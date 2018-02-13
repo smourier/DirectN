@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{576EF3E5-0414-4891-8DCE-F0B27074C069}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DirectN</RootNamespace>
+    <AssemblyName>DirectN</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api.cs" />
+    <Compile Include="D3D11_BLEND_DESC.cs" />
+    <Compile Include="D3D11_BUFFER_DESC.cs" />
+    <Compile Include="D3D11_COUNTER_DESC.cs" />
+    <Compile Include="D3D11_COUNTER_INFO.cs" />
+    <Compile Include="D3D11_COUNTER_TYPE.cs" />
+    <Compile Include="D3D11_CREATE_DEVICE_FLAG.cs" />
+    <Compile Include="D3D11_DEPTH_STENCIL_DESC.cs" />
+    <Compile Include="D3D11_DEPTH_STENCIL_VIEW_DESC.cs" />
+    <Compile Include="D3D11_FEATURE.cs" />
+    <Compile Include="D3D11_INPUT_ELEMENT_DESC.cs" />
+    <Compile Include="D3D11_QUERY_DESC.cs" />
+    <Compile Include="D3D11_RASTERIZER_DESC.cs" />
+    <Compile Include="D3D11_RENDER_TARGET_VIEW_DESC.cs" />
+    <Compile Include="D3D11_RESOURCE_DIMENSION.cs" />
+    <Compile Include="D3D11_SAMPLER_DESC.cs" />
+    <Compile Include="D3D11_SHADER_RESOURCE_VIEW_DESC.cs" />
+    <Compile Include="D3D11_SO_DECLARATION_ENTRY.cs" />
+    <Compile Include="D3D11_SUBRESOURCE_DATA.cs" />
+    <Compile Include="D3D11_TEXTURE1D_DESC.cs" />
+    <Compile Include="D3D11_TEXTURE2D_DESC.cs" />
+    <Compile Include="D3D11_TEXTURE3D_DESC.cs" />
+    <Compile Include="D3D11_UNORDERED_ACCESS_VIEW_DESC.cs" />
+    <Compile Include="D3D_DRIVER_TYPE.cs" />
+    <Compile Include="D3D_FEATURE_LEVEL.cs" />
+    <Compile Include="DXGI_ADAPTER_DESC.cs" />
+    <Compile Include="DXGI_CREATE_FACTORY_FLAGS.cs" />
+    <Compile Include="DXGI_FORMAT.cs" />
+    <Compile Include="DXGI_MWA_FLAGS.cs" />
+    <Compile Include="DXGI_SWAP_CHAIN_DESC.cs" />
+    <Compile Include="ID3D11Asynchronous.cs" />
+    <Compile Include="ID3D11BlendState.cs" />
+    <Compile Include="ID3D11Buffer.cs" />
+    <Compile Include="ID3D11ClassLinkage.cs" />
+    <Compile Include="ID3D11ComputeShader.cs" />
+    <Compile Include="ID3D11Counter.cs" />
+    <Compile Include="ID3D11DepthStencilState.cs" />
+    <Compile Include="ID3D11DepthStencilView.cs" />
+    <Compile Include="ID3D11Device.cs" />
+    <Compile Include="ID3D11DeviceChild.cs" />
+    <Compile Include="ID3D11DeviceContext.cs" />
+    <Compile Include="ID3D11DomainShader.cs" />
+    <Compile Include="ID3D11GeometryShader.cs" />
+    <Compile Include="ID3D11HullShader.cs" />
+    <Compile Include="ID3D11InputLayout.cs" />
+    <Compile Include="ID3D11PixelShader.cs" />
+    <Compile Include="ID3D11Predicate.cs" />
+    <Compile Include="ID3D11Query.cs" />
+    <Compile Include="ID3D11RasterizerState.cs" />
+    <Compile Include="ID3D11RenderTargetView.cs" />
+    <Compile Include="ID3D11Resource.cs" />
+    <Compile Include="ID3D11SamplerState.cs" />
+    <Compile Include="ID3D11ShaderResourceView.cs" />
+    <Compile Include="ID3D11Texture1D.cs" />
+    <Compile Include="ID3D11Texture2D.cs" />
+    <Compile Include="ID3D11Texture3D.cs" />
+    <Compile Include="ID3D11UnorderedAccessView.cs" />
+    <Compile Include="ID3D11VertexShader.cs" />
+    <Compile Include="ID3D11View.cs" />
+    <Compile Include="IDXGIAdapter.cs" />
+    <Compile Include="IDXGIAdapter1.cs" />
+    <Compile Include="IDXGIDeviceSubObject.cs" />
+    <Compile Include="IDXGIFactory.cs" />
+    <Compile Include="IDXGIFactory1.cs" />
+    <Compile Include="IDXGIObject.cs" />
+    <Compile Include="IDXGIOutput.cs" />
+    <Compile Include="IDXGISwapChain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
