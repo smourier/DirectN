@@ -6,7 +6,7 @@ namespace DirectN
     public static class Api
     {
         [DllImport("d3d11")]
-        public static extern int D3D11CreateDevice(
+        public static extern HRESULT D3D11CreateDevice(
             IDXGIAdapter pAdapter,
             D3D_DRIVER_TYPE DriverType,
             IntPtr Software,
@@ -20,7 +20,7 @@ namespace DirectN
             );
 
         [DllImport("d3d11")]
-        public static extern int D3D11CreateDeviceAndSwapChain(
+        public static extern HRESULT D3D11CreateDeviceAndSwapChain(
             IDXGIAdapter pAdapter,
             D3D_DRIVER_TYPE DriverType,
             IntPtr Software,
@@ -36,18 +36,25 @@ namespace DirectN
             );
 
         [DllImport("dxgi")]
-        public static extern int CreateDXGIFactory([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
+        public static extern HRESULT CreateDXGIFactory([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
 
         [DllImport("dxgi")]
-        public static extern int CreateDXGIFactory1([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
+        public static extern HRESULT CreateDXGIFactory1([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
 
         [DllImport("dxgi")]
-        public static extern int CreateDXGIFactory2(DXGI_CREATE_FACTORY_FLAGS Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
+        public static extern HRESULT CreateDXGIFactory2(DXGI_CREATE_FACTORY_FLAGS Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
 
         [DllImport("dxgidebug")]
-        public static extern int DXGIGetDebugInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
+        public static extern HRESULT DXGIGetDebugInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
 
         [DllImport("dxgidebug")]
-        public static extern int DXGIGetDebugInterface1(int Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
+        public static extern HRESULT DXGIGetDebugInterface1(int Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
+
+        public static T CreateDXGIFactory<T>() where T : IDXGIFactory => CreateDXGIFactory<T>(0);
+        public static T CreateDXGIFactory<T>(DXGI_CREATE_FACTORY_FLAGS flags) where T : IDXGIFactory
+        {
+            CreateDXGIFactory2(flags, typeof(T).GUID, out object factory).ThrowOnError();
+            return (T)factory;
+        }
     }
 }

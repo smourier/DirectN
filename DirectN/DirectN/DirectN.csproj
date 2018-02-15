@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api.cs" />
+    <Compile Include="ComObject.cs" />
     <Compile Include="D3D11_BLEND_DESC.cs" />
     <Compile Include="D3D11_BUFFER_DESC.cs" />
     <Compile Include="D3D11_COUNTER_DESC.cs" />
@@ -62,11 +63,27 @@
     <Compile Include="D3D11_UNORDERED_ACCESS_VIEW_DESC.cs" />
     <Compile Include="D3D_DRIVER_TYPE.cs" />
     <Compile Include="D3D_FEATURE_LEVEL.cs" />
+    <Compile Include="DirectNExtensions.cs" />
     <Compile Include="DXGI_ADAPTER_DESC.cs" />
+    <Compile Include="DXGI_ADAPTER_DESC1.cs" />
+    <Compile Include="DXGI_ALPHA_MODE.cs" />
     <Compile Include="DXGI_CREATE_FACTORY_FLAGS.cs" />
     <Compile Include="DXGI_FORMAT.cs" />
+    <Compile Include="DXGI_MODE_DESC.cs" />
+    <Compile Include="DXGI_MODE_SCALING.cs" />
+    <Compile Include="DXGI_MODE_SCANLINE_ORDER.cs" />
     <Compile Include="DXGI_MWA_FLAGS.cs" />
+    <Compile Include="DXGI_RATIONAL.cs" />
+    <Compile Include="DXGI_SAMPLE_DESC.cs" />
+    <Compile Include="DXGI_SCALING.cs" />
     <Compile Include="DXGI_SWAP_CHAIN_DESC.cs" />
+    <Compile Include="DXGI_SWAP_CHAIN_DESC1.cs" />
+    <Compile Include="DXGI_SWAP_CHAIN_FLAG.cs" />
+    <Compile Include="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.cs" />
+    <Compile Include="DXGI_SWAP_EFFECT.cs" />
+    <Compile Include="DXGI_USAGE.cs" />
+    <Compile Include="HRESULT.cs" />
+    <Compile Include="HRESULTS.cs" />
     <Compile Include="ID3D11Asynchronous.cs" />
     <Compile Include="ID3D11BlendState.cs" />
     <Compile Include="ID3D11Buffer.cs" />
@@ -101,9 +118,11 @@
     <Compile Include="IDXGIDeviceSubObject.cs" />
     <Compile Include="IDXGIFactory.cs" />
     <Compile Include="IDXGIFactory1.cs" />
+    <Compile Include="IDXGIFactory2.cs" />
     <Compile Include="IDXGIObject.cs" />
     <Compile Include="IDXGIOutput.cs" />
     <Compile Include="IDXGISwapChain.cs" />
+    <Compile Include="IDXGISwapChain1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
