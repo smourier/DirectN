@@ -63,7 +63,8 @@
     <Compile Include="D3D11_UNORDERED_ACCESS_VIEW_DESC.cs" />
     <Compile Include="D3D_DRIVER_TYPE.cs" />
     <Compile Include="D3D_FEATURE_LEVEL.cs" />
-    <Compile Include="DirectNExtensions.cs" />
+    <Compile Include="DXGI_FEATURE.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="DXGI_ADAPTER_DESC.cs" />
     <Compile Include="DXGI_ADAPTER_DESC1.cs" />
     <Compile Include="DXGI_ALPHA_MODE.cs" />
@@ -114,10 +115,14 @@
     <Compile Include="ID3D11VertexShader.cs" />
     <Compile Include="ID3D11View.cs" />
     <Compile Include="IDXGIAdapter.cs" />
-    <Compile Include="IDXGIAdapter1.cs" />
     <Compile Include="IDXGIDeviceSubObject.cs" />
     <Compile Include="IDXGIFactory.cs" />
     <Compile Include="IDXGIFactory1.cs" />
+    <Compile Include="IDXGIFactory3.cs" />
+    <Compile Include="IDXGIFactory4.cs" />
+    <Compile Include="IDXGIFactory5.cs" />
+    <Compile Include="IDXGIFactoryExtensions.cs" />
+    <Compile Include="IDXGIFactory1Extensions.cs" />
     <Compile Include="IDXGIFactory2.cs" />
     <Compile Include="IDXGIObject.cs" />
     <Compile Include="IDXGIOutput.cs" />

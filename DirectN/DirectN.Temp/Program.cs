@@ -10,18 +10,13 @@ namespace DirectN.Temp
     {
         static void Main(string[] args)
         {
-            using (var factory = ComObject.From(Api.CreateDXGIFactory<IDXGIFactory2>()))
+            using (var factory = ComObject.From(Api.CreateDXGIFactory2()))
             {
-                Console.WriteLine(factory);
-                int i = 0;
-                do
+                foreach (var adapter in factory.EnumAdapters<IDXGIAdapter1>())
                 {
-                    if (factory.Object.EnumAdapters(i++, out IDXGIAdapter adapter).IsError)
-                        break;
-
                     Console.WriteLine(adapter);
+                    adapter.Dispose();
                 }
-                while (true);
             }
         }
     }

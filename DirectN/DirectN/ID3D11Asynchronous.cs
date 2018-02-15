@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DirectN
 {
@@ -11,6 +7,19 @@ namespace DirectN
     public interface ID3D11Asynchronous
     {
         // ID3D11DeviceChild
+        [PreserveSig]
+        void GetDevice(out ID3D11Device ppDevice);
+
+        [PreserveSig]
+        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid guid, out int pDataSize, IntPtr pData);
+
+        [PreserveSig]
+        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid guid, int DataSize, IntPtr pData);
+
+        [PreserveSig]
+        HRESULT SetPrivateDataInterface([MarshalAs(UnmanagedType.LPStruct)] Guid guid, [MarshalAs(UnmanagedType.IUnknown)] object pData);
+
+        // ID3D11Asynchronous
         [PreserveSig]
         int GetDataSize();
     }

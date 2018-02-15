@@ -8,36 +8,36 @@ namespace DirectN
     {
         // IDXGIObject
         [PreserveSig]
-        new int SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, int DataSize, IntPtr pData);
+        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, int DataSize, IntPtr pData);
 
         [PreserveSig]
-        new int SetPrivateDataInterface([MarshalAs(UnmanagedType.LPStruct)] Guid Name, [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
+        new HRESULT SetPrivateDataInterface([MarshalAs(UnmanagedType.LPStruct)] Guid Name, [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
 
         [PreserveSig]
-        new int GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, out int pDataSize, IntPtr pData);
+        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, out int pDataSize, IntPtr pData);
 
         [PreserveSig]
-        new int GetParent([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
+        new HRESULT GetParent([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
 
         // IDXGIFactory
         [PreserveSig]
-        new int EnumAdapters(int Adapter, out IDXGIAdapter ppAdapter);
+        new HRESULT EnumAdapters(int Adapter, out IDXGIAdapter ppAdapter);
 
         [PreserveSig]
-        new int MakeWindowAssociation(IntPtr WindowHandle, DXGI_MWA_FLAGS Flags);
+        new HRESULT MakeWindowAssociation(IntPtr WindowHandle, DXGI_MWA_FLAGS Flags);
 
         [PreserveSig]
-        new int GetWindowAssociation(out IntPtr pWindowHandle);
+        new HRESULT GetWindowAssociation(out IntPtr pWindowHandle);
 
         [PreserveSig]
-        new int CreateSwapChain([MarshalAs(UnmanagedType.IUnknown)] object pDevice, ref DXGI_SWAP_CHAIN_DESC pDesc, out IDXGISwapChain ppSwapChain);
+        new HRESULT CreateSwapChain([MarshalAs(UnmanagedType.IUnknown)] object pDevice, ref DXGI_SWAP_CHAIN_DESC pDesc, out IDXGISwapChain ppSwapChain);
 
         [PreserveSig]
-        new int CreateSoftwareAdapter(IntPtr Module, out IDXGIAdapter ppAdapter);
+        new HRESULT CreateSoftwareAdapter(IntPtr Module, out IDXGIAdapter ppAdapter);
 
         // IDXGIFactory1
         [PreserveSig]
-        int EnumAdapters1(int Adapter, out IDXGIAdapter1 ppAdapter);
+        HRESULT EnumAdapters1(int Adapter, out IDXGIAdapter1 ppAdapter);
 
         [PreserveSig]
         bool IsCurrent();

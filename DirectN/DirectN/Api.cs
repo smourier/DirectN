@@ -50,6 +50,12 @@ namespace DirectN
         [DllImport("dxgidebug")]
         public static extern HRESULT DXGIGetDebugInterface1(int Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
 
+        public static IDXGIFactory CreateDXGIFactory() => CreateDXGIFactory<IDXGIFactory>(0);
+        public static IDXGIFactory1 CreateDXGIFactory1() => CreateDXGIFactory<IDXGIFactory1>(0);
+        public static IDXGIFactory2 CreateDXGIFactory2() => CreateDXGIFactory<IDXGIFactory2>(0);
+        public static IDXGIFactory3 CreateDXGIFactory3() => CreateDXGIFactory<IDXGIFactory3>(0);
+        public static IDXGIFactory4 CreateDXGIFactory4() => CreateDXGIFactory<IDXGIFactory4>(0);
+        public static IDXGIFactory5 CreateDXGIFactory5() => CreateDXGIFactory<IDXGIFactory5>(0);
         public static T CreateDXGIFactory<T>() where T : IDXGIFactory => CreateDXGIFactory<T>(0);
         public static T CreateDXGIFactory<T>(DXGI_CREATE_FACTORY_FLAGS flags) where T : IDXGIFactory
         {

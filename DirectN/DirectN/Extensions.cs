@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DirectN
 {
-    public static class DirectNExtensions
+    public static class Extensions
     {
         public static void Throw(Func<HRESULT> func)
         {
