@@ -7,5 +7,7 @@ namespace DirectN
     {
         public uint Numerator;
         public uint Denominator;
+
+        public override string ToString() => Numerator + "/" + Denominator;
     }
 }

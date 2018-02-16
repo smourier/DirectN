@@ -28,7 +28,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC[] pDesc);
 
         [PreserveSig]
         HRESULT FindClosestMatchingMode(ref DXGI_MODE_DESC pModeToMatch, out DXGI_MODE_DESC pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -87,7 +88,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode(ref DXGI_MODE_DESC pModeToMatch, out DXGI_MODE_DESC pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -125,7 +127,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC1[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC1[] pDesc);
 
         [PreserveSig]
         HRESULT FindClosestMatchingMode1(ref DXGI_MODE_DESC1 pModeToMatch, out DXGI_MODE_DESC1 pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -163,7 +166,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode(ref DXGI_MODE_DESC pModeToMatch, out DXGI_MODE_DESC pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -201,7 +205,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC1[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC1[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode1(ref DXGI_MODE_DESC1 pModeToMatch, out DXGI_MODE_DESC1 pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -243,7 +248,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode(ref DXGI_MODE_DESC pModeToMatch, out DXGI_MODE_DESC pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -281,7 +287,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC1[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC1[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode1(ref DXGI_MODE_DESC1 pModeToMatch, out DXGI_MODE_DESC1 pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -327,7 +334,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode(ref DXGI_MODE_DESC pModeToMatch, out DXGI_MODE_DESC pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -365,7 +373,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC1[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC1[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode1(ref DXGI_MODE_DESC1 pModeToMatch, out DXGI_MODE_DESC1 pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -415,7 +424,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode(ref DXGI_MODE_DESC pModeToMatch, out DXGI_MODE_DESC pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -453,7 +463,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC1[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC1[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode1(ref DXGI_MODE_DESC1 pModeToMatch, out DXGI_MODE_DESC1 pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -482,6 +493,7 @@ namespace DirectN
             [MarshalAs(UnmanagedType.IUnknown)] object pDevice,
             int Flags,
             int SupportedFormatsCount,
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
             DXGI_FORMAT[] pSupportedFormats,
             out IDXGIOutputDuplication ppOutputDuplication);
     }
@@ -512,7 +524,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode(ref DXGI_MODE_DESC pModeToMatch, out DXGI_MODE_DESC pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -550,7 +563,8 @@ namespace DirectN
             DXGI_FORMAT EnumFormat,
             DXGI_ENUM_MODES Flags,
             ref int pNumModes,
-            [In, Out] DXGI_MODE_DESC1[] pDesc);
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
+            DXGI_MODE_DESC1[] pDesc);
 
         [PreserveSig]
         new HRESULT FindClosestMatchingMode1(ref DXGI_MODE_DESC1 pModeToMatch, out DXGI_MODE_DESC1 pClosestMatch, [MarshalAs(UnmanagedType.IUnknown)] object pConcernedDevice);
@@ -579,6 +593,7 @@ namespace DirectN
             [MarshalAs(UnmanagedType.IUnknown)] object pDevice,
             int Flags,
             int SupportedFormatsCount,
+            [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
             DXGI_FORMAT[] pSupportedFormats,
             out IDXGIOutputDuplication ppOutputDuplication);
 
