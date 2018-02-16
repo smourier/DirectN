@@ -29,5 +29,8 @@ namespace DirectN
         }
 
         public new T Object => (T)base.Object;
+
+        //public static implicit operator ComObject<T>(T value) => new ComObject<T>(value);
+        //public static implicit operator T(ComObject<T> value) => value.Object;
     }
 }

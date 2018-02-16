@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DirectN
 {
     public static class IDXGIFactoryExtensions
     {
-        public static IEnumerable<ComObject<IDXGIAdapter>> EnumAdapters(this ComObject<IDXGIFactory> factory)
+        public static IEnumerable<ComObject<T>> EnumAdapters<T>(this ComObject<IDXGIFactory> factory) where T : IDXGIAdapter => EnumAdapters<T>(factory?.Object);
+        public static IEnumerable<ComObject<T>> EnumAdapters<T>(this ComObject<IDXGIFactory1> factory) where T : IDXGIAdapter => EnumAdapters<T>(factory?.Object);
+        public static IEnumerable<ComObject<T>> EnumAdapters<T>(this ComObject<IDXGIFactory2> factory) where T : IDXGIAdapter => EnumAdapters<T>(factory?.Object);
+        public static IEnumerable<ComObject<T>> EnumAdapters<T>(this ComObject<IDXGIFactory3> factory) where T : IDXGIAdapter => EnumAdapters<T>(factory?.Object);
+        public static IEnumerable<ComObject<T>> EnumAdapters<T>(this ComObject<IDXGIFactory4> factory) where T : IDXGIAdapter => EnumAdapters<T>(factory?.Object);
+        public static IEnumerable<ComObject<T>> EnumAdapters<T>(this ComObject<IDXGIFactory5> factory) where T : IDXGIAdapter => EnumAdapters<T>(factory?.Object);
+        public static IEnumerable<ComObject<T>> EnumAdapters<T>(this IDXGIFactory factory) where T : IDXGIAdapter
         {
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
@@ -16,10 +19,10 @@ namespace DirectN
             int i = 0;
             do
             {
-                if (factory.Object.EnumAdapters(i++, out IDXGIAdapter adapter).IsError)
+                if (factory.EnumAdapters(i++, out IDXGIAdapter adapter).IsError)
                     yield break;
 
-                yield return new ComObject<IDXGIAdapter>(adapter);
+                yield return new ComObject<T>((T)adapter);
             }
             while (true);
         }

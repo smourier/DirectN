@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct DXGI_ADAPTER_DESC1
+    public struct DXGI_ADAPTER_DESC3
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
         public string Description;
@@ -16,6 +16,8 @@ namespace DirectN
         public UIntPtr DedicatedSystemMemory;
         public UIntPtr SharedSystemMemory;
         public long AdapterLuid;
-        public DXGI_ADAPTER_FLAG Flags;
+        DXGI_ADAPTER_FLAG3 Flags;
+        DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity;
+        DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity;
     }
 }

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DirectN
 {
@@ -11,5 +7,26 @@ namespace DirectN
     public interface IDXGISwapChain
     {
         // IDXGIDeviceSubObject
+    }
+
+    [Guid("790a45f7-0d42-4876-983a-0a55cfe6f4aa"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGISwapChain1 : IDXGISwapChain
+    {
+    }
+
+    public interface IDXGISwapChain2 : IDXGISwapChain1
+    {
+    }
+
+    public interface IDXGISwapChain3 : IDXGISwapChain2
+    {
+    }
+
+    // dxgi1_5.h
+    [Guid("3D585D5A-BD4A-489E-B1F4-3DBCB6452FFB"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGISwapChain4 : IDXGISwapChain3
+    {
+        [PreserveSig]
+        HRESULT SetHDRMetaData(DXGI_HDR_METADATA_TYPE Type, int Size, IntPtr pMetaData);
     }
 }

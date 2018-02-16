@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DirectN
 {
@@ -11,5 +7,54 @@ namespace DirectN
     public interface IDXGIOutput
     {
         // IDXGIObject
+    }
+
+    public interface IDXGIOutput1 : IDXGIOutput
+    {
+    }
+
+    public interface IDXGIOutput2 : IDXGIOutput1
+    {
+    }
+
+    public interface IDXGIOutput3 : IDXGIOutput2
+    {
+    }
+
+    public interface IDXGIOutput4 : IDXGIOutput3
+    {
+    }
+
+    // dxgi1_5.h
+    [Guid("80A07424-AB52-42EB-833C-0C42FD282D98"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGIOutput5 : IDXGIOutput4
+    {
+        [PreserveSig]
+        HRESULT DuplicateOutput1(
+            [MarshalAs(UnmanagedType.IUnknown)] object pDevice,
+            int Flags,
+            int SupportedFormatsCount,
+            DXGI_FORMAT[] pSupportedFormats,
+            out IDXGIOutputDuplication ppOutputDuplication);
+    }
+
+    // dxgi1_6.h
+    [Guid("068346e8-aaec-4b84-add7-137f513f77a1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGIOutput6 : IDXGIOutput5
+    {
+        // IDXGIOutput5
+        [PreserveSig]
+        new HRESULT DuplicateOutput1(
+            [MarshalAs(UnmanagedType.IUnknown)] object pDevice,
+            int Flags,
+            int SupportedFormatsCount,
+            DXGI_FORMAT[] pSupportedFormats,
+            out IDXGIOutputDuplication ppOutputDuplication);
+
+        [PreserveSig]
+        HRESULT GetDesc1(out DXGI_OUTPUT_DESC1 pDesc);
+        
+        [PreserveSig]
+        HRESULT CheckHardwareCompositionSupport(out DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS pFlags);
     }
 }
