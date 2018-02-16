@@ -3,10 +3,10 @@
 namespace DirectN
 {
     // dxgi1_6.h
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public struct DXGI_OUTPUT_DESC1
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
         public string DeviceName;
         public RECT DesktopCoordinates;
         public bool AttachedToDesktop;

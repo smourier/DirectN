@@ -16,16 +16,20 @@ namespace DirectN.Temp
                 foreach (var adapter in factory.EnumAdapters<IDXGIAdapter4>())
                 {
                     Console.WriteLine(adapter.GetDesc().Description);
-                    Console.WriteLine(adapter.GetDesc().SharedSystemMemory);
-                    DumpStruct(adapter.GetDesc());
+                    DumpStruct(0, adapter.GetDesc3());
+                    foreach (var output in adapter.EnumOutputs<IDXGIOutput6>())
+                    {
+                        DumpStruct(1, output.GetDesc1());
+                        output.Dispose();
+                    }
                     adapter.Dispose();
                 }
             }
         }
 
-        static void DumpStruct(object obj)
+        static void DumpStruct(int indent, object obj)
         {
-            Console.WriteLine(new StructTableString(obj).WriteObject());
+            Console.WriteLine(new StructTableString(obj) { Indent = indent }.WriteObject());
         }
     }
 }
