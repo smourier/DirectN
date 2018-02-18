@@ -9,5 +9,7 @@ namespace DirectN
         public float g;
         public float b;
         public float a;
+
+        public override string ToString() => "r=" + r + ",g=" + g + ",b=" + b + ",a=" + a;
     }
 }

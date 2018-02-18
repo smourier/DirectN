@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using LUID = System.Int64;
 
 namespace DirectN
 {
@@ -15,6 +16,6 @@ namespace DirectN
         public UIntPtr DedicatedVideoMemory;
         public UIntPtr DedicatedSystemMemory;
         public UIntPtr SharedSystemMemory;
-        public long AdapterLuid;
+        public LUID AdapterLuid;
     }
 }

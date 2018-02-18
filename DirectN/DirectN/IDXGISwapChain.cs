@@ -381,7 +381,7 @@ namespace DirectN
         int GetCurrentBackBufferIndex();
         
         [PreserveSig]
-        HRESULT CheckColorSpaceSupport(DXGI_COLOR_SPACE_TYPE ColorSpace, out int pColorSpaceSupport);
+        HRESULT CheckColorSpaceSupport(DXGI_COLOR_SPACE_TYPE ColorSpace, out DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG pColorSpaceSupport);
         
         [PreserveSig]
         HRESULT SetColorSpace1(DXGI_COLOR_SPACE_TYPE ColorSpace);
@@ -516,7 +516,7 @@ namespace DirectN
         new int GetCurrentBackBufferIndex();
 
         [PreserveSig]
-        new HRESULT CheckColorSpaceSupport(DXGI_COLOR_SPACE_TYPE ColorSpace, out int pColorSpaceSupport);
+        new HRESULT CheckColorSpaceSupport(DXGI_COLOR_SPACE_TYPE ColorSpace, out DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG pColorSpaceSupport);
 
         [PreserveSig]
         new HRESULT SetColorSpace1(DXGI_COLOR_SPACE_TYPE ColorSpace);

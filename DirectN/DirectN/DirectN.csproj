@@ -39,11 +39,18 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="DXGI_DEBUG_RLO_FLAGS.cs" />
+    <Compile Include="DXGI_DECODE_SWAP_CHAIN_DESC.cs" />
+    <Compile Include="DXGI_FRAME_PRESENTATION_MODE.cs" />
+    <Compile Include="DXGI_FRAME_STATISTICS_MEDIA.cs" />
     <Compile Include="DXGI_INFO_QUEUE_FILTER.cs" />
     <Compile Include="DXGI_INFO_QUEUE_FILTER_DESC.cs" />
     <Compile Include="DXGI_INFO_QUEUE_MESSAGE.cs" />
     <Compile Include="DXGI_INFO_QUEUE_MESSAGE_CATEGORY.cs" />
     <Compile Include="DXGI_INFO_QUEUE_MESSAGE_SEVERITY.cs" />
+    <Compile Include="DXGI_MAP_FLAGS.cs" />
+    <Compile Include="DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS.cs" />
+    <Compile Include="DXGI_OUTDUPL_FLAG.cs" />
+    <Compile Include="DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="ComObject.cs" />
     <Compile Include="D3D11_BLEND_DESC.cs" />
@@ -140,6 +147,7 @@
     <Compile Include="ID3D11Device.cs" />
     <Compile Include="ID3D11DeviceChild.cs" />
     <Compile Include="ID3D11DeviceContext.cs" />
+    <Compile Include="ID3D11DeviceExtensions.cs" />
     <Compile Include="ID3D11DomainShader.cs" />
     <Compile Include="ID3D11GeometryShader.cs" />
     <Compile Include="ID3D11HullShader.cs" />
@@ -161,12 +169,17 @@
     <Compile Include="IDXGIAdapter.cs" />
     <Compile Include="IDXGIAdapterExtensions.cs" />
     <Compile Include="IDXGIDebug.cs" />
+    <Compile Include="IDXGIDecodeSwapChain.cs" />
     <Compile Include="IDXGIDevice.cs" />
+    <Compile Include="IDXGIDeviceExtensions.cs" />
     <Compile Include="IDXGIDeviceSubObject.cs" />
     <Compile Include="IDXGIDeviceSubObjectExtensions.cs" />
+    <Compile Include="IDXGIDisplayControl.cs" />
     <Compile Include="IDXGIFactory.cs" />
     <Compile Include="IDXGIFactoryExtensions.cs" />
+    <Compile Include="IDXGIFactoryMedia.cs" />
     <Compile Include="IDXGIInfoQueue.cs" />
+    <Compile Include="IDXGIKeyedMutex.cs" />
     <Compile Include="IDXGIObject.cs" />
     <Compile Include="IDXGIObjectExtensions.cs" />
     <Compile Include="IDXGIOutput.cs" />
@@ -175,6 +188,8 @@
     <Compile Include="IDXGIResource.cs" />
     <Compile Include="IDXGISurface.cs" />
     <Compile Include="IDXGISwapChain.cs" />
+    <Compile Include="IDXGISwapChainExtensions.cs" />
+    <Compile Include="IDXGISwapChainMedia.cs" />
     <Compile Include="POINT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RECT.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using LUID = System.Int64;
 
 namespace DirectN
 {
@@ -15,7 +16,7 @@ namespace DirectN
         public UIntPtr DedicatedVideoMemory;
         public UIntPtr DedicatedSystemMemory;
         public UIntPtr SharedSystemMemory;
-        public long AdapterLuid;
+        public LUID AdapterLuid;
         public DXGI_ADAPTER_FLAG3 Flags;
         public DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity;
         public DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity;

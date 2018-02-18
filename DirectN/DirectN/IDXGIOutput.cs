@@ -491,7 +491,7 @@ namespace DirectN
         [PreserveSig]
         HRESULT DuplicateOutput1(
             [MarshalAs(UnmanagedType.IUnknown)] object pDevice,
-            int Flags,
+            DXGI_OUTDUPL_FLAG Flags,
             int SupportedFormatsCount,
             [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
             DXGI_FORMAT[] pSupportedFormats,
@@ -591,7 +591,7 @@ namespace DirectN
         [PreserveSig]
         new HRESULT DuplicateOutput1(
             [MarshalAs(UnmanagedType.IUnknown)] object pDevice,
-            int Flags,
+            DXGI_OUTDUPL_FLAG Flags,
             int SupportedFormatsCount,
             [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)]
             DXGI_FORMAT[] pSupportedFormats,

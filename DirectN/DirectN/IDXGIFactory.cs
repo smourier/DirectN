@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using LUID = System.Int64;
 
 namespace DirectN
 {
@@ -138,7 +139,7 @@ namespace DirectN
             out IDXGISwapChain1 ppSwapChain);
 
         [PreserveSig]
-        HRESULT GetSharedResourceAdapterLuid(IntPtr hResource, out long pLuid);
+        HRESULT GetSharedResourceAdapterLuid(IntPtr hResource, out LUID pLuid);
 
         [PreserveSig]
         HRESULT RegisterStereoStatusWindow(IntPtr WindowHandle, int wMsg, out int pdwCookie);
@@ -224,7 +225,7 @@ namespace DirectN
             out IDXGISwapChain1 ppSwapChain);
 
         [PreserveSig]
-        new HRESULT GetSharedResourceAdapterLuid(IntPtr hResource, out long pLuid);
+        new HRESULT GetSharedResourceAdapterLuid(IntPtr hResource, out LUID pLuid);
 
         [PreserveSig]
         new HRESULT RegisterStereoStatusWindow(IntPtr WindowHandle, int wMsg, out int pdwCookie);
@@ -314,7 +315,7 @@ namespace DirectN
             out IDXGISwapChain1 ppSwapChain);
 
         [PreserveSig]
-        new HRESULT GetSharedResourceAdapterLuid(IntPtr hResource, out long pLuid);
+        new HRESULT GetSharedResourceAdapterLuid(IntPtr hResource, out LUID pLuid);
 
         [PreserveSig]
         new HRESULT RegisterStereoStatusWindow(IntPtr WindowHandle, int wMsg, out int pdwCookie);
@@ -343,7 +344,7 @@ namespace DirectN
 
         // IDXGIFactory4
         [PreserveSig]
-        HRESULT EnumAdapterByLuid(long AdapterLuid, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvAdapter);
+        HRESULT EnumAdapterByLuid(LUID AdapterLuid, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvAdapter);
 
         [PreserveSig]
         HRESULT EnumWarpAdapter([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvAdapter);
@@ -411,7 +412,7 @@ namespace DirectN
             out IDXGISwapChain1 ppSwapChain);
 
         [PreserveSig]
-        new HRESULT GetSharedResourceAdapterLuid(IntPtr hResource, out long pLuid);
+        new HRESULT GetSharedResourceAdapterLuid(IntPtr hResource, out LUID pLuid);
 
         [PreserveSig]
         new HRESULT RegisterStereoStatusWindow(IntPtr WindowHandle, int wMsg, out int pdwCookie);
@@ -440,7 +441,7 @@ namespace DirectN
 
         // IDXGIFactory4
         [PreserveSig]
-        new HRESULT EnumAdapterByLuid(long AdapterLuid, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvAdapter);
+        new HRESULT EnumAdapterByLuid(LUID AdapterLuid, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvAdapter);
 
         [PreserveSig]
         new HRESULT EnumWarpAdapter([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvAdapter);

@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
@@ -9,7 +10,7 @@ namespace DirectN
         public DXGI_SAMPLE_DESC SampleDesc;
         public DXGI_USAGE BufferUsage;
         public int BufferCount;
-        public int OutputWindow;
+        public IntPtr OutputWindow;
         public bool Windowed;
         public DXGI_SWAP_EFFECT SwapEffect;
         public DXGI_SWAP_CHAIN_FLAG Flags;

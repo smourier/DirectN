@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectN", "DirectN\DirectN.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectN.Temp", "DirectN.Temp\DirectN.Temp.csproj", "{C9D38331-AD3C-4DC4-AC68-9959FE786F56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectN.WinTemp", "DirectN.WinTemp\DirectN.WinTemp.csproj", "{1EDF7AE6-81CB-448C-BD8A-CE3029E0F7C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C9D38331-AD3C-4DC4-AC68-9959FE786F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9D38331-AD3C-4DC4-AC68-9959FE786F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9D38331-AD3C-4DC4-AC68-9959FE786F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EDF7AE6-81CB-448C-BD8A-CE3029E0F7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EDF7AE6-81CB-448C-BD8A-CE3029E0F7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EDF7AE6-81CB-448C-BD8A-CE3029E0F7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EDF7AE6-81CB-448C-BD8A-CE3029E0F7C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
