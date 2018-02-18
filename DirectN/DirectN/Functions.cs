@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    public static class Api
+    public static class Functions
     {
         [DllImport("d3d11")]
         public static extern HRESULT D3D11CreateDevice(
@@ -36,6 +36,9 @@ namespace DirectN
             );
 
         [DllImport("dxgi")]
+        public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
+
+        [DllImport("dxgi")]
         public static extern HRESULT CreateDXGIFactory([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
 
         [DllImport("dxgi")]
@@ -47,8 +50,14 @@ namespace DirectN
         [DllImport("dxgidebug")]
         public static extern HRESULT DXGIGetDebugInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
 
-        [DllImport("dxgidebug")]
+        [DllImport("dxgi")]
         public static extern HRESULT DXGIGetDebugInterface1(int Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
+
+        public static IDXGIDebug DXGIGetDebugInterface()
+        {
+            DXGIGetDebugInterface(typeof(IDXGIDebug).GUID, out object debug).ThrowOnError();
+            return (IDXGIDebug)debug;
+        }
 
         public static IDXGIFactory CreateDXGIFactory() => CreateDXGIFactory<IDXGIFactory>(0);
         public static IDXGIFactory1 CreateDXGIFactory1() => CreateDXGIFactory<IDXGIFactory1>(0);

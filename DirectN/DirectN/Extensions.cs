@@ -8,8 +8,5 @@ namespace DirectN
 {
     public static class Extensions
     {
-        public static void Throw(Func<HRESULT> func)
-        {
-        }
     }
 }

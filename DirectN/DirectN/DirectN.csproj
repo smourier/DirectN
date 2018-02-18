@@ -37,7 +37,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DXGI_DEBUG_RLO_FLAGS.cs" />
+    <Compile Include="DXGI_INFO_QUEUE_FILTER.cs" />
+    <Compile Include="DXGI_INFO_QUEUE_FILTER_DESC.cs" />
+    <Compile Include="DXGI_INFO_QUEUE_MESSAGE.cs" />
+    <Compile Include="DXGI_INFO_QUEUE_MESSAGE_CATEGORY.cs" />
+    <Compile Include="DXGI_INFO_QUEUE_MESSAGE_SEVERITY.cs" />
+    <Compile Include="Functions.cs" />
     <Compile Include="ComObject.cs" />
     <Compile Include="D3D11_BLEND_DESC.cs" />
     <Compile Include="D3D11_BUFFER_DESC.cs" />
@@ -153,11 +160,13 @@
     <Compile Include="ID3D11View.cs" />
     <Compile Include="IDXGIAdapter.cs" />
     <Compile Include="IDXGIAdapterExtensions.cs" />
+    <Compile Include="IDXGIDebug.cs" />
     <Compile Include="IDXGIDevice.cs" />
     <Compile Include="IDXGIDeviceSubObject.cs" />
     <Compile Include="IDXGIDeviceSubObjectExtensions.cs" />
     <Compile Include="IDXGIFactory.cs" />
     <Compile Include="IDXGIFactoryExtensions.cs" />
+    <Compile Include="IDXGIInfoQueue.cs" />
     <Compile Include="IDXGIObject.cs" />
     <Compile Include="IDXGIObjectExtensions.cs" />
     <Compile Include="IDXGIOutput.cs" />
