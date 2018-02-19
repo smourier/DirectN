@@ -3,7 +3,7 @@
 namespace DirectN
 {
     [StructLayout(LayoutKind.Explicit)]
-    public struct D3D11_SHADER_RESOURCE_VIEW_DESC
+    public struct D3D11_SHADER_RESOURCE_VIEW_DESC1
     {
         [FieldOffset(0)]
         public DXGI_FORMAT Format;
@@ -16,9 +16,9 @@ namespace DirectN
         [FieldOffset(8)]
         public D3D11_TEX1D_ARRAY_SRV Texture1DArray;
         [FieldOffset(8)]
-        public D3D11_TEX2D_SRV Texture2D;
+        public D3D11_TEX2D_SRV1 Texture2D;
         [FieldOffset(8)]
-        public D3D11_TEX2D_ARRAY_SRV Texture2DArray;
+        public D3D11_TEX2D_ARRAY_SRV1 Texture2DArray;
         [FieldOffset(8)]
         public D3D11_TEX2DMS_SRV Texture2DMS;
         [FieldOffset(8)]

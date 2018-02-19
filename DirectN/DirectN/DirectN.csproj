@@ -38,6 +38,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="D3D11_BUFFEREX_SRV.cs" />
+    <Compile Include="D3D11_BUFFEREX_SRV_FLAG.cs" />
+    <Compile Include="D3D11_BUFFER_SRV.cs" />
+    <Compile Include="D3D11_SHADER_RESOURCE_VIEW_DESC1.cs" />
+    <Compile Include="D3D11_SRV_DIMENSION.cs" />
+    <Compile Include="D3D11_TEX1D_ARRAY_SRV.cs" />
+    <Compile Include="D3D11_TEX1D_SRV.cs" />
+    <Compile Include="D3D11_TEX2DMS_ARRAY_SRV.cs" />
+    <Compile Include="D3D11_TEX2DMS_SRV.cs" />
+    <Compile Include="D3D11_TEX2D_ARRAY_SRV.cs" />
+    <Compile Include="D3D11_TEX2D_ARRAY_SRV1.cs" />
+    <Compile Include="D3D11_TEX2D_SRV.cs" />
+    <Compile Include="D3D11_TEX2D_SRV1.cs" />
+    <Compile Include="D3D11_TEX3D_SRV.cs" />
+    <Compile Include="D3D11_TEXCUBE_ARRAY_SRV.cs" />
+    <Compile Include="D3D11_TEXCUBE_SRV.cs" />
     <Compile Include="DXGI_DEBUG_RLO_FLAGS.cs" />
     <Compile Include="DXGI_DECODE_SWAP_CHAIN_DESC.cs" />
     <Compile Include="DXGI_FRAME_PRESENTATION_MODE.cs" />

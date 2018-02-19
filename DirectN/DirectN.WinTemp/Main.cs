@@ -29,7 +29,7 @@ namespace DirectN.WinTemp
             // force creation now
             var sw = _swapChain.Value;
             var desc = sw.As<IDXGISwapChain1>().GetDesc1();
-            var o = sw.GetContainingOutput<IDXGIOutput>();
+            var o = sw.GetContainingOutput<IDXGIOutput1>();
             var stats = sw.GetFrameStatistics();
             var fs = sw.As<IDXGISwapChain1>().GetFullscreenDesc();
             var h = sw.As<IDXGISwapChain1>().GetBackgroundColor();
