@@ -18,7 +18,7 @@ namespace DirectN
                 D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_9_2,
                 D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_9_1
             };
-            return D3D11CreateDevice(adapter, D3D_DRIVER_TYPE.D3D_DRIVER_TYPE_HARDWARE, flags, levels, Constants.D3D11_SDK_VERSION);
+            return D3D11CreateDevice(adapter, D3D_DRIVER_TYPE.D3D_DRIVER_TYPE_HARDWARE, flags, levels, D3D11Constants.D3D11_SDK_VERSION);
         }
 
         public static ComObject<ID3D11Device> D3D11CreateDevice(

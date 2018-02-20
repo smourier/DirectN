@@ -28,11 +28,11 @@ namespace DirectN.WinTemp
         {
             // force creation now
             var sw = _swapChain.Value;
-            var desc = sw.As<IDXGISwapChain1>().GetDesc1();
+            var desc = sw.Cast<IDXGISwapChain1>().GetDesc1();
             var o = sw.GetContainingOutput<IDXGIOutput1>();
             var stats = sw.GetFrameStatistics();
-            var fs = sw.As<IDXGISwapChain1>().GetFullscreenDesc();
-            var h = sw.As<IDXGISwapChain1>().GetBackgroundColor();
+            var fs = sw.Cast<IDXGISwapChain1>().GetFullscreenDesc();
+            var h = sw.Cast<IDXGISwapChain1>().GetBackgroundColor();
         }
 
         private ComObject<ID3D11Device> CreateD3D11Device()
