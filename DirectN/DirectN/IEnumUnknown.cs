@@ -7,7 +7,7 @@ namespace DirectN
     public interface IEnumUnknown
     {
         [PreserveSig]
-        HRESULT Next(int celt, [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown)] object[] rgelt, ref int celtFetched);
+        HRESULT Next(int celt, [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown)] object[] rgelt, out int celtFetched);
 
         [PreserveSig]
         HRESULT Skip(int celt);
