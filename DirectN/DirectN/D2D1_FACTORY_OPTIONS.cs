@@ -3,9 +3,8 @@
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct D2D1_PIXEL_FORMAT
+    public struct D2D1_FACTORY_OPTIONS
     {
-        public DXGI_FORMAT format;
-        public D2D1_ALPHA_MODE alphaMode;
+        public D2D1_DEBUG_LEVEL debugLevel;
     }
 }

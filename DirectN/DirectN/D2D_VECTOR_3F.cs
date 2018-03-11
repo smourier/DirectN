@@ -3,9 +3,10 @@
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct D2D1_PIXEL_FORMAT
+    public struct D2D_VECTOR_3F
     {
-        public DXGI_FORMAT format;
-        public D2D1_ALPHA_MODE alphaMode;
+        public float x;
+        public float y;
+        public float z;
     }
 }
