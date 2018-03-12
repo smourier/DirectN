@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using D2D1_RECT_F = DirectN.D2D_RECT_F;
 using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
+using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {

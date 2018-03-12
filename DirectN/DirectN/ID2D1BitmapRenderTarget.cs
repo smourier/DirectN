@@ -10,8 +10,8 @@ using D2D1_COLOR_F = DirectN.D3DCOLORVALUE;
 
 namespace DirectN
 {
-    [Guid("2cd90698-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1HwndRenderTarget : ID2D1RenderTarget
+    [Guid("2cd90695-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface ID2D1BitmapRenderTarget : ID2D1RenderTarget
     {
         // ID2D1Resource
         [PreserveSig]
@@ -177,14 +177,8 @@ namespace DirectN
         [PreserveSig]
         new bool IsSupported(ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties);
 
-        // ID2D1HwndRenderTarget
+        // ID2D1BitmapRenderTarget
         [PreserveSig]
-        D2D1_WINDOW_STATE CheckWindowState();
-
-        [PreserveSig]
-        HRESULT Resize(ref D2D1_SIZE_U pixelSize);
-
-        [PreserveSig]
-        IntPtr GetHwnd();
+        HRESULT GetBitmap(out ID2D1Bitmap bitmap);
     }
 }
