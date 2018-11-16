@@ -11,7 +11,7 @@ namespace DirectN
     public struct HRESULT : IEquatable<HRESULT>, IFormattable
     {
         private static ConcurrentDictionary<int, string> _names = new ConcurrentDictionary<int, string>();
-        private int _value;
+        private readonly int _value;
 
         public HRESULT(int value)
         {

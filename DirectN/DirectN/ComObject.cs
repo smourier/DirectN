@@ -42,7 +42,7 @@ namespace DirectN
 
         public bool IsDisposed => _object == null;
 
-        public static ComObject<T> From<T>(T comObject) => new ComObject<T>(comObject);
+        public static ComObject<T> From<T>(T comObject) => comObject == null ? null : new ComObject<T>(comObject);
 
         public static object Unwrap(object obj)
         {
@@ -70,7 +70,7 @@ namespace DirectN
     public class ComObject<T> : ComObject
     {
         public ComObject(T comObject)
-            :base(comObject)
+            : base(comObject)
         {
         }
 
