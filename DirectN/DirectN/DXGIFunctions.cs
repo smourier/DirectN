@@ -5,6 +5,38 @@ namespace DirectN
 {
     public static class DXGIFunctions
     {
+        private static readonly Lazy<bool> _debugLayerAvailable = new Lazy<bool>(GetDebugLayerAvailable, true);
+        public static bool IsDebugLayerAvailable => _debugLayerAvailable.Value;
+
+        private static bool GetDebugLayerAvailable()
+        {
+            try
+            {
+                DXGIGetDebugInterface(typeof(IDXGIDebug).GUID, out var debug);
+                Marshal.ReleaseComObject(debug);
+                return true;
+            }
+            catch (DllNotFoundException)
+            {
+                return false;
+            }
+        }
+
+        public static void DXGIReportLiveObjects() => DXGIReportLiveObjects(DXGIConstants.DXGI_DEBUG_ALL, DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_ALL);
+        public static void DXGIReportLiveObjects(Guid apiid) => DXGIReportLiveObjects(apiid, DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_ALL);
+        public static void DXGIReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags)
+        {
+            if (!IsDebugLayerAvailable)
+                return;
+
+            DXGIGetDebugInterface(typeof(IDXGIDebug).GUID, out var debug);
+            if (debug == null || !(debug is IDXGIDebug dbg))
+                return;
+
+            dbg.ReportLiveObjects(apiid, flags);
+            Marshal.ReleaseComObject(debug);
+        }
+
         [DllImport("dxgi")]
         public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
 

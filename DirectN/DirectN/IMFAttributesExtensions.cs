@@ -130,8 +130,22 @@ namespace DirectN
                     return true;
 
                 case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_IUNKNOWN:
-                    value = GetUnknown<T>(obj, key);
-                    return value != null;
+                    var comType = ComObject.GetGenericComObjectComType(typeof(T));
+                    if (comType == null)
+                    {
+                        value = (T)GetUnknown(obj, key, typeof(T).GUID);
+                        return value != null;
+                    }
+
+                    var unk = GetUnknown(obj, key, comType.GUID);
+                    if (unk == null)
+                    {
+                        value = default(T);
+                        return false;
+                    }
+
+                    value = (T)(object)ComObject.WrapAsGeneric(comType, unk);
+                    return true;
 
                 default:
                     throw new NotSupportedException();
@@ -236,18 +250,18 @@ namespace DirectN
             return value;
         }
 
-        public static T GetUnknown<T>(this ComObject<IMFAttributes> obj, Guid key) => GetUnknown<T>(obj, key, typeof(T).GUID);
-        public static T GetUnknown<T>(this ComObject<IMFAttributes> obj, Guid key, Guid interfaceId) => GetUnknown<T>(obj?.Object, key, interfaceId);
-        public static T GetUnknown<T>(this IMFAttributes obj, Guid key) => GetUnknown<T>(obj, key, typeof(T).GUID);
-        public static T GetUnknown<T>(this IMFAttributes obj, Guid key, Guid interfaceId)
+        public static ComObject<T> GetUnknown<T>(this ComObject<IMFAttributes> obj, Guid key) => GetUnknown<T>(obj, key, typeof(T).GUID);
+        public static ComObject<T> GetUnknown<T>(this ComObject<IMFAttributes> obj, Guid key, Guid interfaceId) => GetUnknown<T>(obj?.Object, key, interfaceId);
+        public static ComObject<T> GetUnknown<T>(this IMFAttributes obj, Guid key) => GetUnknown<T>(obj, key, typeof(T).GUID);
+        public static ComObject<T> GetUnknown<T>(this IMFAttributes obj, Guid key, Guid interfaceId)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
 
             if (obj.GetUnknown(key, interfaceId, out var value).IsError)
-                return default(T);
+                return null;
 
-            return (T)value;
+            return new ComObject<T>((T)value);
         }
 
         public static IntPtr GetAllocatedBlob(this ComObject<IMFAttributes> obj, Guid key) => GetAllocatedBlob(obj, key, out var size);
@@ -285,13 +299,12 @@ namespace DirectN
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
 
-            if (obj.GetStringLength(key, out var value).IsError)
+            if (obj.GetStringLength(key, out var length).IsError)
                 return defaultValue;
 
-            var s = new string('\0', value);
-            if (obj.GetString(key, s, value, ref value).IsError)
-                return defaultValue;
-
+            var s = new string('\0', length);
+            length++;
+            obj.GetString(key, s, length, ref length).ThrowOnError();
             return s;
         }
     }

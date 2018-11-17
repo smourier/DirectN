@@ -65,6 +65,41 @@ namespace DirectN
 
             return (T)obj;
         }
+
+        public static ComObject WrapAsGeneric(Type comType, object instance)
+        {
+            if (comType == null)
+                throw new ArgumentNullException(nameof(comType));
+
+            if (instance == null)
+                throw new ArgumentNullException(nameof(instance));
+
+            if (!comType.IsAssignableFrom(instance.GetType()))
+                throw new ArgumentNullException(nameof(instance));
+
+            var type = typeof(ComObject<>).MakeGenericType(comType);
+            var ctor = type.GetConstructor(new[] { comType });
+            return (ComObject)ctor.Invoke(new[] { instance });
+        }
+
+        public static bool IsGenericComObjectType(Type type)
+        {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
+            return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(ComObject<>);
+        }
+
+        public static Type GetGenericComObjectComType(Type type)
+        {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
+            if (!type.IsGenericType || type.GetGenericTypeDefinition() != typeof(ComObject<>))
+                return null;
+
+            return type.GetGenericArguments()[0];
+        }
     }
 
     public class ComObject<T> : ComObject

@@ -15,7 +15,9 @@ namespace DirectN
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
 
-            obj.GetAttributes(out var atts).ThrowOnError();
+            if (obj.GetAttributes(out var atts).IsError)
+                return null;
+
             return new ComObject<IMFAttributes>(atts);
         }
 

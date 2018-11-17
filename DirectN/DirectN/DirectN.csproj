@@ -103,6 +103,7 @@
     <Compile Include="D2D_VECTOR_3F.cs" />
     <Compile Include="D2D_VECTOR_4F.cs" />
     <Compile Include="D3DCOLORVALUE.cs" />
+    <Compile Include="ComMemory.cs" />
     <Compile Include="DWRITE_GLYPH_IMAGE_FORMATS.cs" />
     <Compile Include="DWRITE_GLYPH_RUN.cs" />
     <Compile Include="DWRITE_MEASURING_MODE.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.cs" />
     <Compile Include="DXGI_SWAP_EFFECT.cs" />
     <Compile Include="DXGI_USAGE.cs" />
+    <Compile Include="FourCC.cs" />
     <Compile Include="HRESULT.cs" />
     <Compile Include="HRESULTS.cs" />
     <Compile Include="ID2D1Bitmap.cs" />
@@ -329,6 +331,7 @@
     <Compile Include="IMFSinkWriterExtensions.cs" />
     <Compile Include="IMFTransform.cs" />
     <Compile Include="IMFTransformExtensions.cs" />
+    <Compile Include="InterlockedDisposable.cs" />
     <Compile Include="IPropertyBag2.cs" />
     <Compile Include="IUnknown.cs" />
     <Compile Include="IWICBitmap.cs" />
@@ -368,6 +371,7 @@
     <Compile Include="IWICStream.cs" />
     <Compile Include="MediaEventType.cs" />
     <Compile Include="MFConstants.cs" />
+    <Compile Include="MFFunctions.cs" />
     <Compile Include="MFT_ENUM_FLAG.cs" />
     <Compile Include="MFT_INPUT_STREAM_INFO.cs" />
     <Compile Include="MFT_INPUT_STREAM_INFO_FLAGS.cs" />
@@ -377,6 +381,7 @@
     <Compile Include="MFT_OUTPUT_STREAM_INFO_FLAGS.cs" />
     <Compile Include="MFT_PROCESS_OUTPUT_FLAGS.cs" />
     <Compile Include="MFT_PROCESS_OUTPUT_STATUS.cs" />
+    <Compile Include="MFT_REGISTER_TYPE_INFO.cs" />
     <Compile Include="MFT_SET_TYPE_FLAGS.cs" />
     <Compile Include="MF_ATTRIBUTES_MATCH_TYPE.cs" />
     <Compile Include="MF_ATTRIBUTE_TYPE.cs" />
