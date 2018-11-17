@@ -6,9 +6,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public struct DXGI_PRESENT_PARAMETERS
     {
-        int DirtyRectsCount;
-        IntPtr pDirtyRects;
-        IntPtr pScrollRect;
-        IntPtr pScrollOffset;
+        public int DirtyRectsCount;
+        public IntPtr pDirtyRects;
+        public IntPtr pScrollRect;
+        public IntPtr pScrollOffset;
     }
 }

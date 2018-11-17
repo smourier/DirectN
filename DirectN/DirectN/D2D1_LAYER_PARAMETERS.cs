@@ -9,7 +9,7 @@ namespace DirectN
     {
         public D2D1_RECT_F contentBounds;
         public ID2D1Geometry geometricMask;
-        D2D1_ANTIALIAS_MODE maskAntialiasMode;
+        public D2D1_ANTIALIAS_MODE maskAntialiasMode;
         public D2D1_MATRIX_3X2_F maskTransform;
         public float opacity;
         public ID2D1Brush opacityBrush;

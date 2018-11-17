@@ -6,6 +6,24 @@ namespace DirectN
 {
     public static class MFFunctions
     {
+        public static void MFStartup()
+        {
+            // win7
+            if (Environment.OSVersion.Version >= new Version(6, 1))
+            {
+                MFStartup(MF_SDK.MF_SDK_VERSION_2, MFSTARTUP.MFSTARTUP_FULL).ThrowOnError();
+                return;
+            }
+
+            MFStartup(MF_SDK.MF_SDK_VERSION_1, MFSTARTUP.MFSTARTUP_FULL).ThrowOnError();
+        }
+
+        [DllImport("mfplat")]
+        public static extern HRESULT MFStartup(MF_SDK Version, MFSTARTUP dwFlags);
+
+        [DllImport("mfplat")]
+        public static extern HRESULT MFShutdown();
+
         [DllImport("mfplat")]
         public static extern HRESULT MFTEnumEx(
             Guid guidCategory,
