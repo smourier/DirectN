@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    // we want to avoid PropVariant stuff
     public static class IMFAttributesExtensions
     {
         public static IEnumerable<KeyValuePair<Guid, MF_ATTRIBUTE_TYPE>> Enumerate(this ComObject<IMFAttributes> obj) => Enumerate(obj?.Object);
@@ -29,6 +31,113 @@ namespace DirectN
             return value;
         }
 
+        public static T Get<T>(this ComObject<IMFAttributes> obj, Guid key, T defaultValue = default(T), IFormatProvider provider = null) => Get(obj?.Object, key, defaultValue, provider);
+        public static T Get<T>(this IMFAttributes obj, Guid key, T defaultValue = default(T), IFormatProvider provider = null)
+        {
+            if (!TryGet(obj, key, provider, out T value))
+                return defaultValue;
+
+            return value;
+        }
+
+        public static bool TryGet<T>(this ComObject<IMFAttributes> obj, Guid key, out T value) => TryGet(obj?.Object, key, null, out value);
+        public static bool TryGet<T>(this ComObject<IMFAttributes> obj, Guid key, IFormatProvider provider, out T value) => TryGet(obj?.Object, key, provider, out value);
+        public static bool TryGet<T>(this IMFAttributes obj, Guid key, out T value) => TryGet(obj, key, null, out value);
+        public static bool TryGet<T>(this IMFAttributes obj, Guid key, IFormatProvider provider, out T value)
+        {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
+
+            if (obj.GetItemType(key, out var type).IsError)
+            {
+                value = default(T);
+                return false;
+            }
+
+            T item;
+            switch (type)
+            {
+                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_BLOB:
+                    if (typeof(T) == typeof(IntPtr))
+                    {
+                        value = (T)(object)GetAllocatedBlob(obj, key);
+                        return true;
+                    }
+
+                    var bytes = GetBlob(obj, key);
+                    if (!Conversions.TryChangeType(bytes, provider, out item))
+                    {
+                        value = default(T);
+                        return false;
+                    }
+
+                    value = item;
+                    return true;
+
+                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_DOUBLE:
+                    var dbl = GetDouble(obj, key);
+                    if (!Conversions.TryChangeType(dbl, provider, out item))
+                    {
+                        value = default(T);
+                        return false;
+                    }
+
+                    value = item;
+                    return true;
+
+                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_GUID:
+                    var guid = GetGuid(obj, key);
+                    if (!Conversions.TryChangeType(guid, provider, out item))
+                    {
+                        value = default(T);
+                        return false;
+                    }
+
+                    value = item;
+                    return true;
+
+                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_STRING:
+                    var s = GetString(obj, key);
+                    if (!Conversions.TryChangeType(s, provider, out item))
+                    {
+                        value = default(T);
+                        return false;
+                    }
+
+                    value = item;
+                    return true;
+
+                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT32:
+                    var ui = GetUInt32(obj, key);
+                    if (!Conversions.TryChangeType(ui, provider, out item))
+                    {
+                        value = default(T);
+                        return false;
+                    }
+
+                    value = item;
+                    return true;
+
+                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT64:
+                    var ul = GetUInt64(obj, key);
+                    if (!Conversions.TryChangeType(ul, provider, out item))
+                    {
+                        value = default(T);
+                        return false;
+                    }
+
+                    value = item;
+                    return true;
+
+                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_IUNKNOWN:
+                    value = GetUnknown<T>(obj, key);
+                    return value != null;
+
+                default:
+                    throw new NotSupportedException();
+            }
+        }
+
         public static Guid GetGuid(this ComObject<IMFAttributes> obj, Guid key) => GetGuid(obj?.Object, key, Guid.Empty);
         public static Guid GetGuid(this ComObject<IMFAttributes> obj, Guid key, Guid defaultValue) => GetGuid(obj?.Object, key, defaultValue);
         public static Guid GetGuid(this IMFAttributes obj, Guid key) => GetGuid(obj, key, Guid.Empty);
@@ -53,6 +162,18 @@ namespace DirectN
                 return defaultValue;
 
             return value;
+        }
+
+        public static bool GetBoolean(this ComObject<IMFAttributes> obj, Guid key, bool defaultValue = false) => GetBoolean(obj?.Object, key, defaultValue);
+        public static bool GetBoolean(this IMFAttributes obj, Guid key, bool defaultValue = false)
+        {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
+
+            if (obj.GetUINT32(key, out var value).IsError)
+                return defaultValue;
+
+            return value != 0;
         }
 
         public static int GetInt32(this ComObject<IMFAttributes> obj, Guid key, int defaultValue = 0) => GetInt32(obj?.Object, key, defaultValue);
@@ -129,10 +250,10 @@ namespace DirectN
             return (T)value;
         }
 
-        public static IntPtr GetBlob(this ComObject<IMFAttributes> obj, Guid key) => GetBlob(obj, key, out var size);
-        public static IntPtr GetBlob(this ComObject<IMFAttributes> obj, Guid key, out int size) => GetBlob(obj?.Object, key, out size);
-        public static IntPtr GetBlob(this IMFAttributes obj, Guid key) => GetBlob(obj, key, out var size);
-        public static IntPtr GetBlob(this IMFAttributes obj, Guid key, out int size)
+        public static IntPtr GetAllocatedBlob(this ComObject<IMFAttributes> obj, Guid key) => GetAllocatedBlob(obj, key, out var size);
+        public static IntPtr GetAllocatedBlob(this ComObject<IMFAttributes> obj, Guid key, out int size) => GetAllocatedBlob(obj?.Object, key, out size);
+        public static IntPtr GetAllocatedBlob(this IMFAttributes obj, Guid key) => GetAllocatedBlob(obj, key, out var size);
+        public static IntPtr GetAllocatedBlob(this IMFAttributes obj, Guid key, out int size)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
@@ -141,6 +262,21 @@ namespace DirectN
                 return IntPtr.Zero;
 
             return ptr;
+        }
+
+        public static byte[] GetBlob(this ComObject<IMFAttributes> obj, Guid key) => GetBlob(obj, key);
+        public static byte[] GetBlob(this IMFAttributes obj, Guid key)
+        {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
+
+            if (obj.GetAllocatedBlob(key, out var ptr, out var size).IsError)
+                return null;
+
+            var bytes = new byte[size];
+            Marshal.Copy(ptr, bytes, 0, size);
+            Marshal.FreeCoTaskMem(ptr);
+            return bytes;
         }
 
         public static string GetString(this ComObject<IMFAttributes> obj, Guid key, string defaultValue = null) => GetString(obj?.Object, key, defaultValue);

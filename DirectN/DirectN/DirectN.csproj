@@ -37,6 +37,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conversions.cs" />
+    <Compile Include="D2D1Functions.cs" />
     <Compile Include="D2D1_ALPHA_MODE.cs" />
     <Compile Include="D2D1_ANTIALIAS_MODE.cs" />
     <Compile Include="D2D1_ARC_SEGMENT.cs" />
@@ -122,6 +124,7 @@
     <Compile Include="D3D11_TEX3D_SRV.cs" />
     <Compile Include="D3D11_TEXCUBE_ARRAY_SRV.cs" />
     <Compile Include="D3D11_TEXCUBE_SRV.cs" />
+    <Compile Include="DXGIFunctions.cs" />
     <Compile Include="DXGI_DEBUG_RLO_FLAGS.cs" />
     <Compile Include="DXGI_DECODE_SWAP_CHAIN_DESC.cs" />
     <Compile Include="DXGI_FRAME_PRESENTATION_MODE.cs" />
@@ -138,7 +141,7 @@
     <Compile Include="DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS.cs" />
     <Compile Include="DXGI_OUTDUPL_FLAG.cs" />
     <Compile Include="DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG.cs" />
-    <Compile Include="Functions.cs" />
+    <Compile Include="D3D11Functions.cs" />
     <Compile Include="ComObject.cs" />
     <Compile Include="D3D11_BLEND_DESC.cs" />
     <Compile Include="D3D11_BUFFER_DESC.cs" />

@@ -30,7 +30,7 @@ namespace DirectN.Temp
 
         static void SafeMain(string[] args)
         {
-            using (var factory = Functions.CreateDXGIFactory5())
+            using (var factory = DXGIFunctions.CreateDXGIFactory5())
             {
                 foreach (var adapter in factory.EnumAdapters<IDXGIAdapter4>())
                 {

@@ -37,7 +37,7 @@ namespace DirectN.WinTemp
 
         private ComObject<ID3D11Device> CreateD3D11Device()
         {
-            return Functions.D3D11CreateDevice(
+            return D3D11Functions.D3D11CreateDevice(
                 D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_BGRA_SUPPORT |
 #if DEBUG
                 D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_DEBUG |
