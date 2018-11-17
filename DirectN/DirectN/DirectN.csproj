@@ -62,6 +62,7 @@
     <Compile Include="D2D1_DC_INITIALIZE_MODE.cs" />
     <Compile Include="D2D1_DEBUG_LEVEL.cs" />
     <Compile Include="D2D1_DRAWING_STATE_DESCRIPTION.cs" />
+    <Compile Include="D2D1_DRAWING_STATE_DESCRIPTION1.cs" />
     <Compile Include="D2D1_DRAW_TEXT_OPTIONS.cs" />
     <Compile Include="D2D1_EFFECT_INPUT_DESCRIPTION.cs" />
     <Compile Include="D2D1_ELLIPSE.cs" />
@@ -91,8 +92,10 @@
     <Compile Include="D2D1_OPACITY_MASK_CONTENT.cs" />
     <Compile Include="D2D1_PATH_SEGMENT.cs" />
     <Compile Include="D2D1_PIXEL_FORMAT.cs" />
+    <Compile Include="D2D1_POINT_DESCRIPTION.cs" />
     <Compile Include="D2D1_PRESENT_OPTIONS.cs" />
     <Compile Include="D2D1_PRIMITIVE_BLEND.cs" />
+    <Compile Include="D2D1_PROPERTY_BINDING.cs" />
     <Compile Include="D2D1_PROPERTY_TYPE.cs" />
     <Compile Include="D2D1_QUADRATIC_BEZIER_SEGMENT.cs" />
     <Compile Include="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES.cs" />
@@ -102,6 +105,8 @@
     <Compile Include="D2D1_RENDER_TARGET_USAGE.cs" />
     <Compile Include="D2D1_ROUNDED_RECT.cs" />
     <Compile Include="D2D1_STROKE_STYLE_PROPERTIES.cs" />
+    <Compile Include="D2D1_STROKE_STYLE_PROPERTIES1.cs" />
+    <Compile Include="D2D1_STROKE_TRANSFORM_TYPE.cs" />
     <Compile Include="D2D1_SWEEP_DIRECTION.cs" />
     <Compile Include="D2D1_TEXT_ANTIALIAS_MODE.cs" />
     <Compile Include="D2D1_TRIANGLE.cs" />
@@ -287,10 +292,12 @@
     <Compile Include="ID2D1Device.cs" />
     <Compile Include="ID2D1DeviceContext.cs" />
     <Compile Include="ID2D1DrawingStateBlock.cs" />
+    <Compile Include="ID2D1DrawingStateBlock1.cs" />
     <Compile Include="ID2D1Effect.cs" />
     <Compile Include="ID2D1EllipseGeometry.cs" />
     <Compile Include="ID2D1Factory.cs" />
     <Compile Include="ID2D1DCRenderTarget.cs" />
+    <Compile Include="ID2D1Factory1.cs" />
     <Compile Include="ID2D1GdiMetafile.cs" />
     <Compile Include="ID2D1Geometry.cs" />
     <Compile Include="ID2D1GeometryGroup.cs" />
@@ -305,6 +312,7 @@
     <Compile Include="ID2D1Layer.cs" />
     <Compile Include="ID2D1Mesh.cs" />
     <Compile Include="ID2D1PathGeometry.cs" />
+    <Compile Include="ID2D1PathGeometry1.cs" />
     <Compile Include="ID2D1Properties.cs" />
     <Compile Include="ID2D1RadialGradientBrush.cs" />
     <Compile Include="ID2D1RectangleGeometry.cs" />
@@ -314,6 +322,7 @@
     <Compile Include="ID2D1SimplifiedGeometrySink.cs" />
     <Compile Include="ID2D1SolidColorBrush.cs" />
     <Compile Include="ID2D1StrokeStyle.cs" />
+    <Compile Include="ID2D1StrokeStyle1.cs" />
     <Compile Include="ID2D1TessellationSink.cs" />
     <Compile Include="ID2D1TransformedGeometry.cs" />
     <Compile Include="ID3D11Asynchronous.cs" />
@@ -486,6 +495,9 @@
     <Compile Include="MF_MEDIATYPE_EQUAL.cs" />
     <Compile Include="MF_SDK.cs" />
     <Compile Include="MF_SINK_WRITER_STATISTICS.cs" />
+    <Compile Include="PD2D1_EFFECT_FACTORY.cs" />
+    <Compile Include="PD2D1_PROPERTY_GET_FUNCTION.cs" />
+    <Compile Include="PD2D1_PROPERTY_SET_FUNCTION.cs" />
     <Compile Include="POINT.cs" />
     <Compile Include="PROPBAG2.cs" />
     <Compile Include="PROPBAG2_TYPE.cs" />

@@ -22,15 +22,14 @@ namespace DirectN
             }
         }
 
-        public static void DXGIReportLiveObjects() => DXGIReportLiveObjects(DXGIConstants.DXGI_DEBUG_ALL, DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_ALL);
-        public static void DXGIReportLiveObjects(Guid apiid) => DXGIReportLiveObjects(apiid, DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_ALL);
-        public static void DXGIReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags)
+        public static void DXGIReportLiveObjects() => DXGIReportLiveObjects(DXGIConstants.DXGI_DEBUG_ALL);
+        public static void DXGIReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags = DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_ALL)
         {
             if (!IsDebugLayerAvailable)
                 return;
 
             DXGIGetDebugInterface(typeof(IDXGIDebug).GUID, out var debug);
-            if (debug == null || !(debug is IDXGIDebug dbg))
+            if (!(debug is IDXGIDebug dbg))
                 return;
 
             dbg.ReportLiveObjects(apiid, flags);
@@ -57,18 +56,19 @@ namespace DirectN
 
         public static ComObject<IDXGIDebug> DXGIGetDebugInterface()
         {
-            DXGIGetDebugInterface(typeof(IDXGIDebug).GUID, out object debug).ThrowOnError();
+            if (DXGIGetDebugInterface(typeof(IDXGIDebug).GUID, out object debug).IsError)
+                return null;
+
             return new ComObject<IDXGIDebug>((IDXGIDebug)debug);
         }
 
-        public static ComObject<IDXGIFactory> CreateDXGIFactory() => CreateDXGIFactory<IDXGIFactory>(0);
-        public static ComObject<IDXGIFactory1> CreateDXGIFactory1() => CreateDXGIFactory<IDXGIFactory1>(0);
-        public static ComObject<IDXGIFactory2> CreateDXGIFactory2() => CreateDXGIFactory<IDXGIFactory2>(0);
-        public static ComObject<IDXGIFactory3> CreateDXGIFactory3() => CreateDXGIFactory<IDXGIFactory3>(0);
-        public static ComObject<IDXGIFactory4> CreateDXGIFactory4() => CreateDXGIFactory<IDXGIFactory4>(0);
-        public static ComObject<IDXGIFactory5> CreateDXGIFactory5() => CreateDXGIFactory<IDXGIFactory5>(0);
-        public static ComObject<T> CreateDXGIFactory<T>() where T : IDXGIFactory => CreateDXGIFactory<T>(0);
-        public static ComObject<T> CreateDXGIFactory<T>(DXGI_CREATE_FACTORY_FLAGS flags) where T : IDXGIFactory
+        public static ComObject<IDXGIFactory> CreateDXGIFactory(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory>(flags);
+        public static ComObject<IDXGIFactory1> CreateDXGIFactory1(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory1>(flags);
+        public static ComObject<IDXGIFactory2> CreateDXGIFactory2(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory2>(flags);
+        public static ComObject<IDXGIFactory3> CreateDXGIFactory3(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory3>(flags);
+        public static ComObject<IDXGIFactory4> CreateDXGIFactory4(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory4>(flags);
+        public static ComObject<IDXGIFactory5> CreateDXGIFactory5(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory5>(flags);
+        public static ComObject<T> CreateDXGIFactory<T>(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) where T : IDXGIFactory
         {
             CreateDXGIFactory2(flags, typeof(T).GUID, out object factory).ThrowOnError();
             return new ComObject<T>((T)factory);

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
-using D2D1_POINT_2F = DirectN.D2D_POINT_2F;
 
 namespace DirectN
 {
@@ -41,10 +39,12 @@ namespace DirectN
                 out ID3D11Device device,
                 out D3D_FEATURE_LEVEL level,
                 out ID3D11DeviceContext dc).ThrowOnError();
-            Marshal.ReleaseComObject(dc);
+            if (dc != null)
+            {
+                Marshal.ReleaseComObject(dc);
+            }
             return new ComObject<ID3D11Device>(device);
         }
-
 
         [DllImport("d3d11")]
         public static extern HRESULT D3D11CreateDevice(
