@@ -15,7 +15,7 @@ namespace DirectN
         int GetGradientStopCount();
 
         [PreserveSig]
-        void GetGradientStops(IntPtr /*D2D1_GRADIENT_STOP*/ gradientStops, int gradientStopsCount);
+        void GetGradientStops(D2D1_GRADIENT_STOP[] gradientStops, int gradientStopsCount);
 
         [PreserveSig]
         D2D1_GAMMA GetColorInterpolationGamma();
