@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using HDC = System.IntPtr;
 
 namespace DirectN
 {
-    [Guid("cafcb56c-6ac3-4889-bf47-9e23bbd260ec"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGISurface : IDXGIDeviceSubObject
+    [Guid("4AE63092-6327-4c1b-80AE-BFE12EA32B86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGISurface1 : IDXGISurface
     {
         // IDXGIObject
         [PreserveSig]
@@ -25,12 +26,19 @@ namespace DirectN
 
         // IDXGISurface
         [PreserveSig]
-        HRESULT GetDesc(out DXGI_SURFACE_DESC pDesc);
+        new HRESULT GetDesc(out DXGI_SURFACE_DESC pDesc);
 
         [PreserveSig]
-        HRESULT Map(out DXGI_MAPPED_RECT pLockedRect, DXGI_MAP_FLAGS MapFlags);
+        new HRESULT Map(out DXGI_MAPPED_RECT pLockedRect, DXGI_MAP_FLAGS MapFlags);
 
         [PreserveSig]
-        HRESULT Unmap();
+        new HRESULT Unmap();
+
+        // IDXGISurface1
+        [PreserveSig]
+        HRESULT GetDC(bool Discard, out HDC phdc);
+
+        [PreserveSig]
+        HRESULT ReleaseDC(ref RECT pDirtyRect);
     }
 }

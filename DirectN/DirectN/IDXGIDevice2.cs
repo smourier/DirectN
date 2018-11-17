@@ -3,9 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    // dxgi.h
-    [Guid("54ec77fa-1377-44e6-8c32-88fd5f44c84c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGIDevice : IDXGIObject
+    // dxgi1_2.h
+    [Guid("05008617-fbfd-4051-a790-144884b4f6a9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGIDevice2 : IDXGIDevice1
     {
         // IDXGIObject
         [PreserveSig]
@@ -22,10 +22,10 @@ namespace DirectN
 
         // IDXGIDevice
         [PreserveSig]
-        HRESULT GetAdapter(out IDXGIAdapter pAdapter);
+        new HRESULT GetAdapter(out IDXGIAdapter pAdapter);
 
         [PreserveSig]
-        HRESULT CreateSurface(
+        new HRESULT CreateSurface(
             ref DXGI_SURFACE_DESC pDesc,
             int NumSurfaces,
             DXGI_USAGE Usage,
@@ -33,17 +33,34 @@ namespace DirectN
             out IDXGISurface ppSurface);
 
         [PreserveSig]
-        HRESULT QueryResourceResidency(
+        new HRESULT QueryResourceResidency(
             [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown)]
             object[] ppResources,
             [In, Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown, SizeParamIndex = 2)]
             DXGI_RESIDENCY[] pResidencyStatus,
             int NumResources);
-        
-        [PreserveSig]
-        HRESULT SetGPUThreadPriority(int Priority);
 
         [PreserveSig]
-        HRESULT GetGPUThreadPriority(out int pPriority);
+        new HRESULT SetGPUThreadPriority(int Priority);
+
+        [PreserveSig]
+        new HRESULT GetGPUThreadPriority(out int pPriority);
+
+        // IDXGIDevice1
+        [PreserveSig]
+        new HRESULT SetMaximumFrameLatency(int MaxLatency);
+
+        [PreserveSig]
+        new HRESULT GetMaximumFrameLatency(out int pMaxLatency);
+
+        // IDXGIDevice2
+        [PreserveSig]
+        HRESULT OfferResources(int NumResources, IDXGIResource[] ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority);
+
+        [PreserveSig]
+        HRESULT ReclaimResources(int NumResources, IDXGIResource[] ppResources, out bool pDiscarded);
+
+        [PreserveSig]
+        HRESULT EnqueueSetEvent(IntPtr hEvent);
     }
 }

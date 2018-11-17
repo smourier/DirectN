@@ -3,8 +3,8 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7b7166ec-21c7-44ae-b21a-c9ae321ae369"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGIFactory : IDXGIObject
+    [Guid("770aae78-f26f-4dba-a829-253c83d1b387"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGIFactory1 : IDXGIFactory
     {
         // IDXGIObject
         [PreserveSig]
@@ -21,18 +21,25 @@ namespace DirectN
 
         // IDXGIFactory
         [PreserveSig]
-        HRESULT EnumAdapters(int Adapter, out IDXGIAdapter ppAdapter);
+        new HRESULT EnumAdapters(int Adapter, out IDXGIAdapter ppAdapter);
 
         [PreserveSig]
-        HRESULT MakeWindowAssociation(IntPtr WindowHandle, DXGI_MWA_FLAGS Flags);
+        new HRESULT MakeWindowAssociation(IntPtr WindowHandle, DXGI_MWA_FLAGS Flags);
 
         [PreserveSig]
-        HRESULT GetWindowAssociation(out IntPtr pWindowHandle);
+        new HRESULT GetWindowAssociation(out IntPtr pWindowHandle);
 
         [PreserveSig]
-        HRESULT CreateSwapChain([MarshalAs(UnmanagedType.IUnknown)] object pDevice, ref DXGI_SWAP_CHAIN_DESC pDesc, out IDXGISwapChain ppSwapChain);
+        new HRESULT CreateSwapChain([MarshalAs(UnmanagedType.IUnknown)] object pDevice, ref DXGI_SWAP_CHAIN_DESC pDesc, out IDXGISwapChain ppSwapChain);
 
         [PreserveSig]
-        HRESULT CreateSoftwareAdapter(IntPtr Module, out IDXGIAdapter ppAdapter);
+        new HRESULT CreateSoftwareAdapter(IntPtr Module, out IDXGIAdapter ppAdapter);
+
+        // IDXGIFactory1
+        [PreserveSig]
+        HRESULT EnumAdapters1(int Adapter, out IDXGIAdapter1 ppAdapter);
+
+        [PreserveSig]
+        bool IsCurrent();
     }
 }

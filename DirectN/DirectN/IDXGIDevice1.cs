@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     // dxgi.h
-    [Guid("54ec77fa-1377-44e6-8c32-88fd5f44c84c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGIDevice : IDXGIObject
+    [Guid("77db970f-6276-48ba-ba28-070143b4392c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGIDevice1 : IDXGIDevice
     {
         // IDXGIObject
         [PreserveSig]
@@ -22,10 +22,10 @@ namespace DirectN
 
         // IDXGIDevice
         [PreserveSig]
-        HRESULT GetAdapter(out IDXGIAdapter pAdapter);
+        new HRESULT GetAdapter(out IDXGIAdapter pAdapter);
 
         [PreserveSig]
-        HRESULT CreateSurface(
+        new HRESULT CreateSurface(
             ref DXGI_SURFACE_DESC pDesc,
             int NumSurfaces,
             DXGI_USAGE Usage,
@@ -33,17 +33,24 @@ namespace DirectN
             out IDXGISurface ppSurface);
 
         [PreserveSig]
-        HRESULT QueryResourceResidency(
+        new HRESULT QueryResourceResidency(
             [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown)]
             object[] ppResources,
             [In, Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown, SizeParamIndex = 2)]
             DXGI_RESIDENCY[] pResidencyStatus,
             int NumResources);
-        
-        [PreserveSig]
-        HRESULT SetGPUThreadPriority(int Priority);
 
         [PreserveSig]
-        HRESULT GetGPUThreadPriority(out int pPriority);
+        new HRESULT SetGPUThreadPriority(int Priority);
+
+        [PreserveSig]
+        new HRESULT GetGPUThreadPriority(out int pPriority);
+
+        // IDXGIDevice1
+        [PreserveSig]
+        HRESULT SetMaximumFrameLatency(int MaxLatency);
+
+        [PreserveSig]
+        HRESULT GetMaximumFrameLatency(out int pMaxLatency);
     }
 }

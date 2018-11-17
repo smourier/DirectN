@@ -3,8 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cafcb56c-6ac3-4889-bf47-9e23bbd260ec"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGISurface : IDXGIDeviceSubObject
+    // dxgi1_2.h
+    [Guid("0AA1AE0A-FA0E-4B84-8644-E05FF8E5ACB5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface IDXGIAdapter2 : IDXGIAdapter1
     {
         // IDXGIObject
         [PreserveSig]
@@ -19,18 +20,22 @@ namespace DirectN
         [PreserveSig]
         new HRESULT GetParent([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
 
-        // IDXGIDeviceSubObject
+        // IDXGIAdapter
         [PreserveSig]
-        new int GetDevice([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDevice);
-
-        // IDXGISurface
-        [PreserveSig]
-        HRESULT GetDesc(out DXGI_SURFACE_DESC pDesc);
+        new HRESULT EnumOutputs(int nOutput, out IDXGIOutput ppOutput);
 
         [PreserveSig]
-        HRESULT Map(out DXGI_MAPPED_RECT pLockedRect, DXGI_MAP_FLAGS MapFlags);
+        new HRESULT GetDesc(out DXGI_ADAPTER_DESC pDesc);
 
         [PreserveSig]
-        HRESULT Unmap();
+        new HRESULT CheckInterfaceSupport([MarshalAs(UnmanagedType.LPStruct)] Guid InterfaceName, out long pUMDVersion);
+
+        // IDXGIAdapter1
+        [PreserveSig]
+        new HRESULT GetDesc1(out DXGI_ADAPTER_DESC1 pDesc);
+
+        // IDXGIAdapter2
+        [PreserveSig]
+        HRESULT GetDesc2(out DXGI_ADAPTER_DESC2 pDesc);
     }
 }

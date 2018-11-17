@@ -182,13 +182,13 @@ namespace DirectN
             return closest;
         }
 
-        public static IDXGIOutputDuplication DuplicateOutput(this ComObject<IDXGIOutput1> output, object device) => DuplicateOutput(output.Object, device);
-        public static IDXGIOutputDuplication DuplicateOutput(this ComObject<IDXGIOutput2> output, object device) => DuplicateOutput(output.Object, device);
-        public static IDXGIOutputDuplication DuplicateOutput(this ComObject<IDXGIOutput3> output, object device) => DuplicateOutput(output.Object, device);
-        public static IDXGIOutputDuplication DuplicateOutput(this ComObject<IDXGIOutput4> output, object device) => DuplicateOutput(output.Object, device);
-        public static IDXGIOutputDuplication DuplicateOutput(this ComObject<IDXGIOutput5> output, object device) => DuplicateOutput(output.Object, device);
-        public static IDXGIOutputDuplication DuplicateOutput(this ComObject<IDXGIOutput6> output, object device) => DuplicateOutput(output.Object, device);
-        public static IDXGIOutputDuplication DuplicateOutput(this IDXGIOutput1 output, object device)
+        public static ComObject<IDXGIOutputDuplication> DuplicateOutput(this ComObject<IDXGIOutput1> output, object device) => DuplicateOutput(output.Object, device);
+        public static ComObject<IDXGIOutputDuplication> DuplicateOutput(this ComObject<IDXGIOutput2> output, object device) => DuplicateOutput(output.Object, device);
+        public static ComObject<IDXGIOutputDuplication> DuplicateOutput(this ComObject<IDXGIOutput3> output, object device) => DuplicateOutput(output.Object, device);
+        public static ComObject<IDXGIOutputDuplication> DuplicateOutput(this ComObject<IDXGIOutput4> output, object device) => DuplicateOutput(output.Object, device);
+        public static ComObject<IDXGIOutputDuplication> DuplicateOutput(this ComObject<IDXGIOutput5> output, object device) => DuplicateOutput(output.Object, device);
+        public static ComObject<IDXGIOutputDuplication> DuplicateOutput(this ComObject<IDXGIOutput6> output, object device) => DuplicateOutput(output.Object, device);
+        public static ComObject<IDXGIOutputDuplication> DuplicateOutput(this IDXGIOutput1 output, object device)
         {
             if (output == null)
                 throw new ArgumentNullException(nameof(output));
@@ -196,8 +196,10 @@ namespace DirectN
             if (device == null)
                 throw new ArgumentNullException(nameof(device));
 
-            output.DuplicateOutput(ComObject.Unwrap(device), out IDXGIOutputDuplication duplication).ThrowOnError();
-            return duplication;
+            if (output.DuplicateOutput(ComObject.Unwrap(device), out IDXGIOutputDuplication duplication).IsError)
+                return null;
+
+            return new ComObject<IDXGIOutputDuplication>(duplication);
         }
     }
 }
