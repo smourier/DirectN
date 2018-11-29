@@ -127,8 +127,8 @@
     <Compile Include="Generated\D2D_VECTOR_4F.cs" />
     <Compile Include="Generated\D3DCOLORVALUE.cs" />
     <Compile Include="ComMemory.cs" />
-    <Compile Include="Generated\DISPLAY_DEVICE.cs" />
-    <Compile Include="Generated\DISPLAY_DEVICE_FLAGS.cs" />
+    <Compile Include="DISPLAY_DEVICE.cs" />
+    <Compile Include="DISPLAY_DEVICE_FLAGS.cs" />
     <Compile Include="Generated\DWRITE_BREAK_CONDITION.cs" />
     <Compile Include="Generated\DWRITE_FLOW_DIRECTION.cs" />
     <Compile Include="Generated\DWRITE_FONT_FACE_TYPE.cs" />
@@ -225,7 +225,7 @@
     <Compile Include="Generated\DXGI_ADAPTER_FLAG3.cs" />
     <Compile Include="Generated\DXGI_COLOR_SPACE_TYPE.cs" />
     <Compile Include="Generated\DXGI_COMPUTE_PREEMPTION_GRANULARITY.cs" />
-    <Compile Include="Generated\DXGI_ENUM_MODES.cs" />
+    <Compile Include="DXGI_ENUM_MODES.cs" />
     <Compile Include="Generated\DXGI_FEATURE.cs" />
     <Compile Include="Generated\DXGI_FRAME_STATISTICS.cs" />
     <Compile Include="Generated\DXGI_GAMMA_CONTROL.cs" />
@@ -431,7 +431,7 @@
     <Compile Include="Generated\IMFMediaBuffer.cs" />
     <Compile Include="Generated\IMFMediaEvent.cs" />
     <Compile Include="Generated\IMFMediaType.cs" />
-    <Compile Include="Generated\IMFObjectInformation.cs" />
+    <Compile Include="IMFObjectInformation.cs" />
     <Compile Include="Generated\IMFSample.cs" />
     <Compile Include="Generated\IMFSinkWriter.cs" />
     <Compile Include="IMFSinkWriterExtensions.cs" />
