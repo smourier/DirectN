@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct RECT
+    public struct tagRECT
     {
         public int left;
         public int top;

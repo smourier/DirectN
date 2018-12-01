@@ -3,7 +3,7 @@
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct POINT
+    public struct tagPOINT
     {
         public int x;
         public int y;

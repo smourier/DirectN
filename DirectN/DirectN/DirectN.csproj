@@ -4114,13 +4114,13 @@
     <Compile Include="Generated\IWICStream.cs" />
     <Compile Include="MFConstants.cs" />
     <Compile Include="MFFunctions.cs" />
-    <Compile Include="POINT.cs" />
+    <Compile Include="tagPOINT.cs" />
     <Compile Include="PROPBAG2.cs" />
     <Compile Include="PROPBAG2_TYPE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropVariant.cs" />
-    <Compile Include="RECT.cs" />
-    <Compile Include="SIZE.cs" />
+    <Compile Include="tagRECT.cs" />
+    <Compile Include="tagSIZE.cs" />
     <Compile Include="UserExtensions.cs" />
     <Compile Include="VARTYPE.cs" />
     <Compile Include="Generated\WIC8BIMIptcDigestProperties.cs" />

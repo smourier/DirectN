@@ -3,9 +3,9 @@
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct SIZE
+    public struct tagSIZE
     {
-        public SIZE(int cx, int cy)
+        public tagSIZE(int cx, int cy)
         {
             this.cx = cx;
             this.cy = cy;
