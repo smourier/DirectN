@@ -1,0 +1,15 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(17462,1)
+namespace DirectN
+{
+    public enum MF_MEDIAKEY_STATUS
+    {
+        MF_MEDIAKEY_STATUS_USABLE = 0,
+        MF_MEDIAKEY_STATUS_EXPIRED = 1,
+        MF_MEDIAKEY_STATUS_OUTPUT_DOWNSCALED = 2,
+        MF_MEDIAKEY_STATUS_OUTPUT_NOT_ALLOWED = 3,
+        MF_MEDIAKEY_STATUS_STATUS_PENDING = 4,
+        MF_MEDIAKEY_STATUS_INTERNAL_ERROR = 5,
+        MF_MEDIAKEY_STATUS_RELEASED = 6,
+        MF_MEDIAKEY_STATUS_OUTPUT_RESTRICTED = 7,
+    }
+}

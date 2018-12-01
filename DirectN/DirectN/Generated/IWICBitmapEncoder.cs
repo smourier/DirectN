@@ -1,40 +1,41 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(3272,5)
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
     [Guid("00000103-a8f2-4877-ba0a-fd2b6645fb94"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IWICBitmapEncoder
+    public partial interface IWICBitmapEncoder
     {
         [PreserveSig]
-        HRESULT Initialize(IStream pIStream, WICBitmapEncoderCacheOption cacheOption);
-
+        HRESULT Initialize(/* [in] __RPC__in_opt */ ref IStream pIStream, /* [in] */ WICBitmapEncoderCacheOption cacheOption);
+        
         [PreserveSig]
-        HRESULT GetContainerFormat(out Guid pguidContainerFormat);
-
+        HRESULT GetContainerFormat(/* [out] __RPC__out */ out Guid pguidContainerFormat);
+        
         [PreserveSig]
-        HRESULT GetEncoderInfo(out IWICBitmapEncoderInfo ppIEncoderInfo);
-
+        HRESULT GetEncoderInfo(/* [out] __RPC__deref_out_opt */ out IWICBitmapEncoderInfo ppIEncoderInfo);
+        
         [PreserveSig]
-        HRESULT SetColorContexts(int cCount, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContext);
-
+        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ out IWICColorContext[] ppIColorContext);
+        
         [PreserveSig]
-        HRESULT SetPalette(IWICPalette pIPalette);
-
+        HRESULT SetPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);
+        
         [PreserveSig]
-        HRESULT SetThumbnail(IWICBitmapSource pIThumbnail);
-
+        HRESULT SetThumbnail(/* [in] __RPC__in_opt */ IWICBitmapSource pIThumbnail);
+        
         [PreserveSig]
-        HRESULT SetPreview(IWICBitmapSource pIPreview);
-
+        HRESULT SetPreview(/* [in] __RPC__in_opt */ IWICBitmapSource pIPreview);
+        
         [PreserveSig]
-        HRESULT CreateNewFrame(out IWICBitmapFrameEncode ppIFrameEncode, out IPropertyBag2 encoderOptions);
-
+        HRESULT CreateNewFrame(/* [out] __RPC__deref_out_opt */ out IWICBitmapFrameEncode ppIFrameEncode, /* [unique][out][in] __RPC__deref_opt_inout_opt */ ref IPropertyBag2 ppIEncoderOptions);
+        
         [PreserveSig]
         HRESULT Commit();
-
+        
         [PreserveSig]
-        HRESULT GetMetadataQueryWriter(out IWICMetadataQueryWriter ppIMetadataQueryWriter);
+        HRESULT GetMetadataQueryWriter(/* [out] __RPC__deref_out_opt */ out IWICMetadataQueryWriter ppIMetadataQueryWriter);
     }
 }

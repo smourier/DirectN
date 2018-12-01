@@ -1,12 +1,13 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3dcommon.h(69,1)
+namespace DirectN
 {
     public enum D3D_DRIVER_TYPE
     {
         D3D_DRIVER_TYPE_UNKNOWN = 0,
-        D3D_DRIVER_TYPE_HARDWARE = (D3D_DRIVER_TYPE_UNKNOWN + 1),
-        D3D_DRIVER_TYPE_REFERENCE = (D3D_DRIVER_TYPE_HARDWARE + 1),
-        D3D_DRIVER_TYPE_NULL = (D3D_DRIVER_TYPE_REFERENCE + 1),
-        D3D_DRIVER_TYPE_SOFTWARE = (D3D_DRIVER_TYPE_NULL + 1),
-        D3D_DRIVER_TYPE_WARP = (D3D_DRIVER_TYPE_SOFTWARE + 1)
+        D3D_DRIVER_TYPE_HARDWARE = 1,
+        D3D_DRIVER_TYPE_REFERENCE = 2,
+        D3D_DRIVER_TYPE_NULL = 3,
+        D3D_DRIVER_TYPE_SOFTWARE = 4,
+        D3D_DRIVER_TYPE_WARP = 5,
     }
 }

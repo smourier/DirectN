@@ -1,0 +1,28 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmstream.h(330,5)
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    [Guid("b502d1bd-9a57-11d0-8fde-00c04fd9189d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IMediaStream
+    {
+        [PreserveSig]
+        HRESULT GetMultiMediaStream(/* [out] __RPC__deref_out_opt */ out IMultiMediaStream ppMultiMediaStream);
+        
+        [PreserveSig]
+        HRESULT GetInformation(/* [out] __RPC__out */ out Guid pPurposeId, /* [out] __RPC__out */ out __MIDL___MIDL_itf_mmstream_0000_0000_0001 pType);
+        
+        [PreserveSig]
+        HRESULT SetSameFormat(/* [in] __RPC__in_opt */ IMediaStream pStreamThatHasDesiredFormat, /* [in] */ uint dwFlags);
+        
+        [PreserveSig]
+        HRESULT AllocateSample(/* [in] */ uint dwFlags, /* [out] __RPC__deref_out_opt */ out IStreamSample ppSample);
+        
+        [PreserveSig]
+        HRESULT CreateSharedSample(/* [in] __RPC__in_opt */ IStreamSample pExistingSample, /* [in] */ uint dwFlags, /* [out] __RPC__deref_out_opt */ out IStreamSample ppNewSample);
+        
+        [PreserveSig]
+        HRESULT SendEndOfStream(uint dwFlags);
+    }
+}

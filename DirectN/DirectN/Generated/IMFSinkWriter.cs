@@ -1,42 +1,43 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfreadwrite.h(1206,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [Guid("3137f1cd-fe5e-4805-a5d8-fb477448cb3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFSinkWriter
+    public partial interface IMFSinkWriter
     {
         [PreserveSig]
-        HRESULT AddStream(IMFMediaType pTargetMediaType, out int pdwStreamIndex);
-
+        HRESULT AddStream(/* [annotation][in] _In_ */ IMFMediaType pTargetMediaType, /* [annotation][out] _Out_ */ out uint pdwStreamIndex);
+        
         [PreserveSig]
-        HRESULT SetInputMediaType(int dwStreamIndex, IMFMediaType pInputMediaType, IMFAttributes pEncodingParameters);
-
+        HRESULT SetInputMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFMediaType pInputMediaType, /* [annotation][in] _In_opt_ */ IMFAttributes pEncodingParameters);
+        
         [PreserveSig]
         HRESULT BeginWriting();
-
+        
         [PreserveSig]
-        HRESULT WriteSample(int dwStreamIndex, IMFSample pSample);
-
+        HRESULT WriteSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFSample pSample);
+        
         [PreserveSig]
-        HRESULT SendStreamTick(int dwStreamIndex, long llTimestamp);
-
+        HRESULT SendStreamTick(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ long llTimestamp);
+        
         [PreserveSig]
-        HRESULT PlaceMarker(int dwStreamIndex, IntPtr pvContext);
-
+        HRESULT PlaceMarker(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IntPtr pvContext);
+        
         [PreserveSig]
-        HRESULT NotifyEndOfSegment(int dwStreamIndex);
-
+        HRESULT NotifyEndOfSegment(/* [annotation][in] _In_ */ uint dwStreamIndex);
+        
         [PreserveSig]
-        HRESULT Flush(int dwStreamIndex);
-
+        HRESULT Flush(/* [annotation][in] _In_ */ uint dwStreamIndex);
+        
         [PreserveSig]
         HRESULT Finalize();
-
+        
         [PreserveSig]
-        HRESULT GetServiceForStream(int dwStreamIndex, [MarshalAs(UnmanagedType.LPStruct)] Guid guidService, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
-
+        HRESULT GetServiceForStream(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidService, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
+        
         [PreserveSig]
-        HRESULT GetStatistics(int dwStreamIndex, out MF_SINK_WRITER_STATISTICS pStats);
+        HRESULT GetStatistics(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out] _Out_ */ out _MF_SINK_WRITER_STATISTICS pStats);
     }
 }

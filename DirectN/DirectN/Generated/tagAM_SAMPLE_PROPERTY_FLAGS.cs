@@ -1,0 +1,21 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(3003,1)
+using System;
+
+namespace DirectN
+{
+    [Flags]
+    public enum tagAM_SAMPLE_PROPERTY_FLAGS
+    {
+        AM_SAMPLE_SPLICEPOINT = 0x00000001,
+        AM_SAMPLE_PREROLL = 0x00000002,
+        AM_SAMPLE_DATADISCONTINUITY = 0x00000004,
+        AM_SAMPLE_TYPECHANGED = 0x00000008,
+        AM_SAMPLE_TIMEVALID = 0x00000010,
+        AM_SAMPLE_TIMEDISCONTINUITY = 0x00000040,
+        AM_SAMPLE_FLUSH_ON_PAUSE = 0x00000080,
+        AM_SAMPLE_STOPVALID = 0x00000100,
+        AM_SAMPLE_ENDOFSTREAM = 0x00000200,
+        AM_STREAM_MEDIA = 0x00000000,
+        AM_STREAM_CONTROL = 0x00000001,
+    }
+}

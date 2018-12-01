@@ -1,0 +1,26 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9types.h(495,9)
+namespace DirectN
+{
+    public enum _D3DTEXTURESTAGESTATETYPE
+    {
+        D3DTSS_COLOROP = 1,
+        D3DTSS_COLORARG1 = 2,
+        D3DTSS_COLORARG2 = 3,
+        D3DTSS_ALPHAOP = 4,
+        D3DTSS_ALPHAARG1 = 5,
+        D3DTSS_ALPHAARG2 = 6,
+        D3DTSS_BUMPENVMAT00 = 7,
+        D3DTSS_BUMPENVMAT01 = 8,
+        D3DTSS_BUMPENVMAT10 = 9,
+        D3DTSS_BUMPENVMAT11 = 10,
+        D3DTSS_TEXCOORDINDEX = 11,
+        D3DTSS_BUMPENVLSCALE = 22,
+        D3DTSS_BUMPENVLOFFSET = 23,
+        D3DTSS_TEXTURETRANSFORMFLAGS = 24,
+        D3DTSS_COLORARG0 = 26,
+        D3DTSS_ALPHAARG0 = 27,
+        D3DTSS_RESULTARG = 28,
+        D3DTSS_CONSTANT = 32,
+        D3DTSS_FORCE_DWORD = 2147483647,
+    }
+}

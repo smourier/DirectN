@@ -1,23 +1,22 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(1414,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents a color context that can be used with an ID2D1Bitmap1 object.
+    /// </summary>
     [Guid("1c4820bb-5771-4518-a581-2fe4dd0ec657"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1ColorContext : ID2D1Resource
+    public partial interface ID2D1ColorContext
     {
-        // ID2D1Resource
-        [PreserveSig]
-        new void GetFactory(out ID2D1Factory factory);
-
-        // ID2D1ColorContext
         [PreserveSig]
         D2D1_COLOR_SPACE GetColorSpace();
-
+        
         [PreserveSig]
-        int GetProfileSize();
-
+        uint GetProfileSize();
+        
         [PreserveSig]
-        HRESULT GetProfile(byte[] profile, int profileSize);
+        HRESULT GetProfile(/* _Out_writes_(profileSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] profile, uint profileSize);
     }
 }

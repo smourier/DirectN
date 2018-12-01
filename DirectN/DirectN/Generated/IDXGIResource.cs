@@ -1,80 +1,40 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgi.h(583,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [Guid("035f3ab4-482e-4e50-b41f-8a7f8bd8960b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGIResource : IDXGIDeviceSubObject
+    public partial interface IDXGIResource : IDXGIDeviceSubObject
     {
         // IDXGIObject
         [PreserveSig]
-        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, int DataSize, IntPtr pData);
-
+        new HRESULT SetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [in] */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ out IntPtr pData);
+        
         [PreserveSig]
-        new HRESULT SetPrivateDataInterface([MarshalAs(UnmanagedType.LPStruct)] Guid Name, [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
-
+        new HRESULT SetPrivateDataInterface(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
+        
         [PreserveSig]
-        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, out int pDataSize, IntPtr pData);
-
+        new HRESULT GetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][out][in] _Inout_ */ ref uint pDataSize, /* [annotation][out] _Out_writes_bytes_(*pDataSize) */ out IntPtr pData);
+        
         [PreserveSig]
-        new HRESULT GetParent([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
-
+        new HRESULT GetParent(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][retval][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
+        
         // IDXGIDeviceSubObject
         [PreserveSig]
-        new int GetDevice([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDevice);
-
+        new HRESULT GetDevice(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][retval][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppDevice);
+        
         // IDXGIResource
         [PreserveSig]
-        HRESULT GetSharedHandle(out IntPtr pSharedHandle);
-
+        HRESULT GetSharedHandle(/* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object pSharedHandle);
+        
         [PreserveSig]
-        HRESULT GetUsage(out DXGI_USAGE pUsage);
-
+        HRESULT GetUsage(/* [out] */ out uint pUsage);
+        
         [PreserveSig]
-        HRESULT SetEvictionPriority(int EvictionPriority);
-
+        HRESULT SetEvictionPriority(/* [in] */ uint EvictionPriority);
+        
         [PreserveSig]
-        HRESULT GetEvictionPriority(out int pEvictionPriority);
-    }
-
-    [Guid("30961379-4609-4a41-998e-54fe567ee0c1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGIResource1 : IDXGIResource
-    {
-        // IDXGIObject
-        [PreserveSig]
-        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, int DataSize, IntPtr pData);
-
-        [PreserveSig]
-        new HRESULT SetPrivateDataInterface([MarshalAs(UnmanagedType.LPStruct)] Guid Name, [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
-
-        [PreserveSig]
-        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, out int pDataSize, IntPtr pData);
-
-        [PreserveSig]
-        new HRESULT GetParent([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
-
-        // IDXGIDeviceSubObject
-        [PreserveSig]
-        new int GetDevice([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDevice);
-
-        // IDXGIResource
-        [PreserveSig]
-        new HRESULT GetSharedHandle(out IntPtr pSharedHandle);
-
-        [PreserveSig]
-        new HRESULT GetUsage(out DXGI_USAGE pUsage);
-
-        [PreserveSig]
-        new HRESULT SetEvictionPriority(int EvictionPriority);
-
-        [PreserveSig]
-        new HRESULT GetEvictionPriority(out int pEvictionPriority);
-
-        // IDXGIResource1
-        [PreserveSig]
-        HRESULT CreateSubresourceSurface(int index, out IDXGISurface2 ppSurface);
-
-        [PreserveSig]
-        HRESULT CreateSharedHandle(IntPtr pAttributes, int dwAccess, [MarshalAs(UnmanagedType.LPWStr)] string lpName, out IntPtr pHandle);
+        HRESULT GetEvictionPriority(/* [annotation][retval][out] _Out_ */ out uint pEvictionPriority);
     }
 }

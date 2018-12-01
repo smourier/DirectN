@@ -1,4 +1,5 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(726,1)
+using System;
 
 namespace DirectN
 {
@@ -10,6 +11,7 @@ namespace DirectN
         WICBitmapTransformRotate180 = 0x00000002,
         WICBitmapTransformRotate270 = 0x00000003,
         WICBitmapTransformFlipHorizontal = 0x00000008,
-        WICBitmapTransformFlipVertical = 0x00000010
+        WICBitmapTransformFlipVertical = 0x00000010,
+        WICBITMAPTRANSFORMOPTIONS_FORCE_DWORD = 0x7FFFFFFF,
     }
 }

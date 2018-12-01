@@ -1,16 +1,17 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxgidebug.h(135,9)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct DXGI_INFO_QUEUE_FILTER_DESC
+    public partial struct DXGI_INFO_QUEUE_FILTER_DESC
     {
-        public int NumCategories;
+        public uint NumCategories;
         public IntPtr pCategoryList;
-        public int NumSeverities;
+        public uint NumSeverities;
         public IntPtr pSeverityList;
-        public int NumIDs;
+        public uint NumIDs;
         public IntPtr pIDList;
     }
 }

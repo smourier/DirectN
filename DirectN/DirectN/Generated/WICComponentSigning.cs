@@ -1,13 +1,12 @@
-﻿using System;
-
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(776,1)
 namespace DirectN
 {
-    [Flags]
     public enum WICComponentSigning
     {
-        WICComponentSigned = 0x00000001,
-        WICComponentUnsigned = 0x00000002,
-        WICComponentSafe = 0x00000004,
-        WICComponentDisabled = unchecked((int)0x80000000)
+        WICComponentSigned = 1,
+        WICComponentUnsigned = 2,
+        WICComponentSafe = 4,
+        WICComponentDisabled = -2147483648,
+        WICCOMPONENTSIGNING_FORCE_DWORD = 2147483647,
     }
 }

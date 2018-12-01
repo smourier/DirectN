@@ -1,8 +1,13 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(768,9)
+namespace DirectN
 {
+    /// <summary>
+    /// Describes whether a window is occluded.
+    /// </summary>
     public enum D2D1_WINDOW_STATE
     {
-        D2D1_WINDOW_STATE_NONE = 0x0000000,
-        D2D1_WINDOW_STATE_OCCLUDED = 0x0000001,
+        D2D1_WINDOW_STATE_NONE = 0,
+        D2D1_WINDOW_STATE_OCCLUDED = 1,
+        D2D1_WINDOW_STATE_FORCE_DWORD = -1,
     }
 }

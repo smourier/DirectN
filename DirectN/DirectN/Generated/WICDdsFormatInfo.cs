@@ -1,13 +1,15 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(8012,24)
+using System;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct WICDdsFormatInfo
+    public partial struct WICDdsFormatInfo
     {
         public DXGI_FORMAT DxgiFormat;
-        public int BytesPerBlock;
-        public int BlockWidth;
-        public int BlockHeight;
+        public uint BytesPerBlock;
+        public uint BlockWidth;
+        public uint BlockHeight;
     }
 }

@@ -1,0 +1,13 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12.h(3646,1)
+namespace DirectN
+{
+    public enum D3D12_QUERY_HEAP_TYPE
+    {
+        D3D12_QUERY_HEAP_TYPE_OCCLUSION = 0,
+        D3D12_QUERY_HEAP_TYPE_TIMESTAMP = 1,
+        D3D12_QUERY_HEAP_TYPE_PIPELINE_STATISTICS = 2,
+        D3D12_QUERY_HEAP_TYPE_SO_STATISTICS = 3,
+        D3D12_QUERY_HEAP_TYPE_VIDEO_DECODE_STATISTICS = 4,
+        D3D12_QUERY_HEAP_TYPE_COPY_QUEUE_TIMESTAMP = 5,
+    }
+}

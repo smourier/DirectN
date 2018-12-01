@@ -1,78 +1,58 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(1043,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// This interface exposes various font data such as metrics, names, and glyph outlines. It contains font face type, appropriate file references and face identification data.
+    /// </summary>
     [Guid("5f49804d-7024-4d43-bfa9-d25984f53849"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDWriteFontFace
+    public partial interface IDWriteFontFace
     {
         [PreserveSig]
         DWRITE_FONT_FACE_TYPE GetType();
-
+        
         [PreserveSig]
-        HRESULT GetFiles(ref int numberOfFiles, [In, Out] IDWriteFontFile[] fontFiles);
-
+        HRESULT GetFiles(/* _Inout_ */ ref uint numberOfFiles, /* _Out_writes_opt_(*numberOfFiles) */ out IDWriteFontFile[] fontFiles);
+        
         [PreserveSig]
-        int GetIndex();
-
+        uint GetIndex();
+        
         [PreserveSig]
         DWRITE_FONT_SIMULATIONS GetSimulations();
-
+        
         [PreserveSig]
         bool IsSymbolFont();
-
+        
         [PreserveSig]
-        void GetMetrics(out DWRITE_FONT_METRICS fontFaceMetrics);
-
+        void GetMetrics(/* _Out_ */ out DWRITE_FONT_METRICS fontFaceMetrics);
+        
         [PreserveSig]
-        short GetGlyphCount();
-
+        ushort GetGlyphCount();
+        
         [PreserveSig]
-        HRESULT GetDesignGlyphMetrics(short[] glyphIndices, int glyphCount, [In, Out] DWRITE_GLYPH_METRICS[] glyphMetrics, bool isSideways);
-
+        HRESULT GetDesignGlyphMetrics(/* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_GLYPH_METRICS[] glyphMetrics, bool isSideways);
+        
         [PreserveSig]
-        HRESULT GetGlyphIndices(int[] codePoints, int codePointCount, [In, Out] short[] glyphIndices);
-
+        HRESULT GetGlyphIndicesA(/* _In_reads_(codePointCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] codePoints, uint codePointCount, /* _Out_writes_(codePointCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices);
+        
         [PreserveSig]
-        HRESULT TryGetFontTable(uint openTypeTableTag, out IntPtr tableData, out int tableSize, out IntPtr tableContext, out bool exists);
-
+        HRESULT TryGetFontTable(/* _In_ */ uint openTypeTableTag, /* _Outptr_result_bytebuffer_(*tableSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object tableData, /* _Out_ */ out uint tableSize, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object tableContext, /* _Out_ */ out bool exists);
+        
         [PreserveSig]
-        void ReleaseFontTable(IntPtr tableContext);
-
+        void ReleaseFontTable(/* _In_ */ IntPtr tableContext);
+        
         [PreserveSig]
-        HRESULT GetGlyphRunOutline(
-            float emSize,
-            short[] glyphIndices,
-            float[] glyphAdvances,
-            DWRITE_GLYPH_OFFSET[] glyphOffsets,
-            int glyphCount,
-            bool isSideways,
-            bool isRightToLeft,
-            ID2D1SimplifiedGeometrySink geometrySink
-        );
-
+        HRESULT GetGlyphRunOutline(float emSize, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] ushort[] glyphIndices, /* _In_reads_opt_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] float[] glyphAdvances, /* _In_reads_opt_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] DWRITE_GLYPH_OFFSET[] glyphOffsets, uint glyphCount, bool isSideways, bool isRightToLeft, /* _In_ */ ref ID2D1SimplifiedGeometrySink geometrySink);
+        
         [PreserveSig]
-        HRESULT GetRecommendedRenderingMode(
-            float emSize,
-            float pixelsPerDip,
-            DWRITE_MEASURING_MODE measuringMode,
-            IDWriteRenderingParams renderingParams,
-            out DWRITE_RENDERING_MODE renderingMode
-            );
-
+        HRESULT GetRecommendedRenderingMode(float emSize, float pixelsPerDip, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode);
+        
         [PreserveSig]
-        HRESULT GetGdiCompatibleMetrics(float emSize, float pixelsPerDip, ref DWRITE_MATRIX transform, out DWRITE_FONT_METRICS fontFaceMetrics);
-
+        HRESULT GetGdiCompatibleMetrics(float emSize, float pixelsPerDip, /* _In_opt_ */ ref DWRITE_MATRIX transform, /* _Out_ */ out DWRITE_FONT_METRICS fontFaceMetrics);
+        
         [PreserveSig]
-        HRESULT GetGdiCompatibleGlyphMetrics(
-            float emSize,
-            float pixelsPerDip,
-            ref DWRITE_MATRIX transform,
-            bool useGdiNatural,
-            short[] glyphIndices,
-            int glyphCount,
-            [In, Out] DWRITE_GLYPH_METRICS[] glyphMetrics,
-            bool isSideways
-        );
+        HRESULT GetGdiCompatibleGlyphMetrics(float emSize, float pixelsPerDip, /* _In_opt_ */ ref DWRITE_MATRIX transform, bool useGdiNatural, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] ushort[] glyphIndices, uint glyphCount, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DWRITE_GLYPH_METRICS[] glyphMetrics, bool isSideways);
     }
 }

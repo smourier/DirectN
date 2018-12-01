@@ -1,59 +1,63 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(1299,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The effect interface. Properties control how the effect is rendered. The effect is Drawn with the DrawImage call.
+    /// </summary>
     [Guid("28211a43-7d89-476f-8181-2d6159b220ad"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1Effect : ID2D1Properties
+    public partial interface ID2D1Effect : ID2D1Properties
     {
         // ID2D1Properties
         [PreserveSig]
-        new int GetPropertyCount();
-
+        new uint GetPropertyCount();
+        
         [PreserveSig]
-        new HRESULT GetPropertyName(int index, [MarshalAs(UnmanagedType.LPWStr)] string name, int nameCount);
-
+        new HRESULT GetPropertyName(uint index, /* _Out_writes_(nameCount) */ [MarshalAs(UnmanagedType.LPWStr)] string name, uint nameCount);
+        
         [PreserveSig]
-        new int GetPropertyNameLength(int index);
-
+        new uint GetPropertyNameLength(uint index);
+        
         [PreserveSig]
-        new D2D1_PROPERTY_TYPE GetType(int index);
-
+        new D2D1_PROPERTY_TYPE GetType(uint index);
+        
         [PreserveSig]
-        new int GetPropertyIndex([MarshalAs(UnmanagedType.LPWStr)] string name);
-
+        new uint GetPropertyIndex(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name);
+        
         [PreserveSig]
-        new HRESULT SetValueByName([MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, byte[] data, int dataSize);
-
+        new HRESULT SetValueByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, /* _In_reads_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        
         [PreserveSig]
-        new HRESULT SetValue(int index, D2D1_PROPERTY_TYPE type, byte[] data, int dataSize);
-
+        new HRESULT SetValue(uint index, D2D1_PROPERTY_TYPE type, /* _In_reads_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        
         [PreserveSig]
-        new HRESULT GetValueByName([MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, [In, Out] byte[] data, int dataSize);
-
+        new HRESULT GetValueByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, /* _Out_writes_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        
         [PreserveSig]
-        new HRESULT GetValue(int index, D2D1_PROPERTY_TYPE type, [In, Out] byte[] data, int dataSize);
-
+        new HRESULT GetValue(uint index, D2D1_PROPERTY_TYPE type, /* _Out_writes_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        
         [PreserveSig]
-        new int GetValueSize(int index);
-
+        new uint GetValueSize(uint index);
+        
         [PreserveSig]
-        new HRESULT GetSubProperties(int index, out ID2D1Properties subProperties);
-
+        new HRESULT GetSubProperties(uint index, /* _COM_Outptr_result_maybenull_ */ out ID2D1Properties subProperties);
+        
         // ID2D1Effect
         [PreserveSig]
-        void SetInput(int index, ID2D1Image input, bool invalidate);
-
+        void SetInput(uint index, /* _In_opt_ */ ref ID2D1Image input, bool invalidate);
+        
         [PreserveSig]
-        HRESULT SetInputCount(int inputCount);
-
+        HRESULT SetInputCount(uint inputCount);
+        
         [PreserveSig]
-        void GetInput(int index, out ID2D1Image input);
-
+        void GetInput(uint index, /* _Outptr_result_maybenull_ */ out ID2D1Image input);
+        
         [PreserveSig]
-        int GetInputCount();
-
+        uint GetInputCount();
+        
         [PreserveSig]
-        void GetOutput(out ID2D1Image outputImage);
+        void GetOutput(/* _Outptr_ */ out ID2D1Image outputImage);
     }
 }

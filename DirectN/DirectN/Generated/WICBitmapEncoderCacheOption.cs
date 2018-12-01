@@ -1,12 +1,11 @@
-﻿using System;
-
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(628,1)
 namespace DirectN
 {
-    [Flags]
     public enum WICBitmapEncoderCacheOption
     {
-        WICBitmapEncoderCacheInMemory = 0x00000000,
-        WICBitmapEncoderCacheTempFile = 0x00000001,
-        WICBitmapEncoderNoCache = 0x00000002
+        WICBitmapEncoderCacheInMemory = 0,
+        WICBitmapEncoderCacheTempFile = 1,
+        WICBitmapEncoderNoCache = 2,
+        WICBITMAPENCODERCACHEOPTION_FORCE_DWORD = 2147483647,
     }
 }

@@ -1,21 +1,25 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(1455,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The IDWriteFontCollection encapsulates a collection of font families.
+    /// </summary>
     [Guid("a84cee02-3eea-4eee-a827-87c1a02a0fcc"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDWriteFontCollection
+    public partial interface IDWriteFontCollection
     {
         [PreserveSig]
-        int GetFontFamilyCount();
-
+        uint GetFontFamilyCount();
+        
         [PreserveSig]
-        HRESULT GetFontFamily(int index, out IDWriteFontFamily fontFamily);
-
+        HRESULT GetFontFamily(uint index, /* _COM_Outptr_ */ out IDWriteFontFamily fontFamily);
+        
         [PreserveSig]
-        HRESULT FindFamilyName([MarshalAs(UnmanagedType.LPWStr)] string familyName, out int index, out bool exists);
-
+        HRESULT FindFamilyName(/* _In_z_ */ ref char familyName, /* _Out_ */ out uint index, /* _Out_ */ out bool exists);
+        
         [PreserveSig]
-        HRESULT GetFontFromFontFace(IDWriteFontFace fontFace, out IDWriteFont font);
+        HRESULT GetFontFromFontFace(/* _In_ */ IDWriteFontFace fontFace, /* _COM_Outptr_ */ out IDWriteFont font);
     }
 }

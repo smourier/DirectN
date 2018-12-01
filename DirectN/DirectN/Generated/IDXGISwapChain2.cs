@@ -1,118 +1,114 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgi1_3.h(369,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [Guid("a8be2ac4-199f-4946-b331-79599fb98de7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGISwapChain2 : IDXGISwapChain1
+    public partial interface IDXGISwapChain2 : IDXGISwapChain1
     {
         // IDXGIObject
         [PreserveSig]
-        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, int DataSize, IntPtr pData);
-
+        new HRESULT SetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [in] */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ out IntPtr pData);
+        
         [PreserveSig]
-        new HRESULT SetPrivateDataInterface([MarshalAs(UnmanagedType.LPStruct)] Guid Name, [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
-
+        new HRESULT SetPrivateDataInterface(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
+        
         [PreserveSig]
-        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, out int pDataSize, IntPtr pData);
-
+        new HRESULT GetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][out][in] _Inout_ */ ref uint pDataSize, /* [annotation][out] _Out_writes_bytes_(*pDataSize) */ out IntPtr pData);
+        
         [PreserveSig]
-        new HRESULT GetParent([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
-
+        new HRESULT GetParent(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][retval][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
+        
         // IDXGIDeviceSubObject
         [PreserveSig]
-        new int GetDevice([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDevice);
-
+        new HRESULT GetDevice(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][retval][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppDevice);
+        
         // IDXGISwapChain
         [PreserveSig]
-        new HRESULT Present(int SyncInterval, DXGI_PRESENT Flags);
-
+        new HRESULT Present(/* [in] */ uint SyncInterval, /* [in] */ uint Flags);
+        
         [PreserveSig]
-        new HRESULT GetBuffer(int Buffer, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppSurface);
-
+        new HRESULT GetBuffer(/* [in] */ uint Buffer, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out][in] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppSurface);
+        
         [PreserveSig]
-        new HRESULT SetFullscreenState(bool Fullscreen, IDXGIOutput pTarget);
-
+        new HRESULT SetFullscreenState(/* [in] */ bool Fullscreen, /* [annotation][in] _In_opt_ */ IDXGIOutput pTarget);
+        
         [PreserveSig]
-        new HRESULT GetFullscreenState(out bool pFullscreen, out IDXGIOutput ppTarget);
-
+        new HRESULT GetFullscreenState(/* [annotation][out] _Out_opt_ */ out bool pFullscreen, /* [annotation][out] _COM_Outptr_opt_result_maybenull_ */ out IDXGIOutput ppTarget);
+        
         [PreserveSig]
-        new HRESULT GetDesc(out DXGI_SWAP_CHAIN_DESC pDesc);
-
+        new HRESULT GetDesc(/* [annotation][out] _Out_ */ out DXGI_SWAP_CHAIN_DESC pDesc);
+        
         [PreserveSig]
-        new HRESULT ResizeBuffers(
-            int BufferCount,
-            int Width,
-            int Height,
-            DXGI_FORMAT NewFormat,
-            DXGI_SWAP_CHAIN_FLAG SwapChainFlags);
-
+        new HRESULT ResizeBuffers(/* [in] */ uint BufferCount, /* [in] */ uint Width, /* [in] */ uint Height, /* [in] */ DXGI_FORMAT NewFormat, /* [in] */ uint SwapChainFlags);
+        
         [PreserveSig]
-        new HRESULT ResizeTarget(ref DXGI_MODE_DESC pNewTargetParameters);
-
+        new HRESULT ResizeTarget(/* [annotation][in] _In_ */ ref DXGI_MODE_DESC pNewTargetParameters);
+        
         [PreserveSig]
-        new HRESULT GetContainingOutput(out IDXGIOutput ppOutput);
-
+        new HRESULT GetContainingOutput(/* [annotation][out] _COM_Outptr_ */ out IDXGIOutput ppOutput);
+        
         [PreserveSig]
-        new HRESULT GetFrameStatistics(out DXGI_FRAME_STATISTICS pStats);
-
+        new HRESULT GetFrameStatistics(/* [annotation][out] _Out_ */ out DXGI_FRAME_STATISTICS pStats);
+        
         [PreserveSig]
-        new HRESULT GetLastPresentCount(out int pLastPresentCount);
-
+        new HRESULT GetLastPresentCount(/* [annotation][out] _Out_ */ out uint pLastPresentCount);
+        
         // IDXGISwapChain1
         [PreserveSig]
-        new HRESULT GetDesc1(out DXGI_SWAP_CHAIN_DESC1 pDesc);
-
+        new HRESULT GetDesc1(/* [annotation][out] _Out_ */ out DXGI_SWAP_CHAIN_DESC1 pDesc);
+        
         [PreserveSig]
-        new HRESULT GetFullscreenDesc(out DXGI_SWAP_CHAIN_FULLSCREEN_DESC pDesc);
-
+        new HRESULT GetFullscreenDesc(/* [annotation][out] _Out_ */ out DXGI_SWAP_CHAIN_FULLSCREEN_DESC pDesc);
+        
         [PreserveSig]
-        new HRESULT GetHwnd(out IntPtr pHwnd);
-
+        new HRESULT GetHwnd(/* [annotation][out] _Out_ */ out IntPtr pHwnd);
+        
         [PreserveSig]
-        new HRESULT GetCoreWindow([MarshalAs(UnmanagedType.LPStruct)] Guid refiid, [MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
-
+        new HRESULT GetCoreWindow(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid refiid, /* [annotation][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
+        
         [PreserveSig]
-        new HRESULT Present1(int SyncInterval, DXGI_PRESENT PresentFlags, ref DXGI_PRESENT_PARAMETERS pPresentParameters);
-
+        new HRESULT Present1(/* [in] */ uint SyncInterval, /* [in] */ uint PresentFlags, /* [annotation][in] _In_ */ ref DXGI_PRESENT_PARAMETERS pPresentParameters);
+        
         [PreserveSig]
         new bool IsTemporaryMonoSupported();
-
+        
         [PreserveSig]
-        new HRESULT GetRestrictToOutput(out IDXGIOutput ppRestrictToOutput);
-
+        new HRESULT GetRestrictToOutput(/* [annotation][out] _Out_ */ out IDXGIOutput ppRestrictToOutput);
+        
         [PreserveSig]
-        new HRESULT SetBackgroundColor(ref DXGI_RGBA pColor);
-
+        new HRESULT SetBackgroundColor(/* [annotation][in] _In_ */ ref _D3DCOLORVALUE pColor);
+        
         [PreserveSig]
-        new HRESULT GetBackgroundColor(out DXGI_RGBA pColor);
-
+        new HRESULT GetBackgroundColor(/* [annotation][out] _Out_ */ out _D3DCOLORVALUE pColor);
+        
         [PreserveSig]
-        new HRESULT SetRotation(DXGI_MODE_ROTATION Rotation);
-
+        new HRESULT SetRotation(/* [annotation][in] _In_ */ DXGI_MODE_ROTATION Rotation);
+        
         [PreserveSig]
-        new HRESULT GetRotation(out DXGI_MODE_ROTATION pRotation);
-
+        new HRESULT GetRotation(/* [annotation][out] _Out_ */ out DXGI_MODE_ROTATION pRotation);
+        
         // IDXGISwapChain2
         [PreserveSig]
-        HRESULT SetSourceSize(int Width, int Height);
-
+        HRESULT SetSourceSize(uint Width, uint Height);
+        
         [PreserveSig]
-        HRESULT GetSourceSize(out int pWidth, out int pHeight);
-
+        HRESULT GetSourceSize(/* [annotation][out] _Out_ */ out uint pWidth, /* [annotation][out] _Out_ */ out uint pHeight);
+        
         [PreserveSig]
-        HRESULT SetMaximumFrameLatency(int MaxLatency);
-
+        HRESULT SetMaximumFrameLatency(uint MaxLatency);
+        
         [PreserveSig]
-        HRESULT GetMaximumFrameLatency(out int pMaxLatency);
-
+        HRESULT GetMaximumFrameLatency(/* [annotation][out] _Out_ */ out uint pMaxLatency);
+        
         [PreserveSig]
         IntPtr GetFrameLatencyWaitableObject();
-
+        
         [PreserveSig]
         HRESULT SetMatrixTransform(ref DXGI_MATRIX_3X2_F pMatrix);
-
+        
         [PreserveSig]
-        HRESULT GetMatrixTransform(out DXGI_MATRIX_3X2_F pMatrix);
+        HRESULT GetMatrixTransform(/* [annotation][out] _Out_ */ out DXGI_MATRIX_3X2_F pMatrix);
     }
 }

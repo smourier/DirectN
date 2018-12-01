@@ -1,14 +1,16 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(1077,24)
+using System;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct WICJpegScanHeader
+    public partial struct WICJpegScanHeader
     {
-        public int cComponents;
-        public int RestartInterval;
-        public int ComponentSelectors;
-        public int HuffmanTableIndices;
+        public uint cComponents;
+        public uint RestartInterval;
+        public uint ComponentSelectors;
+        public uint HuffmanTableIndices;
         public byte StartSpectralSelection;
         public byte EndSpectralSelection;
         public byte SuccessiveApproximationHigh;

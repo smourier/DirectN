@@ -1,10 +1,12 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(766,1)
+namespace DirectN
 {
     public enum WICProgressNotification
     {
-        WICProgressNotificationBegin = 0x00010000,
-        WICProgressNotificationEnd = 0x00020000,
-        WICProgressNotificationFrequent = 0x00040000,
-        WICProgressNotificationAll = unchecked((int)0xFFFF0000)
+        WICProgressNotificationBegin = 65536,
+        WICProgressNotificationEnd = 131072,
+        WICProgressNotificationFrequent = 262144,
+        WICProgressNotificationAll = -65536,
+        WICPROGRESSNOTIFICATION_FORCE_DWORD = 2147483647,
     }
 }

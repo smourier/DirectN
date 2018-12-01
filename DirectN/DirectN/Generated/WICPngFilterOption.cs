@@ -1,13 +1,15 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(7050,1)
+namespace DirectN
 {
     public enum WICPngFilterOption
     {
-        WICPngFilterUnspecified = 0x00000000,
-        WICPngFilterNone = 0x00000001,
-        WICPngFilterSub = 0x00000002,
-        WICPngFilterUp = 0x00000003,
-        WICPngFilterAverage = 0x00000004,
-        WICPngFilterPaeth = 0x00000005,
-        WICPngFilterAdaptive = 0x00000006
+        WICPngFilterUnspecified = 0,
+        WICPngFilterNone = 1,
+        WICPngFilterSub = 2,
+        WICPngFilterUp = 3,
+        WICPngFilterAverage = 4,
+        WICPngFilterPaeth = 5,
+        WICPngFilterAdaptive = 6,
+        WICPNGFILTEROPTION_FORCE_DWORD = 2147483647,
     }
 }

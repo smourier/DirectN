@@ -1,29 +1,25 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(3506,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("8339FDE3-106F-47ab-8373-1C6295EB10B3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDWriteInlineObject
+    /// <summary>
+    /// The IDWriteInlineObject interface wraps an application defined inline graphic, allowing DWrite to query metrics as if it was a glyph inline with the text.
+    /// </summary>
+    [Guid("8339fde3-106f-47ab-8373-1c6295eb10b3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IDWriteInlineObject
     {
         [PreserveSig]
-        HRESULT Draw(
-            IntPtr clientDrawingContext,
-            IDWriteTextRenderer renderer,
-            float originX,
-            float originY,
-            bool isSideways,
-            bool isRightToLeft,
-            [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect
-        );
-
+        HRESULT Draw(/* _In_opt_ */ IntPtr clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY, bool isSideways, bool isRightToLeft, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
+        
         [PreserveSig]
-        HRESULT GetMetrics(out DWRITE_INLINE_OBJECT_METRICS metrics);
-
+        HRESULT GetMetrics(/* _Out_ */ out DWRITE_INLINE_OBJECT_METRICS metrics);
+        
         [PreserveSig]
-        HRESULT GetOverhangMetrics(out DWRITE_OVERHANG_METRICS overhangs);
-
+        HRESULT GetOverhangMetrics(/* _Out_ */ out DWRITE_OVERHANG_METRICS overhangs);
+        
         [PreserveSig]
-        HRESULT GetBreakConditions(out DWRITE_BREAK_CONDITION breakConditionBefore, out DWRITE_BREAK_CONDITION breakConditionAfter);
+        HRESULT GetBreakConditions(/* _Out_ */ out DWRITE_BREAK_CONDITION breakConditionBefore, /* _Out_ */ out DWRITE_BREAK_CONDITION breakConditionAfter);
     }
 }

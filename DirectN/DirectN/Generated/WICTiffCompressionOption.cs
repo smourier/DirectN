@@ -1,14 +1,16 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(7025,1)
+namespace DirectN
 {
     public enum WICTiffCompressionOption
     {
-        WICTiffCompressionDontCare = 0x00000000,
-        WICTiffCompressionNone = 0x00000001,
-        WICTiffCompressionCCITT3 = 0x00000002,
-        WICTiffCompressionCCITT4 = 0x00000003,
-        WICTiffCompressionLZW = 0x00000004,
-        WICTiffCompressionRLE = 0x00000005,
-        WICTiffCompressionZIP = 0x00000006,
-        WICTiffCompressionLZWHDifferencing = 0x00000007
+        WICTiffCompressionDontCare = 0,
+        WICTiffCompressionNone = 1,
+        WICTiffCompressionCCITT3 = 2,
+        WICTiffCompressionCCITT4 = 3,
+        WICTiffCompressionLZW = 4,
+        WICTiffCompressionRLE = 5,
+        WICTiffCompressionZIP = 6,
+        WICTiffCompressionLZWHDifferencing = 7,
+        WICTIFFCOMPRESSIONOPTION_FORCE_DWORD = 2147483647,
     }
 }

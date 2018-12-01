@@ -1,21 +1,23 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(3032,5)
+using System;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("30989668-E1C9-4597-B395-458EEDB808DF"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IWICMetadataQueryReader
+    [Guid("30989668-e1c9-4597-b395-458eedb808df"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IWICMetadataQueryReader
     {
         [PreserveSig]
-        HRESULT GetContainerFormat(out Guid pguidContainerFormat);
-
+        HRESULT GetContainerFormat(/* [out] __RPC__out */ out Guid pguidContainerFormat);
+        
         [PreserveSig]
-        HRESULT GetLocation(int cchMaxLength, [In, Out, MarshalAs(UnmanagedType.LPWStr)] string wzNamespace, out int pcchActualLength);
-
+        HRESULT GetLocation(/* [in] */ uint cchMaxLength, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cchMaxLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] char[] wzNamespace, /* [out] __RPC__out */ out uint pcchActualLength);
+        
         [PreserveSig]
-        HRESULT GetMetadataByName(string wzName, [In, Out] PropVariant pvarValue);
-
+        HRESULT GetMetadataByName(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* [unique][out][in] __RPC__inout_opt */ PropVariant pvarValue);
+        
         [PreserveSig]
-        HRESULT GetEnumerator(out IEnumString ppIEnumString);
+        HRESULT GetEnumerator(/* [out] __RPC__deref_out_opt */ out IEnumString ppIEnumString);
     }
 }

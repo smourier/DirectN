@@ -1,78 +1,79 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mftransform.h(241,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [Guid("bf94c121-5b05-4e6f-8000-ba598961414d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFTransform
+    public partial interface IMFTransform
     {
         [PreserveSig]
-        HRESULT GetStreamLimits(out int pdwInputMinimum, out int pdwInputMaximum, out int pdwOutputMinimum, out int pdwOutputMaximum);
-
+        HRESULT GetStreamLimits(/* [out] __RPC__out */ out uint pdwInputMinimum, /* [out] __RPC__out */ out uint pdwInputMaximum, /* [out] __RPC__out */ out uint pdwOutputMinimum, /* [out] __RPC__out */ out uint pdwOutputMaximum);
+        
         [PreserveSig]
-        HRESULT GetStreamCount(out int pcInputStreams, out int pcOutputStreams);
-
+        HRESULT GetStreamCount(/* [out] __RPC__out */ out uint pcInputStreams, /* [out] __RPC__out */ out uint pcOutputStreams);
+        
         [PreserveSig]
-        HRESULT GetStreamIDs(int dwInputIDArraySize, [In, Out] int[] pdwInputIDs, int dwOutputIDArraySize, [In, Out] int[] pdwOutputIDs);
-
+        HRESULT GetStreamIDs(uint dwInputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwInputIDArraySize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pdwInputIDs, uint dwOutputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwOutputIDArraySize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pdwOutputIDs);
+        
         [PreserveSig]
-        HRESULT GetInputStreamInfo(int dwInputStreamID, out MFT_INPUT_STREAM_INFO pStreamInfo);
-
+        HRESULT GetInputStreamInfo(uint dwInputStreamID, /* [out] __RPC__out */ out _MFT_INPUT_STREAM_INFO pStreamInfo);
+        
         [PreserveSig]
-        HRESULT GetOutputStreamInfo(int dwOutputStreamID, out MFT_OUTPUT_STREAM_INFO pStreamInfo);
-
+        HRESULT GetOutputStreamInfo(uint dwOutputStreamID, /* [out] __RPC__out */ out _MFT_OUTPUT_STREAM_INFO pStreamInfo);
+        
         [PreserveSig]
-        HRESULT GetAttributes(out IMFAttributes pAttributes);
-
+        HRESULT GetAttributes(/* [out] __RPC__deref_out_opt */ out IMFAttributes pAttributes);
+        
         [PreserveSig]
-        HRESULT GetInputStreamAttributes(int dwInputStreamID, out IMFAttributes pAttributes);
-
+        HRESULT GetInputStreamAttributes(uint dwInputStreamID, /* [out] __RPC__deref_out_opt */ out IMFAttributes pAttributes);
+        
         [PreserveSig]
-        HRESULT GetOutputStreamAttributes(int dwOutputStreamID, out IMFAttributes pAttributes);
-
+        HRESULT GetOutputStreamAttributes(uint dwOutputStreamID, /* [out] __RPC__deref_out_opt */ out IMFAttributes pAttributes);
+        
         [PreserveSig]
-        HRESULT DeleteInputStream(int dwStreamID);
-
+        HRESULT DeleteInputStream(uint dwStreamID);
+        
         [PreserveSig]
-        HRESULT AddInputStreams(int cStreams, int[] adwStreamIDs);
-
+        HRESULT AddInputStreams(uint cStreams, /* [in] __RPC__in */ ref uint adwStreamIDs);
+        
         [PreserveSig]
-        HRESULT GetInputAvailableType(int dwInputStreamID, int dwTypeIndex, out IMFMediaType ppType);
-
+        HRESULT GetInputAvailableType(uint dwInputStreamID, uint dwTypeIndex, /* [out] __RPC__deref_out_opt */ out IMFMediaType ppType);
+        
         [PreserveSig]
-        HRESULT GetOutputAvailableType(int dwOutputStreamID, int dwTypeIndex, out IMFMediaType ppType);
-
+        HRESULT GetOutputAvailableType(uint dwOutputStreamID, uint dwTypeIndex, /* [out] __RPC__deref_out_opt */ out IMFMediaType ppType);
+        
         [PreserveSig]
-        HRESULT SetInputType(int dwInputStreamID, IMFMediaType pType, MFT_SET_TYPE_FLAGS dwFlags);
-
+        HRESULT SetInputType(uint dwInputStreamID, /* [in] __RPC__in_opt */ IMFMediaType pType, uint dwFlags);
+        
         [PreserveSig]
-        HRESULT SetOutputType(int dwOutputStreamID, IMFMediaType pType, MFT_SET_TYPE_FLAGS dwFlags);
-
+        HRESULT SetOutputType(uint dwOutputStreamID, /* [in] __RPC__in_opt */ IMFMediaType pType, uint dwFlags);
+        
         [PreserveSig]
-        HRESULT GetInputCurrentType(int dwInputStreamID, out IMFMediaType ppType);
-
+        HRESULT GetInputCurrentType(uint dwInputStreamID, /* [out] __RPC__deref_out_opt */ out IMFMediaType ppType);
+        
         [PreserveSig]
-        HRESULT GetOutputCurrentType(int dwOutputStreamID, out IMFMediaType ppType);
-
+        HRESULT GetOutputCurrentType(uint dwOutputStreamID, /* [out] __RPC__deref_out_opt */ out IMFMediaType ppType);
+        
         [PreserveSig]
-        HRESULT GetInputStatus(int dwInputStreamID, out int pdwFlags);
-
+        HRESULT GetInputStatus(uint dwInputStreamID, /* [out] __RPC__out */ out uint pdwFlags);
+        
         [PreserveSig]
-        HRESULT GetOutputStatus(out int pdwFlags);
-
+        HRESULT GetOutputStatus(/* [out] __RPC__out */ out uint pdwFlags);
+        
         [PreserveSig]
         HRESULT SetOutputBounds(long hnsLowerBound, long hnsUpperBound);
-
+        
         [PreserveSig]
-        HRESULT ProcessEvent(int dwInputStreamID, IMFMediaEvent pEvent);
-
+        HRESULT ProcessEvent(uint dwInputStreamID, /* [in] __RPC__in_opt */ IMFMediaEvent pEvent);
+        
         [PreserveSig]
-        HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, IntPtr ulParam);
-
+        HRESULT ProcessMessage(_MFT_MESSAGE_TYPE eMessage, ulong ulParam);
+        
         [PreserveSig]
-        HRESULT ProcessInput(int dwInputStreamID, IMFSample pSample, int dwFlags);
-
+        HRESULT ProcessInput(uint dwInputStreamID, IMFSample pSample, uint dwFlags);
+        
         [PreserveSig]
-        HRESULT ProcessOutput(MFT_PROCESS_OUTPUT_FLAGS dwFlags, int cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER[] pOutputSamples, out int pdwStatus);
+        HRESULT ProcessOutput(uint dwFlags, uint cOutputBufferCount, /* [size_is][out][in] */ [In, Out, MarshalAs(UnmanagedType.LPArray)] _MFT_OUTPUT_DATA_BUFFER[] pOutputSamples, /* [out] */ out uint pdwStatus);
     }
 }

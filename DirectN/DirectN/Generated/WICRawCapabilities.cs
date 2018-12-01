@@ -1,9 +1,11 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(7080,1)
+namespace DirectN
 {
     public enum WICRawCapabilities
     {
-        WICRawCapabilityNotSupported = 0x00000000,
-        WICRawCapabilityGetSupported = 0x00000001,
-        WICRawCapabilityFullySupported = 0x00000002
+        WICRawCapabilityNotSupported = 0,
+        WICRawCapabilityGetSupported = 1,
+        WICRawCapabilityFullySupported = 2,
+        WICRAWCAPABILITIES_FORCE_DWORD = 2147483647,
     }
 }

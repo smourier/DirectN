@@ -1,4 +1,5 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodecsdk.h(265,1)
+using System;
 
 namespace DirectN
 {
@@ -11,6 +12,6 @@ namespace DirectN
         WICPersistOptionStrictFormat = 0x00000002,
         WICPersistOptionNoCacheStream = 0x00000004,
         WICPersistOptionPreferUTF8 = 0x00000008,
-        WICPersistOptionMask = 0x0000FFFF
+        WICPersistOptionMask = 0x0000FFFF,
     }
 }

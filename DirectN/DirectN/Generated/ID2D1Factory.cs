@@ -1,53 +1,55 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(3341,1)
+using System;
 using System.Runtime.InteropServices;
-using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
-using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The root factory interface for all of D2D's objects.
+    /// </summary>
     [Guid("06152247-6f50-465a-9245-118bfd3b6007"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1Factory
+    public partial interface ID2D1Factory
     {
         [PreserveSig]
         HRESULT ReloadSystemMetrics();
-
+        
         [PreserveSig]
-        void GetDesktopDpi(out float dpiX, out float dpiY);
-
+        void GetDesktopDpi(/* _Out_ */ out float dpiX, /* _Out_ */ out float dpiY);
+        
         [PreserveSig]
-        HRESULT CreateRectangleGeometry(ref D2D1_RECT_F rectangle, out ID2D1RectangleGeometry rectangleGeometry);
-
+        HRESULT CreateRectangleGeometry(/* _In_ */ ref D2D_RECT_F rectangle, /* _COM_Outptr_ */ out ID2D1RectangleGeometry rectangleGeometry);
+        
         [PreserveSig]
-        HRESULT CreateRoundedRectangleGeometry(ref D2D1_ROUNDED_RECT roundedRectangle, out ID2D1RoundedRectangleGeometry roundedRectangleGeometry);
-
+        HRESULT CreateRoundedRectangleGeometry(/* _In_ */ ref D2D1_ROUNDED_RECT roundedRectangle, /* _COM_Outptr_ */ out ID2D1RoundedRectangleGeometry roundedRectangleGeometry);
+        
         [PreserveSig]
-        HRESULT CreateEllipseGeometry(ref D2D1_ELLIPSE ellipse, out ID2D1EllipseGeometry ellipseGeometry);
-
+        HRESULT CreateEllipseGeometry(/* _In_ */ ref D2D1_ELLIPSE ellipse, /* _COM_Outptr_ */ out ID2D1EllipseGeometry ellipseGeometry);
+        
         [PreserveSig]
-        HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID2D1Geometry geometries, int geometriesCount, out ID2D1GeometryGroup geometryGroup);
-
+        HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ out ID2D1Geometry[] geometries, uint geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
+        
         [PreserveSig]
-        HRESULT CreateTransformedGeometry(ID2D1Geometry sourceGeometry, ref D2D1_MATRIX_3X2_F transform, out ID2D1TransformedGeometry transformedGeometry);
-
+        HRESULT CreateTransformedGeometry(/* _In_ */ ID2D1Geometry sourceGeometry, /* _In_ */ ref D2D_MATRIX_3X2_F transform, /* _COM_Outptr_ */ out ID2D1TransformedGeometry transformedGeometry);
+        
         [PreserveSig]
-        HRESULT CreatePathGeometry(out ID2D1PathGeometry pathGeometry);
-
+        HRESULT CreatePathGeometry(/* _COM_Outptr_ */ out ID2D1PathGeometry pathGeometry);
+        
         [PreserveSig]
-        HRESULT CreateStrokeStyle(ref D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, int dashesCount, out ID2D1StrokeStyle strokeStyle);
-
+        HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, uint dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle strokeStyle);
+        
         [PreserveSig]
-        HRESULT CreateDrawingStateBlock(ref D2D1_DRAWING_STATE_DESCRIPTION drawingStateDescription, IDWriteRenderingParams textRenderingParams, out ID2D1DrawingStateBlock drawingStateBlock);
-
+        HRESULT CreateDrawingStateBlock(/* _In_opt_ */ ref D2D1_DRAWING_STATE_DESCRIPTION drawingStateDescription, /* _In_opt_ */ ref IDWriteRenderingParams textRenderingParams, /* _COM_Outptr_ */ out ID2D1DrawingStateBlock drawingStateBlock);
+        
         [PreserveSig]
-        HRESULT CreateWicBitmapRenderTarget(IWICBitmap target, ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget renderTarget);
-
+        HRESULT CreateWicBitmapRenderTarget(/* _In_ */ ref IWICBitmap target, /* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1RenderTarget renderTarget);
+        
         [PreserveSig]
-        HRESULT CreateHwndRenderTarget(ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, ref D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, out ID2D1HwndRenderTarget hwndRenderTarget);
-
+        HRESULT CreateHwndRenderTarget(/* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _In_ */ ref D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, /* _COM_Outptr_ */ out ID2D1HwndRenderTarget hwndRenderTarget);
+        
         [PreserveSig]
-        HRESULT CreateDxgiSurfaceRenderTarget(IDXGISurface dxgiSurface, ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1RenderTarget renderTarget);
-
+        HRESULT CreateDxgiSurfaceRenderTarget(/* _In_ */ ref IDXGISurface dxgiSurface, /* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1RenderTarget renderTarget);
+        
         [PreserveSig]
-        HRESULT CreateDCRenderTarget(ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, out ID2D1DCRenderTarget dcRenderTarget);
+        HRESULT CreateDCRenderTarget(/* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1DCRenderTarget dcRenderTarget);
     }
 }

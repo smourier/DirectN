@@ -1,21 +1,22 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(8342,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("2F0C601F-D2C6-468C-ABFA-49495D983ED1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IWICJpegFrameEncode
+    [Guid("2f0c601f-d2c6-468c-abfa-49495d983ed1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IWICJpegFrameEncode
     {
         [PreserveSig]
-        HRESULT GetAcHuffmanTable(int scanIndex, int tableIndex, ref DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable);
-
+        HRESULT GetAcHuffmanTable(uint scanIndex, /* [range] __RPC__in_range(0,WIC_JPEG_MAX_TABLE_INDEX) */ uint tableIndex, /* [out] __RPC__out */ out DXGI_JPEG_AC_HUFFMAN_TABLE pAcHuffmanTable);
+        
         [PreserveSig]
-        HRESULT GetDcHuffmanTable(int scanIndex, int tableIndex, out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable);
-
+        HRESULT GetDcHuffmanTable(uint scanIndex, /* [range] __RPC__in_range(0,WIC_JPEG_MAX_TABLE_INDEX) */ uint tableIndex, /* [out] __RPC__out */ out DXGI_JPEG_DC_HUFFMAN_TABLE pDcHuffmanTable);
+        
         [PreserveSig]
-        HRESULT GetQuantizationTable(int scanIndex, int tableIndex, out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable);
-
+        HRESULT GetQuantizationTable(uint scanIndex, /* [range] __RPC__in_range(0,WIC_JPEG_MAX_TABLE_INDEX) */ uint tableIndex, /* [out] __RPC__out */ out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable);
+        
         [PreserveSig]
-        HRESULT WriteScan(int cbScanData, IntPtr pbScanData);
+        HRESULT WriteScan(/* [in] */ uint cbScanData, /* [size_is][in] __RPC__in_ecount_full(cbScanData) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbScanData);
     }
 }

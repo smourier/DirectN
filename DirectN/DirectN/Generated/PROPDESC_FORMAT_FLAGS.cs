@@ -1,0 +1,25 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\propsys.h(1808,1)
+using System;
+
+namespace DirectN
+{
+    [Flags]
+    public enum PROPDESC_FORMAT_FLAGS
+    {
+        PDFF_DEFAULT = 0x00000000,
+        PDFF_PREFIXNAME = 0x00000001,
+        PDFF_FILENAME = 0x00000002,
+        PDFF_ALWAYSKB = 0x00000004,
+        PDFF_RESERVED_RIGHTTOLEFT = 0x00000008,
+        PDFF_SHORTTIME = 0x00000010,
+        PDFF_LONGTIME = 0x00000020,
+        PDFF_HIDETIME = 0x00000040,
+        PDFF_SHORTDATE = 0x00000080,
+        PDFF_LONGDATE = 0x00000100,
+        PDFF_HIDEDATE = 0x00000200,
+        PDFF_RELATIVEDATE = 0x00000400,
+        PDFF_USEEDITINVITATION = 0x00000800,
+        PDFF_READONLY = 0x00001000,
+        PDFF_NOAUTOREADINGORDER = 0x00002000,
+    }
+}

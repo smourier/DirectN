@@ -1,20 +1,22 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(681,1)
+namespace DirectN
 {
     public enum WICBitmapPaletteType
     {
-        WICBitmapPaletteTypeCustom = 0x00000000,
-        WICBitmapPaletteTypeMedianCut = 0x00000001,
-        WICBitmapPaletteTypeFixedBW = 0x00000002,
-        WICBitmapPaletteTypeFixedHalftone8 = 0x00000003,
-        WICBitmapPaletteTypeFixedHalftone27 = 0x00000004,
-        WICBitmapPaletteTypeFixedHalftone64 = 0x00000005,
-        WICBitmapPaletteTypeFixedHalftone125 = 0x00000006,
-        WICBitmapPaletteTypeFixedHalftone216 = 0x00000007,
-        WICBitmapPaletteTypeFixedWebPalette = WICBitmapPaletteTypeFixedHalftone216,
-        WICBitmapPaletteTypeFixedHalftone252 = 0x00000008,
-        WICBitmapPaletteTypeFixedHalftone256 = 0x00000009,
-        WICBitmapPaletteTypeFixedGray4 = 0x0000000A,
-        WICBitmapPaletteTypeFixedGray16 = 0x0000000B,
-        WICBitmapPaletteTypeFixedGray256 = 0x0000000C
+        WICBitmapPaletteTypeCustom = 0,
+        WICBitmapPaletteTypeMedianCut = 1,
+        WICBitmapPaletteTypeFixedBW = 2,
+        WICBitmapPaletteTypeFixedHalftone8 = 3,
+        WICBitmapPaletteTypeFixedHalftone27 = 4,
+        WICBitmapPaletteTypeFixedHalftone64 = 5,
+        WICBitmapPaletteTypeFixedHalftone125 = 6,
+        WICBitmapPaletteTypeFixedHalftone216 = 7,
+        WICBitmapPaletteTypeFixedWebPalette = 7,
+        WICBitmapPaletteTypeFixedHalftone252 = 8,
+        WICBitmapPaletteTypeFixedHalftone256 = 9,
+        WICBitmapPaletteTypeFixedGray4 = 10,
+        WICBitmapPaletteTypeFixedGray16 = 11,
+        WICBitmapPaletteTypeFixedGray256 = 12,
+        WICBITMAPPALETTETYPE_FORCE_DWORD = 2147483647,
     }
 }

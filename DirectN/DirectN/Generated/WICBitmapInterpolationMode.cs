@@ -1,11 +1,13 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(670,1)
+namespace DirectN
 {
     public enum WICBitmapInterpolationMode
     {
-        WICBitmapInterpolationModeNearestNeighbor = 0x00000000,
-        WICBitmapInterpolationModeLinear = 0x00000001,
-        WICBitmapInterpolationModeCubic = 0x00000002,
-        WICBitmapInterpolationModeFant = 0x00000003,
-        WICBitmapInterpolationModeHighQualityCubic = 0x00000004
+        WICBitmapInterpolationModeNearestNeighbor = 0,
+        WICBitmapInterpolationModeLinear = 1,
+        WICBitmapInterpolationModeCubic = 2,
+        WICBitmapInterpolationModeFant = 3,
+        WICBitmapInterpolationModeHighQualityCubic = 4,
+        WICBITMAPINTERPOLATIONMODE_FORCE_DWORD = 2147483647,
     }
 }

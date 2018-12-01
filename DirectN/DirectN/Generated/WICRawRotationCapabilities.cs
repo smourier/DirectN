@@ -1,10 +1,12 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(7089,1)
+namespace DirectN
 {
     public enum WICRawRotationCapabilities
     {
-        WICRawRotationCapabilityNotSupported = 0x00000000,
-        WICRawRotationCapabilityGetSupported = 0x00000001,
-        WICRawRotationCapabilityNinetyDegreesSupported = 0x00000002,
-        WICRawRotationCapabilityFullySupported = 0x00000003
+        WICRawRotationCapabilityNotSupported = 0,
+        WICRawRotationCapabilityGetSupported = 1,
+        WICRawRotationCapabilityNinetyDegreesSupported = 2,
+        WICRawRotationCapabilityFullySupported = 3,
+        WICRAWROTATIONCAPABILITIES_FORCE_DWORD = 2147483647,
     }
 }

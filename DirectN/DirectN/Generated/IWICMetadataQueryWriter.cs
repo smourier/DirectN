@@ -1,29 +1,31 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(3148,5)
+using System;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("A721791A-0DEF-4d06-BD91-2118BF1DB10B"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IWICMetadataQueryWriter : IWICMetadataQueryReader
+    [Guid("a721791a-0def-4d06-bd91-2118bf1db10b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IWICMetadataQueryWriter : IWICMetadataQueryReader
     {
         // IWICMetadataQueryReader
         [PreserveSig]
-        new HRESULT GetContainerFormat(out Guid pguidContainerFormat);
-
+        new HRESULT GetContainerFormat(/* [out] __RPC__out */ out Guid pguidContainerFormat);
+        
         [PreserveSig]
-        new HRESULT GetLocation(int cchMaxLength, [In, Out, MarshalAs(UnmanagedType.LPWStr)] string wzNamespace, out int pcchActualLength);
-
+        new HRESULT GetLocation(/* [in] */ uint cchMaxLength, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cchMaxLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] char[] wzNamespace, /* [out] __RPC__out */ out uint pcchActualLength);
+        
         [PreserveSig]
-        new HRESULT GetMetadataByName(string wzName, [In, Out] PropVariant pvarValue);
-
+        new HRESULT GetMetadataByName(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* [unique][out][in] __RPC__inout_opt */ PropVariant pvarValue);
+        
         [PreserveSig]
-        new HRESULT GetEnumerator(out IEnumString ppIEnumString);
-
+        new HRESULT GetEnumerator(/* [out] __RPC__deref_out_opt */ out IEnumString ppIEnumString);
+        
         // IWICMetadataQueryWriter
         [PreserveSig]
-        HRESULT SetMetadataByName([MarshalAs(UnmanagedType.LPWStr)] string wzName, PropVariant pvarValue);
-
+        HRESULT SetMetadataByName(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* [in] __RPC__in */ PropVariant pvarValue);
+        
         [PreserveSig]
-        HRESULT RemoveMetadataByName([MarshalAs(UnmanagedType.LPWStr)] string wzName);
+        HRESULT RemoveMetadataByName(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzName);
     }
 }

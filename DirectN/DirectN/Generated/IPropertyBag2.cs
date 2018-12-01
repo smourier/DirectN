@@ -1,24 +1,25 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(6032,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("22F55882-280B-11d0-A8A9-00A0C90C2004"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IPropertyBag2
+    [Guid("22f55882-280b-11d0-a8a9-00a0c90c2004"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IPropertyBag2
     {
         [PreserveSig]
-        HRESULT Read(int cProperties, [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] PROPBAG2[] pPropBag, /*IErrorLog*/ object pErrLog, [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pvarValue, [In, Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.Error, SizeParamIndex = 0)] int[] phrError);
-
+        HRESULT Read(/* [in] */ uint cProperties, /* [size_is][in] __RPC__in_ecount_full(cProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagPROPBAG2[] pPropBag, /* [unique][in] __RPC__in_opt */ ref IErrorLog pErrLog, /* [size_is][out] __RPC__out_ecount_full(cProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pvarValue, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] HRESULT phrError);
+        
         [PreserveSig]
-        HRESULT Write(int cProperties, [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] PROPBAG2[] pPropBag, [In, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pvarValue);
-
+        HRESULT Write(/* [in] */ uint cProperties, /* [size_is][in] __RPC__in_ecount_full(cProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagPROPBAG2[] pPropBag, /* [size_is][in] __RPC__in_ecount_full(cProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pvarValue);
+        
         [PreserveSig]
-        HRESULT CountProperties(out int pcProperties);
-
+        HRESULT CountProperties(/* [out] __RPC__out */ out uint pcProperties);
+        
         [PreserveSig]
-        HRESULT GetPropertyInfo(int iProperty, int cProperties, [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] PROPBAG2[] pPropBag, out int pcProperties);
-
+        HRESULT GetPropertyInfo(/* [in] */ uint iProperty, /* [in] */ uint cProperties, /* [size_is][out] __RPC__out_ecount_full(cProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagPROPBAG2[] pPropBag, /* [out] __RPC__out */ out uint pcProperties);
+        
         [PreserveSig]
-        HRESULT LoadObject([MarshalAs(UnmanagedType.LPWStr)] string pstrName, uint dwHint, [MarshalAs(UnmanagedType.IUnknown)] object pUnkObject, /*IErrorLog*/ object pErrLog);
+        HRESULT LoadObject(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string pstrName, /* [in] */ uint dwHint, /* [in] __RPC__in_opt */ [MarshalAs(UnmanagedType.IUnknown)] object pUnkObject, /* [unique][in] __RPC__in_opt */ ref IErrorLog pErrLog);
     }
 }

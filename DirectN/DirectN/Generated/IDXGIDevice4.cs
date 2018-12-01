@@ -1,77 +1,67 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgi1_5.h(907,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    // dxgi1_5.h
-    [Guid("95B4F95F-D8DA-4CA4-9EE6-3B76D5968A10"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGIDevice4 : IDXGIDevice3
+    [Guid("95b4f95f-d8da-4ca4-9ee6-3b76d5968a10"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IDXGIDevice4 : IDXGIDevice3
     {
         // IDXGIObject
         [PreserveSig]
-        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, int DataSize, IntPtr pData);
-
+        new HRESULT SetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [in] */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ out IntPtr pData);
+        
         [PreserveSig]
-        new HRESULT SetPrivateDataInterface([MarshalAs(UnmanagedType.LPStruct)] Guid Name, [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
-
+        new HRESULT SetPrivateDataInterface(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
+        
         [PreserveSig]
-        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid Name, out int pDataSize, IntPtr pData);
-
+        new HRESULT GetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][out][in] _Inout_ */ ref uint pDataSize, /* [annotation][out] _Out_writes_bytes_(*pDataSize) */ out IntPtr pData);
+        
         [PreserveSig]
-        new HRESULT GetParent([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
-
+        new HRESULT GetParent(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][retval][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
+        
         // IDXGIDevice
         [PreserveSig]
-        new HRESULT GetAdapter(out IDXGIAdapter pAdapter);
-
+        new HRESULT GetAdapter(/* [annotation][out] _COM_Outptr_ */ out IDXGIAdapter pAdapter);
+        
         [PreserveSig]
-        new HRESULT CreateSurface(
-            ref DXGI_SURFACE_DESC pDesc,
-            int NumSurfaces,
-            DXGI_USAGE Usage,
-            ref DXGI_SHARED_RESOURCE pSharedResource,
-            out IDXGISurface ppSurface);
-
+        new HRESULT CreateSurface(/* [annotation][in] _In_ */ ref DXGI_SURFACE_DESC pDesc, /* [in] */ uint NumSurfaces, /* [in] */ uint Usage, /* [annotation][in] _In_opt_ */ ref DXGI_SHARED_RESOURCE pSharedResource, /* [annotation][out] _COM_Outptr_ */ out IDXGISurface ppSurface);
+        
         [PreserveSig]
-        new HRESULT QueryResourceResidency(
-            [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown)]
-            object[] ppResources,
-            [In, Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown, SizeParamIndex = 2)]
-            DXGI_RESIDENCY[] pResidencyStatus,
-            int NumResources);
-
+        new HRESULT QueryResourceResidency(/* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.IUnknown)] object ppResources, /* [annotation][size_is][out] _Out_writes_(NumResources) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_RESIDENCY[] pResidencyStatus, /* [in] */ uint NumResources);
+        
         [PreserveSig]
-        new HRESULT SetGPUThreadPriority(int Priority);
-
+        new HRESULT SetGPUThreadPriority(/* [in] */ int Priority);
+        
         [PreserveSig]
-        new HRESULT GetGPUThreadPriority(out int pPriority);
-
+        new HRESULT GetGPUThreadPriority(/* [annotation][retval][out] _Out_ */ out int pPriority);
+        
         // IDXGIDevice1
         [PreserveSig]
-        new HRESULT SetMaximumFrameLatency(int MaxLatency);
-
+        new HRESULT SetMaximumFrameLatency(/* [in] */ uint MaxLatency);
+        
         [PreserveSig]
-        new HRESULT GetMaximumFrameLatency(out int pMaxLatency);
-
+        new HRESULT GetMaximumFrameLatency(/* [annotation][out] _Out_ */ out uint pMaxLatency);
+        
         // IDXGIDevice2
         [PreserveSig]
-        new HRESULT OfferResources(int NumResources, IDXGIResource[] ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority);
-
+        new HRESULT OfferResources(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ out IDXGIResource[] ppResources, /* [annotation][in] _In_ */ _DXGI_OFFER_RESOURCE_PRIORITY Priority);
+        
         [PreserveSig]
-        new HRESULT ReclaimResources(int NumResources, IDXGIResource[] ppResources, out bool pDiscarded);
-
+        new HRESULT ReclaimResources(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ out IDXGIResource[] ppResources, /* [annotation][size_is][out] _Out_writes_all_opt_(NumResources) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] bool pDiscarded);
+        
         [PreserveSig]
-        new HRESULT EnqueueSetEvent(IntPtr hEvent);
-
+        new HRESULT EnqueueSetEvent(/* [annotation][in] _In_ */ IntPtr hEvent);
+        
         // IDXGIDevice3
         [PreserveSig]
         new void Trim();
-
+        
         // IDXGIDevice4
         [PreserveSig]
-        HRESULT OfferResources1(int NumResources, IDXGIResource[] ppResources, DXGI_OFFER_RESOURCE_PRIORITY Priority, DXGI_OFFER_RESOURCE_FLAGS Flags);
-
+        HRESULT OfferResources1(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ out IDXGIResource[] ppResources, /* [annotation][in] _In_ */ _DXGI_OFFER_RESOURCE_PRIORITY Priority, /* [annotation][in] _In_ */ uint Flags);
+        
         [PreserveSig]
-        HRESULT ReclaimResources1(int NumResources, IDXGIResource[] ppResources, DXGI_RECLAIM_RESOURCE_RESULTS[] pResults);
+        HRESULT ReclaimResources1(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ out IDXGIResource[] ppResources, /* [annotation][size_is][out] _Out_writes_all_(NumResources) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _DXGI_RECLAIM_RESOURCE_RESULTS[] pResults);
     }
 }

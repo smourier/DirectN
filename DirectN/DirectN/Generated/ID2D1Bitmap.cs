@@ -1,41 +1,41 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(1105,1)
+using System;
 using System.Runtime.InteropServices;
-using D2D1_SIZE_F = DirectN.D2D_SIZE_F;
-using D2D1_SIZE_U = DirectN.D2D_SIZE_U;
-using D2D1_POINT_2U = DirectN.D2D_POINT_2U;
-using D2D1_RECT_U = DirectN.D2D_RECT_U;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Root bitmap resource, linearly scaled on a draw call.
+    /// </summary>
     [Guid("a2296057-ea42-4099-983b-539fb6505426"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1Bitmap : ID2D1Image
+    public partial interface ID2D1Bitmap : ID2D1Image
     {
         // ID2D1Resource
         [PreserveSig]
-        new void GetFactory(out ID2D1Factory factory);
-
+        new void GetFactory(/* _Outptr_ */ out ID2D1Factory factory);
+        
         // ID2D1Image
-
+        
         // ID2D1Bitmap
         [PreserveSig]
-        D2D1_SIZE_F GetSize();
-
+        D2D_SIZE_F GetSize();
+        
         [PreserveSig]
-        D2D1_SIZE_U GetPixelSize();
-
+        D2D_SIZE_U GetPixelSize();
+        
         [PreserveSig]
         D2D1_PIXEL_FORMAT GetPixelFormat();
-
+        
         [PreserveSig]
-        void GetDpi(out float dpiX, out float dpiY);
-
+        void GetDpi(/* _Out_ */ out float dpiX, /* _Out_ */ out float dpiY);
+        
         [PreserveSig]
-        HRESULT CopyFromBitmap(ref D2D1_POINT_2U destPoint, ID2D1Bitmap bitmap, ref D2D1_RECT_U srcRect);
-
+        HRESULT CopyFromBitmap(/* _In_opt_ */ ref D2D_POINT_2U destPoint, /* _In_ */ ID2D1Bitmap bitmap, /* _In_opt_ */ ref D2D_RECT_U srcRect);
+        
         [PreserveSig]
-        HRESULT CopyFromRenderTarget(ref D2D1_POINT_2U destPoint, ID2D1RenderTarget renderTarget, ref D2D1_RECT_U srcRect);
-
+        HRESULT CopyFromRenderTarget(/* _In_opt_ */ ref D2D_POINT_2U destPoint, /* _In_ */ ID2D1RenderTarget renderTarget, /* _In_opt_ */ ref D2D_RECT_U srcRect);
+        
         [PreserveSig]
-        HRESULT CopyFromMemory(ref D2D1_RECT_U dstRect, IntPtr esrcData, int pitch);
+        HRESULT CopyFromMemory(/* _In_opt_ */ ref D2D_RECT_U dstRect, /* _In_ */ IntPtr srcData, uint pitch);
     }
 }

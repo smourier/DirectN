@@ -1,9 +1,11 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgi1_3.h(343,9)
+using System;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct DXGI_MATRIX_3X2_F
+    public partial struct DXGI_MATRIX_3X2_F
     {
         public float _11;
         public float _12;

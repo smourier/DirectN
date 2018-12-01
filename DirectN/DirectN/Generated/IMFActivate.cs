@@ -1,109 +1,110 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfobjects.h(5260,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7FEE9E9A-4A89-47a6-899C-B6A53A70FB67"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IMFActivate : IMFAttributes
+    [Guid("7fee9e9a-4a89-47a6-899c-b6a53a70fb67"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IMFActivate : IMFAttributes
     {
         // IMFAttributes
         [PreserveSig]
-        new HRESULT GetItem([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, PropVariant pValue);
-
+        new HRESULT GetItem(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [full][out][in] __RPC__inout_opt */ PropVariant pValue);
+        
         [PreserveSig]
-        new HRESULT GetItemType([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out MF_ATTRIBUTE_TYPE pType);
-
+        new HRESULT GetItemType(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [out] __RPC__out */ out _MF_ATTRIBUTE_TYPE pType);
+        
         [PreserveSig]
-        new HRESULT CompareItem([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, PropVariant Value, out bool pbResult);
-
+        new HRESULT CompareItem(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* __RPC__in */ PropVariant Value, /* [out] __RPC__out */ out bool pbResult);
+        
         [PreserveSig]
-        new HRESULT Compare(IMFAttributes pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, out bool pbResult);
-
+        new HRESULT Compare(/* __RPC__in_opt */ IMFAttributes pTheirs, _MF_ATTRIBUTES_MATCH_TYPE MatchType, /* [out] __RPC__out */ out bool pbResult);
+        
         [PreserveSig]
-        new HRESULT GetUINT32([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out uint punValue);
-
+        new HRESULT GetUINT32(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [out] __RPC__out */ out uint punValue);
+        
         [PreserveSig]
-        new HRESULT GetUINT64([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out ulong punValue);
-
+        new HRESULT GetUINT64(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [out] __RPC__out */ out ulong punValue);
+        
         [PreserveSig]
-        new HRESULT GetDouble([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out double pfValue);
-
+        new HRESULT GetDouble(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [out] __RPC__out */ out double pfValue);
+        
         [PreserveSig]
-        new HRESULT GetGUID([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out Guid pguidValue);
-
+        new HRESULT GetGUID(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [out] __RPC__out */ out Guid pguidValue);
+        
         [PreserveSig]
-        new HRESULT GetStringLength([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out int pcchLength);
-
+        new HRESULT GetStringLength(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [out] __RPC__out */ out uint pcchLength);
+        
         [PreserveSig]
-        new HRESULT GetString([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, [MarshalAs(UnmanagedType.LPWStr)] string pwszValue, int cchBufSize, ref int pcchLength);
-
+        new HRESULT GetString(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][out] __RPC__out_ecount_full(cchBufSize) */ [MarshalAs(UnmanagedType.LPWStr)] string pwszValue, uint cchBufSize, /* [full][out][in] __RPC__inout_opt */ ref uint pcchLength);
+        
         [PreserveSig]
-        new HRESULT GetAllocatedString([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out IntPtr ppwszValue, out int pcchLength);
-
+        new HRESULT GetAllocatedString(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(( *pcchLength + 1 ) ) */ out IntPtr ppwszValue, /* [out] __RPC__out */ out uint pcchLength);
+        
         [PreserveSig]
-        new HRESULT GetBlobSize([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out int pcbBlobSize);
-
+        new HRESULT GetBlobSize(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [out] __RPC__out */ out uint pcbBlobSize);
+        
         [PreserveSig]
-        new HRESULT GetBlob([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, IntPtr pBuf, int cbBufSize, ref int pcbBlobSize);
-
+        new HRESULT GetBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][out] __RPC__out_ecount_full(cbBufSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pBuf, uint cbBufSize, /* [full][out][in] __RPC__inout_opt */ ref uint pcbBlobSize);
+        
         [PreserveSig]
-        new HRESULT GetAllocatedBlob([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, out IntPtr ppBuf, out int pcbSize);
-
+        new HRESULT GetAllocatedBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(*pcbSize) */ out byte[] ppBuf, /* [out] __RPC__out */ out uint pcbSize);
+        
         [PreserveSig]
-        new HRESULT GetUnknown([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
-
+        new HRESULT GetUnknown(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
+        
         [PreserveSig]
-        new HRESULT SetItem([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, PropVariant Value);
-
+        new HRESULT SetItem(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* __RPC__in */ PropVariant Value);
+        
         [PreserveSig]
-        new HRESULT DeleteItem([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey);
-
+        new HRESULT DeleteItem(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey);
+        
         [PreserveSig]
         new HRESULT DeleteAllItems();
-
+        
         [PreserveSig]
-        new HRESULT SetUINT32([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unValue);
-
+        new HRESULT SetUINT32(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unValue);
+        
         [PreserveSig]
-        new HRESULT SetUINT64([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, ulong unValue);
-
+        new HRESULT SetUINT64(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, ulong unValue);
+        
         [PreserveSig]
-        new HRESULT SetDouble([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, double fValue);
-
+        new HRESULT SetDouble(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, double fValue);
+        
         [PreserveSig]
-        new HRESULT SetGUID([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, [MarshalAs(UnmanagedType.LPStruct)] Guid guidValue);
-
+        new HRESULT SetGUID(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidValue);
+        
         [PreserveSig]
-        new HRESULT SetString([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, [MarshalAs(UnmanagedType.LPWStr)] string wszValue);
-
+        new HRESULT SetString(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string wszValue);
+        
         [PreserveSig]
-        new HRESULT SetBlob([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, IntPtr pBuf, uint cbBufSize);
-
+        new HRESULT SetBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][in] __RPC__in_ecount_full(cbBufSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pBuf, uint cbBufSize);
+        
         [PreserveSig]
-        new HRESULT SetUnknown([MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
-
+        new HRESULT SetUnknown(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [in] __RPC__in_opt */ [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
+        
         [PreserveSig]
         new HRESULT LockStore();
-
+        
         [PreserveSig]
         new HRESULT UnlockStore();
-
+        
         [PreserveSig]
-        new HRESULT GetCount(out int pcItems);
-
+        new HRESULT GetCount(/* [out] __RPC__out */ out uint pcItems);
+        
         [PreserveSig]
-        new HRESULT GetItemByIndex(int unIndex, out Guid pguidKey, PropVariant pValue);
-
+        new HRESULT GetItemByIndex(uint unIndex, /* [out] __RPC__out */ out Guid pguidKey, /* [full][out][in] __RPC__inout_opt */ PropVariant pValue);
+        
         [PreserveSig]
-        new HRESULT CopyAllItems(out IMFAttributes pDest);
-
+        new HRESULT CopyAllItems(/* [in] __RPC__in_opt */ IMFAttributes pDest);
+        
         // IMFActivate
         [PreserveSig]
-        HRESULT ActivateObject([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
-
+        HRESULT ActivateObject(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [retval][iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
+        
         [PreserveSig]
         HRESULT ShutdownObject();
-
+        
         [PreserveSig]
         HRESULT DetachObject();
     }

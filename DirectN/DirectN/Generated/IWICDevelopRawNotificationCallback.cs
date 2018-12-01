@@ -1,12 +1,13 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(7180,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7B816B45-1996-4476-B132-DE9E247C8AF0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IWICDevelopRawNotificationCallback
+    [Guid("95c75a6e-3e8c-4ec2-85a8-aebcc551e59b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IWICDevelopRawNotificationCallback
     {
         [PreserveSig]
-        HRESULT Notify(WICRawChangeNotification NotificationMask);
+        HRESULT Notify(/* [in] */ uint NotificationMask);
     }
 }

@@ -1,98 +1,86 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(6260,5)
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
     [Guid("ec5ec8a9-c395-4314-9c77-54d7a935ff70"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IWICImagingFactory
+    public partial interface IWICImagingFactory
     {
         [PreserveSig]
-        HRESULT CreateDecoderFromFilename([MarshalAs(UnmanagedType.LPWStr)] string wzFilename, [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, WICAccessRights dwDesiredAccess, WICDecodeOptions metadataOptions, out IWICBitmapDecoder ppIDecoder);
-
+        HRESULT CreateDecoderFromFilename(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzFilename, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [in] */ uint dwDesiredAccess, /* [in] */ WICDecodeOptions metadataOptions, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
+        
         [PreserveSig]
-        HRESULT CreateDecoderFromStream(IStream pIStream, [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder ppIDecoder);
-
+        HRESULT CreateDecoderFromStream(/* [in] __RPC__in_opt */ ref IStream pIStream, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [in] */ WICDecodeOptions metadataOptions, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
+        
         [PreserveSig]
-        HRESULT CreateDecoderFromFileHandle(IntPtr hFile, [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, WICDecodeOptions metadataOptions, out IWICBitmapDecoder ppIDecoder);
-
+        HRESULT CreateDecoderFromFileHandle(/* [in] */ ulong hFile, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [in] */ WICDecodeOptions metadataOptions, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
+        
         [PreserveSig]
-        HRESULT CreateComponentInfo([MarshalAs(UnmanagedType.LPStruct)] Guid clsidComponent, out IWICComponentInfo ppIInfo);
-
+        HRESULT CreateComponentInfo(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsidComponent, /* [out] __RPC__deref_out_opt */ out IWICComponentInfo ppIInfo);
+        
         [PreserveSig]
-        HRESULT CreateDecoder([MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, out IWICBitmapDecoder ppIDecoder);
-
+        HRESULT CreateDecoder(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
+        
         [PreserveSig]
-        HRESULT CreateEncoder([MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, [MarshalAs(UnmanagedType.LPArray, SizeConst = 1)] Guid[] pguidVendor, out IWICBitmapEncoder ppIEncoder);
-
+        HRESULT CreateEncoder(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapEncoder ppIEncoder);
+        
         [PreserveSig]
-        HRESULT CreatePalette(out IWICPalette ppIPalette);
-
+        HRESULT CreatePalette(/* [out] __RPC__deref_out_opt */ out IWICPalette ppIPalette);
+        
         [PreserveSig]
-        HRESULT CreateFormatConverter(out IWICFormatConverter ppIFormatConverter);
-
+        HRESULT CreateFormatConverter(/* [out] __RPC__deref_out_opt */ out IWICFormatConverter ppIFormatConverter);
+        
         [PreserveSig]
-        HRESULT CreateBitmapScaler(out IWICBitmapScaler ppIBitmapScaler);
-
+        HRESULT CreateBitmapScaler(/* [out] __RPC__deref_out_opt */ out IWICBitmapScaler ppIBitmapScaler);
+        
         [PreserveSig]
-        HRESULT CreateBitmapClipper(out IWICBitmapClipper ppIBitmapClipper);
-
+        HRESULT CreateBitmapClipper(/* [out] __RPC__deref_out_opt */ out IWICBitmapClipper ppIBitmapClipper);
+        
         [PreserveSig]
-        HRESULT CreateBitmapFlipRotator(out IWICBitmapFlipRotator ppIBitmapFlipRotator);
-
+        HRESULT CreateBitmapFlipRotator(/* [out] __RPC__deref_out_opt */ out IWICBitmapFlipRotator ppIBitmapFlipRotator);
+        
         [PreserveSig]
-        HRESULT CreateStream(out IWICStream ppIWICStream);
-
+        HRESULT CreateStream(/* [out] __RPC__deref_out_opt */ out IWICStream ppIWICStream);
+        
         [PreserveSig]
-        HRESULT CreateColorContext(out IWICColorContext ppIWICColorContext);
-
+        HRESULT CreateColorContext(/* [out] __RPC__deref_out_opt */ out IWICColorContext ppIWICColorContext);
+        
         [PreserveSig]
-        HRESULT CreateColorTransformer(out IWICColorTransform ppIWICColorTransform);
-
+        HRESULT CreateColorTransformer(/* [out] __RPC__deref_out_opt */ out IWICColorTransform ppIWICColorTransform);
+        
         [PreserveSig]
-        HRESULT CreateBitmap(int uiWidth, int uiHeight, [MarshalAs(UnmanagedType.LPStruct)] Guid pixelFormat, WICBitmapCreateCacheOption option, out IWICBitmap ppIBitmap);
-
+        HRESULT CreateBitmap(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid pixelFormat, /* [in] */ WICBitmapCreateCacheOption option, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        
         [PreserveSig]
-        HRESULT CreateBitmapFromSource(IWICBitmapSource pIBitmapSource, WICBitmapCreateCacheOption option, out IWICBitmap ppIBitmap);
-
+        HRESULT CreateBitmapFromSource(/* [in] __RPC__in_opt */ IWICBitmapSource pIBitmapSource, /* [in] */ WICBitmapCreateCacheOption option, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        
         [PreserveSig]
-        HRESULT CreateBitmapFromSourceRect(
-            IWICBitmapSource pIBitmapSource,
-            int x,
-            int y,
-            int width,
-            int height,
-            out IWICBitmap ppIBitmap);
-
+        HRESULT CreateBitmapFromSourceRect(/* [in] __RPC__in_opt */ IWICBitmapSource pIBitmapSource, /* [in] */ uint x, /* [in] */ uint y, /* [in] */ uint width, /* [in] */ uint height, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        
         [PreserveSig]
-        HRESULT CreateBitmapFromMemory(
-            int uiWidth,
-            int uiHeight,
-            [MarshalAs(UnmanagedType.LPStruct)] Guid pixelFormat,
-            int cbStride,
-            int cbBufferSize,
-            IntPtr pbBuffer,
-            out IWICBitmap ppIBitmap);
-
+        HRESULT CreateBitmapFromMemory(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid pixelFormat, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] pbBuffer, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        
         [PreserveSig]
-        HRESULT CreateBitmapFromHBITMAP(IntPtr hBitmap, IntPtr hPalette, WICBitmapAlphaChannelOption options, out IWICBitmap ppIBitmap);
-
+        HRESULT CreateBitmapFromHBITMAP(/* [in] __RPC__in */ IntPtr hBitmap, /* [unique][in] __RPC__in_opt */ IntPtr hPalette, /* [in] */ WICBitmapAlphaChannelOption options, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        
         [PreserveSig]
-        HRESULT CreateBitmapFromHICON(IntPtr hIcon, out IWICBitmap ppIBitmap);
-
+        HRESULT CreateBitmapFromHICON(/* [in] __RPC__in */ IntPtr hIcon, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        
         [PreserveSig]
-        HRESULT CreateComponentEnumerator(WICComponentType componentTypes, WICComponentEnumerateOptions options, out IEnumUnknown ppIEnumUnknown);
-
+        HRESULT CreateComponentEnumerator(/* [in] */ uint componentTypes, /* [in] */ uint options, /* [out] __RPC__deref_out_opt */ out IEnumUnknown ppIEnumUnknown);
+        
         [PreserveSig]
-        HRESULT CreateFastMetadataEncoderFromDecoder(IWICBitmapDecoder pIDecoder, out IWICFastMetadataEncoder ppIFastEncoder);
-
+        HRESULT CreateFastMetadataEncoderFromDecoder(/* [in] __RPC__in_opt */ IWICBitmapDecoder pIDecoder, /* [out] __RPC__deref_out_opt */ out IWICFastMetadataEncoder ppIFastEncoder);
+        
         [PreserveSig]
-        HRESULT CreateFastMetadataEncoderFromFrameDecode(IWICBitmapFrameDecode pIFrameDecoder, out IWICFastMetadataEncoder ppIFastEncoder);
-
+        HRESULT CreateFastMetadataEncoderFromFrameDecode(/* [in] __RPC__in_opt */ IWICBitmapFrameDecode pIFrameDecoder, /* [out] __RPC__deref_out_opt */ out IWICFastMetadataEncoder ppIFastEncoder);
+        
         [PreserveSig]
-        HRESULT CreateQueryWriter([MarshalAs(UnmanagedType.LPStruct)] Guid guidMetadataFormat, [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, out IWICMetadataQueryWriter ppIQueryWriter);
-
+        HRESULT CreateQueryWriter(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMetadataFormat, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [out] __RPC__deref_out_opt */ out IWICMetadataQueryWriter ppIQueryWriter);
+        
         [PreserveSig]
-        HRESULT CreateQueryWriterFromReader(IWICMetadataQueryReader pIQueryReader, [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, out IWICMetadataQueryWriter ppIQueryWriter);
+        HRESULT CreateQueryWriterFromReader(/* [in] __RPC__in_opt */ IWICMetadataQueryReader pIQueryReader, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [out] __RPC__deref_out_opt */ out IWICMetadataQueryWriter ppIQueryWriter);
     }
 }

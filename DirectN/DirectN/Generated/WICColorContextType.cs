@@ -1,9 +1,10 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(478,1)
+namespace DirectN
 {
     public enum WICColorContextType
     {
-        WICColorContextUninitialized = 0x00000000,
-        WICColorContextProfile = 0x00000001,
-        WICColorContextExifColorSpace = 0x00000002
+        WICColorContextUninitialized = 0,
+        WICColorContextProfile = 1,
+        WICColorContextExifColorSpace = 2,
     }
 }

@@ -1,16 +1,18 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(701,1)
+namespace DirectN
 {
     public enum WICBitmapDitherType
     {
-        WICBitmapDitherTypeNone = 0x00000000,
-        WICBitmapDitherTypeSolid = 0x00000000,
-        WICBitmapDitherTypeOrdered4x4 = 0x00000001,
-        WICBitmapDitherTypeOrdered8x8 = 0x00000002,
-        WICBitmapDitherTypeOrdered16x16 = 0x00000003,
-        WICBitmapDitherTypeSpiral4x4 = 0x00000004,
-        WICBitmapDitherTypeSpiral8x8 = 0x00000005,
-        WICBitmapDitherTypeDualSpiral4x4 = 0x00000006,
-        WICBitmapDitherTypeDualSpiral8x8 = 0x00000007,
-        WICBitmapDitherTypeErrorDiffusion = 0x00000008
+        WICBitmapDitherTypeNone = 0,
+        WICBitmapDitherTypeSolid = 0,
+        WICBitmapDitherTypeOrdered4x4 = 1,
+        WICBitmapDitherTypeOrdered8x8 = 2,
+        WICBitmapDitherTypeOrdered16x16 = 3,
+        WICBitmapDitherTypeSpiral4x4 = 4,
+        WICBitmapDitherTypeSpiral8x8 = 5,
+        WICBitmapDitherTypeDualSpiral4x4 = 6,
+        WICBitmapDitherTypeDualSpiral8x8 = 7,
+        WICBitmapDitherTypeErrorDiffusion = 8,
+        WICBITMAPDITHERTYPE_FORCE_DWORD = 2147483647,
     }
 }

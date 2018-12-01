@@ -1,16 +1,18 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgi1_3.h(1662,9)
+using System;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct DXGI_FRAME_STATISTICS_MEDIA
+    public partial struct DXGI_FRAME_STATISTICS_MEDIA
     {
-        public int PresentCount;
-        public int PresentRefreshCount;
-        public int SyncRefreshCount;
+        public uint PresentCount;
+        public uint PresentRefreshCount;
+        public uint SyncRefreshCount;
         public long SyncQPCTime;
         public long SyncGPUTime;
         public DXGI_FRAME_PRESENTATION_MODE CompositionMode;
-        public int ApprovedPresentDuration;
+        public uint ApprovedPresentDuration;
     }
 }

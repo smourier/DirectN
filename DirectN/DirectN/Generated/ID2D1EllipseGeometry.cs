@@ -1,56 +1,61 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(2126,1)
+using System;
 using System.Runtime.InteropServices;
-using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
-using D2D1_POINT_2F = DirectN.D2D_POINT_2F;
-using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents an ellipse.
+    /// </summary>
     [Guid("2cd906a4-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1EllipseGeometry : ID2D1Geometry
+    public partial interface ID2D1EllipseGeometry : ID2D1Geometry
     {
+        // ID2D1Resource
+        [PreserveSig]
+        new void GetFactory(/* _Outptr_ */ out ID2D1Factory factory);
+        
         // ID2D1Geometry
         [PreserveSig]
-        new HRESULT GetBounds(ref D2D1_MATRIX_3X2_F worldTransform, ref D2D1_RECT_F bounds);
-
+        new HRESULT GetBounds(/* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, /* _Out_ */ out D2D_RECT_F bounds);
+        
         [PreserveSig]
-        new HRESULT GetWidenedBounds(float strokeWidth, ID2D1StrokeStyle strokeStyle, ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, ref D2D1_RECT_F bounds);
-
+        new HRESULT GetWidenedBounds(float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _Out_ */ out D2D_RECT_F bounds);
+        
         [PreserveSig]
-        new HRESULT StrokeContainsPoint(D2D1_POINT_2F point, float strokeWidth, ID2D1StrokeStyle strokeStyle, ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, out bool contains);
-
+        new HRESULT StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _Out_ */ out bool contains);
+        
         [PreserveSig]
-        new HRESULT FillContainsPoint(D2D1_POINT_2F point, ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, out bool contains);
-
+        new HRESULT FillContainsPoint(D2D_POINT_2F point, /* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _Out_ */ out bool contains);
+        
         [PreserveSig]
-        new HRESULT CompareWithGeometry(ID2D1Geometry inputGeometry, ref D2D1_MATRIX_3X2_F inputGeometryTransform, float flatteningTolerance, out D2D1_GEOMETRY_RELATION relation);
-
+        new HRESULT CompareWithGeometry(/* _In_ */ ID2D1Geometry inputGeometry, /* _In_opt_ */ ref D2D_MATRIX_3X2_F inputGeometryTransform, float flatteningTolerance, /* _Out_ */ out D2D1_GEOMETRY_RELATION relation);
+        
         [PreserveSig]
-        new HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink geometrySink);
-
+        new HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, /* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
+        
         [PreserveSig]
-        new HRESULT Tessellate(ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, ID2D1TessellationSink tessellationSink);
-
+        new HRESULT Tessellate(/* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _In_ */ ID2D1TessellationSink tessellationSink);
+        
         [PreserveSig]
-        new HRESULT CombineWithGeometry(ID2D1Geometry inputGeometry, D2D1_COMBINE_MODE combineMode, ref D2D1_MATRIX_3X2_F inputGeometryTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink geometrySink);
-
+        new HRESULT CombineWithGeometry(/* _In_ */ ID2D1Geometry inputGeometry, D2D1_COMBINE_MODE combineMode, /* _In_opt_ */ ref D2D_MATRIX_3X2_F inputGeometryTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
+        
         [PreserveSig]
-        new HRESULT Outline(ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink geometrySink);
-
+        new HRESULT Outline(/* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
+        
         [PreserveSig]
-        new HRESULT ComputeArea(ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, out float area);
-
+        new HRESULT ComputeArea(/* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _Out_ */ out float area);
+        
         [PreserveSig]
-        new HRESULT ComputeLength(ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, out float length);
-
+        new HRESULT ComputeLength(/* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _Out_ */ out float length);
+        
         [PreserveSig]
-        new HRESULT ComputePointAtLength(float length, ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, ref D2D1_POINT_2F point, ref D2D1_POINT_2F unitTangentVector);
-
+        new HRESULT ComputePointAtLength(float length, /* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _Out_opt_ */ out D2D_POINT_2F point, /* _Out_opt_ */ out D2D_POINT_2F unitTangentVector);
+        
         [PreserveSig]
-        new HRESULT Widen(float strokeWidth, ID2D1StrokeStyle strokeStyle, ref D2D1_MATRIX_3X2_F worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink geometrySink);
-
+        new HRESULT Widen(float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
+        
         // ID2D1EllipseGeometry
         [PreserveSig]
-        void GetEllipse(ref D2D1_ELLIPSE ellipse);
+        void GetEllipse(/* _Out_ */ out D2D1_ELLIPSE ellipse);
     }
 }

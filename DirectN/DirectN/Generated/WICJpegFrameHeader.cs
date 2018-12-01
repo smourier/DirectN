@@ -1,17 +1,19 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(1065,24)
+using System;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct WICJpegFrameHeader
+    public partial struct WICJpegFrameHeader
     {
-        public int Width;
-        public int Height;
+        public uint Width;
+        public uint Height;
         public WICJpegTransferMatrix TransferMatrix;
         public WICJpegScanType ScanType;
-        public int cComponents;
-        public int ComponentIdentifiers;
-        public int SampleFactors;
-        public int QuantizationTableIndices;
+        public uint cComponents;
+        public uint ComponentIdentifiers;
+        public uint SampleFactors;
+        public uint QuantizationTableIndices;
     }
 }

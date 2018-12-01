@@ -1,59 +1,43 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(893,1)
+using System;
 using System.Runtime.InteropServices;
-using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
-using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Provides a brush that can take any effect, command list or bitmap and use it to fill a 2D shape.
+    /// </summary>
     [Guid("fe9e984d-3f95-407c-b5db-cb94d4e8f87c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1ImageBrush : ID2D1Brush
+    public partial interface ID2D1ImageBrush
     {
-        // ID2D1Resource
         [PreserveSig]
-        new void GetFactory(out ID2D1Factory factory);
-
-        // ID2D1Brush
-        [PreserveSig]
-        new void SetOpacity(float opacity);
-
-        [PreserveSig]
-        new void SetTransform(ref D2D1_MATRIX_3X2_F transform);
-
-        [PreserveSig]
-        new float GetOpacity();
-
-        [PreserveSig]
-        new void GetTransform(ref D2D1_MATRIX_3X2_F transform);
-
-        // ID2D1ImageBrush
-        [PreserveSig]
-        void SetImage(ID2D1Image image);
-
+        void SetImage(/* _In_opt_ */ ref ID2D1Image image);
+        
         [PreserveSig]
         void SetExtendModeX(D2D1_EXTEND_MODE extendModeX);
-
+        
         [PreserveSig]
         void SetExtendModeY(D2D1_EXTEND_MODE extendModeY);
-
+        
         [PreserveSig]
         void SetInterpolationMode(D2D1_INTERPOLATION_MODE interpolationMode);
-
+        
         [PreserveSig]
-        void SetSourceRectangle(ref D2D1_RECT_F sourceRectangle);
-
+        void SetSourceRectangle(/* _In_ */ ref D2D_RECT_F sourceRectangle);
+        
         [PreserveSig]
-        void GetImage(out ID2D1Image image);
-
+        void GetImage(/* _Outptr_result_maybenull_ */ out ID2D1Image image);
+        
         [PreserveSig]
         D2D1_EXTEND_MODE GetExtendModeX();
-
+        
         [PreserveSig]
         D2D1_EXTEND_MODE GetExtendModeY();
-
+        
         [PreserveSig]
         D2D1_INTERPOLATION_MODE GetInterpolationMode();
-
+        
         [PreserveSig]
-        void GetSourceRectangle(out D2D1_RECT_F sourceRectangle);
+        void GetSourceRectangle(/* _Out_ */ out D2D_RECT_F sourceRectangle);
     }
 }

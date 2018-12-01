@@ -1,0 +1,17 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxvahd.h(144,1)
+using System;
+
+namespace DirectN
+{
+    [Flags]
+    public enum _DXVAHD_FILTER_CAPS
+    {
+        DXVAHD_FILTER_CAPS_BRIGHTNESS = 0x00000001,
+        DXVAHD_FILTER_CAPS_CONTRAST = 0x00000002,
+        DXVAHD_FILTER_CAPS_HUE = 0x00000004,
+        DXVAHD_FILTER_CAPS_SATURATION = 0x00000008,
+        DXVAHD_FILTER_CAPS_NOISE_REDUCTION = 0x00000010,
+        DXVAHD_FILTER_CAPS_EDGE_ENHANCEMENT = 0x00000020,
+        DXVAHD_FILTER_CAPS_ANAMORPHIC_SCALING = 0x00000040,
+    }
+}

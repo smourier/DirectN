@@ -1,18 +1,20 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(7098,24)
+using System;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct WICRawCapabilitiesInfo
+    public partial struct WICRawCapabilitiesInfo
     {
-        public int cbSize;
-        public int CodecMajorVersion;
-        public int CodecMinorVersion;
+        public uint cbSize;
+        public uint CodecMajorVersion;
+        public uint CodecMinorVersion;
         public WICRawCapabilities ExposureCompensationSupport;
         public WICRawCapabilities ContrastSupport;
         public WICRawCapabilities RGBWhitePointSupport;
         public WICRawCapabilities NamedWhitePointSupport;
-        public int NamedWhitePointSupportMask;
+        public uint NamedWhitePointSupportMask;
         public WICRawCapabilities KelvinWhitePointSupport;
         public WICRawCapabilities GammaSupport;
         public WICRawCapabilities TintSupport;

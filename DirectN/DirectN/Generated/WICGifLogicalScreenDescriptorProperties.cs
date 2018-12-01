@@ -1,15 +1,17 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(786,1)
+namespace DirectN
 {
     public enum WICGifLogicalScreenDescriptorProperties
     {
-        WICGifLogicalScreenSignature = 0x00000001,
-        WICGifLogicalScreenDescriptorWidth = 0x00000002,
-        WICGifLogicalScreenDescriptorHeight = 0x00000003,
-        WICGifLogicalScreenDescriptorGlobalColorTableFlag = 0x00000004,
-        WICGifLogicalScreenDescriptorColorResolution = 0x00000005,
-        WICGifLogicalScreenDescriptorSortFlag = 0x00000006,
-        WICGifLogicalScreenDescriptorGlobalColorTableSize = 0x00000007,
-        WICGifLogicalScreenDescriptorBackgroundColorIndex = 0x00000008,
-        WICGifLogicalScreenDescriptorPixelAspectRatio = 0x00000009
+        WICGifLogicalScreenSignature = 1,
+        WICGifLogicalScreenDescriptorWidth = 2,
+        WICGifLogicalScreenDescriptorHeight = 3,
+        WICGifLogicalScreenDescriptorGlobalColorTableFlag = 4,
+        WICGifLogicalScreenDescriptorColorResolution = 5,
+        WICGifLogicalScreenDescriptorSortFlag = 6,
+        WICGifLogicalScreenDescriptorGlobalColorTableSize = 7,
+        WICGifLogicalScreenDescriptorBackgroundColorIndex = 8,
+        WICGifLogicalScreenDescriptorPixelAspectRatio = 9,
+        WICGifLogicalScreenDescriptorProperties_FORCE_DWORD = 2147483647,
     }
 }

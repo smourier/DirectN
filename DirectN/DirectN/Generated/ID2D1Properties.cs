@@ -1,42 +1,46 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(1024,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents a set of run-time bindable and discoverable properties that allow a data-driven application to modify the state of a Direct2D effect.
+    /// </summary>
     [Guid("483473d7-cd46-4f9d-9d3a-3112aa80159d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1Properties
+    public partial interface ID2D1Properties
     {
         [PreserveSig]
-        int GetPropertyCount();
-
+        uint GetPropertyCount();
+        
         [PreserveSig]
-        HRESULT GetPropertyName(int index, [MarshalAs(UnmanagedType.LPWStr)] string name, int nameCount);
-
+        HRESULT GetPropertyName(uint index, /* _Out_writes_(nameCount) */ [MarshalAs(UnmanagedType.LPWStr)] string name, uint nameCount);
+        
         [PreserveSig]
-        int GetPropertyNameLength(int index);
-
+        uint GetPropertyNameLength(uint index);
+        
         [PreserveSig]
-        D2D1_PROPERTY_TYPE GetType(int index);
-
+        D2D1_PROPERTY_TYPE GetType(uint index);
+        
         [PreserveSig]
-        int GetPropertyIndex([MarshalAs(UnmanagedType.LPWStr)] string name);
-
+        uint GetPropertyIndex(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name);
+        
         [PreserveSig]
-        HRESULT SetValueByName([MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, byte[] data, int dataSize);
-
+        HRESULT SetValueByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, /* _In_reads_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        
         [PreserveSig]
-        HRESULT SetValue(int index, D2D1_PROPERTY_TYPE type, byte[] data, int dataSize);
-
+        HRESULT SetValue(uint index, D2D1_PROPERTY_TYPE type, /* _In_reads_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        
         [PreserveSig]
-        HRESULT GetValueByName([MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, [In, Out] byte[] data, int dataSize);
-
+        HRESULT GetValueByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, /* _Out_writes_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        
         [PreserveSig]
-        HRESULT GetValue(int index, D2D1_PROPERTY_TYPE type, [In, Out] byte[] data, int dataSize);
-
+        HRESULT GetValue(uint index, D2D1_PROPERTY_TYPE type, /* _Out_writes_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        
         [PreserveSig]
-        int GetValueSize(int index);
-
+        uint GetValueSize(uint index);
+        
         [PreserveSig]
-        HRESULT GetSubProperties(int index, out ID2D1Properties subProperties);
+        HRESULT GetSubProperties(uint index, /* _COM_Outptr_result_maybenull_ */ out ID2D1Properties subProperties);
     }
 }

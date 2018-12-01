@@ -1,15 +1,17 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(7790,24)
+using System;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct WICDdsParameters
+    public partial struct WICDdsParameters
     {
-        public int Width;
-        public int Height;
-        public int Depth;
-        public int MipLevels;
-        public int ArraySize;
+        public uint Width;
+        public uint Height;
+        public uint Depth;
+        public uint MipLevels;
+        public uint ArraySize;
         public DXGI_FORMAT DxgiFormat;
         public WICDdsDimension Dimension;
         public WICDdsAlphaMode AlphaMode;

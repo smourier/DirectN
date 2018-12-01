@@ -1,0 +1,12 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12video.h(128,1)
+namespace DirectN
+{
+    public enum D3D12_VIDEO_FRAME_STEREO_FORMAT
+    {
+        D3D12_VIDEO_FRAME_STEREO_FORMAT_NONE = 0,
+        D3D12_VIDEO_FRAME_STEREO_FORMAT_MONO = 1,
+        D3D12_VIDEO_FRAME_STEREO_FORMAT_HORIZONTAL = 2,
+        D3D12_VIDEO_FRAME_STEREO_FORMAT_VERTICAL = 3,
+        D3D12_VIDEO_FRAME_STEREO_FORMAT_SEPARATE = 4,
+    }
+}

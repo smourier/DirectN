@@ -1,16 +1,15 @@
-﻿using System;
-
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(637,1)
 namespace DirectN
 {
-    [Flags]
     public enum WICComponentType
     {
-        WICDecoder = 0x00000001,
-        WICEncoder = 0x00000002,
-        WICPixelFormatConverter = 0x00000004,
-        WICMetadataReader = 0x00000008,
-        WICMetadataWriter = 0x00000010,
-        WICPixelFormat = 0x00000020,
-        WICAllComponents = 0x0000003F
+        WICDecoder = 1,
+        WICEncoder = 2,
+        WICPixelFormatConverter = 4,
+        WICMetadataReader = 8,
+        WICMetadataWriter = 16,
+        WICPixelFormat = 32,
+        WICAllComponents = 63,
+        WICCOMPONENTTYPE_FORCE_DWORD = 2147483647,
     }
 }

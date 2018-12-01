@@ -1,11 +1,9 @@
-﻿using System;
-
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgi1_4.h(85,1)
 namespace DirectN
 {
-    [Flags]
     public enum DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG
     {
-        DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 0x1,
-        DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_OVERLAY_PRESENT = 0x2
+        DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 1,
+        DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_OVERLAY_PRESENT = 2,
     }
 }

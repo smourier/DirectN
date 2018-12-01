@@ -1,122 +1,121 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxgidebug.h(172,5)
+using System;
 using System.Runtime.InteropServices;
-using DXGI_DEBUG_ID = System.Guid;
-using DXGI_INFO_QUEUE_MESSAGE_ID = System.Int32;
 
 namespace DirectN
 {
-    [Guid("D67441C7-672A-476f-9E82-CD55B44949CE"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDXGIInfoQueue
+    [Guid("d67441c7-672a-476f-9e82-cd55b44949ce"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IDXGIInfoQueue
     {
         [PreserveSig]
-        HRESULT SetMessageCountLimit(DXGI_DEBUG_ID Producer, ulong MessageCountLimit);
-
+        HRESULT SetMessageCountLimit(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ ulong MessageCountLimit);
+        
         [PreserveSig]
-        void ClearStoredMessages(DXGI_DEBUG_ID Producer);
-
+        void ClearStoredMessages(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT GetMessage(DXGI_DEBUG_ID Producer, ulong MessageIndex, out DXGI_INFO_QUEUE_MESSAGE pMessage, ref IntPtr pMessageByteLength);
-
+        HRESULT GetMessageA(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ ulong MessageIndex, /* [annotation] _Out_writes_bytes_opt_(*pMessageByteLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] DXGI_INFO_QUEUE_MESSAGE[] pMessage, /* [annotation] _Inout_ */ ref ulong pMessageByteLength);
+        
         [PreserveSig]
-        ulong GetNumStoredMessagesAllowedByRetrievalFilters(DXGI_DEBUG_ID Producer);
-
+        ulong GetNumStoredMessagesAllowedByRetrievalFilters(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        ulong GetNumStoredMessages(DXGI_DEBUG_ID Producer);
-
+        ulong GetNumStoredMessages(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        ulong GetNumMessagesDiscardedByMessageCountLimit(DXGI_DEBUG_ID Producer);
-
+        ulong GetNumMessagesDiscardedByMessageCountLimit(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        ulong GetMessageCountLimit(DXGI_DEBUG_ID Producer);
-
+        ulong GetMessageCountLimit(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        ulong GetNumMessagesAllowedByStorageFilter(DXGI_DEBUG_ID Producer);
-
+        ulong GetNumMessagesAllowedByStorageFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        ulong GetNumMessagesDeniedByStorageFilter(DXGI_DEBUG_ID Producer);
-
+        ulong GetNumMessagesDeniedByStorageFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT AddStorageFilterEntries(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_FILTER[] pFilter);
-
+        HRESULT AddStorageFilterEntries(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ ref DXGI_INFO_QUEUE_FILTER pFilter);
+        
         [PreserveSig]
-        HRESULT GetStorageFilter(DXGI_DEBUG_ID Producer, out IntPtr pFilter, ref IntPtr pFilterByteLength);
-
+        HRESULT GetStorageFilter(/* [annotation] _In_ */ Guid Producer, /* [annotation] _Out_writes_bytes_opt_(*pFilterByteLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_INFO_QUEUE_FILTER[] pFilter, /* [annotation] _Inout_ */ ref ulong pFilterByteLength);
+        
         [PreserveSig]
-        void ClearStorageFilter(DXGI_DEBUG_ID Producer);
-
+        void ClearStorageFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT PushEmptyStorageFilter(DXGI_DEBUG_ID Producer);
-
+        HRESULT PushEmptyStorageFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT PushDenyAllStorageFilter(DXGI_DEBUG_ID Producer);
-
+        HRESULT PushDenyAllStorageFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT PushCopyOfStorageFilter(DXGI_DEBUG_ID Producer);
-
+        HRESULT PushCopyOfStorageFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT PushStorageFilter(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_FILTER[] pFilter);
-
+        HRESULT PushStorageFilter(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ ref DXGI_INFO_QUEUE_FILTER pFilter);
+        
         [PreserveSig]
-        void PopStorageFilter(DXGI_DEBUG_ID Producer);
-
+        void PopStorageFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        uint GetStorageFilterStackSize(DXGI_DEBUG_ID Producer);
-
+        uint GetStorageFilterStackSize(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT AddRetrievalFilterEntries(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_FILTER[] pFilter);
-
+        HRESULT AddRetrievalFilterEntries(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ ref DXGI_INFO_QUEUE_FILTER pFilter);
+        
         [PreserveSig]
-        HRESULT GetRetrievalFilter(DXGI_DEBUG_ID Producer, out IntPtr pFilter, ref IntPtr pFilterByteLength);
-
+        HRESULT GetRetrievalFilter(/* [annotation] _In_ */ Guid Producer, /* [annotation] _Out_writes_bytes_opt_(*pFilterByteLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_INFO_QUEUE_FILTER[] pFilter, /* [annotation] _Inout_ */ ref ulong pFilterByteLength);
+        
         [PreserveSig]
-        void ClearRetrievalFilter(DXGI_DEBUG_ID Producer);
-
+        void ClearRetrievalFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT PushEmptyRetrievalFilter(DXGI_DEBUG_ID Producer);
-
+        HRESULT PushEmptyRetrievalFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT PushDenyAllRetrievalFilter(DXGI_DEBUG_ID Producer);
-
+        HRESULT PushDenyAllRetrievalFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT PushCopyOfRetrievalFilter(DXGI_DEBUG_ID Producer);
-
+        HRESULT PushCopyOfRetrievalFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT PushRetrievalFilter(DXGI_DEBUG_ID Producer, ref DXGI_INFO_QUEUE_FILTER pFilter);
-
+        HRESULT PushRetrievalFilter(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ ref DXGI_INFO_QUEUE_FILTER pFilter);
+        
         [PreserveSig]
-        void PopRetrievalFilter(DXGI_DEBUG_ID Producer);
-
+        void PopRetrievalFilter(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        uint GetRetrievalFilterStackSize(DXGI_DEBUG_ID Producer);
-
+        uint GetRetrievalFilterStackSize(/* [annotation] _In_ */ Guid Producer);
+        
         [PreserveSig]
-        HRESULT AddMessage(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, DXGI_INFO_QUEUE_MESSAGE_ID ID, [MarshalAs(UnmanagedType.LPWStr)] string pDescription);
-
+        HRESULT AddMessage(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, /* [annotation] _In_ */ DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, /* [annotation] _In_ */ int ID, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pDescription);
+        
         [PreserveSig]
-        HRESULT AddApplicationMessage(DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, [MarshalAs(UnmanagedType.LPWStr)] string pDescription);
-
+        HRESULT AddApplicationMessage(/* [annotation] _In_ */ DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pDescription);
+        
         [PreserveSig]
-        HRESULT SetBreakOnCategory(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, bool bEnable);
-
+        HRESULT SetBreakOnCategory(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, /* [annotation] _In_ */ bool bEnable);
+        
         [PreserveSig]
-        HRESULT SetBreakOnSeverity(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, bool bEnable);
-
+        HRESULT SetBreakOnSeverity(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, /* [annotation] _In_ */ bool bEnable);
+        
         [PreserveSig]
-        HRESULT SetBreakOnID(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_MESSAGE_ID ID, bool bEnable);
-
+        HRESULT SetBreakOnID(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ int ID, /* [annotation] _In_ */ bool bEnable);
+        
         [PreserveSig]
-        bool GetBreakOnCategory(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category);
-
+        bool GetBreakOnCategory(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category);
+        
         [PreserveSig]
-        bool GetBreakOnSeverity(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity);
-
+        bool GetBreakOnSeverity(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity);
+        
         [PreserveSig]
-        bool GetBreakOnID(DXGI_DEBUG_ID Producer, DXGI_INFO_QUEUE_MESSAGE_ID ID);
-
+        bool GetBreakOnID(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ int ID);
+        
         [PreserveSig]
-        void SetMuteDebugOutput(DXGI_DEBUG_ID Producer, bool bMute);
-
+        void SetMuteDebugOutput(/* [annotation] _In_ */ Guid Producer, /* [annotation] _In_ */ bool bMute);
+        
         [PreserveSig]
-        bool GetMuteDebugOutput(DXGI_DEBUG_ID Producer);
+        bool GetMuteDebugOutput(/* [annotation] _In_ */ Guid Producer);
     }
 }

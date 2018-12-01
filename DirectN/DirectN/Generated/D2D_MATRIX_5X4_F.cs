@@ -1,14 +1,14 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dcommon.h(371,9)
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents a 5-by-4 matrix.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct D2D_MATRIX_5X4_F
+    public partial struct D2D_MATRIX_5X4_F
     {
-        public float _11, _12, _13, _14;
-        public float _21, _22, _23, _24;
-        public float _31, _32, _33, _34;
-        public float _41, _42, _43, _44;
-        public float _51, _52, _53, _54;
+        public D2D_MATRIX_5X4_F__union_0 __union_0;
     }
 }

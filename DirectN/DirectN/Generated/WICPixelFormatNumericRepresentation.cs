@@ -1,12 +1,14 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(993,1)
+namespace DirectN
 {
     public enum WICPixelFormatNumericRepresentation
     {
-        WICPixelFormatNumericRepresentationUnspecified = 0x00000000,
-        WICPixelFormatNumericRepresentationIndexed = 0x00000001,
-        WICPixelFormatNumericRepresentationUnsignedInteger = 0x00000002,
-        WICPixelFormatNumericRepresentationSignedInteger = 0x00000003,
-        WICPixelFormatNumericRepresentationFixed = 0x00000004,
-        WICPixelFormatNumericRepresentationFloat = 0x00000005
+        WICPixelFormatNumericRepresentationUnspecified = 0,
+        WICPixelFormatNumericRepresentationIndexed = 1,
+        WICPixelFormatNumericRepresentationUnsignedInteger = 2,
+        WICPixelFormatNumericRepresentationSignedInteger = 3,
+        WICPixelFormatNumericRepresentationFixed = 4,
+        WICPixelFormatNumericRepresentationFloat = 5,
+        WICPixelFormatNumericRepresentation_FORCE_DWORD = 2147483647,
     }
 }

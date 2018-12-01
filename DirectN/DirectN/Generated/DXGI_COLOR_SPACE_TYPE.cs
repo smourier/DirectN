@@ -1,4 +1,5 @@
-﻿namespace DirectN
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgicommon.h(25,9)
+namespace DirectN
 {
     public enum DXGI_COLOR_SPACE_TYPE
     {
@@ -27,6 +28,6 @@
         DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_LEFT_P709 = 22,
         DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_LEFT_P2020 = 23,
         DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_TOPLEFT_P2020 = 24,
-        DXGI_COLOR_SPACE_CUSTOM = unchecked((int)0xFFFFFFFF)
+        DXGI_COLOR_SPACE_CUSTOM = -1,
     }
 }

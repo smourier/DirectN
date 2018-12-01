@@ -1,35 +1,13 @@
-﻿using System.Runtime.InteropServices;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d11_3.h(876,9)
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public struct D3D11_SHADER_RESOURCE_VIEW_DESC1
+    [StructLayout(LayoutKind.Sequential)]
+    public partial struct D3D11_SHADER_RESOURCE_VIEW_DESC1
     {
-        [FieldOffset(0)]
         public DXGI_FORMAT Format;
-        [FieldOffset(4)]
-        public D3D11_SRV_DIMENSION ViewDimension;
-        [FieldOffset(8)]
-        public D3D11_BUFFER_SRV Buffer;
-        [FieldOffset(8)]
-        public D3D11_TEX1D_SRV Texture1D;
-        [FieldOffset(8)]
-        public D3D11_TEX1D_ARRAY_SRV Texture1DArray;
-        [FieldOffset(8)]
-        public D3D11_TEX2D_SRV1 Texture2D;
-        [FieldOffset(8)]
-        public D3D11_TEX2D_ARRAY_SRV1 Texture2DArray;
-        [FieldOffset(8)]
-        public D3D11_TEX2DMS_SRV Texture2DMS;
-        [FieldOffset(8)]
-        public D3D11_TEX2DMS_ARRAY_SRV Texture2DMSArray;
-        [FieldOffset(8)]
-        public D3D11_TEX3D_SRV Texture3D;
-        [FieldOffset(8)]
-        public D3D11_TEXCUBE_SRV TextureCube;
-        [FieldOffset(8)]
-        public D3D11_TEXCUBE_ARRAY_SRV TextureCubeArray;
-        [FieldOffset(8)]
-        public D3D11_BUFFEREX_SRV BufferEx;
+        public D3D_SRV_DIMENSION ViewDimension;
+        public D3D11_SHADER_RESOURCE_VIEW_DESC1__union_0 __union_2;
     }
 }

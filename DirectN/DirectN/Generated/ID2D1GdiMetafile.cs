@@ -1,12 +1,19 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(690,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("82237326-8111-4f7c-bcf4-b5c1175564fe"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface ID2D1GdiMetafile
+    /// <summary>
+    /// Interface encapsulating a GDI/GDI+ metafile.
+    /// </summary>
+    [Guid("2f543dc3-cfc1-4211-864f-cfd91c6f3395"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface ID2D1GdiMetafile
     {
         [PreserveSig]
-        HRESULT ProcessRecord(int recordType, IntPtr recordData, int recordDataSize);
+        HRESULT Stream(/* _In_ */ ID2D1GdiMetafileSink sink);
+        
+        [PreserveSig]
+        HRESULT GetBounds(/* _Out_ */ out D2D_RECT_F bounds);
     }
 }

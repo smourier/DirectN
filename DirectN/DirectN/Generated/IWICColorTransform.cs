@@ -1,33 +1,30 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(2481,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("B66F034F-D0E2-40ab-B436-6DE39E321A94"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IWICColorTransform : IWICBitmapSource
+    [Guid("b66f034f-d0e2-40ab-b436-6de39e321a94"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IWICColorTransform : IWICBitmapSource
     {
         // IWICBitmapSource
         [PreserveSig]
-        new HRESULT GetSize(out int puiWidth, out int puiHeight);
-
+        new HRESULT GetSize(/* [out] __RPC__out */ out uint puiWidth, /* [out] __RPC__out */ out uint puiHeight);
+        
         [PreserveSig]
-        new HRESULT GetPixelFormat(out Guid pPixelFormat);
-
+        new HRESULT GetPixelFormat(/* [out] __RPC__out */ out Guid pPixelFormat);
+        
         [PreserveSig]
-        new HRESULT GetResolution(out double pDpiX, out double pDpiY);
-
+        new HRESULT GetResolution(/* [out] __RPC__out */ out double pDpiX, /* [out] __RPC__out */ out double pDpiY);
+        
         [PreserveSig]
-        new HRESULT CopyPalette(IWICPalette pIPalette);
-
+        new HRESULT CopyPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);
+        
         [PreserveSig]
-        new HRESULT CopyPixels(WICRect prc, int cbStride, int cbBufferSize, IntPtr pbBuffer);
-
+        new HRESULT CopyPixels(/* [unique][in] __RPC__in_opt */ ref WICRect prc, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbBuffer);
+        
         // IWICColorTransform
         [PreserveSig]
-        HRESULT Initialize(
-            IWICBitmapSource pIBitmapSource,
-            IWICColorContext pIContextSource,
-            IWICColorContext pIContextDest,
-            [MarshalAs(UnmanagedType.LPStruct)] Guid pixelFmtDest);
+        HRESULT Initialize(/* [in] __RPC__in_opt */ IWICBitmapSource pIBitmapSource, /* [in] __RPC__in_opt */ IWICColorContext pIContextSource, /* [in] __RPC__in_opt */ IWICColorContext pIContextDest, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid pixelFmtDest);
     }
 }

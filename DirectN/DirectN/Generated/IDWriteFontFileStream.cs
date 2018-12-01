@@ -1,21 +1,25 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(752,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The interface for loading font file data.
+    /// </summary>
     [Guid("6d4865fe-0ab8-4d91-8f62-5dd6be34a3e0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDWriteFontFileStream
+    public partial interface IDWriteFontFileStream
     {
         [PreserveSig]
-        HRESULT ReadFileFragment(out int fragmentStart, long fileOffset, long fragmentSize, out IntPtr fragmentContext);
-
+        HRESULT ReadFileFragment(/* _Outptr_result_bytebuffer_(fragmentSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object fragmentStart, ulong fileOffset, ulong fragmentSize, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object fragmentContext);
+        
         [PreserveSig]
-        void ReleaseFileFragment(IntPtr fragmentContext);
-
+        void ReleaseFileFragment(ref IntPtr fragmentContext);
+        
         [PreserveSig]
-        HRESULT GetFileSize(out long fileSize);
-
+        HRESULT GetFileSize(/* _Out_ */ out ulong fileSize);
+        
         [PreserveSig]
-        HRESULT GetLastWriteTime(out long lastWriteTime);
+        HRESULT GetLastWriteTime(/* _Out_ */ out ulong lastWriteTime);
     }
 }

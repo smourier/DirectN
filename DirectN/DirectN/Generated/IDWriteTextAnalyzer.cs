@@ -1,0 +1,34 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(2734,1)
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    /// <summary>
+    /// Analyzes various text properties for complex script processing.
+    /// </summary>
+    [Guid("b7e6163e-7f46-43b4-84b3-e4e6249c365d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IDWriteTextAnalyzer
+    {
+        [PreserveSig]
+        HRESULT AnalyzeScript(/* _In_ */ IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, /* _In_ */ IDWriteTextAnalysisSink analysisSink);
+        
+        [PreserveSig]
+        HRESULT AnalyzeBidi(/* _In_ */ IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, /* _In_ */ IDWriteTextAnalysisSink analysisSink);
+        
+        [PreserveSig]
+        HRESULT AnalyzeNumberSubstitution(/* _In_ */ IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, /* _In_ */ IDWriteTextAnalysisSink analysisSink);
+        
+        [PreserveSig]
+        HRESULT AnalyzeLineBreakpoints(/* _In_ */ IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, /* _In_ */ IDWriteTextAnalysisSink analysisSink);
+        
+        [PreserveSig]
+        HRESULT GetGlyphs(/* _In_reads_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] textString, uint textLength, /* _In_ */ IDWriteFontFace fontFace, bool isSideways, bool isRightToLeft, /* _In_ */ ref DWRITE_SCRIPT_ANALYSIS scriptAnalysis, /* _In_opt_z_ */ ref char localeName, /* _In_opt_ */ IDWriteNumberSubstitution numberSubstitution, /* _In_reads_opt_(featureRanges) */ out DWRITE_TYPOGRAPHIC_FEATURES[] features, /* _In_reads_opt_(featureRanges) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 10)] uint[] featureRangeLengths, uint featureRanges, uint maxGlyphCount, /* _Out_writes_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] clusterMap, /* _Out_writes_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_SHAPING_TEXT_PROPERTIES[] textProps, /* _Out_writes_(maxGlyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 11)] ushort[] glyphIndices, /* _Out_writes_(maxGlyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 11)] DWRITE_SHAPING_GLYPH_PROPERTIES[] glyphProps, /* _Out_ */ out uint actualGlyphCount);
+        
+        [PreserveSig]
+        HRESULT GetGlyphPlacements(/* _In_reads_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] char[] textString, /* _In_reads_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] ushort[] clusterMap, /* _Inout_updates_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] DWRITE_SHAPING_TEXT_PROPERTIES[] textProps, uint textLength, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] ushort[] glyphIndices, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] DWRITE_SHAPING_GLYPH_PROPERTIES[] glyphProps, uint glyphCount, /* _In_ */ IDWriteFontFace fontFace, float fontEmSize, bool isSideways, bool isRightToLeft, /* _In_ */ ref DWRITE_SCRIPT_ANALYSIS scriptAnalysis, /* _In_opt_z_ */ ref char localeName, /* _In_reads_opt_(featureRanges) */ out DWRITE_TYPOGRAPHIC_FEATURES[] features, /* _In_reads_opt_(featureRanges) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 15)] uint[] featureRangeLengths, uint featureRanges, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] float[] glyphAdvances, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] DWRITE_GLYPH_OFFSET[] glyphOffsets);
+        
+        [PreserveSig]
+        HRESULT GetGdiCompatibleGlyphPlacements(/* _In_reads_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] char[] textString, /* _In_reads_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] ushort[] clusterMap, /* _In_reads_(textLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] DWRITE_SHAPING_TEXT_PROPERTIES[] textProps, uint textLength, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] ushort[] glyphIndices, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] DWRITE_SHAPING_GLYPH_PROPERTIES[] glyphProps, uint glyphCount, /* _In_ */ IDWriteFontFace fontFace, float fontEmSize, float pixelsPerDip, /* _In_opt_ */ ref DWRITE_MATRIX transform, bool useGdiNatural, bool isSideways, bool isRightToLeft, /* _In_ */ ref DWRITE_SCRIPT_ANALYSIS scriptAnalysis, /* _In_opt_z_ */ ref char localeName, /* _In_reads_opt_(featureRanges) */ out DWRITE_TYPOGRAPHIC_FEATURES[] features, /* _In_reads_opt_(featureRanges) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 18)] uint[] featureRangeLengths, uint featureRanges, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] float[] glyphAdvances, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] DWRITE_GLYPH_OFFSET[] glyphOffsets);
+    }
+}

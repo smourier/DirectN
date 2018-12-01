@@ -1,20 +1,19 @@
-﻿using System;
-
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(7063,1)
 namespace DirectN
 {
-    [Flags]
     public enum WICNamedWhitePoint
     {
-        WICWhitePointDefault = 0x00000001,
-        WICWhitePointDaylight = 0x00000002,
-        WICWhitePointCloudy = 0x00000004,
-        WICWhitePointShade = 0x00000008,
-        WICWhitePointTungsten = 0x00000010,
-        WICWhitePointFluorescent = 0x00000020,
-        WICWhitePointFlash = 0x00000040,
-        WICWhitePointUnderwater = 0x00000080,
-        WICWhitePointCustom = 0x00000100,
-        WICWhitePointAutoWhiteBalance = 0x00000200,
-        WICWhitePointAsShot = WICWhitePointDefault
+        WICWhitePointDefault = 1,
+        WICWhitePointDaylight = 2,
+        WICWhitePointCloudy = 4,
+        WICWhitePointShade = 8,
+        WICWhitePointTungsten = 16,
+        WICWhitePointFluorescent = 32,
+        WICWhitePointFlash = 64,
+        WICWhitePointUnderwater = 128,
+        WICWhitePointCustom = 256,
+        WICWhitePointAutoWhiteBalance = 512,
+        WICWhitePointAsShot = 1,
+        WICNAMEDWHITEPOINT_FORCE_DWORD = 2147483647,
     }
 }

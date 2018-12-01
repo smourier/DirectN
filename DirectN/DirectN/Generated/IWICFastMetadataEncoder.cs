@@ -1,15 +1,16 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(2608,5)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("B84E2C09-78C9-4AC4-8BD3-524AE1663A2F"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IWICFastMetadataEncoder
+    [Guid("b84e2c09-78c9-4ac4-8bd3-524ae1663a2f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IWICFastMetadataEncoder
     {
         [PreserveSig]
         HRESULT Commit();
-
+        
         [PreserveSig]
-        HRESULT GetMetadataQueryWriter(out IWICMetadataQueryWriter ppIMetadataQueryWriter);
+        HRESULT GetMetadataQueryWriter(/* [out] __RPC__deref_out_opt */ out IWICMetadataQueryWriter ppIMetadataQueryWriter);
     }
 }

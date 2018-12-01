@@ -1,14 +1,13 @@
-﻿using System;
-
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(746,1)
 namespace DirectN
 {
-    [Flags]
     public enum WICBitmapDecoderCapabilities
     {
-        WICBitmapDecoderCapabilitySameEncoder = 0x00000001,
-        WICBitmapDecoderCapabilityCanDecodeAllImages = 0x00000002,
-        WICBitmapDecoderCapabilityCanDecodeSomeImages = 0x00000004,
-        WICBitmapDecoderCapabilityCanEnumerateMetadata = 0x00000008,
-        WICBitmapDecoderCapabilityCanDecodeThumbnail = 0x00000010
+        WICBitmapDecoderCapabilitySameEncoder = 1,
+        WICBitmapDecoderCapabilityCanDecodeAllImages = 2,
+        WICBitmapDecoderCapabilityCanDecodeSomeImages = 4,
+        WICBitmapDecoderCapabilityCanEnumerateMetadata = 8,
+        WICBitmapDecoderCapabilityCanDecodeThumbnail = 16,
+        WICBITMAPDECODERCAPABILITIES_FORCE_DWORD = 2147483647,
     }
 }

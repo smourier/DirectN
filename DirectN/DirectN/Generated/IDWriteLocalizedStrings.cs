@@ -1,27 +1,31 @@
-﻿using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(1367,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents a collection of strings indexed by locale name.
+    /// </summary>
     [Guid("08256209-099a-4b34-b86d-c22b110e7771"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public interface IDWriteLocalizedStrings
+    public partial interface IDWriteLocalizedStrings
     {
         [PreserveSig]
-        int GetCount();
-
+        uint GetCount();
+        
         [PreserveSig]
-        HRESULT FindLocaleName([MarshalAs(UnmanagedType.LPWStr)] string localeName, out int index, out bool exists);
-
+        HRESULT FindLocaleName(/* _In_z_ */ ref char localeName, /* _Out_ */ out uint index, /* _Out_ */ out bool exists);
+        
         [PreserveSig]
-        HRESULT GetLocaleNameLength(int index, out int length);
-
+        HRESULT GetLocaleNameLength(uint index, /* _Out_ */ out uint length);
+        
         [PreserveSig]
-        HRESULT GetLocaleName(int index, [MarshalAs(UnmanagedType.LPWStr)] string localeName, int size);
-
+        HRESULT GetLocaleName(uint index, /* _Out_writes_z_(size) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] localeName, uint size);
+        
         [PreserveSig]
-        HRESULT GetStringLength(int index, out int length);
-
+        HRESULT GetStringLength(uint index, /* _Out_ */ out uint length);
+        
         [PreserveSig]
-        HRESULT GetString(int index, [MarshalAs(UnmanagedType.LPWStr)] string stringBuffer, int size);
+        HRESULT GetString(uint index, /* _Out_writes_z_(size) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] stringBuffer, uint size);
     }
 }
