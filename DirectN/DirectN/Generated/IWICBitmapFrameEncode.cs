@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface IWICBitmapFrameEncode
     {
         [PreserveSig]
-        HRESULT Initialize(/* [unique][in] __RPC__in_opt */ IPropertyBag2 pIEncoderOptions);
+        HRESULT Initialize(/* optional(IPropertyBag2) */ IntPtr pIEncoderOptions);
         
         [PreserveSig]
         HRESULT SetSize(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight);

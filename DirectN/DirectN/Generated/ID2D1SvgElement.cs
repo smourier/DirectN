@@ -8,8 +8,13 @@ namespace DirectN
     /// Interface for all SVG elements.
     /// </summary>
     [Guid("ac7b67a6-183e-49c1-a823-0ebe40b0db29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface ID2D1SvgElement
+    public partial interface ID2D1SvgElement : ID2D1Resource
     {
+        // ID2D1Resource
+        [PreserveSig]
+        new void GetFactory(/* _Outptr_ */ out ID2D1Factory factory);
+        
+        // ID2D1SvgElement
         [PreserveSig]
         void GetDocument(/* _Outptr_result_maybenull_ */ out ID2D1SvgDocument document);
         

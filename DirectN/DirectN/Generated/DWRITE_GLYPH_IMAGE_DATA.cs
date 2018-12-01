@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using D2D1_POINT_2L = DirectN.tagPOINT;
-using D2D1_SIZE_U = DirectN.D2D_SIZE_U;
 
 namespace DirectN
 {
@@ -31,7 +30,7 @@ namespace DirectN
         /// <summary>
         /// Size of image when the format is pixel data.
         /// </summary>
-        public D2D1_SIZE_U pixelSize;
+        public D2D_SIZE_U pixelSize;
         /// <summary>
         /// Left origin along the horizontal Roman baseline.
         /// </summary>

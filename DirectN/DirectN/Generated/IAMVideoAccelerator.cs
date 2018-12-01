@@ -7,7 +7,6 @@ using AMVAEndFrameInfo = DirectN._tag_AMVAEndFrameInfo;
 using AMVAUncompDataInfo = DirectN._tag_AMVAUncompDataInfo;
 using LPAMVACompBufferInfo = DirectN._tag_AMVACompBufferInfo;
 using LPAMVAInternalMemInfo = DirectN._tag_AMVAInternalMemInfo;
-using LPDDPIXELFORMAT = DirectN._DDPIXELFORMAT;
 
 namespace DirectN
 {
@@ -18,7 +17,7 @@ namespace DirectN
         HRESULT GetVideoAcceleratorGUIDs(/* [annotation][out][in] _Inout_ */ ref uint pdwNumGuidsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumGuidsSupported, *pdwNumGuidsSupported) */ out Guid pGuidsSupported);
         
         [PreserveSig]
-        HRESULT GetUncompFormatsSupported(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ ref uint pdwNumFormatsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumFormatsSupported, *pdwNumFormatsSupported) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] LPDDPIXELFORMAT[] pFormatsSupported);
+        HRESULT GetUncompFormatsSupported(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ ref uint pdwNumFormatsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumFormatsSupported, *pdwNumFormatsSupported) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _DDPIXELFORMAT[] pFormatsSupported);
         
         [PreserveSig]
         HRESULT GetInternalMemInfo(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [in] */ ref AMVAUncompDataInfo pamvaUncompDataInfo, /* [annotation][out][in] _Inout_ */ ref LPAMVAInternalMemInfo pamvaInternalMemInfo);

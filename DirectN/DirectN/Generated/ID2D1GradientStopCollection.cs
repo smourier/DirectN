@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents an collection of gradient stops that can then be the source resource for either a linear or radial gradient brush.
-    /// </summary>
     [Guid("2cd906a7-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1GradientStopCollection : ID2D1Resource
     {

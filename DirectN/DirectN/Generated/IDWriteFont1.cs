@@ -8,8 +8,43 @@ namespace DirectN
     /// The IDWriteFont interface represents a physical font in a font collection.
     /// </summary>
     [Guid("acd16696-8c14-4f5d-877e-fe3fc1d32738"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface IDWriteFont1
+    public partial interface IDWriteFont1 : IDWriteFont
     {
+        // IDWriteFont
+        [PreserveSig]
+        new HRESULT GetFontFamily(/* _COM_Outptr_ */ out IDWriteFontFamily fontFamily);
+        
+        [PreserveSig]
+        new DWRITE_FONT_WEIGHT GetWeight();
+        
+        [PreserveSig]
+        new DWRITE_FONT_STRETCH GetStretch();
+        
+        [PreserveSig]
+        new DWRITE_FONT_STYLE GetStyle();
+        
+        [PreserveSig]
+        new bool IsSymbolFont();
+        
+        [PreserveSig]
+        new HRESULT GetFaceNames(/* _COM_Outptr_ */ out IDWriteLocalizedStrings names);
+        
+        [PreserveSig]
+        new HRESULT GetInformationalStrings(DWRITE_INFORMATIONAL_STRING_ID informationalStringID, /* _COM_Outptr_result_maybenull_ */ out IDWriteLocalizedStrings informationalStrings, /* _Out_ */ out bool exists);
+        
+        [PreserveSig]
+        new DWRITE_FONT_SIMULATIONS GetSimulations();
+        
+        [PreserveSig]
+        new void GetMetrics(/* _Out_ */ out DWRITE_FONT_METRICS fontMetrics);
+        
+        [PreserveSig]
+        new HRESULT HasCharacter(uint unicodeValue, /* _Out_ */ out bool exists);
+        
+        [PreserveSig]
+        new HRESULT CreateFontFace(/* _COM_Outptr_ */ out IDWriteFontFace fontFace);
+        
+        // IDWriteFont1
         [PreserveSig]
         void GetMetrics(/* _Out_ */ out DWRITE_FONT_METRICS1 fontMetrics);
         

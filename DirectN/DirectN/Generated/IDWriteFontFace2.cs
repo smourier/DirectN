@@ -1,15 +1,97 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_2.h(673,1)
 using System;
 using System.Runtime.InteropServices;
+using IDWriteGeometrySink = DirectN.ID2D1SimplifiedGeometrySink;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The interface that represents an absolute reference to a font face. It contains font face type, appropriate file references and face identification data. Various font data such as metrics, names and glyph outlines is obtained from IDWriteFontFace.
-    /// </summary>
     [Guid("d8b768ff-64bc-4e66-982b-ec8e87f693f7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface IDWriteFontFace2
+    public partial interface IDWriteFontFace2 : IDWriteFontFace1
     {
+        // IDWriteFontFace
+        [PreserveSig]
+        new DWRITE_FONT_FACE_TYPE GetType();
+        
+        [PreserveSig]
+        new HRESULT GetFiles(/* _Inout_ */ ref uint numberOfFiles, /* optional(IDWriteFontFile) */ out IntPtr fontFiles);
+        
+        [PreserveSig]
+        new uint GetIndex();
+        
+        [PreserveSig]
+        new DWRITE_FONT_SIMULATIONS GetSimulations();
+        
+        [PreserveSig]
+        new bool IsSymbolFont();
+        
+        [PreserveSig]
+        new void GetMetrics(/* _Out_ */ out DWRITE_FONT_METRICS fontFaceMetrics);
+        
+        [PreserveSig]
+        new ushort GetGlyphCount();
+        
+        [PreserveSig]
+        new HRESULT GetDesignGlyphMetrics(/* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_GLYPH_METRICS[] glyphMetrics, bool isSideways);
+        
+        [PreserveSig]
+        new HRESULT GetGlyphIndicesA(/* _In_reads_(codePointCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] codePoints, uint codePointCount, /* _Out_writes_(codePointCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices);
+        
+        [PreserveSig]
+        new HRESULT TryGetFontTable(/* _In_ */ uint openTypeTableTag, /* _Outptr_result_bytebuffer_(*tableSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object tableData, /* _Out_ */ out uint tableSize, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object tableContext, /* _Out_ */ out bool exists);
+        
+        [PreserveSig]
+        new void ReleaseFontTable(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object tableContext);
+        
+        [PreserveSig]
+        new HRESULT GetGlyphRunOutline(float emSize, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] ushort[] glyphIndices, /* _In_reads_opt_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] float[] glyphAdvances, /* _In_reads_opt_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] DWRITE_GLYPH_OFFSET[] glyphOffsets, uint glyphCount, bool isSideways, bool isRightToLeft, /* _In_ */ ref IDWriteGeometrySink geometrySink);
+        
+        [PreserveSig]
+        new HRESULT GetRecommendedRenderingMode(float emSize, float pixelsPerDip, DWRITE_MEASURING_MODE measuringMode, IDWriteRenderingParams renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode);
+        
+        [PreserveSig]
+        new HRESULT GetGdiCompatibleMetrics(float emSize, float pixelsPerDip, /* optional(DWRITE_MATRIX) */ IntPtr transform, /* _Out_ */ out DWRITE_FONT_METRICS fontFaceMetrics);
+        
+        [PreserveSig]
+        new HRESULT GetGdiCompatibleGlyphMetrics(float emSize, float pixelsPerDip, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool useGdiNatural, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] ushort[] glyphIndices, uint glyphCount, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DWRITE_GLYPH_METRICS[] glyphMetrics, bool isSideways);
+        
+        // IDWriteFontFace1
+        [PreserveSig]
+        new void GetMetrics(/* _Out_ */ out DWRITE_FONT_METRICS1 fontMetrics);
+        
+        [PreserveSig]
+        new HRESULT GetGdiCompatibleMetrics(float emSize, float pixelsPerDip, /* optional(DWRITE_MATRIX) */ IntPtr transform, /* _Out_ */ out DWRITE_FONT_METRICS1 fontMetrics);
+        
+        [PreserveSig]
+        new void GetCaretMetrics(/* _Out_ */ out DWRITE_CARET_METRICS caretMetrics);
+        
+        [PreserveSig]
+        new HRESULT GetUnicodeRanges(uint maxRangeCount, /* _Out_writes_to_opt_(maxRangeCount, *actualRangeCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] DWRITE_UNICODE_RANGE[] unicodeRanges, /* _Out_ */ out uint actualRangeCount);
+        
+        [PreserveSig]
+        new bool IsMonospacedFont();
+        
+        [PreserveSig]
+        new HRESULT GetDesignGlyphAdvances(uint glyphCount, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] glyphAdvances, bool isSideways);
+        
+        [PreserveSig]
+        new HRESULT GetGdiCompatibleGlyphAdvances(float emSize, float pixelsPerDip, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool useGdiNatural, bool isSideways, uint glyphCount, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] int[] glyphAdvances);
+        
+        [PreserveSig]
+        new HRESULT GetKerningPairAdjustments(uint glyphCount, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] glyphAdvanceAdjustments);
+        
+        [PreserveSig]
+        new bool HasKerningPairs();
+        
+        [PreserveSig]
+        new HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode);
+        
+        [PreserveSig]
+        new HRESULT GetVerticalGlyphVariants(uint glyphCount, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] nominalGlyphIndices, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] verticalGlyphIndices);
+        
+        [PreserveSig]
+        new bool HasVerticalGlyphVariants();
+        
+        // IDWriteFontFace2
         [PreserveSig]
         bool IsColorFont();
         
@@ -23,6 +105,6 @@ namespace DirectN
         HRESULT GetPaletteEntries(uint colorPaletteIndex, uint firstEntryIndex, uint entryCount, /* _Out_writes_(entryCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _D3DCOLORVALUE[] paletteEntries);
         
         [PreserveSig]
-        HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* optional(IDWriteRenderingParams) */ IntPtr renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode, /* _Out_ */ out DWRITE_GRID_FIT_MODE gridFitMode);
+        HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* _In_opt_ */ IDWriteRenderingParams renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode, /* _Out_ */ out DWRITE_GRID_FIT_MODE gridFitMode);
     }
 }

@@ -22,6 +22,6 @@ namespace DirectN
         
         // IDWriteFontSetBuilder1
         [PreserveSig]
-        HRESULT AddFontFile(/* _In_ */ ref IDWriteFontFile fontFile);
+        HRESULT AddFontFile(/* _In_ */ IDWriteFontFile fontFile);
     }
 }

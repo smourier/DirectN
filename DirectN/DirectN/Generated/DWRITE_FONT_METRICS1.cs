@@ -7,6 +7,19 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DWRITE_FONT_METRICS1
     {
+        // struct DWRITE_FONT_METRICS
+        public ushort designUnitsPerEm;
+        public ushort ascent;
+        public ushort descent;
+        public short lineGap;
+        public ushort capHeight;
+        public ushort xHeight;
+        public short underlinePosition;
+        public ushort underlineThickness;
+        public short strikethroughPosition;
+        public ushort strikethroughThickness;
+        
+        // DWRITE_FONT_METRICS1
         /// <summary>
         /// Left edge of accumulated bounding blackbox of all glyphs in the font.
         /// </summary>

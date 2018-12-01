@@ -1,16 +1,16 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1svg.h(625,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_COLOR_F = DirectN._D3DCOLORVALUE;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Interface describing an SVG 'fill' or 'stroke' value.
-    /// </summary>
     [Guid("d59bab0a-68a2-455b-a5dc-9eb2854e2490"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgPaint : ID2D1SvgAttribute
     {
+        // ID2D1Resource
+        [PreserveSig]
+        new void GetFactory(/* _Outptr_ */ out ID2D1Factory factory);
+        
         // ID2D1SvgAttribute
         [PreserveSig]
         new void GetElement(/* _Outptr_result_maybenull_ */ out ID2D1SvgElement element);
@@ -26,10 +26,10 @@ namespace DirectN
         D2D1_SVG_PAINT_TYPE GetPaintType();
         
         [PreserveSig]
-        HRESULT SetColor(/* _In_ */ ref D2D1_COLOR_F color);
+        HRESULT SetColor(/* _In_ */ ref _D3DCOLORVALUE color);
         
         [PreserveSig]
-        void GetColor(/* _Out_ */ out D2D1_COLOR_F color);
+        void GetColor(/* _Out_ */ out _D3DCOLORVALUE color);
         
         [PreserveSig]
         HRESULT SetId(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string id);

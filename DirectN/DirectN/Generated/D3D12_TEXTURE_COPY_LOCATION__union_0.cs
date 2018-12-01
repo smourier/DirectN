@@ -7,6 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_TEXTURE_COPY_LOCATION__union_0
     {
-        // This definition is empty as size of structure was not successfully resolved.
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 28)]
+        public byte[] __bits;
+        public D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint => InteropRuntime.GetBits<D3D12_PLACED_SUBRESOURCE_FOOTPRINT>(__bits, 0, 224);
+        public uint SubresourceIndex => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
     }
 }

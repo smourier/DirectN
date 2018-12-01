@@ -10,6 +10,15 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DWRITE_LINE_METRICS1
     {
+        // struct DWRITE_LINE_METRICS
+        public uint length;
+        public uint trailingWhitespaceLength;
+        public uint newlineLength;
+        public float height;
+        public float baseline;
+        public bool isTrimmed;
+        
+        // DWRITE_LINE_METRICS1
         /// <summary>
         /// White space before the content of the line. This is included in the line height and baseline distances. If the line is formatted horizontally either with a uniform line spacing or with proportional line spacing, this value represents the extra space above the content.
         /// </summary>

@@ -4,12 +4,13 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Interface describing an SVG 'stroke-dasharray' value.
-    /// </summary>
     [Guid("f1c0ca52-92a3-4f00-b4ce-f35691efd9d9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgStrokeDashArray : ID2D1SvgAttribute
     {
+        // ID2D1Resource
+        [PreserveSig]
+        new void GetFactory(/* _Outptr_ */ out ID2D1Factory factory);
+        
         // ID2D1SvgAttribute
         [PreserveSig]
         new void GetElement(/* _Outptr_result_maybenull_ */ out ID2D1SvgElement element);

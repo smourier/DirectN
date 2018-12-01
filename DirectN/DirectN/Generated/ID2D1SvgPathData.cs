@@ -10,6 +10,10 @@ namespace DirectN
     [Guid("c095e4f4-bb98-43d6-9745-4d1b84ec9888"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgPathData : ID2D1SvgAttribute
     {
+        // ID2D1Resource
+        [PreserveSig]
+        new void GetFactory(/* _Outptr_ */ out ID2D1Factory factory);
+        
         // ID2D1SvgAttribute
         [PreserveSig]
         new void GetElement(/* _Outptr_result_maybenull_ */ out ID2D1SvgElement element);

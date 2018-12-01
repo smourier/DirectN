@@ -1,14 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(3341,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
-using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The root factory interface for all of D2D's objects.
-    /// </summary>
     [Guid("06152247-6f50-465a-9245-118bfd3b6007"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Factory
     {
@@ -19,7 +14,7 @@ namespace DirectN
         void GetDesktopDpi(/* _Out_ */ out float dpiX, /* _Out_ */ out float dpiY);
         
         [PreserveSig]
-        HRESULT CreateRectangleGeometry(/* _In_ */ ref D2D1_RECT_F rectangle, /* _COM_Outptr_ */ out ID2D1RectangleGeometry rectangleGeometry);
+        HRESULT CreateRectangleGeometry(/* _In_ */ ref D2D_RECT_F rectangle, /* _COM_Outptr_ */ out ID2D1RectangleGeometry rectangleGeometry);
         
         [PreserveSig]
         HRESULT CreateRoundedRectangleGeometry(/* _In_ */ ref D2D1_ROUNDED_RECT roundedRectangle, /* _COM_Outptr_ */ out ID2D1RoundedRectangleGeometry roundedRectangleGeometry);
@@ -31,7 +26,7 @@ namespace DirectN
         HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ out IntPtr geometries, uint geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
         
         [PreserveSig]
-        HRESULT CreateTransformedGeometry(/* _In_ */ ID2D1Geometry sourceGeometry, /* _In_ */ ref D2D1_MATRIX_3X2_F transform, /* _COM_Outptr_ */ out ID2D1TransformedGeometry transformedGeometry);
+        HRESULT CreateTransformedGeometry(/* _In_ */ ID2D1Geometry sourceGeometry, /* _In_ */ ref D2D_MATRIX_3X2_F transform, /* _COM_Outptr_ */ out ID2D1TransformedGeometry transformedGeometry);
         
         [PreserveSig]
         HRESULT CreatePathGeometry(/* _COM_Outptr_ */ out ID2D1PathGeometry pathGeometry);
@@ -49,7 +44,7 @@ namespace DirectN
         HRESULT CreateHwndRenderTarget(/* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _In_ */ ref D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, /* _COM_Outptr_ */ out ID2D1HwndRenderTarget hwndRenderTarget);
         
         [PreserveSig]
-        HRESULT CreateDxgiSurfaceRenderTarget(/* _In_ */ ref IDXGISurface dxgiSurface, /* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1RenderTarget renderTarget);
+        HRESULT CreateDxgiSurfaceRenderTarget(/* _In_ */ IDXGISurface dxgiSurface, /* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1RenderTarget renderTarget);
         
         [PreserveSig]
         HRESULT CreateDCRenderTarget(/* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1DCRenderTarget dcRenderTarget);

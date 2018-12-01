@@ -8,10 +8,15 @@ namespace DirectN
     /// The IDWriteInMemoryFontFileLoader interface enables clients to reference in-memory fonts without having to implement a custom loader. The IDWriteFactory5::CreateInMemoryFontFileLoader method returns an instance of this interface, which the client is responsible for registering and unregistering using IDWriteFactory::RegisterFontFileLoader and IDWriteFactory::UnregisterFontFileLoader.
     /// </summary>
     [Guid("dc102f47-a12d-4b1c-822d-9e117e33043f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface IDWriteInMemoryFontFileLoader
+    public partial interface IDWriteInMemoryFontFileLoader : IDWriteFontFileLoader
     {
+        // IDWriteFontFileLoader
         [PreserveSig]
-        HRESULT CreateInMemoryFontFileReference(ref IDWriteFactory factory, /* _In_reads_bytes_(fontDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontData, uint fontDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object ownerObject, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);
+        new HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
+        
+        // IDWriteInMemoryFontFileLoader
+        [PreserveSig]
+        HRESULT CreateInMemoryFontFileReference(IDWriteFactory factory, /* _In_reads_bytes_(fontDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontData, uint fontDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object ownerObject, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);
         
         [PreserveSig]
         uint GetFileCount();

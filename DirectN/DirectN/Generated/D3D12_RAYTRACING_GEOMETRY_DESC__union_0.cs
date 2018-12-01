@@ -6,6 +6,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_RAYTRACING_GEOMETRY_DESC__union_0
     {
-        // This definition is empty as size of structure was not successfully resolved.
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)]
+        public byte[] __bits;
+        public D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC Triangles => InteropRuntime.GetBits<D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC>(__bits, 0, 384);
+        public D3D12_RAYTRACING_GEOMETRY_AABBS_DESC AABBs => InteropRuntime.GetBits<D3D12_RAYTRACING_GEOMETRY_AABBS_DESC>(__bits, 0, 192);
     }
 }

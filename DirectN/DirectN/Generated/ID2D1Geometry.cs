@@ -1,15 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(1423,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
-using D2D1_POINT_2F = DirectN.D2D_POINT_2F;
-using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents a geometry resource and defines a set of helper methods for manipulating and measuring geometric shapes. Interfaces that inherit from ID2D1Geometry define specific shapes.
-    /// </summary>
     [Guid("2cd906a1-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Geometry : ID2D1Resource
     {
@@ -19,42 +13,42 @@ namespace DirectN
         
         // ID2D1Geometry
         [PreserveSig]
-        HRESULT GetBounds(/* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, /* _Out_ */ out D2D1_RECT_F bounds);
+        HRESULT GetBounds(/* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, /* _Out_ */ out D2D_RECT_F bounds);
         
         [PreserveSig]
-        HRESULT GetWidenedBounds(float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out D2D1_RECT_F bounds);
+        HRESULT GetWidenedBounds(float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out D2D_RECT_F bounds);
         
         [PreserveSig]
-        HRESULT StrokeContainsPoint(D2D1_POINT_2F point, float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out bool contains);
+        HRESULT StrokeContainsPoint(D2D_POINT_2F point, float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out bool contains);
         
         [PreserveSig]
-        HRESULT FillContainsPoint(D2D1_POINT_2F point, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out bool contains);
+        HRESULT FillContainsPoint(D2D_POINT_2F point, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out bool contains);
         
         [PreserveSig]
-        HRESULT CompareWithGeometry(/* _In_ */ ID2D1Geometry inputGeometry, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr inputGeometryTransform, float flatteningTolerance, /* _Out_ */ out D2D1_GEOMETRY_RELATION relation);
+        HRESULT CompareWithGeometry(/* _In_ */ ID2D1Geometry inputGeometry, /* optional(D2D_MATRIX_3X2_F) */ IntPtr inputGeometryTransform, float flatteningTolerance, /* _Out_ */ out D2D1_GEOMETRY_RELATION relation);
         
         [PreserveSig]
-        HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
+        HRESULT Simplify(D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
         
         [PreserveSig]
-        HRESULT Tessellate(/* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1TessellationSink tessellationSink);
+        HRESULT Tessellate(/* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1TessellationSink tessellationSink);
         
         [PreserveSig]
-        HRESULT CombineWithGeometry(/* _In_ */ ID2D1Geometry inputGeometry, D2D1_COMBINE_MODE combineMode, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr inputGeometryTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
+        HRESULT CombineWithGeometry(/* _In_ */ ID2D1Geometry inputGeometry, D2D1_COMBINE_MODE combineMode, /* optional(D2D_MATRIX_3X2_F) */ IntPtr inputGeometryTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
         
         [PreserveSig]
-        HRESULT Outline(/* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
+        HRESULT Outline(/* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
         
         [PreserveSig]
-        HRESULT ComputeArea(/* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out float area);
+        HRESULT ComputeArea(/* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out float area);
         
         [PreserveSig]
-        HRESULT ComputeLength(/* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out float length);
+        HRESULT ComputeLength(/* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out float length);
         
         [PreserveSig]
-        HRESULT ComputePointAtLength(float length, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_opt_ */ out D2D1_POINT_2F point, /* _Out_opt_ */ out D2D1_POINT_2F unitTangentVector);
+        HRESULT ComputePointAtLength(float length, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_opt_ */ out D2D_POINT_2F point, /* _Out_opt_ */ out D2D_POINT_2F unitTangentVector);
         
         [PreserveSig]
-        HRESULT Widen(float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
+        HRESULT Widen(float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);
     }
 }

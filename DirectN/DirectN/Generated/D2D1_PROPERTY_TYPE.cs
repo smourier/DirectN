@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(64,9)
 namespace DirectN
 {
-    /// <summary>
-    /// This defines the valid property types that can be used in an effect property interface.
-    /// </summary>
     public enum D2D1_PROPERTY_TYPE
     {
         D2D1_PROPERTY_TYPE_UNKNOWN = 0,

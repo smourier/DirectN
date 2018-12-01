@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(106,1)
 namespace DirectN
 {
-    /// <summary>
-    /// Ratio between thickest and thinnest point of the stroke for a letter such as uppercase 'O'. Present for families: 2-text, 3-script, 4-decorative
-    /// </summary>
     public enum DWRITE_PANOSE_CONTRAST
     {
         DWRITE_PANOSE_CONTRAST_ANY = 0,

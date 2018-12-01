@@ -1,4 +1,5 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_3.h(1802,1)
+using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
@@ -9,6 +10,15 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DWRITE_COLOR_GLYPH_RUN1
     {
+        // struct DWRITE_COLOR_GLYPH_RUN
+        public DWRITE_GLYPH_RUN glyphRun;
+        public IntPtr glyphRunDescription;
+        public float baselineOriginX;
+        public float baselineOriginY;
+        public _D3DCOLORVALUE runColor;
+        public ushort paletteIndex;
+        
+        // DWRITE_COLOR_GLYPH_RUN1
         /// <summary>
         /// Type of glyph image format for this color run. Exactly one type will be set since TranslateColorGlyphRun has already broken down the run into separate parts.
         /// </summary>

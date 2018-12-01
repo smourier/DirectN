@@ -10,6 +10,18 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DWRITE_TEXT_METRICS1
     {
+        // struct DWRITE_TEXT_METRICS
+        public float left;
+        public float top;
+        public float width;
+        public float widthIncludingTrailingWhitespace;
+        public float height;
+        public float layoutWidth;
+        public float layoutHeight;
+        public uint maxBidiReorderingDepth;
+        public uint lineCount;
+        
+        // DWRITE_TEXT_METRICS1
         /// <summary>
         /// The height of the formatted text taking into account the trailing whitespace at the end of each line, which will matter for vertical reading directions.
         /// </summary>

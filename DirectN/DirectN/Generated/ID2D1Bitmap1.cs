@@ -4,12 +4,38 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents a bitmap that can be used as a surface for an ID2D1DeviceContext or mapped into system memory, and can contain additional color context information.
-    /// </summary>
     [Guid("a898a84c-3873-4588-b08b-ebbf978df041"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface ID2D1Bitmap1
+    public partial interface ID2D1Bitmap1 : ID2D1Bitmap
     {
+        // ID2D1Resource
+        [PreserveSig]
+        new void GetFactory(/* _Outptr_ */ out ID2D1Factory factory);
+        
+        // ID2D1Image
+        
+        // ID2D1Bitmap
+        [PreserveSig]
+        new D2D_SIZE_F GetSize();
+        
+        [PreserveSig]
+        new D2D_SIZE_U GetPixelSize();
+        
+        [PreserveSig]
+        new D2D1_PIXEL_FORMAT GetPixelFormat();
+        
+        [PreserveSig]
+        new void GetDpi(/* _Out_ */ out float dpiX, /* _Out_ */ out float dpiY);
+        
+        [PreserveSig]
+        new HRESULT CopyFromBitmap(/* optional(D2D_POINT_2U) */ IntPtr destPoint, /* _In_ */ ID2D1Bitmap bitmap, /* optional(D2D_RECT_U) */ IntPtr srcRect);
+        
+        [PreserveSig]
+        new HRESULT CopyFromRenderTarget(/* optional(D2D_POINT_2U) */ IntPtr destPoint, /* _In_ */ ID2D1RenderTarget renderTarget, /* optional(D2D_RECT_U) */ IntPtr srcRect);
+        
+        [PreserveSig]
+        new HRESULT CopyFromMemory(/* optional(D2D_RECT_U) */ IntPtr dstRect, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object srcData, uint pitch);
+        
+        // ID2D1Bitmap1
         [PreserveSig]
         void GetColorContext(/* _Outptr_result_maybenull_ */ out ID2D1ColorContext colorContext);
         

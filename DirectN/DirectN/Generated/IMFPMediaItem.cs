@@ -63,6 +63,6 @@ namespace DirectN
         HRESULT SetStreamSink(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pMediaSink);
         
         [PreserveSig]
-        HRESULT GetMetadata(/* [annotation][out] _Out_ */ out IPropertyStore ppMetadataStore);
+        HRESULT GetMetadata(/* [annotation][out] _Out_ */ out IntPtr ppMetadataStore);
     }
 }

@@ -22,7 +22,7 @@ namespace DirectN
         HRESULT GetMaximumSupportedFeatureLevel(/* _In_reads_(featureLevelsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D_FEATURE_LEVEL[] featureLevels, uint featureLevelsCount, /* _Out_ */ out D3D_FEATURE_LEVEL maximumSupportedFeatureLevel);
         
         [PreserveSig]
-        HRESULT CreateTransformNodeFromEffect(/* _In_ */ ref ID2D1Effect effect, /* _COM_Outptr_ */ out ID2D1TransformNode transformNode);
+        HRESULT CreateTransformNodeFromEffect(/* _In_ */ ID2D1Effect effect, /* _COM_Outptr_ */ out ID2D1TransformNode transformNode);
         
         [PreserveSig]
         HRESULT CreateBlendTransform(uint numInputs, /* _In_ */ ref D2D1_BLEND_DESCRIPTION blendDescription, /* _COM_Outptr_ */ out ID2D1BlendTransform transform);

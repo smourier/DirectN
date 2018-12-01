@@ -7,6 +7,19 @@ namespace DirectN
     [Guid("514039c6-4617-4064-bf8b-92ea83e506e0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontCollection2 : IDWriteFontCollection1
     {
+        // IDWriteFontCollection
+        [PreserveSig]
+        new uint GetFontFamilyCount();
+        
+        [PreserveSig]
+        new HRESULT GetFontFamily(uint index, /* _COM_Outptr_ */ out IDWriteFontFamily fontFamily);
+        
+        [PreserveSig]
+        new HRESULT FindFamilyName(/* _In_z_ */ ref char familyName, /* _Out_ */ out uint index, /* _Out_ */ out bool exists);
+        
+        [PreserveSig]
+        new HRESULT GetFontFromFontFace(/* _In_ */ IDWriteFontFace fontFace, /* _COM_Outptr_ */ out IDWriteFont font);
+        
         // IDWriteFontCollection1
         [PreserveSig]
         new HRESULT GetFontSet(/* _COM_Outptr_ */ out IDWriteFontSet fontSet);

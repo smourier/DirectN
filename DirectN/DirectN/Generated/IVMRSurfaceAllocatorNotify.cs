@@ -12,10 +12,10 @@ namespace DirectN
         HRESULT AdviseSurfaceAllocator(/* [in] */ IntPtr dwUserID, /* [in] */ IVMRSurfaceAllocator lpIVRMSurfaceAllocator);
         
         [PreserveSig]
-        HRESULT SetDDrawDevice(/* [in] */ ref LPDIRECTDRAW7 lpDDrawDevice, /* [in] */ IntPtr hMonitor);
+        HRESULT SetDDrawDevice(/* [in] */ LPDIRECTDRAW7 lpDDrawDevice, /* [in] */ IntPtr hMonitor);
         
         [PreserveSig]
-        HRESULT ChangeDDrawDevice(/* [in] */ ref LPDIRECTDRAW7 lpDDrawDevice, /* [in] */ IntPtr hMonitor);
+        HRESULT ChangeDDrawDevice(/* [in] */ LPDIRECTDRAW7 lpDDrawDevice, /* [in] */ IntPtr hMonitor);
         
         [PreserveSig]
         HRESULT RestoreDDrawSurfaces();

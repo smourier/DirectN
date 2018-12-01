@@ -9,15 +9,15 @@ namespace DirectN
     public partial interface IVMRImageCompositor
     {
         [PreserveSig]
-        HRESULT InitCompositionTarget(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pD3DDevice, /* [in] */ ref LPDIRECTDRAWSURFACE7 pddsRenderTarget);
+        HRESULT InitCompositionTarget(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pD3DDevice, /* [in] */ LPDIRECTDRAWSURFACE7 pddsRenderTarget);
         
         [PreserveSig]
-        HRESULT TermCompositionTarget(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pD3DDevice, /* [in] */ ref LPDIRECTDRAWSURFACE7 pddsRenderTarget);
+        HRESULT TermCompositionTarget(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pD3DDevice, /* [in] */ LPDIRECTDRAWSURFACE7 pddsRenderTarget);
         
         [PreserveSig]
         HRESULT SetStreamMediaType(/* [in] */ uint dwStrmID, /* [in] */ ref _AMMediaType pmt, /* [in] */ bool fTexture);
         
         [PreserveSig]
-        HRESULT CompositeImage(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pD3DDevice, /* [in] */ ref LPDIRECTDRAWSURFACE7 pddsRenderTarget, /* [in] */ ref _AMMediaType pmtRenderTarget, /* [in] */ long rtStart, /* [in] */ long rtEnd, /* [in] */ uint dwClrBkGnd, /* [in] */ ref _VMRVIDEOSTREAMINFO pVideoStreamInfo, /* [in] */ uint cStreams);
+        HRESULT CompositeImage(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pD3DDevice, /* [in] */ LPDIRECTDRAWSURFACE7 pddsRenderTarget, /* [in] */ ref _AMMediaType pmtRenderTarget, /* [in] */ long rtStart, /* [in] */ long rtEnd, /* [in] */ uint dwClrBkGnd, /* [in] */ ref _VMRVIDEOSTREAMINFO pVideoStreamInfo, /* [in] */ uint cStreams);
     }
 }

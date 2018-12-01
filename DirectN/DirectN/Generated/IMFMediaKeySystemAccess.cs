@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFMediaKeySystemAccess
     {
         [PreserveSig]
-        HRESULT CreateMediaKeys(/* [annotation] _In_opt_ */ IPropertyStore pCdmCustomConfig, /* [annotation] _COM_Outptr_ */ out IMFMediaKeys2 ppKeys);
+        HRESULT CreateMediaKeys(/* optional(IPropertyStore) */ IntPtr pCdmCustomConfig, /* [annotation] _COM_Outptr_ */ out IMFMediaKeys2 ppKeys);
         
         [PreserveSig]
         HRESULT get_SupportedConfiguration(/* [annotation] _COM_Outptr_ */ out IPropertyStore ppSupportedConfiguration);

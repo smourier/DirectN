@@ -3,9 +3,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents a 3-by-2 matrix.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D_MATRIX_3X2_F
     {

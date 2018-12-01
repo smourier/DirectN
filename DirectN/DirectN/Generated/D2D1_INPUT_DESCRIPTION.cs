@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Describes options transforms may select to use on their input textures.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_INPUT_DESCRIPTION
     {

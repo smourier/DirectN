@@ -6,6 +6,8 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_RENDER_PASS_ENDING_ACCESS__union_0
     {
-        // This definition is empty as size of structure was not successfully resolved.
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 44)]
+        public byte[] __bits;
+        public D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS Resolve => InteropRuntime.GetBits<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS>(__bits, 0, 352);
     }
 }

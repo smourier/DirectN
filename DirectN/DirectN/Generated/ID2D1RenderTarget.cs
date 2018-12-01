@@ -1,19 +1,10 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(2392,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_COLOR_F = DirectN._D3DCOLORVALUE;
-using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
-using D2D1_POINT_2F = DirectN.D2D_POINT_2F;
-using D2D1_RECT_F = DirectN.D2D_RECT_F;
-using D2D1_SIZE_F = DirectN.D2D_SIZE_F;
-using D2D1_SIZE_U = DirectN.D2D_SIZE_U;
 using D2D1_TAG = System.UInt64;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents an object that can receive drawing commands. Interfaces that inherit from ID2D1RenderTarget render the drawing commands they receive in different ways.
-    /// </summary>
     [Guid("2cd90694-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1RenderTarget : ID2D1Resource
     {
@@ -23,7 +14,7 @@ namespace DirectN
         
         // ID2D1RenderTarget
         [PreserveSig]
-        HRESULT CreateBitmap(D2D1_SIZE_U size, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object srcData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
+        HRESULT CreateBitmap(D2D_SIZE_U size, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object srcData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
         
         [PreserveSig]
         HRESULT CreateBitmapFromWicBitmap(/* _In_ */ ref IWICBitmapSource wicBitmapSource, /* optional(D2D1_BITMAP_PROPERTIES) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
@@ -35,7 +26,7 @@ namespace DirectN
         HRESULT CreateBitmapBrush(/* _In_opt_ */ ID2D1Bitmap bitmap, /* optional(D2D1_BITMAP_BRUSH_PROPERTIES) */ IntPtr bitmapBrushProperties, /* optional(D2D1_BRUSH_PROPERTIES) */ IntPtr brushProperties, /* _COM_Outptr_ */ out ID2D1BitmapBrush bitmapBrush);
         
         [PreserveSig]
-        HRESULT CreateSolidColorBrush(/* _In_ */ ref D2D1_COLOR_F color, /* optional(D2D1_BRUSH_PROPERTIES) */ IntPtr brushProperties, /* _COM_Outptr_ */ out ID2D1SolidColorBrush solidColorBrush);
+        HRESULT CreateSolidColorBrush(/* _In_ */ ref _D3DCOLORVALUE color, /* optional(D2D1_BRUSH_PROPERTIES) */ IntPtr brushProperties, /* _COM_Outptr_ */ out ID2D1SolidColorBrush solidColorBrush);
         
         [PreserveSig]
         HRESULT CreateGradientStopCollection(/* _In_reads_(gradientStopsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, /* _In_range_(>=,1) */ uint gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, /* _COM_Outptr_ */ out ID2D1GradientStopCollection gradientStopCollection);
@@ -47,22 +38,22 @@ namespace DirectN
         HRESULT CreateRadialGradientBrush(/* _In_ */ ref D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES radialGradientBrushProperties, /* optional(D2D1_BRUSH_PROPERTIES) */ IntPtr brushProperties, /* _In_ */ ID2D1GradientStopCollection gradientStopCollection, /* _COM_Outptr_ */ out ID2D1RadialGradientBrush radialGradientBrush);
         
         [PreserveSig]
-        HRESULT CreateCompatibleRenderTarget(/* optional(D2D1_SIZE_F) */ IntPtr desiredSize, /* optional(D2D1_SIZE_U) */ IntPtr desiredPixelSize, /* optional(D2D1_PIXEL_FORMAT) */ IntPtr desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, /* _COM_Outptr_ */ out ID2D1BitmapRenderTarget bitmapRenderTarget);
+        HRESULT CreateCompatibleRenderTarget(/* optional(D2D_SIZE_F) */ IntPtr desiredSize, /* optional(D2D_SIZE_U) */ IntPtr desiredPixelSize, /* optional(D2D1_PIXEL_FORMAT) */ IntPtr desiredFormat, D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options, /* _COM_Outptr_ */ out ID2D1BitmapRenderTarget bitmapRenderTarget);
         
         [PreserveSig]
-        HRESULT CreateLayer(/* optional(D2D1_SIZE_F) */ IntPtr size, /* _COM_Outptr_ */ out ID2D1Layer layer);
+        HRESULT CreateLayer(/* optional(D2D_SIZE_F) */ IntPtr size, /* _COM_Outptr_ */ out ID2D1Layer layer);
         
         [PreserveSig]
         HRESULT CreateMesh(/* _COM_Outptr_ */ out ID2D1Mesh mesh);
         
         [PreserveSig]
-        void DrawLine(D2D1_POINT_2F point0, D2D1_POINT_2F point1, /* _In_ */ ID2D1Brush brush, float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle);
+        void DrawLine(D2D_POINT_2F point0, D2D_POINT_2F point1, /* _In_ */ ID2D1Brush brush, float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle);
         
         [PreserveSig]
-        void DrawRectangle(/* _In_ */ ref D2D1_RECT_F rect, /* _In_ */ ID2D1Brush brush, float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle);
+        void DrawRectangle(/* _In_ */ ref D2D_RECT_F rect, /* _In_ */ ID2D1Brush brush, float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle);
         
         [PreserveSig]
-        void FillRectangle(/* _In_ */ ref D2D1_RECT_F rect, /* _In_ */ ID2D1Brush brush);
+        void FillRectangle(/* _In_ */ ref D2D_RECT_F rect, /* _In_ */ ID2D1Brush brush);
         
         [PreserveSig]
         void DrawRoundedRectangle(/* _In_ */ ref D2D1_ROUNDED_RECT roundedRect, /* _In_ */ ID2D1Brush brush, float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle);
@@ -86,25 +77,25 @@ namespace DirectN
         void FillMesh(/* _In_ */ ID2D1Mesh mesh, /* _In_ */ ID2D1Brush brush);
         
         [PreserveSig]
-        void FillOpacityMask(/* _In_ */ ID2D1Bitmap opacityMask, /* _In_ */ ID2D1Brush brush, D2D1_OPACITY_MASK_CONTENT content, /* optional(D2D1_RECT_F) */ IntPtr destinationRectangle, /* optional(D2D1_RECT_F) */ IntPtr sourceRectangle);
+        void FillOpacityMask(/* _In_ */ ID2D1Bitmap opacityMask, /* _In_ */ ID2D1Brush brush, D2D1_OPACITY_MASK_CONTENT content, /* optional(D2D_RECT_F) */ IntPtr destinationRectangle, /* optional(D2D_RECT_F) */ IntPtr sourceRectangle);
         
         [PreserveSig]
-        void DrawBitmap(/* _In_ */ ID2D1Bitmap bitmap, /* optional(D2D1_RECT_F) */ IntPtr destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, /* optional(D2D1_RECT_F) */ IntPtr sourceRectangle);
+        void DrawBitmap(/* _In_ */ ID2D1Bitmap bitmap, /* optional(D2D_RECT_F) */ IntPtr destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, /* optional(D2D_RECT_F) */ IntPtr sourceRectangle);
         
         [PreserveSig]
-        void DrawTextA(/* _In_reads_(stringLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] @string, uint stringLength, /* _In_ */ ref IDWriteTextFormat textFormat, /* _In_ */ ref D2D1_RECT_F layoutRect, /* _In_ */ ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode);
+        void DrawTextA(/* _In_reads_(stringLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] @string, uint stringLength, /* _In_ */ ref IDWriteTextFormat textFormat, /* _In_ */ ref D2D_RECT_F layoutRect, /* _In_ */ ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode);
         
         [PreserveSig]
-        void DrawTextLayout(D2D1_POINT_2F origin, /* _In_ */ ref IDWriteTextLayout textLayout, /* _In_ */ ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options);
+        void DrawTextLayout(D2D_POINT_2F origin, /* _In_ */ ref IDWriteTextLayout textLayout, /* _In_ */ ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options);
         
         [PreserveSig]
-        void DrawGlyphRun(D2D1_POINT_2F baselineOrigin, /* _In_ */ ref DWRITE_GLYPH_RUN glyphRun, /* _In_ */ ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode);
+        void DrawGlyphRun(D2D_POINT_2F baselineOrigin, /* _In_ */ ref DWRITE_GLYPH_RUN glyphRun, /* _In_ */ ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode);
         
         [PreserveSig]
-        void SetTransform(/* _In_ */ ref D2D1_MATRIX_3X2_F transform);
+        void SetTransform(/* _In_ */ ref D2D_MATRIX_3X2_F transform);
         
         [PreserveSig]
-        void GetTransform(/* _Out_ */ out D2D1_MATRIX_3X2_F transform);
+        void GetTransform(/* _Out_ */ out D2D_MATRIX_3X2_F transform);
         
         [PreserveSig]
         void SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode);
@@ -146,13 +137,13 @@ namespace DirectN
         void RestoreDrawingState(/* _In_ */ ID2D1DrawingStateBlock drawingStateBlock);
         
         [PreserveSig]
-        void PushAxisAlignedClip(/* _In_ */ ref D2D1_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode);
+        void PushAxisAlignedClip(/* _In_ */ ref D2D_RECT_F clipRect, D2D1_ANTIALIAS_MODE antialiasMode);
         
         [PreserveSig]
         void PopAxisAlignedClip();
         
         [PreserveSig]
-        void Clear(/* optional(D2D1_COLOR_F) */ IntPtr clearColor);
+        void Clear(/* optional(_D3DCOLORVALUE) */ IntPtr clearColor);
         
         [PreserveSig]
         void BeginDraw();
@@ -170,10 +161,10 @@ namespace DirectN
         void GetDpi(/* _Out_ */ out float dpiX, /* _Out_ */ out float dpiY);
         
         [PreserveSig]
-        D2D1_SIZE_F GetSize();
+        D2D_SIZE_F GetSize();
         
         [PreserveSig]
-        D2D1_SIZE_U GetPixelSize();
+        D2D_SIZE_U GetPixelSize();
         
         [PreserveSig]
         uint GetMaximumBitmapSize();

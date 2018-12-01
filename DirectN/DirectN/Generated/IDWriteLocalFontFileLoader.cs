@@ -5,9 +5,6 @@ using FILETIME = DirectN._FILETIME;
 
 namespace DirectN
 {
-    /// <summary>
-    /// A built-in implementation of IDWriteFontFileLoader interface that operates on local font files and exposes local font file information from the font file reference key. Font file references created using CreateFontFileReference use this font file loader.
-    /// </summary>
     [Guid("b2d9f3ec-c9fe-4a11-a2ec-d86208f7c0a2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteLocalFontFileLoader : IDWriteFontFileLoader
     {

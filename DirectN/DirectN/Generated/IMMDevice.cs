@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT Activate(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid iid, /* [annotation][in] _In_ */ uint dwClsCtx, /* [annotation][unique][in] _In_opt_ */ PropVariant pActivationParams, /* [annotation][iid_is][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppInterface);
         
         [PreserveSig]
-        HRESULT OpenPropertyStore(/* [annotation][in] _In_ */ uint stgmAccess, /* [annotation][out] _Out_ */ out IPropertyStore ppProperties);
+        HRESULT OpenPropertyStore(/* [annotation][in] _In_ */ uint stgmAccess, /* [annotation][out] _Out_ */ out IntPtr ppProperties);
         
         [PreserveSig]
         HRESULT GetId(/* [annotation][out] _Outptr_ */ out IntPtr ppstrId);

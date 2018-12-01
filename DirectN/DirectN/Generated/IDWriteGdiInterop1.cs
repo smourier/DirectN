@@ -11,16 +11,33 @@ namespace DirectN
     /// The GDI interop interface provides interoperability with GDI.
     /// </summary>
     [Guid("4556be70-3abd-4f70-90be-421780a6f515"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface IDWriteGdiInterop1
+    public partial interface IDWriteGdiInterop1 : IDWriteGdiInterop
     {
+        // IDWriteGdiInterop
         [PreserveSig]
-        HRESULT CreateFontFromLOGFONT(/* _In_ */ ref LOGFONTW logFont, /* optional(IDWriteFontCollection) */ IntPtr fontCollection, /* _COM_Outptr_ */ out IDWriteFont font);
+        new HRESULT CreateFontFromLOGFONT(/* _In_ */ ref LOGFONTW logFont, /* _COM_Outptr_ */ out IDWriteFont font);
         
         [PreserveSig]
-        HRESULT GetFontSignature(/* _In_ */ ref IDWriteFont font, /* _Out_ */ out FONTSIGNATURE fontSignature);
+        new HRESULT ConvertFontToLOGFONT(/* _In_ */ IDWriteFont font, /* _Out_ */ out LOGFONTW logFont, /* _Out_ */ out bool isSystemFont);
         
         [PreserveSig]
-        HRESULT GetFontSignature(/* _In_ */ ref IDWriteFontFace fontFace, /* _Out_ */ out FONTSIGNATURE fontSignature);
+        new HRESULT ConvertFontFaceToLOGFONT(/* _In_ */ IDWriteFontFace font, /* _Out_ */ out LOGFONTW logFont);
+        
+        [PreserveSig]
+        new HRESULT CreateFontFaceFromHdc(ref IntPtr hdc, /* _COM_Outptr_ */ out IDWriteFontFace fontFace);
+        
+        [PreserveSig]
+        new HRESULT CreateBitmapRenderTarget(/* optional(HDC) */ IntPtr hdc, uint width, uint height, /* _COM_Outptr_ */ out IDWriteBitmapRenderTarget renderTarget);
+        
+        // IDWriteGdiInterop1
+        [PreserveSig]
+        HRESULT CreateFontFromLOGFONT(/* _In_ */ ref LOGFONTW logFont, /* _In_opt_ */ IDWriteFontCollection fontCollection, /* _COM_Outptr_ */ out IDWriteFont font);
+        
+        [PreserveSig]
+        HRESULT GetFontSignature(/* _In_ */ IDWriteFont font, /* _Out_ */ out FONTSIGNATURE fontSignature);
+        
+        [PreserveSig]
+        HRESULT GetFontSignature(/* _In_ */ IDWriteFontFace fontFace, /* _Out_ */ out FONTSIGNATURE fontSignature);
         
         [PreserveSig]
         HRESULT GetMatchingFontsByLOGFONT(/* _In_ */ ref LOGFONT logFont, /* _In_ */ IDWriteFontSet fontSet, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);

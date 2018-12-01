@@ -9,13 +9,13 @@ namespace DirectN
     public partial interface IVMRSurfaceAllocator
     {
         [PreserveSig]
-        HRESULT AllocateSurface(/* [in] */ IntPtr dwUserID, /* [in] */ ref tagVMRALLOCATIONINFO lpAllocInfo, /* [out][in] */ ref uint lpdwActualBuffers, /* [out] */ out IntPtr lplpSurface);
+        HRESULT AllocateSurface(/* [in] */ IntPtr dwUserID, /* [in] */ ref tagVMRALLOCATIONINFO lpAllocInfo, /* [out][in] */ ref uint lpdwActualBuffers, /* [out] */ out LPDIRECTDRAWSURFACE7 lplpSurface);
         
         [PreserveSig]
         HRESULT FreeSurface(/* [in] */ IntPtr dwID);
         
         [PreserveSig]
-        HRESULT PrepareSurface(/* [in] */ IntPtr dwUserID, /* [in] */ ref LPDIRECTDRAWSURFACE7 lpSurface, /* [in] */ uint dwSurfaceFlags);
+        HRESULT PrepareSurface(/* [in] */ IntPtr dwUserID, /* [in] */ LPDIRECTDRAWSURFACE7 lpSurface, /* [in] */ uint dwSurfaceFlags);
         
         [PreserveSig]
         HRESULT AdviseNotify(/* [in] */ IVMRSurfaceAllocatorNotify lpIVMRSurfAllocNotify);

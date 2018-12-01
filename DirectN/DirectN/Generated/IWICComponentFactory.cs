@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
+using PROPBAG2 = DirectN.tagPROPBAG2;
 using REFWICPixelFormatGUID = System.Guid;
 
 namespace DirectN
@@ -105,6 +106,6 @@ namespace DirectN
         HRESULT CreateQueryWriterFromBlockWriter(/* [in] __RPC__in_opt */ IWICMetadataBlockWriter pIBlockWriter, /* [out] __RPC__deref_out_opt */ out IWICMetadataQueryWriter ppIQueryWriter);
         
         [PreserveSig]
-        HRESULT CreateEncoderPropertyBag(/* [size_is][unique][in] __RPC__in_ecount_full_opt(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagPROPBAG2[] ppropOptions, /* [in] */ uint cCount, /* [out] __RPC__deref_out_opt */ out IPropertyBag2 ppIPropertyBag);
+        HRESULT CreateEncoderPropertyBag(/* [size_is][unique][in] __RPC__in_ecount_full_opt(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] PROPBAG2[] ppropOptions, /* [in] */ uint cCount, /* optional(IPropertyBag2) */ out IntPtr ppIPropertyBag);
     }
 }

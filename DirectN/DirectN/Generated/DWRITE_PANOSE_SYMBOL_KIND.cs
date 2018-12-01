@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(473,1)
 namespace DirectN
 {
-    /// <summary>
-    /// Kind of symbol set. Present for families: 5-symbol
-    /// </summary>
     public enum DWRITE_PANOSE_SYMBOL_KIND
     {
         DWRITE_PANOSE_SYMBOL_KIND_ANY = 0,

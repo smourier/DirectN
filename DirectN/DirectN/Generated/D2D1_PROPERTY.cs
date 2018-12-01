@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(94,9)
 namespace DirectN
 {
-    /// <summary>
-    /// This defines the list of system properties present on the root effect property interface.
-    /// </summary>
     public enum D2D1_PROPERTY
     {
         D2D1_PROPERTY_CLSID = -2147483648,

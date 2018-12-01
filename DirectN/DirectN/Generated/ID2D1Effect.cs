@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The effect interface. Properties control how the effect is rendered. The effect is Drawn with the DrawImage call.
-    /// </summary>
     [Guid("28211a43-7d89-476f-8181-2d6159b220ad"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Effect : ID2D1Properties
     {
@@ -46,18 +43,18 @@ namespace DirectN
         
         // ID2D1Effect
         [PreserveSig]
-        void SetInput(uint index, /* optional(ID2D1Image) */ IntPtr input, bool invalidate);
+        void SetInput(uint index, /* _In_opt_ */ ID2D1Image input, bool invalidate);
         
         [PreserveSig]
         HRESULT SetInputCount(uint inputCount);
         
         [PreserveSig]
-        void GetInput(uint index, /* _Outptr_result_maybenull_ */ out IntPtr input);
+        void GetInput(uint index, /* _Outptr_result_maybenull_ */ out ID2D1Image input);
         
         [PreserveSig]
         uint GetInputCount();
         
         [PreserveSig]
-        void GetOutput(/* _Outptr_ */ out IntPtr outputImage);
+        void GetOutput(/* _Outptr_ */ out ID2D1Image outputImage);
     }
 }

@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// A transform uses this interface to specify how to render a particular pass using pixel and vertex shaders.
-    /// </summary>
     [Guid("693ce632-7f2f-45de-93fe-18d88b37aa21"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DrawInfo : ID2D1RenderInfo
     {

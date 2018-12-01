@@ -8,8 +8,15 @@ namespace DirectN
     /// Represents an image source which shares resources with an original image source.
     /// </summary>
     [Guid("7f1f79e5-2796-416c-8f55-700f911445e5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface ID2D1TransformedImageSource
+    public partial interface ID2D1TransformedImageSource : ID2D1Image
     {
+        // ID2D1Resource
+        [PreserveSig]
+        new void GetFactory(/* _Outptr_ */ out ID2D1Factory factory);
+        
+        // ID2D1Image
+        
+        // ID2D1TransformedImageSource
         [PreserveSig]
         void GetSource(/* _Outptr_result_maybenull_ */ out ID2D1ImageSource imageSource);
         

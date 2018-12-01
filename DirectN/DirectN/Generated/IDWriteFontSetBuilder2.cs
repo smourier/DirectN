@@ -22,11 +22,11 @@ namespace DirectN
         
         // IDWriteFontSetBuilder1
         [PreserveSig]
-        new HRESULT AddFontFile(/* _In_ */ ref IDWriteFontFile fontFile);
+        new HRESULT AddFontFile(/* _In_ */ IDWriteFontFile fontFile);
         
         // IDWriteFontSetBuilder2
         [PreserveSig]
-        HRESULT AddFont(/* _In_ */ ref IDWriteFontFile fontFile, uint fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, /* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _In_reads_(fontAxisRangeCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] DWRITE_FONT_AXIS_RANGE[] fontAxisRanges, uint fontAxisRangeCount, /* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 8)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount);
+        HRESULT AddFont(/* _In_ */ IDWriteFontFile fontFile, uint fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, /* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _In_reads_(fontAxisRangeCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] DWRITE_FONT_AXIS_RANGE[] fontAxisRanges, uint fontAxisRangeCount, /* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 8)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount);
         
         [PreserveSig]
         HRESULT AddFontFile(/* _In_z_ */ ref char filePath);

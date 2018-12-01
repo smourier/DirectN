@@ -1,14 +1,10 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1effectauthor.h(749,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_POINT_2U = DirectN.D2D_POINT_2U;
 using D2D1_RECT_L = DirectN.tagRECT;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The interface implemented by a transform author to provide a CPU based source effect.
-    /// </summary>
     [Guid("db1800dd-0c34-4cf9-be90-31cc0a5653e1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SourceTransform : ID2D1Transform
     {
@@ -31,6 +27,6 @@ namespace DirectN
         HRESULT SetRenderInfo(/* _In_ */ ID2D1RenderInfo renderInfo);
         
         [PreserveSig]
-        HRESULT Draw(/* _In_ */ ref ID2D1Bitmap1 target, /* _In_ */ ref D2D1_RECT_L drawRect, D2D1_POINT_2U targetOrigin);
+        HRESULT Draw(/* _In_ */ ID2D1Bitmap1 target, /* _In_ */ ref D2D1_RECT_L drawRect, D2D_POINT_2U targetOrigin);
     }
 }

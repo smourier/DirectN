@@ -4,12 +4,14 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// User-implementable interface for introspecting on a metafile.
-    /// </summary>
     [Guid("fd0ecb6b-91e6-411e-8655-395e760f91b4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface ID2D1GdiMetafileSink1
+    public partial interface ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink
     {
+        // ID2D1GdiMetafileSink
+        [PreserveSig]
+        new HRESULT ProcessRecord(uint recordType, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object recordData, uint recordDataSize);
+        
+        // ID2D1GdiMetafileSink1
         [PreserveSig]
         HRESULT ProcessRecord(uint recordType, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object recordData, uint recordDataSize, uint flags);
     }
