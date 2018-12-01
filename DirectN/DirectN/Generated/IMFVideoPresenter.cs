@@ -25,7 +25,7 @@ namespace DirectN
         
         // IMFVideoPresenter
         [PreserveSig]
-        HRESULT ProcessMessage(MFVP_MESSAGE_TYPE eMessage, ulong ulParam);
+        HRESULT ProcessMessage(MFVP_MESSAGE_TYPE eMessage, IntPtr ulParam);
         
         [PreserveSig]
         HRESULT GetCurrentMediaType(/* [annotation][out] _Outptr_ */ out IMFVideoMediaType ppMediaType);

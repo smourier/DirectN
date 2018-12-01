@@ -11,6 +11,6 @@ namespace DirectN
         IntPtr GetBufferPointer();
         
         [PreserveSig]
-        ulong GetBufferSize();
+        IntPtr GetBufferSize();
     }
 }

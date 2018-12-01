@@ -11,7 +11,7 @@ namespace DirectN
     public partial interface IDWriteInlineObject
     {
         [PreserveSig]
-        HRESULT Draw(/* _In_opt_ */ IntPtr clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY, bool isSideways, bool isRightToLeft, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
+        HRESULT Draw(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY, bool isSideways, bool isRightToLeft, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
         
         [PreserveSig]
         HRESULT GetMetrics(/* _Out_ */ out DWRITE_INLINE_OBJECT_METRICS metrics);

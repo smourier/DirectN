@@ -14,6 +14,6 @@ namespace DirectN
         public uint dwDVVAuxSrc;
         public uint dwDVVAuxCtl;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public uint[] dwDVReserved;
+        public uint dwDVReserved;
     }
 }

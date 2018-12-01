@@ -12,6 +12,6 @@ namespace DirectN
         public uint cDstChannels;
         public uint dwChannelMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)] 
-        public long[] Coeff;
+        public int Coeff;
     }
 }

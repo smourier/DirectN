@@ -9,7 +9,7 @@ namespace DirectN
     {
         // ISpatialAudioObjectBase
         [PreserveSig]
-        new HRESULT GetBuffer(/* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*bufferLength) */ out byte[] buffer, /* [annotation][out] _Out_ */ out uint bufferLength);
+        new HRESULT GetBuffer(/* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*bufferLength) */ out IntPtr buffer, /* [annotation][out] _Out_ */ out uint bufferLength);
         
         [PreserveSig]
         new HRESULT SetEndOfStream(/* [annotation][in] _In_ */ uint frameCount);
@@ -22,6 +22,6 @@ namespace DirectN
         
         // ISpatialAudioObjectForMetadataCommands
         [PreserveSig]
-        HRESULT WriteNextMetadataCommand(/* [annotation][in] _In_ */ byte commandID, /* [annotation][size_is][in] _In_reads_bytes_opt_(valueBufferLength) */ out IntPtr valueBuffer, /* [annotation][in] _In_ */ uint valueBufferLength);
+        HRESULT WriteNextMetadataCommand(/* [annotation][in] _In_ */ byte commandID, /* [annotation][size_is][in] _In_reads_bytes_opt_(valueBufferLength) */ [MarshalAs(UnmanagedType.IUnknown)] object valueBuffer, /* [annotation][in] _In_ */ uint valueBufferLength);
     }
 }

@@ -1,6 +1,7 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(2026,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva9typ.h(689,9)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -8,8 +9,8 @@ namespace DirectN
     public partial struct _DXVA_ProcAmpControlBlt
     {
         public uint Size;
-        public tagRECT DstRect;
-        public tagRECT SrcRect;
+        public RECT DstRect;
+        public RECT SrcRect;
         public float Alpha;
         public float Brightness;
         public float Contrast;

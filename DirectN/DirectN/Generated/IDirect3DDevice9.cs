@@ -1,6 +1,10 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(179,1)
 using System;
 using System.Runtime.InteropServices;
+using PALETTEENTRY = DirectN.tagPALETTEENTRY;
+using POINT = DirectN.tagPOINT;
+using RECT = DirectN.tagRECT;
+using RGNDATA = DirectN._RGNDATA;
 
 namespace DirectN
 {
@@ -50,7 +54,7 @@ namespace DirectN
         HRESULT Reset(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters);
         
         [PreserveSig]
-        HRESULT Present(ref tagRECT pSourceRect, ref tagRECT pDestRect, IntPtr hDestWindowOverride, ref _RGNDATA pDirtyRegion);
+        HRESULT Present(ref RECT pSourceRect, ref RECT pDestRect, ref IntPtr hDestWindowOverride, ref RGNDATA pDirtyRegion);
         
         [PreserveSig]
         HRESULT GetBackBuffer(uint iSwapChain, uint iBackBuffer, _D3DBACKBUFFER_TYPE Type, IDirect3DSurface9 ppBackBuffer);
@@ -68,28 +72,28 @@ namespace DirectN
         void GetGammaRamp(uint iSwapChain, ref _D3DGAMMARAMP pRamp);
         
         [PreserveSig]
-        HRESULT CreateTexture(uint Width, uint Height, uint Levels, uint Usage, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DTexture9 ppTexture, [MarshalAs(UnmanagedType.IUnknown)] object pSharedHandle);
+        HRESULT CreateTexture(uint Width, uint Height, uint Levels, uint Usage, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DTexture9 ppTexture, ref IntPtr pSharedHandle);
         
         [PreserveSig]
-        HRESULT CreateVolumeTexture(uint Width, uint Height, uint Depth, uint Levels, uint Usage, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DVolumeTexture9 ppVolumeTexture, [MarshalAs(UnmanagedType.IUnknown)] object pSharedHandle);
+        HRESULT CreateVolumeTexture(uint Width, uint Height, uint Depth, uint Levels, uint Usage, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DVolumeTexture9 ppVolumeTexture, ref IntPtr pSharedHandle);
         
         [PreserveSig]
-        HRESULT CreateCubeTexture(uint EdgeLength, uint Levels, uint Usage, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DCubeTexture9 ppCubeTexture, [MarshalAs(UnmanagedType.IUnknown)] object pSharedHandle);
+        HRESULT CreateCubeTexture(uint EdgeLength, uint Levels, uint Usage, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DCubeTexture9 ppCubeTexture, ref IntPtr pSharedHandle);
         
         [PreserveSig]
-        HRESULT CreateVertexBuffer(uint Length, uint Usage, uint FVF, _D3DPOOL Pool, IDirect3DVertexBuffer9 ppVertexBuffer, [MarshalAs(UnmanagedType.IUnknown)] object pSharedHandle);
+        HRESULT CreateVertexBuffer(uint Length, uint Usage, uint FVF, _D3DPOOL Pool, IDirect3DVertexBuffer9 ppVertexBuffer, ref IntPtr pSharedHandle);
         
         [PreserveSig]
-        HRESULT CreateIndexBuffer(uint Length, uint Usage, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DIndexBuffer9 ppIndexBuffer, [MarshalAs(UnmanagedType.IUnknown)] object pSharedHandle);
+        HRESULT CreateIndexBuffer(uint Length, uint Usage, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DIndexBuffer9 ppIndexBuffer, ref IntPtr pSharedHandle);
         
         [PreserveSig]
-        HRESULT CreateRenderTarget(uint Width, uint Height, _D3DFORMAT Format, _D3DMULTISAMPLE_TYPE MultiSample, uint MultisampleQuality, bool Lockable, IDirect3DSurface9 ppSurface, [MarshalAs(UnmanagedType.IUnknown)] object pSharedHandle);
+        HRESULT CreateRenderTarget(uint Width, uint Height, _D3DFORMAT Format, _D3DMULTISAMPLE_TYPE MultiSample, uint MultisampleQuality, bool Lockable, IDirect3DSurface9 ppSurface, ref IntPtr pSharedHandle);
         
         [PreserveSig]
-        HRESULT CreateDepthStencilSurface(uint Width, uint Height, _D3DFORMAT Format, _D3DMULTISAMPLE_TYPE MultiSample, uint MultisampleQuality, bool Discard, IDirect3DSurface9 ppSurface, [MarshalAs(UnmanagedType.IUnknown)] object pSharedHandle);
+        HRESULT CreateDepthStencilSurface(uint Width, uint Height, _D3DFORMAT Format, _D3DMULTISAMPLE_TYPE MultiSample, uint MultisampleQuality, bool Discard, IDirect3DSurface9 ppSurface, ref IntPtr pSharedHandle);
         
         [PreserveSig]
-        HRESULT UpdateSurface(IDirect3DSurface9 pSourceSurface, ref tagRECT pSourceRect, IDirect3DSurface9 pDestinationSurface, ref tagPOINT pDestPoint);
+        HRESULT UpdateSurface(IDirect3DSurface9 pSourceSurface, ref RECT pSourceRect, IDirect3DSurface9 pDestinationSurface, ref POINT pDestPoint);
         
         [PreserveSig]
         HRESULT UpdateTexture(IDirect3DBaseTexture9 pSourceTexture, IDirect3DBaseTexture9 pDestinationTexture);
@@ -101,13 +105,13 @@ namespace DirectN
         HRESULT GetFrontBufferData(uint iSwapChain, IDirect3DSurface9 pDestSurface);
         
         [PreserveSig]
-        HRESULT StretchRect(IDirect3DSurface9 pSourceSurface, ref tagRECT pSourceRect, IDirect3DSurface9 pDestSurface, ref tagRECT pDestRect, _D3DTEXTUREFILTERTYPE Filter);
+        HRESULT StretchRect(IDirect3DSurface9 pSourceSurface, ref RECT pSourceRect, IDirect3DSurface9 pDestSurface, ref RECT pDestRect, _D3DTEXTUREFILTERTYPE Filter);
         
         [PreserveSig]
-        HRESULT ColorFill(IDirect3DSurface9 pSurface, ref tagRECT pRect, uint color);
+        HRESULT ColorFill(IDirect3DSurface9 pSurface, ref RECT pRect, uint color);
         
         [PreserveSig]
-        HRESULT CreateOffscreenPlainSurface(uint Width, uint Height, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DSurface9 ppSurface, [MarshalAs(UnmanagedType.IUnknown)] object pSharedHandle);
+        HRESULT CreateOffscreenPlainSurface(uint Width, uint Height, _D3DFORMAT Format, _D3DPOOL Pool, IDirect3DSurface9 ppSurface, ref IntPtr pSharedHandle);
         
         [PreserveSig]
         HRESULT SetRenderTarget(uint RenderTargetIndex, IDirect3DSurface9 pRenderTarget);
@@ -212,10 +216,10 @@ namespace DirectN
         HRESULT ValidateDevice(ref uint pNumPasses);
         
         [PreserveSig]
-        HRESULT SetPaletteEntries(uint PaletteNumber, ref tagPALETTEENTRY pEntries);
+        HRESULT SetPaletteEntries(uint PaletteNumber, ref PALETTEENTRY pEntries);
         
         [PreserveSig]
-        HRESULT GetPaletteEntries(uint PaletteNumber, ref tagPALETTEENTRY pEntries);
+        HRESULT GetPaletteEntries(uint PaletteNumber, ref PALETTEENTRY pEntries);
         
         [PreserveSig]
         HRESULT SetCurrentTexturePalette(uint PaletteNumber);
@@ -224,10 +228,10 @@ namespace DirectN
         HRESULT GetCurrentTexturePalette(ref uint PaletteNumber);
         
         [PreserveSig]
-        HRESULT SetScissorRect(ref tagRECT pRect);
+        HRESULT SetScissorRect(ref RECT pRect);
         
         [PreserveSig]
-        HRESULT GetScissorRect(ref tagRECT pRect);
+        HRESULT GetScissorRect(ref RECT pRect);
         
         [PreserveSig]
         HRESULT SetSoftwareVertexProcessing(bool bSoftware);
@@ -248,10 +252,10 @@ namespace DirectN
         HRESULT DrawIndexedPrimitive(_D3DPRIMITIVETYPE __unnamed_0, int BaseVertexIndex, uint MinVertexIndex, uint NumVertices, uint startIndex, uint primCount);
         
         [PreserveSig]
-        HRESULT DrawPrimitiveUP(_D3DPRIMITIVETYPE PrimitiveType, uint PrimitiveCount, ref IntPtr pVertexStreamZeroData, uint VertexStreamZeroStride);
+        HRESULT DrawPrimitiveUP(_D3DPRIMITIVETYPE PrimitiveType, uint PrimitiveCount, [MarshalAs(UnmanagedType.IUnknown)] object pVertexStreamZeroData, uint VertexStreamZeroStride);
         
         [PreserveSig]
-        HRESULT DrawIndexedPrimitiveUP(_D3DPRIMITIVETYPE PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, ref IntPtr pIndexData, _D3DFORMAT IndexDataFormat, ref IntPtr pVertexStreamZeroData, uint VertexStreamZeroStride);
+        HRESULT DrawIndexedPrimitiveUP(_D3DPRIMITIVETYPE PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [MarshalAs(UnmanagedType.IUnknown)] object pIndexData, _D3DFORMAT IndexDataFormat, [MarshalAs(UnmanagedType.IUnknown)] object pVertexStreamZeroData, uint VertexStreamZeroStride);
         
         [PreserveSig]
         HRESULT ProcessVertices(uint SrcStartIndex, uint DestIndex, uint VertexCount, IDirect3DVertexBuffer9 pDestBuffer, IDirect3DVertexDeclaration9 pVertexDecl, uint Flags);
@@ -293,7 +297,7 @@ namespace DirectN
         HRESULT GetVertexShaderConstantI(uint StartRegister, ref int pConstantData, uint Vector4iCount);
         
         [PreserveSig]
-        HRESULT SetVertexShaderConstantB(uint StartRegister, ref int pConstantData, uint BoolCount);
+        HRESULT SetVertexShaderConstantB(uint StartRegister, ref bool pConstantData, uint BoolCount);
         
         [PreserveSig]
         HRESULT GetVertexShaderConstantB(uint StartRegister, ref bool pConstantData, uint BoolCount);
@@ -338,7 +342,7 @@ namespace DirectN
         HRESULT GetPixelShaderConstantI(uint StartRegister, ref int pConstantData, uint Vector4iCount);
         
         [PreserveSig]
-        HRESULT SetPixelShaderConstantB(uint StartRegister, ref int pConstantData, uint BoolCount);
+        HRESULT SetPixelShaderConstantB(uint StartRegister, ref bool pConstantData, uint BoolCount);
         
         [PreserveSig]
         HRESULT GetPixelShaderConstantB(uint StartRegister, ref bool pConstantData, uint BoolCount);

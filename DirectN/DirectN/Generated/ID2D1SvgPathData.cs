@@ -22,10 +22,10 @@ namespace DirectN
         HRESULT RemoveSegmentDataAtEnd(uint dataCount);
         
         [PreserveSig]
-        HRESULT UpdateSegmentData(/* _In_reads_(dataCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] data, uint dataCount, uint startIndex);
+        HRESULT UpdateSegmentData(/* _In_reads_(dataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] data, uint dataCount, uint startIndex);
         
         [PreserveSig]
-        HRESULT GetSegmentData(/* _Out_writes_(dataCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] data, uint dataCount, uint startIndex);
+        HRESULT GetSegmentData(/* _Out_writes_(dataCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] data, uint dataCount, uint startIndex);
         
         [PreserveSig]
         uint GetSegmentDataCount();
@@ -34,10 +34,10 @@ namespace DirectN
         HRESULT RemoveCommandsAtEnd(uint commandsCount);
         
         [PreserveSig]
-        HRESULT UpdateCommands(/* _In_reads_(commandsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_SVG_PATH_COMMAND[] commands, uint commandsCount, uint startIndex);
+        HRESULT UpdateCommands(/* _In_reads_(commandsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_SVG_PATH_COMMAND[] commands, uint commandsCount, uint startIndex);
         
         [PreserveSig]
-        HRESULT GetCommands(/* _Out_writes_(commandsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_SVG_PATH_COMMAND[] commands, uint commandsCount, uint startIndex);
+        HRESULT GetCommands(/* _Out_writes_(commandsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_SVG_PATH_COMMAND[] commands, uint commandsCount, uint startIndex);
         
         [PreserveSig]
         uint GetCommandsCount();

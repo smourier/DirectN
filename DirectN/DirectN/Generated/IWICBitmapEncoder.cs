@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface IWICBitmapEncoder
     {
         [PreserveSig]
-        HRESULT Initialize(/* [in] __RPC__in_opt */ ref IStream pIStream, /* [in] */ WICBitmapEncoderCacheOption cacheOption);
+        HRESULT Initialize(/* [in] __RPC__in_opt */ IStream pIStream, /* [in] */ WICBitmapEncoderCacheOption cacheOption);
         
         [PreserveSig]
         HRESULT GetContainerFormat(/* [out] __RPC__out */ out Guid pguidContainerFormat);
@@ -18,7 +18,7 @@ namespace DirectN
         HRESULT GetEncoderInfo(/* [out] __RPC__deref_out_opt */ out IWICBitmapEncoderInfo ppIEncoderInfo);
         
         [PreserveSig]
-        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ out IWICColorContext[] ppIColorContext);
+        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ out IntPtr ppIColorContext);
         
         [PreserveSig]
         HRESULT SetPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);

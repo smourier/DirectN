@@ -8,19 +8,19 @@ namespace DirectN
     public partial interface IAudioSessionEvents
     {
         [PreserveSig]
-        HRESULT OnDisplayNameChanged(/* [annotation][string][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string NewDisplayName, /* [in] */ Guid EventContext);
+        HRESULT OnDisplayNameChanged(/* [annotation][string][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string NewDisplayName, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
-        HRESULT OnIconPathChanged(/* [annotation][string][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string NewIconPath, /* [in] */ Guid EventContext);
+        HRESULT OnIconPathChanged(/* [annotation][string][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string NewIconPath, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
-        HRESULT OnSimpleVolumeChanged(/* [annotation][in] _In_ */ float NewVolume, /* [annotation][in] _In_ */ bool NewMute, /* [in] */ Guid EventContext);
+        HRESULT OnSimpleVolumeChanged(/* [annotation][in] _In_ */ float NewVolume, /* [annotation][in] _In_ */ bool NewMute, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
-        HRESULT OnChannelVolumeChanged(/* [annotation][in] _In_ */ uint ChannelCount, /* [annotation][size_is][in] _In_reads_(ChannelCount) */ float [] NewChannelVolumeArray, /* [annotation][in] _In_ */ uint ChangedChannel, /* [in] */ Guid EventContext);
+        HRESULT OnChannelVolumeChanged(/* [annotation][in] _In_ */ uint ChannelCount, /* [annotation][size_is][in] _In_reads_(ChannelCount) */ float [] NewChannelVolumeArray, /* [annotation][in] _In_ */ uint ChangedChannel, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
-        HRESULT OnGroupingParamChanged(/* [annotation][in] _In_ */ Guid NewGroupingParam, /* [in] */ Guid EventContext);
+        HRESULT OnGroupingParamChanged(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid NewGroupingParam, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
         HRESULT OnStateChanged(/* [annotation][in] _In_ */ _AudioSessionState NewState);

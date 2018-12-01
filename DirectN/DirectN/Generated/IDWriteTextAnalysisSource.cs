@@ -11,16 +11,16 @@ namespace DirectN
     public partial interface IDWriteTextAnalysisSource
     {
         [PreserveSig]
-        HRESULT GetTextAtPosition(uint textPosition, /* _Outptr_result_buffer_(*textLength) */ out char[] textString, /* _Out_ */ out uint textLength);
+        HRESULT GetTextAtPosition(uint textPosition, /* _Outptr_result_buffer_(*textLength) */ out IntPtr textString, /* _Out_ */ out uint textLength);
         
         [PreserveSig]
-        HRESULT GetTextBeforePosition(uint textPosition, /* _Outptr_result_buffer_(*textLength) */ out char[] textString, /* _Out_ */ out uint textLength);
+        HRESULT GetTextBeforePosition(uint textPosition, /* _Outptr_result_buffer_(*textLength) */ out IntPtr textString, /* _Out_ */ out uint textLength);
         
         [PreserveSig]
         DWRITE_READING_DIRECTION GetParagraphReadingDirection();
         
         [PreserveSig]
-        HRESULT GetLocaleName(uint textPosition, /* _Out_ */ out uint textLength, /* _Outptr_result_z_ */ out char localeName);
+        HRESULT GetLocaleName(uint textPosition, /* _Out_ */ out uint textLength, /* _Outptr_result_z_ */ out IntPtr localeName);
         
         [PreserveSig]
         HRESULT GetNumberSubstitution(uint textPosition, /* _Out_ */ out uint textLength, /* _COM_Outptr_ */ out IDWriteNumberSubstitution numberSubstitution);

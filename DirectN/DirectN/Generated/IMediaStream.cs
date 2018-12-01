@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmstream.h(330,5)
 using System;
 using System.Runtime.InteropServices;
+using MSPID = System.Guid;
 
 namespace DirectN
 {
@@ -11,7 +12,7 @@ namespace DirectN
         HRESULT GetMultiMediaStream(/* [out] __RPC__deref_out_opt */ out IMultiMediaStream ppMultiMediaStream);
         
         [PreserveSig]
-        HRESULT GetInformation(/* [out] __RPC__out */ out Guid pPurposeId, /* [out] __RPC__out */ out __MIDL___MIDL_itf_mmstream_0000_0000_0001 pType);
+        HRESULT GetInformation(/* [out] __RPC__out */ out MSPID pPurposeId, /* [out] __RPC__out */ out __MIDL___MIDL_itf_mmstream_0000_0000_0001 pType);
         
         [PreserveSig]
         HRESULT SetSameFormat(/* [in] __RPC__in_opt */ IMediaStream pStreamThatHasDesiredFormat, /* [in] */ uint dwFlags);

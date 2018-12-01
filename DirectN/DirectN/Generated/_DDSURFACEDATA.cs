@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint ddsCaps;
         public uint dwSurfaceOffset;
-        public ulong fpLockPtr;
+        public IntPtr fpLockPtr;
         public uint dwWidth;
         public uint dwHeight;
         public int lPitch;

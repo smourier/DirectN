@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IProvideClassInfo
         [PreserveSig]
-        new HRESULT GetClassInfoA(/* [out] __RPC__deref_out_opt */ out ITypeInfo ppTI);
+        new HRESULT GetClassInfoA(/* optional(ITypeInfo) */ out IntPtr ppTI);
         
         // IProvideClassInfo2
         [PreserveSig]

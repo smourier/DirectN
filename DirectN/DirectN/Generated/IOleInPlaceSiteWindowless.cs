@@ -1,6 +1,10 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(4420,5)
 using System;
 using System.Runtime.InteropServices;
+using HRGN = DirectN.HRGN__;
+using LPCRECT = DirectN.tagRECT;
+using LPRECT = DirectN.tagRECT;
+using LRESULT = System.Int64;
 
 namespace DirectN
 {
@@ -34,24 +38,24 @@ namespace DirectN
         HRESULT SetFocus(/* [in] */ bool fFocus);
         
         [PreserveSig]
-        HRESULT GetDC(/* [unique][in] __RPC__in_opt */ IntPtr pRect, /* [in] */ uint grfFlags, /* [out] __RPC__deref_out_opt */ out IntPtr phDC);
+        HRESULT GetDC(/* optional(LPCRECT) */ IntPtr pRect, /* [in] */ uint grfFlags, /* optional(HDC) */ out IntPtr phDC);
         
         [PreserveSig]
         HRESULT ReleaseDC(/* [in] __RPC__in */ IntPtr hDC);
         
         [PreserveSig]
-        HRESULT InvalidateRect(/* [unique][in] __RPC__in_opt */ IntPtr pRect, /* [in] */ bool fErase);
+        HRESULT InvalidateRect(/* optional(LPCRECT) */ IntPtr pRect, /* [in] */ bool fErase);
         
         [PreserveSig]
-        HRESULT InvalidateRgn(/* [in] __RPC__in */ IntPtr hRGN, /* [in] */ bool fErase);
+        HRESULT InvalidateRgn(/* [in] __RPC__in */ ref HRGN hRGN, /* [in] */ bool fErase);
         
         [PreserveSig]
-        HRESULT ScrollRect(/* [in] */ int dx, /* [in] */ int dy, /* [in] __RPC__in */ IntPtr pRectScroll, /* [in] __RPC__in */ IntPtr pRectClip);
+        HRESULT ScrollRect(/* [in] */ int dx, /* [in] */ int dy, /* [in] __RPC__in */ ref LPCRECT pRectScroll, /* [in] __RPC__in */ ref LPCRECT pRectClip);
         
         [PreserveSig]
-        HRESULT AdjustRect(/* [out][in] __RPC__inout */ IntPtr prc);
+        HRESULT AdjustRect(/* [out][in] __RPC__inout */ ref LPRECT prc);
         
         [PreserveSig]
-        HRESULT OnDefWindowMessage(/* [annotation][in] _In_ */ uint msg, /* [annotation][in] _In_ */ ulong wParam, /* [annotation][in] _In_ */ long lParam, /* [out] __RPC__out */ out long plResult);
+        HRESULT OnDefWindowMessage(/* [annotation][in] _In_ */ uint msg, /* [annotation][in] _In_ */ ulong wParam, /* [annotation][in] _In_ */ long lParam, /* [out] __RPC__out */ out LRESULT plResult);
     }
 }

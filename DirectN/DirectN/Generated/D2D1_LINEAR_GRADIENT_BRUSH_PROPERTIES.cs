@@ -1,5 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(342,9)
 using System.Runtime.InteropServices;
+using D2D1_POINT_2F = DirectN.D2D_POINT_2F;
 
 namespace DirectN
 {
@@ -9,7 +10,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES
     {
-        public D2D_POINT_2F startPoint;
-        public D2D_POINT_2F endPoint;
+        public D2D1_POINT_2F startPoint;
+        public D2D1_POINT_2F endPoint;
     }
 }

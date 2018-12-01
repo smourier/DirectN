@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface INamedPropertyStore
     {
         [PreserveSig]
-        HRESULT GetNamedValue(/* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* [out] __RPC__out */ out PropVariant ppropvar);
+        HRESULT GetNamedValue(/* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* [out] __RPC__out */ PropVariant ppropvar);
         
         [PreserveSig]
         HRESULT SetNamedValue(/* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* [in] __RPC__in */ PropVariant propvar);
@@ -17,6 +17,6 @@ namespace DirectN
         HRESULT GetNameCount(/* [out] __RPC__out */ out uint pdwCount);
         
         [PreserveSig]
-        HRESULT GetNameAt(/* [in] */ uint iProp, /* [out] __RPC__deref_out_opt */ out IntPtr pbstrName);
+        HRESULT GetNameAt(/* [in] */ uint iProp, /* optional(BSTR) */ out IntPtr pbstrName);
     }
 }

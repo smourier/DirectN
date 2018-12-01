@@ -1,6 +1,14 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3dnthal.h(396,9)
 using System;
 using System.Runtime.InteropServices;
+using LPD3DNTHAL_CONTEXTCREATECB = System.IntPtr;
+using LPD3DNTHAL_CONTEXTDESTROYALLCB = System.IntPtr;
+using LPD3DNTHAL_CONTEXTDESTROYCB = System.IntPtr;
+using LPD3DNTHAL_SCENECAPTURECB = System.IntPtr;
+using LPD3DNTHAL_TEXTURECREATECB = System.IntPtr;
+using LPD3DNTHAL_TEXTUREDESTROYCB = System.IntPtr;
+using LPD3DNTHAL_TEXTUREGETSURFCB = System.IntPtr;
+using LPD3DNTHAL_TEXTURESWAPCB = System.IntPtr;
 
 namespace DirectN
 {
@@ -16,7 +24,7 @@ namespace DirectN
         public IntPtr dwReserved11;
         public IntPtr dwReserved22;
         public IntPtr dwReserved23;
-        public ulong dwReserved;
+        public IntPtr dwReserved;
         public IntPtr TextureCreate;
         public IntPtr TextureDestroy;
         public IntPtr TextureSwap;
@@ -32,15 +40,15 @@ namespace DirectN
         public IntPtr dwReserved20;
         public IntPtr dwReserved21;
         public IntPtr dwReserved24;
-        public ulong dwReserved0;
-        public ulong dwReserved1;
-        public ulong dwReserved2;
-        public ulong dwReserved3;
-        public ulong dwReserved4;
-        public ulong dwReserved5;
-        public ulong dwReserved6;
-        public ulong dwReserved7;
-        public ulong dwReserved8;
-        public ulong dwReserved9;
+        public IntPtr dwReserved0;
+        public IntPtr dwReserved1;
+        public IntPtr dwReserved2;
+        public IntPtr dwReserved3;
+        public IntPtr dwReserved4;
+        public IntPtr dwReserved5;
+        public IntPtr dwReserved6;
+        public IntPtr dwReserved7;
+        public IntPtr dwReserved8;
+        public IntPtr dwReserved9;
     }
 }

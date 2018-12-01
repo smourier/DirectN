@@ -9,13 +9,13 @@ namespace DirectN
     {
         // IDXGIObject
         [PreserveSig]
-        new HRESULT SetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [in] */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ out IntPtr pData);
+        new HRESULT SetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [in] */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
         new HRESULT SetPrivateDataInterface(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
         
         [PreserveSig]
-        new HRESULT GetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][out][in] _Inout_ */ ref uint pDataSize, /* [annotation][out] _Out_writes_bytes_(*pDataSize) */ out IntPtr pData);
+        new HRESULT GetPrivateData(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Name, /* [annotation][out][in] _Inout_ */ ref uint pDataSize, /* [annotation][out] _Out_writes_bytes_(*pDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
         new HRESULT GetParent(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][retval][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppParent);
@@ -25,10 +25,10 @@ namespace DirectN
         new HRESULT GetAdapter(/* [annotation][out] _COM_Outptr_ */ out IDXGIAdapter pAdapter);
         
         [PreserveSig]
-        new HRESULT CreateSurface(/* [annotation][in] _In_ */ ref DXGI_SURFACE_DESC pDesc, /* [in] */ uint NumSurfaces, /* [in] */ uint Usage, /* [annotation][in] _In_opt_ */ ref DXGI_SHARED_RESOURCE pSharedResource, /* [annotation][out] _COM_Outptr_ */ out IDXGISurface ppSurface);
+        new HRESULT CreateSurface(/* [annotation][in] _In_ */ ref DXGI_SURFACE_DESC pDesc, /* [in] */ uint NumSurfaces, /* [in] */ uint Usage, /* optional(DXGI_SHARED_RESOURCE) */ IntPtr pSharedResource, /* [annotation][out] _COM_Outptr_ */ out IDXGISurface ppSurface);
         
         [PreserveSig]
-        new HRESULT QueryResourceResidency(/* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.IUnknown)] object ppResources, /* [annotation][size_is][out] _Out_writes_(NumResources) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_RESIDENCY[] pResidencyStatus, /* [in] */ uint NumResources);
+        new HRESULT QueryResourceResidency(/* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.IUnknown)] object ppResources, /* [annotation][size_is][out] _Out_writes_(NumResources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_RESIDENCY[] pResidencyStatus, /* [in] */ uint NumResources);
         
         [PreserveSig]
         new HRESULT SetGPUThreadPriority(/* [in] */ int Priority);
@@ -45,10 +45,10 @@ namespace DirectN
         
         // IDXGIDevice2
         [PreserveSig]
-        new HRESULT OfferResources(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ out IDXGIResource[] ppResources, /* [annotation][in] _In_ */ _DXGI_OFFER_RESOURCE_PRIORITY Priority);
+        new HRESULT OfferResources(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ out IntPtr ppResources, /* [annotation][in] _In_ */ _DXGI_OFFER_RESOURCE_PRIORITY Priority);
         
         [PreserveSig]
-        new HRESULT ReclaimResources(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ out IDXGIResource[] ppResources, /* [annotation][size_is][out] _Out_writes_all_opt_(NumResources) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] bool pDiscarded);
+        new HRESULT ReclaimResources(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ out IntPtr ppResources, /* [annotation][size_is][out] _Out_writes_all_opt_(NumResources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] bool[] pDiscarded);
         
         [PreserveSig]
         new HRESULT EnqueueSetEvent(/* [annotation][in] _In_ */ IntPtr hEvent);

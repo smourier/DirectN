@@ -8,8 +8,8 @@ namespace DirectN
     public partial struct _DXVA_QmatrixData
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte[] bNewQmatrix;
+        public byte bNewQmatrix;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort[] Qmatrix;
+        public ushort Qmatrix;
     }
 }

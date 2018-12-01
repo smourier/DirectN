@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT CheckMemory(/* [in] */ ref byte pBuffer);
         
         [PreserveSig]
-        HRESULT Alloc(/* [annotation][out] _Outptr_result_bytebuffer_(*pdwcbBuffer) */ out byte[] ppBuffer, /* [annotation][out][in] _Inout_ */ ref uint pdwcbBuffer);
+        HRESULT Alloc(/* [annotation][out] _Outptr_result_bytebuffer_(*pdwcbBuffer) */ out IntPtr ppBuffer, /* [annotation][out][in] _Inout_ */ ref uint pdwcbBuffer);
         
         [PreserveSig]
         HRESULT Free(/* [in] */ ref byte pBuffer);

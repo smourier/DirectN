@@ -38,7 +38,7 @@ namespace DirectN
         bool HasCharacter(uint unicodeValue);
         
         [PreserveSig]
-        HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* _In_opt_ */ ref DWRITE_MATRIX transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* _In_opt_ */ ref IDWriteRenderingParams renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE1 renderingMode, /* _Out_ */ out DWRITE_GRID_FIT_MODE gridFitMode);
+        HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* optional(IDWriteRenderingParams) */ IntPtr renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE1 renderingMode, /* _Out_ */ out DWRITE_GRID_FIT_MODE gridFitMode);
         
         [PreserveSig]
         bool IsCharacterLocal(uint unicodeValue);
@@ -47,9 +47,9 @@ namespace DirectN
         bool IsGlyphLocal(ushort glyphId);
         
         [PreserveSig]
-        HRESULT AreCharactersLocal(/* _In_reads_(characterCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount, bool enqueueIfNotLocal, /* _Out_ */ out bool isLocal);
+        HRESULT AreCharactersLocal(/* _In_reads_(characterCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount, bool enqueueIfNotLocal, /* _Out_ */ out bool isLocal);
         
         [PreserveSig]
-        HRESULT AreGlyphsLocal(/* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount, bool enqueueIfNotLocal, /* _Out_ */ out bool isLocal);
+        HRESULT AreGlyphsLocal(/* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount, bool enqueueIfNotLocal, /* _Out_ */ out bool isLocal);
     }
 }

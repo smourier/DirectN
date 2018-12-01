@@ -66,7 +66,7 @@ namespace DirectN
         new uint GetFontFamilyNameLength();
         
         [PreserveSig]
-        new HRESULT GetFontFamilyName(/* _Out_writes_z_(nameSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] fontFamilyName, uint nameSize);
+        new HRESULT GetFontFamilyName(/* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] fontFamilyName, uint nameSize);
         
         [PreserveSig]
         new DWRITE_FONT_WEIGHT GetFontWeight();
@@ -84,7 +84,7 @@ namespace DirectN
         new uint GetLocaleNameLength();
         
         [PreserveSig]
-        new HRESULT GetLocaleName(/* _Out_writes_z_(nameSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] localeName, uint nameSize);
+        new HRESULT GetLocaleName(/* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] localeName, uint nameSize);
         
         // IDWriteTextLayout
         [PreserveSig]
@@ -142,7 +142,7 @@ namespace DirectN
         HRESULT GetFontFamilyNameLength(uint currentPosition, /* _Out_ */ out uint nameLength, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        HRESULT GetFontFamilyName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] fontFamilyName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        HRESULT GetFontFamilyName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] fontFamilyName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         HRESULT GetFontWeight(uint currentPosition, /* _Out_ */ out DWRITE_FONT_WEIGHT fontWeight, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
@@ -175,13 +175,13 @@ namespace DirectN
         HRESULT GetLocaleNameLength(uint currentPosition, /* _Out_ */ out uint nameLength, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        HRESULT GetLocaleName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] localeName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        HRESULT GetLocaleName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] localeName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        HRESULT Draw(/* _In_opt_ */ IntPtr clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY);
+        HRESULT Draw(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY);
         
         [PreserveSig]
-        HRESULT GetLineMetrics(/* _Out_writes_opt_(maxLineCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
+        HRESULT GetLineMetrics(/* _Out_writes_opt_(maxLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
         
         [PreserveSig]
         HRESULT GetMetrics(/* _Out_ */ out DWRITE_TEXT_METRICS textMetrics);
@@ -190,7 +190,7 @@ namespace DirectN
         HRESULT GetOverhangMetrics(/* _Out_ */ out DWRITE_OVERHANG_METRICS overhangs);
         
         [PreserveSig]
-        HRESULT GetClusterMetrics(/* _Out_writes_opt_(maxClusterCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_CLUSTER_METRICS[] clusterMetrics, uint maxClusterCount, /* _Out_ */ out uint actualClusterCount);
+        HRESULT GetClusterMetrics(/* _Out_writes_opt_(maxClusterCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_CLUSTER_METRICS[] clusterMetrics, uint maxClusterCount, /* _Out_ */ out uint actualClusterCount);
         
         [PreserveSig]
         HRESULT DetermineMinWidth(/* _Out_ */ out float minWidth);
@@ -202,6 +202,6 @@ namespace DirectN
         HRESULT HitTestTextPosition(uint textPosition, bool isTrailingHit, /* _Out_ */ out float pointX, /* _Out_ */ out float pointY, /* _Out_ */ out DWRITE_HIT_TEST_METRICS hitTestMetrics);
         
         [PreserveSig]
-        HRESULT HitTestTextRange(uint textPosition, uint textLength, float originX, float originY, /* _Out_writes_opt_(maxHitTestMetricsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DWRITE_HIT_TEST_METRICS[] hitTestMetrics, uint maxHitTestMetricsCount, /* _Out_ */ out uint actualHitTestMetricsCount);
+        HRESULT HitTestTextRange(uint textPosition, uint textLength, float originX, float originY, /* _Out_writes_opt_(maxHitTestMetricsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DWRITE_HIT_TEST_METRICS[] hitTestMetrics, uint maxHitTestMetricsCount, /* _Out_ */ out uint actualHitTestMetricsCount);
     }
 }

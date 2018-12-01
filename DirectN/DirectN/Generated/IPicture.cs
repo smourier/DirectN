@@ -1,6 +1,10 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(3238,5)
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
+using LPCRECT = DirectN.tagRECT;
+using OLE_XSIZE_HIMETRIC = System.Int32;
+using OLE_YSIZE_HIMETRIC = System.Int32;
 
 namespace DirectN
 {
@@ -8,31 +12,31 @@ namespace DirectN
     public partial interface IPicture
     {
         [PreserveSig]
-        HRESULT get_Handle(/* [out] __RPC__out */ out uint pHandle);
+        HRESULT get_Handle(/* [out] __RPC__out */ out IntPtr pHandle);
         
         [PreserveSig]
-        HRESULT get_hPal(/* [out] __RPC__out */ out uint phPal);
+        HRESULT get_hPal(/* [out] __RPC__out */ out IntPtr phPal);
         
         [PreserveSig]
         HRESULT get_Type(/* [out] __RPC__out */ out short pType);
         
         [PreserveSig]
-        HRESULT get_Width(/* [out] __RPC__out */ out long pWidth);
+        HRESULT get_Width(/* [out] __RPC__out */ out OLE_XSIZE_HIMETRIC pWidth);
         
         [PreserveSig]
-        HRESULT get_Height(/* [out] __RPC__out */ out long pHeight);
+        HRESULT get_Height(/* [out] __RPC__out */ out OLE_YSIZE_HIMETRIC pHeight);
         
         [PreserveSig]
-        HRESULT Render(/* [in] __RPC__in */ IntPtr hDC, /* [in] */ int x, /* [in] */ int y, /* [in] */ int cx, /* [in] */ int cy, /* [in] */ int xSrc, /* [in] */ int ySrc, /* [in] */ int cxSrc, /* [in] */ int cySrc, /* [in] __RPC__in */ IntPtr pRcWBounds);
+        HRESULT Render(/* [in] __RPC__in */ IntPtr hDC, /* [in] */ int x, /* [in] */ int y, /* [in] */ int cx, /* [in] */ int cy, /* [in] */ int xSrc, /* [in] */ int ySrc, /* [in] */ int cxSrc, /* [in] */ int cySrc, /* [in] __RPC__in */ ref LPCRECT pRcWBounds);
         
         [PreserveSig]
-        HRESULT set_hPal(/* [in] */ uint hPal);
+        HRESULT set_hPal(/* [in] */ IntPtr hPal);
         
         [PreserveSig]
-        HRESULT get_CurDC(/* [out] __RPC__deref_out_opt */ out IntPtr phDC);
+        HRESULT get_CurDC(/* optional(HDC) */ out IntPtr phDC);
         
         [PreserveSig]
-        HRESULT SelectPicture(/* [in] __RPC__in */ IntPtr hDCIn, /* [out] __RPC__deref_out_opt */ out IntPtr phDCOut, /* [out] __RPC__out */ out uint phBmpOut);
+        HRESULT SelectPicture(/* [in] __RPC__in */ IntPtr hDCIn, /* optional(HDC) */ out IntPtr phDCOut, /* [out] __RPC__out */ out IntPtr phBmpOut);
         
         [PreserveSig]
         HRESULT get_KeepOriginalFormat(/* [out] __RPC__out */ out bool pKeep);
@@ -44,7 +48,7 @@ namespace DirectN
         HRESULT PictureChanged();
         
         [PreserveSig]
-        HRESULT SaveAsFile(/* [in] __RPC__in_opt */ IntPtr pStream, /* [in] */ bool fSaveMemCopy, /* [out] __RPC__out */ out long pCbSize);
+        HRESULT SaveAsFile(/* [in] __RPC__in_opt */ IStream pStream, /* [in] */ bool fSaveMemCopy, /* [out] __RPC__out */ out int pCbSize);
         
         [PreserveSig]
         HRESULT get_Attributes(/* [out] __RPC__out */ out uint pDwAttr);

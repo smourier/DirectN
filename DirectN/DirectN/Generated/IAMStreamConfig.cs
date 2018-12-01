@@ -11,12 +11,12 @@ namespace DirectN
         HRESULT SetFormat(/* [in] */ ref _AMMediaType pmt);
         
         [PreserveSig]
-        HRESULT GetFormat(/* [annotation][out] _Out_ */ out _AMMediaType ppmt);
+        HRESULT GetFormat(/* [annotation][out] _Out_ */ out IntPtr ppmt);
         
         [PreserveSig]
         HRESULT GetNumberOfCapabilities(/* [annotation][out] _Out_ */ out int piCount, /* [annotation][out] _Out_ */ out int piSize);
         
         [PreserveSig]
-        HRESULT GetStreamCaps(/* [in] */ int iIndex, /* [annotation][out] _Out_ */ out _AMMediaType ppmt, /* [annotation][out] _Out_ */ out byte pSCC);
+        HRESULT GetStreamCaps(/* [in] */ int iIndex, /* [annotation][out] _Out_ */ out IntPtr ppmt, /* [annotation][out] _Out_ */ out byte pSCC);
     }
 }

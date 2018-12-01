@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IMFProtectedEnvironmentAccess
     {
         [PreserveSig]
-        HRESULT Call(/* [annotation] _In_ */ uint inputLength, /* [annotation] _In_reads_bytes_(inputLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] input, /* [annotation] _In_ */ uint outputLength, /* [annotation] _Out_writes_bytes_(outputLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] output);
+        HRESULT Call(/* [annotation] _In_ */ uint inputLength, /* [annotation] _In_reads_bytes_(inputLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] input, /* [annotation] _In_ */ uint outputLength, /* [annotation] _Out_writes_bytes_(outputLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] output);
         
         [PreserveSig]
-        HRESULT ReadGRL(/* [annotation] _Out_ */ out uint outputLength, /* [annotation] _Outptr_result_bytebuffer_(*outputLength) */ out byte[] output);
+        HRESULT ReadGRL(/* [annotation] _Out_ */ out uint outputLength, /* [annotation] _Outptr_result_bytebuffer_(*outputLength) */ out IntPtr output);
     }
 }

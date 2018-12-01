@@ -21,7 +21,7 @@ namespace DirectN
         new HRESULT FindFilterByName(/* [string][in] */ [MarshalAs(UnmanagedType.LPWStr)] string pName, /* [annotation][out] _Out_ */ out IBaseFilter ppFilter);
         
         [PreserveSig]
-        new HRESULT ConnectDirect(/* [in] */ IPin ppinOut, /* [in] */ IPin ppinIn, /* [annotation][unique][in] _In_opt_ */ ref _AMMediaType pmt);
+        new HRESULT ConnectDirect(/* [in] */ IPin ppinOut, /* [in] */ IPin ppinIn, /* optional(_AMMediaType) */ IntPtr pmt);
         
         [PreserveSig]
         new HRESULT Reconnect(/* [in] */ IPin ppin);
@@ -46,7 +46,7 @@ namespace DirectN
         HRESULT AddSourceFilter(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpcwstrFileName, /* [annotation][unique][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpcwstrFilterName, /* [annotation][out] _Out_ */ out IBaseFilter ppFilter);
         
         [PreserveSig]
-        HRESULT SetLogFile(/* [in] */ ulong hFile);
+        HRESULT SetLogFile(/* [in] */ IntPtr hFile);
         
         [PreserveSig]
         HRESULT Abort();

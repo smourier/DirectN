@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_3.h(2916,1)
 using System;
 using System.Runtime.InteropServices;
+using FILETIME = DirectN._FILETIME;
 
 namespace DirectN
 {
@@ -33,7 +34,7 @@ namespace DirectN
         new ulong GetFileSize();
         
         [PreserveSig]
-        new HRESULT GetFileTime(/* _Out_ */ out _FILETIME lastWriteTime);
+        new HRESULT GetFileTime(/* _Out_ */ out FILETIME lastWriteTime);
         
         [PreserveSig]
         new DWRITE_LOCALITY GetLocality();
@@ -42,10 +43,10 @@ namespace DirectN
         new HRESULT EnqueueFontDownloadRequest();
         
         [PreserveSig]
-        new HRESULT EnqueueCharacterDownloadRequest(/* _In_reads_(characterCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount);
+        new HRESULT EnqueueCharacterDownloadRequest(/* _In_reads_(characterCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount);
         
         [PreserveSig]
-        new HRESULT EnqueueGlyphDownloadRequest(/* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount);
+        new HRESULT EnqueueGlyphDownloadRequest(/* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount);
         
         [PreserveSig]
         new HRESULT EnqueueFileFragmentDownloadRequest(ulong fileOffset, ulong fragmentSize);
@@ -58,6 +59,6 @@ namespace DirectN
         uint GetFontAxisValueCount();
         
         [PreserveSig]
-        HRESULT GetFontAxisValues(/* _Out_writes_(fontAxisValueCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
+        HRESULT GetFontAxisValues(/* _Out_writes_(fontAxisValueCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
     }
 }

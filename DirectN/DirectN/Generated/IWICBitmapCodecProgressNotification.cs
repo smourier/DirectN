@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(4635,5)
 using System;
 using System.Runtime.InteropServices;
+using PFNProgressNotification = System.IntPtr;
 
 namespace DirectN
 {
@@ -8,6 +9,6 @@ namespace DirectN
     public partial interface IWICBitmapCodecProgressNotification
     {
         [PreserveSig]
-        HRESULT RegisterProgressNotification(/* [annotation][unique][in] _In_opt_ */ IntPtr pfnProgressNotification, /* [annotation][unique][in] _In_opt_ */ IntPtr pvData, /* [in] */ uint dwProgressFlags);
+        HRESULT RegisterProgressNotification(/* optional(PFNProgressNotification) */ IntPtr pfnProgressNotification, /* optional(LPVOID) */ IntPtr pvData, /* [in] */ uint dwProgressFlags);
     }
 }

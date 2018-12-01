@@ -9,8 +9,8 @@ namespace DirectN
     {
         public ulong Invocation;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public uint[] ThreadIDInGroup;
+        public uint ThreadIDInGroup;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public uint[] ThreadGroupID;
+        public uint ThreadGroupID;
     }
 }

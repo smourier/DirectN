@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(3047,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -9,16 +10,16 @@ namespace DirectN
     {
         // IMediaSample
         [PreserveSig]
-        new HRESULT GetPointer(/* [annotation][out] _Outptr_result_buffer_to_(_Inexpressible_(this->GetSize()), _Inexpressible_(this->GetActualDataLength())) */ out byte[] ppBuffer);
+        new HRESULT GetPointer(/* [annotation][out] _Outptr_result_buffer_to_(_Inexpressible_(this->GetSize()), _Inexpressible_(this->GetActualDataLength())) */ ref byte ppBuffer);
         
         [PreserveSig]
         new void GetSize();
         
         [PreserveSig]
-        new HRESULT GetTime(/* [annotation][out] _Out_ */ out long pTimeStart, /* [annotation][out] _Out_ */ out long pTimeEnd);
+        new HRESULT GetTime(/* [annotation][out] _Out_ */ out REFERENCE_TIME pTimeStart, /* [annotation][out] _Out_ */ out REFERENCE_TIME pTimeEnd);
         
         [PreserveSig]
-        new HRESULT SetTime(/* [annotation][in] _In_opt_ */ ref long pTimeStart, /* [annotation][in] _In_opt_ */ ref long pTimeEnd);
+        new HRESULT SetTime(/* optional(REFERENCE_TIME) */ IntPtr pTimeStart, /* optional(REFERENCE_TIME) */ IntPtr pTimeEnd);
         
         [PreserveSig]
         new HRESULT IsSyncPoint();
@@ -39,7 +40,7 @@ namespace DirectN
         new HRESULT SetActualDataLength(int __MIDL__IMediaSample0000);
         
         [PreserveSig]
-        new HRESULT GetMediaType(/* [annotation][out] _Out_ */ out _AMMediaType ppMediaType);
+        new HRESULT GetMediaType(/* [annotation][out] _Out_ */ out IntPtr ppMediaType);
         
         [PreserveSig]
         new HRESULT SetMediaType(/* [annotation][in] _In_ */ ref _AMMediaType pMediaType);
@@ -54,13 +55,13 @@ namespace DirectN
         new HRESULT GetMediaTime(/* [annotation][out] _Out_ */ out long pTimeStart, /* [annotation][out] _Out_ */ out long pTimeEnd);
         
         [PreserveSig]
-        new HRESULT SetMediaTime(/* [annotation][in] _In_opt_ */ ref long pTimeStart, /* [annotation][in] _In_opt_ */ ref long pTimeEnd);
+        new HRESULT SetMediaTime(/* optional(LONGLONG) */ IntPtr pTimeStart, /* optional(LONGLONG) */ IntPtr pTimeEnd);
         
         // IMediaSample2
         [PreserveSig]
-        HRESULT GetProperties(/* [in] */ uint cbProperties, /* [annotation][size_is][out] _Out_writes_bytes_(cbProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbProperties);
+        HRESULT GetProperties(/* [in] */ uint cbProperties, /* [annotation][size_is][out] _Out_writes_bytes_(cbProperties) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbProperties);
         
         [PreserveSig]
-        HRESULT SetProperties(/* [in] */ uint cbProperties, /* [annotation][size_is][in] _In_reads_bytes_(cbProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbProperties);
+        HRESULT SetProperties(/* [in] */ uint cbProperties, /* [annotation][size_is][in] _In_reads_bytes_(cbProperties) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbProperties);
     }
 }

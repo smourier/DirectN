@@ -14,6 +14,6 @@ namespace DirectN
         uint GetPatchCount();
         
         [PreserveSig]
-        HRESULT GetPatches(uint startIndex, /* _Out_writes_(patchesCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_GRADIENT_MESH_PATCH[] patches, uint patchesCount);
+        HRESULT GetPatches(uint startIndex, /* _Out_writes_(patchesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_GRADIENT_MESH_PATCH[] patches, uint patchesCount);
     }
 }

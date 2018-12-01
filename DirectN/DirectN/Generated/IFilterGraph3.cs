@@ -21,7 +21,7 @@ namespace DirectN
         new HRESULT FindFilterByName(/* [string][in] */ [MarshalAs(UnmanagedType.LPWStr)] string pName, /* [annotation][out] _Out_ */ out IBaseFilter ppFilter);
         
         [PreserveSig]
-        new HRESULT ConnectDirect(/* [in] */ IPin ppinOut, /* [in] */ IPin ppinIn, /* [annotation][unique][in] _In_opt_ */ ref _AMMediaType pmt);
+        new HRESULT ConnectDirect(/* [in] */ IPin ppinOut, /* [in] */ IPin ppinIn, /* optional(_AMMediaType) */ IntPtr pmt);
         
         [PreserveSig]
         new HRESULT Reconnect(/* [in] */ IPin ppin);
@@ -46,7 +46,7 @@ namespace DirectN
         new HRESULT AddSourceFilter(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpcwstrFileName, /* [annotation][unique][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpcwstrFilterName, /* [annotation][out] _Out_ */ out IBaseFilter ppFilter);
         
         [PreserveSig]
-        new HRESULT SetLogFile(/* [in] */ ulong hFile);
+        new HRESULT SetLogFile(/* [in] */ IntPtr hFile);
         
         [PreserveSig]
         new HRESULT Abort();
@@ -59,7 +59,7 @@ namespace DirectN
         new HRESULT AddSourceFilterForMoniker(/* [in] */ ref IMoniker pMoniker, /* [in] */ ref IBindCtx pCtx, /* [unique][in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpcwstrFilterName, /* [annotation][out] _Out_ */ out IBaseFilter ppFilter);
         
         [PreserveSig]
-        new HRESULT ReconnectEx(/* [in] */ IPin ppin, /* [annotation][unique][in] _In_opt_ */ ref _AMMediaType pmt);
+        new HRESULT ReconnectEx(/* [in] */ IPin ppin, /* optional(_AMMediaType) */ IntPtr pmt);
         
         [PreserveSig]
         new HRESULT RenderEx(/* [in] */ IPin pPinOut, /* [in] */ uint dwFlags, /* [annotation][out][in] _Reserved_ */ ref uint pvContext);

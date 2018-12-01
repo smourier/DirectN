@@ -12,25 +12,25 @@ namespace DirectN
     {
         // IDWritePixelSnapping
         [PreserveSig]
-        new HRESULT IsPixelSnappingDisabled(/* _In_opt_ */ IntPtr clientDrawingContext, /* _Out_ */ out bool isDisabled);
+        new HRESULT IsPixelSnappingDisabled(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out bool isDisabled);
         
         [PreserveSig]
-        new HRESULT GetCurrentTransform(/* _In_opt_ */ IntPtr clientDrawingContext, /* _Out_ */ out DWRITE_MATRIX transform);
+        new HRESULT GetCurrentTransform(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out DWRITE_MATRIX transform);
         
         [PreserveSig]
-        new HRESULT GetPixelsPerDip(/* _In_opt_ */ IntPtr clientDrawingContext, /* _Out_ */ out float pixelsPerDip);
+        new HRESULT GetPixelsPerDip(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out float pixelsPerDip);
         
         // IDWriteTextRenderer
         [PreserveSig]
-        HRESULT DrawGlyphRun(/* _In_opt_ */ IntPtr clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, /* _In_ */ ref DWRITE_GLYPH_RUN glyphRun, /* _In_ */ ref DWRITE_GLYPH_RUN_DESCRIPTION glyphRunDescription, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
+        HRESULT DrawGlyphRun(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, /* _In_ */ ref DWRITE_GLYPH_RUN glyphRun, /* _In_ */ ref DWRITE_GLYPH_RUN_DESCRIPTION glyphRunDescription, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
         
         [PreserveSig]
-        HRESULT DrawUnderline(/* _In_opt_ */ IntPtr clientDrawingContext, float baselineOriginX, float baselineOriginY, /* _In_ */ ref DWRITE_UNDERLINE underline, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
+        HRESULT DrawUnderline(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, float baselineOriginX, float baselineOriginY, /* _In_ */ ref DWRITE_UNDERLINE underline, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
         
         [PreserveSig]
-        HRESULT DrawStrikethrough(/* _In_opt_ */ IntPtr clientDrawingContext, float baselineOriginX, float baselineOriginY, /* _In_ */ ref DWRITE_STRIKETHROUGH strikethrough, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
+        HRESULT DrawStrikethrough(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, float baselineOriginX, float baselineOriginY, /* _In_ */ ref DWRITE_STRIKETHROUGH strikethrough, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
         
         [PreserveSig]
-        HRESULT DrawInlineObject(/* _In_opt_ */ IntPtr clientDrawingContext, float originX, float originY, /* _In_ */ IDWriteInlineObject inlineObject, bool isSideways, bool isRightToLeft, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
+        HRESULT DrawInlineObject(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, float originX, float originY, /* _In_ */ IDWriteInlineObject inlineObject, bool isSideways, bool isRightToLeft, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingEffect);
     }
 }

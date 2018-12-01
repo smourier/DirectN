@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(2084,5)
 using System;
 using System.Runtime.InteropServices;
+using WICInProcPointer = System.Byte;
+using WICPixelFormatGUID = System.Guid;
 
 namespace DirectN
 {
@@ -14,9 +16,9 @@ namespace DirectN
         HRESULT GetStride(/* [out] __RPC__out */ out uint pcbStride);
         
         [PreserveSig]
-        HRESULT GetDataPointer(/* [out] __RPC__out */ out uint pcbBufferSize, /* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(*pcbBufferSize) */ out IntPtr[] ppbData);
+        HRESULT GetDataPointer(/* [out] __RPC__out */ out uint pcbBufferSize, /* optional(WICInProcPointer) */ out IntPtr ppbData);
         
         [PreserveSig]
-        HRESULT GetPixelFormat(/* [out] __RPC__out */ out Guid pPixelFormat);
+        HRESULT GetPixelFormat(/* [out] __RPC__out */ out WICPixelFormatGUID pPixelFormat);
     }
 }

@@ -12,7 +12,7 @@ namespace DirectN
         new HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference);
         
         [PreserveSig]
-        new HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference, /* _In_reads_(propertyCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount);
+        new HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference, /* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount);
         
         [PreserveSig]
         new HRESULT AddFontSet(/* _In_ */ IDWriteFontSet fontSet);
@@ -26,7 +26,7 @@ namespace DirectN
         
         // IDWriteFontSetBuilder2
         [PreserveSig]
-        HRESULT AddFont(/* _In_ */ ref IDWriteFontFile fontFile, uint fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, /* _In_reads_(fontAxisValueCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _In_reads_(fontAxisRangeCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] DWRITE_FONT_AXIS_RANGE[] fontAxisRanges, uint fontAxisRangeCount, /* _In_reads_(propertyCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 8)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount);
+        HRESULT AddFont(/* _In_ */ ref IDWriteFontFile fontFile, uint fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, /* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _In_reads_(fontAxisRangeCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] DWRITE_FONT_AXIS_RANGE[] fontAxisRanges, uint fontAxisRangeCount, /* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 8)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount);
         
         [PreserveSig]
         HRESULT AddFontFile(/* _In_z_ */ ref char filePath);

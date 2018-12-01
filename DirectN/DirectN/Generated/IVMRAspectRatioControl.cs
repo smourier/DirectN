@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IVMRAspectRatioControl
     {
         [PreserveSig]
-        HRESULT GetAspectRatioMode(/* [out] */ IntPtr lpdwARMode);
+        HRESULT GetAspectRatioMode(/* [out] */ out uint lpdwARMode);
         
         [PreserveSig]
         HRESULT SetAspectRatioMode(/* [in] */ uint dwARMode);

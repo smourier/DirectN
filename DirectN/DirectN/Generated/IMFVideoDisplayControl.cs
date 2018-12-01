@@ -1,6 +1,10 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\evr.h(469,5)
 using System;
 using System.Runtime.InteropServices;
+using BITMAPINFOHEADER = DirectN.tagBITMAPINFOHEADER;
+using COLORREF = System.UInt32;
+using LPRECT = DirectN.tagRECT;
+using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -8,16 +12,16 @@ namespace DirectN
     public partial interface IMFVideoDisplayControl
     {
         [PreserveSig]
-        HRESULT GetNativeVideoSize(/* [unique][out][in] __RPC__inout_opt */ ref tagSIZE pszVideo, /* [unique][out][in] __RPC__inout_opt */ ref tagSIZE pszARVideo);
+        HRESULT GetNativeVideoSize(/* [unique][out][in] __RPC__inout_opt */ ref SIZE pszVideo, /* [unique][out][in] __RPC__inout_opt */ ref SIZE pszARVideo);
         
         [PreserveSig]
-        HRESULT GetIdealVideoSize(/* [unique][out][in] __RPC__inout_opt */ ref tagSIZE pszMin, /* [unique][out][in] __RPC__inout_opt */ ref tagSIZE pszMax);
+        HRESULT GetIdealVideoSize(/* [unique][out][in] __RPC__inout_opt */ ref SIZE pszMin, /* [unique][out][in] __RPC__inout_opt */ ref SIZE pszMax);
         
         [PreserveSig]
-        HRESULT SetVideoPosition(/* [unique][in] __RPC__in_opt */ ref MFVideoNormalizedRect pnrcSource, /* [unique][in] __RPC__in_opt */ IntPtr prcDest);
+        HRESULT SetVideoPosition(/* optional(MFVideoNormalizedRect) */ IntPtr pnrcSource, /* optional(LPRECT) */ IntPtr prcDest);
         
         [PreserveSig]
-        HRESULT GetVideoPosition(/* [out] __RPC__out */ out MFVideoNormalizedRect pnrcSource, /* [out] __RPC__out */ IntPtr prcDest);
+        HRESULT GetVideoPosition(/* [out] __RPC__out */ out MFVideoNormalizedRect pnrcSource, /* [out] __RPC__out */ out LPRECT prcDest);
         
         [PreserveSig]
         HRESULT SetAspectRatioMode(/* [in] */ uint dwAspectRatioMode);
@@ -29,19 +33,19 @@ namespace DirectN
         HRESULT SetVideoWindow(/* [in] __RPC__in */ IntPtr hwndVideo);
         
         [PreserveSig]
-        HRESULT GetVideoWindow(/* [out] __RPC__deref_out_opt */ out IntPtr phwndVideo);
+        HRESULT GetVideoWindow(/* optional(HWND) */ out IntPtr phwndVideo);
         
         [PreserveSig]
         HRESULT RepaintVideo();
         
         [PreserveSig]
-        HRESULT GetCurrentImage(/* [out][in] __RPC__inout */ ref tagBITMAPINFOHEADER pBih, /* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(*pcbDib) */ out byte[] pDib, /* [out] __RPC__out */ out uint pcbDib, /* [unique][out][in] __RPC__inout_opt */ ref long pTimeStamp);
+        HRESULT GetCurrentImage(/* [out][in] __RPC__inout */ ref BITMAPINFOHEADER pBih, /* optional(BYTE) */ out IntPtr pDib, /* [out] __RPC__out */ out uint pcbDib, /* [unique][out][in] __RPC__inout_opt */ ref long pTimeStamp);
         
         [PreserveSig]
         HRESULT SetBorderColor(/* [in] */ uint Clr);
         
         [PreserveSig]
-        HRESULT GetBorderColor(/* [out] __RPC__out */ out uint pClr);
+        HRESULT GetBorderColor(/* [out] __RPC__out */ out COLORREF pClr);
         
         [PreserveSig]
         HRESULT SetRenderingPrefs(/* [in] */ uint dwRenderFlags);

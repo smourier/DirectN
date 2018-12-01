@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(19410,9)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -8,7 +9,7 @@ namespace DirectN
     public partial struct tagVMRMONITORINFO
     {
         public tagVMRGUID guid;
-        public tagRECT rcMonitor;
+        public RECT rcMonitor;
         public IntPtr hMon;
         public uint dwFlags;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] 

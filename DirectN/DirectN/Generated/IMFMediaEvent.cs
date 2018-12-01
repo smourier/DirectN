@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfobjects.h(3768,5)
 using System;
 using System.Runtime.InteropServices;
+using MediaEventType = System.UInt32;
 
 namespace DirectN
 {
@@ -39,16 +40,16 @@ namespace DirectN
         new HRESULT GetString(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][out] __RPC__out_ecount_full(cchBufSize) */ [MarshalAs(UnmanagedType.LPWStr)] string pwszValue, uint cchBufSize, /* [full][out][in] __RPC__inout_opt */ ref uint pcchLength);
         
         [PreserveSig]
-        new HRESULT GetAllocatedString(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(( *pcchLength + 1 ) ) */ out IntPtr ppwszValue, /* [out] __RPC__out */ out uint pcchLength);
+        new HRESULT GetAllocatedString(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* optional(LPWSTR) */ IntPtr ppwszValue, /* [out] __RPC__out */ out uint pcchLength);
         
         [PreserveSig]
         new HRESULT GetBlobSize(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [out] __RPC__out */ out uint pcbBlobSize);
         
         [PreserveSig]
-        new HRESULT GetBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][out] __RPC__out_ecount_full(cbBufSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pBuf, uint cbBufSize, /* [full][out][in] __RPC__inout_opt */ ref uint pcbBlobSize);
+        new HRESULT GetBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][out] __RPC__out_ecount_full(cbBufSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pBuf, uint cbBufSize, /* [full][out][in] __RPC__inout_opt */ ref uint pcbBlobSize);
         
         [PreserveSig]
-        new HRESULT GetAllocatedBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(*pcbSize) */ out byte[] ppBuf, /* [out] __RPC__out */ out uint pcbSize);
+        new HRESULT GetAllocatedBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* optional(UINT8) */ out IntPtr ppBuf, /* [out] __RPC__out */ out uint pcbSize);
         
         [PreserveSig]
         new HRESULT GetUnknown(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
@@ -78,7 +79,7 @@ namespace DirectN
         new HRESULT SetString(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string wszValue);
         
         [PreserveSig]
-        new HRESULT SetBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][in] __RPC__in_ecount_full(cbBufSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pBuf, uint cbBufSize);
+        new HRESULT SetBlob(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [size_is][in] __RPC__in_ecount_full(cbBufSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pBuf, uint cbBufSize);
         
         [PreserveSig]
         new HRESULT SetUnknown(/* __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* [in] __RPC__in_opt */ [MarshalAs(UnmanagedType.IUnknown)] object pUnknown);
@@ -100,7 +101,7 @@ namespace DirectN
         
         // IMFMediaEvent
         [PreserveSig]
-        HRESULT GetType(/* [out] __RPC__out */ out uint pmet);
+        HRESULT GetType(/* [out] __RPC__out */ out MediaEventType pmet);
         
         [PreserveSig]
         HRESULT GetExtendedType(/* [out] __RPC__out */ out Guid pguidExtendedType);
@@ -109,6 +110,6 @@ namespace DirectN
         HRESULT GetStatus(/* [out] __RPC__out */ out HRESULT phrStatus);
         
         [PreserveSig]
-        HRESULT GetValue(/* [out] __RPC__out */ out PropVariant pvValue);
+        HRESULT GetValue(/* [out] __RPC__out */ PropVariant pvValue);
     }
 }

@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(2174,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_POINT_2F = DirectN.D2D_POINT_2F;
 
 namespace DirectN
 {
@@ -17,13 +18,13 @@ namespace DirectN
         void SetSegmentFlags(D2D1_PATH_SEGMENT vertexFlags);
         
         [PreserveSig]
-        void BeginFigure(D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin);
+        void BeginFigure(D2D1_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin);
         
         [PreserveSig]
-        void AddLines(/* _In_reads_(pointsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, uint pointsCount);
+        void AddLines(/* _In_reads_(pointsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_POINT_2F[] points, uint pointsCount);
         
         [PreserveSig]
-        void AddBeziers(/* _In_reads_(beziersCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_BEZIER_SEGMENT[] beziers, uint beziersCount);
+        void AddBeziers(/* _In_reads_(beziersCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_BEZIER_SEGMENT[] beziers, uint beziersCount);
         
         [PreserveSig]
         void EndFigure(D2D1_FIGURE_END figureEnd);

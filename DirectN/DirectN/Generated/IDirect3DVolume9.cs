@@ -11,10 +11,10 @@ namespace DirectN
         HRESULT GetDevice(IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, ref IntPtr pData, uint SizeOfData, uint Flags);
+        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
-        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, ref IntPtr pData, ref uint pSizeOfData);
+        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
         
         [PreserveSig]
         HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);

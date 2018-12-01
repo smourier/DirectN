@@ -12,19 +12,19 @@ namespace DirectN
         new HRESULT GetEnumType(/* [out] __RPC__out */ out PROPENUMTYPE penumtype);
         
         [PreserveSig]
-        new HRESULT GetValue(/* [out] __RPC__out */ out PropVariant ppropvar);
+        new HRESULT GetValue(/* [out] __RPC__out */ PropVariant ppropvar);
         
         [PreserveSig]
-        new HRESULT GetRangeMinValue(/* [out] __RPC__out */ out PropVariant ppropvarMin);
+        new HRESULT GetRangeMinValue(/* [out] __RPC__out */ PropVariant ppropvarMin);
         
         [PreserveSig]
-        new HRESULT GetRangeSetValue(/* [out] __RPC__out */ out PropVariant ppropvarSet);
+        new HRESULT GetRangeSetValue(/* [out] __RPC__out */ PropVariant ppropvarSet);
         
         [PreserveSig]
-        new HRESULT GetDisplayText(/* [out] __RPC__deref_out_opt */ out IntPtr ppszDisplay);
+        new HRESULT GetDisplayText(/* optional(LPWSTR) */ out IntPtr ppszDisplay);
         
         // IPropertyEnumType2
         [PreserveSig]
-        HRESULT GetImageReference(/* [out] __RPC__deref_out_opt */ out IntPtr ppszImageRes);
+        HRESULT GetImageReference(/* optional(LPWSTR) */ out IntPtr ppszImageRes);
     }
 }

@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(5589,5)
 using System;
 using System.Runtime.InteropServices;
+using PALETTEENTRY = DirectN.tagPALETTEENTRY;
+using RECT = DirectN.tagRECT;
+using RGNDATA = DirectN._RGNDATA;
 
 namespace DirectN
 {
@@ -8,15 +11,15 @@ namespace DirectN
     public partial interface IOverlayNotify
     {
         [PreserveSig]
-        HRESULT OnPaletteChange(/* [in] */ uint dwColors, /* [in] */ ref tagPALETTEENTRY pPalette);
+        HRESULT OnPaletteChange(/* [in] */ uint dwColors, /* [in] */ ref PALETTEENTRY pPalette);
         
         [PreserveSig]
-        HRESULT OnClipChange(/* [in] */ ref tagRECT pSourceRect, /* [in] */ ref tagRECT pDestinationRect, /* [in] */ ref _RGNDATA pRgnData);
+        HRESULT OnClipChange(/* [in] */ ref RECT pSourceRect, /* [in] */ ref RECT pDestinationRect, /* [in] */ ref RGNDATA pRgnData);
         
         [PreserveSig]
         HRESULT OnColorKeyChange(/* [in] */ ref tagCOLORKEY pColorKey);
         
         [PreserveSig]
-        HRESULT OnPositionChange(/* [in] */ ref tagRECT pSourceRect, /* [in] */ ref tagRECT pDestinationRect);
+        HRESULT OnPositionChange(/* [in] */ ref RECT pSourceRect, /* [in] */ ref RECT pDestinationRect);
     }
 }

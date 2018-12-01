@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(1924,5)
 using System;
 using System.Runtime.InteropServices;
+using LPCRECT = DirectN.tagRECT;
+using MSG = DirectN.tagMSG;
 
 namespace DirectN
 {
@@ -12,7 +14,7 @@ namespace DirectN
         new HRESULT SetPageSite(/* [in] __RPC__in_opt */ IPropertyPageSite pPageSite);
         
         [PreserveSig]
-        new HRESULT Activate(/* [in] __RPC__in */ IntPtr hWndParent, /* [in] __RPC__in */ IntPtr pRect, /* [in] */ bool bModal);
+        new HRESULT Activate(/* [in] __RPC__in */ IntPtr hWndParent, /* [in] __RPC__in */ ref LPCRECT pRect, /* [in] */ bool bModal);
         
         [PreserveSig]
         new HRESULT Deactivate();
@@ -27,7 +29,7 @@ namespace DirectN
         new HRESULT Show(/* [in] */ uint nCmdShow);
         
         [PreserveSig]
-        new HRESULT Move(/* [in] __RPC__in */ IntPtr pRect);
+        new HRESULT Move(/* [in] __RPC__in */ ref LPCRECT pRect);
         
         [PreserveSig]
         new HRESULT IsPageDirty();
@@ -39,7 +41,7 @@ namespace DirectN
         new HRESULT Help(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string pszHelpDir);
         
         [PreserveSig]
-        new HRESULT TranslateAcceleratorA(/* [in] __RPC__in */ ref tagMSG pMsg);
+        new HRESULT TranslateAcceleratorA(/* [in] __RPC__in */ ref MSG pMsg);
         
         // IPropertyPage2
         [PreserveSig]

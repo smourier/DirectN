@@ -35,7 +35,7 @@ namespace DirectN
         HRESULT GetPropertyOccurrenceCount(/* _In_ */ ref DWRITE_FONT_PROPERTY property, /* _Out_ */ out uint propertyOccurrenceCount);
         
         [PreserveSig]
-        HRESULT GetMatchingFonts(/* _In_reads_(propertyCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);
+        HRESULT GetMatchingFonts(/* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);
         
         [PreserveSig]
         HRESULT GetMatchingFonts(/* _In_z_ */ ref char familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);

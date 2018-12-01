@@ -9,12 +9,12 @@ namespace DirectN
     {
         public _segmentation_VP9__union_0 __union_0;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 7)] 
-        public byte[] tree_probs;
+        public byte tree_probs;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public byte[] pred_probs;
+        public byte pred_probs;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public short[] feature_data;
+        public short feature_data;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public byte[] feature_mask;
+        public byte feature_mask;
     }
 }

@@ -12,10 +12,10 @@ namespace DirectN
         new void GetDevice(/* [annotation] _Outptr_ */ out ID3D11Device ppDevice);
         
         [PreserveSig]
-        new HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* [annotation] _Out_writes_bytes_opt_( *pDataSize ) */ out IntPtr pData);
+        new HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* [annotation] _Out_writes_bytes_opt_( *pDataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_( DataSize ) */ out IntPtr pData);
+        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
         new HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
@@ -28,9 +28,9 @@ namespace DirectN
         void GetDesc(/* [annotation] _Out_ */ out D3D11_CLASS_INSTANCE_DESC pDesc);
         
         [PreserveSig]
-        void GetInstanceName(/* [annotation] _Out_writes_opt_(*pBufferLength) */ [MarshalAs(UnmanagedType.LPStr)] string pInstanceName, /* [annotation] _Inout_ */ ref ulong pBufferLength);
+        void GetInstanceName(/* [annotation] _Out_writes_opt_(*pBufferLength) */ [MarshalAs(UnmanagedType.LPStr)] string pInstanceName, /* [annotation] _Inout_ */ IntPtr pBufferLength);
         
         [PreserveSig]
-        void GetTypeName(/* [annotation] _Out_writes_opt_(*pBufferLength) */ [MarshalAs(UnmanagedType.LPStr)] string pTypeName, /* [annotation] _Inout_ */ ref ulong pBufferLength);
+        void GetTypeName(/* [annotation] _Out_writes_opt_(*pBufferLength) */ [MarshalAs(UnmanagedType.LPStr)] string pTypeName, /* [annotation] _Inout_ */ IntPtr pBufferLength);
     }
 }

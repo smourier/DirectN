@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IGraphConfigCallback
     {
         [PreserveSig]
-        HRESULT Reconfigure(IntPtr pvContext, uint dwFlags);
+        HRESULT Reconfigure(ref IntPtr pvContext, uint dwFlags);
     }
 }

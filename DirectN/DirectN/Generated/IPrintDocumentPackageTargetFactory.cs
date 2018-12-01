@@ -9,6 +9,6 @@ namespace DirectN
     public partial interface IPrintDocumentPackageTargetFactory
     {
         [PreserveSig]
-        HRESULT CreateDocumentPackageTargetForPrintJob(/* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string printerName, /* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string jobName, /* [in] __RPC__in_opt */ ref IStream jobOutputStream, /* [in] __RPC__in_opt */ ref IStream jobPrintTicketStream, /* [out] __RPC__deref_out_opt */ out IPrintDocumentPackageTarget docPackageTarget);
+        HRESULT CreateDocumentPackageTargetForPrintJob(/* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string printerName, /* [string][in] __RPC__in_string */ [MarshalAs(UnmanagedType.LPWStr)] string jobName, /* [in] __RPC__in_opt */ IStream jobOutputStream, /* [in] __RPC__in_opt */ IStream jobPrintTicketStream, /* [out] __RPC__deref_out_opt */ out IPrintDocumentPackageTarget docPackageTarget);
     }
 }

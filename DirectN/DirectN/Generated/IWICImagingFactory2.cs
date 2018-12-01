@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
+using REFWICPixelFormatGUID = System.Guid;
 
 namespace DirectN
 {
@@ -13,10 +14,10 @@ namespace DirectN
         new HRESULT CreateDecoderFromFilename(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzFilename, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [in] */ uint dwDesiredAccess, /* [in] */ WICDecodeOptions metadataOptions, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
         
         [PreserveSig]
-        new HRESULT CreateDecoderFromStream(/* [in] __RPC__in_opt */ ref IStream pIStream, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [in] */ WICDecodeOptions metadataOptions, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
+        new HRESULT CreateDecoderFromStream(/* [in] __RPC__in_opt */ IStream pIStream, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [in] */ WICDecodeOptions metadataOptions, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
         
         [PreserveSig]
-        new HRESULT CreateDecoderFromFileHandle(/* [in] */ ulong hFile, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [in] */ WICDecodeOptions metadataOptions, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
+        new HRESULT CreateDecoderFromFileHandle(/* [in] */ IntPtr hFile, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidVendor, /* [in] */ WICDecodeOptions metadataOptions, /* [retval][out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIDecoder);
         
         [PreserveSig]
         new HRESULT CreateComponentInfo(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsidComponent, /* [out] __RPC__deref_out_opt */ out IWICComponentInfo ppIInfo);
@@ -52,7 +53,7 @@ namespace DirectN
         new HRESULT CreateColorTransformer(/* [out] __RPC__deref_out_opt */ out IWICColorTransform ppIWICColorTransform);
         
         [PreserveSig]
-        new HRESULT CreateBitmap(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid pixelFormat, /* [in] */ WICBitmapCreateCacheOption option, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        new HRESULT CreateBitmap(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ ref REFWICPixelFormatGUID pixelFormat, /* [in] */ WICBitmapCreateCacheOption option, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
         new HRESULT CreateBitmapFromSource(/* [in] __RPC__in_opt */ IWICBitmapSource pIBitmapSource, /* [in] */ WICBitmapCreateCacheOption option, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
@@ -61,16 +62,16 @@ namespace DirectN
         new HRESULT CreateBitmapFromSourceRect(/* [in] __RPC__in_opt */ IWICBitmapSource pIBitmapSource, /* [in] */ uint x, /* [in] */ uint y, /* [in] */ uint width, /* [in] */ uint height, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
-        new HRESULT CreateBitmapFromMemory(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid pixelFormat, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] pbBuffer, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        new HRESULT CreateBitmapFromMemory(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ ref REFWICPixelFormatGUID pixelFormat, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] pbBuffer, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
-        new HRESULT CreateBitmapFromHBITMAP(/* [in] __RPC__in */ IntPtr hBitmap, /* [unique][in] __RPC__in_opt */ IntPtr hPalette, /* [in] */ WICBitmapAlphaChannelOption options, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        new HRESULT CreateBitmapFromHBITMAP(/* [in] __RPC__in */ IntPtr hBitmap, /* optional(HPALETTE) */ IntPtr hPalette, /* [in] */ WICBitmapAlphaChannelOption options, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
         new HRESULT CreateBitmapFromHICON(/* [in] __RPC__in */ IntPtr hIcon, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
-        new HRESULT CreateComponentEnumerator(/* [in] */ uint componentTypes, /* [in] */ uint options, /* [out] __RPC__deref_out_opt */ out IEnumUnknown ppIEnumUnknown);
+        new HRESULT CreateComponentEnumerator(/* [in] */ uint componentTypes, /* [in] */ uint options, /* optional(IEnumUnknown) */ out IntPtr ppIEnumUnknown);
         
         [PreserveSig]
         new HRESULT CreateFastMetadataEncoderFromDecoder(/* [in] __RPC__in_opt */ IWICBitmapDecoder pIDecoder, /* [out] __RPC__deref_out_opt */ out IWICFastMetadataEncoder ppIFastEncoder);

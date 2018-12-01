@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface ICreateDevEnum
     {
         [PreserveSig]
-        HRESULT CreateClassEnumerator(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsidDeviceClass, /* [annotation][out] _Out_ */ out IEnumMoniker ppEnumMoniker, /* [in] */ uint dwFlags);
+        HRESULT CreateClassEnumerator(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsidDeviceClass, /* [annotation][out] _Out_ */ out IntPtr ppEnumMoniker, /* [in] */ uint dwFlags);
     }
 }

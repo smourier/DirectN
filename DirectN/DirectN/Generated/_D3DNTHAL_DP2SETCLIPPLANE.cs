@@ -9,6 +9,6 @@ namespace DirectN
     {
         public uint dwIndex;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public float[] plane;
+        public D3DVALUE[] plane;
     }
 }

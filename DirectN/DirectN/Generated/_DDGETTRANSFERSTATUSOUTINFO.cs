@@ -7,6 +7,6 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDGETTRANSFERSTATUSOUTINFO
     {
-        public ulong dwTransferID;
+        public IntPtr dwTransferID;
     }
 }

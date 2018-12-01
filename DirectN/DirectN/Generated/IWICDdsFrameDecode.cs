@@ -14,6 +14,6 @@ namespace DirectN
         HRESULT GetFormatInfo(/* [out] __RPC__out */ out WICDdsFormatInfo pFormatInfo);
         
         [PreserveSig]
-        HRESULT CopyBlocks(/* [unique][in] __RPC__in_opt */ ref WICRect prcBoundsInBlocks, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbBuffer);
+        HRESULT CopyBlocks(/* optional(WICRect) */ IntPtr prcBoundsInBlocks, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbBuffer);
     }
 }

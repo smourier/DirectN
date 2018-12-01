@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(4420,1)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
+using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -11,7 +13,7 @@ namespace DirectN
     public partial interface IDWriteBitmapRenderTarget
     {
         [PreserveSig]
-        HRESULT DrawGlyphRun(float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, /* _In_ */ ref DWRITE_GLYPH_RUN glyphRun, /* _In_ */ IDWriteRenderingParams renderingParams, uint textColor, /* _Out_opt_ */ out tagRECT blackBoxRect);
+        HRESULT DrawGlyphRun(float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, /* _In_ */ ref DWRITE_GLYPH_RUN glyphRun, /* _In_ */ IDWriteRenderingParams renderingParams, uint textColor, /* _Out_opt_ */ out RECT blackBoxRect);
         
         [PreserveSig]
         IntPtr GetMemoryDC();
@@ -26,10 +28,10 @@ namespace DirectN
         HRESULT GetCurrentTransform(/* _Out_ */ out DWRITE_MATRIX transform);
         
         [PreserveSig]
-        HRESULT SetCurrentTransform(/* _In_opt_ */ ref DWRITE_MATRIX transform);
+        HRESULT SetCurrentTransform(/* optional(DWRITE_MATRIX) */ IntPtr transform);
         
         [PreserveSig]
-        HRESULT GetSize(/* _Out_ */ out tagSIZE size);
+        HRESULT GetSize(/* _Out_ */ out SIZE size);
         
         [PreserveSig]
         HRESULT Resize(uint width, uint height);

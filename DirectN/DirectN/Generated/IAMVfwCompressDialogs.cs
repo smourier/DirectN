@@ -11,10 +11,10 @@ namespace DirectN
         HRESULT ShowDialog(/* [in] */ int iDialog, /* [in] */ IntPtr hwnd);
         
         [PreserveSig]
-        HRESULT GetState(/* [annotation][size_is][out] _Out_writes_bytes_to_(*pcbState, *pcbState) */ IntPtr pState, /* [annotation][out][in] _Inout_ */ ref int pcbState);
+        HRESULT GetState(/* [annotation][size_is][out] _Out_writes_bytes_to_(*pcbState, *pcbState) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pState, /* [annotation][out][in] _Inout_ */ ref int pcbState);
         
         [PreserveSig]
-        HRESULT SetState(/* [annotation][size_is][in] _In_reads_bytes_(cbState) */ IntPtr pState, /* [in] */ int cbState);
+        HRESULT SetState(/* [annotation][size_is][in] _In_reads_bytes_(cbState) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pState, /* [in] */ int cbState);
         
         [PreserveSig]
         HRESULT SendDriverMessage(/* [in] */ int uMsg, /* [in] */ int dw1, /* [in] */ int dw2);

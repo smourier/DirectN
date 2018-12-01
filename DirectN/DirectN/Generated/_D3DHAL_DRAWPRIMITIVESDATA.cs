@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DHAL_DRAWPRIMITIVESDATA
     {
-        public ulong dwhContext;
+        public IntPtr dwhContext;
         public uint dwFlags;
         public IntPtr lpvData;
         public uint dwFVFControl;

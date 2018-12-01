@@ -8,18 +8,18 @@ namespace DirectN
     public partial interface IMFSSLCertificateManager
     {
         [PreserveSig]
-        HRESULT GetClientCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*pcbData) */ out byte[] ppbData, /* [annotation][out] _Out_ */ out uint pcbData);
+        HRESULT GetClientCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*pcbData) */ out IntPtr ppbData, /* [annotation][out] _Out_ */ out uint pcbData);
         
         [PreserveSig]
         HRESULT BeginGetClientCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT EndGetClientCertificate(/* [in] */ IMFAsyncResult pResult, /* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*pcbData) */ out byte[] ppbData, /* [annotation][out] _Out_ */ out uint pcbData);
+        HRESULT EndGetClientCertificate(/* [in] */ IMFAsyncResult pResult, /* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*pcbData) */ out IntPtr ppbData, /* [annotation][out] _Out_ */ out uint pcbData);
         
         [PreserveSig]
         HRESULT GetCertificatePolicy(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [out] */ out bool pfOverrideAutomaticCheck, /* [out] */ out bool pfClientCertificateAvailable);
         
         [PreserveSig]
-        HRESULT OnServerCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [annotation][size_is][in] _In_reads_bytes_(cbData) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbData, /* [in] */ uint cbData, /* [out] */ out bool pfIsGood);
+        HRESULT OnServerCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [annotation][size_is][in] _In_reads_bytes_(cbData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbData, /* [in] */ uint cbData, /* [out] */ out bool pfIsGood);
     }
 }

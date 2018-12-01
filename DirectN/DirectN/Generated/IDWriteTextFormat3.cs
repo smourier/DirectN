@@ -16,13 +16,13 @@ namespace DirectN
         
         // IDWriteTextFormat3
         [PreserveSig]
-        HRESULT SetFontAxisValues(/* _In_reads_(fontAxisValueCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
+        HRESULT SetFontAxisValues(/* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
         
         [PreserveSig]
         uint GetFontAxisValueCount();
         
         [PreserveSig]
-        HRESULT GetFontAxisValues(/* _Out_writes_(fontAxisValueCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
+        HRESULT GetFontAxisValues(/* _Out_writes_(fontAxisValueCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
         
         [PreserveSig]
         DWRITE_AUTOMATIC_FONT_AXES GetAutomaticFontAxes();

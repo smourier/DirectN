@@ -1,6 +1,17 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3dhal.h(595,9)
 using System;
 using System.Runtime.InteropServices;
+using LPD3DHAL_CONTEXTCREATECB = System.IntPtr;
+using LPD3DHAL_CONTEXTDESTROYALLCB = System.IntPtr;
+using LPD3DHAL_CONTEXTDESTROYCB = System.IntPtr;
+using LPD3DHAL_GETSTATECB = System.IntPtr;
+using LPD3DHAL_RENDERPRIMITIVECB = System.IntPtr;
+using LPD3DHAL_RENDERSTATECB = System.IntPtr;
+using LPD3DHAL_SCENECAPTURECB = System.IntPtr;
+using LPD3DHAL_TEXTURECREATECB = System.IntPtr;
+using LPD3DHAL_TEXTUREDESTROYCB = System.IntPtr;
+using LPD3DHAL_TEXTUREGETSURFCB = System.IntPtr;
+using LPD3DHAL_TEXTURESWAPCB = System.IntPtr;
 
 namespace DirectN
 {

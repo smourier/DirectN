@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMediaEventSink
     {
         [PreserveSig]
-        HRESULT Notify(/* [in] */ int EventCode, /* [in] */ long EventParam1, /* [in] */ long EventParam2);
+        HRESULT Notify(/* [in] */ int EventCode, /* [in] */ IntPtr EventParam1, /* [in] */ IntPtr EventParam2);
     }
 }

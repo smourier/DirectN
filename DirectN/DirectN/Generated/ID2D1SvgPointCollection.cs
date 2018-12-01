@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1svg.h(774,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_POINT_2F = DirectN.D2D_POINT_2F;
 
 namespace DirectN
 {
@@ -22,10 +23,10 @@ namespace DirectN
         HRESULT RemovePointsAtEnd(uint pointsCount);
         
         [PreserveSig]
-        HRESULT UpdatePoints(/* _In_reads_(pointsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, uint pointsCount, uint startIndex);
+        HRESULT UpdatePoints(/* _In_reads_(pointsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_POINT_2F[] points, uint pointsCount, uint startIndex);
         
         [PreserveSig]
-        HRESULT GetPoints(/* _Out_writes_(pointsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, uint pointsCount, uint startIndex);
+        HRESULT GetPoints(/* _Out_writes_(pointsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_POINT_2F[] points, uint pointsCount, uint startIndex);
         
         [PreserveSig]
         uint GetPointsCount();

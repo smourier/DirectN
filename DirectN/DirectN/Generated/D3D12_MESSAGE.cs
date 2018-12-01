@@ -11,6 +11,6 @@ namespace DirectN
         public D3D12_MESSAGE_SEVERITY Severity;
         public D3D12_MESSAGE_ID ID;
         public IntPtr pDescription;
-        public ulong DescriptionByteLength;
+        public IntPtr DescriptionByteLength;
     }
 }

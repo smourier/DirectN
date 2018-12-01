@@ -9,10 +9,10 @@ namespace DirectN
     public partial interface IWICBitmapDecoder
     {
         [PreserveSig]
-        HRESULT QueryCapability(/* [in] __RPC__in_opt */ ref IStream pIStream, /* [out] __RPC__out */ out uint pdwCapability);
+        HRESULT QueryCapability(/* [in] __RPC__in_opt */ IStream pIStream, /* [out] __RPC__out */ out uint pdwCapability);
         
         [PreserveSig]
-        HRESULT Initialize(/* [in] __RPC__in_opt */ ref IStream pIStream, /* [in] */ WICDecodeOptions cacheOptions);
+        HRESULT Initialize(/* [in] __RPC__in_opt */ IStream pIStream, /* [in] */ WICDecodeOptions cacheOptions);
         
         [PreserveSig]
         HRESULT GetContainerFormat(/* [out] __RPC__out */ out Guid pguidContainerFormat);
@@ -30,7 +30,7 @@ namespace DirectN
         HRESULT GetPreview(/* [out] __RPC__deref_out_opt */ out IWICBitmapSource ppIBitmapSource);
         
         [PreserveSig]
-        HRESULT GetColorContexts(/* [in] */ uint cCount, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cCount) */ out IWICColorContext[] ppIColorContexts, /* [out] __RPC__out */ out uint pcActualCount);
+        HRESULT GetColorContexts(/* [in] */ uint cCount, /* optional(IWICColorContext) */ out IntPtr ppIColorContexts, /* [out] __RPC__out */ out uint pcActualCount);
         
         [PreserveSig]
         HRESULT GetThumbnail(/* [out] __RPC__deref_out_opt */ out IWICBitmapSource ppIThumbnail);

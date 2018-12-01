@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(10721,5)
 using System;
 using System.Runtime.InteropServices;
+using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -20,9 +21,9 @@ namespace DirectN
         HRESULT GetCurrentActualFrameRate(/* [in] */ IPin pPin, /* [annotation][out] _Out_ */ out long ActualFrameRate);
         
         [PreserveSig]
-        HRESULT GetMaxAvailableFrameRate(/* [in] */ IPin pPin, /* [in] */ int iIndex, /* [in] */ tagSIZE Dimensions, /* [annotation][out] _Out_ */ out long MaxAvailableFrameRate);
+        HRESULT GetMaxAvailableFrameRate(/* [in] */ IPin pPin, /* [in] */ int iIndex, /* [in] */ SIZE Dimensions, /* [annotation][out] _Out_ */ out long MaxAvailableFrameRate);
         
         [PreserveSig]
-        HRESULT GetFrameRateList(/* [in] */ IPin pPin, /* [in] */ int iIndex, /* [in] */ tagSIZE Dimensions, /* [annotation][out] _Out_ */ out long ListSize, /* [annotation][out] _Out_ */ out long FrameRates);
+        HRESULT GetFrameRateList(/* [in] */ IPin pPin, /* [in] */ int iIndex, /* [in] */ SIZE Dimensions, /* [annotation][out] _Out_ */ out long ListSize, /* [annotation][out] _Out_ */ out IntPtr FrameRates);
     }
 }

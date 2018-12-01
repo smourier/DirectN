@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFMediaBuffer
     {
         [PreserveSig]
-        HRESULT Lock(/* [annotation][out] _Outptr_result_bytebuffer_to_(*pcbMaxLength, *pcbCurrentLength) */ out byte[] ppbBuffer, /* [annotation][out] _Out_opt_ */ out uint pcbMaxLength, /* [annotation][out] _Out_opt_ */ out uint pcbCurrentLength);
+        HRESULT Lock(/* [annotation][out] _Outptr_result_bytebuffer_to_(*pcbMaxLength, *pcbCurrentLength) */ out IntPtr ppbBuffer, /* [annotation][out] _Out_opt_ */ out uint pcbMaxLength, /* [annotation][out] _Out_opt_ */ out uint pcbCurrentLength);
         
         [PreserveSig]
         HRESULT Unlock();

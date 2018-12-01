@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DHAL_CONTEXTDESTROYDATA
     {
-        public ulong dwhContext;
+        public IntPtr dwhContext;
         public HRESULT ddrval;
     }
 }

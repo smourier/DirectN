@@ -11,10 +11,10 @@ namespace DirectN
         HRESULT GetEnableType(/* [out] __RPC__out */ out Guid pType);
         
         [PreserveSig]
-        HRESULT GetEnableURL(/* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(*pcchURL) */ out IntPtr ppwszURL, /* [out] __RPC__out */ out uint pcchURL, /* [unique][out][in] __RPC__inout_opt */ ref __MIDL___MIDL_itf_mfidl_0000_0031_0001 pTrustStatus);
+        HRESULT GetEnableURL(/* optional(LPWSTR) */ IntPtr ppwszURL, /* [out] __RPC__out */ out uint pcchURL, /* [unique][out][in] __RPC__inout_opt */ ref __MIDL___MIDL_itf_mfidl_0000_0031_0001 pTrustStatus);
         
         [PreserveSig]
-        HRESULT GetEnableData(/* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(*pcbData) */ out byte[] ppbData, /* [out] __RPC__out */ out uint pcbData);
+        HRESULT GetEnableData(/* optional(BYTE) */ out IntPtr ppbData, /* [out] __RPC__out */ out uint pcbData);
         
         [PreserveSig]
         HRESULT IsAutomaticSupported(/* [out] __RPC__out */ out bool pfAutomatic);

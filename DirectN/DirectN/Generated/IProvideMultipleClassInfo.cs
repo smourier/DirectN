@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IProvideClassInfo
         [PreserveSig]
-        new HRESULT GetClassInfoA(/* [out] __RPC__deref_out_opt */ out ITypeInfo ppTI);
+        new HRESULT GetClassInfoA(/* optional(ITypeInfo) */ out IntPtr ppTI);
         
         // IProvideClassInfo2
         [PreserveSig]
@@ -20,6 +20,6 @@ namespace DirectN
         HRESULT GetMultiTypeInfoCount(/* [out] __RPC__out */ out uint pcti);
         
         [PreserveSig]
-        HRESULT GetInfoOfIndex(/* [in] */ uint iti, /* [in] */ uint dwFlags, /* [out] __RPC__deref_out_opt */ out ITypeInfo pptiCoClass, /* [out] __RPC__out */ out uint pdwTIFlags, /* [out] __RPC__out */ out uint pcdispidReserved, /* [out] __RPC__out */ out Guid piidPrimary, /* [out] __RPC__out */ out Guid piidSource);
+        HRESULT GetInfoOfIndex(/* [in] */ uint iti, /* [in] */ uint dwFlags, /* optional(ITypeInfo) */ out IntPtr pptiCoClass, /* [out] __RPC__out */ out uint pdwTIFlags, /* [out] __RPC__out */ out uint pcdispidReserved, /* [out] __RPC__out */ out Guid piidPrimary, /* [out] __RPC__out */ out Guid piidSource);
     }
 }

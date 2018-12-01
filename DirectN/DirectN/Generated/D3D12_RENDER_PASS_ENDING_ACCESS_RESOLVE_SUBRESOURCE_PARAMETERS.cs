@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12.h(14155,9)
 using System;
 using System.Runtime.InteropServices;
+using D3D12_RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -11,6 +12,6 @@ namespace DirectN
         public uint DstSubresource;
         public uint DstX;
         public uint DstY;
-        public tagRECT SrcRect;
+        public D3D12_RECT SrcRect;
     }
 }

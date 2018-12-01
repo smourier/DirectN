@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3D11_TRACE_VALUE
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public uint[] Bits;
+        public uint Bits;
         public byte ValidMask;
     }
 }

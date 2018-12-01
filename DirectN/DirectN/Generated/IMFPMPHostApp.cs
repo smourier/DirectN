@@ -15,6 +15,6 @@ namespace DirectN
         HRESULT UnlockProcess();
         
         [PreserveSig]
-        HRESULT ActivateClassById(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string id, /* [unique][in] __RPC__in_opt */ ref IStream pStream, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
+        HRESULT ActivateClassById(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string id, /* [unique][in] __RPC__in_opt */ IStream pStream, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
     }
 }

@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint dwFunction;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public uint[] dwReservedBits;
+        public uint dwReservedBits;
         public byte bConfigBlendType;
         public byte bConfigPictureResizing;
         public byte bConfigOnlyUsePicDestRectArea;

@@ -26,7 +26,7 @@ namespace DirectN
         HRESULT GetStatus(/* [in] */ int StatusItem, /* [annotation][out] _Out_ */ out long pValue);
         
         [PreserveSig]
-        HRESULT GetTransportBasicParameters(/* [in] */ int Param, /* [annotation][out][in] _Inout_ */ ref long pValue, /* [annotation][out][in] _Inout_ */ ref IntPtr ppszData);
+        HRESULT GetTransportBasicParameters(/* [in] */ int Param, /* [annotation][out][in] _Inout_ */ ref long pValue, /* [annotation][out][in] _Inout_ */ out IntPtr ppszData);
         
         [PreserveSig]
         HRESULT SetTransportBasicParameters(/* [in] */ int Param, /* [in] */ int Value, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszData);
@@ -56,10 +56,10 @@ namespace DirectN
         HRESULT get_Rate(/* [annotation][out] _Out_ */ out double pdblRate);
         
         [PreserveSig]
-        HRESULT GetChase(/* [annotation][out] _Out_ */ out long pEnabled, /* [annotation][out] _Out_ */ out long pOffset, /* [annotation][out] _Out_ */ out ulong phEvent);
+        HRESULT GetChase(/* [annotation][out] _Out_ */ out long pEnabled, /* [annotation][out] _Out_ */ out long pOffset, /* [annotation][out] _Out_ */ out IntPtr phEvent);
         
         [PreserveSig]
-        HRESULT SetChase(/* [in] */ int Enable, /* [in] */ int Offset, /* [in] */ ulong hEvent);
+        HRESULT SetChase(/* [in] */ int Enable, /* [in] */ int Offset, /* [in] */ IntPtr hEvent);
         
         [PreserveSig]
         HRESULT GetBump(/* [annotation][out] _Out_ */ out long pSpeed, /* [annotation][out] _Out_ */ out long pDuration);

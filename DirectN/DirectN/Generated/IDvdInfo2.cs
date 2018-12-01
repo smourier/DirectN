@@ -1,6 +1,10 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(22983,5)
 using System;
 using System.Runtime.InteropServices;
+using GPRMARRAY = System.UInt16;
+using POINT = DirectN.tagPOINT;
+using RECT = DirectN.tagRECT;
+using SPRMARRAY = System.UInt16;
 
 namespace DirectN
 {
@@ -32,16 +36,16 @@ namespace DirectN
         HRESULT GetCurrentUOPS(/* [annotation][out] _Out_ */ out uint pulUOPs);
         
         [PreserveSig]
-        HRESULT GetAllSPRMs(/* [annotation][out] _Out_ */ out IntPtr pRegisterArray);
+        HRESULT GetAllSPRMs(/* [annotation][out] _Out_ */ out SPRMARRAY pRegisterArray);
         
         [PreserveSig]
-        HRESULT GetAllGPRMs(/* [annotation][out] _Out_ */ out IntPtr pRegisterArray);
+        HRESULT GetAllGPRMs(/* [annotation][out] _Out_ */ out GPRMARRAY pRegisterArray);
         
         [PreserveSig]
-        HRESULT GetAudioLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out uint pLanguage);
+        HRESULT GetAudioLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out int pLanguage);
         
         [PreserveSig]
-        HRESULT GetSubpictureLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out uint pLanguage);
+        HRESULT GetSubpictureLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out int pLanguage);
         
         [PreserveSig]
         HRESULT GetTitleAttributes(/* [in] */ uint ulTitle, /* [annotation][out] _Out_ */ out tagDVD_MenuAttributes pMenu, /* [annotation][out] _Out_ */ out tagDVD_TitleMainAttributes pTitle);
@@ -68,7 +72,7 @@ namespace DirectN
         HRESULT GetDVDTextNumberOfLanguages(/* [annotation][out] _Out_ */ out uint pulNumOfLangs);
         
         [PreserveSig]
-        HRESULT GetDVDTextLanguageInfo(/* [in] */ uint ulLangIndex, /* [annotation][out] _Out_ */ out uint pulNumOfStrings, /* [annotation][out] _Out_ */ out uint pLangCode, /* [annotation][out] _Out_ */ out DVD_TextCharSet pbCharacterSet);
+        HRESULT GetDVDTextLanguageInfo(/* [in] */ uint ulLangIndex, /* [annotation][out] _Out_ */ out uint pulNumOfStrings, /* [annotation][out] _Out_ */ out int pLangCode, /* [annotation][out] _Out_ */ out DVD_TextCharSet pbCharacterSet);
         
         [PreserveSig]
         HRESULT GetDVDTextStringAsNative(/* [in] */ uint ulLangIndex, /* [in] */ uint ulStringIndex, /* [annotation][out] _Out_ */ out byte pbBuffer, /* [in] */ uint ulMaxBufferSize, /* [annotation][out] _Out_ */ out uint pulActualSize, /* [annotation][out] _Out_ */ out DVD_TextStringType pType);
@@ -77,7 +81,7 @@ namespace DirectN
         HRESULT GetDVDTextStringAsUnicode(/* [in] */ uint ulLangIndex, /* [in] */ uint ulStringIndex, /* [annotation][out] _Out_ */ out char pchwBuffer, /* [in] */ uint ulMaxBufferSize, /* [annotation][out] _Out_ */ out uint pulActualSize, /* [annotation][out] _Out_ */ out DVD_TextStringType pType);
         
         [PreserveSig]
-        HRESULT GetPlayerParentalLevel(/* [annotation][out] _Out_ */ out uint pulParentalLevel, /* [annotation][out] _Out_ */ [In, Out, MarshalAs(UnmanagedType.LPArray)] byte[] pbCountryCode);
+        HRESULT GetPlayerParentalLevel(/* [annotation][out] _Out_ */ out uint pulParentalLevel, /* [annotation][out] _Out_ */ [In, Out, MarshalAs(UnmanagedType.LPArray)] byte pbCountryCode);
         
         [PreserveSig]
         HRESULT GetNumberOfChapters(/* [in] */ uint ulTitle, /* [annotation][out] _Out_ */ out uint pulNumOfChapters);
@@ -98,28 +102,28 @@ namespace DirectN
         HRESULT GetState(/* [annotation][out] _Out_ */ out IDvdState pStateData);
         
         [PreserveSig]
-        HRESULT GetMenuLanguages(/* [annotation][out] _Out_ */ out uint pLanguages, /* [in] */ uint ulMaxLanguages, /* [annotation][out] _Out_ */ out uint pulActualLanguages);
+        HRESULT GetMenuLanguages(/* [annotation][out] _Out_ */ out int pLanguages, /* [in] */ uint ulMaxLanguages, /* [annotation][out] _Out_ */ out uint pulActualLanguages);
         
         [PreserveSig]
-        HRESULT GetButtonAtPosition(/* [in] */ tagPOINT point, /* [annotation][out] _Out_ */ out uint pulButtonIndex);
+        HRESULT GetButtonAtPosition(/* [in] */ POINT point, /* [annotation][out] _Out_ */ out uint pulButtonIndex);
         
         [PreserveSig]
-        HRESULT GetCmdFromEvent(/* [in] */ long lParam1, /* [annotation][out] _Out_ */ out IDvdCmd pCmdObj);
+        HRESULT GetCmdFromEvent(/* [in] */ IntPtr lParam1, /* [annotation][out] _Out_ */ out IDvdCmd pCmdObj);
         
         [PreserveSig]
-        HRESULT GetDefaultMenuLanguage(/* [annotation][out] _Out_ */ out uint pLanguage);
+        HRESULT GetDefaultMenuLanguage(/* [annotation][out] _Out_ */ out int pLanguage);
         
         [PreserveSig]
-        HRESULT GetDefaultAudioLanguage(/* [annotation][out] _Out_ */ out uint pLanguage, /* [annotation][out] _Out_ */ out tagDVD_AUDIO_LANG_EXT pAudioExtension);
+        HRESULT GetDefaultAudioLanguage(/* [annotation][out] _Out_ */ out int pLanguage, /* [annotation][out] _Out_ */ out tagDVD_AUDIO_LANG_EXT pAudioExtension);
         
         [PreserveSig]
-        HRESULT GetDefaultSubpictureLanguage(/* [annotation][out] _Out_ */ out uint pLanguage, /* [annotation][out] _Out_ */ out tagDVD_SUBPICTURE_LANG_EXT pSubpictureExtension);
+        HRESULT GetDefaultSubpictureLanguage(/* [annotation][out] _Out_ */ out int pLanguage, /* [annotation][out] _Out_ */ out tagDVD_SUBPICTURE_LANG_EXT pSubpictureExtension);
         
         [PreserveSig]
         HRESULT GetDecoderCaps(/* [annotation][out] _Out_ */ out tagDVD_DECODER_CAPS pCaps);
         
         [PreserveSig]
-        HRESULT GetButtonRect(/* [in] */ uint ulButton, /* [annotation][out] _Out_ */ out tagRECT pRect);
+        HRESULT GetButtonRect(/* [in] */ uint ulButton, /* [annotation][out] _Out_ */ out RECT pRect);
         
         [PreserveSig]
         HRESULT IsSubpictureStreamEnabled(/* [in] */ uint ulStreamNum, /* [annotation][out] _Out_ */ out bool pbEnabled);

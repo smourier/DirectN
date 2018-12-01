@@ -11,9 +11,9 @@ namespace DirectN
         bool AssertResourceState(/* _In_ */ ID3D12Resource pResource, uint Subresource, uint State);
         
         [PreserveSig]
-        HRESULT SetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, /* _In_reads_bytes_(DataSize) */ out IntPtr pData, uint DataSize);
+        HRESULT SetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, /* _In_reads_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint DataSize);
         
         [PreserveSig]
-        HRESULT GetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, /* _Out_writes_bytes_(DataSize) */ out IntPtr pData, uint DataSize);
+        HRESULT GetDebugParameter(D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE Type, /* _Out_writes_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint DataSize);
     }
 }

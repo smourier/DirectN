@@ -54,7 +54,7 @@ namespace DirectN
         new HRESULT CheckCryptoKeyExchange(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _In_ */ uint Index, /* [annotation] _Out_ */ out Guid pKeyExchangeType);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_(DataSize) */ out IntPtr pData);
+        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
         new HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
@@ -74,9 +74,9 @@ namespace DirectN
         
         // ID3D11VideoDevice2
         [PreserveSig]
-        HRESULT CheckFeatureSupport(D3D11_FEATURE_VIDEO Feature, /* [annotation] _Out_writes_bytes_(FeatureSupportDataSize) */ out IntPtr pFeatureSupportData, uint FeatureSupportDataSize);
+        HRESULT CheckFeatureSupport(D3D11_FEATURE_VIDEO Feature, /* [annotation] _Out_writes_bytes_(FeatureSupportDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object pFeatureSupportData, uint FeatureSupportDataSize);
         
         [PreserveSig]
-        HRESULT NegotiateCryptoSessionKeyExchangeMT(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, /* [annotation] _In_ */ uint DataSize, /* [annotation] _Inout_updates_bytes_(DataSize) */ out IntPtr pData);
+        HRESULT NegotiateCryptoSessionKeyExchangeMT(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, /* [annotation] _In_ */ uint DataSize, /* [annotation] _Inout_updates_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
     }
 }

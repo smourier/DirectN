@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DHAL_CLEARDATA
     {
-        public ulong dwhContext;
+        public IntPtr dwhContext;
         public uint dwFlags;
         public uint dwFillColor;
         public uint dwFillDepth;

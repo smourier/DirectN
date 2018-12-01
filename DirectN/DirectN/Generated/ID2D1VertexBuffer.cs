@@ -11,7 +11,7 @@ namespace DirectN
     public partial interface ID2D1VertexBuffer
     {
         [PreserveSig]
-        HRESULT Map(/* _Outptr_result_bytebuffer_(bufferSize) */ out byte[] data, uint bufferSize);
+        HRESULT Map(/* _Outptr_result_bytebuffer_(bufferSize) */ out IntPtr data, uint bufferSize);
         
         [PreserveSig]
         HRESULT Unmap();

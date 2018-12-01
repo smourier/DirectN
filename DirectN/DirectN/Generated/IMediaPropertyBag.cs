@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMediaPropertyBag
     {
         [PreserveSig]
-        HRESULT EnumProperty(/* [in] */ uint iProperty, /* [out][in] */ ref object pvarPropertyName, /* [out][in] */ ref object pvarPropertyValue);
+        HRESULT EnumProperty(/* [in] */ uint iProperty, /* [out][in] */ out object pvarPropertyName, /* [out][in] */ out object pvarPropertyValue);
     }
 }

@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioengineendpoint.h(860,5)
 using System;
 using System.Runtime.InteropServices;
+using boolean = System.Byte;
 
 namespace DirectN
 {
@@ -11,6 +12,6 @@ namespace DirectN
         HRESULT SetMute(/* [in] */ byte bMuted);
         
         [PreserveSig]
-        HRESULT GetMute(/* [out] */ out byte pbMuted);
+        HRESULT GetMute(/* [out] */ out boolean pbMuted);
     }
 }

@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(20627,5)
 using System;
 using System.Runtime.InteropServices;
+using LPDIRECTDRAW7 = DirectN.IDirectDraw7;
+using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;
 
 namespace DirectN
 {
@@ -16,7 +18,7 @@ namespace DirectN
         
         // IVMRImagePresenterExclModeConfig
         [PreserveSig]
-        HRESULT SetXlcModeDDObjAndPrimarySurface(/* [in] */ IntPtr lpDDObj, /* [in] */ IntPtr lpPrimarySurf);
+        HRESULT SetXlcModeDDObjAndPrimarySurface(/* [in] */ ref LPDIRECTDRAW7 lpDDObj, /* [in] */ ref LPDIRECTDRAWSURFACE7 lpPrimarySurf);
         
         [PreserveSig]
         HRESULT GetXlcModeDDObjAndPrimarySurface(/* [out] */ out IntPtr lpDDObj, /* [out] */ out IntPtr lpPrimarySurf);

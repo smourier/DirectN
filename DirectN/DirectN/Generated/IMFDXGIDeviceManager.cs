@@ -17,7 +17,7 @@ namespace DirectN
         HRESULT LockDevice(/* [annotation] _In_ */ IntPtr hDevice, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnkDevice, /* [annotation] _In_ */ bool fBlock);
         
         [PreserveSig]
-        HRESULT OpenDeviceHandle(/* [annotation] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object phDevice);
+        HRESULT OpenDeviceHandle(/* [annotation] _Out_ */ out IntPtr phDevice);
         
         [PreserveSig]
         HRESULT ResetDevice(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pUnkDevice, /* [annotation] _In_ */ uint resetToken);

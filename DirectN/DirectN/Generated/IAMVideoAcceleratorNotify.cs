@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\videoacc.h(118,5)
 using System;
 using System.Runtime.InteropServices;
+using LPAMVAUncompBufferInfo = DirectN._tag_AMVAUncompBufferInfo;
 
 namespace DirectN
 {
@@ -8,12 +9,12 @@ namespace DirectN
     public partial interface IAMVideoAcceleratorNotify
     {
         [PreserveSig]
-        HRESULT GetUncompSurfacesInfo(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ IntPtr pUncompBufferInfo);
+        HRESULT GetUncompSurfacesInfo(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ ref LPAMVAUncompBufferInfo pUncompBufferInfo);
         
         [PreserveSig]
         HRESULT SetUncompSurfacesInfo(/* [in] */ uint dwActualUncompSurfacesAllocated);
         
         [PreserveSig]
-        HRESULT GetCreateVideoAcceleratorData(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out] _Out_ */ IntPtr pdwSizeMiscData, /* [annotation][out] _Outptr_result_bytebuffer_(*pdwSizeMiscData) */ [MarshalAs(UnmanagedType.IUnknown)] out object ppMiscData);
+        HRESULT GetCreateVideoAcceleratorData(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out] _Out_ */ out uint pdwSizeMiscData, /* [annotation][out] _Outptr_result_bytebuffer_(*pdwSizeMiscData) */ [MarshalAs(UnmanagedType.IUnknown)] out object ppMiscData);
     }
 }

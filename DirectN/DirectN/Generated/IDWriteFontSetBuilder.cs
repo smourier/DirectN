@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference);
         
         [PreserveSig]
-        HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference, /* _In_reads_(propertyCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount);
+        HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference, /* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_PROPERTY[] properties, uint propertyCount);
         
         [PreserveSig]
         HRESULT AddFontSet(/* _In_ */ IDWriteFontSet fontSet);

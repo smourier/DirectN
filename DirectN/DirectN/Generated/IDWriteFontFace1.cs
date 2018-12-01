@@ -14,34 +14,34 @@ namespace DirectN
         void GetMetrics(/* _Out_ */ out DWRITE_FONT_METRICS1 fontMetrics);
         
         [PreserveSig]
-        HRESULT GetGdiCompatibleMetrics(float emSize, float pixelsPerDip, /* _In_opt_ */ ref DWRITE_MATRIX transform, /* _Out_ */ out DWRITE_FONT_METRICS1 fontMetrics);
+        HRESULT GetGdiCompatibleMetrics(float emSize, float pixelsPerDip, /* optional(DWRITE_MATRIX) */ IntPtr transform, /* _Out_ */ out DWRITE_FONT_METRICS1 fontMetrics);
         
         [PreserveSig]
         void GetCaretMetrics(/* _Out_ */ out DWRITE_CARET_METRICS caretMetrics);
         
         [PreserveSig]
-        HRESULT GetUnicodeRanges(uint maxRangeCount, /* _Out_writes_to_opt_(maxRangeCount, *actualRangeCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] DWRITE_UNICODE_RANGE[] unicodeRanges, /* _Out_ */ out uint actualRangeCount);
+        HRESULT GetUnicodeRanges(uint maxRangeCount, /* _Out_writes_to_opt_(maxRangeCount, *actualRangeCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] DWRITE_UNICODE_RANGE[] unicodeRanges, /* _Out_ */ out uint actualRangeCount);
         
         [PreserveSig]
         bool IsMonospacedFont();
         
         [PreserveSig]
-        HRESULT GetDesignGlyphAdvances(uint glyphCount, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] glyphAdvances, bool isSideways);
+        HRESULT GetDesignGlyphAdvances(uint glyphCount, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] glyphAdvances, bool isSideways);
         
         [PreserveSig]
-        HRESULT GetGdiCompatibleGlyphAdvances(float emSize, float pixelsPerDip, /* _In_opt_ */ ref DWRITE_MATRIX transform, bool useGdiNatural, bool isSideways, uint glyphCount, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] int[] glyphAdvances);
+        HRESULT GetGdiCompatibleGlyphAdvances(float emSize, float pixelsPerDip, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool useGdiNatural, bool isSideways, uint glyphCount, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] int[] glyphAdvances);
         
         [PreserveSig]
-        HRESULT GetKerningPairAdjustments(uint glyphCount, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] glyphAdvanceAdjustments);
+        HRESULT GetKerningPairAdjustments(uint glyphCount, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] glyphIndices, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] int[] glyphAdvanceAdjustments);
         
         [PreserveSig]
         bool HasKerningPairs();
         
         [PreserveSig]
-        HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* _In_opt_ */ ref DWRITE_MATRIX transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode);
+        HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode);
         
         [PreserveSig]
-        HRESULT GetVerticalGlyphVariants(uint glyphCount, /* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] nominalGlyphIndices, /* _Out_writes_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] verticalGlyphIndices);
+        HRESULT GetVerticalGlyphVariants(uint glyphCount, /* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] nominalGlyphIndices, /* _Out_writes_(glyphCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ushort[] verticalGlyphIndices);
         
         [PreserveSig]
         bool HasVerticalGlyphVariants();

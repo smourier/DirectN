@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3D12_MEMCPY_DEST
     {
         public IntPtr pData;
-        public ulong RowPitch;
-        public ulong SlicePitch;
+        public IntPtr RowPitch;
+        public IntPtr SlicePitch;
     }
 }

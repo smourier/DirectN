@@ -8,13 +8,13 @@ namespace DirectN
     public partial interface ISimpleAudioVolume
     {
         [PreserveSig]
-        HRESULT SetMasterVolume(/* [annotation][in] _In_ */ float fLevel, /* [unique][in] */ Guid EventContext);
+        HRESULT SetMasterVolume(/* [annotation][in] _In_ */ float fLevel, /* [unique][in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
         HRESULT GetMasterVolume(/* [annotation][out] _Out_ */ out float pfLevel);
         
         [PreserveSig]
-        HRESULT SetMute(/* [annotation][in] _In_ */ int bMute, /* [unique][in] */ Guid EventContext);
+        HRESULT SetMute(/* [annotation][in] _In_ */ int bMute, /* [unique][in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
         HRESULT GetMute(/* [annotation][out] _Out_ */ out bool pbMute);

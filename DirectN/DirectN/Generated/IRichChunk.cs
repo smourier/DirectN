@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IRichChunk
     {
         [PreserveSig]
-        HRESULT GetData(/* [annotation][unique][out] _Out_opt_ */ out uint pFirstPos, /* [annotation][unique][out] _Out_opt_ */ out uint pLength, /* [annotation][unique][out] _Outptr_opt_result_maybenull_ */ out IntPtr ppsz, /* [annotation][unique][out] _Out_opt_ */ out PropVariant pValue);
+        HRESULT GetData(/* [annotation][unique][out] _Out_opt_ */ out uint pFirstPos, /* [annotation][unique][out] _Out_opt_ */ out uint pLength, /* optional(LPWSTR) */ out IntPtr ppsz, /* [annotation][unique][out] _Out_opt_ */ PropVariant pValue);
     }
 }

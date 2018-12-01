@@ -10,6 +10,6 @@ namespace DirectN
         public uint PrivateDataSize;
         public uint HWProtectionDataSize;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte[] pbInput;
+        public byte pbInput;
     }
 }

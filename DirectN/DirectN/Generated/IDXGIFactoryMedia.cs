@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IDXGIFactoryMedia
     {
         [PreserveSig]
-        HRESULT CreateSwapChainForCompositionSurfaceHandle(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, /* [annotation][in] _In_opt_ */ IntPtr hSurface, /* [annotation][in] _In_ */ ref DXGI_SWAP_CHAIN_DESC1 pDesc, /* [annotation][in] _In_opt_ */ IDXGIOutput pRestrictToOutput, /* [annotation][out] _COM_Outptr_ */ out IDXGISwapChain1 ppSwapChain);
+        HRESULT CreateSwapChainForCompositionSurfaceHandle(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, /* optional(HANDLE) */ IntPtr hSurface, /* [annotation][in] _In_ */ ref DXGI_SWAP_CHAIN_DESC1 pDesc, /* [annotation][in] _In_opt_ */ IDXGIOutput pRestrictToOutput, /* [annotation][out] _COM_Outptr_ */ out IDXGISwapChain1 ppSwapChain);
         
         [PreserveSig]
-        HRESULT CreateDecodeSwapChainForCompositionSurfaceHandle(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, /* [annotation][in] _In_opt_ */ IntPtr hSurface, /* [annotation][in] _In_ */ ref DXGI_DECODE_SWAP_CHAIN_DESC pDesc, /* [annotation][in] _In_ */ IDXGIResource pYuvDecodeBuffers, /* [annotation][in] _In_opt_ */ IDXGIOutput pRestrictToOutput, /* [annotation][out] _COM_Outptr_ */ out IDXGIDecodeSwapChain ppSwapChain);
+        HRESULT CreateDecodeSwapChainForCompositionSurfaceHandle(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, /* optional(HANDLE) */ IntPtr hSurface, /* [annotation][in] _In_ */ ref DXGI_DECODE_SWAP_CHAIN_DESC pDesc, /* [annotation][in] _In_ */ IDXGIResource pYuvDecodeBuffers, /* [annotation][in] _In_opt_ */ IDXGIOutput pRestrictToOutput, /* [annotation][out] _COM_Outptr_ */ out IDXGIDecodeSwapChain ppSwapChain);
     }
 }

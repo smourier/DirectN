@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(1545,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
@@ -15,7 +16,7 @@ namespace DirectN
         new HRESULT DrawGradientMesh(/* _In_ */ ID2D1GradientMesh gradientMesh);
         
         [PreserveSig]
-        new HRESULT DrawGdiMetafile(/* _In_ */ ref ID2D1GdiMetafile gdiMetafile, /* _In_opt_ */ ref D2D_RECT_F destinationRectangle, /* _In_opt_ */ ref D2D_RECT_F sourceRectangle);
+        new HRESULT DrawGdiMetafile(/* _In_ */ ref ID2D1GdiMetafile gdiMetafile, /* optional(D2D1_RECT_F) */ IntPtr destinationRectangle, /* optional(D2D1_RECT_F) */ IntPtr sourceRectangle);
         
         // ID2D1CommandSink3
         [PreserveSig]

@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IEnumOleUndoUnits
     {
         [PreserveSig]
-        HRESULT Next(/* [in] */ uint cElt, /* [length_is][size_is][out] */ out IOleUndoUnit[] rgElt, /* [out] */ out uint pcEltFetched);
+        HRESULT Next(/* [in] */ uint cElt, /* [length_is][size_is][out] */ out IntPtr rgElt, /* [out] */ out uint pcEltFetched);
         
         [PreserveSig]
         HRESULT Skip(/* [in] */ uint cElt);

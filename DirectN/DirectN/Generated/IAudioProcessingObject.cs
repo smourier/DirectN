@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioenginebaseapo.h(561,5)
 using System;
 using System.Runtime.InteropServices;
+using HNSTIME = System.Int64;
 
 namespace DirectN
 {
@@ -11,13 +12,13 @@ namespace DirectN
         HRESULT Reset();
         
         [PreserveSig]
-        HRESULT GetLatency(/* [out] __RPC__out */ out long pTime);
+        HRESULT GetLatency(/* [out] __RPC__out */ out HNSTIME pTime);
         
         [PreserveSig]
-        HRESULT GetRegistrationProperties(/* [out] __RPC__deref_out_opt */ out APO_REG_PROPERTIES ppRegProps);
+        HRESULT GetRegistrationProperties(/* optional(APO_REG_PROPERTIES) */ out IntPtr ppRegProps);
         
         [PreserveSig]
-        HRESULT Initialize(/* [in] */ uint cbDataSize, /* [size_is][in] __RPC__in_ecount_full(cbDataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbyData);
+        HRESULT Initialize(/* [in] */ uint cbDataSize, /* [size_is][in] __RPC__in_ecount_full(cbDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbyData);
         
         [PreserveSig]
         HRESULT IsInputFormatSupported(/* [unique][in] __RPC__in_opt */ IAudioMediaType pOppositeFormat, /* [in] __RPC__in_opt */ IAudioMediaType pRequestedInputFormat, /* [out] __RPC__deref_out_opt */ out IAudioMediaType ppSupportedInputFormat);

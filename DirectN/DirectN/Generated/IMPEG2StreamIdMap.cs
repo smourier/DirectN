@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT MapStreamId(/* [in] */ uint ulStreamId, /* [in] */ uint MediaSampleContent, /* [in] */ uint ulSubstreamFilterValue, /* [in] */ int iDataOffset);
         
         [PreserveSig]
-        HRESULT UnmapStreamId(/* [in] */ uint culStreamId, /* [annotation][in] _In_reads_(culStreamId) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pulStreamId);
+        HRESULT UnmapStreamId(/* [in] */ uint culStreamId, /* [annotation][in] _In_reads_(culStreamId) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pulStreamId);
         
         [PreserveSig]
         HRESULT EnumStreamIdMap(/* [annotation][out] _Out_ */ out IEnumStreamIdMap ppIEnumStreamIdMap);

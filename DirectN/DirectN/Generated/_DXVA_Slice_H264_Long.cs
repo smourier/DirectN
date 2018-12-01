@@ -24,7 +24,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)] 
         public _DXVA_PicEntry_H264[] RefPicList;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 384)] 
-        public short[] Weights;
+        public short Weights;
         public sbyte slice_qs_delta;
         public sbyte slice_qp_delta;
         public byte redundant_pic_cnt;

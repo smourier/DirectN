@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetLicInfo(/* [out][in] __RPC__inout */ ref tagLICINFO pLicInfo);
         
         [PreserveSig]
-        HRESULT RequestLicKey(/* [in] */ uint dwReserved, /* [out] __RPC__deref_out_opt */ out IntPtr pBstrKey);
+        HRESULT RequestLicKey(/* [in] */ uint dwReserved, /* optional(BSTR) */ out IntPtr pBstrKey);
         
         [PreserveSig]
         HRESULT CreateInstanceLic(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pUnkOuter, /* [annotation][in] _Reserved_ */ [MarshalAs(UnmanagedType.IUnknown)] object pUnkReserved, /* [annotation][in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][in] __RPC__in */ [MarshalAs(UnmanagedType.BStr)] string bstrKey, /* [annotation][iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObj);

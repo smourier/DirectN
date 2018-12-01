@@ -10,6 +10,6 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
         public uint Priority => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public ulong Unused => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
+        public IntPtr Unused => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
     }
 }

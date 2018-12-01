@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(718,9)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
+using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
@@ -13,7 +15,7 @@ namespace DirectN
         /// <summary>
         /// The rectangular clip that will be applied to the layer. The clip is affected by the world transform. Content outside of the content bounds will not render.
         /// </summary>
-        public D2D_RECT_F contentBounds;
+        public D2D1_RECT_F contentBounds;
         /// <summary>
         /// A general mask that can be optionally applied to the content. Content not inside the fill of the mask will not be rendered.
         /// </summary>
@@ -25,7 +27,7 @@ namespace DirectN
         /// <summary>
         /// An additional transform that may be applied to the mask in addition to the current world transform.
         /// </summary>
-        public D2D_MATRIX_3X2_F maskTransform;
+        public D2D1_MATRIX_3X2_F maskTransform;
         /// <summary>
         /// The opacity with which all of the content in the layer will be blended back to the target when the layer is popped.
         /// </summary>

@@ -27,16 +27,16 @@ namespace DirectN
         new uint GetPropertyIndex(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name);
         
         [PreserveSig]
-        new HRESULT SetValueByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, /* _In_reads_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        new HRESULT SetValueByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, /* _In_reads_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
         
         [PreserveSig]
-        new HRESULT SetValue(uint index, D2D1_PROPERTY_TYPE type, /* _In_reads_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        new HRESULT SetValue(uint index, D2D1_PROPERTY_TYPE type, /* _In_reads_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
         
         [PreserveSig]
-        new HRESULT GetValueByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, /* _Out_writes_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        new HRESULT GetValueByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_PROPERTY_TYPE type, /* _Out_writes_(dataSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
         
         [PreserveSig]
-        new HRESULT GetValue(uint index, D2D1_PROPERTY_TYPE type, /* _Out_writes_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
+        new HRESULT GetValue(uint index, D2D1_PROPERTY_TYPE type, /* _Out_writes_(dataSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataSize);
         
         [PreserveSig]
         new uint GetValueSize(uint index);
@@ -46,18 +46,18 @@ namespace DirectN
         
         // ID2D1Effect
         [PreserveSig]
-        void SetInput(uint index, /* _In_opt_ */ ref ID2D1Image input, bool invalidate);
+        void SetInput(uint index, /* optional(ID2D1Image) */ IntPtr input, bool invalidate);
         
         [PreserveSig]
         HRESULT SetInputCount(uint inputCount);
         
         [PreserveSig]
-        void GetInput(uint index, /* _Outptr_result_maybenull_ */ out ID2D1Image input);
+        void GetInput(uint index, /* _Outptr_result_maybenull_ */ out IntPtr input);
         
         [PreserveSig]
         uint GetInputCount();
         
         [PreserveSig]
-        void GetOutput(/* _Outptr_ */ out ID2D1Image outputImage);
+        void GetOutput(/* _Outptr_ */ out IntPtr outputImage);
     }
 }

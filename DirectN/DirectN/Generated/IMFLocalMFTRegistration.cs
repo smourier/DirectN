@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFLocalMFTRegistration
     {
         [PreserveSig]
-        HRESULT RegisterMFTs(/* [size_is][in] __RPC__in_ecount_full(cMFTs) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _MFT_REGISTRATION_INFO[] pMFTs, uint cMFTs);
+        HRESULT RegisterMFTs(/* [size_is][in] __RPC__in_ecount_full(cMFTs) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _MFT_REGISTRATION_INFO[] pMFTs, uint cMFTs);
     }
 }

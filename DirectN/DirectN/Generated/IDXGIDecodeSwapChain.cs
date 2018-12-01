@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgi1_3.h(1357,5)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -11,19 +12,19 @@ namespace DirectN
         HRESULT PresentBuffer(uint BufferToPresent, uint SyncInterval, uint Flags);
         
         [PreserveSig]
-        HRESULT SetSourceRect(ref tagRECT pRect);
+        HRESULT SetSourceRect(ref RECT pRect);
         
         [PreserveSig]
-        HRESULT SetTargetRect(ref tagRECT pRect);
+        HRESULT SetTargetRect(ref RECT pRect);
         
         [PreserveSig]
         HRESULT SetDestSize(uint Width, uint Height);
         
         [PreserveSig]
-        HRESULT GetSourceRect(/* [annotation][out] _Out_ */ out tagRECT pRect);
+        HRESULT GetSourceRect(/* [annotation][out] _Out_ */ out RECT pRect);
         
         [PreserveSig]
-        HRESULT GetTargetRect(/* [annotation][out] _Out_ */ out tagRECT pRect);
+        HRESULT GetTargetRect(/* [annotation][out] _Out_ */ out RECT pRect);
         
         [PreserveSig]
         HRESULT GetDestSize(/* [annotation][out] _Out_ */ out uint pWidth, /* [annotation][out] _Out_ */ out uint pHeight);

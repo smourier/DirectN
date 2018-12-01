@@ -9,6 +9,6 @@ namespace DirectN
     {
         public ushort cb;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public byte[] abID;
+        public byte abID;
     }
 }

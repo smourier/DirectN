@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(19226,5)
 using System;
 using System.Runtime.InteropServices;
+using COLORREF = System.UInt32;
 
 namespace DirectN
 {
@@ -29,7 +30,7 @@ namespace DirectN
         HRESULT SetBackgroundClr(/* [in] */ uint ClrBkg);
         
         [PreserveSig]
-        HRESULT GetBackgroundClr(/* [in] */ ref uint lpClrBkg);
+        HRESULT GetBackgroundClr(/* [in] */ ref COLORREF lpClrBkg);
         
         [PreserveSig]
         HRESULT SetMixingPrefs(/* [in] */ uint dwMixerPrefs);

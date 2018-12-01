@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFSeekInfo
     {
         [PreserveSig]
-        HRESULT GetNearestKeyFrames(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidTimeFormat, /* [annotation][in] _In_ */ PropVariant pvarStartPosition, /* [annotation][out] _Out_ */ out PropVariant pvarPreviousKeyFrame, /* [annotation][out] _Out_ */ out PropVariant pvarNextKeyFrame);
+        HRESULT GetNearestKeyFrames(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidTimeFormat, /* [annotation][in] _In_ */ PropVariant pvarStartPosition, /* [annotation][out] _Out_ */ PropVariant pvarPreviousKeyFrame, /* [annotation][out] _Out_ */ PropVariant pvarNextKeyFrame);
     }
 }

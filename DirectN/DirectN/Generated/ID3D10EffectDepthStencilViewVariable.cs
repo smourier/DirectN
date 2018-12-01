@@ -78,10 +78,10 @@ namespace DirectN
         new ID3D10EffectSamplerVariable AsSampler();
         
         [PreserveSig]
-        new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         // ID3D10EffectDepthStencilViewVariable
         [PreserveSig]
@@ -154,10 +154,10 @@ namespace DirectN
         ID3D10EffectSamplerVariable AsSampler();
         
         [PreserveSig]
-        HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
         HRESULT SetDepthStencil(/* THIS_ _In_opt_ */ ID3D10DepthStencilView pResource);
@@ -166,9 +166,9 @@ namespace DirectN
         HRESULT GetDepthStencil(/* THIS_ _Out_ */ out ID3D10DepthStencilView ppResource);
         
         [PreserveSig]
-        HRESULT SetDepthStencilArray(/* THIS_ _In_reads_(Count) */ out ID3D10DepthStencilView[] ppResources, uint Offset, uint Count);
+        HRESULT SetDepthStencilArray(/* THIS_ _In_reads_(Count) */ out IntPtr ppResources, uint Offset, uint Count);
         
         [PreserveSig]
-        HRESULT GetDepthStencilArray(/* THIS_ _Out_writes_(Count) */ out ID3D10DepthStencilView[] ppResources, uint Offset, uint Count);
+        HRESULT GetDepthStencilArray(/* THIS_ _Out_writes_(Count) */ out IntPtr ppResources, uint Offset, uint Count);
     }
 }

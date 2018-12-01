@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(2907,5)
 using System;
 using System.Runtime.InteropServices;
+using CY = DirectN.tagCY;
+using TEXTMETRICOLE = DirectN.tagTEXTMETRICW;
 
 namespace DirectN
 {
@@ -8,16 +10,16 @@ namespace DirectN
     public partial interface IFont
     {
         [PreserveSig]
-        HRESULT get_Name(/* [out] __RPC__deref_out_opt */ out IntPtr pName);
+        HRESULT get_Name(/* optional(BSTR) */ out IntPtr pName);
         
         [PreserveSig]
         HRESULT put_Name(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.BStr)] string name);
         
         [PreserveSig]
-        HRESULT get_Size(/* [out] __RPC__out */ out tagCY pSize);
+        HRESULT get_Size(/* [out] __RPC__out */ out CY pSize);
         
         [PreserveSig]
-        HRESULT put_Size(/* [in] */ tagCY size);
+        HRESULT put_Size(/* [in] */ CY size);
         
         [PreserveSig]
         HRESULT get_Bold(/* [out] __RPC__out */ out bool pBold);
@@ -56,7 +58,7 @@ namespace DirectN
         HRESULT put_Charset(/* [in] */ short charset);
         
         [PreserveSig]
-        HRESULT get_hFont(/* [out] __RPC__deref_out_opt */ out IntPtr phFont);
+        HRESULT get_hFont(/* optional(HFONT) */ out IntPtr phFont);
         
         [PreserveSig]
         HRESULT Clone(/* [out] __RPC__deref_out_opt */ out IFont ppFont);
@@ -68,7 +70,7 @@ namespace DirectN
         HRESULT SetRatio(/* [in] */ int cyLogical, /* [in] */ int cyHimetric);
         
         [PreserveSig]
-        HRESULT QueryTextMetrics(/* [out] __RPC__out */ out tagTEXTMETRICW pTM);
+        HRESULT QueryTextMetrics(/* [out] __RPC__out */ out TEXTMETRICOLE pTM);
         
         [PreserveSig]
         HRESULT AddRefHfont(/* [in] __RPC__in */ IntPtr hFont);

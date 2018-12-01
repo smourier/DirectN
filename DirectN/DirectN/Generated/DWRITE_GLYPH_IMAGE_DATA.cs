@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_3.h(1820,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_POINT_2L = DirectN.tagPOINT;
+using D2D1_SIZE_U = DirectN.D2D_SIZE_U;
 
 namespace DirectN
 {
@@ -29,22 +31,22 @@ namespace DirectN
         /// <summary>
         /// Size of image when the format is pixel data.
         /// </summary>
-        public D2D_SIZE_U pixelSize;
+        public D2D1_SIZE_U pixelSize;
         /// <summary>
         /// Left origin along the horizontal Roman baseline.
         /// </summary>
-        public tagPOINT horizontalLeftOrigin;
+        public D2D1_POINT_2L horizontalLeftOrigin;
         /// <summary>
         /// Right origin along the horizontal Roman baseline.
         /// </summary>
-        public tagPOINT horizontalRightOrigin;
+        public D2D1_POINT_2L horizontalRightOrigin;
         /// <summary>
         /// Top origin along the vertical central baseline.
         /// </summary>
-        public tagPOINT verticalTopOrigin;
+        public D2D1_POINT_2L verticalTopOrigin;
         /// <summary>
         /// Bottom origin along vertical central baseline.
         /// </summary>
-        public tagPOINT verticalBottomOrigin;
+        public D2D1_POINT_2L verticalBottomOrigin;
     }
 }

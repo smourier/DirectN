@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d.h(208,1)
 using System;
 using System.Runtime.InteropServices;
+using LPDIRECT3DLIGHT = DirectN.IDirect3DLight;
+using LPDIRECT3DMATERIAL = DirectN.IDirect3DMaterial;
+using LPDIRECT3DVIEWPORT = DirectN.IDirect3DViewport;
 
 namespace DirectN
 {
@@ -11,18 +14,18 @@ namespace DirectN
         HRESULT Initialize([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0);
         
         [PreserveSig]
-        HRESULT EnumDevices(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT EnumDevices(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateLight(ref IntPtr __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateLight(LPDIRECT3DLIGHT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateMaterial(ref IntPtr __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateMaterial(LPDIRECT3DMATERIAL __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateViewport(ref IntPtr __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateViewport(LPDIRECT3DVIEWPORT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
-        HRESULT FindDevice(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT FindDevice(ref _D3DFINDDEVICESEARCH __unnamed_0, ref _D3DFINDDEVICERESULT __unnamed_1);
     }
 }

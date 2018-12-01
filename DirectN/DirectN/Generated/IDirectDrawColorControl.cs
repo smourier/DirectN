@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddraw.h(2161,1)
 using System;
 using System.Runtime.InteropServices;
+using LPDDCOLORCONTROL = DirectN._DDCOLORCONTROL;
 
 namespace DirectN
 {
@@ -8,9 +9,9 @@ namespace DirectN
     public partial interface IDirectDrawColorControl
     {
         [PreserveSig]
-        HRESULT GetColorControls(IntPtr __unnamed_0);
+        HRESULT GetColorControls(ref LPDDCOLORCONTROL __unnamed_0);
         
         [PreserveSig]
-        HRESULT SetColorControls(IntPtr __unnamed_0);
+        HRESULT SetColorControls(ref LPDDCOLORCONTROL __unnamed_0);
     }
 }

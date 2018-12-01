@@ -1,6 +1,12 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(21710,5)
 using System;
 using System.Runtime.InteropServices;
+using DVD_AudioATR = System.Byte;
+using DVD_SubpictureATR = System.Byte;
+using DVD_VideoATR = System.Byte;
+using GPRMARRAY = System.UInt16;
+using SPRMARRAY = System.UInt16;
+using VALID_UOP_SOMTHING_OR_OTHER = System.UInt32;
 
 namespace DirectN
 {
@@ -29,19 +35,19 @@ namespace DirectN
         HRESULT GetCurrentSubpicture(/* [annotation][out] _Out_ */ out uint pulStreamsAvailable, /* [annotation][out] _Out_ */ out uint pulCurrentStream, /* [annotation][out] _Out_ */ out bool pIsDisabled);
         
         [PreserveSig]
-        HRESULT GetCurrentUOPS(/* [annotation][out] _Out_ */ out uint pUOP);
+        HRESULT GetCurrentUOPS(/* [annotation][out] _Out_ */ out VALID_UOP_SOMTHING_OR_OTHER pUOP);
         
         [PreserveSig]
-        HRESULT GetAllSPRMs(/* [annotation][out] _Out_ */ out IntPtr pRegisterArray);
+        HRESULT GetAllSPRMs(/* [annotation][out] _Out_ */ out SPRMARRAY pRegisterArray);
         
         [PreserveSig]
-        HRESULT GetAllGPRMs(/* [annotation][out] _Out_ */ out IntPtr pRegisterArray);
+        HRESULT GetAllGPRMs(/* [annotation][out] _Out_ */ out GPRMARRAY pRegisterArray);
         
         [PreserveSig]
-        HRESULT GetAudioLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out uint pLanguage);
+        HRESULT GetAudioLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out int pLanguage);
         
         [PreserveSig]
-        HRESULT GetSubpictureLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out uint pLanguage);
+        HRESULT GetSubpictureLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out int pLanguage);
         
         [PreserveSig]
         HRESULT GetTitleAttributes(/* [in] */ uint ulTitle, /* [annotation][out] _Out_ */ out tagDVD_ATR pATR);
@@ -50,19 +56,19 @@ namespace DirectN
         HRESULT GetVMGAttributes(/* [annotation][out] _Out_ */ out tagDVD_ATR pATR);
         
         [PreserveSig]
-        HRESULT GetCurrentVideoAttributes(/* [annotation][out] _Out_ */ out IntPtr pATR);
+        HRESULT GetCurrentVideoAttributes(/* [annotation][out] _Out_ */ out DVD_VideoATR pATR);
         
         [PreserveSig]
-        HRESULT GetCurrentAudioAttributes(/* [annotation][out] _Out_ */ out IntPtr pATR);
+        HRESULT GetCurrentAudioAttributes(/* [annotation][out] _Out_ */ out DVD_AudioATR pATR);
         
         [PreserveSig]
-        HRESULT GetCurrentSubpictureAttributes(/* [annotation][out] _Out_ */ out IntPtr pATR);
+        HRESULT GetCurrentSubpictureAttributes(/* [annotation][out] _Out_ */ out DVD_SubpictureATR pATR);
         
         [PreserveSig]
         HRESULT GetCurrentVolumeInfo(/* [annotation][out] _Out_ */ out uint pulNumOfVol, /* [annotation][out] _Out_ */ out uint pulThisVolNum, /* [annotation][out] _Out_ */ out tagDVD_DISC_SIDE pSide, /* [annotation][out] _Out_ */ out uint pulNumOfTitles);
         
         [PreserveSig]
-        HRESULT GetDVDTextInfo(/* [annotation][size_is][out] _Out_writes_bytes_to_(ulBufSize, *pulActualSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pTextManager, /* [in] */ uint ulBufSize, /* [annotation][out] _Out_ */ out uint pulActualSize);
+        HRESULT GetDVDTextInfo(/* [annotation][size_is][out] _Out_writes_bytes_to_(ulBufSize, *pulActualSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pTextManager, /* [in] */ uint ulBufSize, /* [annotation][out] _Out_ */ out uint pulActualSize);
         
         [PreserveSig]
         HRESULT GetPlayerParentalLevel(/* [annotation][out] _Out_ */ out uint pulParentalLevel, /* [annotation][out] _Out_ */ out uint pulCountryCode);

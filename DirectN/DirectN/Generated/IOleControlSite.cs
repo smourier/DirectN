@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(1586,5)
 using System;
 using System.Runtime.InteropServices;
+using MSG = DirectN.tagMSG;
+using POINTL = DirectN._POINTL;
 
 namespace DirectN
 {
@@ -14,13 +16,13 @@ namespace DirectN
         HRESULT LockInPlaceActive(/* [in] */ bool fLock);
         
         [PreserveSig]
-        HRESULT GetExtendedControl(/* [out] __RPC__deref_out_opt */ out IDispatch ppDisp);
+        HRESULT GetExtendedControl(/* optional(IDispatch) */ out IntPtr ppDisp);
         
         [PreserveSig]
-        HRESULT TransformCoords(/* [out][in] __RPC__inout */ ref _POINTL pPtlHimetric, /* [out][in] __RPC__inout */ ref tagPOINTF pPtfContainer, /* [in] */ uint dwFlags);
+        HRESULT TransformCoords(/* [out][in] __RPC__inout */ ref POINTL pPtlHimetric, /* [out][in] __RPC__inout */ ref tagPOINTF pPtfContainer, /* [in] */ uint dwFlags);
         
         [PreserveSig]
-        HRESULT TranslateAcceleratorA(/* [in] __RPC__in */ ref tagMSG pMsg, /* [in] */ uint grfModifiers);
+        HRESULT TranslateAcceleratorA(/* [in] __RPC__in */ ref MSG pMsg, /* [in] */ uint grfModifiers);
         
         [PreserveSig]
         HRESULT OnFocus(/* [in] */ bool fGotFocus);

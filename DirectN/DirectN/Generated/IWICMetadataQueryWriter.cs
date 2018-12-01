@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(3148,5)
 using System;
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
@@ -19,7 +18,7 @@ namespace DirectN
         new HRESULT GetMetadataByName(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* [unique][out][in] __RPC__inout_opt */ PropVariant pvarValue);
         
         [PreserveSig]
-        new HRESULT GetEnumerator(/* [out] __RPC__deref_out_opt */ out IEnumString ppIEnumString);
+        new HRESULT GetEnumerator(/* optional(IEnumString) */ out IntPtr ppIEnumString);
         
         // IWICMetadataQueryWriter
         [PreserveSig]

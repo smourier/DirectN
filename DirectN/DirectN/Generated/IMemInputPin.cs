@@ -20,7 +20,7 @@ namespace DirectN
         HRESULT Receive(/* [in] */ IMediaSample pSample);
         
         [PreserveSig]
-        HRESULT ReceiveMultiple(/* [annotation][size_is][in] _In_reads_(nSamples) */ out IMediaSample[] pSamples, /* [in] */ int nSamples, /* [annotation][out] _Out_ */ out long nSamplesProcessed);
+        HRESULT ReceiveMultiple(/* [annotation][size_is][in] _In_reads_(nSamples) */ out IntPtr pSamples, /* [in] */ int nSamples, /* [annotation][out] _Out_ */ out long nSamplesProcessed);
         
         [PreserveSig]
         HRESULT ReceiveCanBlock();

@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT Count(/* [annotation][out] _Out_ */ out uint pcStreams);
         
         [PreserveSig]
-        HRESULT Info(/* [in] */ int lIndex, /* [annotation][out] _Out_opt_ */ out _AMMediaType ppmt, /* [annotation][out] _Out_opt_ */ out uint pdwFlags, /* [annotation][out] _Out_opt_ */ out uint plcid, /* [annotation][out] _Out_opt_ */ out uint pdwGroup, /* [annotation][out] _Out_opt_ */ out IntPtr ppszName, /* [annotation][out] _Out_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppObject, /* [annotation][out] _Out_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
+        HRESULT Info(/* [in] */ int lIndex, /* optional(_AMMediaType) */ out IntPtr ppmt, /* [annotation][out] _Out_opt_ */ out uint pdwFlags, /* [annotation][out] _Out_opt_ */ out int plcid, /* [annotation][out] _Out_opt_ */ out uint pdwGroup, /* optional(LPWSTR) */ out IntPtr ppszName, /* [annotation][out] _Out_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppObject, /* [annotation][out] _Out_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);
         
         [PreserveSig]
         HRESULT Enable(/* [in] */ int lIndex, /* [in] */ uint dwFlags);

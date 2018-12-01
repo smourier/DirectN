@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_3.h(932,1)
 using System;
 using System.Runtime.InteropServices;
+using FILETIME = DirectN._FILETIME;
 
 namespace DirectN
 {
@@ -35,7 +36,7 @@ namespace DirectN
         ulong GetFileSize();
         
         [PreserveSig]
-        HRESULT GetFileTime(/* _Out_ */ out _FILETIME lastWriteTime);
+        HRESULT GetFileTime(/* _Out_ */ out FILETIME lastWriteTime);
         
         [PreserveSig]
         DWRITE_LOCALITY GetLocality();
@@ -44,10 +45,10 @@ namespace DirectN
         HRESULT EnqueueFontDownloadRequest();
         
         [PreserveSig]
-        HRESULT EnqueueCharacterDownloadRequest(/* _In_reads_(characterCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount);
+        HRESULT EnqueueCharacterDownloadRequest(/* _In_reads_(characterCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount);
         
         [PreserveSig]
-        HRESULT EnqueueGlyphDownloadRequest(/* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount);
+        HRESULT EnqueueGlyphDownloadRequest(/* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount);
         
         [PreserveSig]
         HRESULT EnqueueFileFragmentDownloadRequest(ulong fileOffset, ulong fragmentSize);

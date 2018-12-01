@@ -9,10 +9,10 @@ namespace DirectN
     {
         // ID3D12Object
         [PreserveSig]
-        new HRESULT GetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _Inout_ */ ref uint pDataSize, /* _Out_writes_bytes_opt_( *pDataSize ) */ out IntPtr pData);
+        new HRESULT GetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _Inout_ */ ref uint pDataSize, /* _Out_writes_bytes_opt_( *pDataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* _In_reads_bytes_opt_( DataSize ) */ out IntPtr pData);
+        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
         new HRESULT SetPrivateDataInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
@@ -35,9 +35,9 @@ namespace DirectN
         HRESULT LoadComputePipeline(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pName, /* _In_ */ ref D3D12_COMPUTE_PIPELINE_STATE_DESC pDesc, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppPipelineState);
         
         [PreserveSig]
-        ulong GetSerializedSize();
+        IntPtr GetSerializedSize();
         
         [PreserveSig]
-        HRESULT Serialize(/* _Out_writes_(DataSizeInBytes) */ out IntPtr pData, ulong DataSizeInBytes);
+        HRESULT Serialize(/* _Out_writes_(DataSizeInBytes) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, IntPtr DataSizeInBytes);
     }
 }

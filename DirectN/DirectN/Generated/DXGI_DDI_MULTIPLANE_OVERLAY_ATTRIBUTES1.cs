@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxgiddi.h(547,9)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -8,9 +9,9 @@ namespace DirectN
     public partial struct DXGI_DDI_MULTIPLANE_OVERLAY_ATTRIBUTES1
     {
         public uint Flags;
-        public tagRECT SrcRect;
-        public tagRECT DstRect;
-        public tagRECT ClipRect;
+        public RECT SrcRect;
+        public RECT DstRect;
+        public RECT ClipRect;
         public DXGI_DDI_MODE_ROTATION Rotation;
         public DXGI_DDI_MULTIPLANE_OVERLAY_BLEND Blend;
         public uint DirtyRectCount;

@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFTimedTextBinary
     {
         [PreserveSig]
-        HRESULT GetData(/* [annotation][out] _Outptr_result_bytebuffer_(*length) */ out byte[] data, /* [annotation][out] _Out_ */ out uint length);
+        HRESULT GetData(/* [annotation][out] _Outptr_result_bytebuffer_(*length) */ out IntPtr data, /* [annotation][out] _Out_ */ out uint length);
     }
 }

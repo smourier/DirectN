@@ -16,9 +16,9 @@ namespace DirectN
         public ushort wBackwardRefPictureIndex;
         public ushort vop_time_increment_resolution;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public uint[] TRB;
+        public uint TRB;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public uint[] TRD;
+        public uint TRD;
         public _DXVA_PicParams_MPEG4_PART2__union_0 __union_10;
         public byte profile_and_level_indication;
         public byte video_object_layer_verid;
@@ -26,7 +26,7 @@ namespace DirectN
         public ushort vop_height;
         public _DXVA_PicParams_MPEG4_PART2__union_1 __union_15;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public short[] warping_mv;
+        public short warping_mv;
         public _DXVA_PicParams_MPEG4_PART2__union_2 __union_17;
         public ushort StatusReportFeedbackNumber;
         public ushort Reserved16BitsA;

@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(3264,5)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
+using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -8,13 +10,13 @@ namespace DirectN
     public partial interface IMFVideoProcessorControl
     {
         [PreserveSig]
-        HRESULT SetBorderColor(/* [annotation][in] _In_opt_ */ ref _MFARGB pBorderColor);
+        HRESULT SetBorderColor(/* optional(_MFARGB) */ IntPtr pBorderColor);
         
         [PreserveSig]
-        HRESULT SetSourceRectangle(/* [annotation][in] _In_opt_ */ ref tagRECT pSrcRect);
+        HRESULT SetSourceRectangle(/* optional(RECT) */ IntPtr pSrcRect);
         
         [PreserveSig]
-        HRESULT SetDestinationRectangle(/* [annotation][in] _In_opt_ */ ref tagRECT pDstRect);
+        HRESULT SetDestinationRectangle(/* optional(RECT) */ IntPtr pDstRect);
         
         [PreserveSig]
         HRESULT SetMirror(/* [annotation][in] _In_ */ _MF_VIDEO_PROCESSOR_MIRROR eMirror);
@@ -23,6 +25,6 @@ namespace DirectN
         HRESULT SetRotation(/* [annotation][in] _In_ */ _MF_VIDEO_PROCESSOR_ROTATION eRotation);
         
         [PreserveSig]
-        HRESULT SetConstrictionSize(/* [annotation][in] _In_opt_ */ ref tagSIZE pConstrictionSize);
+        HRESULT SetConstrictionSize(/* optional(SIZE) */ IntPtr pConstrictionSize);
     }
 }

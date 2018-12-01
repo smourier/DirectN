@@ -11,18 +11,18 @@ namespace DirectN
     public partial interface ID2D1SvgGlyphStyle
     {
         [PreserveSig]
-        HRESULT SetFill(/* _In_opt_ */ ref ID2D1Brush brush);
+        HRESULT SetFill(/* optional(ID2D1Brush) */ IntPtr brush);
         
         [PreserveSig]
-        void GetFill(/* _Outptr_result_maybenull_ */ out ID2D1Brush brush);
+        void GetFill(/* _Outptr_result_maybenull_ */ out IntPtr brush);
         
         [PreserveSig]
-        HRESULT SetStroke(/* _In_opt_ */ ref ID2D1Brush brush, float strokeWidth, /* _In_reads_opt_(dashesCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, uint dashesCount, float dashOffset);
+        HRESULT SetStroke(/* optional(ID2D1Brush) */ IntPtr brush, float strokeWidth, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, uint dashesCount, float dashOffset);
         
         [PreserveSig]
         uint GetStrokeDashesCount();
         
         [PreserveSig]
-        void GetStroke(/* _Outptr_opt_result_maybenull_ */ out ID2D1Brush brush, /* _Out_opt_ */ out float strokeWidth, /* _Out_writes_opt_(dashesCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, uint dashesCount, /* _Out_opt_ */ out float dashOffset);
+        void GetStroke(/* optional(ID2D1Brush) */ out IntPtr brush, /* _Out_opt_ */ out float strokeWidth, /* _Out_writes_opt_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, uint dashesCount, /* _Out_opt_ */ out float dashOffset);
     }
 }

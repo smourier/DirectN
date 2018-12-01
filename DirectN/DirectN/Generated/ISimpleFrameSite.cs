@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(2787,5)
 using System;
 using System.Runtime.InteropServices;
+using LRESULT = System.Int64;
 
 namespace DirectN
 {
@@ -8,9 +9,9 @@ namespace DirectN
     public partial interface ISimpleFrameSite
     {
         [PreserveSig]
-        HRESULT PreMessageFilter(/* [in] __RPC__in */ IntPtr hWnd, /* [in] */ uint msg, /* [in] */ ulong wp, /* [in] */ long lp, /* [out] __RPC__out */ out long plResult, /* [out] __RPC__out */ out uint pdwCookie);
+        HRESULT PreMessageFilter(/* [in] __RPC__in */ IntPtr hWnd, /* [in] */ uint msg, /* [in] */ ulong wp, /* [in] */ long lp, /* [out] __RPC__out */ out LRESULT plResult, /* [out] __RPC__out */ out uint pdwCookie);
         
         [PreserveSig]
-        HRESULT PostMessageFilter(/* [in] __RPC__in */ IntPtr hWnd, /* [in] */ uint msg, /* [in] */ ulong wp, /* [in] */ long lp, /* [out] __RPC__out */ out long plResult, /* [in] */ uint dwCookie);
+        HRESULT PostMessageFilter(/* [in] __RPC__in */ IntPtr hWnd, /* [in] */ uint msg, /* [in] */ ulong wp, /* [in] */ long lp, /* [out] __RPC__out */ out LRESULT plResult, /* [in] */ uint dwCookie);
     }
 }

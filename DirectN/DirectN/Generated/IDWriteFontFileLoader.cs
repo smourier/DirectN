@@ -11,6 +11,6 @@ namespace DirectN
     public partial interface IDWriteFontFileLoader
     {
         [PreserveSig]
-        HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ out IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
+        HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
     }
 }

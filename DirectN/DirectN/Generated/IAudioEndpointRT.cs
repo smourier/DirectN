@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioengineendpoint.h(322,5)
 using System;
 using System.Runtime.InteropServices;
+using HNSTIME = System.Int64;
 
 namespace DirectN
 {
@@ -8,7 +9,7 @@ namespace DirectN
     public partial interface IAudioEndpointRT
     {
         [PreserveSig]
-        void GetCurrentPadding(/* [out] */ out long pPadding, /* [out] */ out AE_CURRENT_POSITION pAeCurrentPosition);
+        void GetCurrentPadding(/* [out] */ out HNSTIME pPadding, /* [out] */ out AE_CURRENT_POSITION pAeCurrentPosition);
         
         [PreserveSig]
         void ProcessingComplete();

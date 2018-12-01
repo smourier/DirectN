@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(5404,5)
 using System;
 using System.Runtime.InteropServices;
+using MFTIME = System.Int64;
 
 namespace DirectN
 {
@@ -12,7 +13,7 @@ namespace DirectN
         new HRESULT GetClockCharacteristics(/* [out] __RPC__out */ out uint pdwCharacteristics);
         
         [PreserveSig]
-        new HRESULT GetCorrelatedTime(/* [in] */ uint dwReserved, /* [out] __RPC__out */ out long pllClockTime, /* [out] __RPC__out */ out long phnsSystemTime);
+        new HRESULT GetCorrelatedTime(/* [in] */ uint dwReserved, /* [out] __RPC__out */ out long pllClockTime, /* [out] __RPC__out */ out MFTIME phnsSystemTime);
         
         [PreserveSig]
         new HRESULT GetContinuityKey(/* [out] __RPC__out */ out uint pdwContinuityKey);

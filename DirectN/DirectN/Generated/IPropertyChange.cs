@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\propsys.h(891,5)
 using System;
 using System.Runtime.InteropServices;
+using PROPERTYKEY = DirectN._tagpropertykey;
 
 namespace DirectN
 {
@@ -9,13 +10,13 @@ namespace DirectN
     {
         // IObjectWithPropertyKey
         [PreserveSig]
-        new HRESULT SetPropertyKey(/* [in] __RPC__in */ ref _tagpropertykey key);
+        new HRESULT SetPropertyKey(/* [in] __RPC__in */ ref PROPERTYKEY key);
         
         [PreserveSig]
-        new HRESULT GetPropertyKey(/* [out] __RPC__out */ out _tagpropertykey pkey);
+        new HRESULT GetPropertyKey(/* [out] __RPC__out */ out PROPERTYKEY pkey);
         
         // IPropertyChange
         [PreserveSig]
-        HRESULT ApplyToPropVariant(/* [in] __RPC__in */ PropVariant propvarIn, /* [out] __RPC__out */ out PropVariant ppropvarOut);
+        HRESULT ApplyToPropVariant(/* [in] __RPC__in */ PropVariant propvarIn, /* [out] __RPC__out */ PropVariant ppropvarOut);
     }
 }

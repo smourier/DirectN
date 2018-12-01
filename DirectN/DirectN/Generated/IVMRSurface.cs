@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(20431,5)
 using System;
 using System.Runtime.InteropServices;
+using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;
 
 namespace DirectN
 {
@@ -11,7 +12,7 @@ namespace DirectN
         HRESULT IsSurfaceLocked();
         
         [PreserveSig]
-        HRESULT LockSurface(/* [out] */ out byte lpSurface);
+        HRESULT LockSurface(/* [out] */ out IntPtr lpSurface);
         
         [PreserveSig]
         HRESULT UnlockSurface();

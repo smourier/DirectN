@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(18950,5)
 using System;
 using System.Runtime.InteropServices;
+using COLORREF = System.UInt32;
+using LPRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -8,19 +10,19 @@ namespace DirectN
     public partial interface IVMRWindowlessControl
     {
         [PreserveSig]
-        HRESULT GetNativeVideoSize(/* [out] */ out long lpWidth, /* [out] */ out long lpHeight, /* [out] */ out long lpARWidth, /* [out] */ out long lpARHeight);
+        HRESULT GetNativeVideoSize(/* [out] */ out int lpWidth, /* [out] */ out int lpHeight, /* [out] */ out int lpARWidth, /* [out] */ out int lpARHeight);
         
         [PreserveSig]
-        HRESULT GetMinIdealVideoSize(/* [out] */ out long lpWidth, /* [out] */ out long lpHeight);
+        HRESULT GetMinIdealVideoSize(/* [out] */ out int lpWidth, /* [out] */ out int lpHeight);
         
         [PreserveSig]
-        HRESULT GetMaxIdealVideoSize(/* [out] */ out long lpWidth, /* [out] */ out long lpHeight);
+        HRESULT GetMaxIdealVideoSize(/* [out] */ out int lpWidth, /* [out] */ out int lpHeight);
         
         [PreserveSig]
-        HRESULT SetVideoPosition(/* [in] */ IntPtr lpSRCRect, /* [in] */ IntPtr lpDSTRect);
+        HRESULT SetVideoPosition(/* [in] */ ref LPRECT lpSRCRect, /* [in] */ ref LPRECT lpDSTRect);
         
         [PreserveSig]
-        HRESULT GetVideoPosition(/* [out] */ IntPtr lpSRCRect, /* [out] */ IntPtr lpDSTRect);
+        HRESULT GetVideoPosition(/* [out] */ out LPRECT lpSRCRect, /* [out] */ out LPRECT lpDSTRect);
         
         [PreserveSig]
         HRESULT GetAspectRatioMode(/* [out] */ out uint lpAspectRatioMode);
@@ -38,18 +40,18 @@ namespace DirectN
         HRESULT DisplayModeChanged();
         
         [PreserveSig]
-        HRESULT GetCurrentImage(/* [out] */ out byte lpDib);
+        HRESULT GetCurrentImage(/* [out] */ out IntPtr lpDib);
         
         [PreserveSig]
         HRESULT SetBorderColor(/* [in] */ uint Clr);
         
         [PreserveSig]
-        HRESULT GetBorderColor(/* [out] */ out uint lpClr);
+        HRESULT GetBorderColor(/* [out] */ out COLORREF lpClr);
         
         [PreserveSig]
         HRESULT SetColorKey(/* [in] */ uint Clr);
         
         [PreserveSig]
-        HRESULT GetColorKey(/* [out] */ out uint lpClr);
+        HRESULT GetColorKey(/* [out] */ out COLORREF lpClr);
     }
 }

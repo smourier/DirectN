@@ -19,9 +19,9 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
         public _DXVA_PicEntry_H264[] RefFrameList;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public int[] CurrFieldOrderCnt;
+        public int CurrFieldOrderCnt;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public int[] FieldOrderCntList;
+        public int FieldOrderCntList;
         public sbyte pic_init_qs_minus26;
         public sbyte chroma_qp_index_offset;
         public sbyte second_chroma_qp_index_offset;
@@ -31,7 +31,7 @@ namespace DirectN
         public byte num_ref_idx_l1_active_minus1;
         public byte Reserved8BitsA;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public ushort[] FrameNumList;
+        public ushort FrameNumList;
         public uint UsedForReferenceFlags;
         public ushort NonExistingFrameFlags;
         public ushort frame_num;
@@ -49,6 +49,6 @@ namespace DirectN
         public byte Reserved8BitsB;
         public ushort slice_group_change_rate_minus1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 810)] 
-        public byte[] SliceGroupMap;
+        public byte SliceGroupMap;
     }
 }

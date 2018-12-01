@@ -19,9 +19,9 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
         public _DXVA_PicEntry_VPx[] ref_frame_map;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint[] ref_frame_coded_width;
+        public uint ref_frame_coded_width;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint[] ref_frame_coded_height;
+        public uint ref_frame_coded_height;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
         public _DXVA_PicEntry_VPx[] frame_refs;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)] 

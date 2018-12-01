@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(21308,5)
 using System;
 using System.Runtime.InteropServices;
+using POINT = DirectN.tagPOINT;
 
 namespace DirectN
 {
@@ -77,7 +78,7 @@ namespace DirectN
         HRESULT PauseOff();
         
         [PreserveSig]
-        HRESULT MenuLanguageSelect(/* [in] */ uint Language);
+        HRESULT MenuLanguageSelect(/* [in] */ int Language);
         
         [PreserveSig]
         HRESULT AudioStreamChange(/* [in] */ uint ulAudio);
@@ -104,10 +105,10 @@ namespace DirectN
         HRESULT SetRoot(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszPath);
         
         [PreserveSig]
-        HRESULT MouseActivate(/* [in] */ tagPOINT point);
+        HRESULT MouseActivate(/* [in] */ POINT point);
         
         [PreserveSig]
-        HRESULT MouseSelect(/* [in] */ tagPOINT point);
+        HRESULT MouseSelect(/* [in] */ POINT point);
         
         [PreserveSig]
         HRESULT ChapterPlayAutoStop(/* [in] */ uint ulTitle, /* [in] */ uint ulChapter, /* [in] */ uint ulChaptersToPlay);

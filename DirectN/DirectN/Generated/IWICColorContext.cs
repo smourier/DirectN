@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT InitializeFromFilename(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzFilename);
         
         [PreserveSig]
-        HRESULT InitializeFromMemory(/* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [in] */ uint cbBufferSize);
+        HRESULT InitializeFromMemory(/* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [in] */ uint cbBufferSize);
         
         [PreserveSig]
         HRESULT InitializeFromExifColorSpace(/* [in] */ uint value);

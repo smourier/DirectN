@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(10347,5)
 using System;
 using System.Runtime.InteropServices;
+using MFSequencerElementId = System.UInt32;
 
 namespace DirectN
 {
@@ -8,13 +9,13 @@ namespace DirectN
     public partial interface IMFSequencerSource
     {
         [PreserveSig]
-        HRESULT AppendTopology(/* [in] */ IMFTopology pTopology, /* [in] */ uint dwFlags, /* [annotation][out] _Out_ */ out uint pdwId);
+        HRESULT AppendTopology(/* [in] */ IMFTopology pTopology, /* [in] */ uint dwFlags, /* [annotation][out] _Out_ */ out MFSequencerElementId pdwId);
         
         [PreserveSig]
         HRESULT DeleteTopology(/* [in] */ uint dwId);
         
         [PreserveSig]
-        HRESULT GetPresentationContext(/* [in] */ IMFPresentationDescriptor pPD, /* [annotation][optional][out] _Out_opt_ */ out uint pId, /* [annotation][optional][out] _Out_opt_ */ out IMFTopology ppTopology);
+        HRESULT GetPresentationContext(/* [in] */ IMFPresentationDescriptor pPD, /* [annotation][optional][out] _Out_opt_ */ out MFSequencerElementId pId, /* [annotation][optional][out] _Out_opt_ */ out IMFTopology ppTopology);
         
         [PreserveSig]
         HRESULT UpdateTopology(/* [in] */ uint dwId, /* [in] */ IMFTopology pTopology);

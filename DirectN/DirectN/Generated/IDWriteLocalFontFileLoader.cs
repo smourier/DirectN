@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(696,1)
 using System;
 using System.Runtime.InteropServices;
+using FILETIME = DirectN._FILETIME;
 
 namespace DirectN
 {
@@ -12,16 +13,16 @@ namespace DirectN
     {
         // IDWriteFontFileLoader
         [PreserveSig]
-        new HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ out IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
+        new HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
         
         // IDWriteLocalFontFileLoader
         [PreserveSig]
-        HRESULT GetFilePathLengthFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ out IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_ */ out uint filePathLength);
+        HRESULT GetFilePathLengthFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_ */ out uint filePathLength);
         
         [PreserveSig]
-        HRESULT GetFilePathFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ out IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_writes_z_(filePathSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] char[] filePath, uint filePathSize);
+        HRESULT GetFilePathFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_writes_z_(filePathSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] char[] filePath, uint filePathSize);
         
         [PreserveSig]
-        HRESULT GetLastWriteTimeFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ out IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_ */ out _FILETIME lastWriteTime);
+        HRESULT GetLastWriteTimeFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_ */ out FILETIME lastWriteTime);
     }
 }

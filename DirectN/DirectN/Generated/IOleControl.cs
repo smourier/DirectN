@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(1456,5)
 using System;
 using System.Runtime.InteropServices;
+using MSG = DirectN.tagMSG;
 
 namespace DirectN
 {
@@ -11,7 +12,7 @@ namespace DirectN
         HRESULT GetControlInfo(/* [out][in] __RPC__inout */ ref tagCONTROLINFO pCI);
         
         [PreserveSig]
-        HRESULT OnMnemonic(/* [in] __RPC__in */ ref tagMSG pMsg);
+        HRESULT OnMnemonic(/* [in] __RPC__in */ ref MSG pMsg);
         
         [PreserveSig]
         HRESULT OnAmbientPropertyChange(/* [in] */ int dispID);

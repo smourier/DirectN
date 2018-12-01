@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(4078,5)
 using System;
 using System.Runtime.InteropServices;
+using LRESULT = System.Int64;
 
 namespace DirectN
 {
@@ -8,9 +9,9 @@ namespace DirectN
     public partial interface IOleInPlaceObjectWindowless
     {
         [PreserveSig]
-        HRESULT OnWindowMessage(/* [in] */ uint msg, /* [in] */ ulong wParam, /* [in] */ long lParam, /* [out] __RPC__out */ out long plResult);
+        HRESULT OnWindowMessage(/* [in] */ uint msg, /* [in] */ ulong wParam, /* [in] */ long lParam, /* [out] __RPC__out */ out LRESULT plResult);
         
         [PreserveSig]
-        HRESULT GetDropTarget(/* [out] __RPC__deref_out_opt */ out IDropTarget ppDropTarget);
+        HRESULT GetDropTarget(/* optional(IDropTarget) */ out IntPtr ppDropTarget);
     }
 }

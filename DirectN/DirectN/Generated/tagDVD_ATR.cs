@@ -9,6 +9,6 @@ namespace DirectN
     {
         public uint ulCAT;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 768)] 
-        public byte[] pbATRI;
+        public byte pbATRI;
     }
 }

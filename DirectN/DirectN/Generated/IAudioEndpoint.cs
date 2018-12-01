@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioengineendpoint.h(202,5)
 using System;
 using System.Runtime.InteropServices;
+using HNSTIME = System.Int64;
+using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -8,13 +10,13 @@ namespace DirectN
     public partial interface IAudioEndpoint
     {
         [PreserveSig]
-        HRESULT GetFrameFormat(/* [out] */ out tWAVEFORMATEX ppFormat);
+        HRESULT GetFrameFormat(/* [out] */ out IntPtr ppFormat);
         
         [PreserveSig]
         HRESULT GetFramesPerPacket(/* [out] */ out uint pFramesPerPacket);
         
         [PreserveSig]
-        HRESULT GetLatency(/* [out] */ out long pLatency);
+        HRESULT GetLatency(/* [out] */ out HNSTIME pLatency);
         
         [PreserveSig]
         HRESULT SetStreamFlags(/* [in] */ uint streamFlags);

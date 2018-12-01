@@ -46,12 +46,12 @@ namespace DirectN
         
         // IMFWorkQueueServicesEx
         [PreserveSig]
-        HRESULT GetTopologyWorkQueueMMCSSPriority(/* [in] */ uint dwTopologyWorkQueueId, /* [out] __RPC__out */ out long plPriority);
+        HRESULT GetTopologyWorkQueueMMCSSPriority(/* [in] */ uint dwTopologyWorkQueueId, /* [out] __RPC__out */ out int plPriority);
         
         [PreserveSig]
         HRESULT BeginRegisterPlatformWorkQueueWithMMCSSEx(/* [in] */ uint dwPlatformWorkQueue, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string wszClass, /* [in] */ uint dwTaskId, /* [in] */ int lPriority, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT GetPlatformWorkQueueMMCSSPriority(/* [in] */ uint dwPlatformWorkQueueId, /* [out] __RPC__out */ out long plPriority);
+        HRESULT GetPlatformWorkQueueMMCSSPriority(/* [in] */ uint dwPlatformWorkQueueId, /* [out] __RPC__out */ out int plPriority);
     }
 }

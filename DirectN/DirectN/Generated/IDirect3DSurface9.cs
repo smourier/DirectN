@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(194,1)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -21,10 +22,10 @@ namespace DirectN
         new HRESULT GetDevice(IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, ref IntPtr pData, uint SizeOfData, uint Flags);
+        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
-        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, ref IntPtr pData, ref uint pSizeOfData);
+        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
         
         [PreserveSig]
         new HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
@@ -46,10 +47,10 @@ namespace DirectN
         HRESULT GetDevice(IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, ref IntPtr pData, uint SizeOfData, uint Flags);
+        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
-        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, ref IntPtr pData, ref uint pSizeOfData);
+        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
         
         [PreserveSig]
         HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
@@ -73,7 +74,7 @@ namespace DirectN
         HRESULT GetDesc(ref _D3DSURFACE_DESC pDesc);
         
         [PreserveSig]
-        HRESULT LockRect(ref _D3DLOCKED_RECT pLockedRect, ref tagRECT pRect, uint Flags);
+        HRESULT LockRect(ref _D3DLOCKED_RECT pLockedRect, ref RECT pRect, uint Flags);
         
         [PreserveSig]
         HRESULT UnlockRect();
@@ -82,6 +83,6 @@ namespace DirectN
         HRESULT GetDC(ref IntPtr phdc);
         
         [PreserveSig]
-        HRESULT ReleaseDC(IntPtr hdc);
+        HRESULT ReleaseDC(ref IntPtr hdc);
     }
 }

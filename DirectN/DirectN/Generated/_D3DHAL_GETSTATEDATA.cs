@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DHAL_GETSTATEDATA
     {
-        public ulong dwhContext;
+        public IntPtr dwhContext;
         public uint dwWhich;
         public _D3DSTATE ddState;
         public HRESULT ddrval;

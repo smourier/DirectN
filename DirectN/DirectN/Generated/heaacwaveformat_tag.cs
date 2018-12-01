@@ -9,6 +9,6 @@ namespace DirectN
     {
         public heaacwaveinfo_tag wfInfo;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public byte[] pbAudioSpecificConfig;
+        public byte pbAudioSpecificConfig;
     }
 }

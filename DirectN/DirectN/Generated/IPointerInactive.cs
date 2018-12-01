@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(5636,5)
 using System;
 using System.Runtime.InteropServices;
+using LPCRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -11,9 +12,9 @@ namespace DirectN
         HRESULT GetActivationPolicy(/* [out] __RPC__out */ out uint pdwPolicy);
         
         [PreserveSig]
-        HRESULT OnInactiveMouseMove(/* [in] __RPC__in */ IntPtr pRectBounds, /* [in] */ int x, /* [in] */ int y, /* [in] */ uint grfKeyState);
+        HRESULT OnInactiveMouseMove(/* [in] __RPC__in */ ref LPCRECT pRectBounds, /* [in] */ int x, /* [in] */ int y, /* [in] */ uint grfKeyState);
         
         [PreserveSig]
-        HRESULT OnInactiveSetCursor(/* [in] __RPC__in */ IntPtr pRectBounds, /* [in] */ int x, /* [in] */ int y, /* [in] */ uint dwMouseMsg, /* [in] */ bool fSetAlways);
+        HRESULT OnInactiveSetCursor(/* [in] __RPC__in */ ref LPCRECT pRectBounds, /* [in] */ int x, /* [in] */ int y, /* [in] */ uint dwMouseMsg, /* [in] */ bool fSetAlways);
     }
 }

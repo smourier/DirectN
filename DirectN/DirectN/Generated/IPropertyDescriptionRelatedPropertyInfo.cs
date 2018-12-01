@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\propsys.h(2979,5)
 using System;
 using System.Runtime.InteropServices;
+using PROPERTYKEY = DirectN._tagpropertykey;
+using SHCOLSTATEF = System.UInt32;
+using VARTYPE = System.UInt16;
 
 namespace DirectN
 {
@@ -9,19 +12,19 @@ namespace DirectN
     {
         // IPropertyDescription
         [PreserveSig]
-        new HRESULT GetPropertyKey(/* [out] __RPC__out */ out _tagpropertykey pkey);
+        new HRESULT GetPropertyKey(/* [out] __RPC__out */ out PROPERTYKEY pkey);
         
         [PreserveSig]
-        new HRESULT GetCanonicalName(/* [string][out] __RPC__deref_out_opt_string */ out IntPtr ppszName);
+        new HRESULT GetCanonicalName(/* optional(LPWSTR) */ out IntPtr ppszName);
         
         [PreserveSig]
-        new HRESULT GetPropertyType(/* [out] __RPC__out */ out ushort pvartype);
+        new HRESULT GetPropertyType(/* [out] __RPC__out */ out VARTYPE pvartype);
         
         [PreserveSig]
-        new HRESULT GetDisplayName(/* [string][out] __RPC__deref_out_opt_string */ out IntPtr ppszName);
+        new HRESULT GetDisplayName(/* optional(LPWSTR) */ out IntPtr ppszName);
         
         [PreserveSig]
-        new HRESULT GetEditInvitation(/* [string][out] __RPC__deref_out_opt_string */ out IntPtr ppszInvite);
+        new HRESULT GetEditInvitation(/* optional(LPWSTR) */ out IntPtr ppszInvite);
         
         [PreserveSig]
         new HRESULT GetTypeFlags(/* [in] */ PROPDESC_TYPE_FLAGS mask, /* [out] __RPC__out */ out PROPDESC_TYPE_FLAGS ppdtFlags);
@@ -36,7 +39,7 @@ namespace DirectN
         new HRESULT GetDisplayType(/* [out] __RPC__out */ out PROPDESC_DISPLAYTYPE pdisplaytype);
         
         [PreserveSig]
-        new HRESULT GetColumnState(/* [out] __RPC__out */ out uint pcsFlags);
+        new HRESULT GetColumnState(/* [out] __RPC__out */ out SHCOLSTATEF pcsFlags);
         
         [PreserveSig]
         new HRESULT GetGroupingRange(/* [out] __RPC__out */ out PROPDESC_GROUPING_RANGE pgr);
@@ -45,13 +48,13 @@ namespace DirectN
         new HRESULT GetRelativeDescriptionType(/* [out] __RPC__out */ out PROPDESC_RELATIVEDESCRIPTION_TYPE prdt);
         
         [PreserveSig]
-        new HRESULT GetRelativeDescription(/* [in] __RPC__in */ PropVariant propvar1, /* [in] __RPC__in */ PropVariant propvar2, /* [string][out] __RPC__deref_out_opt_string */ out IntPtr ppszDesc1, /* [string][out] __RPC__deref_out_opt_string */ out IntPtr ppszDesc2);
+        new HRESULT GetRelativeDescription(/* [in] __RPC__in */ PropVariant propvar1, /* [in] __RPC__in */ PropVariant propvar2, /* optional(LPWSTR) */ out IntPtr ppszDesc1, /* optional(LPWSTR) */ out IntPtr ppszDesc2);
         
         [PreserveSig]
         new HRESULT GetSortDescription(/* [out] __RPC__out */ out PROPDESC_SORTDESCRIPTION psd);
         
         [PreserveSig]
-        new HRESULT GetSortDescriptionLabel(/* [in] */ bool fDescending, /* [string][out] __RPC__deref_out_opt_string */ out IntPtr ppszDescription);
+        new HRESULT GetSortDescriptionLabel(/* [in] */ bool fDescending, /* optional(LPWSTR) */ out IntPtr ppszDescription);
         
         [PreserveSig]
         new HRESULT GetAggregationType(/* [out] __RPC__out */ out PROPDESC_AGGREGATION_TYPE paggtype);
@@ -66,7 +69,7 @@ namespace DirectN
         new HRESULT CoerceToCanonicalValue(/* [annotation][out][in] _Inout_ */ PropVariant ppropvar);
         
         [PreserveSig]
-        new HRESULT FormatForDisplay(/* [in] __RPC__in */ PropVariant propvar, /* [in] */ PROPDESC_FORMAT_FLAGS pdfFlags, /* [string][out] __RPC__deref_out_opt_string */ out IntPtr ppszDisplay);
+        new HRESULT FormatForDisplay(/* [in] __RPC__in */ PropVariant propvar, /* [in] */ PROPDESC_FORMAT_FLAGS pdfFlags, /* optional(LPWSTR) */ out IntPtr ppszDisplay);
         
         [PreserveSig]
         new HRESULT IsValueCanonical(/* [in] __RPC__in */ PropVariant propvar);

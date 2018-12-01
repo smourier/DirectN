@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IGraphVersion
     {
         [PreserveSig]
-        HRESULT QueryVersion(/* [annotation] _Out_ */ out long pVersion);
+        HRESULT QueryVersion(/* [annotation] _Out_ */ out int pVersion);
     }
 }

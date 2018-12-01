@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(18797,5)
 using System;
 using System.Runtime.InteropServices;
+using LPDIRECTDRAW7 = DirectN.IDirectDraw7;
 
 namespace DirectN
 {
@@ -8,19 +9,19 @@ namespace DirectN
     public partial interface IVMRSurfaceAllocatorNotify
     {
         [PreserveSig]
-        HRESULT AdviseSurfaceAllocator(/* [in] */ ulong dwUserID, /* [in] */ IVMRSurfaceAllocator lpIVRMSurfaceAllocator);
+        HRESULT AdviseSurfaceAllocator(/* [in] */ IntPtr dwUserID, /* [in] */ IVMRSurfaceAllocator lpIVRMSurfaceAllocator);
         
         [PreserveSig]
-        HRESULT SetDDrawDevice(/* [in] */ IntPtr lpDDrawDevice, /* [in] */ IntPtr hMonitor);
+        HRESULT SetDDrawDevice(/* [in] */ ref LPDIRECTDRAW7 lpDDrawDevice, /* [in] */ IntPtr hMonitor);
         
         [PreserveSig]
-        HRESULT ChangeDDrawDevice(/* [in] */ IntPtr lpDDrawDevice, /* [in] */ IntPtr hMonitor);
+        HRESULT ChangeDDrawDevice(/* [in] */ ref LPDIRECTDRAW7 lpDDrawDevice, /* [in] */ IntPtr hMonitor);
         
         [PreserveSig]
         HRESULT RestoreDDrawSurfaces();
         
         [PreserveSig]
-        HRESULT NotifyEvent(/* [in] */ int EventCode, /* [in] */ long Param1, /* [in] */ long Param2);
+        HRESULT NotifyEvent(/* [in] */ int EventCode, /* [in] */ IntPtr Param1, /* [in] */ IntPtr Param2);
         
         [PreserveSig]
         HRESULT SetBorderColor(/* [in] */ uint clrBorder);

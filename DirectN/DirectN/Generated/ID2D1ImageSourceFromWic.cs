@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(728,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_RECT_U = DirectN.D2D_RECT_U;
 
 namespace DirectN
 {
@@ -19,12 +20,12 @@ namespace DirectN
         
         // ID2D1ImageSourceFromWic
         [PreserveSig]
-        HRESULT EnsureCached(/* _In_opt_ */ ref D2D_RECT_U rectangleToFill);
+        HRESULT EnsureCached(/* optional(D2D1_RECT_U) */ IntPtr rectangleToFill);
         
         [PreserveSig]
-        HRESULT TrimCache(/* _In_opt_ */ ref D2D_RECT_U rectangleToPreserve);
+        HRESULT TrimCache(/* optional(D2D1_RECT_U) */ IntPtr rectangleToPreserve);
         
         [PreserveSig]
-        void GetSource(/* _Outptr_result_maybenull_ */ out IWICBitmapSource wicBitmapSource);
+        void GetSource(/* _Outptr_result_maybenull_ */ out IntPtr wicBitmapSource);
     }
 }

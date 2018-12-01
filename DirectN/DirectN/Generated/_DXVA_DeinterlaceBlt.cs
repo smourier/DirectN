@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(1914,9)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -10,8 +11,8 @@ namespace DirectN
         public uint Size;
         public uint Reserved;
         public long rtTarget;
-        public tagRECT DstRect;
-        public tagRECT SrcRect;
+        public RECT DstRect;
+        public RECT SrcRect;
         public uint NumSourceSurfaces;
         public float Alpha;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 

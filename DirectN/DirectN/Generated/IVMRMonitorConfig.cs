@@ -20,6 +20,6 @@ namespace DirectN
         HRESULT GetDefaultMonitor(/* [out] */ out tagVMRGUID pGUID);
         
         [PreserveSig]
-        HRESULT GetAvailableMonitors(/* [size_is][out] */ [In, Out, MarshalAs(UnmanagedType.LPArray)] tagVMRMONITORINFO[] pInfo, /* [in] */ uint dwMaxInfoArraySize, /* [out] */ out uint pdwNumDevices);
+        HRESULT GetAvailableMonitors(/* [size_is][out] */ [Out, MarshalAs(UnmanagedType.LPArray)] tagVMRMONITORINFO[] pInfo, /* [in] */ uint dwMaxInfoArraySize, /* [out] */ out uint pdwNumDevices);
     }
 }

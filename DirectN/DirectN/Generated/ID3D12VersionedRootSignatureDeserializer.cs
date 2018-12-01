@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface ID3D12VersionedRootSignatureDeserializer
     {
         [PreserveSig]
-        HRESULT GetRootSignatureDescAtVersion(D3D_ROOT_SIGNATURE_VERSION convertToVersion, /* _Out_ */ out D3D12_VERSIONED_ROOT_SIGNATURE_DESC ppDesc);
+        HRESULT GetRootSignatureDescAtVersion(D3D_ROOT_SIGNATURE_VERSION convertToVersion, /* _Out_ */ out IntPtr ppDesc);
         
         [PreserveSig]
         D3D12_VERSIONED_ROOT_SIGNATURE_DESC GetUnconvertedRootSignatureDesc();

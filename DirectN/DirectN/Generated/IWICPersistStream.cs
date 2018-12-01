@@ -9,9 +9,9 @@ namespace DirectN
     public partial interface IWICPersistStream
     {
         [PreserveSig]
-        HRESULT LoadEx(/* [unique][in] __RPC__in_opt */ ref IStream pIStream, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidPreferredVendor, /* [in] */ uint dwPersistOptions);
+        HRESULT LoadEx(/* [unique][in] __RPC__in_opt */ IStream pIStream, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidPreferredVendor, /* [in] */ uint dwPersistOptions);
         
         [PreserveSig]
-        HRESULT SaveEx(/* [in] __RPC__in_opt */ ref IStream pIStream, /* [in] */ uint dwPersistOptions, /* [in] */ bool fClearDirty);
+        HRESULT SaveEx(/* [in] __RPC__in_opt */ IStream pIStream, /* [in] */ uint dwPersistOptions, /* [in] */ bool fClearDirty);
     }
 }

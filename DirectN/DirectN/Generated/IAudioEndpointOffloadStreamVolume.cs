@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioengineendpoint.h(752,5)
 using System;
 using System.Runtime.InteropServices;
+using FLOAT32 = System.Single;
+using HNSTIME = System.Int64;
 
 namespace DirectN
 {
@@ -11,9 +13,9 @@ namespace DirectN
         HRESULT GetVolumeChannelCount(/* [out] */ out uint pu32ChannelCount);
         
         [PreserveSig]
-        HRESULT SetChannelVolumes(/* [in] */ uint u32ChannelCount, /* [in] */ ref float pf32Volumes, /* [in] */ AUDIO_CURVE_TYPE u32CurveType, /* [in] */ ref long pCurveDuration);
+        HRESULT SetChannelVolumes(/* [in] */ uint u32ChannelCount, /* [in] */ ref FLOAT32 pf32Volumes, /* [in] */ AUDIO_CURVE_TYPE u32CurveType, /* [in] */ ref HNSTIME pCurveDuration);
         
         [PreserveSig]
-        HRESULT GetChannelVolumes(/* [in] */ uint u32ChannelCount, /* [out] */ out float pf32Volumes);
+        HRESULT GetChannelVolumes(/* [in] */ uint u32ChannelCount, /* [out] */ out FLOAT32 pf32Volumes);
     }
 }

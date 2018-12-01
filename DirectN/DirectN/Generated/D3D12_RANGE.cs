@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_RANGE
     {
-        public ulong Begin;
-        public ulong End;
+        public IntPtr Begin;
+        public IntPtr End;
     }
 }

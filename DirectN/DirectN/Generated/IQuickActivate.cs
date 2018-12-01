@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(6514,5)
 using System;
 using System.Runtime.InteropServices;
+using LPSIZEL = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -11,9 +12,9 @@ namespace DirectN
         HRESULT QuickActivate(/* [in] */ ref tagQACONTAINER pQaContainer, /* [out][in] */ ref tagQACONTROL pQaControl);
         
         [PreserveSig]
-        HRESULT SetContentExtent(/* [in] __RPC__in */ IntPtr pSizel);
+        HRESULT SetContentExtent(/* [in] __RPC__in */ ref LPSIZEL pSizel);
         
         [PreserveSig]
-        HRESULT GetContentExtent(/* [out] __RPC__out */ IntPtr pSizel);
+        HRESULT GetContentExtent(/* [out] __RPC__out */ out LPSIZEL pSizel);
     }
 }

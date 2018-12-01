@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
+using PD2D1_EFFECT_FACTORY = System.IntPtr;
 
 namespace DirectN
 {
@@ -15,22 +16,22 @@ namespace DirectN
         HRESULT CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device d2dDevice);
         
         [PreserveSig]
-        HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, uint dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle1 strokeStyle);
+        HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, uint dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle1 strokeStyle);
         
         [PreserveSig]
         HRESULT CreatePathGeometry(/* _COM_Outptr_ */ out ID2D1PathGeometry1 pathGeometry);
         
         [PreserveSig]
-        HRESULT CreateDrawingStateBlock(/* _In_opt_ */ ref D2D1_DRAWING_STATE_DESCRIPTION1 drawingStateDescription, /* _In_opt_ */ ref IDWriteRenderingParams textRenderingParams, /* _COM_Outptr_ */ out ID2D1DrawingStateBlock1 drawingStateBlock);
+        HRESULT CreateDrawingStateBlock(/* optional(D2D1_DRAWING_STATE_DESCRIPTION1) */ IntPtr drawingStateDescription, /* optional(IDWriteRenderingParams) */ IntPtr textRenderingParams, /* _COM_Outptr_ */ out ID2D1DrawingStateBlock1 drawingStateBlock);
         
         [PreserveSig]
-        HRESULT CreateGdiMetafile(/* _In_ */ ref IStream metafileStream, /* _COM_Outptr_ */ out ID2D1GdiMetafile metafile);
+        HRESULT CreateGdiMetafile(/* _In_ */ IStream metafileStream, /* _COM_Outptr_ */ out ID2D1GdiMetafile metafile);
         
         [PreserveSig]
-        HRESULT RegisterEffectFromStream(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId, /* _In_ */ ref IStream propertyXml, /* _In_reads_opt_(bindingsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_PROPERTY_BINDING[] bindings, uint bindingsCount, /* _In_ */ IntPtr effectFactory);
+        HRESULT RegisterEffectFromStream(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId, /* _In_ */ IStream propertyXml, /* _In_reads_opt_(bindingsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_PROPERTY_BINDING[] bindings, uint bindingsCount, /* _In_ */ ref PD2D1_EFFECT_FACTORY effectFactory);
         
         [PreserveSig]
-        HRESULT RegisterEffectFromString(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string propertyXml, /* _In_reads_opt_(bindingsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_PROPERTY_BINDING[] bindings, uint bindingsCount, /* _In_ */ IntPtr effectFactory);
+        HRESULT RegisterEffectFromString(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string propertyXml, /* _In_reads_opt_(bindingsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_PROPERTY_BINDING[] bindings, uint bindingsCount, /* _In_ */ ref PD2D1_EFFECT_FACTORY effectFactory);
         
         [PreserveSig]
         HRESULT UnregisterEffect(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId);

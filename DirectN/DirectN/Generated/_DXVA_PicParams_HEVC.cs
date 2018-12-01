@@ -33,9 +33,9 @@ namespace DirectN
         public byte num_tile_columns_minus1;
         public byte num_tile_rows_minus1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 19)] 
-        public ushort[] column_width_minus1;
+        public ushort column_width_minus1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 21)] 
-        public ushort[] row_height_minus1;
+        public ushort row_height_minus1;
         public byte diff_cu_qp_delta_depth;
         public sbyte pps_beta_offset_div2;
         public sbyte pps_tc_offset_div2;
@@ -45,13 +45,13 @@ namespace DirectN
         public _DXVA_PicEntry_HEVC[] RefPicList;
         public byte ReservedBits5;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 15)] 
-        public int[] PicOrderCntValList;
+        public int PicOrderCntValList;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public byte[] RefPicSetStCurrBefore;
+        public byte RefPicSetStCurrBefore;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public byte[] RefPicSetStCurrAfter;
+        public byte RefPicSetStCurrAfter;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public byte[] RefPicSetLtCurr;
+        public byte RefPicSetLtCurr;
         public ushort ReservedBits6;
         public ushort ReservedBits7;
         public uint StatusReportFeedbackNumber;

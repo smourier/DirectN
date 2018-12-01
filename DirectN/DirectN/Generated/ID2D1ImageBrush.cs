@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(893,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
@@ -11,7 +12,7 @@ namespace DirectN
     public partial interface ID2D1ImageBrush
     {
         [PreserveSig]
-        void SetImage(/* _In_opt_ */ ref ID2D1Image image);
+        void SetImage(/* optional(ID2D1Image) */ IntPtr image);
         
         [PreserveSig]
         void SetExtendModeX(D2D1_EXTEND_MODE extendModeX);
@@ -23,10 +24,10 @@ namespace DirectN
         void SetInterpolationMode(D2D1_INTERPOLATION_MODE interpolationMode);
         
         [PreserveSig]
-        void SetSourceRectangle(/* _In_ */ ref D2D_RECT_F sourceRectangle);
+        void SetSourceRectangle(/* _In_ */ ref D2D1_RECT_F sourceRectangle);
         
         [PreserveSig]
-        void GetImage(/* _Outptr_result_maybenull_ */ out ID2D1Image image);
+        void GetImage(/* _Outptr_result_maybenull_ */ out IntPtr image);
         
         [PreserveSig]
         D2D1_EXTEND_MODE GetExtendModeX();
@@ -38,6 +39,6 @@ namespace DirectN
         D2D1_INTERPOLATION_MODE GetInterpolationMode();
         
         [PreserveSig]
-        void GetSourceRectangle(/* _Out_ */ out D2D_RECT_F sourceRectangle);
+        void GetSourceRectangle(/* _Out_ */ out D2D1_RECT_F sourceRectangle);
     }
 }

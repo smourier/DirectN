@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddraw.h(1362,1)
 using System;
 using System.Runtime.InteropServices;
+using LPDIRECTDRAW = DirectN.IDirectDraw;
+using LPPALETTEENTRY = DirectN.tagPALETTEENTRY;
 
 namespace DirectN
 {
@@ -8,15 +10,15 @@ namespace DirectN
     public partial interface IDirectDrawPalette
     {
         [PreserveSig]
-        HRESULT GetCaps(IntPtr __unnamed_0);
+        HRESULT GetCaps(ref uint __unnamed_0);
         
         [PreserveSig]
-        HRESULT GetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, IntPtr __unnamed_3);
+        HRESULT GetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref LPPALETTEENTRY __unnamed_3);
         
         [PreserveSig]
-        HRESULT Initialize(IntPtr __unnamed_0, uint __unnamed_1, IntPtr __unnamed_2);
+        HRESULT Initialize(LPDIRECTDRAW __unnamed_0, uint __unnamed_1, ref LPPALETTEENTRY __unnamed_2);
         
         [PreserveSig]
-        HRESULT SetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, IntPtr __unnamed_3);
+        HRESULT SetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref LPPALETTEENTRY __unnamed_3);
     }
 }

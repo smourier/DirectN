@@ -10,6 +10,6 @@ namespace DirectN
         public Guid guid;
         public uint dataLength;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public uint[] reserved;
+        public uint reserved;
     }
 }

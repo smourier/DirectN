@@ -78,10 +78,10 @@ namespace DirectN
         new ID3D10EffectSamplerVariable AsSampler();
         
         [PreserveSig]
-        new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         // ID3D10EffectStringVariable
         [PreserveSig]
@@ -154,15 +154,15 @@ namespace DirectN
         ID3D10EffectSamplerVariable AsSampler();
         
         [PreserveSig]
-        HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
         HRESULT GetString(/* THIS_ _Out_ */ out IntPtr ppString);
         
         [PreserveSig]
-        HRESULT GetStringArray(/* THIS_ _Out_writes_(Count) */ out IntPtr ppStrings, uint Offset, uint Count);
+        HRESULT GetStringArray(/* THIS_ _Out_writes_(Count) */ IntPtr ppStrings, uint Offset, uint Count);
     }
 }

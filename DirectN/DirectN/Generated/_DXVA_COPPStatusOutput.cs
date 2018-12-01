@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(2240,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva9typ.h(883,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -10,6 +10,6 @@ namespace DirectN
         public Guid macKDI;
         public uint cbSizeData;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4076)] 
-        public byte[] COPPStatus;
+        public byte COPPStatus;
     }
 }

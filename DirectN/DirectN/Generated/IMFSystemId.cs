@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IMFSystemId
     {
         [PreserveSig]
-        HRESULT GetData(/* [annotation] _Out_ */ out uint size, /* [annotation] _Outptr_result_bytebuffer_(*size) */ out byte[] data);
+        HRESULT GetData(/* [annotation] _Out_ */ out uint size, /* [annotation] _Outptr_result_bytebuffer_(*size) */ out IntPtr data);
         
         [PreserveSig]
-        HRESULT Setup(uint stage, uint cbIn, /* [annotation] _In_reads_bytes_(cbIn) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbIn, /* [annotation] _Out_ */ out uint pcbOut, /* [annotation] _Outptr_result_bytebuffer_(*pcbOut) */ out byte[] ppbOut);
+        HRESULT Setup(uint stage, uint cbIn, /* [annotation] _In_reads_bytes_(cbIn) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbIn, /* [annotation] _Out_ */ out uint pcbOut, /* [annotation] _Outptr_result_bytebuffer_(*pcbOut) */ out IntPtr ppbOut);
     }
 }

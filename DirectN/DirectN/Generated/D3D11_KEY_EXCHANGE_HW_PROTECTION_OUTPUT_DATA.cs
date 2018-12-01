@@ -13,6 +13,6 @@ namespace DirectN
         public ulong TransportTime;
         public ulong ExecutionTime;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte[] pbOutput;
+        public byte pbOutput;
     }
 }

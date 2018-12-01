@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(505,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
 
 namespace DirectN
 {
@@ -11,10 +12,10 @@ namespace DirectN
     public partial interface ID2D1InkStyle
     {
         [PreserveSig]
-        void SetNibTransform(/* _In_ */ ref D2D_MATRIX_3X2_F transform);
+        void SetNibTransform(/* _In_ */ ref D2D1_MATRIX_3X2_F transform);
         
         [PreserveSig]
-        void GetNibTransform(/* _Out_ */ out D2D_MATRIX_3X2_F transform);
+        void GetNibTransform(/* _Out_ */ out D2D1_MATRIX_3X2_F transform);
         
         [PreserveSig]
         void SetNibShape(D2D1_INK_NIB_SHAPE nibShape);

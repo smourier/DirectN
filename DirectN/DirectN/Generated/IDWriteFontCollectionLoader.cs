@@ -11,6 +11,6 @@ namespace DirectN
     public partial interface IDWriteFontCollectionLoader
     {
         [PreserveSig]
-        HRESULT CreateEnumeratorFromKey(/* _In_ */ IDWriteFactory factory, /* _In_reads_bytes_(collectionKeySize) */ out IntPtr collectionKey, uint collectionKeySize, /* _COM_Outptr_ */ out IDWriteFontFileEnumerator fontFileEnumerator);
+        HRESULT CreateEnumeratorFromKey(/* _In_ */ IDWriteFactory factory, /* _In_reads_bytes_(collectionKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object collectionKey, uint collectionKeySize, /* _COM_Outptr_ */ out IDWriteFontFileEnumerator fontFileEnumerator);
     }
 }

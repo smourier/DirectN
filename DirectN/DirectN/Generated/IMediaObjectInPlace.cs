@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mediaobj.h(814,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -14,6 +15,6 @@ namespace DirectN
         HRESULT Clone(/* [annotation][out] _Out_ */ out IMediaObjectInPlace ppMediaObject);
         
         [PreserveSig]
-        HRESULT GetLatency(/* [annotation][out] _Out_ */ out long pLatencyTime);
+        HRESULT GetLatency(/* [annotation][out] _Out_ */ out REFERENCE_TIME pLatencyTime);
     }
 }

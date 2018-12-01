@@ -10,13 +10,13 @@ namespace DirectN
         public tagDVD_AUDIO_APPMODE AppMode;
         public byte AppModeData;
         public tagDVD_AUDIO_FORMAT AudioFormat;
-        public uint Language;
+        public int Language;
         public tagDVD_AUDIO_LANG_EXT LanguageExtension;
         public bool fHasMultichannelInfo;
         public uint dwFrequency;
         public byte bQuantization;
         public byte bNumberOfChannels;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public uint[] dwReserved;
+        public uint dwReserved;
     }
 }

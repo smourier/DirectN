@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(1044,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
@@ -14,6 +15,6 @@ namespace DirectN
         HRESULT GetDpi(/* _Out_ */ out float dpiX, /* _Out_ */ out float dpiY);
         
         [PreserveSig]
-        HRESULT GetSourceBounds(/* _Out_ */ out D2D_RECT_F bounds);
+        HRESULT GetSourceBounds(/* _Out_ */ out D2D1_RECT_F bounds);
     }
 }

@@ -41,7 +41,7 @@ namespace DirectN
         HRESULT ProcessInput(/* [annotation][in] _In_ */ uint dwInputStreamID, /* [annotation][in] _In_ */ IMFSample pSample, /* [annotation][in] _In_ */ uint dwFlags);
         
         [PreserveSig]
-        HRESULT ProcessMessage(/* [annotation][in] _In_ */ _MFT_MESSAGE_TYPE eMessage, /* [annotation][in] _In_ */ ulong ulParam);
+        HRESULT ProcessMessage(/* [annotation][in] _In_ */ _MFT_MESSAGE_TYPE eMessage, /* [annotation][in] _In_ */ IntPtr ulParam);
         
         [PreserveSig]
         HRESULT ProcessOutput(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_ */ uint cOutputBufferCount, /* [size_is][annotation][out][in] _Inout_ */ [In, Out, MarshalAs(UnmanagedType.LPArray)] _MFT_OUTPUT_DATA_BUFFER[] pOutputSample, /* [annotation][out] _Out_ */ out uint pdwStatus);

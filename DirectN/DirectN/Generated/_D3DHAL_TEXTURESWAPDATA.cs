@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DHAL_TEXTURESWAPDATA
     {
-        public ulong dwhContext;
+        public IntPtr dwhContext;
         public uint dwHandle1;
         public uint dwHandle2;
         public HRESULT ddrval;

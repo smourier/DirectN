@@ -20,7 +20,7 @@ namespace DirectN
         float GetInverseScale();
         
         [PreserveSig]
-        HRESULT AttachBuffersAndPrecompute(/* THIS_ _In_range_(0,D3DX11_FFT_MAX_TEMP_BUFFERS) */ uint NumTempBuffers, /* _In_reads_(NumTempBuffers) */ out ID3D11UnorderedAccessView[] ppTempBuffers, /* _In_range_(0,D3DX11_FFT_MAX_PRECOMPUTE_BUFFERS) */ uint NumPrecomputeBuffers, /* _In_reads_(NumPrecomputeBuffers) */ out ID3D11UnorderedAccessView[] ppPrecomputeBufferSizes);
+        HRESULT AttachBuffersAndPrecompute(/* THIS_ _In_range_(0,D3DX11_FFT_MAX_TEMP_BUFFERS) */ uint NumTempBuffers, /* _In_reads_(NumTempBuffers) */ out IntPtr ppTempBuffers, /* _In_range_(0,D3DX11_FFT_MAX_PRECOMPUTE_BUFFERS) */ uint NumPrecomputeBuffers, /* _In_reads_(NumPrecomputeBuffers) */ out IntPtr ppPrecomputeBufferSizes);
         
         [PreserveSig]
         HRESULT ForwardTransform(/* THIS_ _In_ */ ref ID3D11UnorderedAccessView pInputBuffer, /* _Inout_ */ ID3D11UnorderedAccessView ppOutputBuffer);

@@ -8,52 +8,52 @@ namespace DirectN
     public partial interface ID3D11Device
     {
         [PreserveSig]
-        HRESULT CreateBuffer(/* [annotation] _In_ */ ref D3D11_BUFFER_DESC pDesc, /* [annotation] _In_opt_ */ ref D3D11_SUBRESOURCE_DATA pInitialData, /* [annotation] _COM_Outptr_opt_ */ out ID3D11Buffer ppBuffer);
+        HRESULT CreateBuffer(/* [annotation] _In_ */ ref D3D11_BUFFER_DESC pDesc, /* optional(D3D11_SUBRESOURCE_DATA) */ IntPtr pInitialData, /* [annotation] _COM_Outptr_opt_ */ out ID3D11Buffer ppBuffer);
         
         [PreserveSig]
-        HRESULT CreateTexture1D(/* [annotation] _In_ */ ref D3D11_TEXTURE1D_DESC pDesc, /* [annotation] _In_reads_opt_(_Inexpressible_(pDesc->MipLevels * pDesc->ArraySize)) */ [In, Out, MarshalAs(UnmanagedType.LPArray)] D3D11_SUBRESOURCE_DATA[] pInitialData, /* [annotation] _COM_Outptr_opt_ */ out ID3D11Texture1D ppTexture1D);
+        HRESULT CreateTexture1D(/* [annotation] _In_ */ ref D3D11_TEXTURE1D_DESC pDesc, /* [annotation] _In_reads_opt_(_Inexpressible_(pDesc->MipLevels * pDesc->ArraySize)) */ [MarshalAs(UnmanagedType.LPArray)] D3D11_SUBRESOURCE_DATA[] pInitialData, /* [annotation] _COM_Outptr_opt_ */ out ID3D11Texture1D ppTexture1D);
         
         [PreserveSig]
-        HRESULT CreateTexture2D(/* [annotation] _In_ */ ref D3D11_TEXTURE2D_DESC pDesc, /* [annotation] _In_reads_opt_(_Inexpressible_(pDesc->MipLevels * pDesc->ArraySize)) */ [In, Out, MarshalAs(UnmanagedType.LPArray)] D3D11_SUBRESOURCE_DATA[] pInitialData, /* [annotation] _COM_Outptr_opt_ */ out ID3D11Texture2D ppTexture2D);
+        HRESULT CreateTexture2D(/* [annotation] _In_ */ ref D3D11_TEXTURE2D_DESC pDesc, /* [annotation] _In_reads_opt_(_Inexpressible_(pDesc->MipLevels * pDesc->ArraySize)) */ [MarshalAs(UnmanagedType.LPArray)] D3D11_SUBRESOURCE_DATA[] pInitialData, /* [annotation] _COM_Outptr_opt_ */ out ID3D11Texture2D ppTexture2D);
         
         [PreserveSig]
-        HRESULT CreateTexture3D(/* [annotation] _In_ */ ref D3D11_TEXTURE3D_DESC pDesc, /* [annotation] _In_reads_opt_(_Inexpressible_(pDesc->MipLevels)) */ [In, Out, MarshalAs(UnmanagedType.LPArray)] D3D11_SUBRESOURCE_DATA[] pInitialData, /* [annotation] _COM_Outptr_opt_ */ out ID3D11Texture3D ppTexture3D);
+        HRESULT CreateTexture3D(/* [annotation] _In_ */ ref D3D11_TEXTURE3D_DESC pDesc, /* [annotation] _In_reads_opt_(_Inexpressible_(pDesc->MipLevels)) */ [MarshalAs(UnmanagedType.LPArray)] D3D11_SUBRESOURCE_DATA[] pInitialData, /* [annotation] _COM_Outptr_opt_ */ out ID3D11Texture3D ppTexture3D);
         
         [PreserveSig]
-        HRESULT CreateShaderResourceView(/* [annotation] _In_ */ ID3D11Resource pResource, /* [annotation] _In_opt_ */ ref D3D11_SHADER_RESOURCE_VIEW_DESC pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11ShaderResourceView ppSRView);
+        HRESULT CreateShaderResourceView(/* [annotation] _In_ */ ID3D11Resource pResource, /* optional(D3D11_SHADER_RESOURCE_VIEW_DESC) */ IntPtr pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11ShaderResourceView ppSRView);
         
         [PreserveSig]
-        HRESULT CreateUnorderedAccessView(/* [annotation] _In_ */ ID3D11Resource pResource, /* [annotation] _In_opt_ */ ref D3D11_UNORDERED_ACCESS_VIEW_DESC pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11UnorderedAccessView ppUAView);
+        HRESULT CreateUnorderedAccessView(/* [annotation] _In_ */ ID3D11Resource pResource, /* optional(D3D11_UNORDERED_ACCESS_VIEW_DESC) */ IntPtr pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11UnorderedAccessView ppUAView);
         
         [PreserveSig]
-        HRESULT CreateRenderTargetView(/* [annotation] _In_ */ ID3D11Resource pResource, /* [annotation] _In_opt_ */ ref D3D11_RENDER_TARGET_VIEW_DESC pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11RenderTargetView ppRTView);
+        HRESULT CreateRenderTargetView(/* [annotation] _In_ */ ID3D11Resource pResource, /* optional(D3D11_RENDER_TARGET_VIEW_DESC) */ IntPtr pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11RenderTargetView ppRTView);
         
         [PreserveSig]
-        HRESULT CreateDepthStencilView(/* [annotation] _In_ */ ID3D11Resource pResource, /* [annotation] _In_opt_ */ ref D3D11_DEPTH_STENCIL_VIEW_DESC pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11DepthStencilView ppDepthStencilView);
+        HRESULT CreateDepthStencilView(/* [annotation] _In_ */ ID3D11Resource pResource, /* optional(D3D11_DEPTH_STENCIL_VIEW_DESC) */ IntPtr pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11DepthStencilView ppDepthStencilView);
         
         [PreserveSig]
-        HRESULT CreateInputLayout(/* [annotation] _In_reads_(NumElements) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_INPUT_ELEMENT_DESC[] pInputElementDescs, /* [annotation] _In_range_( 0, D3D11_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT ) */ uint NumElements, /* [annotation] _In_reads_(BytecodeLength) */ out IntPtr pShaderBytecodeWithInputSignature, /* [annotation] _In_ */ ulong BytecodeLength, /* [annotation] _COM_Outptr_opt_ */ out ID3D11InputLayout ppInputLayout);
+        HRESULT CreateInputLayout(/* [annotation] _In_reads_(NumElements) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_INPUT_ELEMENT_DESC[] pInputElementDescs, /* [annotation] _In_range_( 0, D3D11_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT ) */ uint NumElements, /* [annotation] _In_reads_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecodeWithInputSignature, /* [annotation] _In_ */ IntPtr BytecodeLength, /* [annotation] _COM_Outptr_opt_ */ out ID3D11InputLayout ppInputLayout);
         
         [PreserveSig]
-        HRESULT CreateVertexShader(/* [annotation] _In_reads_(BytecodeLength) */ out IntPtr pShaderBytecode, /* [annotation] _In_ */ ulong BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11VertexShader ppVertexShader);
+        HRESULT CreateVertexShader(/* [annotation] _In_reads_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, /* [annotation] _In_ */ IntPtr BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11VertexShader ppVertexShader);
         
         [PreserveSig]
-        HRESULT CreateGeometryShader(/* [annotation] _In_reads_(BytecodeLength) */ out IntPtr pShaderBytecode, /* [annotation] _In_ */ ulong BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11GeometryShader ppGeometryShader);
+        HRESULT CreateGeometryShader(/* [annotation] _In_reads_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, /* [annotation] _In_ */ IntPtr BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11GeometryShader ppGeometryShader);
         
         [PreserveSig]
-        HRESULT CreateGeometryShaderWithStreamOutput(/* [annotation] _In_reads_(BytecodeLength) */ out IntPtr pShaderBytecode, /* [annotation] _In_ */ ulong BytecodeLength, /* [annotation] _In_reads_opt_(NumEntries) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D11_SO_DECLARATION_ENTRY[] pSODeclaration, /* [annotation] _In_range_( 0, D3D11_SO_STREAM_COUNT * D3D11_SO_OUTPUT_COMPONENT_COUNT ) */ uint NumEntries, /* [annotation] _In_reads_opt_(NumStrides) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pBufferStrides, /* [annotation] _In_range_( 0, D3D11_SO_BUFFER_SLOT_COUNT ) */ uint NumStrides, /* [annotation] _In_ */ uint RasterizedStream, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11GeometryShader ppGeometryShader);
+        HRESULT CreateGeometryShaderWithStreamOutput(/* [annotation] _In_reads_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, /* [annotation] _In_ */ IntPtr BytecodeLength, /* [annotation] _In_reads_opt_(NumEntries) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D11_SO_DECLARATION_ENTRY[] pSODeclaration, /* [annotation] _In_range_( 0, D3D11_SO_STREAM_COUNT * D3D11_SO_OUTPUT_COMPONENT_COUNT ) */ uint NumEntries, /* [annotation] _In_reads_opt_(NumStrides) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pBufferStrides, /* [annotation] _In_range_( 0, D3D11_SO_BUFFER_SLOT_COUNT ) */ uint NumStrides, /* [annotation] _In_ */ uint RasterizedStream, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11GeometryShader ppGeometryShader);
         
         [PreserveSig]
-        HRESULT CreatePixelShader(/* [annotation] _In_reads_(BytecodeLength) */ out IntPtr pShaderBytecode, /* [annotation] _In_ */ ulong BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11PixelShader ppPixelShader);
+        HRESULT CreatePixelShader(/* [annotation] _In_reads_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, /* [annotation] _In_ */ IntPtr BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11PixelShader ppPixelShader);
         
         [PreserveSig]
-        HRESULT CreateHullShader(/* [annotation] _In_reads_(BytecodeLength) */ out IntPtr pShaderBytecode, /* [annotation] _In_ */ ulong BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11HullShader ppHullShader);
+        HRESULT CreateHullShader(/* [annotation] _In_reads_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, /* [annotation] _In_ */ IntPtr BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11HullShader ppHullShader);
         
         [PreserveSig]
-        HRESULT CreateDomainShader(/* [annotation] _In_reads_(BytecodeLength) */ out IntPtr pShaderBytecode, /* [annotation] _In_ */ ulong BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11DomainShader ppDomainShader);
+        HRESULT CreateDomainShader(/* [annotation] _In_reads_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, /* [annotation] _In_ */ IntPtr BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11DomainShader ppDomainShader);
         
         [PreserveSig]
-        HRESULT CreateComputeShader(/* [annotation] _In_reads_(BytecodeLength) */ out IntPtr pShaderBytecode, /* [annotation] _In_ */ ulong BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11ComputeShader ppComputeShader);
+        HRESULT CreateComputeShader(/* [annotation] _In_reads_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, /* [annotation] _In_ */ IntPtr BytecodeLength, /* [annotation] _In_opt_ */ ID3D11ClassLinkage pClassLinkage, /* [annotation] _COM_Outptr_opt_ */ out ID3D11ComputeShader ppComputeShader);
         
         [PreserveSig]
         HRESULT CreateClassLinkage(/* [annotation] _COM_Outptr_ */ out ID3D11ClassLinkage ppLinkage);
@@ -95,16 +95,16 @@ namespace DirectN
         void CheckCounterInfo(/* [annotation] _Out_ */ out D3D11_COUNTER_INFO pCounterInfo);
         
         [PreserveSig]
-        HRESULT CheckCounter(/* [annotation] _In_ */ ref D3D11_COUNTER_DESC pDesc, /* [annotation] _Out_ */ out D3D11_COUNTER_TYPE pType, /* [annotation] _Out_ */ out uint pActiveCounters, /* [annotation] _Out_writes_opt_(*pNameLength) */ [MarshalAs(UnmanagedType.LPStr)] string szName, /* [annotation] _Inout_opt_ */ ref uint pNameLength, /* [annotation] _Out_writes_opt_(*pUnitsLength) */ [MarshalAs(UnmanagedType.LPStr)] string szUnits, /* [annotation] _Inout_opt_ */ ref uint pUnitsLength, /* [annotation] _Out_writes_opt_(*pDescriptionLength) */ [MarshalAs(UnmanagedType.LPStr)] string szDescription, /* [annotation] _Inout_opt_ */ ref uint pDescriptionLength);
+        HRESULT CheckCounter(/* [annotation] _In_ */ ref D3D11_COUNTER_DESC pDesc, /* [annotation] _Out_ */ out D3D11_COUNTER_TYPE pType, /* [annotation] _Out_ */ out uint pActiveCounters, /* [annotation] _Out_writes_opt_(*pNameLength) */ [MarshalAs(UnmanagedType.LPStr)] string szName, /* optional(UINT) */ IntPtr pNameLength, /* [annotation] _Out_writes_opt_(*pUnitsLength) */ [MarshalAs(UnmanagedType.LPStr)] string szUnits, /* optional(UINT) */ IntPtr pUnitsLength, /* [annotation] _Out_writes_opt_(*pDescriptionLength) */ [MarshalAs(UnmanagedType.LPStr)] string szDescription, /* optional(UINT) */ IntPtr pDescriptionLength);
         
         [PreserveSig]
-        HRESULT CheckFeatureSupport(D3D11_FEATURE Feature, /* [annotation] _Out_writes_bytes_(FeatureSupportDataSize) */ out IntPtr pFeatureSupportData, uint FeatureSupportDataSize);
+        HRESULT CheckFeatureSupport(D3D11_FEATURE Feature, /* [annotation] _Out_writes_bytes_(FeatureSupportDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object pFeatureSupportData, uint FeatureSupportDataSize);
         
         [PreserveSig]
-        HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* [annotation] _Out_writes_bytes_opt_(*pDataSize) */ out IntPtr pData);
+        HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* [annotation] _Out_writes_bytes_opt_(*pDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
-        HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_(DataSize) */ out IntPtr pData);
+        HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
         HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);

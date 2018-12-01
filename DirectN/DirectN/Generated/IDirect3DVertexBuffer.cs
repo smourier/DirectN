@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d.h(1407,1)
 using System;
 using System.Runtime.InteropServices;
+using LPDIRECT3DVERTEXBUFFER = DirectN.IDirect3DVertexBuffer;
 
 namespace DirectN
 {
@@ -8,18 +9,18 @@ namespace DirectN
     public partial interface IDirect3DVertexBuffer
     {
         [PreserveSig]
-        HRESULT Lock(uint __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1, IntPtr __unnamed_2);
+        HRESULT Lock(uint __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1, ref uint __unnamed_2);
         
         [PreserveSig]
         HRESULT Unlock();
         
         [PreserveSig]
-        HRESULT ProcessVertices(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, IntPtr __unnamed_3, uint __unnamed_4, IntPtr __unnamed_5, uint __unnamed_6);
+        HRESULT ProcessVertices(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, LPDIRECT3DVERTEXBUFFER __unnamed_3, uint __unnamed_4, IDirect3DDevice3 __unnamed_5, uint __unnamed_6);
         
         [PreserveSig]
-        HRESULT GetVertexBufferDesc(IntPtr __unnamed_0);
+        HRESULT GetVertexBufferDesc(ref _D3DVERTEXBUFFERDESC __unnamed_0);
         
         [PreserveSig]
-        HRESULT Optimize(IntPtr __unnamed_0, uint __unnamed_1);
+        HRESULT Optimize(IDirect3DDevice3 __unnamed_0, uint __unnamed_1);
     }
 }

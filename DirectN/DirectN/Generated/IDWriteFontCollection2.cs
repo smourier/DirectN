@@ -19,7 +19,7 @@ namespace DirectN
         HRESULT GetFontFamily(uint index, /* _COM_Outptr_ */ out IDWriteFontFamily2 fontFamily);
         
         [PreserveSig]
-        HRESULT GetMatchingFonts(/* _In_z_ */ ref char familyName, /* _In_reads_(fontAxisValueCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _COM_Outptr_ */ out IDWriteFontList2 fontList);
+        HRESULT GetMatchingFonts(/* _In_z_ */ ref char familyName, /* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _COM_Outptr_ */ out IDWriteFontList2 fontList);
         
         [PreserveSig]
         DWRITE_FONT_FAMILY_MODEL GetFontFamilyModel();

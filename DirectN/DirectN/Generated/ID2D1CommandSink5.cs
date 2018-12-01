@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(1704,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_POINT_2F = DirectN.D2D_POINT_2F;
+using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
@@ -15,7 +17,7 @@ namespace DirectN
         new HRESULT DrawGradientMesh(/* _In_ */ ID2D1GradientMesh gradientMesh);
         
         [PreserveSig]
-        new HRESULT DrawGdiMetafile(/* _In_ */ ref ID2D1GdiMetafile gdiMetafile, /* _In_opt_ */ ref D2D_RECT_F destinationRectangle, /* _In_opt_ */ ref D2D_RECT_F sourceRectangle);
+        new HRESULT DrawGdiMetafile(/* _In_ */ ref ID2D1GdiMetafile gdiMetafile, /* optional(D2D1_RECT_F) */ IntPtr destinationRectangle, /* optional(D2D1_RECT_F) */ IntPtr sourceRectangle);
         
         // ID2D1CommandSink3
         [PreserveSig]
@@ -27,6 +29,6 @@ namespace DirectN
         
         // ID2D1CommandSink5
         [PreserveSig]
-        HRESULT BlendImage(/* _In_ */ ref ID2D1Image image, D2D1_BLEND_MODE blendMode, /* _In_opt_ */ ref D2D_POINT_2F targetOffset, /* _In_opt_ */ ref D2D_RECT_F imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode);
+        HRESULT BlendImage(/* _In_ */ ref ID2D1Image image, D2D1_BLEND_MODE blendMode, /* optional(D2D1_POINT_2F) */ IntPtr targetOffset, /* optional(D2D1_RECT_F) */ IntPtr imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode);
     }
 }

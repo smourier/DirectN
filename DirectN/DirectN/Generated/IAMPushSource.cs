@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(15126,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -9,7 +10,7 @@ namespace DirectN
     {
         // IAMLatency
         [PreserveSig]
-        new HRESULT GetLatency(/* [annotation][in] _Out_ */ ref long prtLatency);
+        new HRESULT GetLatency(/* [annotation][in] _Out_ */ ref REFERENCE_TIME prtLatency);
         
         // IAMPushSource
         [PreserveSig]
@@ -22,10 +23,10 @@ namespace DirectN
         HRESULT SetStreamOffset(/* [in] */ long rtOffset);
         
         [PreserveSig]
-        HRESULT GetStreamOffset(/* [annotation][out] _Out_ */ out long prtOffset);
+        HRESULT GetStreamOffset(/* [annotation][out] _Out_ */ out REFERENCE_TIME prtOffset);
         
         [PreserveSig]
-        HRESULT GetMaxStreamOffset(/* [annotation][out] _Out_ */ out long prtMaxOffset);
+        HRESULT GetMaxStreamOffset(/* [annotation][out] _Out_ */ out REFERENCE_TIME prtMaxOffset);
         
         [PreserveSig]
         HRESULT SetMaxStreamOffset(/* [in] */ long rtMaxOffset);

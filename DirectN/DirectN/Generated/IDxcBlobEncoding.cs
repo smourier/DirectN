@@ -12,7 +12,7 @@ namespace DirectN
         new IntPtr GetBufferPointer();
         
         [PreserveSig]
-        new ulong GetBufferSize();
+        new IntPtr GetBufferSize();
         
         // IDxcBlobEncoding
         [PreserveSig]

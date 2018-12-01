@@ -11,7 +11,7 @@ namespace DirectN
         public _D3DHAL_CONTEXTCREATEDATA__union_1 __union_1;
         public _D3DHAL_CONTEXTCREATEDATA__union_2 __union_2;
         public _D3DHAL_CONTEXTCREATEDATA__union_3 __union_3;
-        public ulong dwhContext;
+        public IntPtr dwhContext;
         public HRESULT ddrval;
     }
 }

@@ -17,6 +17,6 @@ namespace DirectN
         HRESULT GetLineSpacing(/* _Out_ */ out DWRITE_LINE_SPACING lineSpacingOptions);
         
         [PreserveSig]
-        HRESULT GetLineMetrics(/* _Out_writes_to_opt_(maxLineCount, *actualLineCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS1[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
+        HRESULT GetLineMetrics(/* _Out_writes_to_opt_(maxLineCount, *actualLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS1[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
     }
 }

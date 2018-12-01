@@ -8,24 +8,24 @@ namespace DirectN
     public partial interface IVMRDeinterlaceControl
     {
         [PreserveSig]
-        HRESULT GetNumberOfDeinterlaceModes(/* [in] */ ref _VMRVideoDesc lpVideoDescription, /* [out][in] */ IntPtr lpdwNumDeinterlaceModes, /* [out] */ Guid lpDeinterlaceModes);
+        HRESULT GetNumberOfDeinterlaceModes(/* [in] */ ref _VMRVideoDesc lpVideoDescription, /* [out][in] */ ref uint lpdwNumDeinterlaceModes, /* [out] */ out Guid lpDeinterlaceModes);
         
         [PreserveSig]
-        HRESULT GetDeinterlaceModeCaps(/* [in] */ Guid lpDeinterlaceMode, /* [in] */ ref _VMRVideoDesc lpVideoDescription, /* [out][in] */ ref _VMRDeinterlaceCaps lpDeinterlaceCaps);
+        HRESULT GetDeinterlaceModeCaps(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid lpDeinterlaceMode, /* [in] */ ref _VMRVideoDesc lpVideoDescription, /* [out][in] */ ref _VMRDeinterlaceCaps lpDeinterlaceCaps);
         
         [PreserveSig]
-        HRESULT GetDeinterlaceMode(/* [in] */ uint dwStreamID, /* [out] */ Guid lpDeinterlaceMode);
+        HRESULT GetDeinterlaceMode(/* [in] */ uint dwStreamID, /* [out] */ out Guid lpDeinterlaceMode);
         
         [PreserveSig]
-        HRESULT SetDeinterlaceMode(/* [in] */ uint dwStreamID, /* [in] */ Guid lpDeinterlaceMode);
+        HRESULT SetDeinterlaceMode(/* [in] */ uint dwStreamID, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid lpDeinterlaceMode);
         
         [PreserveSig]
-        HRESULT GetDeinterlacePrefs(/* [out] */ IntPtr lpdwDeinterlacePrefs);
+        HRESULT GetDeinterlacePrefs(/* [out] */ out uint lpdwDeinterlacePrefs);
         
         [PreserveSig]
         HRESULT SetDeinterlacePrefs(/* [in] */ uint dwDeinterlacePrefs);
         
         [PreserveSig]
-        HRESULT GetActualDeinterlaceMode(/* [in] */ uint dwStreamID, /* [out] */ Guid lpDeinterlaceMode);
+        HRESULT GetActualDeinterlaceMode(/* [in] */ uint dwStreamID, /* [out] */ out Guid lpDeinterlaceMode);
     }
 }

@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(2758,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -8,16 +9,16 @@ namespace DirectN
     public partial interface IMediaSample
     {
         [PreserveSig]
-        HRESULT GetPointer(/* [annotation][out] _Outptr_result_buffer_to_(_Inexpressible_(this->GetSize()), _Inexpressible_(this->GetActualDataLength())) */ out byte[] ppBuffer);
+        HRESULT GetPointer(/* [annotation][out] _Outptr_result_buffer_to_(_Inexpressible_(this->GetSize()), _Inexpressible_(this->GetActualDataLength())) */ ref byte ppBuffer);
         
         [PreserveSig]
         void GetSize();
         
         [PreserveSig]
-        HRESULT GetTime(/* [annotation][out] _Out_ */ out long pTimeStart, /* [annotation][out] _Out_ */ out long pTimeEnd);
+        HRESULT GetTime(/* [annotation][out] _Out_ */ out REFERENCE_TIME pTimeStart, /* [annotation][out] _Out_ */ out REFERENCE_TIME pTimeEnd);
         
         [PreserveSig]
-        HRESULT SetTime(/* [annotation][in] _In_opt_ */ ref long pTimeStart, /* [annotation][in] _In_opt_ */ ref long pTimeEnd);
+        HRESULT SetTime(/* optional(REFERENCE_TIME) */ IntPtr pTimeStart, /* optional(REFERENCE_TIME) */ IntPtr pTimeEnd);
         
         [PreserveSig]
         HRESULT IsSyncPoint();
@@ -38,7 +39,7 @@ namespace DirectN
         HRESULT SetActualDataLength(int __MIDL__IMediaSample0000);
         
         [PreserveSig]
-        HRESULT GetMediaType(/* [annotation][out] _Out_ */ out _AMMediaType ppMediaType);
+        HRESULT GetMediaType(/* [annotation][out] _Out_ */ out IntPtr ppMediaType);
         
         [PreserveSig]
         HRESULT SetMediaType(/* [annotation][in] _In_ */ ref _AMMediaType pMediaType);
@@ -53,6 +54,6 @@ namespace DirectN
         HRESULT GetMediaTime(/* [annotation][out] _Out_ */ out long pTimeStart, /* [annotation][out] _Out_ */ out long pTimeEnd);
         
         [PreserveSig]
-        HRESULT SetMediaTime(/* [annotation][in] _In_opt_ */ ref long pTimeStart, /* [annotation][in] _In_opt_ */ ref long pTimeEnd);
+        HRESULT SetMediaTime(/* optional(LONGLONG) */ IntPtr pTimeStart, /* optional(LONGLONG) */ IntPtr pTimeEnd);
     }
 }

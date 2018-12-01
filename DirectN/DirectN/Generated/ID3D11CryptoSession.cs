@@ -12,10 +12,10 @@ namespace DirectN
         new void GetDevice(/* [annotation] _Outptr_ */ out ID3D11Device ppDevice);
         
         [PreserveSig]
-        new HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* [annotation] _Out_writes_bytes_opt_( *pDataSize ) */ out IntPtr pData);
+        new HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* [annotation] _Out_writes_bytes_opt_( *pDataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_( DataSize ) */ out IntPtr pData);
+        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
         new HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
@@ -31,9 +31,9 @@ namespace DirectN
         HRESULT GetCertificateSize(/* [annotation] _Out_ */ out uint pCertificateSize);
         
         [PreserveSig]
-        HRESULT GetCertificate(/* [annotation] _In_ */ uint CertificateSize, /* [annotation] _Out_writes_bytes_(CertificateSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pCertificate);
+        HRESULT GetCertificate(/* [annotation] _In_ */ uint CertificateSize, /* [annotation] _Out_writes_bytes_(CertificateSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pCertificate);
         
         [PreserveSig]
-        void GetCryptoSessionHandle(/* [annotation] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object pCryptoSessionHandle);
+        void GetCryptoSessionHandle(/* [annotation] _Out_ */ out IntPtr pCryptoSessionHandle);
     }
 }

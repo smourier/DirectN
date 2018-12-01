@@ -11,15 +11,15 @@ namespace DirectN
         HRESULT GetEnumType(/* [out] __RPC__out */ out PROPENUMTYPE penumtype);
         
         [PreserveSig]
-        HRESULT GetValue(/* [out] __RPC__out */ out PropVariant ppropvar);
+        HRESULT GetValue(/* [out] __RPC__out */ PropVariant ppropvar);
         
         [PreserveSig]
-        HRESULT GetRangeMinValue(/* [out] __RPC__out */ out PropVariant ppropvarMin);
+        HRESULT GetRangeMinValue(/* [out] __RPC__out */ PropVariant ppropvarMin);
         
         [PreserveSig]
-        HRESULT GetRangeSetValue(/* [out] __RPC__out */ out PropVariant ppropvarSet);
+        HRESULT GetRangeSetValue(/* [out] __RPC__out */ PropVariant ppropvarSet);
         
         [PreserveSig]
-        HRESULT GetDisplayText(/* [out] __RPC__deref_out_opt */ out IntPtr ppszDisplay);
+        HRESULT GetDisplayText(/* optional(LPWSTR) */ out IntPtr ppszDisplay);
     }
 }

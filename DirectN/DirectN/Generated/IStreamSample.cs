@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmstream.h(470,5)
 using System;
 using System.Runtime.InteropServices;
+using PAPCFUNC = System.IntPtr;
+using STREAM_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -11,13 +13,13 @@ namespace DirectN
         HRESULT GetMediaStream(/* [in] */ IMediaStream ppMediaStream);
         
         [PreserveSig]
-        HRESULT GetSampleTimes(/* [out] */ out long pStartTime, /* [out] */ out long pEndTime, /* [out] */ out long pCurrentTime);
+        HRESULT GetSampleTimes(/* [out] */ out STREAM_TIME pStartTime, /* [out] */ out STREAM_TIME pEndTime, /* [out] */ out STREAM_TIME pCurrentTime);
         
         [PreserveSig]
-        HRESULT SetSampleTimes(/* [in] */ ref long pStartTime, /* [in] */ ref long pEndTime);
+        HRESULT SetSampleTimes(/* [in] */ ref STREAM_TIME pStartTime, /* [in] */ ref STREAM_TIME pEndTime);
         
         [PreserveSig]
-        HRESULT Update(/* [in] */ uint dwFlags, /* [in] */ IntPtr hEvent, /* [in] */ IntPtr pfnAPC, /* [in] */ ulong dwAPCData);
+        HRESULT Update(/* [in] */ uint dwFlags, /* [in] */ IntPtr hEvent, /* [in] */ ref PAPCFUNC pfnAPC, /* [in] */ IntPtr dwAPCData);
         
         [PreserveSig]
         HRESULT CompletionStatus(/* [in] */ uint dwFlags, /* [in] */ uint dwMilliseconds);

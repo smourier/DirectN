@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12.h(11420,5)
 using System;
 using System.Runtime.InteropServices;
+using LUID = DirectN._LUID;
 
 namespace DirectN
 {
@@ -8,7 +9,7 @@ namespace DirectN
     public partial interface ID3D12SwapChainAssistant
     {
         [PreserveSig]
-        _LUID GetLUID();
+        LUID GetLUID();
         
         [PreserveSig]
         HRESULT GetSwapChainObject([MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);

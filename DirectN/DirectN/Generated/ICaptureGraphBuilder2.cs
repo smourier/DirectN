@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(7016,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -23,7 +24,7 @@ namespace DirectN
         HRESULT RenderStream(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ IBaseFilter pfCompressor, /* [in] */ IBaseFilter pfRenderer);
         
         [PreserveSig]
-        HRESULT ControlStream(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ IBaseFilter pFilter, /* [annotation][in] _In_opt_ */ ref long pstart, /* [annotation][in] _In_opt_ */ ref long pstop, /* [in] */ ushort wStartCookie, /* [in] */ ushort wStopCookie);
+        HRESULT ControlStream(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ IBaseFilter pFilter, /* optional(REFERENCE_TIME) */ IntPtr pstart, /* optional(REFERENCE_TIME) */ IntPtr pstop, /* [in] */ ushort wStartCookie, /* [in] */ ushort wStopCookie);
         
         [PreserveSig]
         HRESULT AllocCapFile(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpstr, /* [in] */ ulong dwlSize);

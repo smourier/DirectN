@@ -17,6 +17,6 @@ namespace DirectN
         HRESULT GetEventDrivenCapable(/* [out] */ out bool pbisEventCapable);
         
         [PreserveSig]
-        HRESULT WriteExclusiveModeParametersToSharedMemory(/* [in] */ ulong hTargetProcess, /* [in] */ long hnsPeriod, /* [in] */ long hnsBufferDuration, /* [in] */ uint u32LatencyCoefficient, /* [out] */ out uint pu32SharedMemorySize, /* [out] */ out ulong phSharedMemory);
+        HRESULT WriteExclusiveModeParametersToSharedMemory(/* [in] */ IntPtr hTargetProcess, /* [in] */ long hnsPeriod, /* [in] */ long hnsBufferDuration, /* [in] */ uint u32LatencyCoefficient, /* [out] */ out uint pu32SharedMemorySize, /* [out] */ out IntPtr phSharedMemory);
     }
 }

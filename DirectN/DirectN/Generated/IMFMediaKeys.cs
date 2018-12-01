@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFMediaKeys
     {
         [PreserveSig]
-        HRESULT CreateSession(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string mimeType, /* [annotation] _In_reads_bytes_opt_(cb) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] initData, /* [annotation] _In_opt_ */ uint cb, /* [annotation] _In_reads_bytes_opt_(cbCustomData) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] customData, /* [annotation] _In_ */ uint cbCustomData, /* [annotation] _In_ */ IMFMediaKeySessionNotify notify, /* [annotation] _COM_Outptr_ */ out IMFMediaKeySession ppSession);
+        HRESULT CreateSession(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string mimeType, /* [annotation] _In_reads_bytes_opt_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] initData, /* [annotation] _In_opt_ */ uint cb, /* [annotation] _In_reads_bytes_opt_(cbCustomData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] customData, /* [annotation] _In_ */ uint cbCustomData, /* [annotation] _In_ */ IMFMediaKeySessionNotify notify, /* [annotation] _COM_Outptr_ */ out IMFMediaKeySession ppSession);
         
         [PreserveSig]
         HRESULT get_KeySystem(/* [annotation] _COM_Outptr_ */ out IntPtr keySystem);

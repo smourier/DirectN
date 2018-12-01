@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(732,5)
 using System;
 using System.Runtime.InteropServices;
+using LPCONNECTIONPOINT = DirectN.IConnectionPoint;
 
 namespace DirectN
 {
@@ -8,7 +9,7 @@ namespace DirectN
     public partial interface IEnumConnectionPoints
     {
         [PreserveSig]
-        HRESULT Next(/* [in] */ uint cConnections, /* [length_is][size_is][out] */ out IntPtr[] ppCP, /* [out] */ out uint pcFetched);
+        HRESULT Next(/* [in] */ uint cConnections, /* [length_is][size_is][out] */ out IntPtr ppCP, /* [out] */ out uint pcFetched);
         
         [PreserveSig]
         HRESULT Skip(/* [in] */ uint cConnections);

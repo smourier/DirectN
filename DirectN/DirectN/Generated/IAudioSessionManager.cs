@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IAudioSessionManager
     {
         [PreserveSig]
-        HRESULT GetAudioSessionControl(/* [annotation][in] _In_opt_ */ Guid AudioSessionGuid, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][out] _Outptr_ */ out IAudioSessionControl SessionControl);
+        HRESULT GetAudioSessionControl(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][out] _Outptr_ */ out IAudioSessionControl SessionControl);
         
         [PreserveSig]
-        HRESULT GetSimpleAudioVolume(/* [annotation][in] _In_opt_ */ Guid AudioSessionGuid, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][out] _Outptr_ */ out ISimpleAudioVolume AudioVolume);
+        HRESULT GetSimpleAudioVolume(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][out] _Outptr_ */ out ISimpleAudioVolume AudioVolume);
     }
 }

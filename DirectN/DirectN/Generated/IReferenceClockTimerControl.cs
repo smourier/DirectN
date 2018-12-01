@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(2548,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -11,6 +12,6 @@ namespace DirectN
         HRESULT SetDefaultTimerResolution(long timerResolution);
         
         [PreserveSig]
-        HRESULT GetDefaultTimerResolution(/* [annotation] _Out_ */ out long pTimerResolution);
+        HRESULT GetDefaultTimerResolution(/* [annotation] _Out_ */ out REFERENCE_TIME pTimerResolution);
     }
 }

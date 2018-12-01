@@ -11,6 +11,6 @@ namespace DirectN
     public partial interface IDWriteColorGlyphRunEnumerator1
     {
         [PreserveSig]
-        HRESULT GetCurrentRun(/* _Outptr_ */ out DWRITE_COLOR_GLYPH_RUN1 colorGlyphRun);
+        HRESULT GetCurrentRun(/* _Outptr_ */ out IntPtr colorGlyphRun);
     }
 }

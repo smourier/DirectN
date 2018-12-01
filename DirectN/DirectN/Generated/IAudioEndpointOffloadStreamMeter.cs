@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioengineendpoint.h(950,5)
 using System;
 using System.Runtime.InteropServices;
+using FLOAT32 = System.Single;
 
 namespace DirectN
 {
@@ -11,6 +12,6 @@ namespace DirectN
         HRESULT GetMeterChannelCount(/* [out] */ out uint pu32ChannelCount);
         
         [PreserveSig]
-        HRESULT GetMeteringData(/* [in] */ uint u32ChannelCount, /* [out] */ out float pf32PeakValues);
+        HRESULT GetMeteringData(/* [in] */ uint u32ChannelCount, /* [out] */ out FLOAT32 pf32PeakValues);
     }
 }

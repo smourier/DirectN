@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\propsys.h(1223,5)
 using System;
 using System.Runtime.InteropServices;
+using PROPERTYKEY = DirectN._tagpropertykey;
 
 namespace DirectN
 {
@@ -12,28 +13,28 @@ namespace DirectN
         new HRESULT GetCount(/* [out] __RPC__out */ out uint cProps);
         
         [PreserveSig]
-        new HRESULT GetAt(/* [in] */ uint iProp, /* [out] __RPC__out */ out _tagpropertykey pkey);
+        new HRESULT GetAt(/* [in] */ uint iProp, /* [out] __RPC__out */ out PROPERTYKEY pkey);
         
         [PreserveSig]
-        new HRESULT GetValue(/* [in] __RPC__in */ ref _tagpropertykey key, /* [out] __RPC__out */ out PropVariant pv);
+        new HRESULT GetValue(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [out] __RPC__out */ PropVariant pv);
         
         [PreserveSig]
-        new HRESULT SetValue(/* [in] __RPC__in */ ref _tagpropertykey key, /* [in] __RPC__in */ PropVariant propvar);
+        new HRESULT SetValue(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [in] __RPC__in */ PropVariant propvar);
         
         [PreserveSig]
         new HRESULT Commit();
         
         // IPropertyStoreCache
         [PreserveSig]
-        HRESULT GetState(/* [in] __RPC__in */ ref _tagpropertykey key, /* [out] __RPC__out */ out PSC_STATE pstate);
+        HRESULT GetState(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [out] __RPC__out */ out PSC_STATE pstate);
         
         [PreserveSig]
-        HRESULT GetValueAndState(/* [in] __RPC__in */ ref _tagpropertykey key, /* [out] __RPC__out */ out PropVariant ppropvar, /* [out] __RPC__out */ out PSC_STATE pstate);
+        HRESULT GetValueAndState(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [out] __RPC__out */ PropVariant ppropvar, /* [out] __RPC__out */ out PSC_STATE pstate);
         
         [PreserveSig]
-        HRESULT SetState(/* [in] __RPC__in */ ref _tagpropertykey key, /* [in] */ PSC_STATE state);
+        HRESULT SetState(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [in] */ PSC_STATE state);
         
         [PreserveSig]
-        HRESULT SetValueAndState(/* [in] __RPC__in */ ref _tagpropertykey key, /* [unique][in] __RPC__in_opt */ PropVariant ppropvar, /* [in] */ PSC_STATE state);
+        HRESULT SetValueAndState(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [unique][in] __RPC__in_opt */ PropVariant ppropvar, /* [in] */ PSC_STATE state);
     }
 }

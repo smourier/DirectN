@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct MFP_ACQUIRE_USER_CREDENTIAL_EVENT
     {
         public MFP_EVENT_HEADER header;
-        public ulong dwUserData;
+        public IntPtr dwUserData;
         public bool fProceedWithAuthentication;
         public HRESULT hrAuthenticationStatus;
         [MarshalAs(UnmanagedType.LPWStr)] 

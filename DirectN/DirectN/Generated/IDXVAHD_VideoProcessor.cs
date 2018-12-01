@@ -8,18 +8,18 @@ namespace DirectN
     public partial interface IDXVAHD_VideoProcessor
     {
         [PreserveSig]
-        HRESULT SetVideoProcessBltState(/* [annotation][in] _In_ */ _DXVAHD_BLT_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ out IntPtr pData);
+        HRESULT SetVideoProcessBltState(/* [annotation][in] _In_ */ _DXVAHD_BLT_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
-        HRESULT GetVideoProcessBltState(/* [annotation][in] _In_ */ _DXVAHD_BLT_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][out] _Inout_updates_bytes_(DataSize) */ out IntPtr pData);
+        HRESULT GetVideoProcessBltState(/* [annotation][in] _In_ */ _DXVAHD_BLT_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][out] _Inout_updates_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
-        HRESULT SetVideoProcessStreamState(/* [annotation][in] _In_ */ uint StreamNumber, /* [annotation][in] _In_ */ _DXVAHD_STREAM_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ out IntPtr pData);
+        HRESULT SetVideoProcessStreamState(/* [annotation][in] _In_ */ uint StreamNumber, /* [annotation][in] _In_ */ _DXVAHD_STREAM_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][in] _In_reads_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
-        HRESULT GetVideoProcessStreamState(/* [annotation][in] _In_ */ uint StreamNumber, /* [annotation][in] _In_ */ _DXVAHD_STREAM_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][out] _Inout_updates_bytes_(DataSize) */ out IntPtr pData);
+        HRESULT GetVideoProcessStreamState(/* [annotation][in] _In_ */ uint StreamNumber, /* [annotation][in] _In_ */ _DXVAHD_STREAM_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][out] _Inout_updates_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
-        HRESULT VideoProcessBltHD(/* [annotation][in] _In_ */ ref int pOutputSurface, /* [annotation][in] _In_ */ uint OutputFrame, /* [annotation][in] _In_ */ uint StreamCount, /* [annotation][size_is][in] _In_reads_(StreamCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _DXVAHD_STREAM_DATA[] pStreams);
+        HRESULT VideoProcessBltHD(/* [annotation][in] _In_ */ ref int pOutputSurface, /* [annotation][in] _In_ */ uint OutputFrame, /* [annotation][in] _In_ */ uint StreamCount, /* [annotation][size_is][in] _In_reads_(StreamCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _DXVAHD_STREAM_DATA[] pStreams);
     }
 }

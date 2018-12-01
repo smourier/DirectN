@@ -8,13 +8,13 @@ namespace DirectN
     public partial interface IMFExtendedCameraIntrinsics
     {
         [PreserveSig]
-        HRESULT InitializeFromBuffer(/* [annotation][size_is][in] _In_reads_bytes_(dwBufferSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [in] */ uint dwBufferSize);
+        HRESULT InitializeFromBuffer(/* [annotation][size_is][in] _In_reads_bytes_(dwBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [in] */ uint dwBufferSize);
         
         [PreserveSig]
         HRESULT GetBufferSize(/* [annotation][out] _Out_ */ out uint pdwBufferSize);
         
         [PreserveSig]
-        HRESULT SerializeToBuffer(/* [annotation][out] _Out_writes_bytes_to_(*pdwBufferSize, *pdwBufferSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [annotation][out] _Inout_ */ ref uint pdwBufferSize);
+        HRESULT SerializeToBuffer(/* [annotation][out] _Out_writes_bytes_to_(*pdwBufferSize, *pdwBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [annotation][out] _Inout_ */ ref uint pdwBufferSize);
         
         [PreserveSig]
         HRESULT GetIntrinsicModelCount(/* [annotation][out] _Out_ */ out uint pdwCount);

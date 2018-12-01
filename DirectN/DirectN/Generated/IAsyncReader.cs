@@ -11,16 +11,16 @@ namespace DirectN
         HRESULT RequestAllocator(/* [in] */ IMemAllocator pPreferred, /* [annotation][in] _In_ */ ref _AllocatorProperties pProps, /* [annotation][out] _Out_ */ out IMemAllocator ppActual);
         
         [PreserveSig]
-        HRESULT Request(/* [in] */ IMediaSample pSample, /* [in] */ ulong dwUser);
+        HRESULT Request(/* [in] */ IMediaSample pSample, /* [in] */ IntPtr dwUser);
         
         [PreserveSig]
-        HRESULT WaitForNext(/* [in] */ uint dwTimeout, /* [annotation][out] _Out_opt_ */ out IMediaSample ppSample, /* [annotation][out] _Out_ */ out ulong pdwUser);
+        HRESULT WaitForNext(/* [in] */ uint dwTimeout, /* [annotation][out] _Out_opt_ */ out IMediaSample ppSample, /* [annotation][out] _Out_ */ out IntPtr pdwUser);
         
         [PreserveSig]
         HRESULT SyncReadAligned(/* [in] */ IMediaSample pSample);
         
         [PreserveSig]
-        HRESULT SyncRead(/* [in] */ long llPosition, /* [in] */ int lLength, /* [annotation][size_is][out] _Out_writes_bytes_(lLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pBuffer);
+        HRESULT SyncRead(/* [in] */ long llPosition, /* [in] */ int lLength, /* [annotation][size_is][out] _Out_writes_bytes_(lLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pBuffer);
         
         [PreserveSig]
         HRESULT Length(/* [annotation][out] _Out_ */ out long pTotal, /* [annotation][out] _Out_ */ out long pAvailable);

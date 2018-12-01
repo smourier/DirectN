@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d.h(1150,1)
 using System;
 using System.Runtime.InteropServices;
+using LPDIRECT3DTEXTURE2 = DirectN.IDirect3DTexture2;
 
 namespace DirectN
 {
@@ -8,12 +9,12 @@ namespace DirectN
     public partial interface IDirect3DTexture2
     {
         [PreserveSig]
-        HRESULT GetHandle(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT GetHandle(IDirect3DDevice2 __unnamed_0, ref uint __unnamed_1);
         
         [PreserveSig]
         HRESULT PaletteChanged(uint __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT Load(IntPtr __unnamed_0);
+        HRESULT Load(LPDIRECT3DTEXTURE2 __unnamed_0);
     }
 }

@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFMediaEngineNeedKeyNotify
     {
         [PreserveSig]
-        void NeedKey(/* [annotation] _In_reads_bytes_opt_(cb) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] initData, /* [annotation] _In_ */ uint cb);
+        void NeedKey(/* [annotation] _In_reads_bytes_opt_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] initData, /* [annotation] _In_ */ uint cb);
     }
 }

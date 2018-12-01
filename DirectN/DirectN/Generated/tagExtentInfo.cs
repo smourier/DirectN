@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(4760,9)
 using System;
 using System.Runtime.InteropServices;
+using SIZEL = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -9,6 +10,6 @@ namespace DirectN
     {
         public uint cb;
         public uint dwExtentMode;
-        public tagSIZE sizelProposed;
+        public SIZEL sizelProposed;
     }
 }

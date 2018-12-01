@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfmediaengine.h(1598,5)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -129,7 +130,7 @@ namespace DirectN
         new HRESULT Shutdown();
         
         [PreserveSig]
-        new HRESULT TransferVideoFrame(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDstSurf, /* [annotation][in] _In_opt_ */ ref MFVideoNormalizedRect pSrc, /* [annotation][in] _In_ */ ref tagRECT pDst, /* [annotation][in] _In_opt_ */ ref _MFARGB pBorderClr);
+        new HRESULT TransferVideoFrame(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDstSurf, /* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* [annotation][in] _In_ */ ref RECT pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
         
         [PreserveSig]
         new HRESULT OnVideoStreamTick(/* [annotation][out] _Out_ */ out long pPts);
@@ -139,10 +140,10 @@ namespace DirectN
         HRESULT SetSourceFromByteStream(/* [annotation][in] _In_ */ IMFByteStream pByteStream, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.BStr)] string pURL);
         
         [PreserveSig]
-        HRESULT GetStatistics(/* [annotation][in] _In_ */ MF_MEDIA_ENGINE_STATISTIC StatisticID, /* [annotation][out] _Out_ */ out PropVariant pStatistic);
+        HRESULT GetStatistics(/* [annotation][in] _In_ */ MF_MEDIA_ENGINE_STATISTIC StatisticID, /* [annotation][out] _Out_ */ PropVariant pStatistic);
         
         [PreserveSig]
-        HRESULT UpdateVideoStream(/* [annotation][in] _In_opt_ */ ref MFVideoNormalizedRect pSrc, /* [annotation][in] _In_opt_ */ ref tagRECT pDst, /* [annotation][in] _In_opt_ */ ref _MFARGB pBorderClr);
+        HRESULT UpdateVideoStream(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(RECT) */ IntPtr pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
         
         [PreserveSig]
         void GetBalance();
@@ -160,13 +161,13 @@ namespace DirectN
         HRESULT GetResourceCharacteristics(/* [annotation][out] _Out_ */ out uint pCharacteristics);
         
         [PreserveSig]
-        HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ out PropVariant pvValue);
+        HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ PropVariant pvValue);
         
         [PreserveSig]
         HRESULT GetNumberOfStreams(/* [annotation][out] _Out_ */ out uint pdwStreamCount);
         
         [PreserveSig]
-        HRESULT GetStreamAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ out PropVariant pvValue);
+        HRESULT GetStreamAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ PropVariant pvValue);
         
         [PreserveSig]
         HRESULT GetStreamSelection(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out] _Out_ */ out bool pEnabled);
@@ -217,7 +218,7 @@ namespace DirectN
         HRESULT EnableWindowlessSwapchainMode(/* [annotation][in] _In_ */ bool fEnable);
         
         [PreserveSig]
-        HRESULT GetVideoSwapchainHandle(/* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object phSwapchain);
+        HRESULT GetVideoSwapchainHandle(/* [annotation][out] _Out_ */ out IntPtr phSwapchain);
         
         [PreserveSig]
         HRESULT EnableHorizontalMirrorMode(/* [annotation][in] _In_ */ bool fEnable);

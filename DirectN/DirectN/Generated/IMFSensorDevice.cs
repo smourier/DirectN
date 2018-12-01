@@ -17,7 +17,7 @@ namespace DirectN
         HRESULT GetFlags(/* [annotation][out] _Out_ */ out ulong pFlags);
         
         [PreserveSig]
-        HRESULT GetSymbolicLink(/* [annotation][size_is][out] _Out_writes_z_(cchSymbolicLink) */ [MarshalAs(UnmanagedType.LPWStr)] string SymbolicLink, /* [annotation][in] _In_ */ int cchSymbolicLink, /* [annotation][out] _Out_ */ out long pcchWritten);
+        HRESULT GetSymbolicLink(/* [annotation][size_is][out] _Out_writes_z_(cchSymbolicLink) */ [MarshalAs(UnmanagedType.LPWStr)] string SymbolicLink, /* [annotation][in] _In_ */ int cchSymbolicLink, /* [annotation][out] _Out_ */ out int pcchWritten);
         
         [PreserveSig]
         HRESULT GetDeviceAttributes(/* [annotation][out] _COM_Outptr_result_maybenull_ */ out IMFAttributes ppAttributes);

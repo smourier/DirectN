@@ -12,6 +12,6 @@ namespace DirectN
         public uint dwSequence;
         public uint cbSizeData;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4056)] 
-        public byte[] StatusData;
+        public byte StatusData;
     }
 }

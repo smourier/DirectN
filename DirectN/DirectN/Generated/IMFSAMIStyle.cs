@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetStyleCount(/* [annotation][out] _Out_ */ out uint pdwCount);
         
         [PreserveSig]
-        HRESULT GetStyles(/* [annotation][out] _Out_ */ out PropVariant pPropVarStyleArray);
+        HRESULT GetStyles(/* [annotation][out] _Out_ */ PropVariant pPropVarStyleArray);
         
         [PreserveSig]
         HRESULT SetSelectedStyle(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszStyle);

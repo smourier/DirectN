@@ -9,10 +9,10 @@ namespace DirectN
     {
         // ID3D12Object
         [PreserveSig]
-        new HRESULT GetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _Inout_ */ ref uint pDataSize, /* _Out_writes_bytes_opt_( *pDataSize ) */ out IntPtr pData);
+        new HRESULT GetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _Inout_ */ ref uint pDataSize, /* _Out_writes_bytes_opt_( *pDataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* _In_reads_bytes_opt_( DataSize ) */ out IntPtr pData);
+        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
         new HRESULT SetPrivateDataInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
@@ -28,10 +28,10 @@ namespace DirectN
         
         // ID3D12Resource
         [PreserveSig]
-        new HRESULT Map(uint Subresource, /* _In_opt_ */ ref D3D12_RANGE pReadRange, /* _Outptr_opt_result_bytebuffer_(_Inexpressible_("Dependent on resource")) */ [MarshalAs(UnmanagedType.IUnknown)] out object ppData);
+        new HRESULT Map(uint Subresource, /* optional(D3D12_RANGE) */ IntPtr pReadRange, /* _Outptr_opt_result_bytebuffer_(_Inexpressible_("Dependent on resource")) */ [MarshalAs(UnmanagedType.IUnknown)] out object ppData);
         
         [PreserveSig]
-        new void Unmap(uint Subresource, /* _In_opt_ */ ref D3D12_RANGE pWrittenRange);
+        new void Unmap(uint Subresource, /* optional(D3D12_RANGE) */ IntPtr pWrittenRange);
         
         [PreserveSig]
         new D3D12_RESOURCE_DESC GetDesc();
@@ -40,10 +40,10 @@ namespace DirectN
         new ulong GetGPUVirtualAddress();
         
         [PreserveSig]
-        new HRESULT WriteToSubresource(uint DstSubresource, /* _In_opt_ */ ref D3D12_BOX pDstBox, /* _In_ */ IntPtr pSrcData, uint SrcRowPitch, uint SrcDepthPitch);
+        new HRESULT WriteToSubresource(uint DstSubresource, /* optional(D3D12_BOX) */ IntPtr pDstBox, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pSrcData, uint SrcRowPitch, uint SrcDepthPitch);
         
         [PreserveSig]
-        new HRESULT ReadFromSubresource(/* _Out_ */ out IntPtr pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, /* _In_opt_ */ ref D3D12_BOX pSrcBox);
+        new HRESULT ReadFromSubresource(/* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, /* optional(D3D12_BOX) */ IntPtr pSrcBox);
         
         [PreserveSig]
         new HRESULT GetHeapProperties(/* _Out_opt_ */ out D3D12_HEAP_PROPERTIES pHeapProperties, /* _Out_opt_ */ out D3D12_HEAP_FLAGS pHeapFlags);

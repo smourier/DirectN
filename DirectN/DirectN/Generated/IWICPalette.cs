@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wincodec.h(1105,5)
 using System;
 using System.Runtime.InteropServices;
+using WICColor = System.UInt32;
 
 namespace DirectN
 {
@@ -11,7 +12,7 @@ namespace DirectN
         HRESULT InitializePredefined(/* [in] */ WICBitmapPaletteType ePaletteType, /* [in] */ bool fAddTransparentColor);
         
         [PreserveSig]
-        HRESULT InitializeCustom(/* [size_is][in] __RPC__in_ecount_full(cCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pColors, /* [in] */ uint cCount);
+        HRESULT InitializeCustom(/* [size_is][in] __RPC__in_ecount_full(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] WICColor[] pColors, /* [in] */ uint cCount);
         
         [PreserveSig]
         HRESULT InitializeFromBitmap(/* [in] __RPC__in_opt */ IWICBitmapSource pISurface, /* [in] */ uint cCount, /* [in] */ bool fAddTransparentColor);
@@ -26,7 +27,7 @@ namespace DirectN
         HRESULT GetColorCount(/* [out] __RPC__out */ out uint pcCount);
         
         [PreserveSig]
-        HRESULT GetColors(/* [in] */ uint cCount, /* [size_is][out] __RPC__out_ecount_full(cCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pColors, /* [out] __RPC__out */ out uint pcActualColors);
+        HRESULT GetColors(/* [in] */ uint cCount, /* [size_is][out] __RPC__out_ecount_full(cCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICColor[] pColors, /* [out] __RPC__out */ out uint pcActualColors);
         
         [PreserveSig]
         HRESULT IsBlackWhite(/* [out] __RPC__out */ out bool pfIsBlackWhite);

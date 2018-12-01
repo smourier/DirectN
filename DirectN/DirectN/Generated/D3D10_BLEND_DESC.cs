@@ -9,7 +9,7 @@ namespace DirectN
     {
         public bool AlphaToCoverageEnable;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public int[] BlendEnable;
+        public bool BlendEnable;
         public D3D10_BLEND SrcBlend;
         public D3D10_BLEND DestBlend;
         public D3D10_BLEND_OP BlendOp;
@@ -17,6 +17,6 @@ namespace DirectN
         public D3D10_BLEND DestBlendAlpha;
         public D3D10_BLEND_OP BlendOpAlpha;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public byte[] RenderTargetWriteMask;
+        public byte RenderTargetWriteMask;
     }
 }

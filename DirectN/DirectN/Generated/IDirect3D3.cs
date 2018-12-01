@@ -1,6 +1,12 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d.h(297,1)
 using System;
 using System.Runtime.InteropServices;
+using LPDIRECT3DDEVICE3 = DirectN.IDirect3DDevice3;
+using LPDIRECT3DLIGHT = DirectN.IDirect3DLight;
+using LPDIRECT3DMATERIAL3 = DirectN.IDirect3DMaterial3;
+using LPDIRECT3DVERTEXBUFFER = DirectN.IDirect3DVertexBuffer;
+using LPDIRECT3DVIEWPORT3 = DirectN.IDirect3DViewport3;
+using LPDIRECTDRAWSURFACE4 = DirectN.IDirectDrawSurface4;
 
 namespace DirectN
 {
@@ -8,28 +14,28 @@ namespace DirectN
     public partial interface IDirect3D3
     {
         [PreserveSig]
-        HRESULT EnumDevices(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT EnumDevices(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateLight(ref IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT CreateLight(LPDIRECT3DLIGHT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateMaterial(ref IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT CreateMaterial(LPDIRECT3DMATERIAL3 __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateViewport(ref IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT CreateViewport(LPDIRECT3DVIEWPORT3 __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
-        HRESULT FindDevice(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT FindDevice(ref _D3DFINDDEVICESEARCH __unnamed_0, ref _D3DFINDDEVICERESULT __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, IntPtr __unnamed_1, ref IntPtr __unnamed_2, IntPtr __unnamed_3);
+        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, LPDIRECTDRAWSURFACE4 __unnamed_1, LPDIRECT3DDEVICE3 __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
         
         [PreserveSig]
-        HRESULT CreateVertexBuffer(IntPtr __unnamed_0, ref IntPtr __unnamed_1, uint __unnamed_2, IntPtr __unnamed_3);
+        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, LPDIRECT3DVERTEXBUFFER __unnamed_1, uint __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
         
         [PreserveSig]
-        HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, IntPtr __unnamed_1, IntPtr __unnamed_2);
+        HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, ref IntPtr __unnamed_1, ref IntPtr __unnamed_2);
         
         [PreserveSig]
         HRESULT EvictManagedTextures();

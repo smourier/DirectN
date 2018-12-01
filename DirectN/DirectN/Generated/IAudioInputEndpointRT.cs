@@ -11,7 +11,7 @@ namespace DirectN
         void GetInputDataPointer(/* [out][in] */ ref APO_CONNECTION_PROPERTY pConnectionProperty, /* [out][in] */ ref AE_CURRENT_POSITION pAeTimeStamp);
         
         [PreserveSig]
-        void ReleaseInputDataPointer(/* [in] */ uint u32FrameCount, /* [in] */ ulong pDataPointer);
+        void ReleaseInputDataPointer(/* [in] */ uint u32FrameCount, /* [in] */ IntPtr pDataPointer);
         
         [PreserveSig]
         void PulseEndpoint();

@@ -9,10 +9,10 @@ namespace DirectN
     {
         // ID3D12Object
         [PreserveSig]
-        new HRESULT GetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _Inout_ */ ref uint pDataSize, /* _Out_writes_bytes_opt_( *pDataSize ) */ out IntPtr pData);
+        new HRESULT GetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _Inout_ */ ref uint pDataSize, /* _Out_writes_bytes_opt_( *pDataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* _In_reads_bytes_opt_( DataSize ) */ out IntPtr pData);
+        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
         new HRESULT SetPrivateDataInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
@@ -28,19 +28,19 @@ namespace DirectN
         
         // ID3D12CommandQueue
         [PreserveSig]
-        void UpdateTileMappings(/* _In_ */ ID3D12Resource pResource, uint NumResourceRegions, /* _In_reads_opt_(NumResourceRegions) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_TILED_RESOURCE_COORDINATE[] pResourceRegionStartCoordinates, /* _In_reads_opt_(NumResourceRegions) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_TILE_REGION_SIZE[] pResourceRegionSizes, /* _In_opt_ */ ID3D12Heap pHeap, uint NumRanges, /* _In_reads_opt_(NumRanges) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D12_TILE_RANGE_FLAGS[] pRangeFlags, /* _In_reads_opt_(NumRanges) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pHeapRangeStartOffsets, /* _In_reads_opt_(NumRanges) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags);
+        void UpdateTileMappings(/* _In_ */ ID3D12Resource pResource, uint NumResourceRegions, /* _In_reads_opt_(NumResourceRegions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_TILED_RESOURCE_COORDINATE[] pResourceRegionStartCoordinates, /* _In_reads_opt_(NumResourceRegions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_TILE_REGION_SIZE[] pResourceRegionSizes, /* _In_opt_ */ ID3D12Heap pHeap, uint NumRanges, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D12_TILE_RANGE_FLAGS[] pRangeFlags, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pHeapRangeStartOffsets, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags);
         
         [PreserveSig]
         void CopyTileMappings(/* _In_ */ ID3D12Resource pDstResource, /* _In_ */ ref D3D12_TILED_RESOURCE_COORDINATE pDstRegionStartCoordinate, /* _In_ */ ID3D12Resource pSrcResource, /* _In_ */ ref D3D12_TILED_RESOURCE_COORDINATE pSrcRegionStartCoordinate, /* _In_ */ ref D3D12_TILE_REGION_SIZE pRegionSize, D3D12_TILE_MAPPING_FLAGS Flags);
         
         [PreserveSig]
-        void ExecuteCommandLists(/* _In_ */ uint NumCommandLists, /* _In_reads_(NumCommandLists) */ out ID3D12CommandList[] ppCommandLists);
+        void ExecuteCommandLists(/* _In_ */ uint NumCommandLists, /* _In_reads_(NumCommandLists) */ out IntPtr ppCommandLists);
         
         [PreserveSig]
-        void SetMarker(uint Metadata, /* _In_reads_bytes_opt_(Size) */ out IntPtr pData, uint Size);
+        void SetMarker(uint Metadata, /* _In_reads_bytes_opt_(Size) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Size);
         
         [PreserveSig]
-        void BeginEvent(uint Metadata, /* _In_reads_bytes_opt_(Size) */ out IntPtr pData, uint Size);
+        void BeginEvent(uint Metadata, /* _In_reads_bytes_opt_(Size) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Size);
         
         [PreserveSig]
         void EndEvent();

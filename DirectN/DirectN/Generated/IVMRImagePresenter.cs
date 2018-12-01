@@ -8,12 +8,12 @@ namespace DirectN
     public partial interface IVMRImagePresenter
     {
         [PreserveSig]
-        HRESULT StartPresenting(/* [in] */ ulong dwUserID);
+        HRESULT StartPresenting(/* [in] */ IntPtr dwUserID);
         
         [PreserveSig]
-        HRESULT StopPresenting(/* [in] */ ulong dwUserID);
+        HRESULT StopPresenting(/* [in] */ IntPtr dwUserID);
         
         [PreserveSig]
-        HRESULT PresentImage(/* [in] */ ulong dwUserID, /* [in] */ ref tagVMRPRESENTATIONINFO lpPresInfo);
+        HRESULT PresentImage(/* [in] */ IntPtr dwUserID, /* [in] */ ref tagVMRPRESENTATIONINFO lpPresInfo);
     }
 }

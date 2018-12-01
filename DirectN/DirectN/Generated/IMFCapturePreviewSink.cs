@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfcaptureengine.h(771,5)
 using System;
 using System.Runtime.InteropServices;
+using COLORREF = System.UInt32;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -31,7 +33,7 @@ namespace DirectN
         HRESULT SetRenderSurface(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pSurface);
         
         [PreserveSig]
-        HRESULT UpdateVideo(/* [annotation][in] _In_opt_ */ ref MFVideoNormalizedRect pSrc, /* [annotation][in] _In_opt_ */ ref tagRECT pDst, /* [annotation][in] _In_opt_ */ ref uint pBorderClr);
+        HRESULT UpdateVideo(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(RECT) */ IntPtr pDst, /* optional(COLORREF) */ IntPtr pBorderClr);
         
         [PreserveSig]
         HRESULT SetSampleCallback(/* [annotation][in] _In_ */ uint dwStreamSinkIndex, /* [annotation][in] _In_ */ IMFCaptureEngineOnSampleCallback pCallback);

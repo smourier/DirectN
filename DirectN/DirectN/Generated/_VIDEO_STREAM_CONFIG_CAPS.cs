@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(8727,9)
 using System;
 using System.Runtime.InteropServices;
+using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -9,15 +10,15 @@ namespace DirectN
     {
         public Guid guid;
         public uint VideoStandard;
-        public tagSIZE InputSize;
-        public tagSIZE MinCroppingSize;
-        public tagSIZE MaxCroppingSize;
+        public SIZE InputSize;
+        public SIZE MinCroppingSize;
+        public SIZE MaxCroppingSize;
         public int CropGranularityX;
         public int CropGranularityY;
         public int CropAlignX;
         public int CropAlignY;
-        public tagSIZE MinOutputSize;
-        public tagSIZE MaxOutputSize;
+        public SIZE MinOutputSize;
+        public SIZE MaxOutputSize;
         public int OutputGranularityX;
         public int OutputGranularityY;
         public int StretchTapsX;

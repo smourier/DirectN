@@ -10,6 +10,6 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
         public ushort Index1D => InteropRuntime.GetUInt16Bits(__bits, 0, 16);
-        public ushort[] Index2D => InteropRuntime.GetBits<ushort[]>(__bits, 0, 0);
+        public ushort Index2D => InteropRuntime.GetUInt16Bits(__bits, 0, 32);
     }
 }

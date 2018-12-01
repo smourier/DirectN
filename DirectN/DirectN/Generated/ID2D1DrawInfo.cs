@@ -25,18 +25,18 @@ namespace DirectN
         
         // ID2D1DrawInfo
         [PreserveSig]
-        HRESULT SetPixelShaderConstantBuffer(/* _In_reads_(bufferCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, uint bufferCount);
+        HRESULT SetPixelShaderConstantBuffer(/* _In_reads_(bufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, uint bufferCount);
         
         [PreserveSig]
         HRESULT SetResourceTexture(uint textureIndex, /* _In_ */ ID2D1ResourceTexture resourceTexture);
         
         [PreserveSig]
-        HRESULT SetVertexShaderConstantBuffer(/* _In_reads_(bufferCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, uint bufferCount);
+        HRESULT SetVertexShaderConstantBuffer(/* _In_reads_(bufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, uint bufferCount);
         
         [PreserveSig]
         HRESULT SetPixelShader(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid shaderId, D2D1_PIXEL_OPTIONS pixelOptions);
         
         [PreserveSig]
-        HRESULT SetVertexProcessing(/* _In_opt_ */ ID2D1VertexBuffer vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, /* _In_opt_ */ ref D2D1_BLEND_DESCRIPTION blendDescription, /* _In_opt_ */ ref D2D1_VERTEX_RANGE vertexRange, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid vertexShader);
+        HRESULT SetVertexProcessing(/* _In_opt_ */ ID2D1VertexBuffer vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, /* optional(D2D1_BLEND_DESCRIPTION) */ IntPtr blendDescription, /* optional(D2D1_VERTEX_RANGE) */ IntPtr vertexRange, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid vertexShader);
     }
 }

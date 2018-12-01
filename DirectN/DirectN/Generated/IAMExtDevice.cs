@@ -23,7 +23,7 @@ namespace DirectN
         HRESULT get_DevicePower(/* [annotation][out] _Out_ */ out long pPowerMode);
         
         [PreserveSig]
-        HRESULT Calibrate(/* [in] */ ulong hEvent, /* [in] */ int Mode, /* [annotation][out] _Out_ */ out long pStatus);
+        HRESULT Calibrate(/* [in] */ IntPtr hEvent, /* [in] */ int Mode, /* [annotation][out] _Out_ */ out long pStatus);
         
         [PreserveSig]
         HRESULT put_DevicePort(/* [in] */ int DevicePort);

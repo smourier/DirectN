@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IAMCertifiedOutputProtection
     {
         [PreserveSig]
-        HRESULT KeyExchange(/* [annotation][out] _Out_ */ out Guid pRandom, /* [annotation][out] _Outptr_result_bytebuffer_(*pdwLengthCertGH) */ out byte[] VarLenCertGH, /* [annotation][out] _Out_ */ out uint pdwLengthCertGH);
+        HRESULT KeyExchange(/* [annotation][out] _Out_ */ out Guid pRandom, /* [annotation][out] _Outptr_result_bytebuffer_(*pdwLengthCertGH) */ out IntPtr VarLenCertGH, /* [annotation][out] _Out_ */ out uint pdwLengthCertGH);
         
         [PreserveSig]
         HRESULT SessionSequenceStart(/* [in] */ ref _AMCOPPSignature pSig);

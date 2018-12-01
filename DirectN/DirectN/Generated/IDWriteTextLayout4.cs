@@ -18,17 +18,17 @@ namespace DirectN
         new HRESULT GetLineSpacing(/* _Out_ */ out DWRITE_LINE_SPACING lineSpacingOptions);
         
         [PreserveSig]
-        new HRESULT GetLineMetrics(/* _Out_writes_to_opt_(maxLineCount, *actualLineCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS1[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
+        new HRESULT GetLineMetrics(/* _Out_writes_to_opt_(maxLineCount, *actualLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS1[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
         
         // IDWriteTextLayout4
         [PreserveSig]
-        HRESULT SetFontAxisValues(/* _In_reads_(fontAxisValueCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, DWRITE_TEXT_RANGE textRange);
+        HRESULT SetFontAxisValues(/* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         uint GetFontAxisValueCount(uint currentPosition);
         
         [PreserveSig]
-        HRESULT GetFontAxisValues(uint currentPosition, /* _Out_writes_(fontAxisValueCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        HRESULT GetFontAxisValues(uint currentPosition, /* _Out_writes_(fontAxisValueCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         DWRITE_AUTOMATIC_FONT_AXES GetAutomaticFontAxes();

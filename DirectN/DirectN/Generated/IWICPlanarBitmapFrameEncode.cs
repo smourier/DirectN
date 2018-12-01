@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IWICPlanarBitmapFrameEncode
     {
         [PreserveSig]
-        HRESULT WritePixels(uint lineCount, /* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] WICBitmapPlane[] pPlanes, uint cPlanes);
+        HRESULT WritePixels(uint lineCount, /* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] WICBitmapPlane[] pPlanes, uint cPlanes);
         
         [PreserveSig]
-        HRESULT WriteSource(/* [size_is][in] __RPC__in_ecount_full(cPlanes) */ out IWICBitmapSource[] ppPlanes, uint cPlanes, /* [unique][in] __RPC__in_opt */ ref WICRect prcSource);
+        HRESULT WriteSource(/* [size_is][in] __RPC__in_ecount_full(cPlanes) */ out IntPtr ppPlanes, uint cPlanes, /* optional(WICRect) */ IntPtr prcSource);
     }
 }

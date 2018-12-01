@@ -20,9 +20,9 @@ namespace DirectN
         uint GetPaletteEntryCount();
         
         [PreserveSig]
-        HRESULT GetPaletteEntries(uint colorPaletteIndex, uint firstEntryIndex, uint entryCount, /* _Out_writes_(entryCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _D3DCOLORVALUE[] paletteEntries);
+        HRESULT GetPaletteEntries(uint colorPaletteIndex, uint firstEntryIndex, uint entryCount, /* _Out_writes_(entryCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _D3DCOLORVALUE[] paletteEntries);
         
         [PreserveSig]
-        HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* _In_opt_ */ ref DWRITE_MATRIX transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* _In_opt_ */ ref IDWriteRenderingParams renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode, /* _Out_ */ out DWRITE_GRID_FIT_MODE gridFitMode);
+        HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* optional(IDWriteRenderingParams) */ IntPtr renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE renderingMode, /* _Out_ */ out DWRITE_GRID_FIT_MODE gridFitMode);
     }
 }

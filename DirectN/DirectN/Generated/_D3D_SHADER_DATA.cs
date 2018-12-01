@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct _D3D_SHADER_DATA
     {
         public IntPtr pBytecode;
-        public ulong BytecodeLength;
+        public IntPtr BytecodeLength;
     }
 }

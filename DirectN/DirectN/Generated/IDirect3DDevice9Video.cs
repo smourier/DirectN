@@ -11,9 +11,9 @@ namespace DirectN
         HRESULT GetContentProtectionCaps([MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, [MarshalAs(UnmanagedType.LPStruct)] Guid pDecodeProfile, ref _D3DCONTENTPROTECTIONCAPS pCaps);
         
         [PreserveSig]
-        HRESULT CreateAuthenticatedChannel(_D3DAUTHENTICATEDCHANNELTYPE ChannelType, IDirect3DAuthenticatedChannel9 ppAuthenticatedChannel, [MarshalAs(UnmanagedType.IUnknown)] object pChannelHandle);
+        HRESULT CreateAuthenticatedChannel(_D3DAUTHENTICATEDCHANNELTYPE ChannelType, IDirect3DAuthenticatedChannel9 ppAuthenticatedChannel, ref IntPtr pChannelHandle);
         
         [PreserveSig]
-        HRESULT CreateCryptoSession([MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, [MarshalAs(UnmanagedType.LPStruct)] Guid pDecodeProfile, IDirect3DCryptoSession9 ppCryptoSession, [MarshalAs(UnmanagedType.IUnknown)] object pCryptoHandle);
+        HRESULT CreateCryptoSession([MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, [MarshalAs(UnmanagedType.LPStruct)] Guid pDecodeProfile, IDirect3DCryptoSession9 ppCryptoSession, ref IntPtr pCryptoHandle);
     }
 }

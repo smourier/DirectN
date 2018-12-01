@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(7971,5)
 using System;
 using System.Runtime.InteropServices;
+using MFTIME = System.Int64;
 
 namespace DirectN
 {
@@ -11,12 +12,12 @@ namespace DirectN
         HRESULT BeginConvertTimecodeToHNS(/* [in] */ PropVariant pPropVarTimecode, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
-        HRESULT EndConvertTimecodeToHNS(/* [in] */ IMFAsyncResult pResult, /* [out] */ out long phnsTime);
+        HRESULT EndConvertTimecodeToHNS(/* [in] */ IMFAsyncResult pResult, /* [out] */ out MFTIME phnsTime);
         
         [PreserveSig]
         HRESULT BeginConvertHNSToTimecode(/* [in] */ long hnsTime, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
-        HRESULT EndConvertHNSToTimecode(/* [in] */ IMFAsyncResult pResult, /* [out] */ out PropVariant pPropVarTimecode);
+        HRESULT EndConvertHNSToTimecode(/* [in] */ IMFAsyncResult pResult, /* [out] */ PropVariant pPropVarTimecode);
     }
 }

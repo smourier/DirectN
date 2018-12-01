@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(15044,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -8,6 +9,6 @@ namespace DirectN
     public partial interface IAMLatency
     {
         [PreserveSig]
-        HRESULT GetLatency(/* [annotation][in] _Out_ */ ref long prtLatency);
+        HRESULT GetLatency(/* [annotation][in] _Out_ */ ref REFERENCE_TIME prtLatency);
     }
 }

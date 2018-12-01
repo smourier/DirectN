@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3D12_SUBRESOURCE_DATA
     {
         public IntPtr pData;
-        public long RowPitch;
-        public long SlicePitch;
+        public IntPtr RowPitch;
+        public IntPtr SlicePitch;
     }
 }

@@ -13,7 +13,7 @@ namespace DirectN
         
         // IMFByteStreamCacheControl2
         [PreserveSig]
-        HRESULT GetByteRanges(/* [out] __RPC__out */ out uint pcRanges, /* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(*pcRanges) */ out __MIDL___MIDL_itf_mfidl_0000_0058_0001[] ppRanges);
+        HRESULT GetByteRanges(/* [out] __RPC__out */ out uint pcRanges, /* optional(__MIDL___MIDL_itf_mfidl_0000_0058_0001) */ out IntPtr ppRanges);
         
         [PreserveSig]
         HRESULT SetCacheLimit(/* [in] */ ulong qwBytes);

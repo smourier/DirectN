@@ -7,6 +7,6 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_CPU_DESCRIPTOR_HANDLE
     {
-        public ulong ptr;
+        public IntPtr ptr;
     }
 }

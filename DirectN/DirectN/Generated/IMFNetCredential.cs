@@ -8,16 +8,16 @@ namespace DirectN
     public partial interface IMFNetCredential
     {
         [PreserveSig]
-        HRESULT SetUser(/* [annotation][size_is][in] _In_reads_bytes_(cbData) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbData, /* [in] */ uint cbData, /* [in] */ bool fDataIsEncrypted);
+        HRESULT SetUser(/* [annotation][size_is][in] _In_reads_bytes_(cbData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbData, /* [in] */ uint cbData, /* [in] */ bool fDataIsEncrypted);
         
         [PreserveSig]
-        HRESULT SetPassword(/* [annotation][size_is][in] _In_reads_bytes_(cbData) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbData, /* [in] */ uint cbData, /* [in] */ bool fDataIsEncrypted);
+        HRESULT SetPassword(/* [annotation][size_is][in] _In_reads_bytes_(cbData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbData, /* [in] */ uint cbData, /* [in] */ bool fDataIsEncrypted);
         
         [PreserveSig]
-        HRESULT GetUser(/* [annotation][size_is][out] _Out_writes_to_opt_(*pcbData,*pcbData) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbData, /* [annotation][out][in] _Inout_ */ ref uint pcbData, /* [in] */ bool fEncryptData);
+        HRESULT GetUser(/* [annotation][size_is][out] _Out_writes_to_opt_(*pcbData,*pcbData) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbData, /* [annotation][out][in] _Inout_ */ ref uint pcbData, /* [in] */ bool fEncryptData);
         
         [PreserveSig]
-        HRESULT GetPassword(/* [annotation][size_is][out] _Out_writes_to_opt_(*pcbData,*pcbData) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbData, /* [annotation][out][in] _Inout_ */ ref uint pcbData, /* [in] */ bool fEncryptData);
+        HRESULT GetPassword(/* [annotation][size_is][out] _Out_writes_to_opt_(*pcbData,*pcbData) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbData, /* [annotation][out][in] _Inout_ */ ref uint pcbData, /* [in] */ bool fEncryptData);
         
         [PreserveSig]
         HRESULT LoggedOnUser(/* [annotation][out] _Out_ */ out bool pfLoggedOnUser);

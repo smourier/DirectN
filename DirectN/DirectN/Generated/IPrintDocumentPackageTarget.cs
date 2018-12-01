@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IPrintDocumentPackageTarget
     {
         [PreserveSig]
-        HRESULT GetPackageTargetTypes(/* [out] __RPC__out */ out uint targetCount, /* [size_is][size_is][out] __RPC__deref_out_ecount_full_opt(*targetCount) */ out Guid targetTypes);
+        HRESULT GetPackageTargetTypes(/* [out] __RPC__out */ out uint targetCount, /* optional(GUID) */ out IntPtr targetTypes);
         
         [PreserveSig]
         HRESULT GetPackageTarget(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidTargetType, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvTarget);

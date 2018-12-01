@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfplay.h(156,5)
 using System;
 using System.Runtime.InteropServices;
+using COLORREF = System.UInt32;
+using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -23,10 +25,10 @@ namespace DirectN
         HRESULT SetPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][in] _In_ */ PropVariant pvPositionValue);
         
         [PreserveSig]
-        HRESULT GetPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ out PropVariant pvPositionValue);
+        HRESULT GetPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ PropVariant pvPositionValue);
         
         [PreserveSig]
-        HRESULT GetDuration(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ out PropVariant pvDurationValue);
+        HRESULT GetDuration(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ PropVariant pvDurationValue);
         
         [PreserveSig]
         HRESULT SetRate(/* [annotation][in] _In_ */ float flRate);
@@ -41,10 +43,10 @@ namespace DirectN
         HRESULT GetState(/* [annotation][out] _Out_ */ out MFP_MEDIAPLAYER_STATE peState);
         
         [PreserveSig]
-        HRESULT CreateMediaItemFromURL(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [annotation][in] _In_ */ bool fSync, /* [annotation][in] _In_ */ ulong dwUserData, /* [annotation][out] _Out_opt_ */ out IMFPMediaItem ppMediaItem);
+        HRESULT CreateMediaItemFromURL(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [annotation][in] _In_ */ bool fSync, /* [annotation][in] _In_ */ IntPtr dwUserData, /* [annotation][out] _Out_opt_ */ out IMFPMediaItem ppMediaItem);
         
         [PreserveSig]
-        HRESULT CreateMediaItemFromObject(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pIUnknownObj, /* [annotation][in] _In_ */ bool fSync, /* [annotation][in] _In_ */ ulong dwUserData, /* [annotation][out] _Out_opt_ */ out IMFPMediaItem ppMediaItem);
+        HRESULT CreateMediaItemFromObject(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pIUnknownObj, /* [annotation][in] _In_ */ bool fSync, /* [annotation][in] _In_ */ IntPtr dwUserData, /* [annotation][out] _Out_opt_ */ out IMFPMediaItem ppMediaItem);
         
         [PreserveSig]
         HRESULT SetMediaItem(/* [annotation][in] _In_ */ IMFPMediaItem pIMFPMediaItem);
@@ -74,10 +76,10 @@ namespace DirectN
         HRESULT SetMute(/* [annotation][in] _In_ */ bool fMute);
         
         [PreserveSig]
-        HRESULT GetNativeVideoSize(/* [annotation][out] _Out_opt_ */ out tagSIZE pszVideo, /* [annotation][out] _Out_opt_ */ out tagSIZE pszARVideo);
+        HRESULT GetNativeVideoSize(/* [annotation][out] _Out_opt_ */ out SIZE pszVideo, /* [annotation][out] _Out_opt_ */ out SIZE pszARVideo);
         
         [PreserveSig]
-        HRESULT GetIdealVideoSize(/* [annotation][out] _Out_opt_ */ out tagSIZE pszMin, /* [annotation][out] _Out_opt_ */ out tagSIZE pszMax);
+        HRESULT GetIdealVideoSize(/* [annotation][out] _Out_opt_ */ out SIZE pszMin, /* [annotation][out] _Out_opt_ */ out SIZE pszMax);
         
         [PreserveSig]
         HRESULT SetVideoSourceRect(/* [annotation][in] _In_ */ ref MFVideoNormalizedRect pnrcSource);
@@ -101,7 +103,7 @@ namespace DirectN
         HRESULT SetBorderColor(/* [annotation][in] _In_ */ uint Clr);
         
         [PreserveSig]
-        HRESULT GetBorderColor(/* [annotation][out] _Out_ */ out uint pClr);
+        HRESULT GetBorderColor(/* [annotation][out] _Out_ */ out COLORREF pClr);
         
         [PreserveSig]
         HRESULT InsertEffect(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pEffect, /* [annotation][in] _In_ */ bool fOptional);

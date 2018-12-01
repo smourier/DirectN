@@ -14,10 +14,10 @@ namespace DirectN
         HRESULT GetOutputProtectionVersion(/* [annotation][out] _Out_ */ out uint pdwVersion);
         
         [PreserveSig]
-        HRESULT GetProtectionCertificate(/* [in] */ uint dwVersion, /* [annotation][out] _Outptr_result_bytebuffer_(*pcbCert) */ out byte[] ppCert, /* [annotation][out] _Out_ */ out uint pcbCert);
+        HRESULT GetProtectionCertificate(/* [in] */ uint dwVersion, /* [annotation][out] _Outptr_result_bytebuffer_(*pcbCert) */ out IntPtr ppCert, /* [annotation][out] _Out_ */ out uint pcbCert);
         
         [PreserveSig]
-        HRESULT InitOutputProtection(/* [in] */ uint dwVersion, /* [in] */ uint dwOutputId, /* [in] */ ref byte pbCert, /* [in] */ uint cbCert, /* [out] */ out byte ppbSeed, /* [out] */ out uint pcbSeed);
+        HRESULT InitOutputProtection(/* [in] */ uint dwVersion, /* [in] */ uint dwOutputId, /* [in] */ ref byte pbCert, /* [in] */ uint cbCert, /* [out] */ out IntPtr ppbSeed, /* [out] */ out uint pcbSeed);
         
         [PreserveSig]
         HRESULT InitInputProtection(/* [in] */ uint dwVersion, /* [in] */ uint dwInputId, /* [in] */ ref byte pbSeed, /* [in] */ uint cbSeed);

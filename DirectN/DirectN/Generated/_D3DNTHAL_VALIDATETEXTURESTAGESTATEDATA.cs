@@ -7,9 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DNTHAL_VALIDATETEXTURESTAGESTATEDATA
     {
-        public ulong dwhContext;
+        public IntPtr dwhContext;
         public uint dwFlags;
-        public ulong dwReserved;
+        public IntPtr dwReserved;
         public uint dwNumPasses;
         public HRESULT ddrval;
     }

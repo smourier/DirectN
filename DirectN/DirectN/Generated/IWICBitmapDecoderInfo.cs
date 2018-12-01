@@ -72,10 +72,10 @@ namespace DirectN
         
         // IWICBitmapDecoderInfo
         [PreserveSig]
-        HRESULT GetPatterns(/* [in] */ uint cbSizePatterns, /* [annotation][unique][size_is][out] _Out_writes_bytes_to_opt_(cbSizePatterns, *pcbPatternsActual) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICBitmapPattern[] pPatterns, /* [annotation][unique][out] _Out_opt_ */ out uint pcPatterns, /* [annotation][out] _Out_ */ out uint pcbPatternsActual);
+        HRESULT GetPatterns(/* [in] */ uint cbSizePatterns, /* [annotation][unique][size_is][out] _Out_writes_bytes_to_opt_(cbSizePatterns, *pcbPatternsActual) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICBitmapPattern[] pPatterns, /* [annotation][unique][out] _Out_opt_ */ out uint pcPatterns, /* [annotation][out] _Out_ */ out uint pcbPatternsActual);
         
         [PreserveSig]
-        HRESULT MatchesPattern(/* [in] __RPC__in_opt */ ref IStream pIStream, /* [out] __RPC__out */ out bool pfMatches);
+        HRESULT MatchesPattern(/* [in] __RPC__in_opt */ IStream pIStream, /* [out] __RPC__out */ out bool pfMatches);
         
         [PreserveSig]
         HRESULT CreateInstance(/* [out] __RPC__deref_out_opt */ out IWICBitmapDecoder ppIBitmapDecoder);

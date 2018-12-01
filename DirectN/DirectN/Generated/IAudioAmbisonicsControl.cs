@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IAudioAmbisonicsControl
     {
         [PreserveSig]
-        HRESULT SetData(/* [size_is][in] __RPC__in_ecount_full(cbAmbisonicsParams) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] AMBISONICS_PARAMS[] pAmbisonicsParams, /* [in] */ uint cbAmbisonicsParams);
+        HRESULT SetData(/* [size_is][in] __RPC__in_ecount_full(cbAmbisonicsParams) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] AMBISONICS_PARAMS[] pAmbisonicsParams, /* [in] */ uint cbAmbisonicsParams);
         
         [PreserveSig]
         HRESULT SetHeadTracking(/* [in] */ bool bEnableHeadTracking);

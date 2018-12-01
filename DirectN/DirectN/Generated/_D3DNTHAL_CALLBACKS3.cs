@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3dnthal.h(944,9)
 using System;
 using System.Runtime.InteropServices;
+using LPD3DNTHAL_CLEAR2CB = System.IntPtr;
+using LPD3DNTHAL_DRAWPRIMITIVES2CB = System.IntPtr;
+using LPD3DNTHAL_VALIDATETEXTURESTAGESTATECB = System.IntPtr;
 
 namespace DirectN
 {

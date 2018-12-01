@@ -12,6 +12,6 @@ namespace DirectN
         public uint OutputDword => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
         public ulong OutputQword => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
         public string OutputString => InteropRuntime.GetStringBits(__bits, 0, 8);
-        public byte[] OutputBinary => InteropRuntime.GetBits<byte[]>(__bits, 0, 0);
+        public byte OutputBinary => InteropRuntime.GetByteBits(__bits, 0, 8);
     }
 }

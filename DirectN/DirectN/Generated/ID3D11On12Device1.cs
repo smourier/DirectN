@@ -12,10 +12,10 @@ namespace DirectN
         new HRESULT CreateWrappedResource(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pResource12, /* _In_ */ ref D3D11_RESOURCE_FLAGS pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppResource11);
         
         [PreserveSig]
-        new void ReleaseWrappedResources(/* _In_reads_( NumResources ) */ out ID3D11Resource[] ppResources, uint NumResources);
+        new void ReleaseWrappedResources(/* _In_reads_( NumResources ) */ out IntPtr ppResources, uint NumResources);
         
         [PreserveSig]
-        new void AcquireWrappedResources(/* _In_reads_( NumResources ) */ out ID3D11Resource[] ppResources, uint NumResources);
+        new void AcquireWrappedResources(/* _In_reads_( NumResources ) */ out IntPtr ppResources, uint NumResources);
         
         // ID3D11On12Device1
         [PreserveSig]

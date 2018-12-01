@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IMFSecureChannel
     {
         [PreserveSig]
-        HRESULT GetCertificate(/* [annotation][out] _Outptr_result_bytebuffer_(*pcbCert) */ out byte[] ppCert, /* [annotation][out] _Out_ */ out uint pcbCert);
+        HRESULT GetCertificate(/* [annotation][out] _Outptr_result_bytebuffer_(*pcbCert) */ out IntPtr ppCert, /* [annotation][out] _Out_ */ out uint pcbCert);
         
         [PreserveSig]
-        HRESULT SetupSession(/* [annotation][in] _In_reads_bytes_(cbSessionKey) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbEncryptedSessionKey, /* [in] */ uint cbSessionKey);
+        HRESULT SetupSession(/* [annotation][in] _In_reads_bytes_(cbSessionKey) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbEncryptedSessionKey, /* [in] */ uint cbSessionKey);
     }
 }

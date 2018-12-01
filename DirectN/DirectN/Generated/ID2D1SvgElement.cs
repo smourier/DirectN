@@ -71,7 +71,7 @@ namespace DirectN
         HRESULT RemoveAttribute(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name);
         
         [PreserveSig]
-        HRESULT SetTextValue(/* _In_reads_(nameCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] name, uint nameCount);
+        HRESULT SetTextValue(/* _In_reads_(nameCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] name, uint nameCount);
         
         [PreserveSig]
         HRESULT GetTextValue(/* _Out_writes_(nameCount) */ [MarshalAs(UnmanagedType.LPWStr)] string name, uint nameCount);
@@ -89,10 +89,10 @@ namespace DirectN
         HRESULT GetAttributeValueLength(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, /* _Out_ */ out uint valueLength);
         
         [PreserveSig]
-        HRESULT SetAttributeValue(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, /* _In_reads_bytes_(valueSizeInBytes) */ out IntPtr value, uint valueSizeInBytes);
+        HRESULT SetAttributeValue(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, /* _In_reads_bytes_(valueSizeInBytes) */ [MarshalAs(UnmanagedType.IUnknown)] object value, uint valueSizeInBytes);
         
         [PreserveSig]
-        HRESULT GetAttributeValue(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, /* _Out_writes_bytes_(valueSizeInBytes) */ out IntPtr value, uint valueSizeInBytes);
+        HRESULT GetAttributeValue(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, /* _Out_writes_bytes_(valueSizeInBytes) */ [MarshalAs(UnmanagedType.IUnknown)] out object value, uint valueSizeInBytes);
         
         [PreserveSig]
         HRESULT SetAttributeValue(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, /* _In_ */ ID2D1SvgAttribute value);

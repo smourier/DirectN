@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IAudioSourceProvider
     {
         [PreserveSig]
-        HRESULT ProvideInput(/* [annotation][in] _In_ */ uint dwSampleCount, /* [annotation][in] _Inout_ */ ref uint pdwChannelCount, /* [annotation][out] _Out_writes_opt_(dwSampleCount * (*pdwChannelCount)) */ [In, Out, MarshalAs(UnmanagedType.LPArray)] float[] pInterleavedAudioData);
+        HRESULT ProvideInput(/* [annotation][in] _In_ */ uint dwSampleCount, /* [annotation][in] _Inout_ */ ref uint pdwChannelCount, /* [annotation][out] _Out_writes_opt_(dwSampleCount * (*pdwChannelCount)) */ [Out, MarshalAs(UnmanagedType.LPArray)] float[] pInterleavedAudioData);
     }
 }

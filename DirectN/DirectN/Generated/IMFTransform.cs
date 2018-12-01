@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT GetStreamCount(/* [out] __RPC__out */ out uint pcInputStreams, /* [out] __RPC__out */ out uint pcOutputStreams);
         
         [PreserveSig]
-        HRESULT GetStreamIDs(uint dwInputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwInputIDArraySize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pdwInputIDs, uint dwOutputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwOutputIDArraySize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pdwOutputIDs);
+        HRESULT GetStreamIDs(uint dwInputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwInputIDArraySize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pdwInputIDs, uint dwOutputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwOutputIDArraySize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pdwOutputIDs);
         
         [PreserveSig]
         HRESULT GetInputStreamInfo(uint dwInputStreamID, /* [out] __RPC__out */ out _MFT_INPUT_STREAM_INFO pStreamInfo);
@@ -68,7 +68,7 @@ namespace DirectN
         HRESULT ProcessEvent(uint dwInputStreamID, /* [in] __RPC__in_opt */ IMFMediaEvent pEvent);
         
         [PreserveSig]
-        HRESULT ProcessMessage(_MFT_MESSAGE_TYPE eMessage, ulong ulParam);
+        HRESULT ProcessMessage(_MFT_MESSAGE_TYPE eMessage, IntPtr ulParam);
         
         [PreserveSig]
         HRESULT ProcessInput(uint dwInputStreamID, IMFSample pSample, uint dwFlags);

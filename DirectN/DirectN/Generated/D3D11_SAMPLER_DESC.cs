@@ -15,7 +15,7 @@ namespace DirectN
         public uint MaxAnisotropy;
         public D3D11_COMPARISON_FUNC ComparisonFunc;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public float[] BorderColor;
+        public float BorderColor;
         public float MinLOD;
         public float MaxLOD;
     }

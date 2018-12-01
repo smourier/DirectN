@@ -21,7 +21,7 @@
         public const int D3DPRESENT_VIDEO_RESTRICT_TO_MONITOR = 16;
         public const int D3D_SDK_VERSION = 32;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\d3d9caps.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\d3d9caps.h
         public const int D3DCAPS2_CANAUTOGENMIPMAP = 1073741824;
         public const int D3DCAPS2_CANCALIBRATEGAMMA = 1048576;
         public const int D3DCAPS2_CANMANAGERESOURCE = 268435456;
@@ -326,11 +326,6 @@
         public const int DXGK_MIN_PAGE_TABLE_LEVEL_COUNT = 2;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgi.h
-        public const int DXGI_CPU_ACCESS_DYNAMIC = 1;
-        public const int DXGI_CPU_ACCESS_FIELD = 15;
-        public const int DXGI_CPU_ACCESS_NONE = 0;
-        public const int DXGI_CPU_ACCESS_READ_WRITE = 2;
-        public const int DXGI_CPU_ACCESS_SCRATCH = 3;
         public const int DXGI_ENUM_MODES_INTERLACED = 1;
         public const int DXGI_ENUM_MODES_SCALING = 2;
         public const int DXGI_MAP_DISCARD = 4;
@@ -369,14 +364,19 @@
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgi1_3.h
         public const int DXGI_CREATE_FACTORY_DEBUG = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgicommon.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\dxgicommon.h
         public const int DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN = -2;
         public const int DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgiformat.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\dxgiformat.h
         public const int DXGI_FORMAT_DEFINED = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgitype.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\dxgitype.h
+        public const int DXGI_CPU_ACCESS_DYNAMIC = 1;
+        public const int DXGI_CPU_ACCESS_FIELD = 15;
+        public const int DXGI_CPU_ACCESS_NONE = 0;
+        public const int DXGI_CPU_ACCESS_READ_WRITE = 2;
+        public const int DXGI_CPU_ACCESS_SCRATCH = 3;
         public const int _FACDXGI = 2170;
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\mmreg.h
@@ -2218,7 +2218,7 @@
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\audiomediatype.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
@@ -3567,9 +3567,15 @@
         public const int D3DHAL_SETLIGHT_DATA = 2;
         public const int D3DHAL_SETLIGHT_DISABLE = 1;
         public const int D3DHAL_SETLIGHT_ENABLE = 0;
+        public const int D3DHAL_STATESETBEGIN = 0;
+        public const int D3DHAL_STATESETCAPTURE = 4;
+        public const int D3DHAL_STATESETDELETE = 2;
+        public const int D3DHAL_STATESETEND = 1;
+        public const int D3DHAL_STATESETEXECUTE = 3;
         public const int D3DHAL_TSS_MAXSTAGES = 8;
         public const int D3DHAL_TSS_RENDERSTATEBASE = 256;
         public const int D3DHAL_TSS_STATESPERSTAGE = 64;
+        public const int D3DINFINITEINSTRUCTIONS = -1;
         public const int D3DPMISCCAPS_FOGINFVF = 8192;
         public const int D3DPS_COLOROUT_MAX_V2_0 = 4;
         public const int D3DPS_COLOROUT_MAX_V2_1 = 4;
@@ -3622,11 +3628,14 @@
         public const int D3DPS_TEXTUREREG_MAX_V2_0 = 8;
         public const int D3DPS_TEXTUREREG_MAX_V2_1 = 8;
         public const int D3DPS_TEXTUREREG_MAX_V3_0 = 0;
+        public const int D3DRENDERSTATE_EVICTMANAGEDTEXTURES = 61;
+        public const int D3DRENDERSTATE_SCENECAPTURE = 62;
         public const int D3DRS_DELETERTPATCH = 169;
         public const int D3DTRANSFORMSTATE_WORLD1_DX7 = 4;
         public const int D3DTRANSFORMSTATE_WORLD2_DX7 = 5;
         public const int D3DTRANSFORMSTATE_WORLD3_DX7 = 6;
         public const int D3DTRANSFORMSTATE_WORLD_DX7 = 1;
+        public const int D3DTSS_TEXTUREMAP = 0;
         public const int D3DVS_ADDRREG_MAX_V1_1 = 1;
         public const int D3DVS_ADDRREG_MAX_V2_0 = 1;
         public const int D3DVS_ADDRREG_MAX_V2_1 = 1;
@@ -3674,12 +3683,6 @@
         public const int D3DVS_TEMPREG_MAX_V3_0 = 32;
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\d3dnthal.h
-        public const int D3DHAL_STATESETBEGIN = 0;
-        public const int D3DHAL_STATESETCAPTURE = 4;
-        public const int D3DHAL_STATESETDELETE = 2;
-        public const int D3DHAL_STATESETEND = 1;
-        public const int D3DHAL_STATESETEXECUTE = 3;
-        public const int D3DINFINITEINSTRUCTIONS = -1;
         public const int D3DNTHAL2_CB32_SETRENDERTARGET = 1;
         public const int D3DNTHAL3_CB32_CLEAR2 = 1;
         public const int D3DNTHAL3_CB32_DRAWPRIMITIVES2 = 8;
@@ -3701,9 +3704,6 @@
         public const int D3DNTHAL_TSS_MAXSTAGES = 8;
         public const int D3DNTHAL_TSS_RENDERSTATEBASE = 256;
         public const int D3DNTHAL_TSS_STATESPERSTAGE = 64;
-        public const int D3DRENDERSTATE_EVICTMANAGEDTEXTURES = 61;
-        public const int D3DRENDERSTATE_SCENECAPTURE = 62;
-        public const int D3DTSS_TEXTUREMAP = 0;
         public const int _NT_D3DRS_DELETERTPATCH = 169;
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\d3dtypes.h

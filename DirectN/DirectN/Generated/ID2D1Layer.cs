@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(2331,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_SIZE_F = DirectN.D2D_SIZE_F;
 
 namespace DirectN
 {
@@ -16,6 +17,6 @@ namespace DirectN
         
         // ID2D1Layer
         [PreserveSig]
-        D2D_SIZE_F GetSize();
+        D2D1_SIZE_F GetSize();
     }
 }

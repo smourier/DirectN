@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface ISpatialAudioObjectBase
     {
         [PreserveSig]
-        HRESULT GetBuffer(/* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*bufferLength) */ out byte[] buffer, /* [annotation][out] _Out_ */ out uint bufferLength);
+        HRESULT GetBuffer(/* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*bufferLength) */ out IntPtr buffer, /* [annotation][out] _Out_ */ out uint bufferLength);
         
         [PreserveSig]
         HRESULT SetEndOfStream(/* [annotation][in] _In_ */ uint frameCount);

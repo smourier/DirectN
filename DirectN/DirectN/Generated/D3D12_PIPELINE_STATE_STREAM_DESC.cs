@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_PIPELINE_STATE_STREAM_DESC
     {
-        public ulong SizeInBytes;
+        public IntPtr SizeInBytes;
         public IntPtr pPipelineStateSubobjectStream;
     }
 }

@@ -35,6 +35,6 @@ namespace DirectN
         HRESULT GetServiceForStream(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidService, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
         
         [PreserveSig]
-        HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidAttribute, /* [annotation][out] _Out_ */ out PropVariant pvarAttribute);
+        HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidAttribute, /* [annotation][out] _Out_ */ PropVariant pvarAttribute);
     }
 }

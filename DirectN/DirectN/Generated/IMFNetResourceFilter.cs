@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(11852,5)
 using System;
 using System.Runtime.InteropServices;
+using VARIANT_BOOL = System.Int16;
 
 namespace DirectN
 {
@@ -8,7 +9,7 @@ namespace DirectN
     public partial interface IMFNetResourceFilter
     {
         [PreserveSig]
-        HRESULT OnRedirect(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszUrl, /* [annotation][out] _Out_ */ out short pvbCancel);
+        HRESULT OnRedirect(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszUrl, /* [annotation][out] _Out_ */ out VARIANT_BOOL pvbCancel);
         
         [PreserveSig]
         HRESULT OnSendingRequest(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszUrl);

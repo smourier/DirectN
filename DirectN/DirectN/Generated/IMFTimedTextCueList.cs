@@ -23,7 +23,7 @@ namespace DirectN
         HRESULT AddTextCue(/* [annotation][in] _In_ */ double start, /* [annotation][in] _In_ */ double duration, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string text, /* [annotation][out] _COM_Outptr_opt_ */ out IMFTimedTextCue cue);
         
         [PreserveSig]
-        HRESULT AddDataCue(/* [annotation][in] _In_ */ double start, /* [annotation][in] _In_ */ double duration, /* [annotation][in] _In_reads_bytes_(dataSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, /* [annotation][in] _In_ */ uint dataSize, /* [annotation][out] _COM_Outptr_opt_ */ out IMFTimedTextCue cue);
+        HRESULT AddDataCue(/* [annotation][in] _In_ */ double start, /* [annotation][in] _In_ */ double duration, /* [annotation][in] _In_reads_bytes_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, /* [annotation][in] _In_ */ uint dataSize, /* [annotation][out] _COM_Outptr_opt_ */ out IMFTimedTextCue cue);
         
         [PreserveSig]
         HRESULT RemoveCue(/* [annotation][in] _In_ */ IMFTimedTextCue cue);

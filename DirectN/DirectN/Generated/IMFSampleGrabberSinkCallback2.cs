@@ -28,13 +28,13 @@ namespace DirectN
         new HRESULT OnSetPresentationClock(/* [in] */ IMFPresentationClock pPresentationClock);
         
         [PreserveSig]
-        new HRESULT OnProcessSample(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMajorMediaType, /* [in] */ uint dwSampleFlags, /* [in] */ long llSampleTime, /* [in] */ long llSampleDuration, /* [annotation][in] _In_reads_bytes_(dwSampleSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] pSampleBuffer, /* [in] */ uint dwSampleSize);
+        new HRESULT OnProcessSample(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMajorMediaType, /* [in] */ uint dwSampleFlags, /* [in] */ long llSampleTime, /* [in] */ long llSampleDuration, /* [annotation][in] _In_reads_bytes_(dwSampleSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] pSampleBuffer, /* [in] */ uint dwSampleSize);
         
         [PreserveSig]
         new HRESULT OnShutdown();
         
         // IMFSampleGrabberSinkCallback2
         [PreserveSig]
-        HRESULT OnProcessSampleEx(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMajorMediaType, /* [in] */ uint dwSampleFlags, /* [in] */ long llSampleTime, /* [in] */ long llSampleDuration, /* [annotation][in] _In_reads_bytes_(dwSampleSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] pSampleBuffer, /* [in] */ uint dwSampleSize, /* [annotation][in] _In_ */ IMFAttributes pAttributes);
+        HRESULT OnProcessSampleEx(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMajorMediaType, /* [in] */ uint dwSampleFlags, /* [in] */ long llSampleTime, /* [in] */ long llSampleDuration, /* [annotation][in] _In_reads_bytes_(dwSampleSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] pSampleBuffer, /* [in] */ uint dwSampleSize, /* [annotation][in] _In_ */ IMFAttributes pAttributes);
     }
 }

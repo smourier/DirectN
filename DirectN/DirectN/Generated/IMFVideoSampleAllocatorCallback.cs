@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT SetCallback(/* [unique][in] */ IMFVideoSampleAllocatorNotify pNotify);
         
         [PreserveSig]
-        HRESULT GetFreeSampleCount(/* [out] */ out long plSamples);
+        HRESULT GetFreeSampleCount(/* [out] */ out int plSamples);
     }
 }

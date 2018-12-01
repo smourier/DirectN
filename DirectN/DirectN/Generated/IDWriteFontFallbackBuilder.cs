@@ -11,7 +11,7 @@ namespace DirectN
     public partial interface IDWriteFontFallbackBuilder
     {
         [PreserveSig]
-        HRESULT AddMapping(/* _In_reads_(rangesCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_UNICODE_RANGE[] ranges, uint rangesCount, /* _In_reads_(targetFamilyNamesCount) */ out char[] targetFamilyNames, uint targetFamilyNamesCount, /* _In_opt_ */ ref IDWriteFontCollection fontCollection, /* _In_opt_z_ */ ref char localeName, /* _In_opt_z_ */ ref char baseFamilyName, float scale);
+        HRESULT AddMapping(/* _In_reads_(rangesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_UNICODE_RANGE[] ranges, uint rangesCount, /* _In_reads_(targetFamilyNamesCount) */ out IntPtr targetFamilyNames, uint targetFamilyNamesCount, /* optional(IDWriteFontCollection) */ IntPtr fontCollection, /* optional(WCHAR) */ IntPtr localeName, /* optional(WCHAR) */ IntPtr baseFamilyName, float scale);
         
         [PreserveSig]
         HRESULT AddMappings(IDWriteFontFallback fontFallback);

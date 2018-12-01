@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFMediaEngineNotify
     {
         [PreserveSig]
-        HRESULT EventNotify(/* [annotation][in] _In_ */ uint @event, /* [annotation][in] _In_ */ ulong param1, /* [annotation][in] _In_ */ uint param2);
+        HRESULT EventNotify(/* [annotation][in] _In_ */ uint @event, /* [annotation][in] _In_ */ IntPtr param1, /* [annotation][in] _In_ */ uint param2);
     }
 }

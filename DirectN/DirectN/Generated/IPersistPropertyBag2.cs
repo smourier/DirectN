@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT InitNew();
         
         [PreserveSig]
-        HRESULT Load(/* [in] __RPC__in_opt */ IPropertyBag2 pPropBag, /* [unique][in] __RPC__in_opt */ ref IErrorLog pErrLog);
+        HRESULT Load(/* [in] __RPC__in_opt */ IPropertyBag2 pPropBag, /* optional(IErrorLog) */ IntPtr pErrLog);
         
         [PreserveSig]
         HRESULT Save(/* [in] __RPC__in_opt */ IPropertyBag2 pPropBag, /* [in] */ bool fClearDirty, /* [in] */ bool fSaveAllProperties);

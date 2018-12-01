@@ -7,6 +7,6 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDLOCKOUTINFO
     {
-        public ulong dwSurfacePtr;
+        public IntPtr dwSurfacePtr;
     }
 }

@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(451,9)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
@@ -21,6 +22,6 @@ namespace DirectN
         /// <summary>
         /// The rectangle which would be available on the specified input connection during render operations.
         /// </summary>
-        public D2D_RECT_F inputRectangle;
+        public D2D1_RECT_F inputRectangle;
     }
 }

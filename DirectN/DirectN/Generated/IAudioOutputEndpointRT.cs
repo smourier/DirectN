@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IAudioOutputEndpointRT
     {
         [PreserveSig]
-        ulong GetOutputDataPointer(/* [in] */ uint u32FrameCount, /* [in] */ ref AE_CURRENT_POSITION pAeTimeStamp);
+        IntPtr GetOutputDataPointer(/* [in] */ uint u32FrameCount, /* [in] */ ref AE_CURRENT_POSITION pAeTimeStamp);
         
         [PreserveSig]
         void ReleaseOutputDataPointer(/* [in] */ ref APO_CONNECTION_PROPERTY pConnectionProperty);

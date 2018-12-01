@@ -10,7 +10,7 @@ namespace DirectN
         public IntPtr lpSurfaceData;
         public uint dwStartLine;
         public uint dwEndLine;
-        public ulong dwTransferID;
+        public IntPtr dwTransferID;
         public uint dwTransferFlags;
         public IntPtr lpDestMDL;
     }

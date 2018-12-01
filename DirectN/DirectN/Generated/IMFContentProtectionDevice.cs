@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFContentProtectionDevice
     {
         [PreserveSig]
-        HRESULT InvokeFunction(/* [annotation][in] _In_ */ uint FunctionId, /* [annotation][in] _In_ */ uint InputBufferByteCount, /* [annotation][size_is][in] _In_reads_bytes_(InputBufferByteCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] InputBuffer, /* [annotation][out][in] _Inout_ */ ref uint OutputBufferByteCount, /* [annotation][size_is][out] _Out_writes_bytes_(*OutputBufferByteCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] OutputBuffer);
+        HRESULT InvokeFunction(/* [annotation][in] _In_ */ uint FunctionId, /* [annotation][in] _In_ */ uint InputBufferByteCount, /* [annotation][size_is][in] _In_reads_bytes_(InputBufferByteCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] InputBuffer, /* [annotation][out][in] _Inout_ */ ref uint OutputBufferByteCount, /* [annotation][size_is][out] _Out_writes_bytes_(*OutputBufferByteCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] OutputBuffer);
         
         [PreserveSig]
         HRESULT GetPrivateDataByteCount(/* [annotation][out] _Out_ */ out uint PrivateInputByteCount, /* [annotation][out] _Out_ */ out uint PrivateOutputByteCount);

@@ -10,8 +10,7 @@ namespace DirectN
         public IntPtr pDXGIContext;
         public IntPtr BroadcastSrcAllocations;
         public IntPtr BroadcastDstAllocations;
-        [MarshalAs(UnmanagedType.IUnknown)] 
-        public object hHwQueues;
+        public IntPtr hHwQueues;
         public uint BroadcastHwQueueCount;
         public uint PrivateDriverDataSize;
         public IntPtr pPrivateDriverData;

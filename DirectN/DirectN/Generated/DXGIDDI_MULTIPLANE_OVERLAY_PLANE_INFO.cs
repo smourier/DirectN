@@ -8,8 +8,7 @@ namespace DirectN
     public partial struct DXGIDDI_MULTIPLANE_OVERLAY_PLANE_INFO
     {
         public uint ContextCount;
-        [MarshalAs(UnmanagedType.IUnknown)] 
-        public object pContextList;
+        public IntPtr pContextList;
         public IntPtr pAllocationList;
         public uint DriverPrivateDataSize;
         public IntPtr pDriverPrivateData;

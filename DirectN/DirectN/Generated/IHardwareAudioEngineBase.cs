@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioengineendpoint.h(1220,5)
 using System;
 using System.Runtime.InteropServices;
+using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -11,10 +12,10 @@ namespace DirectN
         HRESULT GetAvailableOffloadConnectorCount(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string _pwstrDeviceId, /* [annotation][in] _In_ */ uint _uConnectorId, /* [annotation][out] _Out_ */ out uint _pAvailableConnectorInstanceCount);
         
         [PreserveSig]
-        HRESULT GetEngineFormat(/* [annotation][in] _In_ */ IMMDevice pDevice, /* [annotation][in] _In_ */ bool _bRequestDeviceFormat, /* [out] */ out tWAVEFORMATEX _ppwfxFormat);
+        HRESULT GetEngineFormat(/* [annotation][in] _In_ */ IMMDevice pDevice, /* [annotation][in] _In_ */ bool _bRequestDeviceFormat, /* [out] */ out IntPtr _ppwfxFormat);
         
         [PreserveSig]
-        HRESULT SetEngineDeviceFormat(/* [annotation][in] _In_ */ IMMDevice pDevice, /* [in] */ ref tWAVEFORMATEX _pwfxFormat);
+        HRESULT SetEngineDeviceFormat(/* [annotation][in] _In_ */ IMMDevice pDevice, /* [in] */ ref WAVEFORMATEX _pwfxFormat);
         
         [PreserveSig]
         HRESULT SetGfxState(/* [annotation][in] _In_ */ IMMDevice pDevice, /* [annotation][in] _In_ */ bool _bEnable);

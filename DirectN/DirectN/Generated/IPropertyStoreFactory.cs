@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\propsys.h(3523,5)
 using System;
 using System.Runtime.InteropServices;
+using PROPERTYKEY = DirectN._tagpropertykey;
 
 namespace DirectN
 {
@@ -11,6 +12,6 @@ namespace DirectN
         HRESULT GetPropertyStore(/* [in] */ GETPROPERTYSTOREFLAGS flags, /* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.IUnknown)] object pUnkFactory, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
         
         [PreserveSig]
-        HRESULT GetPropertyStoreForKeys(/* [unique][in] __RPC__in_opt */ ref _tagpropertykey rgKeys, /* [in] */ uint cKeys, /* [in] */ GETPROPERTYSTOREFLAGS flags, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
+        HRESULT GetPropertyStoreForKeys(/* optional(PROPERTYKEY) */ IntPtr rgKeys, /* [in] */ uint cKeys, /* [in] */ GETPROPERTYSTOREFLAGS flags, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
     }
 }

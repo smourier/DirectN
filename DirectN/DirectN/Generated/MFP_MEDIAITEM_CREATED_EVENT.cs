@@ -9,6 +9,6 @@ namespace DirectN
     {
         public MFP_EVENT_HEADER header;
         public IntPtr pMediaItem;
-        public ulong dwUserData;
+        public IntPtr dwUserData;
     }
 }

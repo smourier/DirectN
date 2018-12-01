@@ -40,6 +40,6 @@ namespace DirectN
         uint GetDashesCount();
         
         [PreserveSig]
-        void GetDashes(/* _Out_writes_(dashesCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] dashes, uint dashesCount);
+        void GetDashes(/* _Out_writes_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] dashes, uint dashesCount);
     }
 }

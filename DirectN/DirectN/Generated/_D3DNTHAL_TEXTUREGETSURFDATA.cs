@@ -7,9 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DNTHAL_TEXTUREGETSURFDATA
     {
-        public ulong dwhContext;
+        public IntPtr dwhContext;
         public IntPtr hDDS;
-        public ulong dwHandle;
+        public IntPtr dwHandle;
         public HRESULT ddrval;
     }
 }

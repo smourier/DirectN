@@ -22,6 +22,6 @@ namespace DirectN
         public uint u32MaxInstances;
         public uint u32NumAPOInterfaces;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public Guid[] iidAPOInterfaceList;
+        public Guid iidAPOInterfaceList;
     }
 }

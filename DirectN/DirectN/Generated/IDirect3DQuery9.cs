@@ -20,6 +20,6 @@ namespace DirectN
         HRESULT Issue(uint dwIssueFlags);
         
         [PreserveSig]
-        HRESULT GetData(ref IntPtr pData, uint dwSize, uint dwGetDataFlags);
+        HRESULT GetData([MarshalAs(UnmanagedType.IUnknown)] object pData, uint dwSize, uint dwGetDataFlags);
     }
 }

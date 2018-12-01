@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(6715,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -23,7 +24,7 @@ namespace DirectN
         HRESULT RenderStream(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ IBaseFilter pfCompressor, /* [in] */ IBaseFilter pfRenderer);
         
         [PreserveSig]
-        HRESULT ControlStream(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ IBaseFilter pFilter, /* [in] */ ref long pstart, /* [in] */ ref long pstop, /* [in] */ ushort wStartCookie, /* [in] */ ushort wStopCookie);
+        HRESULT ControlStream(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ IBaseFilter pFilter, /* [in] */ ref REFERENCE_TIME pstart, /* [in] */ ref REFERENCE_TIME pstop, /* [in] */ ushort wStartCookie, /* [in] */ ushort wStopCookie);
         
         [PreserveSig]
         HRESULT AllocCapFile(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpstr, /* [in] */ ulong dwlSize);

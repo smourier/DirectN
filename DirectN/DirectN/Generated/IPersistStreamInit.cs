@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(2545,5)
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
@@ -11,10 +12,10 @@ namespace DirectN
         HRESULT IsDirty();
         
         [PreserveSig]
-        HRESULT Load(/* [in] __RPC__in_opt */ IntPtr pStm);
+        HRESULT Load(/* [in] __RPC__in_opt */ IStream pStm);
         
         [PreserveSig]
-        HRESULT Save(/* [in] __RPC__in_opt */ IntPtr pStm, /* [in] */ bool fClearDirty);
+        HRESULT Save(/* [in] __RPC__in_opt */ IStream pStm, /* [in] */ bool fClearDirty);
         
         [PreserveSig]
         HRESULT GetSizeMax(/* [out] __RPC__out */ out ulong pCbSize);

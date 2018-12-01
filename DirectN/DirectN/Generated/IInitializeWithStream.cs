@@ -9,6 +9,6 @@ namespace DirectN
     public partial interface IInitializeWithStream
     {
         [PreserveSig]
-        HRESULT Initialize(/* [annotation][in] _In_ */ ref IStream pstream, /* [annotation][in] _In_ */ uint grfMode);
+        HRESULT Initialize(/* [annotation][in] _In_ */ IStream pstream, /* [annotation][in] _In_ */ uint grfMode);
     }
 }

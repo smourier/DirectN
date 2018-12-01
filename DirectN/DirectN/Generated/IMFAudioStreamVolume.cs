@@ -17,9 +17,9 @@ namespace DirectN
         HRESULT GetChannelVolume(/* [in] */ uint dwIndex, /* [out] __RPC__out */ out float pfLevel);
         
         [PreserveSig]
-        HRESULT SetAllVolumes(/* [in] */ uint dwCount, /* [size_is][in] __RPC__in_ecount_full(dwCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] float[] pfVolumes);
+        HRESULT SetAllVolumes(/* [in] */ uint dwCount, /* [size_is][in] __RPC__in_ecount_full(dwCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] float[] pfVolumes);
         
         [PreserveSig]
-        HRESULT GetAllVolumes(/* [in] */ uint dwCount, /* [size_is][out] __RPC__out_ecount_full(dwCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] float[] pfVolumes);
+        HRESULT GetAllVolumes(/* [in] */ uint dwCount, /* [size_is][out] __RPC__out_ecount_full(dwCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] float[] pfVolumes);
     }
 }

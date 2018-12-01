@@ -15,6 +15,6 @@ namespace DirectN
         HRESULT UnlockProcess();
         
         [PreserveSig]
-        HRESULT CreateObjectByCLSID(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsid, /* [unique][in] */ ref IStream pStream, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
+        HRESULT CreateObjectByCLSID(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsid, /* [unique][in] */ IStream pStream, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][out] */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
     }
 }

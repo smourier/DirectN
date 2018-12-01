@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_3.h(2110,1)
 using System;
 using System.Runtime.InteropServices;
+using UUID = System.Guid;
 
 namespace DirectN
 {
@@ -14,12 +15,12 @@ namespace DirectN
         HRESULT GetLocalFileSize(/* _Out_ */ out ulong localFileSize);
         
         [PreserveSig]
-        HRESULT GetFileFragmentLocality(ulong fileOffset, ulong fragmentSize, /* _Out_ */ out bool isLocal, /* _Out_range_(0, fragmentSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray)] ulong[] partialSize);
+        HRESULT GetFileFragmentLocality(ulong fileOffset, ulong fragmentSize, /* _Out_ */ out bool isLocal, /* _Out_range_(0, fragmentSize) */ [Out, MarshalAs(UnmanagedType.LPArray)] ulong[] partialSize);
         
         [PreserveSig]
         DWRITE_LOCALITY GetLocality();
         
         [PreserveSig]
-        HRESULT BeginDownload(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid downloadOperationID, /* _In_reads_(fragmentCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FILE_FRAGMENT[] fileFragments, uint fragmentCount, /* _COM_Outptr_result_maybenull_ */ out IDWriteAsyncResult asyncResult);
+        HRESULT BeginDownload(/* _In_ */ ref UUID downloadOperationID, /* _In_reads_(fragmentCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FILE_FRAGMENT[] fileFragments, uint fragmentCount, /* _COM_Outptr_result_maybenull_ */ out IDWriteAsyncResult asyncResult);
     }
 }

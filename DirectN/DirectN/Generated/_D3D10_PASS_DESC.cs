@@ -11,10 +11,10 @@ namespace DirectN
         public string Name;
         public uint Annotations;
         public IntPtr pIAInputSignature;
-        public ulong IAInputSignatureSize;
+        public IntPtr IAInputSignatureSize;
         public uint StencilRef;
         public uint SampleMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public float[] BlendFactor;
+        public float BlendFactor;
     }
 }

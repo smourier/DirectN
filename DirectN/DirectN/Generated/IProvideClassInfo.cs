@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IProvideClassInfo
     {
         [PreserveSig]
-        HRESULT GetClassInfoA(/* [out] __RPC__deref_out_opt */ out ITypeInfo ppTI);
+        HRESULT GetClassInfoA(/* optional(ITypeInfo) */ out IntPtr ppTI);
     }
 }

@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3D9
     {
         [PreserveSig]
-        HRESULT RegisterSoftwareDevice(ref IntPtr pInitializeFunction);
+        HRESULT RegisterSoftwareDevice([MarshalAs(UnmanagedType.IUnknown)] object pInitializeFunction);
         
         [PreserveSig]
         uint GetAdapterCount();
@@ -47,6 +47,6 @@ namespace DirectN
         IntPtr GetAdapterMonitor(uint Adapter);
         
         [PreserveSig]
-        HRESULT CreateDevice(uint Adapter, _D3DDEVTYPE DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, IDirect3DDevice9 ppReturnedDeviceInterface);
+        HRESULT CreateDevice(uint Adapter, _D3DDEVTYPE DeviceType, ref IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, IDirect3DDevice9 ppReturnedDeviceInterface);
     }
 }

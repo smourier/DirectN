@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(8534,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -8,10 +9,10 @@ namespace DirectN
     public partial interface IAMStreamControl
     {
         [PreserveSig]
-        HRESULT StartAt(/* [annotation][in] _In_opt_ */ ref long ptStart, /* [in] */ uint dwCookie);
+        HRESULT StartAt(/* optional(REFERENCE_TIME) */ IntPtr ptStart, /* [in] */ uint dwCookie);
         
         [PreserveSig]
-        HRESULT StopAt(/* [annotation][in] _In_opt_ */ ref long ptStop, /* [in] */ bool bSendExtra, /* [in] */ uint dwCookie);
+        HRESULT StopAt(/* optional(REFERENCE_TIME) */ IntPtr ptStop, /* [in] */ bool bSendExtra, /* [in] */ uint dwCookie);
         
         [PreserveSig]
         HRESULT GetInfo(/* [annotation][out] _Out_ */ out AM_STREAM_INFO pInfo);

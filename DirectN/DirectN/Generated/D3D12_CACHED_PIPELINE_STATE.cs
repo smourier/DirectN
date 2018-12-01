@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct D3D12_CACHED_PIPELINE_STATE
     {
         public IntPtr pCachedBlob;
-        public ulong CachedBlobSizeInBytes;
+        public IntPtr CachedBlobSizeInBytes;
     }
 }

@@ -14,12 +14,12 @@ namespace DirectN
         HRESULT GetCertificate(uint CertifacteSize, ref byte ppCertificate);
         
         [PreserveSig]
-        HRESULT NegotiateKeyExchange(uint DataSize, ref IntPtr pData);
+        HRESULT NegotiateKeyExchange(uint DataSize, [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
-        HRESULT Query(uint InputSize, ref IntPtr pInput, uint OutputSize, ref IntPtr pOutput);
+        HRESULT Query(uint InputSize, [MarshalAs(UnmanagedType.IUnknown)] object pInput, uint OutputSize, [MarshalAs(UnmanagedType.IUnknown)] object pOutput);
         
         [PreserveSig]
-        HRESULT Configure(uint InputSize, ref IntPtr pInput, ref _D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT pOutput);
+        HRESULT Configure(uint InputSize, [MarshalAs(UnmanagedType.IUnknown)] object pInput, ref _D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT pOutput);
     }
 }

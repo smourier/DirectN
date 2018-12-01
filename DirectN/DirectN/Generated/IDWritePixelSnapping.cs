@@ -11,12 +11,12 @@ namespace DirectN
     public partial interface IDWritePixelSnapping
     {
         [PreserveSig]
-        HRESULT IsPixelSnappingDisabled(/* _In_opt_ */ IntPtr clientDrawingContext, /* _Out_ */ out bool isDisabled);
+        HRESULT IsPixelSnappingDisabled(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out bool isDisabled);
         
         [PreserveSig]
-        HRESULT GetCurrentTransform(/* _In_opt_ */ IntPtr clientDrawingContext, /* _Out_ */ out DWRITE_MATRIX transform);
+        HRESULT GetCurrentTransform(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out DWRITE_MATRIX transform);
         
         [PreserveSig]
-        HRESULT GetPixelsPerDip(/* _In_opt_ */ IntPtr clientDrawingContext, /* _Out_ */ out float pixelsPerDip);
+        HRESULT GetPixelsPerDip(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out float pixelsPerDip);
     }
 }

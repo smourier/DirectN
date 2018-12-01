@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(1228,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
 
 namespace DirectN
 {
@@ -19,13 +20,13 @@ namespace DirectN
         new void SetOpacity(float opacity);
         
         [PreserveSig]
-        new void SetTransform(/* _In_ */ ref D2D_MATRIX_3X2_F transform);
+        new void SetTransform(/* _In_ */ ref D2D1_MATRIX_3X2_F transform);
         
         [PreserveSig]
         new float GetOpacity();
         
         [PreserveSig]
-        new void GetTransform(/* _Out_ */ out D2D_MATRIX_3X2_F transform);
+        new void GetTransform(/* _Out_ */ out D2D1_MATRIX_3X2_F transform);
         
         // ID2D1BitmapBrush
         [PreserveSig]

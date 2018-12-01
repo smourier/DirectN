@@ -20,6 +20,6 @@ namespace DirectN
         HRESULT get_VITCLine(/* [annotation][out] _Out_ */ out long pLine);
         
         [PreserveSig]
-        HRESULT GetTimecode(/* [annotation][out] _Out_ */ IntPtr pTimecodeSample);
+        HRESULT GetTimecode(/* [annotation][out] _Out_ */ out tagTIMECODE_SAMPLE pTimecodeSample);
     }
 }

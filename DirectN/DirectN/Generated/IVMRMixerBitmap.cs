@@ -11,9 +11,9 @@ namespace DirectN
         HRESULT SetAlphaBitmap(/* [in] */ ref _VMRALPHABITMAP pBmpParms);
         
         [PreserveSig]
-        HRESULT UpdateAlphaBitmapParameters(/* [in] */ IntPtr pBmpParms);
+        HRESULT UpdateAlphaBitmapParameters(/* [in] */ ref _VMRALPHABITMAP pBmpParms);
         
         [PreserveSig]
-        HRESULT GetAlphaBitmapParameters(/* [out] */ IntPtr pBmpParms);
+        HRESULT GetAlphaBitmapParameters(/* [out] */ out _VMRALPHABITMAP pBmpParms);
     }
 }

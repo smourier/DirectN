@@ -10,6 +10,6 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
         public uint dwPID => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public ulong dwrstates => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
+        public IntPtr dwrstates => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
     }
 }

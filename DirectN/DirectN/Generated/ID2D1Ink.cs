@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(538,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_MATRIX_3X2_F = DirectN.D2D_MATRIX_3X2_F;
+using D2D1_RECT_F = DirectN.D2D_RECT_F;
 
 namespace DirectN
 {
@@ -17,13 +19,13 @@ namespace DirectN
         D2D1_INK_POINT GetStartPoint();
         
         [PreserveSig]
-        HRESULT AddSegments(/* _In_reads_(segmentsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_INK_BEZIER_SEGMENT[] segments, uint segmentsCount);
+        HRESULT AddSegments(/* _In_reads_(segmentsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_INK_BEZIER_SEGMENT[] segments, uint segmentsCount);
         
         [PreserveSig]
         HRESULT RemoveSegmentsAtEnd(uint segmentsCount);
         
         [PreserveSig]
-        HRESULT SetSegments(uint startSegment, /* _In_reads_(segmentsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_INK_BEZIER_SEGMENT[] segments, uint segmentsCount);
+        HRESULT SetSegments(uint startSegment, /* _In_reads_(segmentsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_INK_BEZIER_SEGMENT[] segments, uint segmentsCount);
         
         [PreserveSig]
         HRESULT SetSegmentAtEnd(/* _In_ */ ref D2D1_INK_BEZIER_SEGMENT segment);
@@ -32,12 +34,12 @@ namespace DirectN
         uint GetSegmentCount();
         
         [PreserveSig]
-        HRESULT GetSegments(uint startSegment, /* _Out_writes_(segmentsCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_INK_BEZIER_SEGMENT[] segments, uint segmentsCount);
+        HRESULT GetSegments(uint startSegment, /* _Out_writes_(segmentsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_INK_BEZIER_SEGMENT[] segments, uint segmentsCount);
         
         [PreserveSig]
-        HRESULT StreamAsGeometry(/* _In_opt_ */ ID2D1InkStyle inkStyle, /* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, float flatteningTolerance, /* _In_ */ ref ID2D1SimplifiedGeometrySink geometrySink);
+        HRESULT StreamAsGeometry(/* _In_opt_ */ ID2D1InkStyle inkStyle, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ref ID2D1SimplifiedGeometrySink geometrySink);
         
         [PreserveSig]
-        HRESULT GetBounds(/* _In_opt_ */ ID2D1InkStyle inkStyle, /* _In_opt_ */ ref D2D_MATRIX_3X2_F worldTransform, /* _Out_ */ out D2D_RECT_F bounds);
+        HRESULT GetBounds(/* _In_opt_ */ ID2D1InkStyle inkStyle, /* optional(D2D1_MATRIX_3X2_F) */ IntPtr worldTransform, /* _Out_ */ out D2D1_RECT_F bounds);
     }
 }

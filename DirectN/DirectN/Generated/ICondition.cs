@@ -14,13 +14,13 @@ namespace DirectN
         HRESULT GetSubConditions(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [iid_is][retval][out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
         
         [PreserveSig]
-        HRESULT GetComparisonInfo(/* [annotation][unique][out] _Outptr_opt_result_maybenull_ */ out IntPtr ppszPropertyName, /* [annotation][unique][out] _Out_opt_ */ out tagCONDITION_OPERATION pcop, /* [annotation][unique][out] _Out_opt_ */ out PropVariant ppropvar);
+        HRESULT GetComparisonInfo(/* optional(LPWSTR) */ out IntPtr ppszPropertyName, /* [annotation][unique][out] _Out_opt_ */ out tagCONDITION_OPERATION pcop, /* [annotation][unique][out] _Out_opt_ */ PropVariant ppropvar);
         
         [PreserveSig]
-        HRESULT GetValueType(/* [retval][out] __RPC__deref_out_opt */ out IntPtr ppszValueTypeName);
+        HRESULT GetValueType(/* optional(LPWSTR) */ out IntPtr ppszValueTypeName);
         
         [PreserveSig]
-        HRESULT GetValueNormalization(/* [retval][out] __RPC__deref_out_opt */ out IntPtr ppszNormalization);
+        HRESULT GetValueNormalization(/* optional(LPWSTR) */ out IntPtr ppszNormalization);
         
         [PreserveSig]
         HRESULT GetInputTerms(/* [annotation][unique][out] _Out_opt_ */ out IRichChunk ppPropertyTerm, /* [annotation][unique][out] _Out_opt_ */ out IRichChunk ppOperationTerm, /* [annotation][unique][out] _Out_opt_ */ out IRichChunk ppValueTerm);

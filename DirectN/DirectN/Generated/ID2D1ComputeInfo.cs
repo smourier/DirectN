@@ -25,7 +25,7 @@ namespace DirectN
         
         // ID2D1ComputeInfo
         [PreserveSig]
-        HRESULT SetComputeShaderConstantBuffer(/* _In_reads_(bufferCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, uint bufferCount);
+        HRESULT SetComputeShaderConstantBuffer(/* _In_reads_(bufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, uint bufferCount);
         
         [PreserveSig]
         HRESULT SetComputeShader(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid shaderId);

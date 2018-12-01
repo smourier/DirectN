@@ -1,6 +1,7 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(182,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(139,1)
 using System;
 using System.Runtime.InteropServices;
+using D3DRESOURCETYPE = DirectN._D3DRESOURCETYPE;
 
 namespace DirectN
 {
@@ -11,10 +12,10 @@ namespace DirectN
         HRESULT GetDevice(IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, ref IntPtr pData, uint SizeOfData, uint Flags);
+        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
-        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, ref IntPtr pData, ref uint pSizeOfData);
+        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
         
         [PreserveSig]
         HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
@@ -29,6 +30,6 @@ namespace DirectN
         void PreLoad();
         
         [PreserveSig]
-        _D3DRESOURCETYPE GetType();
+        D3DRESOURCETYPE GetType();
     }
 }

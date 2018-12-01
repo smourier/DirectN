@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT RegisterLibrary(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pLibName, /* // Name of the library. _In_ */ IDxcBlob pLib);
         
         [PreserveSig]
-        HRESULT Link(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pEntryName, /* // Entry point name _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pTargetProfile, /* // shader profile to link _In_count_(libCount) */ out IntPtr[] pLibNames, /* // Array of library names to link */ uint libCount, /* // Number of libraries to link _In_count_(argCount) */ out IntPtr[] pArguments, /* // Array of pointers to arguments _In_ */ uint argCount, /* // Number of arguments _COM_Outptr_ */ out IDxcOperationResult ppResult);
+        HRESULT Link(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pEntryName, /* // Entry point name _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pTargetProfile, /* // shader profile to link _In_count_(libCount) */ IntPtr pLibNames, /* // Array of library names to link */ uint libCount, /* // Number of libraries to link _In_count_(argCount) */ IntPtr pArguments, /* // Array of pointers to arguments _In_ */ uint argCount, /* // Number of arguments _COM_Outptr_ */ out IDxcOperationResult ppResult);
     }
 }

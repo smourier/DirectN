@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT ReadNextItem(/* [annotation][out] _Out_ */ out byte commandCount, /* [annotation][out] _Out_ */ out ushort frameOffset);
         
         [PreserveSig]
-        HRESULT ReadNextItemCommand(/* [annotation][out] _Out_ */ out byte commandID, /* [annotation][size_is][in] _Out_writes_bytes_(maxValueBufferLength) */ out IntPtr valueBuffer, /* [annotation][in] _In_ */ uint maxValueBufferLength, /* [annotation][out] _Out_ */ out uint valueBufferLength);
+        HRESULT ReadNextItemCommand(/* [annotation][out] _Out_ */ out byte commandID, /* [annotation][size_is][in] _Out_writes_bytes_(maxValueBufferLength) */ [MarshalAs(UnmanagedType.IUnknown)] out object valueBuffer, /* [annotation][in] _In_ */ uint maxValueBufferLength, /* [annotation][out] _Out_ */ out uint valueBufferLength);
         
         [PreserveSig]
         HRESULT Close();

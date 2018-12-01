@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct DXGI_JPEG_QUANTIZATION_TABLE
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)] 
-        public byte[] Elements;
+        public byte Elements;
     }
 }

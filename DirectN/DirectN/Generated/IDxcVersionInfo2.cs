@@ -16,6 +16,6 @@ namespace DirectN
         
         // IDxcVersionInfo2
         [PreserveSig]
-        HRESULT GetCommitInfo(/* _Out_ */ out uint pCommitCount, /* _Out_ */ out byte pCommitHash);
+        HRESULT GetCommitInfo(/* _Out_ */ out uint pCommitCount, /* _Out_ */ out IntPtr pCommitHash);
     }
 }

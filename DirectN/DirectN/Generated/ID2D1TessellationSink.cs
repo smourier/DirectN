@@ -11,7 +11,7 @@ namespace DirectN
     public partial interface ID2D1TessellationSink
     {
         [PreserveSig]
-        void AddTriangles(/* _In_reads_(trianglesCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_TRIANGLE[] triangles, uint trianglesCount);
+        void AddTriangles(/* _In_reads_(trianglesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_TRIANGLE[] triangles, uint trianglesCount);
         
         [PreserveSig]
         HRESULT Close();

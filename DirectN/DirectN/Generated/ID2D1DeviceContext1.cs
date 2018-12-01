@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT CreateFilledGeometryRealization(/* _In_ */ ref ID2D1Geometry geometry, float flatteningTolerance, /* _COM_Outptr_ */ out ID2D1GeometryRealization geometryRealization);
         
         [PreserveSig]
-        HRESULT CreateStrokedGeometryRealization(/* _In_ */ ref ID2D1Geometry geometry, float flatteningTolerance, float strokeWidth, /* _In_opt_ */ ref ID2D1StrokeStyle strokeStyle, /* _COM_Outptr_ */ out ID2D1GeometryRealization geometryRealization);
+        HRESULT CreateStrokedGeometryRealization(/* _In_ */ ref ID2D1Geometry geometry, float flatteningTolerance, float strokeWidth, /* optional(ID2D1StrokeStyle) */ IntPtr strokeStyle, /* _COM_Outptr_ */ out ID2D1GeometryRealization geometryRealization);
         
         [PreserveSig]
         void DrawGeometryRealization(/* _In_ */ ref ID2D1GeometryRealization geometryRealization, /* _In_ */ ref ID2D1Brush brush);

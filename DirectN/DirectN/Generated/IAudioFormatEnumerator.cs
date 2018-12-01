@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\spatialaudioclient.h(166,5)
 using System;
 using System.Runtime.InteropServices;
+using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -11,6 +12,6 @@ namespace DirectN
         HRESULT GetCount(/* [annotation][out] _Out_ */ out uint count);
         
         [PreserveSig]
-        HRESULT GetFormat(/* [annotation][in] _In_ */ uint index, /* [annotation][out] _Outptr_ */ out tWAVEFORMATEX format);
+        HRESULT GetFormat(/* [annotation][in] _In_ */ uint index, /* [annotation][out] _Outptr_ */ out IntPtr format);
     }
 }

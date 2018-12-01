@@ -18,7 +18,7 @@ namespace DirectN
         new HRESULT GetReaderByIndex(/* [in] */ uint nIndex, /* [out] __RPC__deref_out_opt */ out IWICMetadataReader ppIMetadataReader);
         
         [PreserveSig]
-        new HRESULT GetEnumerator(/* [out] __RPC__deref_out_opt */ out IEnumUnknown ppIEnumMetadata);
+        new HRESULT GetEnumerator(/* optional(IEnumUnknown) */ out IntPtr ppIEnumMetadata);
         
         // IWICMetadataBlockWriter
         [PreserveSig]

@@ -14,6 +14,6 @@ namespace DirectN
         HRESULT GetMaxLength(/* [annotation][out] _Out_ */ out uint pcbMaxLength);
         
         [PreserveSig]
-        HRESULT GetBufferAndLength(/* [annotation][out] _Outptr_opt_result_bytebuffer_(*pcbLength) */ out byte[] ppBuffer, /* [annotation][out] _Out_opt_ */ out uint pcbLength);
+        HRESULT GetBufferAndLength(/* optional(BYTE) */ out IntPtr ppBuffer, /* [annotation][out] _Out_opt_ */ out uint pcbLength);
     }
 }

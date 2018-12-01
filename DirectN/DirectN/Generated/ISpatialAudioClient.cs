@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\spatialaudioclient.h(898,5)
 using System;
 using System.Runtime.InteropServices;
+using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -20,10 +21,10 @@ namespace DirectN
         HRESULT GetSupportedAudioObjectFormatEnumerator(/* [annotation][out] _COM_Outptr_ */ out IAudioFormatEnumerator enumerator);
         
         [PreserveSig]
-        HRESULT GetMaxFrameCount(/* [annotation][in] _In_ */ ref tWAVEFORMATEX objectFormat, /* [annotation][out] _Out_ */ out uint frameCountPerBuffer);
+        HRESULT GetMaxFrameCount(/* [annotation][in] _In_ */ ref WAVEFORMATEX objectFormat, /* [annotation][out] _Out_ */ out uint frameCountPerBuffer);
         
         [PreserveSig]
-        HRESULT IsAudioObjectFormatSupported(/* [annotation][in] _In_ */ ref tWAVEFORMATEX objectFormat);
+        HRESULT IsAudioObjectFormatSupported(/* [annotation][in] _In_ */ ref WAVEFORMATEX objectFormat);
         
         [PreserveSig]
         HRESULT IsSpatialAudioStreamAvailable(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid streamUuid, /* [annotation][in] _In_opt_ */ PropVariant auxiliaryInfo);

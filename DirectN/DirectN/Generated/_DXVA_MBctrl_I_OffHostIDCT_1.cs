@@ -12,6 +12,6 @@ namespace DirectN
         public uint dwMB_SNL;
         public ushort wPatternCode;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)] 
-        public byte[] bNumCoef;
+        public byte bNumCoef;
     }
 }

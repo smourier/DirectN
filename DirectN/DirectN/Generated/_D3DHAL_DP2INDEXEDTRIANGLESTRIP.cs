@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct _D3DHAL_DP2INDEXEDTRIANGLESTRIP
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public ushort[] wV;
+        public ushort wV;
     }
 }

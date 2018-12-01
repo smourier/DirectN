@@ -12,6 +12,6 @@ namespace DirectN
         public bool fDuet;
         public tagDVD_KARAOKE_ASSIGNMENT ChannelAssignment;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public ushort[] wChannelContents;
+        public ushort wChannelContents;
     }
 }

@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IPlayToSourceClassFactory
     {
         [PreserveSig]
-        HRESULT CreateInstance(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_ */ IPlayToControl pControl, /* [annotation][out] _Outptr_ */ out IInspectable ppSource);
+        HRESULT CreateInstance(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_ */ IPlayToControl pControl, /* [annotation][out] _Outptr_ */ out IntPtr ppSource);
     }
 }

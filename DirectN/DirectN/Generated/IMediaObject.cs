@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mediaobj.h(310,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -23,10 +24,10 @@ namespace DirectN
         HRESULT GetOutputType(uint dwOutputStreamIndex, uint dwTypeIndex, /* [annotation][out] _Out_opt_ */ out _DMOMediaType pmt);
         
         [PreserveSig]
-        HRESULT SetInputType(uint dwInputStreamIndex, /* [annotation][in] _In_opt_ */ ref _DMOMediaType pmt, uint dwFlags);
+        HRESULT SetInputType(uint dwInputStreamIndex, /* optional(_DMOMediaType) */ IntPtr pmt, uint dwFlags);
         
         [PreserveSig]
-        HRESULT SetOutputType(uint dwOutputStreamIndex, /* [annotation][in] _In_opt_ */ ref _DMOMediaType pmt, uint dwFlags);
+        HRESULT SetOutputType(uint dwOutputStreamIndex, /* optional(_DMOMediaType) */ IntPtr pmt, uint dwFlags);
         
         [PreserveSig]
         HRESULT GetInputCurrentType(uint dwInputStreamIndex, /* [annotation][out] _Out_ */ out _DMOMediaType pmt);
@@ -41,7 +42,7 @@ namespace DirectN
         HRESULT GetOutputSizeInfo(uint dwOutputStreamIndex, /* [annotation][out] _Out_ */ out uint pcbSize, /* [annotation][out] _Out_ */ out uint pcbAlignment);
         
         [PreserveSig]
-        HRESULT GetInputMaxLatency(uint dwInputStreamIndex, /* [annotation][out] _Out_ */ out long prtMaxLatency);
+        HRESULT GetInputMaxLatency(uint dwInputStreamIndex, /* [annotation][out] _Out_ */ out REFERENCE_TIME prtMaxLatency);
         
         [PreserveSig]
         HRESULT SetInputMaxLatency(uint dwInputStreamIndex, long rtMaxLatency);

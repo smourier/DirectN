@@ -14,6 +14,6 @@ namespace DirectN
         HRESULT MoveNext(/* _Out_ */ out bool hasRun);
         
         [PreserveSig]
-        HRESULT GetCurrentRun(/* _Outptr_ */ out DWRITE_COLOR_GLYPH_RUN colorGlyphRun);
+        HRESULT GetCurrentRun(/* _Outptr_ */ out IntPtr colorGlyphRun);
     }
 }

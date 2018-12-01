@@ -18,20 +18,20 @@ namespace DirectN
         new HRESULT get_SessionId(/* [annotation] _COM_Outptr_ */ out IntPtr sessionId);
         
         [PreserveSig]
-        new HRESULT Update(/* [annotation] _In_reads_bytes_(cb) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] key, /* [annotation] _In_ */ uint cb);
+        new HRESULT Update(/* [annotation] _In_reads_bytes_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] key, /* [annotation] _In_ */ uint cb);
         
         [PreserveSig]
         new HRESULT Close();
         
         // IMFMediaKeySession2
         [PreserveSig]
-        HRESULT get_KeyStatuses(/* [annotation] _Outptr_result_buffer_(*puSize) */ out MFMediaKeyStatus[] pKeyStatusesArray, /* [annotation] _Out_ */ out uint puSize);
+        HRESULT get_KeyStatuses(/* [annotation] _Outptr_result_buffer_(*puSize) */ out IntPtr pKeyStatusesArray, /* [annotation] _Out_ */ out uint puSize);
         
         [PreserveSig]
         HRESULT Load(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.BStr)] string bstrSessionId, /* [annotation] _Out_ */ out bool pfLoaded);
         
         [PreserveSig]
-        HRESULT GenerateRequest(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.BStr)] string initDataType, /* [annotation] _In_reads_bytes_(cb) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbInitData, /* [annotation] _In_ */ uint cb);
+        HRESULT GenerateRequest(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.BStr)] string initDataType, /* [annotation] _In_reads_bytes_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbInitData, /* [annotation] _In_ */ uint cb);
         
         [PreserveSig]
         HRESULT get_Expiration(/* [annotation] _Out_ */ out double dblExpiration);

@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioclient.h(439,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
+using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -9,25 +11,25 @@ namespace DirectN
     {
         // IAudioClient
         [PreserveSig]
-        new HRESULT Initialize(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ long hnsBufferDuration, /* [annotation][in] _In_ */ long hnsPeriodicity, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ Guid AudioSessionGuid);
+        new HRESULT Initialize(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ long hnsBufferDuration, /* [annotation][in] _In_ */ long hnsPeriodicity, /* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
         
         [PreserveSig]
         new HRESULT GetBufferSize(/* [annotation][out] _Out_ */ out uint pNumBufferFrames);
         
         [PreserveSig]
-        new HRESULT GetStreamLatency(/* [annotation][out] _Out_ */ out long phnsLatency);
+        new HRESULT GetStreamLatency(/* [annotation][out] _Out_ */ out REFERENCE_TIME phnsLatency);
         
         [PreserveSig]
         new HRESULT GetCurrentPadding(/* [annotation][out] _Out_ */ out uint pNumPaddingFrames);
         
         [PreserveSig]
-        new HRESULT IsFormatSupported(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [unique][annotation][out] _Out_opt_ */ out tWAVEFORMATEX ppClosestMatch);
+        new HRESULT IsFormatSupported(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* optional(WAVEFORMATEX) */ out IntPtr ppClosestMatch);
         
         [PreserveSig]
-        new HRESULT GetMixFormat(/* [annotation][out] _Out_ */ out tWAVEFORMATEX ppDeviceFormat);
+        new HRESULT GetMixFormat(/* [annotation][out] _Out_ */ out IntPtr ppDeviceFormat);
         
         [PreserveSig]
-        new HRESULT GetDevicePeriod(/* [annotation][out] _Out_opt_ */ out long phnsDefaultDevicePeriod, /* [annotation][out] _Out_opt_ */ out long phnsMinimumDevicePeriod);
+        new HRESULT GetDevicePeriod(/* [annotation][out] _Out_opt_ */ out REFERENCE_TIME phnsDefaultDevicePeriod, /* [annotation][out] _Out_opt_ */ out REFERENCE_TIME phnsMinimumDevicePeriod);
         
         [PreserveSig]
         new HRESULT Start();
@@ -52,6 +54,6 @@ namespace DirectN
         HRESULT SetClientProperties(/* [annotation][in] _In_ */ ref AudioClientProperties pProperties);
         
         [PreserveSig]
-        HRESULT GetBufferSizeLimits(/* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][in] _In_ */ bool bEventDriven, /* [annotation][out] _Out_ */ out long phnsMinBufferDuration, /* [annotation][out] _Out_ */ out long phnsMaxBufferDuration);
+        HRESULT GetBufferSizeLimits(/* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* [annotation][in] _In_ */ bool bEventDriven, /* [annotation][out] _Out_ */ out REFERENCE_TIME phnsMinBufferDuration, /* [annotation][out] _Out_ */ out REFERENCE_TIME phnsMaxBufferDuration);
     }
 }

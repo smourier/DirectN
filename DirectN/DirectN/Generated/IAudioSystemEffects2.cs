@@ -11,6 +11,6 @@ namespace DirectN
         
         // IAudioSystemEffects2
         [PreserveSig]
-        HRESULT GetEffectsList(/* [annotation][out] _Outptr_result_buffer_maybenull_(*pcEffects) */ out Guid ppEffectsIds, /* [annotation][out] _Out_ */ out uint pcEffects, /* [annotation][in] _In_ */ IntPtr Event);
+        HRESULT GetEffectsList(/* [annotation][out] _Outptr_result_buffer_maybenull_(*pcEffects) */ out IntPtr ppEffectsIds, /* [annotation][out] _Out_ */ out uint pcEffects, /* [annotation][in] _In_ */ IntPtr Event);
     }
 }

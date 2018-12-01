@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFMediaKeySessionNotify
     {
         [PreserveSig]
-        void KeyMessage(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string destinationURL, /* [annotation] _In_reads_bytes_(cb) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] message, /* [annotation] _In_ */ uint cb);
+        void KeyMessage(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string destinationURL, /* [annotation] _In_reads_bytes_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] message, /* [annotation] _In_ */ uint cb);
         
         [PreserveSig]
         void KeyAdded();

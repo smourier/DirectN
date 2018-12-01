@@ -9,22 +9,22 @@ namespace DirectN
     public partial interface IDxcLibrary
     {
         [PreserveSig]
-        HRESULT SetMalloc(/* _In_opt_ */ ref IMalloc pMalloc);
+        HRESULT SetMalloc(/* optional(IMalloc) */ IntPtr pMalloc);
         
         [PreserveSig]
         HRESULT CreateBlobFromBlob(/* _In_ */ IDxcBlob pBlob, uint offset, uint length, /* _COM_Outptr_ */ out IDxcBlob ppResult);
         
         [PreserveSig]
-        HRESULT CreateBlobFromFile([MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* _In_opt_ */ ref uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobFromFile([MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* optional(UINT32) */ IntPtr codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
-        HRESULT CreateBlobWithEncodingFromPinned(/* _In_bytecount_(size) */ IntPtr pText, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobWithEncodingFromPinned(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pText, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
-        HRESULT CreateBlobWithEncodingOnHeapCopy(/* _In_bytecount_(size) */ IntPtr pText, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobWithEncodingOnHeapCopy(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pText, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
-        HRESULT CreateBlobWithEncodingOnMalloc(/* _In_bytecount_(size) */ IntPtr pText, ref IMalloc pIMalloc, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobWithEncodingOnMalloc(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IntPtr[] pText, ref IMalloc pIMalloc, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
         HRESULT CreateIncludeHandler(/* _COM_Outptr_ */ out IDxcIncludeHandler ppResult);

@@ -8,10 +8,10 @@ namespace DirectN
     public partial interface IResourceManager
     {
         [PreserveSig]
-        HRESULT Register(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pName, /* [in] */ int cResource, /* [annotation][out] _Out_ */ out long plToken);
+        HRESULT Register(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pName, /* [in] */ int cResource, /* [annotation][out] _Out_ */ out int plToken);
         
         [PreserveSig]
-        HRESULT RegisterGroup(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pName, /* [in] */ int cResource, /* [annotation][size_is][in] _In_reads_(cResource) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] long[] palTokens, /* [annotation][out] _Out_ */ out long plToken);
+        HRESULT RegisterGroup(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pName, /* [in] */ int cResource, /* [annotation][size_is][in] _In_reads_(cResource) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] int[] palTokens, /* [annotation][out] _Out_ */ out int plToken);
         
         [PreserveSig]
         HRESULT RequestResource(/* [in] */ int idResource, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pFocusObject, /* [in] */ IResourceConsumer pConsumer);

@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(3370,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -20,7 +21,7 @@ namespace DirectN
         HRESULT Decommit();
         
         [PreserveSig]
-        HRESULT GetBuffer(/* [annotation][out] _Out_ */ out IMediaSample ppBuffer, /* [annotation][unique][in] _In_opt_ */ ref long pStartTime, /* [annotation][unique][in] _In_opt_ */ ref long pEndTime, /* [in] */ uint dwFlags);
+        HRESULT GetBuffer(/* [annotation][out] _Out_ */ out IMediaSample ppBuffer, /* optional(REFERENCE_TIME) */ IntPtr pStartTime, /* optional(REFERENCE_TIME) */ IntPtr pEndTime, /* [in] */ uint dwFlags);
         
         [PreserveSig]
         HRESULT ReleaseBuffer(/* [in] */ IMediaSample pBuffer);

@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1effectauthor.h(830,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_POINT_2L = DirectN.tagPOINT;
 
 namespace DirectN
 {
@@ -16,9 +17,9 @@ namespace DirectN
         
         // ID2D1OffsetTransform
         [PreserveSig]
-        void SetOffset(tagPOINT offset);
+        void SetOffset(D2D1_POINT_2L offset);
         
         [PreserveSig]
-        tagPOINT GetOffset();
+        D2D1_POINT_2L GetOffset();
     }
 }

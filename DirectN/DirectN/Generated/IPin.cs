@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IPin
     {
         [PreserveSig]
-        HRESULT Connect(/* [in] */ IPin pReceivePin, /* [annotation][in] _In_opt_ */ ref _AMMediaType pmt);
+        HRESULT Connect(/* [in] */ IPin pReceivePin, /* optional(_AMMediaType) */ IntPtr pmt);
         
         [PreserveSig]
         HRESULT ReceiveConnection(/* [in] */ IPin pConnector, /* [in] */ ref _AMMediaType pmt);
@@ -38,7 +38,7 @@ namespace DirectN
         HRESULT EnumMediaTypes(/* [annotation][out] _Out_ */ out IEnumMediaTypes ppEnum);
         
         [PreserveSig]
-        HRESULT QueryInternalConnections(/* [annotation][out] _Out_writes_to_opt_(*nPin, *nPin) */ out IPin[] apPin, /* [out][in] */ ref uint nPin);
+        HRESULT QueryInternalConnections(/* optional(IPin) */ out IntPtr apPin, /* [out][in] */ ref uint nPin);
         
         [PreserveSig]
         HRESULT EndOfStream();

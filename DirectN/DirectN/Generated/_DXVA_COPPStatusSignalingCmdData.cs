@@ -19,8 +19,8 @@ namespace DirectN
         public uint AspectRatioValidMask3;
         public uint AspectRatioData3;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public uint[] ExtendedInfoValidMask;
+        public uint ExtendedInfoValidMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public uint[] ExtendedInfoData;
+        public uint ExtendedInfoData;
     }
 }

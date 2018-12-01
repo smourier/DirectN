@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(204,1)
 using System;
 using System.Runtime.InteropServices;
+using LUID = DirectN._LUID;
 
 namespace DirectN
 {
@@ -18,7 +19,7 @@ namespace DirectN
         new uint Release();
         
         [PreserveSig]
-        new HRESULT RegisterSoftwareDevice(ref IntPtr pInitializeFunction);
+        new HRESULT RegisterSoftwareDevice([MarshalAs(UnmanagedType.IUnknown)] object pInitializeFunction);
         
         [PreserveSig]
         new uint GetAdapterCount();
@@ -57,11 +58,11 @@ namespace DirectN
         new IntPtr GetAdapterMonitor(uint Adapter);
         
         [PreserveSig]
-        new HRESULT CreateDevice(uint Adapter, _D3DDEVTYPE DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, IDirect3DDevice9 ppReturnedDeviceInterface);
+        new HRESULT CreateDevice(uint Adapter, _D3DDEVTYPE DeviceType, ref IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, IDirect3DDevice9 ppReturnedDeviceInterface);
         
         // IDirect3D9Ex
         [PreserveSig]
-        HRESULT RegisterSoftwareDevice(ref IntPtr pInitializeFunction);
+        HRESULT RegisterSoftwareDevice([MarshalAs(UnmanagedType.IUnknown)] object pInitializeFunction);
         
         [PreserveSig]
         uint GetAdapterCount();
@@ -100,7 +101,7 @@ namespace DirectN
         IntPtr GetAdapterMonitor(uint Adapter);
         
         [PreserveSig]
-        HRESULT CreateDevice(uint Adapter, _D3DDEVTYPE DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, IDirect3DDevice9 ppReturnedDeviceInterface);
+        HRESULT CreateDevice(uint Adapter, _D3DDEVTYPE DeviceType, ref IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, IDirect3DDevice9 ppReturnedDeviceInterface);
         
         [PreserveSig]
         uint GetAdapterModeCountEx(uint Adapter, ref D3DDISPLAYMODEFILTER pFilter);
@@ -112,9 +113,9 @@ namespace DirectN
         HRESULT GetAdapterDisplayModeEx(uint Adapter, ref D3DDISPLAYMODEEX pMode, ref D3DDISPLAYROTATION pRotation);
         
         [PreserveSig]
-        HRESULT CreateDeviceEx(uint Adapter, _D3DDEVTYPE DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, ref D3DDISPLAYMODEEX pFullscreenDisplayMode, IDirect3DDevice9Ex ppReturnedDeviceInterface);
+        HRESULT CreateDeviceEx(uint Adapter, _D3DDEVTYPE DeviceType, ref IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, ref D3DDISPLAYMODEEX pFullscreenDisplayMode, IDirect3DDevice9Ex ppReturnedDeviceInterface);
         
         [PreserveSig]
-        HRESULT GetAdapterLUID(uint Adapter, ref _LUID pLUID);
+        HRESULT GetAdapterLUID(uint Adapter, ref LUID pLUID);
     }
 }

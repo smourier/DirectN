@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\propsys.h(3758,5)
 using System;
 using System.Runtime.InteropServices;
+using SERIALIZEDPROPSTORAGE = DirectN.tagSERIALIZEDPROPSTORAGE;
 
 namespace DirectN
 {
@@ -11,9 +12,9 @@ namespace DirectN
         HRESULT SetFlags(/* [in] */ int flags);
         
         [PreserveSig]
-        HRESULT SetPropertyStorage(/* [annotation][in] _In_reads_bytes_(cb) */ IntPtr psps, /* [annotation][in] _In_ */ uint cb);
+        HRESULT SetPropertyStorage(/* [annotation][in] _In_reads_bytes_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] PCUSERIALIZEDPROPSTORAGE[] psps, /* [annotation][in] _In_ */ uint cb);
         
         [PreserveSig]
-        HRESULT GetPropertyStorage(/* [annotation][out] _Outptr_result_bytebuffer_(*pcb) */ out tagSERIALIZEDPROPSTORAGE[] ppsps, /* [annotation][out] _Out_ */ out uint pcb);
+        HRESULT GetPropertyStorage(/* [annotation][out] _Outptr_result_bytebuffer_(*pcb) */ out IntPtr ppsps, /* [annotation][out] _Out_ */ out uint pcb);
     }
 }

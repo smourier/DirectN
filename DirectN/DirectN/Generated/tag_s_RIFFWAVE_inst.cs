@@ -8,8 +8,8 @@ namespace DirectN
     public partial struct tag_s_RIFFWAVE_inst
     {
         public byte bUnshiftedNote;
-        public sbyte chFineTune;
-        public sbyte chGain;
+        public byte chFineTune;
+        public byte chGain;
         public byte bLowNote;
         public byte bHighNote;
         public byte bLowVelocity;

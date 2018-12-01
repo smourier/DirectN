@@ -36,7 +36,7 @@ namespace DirectN
         new bool HasCharacter(uint unicodeValue);
         
         [PreserveSig]
-        new HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* _In_opt_ */ ref DWRITE_MATRIX transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* _In_opt_ */ ref IDWriteRenderingParams renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE1 renderingMode, /* _Out_ */ out DWRITE_GRID_FIT_MODE gridFitMode);
+        new HRESULT GetRecommendedRenderingMode(float fontEmSize, float dpiX, float dpiY, /* optional(DWRITE_MATRIX) */ IntPtr transform, bool isSideways, DWRITE_OUTLINE_THRESHOLD outlineThreshold, DWRITE_MEASURING_MODE measuringMode, /* optional(IDWriteRenderingParams) */ IntPtr renderingParams, /* _Out_ */ out DWRITE_RENDERING_MODE1 renderingMode, /* _Out_ */ out DWRITE_GRID_FIT_MODE gridFitMode);
         
         [PreserveSig]
         new bool IsCharacterLocal(uint unicodeValue);
@@ -45,10 +45,10 @@ namespace DirectN
         new bool IsGlyphLocal(ushort glyphId);
         
         [PreserveSig]
-        new HRESULT AreCharactersLocal(/* _In_reads_(characterCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount, bool enqueueIfNotLocal, /* _Out_ */ out bool isLocal);
+        new HRESULT AreCharactersLocal(/* _In_reads_(characterCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount, bool enqueueIfNotLocal, /* _Out_ */ out bool isLocal);
         
         [PreserveSig]
-        new HRESULT AreGlyphsLocal(/* _In_reads_(glyphCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount, bool enqueueIfNotLocal, /* _Out_ */ out bool isLocal);
+        new HRESULT AreGlyphsLocal(/* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount, bool enqueueIfNotLocal, /* _Out_ */ out bool isLocal);
         
         // IDWriteFontFace4
         [PreserveSig]
@@ -61,14 +61,14 @@ namespace DirectN
         new HRESULT GetGlyphImageData(/* _In_ */ ushort glyphId, uint pixelsPerEm, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, /* _Out_ */ out DWRITE_GLYPH_IMAGE_DATA glyphData, /* _Outptr_result_maybenull_ */ [MarshalAs(UnmanagedType.IUnknown)] out object glyphDataContext);
         
         [PreserveSig]
-        new void ReleaseGlyphImageData(ref IntPtr glyphDataContext);
+        new void ReleaseGlyphImageData([MarshalAs(UnmanagedType.IUnknown)] object glyphDataContext);
         
         // IDWriteFontFace5
         [PreserveSig]
         uint GetFontAxisValueCount();
         
         [PreserveSig]
-        HRESULT GetFontAxisValues(/* _Out_writes_(fontAxisValueCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
+        HRESULT GetFontAxisValues(/* _Out_writes_(fontAxisValueCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
         
         [PreserveSig]
         bool HasVariations();

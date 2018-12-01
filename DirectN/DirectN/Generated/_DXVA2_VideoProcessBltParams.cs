@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva2api.h(524,9)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
+using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -8,8 +10,8 @@ namespace DirectN
     public partial struct _DXVA2_VideoProcessBltParams
     {
         public long TargetFrame;
-        public tagRECT TargetRect;
-        public tagSIZE ConstrictionSize;
+        public RECT TargetRect;
+        public SIZE ConstrictionSize;
         public uint StreamingFlags;
         public _DXVA2_AYUVSample16 BackgroundColor;
         public _DXVA2_ExtendedFormat DestFormat;

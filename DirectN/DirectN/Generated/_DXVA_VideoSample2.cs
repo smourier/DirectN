@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(1844,9)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -14,8 +15,8 @@ namespace DirectN
         public uint SampleFormat;
         public uint SampleFlags;
         public IntPtr lpDDSSrcSurface;
-        public tagRECT rcSrc;
-        public tagRECT rcDst;
+        public RECT rcSrc;
+        public RECT rcDst;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
         public _DXVA_AYUVsample2[] Palette;
     }

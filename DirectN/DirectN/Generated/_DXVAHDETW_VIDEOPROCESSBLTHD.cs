@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxvahd.h(1071,9)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -9,7 +10,7 @@ namespace DirectN
     {
         public ulong pObject;
         public ulong pOutputSurface;
-        public tagRECT TargetRect;
+        public RECT TargetRect;
         public int OutputFormat;
         public uint ColorSpace;
         public uint OutputFrame;

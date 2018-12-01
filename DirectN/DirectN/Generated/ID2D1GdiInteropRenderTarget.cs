@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(3304,1)
 using System;
 using System.Runtime.InteropServices;
+using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -14,6 +15,6 @@ namespace DirectN
         HRESULT GetDC(D2D1_DC_INITIALIZE_MODE mode, /* _Out_ */ out IntPtr hdc);
         
         [PreserveSig]
-        HRESULT ReleaseDC(/* _In_opt_ */ ref tagRECT update);
+        HRESULT ReleaseDC(/* optional(RECT) */ IntPtr update);
     }
 }

@@ -30,7 +30,7 @@ namespace DirectN
         HRESULT SetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][in] _In_ */ object Value);
         
         [PreserveSig]
-        HRESULT RegisterForEvent(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [in] */ long userData);
+        HRESULT RegisterForEvent(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [in] */ IntPtr userData);
         
         [PreserveSig]
         HRESULT UnregisterForEvent(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api);
@@ -39,18 +39,18 @@ namespace DirectN
         HRESULT SetAllDefaults();
         
         [PreserveSig]
-        HRESULT SetValueWithNotify(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [in] */ object Value, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ChangedParamCount) */ out Guid ChangedParam, /* [annotation][out] _Out_ */ out uint ChangedParamCount);
+        HRESULT SetValueWithNotify(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [in] */ object Value, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ChangedParamCount) */ out IntPtr ChangedParam, /* [annotation][out] _Out_ */ out uint ChangedParamCount);
         
         [PreserveSig]
-        HRESULT SetAllDefaultsWithNotify(/* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ChangedParamCount) */ out Guid ChangedParam, /* [annotation][out] _Out_ */ out uint ChangedParamCount);
+        HRESULT SetAllDefaultsWithNotify(/* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ChangedParamCount) */ out IntPtr ChangedParam, /* [annotation][out] _Out_ */ out uint ChangedParamCount);
         
         [PreserveSig]
-        HRESULT GetAllSettings(/* [in] */ ref IStream __MIDL__ICodecAPI0000);
+        HRESULT GetAllSettings(/* [in] */ IStream __MIDL__ICodecAPI0000);
         
         [PreserveSig]
-        HRESULT SetAllSettings(/* [in] */ ref IStream __MIDL__ICodecAPI0001);
+        HRESULT SetAllSettings(/* [in] */ IStream __MIDL__ICodecAPI0001);
         
         [PreserveSig]
-        HRESULT SetAllSettingsWithNotify(ref IStream __MIDL__ICodecAPI0002, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ChangedParamCount) */ out Guid ChangedParam, /* [annotation][out] _Out_ */ out uint ChangedParamCount);
+        HRESULT SetAllSettingsWithNotify(IStream __MIDL__ICodecAPI0002, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ChangedParamCount) */ out IntPtr ChangedParam, /* [annotation][out] _Out_ */ out uint ChangedParamCount);
     }
 }

@@ -20,7 +20,7 @@ namespace DirectN
         HRESULT FindFilterByName(/* [string][in] */ [MarshalAs(UnmanagedType.LPWStr)] string pName, /* [annotation][out] _Out_ */ out IBaseFilter ppFilter);
         
         [PreserveSig]
-        HRESULT ConnectDirect(/* [in] */ IPin ppinOut, /* [in] */ IPin ppinIn, /* [annotation][unique][in] _In_opt_ */ ref _AMMediaType pmt);
+        HRESULT ConnectDirect(/* [in] */ IPin ppinOut, /* [in] */ IPin ppinIn, /* optional(_AMMediaType) */ IntPtr pmt);
         
         [PreserveSig]
         HRESULT Reconnect(/* [in] */ IPin ppin);

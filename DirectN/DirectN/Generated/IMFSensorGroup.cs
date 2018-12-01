@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFSensorGroup
     {
         [PreserveSig]
-        HRESULT GetSymbolicLink(/* [annotation][size_is][out] _Out_writes_z_(cchSymbolicLink) */ [MarshalAs(UnmanagedType.LPWStr)] string SymbolicLink, /* [annotation][in] _In_ */ int cchSymbolicLink, /* [annotation][out] _Out_ */ out long pcchWritten);
+        HRESULT GetSymbolicLink(/* [annotation][size_is][out] _Out_writes_z_(cchSymbolicLink) */ [MarshalAs(UnmanagedType.LPWStr)] string SymbolicLink, /* [annotation][in] _In_ */ int cchSymbolicLink, /* [annotation][out] _Out_ */ out int pcchWritten);
         
         [PreserveSig]
         HRESULT GetFlags(/* [annotation][out] _Out_ */ out ulong pFlags);

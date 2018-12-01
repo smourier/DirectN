@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IFileSinkFilter
         [PreserveSig]
-        new HRESULT SetFileName(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszFileName, /* [annotation][unique][in] _In_opt_ */ ref _AMMediaType pmt);
+        new HRESULT SetFileName(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszFileName, /* optional(_AMMediaType) */ IntPtr pmt);
         
         [PreserveSig]
         new HRESULT GetCurFile(/* [annotation][out] _Out_ */ out IntPtr ppszFileName, /* [annotation][out] _Out_ */ out _AMMediaType pmt);

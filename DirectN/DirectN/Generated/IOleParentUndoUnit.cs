@@ -12,10 +12,10 @@ namespace DirectN
         new HRESULT Do(/* [in] __RPC__in_opt */ IOleUndoManager pUndoManager);
         
         [PreserveSig]
-        new HRESULT GetDescription(/* [out] __RPC__deref_out_opt */ out IntPtr pBstr);
+        new HRESULT GetDescription(/* optional(BSTR) */ out IntPtr pBstr);
         
         [PreserveSig]
-        new HRESULT GetUnitType(/* [out] __RPC__out */ out Guid pClsid, /* [out] __RPC__out */ out long plID);
+        new HRESULT GetUnitType(/* [out] __RPC__out */ out Guid pClsid, /* [out] __RPC__out */ out int plID);
         
         [PreserveSig]
         new HRESULT OnNextAdd();

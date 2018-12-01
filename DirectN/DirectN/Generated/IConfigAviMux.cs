@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT SetMasterStream(/* [in] */ int iStream);
         
         [PreserveSig]
-        HRESULT GetMasterStream(/* [annotation][out] _Out_ */ out long pStream);
+        HRESULT GetMasterStream(/* [annotation][out] _Out_ */ out int pStream);
         
         [PreserveSig]
         HRESULT SetOutputCompatibilityIndex(/* [in] */ bool fOldIndex);

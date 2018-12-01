@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct APO_CONNECTION_DESCRIPTOR
     {
         public APO_CONNECTION_BUFFER_TYPE Type;
-        public ulong pBuffer;
+        public IntPtr pBuffer;
         public uint u32MaxFrameCount;
         public IntPtr pFormat;
         public uint u32Signature;

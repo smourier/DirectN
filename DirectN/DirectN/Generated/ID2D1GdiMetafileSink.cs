@@ -11,6 +11,6 @@ namespace DirectN
     public partial interface ID2D1GdiMetafileSink
     {
         [PreserveSig]
-        HRESULT ProcessRecord(uint recordType, /* _In_opt_ */ IntPtr recordData, uint recordDataSize);
+        HRESULT ProcessRecord(uint recordType, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object recordData, uint recordDataSize);
     }
 }

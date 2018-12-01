@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1svg.h(625,1)
 using System;
 using System.Runtime.InteropServices;
+using D2D1_COLOR_F = DirectN._D3DCOLORVALUE;
 
 namespace DirectN
 {
@@ -25,10 +26,10 @@ namespace DirectN
         D2D1_SVG_PAINT_TYPE GetPaintType();
         
         [PreserveSig]
-        HRESULT SetColor(/* _In_ */ ref _D3DCOLORVALUE color);
+        HRESULT SetColor(/* _In_ */ ref D2D1_COLOR_F color);
         
         [PreserveSig]
-        void GetColor(/* _Out_ */ out _D3DCOLORVALUE color);
+        void GetColor(/* _Out_ */ out D2D1_COLOR_F color);
         
         [PreserveSig]
         HRESULT SetId(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string id);

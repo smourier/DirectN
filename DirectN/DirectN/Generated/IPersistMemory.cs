@@ -11,10 +11,10 @@ namespace DirectN
         HRESULT IsDirty();
         
         [PreserveSig]
-        HRESULT Load(/* [size_is][in] */ IntPtr pMem, /* [in] */ uint cbSize);
+        HRESULT Load(/* [size_is][in] */ [MarshalAs(UnmanagedType.LPArray)] IntPtr[] pMem, /* [in] */ uint cbSize);
         
         [PreserveSig]
-        HRESULT Save(/* [size_is][out] */ IntPtr pMem, /* [in] */ bool fClearDirty, /* [in] */ uint cbSize);
+        HRESULT Save(/* [size_is][out] */ [Out, MarshalAs(UnmanagedType.LPArray)] IntPtr[] pMem, /* [in] */ bool fClearDirty, /* [in] */ uint cbSize);
         
         [PreserveSig]
         HRESULT GetSizeMax(/* [out] __RPC__out */ out uint pCbSize);

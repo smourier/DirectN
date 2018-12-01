@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct _AMCOPPSignature
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public byte[] Signature;
+        public byte Signature;
     }
 }

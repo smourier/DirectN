@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(22304,5)
 using System;
 using System.Runtime.InteropServices;
+using POINT = DirectN.tagPOINT;
 
 namespace DirectN
 {
@@ -83,7 +84,7 @@ namespace DirectN
         HRESULT SelectParentalLevel(/* [in] */ uint ulParentalLevel);
         
         [PreserveSig]
-        HRESULT SelectParentalCountry(/* [in] */ [In, Out, MarshalAs(UnmanagedType.LPArray)] byte[] bCountry);
+        HRESULT SelectParentalCountry(/* [in] */ [In, Out, MarshalAs(UnmanagedType.LPArray)] byte bCountry);
         
         [PreserveSig]
         HRESULT SelectKaraokeAudioPresentationMode(/* [in] */ uint ulMode);
@@ -95,10 +96,10 @@ namespace DirectN
         HRESULT SetDVDDirectory(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszwPath);
         
         [PreserveSig]
-        HRESULT ActivateAtPosition(/* [in] */ tagPOINT point);
+        HRESULT ActivateAtPosition(/* [in] */ POINT point);
         
         [PreserveSig]
-        HRESULT SelectAtPosition(/* [in] */ tagPOINT point);
+        HRESULT SelectAtPosition(/* [in] */ POINT point);
         
         [PreserveSig]
         HRESULT PlayChaptersAutoStop(/* [in] */ uint ulTitle, /* [in] */ uint ulChapter, /* [in] */ uint ulChaptersToPlay, /* [in] */ uint dwFlags, /* [annotation][out] _Out_ */ out IDvdCmd ppCmd);
@@ -119,12 +120,12 @@ namespace DirectN
         HRESULT SetGPRM(/* [in] */ uint ulIndex, /* [in] */ ushort wValue, /* [in] */ uint dwFlags, /* [annotation][out] _Out_ */ out IDvdCmd ppCmd);
         
         [PreserveSig]
-        HRESULT SelectDefaultMenuLanguage(/* [in] */ uint Language);
+        HRESULT SelectDefaultMenuLanguage(/* [in] */ int Language);
         
         [PreserveSig]
-        HRESULT SelectDefaultAudioLanguage(/* [in] */ uint Language, /* [in] */ tagDVD_AUDIO_LANG_EXT audioExtension);
+        HRESULT SelectDefaultAudioLanguage(/* [in] */ int Language, /* [in] */ tagDVD_AUDIO_LANG_EXT audioExtension);
         
         [PreserveSig]
-        HRESULT SelectDefaultSubpictureLanguage(/* [in] */ uint Language, /* [in] */ tagDVD_SUBPICTURE_LANG_EXT subpictureExtension);
+        HRESULT SelectDefaultSubpictureLanguage(/* [in] */ int Language, /* [in] */ tagDVD_SUBPICTURE_LANG_EXT subpictureExtension);
     }
 }

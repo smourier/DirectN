@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(18079,5)
 using System;
 using System.Runtime.InteropServices;
+using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
@@ -23,7 +24,7 @@ namespace DirectN
         HRESULT RemoveFilterFromCache(/* [in] */ IBaseFilter pFilter);
         
         [PreserveSig]
-        HRESULT GetStartTime(/* [out] */ out long prtStart);
+        HRESULT GetStartTime(/* [out] */ out REFERENCE_TIME prtStart);
         
         [PreserveSig]
         HRESULT PushThroughData(/* [in] */ IPin pOutputPin, /* [in] */ IPinConnection pConnection, /* [in] */ IntPtr hEventAbort);

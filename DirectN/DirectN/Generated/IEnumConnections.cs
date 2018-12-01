@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IEnumConnections
     {
         [PreserveSig]
-        HRESULT Next(/* [in] */ uint cConnections, /* [length_is][size_is][out] */ IntPtr rgcd, /* [out] */ out uint pcFetched);
+        HRESULT Next(/* [in] */ uint cConnections, /* [length_is][size_is][out] */ [Out, MarshalAs(UnmanagedType.LPArray)] tagCONNECTDATA[] rgcd, /* [out] */ out uint pcFetched);
         
         [PreserveSig]
         HRESULT Skip(/* [in] */ uint cConnections);

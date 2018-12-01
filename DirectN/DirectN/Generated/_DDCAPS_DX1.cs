@@ -33,7 +33,7 @@ namespace DirectN
         public uint dwAlignSizeDest;
         public uint dwAlignStrideAlign;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint[] dwRops;
+        public uint dwRops;
         public _DDSCAPS ddsCaps;
         public uint dwMinOverlayStretch;
         public uint dwMaxOverlayStretch;

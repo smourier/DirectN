@@ -78,10 +78,10 @@ namespace DirectN
         new ID3D10EffectSamplerVariable AsSampler();
         
         [PreserveSig]
-        new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ out IntPtr pData, uint Offset, uint ByteCount);
+        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         // ID3D10EffectScalarVariable
         [PreserveSig]
@@ -154,10 +154,10 @@ namespace DirectN
         ID3D10EffectSamplerVariable AsSampler();
         
         [PreserveSig]
-        HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ out IntPtr pData, uint ByteOffset, uint ByteCount);
+        HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint ByteOffset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ out IntPtr pData, uint ByteOffset, uint ByteCount);
+        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint ByteOffset, uint ByteCount);
         
         [PreserveSig]
         HRESULT SetFloat(float Value);
@@ -166,10 +166,10 @@ namespace DirectN
         HRESULT GetFloat(/* THIS_ _Out_ */ out float pValue);
         
         [PreserveSig]
-        HRESULT SetFloatArray(/* THIS_ _In_reads_(Count) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] pData, uint Offset, uint Count);
+        HRESULT SetFloatArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] pData, uint Offset, uint Count);
         
         [PreserveSig]
-        HRESULT GetFloatArray(/* THIS_ _Out_writes_(Count) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] pData, uint Offset, uint Count);
+        HRESULT GetFloatArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] pData, uint Offset, uint Count);
         
         [PreserveSig]
         HRESULT SetInt(int Value);
@@ -178,10 +178,10 @@ namespace DirectN
         HRESULT GetInt(/* THIS_ _Out_ */ out int pValue);
         
         [PreserveSig]
-        HRESULT SetIntArray(/* THIS_ _In_reads_(Count) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pData, uint Offset, uint Count);
+        HRESULT SetIntArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pData, uint Offset, uint Count);
         
         [PreserveSig]
-        HRESULT GetIntArray(/* THIS_ _Out_writes_(Count) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pData, uint Offset, uint Count);
+        HRESULT GetIntArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pData, uint Offset, uint Count);
         
         [PreserveSig]
         HRESULT SetBool(bool Value);
@@ -190,9 +190,9 @@ namespace DirectN
         HRESULT GetBool(/* THIS_ _Out_ */ out bool pValue);
         
         [PreserveSig]
-        HRESULT SetBoolArray(/* THIS_ _In_reads_(Count) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] bool pData, uint Offset, uint Count);
+        HRESULT SetBoolArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] bool[] pData, uint Offset, uint Count);
         
         [PreserveSig]
-        HRESULT GetBoolArray(/* THIS_ _Out_writes_(Count) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] bool pData, uint Offset, uint Count);
+        HRESULT GetBoolArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] bool[] pData, uint Offset, uint Count);
     }
 }

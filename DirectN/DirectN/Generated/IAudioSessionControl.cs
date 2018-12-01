@@ -14,19 +14,19 @@ namespace DirectN
         HRESULT GetDisplayName(/* [annotation][string][out] _Out_ */ out IntPtr pRetVal);
         
         [PreserveSig]
-        HRESULT SetDisplayName(/* [annotation][string][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string Value, /* [unique][in] */ Guid EventContext);
+        HRESULT SetDisplayName(/* [annotation][string][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string Value, /* [unique][in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
         HRESULT GetIconPath(/* [annotation][string][out] _Out_ */ out IntPtr pRetVal);
         
         [PreserveSig]
-        HRESULT SetIconPath(/* [annotation][string][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string Value, /* [unique][in] */ Guid EventContext);
+        HRESULT SetIconPath(/* [annotation][string][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string Value, /* [unique][in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
         HRESULT GetGroupingParam(/* [annotation][out] _Out_ */ out Guid pRetVal);
         
         [PreserveSig]
-        HRESULT SetGroupingParam(/* [annotation][in] _In_ */ Guid Override, /* [unique][in] */ Guid EventContext);
+        HRESULT SetGroupingParam(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid Override, /* [unique][in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid EventContext);
         
         [PreserveSig]
         HRESULT RegisterAudioSessionNotification(/* [annotation][in] _In_ */ IAudioSessionEvents NewNotifications);

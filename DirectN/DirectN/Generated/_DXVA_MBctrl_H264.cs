@@ -10,9 +10,9 @@ namespace DirectN
         public _DXVA_MBctrl_H264__union_0 __union_0;
         public ushort CurrMbAddr;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public ushort[] wPatternCode;
+        public ushort wPatternCode;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public byte[] bQpPrime;
+        public byte bQpPrime;
         public byte bMBresidDataQuantity;
         public uint dwMBdataLocation;
         public _DXVA_MBctrl_H264__union_1 __union_6;

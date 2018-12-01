@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct _D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_2
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public uint[] Reserved;
+        public uint Reserved;
     }
 }
