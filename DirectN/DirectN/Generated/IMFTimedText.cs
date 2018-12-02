@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT SelectTrack(/* [annotation][in] _In_ */ uint trackId, /* [annotation][in] _In_ */ bool selected);
         
         [PreserveSig]
-        HRESULT AddDataSource(/* [annotation][in] _In_ */ ref IMFByteStream byteStream, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string label, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string language, /* [annotation][in] _In_ */ MF_TIMED_TEXT_TRACK_KIND kind, /* [annotation][in] _In_ */ bool isDefault, /* [annotation][in] _Out_ */ ref uint trackId);
+        HRESULT AddDataSource(/* [annotation][in] _In_ */ IMFByteStream byteStream, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string label, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string language, /* [annotation][in] _In_ */ MF_TIMED_TEXT_TRACK_KIND kind, /* [annotation][in] _In_ */ bool isDefault, /* [annotation][in] _Out_ */ ref uint trackId);
         
         [PreserveSig]
         HRESULT AddDataSourceFromUrl(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string url, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string label, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string language, /* [annotation][in] _In_ */ MF_TIMED_TEXT_TRACK_KIND kind, /* [annotation][in] _In_ */ bool isDefault, /* [annotation][in] _Out_ */ ref uint trackId);

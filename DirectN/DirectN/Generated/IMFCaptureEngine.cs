@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFCaptureEngine
     {
         [PreserveSig]
-        HRESULT Initialize(/* [annotation][in] _In_ */ IMFCaptureEngineOnEventCallback pEventCallback, /* optional(IMFAttributes) */ IntPtr pAttributes, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pAudioSource, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pVideoSource);
+        HRESULT Initialize(/* [annotation][in] _In_ */ IMFCaptureEngineOnEventCallback pEventCallback, /* [annotation][in] _In_opt_ */ IMFAttributes pAttributes, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pAudioSource, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pVideoSource);
         
         [PreserveSig]
         HRESULT StartPreview();

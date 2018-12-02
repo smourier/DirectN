@@ -15,19 +15,19 @@ namespace DirectN
         new HRESULT SetStreamSelection(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ bool fSelected);
         
         [PreserveSig]
-        new HRESULT GetNativeMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwMediaTypeIndex, /* [annotation][out] _Out_ */ out IntPtr ppMediaType);
+        new HRESULT GetNativeMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwMediaTypeIndex, /* [annotation][out] _Out_ */ out IMFMediaType ppMediaType);
         
         [PreserveSig]
-        new HRESULT GetCurrentMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out] _Out_ */ out IntPtr ppMediaType);
+        new HRESULT GetCurrentMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out] _Out_ */ out IMFMediaType ppMediaType);
         
         [PreserveSig]
-        new HRESULT SetCurrentMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out][in] _Reserved_ */ ref uint pdwReserved, /* [annotation][in] _In_ */ ref IMFMediaType pMediaType);
+        new HRESULT SetCurrentMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out][in] _Reserved_ */ ref uint pdwReserved, /* [annotation][in] _In_ */ IMFMediaType pMediaType);
         
         [PreserveSig]
         new HRESULT SetCurrentPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidTimeFormat, /* [annotation][in] _In_ */ PropVariant varPosition);
         
         [PreserveSig]
-        new HRESULT ReadSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwControlFlags, /* [annotation][out] _Out_opt_ */ out uint pdwActualStreamIndex, /* [annotation][out] _Out_opt_ */ out uint pdwStreamFlags, /* [annotation][out] _Out_opt_ */ out long pllTimestamp, /* optional(IMFSample) */ out IntPtr ppSample);
+        new HRESULT ReadSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwControlFlags, /* [annotation][out] _Out_opt_ */ out uint pdwActualStreamIndex, /* [annotation][out] _Out_opt_ */ out uint pdwStreamFlags, /* [annotation][out] _Out_opt_ */ out long pllTimestamp, /* [annotation][out] _Out_opt_ */ out IMFSample ppSample);
         
         [PreserveSig]
         new HRESULT Flush(/* [annotation][in] _In_ */ uint dwStreamIndex);
@@ -40,7 +40,7 @@ namespace DirectN
         
         // IMFSourceReaderEx
         [PreserveSig]
-        HRESULT SetNativeMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* optional(IMFMediaType) */ IntPtr pMediaType, /* [annotation][out] _Out_ */ out uint pdwStreamFlags);
+        HRESULT SetNativeMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_opt_ */ IMFMediaType pMediaType, /* [annotation][out] _Out_ */ out uint pdwStreamFlags);
         
         [PreserveSig]
         HRESULT AddTransformForStream(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pTransformOrActivate);

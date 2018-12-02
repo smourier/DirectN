@@ -35,7 +35,7 @@ namespace DirectN
         HRESULT Append(/* [annotation][in] _In_reads_bytes_(len) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pData, /* [annotation][in] _In_ */ uint len);
         
         [PreserveSig]
-        HRESULT AppendByteStream(/* [annotation][in] _In_ */ ref IMFByteStream pStream, /* optional(DWORDLONG) */ IntPtr pMaxLen);
+        HRESULT AppendByteStream(/* [annotation][in] _In_ */ IMFByteStream pStream, /* optional(DWORDLONG) */ IntPtr pMaxLen);
         
         [PreserveSig]
         HRESULT Abort();

@@ -1,10 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawi.h(1754,9)
 using System;
 using System.Runtime.InteropServices;
-using DDCOLORKEY = DirectN._DDCOLORKEY;
-using DDSCAPSEX = DirectN._DDSCAPSEX;
 using LPDDKERNELCAPS = DirectN._DDKERNELCAPS;
-using LPDDPIXELFORMAT = DirectN._DDPIXELFORMAT;
 using LPDDRAWI_DDMOTIONCOMP_INT = DirectN._DDRAWI_DDMOTIONCOMP_INT;
 using LPDDRAWI_DDRAWCLIPPER_INT = DirectN._DDRAWI_DDRAWCLIPPER_INT;
 using LPDDRAWI_DDRAWPALETTE_INT = DirectN._DDRAWI_DDRAWPALETTE_INT;
@@ -38,8 +35,8 @@ namespace DirectN
         public _DDCORECAPS ddHELCaps;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 50)] 
         public uint[] dwUnused2;
-        public DDCOLORKEY ddckCKDestOverlay;
-        public DDCOLORKEY ddckCKSrcOverlay;
+        public _DDCOLORKEY ddckCKDestOverlay;
+        public _DDCOLORKEY ddckCKSrcOverlay;
         public _VIDMEMINFO vmiData;
         public IntPtr lpDriverHandle;
         public IntPtr lpExclusiveOwner;
@@ -55,7 +52,7 @@ namespace DirectN
         public IntPtr dwReserved3;
         public IntPtr hDD;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 12)] 
-        public string[] cObsolete;
+        public string cObsolete;
         public uint dwReserved1;
         public uint dwReserved2;
         public _DBLNODE dbnOverlayRoot;
@@ -87,12 +84,12 @@ namespace DirectN
         public uint dwDOSBoxEvent;
         public RECT rectDesktop;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] 
-        public string[] cDriverName;
+        public string cDriverName;
         public IntPtr lpD3DHALCallbacks3;
         public uint dwNumZPixelFormats;
         public IntPtr lpZPixelFormats;
         public IntPtr mcList;
         public uint hDDVxd;
-        public DDSCAPSEX ddsCapsMore;
+        public _DDSCAPSEX ddsCapsMore;
     }
 }

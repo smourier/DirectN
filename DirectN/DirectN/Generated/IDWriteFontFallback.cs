@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IDWriteFontFallback
     {
         [PreserveSig]
-        HRESULT MapCharacters(IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, /* _In_opt_ */ IDWriteFontCollection baseFontCollection, /* optional(wchar_t) */ IntPtr baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, /* _Out_range_(0, textLength) */ [Out, MarshalAs(UnmanagedType.LPArray)] uint[] mappedLength, /* _COM_Outptr_result_maybenull_ */ out IDWriteFont mappedFont, /* _Out_ */ out float scale);
+        HRESULT MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, /* _In_opt_ */ IDWriteFontCollection baseFontCollection, /* _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string baseFamilyName, DWRITE_FONT_WEIGHT baseWeight, DWRITE_FONT_STYLE baseStyle, DWRITE_FONT_STRETCH baseStretch, /* _Out_range_(0, textLength) */ [Out, MarshalAs(UnmanagedType.LPArray)] uint[] mappedLength, /* _COM_Outptr_result_maybenull_ */ out IDWriteFont mappedFont, /* _Out_ */ out float scale);
     }
 }

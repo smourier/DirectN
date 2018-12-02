@@ -17,10 +17,12 @@ namespace DirectN
         /// <summary>
         /// Specifies the property value, such as "Segoe UI".
         /// </summary>
-        public IntPtr propertyValue;
+        [MarshalAs(UnmanagedType.LPWStr)] 
+        public char propertyValue;
         /// <summary>
         /// Specifies the language / locale to use, such as "en-US".  <remarks> When passing property information to AddFontFaceReference, localeName indicates the language of the property value. BCP 47 language tags should be used. If a property value is inherently non-linguistic, this can be left empty.
         /// </summary>
-        public IntPtr localeName;
+        [MarshalAs(UnmanagedType.LPWStr)] 
+        public char localeName;
     }
 }

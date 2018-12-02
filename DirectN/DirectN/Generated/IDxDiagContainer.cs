@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT EnumChildContainerNames(uint dwIndex, [MarshalAs(UnmanagedType.LPWStr)] string pwszContainer, uint cchContainer);
         
         [PreserveSig]
-        HRESULT GetChildContainer([MarshalAs(UnmanagedType.LPWStr)] string pwszContainer, IDxDiagContainer ppInstance);
+        HRESULT GetChildContainer([MarshalAs(UnmanagedType.LPWStr)] string pwszContainer, ref IDxDiagContainer ppInstance);
         
         [PreserveSig]
         HRESULT GetNumberOfProps(ref uint pdwCount);
@@ -23,6 +23,6 @@ namespace DirectN
         HRESULT EnumPropNames(uint dwIndex, [MarshalAs(UnmanagedType.LPWStr)] string pwszPropName, uint cchPropName);
         
         [PreserveSig]
-        HRESULT GetPropA([MarshalAs(UnmanagedType.LPWStr)] string pwszPropName, object pvarProp);
+        HRESULT GetPropW([MarshalAs(UnmanagedType.LPWStr)] string pwszPropName, object pvarProp);
     }
 }

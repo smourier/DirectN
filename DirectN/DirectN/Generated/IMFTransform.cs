@@ -23,13 +23,13 @@ namespace DirectN
         HRESULT GetOutputStreamInfo(uint dwOutputStreamID, /* [out] __RPC__out */ out _MFT_OUTPUT_STREAM_INFO pStreamInfo);
         
         [PreserveSig]
-        HRESULT GetAttributes(/* optional(IMFAttributes) */ out IntPtr pAttributes);
+        HRESULT GetAttributes(/* [out] __RPC__deref_out_opt */ out IMFAttributes pAttributes);
         
         [PreserveSig]
-        HRESULT GetInputStreamAttributes(uint dwInputStreamID, /* optional(IMFAttributes) */ out IntPtr pAttributes);
+        HRESULT GetInputStreamAttributes(uint dwInputStreamID, /* [out] __RPC__deref_out_opt */ out IMFAttributes pAttributes);
         
         [PreserveSig]
-        HRESULT GetOutputStreamAttributes(uint dwOutputStreamID, /* optional(IMFAttributes) */ out IntPtr pAttributes);
+        HRESULT GetOutputStreamAttributes(uint dwOutputStreamID, /* [out] __RPC__deref_out_opt */ out IMFAttributes pAttributes);
         
         [PreserveSig]
         HRESULT DeleteInputStream(uint dwStreamID);
@@ -38,22 +38,22 @@ namespace DirectN
         HRESULT AddInputStreams(uint cStreams, /* [in] __RPC__in */ ref uint adwStreamIDs);
         
         [PreserveSig]
-        HRESULT GetInputAvailableType(uint dwInputStreamID, uint dwTypeIndex, /* optional(IMFMediaType) */ out IntPtr ppType);
+        HRESULT GetInputAvailableType(uint dwInputStreamID, uint dwTypeIndex, /* [out] __RPC__deref_out_opt */ out IMFMediaType ppType);
         
         [PreserveSig]
-        HRESULT GetOutputAvailableType(uint dwOutputStreamID, uint dwTypeIndex, /* optional(IMFMediaType) */ out IntPtr ppType);
+        HRESULT GetOutputAvailableType(uint dwOutputStreamID, uint dwTypeIndex, /* [out] __RPC__deref_out_opt */ out IMFMediaType ppType);
         
         [PreserveSig]
-        HRESULT SetInputType(uint dwInputStreamID, /* optional(IMFMediaType) */ IntPtr pType, uint dwFlags);
+        HRESULT SetInputType(uint dwInputStreamID, /* [in] __RPC__in_opt */ IMFMediaType pType, uint dwFlags);
         
         [PreserveSig]
-        HRESULT SetOutputType(uint dwOutputStreamID, /* optional(IMFMediaType) */ IntPtr pType, uint dwFlags);
+        HRESULT SetOutputType(uint dwOutputStreamID, /* [in] __RPC__in_opt */ IMFMediaType pType, uint dwFlags);
         
         [PreserveSig]
-        HRESULT GetInputCurrentType(uint dwInputStreamID, /* optional(IMFMediaType) */ out IntPtr ppType);
+        HRESULT GetInputCurrentType(uint dwInputStreamID, /* [out] __RPC__deref_out_opt */ out IMFMediaType ppType);
         
         [PreserveSig]
-        HRESULT GetOutputCurrentType(uint dwOutputStreamID, /* optional(IMFMediaType) */ out IntPtr ppType);
+        HRESULT GetOutputCurrentType(uint dwOutputStreamID, /* [out] __RPC__deref_out_opt */ out IMFMediaType ppType);
         
         [PreserveSig]
         HRESULT GetInputStatus(uint dwInputStreamID, /* [out] __RPC__out */ out uint pdwFlags);
@@ -65,7 +65,7 @@ namespace DirectN
         HRESULT SetOutputBounds(long hnsLowerBound, long hnsUpperBound);
         
         [PreserveSig]
-        HRESULT ProcessEvent(uint dwInputStreamID, /* optional(IMFMediaEvent) */ IntPtr pEvent);
+        HRESULT ProcessEvent(uint dwInputStreamID, /* [in] __RPC__in_opt */ IMFMediaEvent pEvent);
         
         [PreserveSig]
         HRESULT ProcessMessage(_MFT_MESSAGE_TYPE eMessage, IntPtr ulParam);

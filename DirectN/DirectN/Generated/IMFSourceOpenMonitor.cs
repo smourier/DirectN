@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFSourceOpenMonitor
     {
         [PreserveSig]
-        HRESULT OnSourceEvent(/* optional(IMFMediaEvent) */ IntPtr pEvent);
+        HRESULT OnSourceEvent(/* [in] __RPC__in_opt */ IMFMediaEvent pEvent);
     }
 }

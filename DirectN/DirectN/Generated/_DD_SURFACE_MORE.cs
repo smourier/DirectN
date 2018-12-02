@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawint.h(774,9)
 using System;
 using System.Runtime.InteropServices;
-using DDSCAPSEX = DirectN._DDSCAPSEX;
 using PDD_VIDEOPORT_LOCAL = DirectN._DD_VIDEOPORT_LOCAL;
 
 namespace DirectN
@@ -12,7 +11,7 @@ namespace DirectN
         public uint dwMipMapCount;
         public IntPtr lpVideoPort;
         public uint dwOverlayFlags;
-        public DDSCAPSEX ddsCapsEx;
+        public _DDSCAPSEX ddsCapsEx;
         public uint dwSurfaceHandle;
     }
 }

@@ -81,7 +81,7 @@ namespace DirectN
         new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
+        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ IntPtr pData, uint Offset, uint ByteCount);
         
         // ID3D10EffectDepthStencilVariable
         [PreserveSig]
@@ -154,10 +154,10 @@ namespace DirectN
         HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
+        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ IntPtr pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetDepthStencilState(uint Index, /* _Out_ */ out IntPtr ppDepthStencilState);
+        HRESULT GetDepthStencilState(uint Index, /* _Out_ */ out ID3D10DepthStencilState ppDepthStencilState);
         
         [PreserveSig]
         HRESULT GetBackingStore(uint Index, /* _Out_ */ out D3D10_DEPTH_STENCIL_DESC pDepthStencilDesc);

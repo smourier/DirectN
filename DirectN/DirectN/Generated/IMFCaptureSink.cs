@@ -8,13 +8,13 @@ namespace DirectN
     public partial interface IMFCaptureSink
     {
         [PreserveSig]
-        HRESULT GetOutputMediaType(/* [annotation][in] _In_ */ uint dwSinkStreamIndex, /* optional(IMFMediaType) */ out IntPtr ppMediaType);
+        HRESULT GetOutputMediaType(/* [annotation][in] _In_ */ uint dwSinkStreamIndex, /* [annotation][out] _Out_opt_ */ out IMFMediaType ppMediaType);
         
         [PreserveSig]
         HRESULT GetService(/* [annotation][in] _In_ */ uint dwSinkStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rguidService, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnknown);
         
         [PreserveSig]
-        HRESULT AddStream(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][in] _In_ */ ref IMFMediaType pMediaType, /* optional(IMFAttributes) */ IntPtr pAttributes, /* [annotation][out] _Out_opt_ */ out uint pdwSinkStreamIndex);
+        HRESULT AddStream(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][in] _In_ */ IMFMediaType pMediaType, /* [annotation][in] _In_opt_ */ IMFAttributes pAttributes, /* [annotation][out] _Out_opt_ */ out uint pdwSinkStreamIndex);
         
         [PreserveSig]
         HRESULT Prepare();

@@ -19,10 +19,10 @@ namespace DirectN
         HRESULT GetSessionEnumerator(/* [retval][out] */ out IAudioSessionEnumerator SessionEnum);
         
         [PreserveSig]
-        HRESULT RegisterSessionNotification(IAudioSessionNotification SessionNotification);
+        HRESULT RegisterSessionNotification(ref IAudioSessionNotification SessionNotification);
         
         [PreserveSig]
-        HRESULT UnregisterSessionNotification(IAudioSessionNotification SessionNotification);
+        HRESULT UnregisterSessionNotification(ref IAudioSessionNotification SessionNotification);
         
         [PreserveSig]
         HRESULT RegisterDuckNotification(/* [string][in] */ [MarshalAs(UnmanagedType.LPWStr)] string sessionID, /* [annotation][in] _In_ */ IAudioVolumeDuckNotification duckNotification);

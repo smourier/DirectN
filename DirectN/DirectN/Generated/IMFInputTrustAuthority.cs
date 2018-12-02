@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetDecrypter(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][iid_is][out] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
         
         [PreserveSig]
-        HRESULT RequestAccess(/* [in] */ _MFPOLICYMANAGER_ACTION Action, /* [annotation][out] _Outptr_ */ out IntPtr ppContentEnablerActivate);
+        HRESULT RequestAccess(/* [in] */ _MFPOLICYMANAGER_ACTION Action, /* [annotation][out] _Outptr_ */ out IMFActivate ppContentEnablerActivate);
         
         [PreserveSig]
         HRESULT GetPolicy(/* [in] */ _MFPOLICYMANAGER_ACTION Action, /* [annotation][out] _Outptr_ */ out IMFOutputPolicy ppPolicy);

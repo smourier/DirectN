@@ -5,8 +5,22 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [Guid("d182108f-4ec6-443f-aa42-a71106ec825f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface IMFMediaStream
+    public partial interface IMFMediaStream : IMFMediaEventGenerator
     {
+        // IMFMediaEventGenerator
+        [PreserveSig]
+        new HRESULT GetEvent(/* [in] */ uint dwFlags, /* [out] __RPC__deref_out_opt */ out IMFMediaEvent ppEvent);
+        
+        [PreserveSig]
+        new HRESULT BeginGetEvent(/* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        
+        [PreserveSig]
+        new HRESULT EndGetEvent(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out IMFMediaEvent ppEvent);
+        
+        [PreserveSig]
+        new HRESULT QueueEvent(/* [in] */ uint met, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] __RPC__in_opt */ PropVariant pvValue);
+        
+        // IMFMediaStream
         [PreserveSig]
         HRESULT GetMediaSource(/* [out] __RPC__deref_out_opt */ out IMFMediaSource ppMediaSource);
         

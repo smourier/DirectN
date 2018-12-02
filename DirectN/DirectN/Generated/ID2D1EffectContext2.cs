@@ -68,10 +68,10 @@ namespace DirectN
         new HRESULT CreateColorContextFromFilename(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string filename, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
         
         [PreserveSig]
-        new HRESULT CreateColorContextFromWicColorContext(/* _In_ */ ref IWICColorContext wicColorContext, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
+        new HRESULT CreateColorContextFromWicColorContext(/* _In_ */ IWICColorContext wicColorContext, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
         
         [PreserveSig]
-        new HRESULT CheckFeatureSupport(D2D1_FEATURE feature, /* _Out_writes_bytes_(featureSupportDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object featureSupportData, uint featureSupportDataSize);
+        new HRESULT CheckFeatureSupport(D2D1_FEATURE feature, /* _Out_writes_bytes_(featureSupportDataSize) */ IntPtr featureSupportData, uint featureSupportDataSize);
         
         [PreserveSig]
         new bool IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision);

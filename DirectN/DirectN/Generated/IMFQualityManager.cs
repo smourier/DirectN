@@ -14,13 +14,13 @@ namespace DirectN
         HRESULT NotifyPresentationClock(/* [in] */ IMFPresentationClock pClock);
         
         [PreserveSig]
-        HRESULT NotifyProcessInput(/* [in] */ IMFTopologyNode pNode, /* [in] */ int lInputIndex, /* [in] */ ref IMFSample pSample);
+        HRESULT NotifyProcessInput(/* [in] */ IMFTopologyNode pNode, /* [in] */ int lInputIndex, /* [in] */ IMFSample pSample);
         
         [PreserveSig]
-        HRESULT NotifyProcessOutput(/* [in] */ IMFTopologyNode pNode, /* [in] */ int lOutputIndex, /* [in] */ ref IMFSample pSample);
+        HRESULT NotifyProcessOutput(/* [in] */ IMFTopologyNode pNode, /* [in] */ int lOutputIndex, /* [in] */ IMFSample pSample);
         
         [PreserveSig]
-        HRESULT NotifyQualityEvent(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pObject, /* [in] */ ref IMFMediaEvent pEvent);
+        HRESULT NotifyQualityEvent(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pObject, /* [in] */ IMFMediaEvent pEvent);
         
         [PreserveSig]
         HRESULT Shutdown();

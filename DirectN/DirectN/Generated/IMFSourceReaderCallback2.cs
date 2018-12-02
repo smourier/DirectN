@@ -9,13 +9,13 @@ namespace DirectN
     {
         // IMFSourceReaderCallback
         [PreserveSig]
-        new HRESULT OnReadSample(/* [annotation][in] _In_ */ HRESULT hrStatus, /* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwStreamFlags, /* [annotation][in] _In_ */ long llTimestamp, /* optional(IMFSample) */ IntPtr pSample);
+        new HRESULT OnReadSample(/* [annotation][in] _In_ */ HRESULT hrStatus, /* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwStreamFlags, /* [annotation][in] _In_ */ long llTimestamp, /* [annotation][in] _In_opt_ */ IMFSample pSample);
         
         [PreserveSig]
         new HRESULT OnFlush(/* [annotation][in] _In_ */ uint dwStreamIndex);
         
         [PreserveSig]
-        new HRESULT OnEvent(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ ref IMFMediaEvent pEvent);
+        new HRESULT OnEvent(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFMediaEvent pEvent);
         
         // IMFSourceReaderCallback2
         [PreserveSig]

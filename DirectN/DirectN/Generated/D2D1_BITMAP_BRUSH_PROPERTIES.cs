@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Describes the extend modes and the interpolation mode of an ID2D1BitmapBrush.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_BITMAP_BRUSH_PROPERTIES
     {

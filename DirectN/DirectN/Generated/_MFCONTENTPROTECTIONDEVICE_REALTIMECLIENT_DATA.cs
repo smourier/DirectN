@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint TaskIndex;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)] 
-        public string[] ClassName;
+        public string ClassName;
         public int BasePriority;
     }
 }

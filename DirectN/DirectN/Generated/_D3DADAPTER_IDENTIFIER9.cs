@@ -8,11 +8,11 @@ namespace DirectN
     public partial struct _D3DADAPTER_IDENTIFIER9
     {
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 512)] 
-        public string[] Driver;
+        public string Driver;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 512)] 
-        public string[] Description;
+        public string Description;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] 
-        public string[] DeviceName;
+        public string DeviceName;
         public long DriverVersion;
         public uint VendorId;
         public uint DeviceId;

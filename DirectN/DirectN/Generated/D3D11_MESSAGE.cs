@@ -10,7 +10,8 @@ namespace DirectN
         public D3D11_MESSAGE_CATEGORY Category;
         public D3D11_MESSAGE_SEVERITY Severity;
         public D3D11_MESSAGE_ID ID;
-        public IntPtr pDescription;
+        [MarshalAs(UnmanagedType.LPStr)] 
+        public byte pDescription;
         public IntPtr DescriptionByteLength;
     }
 }

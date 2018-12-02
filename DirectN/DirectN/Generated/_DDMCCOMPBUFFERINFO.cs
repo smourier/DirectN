@@ -1,8 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawi.h(2856,9)
 using System;
 using System.Runtime.InteropServices;
-using DDPIXELFORMAT = DirectN._DDPIXELFORMAT;
-using DDSCAPS2 = DirectN._DDSCAPS2;
 
 namespace DirectN
 {
@@ -14,7 +12,7 @@ namespace DirectN
         public uint dwWidthToCreate;
         public uint dwHeightToCreate;
         public uint dwBytesToAllocate;
-        public DDSCAPS2 ddCompCaps;
-        public DDPIXELFORMAT ddPixelFormat;
+        public _DDSCAPS2 ddCompCaps;
+        public _DDPIXELFORMAT ddPixelFormat;
     }
 }

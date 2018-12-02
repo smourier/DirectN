@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using HNSTIME = System.Int64;
-using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {

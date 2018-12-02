@@ -14,6 +14,6 @@ namespace DirectN
         HRESULT DetachMediaSource(/* [annotation][out] _COM_Outptr_ */ out IMFByteStream ppByteStream, /* [annotation][out] _COM_Outptr_ */ out IMFMediaSource ppMediaSource, /* [annotation][out] _COM_Outptr_ */ out IMFMediaSourceExtension ppMSE);
         
         [PreserveSig]
-        HRESULT AttachMediaSource(/* optional(IMFByteStream) */ IntPtr pByteStream, /* [annotation][in] _In_ */ ref IMFMediaSource pMediaSource, /* [annotation][in] _In_opt_ */ IMFMediaSourceExtension pMSE);
+        HRESULT AttachMediaSource(/* [annotation][in] _In_opt_ */ IMFByteStream pByteStream, /* [annotation][in] _In_ */ IMFMediaSource pMediaSource, /* [annotation][in] _In_opt_ */ IMFMediaSourceExtension pMSE);
     }
 }

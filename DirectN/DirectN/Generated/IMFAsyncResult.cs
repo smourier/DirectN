@@ -17,7 +17,7 @@ namespace DirectN
         HRESULT SetStatus(/* [in] */ HRESULT hrStatus);
         
         [PreserveSig]
-        HRESULT GetObjectA(/* [out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppObject);
+        HRESULT GetObjectW(/* [out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppObject);
         
         [PreserveSig]
         object GetStateNoAddRef();

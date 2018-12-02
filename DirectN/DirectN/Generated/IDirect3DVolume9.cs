@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DVolume9
     {
         [PreserveSig]
-        HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);

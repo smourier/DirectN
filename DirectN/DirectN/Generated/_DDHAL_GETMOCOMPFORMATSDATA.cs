@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPDDHALMOCOMPCB_GETFORMATS = System.IntPtr;
-using LPDDPIXELFORMAT = DirectN._DDPIXELFORMAT;
 using LPDDRAWI_DIRECTDRAW_LCL = DirectN._DDRAWI_DIRECTDRAW_LCL;
 
 namespace DirectN

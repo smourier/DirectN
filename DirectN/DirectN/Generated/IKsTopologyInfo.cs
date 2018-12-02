@@ -20,7 +20,7 @@ namespace DirectN
         HRESULT get_ConnectionInfo(/* [in] */ uint dwIndex, /* [out] */ out KSTOPOLOGY_CONNECTION pConnectionInfo);
         
         [PreserveSig]
-        HRESULT get_NodeName(/* [in] */ uint dwNodeId, /* [annotation][out] _Out_writes_bytes_opt_(dwBufSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] pwchNodeName, /* [in] */ uint dwBufSize, /* [annotation][out] _Out_ */ out uint pdwNameLen);
+        HRESULT get_NodeName(/* [in] */ uint dwNodeId, /* [annotation][out] _Out_writes_bytes_opt_(dwBufSize) */ [MarshalAs(UnmanagedType.LPWStr)] string pwchNodeName, /* [in] */ uint dwBufSize, /* [annotation][out] _Out_ */ out uint pdwNameLen);
         
         [PreserveSig]
         HRESULT get_NumNodes(/* [out] */ out uint pdwNumNodes);

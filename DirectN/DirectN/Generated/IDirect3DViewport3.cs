@@ -20,7 +20,7 @@ namespace DirectN
         new uint Release();
         
         [PreserveSig]
-        new HRESULT Initialize(IDirect3D __unnamed_0);
+        new HRESULT Initialize(ref IDirect3D __unnamed_0);
         
         [PreserveSig]
         new HRESULT GetViewport(ref _D3DVIEWPORT __unnamed_0);
@@ -41,22 +41,22 @@ namespace DirectN
         new HRESULT GetBackground(ref uint __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
-        new HRESULT SetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0);
+        new HRESULT SetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0);
         
         [PreserveSig]
-        new HRESULT GetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
+        new HRESULT GetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
         new HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
-        new HRESULT AddLight(IDirect3DLight __unnamed_0);
+        new HRESULT AddLight(ref IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        new HRESULT DeleteLight(IDirect3DLight __unnamed_0);
+        new HRESULT DeleteLight(ref IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        new HRESULT NextLight(IDirect3DLight __unnamed_0, IDirect3DLight __unnamed_1, uint __unnamed_2);
+        new HRESULT NextLight(ref IDirect3DLight __unnamed_0, ref IDirect3DLight __unnamed_1, uint __unnamed_2);
         
         // IDirect3DViewport2
         [PreserveSig]
@@ -69,7 +69,7 @@ namespace DirectN
         new uint Release();
         
         [PreserveSig]
-        new HRESULT Initialize(IDirect3D __unnamed_0);
+        new HRESULT Initialize(ref IDirect3D __unnamed_0);
         
         [PreserveSig]
         new HRESULT GetViewport(ref _D3DVIEWPORT __unnamed_0);
@@ -90,22 +90,22 @@ namespace DirectN
         new HRESULT GetBackground(ref uint __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
-        new HRESULT SetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0);
+        new HRESULT SetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0);
         
         [PreserveSig]
-        new HRESULT GetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
+        new HRESULT GetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
         new HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
-        new HRESULT AddLight(IDirect3DLight __unnamed_0);
+        new HRESULT AddLight(ref IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        new HRESULT DeleteLight(IDirect3DLight __unnamed_0);
+        new HRESULT DeleteLight(ref IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        new HRESULT NextLight(IDirect3DLight __unnamed_0, IDirect3DLight __unnamed_1, uint __unnamed_2);
+        new HRESULT NextLight(ref IDirect3DLight __unnamed_0, ref IDirect3DLight __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
         new HRESULT GetViewport2(ref _D3DVIEWPORT2 __unnamed_0);
@@ -115,7 +115,7 @@ namespace DirectN
         
         // IDirect3DViewport3
         [PreserveSig]
-        HRESULT Initialize(IDirect3D __unnamed_0);
+        HRESULT Initialize(ref IDirect3D __unnamed_0);
         
         [PreserveSig]
         HRESULT GetViewport(ref _D3DVIEWPORT __unnamed_0);
@@ -136,22 +136,22 @@ namespace DirectN
         HRESULT GetBackground(ref uint __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
-        HRESULT SetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0);
+        HRESULT SetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0);
         
         [PreserveSig]
-        HRESULT GetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
+        HRESULT GetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
         HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
-        HRESULT AddLight(IDirect3DLight __unnamed_0);
+        HRESULT AddLight(ref IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        HRESULT DeleteLight(IDirect3DLight __unnamed_0);
+        HRESULT DeleteLight(ref IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        HRESULT NextLight(IDirect3DLight __unnamed_0, IDirect3DLight __unnamed_1, uint __unnamed_2);
+        HRESULT NextLight(ref IDirect3DLight __unnamed_0, ref IDirect3DLight __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
         HRESULT GetViewport2(ref _D3DVIEWPORT2 __unnamed_0);
@@ -160,10 +160,10 @@ namespace DirectN
         HRESULT SetViewport2(ref _D3DVIEWPORT2 __unnamed_0);
         
         [PreserveSig]
-        HRESULT SetBackgroundDepth2(LPDIRECTDRAWSURFACE4 __unnamed_0);
+        HRESULT SetBackgroundDepth2(ref LPDIRECTDRAWSURFACE4 __unnamed_0);
         
         [PreserveSig]
-        HRESULT GetBackgroundDepth2(LPDIRECTDRAWSURFACE4 __unnamed_0, ref bool __unnamed_1);
+        HRESULT GetBackgroundDepth2(ref LPDIRECTDRAWSURFACE4 __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
         HRESULT Clear2(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2, uint __unnamed_3, float __unnamed_4, uint __unnamed_5);

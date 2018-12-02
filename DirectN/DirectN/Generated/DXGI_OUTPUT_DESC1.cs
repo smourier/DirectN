@@ -9,7 +9,7 @@ namespace DirectN
     public partial struct DXGI_OUTPUT_DESC1
     {
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] 
-        public string[] DeviceName;
+        public string DeviceName;
         public RECT DesktopCoordinates;
         public bool AttachedToDesktop;
         public DXGI_MODE_ROTATION Rotation;

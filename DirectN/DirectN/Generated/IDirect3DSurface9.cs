@@ -19,7 +19,7 @@ namespace DirectN
         new uint Release();
         
         [PreserveSig]
-        new HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
@@ -44,7 +44,7 @@ namespace DirectN
         
         // IDirect3DSurface9
         [PreserveSig]
-        HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);

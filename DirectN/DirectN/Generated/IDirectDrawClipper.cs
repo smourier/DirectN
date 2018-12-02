@@ -17,7 +17,7 @@ namespace DirectN
         HRESULT GetHWnd(ref IntPtr __unnamed_0);
         
         [PreserveSig]
-        HRESULT Initialize(LPDIRECTDRAW __unnamed_0, uint __unnamed_1);
+        HRESULT Initialize(ref LPDIRECTDRAW __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
         HRESULT IsClipListChanged(ref bool __unnamed_0);

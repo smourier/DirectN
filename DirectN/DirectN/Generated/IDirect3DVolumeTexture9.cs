@@ -18,7 +18,7 @@ namespace DirectN
         new uint Release();
         
         [PreserveSig]
-        new HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
@@ -52,7 +52,7 @@ namespace DirectN
         new uint Release();
         
         [PreserveSig]
-        new HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
@@ -95,7 +95,7 @@ namespace DirectN
         
         // IDirect3DVolumeTexture9
         [PreserveSig]
-        HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
@@ -140,7 +140,7 @@ namespace DirectN
         HRESULT GetLevelDesc(uint Level, ref _D3DVOLUME_DESC pDesc);
         
         [PreserveSig]
-        HRESULT GetVolumeLevel(uint Level, IDirect3DVolume9 ppVolumeLevel);
+        HRESULT GetVolumeLevel(uint Level, ref IDirect3DVolume9 ppVolumeLevel);
         
         [PreserveSig]
         HRESULT LockBox(uint Level, ref _D3DLOCKED_BOX pLockedVolume, ref _D3DBOX pBox, uint Flags);

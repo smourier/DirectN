@@ -14,6 +14,6 @@ namespace DirectN
         HRESULT GetMaterial(ref _D3DMATERIAL __unnamed_0);
         
         [PreserveSig]
-        HRESULT GetHandle(IDirect3DDevice2 __unnamed_0, ref uint __unnamed_1);
+        HRESULT GetHandle(ref IDirect3DDevice2 __unnamed_0, ref uint __unnamed_1);
     }
 }

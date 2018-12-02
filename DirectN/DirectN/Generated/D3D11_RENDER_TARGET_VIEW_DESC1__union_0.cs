@@ -6,6 +6,15 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D11_RENDER_TARGET_VIEW_DESC1__union_0
     {
-        // This definition is empty as size of structure was not successfully resolved.
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public byte[] __bits;
+        public D3D11_BUFFER_RTV Buffer => InteropRuntime.Get<D3D11_BUFFER_RTV>(__bits, 0, 64);
+        public D3D11_TEX1D_RTV Texture1D => InteropRuntime.Get<D3D11_TEX1D_RTV>(__bits, 0, 32);
+        public D3D11_TEX1D_ARRAY_RTV Texture1DArray => InteropRuntime.Get<D3D11_TEX1D_ARRAY_RTV>(__bits, 0, 96);
+        public D3D11_TEX2D_RTV1 Texture2D => InteropRuntime.Get<D3D11_TEX2D_RTV1>(__bits, 0, 64);
+        public D3D11_TEX2D_ARRAY_RTV1 Texture2DArray => InteropRuntime.Get<D3D11_TEX2D_ARRAY_RTV1>(__bits, 0, 128);
+        public D3D11_TEX2DMS_RTV Texture2DMS => InteropRuntime.Get<D3D11_TEX2DMS_RTV>(__bits, 0, 32);
+        public D3D11_TEX2DMS_ARRAY_RTV Texture2DMSArray => InteropRuntime.Get<D3D11_TEX2DMS_ARRAY_RTV>(__bits, 0, 64);
+        public D3D11_TEX3D_RTV Texture3D => InteropRuntime.Get<D3D11_TEX3D_RTV>(__bits, 0, 96);
     }
 }

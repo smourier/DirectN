@@ -8,19 +8,19 @@ namespace DirectN
     public partial interface IMFMediaTypeHandler
     {
         [PreserveSig]
-        HRESULT IsMediaTypeSupported(/* [in] */ ref IMFMediaType pMediaType, /* optional(IMFMediaType) */ out IntPtr ppMediaType);
+        HRESULT IsMediaTypeSupported(/* [in] */ IMFMediaType pMediaType, /* [annotation][out] _Outptr_opt_result_maybenull_ */ out IMFMediaType ppMediaType);
         
         [PreserveSig]
         HRESULT GetMediaTypeCount(/* [out] __RPC__out */ out uint pdwTypeCount);
         
         [PreserveSig]
-        HRESULT GetMediaTypeByIndex(/* [in] */ uint dwIndex, /* [annotation][out] _Outptr_ */ out IntPtr ppType);
+        HRESULT GetMediaTypeByIndex(/* [in] */ uint dwIndex, /* [annotation][out] _Outptr_ */ out IMFMediaType ppType);
         
         [PreserveSig]
-        HRESULT SetCurrentMediaType(/* [in] */ ref IMFMediaType pMediaType);
+        HRESULT SetCurrentMediaType(/* [in] */ IMFMediaType pMediaType);
         
         [PreserveSig]
-        HRESULT GetCurrentMediaType(/* [annotation][out] _Outptr_ */ out IntPtr ppMediaType);
+        HRESULT GetCurrentMediaType(/* [annotation][out] _Outptr_ */ out IMFMediaType ppMediaType);
         
         [PreserveSig]
         HRESULT GetMajorType(/* [out] __RPC__out */ out Guid pguidMajorType);

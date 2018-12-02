@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawi.h(1981,9)
 using System;
 using System.Runtime.InteropServices;
-using DDPIXELFORMAT = DirectN._DDPIXELFORMAT;
 using LPDDRAWI_DIRECTDRAW_LCL = DirectN._DDRAWI_DIRECTDRAW_LCL;
 
 namespace DirectN
@@ -13,7 +12,7 @@ namespace DirectN
         public Guid guid;
         public uint dwUncompWidth;
         public uint dwUncompHeight;
-        public DDPIXELFORMAT ddUncompPixelFormat;
+        public _DDPIXELFORMAT ddUncompPixelFormat;
         public uint dwInternalFlags;
         public uint dwRefCnt;
         public uint dwProcessId;

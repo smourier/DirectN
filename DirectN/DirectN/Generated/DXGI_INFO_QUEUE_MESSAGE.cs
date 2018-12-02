@@ -12,7 +12,8 @@ namespace DirectN
         public DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category;
         public DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity;
         public int ID;
-        public IntPtr pDescription;
+        [MarshalAs(UnmanagedType.LPStr)] 
+        public byte pDescription;
         public IntPtr DescriptionByteLength;
     }
 }

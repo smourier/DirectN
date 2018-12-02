@@ -15,7 +15,7 @@ namespace DirectN
         new HRESULT GetFontFamily(uint index, /* _COM_Outptr_ */ out IDWriteFontFamily fontFamily);
         
         [PreserveSig]
-        new HRESULT FindFamilyName(/* _In_z_ */ ref char familyName, /* _Out_ */ out uint index, /* _Out_ */ out bool exists);
+        new HRESULT FindFamilyName(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string familyName, /* _Out_ */ out uint index, /* _Out_ */ out bool exists);
         
         [PreserveSig]
         new HRESULT GetFontFromFontFace(/* _In_ */ IDWriteFontFace fontFace, /* _COM_Outptr_ */ out IDWriteFont font);
@@ -32,7 +32,7 @@ namespace DirectN
         HRESULT GetFontFamily(uint index, /* _COM_Outptr_ */ out IDWriteFontFamily2 fontFamily);
         
         [PreserveSig]
-        HRESULT GetMatchingFonts(/* _In_z_ */ ref char familyName, /* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _COM_Outptr_ */ out IDWriteFontList2 fontList);
+        HRESULT GetMatchingFonts(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string familyName, /* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _COM_Outptr_ */ out IDWriteFontList2 fontList);
         
         [PreserveSig]
         DWRITE_FONT_FAMILY_MODEL GetFontFamilyModel();

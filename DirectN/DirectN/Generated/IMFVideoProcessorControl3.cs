@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(3596,5)
 using System;
 using System.Runtime.InteropServices;
-using MFARGB = DirectN._MFARGB;
 using RECT = DirectN.tagRECT;
 using SIZE = DirectN.tagSIZE;
 
@@ -12,7 +11,7 @@ namespace DirectN
     {
         // IMFVideoProcessorControl
         [PreserveSig]
-        new HRESULT SetBorderColor(/* optional(MFARGB) */ IntPtr pBorderColor);
+        new HRESULT SetBorderColor(/* optional(_MFARGB) */ IntPtr pBorderColor);
         
         [PreserveSig]
         new HRESULT SetSourceRectangle(/* optional(RECT) */ IntPtr pSrcRect);
@@ -41,7 +40,7 @@ namespace DirectN
         
         // IMFVideoProcessorControl3
         [PreserveSig]
-        HRESULT GetNaturalOutputType(/* [annotation][out] _Outptr_ */ out IntPtr ppType);
+        HRESULT GetNaturalOutputType(/* [annotation][out] _Outptr_ */ out IMFMediaType ppType);
         
         [PreserveSig]
         HRESULT EnableSphericalVideoProcessing(/* [annotation][in] _In_ */ bool fEnable, /* [annotation][in] _In_ */ _MFVideoSphericalFormat eFormat, /* [annotation][in] _In_ */ MFVideoSphericalProjectionMode eProjectionMode);

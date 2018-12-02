@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawint.h(1018,9)
 using System;
 using System.Runtime.InteropServices;
-using DDSCAPSEX = DirectN._DDSCAPSEX;
 
 namespace DirectN
 {
@@ -9,7 +8,7 @@ namespace DirectN
     public partial struct _DD_MORESURFACECAPS
     {
         public uint dwSize;
-        public DDSCAPSEX ddsCapsMore;
+        public _DDSCAPSEX ddsCapsMore;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
         public tagNTExtendedHeapRestrictions[][] ddsExtendedHeapRestrictions;
     }

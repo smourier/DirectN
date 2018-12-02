@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFTimer
     {
         [PreserveSig]
-        HRESULT SetTimer(/* [in] */ uint dwFlags, /* [in] */ long llClockTime, /* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState, /* [out] */ [MarshalAs(UnmanagedType.IUnknown)] out object ppunkKey);
+        HRESULT SetTimer(/* [in] */ uint dwFlags, /* [in] */ long llClockTime, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState, /* [out] */ [MarshalAs(UnmanagedType.IUnknown)] out object ppunkKey);
         
         [PreserveSig]
         HRESULT CancelTimer(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkKey);

@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(1082,5)
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
@@ -8,6 +9,6 @@ namespace DirectN
     public partial interface ICreateDevEnum
     {
         [PreserveSig]
-        HRESULT CreateClassEnumerator(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsidDeviceClass, /* [annotation][out] _Out_ */ out IntPtr ppEnumMoniker, /* [in] */ uint dwFlags);
+        HRESULT CreateClassEnumerator(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsidDeviceClass, /* [annotation][out] _Out_ */ out IEnumMoniker ppEnumMoniker, /* [in] */ uint dwFlags);
     }
 }

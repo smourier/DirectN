@@ -6,9 +6,6 @@ using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Issues drawing commands to a GDI device context.
-    /// </summary>
     [Guid("1c51bc64-de61-46fd-9899-63a5d8f03950"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DCRenderTarget : ID2D1RenderTarget
     {
@@ -21,7 +18,7 @@ namespace DirectN
         new HRESULT CreateBitmap(D2D_SIZE_U size, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object srcData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
         
         [PreserveSig]
-        new HRESULT CreateBitmapFromWicBitmap(/* _In_ */ ref IWICBitmapSource wicBitmapSource, /* optional(D2D1_BITMAP_PROPERTIES) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
+        new HRESULT CreateBitmapFromWicBitmap(/* _In_ */ IWICBitmapSource wicBitmapSource, /* optional(D2D1_BITMAP_PROPERTIES) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
         
         [PreserveSig]
         new HRESULT CreateSharedBitmap(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Inout_ */ [MarshalAs(UnmanagedType.IUnknown)] object data, /* optional(D2D1_BITMAP_PROPERTIES) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
@@ -87,10 +84,10 @@ namespace DirectN
         new void DrawBitmap(/* _In_ */ ID2D1Bitmap bitmap, /* optional(D2D_RECT_F) */ IntPtr destinationRectangle, float opacity, D2D1_BITMAP_INTERPOLATION_MODE interpolationMode, /* optional(D2D_RECT_F) */ IntPtr sourceRectangle);
         
         [PreserveSig]
-        new void DrawTextA(/* _In_reads_(stringLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] @string, uint stringLength, /* _In_ */ ref IDWriteTextFormat textFormat, /* _In_ */ ref D2D_RECT_F layoutRect, /* _In_ */ ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode);
+        new void DrawTextW(/* _In_reads_(stringLength) */ [MarshalAs(UnmanagedType.LPWStr)] string @string, uint stringLength, /* _In_ */ IDWriteTextFormat textFormat, /* _In_ */ ref D2D_RECT_F layoutRect, /* _In_ */ ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options, DWRITE_MEASURING_MODE measuringMode);
         
         [PreserveSig]
-        new void DrawTextLayout(D2D_POINT_2F origin, /* _In_ */ ref IDWriteTextLayout textLayout, /* _In_ */ ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options);
+        new void DrawTextLayout(D2D_POINT_2F origin, /* _In_ */ IDWriteTextLayout textLayout, /* _In_ */ ID2D1Brush defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options);
         
         [PreserveSig]
         new void DrawGlyphRun(D2D_POINT_2F baselineOrigin, /* _In_ */ ref DWRITE_GLYPH_RUN glyphRun, /* _In_ */ ID2D1Brush foregroundBrush, DWRITE_MEASURING_MODE measuringMode);
@@ -114,10 +111,10 @@ namespace DirectN
         new D2D1_TEXT_ANTIALIAS_MODE GetTextAntialiasMode();
         
         [PreserveSig]
-        new void SetTextRenderingParams(/* optional(IDWriteRenderingParams) */ IntPtr textRenderingParams);
+        new void SetTextRenderingParams(/* _In_opt_ */ IDWriteRenderingParams textRenderingParams);
         
         [PreserveSig]
-        new void GetTextRenderingParams(/* _Outptr_result_maybenull_ */ out IntPtr textRenderingParams);
+        new void GetTextRenderingParams(/* _Outptr_result_maybenull_ */ out IDWriteRenderingParams textRenderingParams);
         
         [PreserveSig]
         new void SetTags(ulong tag1, ulong tag2);

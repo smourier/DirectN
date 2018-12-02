@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DPixelShader9
     {
         [PreserveSig]
-        HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         HRESULT GetFunction([MarshalAs(UnmanagedType.IUnknown)] object __unnamed_0, ref uint pSizeOfData);

@@ -7,6 +7,7 @@ using LPDIRECT3DMATERIAL3 = DirectN.IDirect3DMaterial3;
 using LPDIRECT3DVERTEXBUFFER = DirectN.IDirect3DVertexBuffer;
 using LPDIRECT3DVIEWPORT3 = DirectN.IDirect3DViewport3;
 using LPDIRECTDRAWSURFACE4 = DirectN.IDirectDrawSurface4;
+using LPUNKNOWN = System.Object;
 
 namespace DirectN
 {
@@ -17,22 +18,22 @@ namespace DirectN
         HRESULT EnumDevices(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateLight(LPDIRECT3DLIGHT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateLight(ref LPDIRECT3DLIGHT __unnamed_0, ref LPUNKNOWN __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateMaterial(LPDIRECT3DMATERIAL3 __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateMaterial(ref LPDIRECT3DMATERIAL3 __unnamed_0, ref LPUNKNOWN __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateViewport(LPDIRECT3DVIEWPORT3 __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateViewport(ref LPDIRECT3DVIEWPORT3 __unnamed_0, ref LPUNKNOWN __unnamed_1);
         
         [PreserveSig]
         HRESULT FindDevice(ref _D3DFINDDEVICESEARCH __unnamed_0, ref _D3DFINDDEVICERESULT __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, LPDIRECTDRAWSURFACE4 __unnamed_1, LPDIRECT3DDEVICE3 __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, ref LPDIRECTDRAWSURFACE4 __unnamed_1, ref LPDIRECT3DDEVICE3 __unnamed_2, ref LPUNKNOWN __unnamed_3);
         
         [PreserveSig]
-        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, LPDIRECT3DVERTEXBUFFER __unnamed_1, uint __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, ref LPDIRECT3DVERTEXBUFFER __unnamed_1, uint __unnamed_2, ref LPUNKNOWN __unnamed_3);
         
         [PreserveSig]
         HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, ref IntPtr __unnamed_1, ref IntPtr __unnamed_2);

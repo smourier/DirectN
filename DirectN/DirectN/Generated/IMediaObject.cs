@@ -63,7 +63,7 @@ namespace DirectN
         HRESULT GetInputStatus(uint dwInputStreamIndex, /* [annotation][out] _Out_ */ out uint dwFlags);
         
         [PreserveSig]
-        HRESULT ProcessInput(uint dwInputStreamIndex, IMediaBuffer pBuffer, uint dwFlags, long rtTimestamp, long rtTimelength);
+        HRESULT ProcessInput(uint dwInputStreamIndex, ref IMediaBuffer pBuffer, uint dwFlags, long rtTimestamp, long rtTimelength);
         
         [PreserveSig]
         HRESULT ProcessOutput(uint dwFlags, uint cOutputBufferCount, /* [annotation][size_is][out][in] _Out_writes_(cOutputBufferCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _DMO_OUTPUT_DATA_BUFFER[] pOutputBuffers, /* [annotation][out] _Out_ */ out uint pdwStatus);

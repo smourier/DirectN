@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct _FilterInfo
     {
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)] 
-        public string[] achName;
+        public string achName;
         public IntPtr pGraph;
     }
 }

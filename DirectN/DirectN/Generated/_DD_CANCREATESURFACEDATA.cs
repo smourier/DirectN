@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using PDD_DIRECTDRAW_GLOBAL = DirectN._DD_DIRECTDRAW_GLOBAL;
-using PDD_SURFACEDESC = DirectN._DDSURFACEDESC;
 
 namespace DirectN
 {

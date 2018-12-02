@@ -8,12 +8,12 @@ namespace DirectN
     public partial interface IWICImageEncoder
     {
         [PreserveSig]
-        HRESULT WriteFrame(/* [in] */ ref ID2D1Image pImage, /* [in] */ IWICBitmapFrameEncode pFrameEncode, /* [unique][in] */ ref WICImageParameters pImageParameters);
+        HRESULT WriteFrame(/* [in] */ ID2D1Image pImage, /* [in] */ IWICBitmapFrameEncode pFrameEncode, /* [unique][in] */ ref WICImageParameters pImageParameters);
         
         [PreserveSig]
-        HRESULT WriteFrameThumbnail(/* [in] */ ref ID2D1Image pImage, /* [in] */ IWICBitmapFrameEncode pFrameEncode, /* [unique][in] */ ref WICImageParameters pImageParameters);
+        HRESULT WriteFrameThumbnail(/* [in] */ ID2D1Image pImage, /* [in] */ IWICBitmapFrameEncode pFrameEncode, /* [unique][in] */ ref WICImageParameters pImageParameters);
         
         [PreserveSig]
-        HRESULT WriteThumbnail(/* [in] */ ref ID2D1Image pImage, /* [in] */ IWICBitmapEncoder pEncoder, /* [unique][in] */ ref WICImageParameters pImageParameters);
+        HRESULT WriteThumbnail(/* [in] */ ID2D1Image pImage, /* [in] */ IWICBitmapEncoder pEncoder, /* [unique][in] */ ref WICImageParameters pImageParameters);
     }
 }

@@ -78,7 +78,7 @@ namespace DirectN
         HRESULT GetDVDTextStringAsNative(/* [in] */ uint ulLangIndex, /* [in] */ uint ulStringIndex, /* [annotation][out] _Out_ */ out byte pbBuffer, /* [in] */ uint ulMaxBufferSize, /* [annotation][out] _Out_ */ out uint pulActualSize, /* [annotation][out] _Out_ */ out DVD_TextStringType pType);
         
         [PreserveSig]
-        HRESULT GetDVDTextStringAsUnicode(/* [in] */ uint ulLangIndex, /* [in] */ uint ulStringIndex, /* [annotation][out] _Out_ */ out char pchwBuffer, /* [in] */ uint ulMaxBufferSize, /* [annotation][out] _Out_ */ out uint pulActualSize, /* [annotation][out] _Out_ */ out DVD_TextStringType pType);
+        HRESULT GetDVDTextStringAsUnicode(/* [in] */ uint ulLangIndex, /* [in] */ uint ulStringIndex, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.LPWStr)] out string pchwBuffer, /* [in] */ uint ulMaxBufferSize, /* [annotation][out] _Out_ */ out uint pulActualSize, /* [annotation][out] _Out_ */ out DVD_TextStringType pType);
         
         [PreserveSig]
         HRESULT GetPlayerParentalLevel(/* [annotation][out] _Out_ */ out uint pulParentalLevel, /* [annotation][out] _Out_ */ [In, Out, MarshalAs(UnmanagedType.LPArray)] byte pbCountryCode);

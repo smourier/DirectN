@@ -10,6 +10,6 @@ namespace DirectN
         public uint dwParam1;
         public uint dwParam2;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)] 
-        public string[] szName;
+        public string szName;
     }
 }

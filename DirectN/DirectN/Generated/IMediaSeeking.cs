@@ -20,7 +20,7 @@ namespace DirectN
         HRESULT QueryPreferredFormat(/* [annotation][out] _Out_ */ out Guid pFormat);
         
         [PreserveSig]
-        HRESULT GetTimeFormatA(/* [annotation][out] _Out_ */ out Guid pFormat);
+        HRESULT GetTimeFormatW(/* [annotation][out] _Out_ */ out Guid pFormat);
         
         [PreserveSig]
         HRESULT IsUsingTimeFormat(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pFormat);

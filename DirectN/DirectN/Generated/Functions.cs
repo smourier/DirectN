@@ -6,33 +6,14 @@ using BITMAPINFO = DirectN.tagBITMAPINFO;
 using BITMAPINFOHEADER = DirectN.tagBITMAPINFOHEADER;
 using D2D1_POINT_2L = DirectN.tagPOINT;
 using D2D1_RECT_L = DirectN.tagRECT;
-using D3D_SHADER_MACRO = DirectN._D3D_SHADER_MACRO;
-using D3D10_DEVICE_STATE_TYPES = DirectN._D3D10_DEVICE_STATE_TYPES;
-using D3D10_SHADER_MACRO = DirectN._D3D_SHADER_MACRO;
-using D3D10_STATE_BLOCK_MASK = DirectN._D3D10_STATE_BLOCK_MASK;
 using DXVA2_Fixed32 = DirectN._DXVA2_Fixed32;
-using HMIDI = DirectN.HMIDI__;
-using HMIDIIN = DirectN.HMIDIIN__;
-using HMIDIOUT = DirectN.HMIDIOUT__;
-using HMIDISTRM = DirectN.HMIDISTRM__;
-using HMIXER = DirectN.HMIXER__;
-using HMIXEROBJ = DirectN.HMIXEROBJ__;
-using HWAVEIN = DirectN.HWAVEIN__;
-using HWAVEOUT = DirectN.HWAVEOUT__;
-using ID3D10Include = DirectN.ID3DInclude;
-using ID3DBlob = DirectN.ID3D10Blob;
-using LPAUXCAPSA = DirectN.tagAUXCAPSA;
-using LPAUXCAPSW = DirectN.tagAUXCAPSW;
 using LPCWAVEFORMATEX = DirectN.tWAVEFORMATEX;
-using LPD3D10BLOB = DirectN.ID3D10Blob;
-using LPD3D10INCLUDE = DirectN.ID3DInclude;
 using LPD3DHAL_CALLBACKS = DirectN._D3DHAL_CALLBACKS;
 using LPD3DHAL_GLOBALDRIVERDATA = DirectN._D3DHAL_GLOBALDRIVERDATA;
 using LPDDENUMCALLBACKA = System.IntPtr;
 using LPDDENUMCALLBACKEXA = System.IntPtr;
 using LPDDENUMCALLBACKEXW = System.IntPtr;
 using LPDDENUMCALLBACKW = System.IntPtr;
-using LPDDHALINFO = DirectN._DDHALINFO;
 using LPDDRAWI_DIRECTDRAW_GBL = DirectN._DDRAWI_DIRECTDRAW_GBL;
 using LPDIRECTDRAW = DirectN.IDirectDraw;
 using LPDIRECTDRAWCLIPPER = DirectN.IDirectDrawClipper;
@@ -43,25 +24,7 @@ using LPHMIDISTRM = DirectN.HMIDISTRM__;
 using LPHMIXER = DirectN.HMIXER__;
 using LPHWAVEIN = DirectN.HWAVEIN__;
 using LPHWAVEOUT = DirectN.HWAVEOUT__;
-using LPMIDIHDR = DirectN.midihdr_tag;
-using LPMIDIINCAPSA = DirectN.tagMIDIINCAPSA;
-using LPMIDIINCAPSW = DirectN.tagMIDIINCAPSW;
-using LPMIDIOUTCAPSA = DirectN.tagMIDIOUTCAPSA;
-using LPMIDIOUTCAPSW = DirectN.tagMIDIOUTCAPSW;
-using LPMIXERCAPSA = DirectN.tagMIXERCAPSA;
-using LPMIXERCAPSW = DirectN.tagMIXERCAPSW;
-using LPMIXERCONTROLDETAILS = DirectN.tMIXERCONTROLDETAILS;
-using LPMIXERLINEA = DirectN.tagMIXERLINEA;
-using LPMIXERLINECONTROLSA = DirectN.tagMIXERLINECONTROLSA;
-using LPMIXERLINECONTROLSW = DirectN.tagMIXERLINECONTROLSW;
-using LPMIXERLINEW = DirectN.tagMIXERLINEW;
-using LPMMTIME = DirectN.mmtime_tag;
 using LPPALETTEENTRY = DirectN.tagPALETTEENTRY;
-using LPWAVEHDR = DirectN.wavehdr_tag;
-using LPWAVEINCAPSA = DirectN.tagWAVEINCAPSA;
-using LPWAVEINCAPSW = DirectN.tagWAVEINCAPSW;
-using LPWAVEOUTCAPSA = DirectN.tagWAVEOUTCAPSA;
-using LPWAVEOUTCAPSW = DirectN.tagWAVEOUTCAPSW;
 using MFASYNC_WORKQUEUE_TYPE = DirectN.MF;
 using MFCameraIntrinsic_DistortionModelType = DirectN._MFCameraIntrinsic_DistortionModelType;
 using MFPERIODICCALLBACK = System.IntPtr;
@@ -70,10 +33,8 @@ using MPEG1VIDEOINFO = DirectN.tagMPEG1VIDEOINFO;
 using MPEG2VIDEOINFO = DirectN.tagMPEG2VIDEOINFO;
 using PDXVAHDSW_Plugin = System.IntPtr;
 using REFWICPixelFormatGUID = System.Guid;
-using UNCOMPRESSEDAUDIOFORMAT = DirectN._UNCOMPRESSEDAUDIOFORMAT;
 using VIDEOINFOHEADER = DirectN.tagVIDEOINFOHEADER;
 using VIDEOINFOHEADER2 = DirectN.tagVIDEOINFOHEADER2;
-using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -104,7 +65,7 @@ namespace DirectN
         /// ******************* /* D3D9Ex interfaces /********************
         /// </summary>
         [DllImport("d3d9")]
-        public static extern HRESULT Direct3DCreate9Ex(uint SDKVersion, IDirect3D9Ex __unnamed_1);
+        public static extern HRESULT Direct3DCreate9Ex(uint SDKVersion, ref IDirect3D9Ex __unnamed_1);
         
         [DllImport("dxgi")]
         public static extern HRESULT CreateDXGIFactory([MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
@@ -140,10 +101,10 @@ namespace DirectN
         public static extern HRESULT UnregisterAPONotification(ref IntPtr hEvent);
         
         [DllImport("audiomediatype")]
-        public static extern HRESULT CreateAudioMediaType(ref WAVEFORMATEX pAudioFormat, uint cbAudioFormatSize, ref IAudioMediaType ppIAudioMediaType);
+        public static extern HRESULT CreateAudioMediaType(ref tWAVEFORMATEX pAudioFormat, uint cbAudioFormatSize, ref IAudioMediaType ppIAudioMediaType);
         
         [DllImport("audiomediatype")]
-        public static extern HRESULT CreateAudioMediaTypeFromUncompressedAudioFormat(ref UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat, ref IAudioMediaType ppIAudioMediaType);
+        public static extern HRESULT CreateAudioMediaTypeFromUncompressedAudioFormat(ref _UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat, ref IAudioMediaType ppIAudioMediaType);
         
         [DllImport("d2d1")]
         public static extern HRESULT D2D1CreateFactory(/* _In_ */ D2D1_FACTORY_TYPE factoryType, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object factory);
@@ -242,10 +203,10 @@ namespace DirectN
         public static extern _D3DCOLORVALUE D2D1ConvertColorSpace(D2D1_COLOR_SPACE sourceColorSpace, D2D1_COLOR_SPACE destinationColorSpace, /* _In_ */ ref _D3DCOLORVALUE color);
         
         [DllImport("d2d1")]
-        public static extern HRESULT D2D1CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _In_ */ ref D2D1_CREATION_PROPERTIES creationProperties, /* _Outptr_ */ out ID2D1Device d2dDevice);
+        public static extern HRESULT D2D1CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _In_ */ ref D2D1_CREATION_PROPERTIES creationProperties, /* _Outptr_ */ out ID2D1Device d2dDevice);
         
         [DllImport("d2d1")]
-        public static extern HRESULT D2D1CreateDeviceContext(/* _In_ */ ref IDXGISurface dxgiSurface, /* _In_ */ ref D2D1_CREATION_PROPERTIES creationProperties, /* _Outptr_ */ out ID2D1DeviceContext d2dDeviceContext);
+        public static extern HRESULT D2D1CreateDeviceContext(/* _In_ */ IDXGISurface dxgiSurface, /* _In_ */ ref D2D1_CREATION_PROPERTIES creationProperties, /* _Outptr_ */ out ID2D1DeviceContext d2dDeviceContext);
         
         [DllImport("d2d1")]
         public static extern void D2D1SinCos(/* _In_ */ float angle, /* _Out_ */ out float s, /* _Out_ */ out float c);
@@ -272,7 +233,7 @@ namespace DirectN
         public static extern D2D1_DRAWING_STATE_DESCRIPTION1 DrawingStateDescription1(/* _In_ */ ref D2D1_DRAWING_STATE_DESCRIPTION desc, D2D1_PRIMITIVE_BLEND primitiveBlend, D2D1_UNIT_MODE unitMode);
         
         [DllImport("d2d1")]
-        public static extern D2D1_EFFECT_INPUT_DESCRIPTION EffectInputDescription(ID2D1Effect effect, uint inputIndex, D2D_RECT_F inputRectangle);
+        public static extern D2D1_EFFECT_INPUT_DESCRIPTION EffectInputDescription(ref ID2D1Effect effect, uint inputIndex, D2D_RECT_F inputRectangle);
         
         [DllImport("d2d1")]
         public static extern D2D1_IMAGE_BRUSH_PROPERTIES ImageBrushProperties(D2D_RECT_F sourceRectangle, D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, D2D1_INTERPOLATION_MODE interpolationMode);
@@ -341,100 +302,100 @@ namespace DirectN
         public static extern uint D3D10CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CompileEffectFromMemory(/* _In_reads_bytes_(DataLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, IntPtr DataLength, [MarshalAs(UnmanagedType.LPStr)] string pSrcFileName, /* optional(D3D10_SHADER_MACRO) */ IntPtr pDefines, /* optional(ID3D10Include) */ IntPtr pInclude, uint HLSLFlags, uint FXFlags, /* _Out_ */ out IntPtr ppCompiledEffect, /* optional(ID3D10Blob) */ out IntPtr ppErrors);
+        public static extern HRESULT D3D10CompileEffectFromMemory(/* _In_reads_bytes_(DataLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, IntPtr DataLength, [MarshalAs(UnmanagedType.LPStr)] string pSrcFileName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, uint HLSLFlags, uint FXFlags, /* _Out_ */ out ID3D10Blob ppCompiledEffect, /* _Out_opt_ */ out ID3D10Blob ppErrors);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CreateEffectFromMemory(/* _In_reads_bytes_(DataLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, IntPtr DataLength, uint FXFlags, /* _In_ */ ref ID3D10Device pDevice, /* optional(ID3D10EffectPool) */ IntPtr pEffectPool, /* _Out_ */ out IntPtr ppEffect);
+        public static extern HRESULT D3D10CreateEffectFromMemory(/* _In_reads_bytes_(DataLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, IntPtr DataLength, uint FXFlags, /* _In_ */ ID3D10Device pDevice, /* _In_opt_ */ ID3D10EffectPool pEffectPool, /* _Out_ */ out ID3D10Effect ppEffect);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CreateEffectPoolFromMemory(/* _In_reads_bytes_(DataLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, IntPtr DataLength, uint FXFlags, /* _In_ */ ref ID3D10Device pDevice, /* _Out_ */ out IntPtr ppEffectPool);
+        public static extern HRESULT D3D10CreateEffectPoolFromMemory(/* _In_reads_bytes_(DataLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, IntPtr DataLength, uint FXFlags, /* _In_ */ ID3D10Device pDevice, /* _Out_ */ out ID3D10EffectPool ppEffectPool);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CreateStateBlock(/* _In_ */ ref ID3D10Device pDevice, /* _In_ */ ref D3D10_STATE_BLOCK_MASK pStateBlockMask, /* _Out_ */ out IntPtr ppStateBlock);
+        public static extern HRESULT D3D10CreateStateBlock(/* _In_ */ ID3D10Device pDevice, /* _In_ */ ref _D3D10_STATE_BLOCK_MASK pStateBlockMask, /* _Out_ */ out ID3D10StateBlock ppStateBlock);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10DisassembleEffect(/* _In_ */ ref ID3D10Effect pEffect, bool EnableColorCode, /* _Out_ */ out IntPtr ppDisassembly);
+        public static extern HRESULT D3D10DisassembleEffect(/* _In_ */ ID3D10Effect pEffect, bool EnableColorCode, /* _Out_ */ out ID3D10Blob ppDisassembly);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10StateBlockMaskDifference(/* _In_ */ ref D3D10_STATE_BLOCK_MASK pA, /* _In_ */ ref D3D10_STATE_BLOCK_MASK pB, /* _Out_ */ out D3D10_STATE_BLOCK_MASK pResult);
+        public static extern HRESULT D3D10StateBlockMaskDifference(/* _In_ */ ref _D3D10_STATE_BLOCK_MASK pA, /* _In_ */ ref _D3D10_STATE_BLOCK_MASK pB, /* _Out_ */ out _D3D10_STATE_BLOCK_MASK pResult);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10StateBlockMaskDisableAll(/* _Out_ */ out D3D10_STATE_BLOCK_MASK pMask);
+        public static extern HRESULT D3D10StateBlockMaskDisableAll(/* _Out_ */ out _D3D10_STATE_BLOCK_MASK pMask);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10StateBlockMaskDisableCapture(/* _Inout_ */ ref D3D10_STATE_BLOCK_MASK pMask, D3D10_DEVICE_STATE_TYPES StateType, uint RangeStart, uint RangeLength);
+        public static extern HRESULT D3D10StateBlockMaskDisableCapture(/* _Inout_ */ ref _D3D10_STATE_BLOCK_MASK pMask, _D3D10_DEVICE_STATE_TYPES StateType, uint RangeStart, uint RangeLength);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10StateBlockMaskEnableAll(/* _Out_ */ out D3D10_STATE_BLOCK_MASK pMask);
+        public static extern HRESULT D3D10StateBlockMaskEnableAll(/* _Out_ */ out _D3D10_STATE_BLOCK_MASK pMask);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10StateBlockMaskEnableCapture(/* _Inout_ */ ref D3D10_STATE_BLOCK_MASK pMask, D3D10_DEVICE_STATE_TYPES StateType, uint RangeStart, uint RangeLength);
+        public static extern HRESULT D3D10StateBlockMaskEnableCapture(/* _Inout_ */ ref _D3D10_STATE_BLOCK_MASK pMask, _D3D10_DEVICE_STATE_TYPES StateType, uint RangeStart, uint RangeLength);
         
         [DllImport("d3d10")]
-        public static extern bool D3D10StateBlockMaskGetSetting(/* _In_ */ ref D3D10_STATE_BLOCK_MASK pMask, D3D10_DEVICE_STATE_TYPES StateType, uint Entry);
+        public static extern bool D3D10StateBlockMaskGetSetting(/* _In_ */ ref _D3D10_STATE_BLOCK_MASK pMask, _D3D10_DEVICE_STATE_TYPES StateType, uint Entry);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10StateBlockMaskIntersect(/* _In_ */ ref D3D10_STATE_BLOCK_MASK pA, /* _In_ */ ref D3D10_STATE_BLOCK_MASK pB, /* _Out_ */ out D3D10_STATE_BLOCK_MASK pResult);
+        public static extern HRESULT D3D10StateBlockMaskIntersect(/* _In_ */ ref _D3D10_STATE_BLOCK_MASK pA, /* _In_ */ ref _D3D10_STATE_BLOCK_MASK pB, /* _Out_ */ out _D3D10_STATE_BLOCK_MASK pResult);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10StateBlockMaskUnion(/* _In_ */ ref D3D10_STATE_BLOCK_MASK pA, /* _In_ */ ref D3D10_STATE_BLOCK_MASK pB, /* _Out_ */ out D3D10_STATE_BLOCK_MASK pResult);
+        public static extern HRESULT D3D10StateBlockMaskUnion(/* _In_ */ ref _D3D10_STATE_BLOCK_MASK pA, /* _In_ */ ref _D3D10_STATE_BLOCK_MASK pB, /* _Out_ */ out _D3D10_STATE_BLOCK_MASK pResult);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CreateBlob(IntPtr NumBytes, /* _Out_ */ out IntPtr ppBuffer);
+        public static extern HRESULT D3D10CreateBlob(IntPtr NumBytes, /* _Out_ */ out ID3D10Blob ppBuffer);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CreateDevice(/* optional(IDXGIAdapter) */ IntPtr pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, uint SDKVersion, /* optional(ID3D10Device) */ out IntPtr ppDevice);
+        public static extern HRESULT D3D10CreateDevice(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, uint SDKVersion, /* _Out_opt_ */ out ID3D10Device ppDevice);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CreateDeviceAndSwapChain(/* optional(IDXGIAdapter) */ IntPtr pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, uint SDKVersion, /* optional(DXGI_SWAP_CHAIN_DESC) */ IntPtr pSwapChainDesc, /* optional(IDXGISwapChain) */ out IntPtr ppSwapChain, /* optional(ID3D10Device) */ out IntPtr ppDevice);
+        public static extern HRESULT D3D10CreateDeviceAndSwapChain(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, uint SDKVersion, /* optional(DXGI_SWAP_CHAIN_DESC) */ IntPtr pSwapChainDesc, /* _Out_opt_ */ out IDXGISwapChain ppSwapChain, /* _Out_opt_ */ out ID3D10Device ppDevice);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CompileShader(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPStr)] string pSrcData, IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pFileName, /* optional(D3D10_SHADER_MACRO) */ IntPtr pDefines, /* optional(LPD3D10INCLUDE) */ IntPtr pInclude, [MarshalAs(UnmanagedType.LPStr)] string pFunctionName, [MarshalAs(UnmanagedType.LPStr)] string pProfile, uint Flags, /* _Out_ */ out IntPtr ppShader, /* optional(ID3D10Blob) */ out IntPtr ppErrorMsgs);
+        public static extern HRESULT D3D10CompileShader(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPStr)] string pSrcData, IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pFileName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, [MarshalAs(UnmanagedType.LPStr)] string pFunctionName, [MarshalAs(UnmanagedType.LPStr)] string pProfile, uint Flags, /* _Out_ */ out ID3D10Blob ppShader, /* _Out_opt_ */ out ID3D10Blob ppErrorMsgs);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10DisassembleShader(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShader, IntPtr BytecodeLength, bool EnableColorCode, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pComments, /* _Out_ */ out IntPtr ppDisassembly);
+        public static extern HRESULT D3D10DisassembleShader(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShader, IntPtr BytecodeLength, bool EnableColorCode, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pComments, /* _Out_ */ out ID3D10Blob ppDisassembly);
         
         [DllImport("d3d10")]
-        public static extern string D3D10GetGeometryShaderProfile(/* _In_ */ ref ID3D10Device pDevice);
+        public static extern string D3D10GetGeometryShaderProfile(/* _In_ */ ID3D10Device pDevice);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10GetInputAndOutputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out IntPtr ppSignatureBlob);
+        public static extern HRESULT D3D10GetInputAndOutputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10GetInputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out IntPtr ppSignatureBlob);
+        public static extern HRESULT D3D10GetInputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10GetOutputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out IntPtr ppSignatureBlob);
+        public static extern HRESULT D3D10GetOutputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("d3d10")]
-        public static extern string D3D10GetPixelShaderProfile(/* _In_ */ ref ID3D10Device pDevice);
+        public static extern string D3D10GetPixelShaderProfile(/* _In_ */ ID3D10Device pDevice);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10GetShaderDebugInfo(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out IntPtr ppDebugInfo);
+        public static extern HRESULT D3D10GetShaderDebugInfo(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppDebugInfo);
         
         [DllImport("d3d10")]
-        public static extern string D3D10GetVertexShaderProfile(/* _In_ */ ref ID3D10Device pDevice);
+        public static extern string D3D10GetVertexShaderProfile(/* _In_ */ ID3D10Device pDevice);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10PreprocessShader(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPStr)] string pSrcData, IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pFileName, /* optional(D3D10_SHADER_MACRO) */ IntPtr pDefines, /* optional(LPD3D10INCLUDE) */ IntPtr pInclude, /* _Out_ */ out IntPtr ppShaderText, /* optional(ID3D10Blob) */ out IntPtr ppErrorMsgs);
+        public static extern HRESULT D3D10PreprocessShader(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPStr)] string pSrcData, IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pFileName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, /* _Out_ */ out ID3D10Blob ppShaderText, /* _Out_opt_ */ out ID3D10Blob ppErrorMsgs);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10ReflectShader(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out IntPtr ppReflector);
+        public static extern HRESULT D3D10ReflectShader(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10ShaderReflection ppReflector);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CreateDevice1(/* optional(IDXGIAdapter) */ IntPtr pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint SDKVersion, /* optional(ID3D10Device1) */ out IntPtr ppDevice);
+        public static extern HRESULT D3D10CreateDevice1(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint SDKVersion, /* _Out_opt_ */ out ID3D10Device1 ppDevice);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CreateDeviceAndSwapChain1(/* optional(IDXGIAdapter) */ IntPtr pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint SDKVersion, /* optional(DXGI_SWAP_CHAIN_DESC) */ IntPtr pSwapChainDesc, /* optional(IDXGISwapChain) */ out IntPtr ppSwapChain, /* optional(ID3D10Device1) */ out IntPtr ppDevice);
+        public static extern HRESULT D3D10CreateDeviceAndSwapChain1(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint SDKVersion, /* optional(DXGI_SWAP_CHAIN_DESC) */ IntPtr pSwapChainDesc, /* _Out_opt_ */ out IDXGISwapChain ppSwapChain, /* _Out_opt_ */ out ID3D10Device1 ppDevice);
         
         [DllImport("d3d11")]
         public static extern uint D3D11CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels);
         
         [DllImport("d3d11")]
-        public static extern HRESULT D3D11CreateDevice(/* optional(IDXGIAdapter) */ IntPtr pAdapter, D3D_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D_FEATURE_LEVEL[] pFeatureLevels, uint FeatureLevels, uint SDKVersion, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _Out_opt_ */ out D3D_FEATURE_LEVEL pFeatureLevel, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext);
+        public static extern HRESULT D3D11CreateDevice(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D_FEATURE_LEVEL[] pFeatureLevels, uint FeatureLevels, uint SDKVersion, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _Out_opt_ */ out D3D_FEATURE_LEVEL pFeatureLevel, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext);
         
         [DllImport("d3d11")]
-        public static extern HRESULT D3D11CreateDeviceAndSwapChain(/* optional(IDXGIAdapter) */ IntPtr pAdapter, D3D_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D_FEATURE_LEVEL[] pFeatureLevels, uint FeatureLevels, uint SDKVersion, /* optional(DXGI_SWAP_CHAIN_DESC) */ IntPtr pSwapChainDesc, /* _COM_Outptr_opt_ */ out IDXGISwapChain ppSwapChain, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _Out_opt_ */ out D3D_FEATURE_LEVEL pFeatureLevel, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext);
+        public static extern HRESULT D3D11CreateDeviceAndSwapChain(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D_FEATURE_LEVEL[] pFeatureLevels, uint FeatureLevels, uint SDKVersion, /* optional(DXGI_SWAP_CHAIN_DESC) */ IntPtr pSwapChainDesc, /* _COM_Outptr_opt_ */ out IDXGISwapChain ppSwapChain, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _Out_opt_ */ out D3D_FEATURE_LEVEL pFeatureLevel, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext);
         
         [DllImport("d3d11")]
         public static extern HRESULT D3D11On12CreateDevice(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D_FEATURE_LEVEL[] pFeatureLevels, uint FeatureLevels, /* _In_reads_opt_( NumQueues ) */ [MarshalAs(UnmanagedType.IUnknown)] object ppCommandQueues, uint NumQueues, uint NodeMask, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext, /* _Out_opt_ */ out D3D_FEATURE_LEVEL pChosenFeatureLevel);
@@ -458,28 +419,28 @@ namespace DirectN
         public static extern HRESULT D3D12GetDebugInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvDebug);
         
         [DllImport("d3d12")]
-        public static extern HRESULT D3D12SerializeRootSignature(/* _In_ */ ref D3D12_ROOT_SIGNATURE_DESC pRootSignature, /* _In_ */ D3D_ROOT_SIGNATURE_VERSION Version, /* _Out_ */ out IntPtr ppBlob, /* optional(ID3DBlob) */ out IntPtr ppErrorBlob);
+        public static extern HRESULT D3D12SerializeRootSignature(/* _In_ */ ref D3D12_ROOT_SIGNATURE_DESC pRootSignature, /* _In_ */ D3D_ROOT_SIGNATURE_VERSION Version, /* _Out_ */ out ID3D10Blob ppBlob, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorBlob);
         
         [DllImport("d3d12")]
-        public static extern HRESULT D3D12SerializeVersionedRootSignature(/* _In_ */ ref D3D12_VERSIONED_ROOT_SIGNATURE_DESC pRootSignature, /* _Out_ */ out IntPtr ppBlob, /* optional(ID3DBlob) */ out IntPtr ppErrorBlob);
+        public static extern HRESULT D3D12SerializeVersionedRootSignature(/* _In_ */ ref D3D12_VERSIONED_ROOT_SIGNATURE_DESC pRootSignature, /* _Out_ */ out ID3D10Blob ppBlob, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorBlob);
         
         [DllImport("d3d9helper")]
         public static extern IDirect3D9 Direct3DCreate9(uint SDKVersion);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DCompile(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pSourceName, /* _In_reads_opt_(_Inexpressible_(pDefines->Name != NULL)) */ [MarshalAs(UnmanagedType.LPArray)] D3D_SHADER_MACRO[] pDefines, /* optional(ID3DInclude) */ IntPtr pInclude, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pTarget, /* _In_ */ uint Flags1, /* _In_ */ uint Flags2, /* _Out_ */ out IntPtr ppCode, /* optional(ID3DBlob) */ out IntPtr ppErrorMsgs);
+        public static extern HRESULT D3DCompile(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pSourceName, /* _In_reads_opt_(_Inexpressible_(pDefines->Name != NULL)) */ [MarshalAs(UnmanagedType.LPArray)] _D3D_SHADER_MACRO[] pDefines, /* _In_opt_ */ ID3DInclude pInclude, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pTarget, /* _In_ */ uint Flags1, /* _In_ */ uint Flags2, /* _Out_ */ out ID3D10Blob ppCode, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorMsgs);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DCompile2(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pSourceName, /* _In_reads_opt_(_Inexpressible_(pDefines->Name != NULL)) */ [MarshalAs(UnmanagedType.LPArray)] D3D_SHADER_MACRO[] pDefines, /* optional(ID3DInclude) */ IntPtr pInclude, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pTarget, /* _In_ */ uint Flags1, /* _In_ */ uint Flags2, /* _In_ */ uint SecondaryDataFlags, /* _In_reads_bytes_opt_(SecondaryDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 11)] IntPtr[] pSecondaryData, /* _In_ */ IntPtr SecondaryDataSize, /* _Out_ */ out IntPtr ppCode, /* optional(ID3DBlob) */ out IntPtr ppErrorMsgs);
+        public static extern HRESULT D3DCompile2(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pSourceName, /* _In_reads_opt_(_Inexpressible_(pDefines->Name != NULL)) */ [MarshalAs(UnmanagedType.LPArray)] _D3D_SHADER_MACRO[] pDefines, /* _In_opt_ */ ID3DInclude pInclude, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pTarget, /* _In_ */ uint Flags1, /* _In_ */ uint Flags2, /* _In_ */ uint SecondaryDataFlags, /* _In_reads_bytes_opt_(SecondaryDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 11)] IntPtr[] pSecondaryData, /* _In_ */ IntPtr SecondaryDataSize, /* _Out_ */ out ID3D10Blob ppCode, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorMsgs);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DCompileFromFile(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* _In_reads_opt_(_Inexpressible_(pDefines->Name != NULL)) */ [MarshalAs(UnmanagedType.LPArray)] D3D_SHADER_MACRO[] pDefines, /* optional(ID3DInclude) */ IntPtr pInclude, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pTarget, /* _In_ */ uint Flags1, /* _In_ */ uint Flags2, /* _Out_ */ out IntPtr ppCode, /* optional(ID3DBlob) */ out IntPtr ppErrorMsgs);
+        public static extern HRESULT D3DCompileFromFile(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* _In_reads_opt_(_Inexpressible_(pDefines->Name != NULL)) */ [MarshalAs(UnmanagedType.LPArray)] _D3D_SHADER_MACRO[] pDefines, /* _In_opt_ */ ID3DInclude pInclude, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pTarget, /* _In_ */ uint Flags1, /* _In_ */ uint Flags2, /* _Out_ */ out ID3D10Blob ppCode, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorMsgs);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DCompressShaders(/* _In_ */ uint uNumShaders, /* _In_reads_(uNumShaders) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _D3D_SHADER_DATA[] pShaderData, /* _In_ */ uint uFlags, /* _Out_ */ out IntPtr ppCompressedData);
+        public static extern HRESULT D3DCompressShaders(/* _In_ */ uint uNumShaders, /* _In_reads_(uNumShaders) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _D3D_SHADER_DATA[] pShaderData, /* _In_ */ uint uFlags, /* _Out_ */ out ID3D10Blob ppCompressedData);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DCreateBlob(/* _In_ */ IntPtr Size, /* _Out_ */ out IntPtr ppBlob);
+        public static extern HRESULT D3DCreateBlob(/* _In_ */ IntPtr Size, /* _Out_ */ out ID3D10Blob ppBlob);
         
         [DllImport("D3DCompiler_47")]
         public static extern HRESULT D3DCreateFunctionLinkingGraph(/* _In_ */ uint uFlags, /* _Out_ */ out ID3D11FunctionLinkingGraph ppFunctionLinkingGraph);
@@ -491,28 +452,28 @@ namespace DirectN
         public static extern HRESULT D3DDecompressShaders(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ uint uNumShaders, /* _In_ */ uint uStartIndex, /* _In_reads_opt_(uNumShaders) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pIndices, /* _In_ */ uint uFlags, /* _Out_writes_(uNumShaders) */ out IntPtr ppShaders, /* _Out_opt_ */ out uint pTotalShaders);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DDisassemble(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ uint Flags, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string szComments, /* _Out_ */ out IntPtr ppDisassembly);
+        public static extern HRESULT D3DDisassemble(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ uint Flags, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string szComments, /* _Out_ */ out ID3D10Blob ppDisassembly);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DDisassemble10Effect(/* _In_ */ ref ID3D10Effect pEffect, /* _In_ */ uint Flags, /* _Out_ */ out IntPtr ppDisassembly);
+        public static extern HRESULT D3DDisassemble10Effect(/* _In_ */ ID3D10Effect pEffect, /* _In_ */ uint Flags, /* _Out_ */ out ID3D10Blob ppDisassembly);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DDisassembleRegion(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ uint Flags, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string szComments, /* _In_ */ IntPtr StartByteOffset, /* _In_ */ IntPtr NumInsts, /* optional(SIZE_T) */ out IntPtr pFinishByteOffset, /* _Out_ */ out IntPtr ppDisassembly);
+        public static extern HRESULT D3DDisassembleRegion(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ uint Flags, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string szComments, /* _In_ */ IntPtr StartByteOffset, /* _In_ */ IntPtr NumInsts, /* optional(SIZE_T) */ out IntPtr pFinishByteOffset, /* _Out_ */ out ID3D10Blob ppDisassembly);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DGetBlobPart(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ D3D_BLOB_PART Part, /* _In_ */ uint Flags, /* _Out_ */ out IntPtr ppPart);
+        public static extern HRESULT D3DGetBlobPart(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ D3D_BLOB_PART Part, /* _In_ */ uint Flags, /* _Out_ */ out ID3D10Blob ppPart);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DGetDebugInfo(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _Out_ */ out IntPtr ppDebugInfo);
+        public static extern HRESULT D3DGetDebugInfo(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _Out_ */ out ID3D10Blob ppDebugInfo);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DGetInputAndOutputSignatureBlob(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _Out_ */ out IntPtr ppSignatureBlob);
+        public static extern HRESULT D3DGetInputAndOutputSignatureBlob(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DGetInputSignatureBlob(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _Out_ */ out IntPtr ppSignatureBlob);
+        public static extern HRESULT D3DGetInputSignatureBlob(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DGetOutputSignatureBlob(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _Out_ */ out IntPtr ppSignatureBlob);
+        public static extern HRESULT D3DGetOutputSignatureBlob(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("D3DCompiler_47")]
         public static extern HRESULT D3DGetTraceInstructionOffsets(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ uint Flags, /* _In_ */ IntPtr StartInstIndex, /* _In_ */ IntPtr NumInsts, /* _Out_writes_to_opt_(NumInsts, min(NumInsts, *pTotalInsts)) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] IntPtr[] pOffsets, /* optional(SIZE_T) */ out IntPtr pTotalInsts);
@@ -521,10 +482,10 @@ namespace DirectN
         public static extern HRESULT D3DLoadModule(/* _In_ */ IntPtr pSrcData, /* _In_ */ IntPtr cbSrcDataSize, /* _Out_ */ out ID3D11Module ppModule);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DPreprocess(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pSourceName, /* optional(D3D_SHADER_MACRO) */ IntPtr pDefines, /* optional(ID3DInclude) */ IntPtr pInclude, /* _Out_ */ out IntPtr ppCodeText, /* optional(ID3DBlob) */ out IntPtr ppErrorMsgs);
+        public static extern HRESULT D3DPreprocess(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pSourceName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, /* _Out_ */ out ID3D10Blob ppCodeText, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorMsgs);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DReadFileToBlob(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* _Out_ */ out IntPtr ppContents);
+        public static extern HRESULT D3DReadFileToBlob(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* _Out_ */ out ID3D10Blob ppContents);
         
         [DllImport("D3DCompiler_47")]
         public static extern HRESULT D3DReflect(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pInterface, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppReflector);
@@ -533,13 +494,13 @@ namespace DirectN
         public static extern HRESULT D3DReflectLibrary(/* __in_bcount(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* __in */ IntPtr SrcDataSize, /* __in */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* __out */ [MarshalAs(UnmanagedType.IUnknown)] out object ppReflector);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DSetBlobPart(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ D3D_BLOB_PART Part, /* _In_ */ uint Flags, /* _In_reads_bytes_(PartSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] IntPtr[] pPart, /* _In_ */ IntPtr PartSize, /* _Out_ */ out IntPtr ppNewShader);
+        public static extern HRESULT D3DSetBlobPart(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ D3D_BLOB_PART Part, /* _In_ */ uint Flags, /* _In_reads_bytes_(PartSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] IntPtr[] pPart, /* _In_ */ IntPtr PartSize, /* _Out_ */ out ID3D10Blob ppNewShader);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DStripShader(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pShaderBytecode, /* _In_ */ IntPtr BytecodeLength, /* _In_ */ uint uStripFlags, /* _Out_ */ out IntPtr ppStrippedBlob);
+        public static extern HRESULT D3DStripShader(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pShaderBytecode, /* _In_ */ IntPtr BytecodeLength, /* _In_ */ uint uStripFlags, /* _Out_ */ out ID3D10Blob ppStrippedBlob);
         
         [DllImport("D3DCompiler_47")]
-        public static extern HRESULT D3DWriteBlobToFile(/* _In_ */ ref ID3DBlob pBlob, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* _In_ */ bool bOverwrite);
+        public static extern HRESULT D3DWriteBlobToFile(/* _In_ */ ID3D10Blob pBlob, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* _In_ */ bool bOverwrite);
         
         [DllImport("d3dcsx")]
         public static extern HRESULT D3DX11CreateFFT(ref ID3D11DeviceContext pDeviceContext, /* _In_ */ ref D3DX11_FFT_DESC pDesc, uint Flags, /* _Out_ */ out D3DX11_FFT_BUFFER_INFO pBufferInfo, /* _Out_ */ out ID3DX11FFT ppFFT);
@@ -563,10 +524,10 @@ namespace DirectN
         public static extern HRESULT D3DX11CreateFFT3DReal(ref ID3D11DeviceContext pDeviceContext, uint X, uint Y, uint Z, uint Flags, /* _Out_ */ out D3DX11_FFT_BUFFER_INFO pBufferInfo, /* _Out_ */ out ID3DX11FFT ppFFT);
         
         [DllImport("d3dcsx")]
-        public static extern HRESULT D3DX11CreateScan(/* _In_ */ ref ID3D11DeviceContext pDeviceContext, uint MaxElementScanSize, uint MaxScanCount, /* _Out_ */ out ID3DX11Scan ppScan);
+        public static extern HRESULT D3DX11CreateScan(/* _In_ */ ID3D11DeviceContext pDeviceContext, uint MaxElementScanSize, uint MaxScanCount, /* _Out_ */ out ID3DX11Scan ppScan);
         
         [DllImport("d3dcsx")]
-        public static extern HRESULT D3DX11CreateSegmentedScan(/* _In_ */ ref ID3D11DeviceContext pDeviceContext, uint MaxElementScanSize, /* _Out_ */ out ID3DX11SegmentedScan ppScan);
+        public static extern HRESULT D3DX11CreateSegmentedScan(/* _In_ */ ID3D11DeviceContext pDeviceContext, uint MaxElementScanSize, /* _Out_ */ out ID3DX11SegmentedScan ppScan);
         
         [DllImport("ddraw")]
         public static extern HRESULT DirectDrawCreate([MarshalAs(UnmanagedType.LPStruct)] Guid lpGUID, ref LPDIRECTDRAW lplpDD, [MarshalAs(UnmanagedType.IUnknown)] object pUnkOuter);
@@ -641,7 +602,7 @@ namespace DirectN
         public static extern HRESULT D3DParseUnknownCommand(ref IntPtr lpvCommands, [MarshalAs(UnmanagedType.IUnknown)] object lplpvReturnedCommand);
         
         [DllImport("ddrawi")]
-        public static extern bool DDHAL_SetInfo(ref LPDDHALINFO lpDDHALInfo, bool reset);
+        public static extern bool DDHAL_SetInfo(ref _DDHALINFO lpDDHALInfo, bool reset);
         
         [DllImport("ddrawi")]
         public static extern ulong DDHAL_VidMemAlloc(ref LPDDRAWI_DIRECTDRAW_GBL lpDD, int heap, uint dwWidth, uint dwHeight);
@@ -707,7 +668,7 @@ namespace DirectN
         public static extern HRESULT MFAverageTimePerFrameToFrameRate(/* _In_ */ ulong unAverageTimePerFrame, /* _Out_ */ out uint punNumerator, /* _Out_ */ out uint punDenominator);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFBeginCreateFile(__MIDL___MIDL_itf_mfobjects_0000_0017_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0003 fFlags, [MarshalAs(UnmanagedType.LPWStr)] string pwszFilePath, IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pState, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppCancelCookie);
+        public static extern HRESULT MFBeginCreateFile(__MIDL___MIDL_itf_mfobjects_0000_0017_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0003 fFlags, [MarshalAs(UnmanagedType.LPWStr)] string pwszFilePath, ref IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pState, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppCancelCookie);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS(uint dwWorkQueueId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string wszClass, uint dwTaskId, /* _In_ */ IMFAsyncCallback pDoneCallback, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDoneState);
@@ -758,7 +719,7 @@ namespace DirectN
         public static extern HRESULT MFCreateAMMediaTypeFromMFMediaType(/* _In_ */ IMFMediaType pMFType, /* _In_ */ Guid guidFormatBlockType, /* _Inout_ */ ref AM_MEDIA_TYPE ppAMType);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFCreateAsyncResult([MarshalAs(UnmanagedType.IUnknown)] object punkObject, IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object punkState, /* _Out_ */ out IMFAsyncResult ppAsyncResult);
+        public static extern HRESULT MFCreateAsyncResult([MarshalAs(UnmanagedType.IUnknown)] object punkObject, ref IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object punkState, /* _Out_ */ out IMFAsyncResult ppAsyncResult);
         
         /// <summary>
         /// //////////////////////////////////////////////////////////////////////////////////////////////////////////// Attributes //////////////////////////////////// /////////////////////////////////////////////////////////////////////////////
@@ -767,7 +728,7 @@ namespace DirectN
         public static extern HRESULT MFCreateAttributes(/* _Out_ */ out IMFAttributes ppMFAttributes, /* _In_ */ uint cInitialSize);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFCreateAudioMediaType(/* _In_ */ ref WAVEFORMATEX pAudioFormat, /* _Out_ */ out IMFAudioMediaType ppIAudioMediaType);
+        public static extern HRESULT MFCreateAudioMediaType(/* _In_ */ ref tWAVEFORMATEX pAudioFormat, /* _Out_ */ out IMFAudioMediaType ppIAudioMediaType);
         
         /// <summary>
         /// //////////////////////////// Collection //////////////////////////// /////////////////////////////////////////////////////////////////////////////
@@ -794,7 +755,7 @@ namespace DirectN
         public static extern HRESULT MFCreateFile(__MIDL___MIDL_itf_mfobjects_0000_0017_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0003 fFlags, [MarshalAs(UnmanagedType.LPWStr)] string pwszFileURL, /* _Out_ */ out IMFByteStream ppIByteStream);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(/* _In_opt_ */ IMFSample pSample, /* _In_ */ IMFMediaBuffer pMFMediaBuffer, /* _In_ */ uint cbOffset, /* _Outptr_ */ out IntPtr ppMediaBuffer);
+        public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(/* _In_opt_ */ IMFSample pSample, /* _In_ */ IMFMediaBuffer pMFMediaBuffer, /* _In_ */ uint cbOffset, /* _Outptr_ */ out IMediaBuffer ppMediaBuffer);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFCreateMediaBufferFromMediaType(/* _In_ */ IMFMediaType pMediaType, /* _In_ */ long llDuration, /* needed for audio _In_ */ uint dwMinLength, /* // 0 means optimized default _In_ */ uint dwMinAlignment, /* // 0 means optimized default _Outptr_ */ out IMFMediaBuffer ppBuffer);
@@ -863,7 +824,7 @@ namespace DirectN
         public static extern HRESULT MFCreateWICBitmapBuffer(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkSurface, /* _Outptr_ */ out IMFMediaBuffer ppBuffer);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFEndCreateFile(IMFAsyncResult pResult, /* _Out_ */ out IMFByteStream ppFile);
+        public static extern HRESULT MFEndCreateFile(ref IMFAsyncResult pResult, /* _Out_ */ out IMFByteStream ppFile);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFEndRegisterWorkQueueWithMMCSS(/* _In_ */ IMFAsyncResult pResult, /* _Out_ */ out uint pdwTaskId);
@@ -875,13 +836,13 @@ namespace DirectN
         public static extern HRESULT MFFrameRateToAverageTimePerFrame(/* _In_ */ uint unNumerator, /* _In_ */ uint unDenominator, /* _Out_ */ out ulong punAverageTimePerFrame);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFGetAttribute2UINT32asUINT64(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* _Out_ */ out uint punHigh32, /* _Out_ */ out uint punLow32);
+        public static extern HRESULT MFGetAttribute2UINT32asUINT64(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* _Out_ */ out uint punHigh32, /* _Out_ */ out uint punLow32);
         
         [DllImport("mfplat")]
-        public static extern void MFGetAttributeDouble(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, double fDefault);
+        public static extern void MFGetAttributeDouble(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, double fDefault);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFGetAttributeRatio(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* _Out_ */ out uint punNumerator, /* _Out_ */ out uint punDenominator);
+        public static extern HRESULT MFGetAttributeRatio(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* _Out_ */ out uint punNumerator, /* _Out_ */ out uint punDenominator);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFGetAttributesAsBlob(/* _In_ */ IMFAttributes pAttributes, /* _Out_writes_bytes_(cbBufSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pBuf, /* _In_ */ uint cbBufSize);
@@ -890,13 +851,13 @@ namespace DirectN
         public static extern HRESULT MFGetAttributesAsBlobSize(/* _In_ */ IMFAttributes pAttributes, /* _Out_ */ out uint pcbBufSize);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFGetAttributeSize(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* _Out_ */ out uint punWidth, /* _Out_ */ out uint punHeight);
+        public static extern HRESULT MFGetAttributeSize(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, /* _Out_ */ out uint punWidth, /* _Out_ */ out uint punHeight);
         
         [DllImport("mfplat")]
-        public static extern uint MFGetAttributeUINT32(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unDefault);
+        public static extern uint MFGetAttributeUINT32(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unDefault);
         
         [DllImport("mfplat")]
-        public static extern ulong MFGetAttributeUINT64(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, ulong unDefault);
+        public static extern ulong MFGetAttributeUINT64(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, ulong unDefault);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFGetContentProtectionSystemCLSID(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidProtectionSystemID, /* _Out_ */ out Guid pclsid);
@@ -929,7 +890,7 @@ namespace DirectN
         public static extern HRESULT MFGetWorkQueueMMCSSTaskId(uint dwWorkQueueId, /* _Out_ */ out uint pdwTaskId);
         
         [DllImport("mfplat")]
-        public static extern void MFHeapAlloc(ulong nSize, uint dwFlags, /* optional(char) */ IntPtr pszFile, int line, _EAllocationType eat);
+        public static extern void MFHeapAlloc(ulong nSize, uint dwFlags, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pszFile, int line, _EAllocationType eat);
         
         [DllImport("mfplat")]
         public static extern void MFHeapFree([MarshalAs(UnmanagedType.IUnknown)] object pv);
@@ -959,7 +920,7 @@ namespace DirectN
         public static extern HRESULT MFInitMediaTypeFromVideoInfoHeader2(/* _In_ */ IMFMediaType pMFType, /* _In_reads_bytes_(cbBufSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] VIDEOINFOHEADER2[] pVIH2, /* _In_ */ uint cbBufSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pSubtype);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(/* _In_ */ IMFMediaType pMFType, /* _In_reads_bytes_(cbBufSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] WAVEFORMATEX[] pWaveFormat, /* _In_ */ uint cbBufSize);
+        public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(/* _In_ */ IMFMediaType pMFType, /* _In_reads_bytes_(cbBufSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tWAVEFORMATEX[] pWaveFormat, /* _In_ */ uint cbBufSize);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFInitVideoFormat(/* _In_ */ ref _MFVIDEOFORMAT pVideoFormat, /* _In_ */ _MFStandardVideoFormat type);
@@ -968,7 +929,7 @@ namespace DirectN
         public static extern HRESULT MFInitVideoFormat_RGB(/* _In_ */ ref _MFVIDEOFORMAT pVideoFormat, /* _In_ */ uint dwWidth, /* _In_ */ uint dwHeight, /* _In_ */ uint D3Dfmt);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFInvokeCallback(IMFAsyncResult pAsyncResult);
+        public static extern HRESULT MFInvokeCallback(ref IMFAsyncResult pAsyncResult);
         
         [DllImport("mfplat")]
         public static extern bool MFIsFormatYUV(uint Format);
@@ -1001,13 +962,13 @@ namespace DirectN
         public static extern HRESULT MFPutWaitingWorkItem(ref IntPtr hEvent, int Priority, /* _In_ */ IMFAsyncResult pResult, /* _Out_opt_ */ out MFWORKITEM_KEY pKey);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFPutWorkItem(uint dwQueue, IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pState);
+        public static extern HRESULT MFPutWorkItem(uint dwQueue, ref IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFPutWorkItem2(uint dwQueue, int Priority, /* _In_ */ IMFAsyncCallback pCallback, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFPutWorkItemEx(uint dwQueue, IMFAsyncResult pResult);
+        public static extern HRESULT MFPutWorkItemEx(uint dwQueue, ref IMFAsyncResult pResult);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFPutWorkItemEx2(uint dwQueue, int Priority, /* _In_ */ IMFAsyncResult pResult);
@@ -1025,19 +986,19 @@ namespace DirectN
         public static extern HRESULT MFRemovePeriodicCallback(uint dwKey);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFScheduleWorkItem(IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pState, long Timeout, /* _Out_opt_ */ out MFWORKITEM_KEY pKey);
+        public static extern HRESULT MFScheduleWorkItem(ref IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pState, long Timeout, /* _Out_opt_ */ out MFWORKITEM_KEY pKey);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFScheduleWorkItemEx(IMFAsyncResult pResult, long Timeout, /* _Out_opt_ */ out MFWORKITEM_KEY pKey);
+        public static extern HRESULT MFScheduleWorkItemEx(ref IMFAsyncResult pResult, long Timeout, /* _Out_opt_ */ out MFWORKITEM_KEY pKey);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFSetAttribute2UINT32asUINT64(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unHigh32, uint unLow32);
+        public static extern HRESULT MFSetAttribute2UINT32asUINT64(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unHigh32, uint unLow32);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFSetAttributeRatio(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unNumerator, uint unDenominator);
+        public static extern HRESULT MFSetAttributeRatio(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unNumerator, uint unDenominator);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFSetAttributeSize(IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unWidth, uint unHeight);
+        public static extern HRESULT MFSetAttributeSize(ref IMFAttributes pAttributes, [MarshalAs(UnmanagedType.LPStruct)] Guid guidKey, uint unWidth, uint unHeight);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFShutdown();
@@ -1121,40 +1082,40 @@ namespace DirectN
         public static extern HRESULT CreatePropertyStore(/* out _Outptr_ */ out IntPtr ppStore);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreate3GPMediaSink(/* _In_ */ ref IMFByteStream pIByteStream, /* optional(IMFMediaType) */ IntPtr pVideoMediaType, /* optional(IMFMediaType) */ IntPtr pAudioMediaType, /* _Outptr_ */ out IntPtr ppIMediaSink);
+        public static extern HRESULT MFCreate3GPMediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateAC3MediaSink(/* _In_ */ ref IMFByteStream pTargetByteStream, /* _In_ */ ref IMFMediaType pAudioMediaType, /* _Outptr_ */ out IntPtr ppMediaSink);
+        public static extern HRESULT MFCreateAC3MediaSink(/* _In_ */ IMFByteStream pTargetByteStream, /* _In_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppMediaSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateADTSMediaSink(/* _In_ */ ref IMFByteStream pTargetByteStream, /* _In_ */ ref IMFMediaType pAudioMediaType, /* _Outptr_ */ out IntPtr ppMediaSink);
+        public static extern HRESULT MFCreateADTSMediaSink(/* _In_ */ IMFByteStream pTargetByteStream, /* _In_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppMediaSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateAggregateSource(/* _In_ */ ref IMFCollection pSourceCollection, /* _Outptr_ */ out IntPtr ppAggSource);
+        public static extern HRESULT MFCreateAggregateSource(/* _In_ */ IMFCollection pSourceCollection, /* _Outptr_ */ out IMFMediaSource ppAggSource);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateAudioRenderer(ref IMFAttributes pAudioAttributes, /* _Outptr_ */ out IntPtr ppSink);
+        public static extern HRESULT MFCreateAudioRenderer(ref IMFAttributes pAudioAttributes, /* _Outptr_ */ out IMFMediaSink ppSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateAudioRendererActivate(/* _Outptr_ */ out IntPtr ppActivate);
+        public static extern HRESULT MFCreateAudioRendererActivate(/* _Outptr_ */ out IMFActivate ppActivate);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateAVIMediaSink(/* _In_ */ ref IMFByteStream pIByteStream, /* _In_ */ ref IMFMediaType pVideoMediaType, /* optional(IMFMediaType) */ IntPtr pAudioMediaType, /* _Outptr_ */ out IntPtr ppIMediaSink);
+        public static extern HRESULT MFCreateAVIMediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateContentDecryptorContext(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMediaProtectionSystemId, /* optional(IMFDXGIDeviceManager) */ IntPtr pD3DManager, /* _In_ */ ref IMFContentProtectionDevice pContentProtectionDevice, /* _Outptr_ */ out IntPtr ppContentDecryptorContext);
+        public static extern HRESULT MFCreateContentDecryptorContext(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMediaProtectionSystemId, /* _In_opt_ */ IMFDXGIDeviceManager pD3DManager, /* _In_ */ IMFContentProtectionDevice pContentProtectionDevice, /* _Outptr_ */ out IMFContentDecryptorContext ppContentDecryptorContext);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateContentProtectionDevice(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProtectionSystemId, /* _Outptr_ */ out IntPtr ContentProtectionDevice);
+        public static extern HRESULT MFCreateContentProtectionDevice(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProtectionSystemId, /* _Outptr_ */ out IMFContentProtectionDevice ContentProtectionDevice);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateCredentialCache(/* _Outptr_ */ out IntPtr ppCache);
+        public static extern HRESULT MFCreateCredentialCache(/* _Outptr_ */ out IMFNetCredentialCache ppCache);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateDeviceSource(/* _In_ */ ref IMFAttributes pAttributes, /* _Outptr_ */ out IntPtr ppSource);
+        public static extern HRESULT MFCreateDeviceSource(/* _In_ */ IMFAttributes pAttributes, /* _Outptr_ */ out IMFMediaSource ppSource);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateDeviceSourceActivate(/* _In_ */ ref IMFAttributes pAttributes, /* _Outptr_ */ out IntPtr ppActivate);
+        public static extern HRESULT MFCreateDeviceSourceActivate(/* _In_ */ IMFAttributes pAttributes, /* _Outptr_ */ out IMFActivate ppActivate);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFCreateExtendedCameraIntrinsicModel(MFCameraIntrinsic_DistortionModelType distortionModelType, /* _COM_Outptr_ */ out IMFExtendedCameraIntrinsicModel ppExtendedCameraIntrinsicModel);
@@ -1163,64 +1124,64 @@ namespace DirectN
         public static extern HRESULT MFCreateExtendedCameraIntrinsics(/* _COM_Outptr_ */ out IMFExtendedCameraIntrinsics ppExtendedCameraIntrinsics);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateFMPEG4MediaSink(/* _In_ */ ref IMFByteStream pIByteStream, /* optional(IMFMediaType) */ IntPtr pVideoMediaType, /* optional(IMFMediaType) */ IntPtr pAudioMediaType, /* _Outptr_ */ out IntPtr ppIMediaSink);
+        public static extern HRESULT MFCreateFMPEG4MediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateMediaSession(ref IMFAttributes pConfiguration, /* _Outptr_ */ out IntPtr ppMediaSession);
+        public static extern HRESULT MFCreateMediaSession(ref IMFAttributes pConfiguration, /* _Outptr_ */ out IMFMediaSession ppMediaSession);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateMediaTypeFromProperties(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkStream, /* _Outptr_ */ out IntPtr ppMediaType);
+        public static extern HRESULT MFCreateMediaTypeFromProperties(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkStream, /* _Outptr_ */ out IMFMediaType ppMediaType);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateMFByteStreamOnStream(IStream pStream, /* _Outptr_ */ out IntPtr ppByteStream);
+        public static extern HRESULT MFCreateMFByteStreamOnStream(ref IStream pStream, /* _Outptr_ */ out IMFByteStream ppByteStream);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateMFByteStreamOnStreamEx(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkStream, /* _Outptr_ */ out IntPtr ppByteStream);
+        public static extern HRESULT MFCreateMFByteStreamOnStreamEx(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkStream, /* _Outptr_ */ out IMFByteStream ppByteStream);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateMP3MediaSink(/* _In_ */ ref IMFByteStream pTargetByteStream, /* _Outptr_ */ out IntPtr ppMediaSink);
+        public static extern HRESULT MFCreateMP3MediaSink(/* _In_ */ IMFByteStream pTargetByteStream, /* _Outptr_ */ out IMFMediaSink ppMediaSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateMPEG4MediaSink(/* _In_ */ ref IMFByteStream pIByteStream, /* optional(IMFMediaType) */ IntPtr pVideoMediaType, /* optional(IMFMediaType) */ IntPtr pAudioMediaType, /* _Outptr_ */ out IntPtr ppIMediaSink);
+        public static extern HRESULT MFCreateMPEG4MediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateMuxSink(/* _In_ */ Guid guidOutputSubType, /* optional(IMFAttributes) */ IntPtr pOutputAttributes, /* optional(IMFByteStream) */ IntPtr pOutputByteStream, /* _Outptr_ */ out IntPtr ppMuxSink);
+        public static extern HRESULT MFCreateMuxSink(/* _In_ */ Guid guidOutputSubType, /* _In_opt_ */ IMFAttributes pOutputAttributes, /* _In_opt_ */ IMFByteStream pOutputByteStream, /* _Outptr_ */ out IMFMediaSink ppMuxSink);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFCreateNetSchemePlugin([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppvHandler);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreatePMPMediaSession(uint dwCreationFlags, ref IMFAttributes pConfiguration, /* _Outptr_ */ out IntPtr ppMediaSession, /* optional(IMFActivate) */ out IntPtr ppEnablerActivate);
+        public static extern HRESULT MFCreatePMPMediaSession(uint dwCreationFlags, ref IMFAttributes pConfiguration, /* _Outptr_ */ out IMFMediaSession ppMediaSession, /* _Outptr_opt_ */ out IMFActivate ppEnablerActivate);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreatePMPServer(uint dwCreationFlags, /* _Outptr_ */ out IntPtr ppPMPServer);
+        public static extern HRESULT MFCreatePMPServer(uint dwCreationFlags, /* _Outptr_ */ out IMFPMPServer ppPMPServer);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreatePresentationClock(/* _Outptr_ */ out IntPtr ppPresentationClock);
+        public static extern HRESULT MFCreatePresentationClock(/* _Outptr_ */ out IMFPresentationClock ppPresentationClock);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreatePresentationDescriptor(uint cStreamDescriptors, /* optional(IMFStreamDescriptor) */ out IntPtr apStreamDescriptors, /* _Outptr_ */ out IntPtr ppPresentationDescriptor);
+        public static extern HRESULT MFCreatePresentationDescriptor(uint cStreamDescriptors, /* optional(IMFStreamDescriptor) */ out IntPtr apStreamDescriptors, /* _Outptr_ */ out IMFPresentationDescriptor ppPresentationDescriptor);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreatePropertiesFromMediaType(/* _In_ */ ref IMFMediaType pMediaType, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
+        public static extern HRESULT MFCreatePropertiesFromMediaType(/* _In_ */ IMFMediaType pMediaType, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateProtectedEnvironmentAccess(/* _Outptr_ */ out IntPtr ppAccess);
+        public static extern HRESULT MFCreateProtectedEnvironmentAccess(/* _Outptr_ */ out IMFProtectedEnvironmentAccess ppAccess);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateProxyLocator([MarshalAs(UnmanagedType.LPWStr)] string pszProtocol, ref IPropertyStore pProxyConfig, /* _Outptr_ */ out IntPtr ppProxyLocator);
+        public static extern HRESULT MFCreateProxyLocator([MarshalAs(UnmanagedType.LPWStr)] string pszProtocol, ref IPropertyStore pProxyConfig, /* _Outptr_ */ out IMFNetProxyLocator ppProxyLocator);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateRemoteDesktopPlugin(/* _Outptr_ */ out IntPtr ppPlugin);
+        public static extern HRESULT MFCreateRemoteDesktopPlugin(/* _Outptr_ */ out IMFRemoteDesktopPlugin ppPlugin);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSampleCopierMFT(/* _Outptr_ */ out IntPtr ppCopierMFT);
+        public static extern HRESULT MFCreateSampleCopierMFT(/* _Outptr_ */ out IMFTransform ppCopierMFT);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSampleGrabberSinkActivate(ref IMFMediaType pIMFMediaType, ref IMFSampleGrabberSinkCallback pIMFSampleGrabberSinkCallback, /* _Outptr_ */ out IntPtr ppIActivate);
+        public static extern HRESULT MFCreateSampleGrabberSinkActivate(ref IMFMediaType pIMFMediaType, ref IMFSampleGrabberSinkCallback pIMFSampleGrabberSinkCallback, /* _Outptr_ */ out IMFActivate ppIActivate);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSensorActivityMonitor(/* _In_ */ ref IMFSensorActivitiesReportCallback pCallback, /* _COM_Outptr_ */ out IMFSensorActivityMonitor ppActivityMonitor);
+        public static extern HRESULT MFCreateSensorActivityMonitor(/* _In_ */ IMFSensorActivitiesReportCallback pCallback, /* _COM_Outptr_ */ out IMFSensorActivityMonitor ppActivityMonitor);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFCreateSensorGroup(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string SensorGroupSymbolicLink, /* _COM_Outptr_ */ out IMFSensorGroup ppSensorGroup);
@@ -1232,70 +1193,70 @@ namespace DirectN
         public static extern HRESULT MFCreateSensorProfileCollection(/* _COM_Outptr_ */ out IMFSensorProfileCollection ppSensorProfile);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSensorStream(/* _In_ */ uint StreamId, /* optional(IMFAttributes) */ IntPtr pAttributes, /* _In_ */ ref IMFCollection pMediaTypeCollection, /* _COM_Outptr_ */ out IMFSensorStream ppStream);
+        public static extern HRESULT MFCreateSensorStream(/* _In_ */ uint StreamId, /* _In_opt_ */ IMFAttributes pAttributes, /* _In_ */ IMFCollection pMediaTypeCollection, /* _COM_Outptr_ */ out IMFSensorStream ppStream);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFCreateSequencerSegmentOffset(uint dwId, long hnsOffset, /* _Out_ */ PropVariant pvarSegmentOffset);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSequencerSource([MarshalAs(UnmanagedType.IUnknown)] object pReserved, /* _Outptr_ */ out IntPtr ppSequencerSource);
+        public static extern HRESULT MFCreateSequencerSource([MarshalAs(UnmanagedType.IUnknown)] object pReserved, /* _Outptr_ */ out IMFSequencerSource ppSequencerSource);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSimpleTypeHandler(/* _Outptr_ */ out IntPtr ppHandler);
+        public static extern HRESULT MFCreateSimpleTypeHandler(/* _Outptr_ */ out IMFMediaTypeHandler ppHandler);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSourceResolver(/* out _Outptr_ */ out IntPtr ppISourceResolver);
+        public static extern HRESULT MFCreateSourceResolver(/* out _Outptr_ */ out IMFSourceResolver ppISourceResolver);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateStandardQualityManager(/* _Outptr_ */ out IntPtr ppQualityManager);
+        public static extern HRESULT MFCreateStandardQualityManager(/* _Outptr_ */ out IMFQualityManager ppQualityManager);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateStreamDescriptor(uint dwStreamIdentifier, uint cMediaTypes, /* _In_reads_(cMediaTypes) */ out IntPtr apMediaTypes, /* _Outptr_ */ out IntPtr ppDescriptor);
+        public static extern HRESULT MFCreateStreamDescriptor(uint dwStreamIdentifier, uint cMediaTypes, /* _In_reads_(cMediaTypes) */ out IntPtr apMediaTypes, /* _Outptr_ */ out IMFStreamDescriptor ppDescriptor);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateStreamOnMFByteStream(/* _In_ */ ref IMFByteStream pByteStream, /* _Outptr_ */ out IStream ppStream);
+        public static extern HRESULT MFCreateStreamOnMFByteStream(/* _In_ */ IMFByteStream pByteStream, /* _Outptr_ */ out IStream ppStream);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateStreamOnMFByteStreamEx(/* _In_ */ ref IMFByteStream pByteStream, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
+        public static extern HRESULT MFCreateStreamOnMFByteStreamEx(/* _In_ */ IMFByteStream pByteStream, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSystemTimeSource(/* _Outptr_ */ out IntPtr ppSystemTimeSource);
+        public static extern HRESULT MFCreateSystemTimeSource(/* _Outptr_ */ out IMFPresentationTimeSource ppSystemTimeSource);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateTopoLoader(/* _Outptr_ */ out IntPtr ppObj);
+        public static extern HRESULT MFCreateTopoLoader(/* _Outptr_ */ out IMFTopoLoader ppObj);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateTopology(/* _Outptr_ */ out IntPtr ppTopo);
+        public static extern HRESULT MFCreateTopology(/* _Outptr_ */ out IMFTopology ppTopo);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, /* _Outptr_ */ out IntPtr ppNode);
+        public static extern HRESULT MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, /* _Outptr_ */ out IMFTopologyNode ppNode);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateTrackedSample(/* _Outptr_ */ out IntPtr ppMFSample);
+        public static extern HRESULT MFCreateTrackedSample(/* _Outptr_ */ out IMFTrackedSample ppMFSample);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateTranscodeProfile(/* _Outptr_ */ out IntPtr ppTranscodeProfile);
+        public static extern HRESULT MFCreateTranscodeProfile(/* _Outptr_ */ out IMFTranscodeProfile ppTranscodeProfile);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateTranscodeSinkActivate(/* _Outptr_ */ out IntPtr ppActivate);
+        public static extern HRESULT MFCreateTranscodeSinkActivate(/* _Outptr_ */ out IMFActivate ppActivate);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateTranscodeTopology(/* _In_ */ ref IMFMediaSource pSrc, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszOutputFilePath, /* _In_ */ ref IMFTranscodeProfile pProfile, /* _Outptr_ */ out IntPtr ppTranscodeTopo);
+        public static extern HRESULT MFCreateTranscodeTopology(/* _In_ */ IMFMediaSource pSrc, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszOutputFilePath, /* _In_ */ IMFTranscodeProfile pProfile, /* _Outptr_ */ out IMFTopology ppTranscodeTopo);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(/* _In_ */ ref IMFMediaSource pSrc, /* _In_ */ ref IMFByteStream pOutputStream, /* _In_ */ ref IMFTranscodeProfile pProfile, /* _Out_ */ out IntPtr ppTranscodeTopo);
+        public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(/* _In_ */ IMFMediaSource pSrc, /* _In_ */ IMFByteStream pOutputStream, /* _In_ */ IMFTranscodeProfile pProfile, /* _Out_ */ out IMFTopology ppTranscodeTopo);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateVideoRendererActivate(/* _In_ */ IntPtr hwndVideo, /* _Outptr_ */ out IntPtr ppActivate);
+        public static extern HRESULT MFCreateVideoRendererActivate(/* _In_ */ IntPtr hwndVideo, /* _Outptr_ */ out IMFActivate ppActivate);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateWAVEMediaSink(/* _In_ */ ref IMFByteStream pTargetByteStream, /* _In_ */ ref IMFMediaType pAudioMediaType, /* _Outptr_ */ out IntPtr ppMediaSink);
+        public static extern HRESULT MFCreateWAVEMediaSink(/* _In_ */ IMFByteStream pTargetByteStream, /* _In_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppMediaSink);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFDeserializePresentationDescriptor(/* _In_ */ uint cbData, /* _In_reads_( cbData ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbData, /* _Outptr_ */ out IntPtr ppPD);
+        public static extern HRESULT MFDeserializePresentationDescriptor(/* _In_ */ uint cbData, /* _In_reads_( cbData ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbData, /* _Outptr_ */ out IMFPresentationDescriptor ppPD);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFEnumDeviceSources(/* _In_ */ ref IMFAttributes pAttributes, /* _Outptr_result_buffer_(*pcSourceActivate) */ out IntPtr pppSourceActivate, /* _Out_ */ out uint pcSourceActivate);
+        public static extern HRESULT MFEnumDeviceSources(/* _In_ */ IMFAttributes pAttributes, /* _Outptr_result_buffer_(*pcSourceActivate) */ out IMFActivate pppSourceActivate, /* _Out_ */ out uint pcSourceActivate);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFGetLocalId(/* _In_reads_bytes_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] verifier, /* _In_ */ uint size, /* _Outptr_ */ out IntPtr id);
@@ -1310,67 +1271,67 @@ namespace DirectN
         public static extern HRESULT MFGetSupportedSchemes(/* _Out_ */ PropVariant pPropVarSchemeArray);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFGetSystemId(/* _Outptr_ */ out IntPtr ppId);
+        public static extern HRESULT MFGetSystemId(/* _Outptr_ */ out IMFSystemId ppId);
         
         [DllImport("mfidl")]
         public static extern long MFGetSystemTime();
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFGetTopoNodeCurrentType(ref IMFTopologyNode pNode, uint dwStreamIndex, bool fOutput, /* _Outptr_ */ out IntPtr ppType);
+        public static extern HRESULT MFGetTopoNodeCurrentType(ref IMFTopologyNode pNode, uint dwStreamIndex, bool fOutput, /* _Outptr_ */ out IMFMediaType ppType);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFIsContentProtectionDeviceSupported(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProtectionSystemId, /* _Out_ */ out bool isSupported);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFLoadSignedLibrary(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _Outptr_ */ out IntPtr ppLib);
+        public static extern HRESULT MFLoadSignedLibrary(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _Outptr_ */ out IMFSignedLibrary ppLib);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFRequireProtectedEnvironment(/* _In_ */ ref IMFPresentationDescriptor pPresentationDescriptor);
+        public static extern HRESULT MFRequireProtectedEnvironment(/* _In_ */ IMFPresentationDescriptor pPresentationDescriptor);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFSerializePresentationDescriptor(/* _In_ */ ref IMFPresentationDescriptor pPD, /* _Out_ */ out uint pcbData, /* _Outptr_result_bytebuffer_to_(*pcbData, *pcbData) */ out IntPtr ppbData);
+        public static extern HRESULT MFSerializePresentationDescriptor(/* _In_ */ IMFPresentationDescriptor pPD, /* _Out_ */ out uint pcbData, /* _Outptr_result_bytebuffer_to_(*pcbData, *pcbData) */ out IntPtr ppbData);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFShutdownObject([MarshalAs(UnmanagedType.IUnknown)] object pUnk);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidSubType, /* _In_ */ uint dwMFTFlags, /* optional(IMFAttributes) */ IntPtr pCodecConfig, /* _Outptr_ */ out IntPtr ppAvailableTypes);
+        public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidSubType, /* _In_ */ uint dwMFTFlags, /* _In_opt_ */ IMFAttributes pCodecConfig, /* _Outptr_ */ out IMFCollection ppAvailableTypes);
         
         [DllImport("mfobjects")]
-        public static extern HRESULT MFDeserializeAttributesFromStream(ref IMFAttributes pAttr, uint dwOptions, IStream pStm);
+        public static extern HRESULT MFDeserializeAttributesFromStream(ref IMFAttributes pAttr, uint dwOptions, ref IStream pStm);
         
         [DllImport("mfobjects")]
-        public static extern HRESULT MFSerializeAttributesToStream(ref IMFAttributes pAttr, uint dwOptions, IStream pStm);
+        public static extern HRESULT MFSerializeAttributesToStream(ref IMFAttributes pAttr, uint dwOptions, ref IStream pStm);
         
         [DllImport("mfplay")]
         public static extern HRESULT MFPCreateMediaPlayer(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* _In_ */ bool fStartPlayback, /* _In_opt_ */ uint creationOptions, /* _In_opt_ */ IMFPMediaPlayerCallback pCallback, /* optional(HWND) */ IntPtr hWnd, /* _Out_opt_ */ out IMFPMediaPlayer ppMediaPlayer);
         
         [DllImport("mfreadwrite")]
-        public static extern HRESULT MFCreateSinkWriterFromMediaSink(/* _In_ */ ref int pMediaSink, /* optional(IMFAttributes) */ IntPtr pAttributes, /* _Out_ */ out IMFSinkWriter ppSinkWriter);
+        public static extern HRESULT MFCreateSinkWriterFromMediaSink(/* _In_ */ ref int pMediaSink, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSinkWriter ppSinkWriter);
         
         [DllImport("mfreadwrite")]
-        public static extern HRESULT MFCreateSinkWriterFromURL(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszOutputURL, /* optional(IMFByteStream) */ IntPtr pByteStream, /* optional(IMFAttributes) */ IntPtr pAttributes, /* _Out_ */ out IMFSinkWriter ppSinkWriter);
+        public static extern HRESULT MFCreateSinkWriterFromURL(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszOutputURL, /* _In_opt_ */ IMFByteStream pByteStream, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSinkWriter ppSinkWriter);
         
         [DllImport("mfreadwrite")]
-        public static extern HRESULT MFCreateSourceReaderFromByteStream(/* _In_ */ ref IMFByteStream pByteStream, /* optional(IMFAttributes) */ IntPtr pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
+        public static extern HRESULT MFCreateSourceReaderFromByteStream(/* _In_ */ IMFByteStream pByteStream, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
         
         [DllImport("mfreadwrite")]
-        public static extern HRESULT MFCreateSourceReaderFromMediaSource(/* _In_ */ ref int pMediaSource, /* optional(IMFAttributes) */ IntPtr pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
+        public static extern HRESULT MFCreateSourceReaderFromMediaSource(/* _In_ */ ref int pMediaSource, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
         
         [DllImport("mfreadwrite")]
-        public static extern HRESULT MFCreateSourceReaderFromURL(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* optional(IMFAttributes) */ IntPtr pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
+        public static extern HRESULT MFCreateSourceReaderFromURL(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
         
         [DllImport("mftransform")]
-        public static extern HRESULT MFCreateTransformActivate(/* _Out_ */ out IntPtr ppActivate);
+        public static extern HRESULT MFCreateTransformActivate(/* _Out_ */ out IMFActivate ppActivate);
         
         [DllImport("mmdeviceapi")]
-        public static extern HRESULT ActivateAudioInterfaceAsync(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceInterfacePath, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_opt_ */ PropVariant activationParams, /* _In_ */ ref IActivateAudioInterfaceCompletionHandler completionHandler, /* _COM_Outptr_ */ out IActivateAudioInterfaceAsyncOperation activationOperation);
+        public static extern HRESULT ActivateAudioInterfaceAsync(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceInterfacePath, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_opt_ */ PropVariant activationParams, /* _In_ */ IActivateAudioInterfaceCompletionHandler completionHandler, /* _COM_Outptr_ */ out IActivateAudioInterfaceAsyncOperation activationOperation);
         
         [DllImport("mmeapi")]
-        public static extern uint auxGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbac) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPAUXCAPSA[] pac, /* _In_ */ uint cbac);
+        public static extern uint auxGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbac) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagAUXCAPSA[] pac, /* _In_ */ uint cbac);
         
         [DllImport("mmeapi")]
-        public static extern uint auxGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbac) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPAUXCAPSW[] pac, /* _In_ */ uint cbac);
+        public static extern uint auxGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbac) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagAUXCAPSW[] pac, /* _In_ */ uint cbac);
         
         [DllImport("mmeapi")]
         public static extern uint auxGetNumDevs();
@@ -1385,22 +1346,22 @@ namespace DirectN
         public static extern uint auxSetVolume(/* _In_ */ uint uDeviceID, /* _In_ */ uint dwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint midiConnect(/* _In_ */ ref HMIDI hmi, /* _In_ */ ref HMIDIOUT hmo, /* optional(LPVOID) */ IntPtr pReserved);
+        public static extern uint midiConnect(/* _In_ */ ref HMIDI__ hmi, /* _In_ */ ref HMIDIOUT__ hmo, /* optional(LPVOID) */ IntPtr pReserved);
         
         [DllImport("mmeapi")]
-        public static extern uint midiDisconnect(/* _In_ */ ref HMIDI hmi, /* _In_ */ ref HMIDIOUT hmo, /* optional(LPVOID) */ IntPtr pReserved);
+        public static extern uint midiDisconnect(/* _In_ */ ref HMIDI__ hmi, /* _In_ */ ref HMIDIOUT__ hmo, /* optional(LPVOID) */ IntPtr pReserved);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInAddBuffer(/* _In_ */ ref HMIDIIN hmi, /* _Out_writes_bytes_(cbmh) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIHDR[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiInAddBuffer(/* _In_ */ ref HMIDIIN__ hmi, /* _Out_writes_bytes_(cbmh) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInClose(/* _In_ */ ref HMIDIIN hmi);
+        public static extern uint midiInClose(/* _In_ */ ref HMIDIIN__ hmi);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIINCAPSA[] pmic, /* _In_ */ uint cbmic);
+        public static extern uint midiInGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagMIDIINCAPSA[] pmic, /* _In_ */ uint cbmic);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIINCAPSW[] pmic, /* _In_ */ uint cbmic);
+        public static extern uint midiInGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagMIDIINCAPSW[] pmic, /* _In_ */ uint cbmic);
         
         [DllImport("mmeapi")]
         public static extern uint midiInGetErrorTextA(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPStr)] string pszText, /* _In_ */ uint cchText);
@@ -1409,46 +1370,46 @@ namespace DirectN
         public static extern uint midiInGetErrorTextW(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPWStr)] string pszText, /* _In_ */ uint cchText);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInGetID(/* _In_ */ ref HMIDIIN hmi, /* _Out_ */ out uint puDeviceID);
+        public static extern uint midiInGetID(/* _In_ */ ref HMIDIIN__ hmi, /* _Out_ */ out uint puDeviceID);
         
         [DllImport("mmeapi")]
         public static extern uint midiInGetNumDevs();
         
         [DllImport("mmeapi")]
-        public static extern uint midiInMessage(/* optional(HMIDIIN) */ IntPtr hmi, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dw1, /* optional(DWORD_PTR) */ IntPtr dw2);
+        public static extern uint midiInMessage(/* optional(HMIDIIN__) */ IntPtr hmi, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dw1, /* optional(DWORD_PTR) */ IntPtr dw2);
         
         [DllImport("mmeapi")]
         public static extern uint midiInOpen(/* _Out_ */ out IntPtr phmi, /* _In_ */ uint uDeviceID, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInPrepareHeader(/* _In_ */ ref HMIDIIN hmi, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIHDR[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiInPrepareHeader(/* _In_ */ ref HMIDIIN__ hmi, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInReset(/* _In_ */ ref HMIDIIN hmi);
+        public static extern uint midiInReset(/* _In_ */ ref HMIDIIN__ hmi);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInStart(/* _In_ */ ref HMIDIIN hmi);
+        public static extern uint midiInStart(/* _In_ */ ref HMIDIIN__ hmi);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInStop(/* _In_ */ ref HMIDIIN hmi);
+        public static extern uint midiInStop(/* _In_ */ ref HMIDIIN__ hmi);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInUnprepareHeader(/* _In_ */ ref HMIDIIN hmi, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIHDR[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiInUnprepareHeader(/* _In_ */ ref HMIDIIN__ hmi, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutCacheDrumPatches(/* _In_ */ ref HMIDIOUT hmo, /* _In_ */ uint uPatch, /* _In_reads_(MIDIPATCHSIZE) */ [MarshalAs(UnmanagedType.LPArray)] ushort[] pwkya, /* _In_ */ uint fuCache);
+        public static extern uint midiOutCacheDrumPatches(/* _In_ */ ref HMIDIOUT__ hmo, /* _In_ */ uint uPatch, /* _In_reads_(MIDIPATCHSIZE) */ [MarshalAs(UnmanagedType.LPArray)] ushort[] pwkya, /* _In_ */ uint fuCache);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutCachePatches(/* _In_ */ ref HMIDIOUT hmo, /* _In_ */ uint uBank, /* _In_reads_(MIDIPATCHSIZE) */ [MarshalAs(UnmanagedType.LPArray)] ushort[] pwpa, /* _In_ */ uint fuCache);
+        public static extern uint midiOutCachePatches(/* _In_ */ ref HMIDIOUT__ hmo, /* _In_ */ uint uBank, /* _In_reads_(MIDIPATCHSIZE) */ [MarshalAs(UnmanagedType.LPArray)] ushort[] pwpa, /* _In_ */ uint fuCache);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutClose(/* _In_ */ ref HMIDIOUT hmo);
+        public static extern uint midiOutClose(/* _In_ */ ref HMIDIOUT__ hmo);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmoc) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIOUTCAPSA[] pmoc, /* _In_ */ uint cbmoc);
+        public static extern uint midiOutGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmoc) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagMIDIOUTCAPSA[] pmoc, /* _In_ */ uint cbmoc);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmoc) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIOUTCAPSW[] pmoc, /* _In_ */ uint cbmoc);
+        public static extern uint midiOutGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmoc) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagMIDIOUTCAPSW[] pmoc, /* _In_ */ uint cbmoc);
         
         [DllImport("mmeapi")]
         public static extern uint midiOutGetErrorTextA(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPStr)] string pszText, /* _In_ */ uint cchText);
@@ -1457,115 +1418,115 @@ namespace DirectN
         public static extern uint midiOutGetErrorTextW(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPWStr)] string pszText, /* _In_ */ uint cchText);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutGetID(/* _In_ */ ref HMIDIOUT hmo, /* _Out_ */ out uint puDeviceID);
+        public static extern uint midiOutGetID(/* _In_ */ ref HMIDIOUT__ hmo, /* _Out_ */ out uint puDeviceID);
         
         [DllImport("mmeapi")]
         public static extern uint midiOutGetNumDevs();
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutGetVolume(/* optional(HMIDIOUT) */ IntPtr hmo, /* _Out_ */ out uint pdwVolume);
+        public static extern uint midiOutGetVolume(/* optional(HMIDIOUT__) */ IntPtr hmo, /* _Out_ */ out uint pdwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutLongMsg(/* _In_ */ ref HMIDIOUT hmo, /* _In_reads_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIHDR[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiOutLongMsg(/* _In_ */ ref HMIDIOUT__ hmo, /* _In_reads_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutMessage(/* optional(HMIDIOUT) */ IntPtr hmo, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dw1, /* optional(DWORD_PTR) */ IntPtr dw2);
+        public static extern uint midiOutMessage(/* optional(HMIDIOUT__) */ IntPtr hmo, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dw1, /* optional(DWORD_PTR) */ IntPtr dw2);
         
         [DllImport("mmeapi")]
         public static extern uint midiOutOpen(/* _Out_ */ out IntPtr phmo, /* _In_ */ uint uDeviceID, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutPrepareHeader(/* _In_ */ ref HMIDIOUT hmo, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIHDR[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiOutPrepareHeader(/* _In_ */ ref HMIDIOUT__ hmo, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutReset(/* _In_ */ ref HMIDIOUT hmo);
+        public static extern uint midiOutReset(/* _In_ */ ref HMIDIOUT__ hmo);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutSetVolume(/* optional(HMIDIOUT) */ IntPtr hmo, /* _In_ */ uint dwVolume);
+        public static extern uint midiOutSetVolume(/* optional(HMIDIOUT__) */ IntPtr hmo, /* _In_ */ uint dwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutShortMsg(/* _In_ */ ref HMIDIOUT hmo, /* _In_ */ uint dwMsg);
+        public static extern uint midiOutShortMsg(/* _In_ */ ref HMIDIOUT__ hmo, /* _In_ */ uint dwMsg);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutUnprepareHeader(/* _In_ */ ref HMIDIOUT hmo, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIHDR[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiOutUnprepareHeader(/* _In_ */ ref HMIDIOUT__ hmo, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamClose(/* _In_ */ ref HMIDISTRM hms);
+        public static extern uint midiStreamClose(/* _In_ */ ref HMIDISTRM__ hms);
         
         [DllImport("mmeapi")]
         public static extern uint midiStreamOpen(/* _Out_ */ out IntPtr phms, /* _Inout_updates_(cMidi) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] puDeviceID, /* _In_ */ uint cMidi, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamOut(/* _In_ */ ref HMIDISTRM hms, /* _Out_writes_bytes_(cbmh) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIDIHDR[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiStreamOut(/* _In_ */ ref HMIDISTRM__ hms, /* _Out_writes_bytes_(cbmh) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamPause(/* _In_ */ ref HMIDISTRM hms);
+        public static extern uint midiStreamPause(/* _In_ */ ref HMIDISTRM__ hms);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamPosition(/* _In_ */ ref HMIDISTRM hms, /* _Out_writes_bytes_(cbmmt) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMMTIME[] lpmmt, /* _In_ */ uint cbmmt);
+        public static extern uint midiStreamPosition(/* _In_ */ ref HMIDISTRM__ hms, /* _Out_writes_bytes_(cbmmt) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] lpmmt, /* _In_ */ uint cbmmt);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamProperty(/* _In_ */ ref HMIDISTRM hms, /* _Inout_updates_bytes_(sizeof(DWORD) + sizeof(DWORD)) */ [MarshalAs(UnmanagedType.LPArray)] byte[] lppropdata, /* _In_ */ uint dwProperty);
+        public static extern uint midiStreamProperty(/* _In_ */ ref HMIDISTRM__ hms, /* _Inout_updates_bytes_(sizeof(DWORD) + sizeof(DWORD)) */ [MarshalAs(UnmanagedType.LPArray)] byte[] lppropdata, /* _In_ */ uint dwProperty);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamRestart(/* _In_ */ ref HMIDISTRM hms);
+        public static extern uint midiStreamRestart(/* _In_ */ ref HMIDISTRM__ hms);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamStop(/* _In_ */ ref HMIDISTRM hms);
+        public static extern uint midiStreamStop(/* _In_ */ ref HMIDISTRM__ hms);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerClose(/* _In_ */ ref HMIXER hmx);
+        public static extern uint mixerClose(/* _In_ */ ref HMIXER__ hmx);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetControlDetailsA(/* optional(HMIXEROBJ) */ IntPtr hmxobj, /* _Inout_ */ ref LPMIXERCONTROLDETAILS pmxcd, /* _In_ */ uint fdwDetails);
+        public static extern uint mixerGetControlDetailsA(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _Inout_ */ ref tMIXERCONTROLDETAILS pmxcd, /* _In_ */ uint fdwDetails);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetControlDetailsW(/* optional(HMIXEROBJ) */ IntPtr hmxobj, /* _Inout_ */ ref LPMIXERCONTROLDETAILS pmxcd, /* _In_ */ uint fdwDetails);
+        public static extern uint mixerGetControlDetailsW(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _Inout_ */ ref tMIXERCONTROLDETAILS pmxcd, /* _In_ */ uint fdwDetails);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetDevCapsA(/* _In_ */ IntPtr uMxId, /* _Out_writes_bytes_(cbmxcaps) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIXERCAPSA[] pmxcaps, /* _In_ */ uint cbmxcaps);
+        public static extern uint mixerGetDevCapsA(/* _In_ */ IntPtr uMxId, /* _Out_writes_bytes_(cbmxcaps) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagMIXERCAPSA[] pmxcaps, /* _In_ */ uint cbmxcaps);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetDevCapsW(/* _In_ */ IntPtr uMxId, /* _Out_writes_bytes_(cbmxcaps) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMIXERCAPSW[] pmxcaps, /* _In_ */ uint cbmxcaps);
+        public static extern uint mixerGetDevCapsW(/* _In_ */ IntPtr uMxId, /* _Out_writes_bytes_(cbmxcaps) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagMIXERCAPSW[] pmxcaps, /* _In_ */ uint cbmxcaps);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetID(/* optional(HMIXEROBJ) */ IntPtr hmxobj, /* _Out_ */ out uint puMxId, /* _In_ */ uint fdwId);
+        public static extern uint mixerGetID(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _Out_ */ out uint puMxId, /* _In_ */ uint fdwId);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetLineControlsA(/* optional(HMIXEROBJ) */ IntPtr hmxobj, /* _Inout_ */ ref LPMIXERLINECONTROLSA pmxlc, /* _In_ */ uint fdwControls);
+        public static extern uint mixerGetLineControlsA(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _Inout_ */ ref tagMIXERLINECONTROLSA pmxlc, /* _In_ */ uint fdwControls);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetLineControlsW(/* optional(HMIXEROBJ) */ IntPtr hmxobj, /* _Inout_ */ ref LPMIXERLINECONTROLSW pmxlc, /* _In_ */ uint fdwControls);
+        public static extern uint mixerGetLineControlsW(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _Inout_ */ ref tagMIXERLINECONTROLSW pmxlc, /* _In_ */ uint fdwControls);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetLineInfoA(/* optional(HMIXEROBJ) */ IntPtr hmxobj, /* _Inout_ */ ref LPMIXERLINEA pmxl, /* _In_ */ uint fdwInfo);
+        public static extern uint mixerGetLineInfoA(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _Inout_ */ ref tagMIXERLINEA pmxl, /* _In_ */ uint fdwInfo);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerGetLineInfoW(/* optional(HMIXEROBJ) */ IntPtr hmxobj, /* _Inout_ */ ref LPMIXERLINEW pmxl, /* _In_ */ uint fdwInfo);
+        public static extern uint mixerGetLineInfoW(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _Inout_ */ ref tagMIXERLINEW pmxl, /* _In_ */ uint fdwInfo);
         
         [DllImport("mmeapi")]
         public static extern uint mixerGetNumDevs();
         
         [DllImport("mmeapi")]
-        public static extern uint mixerMessage(/* optional(HMIXER) */ IntPtr hmx, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dwParam1, /* optional(DWORD_PTR) */ IntPtr dwParam2);
+        public static extern uint mixerMessage(/* optional(HMIXER__) */ IntPtr hmx, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dwParam1, /* optional(DWORD_PTR) */ IntPtr dwParam2);
         
         [DllImport("mmeapi")]
         public static extern uint mixerOpen(/* optional(LPHMIXER) */ out IntPtr phmx, /* _In_ */ uint uMxId, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerSetControlDetails(/* optional(HMIXEROBJ) */ IntPtr hmxobj, /* _In_ */ ref LPMIXERCONTROLDETAILS pmxcd, /* _In_ */ uint fdwDetails);
+        public static extern uint mixerSetControlDetails(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _In_ */ ref tMIXERCONTROLDETAILS pmxcd, /* _In_ */ uint fdwDetails);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInAddBuffer(/* _In_ */ ref HWAVEIN hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPWAVEHDR[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveInAddBuffer(/* _In_ */ ref HWAVEIN__ hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInClose(/* _In_ */ ref HWAVEIN hwi);
+        public static extern uint waveInClose(/* _In_ */ ref HWAVEIN__ hwi);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbwic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPWAVEINCAPSA[] pwic, /* _In_ */ uint cbwic);
+        public static extern uint waveInGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbwic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagWAVEINCAPSA[] pwic, /* _In_ */ uint cbwic);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbwic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPWAVEINCAPSW[] pwic, /* _In_ */ uint cbwic);
+        public static extern uint waveInGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbwic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagWAVEINCAPSW[] pwic, /* _In_ */ uint cbwic);
         
         [DllImport("mmeapi")]
         public static extern uint waveInGetErrorTextA(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPStr)] string pszText, /* _In_ */ uint cchText);
@@ -1574,46 +1535,46 @@ namespace DirectN
         public static extern uint waveInGetErrorTextW(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPWStr)] string pszText, /* _In_ */ uint cchText);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInGetID(/* _In_ */ ref HWAVEIN hwi, /* _In_ */ ref uint puDeviceID);
+        public static extern uint waveInGetID(/* _In_ */ ref HWAVEIN__ hwi, /* _In_ */ ref uint puDeviceID);
         
         [DllImport("mmeapi")]
         public static extern uint waveInGetNumDevs();
         
         [DllImport("mmeapi")]
-        public static extern uint waveInGetPosition(/* _In_ */ ref HWAVEIN hwi, /* _Inout_updates_bytes_(cbmmt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMMTIME[] pmmt, /* _In_ */ uint cbmmt);
+        public static extern uint waveInGetPosition(/* _In_ */ ref HWAVEIN__ hwi, /* _Inout_updates_bytes_(cbmmt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] pmmt, /* _In_ */ uint cbmmt);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInMessage(/* optional(HWAVEIN) */ IntPtr hwi, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dw1, /* optional(DWORD_PTR) */ IntPtr dw2);
+        public static extern uint waveInMessage(/* optional(HWAVEIN__) */ IntPtr hwi, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dw1, /* optional(DWORD_PTR) */ IntPtr dw2);
         
         [DllImport("mmeapi")]
         public static extern uint waveInOpen(/* optional(LPHWAVEIN) */ out IntPtr phwi, /* _In_ */ uint uDeviceID, /* _In_ */ ref LPCWAVEFORMATEX pwfx, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInPrepareHeader(/* _In_ */ ref HWAVEIN hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPWAVEHDR[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveInPrepareHeader(/* _In_ */ ref HWAVEIN__ hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInReset(/* _In_ */ ref HWAVEIN hwi);
+        public static extern uint waveInReset(/* _In_ */ ref HWAVEIN__ hwi);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInStart(/* _In_ */ ref HWAVEIN hwi);
+        public static extern uint waveInStart(/* _In_ */ ref HWAVEIN__ hwi);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInStop(/* _In_ */ ref HWAVEIN hwi);
+        public static extern uint waveInStop(/* _In_ */ ref HWAVEIN__ hwi);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInUnprepareHeader(/* _In_ */ ref HWAVEIN hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPWAVEHDR[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveInUnprepareHeader(/* _In_ */ ref HWAVEIN__ hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutBreakLoop(/* _In_ */ ref HWAVEOUT hwo);
+        public static extern uint waveOutBreakLoop(/* _In_ */ ref HWAVEOUT__ hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutClose(/* _In_ */ ref HWAVEOUT hwo);
+        public static extern uint waveOutClose(/* _In_ */ ref HWAVEOUT__ hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_ */ out LPWAVEOUTCAPSA pwoc, /* _In_ */ uint cbwoc);
+        public static extern uint waveOutGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_ */ out tagWAVEOUTCAPSA pwoc, /* _In_ */ uint cbwoc);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_ */ out LPWAVEOUTCAPSW pwoc, /* _In_ */ uint cbwoc);
+        public static extern uint waveOutGetDevCapsW(/* _In_ */ IntPtr uDeviceID, /* _Out_ */ out tagWAVEOUTCAPSW pwoc, /* _In_ */ uint cbwoc);
         
         [DllImport("mmeapi")]
         public static extern uint waveOutGetErrorTextA(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPStr)] string pszText, /* _In_ */ uint cchText);
@@ -1622,70 +1583,70 @@ namespace DirectN
         public static extern uint waveOutGetErrorTextW(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPWStr)] string pszText, /* _In_ */ uint cchText);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetID(/* _In_ */ ref HWAVEOUT hwo, /* _Out_ */ out uint puDeviceID);
+        public static extern uint waveOutGetID(/* _In_ */ ref HWAVEOUT__ hwo, /* _Out_ */ out uint puDeviceID);
         
         [DllImport("mmeapi")]
         public static extern uint waveOutGetNumDevs();
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetPitch(/* _In_ */ ref HWAVEOUT hwo, /* _Out_ */ out uint pdwPitch);
+        public static extern uint waveOutGetPitch(/* _In_ */ ref HWAVEOUT__ hwo, /* _Out_ */ out uint pdwPitch);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetPlaybackRate(/* _In_ */ ref HWAVEOUT hwo, /* _Out_ */ out uint pdwRate);
+        public static extern uint waveOutGetPlaybackRate(/* _In_ */ ref HWAVEOUT__ hwo, /* _Out_ */ out uint pdwRate);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetPosition(/* _In_ */ ref HWAVEOUT hwo, /* _Inout_updates_bytes_(cbmmt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPMMTIME[] pmmt, /* _In_ */ uint cbmmt);
+        public static extern uint waveOutGetPosition(/* _In_ */ ref HWAVEOUT__ hwo, /* _Inout_updates_bytes_(cbmmt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] pmmt, /* _In_ */ uint cbmmt);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetVolume(/* optional(HWAVEOUT) */ IntPtr hwo, /* _Out_ */ out uint pdwVolume);
+        public static extern uint waveOutGetVolume(/* optional(HWAVEOUT__) */ IntPtr hwo, /* _Out_ */ out uint pdwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutMessage(/* optional(HWAVEOUT) */ IntPtr hwo, /* _In_ */ uint uMsg, /* _In_ */ IntPtr dw1, /* _In_ */ IntPtr dw2);
+        public static extern uint waveOutMessage(/* optional(HWAVEOUT__) */ IntPtr hwo, /* _In_ */ uint uMsg, /* _In_ */ IntPtr dw1, /* _In_ */ IntPtr dw2);
         
         [DllImport("mmeapi")]
         public static extern uint waveOutOpen(/* optional(LPHWAVEOUT) */ out IntPtr phwo, /* _In_ */ uint uDeviceID, /* _In_ */ ref LPCWAVEFORMATEX pwfx, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutPause(/* _In_ */ ref HWAVEOUT hwo);
+        public static extern uint waveOutPause(/* _In_ */ ref HWAVEOUT__ hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutPrepareHeader(/* _In_ */ ref HWAVEOUT hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPWAVEHDR[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveOutPrepareHeader(/* _In_ */ ref HWAVEOUT__ hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutReset(/* _In_ */ ref HWAVEOUT hwo);
+        public static extern uint waveOutReset(/* _In_ */ ref HWAVEOUT__ hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutRestart(/* _In_ */ ref HWAVEOUT hwo);
+        public static extern uint waveOutRestart(/* _In_ */ ref HWAVEOUT__ hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutSetPitch(/* _In_ */ ref HWAVEOUT hwo, /* _In_ */ uint dwPitch);
+        public static extern uint waveOutSetPitch(/* _In_ */ ref HWAVEOUT__ hwo, /* _In_ */ uint dwPitch);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutSetPlaybackRate(/* _In_ */ ref HWAVEOUT hwo, /* _In_ */ uint dwRate);
+        public static extern uint waveOutSetPlaybackRate(/* _In_ */ ref HWAVEOUT__ hwo, /* _In_ */ uint dwRate);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutSetVolume(/* optional(HWAVEOUT) */ IntPtr hwo, /* _In_ */ uint dwVolume);
+        public static extern uint waveOutSetVolume(/* optional(HWAVEOUT__) */ IntPtr hwo, /* _In_ */ uint dwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutUnprepareHeader(/* _In_ */ ref HWAVEOUT hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPWAVEHDR[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveOutUnprepareHeader(/* _In_ */ ref HWAVEOUT__ hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutWrite(/* _In_ */ ref HWAVEOUT hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] LPWAVEHDR[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveOutWrite(/* _In_ */ ref HWAVEOUT__ hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("wincodec")]
-        public static extern HRESULT WICConvertBitmapSource(/* _In_ */ ref REFWICPixelFormatGUID dstFormat, /* // Destination pixel format _In_ */ ref IWICBitmapSource pISrc, /* // Source bitmap _Outptr_ */ out IntPtr ppIDst);
+        public static extern HRESULT WICConvertBitmapSource(/* _In_ */ ref REFWICPixelFormatGUID dstFormat, /* // Destination pixel format _In_ */ IWICBitmapSource pISrc, /* // Source bitmap _Outptr_ */ out IWICBitmapSource ppIDst);
         
         [DllImport("wincodec")]
-        public static extern HRESULT WICCreateBitmapFromSection(/* _In_ */ uint width, /* _In_ */ uint height, /* _In_ */ ref REFWICPixelFormatGUID pixelFormat, /* _In_ */ IntPtr hSection, /* _In_ */ uint stride, /* _In_ */ uint offset, /* _Outptr_ */ out IntPtr ppIBitmap);
+        public static extern HRESULT WICCreateBitmapFromSection(/* _In_ */ uint width, /* _In_ */ uint height, /* _In_ */ ref REFWICPixelFormatGUID pixelFormat, /* _In_ */ IntPtr hSection, /* _In_ */ uint stride, /* _In_ */ uint offset, /* _Outptr_ */ out IWICBitmap ppIBitmap);
         
         [DllImport("wincodec")]
-        public static extern HRESULT WICCreateBitmapFromSectionEx(/* _In_ */ uint width, /* _In_ */ uint height, /* _In_ */ ref REFWICPixelFormatGUID pixelFormat, /* _In_ */ IntPtr hSection, /* _In_ */ uint stride, /* _In_ */ uint offset, /* _In_ */ WICSectionAccessLevel desiredAccessLevel, /* _Outptr_ */ out IntPtr ppIBitmap);
+        public static extern HRESULT WICCreateBitmapFromSectionEx(/* _In_ */ uint width, /* _In_ */ uint height, /* _In_ */ ref REFWICPixelFormatGUID pixelFormat, /* _In_ */ IntPtr hSection, /* _In_ */ uint stride, /* _In_ */ uint offset, /* _In_ */ WICSectionAccessLevel desiredAccessLevel, /* _Outptr_ */ out IWICBitmap ppIBitmap);
         
         [DllImport("wincodec")]
-        public static extern HRESULT WICMapGuidToShortName(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint cchName, /* _Inout_updates_opt_(cchName) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] wzName, /* _Out_ */ out uint pcchActual);
+        public static extern HRESULT WICMapGuidToShortName(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint cchName, /* _Inout_updates_opt_(cchName) */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out uint pcchActual);
         
         [DllImport("wincodec")]
-        public static extern HRESULT WICMapSchemaToName(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMetadataFormat, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwzSchema, /* _In_ */ uint cchName, /* _Inout_updates_opt_(cchName) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] wzName, /* _Out_ */ out uint pcchActual);
+        public static extern HRESULT WICMapSchemaToName(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMetadataFormat, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwzSchema, /* _In_ */ uint cchName, /* _Inout_updates_opt_(cchName) */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out uint pcchActual);
         
         [DllImport("wincodec")]
         public static extern HRESULT WICMapShortNameToGuid(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out Guid pguid);

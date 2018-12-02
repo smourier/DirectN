@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(7290,5)
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
@@ -56,7 +57,7 @@ namespace DirectN
         
         // IFilterGraph2
         [PreserveSig]
-        HRESULT AddSourceFilterForMoniker(/* [in] */ ref IMoniker pMoniker, /* [in] */ ref IBindCtx pCtx, /* [unique][in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpcwstrFilterName, /* [annotation][out] _Out_ */ out IBaseFilter ppFilter);
+        HRESULT AddSourceFilterForMoniker(/* [in] */ IMoniker pMoniker, /* [in] */ IBindCtx pCtx, /* [unique][in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpcwstrFilterName, /* [annotation][out] _Out_ */ out IBaseFilter ppFilter);
         
         [PreserveSig]
         HRESULT ReconnectEx(/* [in] */ IPin ppin, /* optional(_AMMediaType) */ IntPtr pmt);

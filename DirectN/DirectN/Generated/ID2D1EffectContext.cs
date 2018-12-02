@@ -6,6 +6,9 @@ using D2D1_RECT_L = DirectN.tagRECT;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The internal context handed to effect authors to create transforms from effects and any other operation tied to context which is not useful to the application facing API.
+    /// </summary>
     [Guid("3d9f916b-27dc-4ad7-b4f1-64945340f563"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1EffectContext
     {
@@ -64,10 +67,10 @@ namespace DirectN
         HRESULT CreateColorContextFromFilename(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string filename, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
         
         [PreserveSig]
-        HRESULT CreateColorContextFromWicColorContext(/* _In_ */ ref IWICColorContext wicColorContext, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
+        HRESULT CreateColorContextFromWicColorContext(/* _In_ */ IWICColorContext wicColorContext, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
         
         [PreserveSig]
-        HRESULT CheckFeatureSupport(D2D1_FEATURE feature, /* _Out_writes_bytes_(featureSupportDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object featureSupportData, uint featureSupportDataSize);
+        HRESULT CheckFeatureSupport(D2D1_FEATURE feature, /* _Out_writes_bytes_(featureSupportDataSize) */ IntPtr featureSupportData, uint featureSupportDataSize);
         
         [PreserveSig]
         bool IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision);

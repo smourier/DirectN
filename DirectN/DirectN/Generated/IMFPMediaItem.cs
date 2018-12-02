@@ -15,7 +15,7 @@ namespace DirectN
         HRESULT GetURL(/* [annotation][out] _Out_ */ out IntPtr ppwszURL);
         
         [PreserveSig]
-        HRESULT GetObjectA(/* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppIUnknown);
+        HRESULT GetObjectW(/* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppIUnknown);
         
         [PreserveSig]
         HRESULT GetUserData(/* [annotation][out] _Out_ */ out IntPtr pdwUserData);

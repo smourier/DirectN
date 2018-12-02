@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetFactoryAttributes(/* [annotation][out] _COM_Outptr_ */ out IMFAttributes ppAttributes);
         
         [PreserveSig]
-        HRESULT InitializeFactory(/* [annotation][in] _In_ */ uint dwMaxTransformCount, /* [annotation][in] _In_ */ ref IMFCollection pSensorDevices, /* optional(IMFAttributes) */ IntPtr pAttributes);
+        HRESULT InitializeFactory(/* [annotation][in] _In_ */ uint dwMaxTransformCount, /* [annotation][in] _In_ */ IMFCollection pSensorDevices, /* [annotation][in] _In_opt_ */ IMFAttributes pAttributes);
         
         [PreserveSig]
         HRESULT GetTransformCount(/* [annotation][out] _Out_ */ out uint pdwCount);
@@ -20,6 +20,6 @@ namespace DirectN
         HRESULT GetTransformInformation(/* [annotation][in] _In_ */ uint TransformIndex, /* [annotation][out] _Out_ */ out Guid pguidTransformId, /* [annotation][out] _COM_Outptr_result_maybenull_ */ out IMFAttributes ppAttributes, /* [annotation][out] _COM_Outptr_ */ out IMFCollection ppStreamInformation);
         
         [PreserveSig]
-        HRESULT CreateTransform(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidSensorTransformID, /* optional(IMFAttributes) */ IntPtr pAttributes, /* [annotation][out] _COM_Outptr_ */ out IMFDeviceTransform ppDeviceMFT);
+        HRESULT CreateTransform(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidSensorTransformID, /* [annotation][in] _In_opt_ */ IMFAttributes pAttributes, /* [annotation][out] _COM_Outptr_ */ out IMFDeviceTransform ppDeviceMFT);
     }
 }

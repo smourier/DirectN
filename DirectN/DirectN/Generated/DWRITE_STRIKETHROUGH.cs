@@ -12,7 +12,8 @@ namespace DirectN
         public float offset;
         public DWRITE_READING_DIRECTION readingDirection;
         public DWRITE_FLOW_DIRECTION flowDirection;
-        public IntPtr localeName;
+        [MarshalAs(UnmanagedType.LPWStr)] 
+        public char localeName;
         public DWRITE_MEASURING_MODE measuringMode;
     }
 }

@@ -51,6 +51,6 @@ namespace DirectN
         HRESULT SetAllSettings(/* [in] */ IStream __MIDL__ICodecAPI0001);
         
         [PreserveSig]
-        HRESULT SetAllSettingsWithNotify(IStream __MIDL__ICodecAPI0002, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ChangedParamCount) */ out IntPtr ChangedParam, /* [annotation][out] _Out_ */ out uint ChangedParamCount);
+        HRESULT SetAllSettingsWithNotify(ref IStream __MIDL__ICodecAPI0002, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ChangedParamCount) */ out IntPtr ChangedParam, /* [annotation][out] _Out_ */ out uint ChangedParamCount);
     }
 }

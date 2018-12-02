@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents a color context to be used with the Color Management Effect.
-    /// </summary>
     [Guid("1ab42875-c57f-4be9-bd85-9cd78d6f55ee"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1ColorContext1 : ID2D1ColorContext
     {

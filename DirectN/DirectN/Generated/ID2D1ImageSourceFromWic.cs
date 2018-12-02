@@ -28,6 +28,6 @@ namespace DirectN
         HRESULT TrimCache(/* optional(D2D_RECT_U) */ IntPtr rectangleToPreserve);
         
         [PreserveSig]
-        void GetSource(/* _Outptr_result_maybenull_ */ out IntPtr wicBitmapSource);
+        void GetSource(/* _Outptr_result_maybenull_ */ out IWICBitmapSource wicBitmapSource);
     }
 }

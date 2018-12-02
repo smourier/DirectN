@@ -11,7 +11,7 @@ namespace DirectN
         public ushort wPid;
         public uint vDriverVersion;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] 
-        public string[] szPname;
+        public string szPname;
         public ushort wTechnology;
         public ushort wVoices;
         public ushort wNotes;

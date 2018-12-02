@@ -63,7 +63,7 @@ namespace DirectN
         new uint GetFontFamilyNameLength();
         
         [PreserveSig]
-        new HRESULT GetFontFamilyName(/* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] fontFamilyName, uint nameSize);
+        new HRESULT GetFontFamilyName(/* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string fontFamilyName, uint nameSize);
         
         [PreserveSig]
         new DWRITE_FONT_WEIGHT GetFontWeight();
@@ -81,7 +81,7 @@ namespace DirectN
         new uint GetLocaleNameLength();
         
         [PreserveSig]
-        new HRESULT GetLocaleName(/* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] localeName, uint nameSize);
+        new HRESULT GetLocaleName(/* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, uint nameSize);
         
         // IDWriteTextLayout
         [PreserveSig]
@@ -94,7 +94,7 @@ namespace DirectN
         HRESULT SetFontCollection(/* _In_ */ IDWriteFontCollection fontCollection, DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        HRESULT SetFontFamilyName(/* _In_z_ */ ref char fontFamilyName, DWRITE_TEXT_RANGE textRange);
+        HRESULT SetFontFamilyName(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string fontFamilyName, DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         HRESULT SetFontWeight(DWRITE_FONT_WEIGHT fontWeight, DWRITE_TEXT_RANGE textRange);
@@ -124,7 +124,7 @@ namespace DirectN
         HRESULT SetTypography(/* _In_ */ IDWriteTypography typography, DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        HRESULT SetLocaleName(/* _In_z_ */ ref char localeName, DWRITE_TEXT_RANGE textRange);
+        HRESULT SetLocaleName(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         float GetMaxWidth();
@@ -139,7 +139,7 @@ namespace DirectN
         HRESULT GetFontFamilyNameLength(uint currentPosition, /* _Out_ */ out uint nameLength, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        HRESULT GetFontFamilyName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] fontFamilyName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        HRESULT GetFontFamilyName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string fontFamilyName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         HRESULT GetFontWeight(uint currentPosition, /* _Out_ */ out DWRITE_FONT_WEIGHT fontWeight, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
@@ -172,7 +172,7 @@ namespace DirectN
         HRESULT GetLocaleNameLength(uint currentPosition, /* _Out_ */ out uint nameLength, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        HRESULT GetLocaleName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] localeName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        HRESULT GetLocaleName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         HRESULT Draw(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY);

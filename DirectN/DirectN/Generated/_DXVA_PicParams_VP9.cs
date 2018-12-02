@@ -25,14 +25,14 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
         public _DXVA_PicEntry_VPx[][] frame_refs;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)] 
-        public string[] ref_frame_sign_bias;
+        public string ref_frame_sign_bias;
         public sbyte filter_level;
         public sbyte sharpness_level;
         public _DXVA_PicParams_VP9__union_1 __union_16;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)] 
-        public string[] ref_deltas;
+        public string ref_deltas;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 2)] 
-        public string[] mode_deltas;
+        public string mode_deltas;
         public short base_qindex;
         public sbyte y_dc_delta_q;
         public sbyte uv_dc_delta_q;

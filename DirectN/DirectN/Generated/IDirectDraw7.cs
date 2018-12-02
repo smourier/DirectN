@@ -19,16 +19,16 @@ namespace DirectN
         HRESULT Compact();
         
         [PreserveSig]
-        HRESULT CreateClipper(uint __unnamed_0, LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateClipper(uint __unnamed_0, ref LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
         
         [PreserveSig]
-        HRESULT CreatePalette(uint __unnamed_0, ref LPPALETTEENTRY __unnamed_1, LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreatePalette(uint __unnamed_0, ref LPPALETTEENTRY __unnamed_1, ref LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
         
         [PreserveSig]
-        HRESULT CreateSurface(ref LPDDSURFACEDESC2 __unnamed_0, LPDIRECTDRAWSURFACE7 __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateSurface(ref LPDDSURFACEDESC2 __unnamed_0, ref LPDIRECTDRAWSURFACE7 __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
         
         [PreserveSig]
-        HRESULT DuplicateSurface(LPDIRECTDRAWSURFACE7 __unnamed_0, LPDIRECTDRAWSURFACE7 __unnamed_1);
+        HRESULT DuplicateSurface(ref LPDIRECTDRAWSURFACE7 __unnamed_0, ref LPDIRECTDRAWSURFACE7 __unnamed_1);
         
         [PreserveSig]
         HRESULT EnumDisplayModes(uint __unnamed_0, ref LPDDSURFACEDESC2 __unnamed_1, ref IntPtr __unnamed_2, ref LPDDENUMMODESCALLBACK2 __unnamed_3);
@@ -49,7 +49,7 @@ namespace DirectN
         HRESULT GetFourCCCodes(ref uint __unnamed_0, ref uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT GetGDISurface(LPDIRECTDRAWSURFACE7 __unnamed_0);
+        HRESULT GetGDISurface(ref LPDIRECTDRAWSURFACE7 __unnamed_0);
         
         [PreserveSig]
         HRESULT GetMonitorFrequency(ref uint __unnamed_0);
@@ -79,7 +79,7 @@ namespace DirectN
         HRESULT GetAvailableVidMem(ref _DDSCAPS2 __unnamed_0, ref uint __unnamed_1, ref uint __unnamed_2);
         
         [PreserveSig]
-        HRESULT GetSurfaceFromDC(ref IntPtr __unnamed_0, LPDIRECTDRAWSURFACE7 __unnamed_1);
+        HRESULT GetSurfaceFromDC(ref IntPtr __unnamed_0, ref LPDIRECTDRAWSURFACE7 __unnamed_1);
         
         [PreserveSig]
         HRESULT RestoreAllSurfaces();

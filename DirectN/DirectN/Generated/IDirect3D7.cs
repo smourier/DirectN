@@ -15,10 +15,10 @@ namespace DirectN
         HRESULT EnumDevices(ref LPD3DENUMDEVICESCALLBACK7 __unnamed_0, ref IntPtr __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, LPDIRECTDRAWSURFACE7 __unnamed_1, LPDIRECT3DDEVICE7 __unnamed_2);
+        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, ref LPDIRECTDRAWSURFACE7 __unnamed_1, ref LPDIRECT3DDEVICE7 __unnamed_2);
         
         [PreserveSig]
-        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2);
+        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, ref LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
         HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, ref IntPtr __unnamed_1, ref IntPtr __unnamed_2);

@@ -13,9 +13,9 @@ namespace DirectN
         public uint fdwControl;
         public uint cMultipleItems;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)] 
-        public string[] szShortName;
+        public string szShortName;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)] 
-        public string[] szName;
+        public string szName;
         public tagMIXERCONTROLA__union_0 Bounds;
         public tagMIXERCONTROLA__union_1 Metrics;
     }

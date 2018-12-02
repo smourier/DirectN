@@ -10,6 +10,6 @@ namespace DirectN
         public IntPtr pFilter;
         public _PinDirection dir;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)] 
-        public string[] achName;
+        public string achName;
     }
 }

@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT AddProfileFilter(/* [annotation][in] _In_ */ uint StreamId, /* [annotation][in] _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string wzFilterSetString);
         
         [PreserveSig]
-        HRESULT IsMediaTypeSupported(/* [annotation][in] _In_ */ uint StreamId, /* [annotation][in] _In_ */ ref IMFMediaType pMediaType, /* [annotation][out] _Out_ */ out bool pfSupported);
+        HRESULT IsMediaTypeSupported(/* [annotation][in] _In_ */ uint StreamId, /* [annotation][in] _In_ */ IMFMediaType pMediaType, /* [annotation][out] _Out_ */ out bool pfSupported);
         
         [PreserveSig]
         HRESULT AddBlockedControl(/* [annotation][in] _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string wzBlockedControl);

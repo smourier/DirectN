@@ -15,7 +15,7 @@ namespace DirectN
         void ClearStoredMessages(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer);
         
         [PreserveSig]
-        HRESULT GetMessageA(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* [annotation] _In_ */ ulong MessageIndex, /* [annotation] _Out_writes_bytes_opt_(*pMessageByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] DXGI_INFO_QUEUE_MESSAGE[] pMessage, /* [annotation] _Inout_ */ IntPtr pMessageByteLength);
+        HRESULT GetMessageW(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* [annotation] _In_ */ ulong MessageIndex, /* [annotation] _Out_writes_bytes_opt_(*pMessageByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] DXGI_INFO_QUEUE_MESSAGE[] pMessage, /* [annotation] _Inout_ */ IntPtr pMessageByteLength);
         
         [PreserveSig]
         ulong GetNumStoredMessagesAllowedByRetrievalFilters(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer);

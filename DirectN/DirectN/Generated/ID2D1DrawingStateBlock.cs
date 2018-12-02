@@ -19,9 +19,9 @@ namespace DirectN
         void SetDescription(/* _In_ */ ref D2D1_DRAWING_STATE_DESCRIPTION stateDescription);
         
         [PreserveSig]
-        void SetTextRenderingParams(/* optional(IDWriteRenderingParams) */ IntPtr textRenderingParams);
+        void SetTextRenderingParams(/* _In_opt_ */ IDWriteRenderingParams textRenderingParams);
         
         [PreserveSig]
-        void GetTextRenderingParams(/* _Outptr_result_maybenull_ */ out IntPtr textRenderingParams);
+        void GetTextRenderingParams(/* _Outptr_result_maybenull_ */ out IDWriteRenderingParams textRenderingParams);
     }
 }

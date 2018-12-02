@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFTrackedSample
     {
         [PreserveSig]
-        HRESULT SetAllocator(/* [annotation][in] _In_ */ ref IMFAsyncCallback pSampleAllocator, /* [unique][in] */ [MarshalAs(UnmanagedType.IUnknown)] object pUnkState);
+        HRESULT SetAllocator(/* [annotation][in] _In_ */ IMFAsyncCallback pSampleAllocator, /* [unique][in] */ [MarshalAs(UnmanagedType.IUnknown)] object pUnkState);
     }
 }

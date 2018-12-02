@@ -1,8 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawi.h(1439,9)
 using System;
 using System.Runtime.InteropServices;
-using DDSCAPSEX = DirectN._DDSCAPSEX;
-using LPDDOVERLAYFX = DirectN._DDOVERLAYFX;
 using LPDDRAWI_DDRAWCLIPPER_INT = DirectN._DDRAWI_DDRAWCLIPPER_INT;
 using LPDDRAWI_DDRAWSURFACE_LCL = DirectN._DDRAWI_DDRAWSURFACE_LCL;
 using LPDDRAWI_DDVIDEOPORT_LCL = DirectN._DDRAWI_DDVIDEOPORT_LCL;
@@ -28,7 +26,7 @@ namespace DirectN
         public IntPtr rgjunc;
         public IntPtr lpVideoPort;
         public IntPtr lpddOverlayFX;
-        public DDSCAPSEX ddsCapsEx;
+        public _DDSCAPSEX ddsCapsEx;
         public uint dwTextureStage;
         public IntPtr lpDDRAWReserved;
         public IntPtr lpDDRAWReserved2;

@@ -1623,7 +1623,6 @@
     <Compile Include="Generated\IAudioEndpointOffloadStreamMute.cs" />
     <Compile Include="Generated\IAudioEndpointOffloadStreamVolume.cs" />
     <Compile Include="Generated\IAudioEndpointRT.cs" />
-    <Compile Include="Generated\IAudioFormatEnumerator.cs" />
     <Compile Include="Generated\IAudioInputEndpointRT.cs" />
     <Compile Include="Generated\IAudioLfxControl.cs" />
     <Compile Include="Generated\IAudioMediaType.cs" />
@@ -4104,6 +4103,7 @@
     <Compile Include="Generated\ID3D11Device.cs" />
     <Compile Include="Generated\ID3D11DeviceChild.cs" />
     <Compile Include="Generated\ID3D11DeviceContext.cs" />
+    <Compile Include="IClassFactory.cs" />
     <Compile Include="ID3D11DeviceExtensions.cs" />
     <Compile Include="Generated\ID3D11DomainShader.cs" />
     <Compile Include="Generated\ID3D11GeometryShader.cs" />

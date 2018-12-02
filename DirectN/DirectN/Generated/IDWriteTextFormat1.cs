@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The format of text used for text layout.  <remarks> This object may not be thread-safe and it may carry the state of text format change. </remarks>
-    /// </summary>
     [Guid("5f174b49-0d8b-4cfb-8bca-f1cce9d06c67"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextFormat1 : IDWriteTextFormat
     {
@@ -66,7 +63,7 @@ namespace DirectN
         new uint GetFontFamilyNameLength();
         
         [PreserveSig]
-        new HRESULT GetFontFamilyName(/* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] fontFamilyName, uint nameSize);
+        new HRESULT GetFontFamilyName(/* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string fontFamilyName, uint nameSize);
         
         [PreserveSig]
         new DWRITE_FONT_WEIGHT GetFontWeight();
@@ -84,7 +81,7 @@ namespace DirectN
         new uint GetLocaleNameLength();
         
         [PreserveSig]
-        new HRESULT GetLocaleName(/* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] localeName, uint nameSize);
+        new HRESULT GetLocaleName(/* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, uint nameSize);
         
         // IDWriteTextFormat1
         [PreserveSig]
@@ -106,7 +103,7 @@ namespace DirectN
         DWRITE_OPTICAL_ALIGNMENT GetOpticalAlignment();
         
         [PreserveSig]
-        HRESULT SetFontFallback(IDWriteFontFallback fontFallback);
+        HRESULT SetFontFallback(ref IDWriteFontFallback fontFallback);
         
         [PreserveSig]
         HRESULT GetFontFallback(/* __out */ out IDWriteFontFallback fontFallback);

@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfmediaengine.h(7171,5)
 using System;
 using System.Runtime.InteropServices;
-using MFARGB = DirectN._MFARGB;
 
 namespace DirectN
 {
@@ -21,10 +20,10 @@ namespace DirectN
         HRESULT GetFontSize(/* [annotation][out] _Out_ */ out double fontSize, /* [annotation][out] _Out_ */ out MF_TIMED_TEXT_UNIT_TYPE unitType);
         
         [PreserveSig]
-        HRESULT GetColor(/* [annotation][out] _Out_ */ out MFARGB color);
+        HRESULT GetColor(/* [annotation][out] _Out_ */ out _MFARGB color);
         
         [PreserveSig]
-        HRESULT GetBackgroundColor(/* [annotation][out] _Out_ */ out MFARGB bgColor);
+        HRESULT GetBackgroundColor(/* [annotation][out] _Out_ */ out _MFARGB bgColor);
         
         [PreserveSig]
         HRESULT GetShowBackgroundAlways(/* [annotation][out] _Out_ */ out bool showBackgroundAlways);
@@ -45,6 +44,6 @@ namespace DirectN
         HRESULT GetTextDecoration(/* [annotation][out] _Out_ */ out uint textDecoration);
         
         [PreserveSig]
-        HRESULT GetTextOutline(/* [annotation][out] _Out_ */ out MFARGB color, /* [annotation][out] _Out_ */ out double thickness, /* [annotation][out] _Out_ */ out double blurRadius, /* [annotation][out] _Out_ */ out MF_TIMED_TEXT_UNIT_TYPE unitType);
+        HRESULT GetTextOutline(/* [annotation][out] _Out_ */ out _MFARGB color, /* [annotation][out] _Out_ */ out double thickness, /* [annotation][out] _Out_ */ out double blurRadius, /* [annotation][out] _Out_ */ out MF_TIMED_TEXT_UNIT_TYPE unitType);
     }
 }

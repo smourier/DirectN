@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents a collection of strings indexed by locale name.
-    /// </summary>
     [Guid("08256209-099a-4b34-b86d-c22b110e7771"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteLocalizedStrings
     {
@@ -14,18 +11,18 @@ namespace DirectN
         uint GetCount();
         
         [PreserveSig]
-        HRESULT FindLocaleName(/* _In_z_ */ ref char localeName, /* _Out_ */ out uint index, /* _Out_ */ out bool exists);
+        HRESULT FindLocaleName(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, /* _Out_ */ out uint index, /* _Out_ */ out bool exists);
         
         [PreserveSig]
         HRESULT GetLocaleNameLength(uint index, /* _Out_ */ out uint length);
         
         [PreserveSig]
-        HRESULT GetLocaleName(uint index, /* _Out_writes_z_(size) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] localeName, uint size);
+        HRESULT GetLocaleName(uint index, /* _Out_writes_z_(size) */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, uint size);
         
         [PreserveSig]
         HRESULT GetStringLength(uint index, /* _Out_ */ out uint length);
         
         [PreserveSig]
-        HRESULT GetString(uint index, /* _Out_writes_z_(size) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] stringBuffer, uint size);
+        HRESULT GetString(uint index, /* _Out_writes_z_(size) */ [MarshalAs(UnmanagedType.LPWStr)] string stringBuffer, uint size);
     }
 }

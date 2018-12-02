@@ -8,16 +8,16 @@ namespace DirectN
     public partial interface IMFWorkQueueServices
     {
         [PreserveSig]
-        HRESULT BeginRegisterTopologyWorkQueuesWithMMCSS(/* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
+        HRESULT BeginRegisterTopologyWorkQueuesWithMMCSS(/* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT EndRegisterTopologyWorkQueuesWithMMCSS(/* [in] */ ref IMFAsyncResult pResult);
+        HRESULT EndRegisterTopologyWorkQueuesWithMMCSS(/* [in] */ IMFAsyncResult pResult);
         
         [PreserveSig]
-        HRESULT BeginUnregisterTopologyWorkQueuesWithMMCSS(/* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
+        HRESULT BeginUnregisterTopologyWorkQueuesWithMMCSS(/* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT EndUnregisterTopologyWorkQueuesWithMMCSS(/* [in] */ ref IMFAsyncResult pResult);
+        HRESULT EndUnregisterTopologyWorkQueuesWithMMCSS(/* [in] */ IMFAsyncResult pResult);
         
         [PreserveSig]
         HRESULT GetTopologyWorkQueueMMCSSClass(/* [in] */ uint dwTopologyWorkQueueId, /* [size_is][out] __RPC__out_ecount_full(*pcchClass) */ [MarshalAs(UnmanagedType.LPWStr)] string pwszClass, /* [out][in] __RPC__inout */ ref uint pcchClass);
@@ -26,16 +26,16 @@ namespace DirectN
         HRESULT GetTopologyWorkQueueMMCSSTaskId(/* [in] */ uint dwTopologyWorkQueueId, /* [out] __RPC__out */ out uint pdwTaskId);
         
         [PreserveSig]
-        HRESULT BeginRegisterPlatformWorkQueueWithMMCSS(/* [in] */ uint dwPlatformWorkQueue, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string wszClass, /* [in] */ uint dwTaskId, /* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
+        HRESULT BeginRegisterPlatformWorkQueueWithMMCSS(/* [in] */ uint dwPlatformWorkQueue, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string wszClass, /* [in] */ uint dwTaskId, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT EndRegisterPlatformWorkQueueWithMMCSS(/* [in] */ ref IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out uint pdwTaskId);
+        HRESULT EndRegisterPlatformWorkQueueWithMMCSS(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out uint pdwTaskId);
         
         [PreserveSig]
-        HRESULT BeginUnregisterPlatformWorkQueueWithMMCSS(/* [in] */ uint dwPlatformWorkQueue, /* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
+        HRESULT BeginUnregisterPlatformWorkQueueWithMMCSS(/* [in] */ uint dwPlatformWorkQueue, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT EndUnregisterPlatformWorkQueueWithMMCSS(/* [in] */ ref IMFAsyncResult pResult);
+        HRESULT EndUnregisterPlatformWorkQueueWithMMCSS(/* [in] */ IMFAsyncResult pResult);
         
         [PreserveSig]
         HRESULT GetPlaftormWorkQueueMMCSSClass(/* [in] */ uint dwPlatformWorkQueueId, /* [size_is][out] __RPC__out_ecount_full(*pcchClass) */ [MarshalAs(UnmanagedType.LPWStr)] string pwszClass, /* [out][in] __RPC__inout */ ref uint pcchClass);

@@ -8,21 +8,21 @@ namespace DirectN
     public partial interface IMFTranscodeProfile
     {
         [PreserveSig]
-        HRESULT SetAudioAttributes(/* optional(IMFAttributes) */ IntPtr pAttrs);
+        HRESULT SetAudioAttributes(/* [annotation][in] _In_opt_ */ IMFAttributes pAttrs);
         
         [PreserveSig]
-        HRESULT GetAudioAttributes(/* [annotation][out] _Outptr_result_maybenull_ */ out IntPtr ppAttrs);
+        HRESULT GetAudioAttributes(/* [annotation][out] _Outptr_result_maybenull_ */ out IMFAttributes ppAttrs);
         
         [PreserveSig]
-        HRESULT SetVideoAttributes(/* optional(IMFAttributes) */ IntPtr pAttrs);
+        HRESULT SetVideoAttributes(/* [annotation][in] _In_opt_ */ IMFAttributes pAttrs);
         
         [PreserveSig]
-        HRESULT GetVideoAttributes(/* [annotation][out] _Outptr_result_maybenull_ */ out IntPtr ppAttrs);
+        HRESULT GetVideoAttributes(/* [annotation][out] _Outptr_result_maybenull_ */ out IMFAttributes ppAttrs);
         
         [PreserveSig]
-        HRESULT SetContainerAttributes(/* optional(IMFAttributes) */ IntPtr pAttrs);
+        HRESULT SetContainerAttributes(/* [annotation][in] _In_opt_ */ IMFAttributes pAttrs);
         
         [PreserveSig]
-        HRESULT GetContainerAttributes(/* [annotation][out] _Outptr_result_maybenull_ */ out IntPtr ppAttrs);
+        HRESULT GetContainerAttributes(/* [annotation][out] _Outptr_result_maybenull_ */ out IMFAttributes ppAttrs);
     }
 }

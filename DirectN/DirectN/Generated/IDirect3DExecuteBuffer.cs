@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DExecuteBuffer
     {
         [PreserveSig]
-        HRESULT Initialize(IDirect3DDevice __unnamed_0, ref _D3DExecuteBufferDesc __unnamed_1);
+        HRESULT Initialize(ref IDirect3DDevice __unnamed_0, ref _D3DExecuteBufferDesc __unnamed_1);
         
         [PreserveSig]
         HRESULT Lock(ref _D3DExecuteBufferDesc __unnamed_0);

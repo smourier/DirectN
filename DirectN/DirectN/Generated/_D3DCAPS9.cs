@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public partial struct _D3DCAPS9
     {
-        public int DeviceType;
+        public _D3DDEVTYPE DeviceType;
         public uint AdapterOrdinal;
         public uint Caps;
         public uint Caps2;

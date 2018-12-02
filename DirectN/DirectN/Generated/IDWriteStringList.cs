@@ -17,12 +17,12 @@ namespace DirectN
         HRESULT GetLocaleNameLength(uint listIndex, /* _Out_ */ out uint length);
         
         [PreserveSig]
-        HRESULT GetLocaleName(uint listIndex, /* _Out_writes_z_(size) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] localeName, uint size);
+        HRESULT GetLocaleName(uint listIndex, /* _Out_writes_z_(size) */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, uint size);
         
         [PreserveSig]
         HRESULT GetStringLength(uint listIndex, /* _Out_ */ out uint length);
         
         [PreserveSig]
-        HRESULT GetString(uint listIndex, /* _Out_writes_z_(stringBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] char[] stringBuffer, uint stringBufferSize);
+        HRESULT GetString(uint listIndex, /* _Out_writes_z_(stringBufferSize) */ [MarshalAs(UnmanagedType.LPWStr)] string stringBuffer, uint stringBufferSize);
     }
 }

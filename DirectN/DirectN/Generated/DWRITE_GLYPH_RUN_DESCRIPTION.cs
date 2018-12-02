@@ -7,8 +7,10 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DWRITE_GLYPH_RUN_DESCRIPTION
     {
-        public IntPtr localeName;
-        public IntPtr @string;
+        [MarshalAs(UnmanagedType.LPWStr)] 
+        public char localeName;
+        [MarshalAs(UnmanagedType.LPWStr)] 
+        public char @string;
         public uint stringLength;
         public IntPtr clusterMap;
         public uint textPosition;

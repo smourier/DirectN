@@ -81,7 +81,7 @@ namespace DirectN
         new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
+        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ IntPtr pData, uint Offset, uint ByteCount);
         
         // ID3D10EffectConstantBuffer
         [PreserveSig]
@@ -154,18 +154,18 @@ namespace DirectN
         HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
+        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ IntPtr pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT SetConstantBuffer(/* optional(ID3D10Buffer) */ IntPtr pConstantBuffer);
+        HRESULT SetConstantBuffer(/* THIS_ _In_opt_ */ ID3D10Buffer pConstantBuffer);
         
         [PreserveSig]
-        HRESULT GetConstantBuffer(/* THIS_ _Out_ */ out IntPtr ppConstantBuffer);
+        HRESULT GetConstantBuffer(/* THIS_ _Out_ */ out ID3D10Buffer ppConstantBuffer);
         
         [PreserveSig]
-        HRESULT SetTextureBuffer(/* optional(ID3D10ShaderResourceView) */ IntPtr pTextureBuffer);
+        HRESULT SetTextureBuffer(/* THIS_ _In_opt_ */ ID3D10ShaderResourceView pTextureBuffer);
         
         [PreserveSig]
-        HRESULT GetTextureBuffer(/* THIS_ _Out_ */ out IntPtr ppTextureBuffer);
+        HRESULT GetTextureBuffer(/* THIS_ _Out_ */ out ID3D10ShaderResourceView ppTextureBuffer);
     }
 }

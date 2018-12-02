@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(16799,5)
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
@@ -8,7 +9,7 @@ namespace DirectN
     public partial interface IAMGraphBuilderCallback
     {
         [PreserveSig]
-        HRESULT SelectedFilter(/* [in] */ ref IMoniker pMon);
+        HRESULT SelectedFilter(/* [in] */ IMoniker pMon);
         
         [PreserveSig]
         HRESULT CreatedFilter(/* [in] */ IBaseFilter pFil);

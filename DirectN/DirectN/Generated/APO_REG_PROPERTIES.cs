@@ -10,9 +10,9 @@ namespace DirectN
         public Guid clsid;
         public APO_FLAG Flags;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)] 
-        public string[] szFriendlyName;
+        public string szFriendlyName;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)] 
-        public string[] szCopyrightInfo;
+        public string szCopyrightInfo;
         public uint u32MajorVersion;
         public uint u32MinorVersion;
         public uint u32MinInputConnections;

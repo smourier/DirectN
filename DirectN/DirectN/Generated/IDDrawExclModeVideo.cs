@@ -9,16 +9,16 @@ namespace DirectN
     public partial interface IDDrawExclModeVideo
     {
         [PreserveSig]
-        HRESULT SetDDrawObject(/* [in] */ ref IDirectDraw pDDrawObject);
+        HRESULT SetDDrawObject(/* [in] */ IDirectDraw pDDrawObject);
         
         [PreserveSig]
-        HRESULT GetDDrawObject(/* [annotation][out] _Out_ */ out IntPtr ppDDrawObject, /* [annotation][out] _Out_ */ out bool pbUsingExternal);
+        HRESULT GetDDrawObject(/* [annotation][out] _Out_ */ out IDirectDraw ppDDrawObject, /* [annotation][out] _Out_ */ out bool pbUsingExternal);
         
         [PreserveSig]
-        HRESULT SetDDrawSurface(/* [in] */ ref IDirectDrawSurface pDDrawSurface);
+        HRESULT SetDDrawSurface(/* [in] */ IDirectDrawSurface pDDrawSurface);
         
         [PreserveSig]
-        HRESULT GetDDrawSurface(/* [annotation][out] _Out_ */ out IntPtr ppDDrawSurface, /* [annotation][out] _Out_ */ out bool pbUsingExternal);
+        HRESULT GetDDrawSurface(/* [annotation][out] _Out_ */ out IDirectDrawSurface ppDDrawSurface, /* [annotation][out] _Out_ */ out bool pbUsingExternal);
         
         [PreserveSig]
         HRESULT SetDrawParameters(/* [in] */ ref RECT prcSource, /* [in] */ ref RECT prcTarget);

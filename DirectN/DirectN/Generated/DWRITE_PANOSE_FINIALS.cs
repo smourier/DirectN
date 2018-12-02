@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(326,1)
 namespace DirectN
 {
+    /// <summary>
+    /// How character ends and miniscule ascenders are treated. Present for families: 3-script
+    /// </summary>
     public enum DWRITE_PANOSE_FINIALS
     {
         DWRITE_PANOSE_FINIALS_ANY = 0,

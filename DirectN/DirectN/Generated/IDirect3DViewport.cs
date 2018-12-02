@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface IDirect3DViewport
     {
         [PreserveSig]
-        HRESULT Initialize(IDirect3D __unnamed_0);
+        HRESULT Initialize(ref IDirect3D __unnamed_0);
         
         [PreserveSig]
         HRESULT GetViewport(ref _D3DVIEWPORT __unnamed_0);
@@ -30,21 +30,21 @@ namespace DirectN
         HRESULT GetBackground(ref uint __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
-        HRESULT SetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0);
+        HRESULT SetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0);
         
         [PreserveSig]
-        HRESULT GetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
+        HRESULT GetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
         HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
-        HRESULT AddLight(IDirect3DLight __unnamed_0);
+        HRESULT AddLight(ref IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        HRESULT DeleteLight(IDirect3DLight __unnamed_0);
+        HRESULT DeleteLight(ref IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        HRESULT NextLight(IDirect3DLight __unnamed_0, IDirect3DLight __unnamed_1, uint __unnamed_2);
+        HRESULT NextLight(ref IDirect3DLight __unnamed_0, ref IDirect3DLight __unnamed_1, uint __unnamed_2);
     }
 }

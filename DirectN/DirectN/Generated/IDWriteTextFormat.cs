@@ -65,7 +65,7 @@ namespace DirectN
         uint GetFontFamilyNameLength();
         
         [PreserveSig]
-        HRESULT GetFontFamilyName(/* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] fontFamilyName, uint nameSize);
+        HRESULT GetFontFamilyName(/* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string fontFamilyName, uint nameSize);
         
         [PreserveSig]
         DWRITE_FONT_WEIGHT GetFontWeight();
@@ -83,6 +83,6 @@ namespace DirectN
         uint GetLocaleNameLength();
         
         [PreserveSig]
-        HRESULT GetLocaleName(/* _Out_writes_z_(nameSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] localeName, uint nameSize);
+        HRESULT GetLocaleName(/* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, uint nameSize);
     }
 }

@@ -9,6 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 80)]
         public byte[] __bits;
+        public D2D_MATRIX_5X4_F__union_0__struct_0 __field_0 => InteropRuntime.Get<D2D_MATRIX_5X4_F__union_0__struct_0>(__bits, 0, 640);
         public float[] m => InteropRuntime.GetArray<float>(__bits, 0, 640);
     }
 }

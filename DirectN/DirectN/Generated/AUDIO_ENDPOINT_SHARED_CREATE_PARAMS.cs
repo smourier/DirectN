@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audioengineendpoint.h(155,9)
 using System;
 using System.Runtime.InteropServices;
-using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -11,6 +10,6 @@ namespace DirectN
         public uint u32Size;
         public uint u32TSSessionId;
         public __MIDL___MIDL_itf_audioengineendpoint_0000_0000_0001 targetEndpointConnectorType;
-        public WAVEFORMATEX wfxDeviceFormat;
+        public tWAVEFORMATEX wfxDeviceFormat;
     }
 }

@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPBITMAPINFOHEADER = DirectN.tagBITMAPINFOHEADER;
-using LPDDPIXELFORMAT = DirectN._DDPIXELFORMAT;
 using SIZE = DirectN.tagSIZE;
 
 namespace DirectN

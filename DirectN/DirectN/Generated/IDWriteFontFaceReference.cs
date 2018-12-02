@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_3.h(932,1)
 using System;
 using System.Runtime.InteropServices;
-using FILETIME = DirectN._FILETIME;
 
 namespace DirectN
 {
@@ -18,7 +17,7 @@ namespace DirectN
         HRESULT CreateFontFaceWithSimulations(DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, /* _COM_Outptr_ */ out IDWriteFontFace3 fontFace);
         
         [PreserveSig]
-        bool Equals(IDWriteFontFaceReference fontFaceReference);
+        bool Equals(ref IDWriteFontFaceReference fontFaceReference);
         
         [PreserveSig]
         uint GetFontFaceIndex();
@@ -36,7 +35,7 @@ namespace DirectN
         ulong GetFileSize();
         
         [PreserveSig]
-        HRESULT GetFileTime(/* _Out_ */ out FILETIME lastWriteTime);
+        HRESULT GetFileTime(/* _Out_ */ out long lastWriteTime);
         
         [PreserveSig]
         DWRITE_LOCALITY GetLocality();
@@ -45,7 +44,7 @@ namespace DirectN
         HRESULT EnqueueFontDownloadRequest();
         
         [PreserveSig]
-        HRESULT EnqueueCharacterDownloadRequest(/* _In_reads_(characterCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] char[] characters, uint characterCount);
+        HRESULT EnqueueCharacterDownloadRequest(/* _In_reads_(characterCount) */ [MarshalAs(UnmanagedType.LPWStr)] string characters, uint characterCount);
         
         [PreserveSig]
         HRESULT EnqueueGlyphDownloadRequest(/* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount);

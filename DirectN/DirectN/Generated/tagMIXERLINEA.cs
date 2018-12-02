@@ -18,9 +18,9 @@ namespace DirectN
         public uint cConnections;
         public uint cControls;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)] 
-        public string[] szShortName;
+        public string szShortName;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)] 
-        public string[] szName;
+        public string szName;
         public tagMIXERLINEA__struct_0 Target;
     }
 }

@@ -11,9 +11,9 @@ namespace DirectN
         HRESULT SetScanDirection(D3DX11_SCAN_DIRECTION Direction);
         
         [PreserveSig]
-        HRESULT Scan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint ElementScanSize, /* _In_ */ ref ID3D11UnorderedAccessView pSrc, /* _In_ */ ref ID3D11UnorderedAccessView pDst);
+        HRESULT Scan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint ElementScanSize, /* _In_ */ ID3D11UnorderedAccessView pSrc, /* _In_ */ ID3D11UnorderedAccessView pDst);
         
         [PreserveSig]
-        HRESULT Multiscan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint ElementScanSize, uint ElementScanPitch, uint ScanCount, /* _In_ */ ref ID3D11UnorderedAccessView pSrc, /* _In_ */ ref ID3D11UnorderedAccessView pDst);
+        HRESULT Multiscan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint ElementScanSize, uint ElementScanPitch, uint ScanCount, /* _In_ */ ID3D11UnorderedAccessView pSrc, /* _In_ */ ID3D11UnorderedAccessView pDst);
     }
 }

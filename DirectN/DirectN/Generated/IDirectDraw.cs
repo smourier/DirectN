@@ -16,16 +16,16 @@ namespace DirectN
         HRESULT Compact();
         
         [PreserveSig]
-        HRESULT CreateClipper(uint __unnamed_0, LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateClipper(uint __unnamed_0, ref LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
         
         [PreserveSig]
-        HRESULT CreatePalette(uint __unnamed_0, ref LPPALETTEENTRY __unnamed_1, LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreatePalette(uint __unnamed_0, ref LPPALETTEENTRY __unnamed_1, ref LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
         
         [PreserveSig]
-        HRESULT CreateSurface(ref LPDDSURFACEDESC __unnamed_0, LPDIRECTDRAWSURFACE __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateSurface(ref LPDDSURFACEDESC __unnamed_0, ref LPDIRECTDRAWSURFACE __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
         
         [PreserveSig]
-        HRESULT DuplicateSurface(LPDIRECTDRAWSURFACE __unnamed_0, LPDIRECTDRAWSURFACE __unnamed_1);
+        HRESULT DuplicateSurface(ref LPDIRECTDRAWSURFACE __unnamed_0, ref LPDIRECTDRAWSURFACE __unnamed_1);
         
         [PreserveSig]
         HRESULT EnumDisplayModes(uint __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, ref IntPtr __unnamed_2, ref IntPtr __unnamed_3);
@@ -46,7 +46,7 @@ namespace DirectN
         HRESULT GetFourCCCodes(ref uint __unnamed_0, ref uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT GetGDISurface(LPDIRECTDRAWSURFACE __unnamed_0);
+        HRESULT GetGDISurface(ref LPDIRECTDRAWSURFACE __unnamed_0);
         
         [PreserveSig]
         HRESULT GetMonitorFrequency(ref uint __unnamed_0);

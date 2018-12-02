@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, /* _In_reads_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint DataSize);
         
         [PreserveSig]
-        HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, /* _Out_writes_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint DataSize);
+        HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, /* _Out_writes_bytes_(DataSize) */ IntPtr pData, uint DataSize);
         
         [PreserveSig]
         HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags);

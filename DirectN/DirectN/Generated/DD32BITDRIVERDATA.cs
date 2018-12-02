@@ -8,9 +8,9 @@ namespace DirectN
     public partial struct DD32BITDRIVERDATA
     {
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)] 
-        public string[] szName;
+        public string szName;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)] 
-        public string[] szEntryPoint;
+        public string szEntryPoint;
         public uint dwContext;
     }
 }

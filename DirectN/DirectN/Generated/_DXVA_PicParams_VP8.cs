@@ -19,9 +19,9 @@ namespace DirectN
         public byte mode_ref_lf_delta_enabled;
         public byte mode_ref_lf_delta_update;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)] 
-        public string[] ref_lf_deltas;
+        public string ref_lf_deltas;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)] 
-        public string[] mode_lf_deltas;
+        public string mode_lf_deltas;
         public byte log2_nbr_of_dct_partitions;
         public byte base_qindex;
         public sbyte y1dc_delta_q;

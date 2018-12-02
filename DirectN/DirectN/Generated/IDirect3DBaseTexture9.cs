@@ -9,7 +9,16 @@ namespace DirectN
     {
         // IDirect3DResource9
         [PreserveSig]
-        new HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        new HRESULT QueryInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppvObj);
+        
+        [PreserveSig]
+        new uint AddRef();
+        
+        [PreserveSig]
+        new uint Release();
+        
+        [PreserveSig]
+        new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
@@ -33,6 +42,30 @@ namespace DirectN
         new _D3DRESOURCETYPE GetType();
         
         // IDirect3DBaseTexture9
+        [PreserveSig]
+        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
+        
+        [PreserveSig]
+        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
+        
+        [PreserveSig]
+        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
+        
+        [PreserveSig]
+        HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
+        
+        [PreserveSig]
+        uint SetPriority(uint PriorityNew);
+        
+        [PreserveSig]
+        uint GetPriority();
+        
+        [PreserveSig]
+        void PreLoad();
+        
+        [PreserveSig]
+        _D3DRESOURCETYPE GetType();
+        
         [PreserveSig]
         uint SetLOD(uint LODNew);
         

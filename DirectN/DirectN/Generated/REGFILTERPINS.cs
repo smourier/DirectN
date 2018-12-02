@@ -14,7 +14,8 @@ namespace DirectN
         public bool bZero;
         public bool bMany;
         public IntPtr clsConnectsToFilter;
-        public IntPtr strConnectsToPin;
+        [MarshalAs(UnmanagedType.LPWStr)] 
+        public char strConnectsToPin;
         public uint nMediaTypes;
         public IntPtr lpMediaType;
     }

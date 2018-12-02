@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using REFERENCE_TIME = System.Int64;
-using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -11,7 +10,7 @@ namespace DirectN
     {
         // IAudioClient
         [PreserveSig]
-        new HRESULT Initialize(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ long hnsBufferDuration, /* [annotation][in] _In_ */ long hnsPeriodicity, /* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
+        new HRESULT Initialize(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ long hnsBufferDuration, /* [annotation][in] _In_ */ long hnsPeriodicity, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
         
         [PreserveSig]
         new HRESULT GetBufferSize(/* [annotation][out] _Out_ */ out uint pNumBufferFrames);
@@ -23,7 +22,7 @@ namespace DirectN
         new HRESULT GetCurrentPadding(/* [annotation][out] _Out_ */ out uint pNumPaddingFrames);
         
         [PreserveSig]
-        new HRESULT IsFormatSupported(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* optional(WAVEFORMATEX) */ out IntPtr ppClosestMatch);
+        new HRESULT IsFormatSupported(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* optional(tWAVEFORMATEX) */ out IntPtr ppClosestMatch);
         
         [PreserveSig]
         new HRESULT GetMixFormat(/* [annotation][out] _Out_ */ out IntPtr ppDeviceFormat);
@@ -54,16 +53,16 @@ namespace DirectN
         new HRESULT SetClientProperties(/* [annotation][in] _In_ */ ref AudioClientProperties pProperties);
         
         [PreserveSig]
-        new HRESULT GetBufferSizeLimits(/* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* [annotation][in] _In_ */ bool bEventDriven, /* [annotation][out] _Out_ */ out REFERENCE_TIME phnsMinBufferDuration, /* [annotation][out] _Out_ */ out REFERENCE_TIME phnsMaxBufferDuration);
+        new HRESULT GetBufferSizeLimits(/* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][in] _In_ */ bool bEventDriven, /* [annotation][out] _Out_ */ out REFERENCE_TIME phnsMinBufferDuration, /* [annotation][out] _Out_ */ out REFERENCE_TIME phnsMaxBufferDuration);
         
         // IAudioClient3
         [PreserveSig]
-        HRESULT GetSharedModeEnginePeriod(/* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* [annotation][out] _Out_ */ out uint pDefaultPeriodInFrames, /* [annotation][out] _Out_ */ out uint pFundamentalPeriodInFrames, /* [annotation][out] _Out_ */ out uint pMinPeriodInFrames, /* [annotation][out] _Out_ */ out uint pMaxPeriodInFrames);
+        HRESULT GetSharedModeEnginePeriod(/* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][out] _Out_ */ out uint pDefaultPeriodInFrames, /* [annotation][out] _Out_ */ out uint pFundamentalPeriodInFrames, /* [annotation][out] _Out_ */ out uint pMinPeriodInFrames, /* [annotation][out] _Out_ */ out uint pMaxPeriodInFrames);
         
         [PreserveSig]
         HRESULT GetCurrentSharedModeEnginePeriod(/* [unique][annotation][out] _Out_ */ out IntPtr ppFormat, /* [annotation][out] _Out_ */ out uint pCurrentPeriodInFrames);
         
         [PreserveSig]
-        HRESULT InitializeSharedAudioStream(/* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ uint PeriodInFrames, /* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
+        HRESULT InitializeSharedAudioStream(/* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ uint PeriodInFrames, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
     }
 }

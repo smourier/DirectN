@@ -7,6 +7,19 @@ namespace DirectN
     [Guid("fbb03414-d13b-4786-8319-5ac51fc0a136"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaSource2 : IMFMediaSourceEx
     {
+        // IMFMediaEventGenerator
+        [PreserveSig]
+        new HRESULT GetEvent(/* [in] */ uint dwFlags, /* [out] __RPC__deref_out_opt */ out IMFMediaEvent ppEvent);
+        
+        [PreserveSig]
+        new HRESULT BeginGetEvent(/* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        
+        [PreserveSig]
+        new HRESULT EndGetEvent(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out IMFMediaEvent ppEvent);
+        
+        [PreserveSig]
+        new HRESULT QueueEvent(/* [in] */ uint met, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] __RPC__in_opt */ PropVariant pvValue);
+        
         // IMFMediaSource
         [PreserveSig]
         new HRESULT GetCharacteristics(/* [out] __RPC__out */ out uint pdwCharacteristics);
@@ -28,16 +41,16 @@ namespace DirectN
         
         // IMFMediaSourceEx
         [PreserveSig]
-        new HRESULT GetSourceAttributes(/* optional(IMFAttributes) */ out IntPtr ppAttributes);
+        new HRESULT GetSourceAttributes(/* [out] __RPC__deref_out_opt */ out IMFAttributes ppAttributes);
         
         [PreserveSig]
-        new HRESULT GetStreamAttributes(/* [in] */ uint dwStreamIdentifier, /* optional(IMFAttributes) */ out IntPtr ppAttributes);
+        new HRESULT GetStreamAttributes(/* [in] */ uint dwStreamIdentifier, /* [out] __RPC__deref_out_opt */ out IMFAttributes ppAttributes);
         
         [PreserveSig]
         new HRESULT SetD3DManager(/* [in] __RPC__in_opt */ [MarshalAs(UnmanagedType.IUnknown)] object pManager);
         
         // IMFMediaSource2
         [PreserveSig]
-        HRESULT SetMediaType(/* [annotation][in] _In_ */ uint dwStreamID, /* [annotation][in] _In_ */ ref IMFMediaType pMediaType);
+        HRESULT SetMediaType(/* [annotation][in] _In_ */ uint dwStreamID, /* [annotation][in] _In_ */ IMFMediaType pMediaType);
     }
 }

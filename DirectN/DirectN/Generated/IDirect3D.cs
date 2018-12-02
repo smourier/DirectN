@@ -17,13 +17,13 @@ namespace DirectN
         HRESULT EnumDevices(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateLight(LPDIRECT3DLIGHT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateLight(ref LPDIRECT3DLIGHT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateMaterial(LPDIRECT3DMATERIAL __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateMaterial(ref LPDIRECT3DMATERIAL __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateViewport(LPDIRECT3DVIEWPORT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateViewport(ref LPDIRECT3DVIEWPORT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
         
         [PreserveSig]
         HRESULT FindDevice(ref _D3DFINDDEVICESEARCH __unnamed_0, ref _D3DFINDDEVICERESULT __unnamed_1);

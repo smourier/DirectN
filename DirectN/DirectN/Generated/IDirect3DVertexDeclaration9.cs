@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DVertexDeclaration9
     {
         [PreserveSig]
-        HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         HRESULT GetDeclaration(ref _D3DVERTEXELEMENT9 pElement, ref uint pNumElements);

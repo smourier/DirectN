@@ -14,19 +14,19 @@ namespace DirectN
         HRESULT GetCaps(ref _D3DDeviceDesc __unnamed_0, ref _D3DDeviceDesc __unnamed_1);
         
         [PreserveSig]
-        HRESULT SwapTextureHandles(LPDIRECT3DTEXTURE2 __unnamed_0, LPDIRECT3DTEXTURE2 __unnamed_1);
+        HRESULT SwapTextureHandles(ref LPDIRECT3DTEXTURE2 __unnamed_0, ref LPDIRECT3DTEXTURE2 __unnamed_1);
         
         [PreserveSig]
         HRESULT GetStats(ref _D3DSTATS __unnamed_0);
         
         [PreserveSig]
-        HRESULT AddViewport(LPDIRECT3DVIEWPORT2 __unnamed_0);
+        HRESULT AddViewport(ref LPDIRECT3DVIEWPORT2 __unnamed_0);
         
         [PreserveSig]
-        HRESULT DeleteViewport(LPDIRECT3DVIEWPORT2 __unnamed_0);
+        HRESULT DeleteViewport(ref LPDIRECT3DVIEWPORT2 __unnamed_0);
         
         [PreserveSig]
-        HRESULT NextViewport(LPDIRECT3DVIEWPORT2 __unnamed_0, LPDIRECT3DVIEWPORT2 __unnamed_1, uint __unnamed_2);
+        HRESULT NextViewport(ref LPDIRECT3DVIEWPORT2 __unnamed_0, ref LPDIRECT3DVIEWPORT2 __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
         HRESULT EnumTextureFormats(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
@@ -38,19 +38,19 @@ namespace DirectN
         HRESULT EndScene();
         
         [PreserveSig]
-        HRESULT GetDirect3D(IDirect3D2 __unnamed_0);
+        HRESULT GetDirect3D(ref IDirect3D2 __unnamed_0);
         
         [PreserveSig]
-        HRESULT SetCurrentViewport(LPDIRECT3DVIEWPORT2 __unnamed_0);
+        HRESULT SetCurrentViewport(ref LPDIRECT3DVIEWPORT2 __unnamed_0);
         
         [PreserveSig]
-        HRESULT GetCurrentViewport(LPDIRECT3DVIEWPORT2 __unnamed_0);
+        HRESULT GetCurrentViewport(ref LPDIRECT3DVIEWPORT2 __unnamed_0);
         
         [PreserveSig]
-        HRESULT SetRenderTarget(LPDIRECTDRAWSURFACE __unnamed_0, uint __unnamed_1);
+        HRESULT SetRenderTarget(ref LPDIRECTDRAWSURFACE __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT GetRenderTarget(LPDIRECTDRAWSURFACE __unnamed_0);
+        HRESULT GetRenderTarget(ref LPDIRECTDRAWSURFACE __unnamed_0);
         
         [PreserveSig]
         HRESULT Begin(_D3DPRIMITIVETYPE __unnamed_0, _D3DVERTEXTYPE __unnamed_1, uint __unnamed_2);

@@ -81,7 +81,7 @@ namespace DirectN
         new HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
+        new HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ IntPtr pData, uint Offset, uint ByteCount);
         
         // ID3D10EffectRasterizerVariable
         [PreserveSig]
@@ -154,10 +154,10 @@ namespace DirectN
         HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
+        HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ IntPtr pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetRasterizerState(uint Index, /* _Out_ */ out IntPtr ppRasterizerState);
+        HRESULT GetRasterizerState(uint Index, /* _Out_ */ out ID3D10RasterizerState ppRasterizerState);
         
         [PreserveSig]
         HRESULT GetBackingStore(uint Index, /* _Out_ */ out D3D10_RASTERIZER_DESC pRasterizerDesc);

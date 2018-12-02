@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(19786,5)
 using System;
 using System.Runtime.InteropServices;
-using FILETIME = DirectN._FILETIME;
 
 namespace DirectN
 {
@@ -18,6 +17,6 @@ namespace DirectN
         HRESULT GetStreamingMode(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0109_0003 pMode);
         
         [PreserveSig]
-        HRESULT GetReportTime(/* [annotation][out] _Out_ */ out FILETIME pft);
+        HRESULT GetReportTime(/* [annotation][out] _Out_ */ out long pft);
     }
 }

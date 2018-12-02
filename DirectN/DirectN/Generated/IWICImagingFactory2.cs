@@ -87,6 +87,6 @@ namespace DirectN
         
         // IWICImagingFactory2
         [PreserveSig]
-        HRESULT CreateImageEncoder(/* [in] */ ref ID2D1Device pD2DDevice, /* [out] */ out IWICImageEncoder ppWICImageEncoder);
+        HRESULT CreateImageEncoder(/* [in] */ ID2D1Device pD2DDevice, /* [out] */ out IWICImageEncoder ppWICImageEncoder);
     }
 }

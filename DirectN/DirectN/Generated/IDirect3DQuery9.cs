@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DQuery9
     {
         [PreserveSig]
-        HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         _D3DQUERYTYPE GetType();

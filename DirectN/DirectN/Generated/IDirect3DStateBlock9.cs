@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DStateBlock9
     {
         [PreserveSig]
-        HRESULT GetDevice(IDirect3DDevice9 ppDevice);
+        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         HRESULT Capture();

@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DLight
     {
         [PreserveSig]
-        HRESULT Initialize(IDirect3D __unnamed_0);
+        HRESULT Initialize(ref IDirect3D __unnamed_0);
         
         [PreserveSig]
         HRESULT SetLight(ref _D3DLIGHT __unnamed_0);

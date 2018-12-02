@@ -9,10 +9,10 @@ namespace DirectN
     {
         // IMFCaptureEngineOnSampleCallback
         [PreserveSig]
-        new HRESULT OnSample(/* optional(IMFSample) */ IntPtr pSample);
+        new HRESULT OnSample(/* [annotation][in] _In_opt_ */ IMFSample pSample);
         
         // IMFCaptureEngineOnSampleCallback2
         [PreserveSig]
-        HRESULT OnSynchronizedEvent(/* [annotation][in] _In_ */ ref IMFMediaEvent pEvent);
+        HRESULT OnSynchronizedEvent(/* [annotation][in] _In_ */ IMFMediaEvent pEvent);
     }
 }

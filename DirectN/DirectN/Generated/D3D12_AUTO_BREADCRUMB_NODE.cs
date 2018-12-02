@@ -7,10 +7,14 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_AUTO_BREADCRUMB_NODE
     {
-        public IntPtr pCommandListDebugNameA;
-        public IntPtr pCommandListDebugNameW;
-        public IntPtr pCommandQueueDebugNameA;
-        public IntPtr pCommandQueueDebugNameW;
+        [MarshalAs(UnmanagedType.LPStr)] 
+        public byte pCommandListDebugNameA;
+        [MarshalAs(UnmanagedType.LPWStr)] 
+        public char pCommandListDebugNameW;
+        [MarshalAs(UnmanagedType.LPStr)] 
+        public byte pCommandQueueDebugNameA;
+        [MarshalAs(UnmanagedType.LPWStr)] 
+        public char pCommandQueueDebugNameW;
         public IntPtr pCommandList;
         public IntPtr pCommandQueue;
         public uint BreadcrumbCount;

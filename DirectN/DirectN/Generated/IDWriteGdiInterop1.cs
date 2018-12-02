@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 using FONTSIGNATURE = DirectN.tagFONTSIGNATURE;
-using LOGFONT = DirectN.tagLOGFONTA;
+using LOGFONT = DirectN.tagLOGFONTW;
 using LOGFONTW = DirectN.tagLOGFONTW;
 
 namespace DirectN

@@ -14,7 +14,7 @@ namespace DirectN
         void ClearStoredMessages();
         
         [PreserveSig]
-        HRESULT GetMessageA(/* _In_ */ ulong MessageIndex, /* _Out_writes_bytes_opt_(*pMessageByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D3D12_MESSAGE[] pMessage, /* _Inout_ */ IntPtr pMessageByteLength);
+        HRESULT GetMessageW(/* _In_ */ ulong MessageIndex, /* _Out_writes_bytes_opt_(*pMessageByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D3D12_MESSAGE[] pMessage, /* _Inout_ */ IntPtr pMessageByteLength);
         
         [PreserveSig]
         ulong GetNumMessagesAllowedByStorageFilter();

@@ -11,13 +11,13 @@ namespace DirectN
     {
         // IMFCaptureSink
         [PreserveSig]
-        new HRESULT GetOutputMediaType(/* [annotation][in] _In_ */ uint dwSinkStreamIndex, /* optional(IMFMediaType) */ out IntPtr ppMediaType);
+        new HRESULT GetOutputMediaType(/* [annotation][in] _In_ */ uint dwSinkStreamIndex, /* [annotation][out] _Out_opt_ */ out IMFMediaType ppMediaType);
         
         [PreserveSig]
         new HRESULT GetService(/* [annotation][in] _In_ */ uint dwSinkStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rguidService, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnknown);
         
         [PreserveSig]
-        new HRESULT AddStream(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][in] _In_ */ ref IMFMediaType pMediaType, /* optional(IMFAttributes) */ IntPtr pAttributes, /* [annotation][out] _Out_opt_ */ out uint pdwSinkStreamIndex);
+        new HRESULT AddStream(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][in] _In_ */ IMFMediaType pMediaType, /* [annotation][in] _In_opt_ */ IMFAttributes pAttributes, /* [annotation][out] _Out_opt_ */ out uint pdwSinkStreamIndex);
         
         [PreserveSig]
         new HRESULT Prepare();
@@ -51,6 +51,6 @@ namespace DirectN
         HRESULT SetRotation(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwRotationValue);
         
         [PreserveSig]
-        HRESULT SetCustomSink(/* [annotation][in] _In_ */ ref IMFMediaSink pMediaSink);
+        HRESULT SetCustomSink(/* [annotation][in] _In_ */ IMFMediaSink pMediaSink);
     }
 }

@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawi.h(1340,9)
 using System;
 using System.Runtime.InteropServices;
-using DDPIXELFORMAT = DirectN._DDPIXELFORMAT;
 
 namespace DirectN
 {
@@ -19,6 +18,6 @@ namespace DirectN
         public ushort wWidth;
         public uint dwUsageCount;
         public IntPtr dwReserved1;
-        public DDPIXELFORMAT ddpfSurface;
+        public _DDPIXELFORMAT ddpfSurface;
     }
 }

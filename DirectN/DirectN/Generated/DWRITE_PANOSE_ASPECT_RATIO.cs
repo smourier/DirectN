@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(270,1)
 namespace DirectN
 {
+    /// <summary>
+    /// Ratio between width and height of the face. Present for families: 3-script
+    /// </summary>
     public enum DWRITE_PANOSE_ASPECT_RATIO
     {
         DWRITE_PANOSE_ASPECT_RATIO_ANY = 0,

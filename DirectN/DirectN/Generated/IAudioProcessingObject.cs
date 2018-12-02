@@ -21,10 +21,10 @@ namespace DirectN
         HRESULT Initialize(/* [in] */ uint cbDataSize, /* [size_is][in] __RPC__in_ecount_full(cbDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbyData);
         
         [PreserveSig]
-        HRESULT IsInputFormatSupported(/* optional(IAudioMediaType) */ IntPtr pOppositeFormat, /* optional(IAudioMediaType) */ IntPtr pRequestedInputFormat, /* optional(IAudioMediaType) */ out IntPtr ppSupportedInputFormat);
+        HRESULT IsInputFormatSupported(/* [unique][in] __RPC__in_opt */ IAudioMediaType pOppositeFormat, /* [in] __RPC__in_opt */ IAudioMediaType pRequestedInputFormat, /* [out] __RPC__deref_out_opt */ out IAudioMediaType ppSupportedInputFormat);
         
         [PreserveSig]
-        HRESULT IsOutputFormatSupported(/* optional(IAudioMediaType) */ IntPtr pOppositeFormat, /* optional(IAudioMediaType) */ IntPtr pRequestedOutputFormat, /* optional(IAudioMediaType) */ out IntPtr ppSupportedOutputFormat);
+        HRESULT IsOutputFormatSupported(/* [unique][in] __RPC__in_opt */ IAudioMediaType pOppositeFormat, /* [in] __RPC__in_opt */ IAudioMediaType pRequestedOutputFormat, /* [out] __RPC__deref_out_opt */ out IAudioMediaType ppSupportedOutputFormat);
         
         [PreserveSig]
         HRESULT GetInputChannelCount(/* [out] __RPC__out */ out uint pu32ChannelCount);

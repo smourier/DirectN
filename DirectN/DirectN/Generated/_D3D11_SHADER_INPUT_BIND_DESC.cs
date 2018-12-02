@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d11shader.h(147,9)
 using System;
 using System.Runtime.InteropServices;
-using D3D_SHADER_INPUT_TYPE = DirectN._D3D_SHADER_INPUT_TYPE;
 
 namespace DirectN
 {
@@ -10,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.LPStr)] 
         public string Name;
-        public D3D_SHADER_INPUT_TYPE Type;
+        public _D3D_SHADER_INPUT_TYPE Type;
         public uint BindPoint;
         public uint BindCount;
         public uint uFlags;

@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawint.h(848,9)
 using System;
 using System.Runtime.InteropServices;
-using DDSCAPS = DirectN._DDSCAPS;
 
 namespace DirectN
 {
@@ -35,7 +34,7 @@ namespace DirectN
         public uint dwAlignStrideAlign;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
         public uint[] dwRops;
-        public DDSCAPS ddsCaps;
+        public _DDSCAPS ddsCaps;
         public uint dwMinOverlayStretch;
         public uint dwMaxOverlayStretch;
         public uint dwMinLiveVideoStretch;

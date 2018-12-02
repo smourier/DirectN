@@ -23,7 +23,7 @@ namespace DirectN
         HRESULT SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode);
         
         [PreserveSig]
-        HRESULT SetTextRenderingParams(/* optional(IDWriteRenderingParams) */ IntPtr textRenderingParams);
+        HRESULT SetTextRenderingParams(/* _In_opt_ */ IDWriteRenderingParams textRenderingParams);
         
         [PreserveSig]
         HRESULT SetTransform(/* _In_ */ ref D2D_MATRIX_3X2_F transform);
