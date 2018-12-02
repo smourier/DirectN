@@ -10,9 +10,9 @@ namespace DirectN
         public Guid clsid;
         public APO_FLAG Flags;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)] 
-        public string szFriendlyName;
+        public string[] szFriendlyName;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)] 
-        public string szCopyrightInfo;
+        public string[] szCopyrightInfo;
         public uint u32MajorVersion;
         public uint u32MinorVersion;
         public uint u32MinInputConnections;
@@ -22,6 +22,6 @@ namespace DirectN
         public uint u32MaxInstances;
         public uint u32NumAPOInterfaces;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public Guid iidAPOInterfaceList;
+        public Guid[] iidAPOInterfaceList;
     }
 }

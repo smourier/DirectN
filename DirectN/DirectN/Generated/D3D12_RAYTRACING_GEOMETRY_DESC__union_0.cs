@@ -8,7 +8,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)]
         public byte[] __bits;
-        public D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC Triangles => InteropRuntime.GetBits<D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC>(__bits, 0, 384);
-        public D3D12_RAYTRACING_GEOMETRY_AABBS_DESC AABBs => InteropRuntime.GetBits<D3D12_RAYTRACING_GEOMETRY_AABBS_DESC>(__bits, 0, 192);
+        public D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC Triangles => InteropRuntime.Get<D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC>(__bits, 0, 384);
+        public D3D12_RAYTRACING_GEOMETRY_AABBS_DESC AABBs => InteropRuntime.Get<D3D12_RAYTRACING_GEOMETRY_AABBS_DESC>(__bits, 0, 192);
     }
 }

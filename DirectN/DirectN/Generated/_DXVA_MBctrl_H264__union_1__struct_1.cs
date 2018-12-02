@@ -11,6 +11,6 @@ namespace DirectN
         public byte bSubMbPredModes;
         public ushort wMvBuffOffset;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public byte bRefPicSelect;
+        public byte[] bRefPicSelect;
     }
 }

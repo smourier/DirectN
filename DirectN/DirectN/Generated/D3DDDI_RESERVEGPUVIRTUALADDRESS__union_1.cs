@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public _D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE ReservationType => InteropRuntime.GetBits<_D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE>(__bits, 0, 32);
-        public uint Reserved0 => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public _D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE ReservationType => InteropRuntime.Get<_D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE>(__bits, 0, 32);
+        public uint Reserved0 => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

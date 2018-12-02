@@ -16,6 +16,6 @@ namespace DirectN
         public RECT rcSrc;
         public RECT rcDst;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public _DXVA_AYUVsample2[] Palette;
+        public _DXVA_AYUVsample2[][] Palette;
     }
 }

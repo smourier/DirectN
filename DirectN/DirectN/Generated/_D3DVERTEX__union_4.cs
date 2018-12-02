@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public float ny => InteropRuntime.GetSingleBits(__bits, 0, 32);
-        public float dvNY => InteropRuntime.GetSingleBits(__bits, 0, 32);
+        public float ny => InteropRuntime.GetSingle(__bits, 0, 32);
+        public float dvNY => InteropRuntime.GetSingle(__bits, 0, 32);
     }
 }

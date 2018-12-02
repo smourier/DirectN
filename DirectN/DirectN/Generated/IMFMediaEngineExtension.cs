@@ -11,12 +11,12 @@ namespace DirectN
         HRESULT CanPlayType(/* [annotation][in] _In_ */ bool AudioOnly, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.BStr)] string MimeType, /* [annotation][out] _Out_ */ out MF_MEDIA_ENGINE_CANPLAY pAnswer);
         
         [PreserveSig]
-        HRESULT BeginCreateObject(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.BStr)] string bstrURL, /* [annotation][in] _In_opt_ */ IMFByteStream pByteStream, /* [annotation][in] _In_ */ MF_OBJECT_TYPE type, /* [annotation][out] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppIUnknownCancelCookie, /* [annotation][in] _In_ */ IMFAsyncCallback pCallback, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        HRESULT BeginCreateObject(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.BStr)] string bstrURL, /* optional(IMFByteStream) */ IntPtr pByteStream, /* [annotation][in] _In_ */ MF_OBJECT_TYPE type, /* [annotation][out] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppIUnknownCancelCookie, /* [annotation][in] _In_ */ ref IMFAsyncCallback pCallback, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
         HRESULT CancelObjectCreation(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pIUnknownCancelCookie);
         
         [PreserveSig]
-        HRESULT EndCreateObject(/* [annotation][in] _In_ */ IMFAsyncResult pResult, /* [annotation][out] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppObject);
+        HRESULT EndCreateObject(/* [annotation][in] _In_ */ ref IMFAsyncResult pResult, /* [annotation][out] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppObject);
     }
 }

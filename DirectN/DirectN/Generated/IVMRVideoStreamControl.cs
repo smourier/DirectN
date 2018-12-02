@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(20321,5)
 using System;
 using System.Runtime.InteropServices;
+using LPDDCOLORKEY = DirectN._DDCOLORKEY;
 
 namespace DirectN
 {
@@ -8,10 +9,10 @@ namespace DirectN
     public partial interface IVMRVideoStreamControl
     {
         [PreserveSig]
-        HRESULT SetColorKey(/* [in] */ ref _DDCOLORKEY lpClrKey);
+        HRESULT SetColorKey(/* [in] */ ref LPDDCOLORKEY lpClrKey);
         
         [PreserveSig]
-        HRESULT GetColorKey(/* [out] */ out _DDCOLORKEY lpClrKey);
+        HRESULT GetColorKey(/* [out] */ out LPDDCOLORKEY lpClrKey);
         
         [PreserveSig]
         HRESULT SetStreamActiveState(/* [in] */ bool fActive);

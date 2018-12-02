@@ -9,6 +9,6 @@ namespace DirectN
         public D3DDDI_DXGI_RGB Scale;
         public D3DDDI_DXGI_RGB Offset;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1025)] 
-        public D3DDDI_DXGI_RGB[] GammaCurve;
+        public D3DDDI_DXGI_RGB[][] GammaCurve;
     }
 }

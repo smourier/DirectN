@@ -8,8 +8,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public byte[] __bits;
-        public D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable => InteropRuntime.GetBits<D3D12_ROOT_DESCRIPTOR_TABLE1>(__bits, 0, 128);
-        public D3D12_ROOT_CONSTANTS Constants => InteropRuntime.GetBits<D3D12_ROOT_CONSTANTS>(__bits, 0, 96);
-        public D3D12_ROOT_DESCRIPTOR1 Descriptor => InteropRuntime.GetBits<D3D12_ROOT_DESCRIPTOR1>(__bits, 0, 96);
+        public D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable => InteropRuntime.Get<D3D12_ROOT_DESCRIPTOR_TABLE1>(__bits, 0, 128);
+        public D3D12_ROOT_CONSTANTS Constants => InteropRuntime.Get<D3D12_ROOT_CONSTANTS>(__bits, 0, 96);
+        public D3D12_ROOT_DESCRIPTOR1 Descriptor => InteropRuntime.Get<D3D12_ROOT_DESCRIPTOR1>(__bits, 0, 96);
     }
 }

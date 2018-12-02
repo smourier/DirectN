@@ -14,6 +14,6 @@ namespace DirectN
         public long TransportTimeInHundredsOfNanoseconds;
         public long ExecutionTimeInHundredsOfNanoseconds;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte OutputData;
+        public byte[] OutputData;
     }
 }

@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(402,1)
 namespace DirectN
 {
-    /// <summary>
-    /// Type of fill/line (treatment). Present for families: 4-decorative
-    /// </summary>
     public enum DWRITE_PANOSE_FILL
     {
         DWRITE_PANOSE_FILL_ANY = 0,

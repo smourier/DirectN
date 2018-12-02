@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public _D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0 __field_0 => InteropRuntime.GetBits<_D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0>(__bits, 0, 64);
-        public ulong Value => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
+        public _D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0 __field_0 => InteropRuntime.Get<_D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0>(__bits, 0, 64);
+        public ulong Value => InteropRuntime.GetUInt6s(__bits, 0, 64);
     }
 }

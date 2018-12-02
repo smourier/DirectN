@@ -12,35 +12,35 @@ namespace DirectN
         public byte TargetStampIndex;
         public uint NumTraceSteps;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D11_TRACE_COMPONENT_MASK[] InputMask;
+        public D3D11_TRACE_COMPONENT_MASK[][] InputMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D11_TRACE_COMPONENT_MASK[] OutputMask;
+        public D3D11_TRACE_COMPONENT_MASK[][] OutputMask;
         public ushort NumTemps;
         public ushort MaxIndexableTempIndex;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4096)] 
-        public ushort IndexableTempSize;
+        public ushort[] IndexableTempSize;
         public ushort ImmediateConstantBufferSize;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint PixelPosition;
+        public uint[] PixelPosition;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public ulong PixelCoverageMask;
+        public ulong[] PixelCoverageMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public ulong PixelDiscardedMask;
+        public ulong[] PixelDiscardedMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public ulong PixelCoverageMaskAfterShader;
+        public ulong[] PixelCoverageMaskAfterShader;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public ulong PixelCoverageMaskAfterA2CSampleMask;
+        public ulong[] PixelCoverageMaskAfterA2CSampleMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public ulong PixelCoverageMaskAfterA2CSampleMaskDepth;
+        public ulong[] PixelCoverageMaskAfterA2CSampleMaskDepth;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public ulong PixelCoverageMaskAfterA2CSampleMaskDepthStencil;
+        public ulong[] PixelCoverageMaskAfterA2CSampleMaskDepthStencil;
         public bool PSOutputsDepth;
         public bool PSOutputsMask;
         public D3D11_TRACE_GS_INPUT_PRIMITIVE GSInputPrimitive;
         public bool GSInputsPrimitiveID;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D11_TRACE_COMPONENT_MASK[] HSOutputPatchConstantMask;
+        public D3D11_TRACE_COMPONENT_MASK[][] HSOutputPatchConstantMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D11_TRACE_COMPONENT_MASK[] DSInputPatchConstantMask;
+        public D3D11_TRACE_COMPONENT_MASK[][] DSInputPatchConstantMask;
     }
 }

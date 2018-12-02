@@ -157,7 +157,7 @@ namespace DirectN
         HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetDepthStencilState(uint Index, /* _Out_ */ out ID3D10DepthStencilState ppDepthStencilState);
+        HRESULT GetDepthStencilState(uint Index, /* _Out_ */ out IntPtr ppDepthStencilState);
         
         [PreserveSig]
         HRESULT GetBackingStore(uint Index, /* _Out_ */ out D3D10_DEPTH_STENCIL_DESC pDepthStencilDesc);

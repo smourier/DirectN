@@ -12,6 +12,6 @@ namespace DirectN
         public uint PrivateDriverDataSize;
         public ulong GpuVirtualAddress;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)] 
-        public IntPtr Reserved;
+        public IntPtr[] Reserved;
     }
 }

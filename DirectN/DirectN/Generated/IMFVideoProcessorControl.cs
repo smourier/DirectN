@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(3264,5)
 using System;
 using System.Runtime.InteropServices;
+using MFARGB = DirectN._MFARGB;
 using RECT = DirectN.tagRECT;
 using SIZE = DirectN.tagSIZE;
 
@@ -10,7 +11,7 @@ namespace DirectN
     public partial interface IMFVideoProcessorControl
     {
         [PreserveSig]
-        HRESULT SetBorderColor(/* optional(_MFARGB) */ IntPtr pBorderColor);
+        HRESULT SetBorderColor(/* optional(MFARGB) */ IntPtr pBorderColor);
         
         [PreserveSig]
         HRESULT SetSourceRectangle(/* optional(RECT) */ IntPtr pSrcRect);

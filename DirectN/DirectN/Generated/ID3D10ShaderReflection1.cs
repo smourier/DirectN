@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d10_1shader.h(263,1)
 using System;
 using System.Runtime.InteropServices;
+using D3D10_PRIMITIVE = DirectN.D3D_PRIMITIVE;
 
 namespace DirectN
 {
@@ -44,7 +45,7 @@ namespace DirectN
         HRESULT GetBitwiseInstructionCount(/* THIS_ _Out_ */ out uint pCount);
         
         [PreserveSig]
-        HRESULT GetGSInputPrimitive(/* THIS_ _Out_ */ out D3D_PRIMITIVE pPrim);
+        HRESULT GetGSInputPrimitive(/* THIS_ _Out_ */ out D3D10_PRIMITIVE pPrim);
         
         [PreserveSig]
         HRESULT IsLevel9Shader(/* THIS_ _Out_ */ out bool pbLevel9Shader);

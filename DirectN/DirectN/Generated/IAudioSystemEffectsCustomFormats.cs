@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetFormatCount(/* [out] __RPC__out */ out uint pcFormats);
         
         [PreserveSig]
-        HRESULT GetFormat(/* [in] */ uint nFormat, /* [out] __RPC__deref_out_opt */ out IAudioMediaType ppFormat);
+        HRESULT GetFormat(/* [in] */ uint nFormat, /* optional(IAudioMediaType) */ out IntPtr ppFormat);
         
         [PreserveSig]
         HRESULT GetFormatRepresentation(/* [in] */ uint nFormat, /* optional(LPWSTR) */ out IntPtr ppwstrFormatRep);

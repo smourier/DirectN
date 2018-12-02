@@ -8,10 +8,10 @@ namespace DirectN
     public partial interface IMFByteStreamHandler
     {
         [PreserveSig]
-        HRESULT BeginCreateObject(/* [in] */ IMFByteStream pByteStream, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ uint dwFlags, /* [in] */ ref IPropertyStore pProps, /* [annotation][out] _Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppIUnknownCancelCookie, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        HRESULT BeginCreateObject(/* [in] */ ref IMFByteStream pByteStream, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ uint dwFlags, /* [in] */ ref IPropertyStore pProps, /* [annotation][out] _Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppIUnknownCancelCookie, /* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
-        HRESULT EndCreateObject(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out MF_OBJECT_TYPE pObjectType, /* [annotation][out] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppObject);
+        HRESULT EndCreateObject(/* [in] */ ref IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out MF_OBJECT_TYPE pObjectType, /* [annotation][out] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppObject);
         
         [PreserveSig]
         HRESULT CancelObjectCreation(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pIUnknownCancelCookie);

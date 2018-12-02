@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public ulong PagingFenceValue => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
-        public ulong Reserved2 => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
+        public ulong PagingFenceValue => InteropRuntime.GetUInt6s(__bits, 0, 64);
+        public ulong Reserved2 => InteropRuntime.GetUInt6s(__bits, 0, 64);
     }
 }

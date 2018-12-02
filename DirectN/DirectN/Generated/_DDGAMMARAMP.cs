@@ -8,10 +8,10 @@ namespace DirectN
     public partial struct _DDGAMMARAMP
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort red;
+        public ushort[] red;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort green;
+        public ushort[] green;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort blue;
+        public ushort[] blue;
     }
 }

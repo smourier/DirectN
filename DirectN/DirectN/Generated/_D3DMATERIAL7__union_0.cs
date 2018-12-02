@@ -8,7 +8,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public byte[] __bits;
-        public _D3DCOLORVALUE diffuse => InteropRuntime.GetBits<_D3DCOLORVALUE>(__bits, 0, 128);
-        public _D3DCOLORVALUE dcvDiffuse => InteropRuntime.GetBits<_D3DCOLORVALUE>(__bits, 0, 128);
+        public _D3DCOLORVALUE diffuse => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128);
+        public _D3DCOLORVALUE dcvDiffuse => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128);
     }
 }

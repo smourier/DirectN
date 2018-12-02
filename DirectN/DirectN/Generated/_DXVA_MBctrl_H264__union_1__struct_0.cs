@@ -8,9 +8,9 @@ namespace DirectN
     public partial struct _DXVA_MBctrl_H264__union_1__struct_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public ushort LumaIntraPredModes;
+        public ushort[] LumaIntraPredModes;
         public _DXVA_MBctrl_H264__union_1__struct_0__union_0 __union_1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public byte ReservedIntra24Bits;
+        public byte[] ReservedIntra24Bits;
     }
 }

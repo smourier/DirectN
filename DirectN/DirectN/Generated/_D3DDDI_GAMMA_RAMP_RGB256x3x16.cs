@@ -8,10 +8,10 @@ namespace DirectN
     public partial struct _D3DDDI_GAMMA_RAMP_RGB256x3x16
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort Red;
+        public ushort[] Red;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort Green;
+        public ushort[] Green;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort Blue;
+        public ushort[] Blue;
     }
 }

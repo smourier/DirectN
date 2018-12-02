@@ -8,6 +8,6 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public byte[] __bits;
-        public D3D12_DEVICE_REMOVED_EXTENDED_DATA Dred_1_0 => InteropRuntime.GetBits<D3D12_DEVICE_REMOVED_EXTENDED_DATA>(__bits, 0, 128);
+        public D3D12_DEVICE_REMOVED_EXTENDED_DATA Dred_1_0 => InteropRuntime.Get<D3D12_DEVICE_REMOVED_EXTENDED_DATA>(__bits, 0, 128);
     }
 }

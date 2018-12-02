@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(971,9)
 namespace DirectN
 {
+    /// <summary>
+    /// Indicates the debug level to be output by the debug layer.
+    /// </summary>
     public enum D2D1_DEBUG_LEVEL
     {
         D2D1_DEBUG_LEVEL_NONE = 0,

@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         public byte[] __bits;
-        public byte Index7Bits => InteropRuntime.GetByteBits(__bits, 0, 7);
-        public byte AssociatedFlag => InteropRuntime.GetByteBits(__bits, 7, 1);
+        public byte Index7Bits => InteropRuntime.GetByte(__bits, 0, 7);
+        public byte AssociatedFlag => InteropRuntime.GetByte(__bits, 7, 1);
     }
 }

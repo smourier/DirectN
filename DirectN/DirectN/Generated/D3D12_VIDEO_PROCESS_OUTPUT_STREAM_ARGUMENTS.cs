@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public D3D12_VIDEO_PROCESS_OUTPUT_STREAM[] OutputStream;
+        public D3D12_VIDEO_PROCESS_OUTPUT_STREAM[][] OutputStream;
         public D3D12_RECT TargetRectangle;
     }
 }

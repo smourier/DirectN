@@ -9,14 +9,14 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint HardwareAccess => InteropRuntime.GetUInt32Bits(__bits, 0, 1);
-        public uint DeviceStatusQuery => InteropRuntime.GetUInt32Bits(__bits, 1, 1);
-        public uint ChangeFrameLatency => InteropRuntime.GetUInt32Bits(__bits, 2, 1);
-        public uint NoAdapterSynchronization => InteropRuntime.GetUInt32Bits(__bits, 3, 1);
-        public uint Reserved => InteropRuntime.GetUInt32Bits(__bits, 4, 1);
-        public uint VirtualMachineData => InteropRuntime.GetUInt32Bits(__bits, 5, 1);
-        public uint DriverKnownEscape => InteropRuntime.GetUInt32Bits(__bits, 6, 1);
-        public uint DriverCommonEscape => InteropRuntime.GetUInt32Bits(__bits, 7, 1);
-        public uint Reserved2 => InteropRuntime.GetUInt32Bits(__bits, 8, 24);
+        public uint HardwareAccess => InteropRuntime.GetUInt32(__bits, 0, 1);
+        public uint DeviceStatusQuery => InteropRuntime.GetUInt32(__bits, 1, 1);
+        public uint ChangeFrameLatency => InteropRuntime.GetUInt32(__bits, 2, 1);
+        public uint NoAdapterSynchronization => InteropRuntime.GetUInt32(__bits, 3, 1);
+        public uint Reserved => InteropRuntime.GetUInt32(__bits, 4, 1);
+        public uint VirtualMachineData => InteropRuntime.GetUInt32(__bits, 5, 1);
+        public uint DriverKnownEscape => InteropRuntime.GetUInt32(__bits, 6, 1);
+        public uint DriverCommonEscape => InteropRuntime.GetUInt32(__bits, 7, 1);
+        public uint Reserved2 => InteropRuntime.GetUInt32(__bits, 8, 24);
     }
 }

@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfmediaengine.h(7409,5)
 using System;
 using System.Runtime.InteropServices;
+using MFARGB = DirectN._MFARGB;
 
 namespace DirectN
 {
@@ -17,7 +18,7 @@ namespace DirectN
         HRESULT GetExtent(/* [annotation][out] _Out_ */ out double pWidth, /* [annotation][out] _Out_ */ out double pHeight, /* [annotation][out] _Out_ */ out MF_TIMED_TEXT_UNIT_TYPE unitType);
         
         [PreserveSig]
-        HRESULT GetBackgroundColor(/* [annotation][out] _Out_ */ out _MFARGB bgColor);
+        HRESULT GetBackgroundColor(/* [annotation][out] _Out_ */ out MFARGB bgColor);
         
         [PreserveSig]
         HRESULT GetWritingMode(/* [annotation][out] _Out_ */ out MF_TIMED_TEXT_WRITING_MODE writingMode);

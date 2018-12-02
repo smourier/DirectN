@@ -9,12 +9,12 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public IntPtr pDXGIDDIBaseFunctions6_1 => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions6 => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions5 => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions4 => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions3 => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions2 => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
+        public IntPtr pDXGIDDIBaseFunctions6_1 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr pDXGIDDIBaseFunctions6 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr pDXGIDDIBaseFunctions5 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr pDXGIDDIBaseFunctions4 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr pDXGIDDIBaseFunctions3 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr pDXGIDDIBaseFunctions2 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr pDXGIDDIBaseFunctions => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
     }
 }

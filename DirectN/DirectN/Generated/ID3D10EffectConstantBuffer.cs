@@ -157,15 +157,15 @@ namespace DirectN
         HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT SetConstantBuffer(/* THIS_ _In_opt_ */ ID3D10Buffer pConstantBuffer);
+        HRESULT SetConstantBuffer(/* optional(ID3D10Buffer) */ IntPtr pConstantBuffer);
         
         [PreserveSig]
-        HRESULT GetConstantBuffer(/* THIS_ _Out_ */ out ID3D10Buffer ppConstantBuffer);
+        HRESULT GetConstantBuffer(/* THIS_ _Out_ */ out IntPtr ppConstantBuffer);
         
         [PreserveSig]
-        HRESULT SetTextureBuffer(/* THIS_ _In_opt_ */ ID3D10ShaderResourceView pTextureBuffer);
+        HRESULT SetTextureBuffer(/* optional(ID3D10ShaderResourceView) */ IntPtr pTextureBuffer);
         
         [PreserveSig]
-        HRESULT GetTextureBuffer(/* THIS_ _Out_ */ out ID3D10ShaderResourceView ppTextureBuffer);
+        HRESULT GetTextureBuffer(/* THIS_ _Out_ */ out IntPtr ppTextureBuffer);
     }
 }

@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public byte[] __bits;
-        public float Color => InteropRuntime.GetSingleBits(__bits, 0, 128);
-        public D3D12_DEPTH_STENCIL_VALUE DepthStencil => InteropRuntime.GetBits<D3D12_DEPTH_STENCIL_VALUE>(__bits, 0, 40);
+        public float[] Color => InteropRuntime.GetArray<float>(__bits, 0, 128);
+        public D3D12_DEPTH_STENCIL_VALUE DepthStencil => InteropRuntime.Get<D3D12_DEPTH_STENCIL_VALUE>(__bits, 0, 40);
     }
 }

@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFCapturePhotoConfirmation
     {
         [PreserveSig]
-        HRESULT SetPhotoConfirmationCallback(/* [annotation][in] _In_ */ IMFAsyncCallback pNotificationCallback);
+        HRESULT SetPhotoConfirmationCallback(/* [annotation][in] _In_ */ ref IMFAsyncCallback pNotificationCallback);
         
         [PreserveSig]
         HRESULT SetPixelFormat(/* [annotation][in] _In_ */ Guid subtype);

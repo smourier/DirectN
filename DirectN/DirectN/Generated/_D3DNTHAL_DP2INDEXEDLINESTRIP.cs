@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct _D3DNTHAL_DP2INDEXEDLINESTRIP
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public ushort wV;
+        public ushort[] wV;
     }
 }

@@ -35,6 +35,6 @@ namespace DirectN
         
         // IMFSampleGrabberSinkCallback2
         [PreserveSig]
-        HRESULT OnProcessSampleEx(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMajorMediaType, /* [in] */ uint dwSampleFlags, /* [in] */ long llSampleTime, /* [in] */ long llSampleDuration, /* [annotation][in] _In_reads_bytes_(dwSampleSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] pSampleBuffer, /* [in] */ uint dwSampleSize, /* [annotation][in] _In_ */ IMFAttributes pAttributes);
+        HRESULT OnProcessSampleEx(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMajorMediaType, /* [in] */ uint dwSampleFlags, /* [in] */ long llSampleTime, /* [in] */ long llSampleDuration, /* [annotation][in] _In_reads_bytes_(dwSampleSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] pSampleBuffer, /* [in] */ uint dwSampleSize, /* [annotation][in] _In_ */ ref IMFAttributes pAttributes);
     }
 }

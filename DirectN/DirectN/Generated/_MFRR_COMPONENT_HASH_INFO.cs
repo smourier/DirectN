@@ -9,10 +9,10 @@ namespace DirectN
     {
         public uint ulReason;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 43)] 
-        public string rgHeaderHash;
+        public string[] rgHeaderHash;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 43)] 
-        public string rgPublicKeyHash;
+        public string[] rgPublicKeyHash;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)] 
-        public string wszName;
+        public string[] wszName;
     }
 }

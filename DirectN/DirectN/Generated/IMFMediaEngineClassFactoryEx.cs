@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IMFMediaEngineClassFactory
         [PreserveSig]
-        new HRESULT CreateInstance(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_ */ IMFAttributes pAttr, /* [annotation][out] _Outptr_ */ out IMFMediaEngine ppPlayer);
+        new HRESULT CreateInstance(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_ */ ref IMFAttributes pAttr, /* [annotation][out] _Outptr_ */ out IMFMediaEngine ppPlayer);
         
         [PreserveSig]
         new HRESULT CreateTimeRange(/* [annotation][out] _Outptr_ */ out IMFMediaTimeRange ppTimeRange);
@@ -19,7 +19,7 @@ namespace DirectN
         
         // IMFMediaEngineClassFactoryEx
         [PreserveSig]
-        HRESULT CreateMediaSourceExtension(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_ */ IMFAttributes pAttr, /* [annotation][out] _COM_Outptr_ */ out IMFMediaSourceExtension ppMSE);
+        HRESULT CreateMediaSourceExtension(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_ */ ref IMFAttributes pAttr, /* [annotation][out] _COM_Outptr_ */ out IMFMediaSourceExtension ppMSE);
         
         [PreserveSig]
         HRESULT CreateMediaKeys(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.BStr)] string keySystem, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string cdmStorePath, /* [annotation] _COM_Outptr_ */ out IMFMediaKeys ppKeys);

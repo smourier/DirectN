@@ -8,8 +8,8 @@ namespace DirectN
     public partial struct DXGI_JPEG_AC_HUFFMAN_TABLE
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte CodeCounts;
+        public byte[] CodeCounts;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 162)] 
-        public byte CodeValues;
+        public byte[] CodeValues;
     }
 }

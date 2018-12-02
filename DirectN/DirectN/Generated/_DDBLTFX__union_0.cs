@@ -10,7 +10,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public uint dwZDestConst => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public IntPtr lpDDSZBufferDest => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
+        public uint dwZDestConst => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public IntPtr lpDDSZBufferDest => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
     }
 }

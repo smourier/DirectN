@@ -10,7 +10,7 @@ namespace DirectN
         public _D3DDDI_QUERYREGISTRY_TYPE QueryType;
         public _D3DDDI_QUERYREGISTRY_FLAGS QueryFlags;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)] 
-        public string ValueName;
+        public string[] ValueName;
         public uint ValueType;
         public uint PhysicalAdapterIndex;
         public uint OutputValueSize;

@@ -8,8 +8,8 @@ namespace DirectN
     public partial struct DXGI_DISPLAY_COLOR_SPACE
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public float PrimaryCoordinates;
+        public float[] PrimaryCoordinates;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public float WhitePoints;
+        public float[] WhitePoints;
     }
 }

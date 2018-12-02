@@ -6,6 +6,9 @@ using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Issues drawing commands to a GDI device context.
+    /// </summary>
     [Guid("1c51bc64-de61-46fd-9899-63a5d8f03950"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DCRenderTarget : ID2D1RenderTarget
     {

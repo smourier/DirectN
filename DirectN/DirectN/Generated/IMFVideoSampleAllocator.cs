@@ -14,9 +14,9 @@ namespace DirectN
         HRESULT UninitializeSampleAllocator();
         
         [PreserveSig]
-        HRESULT InitializeSampleAllocator(/* [in] */ uint cRequestedFrames, /* [in] */ IMFMediaType pMediaType);
+        HRESULT InitializeSampleAllocator(/* [in] */ uint cRequestedFrames, /* [in] */ ref IMFMediaType pMediaType);
         
         [PreserveSig]
-        HRESULT AllocateSample(/* [out] */ out IMFSample ppSample);
+        HRESULT AllocateSample(/* [out] */ out IntPtr ppSample);
     }
 }

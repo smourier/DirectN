@@ -11,6 +11,6 @@ namespace DirectN
         public uint OutputSubresource;
         public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1 ConversionArguments;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[] Histograms;
+        public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[][] Histograms;
     }
 }

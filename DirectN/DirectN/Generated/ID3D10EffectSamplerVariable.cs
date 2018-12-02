@@ -157,7 +157,7 @@ namespace DirectN
         HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetSampler(uint Index, /* _Out_ */ out ID3D10SamplerState ppSampler);
+        HRESULT GetSampler(uint Index, /* _Out_ */ out IntPtr ppSampler);
         
         [PreserveSig]
         HRESULT GetBackingStore(uint Index, /* _Out_ */ out D3D10_SAMPLER_DESC pSamplerDesc);

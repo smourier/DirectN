@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct D3DDDI_HDR_METADATA_HDR10PLUS
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 72)] 
-        public byte Data;
+        public byte[] Data;
     }
 }

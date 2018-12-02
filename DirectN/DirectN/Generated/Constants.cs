@@ -2218,7 +2218,7 @@
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\audiomediatype.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
@@ -2241,10 +2241,10 @@
         public const int AVENC_H264V_LEVELCOUNT = 16;
         public const int AVENC_H264V_MAX_MBBITS = 3200;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\d2d1effectauthor.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d2d1effectauthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\D2DErr.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\D2DErr.h
         public const int FACILITY_D2D = 2201;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d.h
@@ -4920,7 +4920,7 @@
         public const int MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
         public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\mftransform.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\mftransform.h
         public const int MFT_STREAMS_UNLIMITED = -1;
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\mmdeviceapi.h
@@ -5194,7 +5194,7 @@
         public const int VMR_NOTSUPPORTED = 0;
         public const int VMR_SUPPORTED = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\wincodec.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wincodec.h
         public const int FACILITY_WINCODEC_ERR = 2200;
         public const int WICRawChangeNotification_Contrast = 16;
         public const int WICRawChangeNotification_DestinationColorContext = 1024;

@@ -8,13 +8,13 @@ namespace DirectN
     public partial struct _D3DDDI_HDR_METADATA_HDR10
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public ushort RedPrimary;
+        public ushort[] RedPrimary;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public ushort GreenPrimary;
+        public ushort[] GreenPrimary;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public ushort BluePrimary;
+        public ushort[] BluePrimary;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public ushort WhitePoint;
+        public ushort[] WhitePoint;
         public uint MaxMasteringLuminance;
         public uint MinMasteringLuminance;
         public ushort MaxContentLightLevel;

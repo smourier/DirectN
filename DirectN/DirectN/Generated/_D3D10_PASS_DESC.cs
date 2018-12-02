@@ -15,6 +15,6 @@ namespace DirectN
         public uint StencilRef;
         public uint SampleMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public float BlendFactor;
+        public float[] BlendFactor;
     }
 }

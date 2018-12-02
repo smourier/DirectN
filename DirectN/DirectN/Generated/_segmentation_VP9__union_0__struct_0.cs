@@ -9,10 +9,10 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         public byte[] __bits;
-        public byte enabled => InteropRuntime.GetByteBits(__bits, 0, 1);
-        public byte update_map => InteropRuntime.GetByteBits(__bits, 1, 1);
-        public byte temporal_update => InteropRuntime.GetByteBits(__bits, 2, 1);
-        public byte abs_delta => InteropRuntime.GetByteBits(__bits, 3, 1);
-        public byte ReservedSegmentFlags4Bits => InteropRuntime.GetByteBits(__bits, 4, 4);
+        public byte enabled => InteropRuntime.GetByte(__bits, 0, 1);
+        public byte update_map => InteropRuntime.GetByte(__bits, 1, 1);
+        public byte temporal_update => InteropRuntime.GetByte(__bits, 2, 1);
+        public byte abs_delta => InteropRuntime.GetByte(__bits, 3, 1);
+        public byte ReservedSegmentFlags4Bits => InteropRuntime.GetByte(__bits, 4, 4);
     }
 }

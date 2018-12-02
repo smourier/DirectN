@@ -8,10 +8,10 @@ namespace DirectN
     public partial interface IMFCaptureSource
     {
         [PreserveSig]
-        HRESULT GetCaptureDeviceSource(/* [annotation][in] _In_ */ MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, /* [annotation][out] _Out_opt_ */ out IMFMediaSource ppMediaSource);
+        HRESULT GetCaptureDeviceSource(/* [annotation][in] _In_ */ MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, /* optional(IMFMediaSource) */ out IntPtr ppMediaSource);
         
         [PreserveSig]
-        HRESULT GetCaptureDeviceActivate(/* [annotation][in] _In_ */ MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, /* [annotation][out] _Out_opt_ */ out IMFActivate ppActivate);
+        HRESULT GetCaptureDeviceActivate(/* [annotation][in] _In_ */ MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, /* optional(IMFActivate) */ out IntPtr ppActivate);
         
         [PreserveSig]
         HRESULT GetService(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rguidService, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnknown);
@@ -26,13 +26,13 @@ namespace DirectN
         HRESULT RemoveAllEffects(/* [annotation][in] _In_ */ uint dwSourceStreamIndex);
         
         [PreserveSig]
-        HRESULT GetAvailableDeviceMediaType(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][in] _In_ */ uint dwMediaTypeIndex, /* [annotation][out] _Out_opt_ */ out IMFMediaType ppMediaType);
+        HRESULT GetAvailableDeviceMediaType(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][in] _In_ */ uint dwMediaTypeIndex, /* optional(IMFMediaType) */ out IntPtr ppMediaType);
         
         [PreserveSig]
-        HRESULT SetCurrentDeviceMediaType(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][in] _In_ */ IMFMediaType pMediaType);
+        HRESULT SetCurrentDeviceMediaType(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][in] _In_ */ ref IMFMediaType pMediaType);
         
         [PreserveSig]
-        HRESULT GetCurrentDeviceMediaType(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][out] _Out_ */ out IMFMediaType ppMediaType);
+        HRESULT GetCurrentDeviceMediaType(/* [annotation][in] _In_ */ uint dwSourceStreamIndex, /* [annotation][out] _Out_ */ out IntPtr ppMediaType);
         
         [PreserveSig]
         HRESULT GetDeviceStreamCount(/* [annotation][out] _Out_ */ out uint pdwStreamCount);

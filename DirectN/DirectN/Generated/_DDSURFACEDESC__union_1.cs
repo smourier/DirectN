@@ -9,8 +9,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint dwMipMapCount => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwZBufferBitDepth => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwRefreshRate => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public uint dwMipMapCount => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwZBufferBitDepth => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwRefreshRate => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

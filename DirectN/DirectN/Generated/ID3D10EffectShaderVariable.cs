@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d10effect.h(913,1)
 using System;
 using System.Runtime.InteropServices;
+using D3D10_SIGNATURE_PARAMETER_DESC = DirectN._D3D10_SIGNATURE_PARAMETER_DESC;
 
 namespace DirectN
 {
@@ -160,18 +161,18 @@ namespace DirectN
         HRESULT GetShaderDesc(uint ShaderIndex, /* _Out_ */ out _D3D10_EFFECT_SHADER_DESC pDesc);
         
         [PreserveSig]
-        HRESULT GetVertexShader(uint ShaderIndex, /* _Out_ */ out ID3D10VertexShader ppVS);
+        HRESULT GetVertexShader(uint ShaderIndex, /* _Out_ */ out IntPtr ppVS);
         
         [PreserveSig]
-        HRESULT GetGeometryShader(uint ShaderIndex, /* _Out_ */ out ID3D10GeometryShader ppGS);
+        HRESULT GetGeometryShader(uint ShaderIndex, /* _Out_ */ out IntPtr ppGS);
         
         [PreserveSig]
-        HRESULT GetPixelShader(uint ShaderIndex, /* _Out_ */ out ID3D10PixelShader ppPS);
+        HRESULT GetPixelShader(uint ShaderIndex, /* _Out_ */ out IntPtr ppPS);
         
         [PreserveSig]
-        HRESULT GetInputSignatureElementDesc(uint ShaderIndex, uint Element, /* _Out_ */ out _D3D10_SIGNATURE_PARAMETER_DESC pDesc);
+        HRESULT GetInputSignatureElementDesc(uint ShaderIndex, uint Element, /* _Out_ */ out D3D10_SIGNATURE_PARAMETER_DESC pDesc);
         
         [PreserveSig]
-        HRESULT GetOutputSignatureElementDesc(uint ShaderIndex, uint Element, /* _Out_ */ out _D3D10_SIGNATURE_PARAMETER_DESC pDesc);
+        HRESULT GetOutputSignatureElementDesc(uint ShaderIndex, uint Element, /* _Out_ */ out D3D10_SIGNATURE_PARAMETER_DESC pDesc);
     }
 }

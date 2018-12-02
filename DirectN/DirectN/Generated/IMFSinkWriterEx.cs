@@ -9,16 +9,16 @@ namespace DirectN
     {
         // IMFSinkWriter
         [PreserveSig]
-        new HRESULT AddStream(/* [annotation][in] _In_ */ IMFMediaType pTargetMediaType, /* [annotation][out] _Out_ */ out uint pdwStreamIndex);
+        new HRESULT AddStream(/* [annotation][in] _In_ */ ref IMFMediaType pTargetMediaType, /* [annotation][out] _Out_ */ out uint pdwStreamIndex);
         
         [PreserveSig]
-        new HRESULT SetInputMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFMediaType pInputMediaType, /* [annotation][in] _In_opt_ */ IMFAttributes pEncodingParameters);
+        new HRESULT SetInputMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ ref IMFMediaType pInputMediaType, /* optional(IMFAttributes) */ IntPtr pEncodingParameters);
         
         [PreserveSig]
         new HRESULT BeginWriting();
         
         [PreserveSig]
-        new HRESULT WriteSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFSample pSample);
+        new HRESULT WriteSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ ref IMFSample pSample);
         
         [PreserveSig]
         new HRESULT SendStreamTick(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ long llTimestamp);

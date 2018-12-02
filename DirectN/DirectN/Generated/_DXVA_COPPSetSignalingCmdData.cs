@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(2178,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva9typ.h(822,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -15,9 +15,9 @@ namespace DirectN
         public uint AspectRatioChangeMask3;
         public uint AspectRatioData3;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public uint ExtendedInfoChangeMask;
+        public uint[] ExtendedInfoChangeMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public uint ExtendedInfoData;
+        public uint[] ExtendedInfoData;
         public uint Reserved;
     }
 }

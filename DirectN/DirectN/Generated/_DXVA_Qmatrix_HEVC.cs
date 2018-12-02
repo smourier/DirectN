@@ -8,16 +8,16 @@ namespace DirectN
     public partial struct _DXVA_Qmatrix_HEVC
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 96)] 
-        public byte ucScalingLists0;
+        public byte[] ucScalingLists0;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 384)] 
-        public byte ucScalingLists1;
+        public byte[] ucScalingLists1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 384)] 
-        public byte ucScalingLists2;
+        public byte[] ucScalingLists2;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)] 
-        public byte ucScalingLists3;
+        public byte[] ucScalingLists3;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)] 
-        public byte ucScalingListDCCoefSizeID2;
+        public byte[] ucScalingListDCCoefSizeID2;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public byte ucScalingListDCCoefSizeID3;
+        public byte[] ucScalingListDCCoefSizeID3;
     }
 }

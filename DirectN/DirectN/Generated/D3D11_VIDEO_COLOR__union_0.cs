@@ -8,7 +8,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public byte[] __bits;
-        public D3D11_VIDEO_COLOR_YCbCrA YCbCr => InteropRuntime.GetBits<D3D11_VIDEO_COLOR_YCbCrA>(__bits, 0, 128);
-        public D3D11_VIDEO_COLOR_RGBA RGBA => InteropRuntime.GetBits<D3D11_VIDEO_COLOR_RGBA>(__bits, 0, 128);
+        public D3D11_VIDEO_COLOR_YCbCrA YCbCr => InteropRuntime.Get<D3D11_VIDEO_COLOR_YCbCrA>(__bits, 0, 128);
+        public D3D11_VIDEO_COLOR_RGBA RGBA => InteropRuntime.Get<D3D11_VIDEO_COLOR_RGBA>(__bits, 0, 128);
     }
 }

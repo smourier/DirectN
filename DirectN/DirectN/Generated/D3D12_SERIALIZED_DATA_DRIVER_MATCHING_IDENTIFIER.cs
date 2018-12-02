@@ -9,6 +9,6 @@ namespace DirectN
     {
         public Guid DriverOpaqueGUID;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte DriverOpaqueVersioningData;
+        public byte[] DriverOpaqueVersioningData;
     }
 }

@@ -6,9 +6,6 @@ using PD2D1_EFFECT_FACTORY = System.IntPtr;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Creates Direct2D resources. This interface also enables the creation of ID2D1Device6 objects.
-    /// </summary>
     [Guid("bdc2bdd3-b96c-4de6-bdf7-99d4745454de"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Factory7 : ID2D1Factory6
     {
@@ -50,14 +47,14 @@ namespace DirectN
         new HRESULT CreateHwndRenderTarget(/* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _In_ */ ref D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, /* _COM_Outptr_ */ out ID2D1HwndRenderTarget hwndRenderTarget);
         
         [PreserveSig]
-        new HRESULT CreateDxgiSurfaceRenderTarget(/* _In_ */ IDXGISurface dxgiSurface, /* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1RenderTarget renderTarget);
+        new HRESULT CreateDxgiSurfaceRenderTarget(/* _In_ */ ref IDXGISurface dxgiSurface, /* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1RenderTarget renderTarget);
         
         [PreserveSig]
         new HRESULT CreateDCRenderTarget(/* _In_ */ ref D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties, /* _COM_Outptr_ */ out ID2D1DCRenderTarget dcRenderTarget);
         
         // ID2D1Factory1
         [PreserveSig]
-        new HRESULT CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device d2dDevice);
+        new HRESULT CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device d2dDevice);
         
         [PreserveSig]
         new HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, uint dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle1 strokeStyle);
@@ -88,26 +85,26 @@ namespace DirectN
         
         // ID2D1Factory2
         [PreserveSig]
-        new HRESULT CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device1 d2dDevice1);
+        new HRESULT CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device1 d2dDevice1);
         
         // ID2D1Factory3
         [PreserveSig]
-        new HRESULT CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device2 d2dDevice2);
+        new HRESULT CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device2 d2dDevice2);
         
         // ID2D1Factory4
         [PreserveSig]
-        new HRESULT CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device3 d2dDevice3);
+        new HRESULT CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device3 d2dDevice3);
         
         // ID2D1Factory5
         [PreserveSig]
-        new HRESULT CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device4 d2dDevice4);
+        new HRESULT CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device4 d2dDevice4);
         
         // ID2D1Factory6
         [PreserveSig]
-        new HRESULT CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device5 d2dDevice5);
+        new HRESULT CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device5 d2dDevice5);
         
         // ID2D1Factory7
         [PreserveSig]
-        HRESULT CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device6 d2dDevice6);
+        HRESULT CreateDevice(/* _In_ */ ref IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device6 d2dDevice6);
     }
 }

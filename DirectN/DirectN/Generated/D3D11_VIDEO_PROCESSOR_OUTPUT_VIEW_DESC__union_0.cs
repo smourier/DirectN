@@ -8,7 +8,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
         public byte[] __bits;
-        public D3D11_TEX2D_VPOV Texture2D => InteropRuntime.GetBits<D3D11_TEX2D_VPOV>(__bits, 0, 32);
-        public D3D11_TEX2D_ARRAY_VPOV Texture2DArray => InteropRuntime.GetBits<D3D11_TEX2D_ARRAY_VPOV>(__bits, 0, 96);
+        public D3D11_TEX2D_VPOV Texture2D => InteropRuntime.Get<D3D11_TEX2D_VPOV>(__bits, 0, 32);
+        public D3D11_TEX2D_ARRAY_VPOV Texture2DArray => InteropRuntime.Get<D3D11_TEX2D_ARRAY_VPOV>(__bits, 0, 96);
     }
 }

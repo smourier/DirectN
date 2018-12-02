@@ -18,6 +18,6 @@ namespace DirectN
         HRESULT UnlockSurface();
         
         [PreserveSig]
-        HRESULT GetSurface(/* [out] */ out LPDIRECTDRAWSURFACE7 lplpSurface);
+        HRESULT GetSurface(/* [out] */ out IntPtr lplpSurface);
     }
 }

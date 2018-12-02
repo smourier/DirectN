@@ -5,25 +5,8 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [Guid("d396ec8c-605e-4249-978d-72ad1c312872"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface IMFSpatialAudioObjectBuffer : IMFMediaBuffer
+    public partial interface IMFSpatialAudioObjectBuffer
     {
-        // IMFMediaBuffer
-        [PreserveSig]
-        new HRESULT Lock(/* [annotation][out] _Outptr_result_bytebuffer_to_(*pcbMaxLength, *pcbCurrentLength) */ out IntPtr ppbBuffer, /* [annotation][out] _Out_opt_ */ out uint pcbMaxLength, /* [annotation][out] _Out_opt_ */ out uint pcbCurrentLength);
-        
-        [PreserveSig]
-        new HRESULT Unlock();
-        
-        [PreserveSig]
-        new HRESULT GetCurrentLength(/* [annotation][out] _Out_ */ out uint pcbCurrentLength);
-        
-        [PreserveSig]
-        new HRESULT SetCurrentLength(/* [in] */ uint cbCurrentLength);
-        
-        [PreserveSig]
-        new HRESULT GetMaxLength(/* [annotation][out] _Out_ */ out uint pcbMaxLength);
-        
-        // IMFSpatialAudioObjectBuffer
         [PreserveSig]
         HRESULT SetID(/* [annotation][in] _In_ */ uint u32ID);
         

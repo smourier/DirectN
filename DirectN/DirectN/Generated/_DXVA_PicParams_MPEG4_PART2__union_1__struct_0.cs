@@ -9,8 +9,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
         public byte[] __bits;
-        public ushort sprite_enable => InteropRuntime.GetUInt16Bits(__bits, 0, 2);
-        public ushort no_of_sprite_warping_points => InteropRuntime.GetUInt16Bits(__bits, 2, 6);
-        public ushort sprite_warping_accuracy => InteropRuntime.GetUInt16Bits(__bits, 8, 2);
+        public ushort sprite_enable => InteropRuntime.GetUInt16(__bits, 0, 2);
+        public ushort no_of_sprite_warping_points => InteropRuntime.GetUInt16(__bits, 2, 6);
+        public ushort sprite_warping_accuracy => InteropRuntime.GetUInt16(__bits, 8, 2);
     }
 }

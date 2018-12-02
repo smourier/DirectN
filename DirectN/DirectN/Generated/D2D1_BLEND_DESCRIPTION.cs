@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Blend description which configures a blend transform object.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_BLEND_DESCRIPTION
     {
@@ -14,6 +17,6 @@ namespace DirectN
         public D2D1_BLEND destinationBlendAlpha;
         public D2D1_BLEND_OPERATION blendOperationAlpha;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public float blendFactor;
+        public float[] blendFactor;
     }
 }

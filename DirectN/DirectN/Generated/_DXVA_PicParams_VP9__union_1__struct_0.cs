@@ -9,9 +9,9 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         public byte[] __bits;
-        public byte mode_ref_delta_enabled => InteropRuntime.GetByteBits(__bits, 0, 1);
-        public byte mode_ref_delta_update => InteropRuntime.GetByteBits(__bits, 1, 1);
-        public byte use_prev_in_find_mv_refs => InteropRuntime.GetByteBits(__bits, 2, 1);
-        public byte ReservedControlInfo5Bits => InteropRuntime.GetByteBits(__bits, 3, 5);
+        public byte mode_ref_delta_enabled => InteropRuntime.GetByte(__bits, 0, 1);
+        public byte mode_ref_delta_update => InteropRuntime.GetByte(__bits, 1, 1);
+        public byte use_prev_in_find_mv_refs => InteropRuntime.GetByte(__bits, 2, 1);
+        public byte ReservedControlInfo5Bits => InteropRuntime.GetByte(__bits, 3, 5);
     }
 }

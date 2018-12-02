@@ -9,8 +9,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public ulong InstanceDescs => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
-        public IntPtr pGeometryDescs => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
-        public IntPtr ppGeometryDescs => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
+        public ulong InstanceDescs => InteropRuntime.GetUInt6s(__bits, 0, 64);
+        public IntPtr pGeometryDescs => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr ppGeometryDescs => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
     }
 }

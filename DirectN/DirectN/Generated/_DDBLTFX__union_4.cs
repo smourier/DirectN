@@ -10,9 +10,9 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public uint dwFillColor => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwFillDepth => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwFillPixel => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public IntPtr lpDDSPattern => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
+        public uint dwFillColor => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwFillDepth => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwFillPixel => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public IntPtr lpDDSPattern => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
     }
 }

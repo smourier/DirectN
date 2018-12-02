@@ -9,27 +9,27 @@ namespace DirectN
     {
         public byte VS;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public byte VSSamplers;
+        public byte[] VSSamplers;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte VSShaderResources;
+        public byte[] VSShaderResources;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public byte VSConstantBuffers;
+        public byte[] VSConstantBuffers;
         public byte GS;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public byte GSSamplers;
+        public byte[] GSSamplers;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte GSShaderResources;
+        public byte[] GSShaderResources;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public byte GSConstantBuffers;
+        public byte[] GSConstantBuffers;
         public byte PS;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public byte PSSamplers;
+        public byte[] PSSamplers;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte PSShaderResources;
+        public byte[] PSShaderResources;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public byte PSConstantBuffers;
+        public byte[] PSConstantBuffers;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public byte IAVertexBuffers;
+        public byte[] IAVertexBuffers;
         public byte IAIndexBuffer;
         public byte IAInputLayout;
         public byte IAPrimitiveTopology;

@@ -20,10 +20,10 @@ namespace DirectN
         uint GetPresentPerRenderOpDelay();
         
         [PreserveSig]
-        HRESULT SetSwapChain(/* [annotation] _In_opt_ */ IDXGISwapChain pSwapChain);
+        HRESULT SetSwapChain(/* optional(IDXGISwapChain) */ IntPtr pSwapChain);
         
         [PreserveSig]
-        HRESULT GetSwapChain(/* [annotation] _Out_ */ out IDXGISwapChain ppSwapChain);
+        HRESULT GetSwapChain(/* [annotation] _Out_ */ out IntPtr ppSwapChain);
         
         [PreserveSig]
         HRESULT Validate();

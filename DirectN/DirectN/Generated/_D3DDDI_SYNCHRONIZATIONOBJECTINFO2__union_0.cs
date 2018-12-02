@@ -8,12 +8,12 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]
         public byte[] __bits;
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_0 SynchronizationMutex => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_0>(__bits, 0, 32);
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_1 Semaphore => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_1>(__bits, 0, 64);
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_2 Fence => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_2>(__bits, 0, 64);
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_3 CPUNotification => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_3>(__bits, 0, 64);
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_4 MonitoredFence => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_4>(__bits, 0, 224);
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_5 PeriodicMonitoredFence => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_5>(__bits, 0, 288);
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_6 Reserved => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_6>(__bits, 0, 512);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_0 SynchronizationMutex => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_0>(__bits, 0, 32);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_1 Semaphore => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_1>(__bits, 0, 64);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_2 Fence => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_2>(__bits, 0, 64);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_3 CPUNotification => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_3>(__bits, 0, 64);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_4 MonitoredFence => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_4>(__bits, 0, 224);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_5 PeriodicMonitoredFence => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_5>(__bits, 0, 288);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_6 Reserved => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_6>(__bits, 0, 512);
     }
 }

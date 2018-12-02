@@ -8,8 +8,8 @@ namespace DirectN
     public partial struct _DXVA_TCoef4Group
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte TCoefIDX;
+        public byte[] TCoefIDX;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public short TCoefValue;
+        public short[] TCoefValue;
     }
 }

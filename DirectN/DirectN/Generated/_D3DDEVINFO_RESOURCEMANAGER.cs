@@ -7,6 +7,6 @@ namespace DirectN
     public partial struct _D3DDEVINFO_RESOURCEMANAGER
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public _D3DRESOURCESTATS[] stats;
+        public _D3DRESOURCESTATS[][] stats;
     }
 }

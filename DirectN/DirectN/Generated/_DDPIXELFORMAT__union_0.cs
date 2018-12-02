@@ -9,12 +9,12 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint dwRGBBitCount => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwYUVBitCount => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwZBufferBitDepth => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwAlphaBitDepth => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwLuminanceBitCount => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwBumpBitCount => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwPrivateFormatBitCount => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public uint dwRGBBitCount => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwYUVBitCount => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwZBufferBitDepth => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwAlphaBitDepth => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwLuminanceBitCount => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwBumpBitCount => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwPrivateFormatBitCount => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

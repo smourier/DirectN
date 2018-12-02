@@ -9,13 +9,13 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         public byte[] __bits;
-        public byte ReservedBit => InteropRuntime.GetByteBits(__bits, 0, 1);
-        public byte FieldModeCurrentMbFlag => InteropRuntime.GetByteBits(__bits, 1, 1);
-        public byte FieldModeLeftMbFlag => InteropRuntime.GetByteBits(__bits, 2, 1);
-        public byte FieldModeAboveMbFlag => InteropRuntime.GetByteBits(__bits, 3, 1);
-        public byte FilterInternal8x8EdgesFlag => InteropRuntime.GetByteBits(__bits, 4, 1);
-        public byte FilterInternal4x4EdgesFlag => InteropRuntime.GetByteBits(__bits, 5, 1);
-        public byte FilterLeftMbEdgeFlag => InteropRuntime.GetByteBits(__bits, 6, 1);
-        public byte FilterTopMbEdgeFlag => InteropRuntime.GetByteBits(__bits, 7, 1);
+        public byte ReservedBit => InteropRuntime.GetByte(__bits, 0, 1);
+        public byte FieldModeCurrentMbFlag => InteropRuntime.GetByte(__bits, 1, 1);
+        public byte FieldModeLeftMbFlag => InteropRuntime.GetByte(__bits, 2, 1);
+        public byte FieldModeAboveMbFlag => InteropRuntime.GetByte(__bits, 3, 1);
+        public byte FilterInternal8x8EdgesFlag => InteropRuntime.GetByte(__bits, 4, 1);
+        public byte FilterInternal4x4EdgesFlag => InteropRuntime.GetByte(__bits, 5, 1);
+        public byte FilterLeftMbEdgeFlag => InteropRuntime.GetByte(__bits, 6, 1);
+        public byte FilterTopMbEdgeFlag => InteropRuntime.GetByte(__bits, 7, 1);
     }
 }

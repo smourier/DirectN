@@ -9,9 +9,9 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint WriteOperation => InteropRuntime.GetUInt32Bits(__bits, 0, 1);
-        public uint DoNotRetireInstance => InteropRuntime.GetUInt32Bits(__bits, 1, 1);
-        public uint OfferPriority => InteropRuntime.GetUInt32Bits(__bits, 2, 3);
-        public uint Reserved => InteropRuntime.GetUInt32Bits(__bits, 5, 27);
+        public uint WriteOperation => InteropRuntime.GetUInt32(__bits, 0, 1);
+        public uint DoNotRetireInstance => InteropRuntime.GetUInt32(__bits, 1, 1);
+        public uint OfferPriority => InteropRuntime.GetUInt32(__bits, 2, 3);
+        public uint Reserved => InteropRuntime.GetUInt32(__bits, 5, 27);
     }
 }

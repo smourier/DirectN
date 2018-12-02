@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFDXGIDeviceManagerSource
     {
         [PreserveSig]
-        HRESULT GetManager(/* [out] __RPC__deref_out_opt */ out IMFDXGIDeviceManager ppManager);
+        HRESULT GetManager(/* optional(IMFDXGIDeviceManager) */ out IntPtr ppManager);
     }
 }

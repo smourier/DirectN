@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFDeviceTransformCallback
     {
         [PreserveSig]
-        HRESULT OnBufferSent(/* [annotation][in] _In_ */ IMFAttributes pCallbackAttributes, /* [annotation][in] _In_ */ uint pinId);
+        HRESULT OnBufferSent(/* [annotation][in] _In_ */ ref IMFAttributes pCallbackAttributes, /* [annotation][in] _In_ */ uint pinId);
     }
 }

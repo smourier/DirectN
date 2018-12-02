@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents a composite geometry, composed of other ID2D1Geometry objects.
-    /// </summary>
     [Guid("2cd906a6-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1GeometryGroup : ID2D1Geometry
     {

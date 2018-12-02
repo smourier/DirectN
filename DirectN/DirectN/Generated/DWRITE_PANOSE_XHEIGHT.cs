@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(222,1)
 namespace DirectN
 {
-    /// <summary>
-    /// Relative size of lowercase letters and treament of diacritic marks and uppercase glyphs. Present for families: 2-text
-    /// </summary>
     public enum DWRITE_PANOSE_XHEIGHT
     {
         DWRITE_PANOSE_XHEIGHT_ANY = 0,

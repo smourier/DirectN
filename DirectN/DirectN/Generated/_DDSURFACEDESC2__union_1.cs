@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint dwBackBufferCount => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwDepth => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public uint dwBackBufferCount => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwDepth => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

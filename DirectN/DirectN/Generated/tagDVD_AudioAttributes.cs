@@ -17,6 +17,6 @@ namespace DirectN
         public byte bQuantization;
         public byte bNumberOfChannels;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public uint dwReserved;
+        public uint[] dwReserved;
     }
 }

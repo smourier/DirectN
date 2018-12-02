@@ -8,7 +8,6 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)]
         public byte[] __bits;
-        public _D3DMATRIX__union_0__struct_0 __field_0 => InteropRuntime.GetBits<_D3DMATRIX__union_0__struct_0>(__bits, 0, 512);
-        public float[] m => InteropRuntime.GetBits<float[]>(__bits, 0, 0);
+        public float[][] m => InteropRuntime.GetArray<float[]>(__bits, 0, 2048);
     }
 }

@@ -15,13 +15,13 @@ namespace DirectN
         new HRESULT UninitializeSampleAllocator();
         
         [PreserveSig]
-        new HRESULT InitializeSampleAllocator(/* [in] */ uint cRequestedFrames, /* [in] */ IMFMediaType pMediaType);
+        new HRESULT InitializeSampleAllocator(/* [in] */ uint cRequestedFrames, /* [in] */ ref IMFMediaType pMediaType);
         
         [PreserveSig]
-        new HRESULT AllocateSample(/* [out] */ out IMFSample ppSample);
+        new HRESULT AllocateSample(/* [out] */ out IntPtr ppSample);
         
         // IMFVideoSampleAllocatorEx
         [PreserveSig]
-        HRESULT InitializeSampleAllocatorEx(/* [annotation] _In_ */ uint cInitialSamples, /* [annotation] _In_ */ uint cMaximumSamples, /* [annotation] _In_opt_ */ IMFAttributes pAttributes, /* [annotation] _In_ */ IMFMediaType pMediaType);
+        HRESULT InitializeSampleAllocatorEx(/* [annotation] _In_ */ uint cInitialSamples, /* [annotation] _In_ */ uint cMaximumSamples, /* optional(IMFAttributes) */ IntPtr pAttributes, /* [annotation] _In_ */ ref IMFMediaType pMediaType);
     }
 }

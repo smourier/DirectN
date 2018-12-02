@@ -9,15 +9,15 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         public byte[] __bits;
-        public float expansionMinimum => InteropRuntime.GetSingleBits(__bits, 0, 32);
-        public float expansionMaximum => InteropRuntime.GetSingleBits(__bits, 32, 32);
-        public float compressionMaximum => InteropRuntime.GetSingleBits(__bits, 64, 32);
-        public uint expansionPriority => InteropRuntime.GetUInt32Bits(__bits, 96, 8);
-        public uint compressionPriority => InteropRuntime.GetUInt32Bits(__bits, 104, 8);
-        public uint allowResidualExpansion => InteropRuntime.GetUInt32Bits(__bits, 112, 1);
-        public uint allowResidualCompression => InteropRuntime.GetUInt32Bits(__bits, 113, 1);
-        public uint applyToLeadingEdge => InteropRuntime.GetUInt32Bits(__bits, 114, 1);
-        public uint applyToTrailingEdge => InteropRuntime.GetUInt32Bits(__bits, 115, 1);
-        public uint reserved => InteropRuntime.GetUInt32Bits(__bits, 116, 12);
+        public float expansionMinimum => InteropRuntime.GetSingle(__bits, 0, 32);
+        public float expansionMaximum => InteropRuntime.GetSingle(__bits, 32, 32);
+        public float compressionMaximum => InteropRuntime.GetSingle(__bits, 64, 32);
+        public uint expansionPriority => InteropRuntime.GetUInt32(__bits, 96, 8);
+        public uint compressionPriority => InteropRuntime.GetUInt32(__bits, 104, 8);
+        public uint allowResidualExpansion => InteropRuntime.GetUInt32(__bits, 112, 1);
+        public uint allowResidualCompression => InteropRuntime.GetUInt32(__bits, 113, 1);
+        public uint applyToLeadingEdge => InteropRuntime.GetUInt32(__bits, 114, 1);
+        public uint applyToTrailingEdge => InteropRuntime.GetUInt32(__bits, 115, 1);
+        public uint reserved => InteropRuntime.GetUInt32(__bits, 116, 12);
     }
 }

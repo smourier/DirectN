@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IAdvancedMediaCaptureInitializationSettings
     {
         [PreserveSig]
-        HRESULT SetDirectxDeviceManager(/* [in] */ IMFDXGIDeviceManager value);
+        HRESULT SetDirectxDeviceManager(/* [in] */ ref IMFDXGIDeviceManager value);
     }
 }

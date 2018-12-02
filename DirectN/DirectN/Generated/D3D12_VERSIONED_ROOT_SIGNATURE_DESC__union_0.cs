@@ -8,7 +8,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 36)]
         public byte[] __bits;
-        public D3D12_ROOT_SIGNATURE_DESC Desc_1_0 => InteropRuntime.GetBits<D3D12_ROOT_SIGNATURE_DESC>(__bits, 0, 288);
-        public D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1 => InteropRuntime.GetBits<D3D12_ROOT_SIGNATURE_DESC1>(__bits, 0, 288);
+        public D3D12_ROOT_SIGNATURE_DESC Desc_1_0 => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC>(__bits, 0, 288);
+        public D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1 => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC1>(__bits, 0, 288);
     }
 }

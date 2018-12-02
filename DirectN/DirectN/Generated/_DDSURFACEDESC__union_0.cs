@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public int lPitch => InteropRuntime.GetInt32Bits(__bits, 0, 32);
-        public uint dwLinearSize => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public int lPitch => InteropRuntime.GetInt32(__bits, 0, 32);
+        public uint dwLinearSize => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

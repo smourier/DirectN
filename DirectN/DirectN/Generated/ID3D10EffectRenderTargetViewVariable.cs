@@ -160,10 +160,10 @@ namespace DirectN
         HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT SetRenderTarget(/* THIS_ _In_opt_ */ ID3D10RenderTargetView pResource);
+        HRESULT SetRenderTarget(/* optional(ID3D10RenderTargetView) */ IntPtr pResource);
         
         [PreserveSig]
-        HRESULT GetRenderTarget(/* THIS_ _Out_ */ out ID3D10RenderTargetView ppResource);
+        HRESULT GetRenderTarget(/* THIS_ _Out_ */ out IntPtr ppResource);
         
         [PreserveSig]
         HRESULT SetRenderTargetArray(/* THIS_ _In_reads_(Count) */ out IntPtr ppResources, uint Offset, uint Count);

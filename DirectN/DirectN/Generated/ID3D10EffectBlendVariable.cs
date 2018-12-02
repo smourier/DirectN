@@ -157,7 +157,7 @@ namespace DirectN
         HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT GetBlendState(uint Index, ID3D10BlendState ppBlendState);
+        HRESULT GetBlendState(uint Index, ref ID3D10BlendState ppBlendState);
         
         [PreserveSig]
         HRESULT GetBackingStore(uint Index, ref D3D10_BLEND_DESC pBlendDesc);

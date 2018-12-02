@@ -1,6 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfmediaengine.h(1598,5)
 using System;
 using System.Runtime.InteropServices;
+using MF3DVideoOutputType = DirectN._MF3DVideoOutputType;
+using MFARGB = DirectN._MFARGB;
 using RECT = DirectN.tagRECT;
 
 namespace DirectN
@@ -130,20 +132,20 @@ namespace DirectN
         new HRESULT Shutdown();
         
         [PreserveSig]
-        new HRESULT TransferVideoFrame(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDstSurf, /* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* [annotation][in] _In_ */ ref RECT pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
+        new HRESULT TransferVideoFrame(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDstSurf, /* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* [annotation][in] _In_ */ ref RECT pDst, /* optional(MFARGB) */ IntPtr pBorderClr);
         
         [PreserveSig]
         new HRESULT OnVideoStreamTick(/* [annotation][out] _Out_ */ out long pPts);
         
         // IMFMediaEngineEx
         [PreserveSig]
-        HRESULT SetSourceFromByteStream(/* [annotation][in] _In_ */ IMFByteStream pByteStream, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.BStr)] string pURL);
+        HRESULT SetSourceFromByteStream(/* [annotation][in] _In_ */ ref IMFByteStream pByteStream, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.BStr)] string pURL);
         
         [PreserveSig]
         HRESULT GetStatistics(/* [annotation][in] _In_ */ MF_MEDIA_ENGINE_STATISTIC StatisticID, /* [annotation][out] _Out_ */ PropVariant pStatistic);
         
         [PreserveSig]
-        HRESULT UpdateVideoStream(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(RECT) */ IntPtr pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
+        HRESULT UpdateVideoStream(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(RECT) */ IntPtr pDst, /* optional(MFARGB) */ IntPtr pBorderClr);
         
         [PreserveSig]
         void GetBalance();
@@ -209,10 +211,10 @@ namespace DirectN
         HRESULT SetStereo3DFramePackingMode(/* [annotation][in] _In_ */ MF_MEDIA_ENGINE_S3D_PACKING_MODE packMode);
         
         [PreserveSig]
-        HRESULT GetStereo3DRenderMode(/* [annotation][out] _Out_ */ out _MF3DVideoOutputType outputType);
+        HRESULT GetStereo3DRenderMode(/* [annotation][out] _Out_ */ out MF3DVideoOutputType outputType);
         
         [PreserveSig]
-        HRESULT SetStereo3DRenderMode(/* [annotation][in] _In_ */ _MF3DVideoOutputType outputType);
+        HRESULT SetStereo3DRenderMode(/* [annotation][in] _In_ */ MF3DVideoOutputType outputType);
         
         [PreserveSig]
         HRESULT EnableWindowlessSwapchainMode(/* [annotation][in] _In_ */ bool fEnable);

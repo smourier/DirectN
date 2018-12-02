@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct _D3DDDI_SYNCHRONIZATIONOBJECTINFO2__union_0__struct_6
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public ulong Reserved;
+        public ulong[] Reserved;
     }
 }

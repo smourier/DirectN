@@ -7,8 +7,8 @@ namespace DirectN
     public partial struct tagDVD_MultichannelAudioAttributes
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public tagDVD_MUA_MixingInfo[] Info;
+        public tagDVD_MUA_MixingInfo[][] Info;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public tagDVD_MUA_Coeff[] Coeff;
+        public tagDVD_MUA_Coeff[][] Coeff;
     }
 }

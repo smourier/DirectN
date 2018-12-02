@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT SetOutputFile(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszFileName);
         
         [PreserveSig]
-        HRESULT SetOutputByteStream(/* [annotation][in] _In_ */ IMFActivate pByteStreamActivate);
+        HRESULT SetOutputByteStream(/* [annotation][in] _In_ */ ref IMFActivate pByteStreamActivate);
         
         [PreserveSig]
         HRESULT SetProfile(/* [annotation][in] _In_ */ IMFTranscodeProfile pProfile);

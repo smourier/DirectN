@@ -33,7 +33,7 @@ namespace DirectN
         public uint dwAlignSizeDest;
         public uint dwAlignStrideAlign;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint dwRops;
+        public uint[] dwRops;
         public _DDSCAPS ddsCaps;
         public uint dwMinOverlayStretch;
         public uint dwMaxOverlayStretch;
@@ -48,17 +48,17 @@ namespace DirectN
         public uint dwSVBCKeyCaps;
         public uint dwSVBFXCaps;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint dwSVBRops;
+        public uint[] dwSVBRops;
         public uint dwVSBCaps;
         public uint dwVSBCKeyCaps;
         public uint dwVSBFXCaps;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint dwVSBRops;
+        public uint[] dwVSBRops;
         public uint dwSSBCaps;
         public uint dwSSBCKeyCaps;
         public uint dwSSBFXCaps;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint dwSSBRops;
+        public uint[] dwSSBRops;
         public uint dwMaxVideoPorts;
         public uint dwCurrVideoPorts;
         public uint dwSVBCaps2;
@@ -67,6 +67,6 @@ namespace DirectN
         public uint dwNLVBCKeyCaps;
         public uint dwNLVBFXCaps;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public uint dwNLVBRops;
+        public uint[] dwNLVBRops;
     }
 }

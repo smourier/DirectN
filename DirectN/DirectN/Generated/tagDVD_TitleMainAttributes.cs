@@ -11,11 +11,11 @@ namespace DirectN
         public tagDVD_VideoAttributes VideoAttributes;
         public uint ulNumberOfAudioStreams;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public tagDVD_AudioAttributes[] AudioAttributes;
+        public tagDVD_AudioAttributes[][] AudioAttributes;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public tagDVD_MultichannelAudioAttributes[] MultichannelAudioAttributes;
+        public tagDVD_MultichannelAudioAttributes[][] MultichannelAudioAttributes;
         public uint ulNumberOfSubpictureStreams;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public tagDVD_SubpictureAttributes[] SubpictureAttributes;
+        public tagDVD_SubpictureAttributes[][] SubpictureAttributes;
     }
 }

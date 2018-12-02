@@ -8,9 +8,9 @@ namespace DirectN
     public partial struct _D3DKMDT_3X4_COLORSPACE_TRANSFORM
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)] 
-        public float[] ColorMatrix3x4;
+        public float[][] ColorMatrix3x4;
         public float ScalarMultiplier;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4096)] 
-        public D3DDDI_DXGI_RGB[] LookupTable1D;
+        public D3DDDI_DXGI_RGB[][] LookupTable1D;
     }
 }

@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
         public byte[] __bits;
-        public _DXVA_PicParams_H264__union_0__struct_0 __field_0 => InteropRuntime.GetBits<_DXVA_PicParams_H264__union_0__struct_0>(__bits, 0, 16);
-        public ushort wBitFields => InteropRuntime.GetUInt16Bits(__bits, 0, 16);
+        public _DXVA_PicParams_H264__union_0__struct_0 __field_0 => InteropRuntime.Get<_DXVA_PicParams_H264__union_0__struct_0>(__bits, 0, 16);
+        public ushort wBitFields => InteropRuntime.GetUInt16(__bits, 0, 16);
     }
 }

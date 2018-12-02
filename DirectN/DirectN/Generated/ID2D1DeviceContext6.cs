@@ -190,7 +190,7 @@ namespace DirectN
         new HRESULT CreateColorContextFromWicColorContext(/* _In_ */ ref IWICColorContext wicColorContext, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
         
         [PreserveSig]
-        new HRESULT CreateBitmapFromDxgiSurface(/* _In_ */ IDXGISurface surface, /* optional(D2D1_BITMAP_PROPERTIES1) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap1 bitmap);
+        new HRESULT CreateBitmapFromDxgiSurface(/* _In_ */ ref IDXGISurface surface, /* optional(D2D1_BITMAP_PROPERTIES1) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap1 bitmap);
         
         [PreserveSig]
         new HRESULT CreateEffect(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid effectId, /* _COM_Outptr_ */ out ID2D1Effect effect);

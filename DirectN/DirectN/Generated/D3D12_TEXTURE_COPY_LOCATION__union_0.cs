@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 28)]
         public byte[] __bits;
-        public D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint => InteropRuntime.GetBits<D3D12_PLACED_SUBRESOURCE_FOOTPRINT>(__bits, 0, 224);
-        public uint SubresourceIndex => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint => InteropRuntime.Get<D3D12_PLACED_SUBRESOURCE_FOOTPRINT>(__bits, 0, 224);
+        public uint SubresourceIndex => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

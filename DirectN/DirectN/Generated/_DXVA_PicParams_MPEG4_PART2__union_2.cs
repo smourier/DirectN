@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         public byte[] __bits;
-        public _DXVA_PicParams_MPEG4_PART2__union_2__struct_0 __field_0 => InteropRuntime.GetBits<_DXVA_PicParams_MPEG4_PART2__union_2__struct_0>(__bits, 0, 8);
-        public byte wFcodeBitFields => InteropRuntime.GetByteBits(__bits, 0, 8);
+        public _DXVA_PicParams_MPEG4_PART2__union_2__struct_0 __field_0 => InteropRuntime.Get<_DXVA_PicParams_MPEG4_PART2__union_2__struct_0>(__bits, 0, 8);
+        public byte wFcodeBitFields => InteropRuntime.GetByte(__bits, 0, 8);
     }
 }

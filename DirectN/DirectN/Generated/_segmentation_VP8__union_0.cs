@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         public byte[] __bits;
-        public _segmentation_VP8__union_0__struct_0 __field_0 => InteropRuntime.GetBits<_segmentation_VP8__union_0__struct_0>(__bits, 0, 8);
-        public byte wSegmentFlags => InteropRuntime.GetByteBits(__bits, 0, 8);
+        public _segmentation_VP8__union_0__struct_0 __field_0 => InteropRuntime.Get<_segmentation_VP8__union_0__struct_0>(__bits, 0, 8);
+        public byte wSegmentFlags => InteropRuntime.GetByte(__bits, 0, 8);
     }
 }

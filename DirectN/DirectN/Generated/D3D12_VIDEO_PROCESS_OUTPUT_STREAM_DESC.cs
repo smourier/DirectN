@@ -12,7 +12,7 @@ namespace DirectN
         public D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE AlphaFillMode;
         public uint AlphaFillModeSourceStreamIndex;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public float BackgroundColor;
+        public float[] BackgroundColor;
         public DXGI_RATIONAL FrameRate;
         public bool EnableStereo;
     }

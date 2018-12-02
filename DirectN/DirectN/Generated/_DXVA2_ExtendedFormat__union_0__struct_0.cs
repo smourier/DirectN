@@ -9,12 +9,12 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint SampleFormat => InteropRuntime.GetUInt32Bits(__bits, 0, 8);
-        public uint VideoChromaSubsampling => InteropRuntime.GetUInt32Bits(__bits, 8, 4);
-        public uint NominalRange => InteropRuntime.GetUInt32Bits(__bits, 12, 3);
-        public uint VideoTransferMatrix => InteropRuntime.GetUInt32Bits(__bits, 15, 3);
-        public uint VideoLighting => InteropRuntime.GetUInt32Bits(__bits, 18, 4);
-        public uint VideoPrimaries => InteropRuntime.GetUInt32Bits(__bits, 22, 5);
-        public uint VideoTransferFunction => InteropRuntime.GetUInt32Bits(__bits, 27, 5);
+        public uint SampleFormat => InteropRuntime.GetUInt32(__bits, 0, 8);
+        public uint VideoChromaSubsampling => InteropRuntime.GetUInt32(__bits, 8, 4);
+        public uint NominalRange => InteropRuntime.GetUInt32(__bits, 12, 3);
+        public uint VideoTransferMatrix => InteropRuntime.GetUInt32(__bits, 15, 3);
+        public uint VideoLighting => InteropRuntime.GetUInt32(__bits, 18, 4);
+        public uint VideoPrimaries => InteropRuntime.GetUInt32(__bits, 22, 5);
+        public uint VideoTransferFunction => InteropRuntime.GetUInt32(__bits, 27, 5);
     }
 }

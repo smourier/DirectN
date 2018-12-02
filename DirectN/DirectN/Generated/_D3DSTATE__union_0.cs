@@ -8,8 +8,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public _D3DTRANSFORMSTATETYPE dtstTransformStateType => InteropRuntime.GetBits<_D3DTRANSFORMSTATETYPE>(__bits, 0, 32);
-        public _D3DLIGHTSTATETYPE dlstLightStateType => InteropRuntime.GetBits<_D3DLIGHTSTATETYPE>(__bits, 0, 32);
-        public _D3DRENDERSTATETYPE drstRenderStateType => InteropRuntime.GetBits<_D3DRENDERSTATETYPE>(__bits, 0, 32);
+        public _D3DTRANSFORMSTATETYPE dtstTransformStateType => InteropRuntime.Get<_D3DTRANSFORMSTATETYPE>(__bits, 0, 32);
+        public _D3DLIGHTSTATETYPE dlstLightStateType => InteropRuntime.Get<_D3DLIGHTSTATETYPE>(__bits, 0, 32);
+        public _D3DRENDERSTATETYPE drstRenderStateType => InteropRuntime.Get<_D3DRENDERSTATETYPE>(__bits, 0, 32);
     }
 }

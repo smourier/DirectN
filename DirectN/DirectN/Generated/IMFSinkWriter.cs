@@ -8,16 +8,16 @@ namespace DirectN
     public partial interface IMFSinkWriter
     {
         [PreserveSig]
-        HRESULT AddStream(/* [annotation][in] _In_ */ IMFMediaType pTargetMediaType, /* [annotation][out] _Out_ */ out uint pdwStreamIndex);
+        HRESULT AddStream(/* [annotation][in] _In_ */ ref IMFMediaType pTargetMediaType, /* [annotation][out] _Out_ */ out uint pdwStreamIndex);
         
         [PreserveSig]
-        HRESULT SetInputMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFMediaType pInputMediaType, /* [annotation][in] _In_opt_ */ IMFAttributes pEncodingParameters);
+        HRESULT SetInputMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ ref IMFMediaType pInputMediaType, /* optional(IMFAttributes) */ IntPtr pEncodingParameters);
         
         [PreserveSig]
         HRESULT BeginWriting();
         
         [PreserveSig]
-        HRESULT WriteSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFSample pSample);
+        HRESULT WriteSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ ref IMFSample pSample);
         
         [PreserveSig]
         HRESULT SendStreamTick(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ long llTimestamp);

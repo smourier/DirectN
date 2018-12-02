@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The interface that represents text rendering settings for glyph rasterization and filtering.
-    /// </summary>
     [Guid("f9d711c3-9777-40ae-87e8-3e5af9bf0948"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteRenderingParams2 : IDWriteRenderingParams1
     {

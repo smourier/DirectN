@@ -11,6 +11,6 @@ namespace DirectN
         public _D3DDP_PTRSTRIDE diffuse;
         public _D3DDP_PTRSTRIDE specular;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public _D3DDP_PTRSTRIDE[] textureCoords;
+        public _D3DDP_PTRSTRIDE[][] textureCoords;
     }
 }

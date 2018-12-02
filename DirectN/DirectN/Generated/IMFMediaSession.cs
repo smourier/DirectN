@@ -5,22 +5,8 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [Guid("90377834-21d0-4dee-8214-ba2e3e6c1127"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface IMFMediaSession : IMFMediaEventGenerator
+    public partial interface IMFMediaSession
     {
-        // IMFMediaEventGenerator
-        [PreserveSig]
-        new HRESULT GetEvent(/* [in] */ uint dwFlags, /* [out] __RPC__deref_out_opt */ out IMFMediaEvent ppEvent);
-        
-        [PreserveSig]
-        new HRESULT BeginGetEvent(/* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
-        
-        [PreserveSig]
-        new HRESULT EndGetEvent(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out IMFMediaEvent ppEvent);
-        
-        [PreserveSig]
-        new HRESULT QueueEvent(/* [in] */ uint met, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] __RPC__in_opt */ PropVariant pvValue);
-        
-        // IMFMediaSession
         [PreserveSig]
         HRESULT SetTopology(/* [in] */ uint dwSetTopologyFlags, /* [in] __RPC__in_opt */ IMFTopology pTopology);
         

@@ -8,10 +8,10 @@ namespace DirectN
     public partial interface IMFSaveJob
     {
         [PreserveSig]
-        HRESULT BeginSave(/* [in] */ IMFByteStream pStream, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
+        HRESULT BeginSave(/* [in] */ ref IMFByteStream pStream, /* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT EndSave(/* [in] */ IMFAsyncResult pResult);
+        HRESULT EndSave(/* [in] */ ref IMFAsyncResult pResult);
         
         [PreserveSig]
         HRESULT CancelSave();

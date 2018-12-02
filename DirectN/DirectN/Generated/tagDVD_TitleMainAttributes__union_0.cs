@@ -8,7 +8,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public tagDVD_TITLE_APPMODE AppMode => InteropRuntime.GetBits<tagDVD_TITLE_APPMODE>(__bits, 0, 32);
-        public tagDVD_HMSF_TIMECODE TitleLength => InteropRuntime.GetBits<tagDVD_HMSF_TIMECODE>(__bits, 0, 32);
+        public tagDVD_TITLE_APPMODE AppMode => InteropRuntime.Get<tagDVD_TITLE_APPMODE>(__bits, 0, 32);
+        public tagDVD_HMSF_TIMECODE TitleLength => InteropRuntime.Get<tagDVD_HMSF_TIMECODE>(__bits, 0, 32);
     }
 }

@@ -17,11 +17,11 @@ namespace DirectN
         public ushort Reserved16Bits;
         public uint StatusReportFeedbackNumber;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public _DXVA_PicEntry_H264[] RefFrameList;
+        public _DXVA_PicEntry_H264[][] RefFrameList;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public int CurrFieldOrderCnt;
+        public int[] CurrFieldOrderCnt;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public int FieldOrderCntList;
+        public int[] FieldOrderCntList;
         public sbyte pic_init_qs_minus26;
         public sbyte chroma_qp_index_offset;
         public sbyte second_chroma_qp_index_offset;
@@ -31,7 +31,7 @@ namespace DirectN
         public byte num_ref_idx_l1_active_minus1;
         public byte Reserved8BitsA;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public ushort FrameNumList;
+        public ushort[] FrameNumList;
         public uint UsedForReferenceFlags;
         public ushort NonExistingFrameFlags;
         public ushort frame_num;
@@ -50,27 +50,27 @@ namespace DirectN
         public ushort slice_group_change_rate_minus1;
         public byte num_views_minus1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public ushort view_id;
+        public ushort[] view_id;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte num_anchor_refs_l0;
+        public byte[] num_anchor_refs_l0;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort anchor_ref_l0;
+        public ushort[] anchor_ref_l0;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte num_anchor_refs_l1;
+        public byte[] num_anchor_refs_l1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort anchor_ref_l1;
+        public ushort[] anchor_ref_l1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte num_non_anchor_refs_l0;
+        public byte[] num_non_anchor_refs_l0;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort non_anchor_ref_l0;
+        public ushort[] non_anchor_ref_l0;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte num_non_anchor_refs_l1;
+        public byte[] num_non_anchor_refs_l1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 256)] 
-        public ushort non_anchor_ref_l1;
+        public ushort[] non_anchor_ref_l1;
         public ushort curr_view_id;
         public byte anchor_pic_flag;
         public byte inter_view_flag;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public ushort ViewIDList;
+        public ushort[] ViewIDList;
     }
 }

@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint dwFunction;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public uint ReservedBits;
+        public uint[] ReservedBits;
         public Guid guidEncryptProtocol;
     }
 }

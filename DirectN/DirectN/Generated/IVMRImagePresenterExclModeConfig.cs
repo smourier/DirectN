@@ -18,9 +18,9 @@ namespace DirectN
         
         // IVMRImagePresenterExclModeConfig
         [PreserveSig]
-        HRESULT SetXlcModeDDObjAndPrimarySurface(/* [in] */ LPDIRECTDRAW7 lpDDObj, /* [in] */ LPDIRECTDRAWSURFACE7 lpPrimarySurf);
+        HRESULT SetXlcModeDDObjAndPrimarySurface(/* [in] */ ref LPDIRECTDRAW7 lpDDObj, /* [in] */ ref LPDIRECTDRAWSURFACE7 lpPrimarySurf);
         
         [PreserveSig]
-        HRESULT GetXlcModeDDObjAndPrimarySurface(/* [out] */ out LPDIRECTDRAW7 lpDDObj, /* [out] */ out LPDIRECTDRAWSURFACE7 lpPrimarySurf);
+        HRESULT GetXlcModeDDObjAndPrimarySurface(/* [out] */ out IntPtr lpDDObj, /* [out] */ out IntPtr lpPrimarySurf);
     }
 }

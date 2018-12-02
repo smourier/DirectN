@@ -9,9 +9,9 @@ namespace DirectN
     {
         public uint NumTempBufferSizes;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public uint TempBufferFloatSizes;
+        public uint[] TempBufferFloatSizes;
         public uint NumPrecomputeBufferSizes;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public uint PrecomputeBufferFloatSizes;
+        public uint[] PrecomputeBufferFloatSizes;
     }
 }

@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct tagDVD_MenuAttributes
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public bool fCompatibleRegion;
+        public bool[] fCompatibleRegion;
         public tagDVD_VideoAttributes VideoAttributes;
         public bool fAudioPresent;
         public tagDVD_AudioAttributes AudioAttributes;

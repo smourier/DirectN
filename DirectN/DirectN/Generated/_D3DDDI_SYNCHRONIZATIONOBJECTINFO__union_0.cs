@@ -8,8 +8,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]
         public byte[] __bits;
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_0 SynchronizationMutex => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_0>(__bits, 0, 32);
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_1 Semaphore => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_1>(__bits, 0, 64);
-        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_2 Reserved => InteropRuntime.GetBits<_D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_2>(__bits, 0, 512);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_0 SynchronizationMutex => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_0>(__bits, 0, 32);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_1 Semaphore => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_1>(__bits, 0, 64);
+        public _D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_2 Reserved => InteropRuntime.Get<_D3DDDI_SYNCHRONIZATIONOBJECTINFO__union_0__struct_2>(__bits, 0, 512);
     }
 }

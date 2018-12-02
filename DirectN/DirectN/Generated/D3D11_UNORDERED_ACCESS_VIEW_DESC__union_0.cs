@@ -8,11 +8,11 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
         public byte[] __bits;
-        public D3D11_BUFFER_UAV Buffer => InteropRuntime.GetBits<D3D11_BUFFER_UAV>(__bits, 0, 96);
-        public D3D11_TEX1D_UAV Texture1D => InteropRuntime.GetBits<D3D11_TEX1D_UAV>(__bits, 0, 32);
-        public D3D11_TEX1D_ARRAY_UAV Texture1DArray => InteropRuntime.GetBits<D3D11_TEX1D_ARRAY_UAV>(__bits, 0, 96);
-        public D3D11_TEX2D_UAV Texture2D => InteropRuntime.GetBits<D3D11_TEX2D_UAV>(__bits, 0, 32);
-        public D3D11_TEX2D_ARRAY_UAV Texture2DArray => InteropRuntime.GetBits<D3D11_TEX2D_ARRAY_UAV>(__bits, 0, 96);
-        public D3D11_TEX3D_UAV Texture3D => InteropRuntime.GetBits<D3D11_TEX3D_UAV>(__bits, 0, 96);
+        public D3D11_BUFFER_UAV Buffer => InteropRuntime.Get<D3D11_BUFFER_UAV>(__bits, 0, 96);
+        public D3D11_TEX1D_UAV Texture1D => InteropRuntime.Get<D3D11_TEX1D_UAV>(__bits, 0, 32);
+        public D3D11_TEX1D_ARRAY_UAV Texture1DArray => InteropRuntime.Get<D3D11_TEX1D_ARRAY_UAV>(__bits, 0, 96);
+        public D3D11_TEX2D_UAV Texture2D => InteropRuntime.Get<D3D11_TEX2D_UAV>(__bits, 0, 32);
+        public D3D11_TEX2D_ARRAY_UAV Texture2DArray => InteropRuntime.Get<D3D11_TEX2D_ARRAY_UAV>(__bits, 0, 96);
+        public D3D11_TEX3D_UAV Texture3D => InteropRuntime.Get<D3D11_TEX3D_UAV>(__bits, 0, 96);
     }
 }

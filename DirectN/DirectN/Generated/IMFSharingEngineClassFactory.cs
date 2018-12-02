@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFSharingEngineClassFactory
     {
         [PreserveSig]
-        HRESULT CreateInstance(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_opt_ */ IMFAttributes pAttr, /* [annotation][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppEngine);
+        HRESULT CreateInstance(/* [annotation][in] _In_ */ uint dwFlags, /* optional(IMFAttributes) */ IntPtr pAttr, /* [annotation][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppEngine);
     }
 }

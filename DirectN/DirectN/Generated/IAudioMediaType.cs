@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\audiomediatype.h(95,5)
 using System;
 using System.Runtime.InteropServices;
+using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -14,7 +15,7 @@ namespace DirectN
         HRESULT IsEqual(/* [annotation][in] _In_ */ IAudioMediaType pIAudioType, /* [annotation][out] _Out_ */ out uint pdwFlags);
         
         [PreserveSig]
-        tWAVEFORMATEX GetAudioFormat();
+        WAVEFORMATEX GetAudioFormat();
         
         [PreserveSig]
         HRESULT GetUncompressedAudioFormat(/* [annotation][out] _Out_ */ out _UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat);

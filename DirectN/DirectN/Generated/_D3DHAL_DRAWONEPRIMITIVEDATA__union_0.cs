@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public _D3DVERTEXTYPE VertexType => InteropRuntime.GetBits<_D3DVERTEXTYPE>(__bits, 0, 32);
-        public uint dwFVFControl => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public _D3DVERTEXTYPE VertexType => InteropRuntime.Get<_D3DVERTEXTYPE>(__bits, 0, 32);
+        public uint dwFVFControl => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

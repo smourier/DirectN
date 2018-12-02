@@ -9,11 +9,11 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint Usage => InteropRuntime.GetUInt32Bits(__bits, 0, 1);
-        public uint RGB_Range => InteropRuntime.GetUInt32Bits(__bits, 1, 1);
-        public uint YCbCr_Matrix => InteropRuntime.GetUInt32Bits(__bits, 2, 1);
-        public uint YCbCr_xvYCC => InteropRuntime.GetUInt32Bits(__bits, 3, 1);
-        public uint Nominal_Range => InteropRuntime.GetUInt32Bits(__bits, 4, 2);
-        public uint Reserved => InteropRuntime.GetUInt32Bits(__bits, 6, 26);
+        public uint Usage => InteropRuntime.GetUInt32(__bits, 0, 1);
+        public uint RGB_Range => InteropRuntime.GetUInt32(__bits, 1, 1);
+        public uint YCbCr_Matrix => InteropRuntime.GetUInt32(__bits, 2, 1);
+        public uint YCbCr_xvYCC => InteropRuntime.GetUInt32(__bits, 3, 1);
+        public uint Nominal_Range => InteropRuntime.GetUInt32(__bits, 4, 2);
+        public uint Reserved => InteropRuntime.GetUInt32(__bits, 6, 26);
     }
 }

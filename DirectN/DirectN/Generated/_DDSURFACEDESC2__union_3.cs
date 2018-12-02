@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public _DDCOLORKEY ddckCKDestOverlay => InteropRuntime.GetBits<_DDCOLORKEY>(__bits, 0, 64);
-        public uint dwEmptyFaceColor => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public _DDCOLORKEY ddckCKDestOverlay => InteropRuntime.Get<_DDCOLORKEY>(__bits, 0, 64);
+        public uint dwEmptyFaceColor => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

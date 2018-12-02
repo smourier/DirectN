@@ -16,6 +16,6 @@ namespace DirectN
         public ulong GpuVirtualAddress;
         public _D3DDDI_ALLOCATIONINFO2__union_2 __union_7;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)] 
-        public IntPtr Reserved;
+        public IntPtr[] Reserved;
     }
 }

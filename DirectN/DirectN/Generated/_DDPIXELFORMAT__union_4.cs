@@ -9,10 +9,10 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint dwRGBAlphaBitMask => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwYUVAlphaBitMask => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwLuminanceAlphaBitMask => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwRGBZBitMask => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public uint dwYUVZBitMask => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public uint dwRGBAlphaBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwYUVAlphaBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwLuminanceAlphaBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwRGBZBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwYUVZBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

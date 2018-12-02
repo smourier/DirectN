@@ -7,19 +7,6 @@ namespace DirectN
     [Guid("3c9b2eb9-86d5-4514-a394-f56664f9f0d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaSourceEx : IMFMediaSource
     {
-        // IMFMediaEventGenerator
-        [PreserveSig]
-        new HRESULT GetEvent(/* [in] */ uint dwFlags, /* [out] __RPC__deref_out_opt */ out IMFMediaEvent ppEvent);
-        
-        [PreserveSig]
-        new HRESULT BeginGetEvent(/* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
-        
-        [PreserveSig]
-        new HRESULT EndGetEvent(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out IMFMediaEvent ppEvent);
-        
-        [PreserveSig]
-        new HRESULT QueueEvent(/* [in] */ uint met, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] __RPC__in_opt */ PropVariant pvValue);
-        
         // IMFMediaSource
         [PreserveSig]
         new HRESULT GetCharacteristics(/* [out] __RPC__out */ out uint pdwCharacteristics);
@@ -41,10 +28,10 @@ namespace DirectN
         
         // IMFMediaSourceEx
         [PreserveSig]
-        HRESULT GetSourceAttributes(/* [out] __RPC__deref_out_opt */ out IMFAttributes ppAttributes);
+        HRESULT GetSourceAttributes(/* optional(IMFAttributes) */ out IntPtr ppAttributes);
         
         [PreserveSig]
-        HRESULT GetStreamAttributes(/* [in] */ uint dwStreamIdentifier, /* [out] __RPC__deref_out_opt */ out IMFAttributes ppAttributes);
+        HRESULT GetStreamAttributes(/* [in] */ uint dwStreamIdentifier, /* optional(IMFAttributes) */ out IntPtr ppAttributes);
         
         [PreserveSig]
         HRESULT SetD3DManager(/* [in] __RPC__in_opt */ [MarshalAs(UnmanagedType.IUnknown)] object pManager);

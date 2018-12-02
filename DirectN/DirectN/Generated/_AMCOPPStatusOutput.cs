@@ -10,6 +10,6 @@ namespace DirectN
         public Guid macKDI;
         public uint cbSizeData;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4076)] 
-        public byte COPPStatus;
+        public byte[] COPPStatus;
     }
 }

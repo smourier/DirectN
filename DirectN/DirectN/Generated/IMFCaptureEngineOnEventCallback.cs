@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFCaptureEngineOnEventCallback
     {
         [PreserveSig]
-        HRESULT OnEvent(/* [annotation][in] _In_ */ IMFMediaEvent pEvent);
+        HRESULT OnEvent(/* [annotation][in] _In_ */ ref IMFMediaEvent pEvent);
     }
 }

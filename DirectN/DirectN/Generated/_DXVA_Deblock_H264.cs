@@ -21,6 +21,6 @@ namespace DirectN
         public ushort wbSTop0;
         public ushort wbSTop1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public _DXVA_DeblockIndexAB_H264[] IndexAB;
+        public _DXVA_DeblockIndexAB_H264[][] IndexAB;
     }
 }

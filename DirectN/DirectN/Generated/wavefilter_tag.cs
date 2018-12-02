@@ -11,6 +11,6 @@ namespace DirectN
         public uint dwFilterTag;
         public uint fdwFilter;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)] 
-        public uint dwReserved;
+        public uint[] dwReserved;
     }
 }

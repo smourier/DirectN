@@ -160,10 +160,10 @@ namespace DirectN
         HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
-        HRESULT SetDepthStencil(/* THIS_ _In_opt_ */ ID3D10DepthStencilView pResource);
+        HRESULT SetDepthStencil(/* optional(ID3D10DepthStencilView) */ IntPtr pResource);
         
         [PreserveSig]
-        HRESULT GetDepthStencil(/* THIS_ _Out_ */ out ID3D10DepthStencilView ppResource);
+        HRESULT GetDepthStencil(/* THIS_ _Out_ */ out IntPtr ppResource);
         
         [PreserveSig]
         HRESULT SetDepthStencilArray(/* THIS_ _In_reads_(Count) */ out IntPtr ppResources, uint Offset, uint Count);

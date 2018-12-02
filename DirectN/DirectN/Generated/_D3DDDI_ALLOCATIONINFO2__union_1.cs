@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public _D3DDDI_ALLOCATIONINFO2__union_1__struct_0 __field_0 => InteropRuntime.GetBits<_D3DDDI_ALLOCATIONINFO2__union_1__struct_0>(__bits, 0, 32);
-        public uint Value => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public _D3DDDI_ALLOCATIONINFO2__union_1__struct_0 __field_0 => InteropRuntime.Get<_D3DDDI_ALLOCATIONINFO2__union_1__struct_0>(__bits, 0, 32);
+        public uint Value => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

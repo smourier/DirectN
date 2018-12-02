@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12.h(4670,5)
 using System;
 using System.Runtime.InteropServices;
+using ID3DBlob = DirectN.ID3D10Blob;
 
 namespace DirectN
 {
@@ -28,6 +29,6 @@ namespace DirectN
         
         // ID3D12PipelineState
         [PreserveSig]
-        HRESULT GetCachedBlob(/* _COM_Outptr_ */ out ID3D10Blob ppBlob);
+        HRESULT GetCachedBlob(/* _COM_Outptr_ */ out ID3DBlob ppBlob);
     }
 }

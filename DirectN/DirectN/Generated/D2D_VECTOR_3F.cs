@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// A vector of 3 FLOAT values (x, y, z).
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D_VECTOR_3F
     {

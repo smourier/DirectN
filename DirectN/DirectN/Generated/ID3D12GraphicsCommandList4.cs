@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 using D3D12_GPU_VIRTUAL_ADDRESS = System.UInt64;
+using D3D12_PRIMITIVE_TOPOLOGY = DirectN.D3D_PRIMITIVE_TOPOLOGY;
 using D3D12_RECT = DirectN.tagRECT;
 
 namespace DirectN
@@ -65,7 +66,7 @@ namespace DirectN
         new void ResolveSubresource(/* _In_ */ ID3D12Resource pDstResource, /* _In_ */ uint DstSubresource, /* _In_ */ ID3D12Resource pSrcResource, /* _In_ */ uint SrcSubresource, /* _In_ */ DXGI_FORMAT Format);
         
         [PreserveSig]
-        new void IASetPrimitiveTopology(/* _In_ */ D3D_PRIMITIVE_TOPOLOGY PrimitiveTopology);
+        new void IASetPrimitiveTopology(/* _In_ */ D3D12_PRIMITIVE_TOPOLOGY PrimitiveTopology);
         
         [PreserveSig]
         new void RSSetViewports(/* _In_range_(0, D3D12_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE) */ uint NumViewports, /* _In_reads_( NumViewports) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D12_VIEWPORT[] pViewports);

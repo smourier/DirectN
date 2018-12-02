@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public _DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA__union_0__struct_0 __field_0 => InteropRuntime.GetBits<_DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA__union_0__struct_0>(__bits, 0, 32);
-        public uint Value => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public _DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA__union_0__struct_0 __field_0 => InteropRuntime.Get<_DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA__union_0__struct_0>(__bits, 0, 32);
+        public uint Value => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

@@ -1,0 +1,19 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(110,5)
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public partial struct mmtime_tag__union_0
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        public byte[] __bits;
+        public uint ms => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint sample => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint cb => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint ticks => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public mmtime_tag__union_0__struct_0 smpte => InteropRuntime.Get<mmtime_tag__union_0__struct_0>(__bits, 0, 64);
+        public mmtime_tag__union_0__struct_1 midi => InteropRuntime.Get<mmtime_tag__union_0__struct_1>(__bits, 0, 32);
+    }
+}

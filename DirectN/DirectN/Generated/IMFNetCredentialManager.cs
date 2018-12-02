@@ -8,10 +8,10 @@ namespace DirectN
     public partial interface IMFNetCredentialManager
     {
         [PreserveSig]
-        HRESULT BeginGetCredentials(/* [in] */ ref _MFNetCredentialManagerGetParam pParam, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
+        HRESULT BeginGetCredentials(/* [in] */ ref _MFNetCredentialManagerGetParam pParam, /* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT EndGetCredentials(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Outptr_ */ out IMFNetCredential ppCred);
+        HRESULT EndGetCredentials(/* [in] */ ref IMFAsyncResult pResult, /* [annotation][out] _Outptr_ */ out IMFNetCredential ppCred);
         
         [PreserveSig]
         HRESULT SetGood(/* [in] */ IMFNetCredential pCred, /* [in] */ bool fGood);

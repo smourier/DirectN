@@ -9,14 +9,14 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint Hours1 => InteropRuntime.GetUInt32Bits(__bits, 0, 4);
-        public uint Hours10 => InteropRuntime.GetUInt32Bits(__bits, 4, 4);
-        public uint Minutes1 => InteropRuntime.GetUInt32Bits(__bits, 8, 4);
-        public uint Minutes10 => InteropRuntime.GetUInt32Bits(__bits, 12, 4);
-        public uint Seconds1 => InteropRuntime.GetUInt32Bits(__bits, 16, 4);
-        public uint Seconds10 => InteropRuntime.GetUInt32Bits(__bits, 20, 4);
-        public uint Frames1 => InteropRuntime.GetUInt32Bits(__bits, 24, 4);
-        public uint Frames10 => InteropRuntime.GetUInt32Bits(__bits, 28, 2);
-        public uint FrameRateCode => InteropRuntime.GetUInt32Bits(__bits, 30, 2);
+        public uint Hours1 => InteropRuntime.GetUInt32(__bits, 0, 4);
+        public uint Hours10 => InteropRuntime.GetUInt32(__bits, 4, 4);
+        public uint Minutes1 => InteropRuntime.GetUInt32(__bits, 8, 4);
+        public uint Minutes10 => InteropRuntime.GetUInt32(__bits, 12, 4);
+        public uint Seconds1 => InteropRuntime.GetUInt32(__bits, 16, 4);
+        public uint Seconds10 => InteropRuntime.GetUInt32(__bits, 20, 4);
+        public uint Frames1 => InteropRuntime.GetUInt32(__bits, 24, 4);
+        public uint Frames10 => InteropRuntime.GetUInt32(__bits, 28, 2);
+        public uint FrameRateCode => InteropRuntime.GetUInt32(__bits, 30, 2);
     }
 }

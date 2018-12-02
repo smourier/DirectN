@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(10676,9)
 using System;
 using System.Runtime.InteropServices;
+using MF_ATTRIBUTE_TYPE = DirectN._MF_ATTRIBUTE_TYPE;
 
 namespace DirectN
 {
@@ -9,7 +10,7 @@ namespace DirectN
     {
         public ulong NodeId;
         public Guid guidAttributeKey;
-        public _MF_ATTRIBUTE_TYPE attrType;
+        public MF_ATTRIBUTE_TYPE attrType;
         public _MFTOPONODE_ATTRIBUTE_UPDATE__union_0 __union_3;
     }
 }

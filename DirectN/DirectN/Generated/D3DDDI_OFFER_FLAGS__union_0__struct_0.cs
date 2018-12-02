@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint AllowDecommit => InteropRuntime.GetUInt32Bits(__bits, 0, 1);
-        public uint Reserved => InteropRuntime.GetUInt32Bits(__bits, 1, 31);
+        public uint AllowDecommit => InteropRuntime.GetUInt32(__bits, 0, 1);
+        public uint Reserved => InteropRuntime.GetUInt32(__bits, 1, 31);
     }
 }

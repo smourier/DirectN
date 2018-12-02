@@ -25,6 +25,6 @@ namespace DirectN
         
         // IMFQualityAdvise2
         [PreserveSig]
-        HRESULT NotifyQualityEvent(/* [in] __RPC__in_opt */ IMFMediaEvent pEvent, /* [out] __RPC__out */ out uint pdwFlags);
+        HRESULT NotifyQualityEvent(/* optional(IMFMediaEvent) */ IntPtr pEvent, /* [out] __RPC__out */ out uint pdwFlags);
     }
 }

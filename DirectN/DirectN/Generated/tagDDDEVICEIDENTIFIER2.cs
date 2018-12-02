@@ -8,9 +8,9 @@ namespace DirectN
     public partial struct tagDDDEVICEIDENTIFIER2
     {
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 512)] 
-        public string szDriver;
+        public string[] szDriver;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 512)] 
-        public string szDescription;
+        public string[] szDescription;
         public long liDriverVersion;
         public uint dwVendorId;
         public uint dwDeviceId;

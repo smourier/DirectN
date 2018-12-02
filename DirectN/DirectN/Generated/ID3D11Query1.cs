@@ -5,30 +5,8 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [Guid("631b4766-36dc-461d-8db6-c47e13e60916"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    public partial interface ID3D11Query1 : ID3D11Query
+    public partial interface ID3D11Query1
     {
-        // ID3D11DeviceChild
-        [PreserveSig]
-        new void GetDevice(/* [annotation] _Outptr_ */ out ID3D11Device ppDevice);
-        
-        [PreserveSig]
-        new HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* [annotation] _Out_writes_bytes_opt_( *pDataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] out object pData);
-        
-        [PreserveSig]
-        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
-        
-        [PreserveSig]
-        new HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
-        
-        // ID3D11Asynchronous
-        [PreserveSig]
-        new uint GetDataSize();
-        
-        // ID3D11Query
-        [PreserveSig]
-        new void GetDesc(/* [annotation] _Out_ */ out D3D11_QUERY_DESC pDesc);
-        
-        // ID3D11Query1
         [PreserveSig]
         void GetDesc1(/* [annotation] _Out_ */ out D3D11_QUERY_DESC1 pDesc1);
     }

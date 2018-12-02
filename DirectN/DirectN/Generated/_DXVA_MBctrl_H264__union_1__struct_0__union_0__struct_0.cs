@@ -9,8 +9,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         public byte[] __bits;
-        public byte intra_chroma_pred_mode => InteropRuntime.GetByteBits(__bits, 0, 2);
-        public byte IntraPredAvailFlags => InteropRuntime.GetByteBits(__bits, 2, 5);
-        public byte ReservedIntraBit => InteropRuntime.GetByteBits(__bits, 7, 1);
+        public byte intra_chroma_pred_mode => InteropRuntime.GetByte(__bits, 0, 2);
+        public byte IntraPredAvailFlags => InteropRuntime.GetByte(__bits, 2, 5);
+        public byte ReservedIntraBit => InteropRuntime.GetByte(__bits, 7, 1);
     }
 }

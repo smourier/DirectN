@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d11.h(7498,5)
 using System;
 using System.Runtime.InteropServices;
+using D3D11_PRIMITIVE_TOPOLOGY = DirectN.D3D_PRIMITIVE_TOPOLOGY;
 using D3D11_RECT = DirectN.tagRECT;
 
 namespace DirectN
@@ -74,7 +75,7 @@ namespace DirectN
         void GSSetShader(/* [annotation] _In_opt_ */ ID3D11GeometryShader pShader, /* optional(ID3D11ClassInstance) */ out IntPtr ppClassInstances, uint NumClassInstances);
         
         [PreserveSig]
-        void IASetPrimitiveTopology(/* [annotation] _In_ */ D3D_PRIMITIVE_TOPOLOGY Topology);
+        void IASetPrimitiveTopology(/* [annotation] _In_ */ D3D11_PRIMITIVE_TOPOLOGY Topology);
         
         [PreserveSig]
         void VSSetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);
@@ -251,7 +252,7 @@ namespace DirectN
         void GSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11GeometryShader ppGeometryShader, /* optional(ID3D11ClassInstance) */ out IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
         
         [PreserveSig]
-        void IAGetPrimitiveTopology(/* [annotation] _Out_ */ out D3D_PRIMITIVE_TOPOLOGY pTopology);
+        void IAGetPrimitiveTopology(/* [annotation] _Out_ */ out D3D11_PRIMITIVE_TOPOLOGY pTopology);
         
         [PreserveSig]
         void VSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);

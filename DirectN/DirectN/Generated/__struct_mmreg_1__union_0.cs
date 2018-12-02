@@ -9,8 +9,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
         public byte[] __bits;
-        public ushort wValidBitsPerSample => InteropRuntime.GetUInt16Bits(__bits, 0, 16);
-        public ushort wSamplesPerBlock => InteropRuntime.GetUInt16Bits(__bits, 0, 16);
-        public ushort wReserved => InteropRuntime.GetUInt16Bits(__bits, 0, 16);
+        public ushort wValidBitsPerSample => InteropRuntime.GetUInt16(__bits, 0, 16);
+        public ushort wSamplesPerBlock => InteropRuntime.GetUInt16(__bits, 0, 16);
+        public ushort wReserved => InteropRuntime.GetUInt16(__bits, 0, 16);
     }
 }

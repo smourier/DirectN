@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IMFReadWriteClassFactory
     {
         [PreserveSig]
-        HRESULT CreateInstanceFromURL(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsid, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [annotation][in] _In_opt_ */ IMFAttributes pAttributes, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][iid_is][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
+        HRESULT CreateInstanceFromURL(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsid, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* optional(IMFAttributes) */ IntPtr pAttributes, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][iid_is][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
         
         [PreserveSig]
-        HRESULT CreateInstanceFromObject(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsid, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkObject, /* [annotation][in] _In_opt_ */ IMFAttributes pAttributes, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][iid_is][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
+        HRESULT CreateInstanceFromObject(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsid, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkObject, /* optional(IMFAttributes) */ IntPtr pAttributes, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][iid_is][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
     }
 }

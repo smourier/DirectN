@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public DXGI_DDI_PRESENT_FLAGS__union_0__struct_0 __field_0 => InteropRuntime.GetBits<DXGI_DDI_PRESENT_FLAGS__union_0__struct_0>(__bits, 0, 32);
-        public uint Value => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public DXGI_DDI_PRESENT_FLAGS__union_0__struct_0 __field_0 => InteropRuntime.Get<DXGI_DDI_PRESENT_FLAGS__union_0__struct_0>(__bits, 0, 32);
+        public uint Value => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

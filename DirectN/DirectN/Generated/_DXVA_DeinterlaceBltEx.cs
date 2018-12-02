@@ -15,7 +15,7 @@ namespace DirectN
         public uint NumSourceSurfaces;
         public float Alpha;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public _DXVA_VideoSample2[] Source;
+        public _DXVA_VideoSample2[][] Source;
         public uint DestinationFormat;
         public uint DestinationFlags;
     }

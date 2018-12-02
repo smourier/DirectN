@@ -9,8 +9,8 @@ namespace DirectN
     {
         public _segmentation_VP8__union_0 __union_0;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public sbyte segment_feature_data;
+        public sbyte[] segment_feature_data;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public byte mb_segment_tree_probs;
+        public byte[] mb_segment_tree_probs;
     }
 }

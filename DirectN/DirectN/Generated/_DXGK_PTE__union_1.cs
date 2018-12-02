@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public ulong PageAddress => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
-        public ulong PageTableAddress => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
+        public ulong PageAddress => InteropRuntime.GetUInt6s(__bits, 0, 64);
+        public ulong PageTableAddress => InteropRuntime.GetUInt6s(__bits, 0, 64);
     }
 }

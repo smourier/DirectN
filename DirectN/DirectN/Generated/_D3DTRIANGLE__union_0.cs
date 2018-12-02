@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
         public byte[] __bits;
-        public ushort v1 => InteropRuntime.GetUInt16Bits(__bits, 0, 16);
-        public ushort wV1 => InteropRuntime.GetUInt16Bits(__bits, 0, 16);
+        public ushort v1 => InteropRuntime.GetUInt16(__bits, 0, 16);
+        public ushort wV1 => InteropRuntime.GetUInt16(__bits, 0, 16);
     }
 }

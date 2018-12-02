@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFMediaStreamSourceSampleRequest
     {
         [PreserveSig]
-        HRESULT SetSample(/* [in] __RPC__in_opt */ IMFSample value);
+        HRESULT SetSample(/* optional(IMFSample) */ IntPtr value);
     }
 }

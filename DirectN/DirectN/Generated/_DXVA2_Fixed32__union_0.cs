@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public _DXVA2_Fixed32__union_0__struct_0 __field_0 => InteropRuntime.GetBits<_DXVA2_Fixed32__union_0__struct_0>(__bits, 0, 32);
-        public int ll => InteropRuntime.GetInt32Bits(__bits, 0, 32);
+        public _DXVA2_Fixed32__union_0__struct_0 __field_0 => InteropRuntime.Get<_DXVA2_Fixed32__union_0__struct_0>(__bits, 0, 32);
+        public int ll => InteropRuntime.GetInt32(__bits, 0, 32);
     }
 }

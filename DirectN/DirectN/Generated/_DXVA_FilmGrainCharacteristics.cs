@@ -25,16 +25,16 @@ namespace DirectN
         public byte blending_mode_id;
         public byte log2_scale_factor;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte comp_model_present_flag;
+        public byte[] comp_model_present_flag;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte num_intensity_intervals_minus1;
+        public byte[] num_intensity_intervals_minus1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte num_model_values_minus1;
+        public byte[] num_model_values_minus1;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)] 
-        public byte intensity_interval_lower_bound;
+        public byte[] intensity_interval_lower_bound;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)] 
-        public byte intensity_interval_upper_bound;
+        public byte[] intensity_interval_upper_bound;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 384)] 
-        public short comp_model_value;
+        public short[] comp_model_value;
     }
 }

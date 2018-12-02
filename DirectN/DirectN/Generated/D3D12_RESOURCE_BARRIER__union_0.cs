@@ -8,8 +8,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
         public byte[] __bits;
-        public D3D12_RESOURCE_TRANSITION_BARRIER Transition => InteropRuntime.GetBits<D3D12_RESOURCE_TRANSITION_BARRIER>(__bits, 0, 160);
-        public D3D12_RESOURCE_ALIASING_BARRIER Aliasing => InteropRuntime.GetBits<D3D12_RESOURCE_ALIASING_BARRIER>(__bits, 0, 128);
-        public D3D12_RESOURCE_UAV_BARRIER UAV => InteropRuntime.GetBits<D3D12_RESOURCE_UAV_BARRIER>(__bits, 0, 64);
+        public D3D12_RESOURCE_TRANSITION_BARRIER Transition => InteropRuntime.Get<D3D12_RESOURCE_TRANSITION_BARRIER>(__bits, 0, 160);
+        public D3D12_RESOURCE_ALIASING_BARRIER Aliasing => InteropRuntime.Get<D3D12_RESOURCE_ALIASING_BARRIER>(__bits, 0, 128);
+        public D3D12_RESOURCE_UAV_BARRIER UAV => InteropRuntime.Get<D3D12_RESOURCE_UAV_BARRIER>(__bits, 0, 64);
     }
 }

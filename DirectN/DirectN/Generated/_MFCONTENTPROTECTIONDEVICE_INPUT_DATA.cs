@@ -12,6 +12,6 @@ namespace DirectN
         public uint HWProtectionDataByteCount;
         public uint Reserved;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public byte InputData;
+        public byte[] InputData;
     }
 }

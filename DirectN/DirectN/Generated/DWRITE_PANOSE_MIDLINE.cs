@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(199,1)
 namespace DirectN
 {
-    /// <summary>
-    /// Placement of midline across uppercase characters and treatment of diagonal stem apexes. Present for families: 2-text
-    /// </summary>
     public enum DWRITE_PANOSE_MIDLINE
     {
         DWRITE_PANOSE_MIDLINE_ANY = 0,

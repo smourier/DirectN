@@ -12,7 +12,7 @@ namespace DirectN
         new HRESULT GetCharacteristics(/* [out] __RPC__out */ out uint pdwCharacteristics);
         
         [PreserveSig]
-        new HRESULT AddStreamSink(/* [in] */ uint dwStreamSinkIdentifier, /* [in] __RPC__in_opt */ IMFMediaType pMediaType, /* [out] __RPC__deref_out_opt */ out IMFStreamSink ppStreamSink);
+        new HRESULT AddStreamSink(/* [in] */ uint dwStreamSinkIdentifier, /* optional(IMFMediaType) */ IntPtr pMediaType, /* [out] __RPC__deref_out_opt */ out IMFStreamSink ppStreamSink);
         
         [PreserveSig]
         new HRESULT RemoveStreamSink(/* [in] */ uint dwStreamSinkIdentifier);
@@ -37,9 +37,9 @@ namespace DirectN
         
         // IMFFinalizableMediaSink
         [PreserveSig]
-        HRESULT BeginFinalize(/* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        HRESULT BeginFinalize(/* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
-        HRESULT EndFinalize(/* [in] */ IMFAsyncResult pResult);
+        HRESULT EndFinalize(/* [in] */ ref IMFAsyncResult pResult);
     }
 }

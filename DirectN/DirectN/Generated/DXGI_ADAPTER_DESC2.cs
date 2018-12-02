@@ -9,7 +9,7 @@ namespace DirectN
     public partial struct DXGI_ADAPTER_DESC2
     {
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)] 
-        public string Description;
+        public string[] Description;
         public uint VendorId;
         public uint DeviceId;
         public uint SubSysId;

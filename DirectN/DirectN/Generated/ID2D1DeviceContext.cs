@@ -5,9 +5,6 @@ using D2D1_TAG = System.UInt64;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The device context represents a set of state and a command buffer that is used to render to a target bitmap.
-    /// </summary>
     [Guid("e8f7fe7a-191c-466d-ad95-975678bda998"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DeviceContext : ID2D1RenderTarget
     {
@@ -192,7 +189,7 @@ namespace DirectN
         HRESULT CreateColorContextFromWicColorContext(/* _In_ */ ref IWICColorContext wicColorContext, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
         
         [PreserveSig]
-        HRESULT CreateBitmapFromDxgiSurface(/* _In_ */ IDXGISurface surface, /* optional(D2D1_BITMAP_PROPERTIES1) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap1 bitmap);
+        HRESULT CreateBitmapFromDxgiSurface(/* _In_ */ ref IDXGISurface surface, /* optional(D2D1_BITMAP_PROPERTIES1) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap1 bitmap);
         
         [PreserveSig]
         HRESULT CreateEffect(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid effectId, /* _COM_Outptr_ */ out ID2D1Effect effect);

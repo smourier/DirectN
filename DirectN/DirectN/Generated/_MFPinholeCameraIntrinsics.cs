@@ -9,6 +9,6 @@ namespace DirectN
     {
         public uint IntrinsicModelCount;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public _MFPinholeCameraIntrinsic_IntrinsicModel[] IntrinsicModels;
+        public _MFPinholeCameraIntrinsic_IntrinsicModel[][] IntrinsicModels;
     }
 }

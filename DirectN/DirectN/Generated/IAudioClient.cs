@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 using REFERENCE_TIME = System.Int64;
+using WAVEFORMATEX = DirectN.tWAVEFORMATEX;
 
 namespace DirectN
 {
@@ -9,7 +10,7 @@ namespace DirectN
     public partial interface IAudioClient
     {
         [PreserveSig]
-        HRESULT Initialize(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ long hnsBufferDuration, /* [annotation][in] _In_ */ long hnsPeriodicity, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
+        HRESULT Initialize(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ long hnsBufferDuration, /* [annotation][in] _In_ */ long hnsPeriodicity, /* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
         
         [PreserveSig]
         HRESULT GetBufferSize(/* [annotation][out] _Out_ */ out uint pNumBufferFrames);
@@ -21,7 +22,7 @@ namespace DirectN
         HRESULT GetCurrentPadding(/* [annotation][out] _Out_ */ out uint pNumPaddingFrames);
         
         [PreserveSig]
-        HRESULT IsFormatSupported(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* optional(tWAVEFORMATEX) */ out IntPtr ppClosestMatch);
+        HRESULT IsFormatSupported(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ ref WAVEFORMATEX pFormat, /* optional(WAVEFORMATEX) */ out IntPtr ppClosestMatch);
         
         [PreserveSig]
         HRESULT GetMixFormat(/* [annotation][out] _Out_ */ out IntPtr ppDeviceFormat);

@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         public byte[] __bits;
-        public byte vop_fcode_forward => InteropRuntime.GetByteBits(__bits, 0, 3);
-        public byte vop_fcode_backward => InteropRuntime.GetByteBits(__bits, 3, 3);
+        public byte vop_fcode_forward => InteropRuntime.GetByte(__bits, 0, 3);
+        public byte vop_fcode_backward => InteropRuntime.GetByte(__bits, 3, 3);
     }
 }

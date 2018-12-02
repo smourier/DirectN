@@ -11,10 +11,10 @@ namespace DirectN
         HRESULT GetClientCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*pcbData) */ out IntPtr ppbData, /* [annotation][out] _Out_ */ out uint pcbData);
         
         [PreserveSig]
-        HRESULT BeginGetClientCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
+        HRESULT BeginGetClientCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pState);
         
         [PreserveSig]
-        HRESULT EndGetClientCertificate(/* [in] */ IMFAsyncResult pResult, /* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*pcbData) */ out IntPtr ppbData, /* [annotation][out] _Out_ */ out uint pcbData);
+        HRESULT EndGetClientCertificate(/* [in] */ ref IMFAsyncResult pResult, /* [annotation][size_is][size_is][out] _Outptr_result_bytebuffer_(*pcbData) */ out IntPtr ppbData, /* [annotation][out] _Out_ */ out uint pcbData);
         
         [PreserveSig]
         HRESULT GetCertificatePolicy(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [out] */ out bool pfOverrideAutomaticCheck, /* [out] */ out bool pfClientCertificateAvailable);

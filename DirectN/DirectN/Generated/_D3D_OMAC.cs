@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct _D3D_OMAC
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public byte Omac;
+        public byte[] Omac;
     }
 }

@@ -8,8 +8,8 @@ namespace DirectN
     public partial struct _DXVA_Qmatrix_H264
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 96)] 
-        public byte bScalingLists4x4;
+        public byte[] bScalingLists4x4;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)] 
-        public byte bScalingLists8x8;
+        public byte[] bScalingLists8x8;
     }
 }

@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFDeviceTransform
     {
         [PreserveSig]
-        HRESULT InitializeTransform(/* [annotation][in] _In_ */ IMFAttributes pAttributes);
+        HRESULT InitializeTransform(/* [annotation][in] _In_ */ ref IMFAttributes pAttributes);
         
         [PreserveSig]
         HRESULT GetInputAvailableType(/* [annotation][in] _In_ */ uint dwInputStreamID, /* [annotation][in] _In_ */ uint dwTypeIndex, /* [annotation][out] _COM_Outptr_ */ out IMFMediaType pMediaType);
@@ -35,10 +35,10 @@ namespace DirectN
         HRESULT GetStreamIDs(/* [annotation][in] _In_ */ uint dwInputIDArraySize, /* [annotation][out] _Out_ */ out uint pdwInputStreamIds, /* [annotation][in] _In_ */ uint dwOutputIDArraySize, /* [annotation][out] _Out_ */ out uint pdwOutputStreamIds);
         
         [PreserveSig]
-        HRESULT ProcessEvent(/* [annotation][in] _In_ */ uint dwInputStreamID, /* [annotation][in] _In_ */ IMFMediaEvent pEvent);
+        HRESULT ProcessEvent(/* [annotation][in] _In_ */ uint dwInputStreamID, /* [annotation][in] _In_ */ ref IMFMediaEvent pEvent);
         
         [PreserveSig]
-        HRESULT ProcessInput(/* [annotation][in] _In_ */ uint dwInputStreamID, /* [annotation][in] _In_ */ IMFSample pSample, /* [annotation][in] _In_ */ uint dwFlags);
+        HRESULT ProcessInput(/* [annotation][in] _In_ */ uint dwInputStreamID, /* [annotation][in] _In_ */ ref IMFSample pSample, /* [annotation][in] _In_ */ uint dwFlags);
         
         [PreserveSig]
         HRESULT ProcessMessage(/* [annotation][in] _In_ */ _MFT_MESSAGE_TYPE eMessage, /* [annotation][in] _In_ */ IntPtr ulParam);
@@ -47,13 +47,13 @@ namespace DirectN
         HRESULT ProcessOutput(/* [annotation][in] _In_ */ uint dwFlags, /* [annotation][in] _In_ */ uint cOutputBufferCount, /* [size_is][annotation][out][in] _Inout_ */ [In, Out, MarshalAs(UnmanagedType.LPArray)] _MFT_OUTPUT_DATA_BUFFER[] pOutputSample, /* [annotation][out] _Out_ */ out uint pdwStatus);
         
         [PreserveSig]
-        HRESULT SetInputStreamState(/* [annotation][in] _In_ */ uint dwStreamID, /* [annotation][in] _In_ */ IMFMediaType pMediaType, /* [annotation][in] _In_ */ _DeviceStreamState value, /* [annotation][in] _In_ */ uint dwFlags);
+        HRESULT SetInputStreamState(/* [annotation][in] _In_ */ uint dwStreamID, /* [annotation][in] _In_ */ ref IMFMediaType pMediaType, /* [annotation][in] _In_ */ _DeviceStreamState value, /* [annotation][in] _In_ */ uint dwFlags);
         
         [PreserveSig]
         HRESULT GetInputStreamState(/* [annotation][in] _In_ */ uint dwStreamID, /* [annotation][out] _Out_ */ out _DeviceStreamState value);
         
         [PreserveSig]
-        HRESULT SetOutputStreamState(/* [annotation][in] _In_ */ uint dwStreamID, /* [annotation][in] _In_ */ IMFMediaType pMediaType, /* [annotation][in] _In_ */ _DeviceStreamState value, /* [annotation][in] _In_ */ uint dwFlags);
+        HRESULT SetOutputStreamState(/* [annotation][in] _In_ */ uint dwStreamID, /* [annotation][in] _In_ */ ref IMFMediaType pMediaType, /* [annotation][in] _In_ */ _DeviceStreamState value, /* [annotation][in] _In_ */ uint dwFlags);
         
         [PreserveSig]
         HRESULT GetOutputStreamState(/* [annotation][in] _In_ */ uint dwStreamID, /* [annotation][out] _Out_ */ out _DeviceStreamState value);

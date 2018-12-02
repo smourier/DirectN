@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT SetScanDirection(D3DX11_SCAN_DIRECTION Direction);
         
         [PreserveSig]
-        HRESULT SegScan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint ElementScanSize, /* _In_opt_ */ ID3D11UnorderedAccessView pSrc, /* _In_ */ ID3D11UnorderedAccessView pSrcElementFlags, /* _In_ */ ID3D11UnorderedAccessView pDst);
+        HRESULT SegScan(D3DX11_SCAN_DATA_TYPE ElementType, D3DX11_SCAN_OPCODE OpCode, uint ElementScanSize, /* optional(ID3D11UnorderedAccessView) */ IntPtr pSrc, /* _In_ */ ref ID3D11UnorderedAccessView pSrcElementFlags, /* _In_ */ ref ID3D11UnorderedAccessView pDst);
     }
 }

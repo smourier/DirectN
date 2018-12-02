@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IMFContentProtectionManager
     {
         [PreserveSig]
-        HRESULT BeginEnableContent(/* [in] */ IMFActivate pEnablerActivate, /* [in] */ IMFTopology pTopo, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        HRESULT BeginEnableContent(/* [in] */ ref IMFActivate pEnablerActivate, /* [in] */ IMFTopology pTopo, /* [in] */ ref IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
-        HRESULT EndEnableContent(/* [in] */ IMFAsyncResult pResult);
+        HRESULT EndEnableContent(/* [in] */ ref IMFAsyncResult pResult);
     }
 }

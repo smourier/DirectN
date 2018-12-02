@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint NumDimensions;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public uint ElementLengths;
+        public uint[] ElementLengths;
         public uint DimensionMask;
         public D3DX11_FFT_DATA_TYPE Type;
     }

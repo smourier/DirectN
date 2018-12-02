@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFCaptureEngineOnSampleCallback
     {
         [PreserveSig]
-        HRESULT OnSample(/* [annotation][in] _In_opt_ */ IMFSample pSample);
+        HRESULT OnSample(/* optional(IMFSample) */ IntPtr pSample);
     }
 }

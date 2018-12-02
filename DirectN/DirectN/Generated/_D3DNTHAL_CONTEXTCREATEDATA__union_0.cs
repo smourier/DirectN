@@ -11,7 +11,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public IntPtr lpDDGbl => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
-        public IntPtr lpDDLcl => InteropRuntime.GetBits<IntPtr>(__bits, 0, 64);
+        public IntPtr lpDDGbl => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr lpDDLcl => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
     }
 }

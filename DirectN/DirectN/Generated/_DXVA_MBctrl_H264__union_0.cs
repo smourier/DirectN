@@ -9,7 +9,7 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public _DXVA_MBctrl_H264__union_0__struct_0 __field_0 => InteropRuntime.GetBits<_DXVA_MBctrl_H264__union_0__struct_0>(__bits, 0, 32);
-        public uint dwMBtype => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
+        public _DXVA_MBctrl_H264__union_0__struct_0 __field_0 => InteropRuntime.Get<_DXVA_MBctrl_H264__union_0__struct_0>(__bits, 0, 32);
+        public uint dwMBtype => InteropRuntime.GetUInt32(__bits, 0, 32);
     }
 }

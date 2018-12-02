@@ -9,11 +9,11 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public ulong Write => InteropRuntime.GetUInt64Bits(__bits, 0, 1);
-        public ulong Execute => InteropRuntime.GetUInt64Bits(__bits, 1, 1);
-        public ulong Zero => InteropRuntime.GetUInt64Bits(__bits, 2, 1);
-        public ulong NoAccess => InteropRuntime.GetUInt64Bits(__bits, 3, 1);
-        public ulong SystemUseOnly => InteropRuntime.GetUInt64Bits(__bits, 4, 1);
-        public ulong Reserved => InteropRuntime.GetUInt64Bits(__bits, 5, 59);
+        public ulong Write => InteropRuntime.GetUInt6s(__bits, 0, 1);
+        public ulong Execute => InteropRuntime.GetUInt6s(__bits, 1, 1);
+        public ulong Zero => InteropRuntime.GetUInt6s(__bits, 2, 1);
+        public ulong NoAccess => InteropRuntime.GetUInt6s(__bits, 3, 1);
+        public ulong SystemUseOnly => InteropRuntime.GetUInt6s(__bits, 4, 1);
+        public ulong Reserved => InteropRuntime.GetUInt6s(__bits, 5, 59);
     }
 }

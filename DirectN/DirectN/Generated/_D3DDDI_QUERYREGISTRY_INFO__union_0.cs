@@ -9,9 +9,9 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public byte[] __bits;
-        public uint OutputDword => InteropRuntime.GetUInt32Bits(__bits, 0, 32);
-        public ulong OutputQword => InteropRuntime.GetUInt64Bits(__bits, 0, 64);
-        public string OutputString => InteropRuntime.GetStringBits(__bits, 0, 8);
-        public byte OutputBinary => InteropRuntime.GetByteBits(__bits, 0, 8);
+        public uint OutputDword => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public ulong OutputQword => InteropRuntime.GetUInt6s(__bits, 0, 64);
+        public string[] OutputString => InteropRuntime.GetArray<string>(__bits, 0, 8);
+        public byte[] OutputBinary => InteropRuntime.GetArray<byte>(__bits, 0, 8);
     }
 }

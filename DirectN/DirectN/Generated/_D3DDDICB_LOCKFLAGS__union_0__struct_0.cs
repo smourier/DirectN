@@ -9,17 +9,17 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
-        public uint ReadOnly => InteropRuntime.GetUInt32Bits(__bits, 0, 1);
-        public uint WriteOnly => InteropRuntime.GetUInt32Bits(__bits, 1, 1);
-        public uint DonotWait => InteropRuntime.GetUInt32Bits(__bits, 2, 1);
-        public uint IgnoreSync => InteropRuntime.GetUInt32Bits(__bits, 3, 1);
-        public uint LockEntire => InteropRuntime.GetUInt32Bits(__bits, 4, 1);
-        public uint DonotEvict => InteropRuntime.GetUInt32Bits(__bits, 5, 1);
-        public uint AcquireAperture => InteropRuntime.GetUInt32Bits(__bits, 6, 1);
-        public uint Discard => InteropRuntime.GetUInt32Bits(__bits, 7, 1);
-        public uint NoExistingReference => InteropRuntime.GetUInt32Bits(__bits, 8, 1);
-        public uint UseAlternateVA => InteropRuntime.GetUInt32Bits(__bits, 9, 1);
-        public uint IgnoreReadSync => InteropRuntime.GetUInt32Bits(__bits, 10, 1);
-        public uint Reserved => InteropRuntime.GetUInt32Bits(__bits, 11, 21);
+        public uint ReadOnly => InteropRuntime.GetUInt32(__bits, 0, 1);
+        public uint WriteOnly => InteropRuntime.GetUInt32(__bits, 1, 1);
+        public uint DonotWait => InteropRuntime.GetUInt32(__bits, 2, 1);
+        public uint IgnoreSync => InteropRuntime.GetUInt32(__bits, 3, 1);
+        public uint LockEntire => InteropRuntime.GetUInt32(__bits, 4, 1);
+        public uint DonotEvict => InteropRuntime.GetUInt32(__bits, 5, 1);
+        public uint AcquireAperture => InteropRuntime.GetUInt32(__bits, 6, 1);
+        public uint Discard => InteropRuntime.GetUInt32(__bits, 7, 1);
+        public uint NoExistingReference => InteropRuntime.GetUInt32(__bits, 8, 1);
+        public uint UseAlternateVA => InteropRuntime.GetUInt32(__bits, 9, 1);
+        public uint IgnoreReadSync => InteropRuntime.GetUInt32(__bits, 10, 1);
+        public uint Reserved => InteropRuntime.GetUInt32(__bits, 11, 21);
     }
 }

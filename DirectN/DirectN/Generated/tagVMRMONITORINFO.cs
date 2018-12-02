@@ -13,9 +13,9 @@ namespace DirectN
         public IntPtr hMon;
         public uint dwFlags;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] 
-        public string szDevice;
+        public string[] szDevice;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)] 
-        public string szDescription;
+        public string[] szDescription;
         public long liDriverVersion;
         public uint dwVendorId;
         public uint dwDeviceId;

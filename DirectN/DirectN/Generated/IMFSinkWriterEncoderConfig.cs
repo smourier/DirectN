@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IMFSinkWriterEncoderConfig
     {
         [PreserveSig]
-        HRESULT SetTargetMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFMediaType pTargetMediaType, /* [annotation][in] _In_opt_ */ IMFAttributes pEncodingParameters);
+        HRESULT SetTargetMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ ref IMFMediaType pTargetMediaType, /* optional(IMFAttributes) */ IntPtr pEncodingParameters);
         
         [PreserveSig]
-        HRESULT PlaceEncodingParameters(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ IMFAttributes pEncodingParameters);
+        HRESULT PlaceEncodingParameters(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ ref IMFAttributes pEncodingParameters);
     }
 }
