@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents a single continuous stroke of variable-width ink, as defined by a series of Bezier segments and widths.
+    /// </summary>
     [Guid("b499923b-7029-478f-a8b3-432c7c5f5312"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Ink : ID2D1Resource
     {

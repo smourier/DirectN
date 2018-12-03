@@ -42,7 +42,7 @@ namespace DirectN
         public byte log2_parallel_merge_level_minus2;
         public int CurrPicOrderCntVal;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 15)] 
-        public _DXVA_PicEntry_HEVC[][] RefPicList;
+        public _DXVA_PicEntry_HEVC[] RefPicList;
         public byte ReservedBits5;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 15)] 
         public int[] PicOrderCntValList;

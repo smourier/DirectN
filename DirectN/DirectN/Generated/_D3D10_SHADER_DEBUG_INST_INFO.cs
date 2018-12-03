@@ -11,7 +11,7 @@ namespace DirectN
         public uint Opcode;
         public uint uOutputs;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public _D3D10_SHADER_DEBUG_OUTPUTREG_INFO[][] pOutputs;
+        public _D3D10_SHADER_DEBUG_OUTPUTREG_INFO[] pOutputs;
         public uint TokenId;
         public uint NestingLevel;
         public uint Scopes;

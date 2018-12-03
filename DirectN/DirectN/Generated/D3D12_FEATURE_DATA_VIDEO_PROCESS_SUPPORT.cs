@@ -22,6 +22,6 @@ namespace DirectN
         public D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS AutoProcessingSupport;
         public D3D12_VIDEO_PROCESS_FILTER_FLAGS FilterSupport;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D12_VIDEO_PROCESS_FILTER_RANGE[][] FilterRangeSupport;
+        public D3D12_VIDEO_PROCESS_FILTER_RANGE[] FilterRangeSupport;
     }
 }

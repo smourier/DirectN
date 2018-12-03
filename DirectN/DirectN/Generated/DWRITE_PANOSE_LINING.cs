@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(418,1)
 namespace DirectN
 {
-    /// <summary>
-    /// Outline handling. Present for families: 4-decorative
-    /// </summary>
     public enum DWRITE_PANOSE_LINING
     {
         DWRITE_PANOSE_LINING_ANY = 0,

@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// This is used to define a resource texture when that resource texture is created.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_RESOURCE_TEXTURE_PROPERTIES
     {

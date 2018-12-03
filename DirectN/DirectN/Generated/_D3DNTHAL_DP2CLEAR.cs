@@ -12,6 +12,6 @@ namespace DirectN
         public float dvFillDepth;
         public uint dwFillStencil;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public RECT[][] Rects;
+        public RECT[] Rects;
     }
 }

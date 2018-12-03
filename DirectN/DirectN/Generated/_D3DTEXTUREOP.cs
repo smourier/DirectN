@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9types.h(568,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3dtypes.h(1655,9)
 namespace DirectN
 {
     public enum _D3DTEXTUREOP
@@ -27,8 +27,6 @@ namespace DirectN
         D3DTOP_BUMPENVMAP = 22,
         D3DTOP_BUMPENVMAPLUMINANCE = 23,
         D3DTOP_DOTPRODUCT3 = 24,
-        D3DTOP_MULTIPLYADD = 25,
-        D3DTOP_LERP = 26,
         D3DTOP_FORCE_DWORD = 2147483647,
     }
 }

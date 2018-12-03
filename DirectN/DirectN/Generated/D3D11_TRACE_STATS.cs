@@ -12,9 +12,9 @@ namespace DirectN
         public byte TargetStampIndex;
         public uint NumTraceSteps;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D11_TRACE_COMPONENT_MASK[][] InputMask;
+        public D3D11_TRACE_COMPONENT_MASK[] InputMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D11_TRACE_COMPONENT_MASK[][] OutputMask;
+        public D3D11_TRACE_COMPONENT_MASK[] OutputMask;
         public ushort NumTemps;
         public ushort MaxIndexableTempIndex;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4096)] 
@@ -39,8 +39,8 @@ namespace DirectN
         public D3D11_TRACE_GS_INPUT_PRIMITIVE GSInputPrimitive;
         public bool GSInputsPrimitiveID;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D11_TRACE_COMPONENT_MASK[][] HSOutputPatchConstantMask;
+        public D3D11_TRACE_COMPONENT_MASK[] HSOutputPatchConstantMask;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public D3D11_TRACE_COMPONENT_MASK[][] DSInputPatchConstantMask;
+        public D3D11_TRACE_COMPONENT_MASK[] DSInputPatchConstantMask;
     }
 }

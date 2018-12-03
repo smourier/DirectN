@@ -17,7 +17,7 @@ namespace DirectN
         public ushort Reserved16Bits;
         public uint StatusReportFeedbackNumber;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public _DXVA_PicEntry_H264[][] RefFrameList;
+        public _DXVA_PicEntry_H264[] RefFrameList;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
         public int[] CurrFieldOrderCnt;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 

@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(37,1)
 namespace DirectN
 {
-    /// <summary>
-    /// Appearance of the serifs. Present for families: 2-text
-    /// </summary>
     public enum DWRITE_PANOSE_SERIF_STYLE
     {
         DWRITE_PANOSE_SERIF_STYLE_ANY = 0,

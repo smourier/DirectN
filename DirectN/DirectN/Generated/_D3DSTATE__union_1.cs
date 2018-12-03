@@ -10,6 +10,6 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public byte[] __bits;
         public uint[] dwArg => InteropRuntime.GetArray<uint>(__bits, 0, 32);
-        public D3DVALUE[][] dvArg => InteropRuntime.GetArray<D3DVALUE[]>(__bits, 0, 32);
+        public D3DVALUE[] dvArg => InteropRuntime.GetArray<D3DVALUE>(__bits, 0, 32);
     }
 }

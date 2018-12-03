@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)] 
-        public D3D12_VIDEO_PROCESS_INPUT_STREAM[][] InputStream;
+        public D3D12_VIDEO_PROCESS_INPUT_STREAM[] InputStream;
         public D3D12_VIDEO_PROCESS_TRANSFORM Transform;
         public D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS Flags;
         public D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE RateInfo;

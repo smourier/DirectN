@@ -22,7 +22,7 @@ namespace DirectN
         public sbyte slice_beta_offset_div2;
         public byte Reserved8Bits;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)] 
-        public _DXVA_PicEntry_H264[][] RefPicList;
+        public _DXVA_PicEntry_H264[] RefPicList;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 384)] 
         public short[] Weights;
         public sbyte slice_qs_delta;

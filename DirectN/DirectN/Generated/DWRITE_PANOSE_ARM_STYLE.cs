@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(147,1)
 namespace DirectN
 {
-    /// <summary>
-    /// Style of termination of stems and rounded letterforms. Present for families: 2-text
-    /// </summary>
     public enum DWRITE_PANOSE_ARM_STYLE
     {
         DWRITE_PANOSE_ARM_STYLE_ANY = 0,

@@ -15,6 +15,6 @@ namespace DirectN
         public uint cbExtensionSize;
         public uint cActions;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public _MFINPUTTRUSTAUTHORITY_ACTION[][] rgOutputActions;
+        public _MFINPUTTRUSTAUTHORITY_ACTION[] rgOutputActions;
     }
 }

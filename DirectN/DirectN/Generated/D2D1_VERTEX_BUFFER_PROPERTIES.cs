@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// This defines the properties of a vertex buffer which uses the default vertex layout.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_VERTEX_BUFFER_PROPERTIES
     {

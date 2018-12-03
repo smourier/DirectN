@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(1740,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva9typ.h(420,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -11,7 +11,7 @@ namespace DirectN
         public uint SampleWidth;
         public uint SampleHeight;
         public uint SampleFormat;
-        public uint d3dFormat;
+        public int d3dFormat;
         public _DXVA_Frequency InputSampleFreq;
         public _DXVA_Frequency OutputFrameFreq;
     }

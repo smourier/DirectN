@@ -9,6 +9,9 @@ using RECTL = DirectN._RECTL;
 
 namespace DirectN
 {
+    /// <summary>
+    /// **************************************************************************
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDHAL_BLTDATA
     {

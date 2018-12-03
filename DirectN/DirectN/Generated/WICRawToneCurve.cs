@@ -9,6 +9,6 @@ namespace DirectN
     {
         public uint cPoints;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public WICRawToneCurvePoint[][] aPoints;
+        public WICRawToneCurvePoint[] aPoints;
     }
 }

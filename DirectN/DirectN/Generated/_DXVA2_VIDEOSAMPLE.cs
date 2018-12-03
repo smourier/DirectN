@@ -16,7 +16,7 @@ namespace DirectN
         public RECT SrcRect;
         public RECT DstRect;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public int[][] Pal;
+        public int[] Pal;
         public int PlanarAlpha;
     }
 }

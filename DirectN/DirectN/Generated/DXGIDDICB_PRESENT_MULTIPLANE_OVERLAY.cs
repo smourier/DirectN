@@ -13,6 +13,6 @@ namespace DirectN
         public IntPtr BroadcastContext;
         public uint AllocationInfoCount;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public DXGIDDI_MULTIPLANE_OVERLAY_ALLOCATION_INFO[][] AllocationInfo;
+        public DXGIDDI_MULTIPLANE_OVERLAY_ALLOCATION_INFO[] AllocationInfo;
     }
 }

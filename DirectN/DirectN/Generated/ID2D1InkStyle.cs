@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents a collection of style properties to be used by methods like ID2D1DeviceContext2::DrawInk when rendering ink. The ink style defines the nib (pen tip) shape and transform.
+    /// </summary>
     [Guid("bae8b344-23fc-4071-8cb5-d05d6f073848"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1InkStyle : ID2D1Resource
     {

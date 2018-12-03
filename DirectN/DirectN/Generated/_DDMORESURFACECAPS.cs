@@ -10,6 +10,6 @@ namespace DirectN
         public uint dwSize;
         public _DDSCAPSEX ddsCapsMore;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public tagExtendedHeapRestrictions[][] ddsExtendedHeapRestrictions;
+        public tagExtendedHeapRestrictions[] ddsExtendedHeapRestrictions;
     }
 }

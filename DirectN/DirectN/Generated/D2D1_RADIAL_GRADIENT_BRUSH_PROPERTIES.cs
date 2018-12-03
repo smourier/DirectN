@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Contains the gradient origin offset and the size and position of the gradient ellipse for an ID2D1RadialGradientBrush.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES
     {

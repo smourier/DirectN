@@ -23,7 +23,7 @@ namespace DirectN
         public D3D12_PRIMITIVE_TOPOLOGY_TYPE PrimitiveTopologyType;
         public uint NumRenderTargets;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public DXGI_FORMAT[][] RTVFormats;
+        public DXGI_FORMAT[] RTVFormats;
         public DXGI_FORMAT DSVFormat;
         public DXGI_SAMPLE_DESC SampleDesc;
         public uint NodeMask;

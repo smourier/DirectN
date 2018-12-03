@@ -10,6 +10,6 @@ namespace DirectN
         public bool AlphaToCoverageEnable;
         public bool IndependentBlendEnable;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public D3D11_RENDER_TARGET_BLEND_DESC[][] RenderTarget;
+        public D3D11_RENDER_TARGET_BLEND_DESC[] RenderTarget;
     }
 }

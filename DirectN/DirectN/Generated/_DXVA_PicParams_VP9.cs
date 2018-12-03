@@ -17,13 +17,13 @@ namespace DirectN
         public byte interp_filter;
         public byte Reserved8Bits;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public _DXVA_PicEntry_VPx[][] ref_frame_map;
+        public _DXVA_PicEntry_VPx[] ref_frame_map;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
         public uint[] ref_frame_coded_width;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
         public uint[] ref_frame_coded_height;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)] 
-        public _DXVA_PicEntry_VPx[][] frame_refs;
+        public _DXVA_PicEntry_VPx[] frame_refs;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)] 
         public string ref_frame_sign_bias;
         public sbyte filter_level;

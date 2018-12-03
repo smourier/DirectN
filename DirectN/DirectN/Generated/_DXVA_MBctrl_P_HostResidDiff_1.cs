@@ -14,6 +14,6 @@ namespace DirectN
         public ushort wPC_Overflow;
         public uint dwReservedBits2;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public _DXVA_MVvalue[][] MVector;
+        public _DXVA_MVvalue[] MVector;
     }
 }

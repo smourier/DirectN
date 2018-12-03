@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(183,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(140,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        HRESULT GetDeclaration(ref _D3DVERTEXELEMENT9 pElement, ref uint pNumElements);
+        HRESULT GetDeclaration(ref _D3DVERTEXELEMENT9 __unnamed_0, ref uint pNumElements);
     }
 }

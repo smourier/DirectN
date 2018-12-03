@@ -10,6 +10,6 @@ namespace DirectN
         public uint FrameNumber;
         public uint NumMoveRegions;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public _MOVE_RECT[][] MoveRegions;
+        public _MOVE_RECT[] MoveRegions;
     }
 }

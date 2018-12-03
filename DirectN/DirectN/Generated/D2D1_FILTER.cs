@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1effectauthor.h(219,9)
 namespace DirectN
 {
+    /// <summary>
+    /// Represents filtering modes transforms may select to use on their input textures.
+    /// </summary>
     public enum D2D1_FILTER
     {
         D2D1_FILTER_MIN_MAG_MIP_POINT = 0,

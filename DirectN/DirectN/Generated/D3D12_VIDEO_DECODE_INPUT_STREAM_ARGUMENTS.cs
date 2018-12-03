@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint NumFrameArguments;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)] 
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT[][] FrameArguments;
+        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT[] FrameArguments;
         public D3D12_VIDEO_DECODE_REFERENCE_FRAMES ReferenceFrames;
         public D3D12_VIDEO_DECODE_COMPRESSED_BITSTREAM CompressedBitstream;
         public IntPtr pHeap;

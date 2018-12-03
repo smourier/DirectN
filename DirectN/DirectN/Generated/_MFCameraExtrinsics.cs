@@ -9,6 +9,6 @@ namespace DirectN
     {
         public uint TransformCount;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public _MFCameraExtrinsic_CalibratedTransform[][] CalibratedTransforms;
+        public _MFCameraExtrinsic_CalibratedTransform[] CalibratedTransforms;
     }
 }

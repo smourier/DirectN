@@ -13,7 +13,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
         public uint[] OutputComponents;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
-        public _D3D10_SHADER_DEBUG_OUTPUTVAR[][] OutputVars;
+        public _D3D10_SHADER_DEBUG_OUTPUTVAR[] OutputVars;
         public uint IndexReg;
         public uint IndexComp;
     }

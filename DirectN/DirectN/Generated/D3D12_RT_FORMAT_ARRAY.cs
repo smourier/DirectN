@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3D12_RT_FORMAT_ARRAY
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public DXGI_FORMAT[][] RTFormats;
+        public DXGI_FORMAT[] RTFormats;
         public uint NumRenderTargets;
     }
 }

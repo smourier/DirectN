@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Blend description which configures a blend transform object.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_BLEND_DESCRIPTION
     {

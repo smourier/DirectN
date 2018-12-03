@@ -12,6 +12,6 @@ namespace DirectN
         public float MinConvertedValue;
         public uint NumGammaControlPoints;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1025)] 
-        public float[][] ControlPointPositions;
+        public float[] ControlPointPositions;
     }
 }

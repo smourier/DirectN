@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(368,9)
 namespace DirectN
 {
-    /// <summary>
-    /// Differentiates which of the two possible arcs could match the given arc parameters.
-    /// </summary>
     public enum D2D1_ARC_SIZE
     {
         D2D1_ARC_SIZE_SMALL = 0,

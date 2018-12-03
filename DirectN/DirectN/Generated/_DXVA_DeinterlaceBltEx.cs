@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(1930,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva9typ.h(599,9)
 using System;
 using System.Runtime.InteropServices;
 using RECT = DirectN.tagRECT;
@@ -15,7 +15,7 @@ namespace DirectN
         public uint NumSourceSurfaces;
         public float Alpha;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
-        public _DXVA_VideoSample2[][] Source;
+        public _DXVA_VideoSample2[] Source;
         public uint DestinationFormat;
         public uint DestinationFlags;
     }
