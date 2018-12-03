@@ -60,6 +60,15 @@ namespace DirectN
         
         // IDirect3DViewport2
         [PreserveSig]
+        new HRESULT QueryInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppvObj);
+        
+        [PreserveSig]
+        new uint AddRef();
+        
+        [PreserveSig]
+        new uint Release();
+        
+        [PreserveSig]
         new HRESULT Initialize(ref IDirect3D __unnamed_0);
         
         [PreserveSig]
@@ -105,6 +114,51 @@ namespace DirectN
         new HRESULT SetViewport2(ref _D3DVIEWPORT2 __unnamed_0);
         
         // IDirect3DViewport3
+        [PreserveSig]
+        HRESULT Initialize(ref IDirect3D __unnamed_0);
+        
+        [PreserveSig]
+        HRESULT GetViewport(ref _D3DVIEWPORT __unnamed_0);
+        
+        [PreserveSig]
+        HRESULT SetViewport(ref _D3DVIEWPORT __unnamed_0);
+        
+        [PreserveSig]
+        HRESULT TransformVertices(uint __unnamed_0, ref _D3DTRANSFORMDATA __unnamed_1, uint __unnamed_2, ref uint __unnamed_3);
+        
+        [PreserveSig]
+        HRESULT LightElements(uint __unnamed_0, ref _D3DLIGHTDATA __unnamed_1);
+        
+        [PreserveSig]
+        HRESULT SetBackground(uint __unnamed_0);
+        
+        [PreserveSig]
+        HRESULT GetBackground(ref uint __unnamed_0, ref bool __unnamed_1);
+        
+        [PreserveSig]
+        HRESULT SetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0);
+        
+        [PreserveSig]
+        HRESULT GetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
+        
+        [PreserveSig]
+        HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2);
+        
+        [PreserveSig]
+        HRESULT AddLight(ref IDirect3DLight __unnamed_0);
+        
+        [PreserveSig]
+        HRESULT DeleteLight(ref IDirect3DLight __unnamed_0);
+        
+        [PreserveSig]
+        HRESULT NextLight(ref IDirect3DLight __unnamed_0, ref IDirect3DLight __unnamed_1, uint __unnamed_2);
+        
+        [PreserveSig]
+        HRESULT GetViewport2(ref _D3DVIEWPORT2 __unnamed_0);
+        
+        [PreserveSig]
+        HRESULT SetViewport2(ref _D3DVIEWPORT2 __unnamed_0);
+        
         [PreserveSig]
         HRESULT SetBackgroundDepth2(ref LPDIRECTDRAWSURFACE4 __unnamed_0);
         

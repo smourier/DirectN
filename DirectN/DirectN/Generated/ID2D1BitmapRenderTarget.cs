@@ -5,6 +5,9 @@ using D2D1_TAG = System.UInt64;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Renders to an intermediate texture created by the CreateCompatibleRenderTarget method.
+    /// </summary>
     [Guid("2cd90695-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1BitmapRenderTarget : ID2D1RenderTarget
     {
@@ -14,7 +17,7 @@ namespace DirectN
         
         // ID2D1RenderTarget
         [PreserveSig]
-        new HRESULT CreateBitmap(D2D_SIZE_U size, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object srcData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
+        new HRESULT CreateBitmap(D2D_SIZE_U size, /* optional(void) */ IntPtr srcData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
         
         [PreserveSig]
         new HRESULT CreateBitmapFromWicBitmap(/* _In_ */ IWICBitmapSource wicBitmapSource, /* optional(D2D1_BITMAP_PROPERTIES) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);

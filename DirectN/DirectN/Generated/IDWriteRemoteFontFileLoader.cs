@@ -12,14 +12,14 @@ namespace DirectN
     {
         // IDWriteFontFileLoader
         [PreserveSig]
-        new HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
+        new HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
         
         // IDWriteRemoteFontFileLoader
         [PreserveSig]
-        HRESULT CreateRemoteStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteRemoteFontFileStream fontFileStream);
+        HRESULT CreateRemoteStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteRemoteFontFileStream fontFileStream);
         
         [PreserveSig]
-        HRESULT GetLocalityFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_ */ out DWRITE_LOCALITY locality);
+        HRESULT GetLocalityFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_ */ out DWRITE_LOCALITY locality);
         
         [PreserveSig]
         HRESULT CreateFontFileReferenceFromUrl(ref IDWriteFactory factory, /* _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string baseUrl, /* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string fontFileUrl, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);

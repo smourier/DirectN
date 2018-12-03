@@ -17,10 +17,10 @@ namespace DirectN
         new HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* optional(void) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* optional(void) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        new HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* optional(IUnknown) */ IntPtr pData);
         
         // ID3D11VideoContext
         [PreserveSig]
@@ -30,7 +30,7 @@ namespace DirectN
         new HRESULT ReleaseDecoderBuffer(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ D3D11_VIDEO_DECODER_BUFFER_TYPE Type);
         
         [PreserveSig]
-        new HRESULT DecoderBeginFrame(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ ID3D11VideoDecoderOutputView pView, uint ContentKeySize, /* [annotation] _In_reads_bytes_opt_(ContentKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object pContentKey);
+        new HRESULT DecoderBeginFrame(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ ID3D11VideoDecoderOutputView pView, uint ContentKeySize, /* optional(void) */ IntPtr pContentKey);
         
         [PreserveSig]
         new HRESULT DecoderEndFrame(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder);
@@ -171,7 +171,7 @@ namespace DirectN
         new void EncryptionBlt(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ ID3D11Texture2D pSrcSurface, /* [annotation] _In_ */ ID3D11Texture2D pDstSurface, /* [annotation] _In_ */ uint IVSize, /* [annotation] _Inout_opt_bytecount_(IVSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pIV);
         
         [PreserveSig]
-        new void DecryptionBlt(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ ID3D11Texture2D pSrcSurface, /* [annotation] _In_ */ ID3D11Texture2D pDstSurface, /* optional(D3D11_ENCRYPTED_BLOCK_INFO) */ IntPtr pEncryptedBlockInfo, /* [annotation] _In_ */ uint ContentKeySize, /* [annotation] _In_reads_bytes_opt_(ContentKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object pContentKey, /* [annotation] _In_ */ uint IVSize, /* [annotation] _Inout_opt_bytecount_(IVSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pIV);
+        new void DecryptionBlt(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ ID3D11Texture2D pSrcSurface, /* [annotation] _In_ */ ID3D11Texture2D pDstSurface, /* optional(D3D11_ENCRYPTED_BLOCK_INFO) */ IntPtr pEncryptedBlockInfo, /* [annotation] _In_ */ uint ContentKeySize, /* optional(void) */ IntPtr pContentKey, /* [annotation] _In_ */ uint IVSize, /* [annotation] _Inout_opt_bytecount_(IVSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pIV);
         
         [PreserveSig]
         new void StartSessionKeyRefresh(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ uint RandomNumberSize, /* [annotation] _Out_writes_bytes_(RandomNumberSize) */ IntPtr pRandomNumber);
@@ -186,10 +186,10 @@ namespace DirectN
         new HRESULT NegotiateAuthenticatedChannelKeyExchange(/* [annotation] _In_ */ ID3D11AuthenticatedChannel pChannel, /* [annotation] _In_ */ uint DataSize, /* [annotation] _Inout_updates_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
-        new HRESULT QueryAuthenticatedChannel(/* [annotation] _In_ */ ID3D11AuthenticatedChannel pChannel, /* [annotation] _In_ */ uint InputSize, /* [annotation] _In_reads_bytes_(InputSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pInput, /* [annotation] _In_ */ uint OutputSize, /* [annotation] _Out_writes_bytes_(OutputSize) */ IntPtr pOutput);
+        new HRESULT QueryAuthenticatedChannel(/* [annotation] _In_ */ ID3D11AuthenticatedChannel pChannel, /* [annotation] _In_ */ uint InputSize, /* [annotation] _In_reads_bytes_(InputSize) */ IntPtr pInput, /* [annotation] _In_ */ uint OutputSize, /* [annotation] _Out_writes_bytes_(OutputSize) */ IntPtr pOutput);
         
         [PreserveSig]
-        new HRESULT ConfigureAuthenticatedChannel(/* [annotation] _In_ */ ID3D11AuthenticatedChannel pChannel, /* [annotation] _In_ */ uint InputSize, /* [annotation] _In_reads_bytes_(InputSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pInput, /* [annotation] _Out_ */ out D3D11_AUTHENTICATED_CONFIGURE_OUTPUT pOutput);
+        new HRESULT ConfigureAuthenticatedChannel(/* [annotation] _In_ */ ID3D11AuthenticatedChannel pChannel, /* [annotation] _In_ */ uint InputSize, /* [annotation] _In_reads_bytes_(InputSize) */ IntPtr pInput, /* [annotation] _Out_ */ out D3D11_AUTHENTICATED_CONFIGURE_OUTPUT pOutput);
         
         [PreserveSig]
         new void VideoProcessorSetStreamRotation(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ bool Enable, /* [annotation] _In_ */ D3D11_VIDEO_PROCESSOR_ROTATION Rotation);
@@ -202,7 +202,7 @@ namespace DirectN
         HRESULT SubmitDecoderBuffers1(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ uint NumBuffers, /* [annotation] _In_reads_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_VIDEO_DECODER_BUFFER_DESC1[] pBufferDesc);
         
         [PreserveSig]
-        HRESULT GetDataForNewHardwareKey(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ uint PrivateInputSize, /* [annotation] _In_reads_(PrivateInputSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pPrivatInputData, /* [annotation] _Out_ */ out ulong pPrivateOutputData);
+        HRESULT GetDataForNewHardwareKey(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ uint PrivateInputSize, /* [annotation] _In_reads_(PrivateInputSize) */ IntPtr pPrivatInputData, /* [annotation] _Out_ */ out ulong pPrivateOutputData);
         
         [PreserveSig]
         HRESULT CheckCryptoSessionStatus(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _Out_ */ out D3D11_CRYPTO_SESSION_STATUS pStatus);

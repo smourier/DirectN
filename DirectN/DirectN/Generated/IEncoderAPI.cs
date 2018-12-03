@@ -14,18 +14,18 @@ namespace DirectN
         HRESULT IsAvailable(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api);
         
         [PreserveSig]
-        HRESULT GetParameterRange(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out object ValueMin, /* [annotation][out] _Out_ */ out object ValueMax, /* [annotation][out] _Out_ */ out object SteppingDelta);
+        HRESULT GetParameterRange(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out IntPtr ValueMin, /* [annotation][out] _Out_ */ out IntPtr ValueMax, /* [annotation][out] _Out_ */ out IntPtr SteppingDelta);
         
         [PreserveSig]
         HRESULT GetParameterValues(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ValuesCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object Values, /* [annotation][out] _Out_ */ out uint ValuesCount);
         
         [PreserveSig]
-        HRESULT GetDefaultValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out object Value);
+        HRESULT GetDefaultValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out IntPtr Value);
         
         [PreserveSig]
-        HRESULT GetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out object Value);
+        HRESULT GetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out IntPtr Value);
         
         [PreserveSig]
-        HRESULT SetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][in] _In_ */ object Value);
+        HRESULT SetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][in] _In_ */ IntPtr Value);
     }
 }

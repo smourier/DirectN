@@ -8,9 +8,6 @@ using LPDDSURFACEDESC = DirectN._DDSURFACEDESC;
 
 namespace DirectN
 {
-    /// <summary>
-    /// **************************************************************************
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDHAL_CREATESURFACEDATA
     {

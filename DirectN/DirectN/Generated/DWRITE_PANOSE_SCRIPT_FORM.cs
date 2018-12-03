@@ -1,9 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(304,1)
 namespace DirectN
 {
-    /// <summary>
-    /// General look of the face, considering slope and tails. Present for families: 3-script
-    /// </summary>
     public enum DWRITE_PANOSE_SCRIPT_FORM
     {
         DWRITE_PANOSE_SCRIPT_FORM_ANY = 0,

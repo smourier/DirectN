@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The text analyzer interface represents a set of application-defined callbacks that perform rendering of text, inline objects, and decorations such as underlines.
-    /// </summary>
     [Guid("553a9ff3-5693-4df7-b52b-74806f7f2eb9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextAnalyzer2 : IDWriteTextAnalyzer1
     {

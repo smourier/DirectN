@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(187,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(144,1)
 using System;
 using System.Runtime.InteropServices;
 using RECT = DirectN.tagRECT;
@@ -10,19 +10,10 @@ namespace DirectN
     {
         // IDirect3DResource9
         [PreserveSig]
-        new HRESULT QueryInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppvObj);
-        
-        [PreserveSig]
-        new uint AddRef();
-        
-        [PreserveSig]
-        new uint Release();
-        
-        [PreserveSig]
         new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
+        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
         new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
@@ -47,7 +38,7 @@ namespace DirectN
         new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
+        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
         new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
@@ -86,6 +77,24 @@ namespace DirectN
         new void GenerateMipSubLevels();
         
         // IDirect3DTexture9
+        [PreserveSig]
+        uint SetLOD(uint LODNew);
+        
+        [PreserveSig]
+        uint GetLOD();
+        
+        [PreserveSig]
+        uint GetLevelCount();
+        
+        [PreserveSig]
+        HRESULT SetAutoGenFilterType(_D3DTEXTUREFILTERTYPE FilterType);
+        
+        [PreserveSig]
+        _D3DTEXTUREFILTERTYPE GetAutoGenFilterType();
+        
+        [PreserveSig]
+        void GenerateMipSubLevels();
+        
         [PreserveSig]
         HRESULT GetLevelDesc(uint Level, ref _D3DSURFACE_DESC pDesc);
         

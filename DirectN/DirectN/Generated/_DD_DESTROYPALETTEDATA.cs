@@ -6,9 +6,6 @@ using PDD_PALETTE_GLOBAL = DirectN._DD_PALETTE_GLOBAL;
 
 namespace DirectN
 {
-    /// <summary>
-    /// **************************************************************************
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DD_DESTROYPALETTEDATA
     {

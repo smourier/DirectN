@@ -12,11 +12,11 @@ namespace DirectN
     {
         // IDWriteFontFileLoader
         [PreserveSig]
-        new HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
+        new HRESULT CreateStreamFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _COM_Outptr_ */ out IDWriteFontFileStream fontFileStream);
         
         // IDWriteInMemoryFontFileLoader
         [PreserveSig]
-        HRESULT CreateInMemoryFontFileReference(ref IDWriteFactory factory, /* _In_reads_bytes_(fontDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object fontData, uint fontDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object ownerObject, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);
+        HRESULT CreateInMemoryFontFileReference(ref IDWriteFactory factory, /* _In_reads_bytes_(fontDataSize) */ IntPtr fontData, uint fontDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object ownerObject, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);
         
         [PreserveSig]
         uint GetFileCount();

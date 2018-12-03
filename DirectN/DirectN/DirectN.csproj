@@ -445,6 +445,7 @@
     <Compile Include="Generated\D3D11_AUTHENTICATED_CONFIGURE_PROTECTION_INPUT.cs" />
     <Compile Include="Generated\D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT.cs" />
     <Compile Include="Generated\D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE.cs" />
+    <Compile Include="Generated\D3D11_AUTHENTICATED_PROTECTION_FLAGS.cs" />
     <Compile Include="Generated\D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT.cs" />
     <Compile Include="Generated\D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_INPUT.cs" />
     <Compile Include="Generated\D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_OUTPUT.cs" />
@@ -1233,6 +1234,7 @@
     <Compile Include="Generated\DWRITE_OPTICAL_ALIGNMENT.cs" />
     <Compile Include="Generated\DWRITE_OUTLINE_THRESHOLD.cs" />
     <Compile Include="Generated\DWRITE_OVERHANG_METRICS.cs" />
+    <Compile Include="Generated\DWRITE_PANOSE.cs" />
     <Compile Include="Generated\DWRITE_PANOSE_ARM_STYLE.cs" />
     <Compile Include="Generated\DWRITE_PANOSE_ASPECT.cs" />
     <Compile Include="Generated\DWRITE_PANOSE_ASPECT_RATIO.cs" />
@@ -1258,6 +1260,10 @@
     <Compile Include="Generated\DWRITE_PANOSE_WEIGHT.cs" />
     <Compile Include="Generated\DWRITE_PANOSE_XASCENT.cs" />
     <Compile Include="Generated\DWRITE_PANOSE_XHEIGHT.cs" />
+    <Compile Include="Generated\DWRITE_PANOSE__struct_0.cs" />
+    <Compile Include="Generated\DWRITE_PANOSE__struct_1.cs" />
+    <Compile Include="Generated\DWRITE_PANOSE__struct_2.cs" />
+    <Compile Include="Generated\DWRITE_PANOSE__struct_3.cs" />
     <Compile Include="Generated\DWRITE_PARAGRAPH_ALIGNMENT.cs" />
     <Compile Include="Generated\DWRITE_PIXEL_GEOMETRY.cs" />
     <Compile Include="Generated\DWRITE_READING_DIRECTION.cs" />
@@ -1460,6 +1466,7 @@
     <Compile Include="Generated\DXGI_SWAP_CHAIN_FULLSCREEN_DESC.cs" />
     <Compile Include="Generated\DXGI_SWAP_EFFECT.cs" />
     <Compile Include="FourCC.cs" />
+    <Compile Include="Generated\DXGK_MIRACAST_CHUNK_ID.cs" />
     <Compile Include="Generated\DXGK_MIRACAST_CHUNK_INFO.cs" />
     <Compile Include="Generated\EAudioConstriction.cs" />
     <Compile Include="Generated\eAVAudioChannelConfig.cs" />
@@ -3664,6 +3671,7 @@
     <Compile Include="Generated\_DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA__union_0__struct_0.cs" />
     <Compile Include="Generated\_DXVAHD_BLT_STATE_PRIVATE_DATA.cs" />
     <Compile Include="Generated\_DXVAHD_BLT_STATE_TARGET_RECT_DATA.cs" />
+    <Compile Include="Generated\_DXVAHD_COLOR.cs" />
     <Compile Include="Generated\_DXVAHD_COLOR_RGBA.cs" />
     <Compile Include="Generated\_DXVAHD_COLOR_YCbCrA.cs" />
     <Compile Include="Generated\_DXVAHD_CONTENT_DESC.cs" />
@@ -3870,6 +3878,7 @@
     <Compile Include="Generated\_MFNET_PROXYSETTINGS.cs" />
     <Compile Include="Generated\_MFNominalRange.cs" />
     <Compile Include="Generated\_MFOffset.cs" />
+    <Compile Include="Generated\_MFPaletteEntry.cs" />
     <Compile Include="Generated\_MFPinholeCameraIntrinsics.cs" />
     <Compile Include="Generated\_MFPinholeCameraIntrinsic_IntrinsicModel.cs" />
     <Compile Include="Generated\_MFPOLICYMANAGER_ACTION.cs" />
@@ -3970,6 +3979,8 @@
     <Compile Include="Generated\_segmentation_VP9__union_0.cs" />
     <Compile Include="Generated\_segmentation_VP9__union_0__struct_0.cs" />
     <Compile Include="Generated\_STREAM_MEDIUM.cs" />
+    <Compile Include="Generated\_timecode.cs" />
+    <Compile Include="Generated\_timecode__struct_0.cs" />
     <Compile Include="Generated\_UNCOMPRESSEDAUDIOFORMAT.cs" />
     <Compile Include="Generated\_VIDEOMEMORY.cs" />
     <Compile Include="Generated\_VIDEOMEMORYINFO.cs" />
@@ -4037,6 +4048,7 @@
     <Compile Include="Generated\__MIDL___MIDL_itf_strmif_0000_0132_0003.cs" />
     <Compile Include="Generated\__MIDL___MIDL_itf_strmif_0000_0132_0004.cs" />
     <Compile Include="Generated\__MIDL___MIDL_itf_strmif_0000_0138_0001.cs" />
+    <Compile Include="Generated\__struct_0.cs" />
     <Compile Include="Generated\__struct_dxva2trace_1.cs" />
     <Compile Include="Generated\__struct_dxva2trace_2.cs" />
     <Compile Include="Generated\__struct_dxva2trace_3.cs" />
@@ -4044,7 +4056,24 @@
     <Compile Include="Generated\__struct_dxva2trace_5.cs" />
     <Compile Include="Generated\__struct_dxva2trace_6.cs" />
     <Compile Include="Generated\__struct_dxva2trace_7.cs" />
+    <Compile Include="Generated\__struct_mmreg_10__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_11__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_12__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_13__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_14__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_15__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_16__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_17__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_18__union_0.cs" />
     <Compile Include="Generated\__struct_mmreg_1__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_2__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_3__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_4__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_5__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_6__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_7__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_8__union_0.cs" />
+    <Compile Include="Generated\__struct_mmreg_9__union_0.cs" />
     <Compile Include="HRESULT.cs" />
     <Compile Include="HRESULTS.cs" />
     <Compile Include="Generated\ID2D1Bitmap.cs" />

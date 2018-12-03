@@ -6,9 +6,6 @@ using PD2D1_EFFECT_FACTORY = System.IntPtr;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Creates Direct2D resources. This interface also enables the creation of ID2D1Device3 objects.
-    /// </summary>
     [Guid("bd4ec2d2-0662-4bee-ba8e-6f29f032e096"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Factory4 : ID2D1Factory3
     {

@@ -3,9 +3,6 @@ using System;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Option flags controlling primary conversion performed by CreateImageSourceFromDxgi, if any.
-    /// </summary>
     [Flags]
     public enum D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS
     {

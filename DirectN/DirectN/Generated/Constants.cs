@@ -2218,7 +2218,7 @@
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\audiomediatype.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
@@ -2241,10 +2241,10 @@
         public const int AVENC_H264V_LEVELCOUNT = 16;
         public const int AVENC_H264V_MAX_MBBITS = 3200;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d2d1effectauthor.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\D2D1EffectAuthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\D2DErr.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\D2DErr.h
         public const int FACILITY_D2D = 2201;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d.h
@@ -5138,7 +5138,7 @@
         public const int TIME_TICKS = 32;
         public const int WAVERR_BASE = 32;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\strmif.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\strmif.h
         public const int AM_GBF_NODDSURFACELOCK = 8;
         public const int AM_GBF_NOTASYNCPOINT = 2;
         public const int AM_GBF_NOWAIT = 4;

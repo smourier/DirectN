@@ -17,9 +17,9 @@ namespace DirectN
         HRESULT NegotiateKeyExchange(uint DataSize, [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
-        HRESULT Query(uint InputSize, [MarshalAs(UnmanagedType.IUnknown)] object pInput, uint OutputSize, [MarshalAs(UnmanagedType.IUnknown)] object pOutput);
+        HRESULT Query(uint InputSize, IntPtr pInput, uint OutputSize, [MarshalAs(UnmanagedType.IUnknown)] object pOutput);
         
         [PreserveSig]
-        HRESULT Configure(uint InputSize, [MarshalAs(UnmanagedType.IUnknown)] object pInput, ref _D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT pOutput);
+        HRESULT Configure(uint InputSize, IntPtr pInput, ref _D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT pOutput);
     }
 }

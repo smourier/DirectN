@@ -6,6 +6,9 @@ using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Encapsulates a 32-bit device independent bitmap and device context, which can be used for rendering glyphs.
+    /// </summary>
     [Guid("791e8298-3ef3-4230-9880-c9bdecc42064"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTarget
     {

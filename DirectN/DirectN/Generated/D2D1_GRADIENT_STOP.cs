@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Contains the position and color of a gradient stop.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_GRADIENT_STOP
     {

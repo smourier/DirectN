@@ -10,6 +10,6 @@ namespace DirectN
         public uint Format;
         public uint PaletteEntries;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public MFPaletteEntry[] Palette;
+        public _MFPaletteEntry[] Palette;
     }
 }

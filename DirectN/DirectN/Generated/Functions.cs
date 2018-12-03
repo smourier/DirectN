@@ -353,25 +353,25 @@ namespace DirectN
         public static extern HRESULT D3D10CompileShader(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPStr)] string pSrcData, IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pFileName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, [MarshalAs(UnmanagedType.LPStr)] string pFunctionName, [MarshalAs(UnmanagedType.LPStr)] string pProfile, uint Flags, /* _Out_ */ out ID3D10Blob ppShader, /* _Out_opt_ */ out ID3D10Blob ppErrorMsgs);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10DisassembleShader(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShader, IntPtr BytecodeLength, bool EnableColorCode, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pComments, /* _Out_ */ out ID3D10Blob ppDisassembly);
+        public static extern HRESULT D3D10DisassembleShader(/* _In_reads_bytes_(BytecodeLength) */ IntPtr pShader, IntPtr BytecodeLength, bool EnableColorCode, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pComments, /* _Out_ */ out ID3D10Blob ppDisassembly);
         
         [DllImport("d3d10")]
         public static extern string D3D10GetGeometryShaderProfile(/* _In_ */ ID3D10Device pDevice);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10GetInputAndOutputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
+        public static extern HRESULT D3D10GetInputAndOutputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ IntPtr pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10GetInputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
+        public static extern HRESULT D3D10GetInputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ IntPtr pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10GetOutputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
+        public static extern HRESULT D3D10GetOutputSignatureBlob(/* _In_reads_bytes_(BytecodeLength) */ IntPtr pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppSignatureBlob);
         
         [DllImport("d3d10")]
         public static extern string D3D10GetPixelShaderProfile(/* _In_ */ ID3D10Device pDevice);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10GetShaderDebugInfo(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppDebugInfo);
+        public static extern HRESULT D3D10GetShaderDebugInfo(/* _In_reads_bytes_(BytecodeLength) */ IntPtr pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10Blob ppDebugInfo);
         
         [DllImport("d3d10")]
         public static extern string D3D10GetVertexShaderProfile(/* _In_ */ ID3D10Device pDevice);
@@ -380,7 +380,7 @@ namespace DirectN
         public static extern HRESULT D3D10PreprocessShader(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPStr)] string pSrcData, IntPtr SrcDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pFileName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, /* _Out_ */ out ID3D10Blob ppShaderText, /* _Out_opt_ */ out ID3D10Blob ppErrorMsgs);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10ReflectShader(/* _In_reads_bytes_(BytecodeLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10ShaderReflection ppReflector);
+        public static extern HRESULT D3D10ReflectShader(/* _In_reads_bytes_(BytecodeLength) */ IntPtr pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10ShaderReflection ppReflector);
         
         [DllImport("d3d10")]
         public static extern HRESULT D3D10CreateDevice1(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D10_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint SDKVersion, /* _Out_opt_ */ out ID3D10Device1 ppDevice);
@@ -398,7 +398,7 @@ namespace DirectN
         public static extern HRESULT D3D11CreateDeviceAndSwapChain(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D_DRIVER_TYPE DriverType, ref IntPtr Software, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D_FEATURE_LEVEL[] pFeatureLevels, uint FeatureLevels, uint SDKVersion, /* optional(DXGI_SWAP_CHAIN_DESC) */ IntPtr pSwapChainDesc, /* _COM_Outptr_opt_ */ out IDXGISwapChain ppSwapChain, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _Out_opt_ */ out D3D_FEATURE_LEVEL pFeatureLevel, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext);
         
         [DllImport("d3d11")]
-        public static extern HRESULT D3D11On12CreateDevice(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D_FEATURE_LEVEL[] pFeatureLevels, uint FeatureLevels, /* _In_reads_opt_( NumQueues ) */ [MarshalAs(UnmanagedType.IUnknown)] object ppCommandQueues, uint NumQueues, uint NodeMask, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext, /* _Out_opt_ */ out D3D_FEATURE_LEVEL pChosenFeatureLevel);
+        public static extern HRESULT D3D11On12CreateDevice(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D_FEATURE_LEVEL[] pFeatureLevels, uint FeatureLevels, /* optional(IUnknown) */ IntPtr ppCommandQueues, uint NumQueues, uint NodeMask, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext, /* _Out_opt_ */ out D3D_FEATURE_LEVEL pChosenFeatureLevel);
         
         [DllImport("d3d11")]
         public static extern HRESULT D3DDisassemble11Trace(/* _In_reads_bytes_(SrcDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ ID3D11ShaderTrace pTrace, /* _In_ */ uint StartStep, /* _In_ */ uint NumSteps, /* _In_ */ uint Flags, /* _COM_Outptr_ */ out ID3D10Blob ppDisassembly);
@@ -629,7 +629,7 @@ namespace DirectN
         public static extern HRESULT DXGIGetDebugInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppDebug);
         
         [DllImport("dxtmpl")]
-        public static extern bool DXIsValidAddress([MarshalAs(UnmanagedType.IUnknown)] object lp, uint nBytes, bool bReadWrite);
+        public static extern bool DXIsValidAddress(IntPtr lp, uint nBytes, bool bReadWrite);
         
         [DllImport("dxva2api")]
         public static extern void DXVA2FixedToFloat(/* _In_ */ DXVA2_Fixed32 _fixed_);

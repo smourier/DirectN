@@ -14,10 +14,10 @@ namespace DirectN
         new HRESULT GetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _Inout_ */ ref uint pDataSize, /* optional(void) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* optional(void) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateDataInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        new HRESULT SetPrivateDataInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* optional(IUnknown) */ IntPtr pData);
         
         [PreserveSig]
         new HRESULT SetName(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string Name);
@@ -51,7 +51,7 @@ namespace DirectN
         new uint GetDescriptorHandleIncrementSize(/* _In_ */ D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapType);
         
         [PreserveSig]
-        new HRESULT CreateRootSignature(/* _In_ */ uint nodeMask, /* _In_reads_(blobLengthInBytes) */ [MarshalAs(UnmanagedType.IUnknown)] object pBlobWithRootSignature, /* _In_ */ IntPtr blobLengthInBytes, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvRootSignature);
+        new HRESULT CreateRootSignature(/* _In_ */ uint nodeMask, /* _In_reads_(blobLengthInBytes) */ IntPtr pBlobWithRootSignature, /* _In_ */ IntPtr blobLengthInBytes, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvRootSignature);
         
         [PreserveSig]
         new void CreateConstantBufferView(/* optional(D3D12_CONSTANT_BUFFER_VIEW_DESC) */ IntPtr pDesc, /* _In_ */ D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptor);
@@ -136,7 +136,7 @@ namespace DirectN
         
         // ID3D12Device1
         [PreserveSig]
-        HRESULT CreatePipelineLibrary(/* _In_reads_(BlobLength) */ [MarshalAs(UnmanagedType.IUnknown)] object pLibraryBlob, IntPtr BlobLength, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppPipelineLibrary);
+        HRESULT CreatePipelineLibrary(/* _In_reads_(BlobLength) */ IntPtr pLibraryBlob, IntPtr BlobLength, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppPipelineLibrary);
         
         [PreserveSig]
         HRESULT SetEventOnMultipleFenceCompletion(/* _In_reads_(NumFences) */ out IntPtr ppFences, /* _In_reads_(NumFences) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ulong[] pFenceValues, uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, ref IntPtr hEvent);

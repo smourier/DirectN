@@ -14,10 +14,10 @@ namespace DirectN
         new HRESULT GetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _Inout_ */ ref uint pDataSize, /* optional(void) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        new HRESULT SetPrivateData(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint DataSize, /* optional(void) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateDataInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        new HRESULT SetPrivateDataInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* optional(IUnknown) */ IntPtr pData);
         
         [PreserveSig]
         new HRESULT SetName(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string Name);
@@ -110,10 +110,10 @@ namespace DirectN
         new void SetGraphicsRoot32BitConstant(/* _In_ */ uint RootParameterIndex, /* _In_ */ uint SrcData, /* _In_ */ uint DestOffsetIn32BitValues);
         
         [PreserveSig]
-        new void SetComputeRoot32BitConstants(/* _In_ */ uint RootParameterIndex, /* _In_ */ uint Num32BitValuesToSet, /* _In_reads_(Num32BitValuesToSet*sizeof(UINT)) */ [MarshalAs(UnmanagedType.IUnknown)] object pSrcData, /* _In_ */ uint DestOffsetIn32BitValues);
+        new void SetComputeRoot32BitConstants(/* _In_ */ uint RootParameterIndex, /* _In_ */ uint Num32BitValuesToSet, /* _In_reads_(Num32BitValuesToSet*sizeof(UINT)) */ IntPtr pSrcData, /* _In_ */ uint DestOffsetIn32BitValues);
         
         [PreserveSig]
-        new void SetGraphicsRoot32BitConstants(/* _In_ */ uint RootParameterIndex, /* _In_ */ uint Num32BitValuesToSet, /* _In_reads_(Num32BitValuesToSet*sizeof(UINT)) */ [MarshalAs(UnmanagedType.IUnknown)] object pSrcData, /* _In_ */ uint DestOffsetIn32BitValues);
+        new void SetGraphicsRoot32BitConstants(/* _In_ */ uint RootParameterIndex, /* _In_ */ uint Num32BitValuesToSet, /* _In_reads_(Num32BitValuesToSet*sizeof(UINT)) */ IntPtr pSrcData, /* _In_ */ uint DestOffsetIn32BitValues);
         
         [PreserveSig]
         new void SetComputeRootConstantBufferView(/* _In_ */ uint RootParameterIndex, /* _In_ */ ulong BufferLocation);
@@ -173,10 +173,10 @@ namespace DirectN
         new void SetPredication(/* _In_opt_ */ ID3D12Resource pBuffer, /* _In_ */ ulong AlignedBufferOffset, /* _In_ */ D3D12_PREDICATION_OP Operation);
         
         [PreserveSig]
-        new void SetMarker(uint Metadata, /* _In_reads_bytes_opt_(Size) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Size);
+        new void SetMarker(uint Metadata, /* optional(void) */ IntPtr pData, uint Size);
         
         [PreserveSig]
-        new void BeginEvent(uint Metadata, /* _In_reads_bytes_opt_(Size) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Size);
+        new void BeginEvent(uint Metadata, /* optional(void) */ IntPtr pData, uint Size);
         
         [PreserveSig]
         new void EndEvent();
@@ -219,10 +219,10 @@ namespace DirectN
         void EndRenderPass();
         
         [PreserveSig]
-        void InitializeMetaCommand(/* _In_ */ ID3D12MetaCommand pMetaCommand, /* _In_reads_bytes_opt_(InitializationParametersDataSizeInBytes) */ [MarshalAs(UnmanagedType.IUnknown)] object pInitializationParametersData, /* _In_ */ IntPtr InitializationParametersDataSizeInBytes);
+        void InitializeMetaCommand(/* _In_ */ ID3D12MetaCommand pMetaCommand, /* optional(void) */ IntPtr pInitializationParametersData, /* _In_ */ IntPtr InitializationParametersDataSizeInBytes);
         
         [PreserveSig]
-        void ExecuteMetaCommand(/* _In_ */ ID3D12MetaCommand pMetaCommand, /* _In_reads_bytes_opt_(ExecutionParametersDataSizeInBytes) */ [MarshalAs(UnmanagedType.IUnknown)] object pExecutionParametersData, /* _In_ */ IntPtr ExecutionParametersDataSizeInBytes);
+        void ExecuteMetaCommand(/* _In_ */ ID3D12MetaCommand pMetaCommand, /* optional(void) */ IntPtr pExecutionParametersData, /* _In_ */ IntPtr ExecutionParametersDataSizeInBytes);
         
         [PreserveSig]
         void BuildRaytracingAccelerationStructure(/* _In_ */ ref D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC pDesc, /* _In_ */ uint NumPostbuildInfoDescs, /* _In_reads_opt_(NumPostbuildInfoDescs) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC[] pPostbuildInfoDescs);

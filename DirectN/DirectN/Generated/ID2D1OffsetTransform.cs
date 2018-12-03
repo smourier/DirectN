@@ -5,9 +5,6 @@ using D2D1_POINT_2L = DirectN.tagPOINT;
 
 namespace DirectN
 {
-    /// <summary>
-    /// An effect uses this interface to offset an image without inserting a rendering pass.
-    /// </summary>
     [Guid("3fe6adea-7643-4f53-bd14-a0ce63f24042"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1OffsetTransform : ID2D1TransformNode
     {

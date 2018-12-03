@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// A font fallback definition used for mapping characters to fonts capable of supporting them.
+    /// </summary>
     [Guid("efa008f9-f7a1-48bf-b05c-f224713cc0ff"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFallback
     {

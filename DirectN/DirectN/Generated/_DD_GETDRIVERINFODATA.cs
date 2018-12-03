@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// **************************************************************************
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DD_GETDRIVERINFODATA
     {

@@ -15,19 +15,19 @@ namespace DirectN
         new HRESULT IsAvailable(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api);
         
         [PreserveSig]
-        new HRESULT GetParameterRange(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out object ValueMin, /* [annotation][out] _Out_ */ out object ValueMax, /* [annotation][out] _Out_ */ out object SteppingDelta);
+        new HRESULT GetParameterRange(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out IntPtr ValueMin, /* [annotation][out] _Out_ */ out IntPtr ValueMax, /* [annotation][out] _Out_ */ out IntPtr SteppingDelta);
         
         [PreserveSig]
         new HRESULT GetParameterValues(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_all_(*ValuesCount) */ [MarshalAs(UnmanagedType.IUnknown)] out object Values, /* [annotation][out] _Out_ */ out uint ValuesCount);
         
         [PreserveSig]
-        new HRESULT GetDefaultValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out object Value);
+        new HRESULT GetDefaultValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out IntPtr Value);
         
         [PreserveSig]
-        new HRESULT GetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out object Value);
+        new HRESULT GetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][out] _Out_ */ out IntPtr Value);
         
         [PreserveSig]
-        new HRESULT SetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][in] _In_ */ object Value);
+        new HRESULT SetValue(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid Api, /* [annotation][in] _In_ */ IntPtr Value);
         
         // IVideoEncoder
     }

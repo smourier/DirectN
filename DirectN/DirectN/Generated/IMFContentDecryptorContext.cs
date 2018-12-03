@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFContentDecryptorContext
     {
         [PreserveSig]
-        HRESULT InitializeHardwareKey(/* [annotation][in] _In_ */ uint InputPrivateDataByteCount, /* [annotation][in] _In_reads_opt_(InputPrivateDataByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object InputPrivateData, /* [annotation][out] _Out_ */ out ulong OutputPrivateData);
+        HRESULT InitializeHardwareKey(/* [annotation][in] _In_ */ uint InputPrivateDataByteCount, /* optional(void) */ IntPtr InputPrivateData, /* [annotation][out] _Out_ */ out ulong OutputPrivateData);
     }
 }

@@ -16,10 +16,10 @@ namespace DirectN
         new HRESULT GetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _Inout_ */ ref uint pDataSize, /* optional(void) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_reads_bytes_opt_( DataSize ) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* optional(void) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        new HRESULT SetPrivateDataInterface(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* optional(IUnknown) */ IntPtr pData);
         
         // ID3D11DeviceContext
         [PreserveSig]
@@ -146,7 +146,7 @@ namespace DirectN
         new void CopyResource(/* [annotation] _In_ */ ID3D11Resource pDstResource, /* [annotation] _In_ */ ID3D11Resource pSrcResource);
         
         [PreserveSig]
-        new void UpdateSubresource(/* [annotation] _In_ */ ID3D11Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* optional(D3D11_BOX) */ IntPtr pDstBox, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pSrcData, /* [annotation] _In_ */ uint SrcRowPitch, /* [annotation] _In_ */ uint SrcDepthPitch);
+        new void UpdateSubresource(/* [annotation] _In_ */ ID3D11Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* optional(D3D11_BOX) */ IntPtr pDstBox, /* [annotation] _In_ */ IntPtr pSrcData, /* [annotation] _In_ */ uint SrcRowPitch, /* [annotation] _In_ */ uint SrcDepthPitch);
         
         [PreserveSig]
         new void CopyStructureCount(/* [annotation] _In_ */ ID3D11Buffer pDstBuffer, /* [annotation] _In_ */ uint DstAlignedByteOffset, /* [annotation] _In_ */ ID3D11UnorderedAccessView pSrcView);
@@ -351,7 +351,7 @@ namespace DirectN
         new void CopySubresourceRegion1(/* [annotation] _In_ */ ID3D11Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* [annotation] _In_ */ uint DstX, /* [annotation] _In_ */ uint DstY, /* [annotation] _In_ */ uint DstZ, /* [annotation] _In_ */ ID3D11Resource pSrcResource, /* [annotation] _In_ */ uint SrcSubresource, /* optional(D3D11_BOX) */ IntPtr pSrcBox, /* [annotation] _In_ */ uint CopyFlags);
         
         [PreserveSig]
-        new void UpdateSubresource1(/* [annotation] _In_ */ ID3D11Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* optional(D3D11_BOX) */ IntPtr pDstBox, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pSrcData, /* [annotation] _In_ */ uint SrcRowPitch, /* [annotation] _In_ */ uint SrcDepthPitch, /* [annotation] _In_ */ uint CopyFlags);
+        new void UpdateSubresource1(/* [annotation] _In_ */ ID3D11Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* optional(D3D11_BOX) */ IntPtr pDstBox, /* [annotation] _In_ */ IntPtr pSrcData, /* [annotation] _In_ */ uint SrcRowPitch, /* [annotation] _In_ */ uint SrcDepthPitch, /* [annotation] _In_ */ uint CopyFlags);
         
         [PreserveSig]
         new void DiscardResource(/* [annotation] _In_ */ ID3D11Resource pResource);
@@ -415,7 +415,7 @@ namespace DirectN
         void CopyTiles(/* [annotation] _In_ */ ID3D11Resource pTiledResource, /* [annotation] _In_ */ ref D3D11_TILED_RESOURCE_COORDINATE pTileRegionStartCoordinate, /* [annotation] _In_ */ ref D3D11_TILE_REGION_SIZE pTileRegionSize, /* [annotation] _In_ */ ID3D11Buffer pBuffer, /* [annotation] _In_ */ ulong BufferStartOffsetInBytes, /* [annotation] _In_ */ uint Flags);
         
         [PreserveSig]
-        void UpdateTiles(/* [annotation] _In_ */ ID3D11Resource pDestTiledResource, /* [annotation] _In_ */ ref D3D11_TILED_RESOURCE_COORDINATE pDestTileRegionStartCoordinate, /* [annotation] _In_ */ ref D3D11_TILE_REGION_SIZE pDestTileRegionSize, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pSourceTileData, /* [annotation] _In_ */ uint Flags);
+        void UpdateTiles(/* [annotation] _In_ */ ID3D11Resource pDestTiledResource, /* [annotation] _In_ */ ref D3D11_TILED_RESOURCE_COORDINATE pDestTileRegionStartCoordinate, /* [annotation] _In_ */ ref D3D11_TILE_REGION_SIZE pDestTileRegionSize, /* [annotation] _In_ */ IntPtr pSourceTileData, /* [annotation] _In_ */ uint Flags);
         
         [PreserveSig]
         HRESULT ResizeTilePool(/* [annotation] _In_ */ ID3D11Buffer pTilePool, /* [annotation] _In_ */ ulong NewSizeInBytes);

@@ -23,6 +23,6 @@ namespace DirectN
         HRESULT EnumPropNames(uint dwIndex, [MarshalAs(UnmanagedType.LPWStr)] string pwszPropName, uint cchPropName);
         
         [PreserveSig]
-        HRESULT GetPropW([MarshalAs(UnmanagedType.LPWStr)] string pwszPropName, object pvarProp);
+        HRESULT GetPropW([MarshalAs(UnmanagedType.LPWStr)] string pwszPropName, IntPtr pvarProp);
     }
 }

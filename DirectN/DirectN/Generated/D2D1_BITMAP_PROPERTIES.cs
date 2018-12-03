@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Describes the pixel format and dpi of a bitmap.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_BITMAP_PROPERTIES
     {

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(186,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(143,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -21,7 +21,7 @@ namespace DirectN
         new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
+        new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
         new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
@@ -46,7 +46,7 @@ namespace DirectN
         HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, uint SizeOfData, uint Flags);
+        HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
         HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);

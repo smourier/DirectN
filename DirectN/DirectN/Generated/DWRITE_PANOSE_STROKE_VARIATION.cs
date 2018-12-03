@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(128,1)
 namespace DirectN
 {
+    /// <summary>
+    /// Relationship between thin and thick stems. Present for families: 2-text
+    /// </summary>
     public enum DWRITE_PANOSE_STROKE_VARIATION
     {
         DWRITE_PANOSE_STROKE_VARIATION_ANY = 0,

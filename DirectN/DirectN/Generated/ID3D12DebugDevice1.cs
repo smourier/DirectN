@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface ID3D12DebugDevice1
     {
         [PreserveSig]
-        HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, /* _In_reads_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint DataSize);
+        HRESULT SetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, /* _In_reads_bytes_(DataSize) */ IntPtr pData, uint DataSize);
         
         [PreserveSig]
         HRESULT GetDebugParameter(D3D12_DEBUG_DEVICE_PARAMETER_TYPE Type, /* _Out_writes_bytes_(DataSize) */ IntPtr pData, uint DataSize);

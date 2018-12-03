@@ -5,9 +5,6 @@ using D2D1_TAG = System.UInt64;
 
 namespace DirectN
 {
-    /// <summary>
-    /// This interface performs all the same functions as the ID2D1DeviceContext1 interface, plus it enables functionality such as ink rendering, gradient mesh rendering, and improved image loading.
-    /// </summary>
     [Guid("394ea6a3-0c34-4321-950b-6ca20f0be6c7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DeviceContext2 : ID2D1DeviceContext1
     {
@@ -17,7 +14,7 @@ namespace DirectN
         
         // ID2D1RenderTarget
         [PreserveSig]
-        new HRESULT CreateBitmap(D2D_SIZE_U size, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object srcData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
+        new HRESULT CreateBitmap(D2D_SIZE_U size, /* optional(void) */ IntPtr srcData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
         
         [PreserveSig]
         new HRESULT CreateBitmapFromWicBitmap(/* _In_ */ IWICBitmapSource wicBitmapSource, /* optional(D2D1_BITMAP_PROPERTIES) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap bitmap);
@@ -177,7 +174,7 @@ namespace DirectN
         
         // ID2D1DeviceContext
         [PreserveSig]
-        new HRESULT CreateBitmap(D2D_SIZE_U size, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object sourceData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES1 bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap1 bitmap);
+        new HRESULT CreateBitmap(D2D_SIZE_U size, /* optional(void) */ IntPtr sourceData, uint pitch, /* _In_ */ ref D2D1_BITMAP_PROPERTIES1 bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap1 bitmap);
         
         [PreserveSig]
         new HRESULT CreateBitmapFromWicBitmap(/* _In_ */ IWICBitmapSource wicBitmapSource, /* optional(D2D1_BITMAP_PROPERTIES1) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap1 bitmap);

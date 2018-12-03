@@ -33,7 +33,7 @@ namespace DirectN
         new HRESULT CopyFromRenderTarget(/* optional(D2D_POINT_2U) */ IntPtr destPoint, /* _In_ */ ID2D1RenderTarget renderTarget, /* optional(D2D_RECT_U) */ IntPtr srcRect);
         
         [PreserveSig]
-        new HRESULT CopyFromMemory(/* optional(D2D_RECT_U) */ IntPtr dstRect, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object srcData, uint pitch);
+        new HRESULT CopyFromMemory(/* optional(D2D_RECT_U) */ IntPtr dstRect, /* _In_ */ IntPtr srcData, uint pitch);
         
         // ID2D1Bitmap1
         [PreserveSig]

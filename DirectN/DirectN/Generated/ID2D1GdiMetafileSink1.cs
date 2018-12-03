@@ -9,10 +9,10 @@ namespace DirectN
     {
         // ID2D1GdiMetafileSink
         [PreserveSig]
-        new HRESULT ProcessRecord(uint recordType, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object recordData, uint recordDataSize);
+        new HRESULT ProcessRecord(uint recordType, /* optional(void) */ IntPtr recordData, uint recordDataSize);
         
         // ID2D1GdiMetafileSink1
         [PreserveSig]
-        HRESULT ProcessRecord(uint recordType, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object recordData, uint recordDataSize, uint flags);
+        HRESULT ProcessRecord(uint recordType, /* optional(void) */ IntPtr recordData, uint recordDataSize, uint flags);
     }
 }
