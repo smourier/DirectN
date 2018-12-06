@@ -21,11 +21,11 @@ namespace DirectN
             return new ComObject<IMFAttributes>(atts);
         }
 
-        public static IEnumerable<KeyValuePair<Guid, MF_ATTRIBUTE_TYPE>> EnumerateAttributes(this ComObject<IMFTransform> obj) => EnumerateAttributes(obj?.Object);
-        public static IEnumerable<KeyValuePair<Guid, MF_ATTRIBUTE_TYPE>> EnumerateAttributes(this IMFTransform obj)
+        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> EnumerateAttributes(this ComObject<IMFTransform> obj) => EnumerateAttributes(obj?.Object);
+        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> EnumerateAttributes(this IMFTransform obj)
         {
             if (obj == null || obj.GetAttributes(out var atts).IsError)
-                return Enumerable.Empty<KeyValuePair<Guid, MF_ATTRIBUTE_TYPE>>();
+                return Enumerable.Empty<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>>();
 
             return atts.Enumerate();
         }

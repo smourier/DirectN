@@ -37,8 +37,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodecApi.cs" />
     <Compile Include="Conversions.cs" />
     <Compile Include="D2D1Functions.cs" />
+    <Compile Include="D2D_RECT_F.partial.cs" />
+    <Compile Include="D2D_SIZE_F.partial.cs" />
+    <Compile Include="DWriteFunctions.cs" />
     <Compile Include="Generated\adpcmcoef_tag.cs" />
     <Compile Include="Generated\adpcmewaveformat_tag.cs" />
     <Compile Include="Generated\adpcmwaveformat_tag.cs" />
@@ -4133,6 +4137,10 @@
     <Compile Include="Generated\ID3D11DeviceChild.cs" />
     <Compile Include="Generated\ID3D11DeviceContext.cs" />
     <Compile Include="IClassFactory.cs" />
+    <Compile Include="ID2D1BitmapExtensions.cs" />
+    <Compile Include="ID2D1DeviceContextExtensions.cs" />
+    <Compile Include="ID2D1DeviceExtensions.cs" />
+    <Compile Include="ID2D1FactoryExtensions.cs" />
     <Compile Include="ID3D11DeviceExtensions.cs" />
     <Compile Include="Generated\ID3D11DomainShader.cs" />
     <Compile Include="Generated\ID3D11GeometryShader.cs" />
@@ -4172,6 +4180,7 @@
     <Compile Include="Generated\IDXGIAdapter2.cs" />
     <Compile Include="Generated\IDXGIAdapter3.cs" />
     <Compile Include="Generated\IDXGIAdapter4.cs" />
+    <Compile Include="IDWriteFactoryExtensions.cs" />
     <Compile Include="IDXGIAdapterExtensions.cs" />
     <Compile Include="Generated\IDXGIDebug.cs" />
     <Compile Include="Generated\IDXGIDecodeSwapChain.cs" />
@@ -4204,6 +4213,7 @@
     <Compile Include="Generated\IDXGIOutput5.cs" />
     <Compile Include="Generated\IDXGIOutput6.cs" />
     <Compile Include="Generated\IDXGIOutputDuplication.cs" />
+    <Compile Include="IDXGIOutputDuplicationExtensions.cs" />
     <Compile Include="IDXGIOutputExtensions.cs" />
     <Compile Include="Generated\IDXGIResource.cs" />
     <Compile Include="Generated\IDXGISurface.cs" />
@@ -4219,6 +4229,8 @@
     <Compile Include="IEnumString.cs" />
     <Compile Include="IEnumUnknown.cs" />
     <Compile Include="Generated\IMFActivate.cs" />
+    <Compile Include="IErrorLog.cs" />
+    <Compile Include="IMF2DBufferExtensions.cs" />
     <Compile Include="IMFActivateExtensions.cs" />
     <Compile Include="Generated\IMFAttributes.cs" />
     <Compile Include="IMFAttributesExtensions.cs" />
@@ -4227,9 +4239,13 @@
     <Compile Include="Generated\IMFMediaBuffer.cs" />
     <Compile Include="Generated\IMFMediaEvent.cs" />
     <Compile Include="Generated\IMFMediaType.cs" />
+    <Compile Include="IMFGetService.cs" />
+    <Compile Include="IMFMediaBufferExtensions.cs" />
+    <Compile Include="IMFMediaTypeExtensions.cs" />
     <Compile Include="IMFObjectInformation.cs" />
     <Compile Include="Generated\IMFSample.cs" />
     <Compile Include="Generated\IMFSinkWriter.cs" />
+    <Compile Include="IMFSampleExtensions.cs" />
     <Compile Include="IMFSinkWriterExtensions.cs" />
     <Compile Include="Generated\IMFTransform.cs" />
     <Compile Include="IMFTransformExtensions.cs" />
@@ -4269,9 +4285,13 @@
     <Compile Include="Generated\IWICPixelFormatInfo2.cs" />
     <Compile Include="Generated\IWICPlanarFormatConverter.cs" />
     <Compile Include="Generated\IWICStream.cs" />
+    <Compile Include="InteropExtensions.cs" />
     <Compile Include="InteropRuntime.cs" />
     <Compile Include="MFConstants.cs" />
     <Compile Include="MFFunctions.cs" />
+    <Compile Include="PropertyType.cs" />
+    <Compile Include="tagEXCEPINFO.cs" />
+    <Compile Include="tagLOGFONTW.cs" />
     <Compile Include="tagPOINT.cs" />
     <Compile Include="PROPBAG2.cs" />
     <Compile Include="PROPBAG2_TYPE.cs" />
@@ -4343,6 +4363,7 @@
     <Compile Include="Generated\WICRect.cs" />
     <Compile Include="Generated\WICSectionAccessLevel.cs" />
     <Compile Include="Generated\WICTiffCompressionOption.cs" />
+    <Compile Include="_LUID.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

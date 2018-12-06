@@ -4,10 +4,10 @@ namespace DirectN
 {
     public static class IMFSinkWriterExtensions
     {
-        public static ComObject<T> GetServiceForStream<T>(this ComObject<IMFSinkWriter> obj, int streamIndex) => GetServiceForStream<T>(obj?.Object, streamIndex, Guid.Empty, typeof(T).GUID);
-        public static ComObject<T> GetServiceForStream<T>(this ComObject<IMFSinkWriter> obj, int streamIndex, Guid serviceId, Guid interfaceId) => GetServiceForStream<T>(obj?.Object, streamIndex, serviceId, interfaceId);
-        public static ComObject<T> GetServiceForStream<T>(this IMFSinkWriter obj, int streamIndex) => GetServiceForStream<T>(obj, streamIndex, Guid.Empty, typeof(T).GUID);
-        public static ComObject<T> GetServiceForStream<T>(this IMFSinkWriter obj, int streamIndex, Guid serviceId, Guid interfaceId)
+        public static ComObject<T> GetServiceForStream<T>(this ComObject<IMFSinkWriter> obj, uint streamIndex) => GetServiceForStream<T>(obj?.Object, streamIndex, Guid.Empty, typeof(T).GUID);
+        public static ComObject<T> GetServiceForStream<T>(this ComObject<IMFSinkWriter> obj, uint streamIndex, Guid serviceId, Guid interfaceId) => GetServiceForStream<T>(obj?.Object, streamIndex, serviceId, interfaceId);
+        public static ComObject<T> GetServiceForStream<T>(this IMFSinkWriter obj, uint streamIndex) => GetServiceForStream<T>(obj, streamIndex, Guid.Empty, typeof(T).GUID);
+        public static ComObject<T> GetServiceForStream<T>(this IMFSinkWriter obj, uint streamIndex, Guid serviceId, Guid interfaceId)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));

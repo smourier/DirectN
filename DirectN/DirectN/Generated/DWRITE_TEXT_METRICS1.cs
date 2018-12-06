@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Overall metrics associated with text after layout. All coordinates are in device independent pixels (DIPs).
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DWRITE_TEXT_METRICS1
     {
@@ -22,9 +19,6 @@ namespace DirectN
         public uint lineCount;
         
         // DWRITE_TEXT_METRICS1
-        /// <summary>
-        /// The height of the formatted text taking into account the trailing whitespace at the end of each line, which will matter for vertical reading directions.
-        /// </summary>
         public float heightIncludingTrailingWhitespace;
     }
 }

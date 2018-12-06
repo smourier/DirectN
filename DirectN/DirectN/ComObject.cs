@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Diagnostics.Eventing;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -19,6 +21,8 @@ namespace DirectN
             _object = comObject;
         }
 
+        public string Name { get; set; }
+
         public object Object
         {
             get
@@ -31,7 +35,7 @@ namespace DirectN
             }
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             var obj = Interlocked.Exchange(ref _object, null);
             if (obj != null)
@@ -41,6 +45,25 @@ namespace DirectN
         }
 
         public bool IsDisposed => _object == null;
+
+        public override string ToString()
+        {
+            string s = null;
+            if (_object == null)
+            {
+                s = "<disposed>";
+            }
+
+            if (Name != null)
+            {
+                if (s != null)
+                {
+                    s += " ";
+                }
+                s += Name;
+            }
+            return s;
+        }
 
         public static ComObject<T> From<T>(T comObject) => comObject == null ? null : new ComObject<T>(comObject);
 
@@ -64,6 +87,20 @@ namespace DirectN
                 throw new ArgumentException("Argument is not a COM object", nameof(obj));
 
             return (T)obj;
+        }
+
+        public ComObject<T> As<T>(bool throwOnError = true) where T : class
+        {
+            T obj;
+            if (throwOnError)
+            {
+                obj = (T)Object;
+            }
+            else
+            {
+                obj = Object as T;
+            }
+            return obj != null ? new ComObject<T>(obj) : null;
         }
 
         public static ComObject WrapAsGeneric(Type comType, object instance)
@@ -100,6 +137,7 @@ namespace DirectN
 
             return type.GetGenericArguments()[0];
         }
+
     }
 
     public class ComObject<T> : ComObject
@@ -107,19 +145,86 @@ namespace DirectN
         public ComObject(T comObject)
             : base(comObject)
         {
+#if DEBUG
+            // note _start is first so we don't get negative values...
+            Id = _sw.ElapsedTicks;
+            ConstructorThreadId = Environment.CurrentManagedThreadId;
+            Trace("+ComObject");
+#endif
         }
 
-        public new T Object => (T)base.Object;
-
-        public ComObject<Ti> Cast<Ti>() => new ComObject<Ti>((Ti)base.Object);
-
-        public ComObject<Ti> As<Ti>()
+#if DEBUG
+        public new T Object
         {
-            if (!typeof(Ti).IsAssignableFrom(Object.GetType()))
-                return null;
-
-            return new ComObject<Ti>((Ti)base.Object);
+            get
+            {
+                try
+                {
+                    return (T)base.Object;
+                }
+                catch (Exception e)
+                {
+                    Trace("-ComObjectQI", e.Message);
+                    throw;
+                }
+            }
         }
+#else
+        public new T Object => (T)base.Object;
+#endif
+
+#if DEBUG
+        // use that guid in TraceSpy's ETW Trace Provider (https://github.com/smourier/TraceSpy) 
+        // or use is with MFTrace https://msdn.microsoft.com/en-us/library/windows/desktop/ff685116 as MFTrace can also display our custom traces
+        // you can use trace.bat and config.xml in the project. Make sure you use mftrace X64 if this is ran as X4 also.
+        private static readonly EventProvider _provider = new EventProvider(new Guid("92f01f42-b22a-4d49-8be6-3f06355841aa"));
+        private static readonly Stopwatch _sw = new Stopwatch();
+
+        static ComObject()
+        {
+            _sw.Start();
+        }
+
+        private void Trace(string method, string message = null)
+        {
+            // many COM objects (like DXGI ones) dont' like to be used on different threads
+            // so we tracks calls on different threads
+            var tir = Thread.CurrentThread.ManagedThreadId;
+            var ti = tir.ToString();
+            if (tir != ConstructorThreadId)
+            {
+                ti += "!" + ConstructorThreadId;
+            }
+
+            string s = ti + method + "<" + typeof(T).Name + ">" + ToString();
+            if (message != null)
+            {
+                s += " " + message;
+            }
+            _provider.WriteMessageEvent(s, 0, 0);
+        }
+
+        public long Id { get; }
+        public int ConstructorThreadId { get; }
+        public TimeSpan Duration => _sw.Elapsed;
+
+        public override string ToString()
+        {
+            var s = base.ToString();
+            if (s != null)
+                return Id + ":" + s;
+
+            return Id.ToString();
+        }
+
+        public override void Dispose()
+        {
+            Trace("-ComObject", "duration=" + Duration.Milliseconds);
+            base.Dispose();
+        }
+#endif
+
+
         //public static implicit operator ComObject<T>(T value) => new ComObject<T>(value);
         //public static implicit operator T(ComObject<T> value) => value.Object;
     }

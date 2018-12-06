@@ -5,9 +5,6 @@ using D2D1_RECT_L = DirectN.tagRECT;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The interface implemented by a transform author to provide a CPU based source effect.
-    /// </summary>
     [Guid("db1800dd-0c34-4cf9-be90-31cc0a5653e1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SourceTransform : ID2D1Transform
     {

@@ -24,10 +24,10 @@ namespace DirectN
         HRESULT SetUserData(/* [annotation][in] _In_ */ IntPtr dwUserData);
         
         [PreserveSig]
-        HRESULT GetStartStopPosition(/* [annotation][out] _Out_opt_ */ out Guid pguidStartPositionType, /* [annotation][out] _Out_opt_ */ PropVariant pvStartValue, /* [annotation][out] _Out_opt_ */ out Guid pguidStopPositionType, /* [annotation][out] _Out_opt_ */ PropVariant pvStopValue);
+        HRESULT GetStartStopPosition(/* [annotation][out] _Out_opt_ */ out Guid pguidStartPositionType, /* [annotation][out] _Out_opt_ */ [In, Out] PropVariant pvStartValue, /* [annotation][out] _Out_opt_ */ out Guid pguidStopPositionType, /* [annotation][out] _Out_opt_ */ [In, Out] PropVariant pvStopValue);
         
         [PreserveSig]
-        HRESULT SetStartStopPosition(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidStartPositionType, /* [annotation][in] _In_opt_ */ PropVariant pvStartValue, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidStopPositionType, /* [annotation][in] _In_opt_ */ PropVariant pvStopValue);
+        HRESULT SetStartStopPosition(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidStartPositionType, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pvStartValue, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidStopPositionType, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pvStopValue);
         
         [PreserveSig]
         HRESULT HasVideo(/* [annotation][out] _Out_opt_ */ out bool pfHasVideo, /* [annotation][out] _Out_opt_ */ out bool pfSelected);
@@ -39,7 +39,7 @@ namespace DirectN
         HRESULT IsProtected(/* [annotation][out] _Out_ */ out bool pfProtected);
         
         [PreserveSig]
-        HRESULT GetDuration(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ PropVariant pvDurationValue);
+        HRESULT GetDuration(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ [In, Out] PropVariant pvDurationValue);
         
         [PreserveSig]
         HRESULT GetNumberOfStreams(/* [annotation][out] _Out_ */ out uint pdwStreamCount);
@@ -51,10 +51,10 @@ namespace DirectN
         HRESULT SetStreamSelection(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ bool fEnabled);
         
         [PreserveSig]
-        HRESULT GetStreamAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ PropVariant pvValue);
+        HRESULT GetStreamAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ [In, Out] PropVariant pvValue);
         
         [PreserveSig]
-        HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ PropVariant pvValue);
+        HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ [In, Out] PropVariant pvValue);
         
         [PreserveSig]
         HRESULT GetCharacteristics(/* [annotation][out] _Out_ */ out MFP_MEDIAITEM_CHARACTERISTICS pCharacteristics);

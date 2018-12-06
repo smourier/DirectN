@@ -7,15 +7,15 @@ namespace DirectN
     public interface IEnumUnknown
     {
         [PreserveSig]
-        HRESULT Next(int celt, [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown)] object[] rgelt, out int celtFetched);
+        int Next(int celt, [Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.IUnknown)] object[] rgelt, ref int celtFetched);
 
         [PreserveSig]
-        HRESULT Skip(int celt);
+        int Skip(int celt);
 
         [PreserveSig]
-        HRESULT Reset();
+        int Reset();
 
         [PreserveSig]
-        HRESULT Clone(out IEnumUnknown enumUnknown);
+        int Clone(out IEnumUnknown enumUnknown);
     }
 }

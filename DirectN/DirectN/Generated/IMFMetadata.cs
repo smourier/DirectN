@@ -14,18 +14,18 @@ namespace DirectN
         HRESULT GetLanguage(/* optional(LPWSTR) */ out IntPtr ppwszRFC1766);
         
         [PreserveSig]
-        HRESULT GetAllLanguages(/* [out] __RPC__out */ PropVariant ppvLanguages);
+        HRESULT GetAllLanguages(/* [out] __RPC__out */ [In, Out] PropVariant ppvLanguages);
         
         [PreserveSig]
-        HRESULT SetProperty(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string pwszName, /* [in] __RPC__in */ PropVariant ppvValue);
+        HRESULT SetProperty(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string pwszName, /* [in] __RPC__in */ [In, Out] PropVariant ppvValue);
         
         [PreserveSig]
-        HRESULT GetProperty(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string pwszName, /* [out] __RPC__out */ PropVariant ppvValue);
+        HRESULT GetProperty(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string pwszName, /* [out] __RPC__out */ [In, Out] PropVariant ppvValue);
         
         [PreserveSig]
         HRESULT DeleteProperty(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string pwszName);
         
         [PreserveSig]
-        HRESULT GetAllPropertyNames(/* [out] __RPC__out */ PropVariant ppvNames);
+        HRESULT GetAllPropertyNames(/* [out] __RPC__out */ [In, Out] PropVariant ppvNames);
     }
 }

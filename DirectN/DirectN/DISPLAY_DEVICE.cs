@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
@@ -19,5 +21,8 @@ namespace DirectN
 
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
         public string DeviceKey;
+
+        public override string ToString() => "Name=" + DeviceName + ", String=" + DeviceString;
+        public IReadOnlyList<DISPLAY_DEVICE> Monitors => UserExtensions.EnumerateDisplayDevices(DeviceName).ToList();
     }
 }

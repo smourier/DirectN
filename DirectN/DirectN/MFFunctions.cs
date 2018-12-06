@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
@@ -13,6 +14,55 @@ namespace DirectN
         public static extern HRESULT MFStartup(uint Version, uint dwFlags);
 
         public static void MFStartup() => MFStartup((Constants.MF_SDK_VERSION << 16) | Constants.MF_API_VERSION, Constants.MFSTARTUP_FULL).ThrowOnError();
+
+        [DllImport("mfplat")]
+        public static extern HRESULT MFCreateMFByteStreamOnStream(IStream pStream, out IMFByteStream ppByteStream);
+
+        public static ComObject<IMFByteStream> MFCreateMFByteStreamOnStream(this IStream stream) => MFCreateMFByteStreamOnStream<IMFByteStream>(stream);
+        public static ComObject<T> MFCreateMFByteStreamOnStream<T>(this IStream stream) where T : IMFByteStream
+        {
+            if (stream == null)
+                throw new ArgumentNullException(nameof(stream));
+
+            MFCreateMFByteStreamOnStream(stream, out var bs).ThrowOnError();
+            return new ComObject<T>((T)bs);
+        }
+
+        [DllImport("mfplat")]
+        public static extern HRESULT MFCreateMediaType(out IMFMediaType ppMFType);
+
+        public static ComObject<IMFMediaType> MFCreateMediaType() => MFCreateMediaType<IMFMediaType>();
+        public static ComObject<T> MFCreateMediaType<T>() where T : IMFMediaType
+        {
+            MFCreateMediaType(out var type).ThrowOnError();
+            return new ComObject<T>((T)type);
+        }
+
+        [DllImport("mfplat")]
+        public static extern HRESULT MFCreateAttributes(out IMFAttributes ppMFAttributes, uint cInitialSize);
+
+        public static ComObject<IMFAttributes> MFCreateAttributes(uint initialSize = 0) => MFCreateAttributes<IMFAttributes>(initialSize);
+        public static ComObject<T> MFCreateAttributes<T>(uint initialSize = 0) where T : IMFAttributes
+        {
+            MFCreateAttributes(out var attributes, initialSize).ThrowOnError();
+            return new ComObject<T>((T)attributes);
+        }
+
+        [DllImport("mfplat")]
+        public static extern HRESULT MFAverageTimePerFrameToFrameRate(ulong unAverageTimePerFrame, out uint punNumerator, out uint punDenominator);
+
+        [DllImport("mfreadwrite")]
+        public static extern HRESULT MFCreateSinkWriterFromURL([MarshalAs(UnmanagedType.LPWStr)] string pwszOutputURL, IMFByteStream pByteStream, IMFAttributes pAttributes, out IMFSinkWriter ppSinkWriter);
+
+        public static ComObject<IMFSinkWriter> MFCreateSinkWriterFromURL(string outputUrl, IMFByteStream byteStream, IMFAttributes attributes) => MFCreateSinkWriterFromURL<IMFSinkWriter>(outputUrl, byteStream, attributes);
+        public static ComObject<T> MFCreateSinkWriterFromURL<T>(string outputURL, IMFByteStream byteStream, IMFAttributes attributes) where T : IMFSinkWriter
+        {
+            if (attributes == null)
+                throw new ArgumentNullException(nameof(attributes));
+
+            MFCreateSinkWriterFromURL(outputURL, byteStream, attributes, out var writer).ThrowOnError();
+            return new ComObject<T>((T)writer);
+        }
 
         [DllImport("mfplat")]
         public static extern HRESULT MFCreateMemoryBuffer(uint cbMaxLength, out IMFMediaBuffer ppBuffer);

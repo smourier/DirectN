@@ -1,24 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.Linq;
 
 namespace DirectN
 {
     // we want to avoid PropVariant stuff
     public static class IMFAttributesExtensions
     {
-        public static IEnumerable<KeyValuePair<Guid, MF_ATTRIBUTE_TYPE>> Enumerate(this ComObject<IMFAttributes> obj) => Enumerate(obj?.Object);
-        public static IEnumerable<KeyValuePair<Guid, MF_ATTRIBUTE_TYPE>> Enumerate(this IMFAttributes obj)
+        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> Enumerate(this ComObject<IMFAttributes> obj) => Enumerate(obj?.Object);
+        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> Enumerate(this IMFAttributes obj)
         {
             if (obj == null)
                 yield break;
 
             for (int i = 0; i < Count(obj); i++)
             {
-                obj.GetItemByIndex(i, out Guid guid, null).ThrowOnError();
+                obj.GetItemByIndex((uint)i, out Guid guid, null).ThrowOnError();
                 obj.GetItemType(guid, out var type).ThrowOnError();
-                yield return new KeyValuePair<Guid, MF_ATTRIBUTE_TYPE>(guid, type);
+                yield return new KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>(guid, type);
             }
+        }
+
+        public static KeyValuePair<Guid, object>[] ToValues(this ComObject<IMFAttributes> obj) => ToValues(obj?.Object);
+        public static KeyValuePair<Guid, object>[] ToValues(this IMFAttributes obj)
+        {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
+
+            return Enumerate(obj).Select(kv => new KeyValuePair<Guid, object>(kv.Key, GetValue(obj, kv.Key))).ToArray();
         }
 
         public static int Count(this ComObject<IMFAttributes> obj) => Count(obj?.Object);
@@ -28,8 +37,19 @@ namespace DirectN
                 throw new ArgumentNullException(nameof(obj));
 
             obj.GetCount(out var value).ThrowOnError();
-            return value;
+            return (int)value;
         }
+
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, ComObject value) => obj?.Object.SetUnknown(key, value.Object).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, string value) => obj?.Object.SetString(key, value).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, double value) => obj?.Object.SetDouble(key, value).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, Guid value) => obj?.Object.SetGUID(key, value).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, long value) => obj?.Object.SetUINT64(key, (ulong)value).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, ulong value) => obj?.Object.SetUINT64(key, value).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, int value) => obj?.Object.SetUINT32(key, (uint)value).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, uint value) => obj?.Object.SetUINT32(key, value).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, bool value) => obj?.Object.SetUINT32(key, (uint)(value ? 1 : 0)).ThrowOnError();
+        public static void Set(this ComObject<IMFAttributes> obj, Guid key, Enum value) => obj?.Object.SetUINT32(key, (uint)Convert.ChangeType(value, typeof(uint))).ThrowOnError();
 
         public static T Get<T>(this ComObject<IMFAttributes> obj, Guid key, T defaultValue = default(T), IFormatProvider provider = null) => Get(obj?.Object, key, defaultValue, provider);
         public static T Get<T>(this IMFAttributes obj, Guid key, T defaultValue = default(T), IFormatProvider provider = null)
@@ -57,10 +77,10 @@ namespace DirectN
             T item;
             switch (type)
             {
-                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_BLOB:
-                    if (typeof(T) == typeof(IntPtr))
+                case _MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_BLOB:
+                    if (typeof(T) == typeof(byte[]))
                     {
-                        value = (T)(object)GetAllocatedBlob(obj, key);
+                        value = (T)(object)GetBlob(obj, key);
                         return true;
                     }
 
@@ -74,7 +94,7 @@ namespace DirectN
                     value = item;
                     return true;
 
-                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_DOUBLE:
+                case _MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_DOUBLE:
                     var dbl = GetDouble(obj, key);
                     if (!Conversions.TryChangeType(dbl, provider, out item))
                     {
@@ -85,7 +105,7 @@ namespace DirectN
                     value = item;
                     return true;
 
-                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_GUID:
+                case _MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_GUID:
                     var guid = GetGuid(obj, key);
                     if (!Conversions.TryChangeType(guid, provider, out item))
                     {
@@ -96,7 +116,7 @@ namespace DirectN
                     value = item;
                     return true;
 
-                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_STRING:
+                case _MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_STRING:
                     var s = GetString(obj, key);
                     if (!Conversions.TryChangeType(s, provider, out item))
                     {
@@ -107,7 +127,7 @@ namespace DirectN
                     value = item;
                     return true;
 
-                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT32:
+                case _MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT32:
                     var ui = GetUInt32(obj, key);
                     if (!Conversions.TryChangeType(ui, provider, out item))
                     {
@@ -118,7 +138,7 @@ namespace DirectN
                     value = item;
                     return true;
 
-                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT64:
+                case _MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT64:
                     var ul = GetUInt64(obj, key);
                     if (!Conversions.TryChangeType(ul, provider, out item))
                     {
@@ -129,7 +149,7 @@ namespace DirectN
                     value = item;
                     return true;
 
-                case MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_IUNKNOWN:
+                case _MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_IUNKNOWN:
                     var comType = ComObject.GetGenericComObjectComType(typeof(T));
                     if (comType == null)
                     {
@@ -150,6 +170,19 @@ namespace DirectN
                 default:
                     throw new NotSupportedException();
             }
+        }
+
+        public static object GetValue(this ComObject<IMFAttributes> obj, Guid key) => GetValue(obj.Object, key);
+        public static object GetValue(this IMFAttributes obj, Guid key)
+        {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
+
+            var pv = new PropVariant();
+            if (obj.GetItem(key, pv).IsError)
+                return null;
+
+            return pv.Value;
         }
 
         public static Guid GetGuid(this ComObject<IMFAttributes> obj, Guid key) => GetGuid(obj?.Object, key, Guid.Empty);
@@ -264,32 +297,17 @@ namespace DirectN
             return new ComObject<T>((T)value);
         }
 
-        public static IntPtr GetAllocatedBlob(this ComObject<IMFAttributes> obj, Guid key) => GetAllocatedBlob(obj, key, out var size);
-        public static IntPtr GetAllocatedBlob(this ComObject<IMFAttributes> obj, Guid key, out int size) => GetAllocatedBlob(obj?.Object, key, out size);
-        public static IntPtr GetAllocatedBlob(this IMFAttributes obj, Guid key) => GetAllocatedBlob(obj, key, out var size);
-        public static IntPtr GetAllocatedBlob(this IMFAttributes obj, Guid key, out int size)
-        {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
-
-            if (obj.GetAllocatedBlob(key, out var ptr, out size).IsError)
-                return IntPtr.Zero;
-
-            return ptr;
-        }
-
         public static byte[] GetBlob(this ComObject<IMFAttributes> obj, Guid key) => GetBlob(obj, key);
         public static byte[] GetBlob(this IMFAttributes obj, Guid key)
         {
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
 
-            if (obj.GetAllocatedBlob(key, out var ptr, out var size).IsError)
+            if (obj.GetBlobSize(key, out var size).IsError || size == 0)
                 return null;
 
-            var bytes = new byte[size];
-            Marshal.Copy(ptr, bytes, 0, size);
-            Marshal.FreeCoTaskMem(ptr);
+            var bytes = new byte[(int)size];
+            obj.GetBlob(key, bytes, size, ref size).ThrowOnError();
             return bytes;
         }
 
@@ -302,7 +320,7 @@ namespace DirectN
             if (obj.GetStringLength(key, out var length).IsError)
                 return defaultValue;
 
-            var s = new string('\0', length);
+            var s = new string('\0', (int)length);
             length++;
             obj.GetString(key, s, length, ref length).ThrowOnError();
             return s;

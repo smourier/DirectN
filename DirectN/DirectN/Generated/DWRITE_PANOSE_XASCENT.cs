@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_1.h(348,1)
 namespace DirectN
 {
+    /// <summary>
+    /// Relative size of the lowercase letters. Present for families: 3-script
+    /// </summary>
     public enum DWRITE_PANOSE_XASCENT
     {
         DWRITE_PANOSE_XASCENT_ANY = 0,

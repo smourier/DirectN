@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The interface implemented by a transform author to indicate that it should receive an analysis result callback.
-    /// </summary>
     [Guid("0359dc30-95e6-4568-9055-27720d130e93"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1AnalysisTransform
     {

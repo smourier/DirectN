@@ -10,32 +10,36 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public struct HRESULT : IEquatable<HRESULT>, IFormattable
     {
-        private static ConcurrentDictionary<int, string> _names = new ConcurrentDictionary<int, string>();
-        private readonly int _value;
+        private static readonly ConcurrentDictionary<int, string> _names = new ConcurrentDictionary<int, string>();
 
         public HRESULT(int value)
         {
-            _value = value;
+            Value = value;
         }
 
         public HRESULT(uint value)
+            : this((int)value)
         {
-            _value = (int)value;
         }
 
         public HRESULT(HRESULTS value)
+            : this((int)value)
         {
-            _value = (int)value;
         }
 
-        public int Value => _value;
+        public int Value { get; }
         public uint UValue => (uint)Value;
         public string Name => ToString("n", null);
-        public bool IsError => _value < 0;
-        public bool IsSuccess => _value >= 0;
+        public bool IsError => Value < 0;
+        public bool IsSuccess => Value >= 0;
+        public bool IsOk => Value == (int)HRESULTS.S_OK;
+        public bool IsFalse => Value == (int)HRESULTS.S_FALSE;
 
-        public void ThrowOnError()
+        public void ThrowOnError(bool throwOnError = true)
         {
+            if (!throwOnError)
+                return;
+
             if (Value < 0)
                 throw new Win32Exception(Value);
         }
@@ -58,7 +62,7 @@ namespace DirectN
                 case "n":
                     if (!_names.TryGetValue(Value, out string text))
                     {
-                        var value = _value;
+                        var value = Value;
                         text = typeof(HRESULTS).GetFields(BindingFlags.Static | BindingFlags.Public).FirstOrDefault(f => ((int)(HRESULTS)f.GetValue(null)) == value)?.Name;
                         _names[Value] = text;
                     }

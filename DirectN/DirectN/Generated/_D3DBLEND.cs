@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9types.h(228,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3dtypes.h(994,9)
 namespace DirectN
 {
     public enum _D3DBLEND
@@ -16,10 +16,6 @@ namespace DirectN
         D3DBLEND_SRCALPHASAT = 11,
         D3DBLEND_BOTHSRCALPHA = 12,
         D3DBLEND_BOTHINVSRCALPHA = 13,
-        D3DBLEND_BLENDFACTOR = 14,
-        D3DBLEND_INVBLENDFACTOR = 15,
-        D3DBLEND_SRCCOLOR2 = 16,
-        D3DBLEND_INVSRCCOLOR2 = 17,
         D3DBLEND_FORCE_DWORD = 2147483647,
     }
 }

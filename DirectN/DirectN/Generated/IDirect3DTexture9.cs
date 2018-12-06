@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(144,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(187,1)
 using System;
 using System.Runtime.InteropServices;
 using RECT = DirectN.tagRECT;
@@ -34,6 +34,15 @@ namespace DirectN
         new _D3DRESOURCETYPE GetType();
         
         // IDirect3DBaseTexture9
+        [PreserveSig]
+        new HRESULT QueryInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppvObj);
+        
+        [PreserveSig]
+        new uint AddRef();
+        
+        [PreserveSig]
+        new uint Release();
+        
         [PreserveSig]
         new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
         

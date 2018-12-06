@@ -18,6 +18,11 @@ namespace DirectN
             }
         }
 
+        public ComMemory(uint size)
+            : this((int)size)
+        {
+        }
+
         public ComMemory(int size)
         {
             Size = size;
@@ -28,17 +33,30 @@ namespace DirectN
             }
         }
 
-        public int Size { get; }
+        public ComMemory(IntPtr pointer, int size)
+        {
+            Replace(pointer, size);
+        }
+
+        public int Size { get; private set; }
+
         public IntPtr Pointer
         {
             get
             {
                 var pointer = _pointer;
                 if (pointer == IntPtr.Zero && Size != 0)
-                    throw new ObjectDisposedException("Pointer");
+                    throw new ObjectDisposedException(nameof(Pointer));
 
                 return pointer;
             }
+        }
+
+        public void Replace(IntPtr pointer, uint size) => Replace(pointer, (int)size);
+        public void Replace(IntPtr pointer, int size)
+        {
+            _pointer = pointer;
+            Size = size;
         }
 
         public void Dispose()

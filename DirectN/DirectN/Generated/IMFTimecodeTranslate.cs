@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface IMFTimecodeTranslate
     {
         [PreserveSig]
-        HRESULT BeginConvertTimecodeToHNS(/* [in] */ PropVariant pPropVarTimecode, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        HRESULT BeginConvertTimecodeToHNS(/* [in] */ [In, Out] PropVariant pPropVarTimecode, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
         HRESULT EndConvertTimecodeToHNS(/* [in] */ IMFAsyncResult pResult, /* [out] */ out MFTIME phnsTime);
@@ -18,6 +18,6 @@ namespace DirectN
         HRESULT BeginConvertHNSToTimecode(/* [in] */ long hnsTime, /* [in] */ IMFAsyncCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
-        HRESULT EndConvertHNSToTimecode(/* [in] */ IMFAsyncResult pResult, /* [out] */ PropVariant pPropVarTimecode);
+        HRESULT EndConvertHNSToTimecode(/* [in] */ IMFAsyncResult pResult, /* [out] */ [In, Out] PropVariant pPropVarTimecode);
     }
 }

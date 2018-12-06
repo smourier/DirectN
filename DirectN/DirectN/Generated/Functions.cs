@@ -764,7 +764,7 @@ namespace DirectN
         public static extern HRESULT MFCreateMediaBufferWrapper(/* _In_ */ IMFMediaBuffer pBuffer, /* _In_ */ uint cbOffset, /* _In_ */ uint dwLength, /* _Out_ */ out IMFMediaBuffer ppBuffer);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFCreateMediaEvent(/* _In_ */ uint met, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* _In_ */ HRESULT hrStatus, /* _In_opt_ */ PropVariant pvValue, /* _Out_ */ out IMFMediaEvent ppEvent);
+        public static extern HRESULT MFCreateMediaEvent(/* _In_ */ uint met, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* _In_ */ HRESULT hrStatus, /* _In_opt_ */ [In, Out] PropVariant pvValue, /* _Out_ */ out IMFMediaEvent ppEvent);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFCreateMediaExtensionActivate(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string szActivatableClassId, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pConfiguration, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
@@ -1196,7 +1196,7 @@ namespace DirectN
         public static extern HRESULT MFCreateSensorStream(/* _In_ */ uint StreamId, /* _In_opt_ */ IMFAttributes pAttributes, /* _In_ */ IMFCollection pMediaTypeCollection, /* _COM_Outptr_ */ out IMFSensorStream ppStream);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFCreateSequencerSegmentOffset(uint dwId, long hnsOffset, /* _Out_ */ PropVariant pvarSegmentOffset);
+        public static extern HRESULT MFCreateSequencerSegmentOffset(uint dwId, long hnsOffset, /* _Out_ */ [In, Out] PropVariant pvarSegmentOffset);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFCreateSequencerSource([MarshalAs(UnmanagedType.IUnknown)] object pReserved, /* _Outptr_ */ out IMFSequencerSource ppSequencerSource);
@@ -1265,10 +1265,10 @@ namespace DirectN
         public static extern HRESULT MFGetService([MarshalAs(UnmanagedType.IUnknown)] object punkObject, [MarshalAs(UnmanagedType.LPStruct)] Guid guidService, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFGetSupportedMimeTypes(/* _Out_ */ PropVariant pPropVarMimeTypeArray);
+        public static extern HRESULT MFGetSupportedMimeTypes(/* _Out_ */ [In, Out] PropVariant pPropVarMimeTypeArray);
         
         [DllImport("mfidl")]
-        public static extern HRESULT MFGetSupportedSchemes(/* _Out_ */ PropVariant pPropVarSchemeArray);
+        public static extern HRESULT MFGetSupportedSchemes(/* _Out_ */ [In, Out] PropVariant pPropVarSchemeArray);
         
         [DllImport("mfidl")]
         public static extern HRESULT MFGetSystemId(/* _Outptr_ */ out IMFSystemId ppId);
@@ -1325,7 +1325,7 @@ namespace DirectN
         public static extern HRESULT MFCreateTransformActivate(/* _Out_ */ out IMFActivate ppActivate);
         
         [DllImport("mmdeviceapi")]
-        public static extern HRESULT ActivateAudioInterfaceAsync(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceInterfacePath, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_opt_ */ PropVariant activationParams, /* _In_ */ IActivateAudioInterfaceCompletionHandler completionHandler, /* _COM_Outptr_ */ out IActivateAudioInterfaceAsyncOperation activationOperation);
+        public static extern HRESULT ActivateAudioInterfaceAsync(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceInterfacePath, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_opt_ */ [In, Out] PropVariant activationParams, /* _In_ */ IActivateAudioInterfaceCompletionHandler completionHandler, /* _COM_Outptr_ */ out IActivateAudioInterfaceAsyncOperation activationOperation);
         
         [DllImport("mmeapi")]
         public static extern uint auxGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbac) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagAUXCAPSA[] pac, /* _In_ */ uint cbac);

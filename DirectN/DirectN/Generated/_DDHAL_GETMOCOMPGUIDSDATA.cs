@@ -6,9 +6,6 @@ using LPDDRAWI_DIRECTDRAW_LCL = DirectN._DDRAWI_DIRECTDRAW_LCL;
 
 namespace DirectN
 {
-    /// <summary>
-    /// **************************************************************************
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDHAL_GETMOCOMPGUIDSDATA
     {

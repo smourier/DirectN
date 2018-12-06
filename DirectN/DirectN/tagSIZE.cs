@@ -5,15 +5,22 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public struct tagSIZE
     {
-        public tagSIZE(int cx, int cy)
+        public uint width;
+        public uint height;
+
+        public tagSIZE(uint width, uint height)
         {
-            this.cx = cx;
-            this.cy = cy;
+            this.width = width;
+            this.height = height;
         }
 
-        public int cx;
-        public int cy;
+        public tagSIZE(int width, int height)
+        {
+            this.width = (uint)width;
+            this.height = (uint)height;
+        }
 
-        public override string ToString() => "x=" + cx + ",y=" + cy;
+        public override string ToString() => "W=" + width + ",H=" + height;
+        public D2D_SIZE_U ToD2D_SIZE_U() => new D2D_SIZE_U { width = width, height = height };
     }
 }

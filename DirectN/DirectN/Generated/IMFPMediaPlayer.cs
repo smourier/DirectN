@@ -22,13 +22,13 @@ namespace DirectN
         HRESULT FrameStep();
         
         [PreserveSig]
-        HRESULT SetPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][in] _In_ */ PropVariant pvPositionValue);
+        HRESULT SetPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][in] _In_ */ [In, Out] PropVariant pvPositionValue);
         
         [PreserveSig]
-        HRESULT GetPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ PropVariant pvPositionValue);
+        HRESULT GetPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ [In, Out] PropVariant pvPositionValue);
         
         [PreserveSig]
-        HRESULT GetDuration(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ PropVariant pvDurationValue);
+        HRESULT GetDuration(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPositionType, /* [annotation][out] _Out_ */ [In, Out] PropVariant pvDurationValue);
         
         [PreserveSig]
         HRESULT SetRate(/* [annotation][in] _In_ */ float flRate);

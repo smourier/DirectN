@@ -18,7 +18,7 @@ namespace DirectN
         new HRESULT EndGetEvent(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out IMFMediaEvent ppEvent);
         
         [PreserveSig]
-        new HRESULT QueueEvent(/* [in] */ uint met, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] __RPC__in_opt */ PropVariant pvValue);
+        new HRESULT QueueEvent(/* [in] */ uint met, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] __RPC__in_opt */ [In, Out] PropVariant pvValue);
         
         // IMFMediaSession
         [PreserveSig]
@@ -28,7 +28,7 @@ namespace DirectN
         HRESULT ClearTopologies();
         
         [PreserveSig]
-        HRESULT Start(/* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidTimeFormat, /* [unique][in] __RPC__in_opt */ PropVariant pvarStartPosition);
+        HRESULT Start(/* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidTimeFormat, /* [unique][in] __RPC__in_opt */ [In, Out] PropVariant pvarStartPosition);
         
         [PreserveSig]
         HRESULT Pause();

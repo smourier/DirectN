@@ -62,16 +62,28 @@ namespace DirectN
             return new ComObject<IDXGIDebug>((IDXGIDebug)debug);
         }
 
-        public static ComObject<IDXGIFactory> CreateDXGIFactory(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory>(flags);
-        public static ComObject<IDXGIFactory1> CreateDXGIFactory1(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory1>(flags);
-        public static ComObject<IDXGIFactory2> CreateDXGIFactory2(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory2>(flags);
-        public static ComObject<IDXGIFactory3> CreateDXGIFactory3(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory3>(flags);
-        public static ComObject<IDXGIFactory4> CreateDXGIFactory4(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory4>(flags);
-        public static ComObject<IDXGIFactory5> CreateDXGIFactory5(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory<IDXGIFactory5>(flags);
-        public static ComObject<T> CreateDXGIFactory<T>(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) where T : IDXGIFactory
+        public static ComObject<IDXGIFactory2> CreateDXGIFactory2(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory2<IDXGIFactory2>(flags);
+        public static ComObject<T> CreateDXGIFactory2<T>(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) where T : IDXGIFactory2
         {
             CreateDXGIFactory2(flags, typeof(T).GUID, out object factory).ThrowOnError();
             return new ComObject<T>((T)factory);
         }
+
+        public static ComObject<IDXGIFactory1> CreateDXGIFactory1() => CreateDXGIFactory1<IDXGIFactory1>();
+        public static ComObject<T> CreateDXGIFactory1<T>() where T : IDXGIFactory1
+        {
+            CreateDXGIFactory1(typeof(T).GUID, out object factory).ThrowOnError();
+            return new ComObject<T>((T)factory);
+        }
+
+        // https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice
+        // Note  Do not mix the use of DXGI 1.0 (IDXGIFactory) and DXGI 1.1 (IDXGIFactory1) in an application.
+        // Use IDXGIFactory or IDXGIFactory1, but not both in an application.
+        //public static ComObject<IDXGIFactory> CreateDXGIFactory() => CreateDXGIFactory<IDXGIFactory>();
+        //public static ComObject<T> CreateDXGIFactory<T>() where T : IDXGIFactory
+        //{
+        //    CreateDXGIFactory(typeof(T).GUID, out object factory).ThrowOnError();
+        //    return new ComObject<T>((T)factory);
+        //}
     }
 }

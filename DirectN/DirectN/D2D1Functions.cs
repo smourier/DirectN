@@ -34,7 +34,5 @@ namespace DirectN
             D2D1CreateFactory(type, typeof(T).GUID, ref op, out object factory).ThrowOnError();
             return new ComObject<T>((T)factory);
         }
-
-        // TODO: add other factories
     }
 }
