@@ -8,9 +8,10 @@ namespace DirectN
     public partial struct __struct_mmreg_16__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ushort wValidBitsPerSample => InteropRuntime.GetUInt16(__bits, 0, 16);
-        public ushort wSamplesPerBlock => InteropRuntime.GetUInt16(__bits, 0, 16);
-        public ushort wReserved => InteropRuntime.GetUInt16(__bits, 0, 16);
+        public ushort wValidBitsPerSample { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
+        public ushort wSamplesPerBlock { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
+        public ushort wReserved { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
     }
 }

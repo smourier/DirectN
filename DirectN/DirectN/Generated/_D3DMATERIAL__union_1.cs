@@ -7,8 +7,9 @@ namespace DirectN
     public partial struct _D3DMATERIAL__union_1
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _D3DCOLORVALUE ambient => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128);
-        public _D3DCOLORVALUE dcvAmbient => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128);
+        public _D3DCOLORVALUE ambient { get => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128); set => InteropRuntime.Set<_D3DCOLORVALUE>(value, __bits, 0, 128); }
+        public _D3DCOLORVALUE dcvAmbient { get => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128); set => InteropRuntime.Set<_D3DCOLORVALUE>(value, __bits, 0, 128); }
     }
 }

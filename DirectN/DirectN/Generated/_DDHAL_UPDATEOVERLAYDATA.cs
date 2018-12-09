@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 using LPDDHALSURFCB_UPDATEOVERLAY = System.IntPtr;
 using LPDDRAWI_DDRAWSURFACE_LCL = DirectN._DDRAWI_DDRAWSURFACE_LCL;
 using LPDDRAWI_DIRECTDRAW_GBL = DirectN._DDRAWI_DIRECTDRAW_GBL;
-using RECTL = DirectN._RECTL;
 
 namespace DirectN
 {
@@ -13,9 +12,9 @@ namespace DirectN
     {
         public IntPtr lpDD;
         public IntPtr lpDDDestSurface;
-        public RECTL rDest;
+        public _RECTL rDest;
         public IntPtr lpDDSrcSurface;
-        public RECTL rSrc;
+        public _RECTL rSrc;
         public uint dwFlags;
         public _DDOVERLAYFX overlayFX;
         public HRESULT ddRVal;

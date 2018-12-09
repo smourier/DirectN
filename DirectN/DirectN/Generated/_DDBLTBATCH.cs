@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECTDRAWSURFACE = DirectN.IDirectDrawSurface;
-using LPRECT = DirectN.tagRECT;
 
 namespace DirectN
 {

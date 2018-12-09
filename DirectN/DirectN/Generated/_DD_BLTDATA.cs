@@ -1,10 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawint.h(1126,9)
 using System;
 using System.Runtime.InteropServices;
-using LPRECT = DirectN.tagRECT;
 using PDD_DIRECTDRAW_GLOBAL = DirectN._DD_DIRECTDRAW_GLOBAL;
 using PDD_SURFACE_LOCAL = DirectN._DD_SURFACE_LOCAL;
-using RECTL = DirectN._RECTL;
 
 namespace DirectN
 {
@@ -13,17 +11,17 @@ namespace DirectN
     {
         public IntPtr lpDD;
         public IntPtr lpDDDestSurface;
-        public RECTL rDest;
+        public _RECTL rDest;
         public IntPtr lpDDSrcSurface;
-        public RECTL rSrc;
+        public _RECTL rSrc;
         public uint dwFlags;
         public uint dwROPFlags;
         public _DDBLTFX bltFX;
         public HRESULT ddRVal;
         public IntPtr Blt;
         public bool IsClipped;
-        public RECTL rOrigDest;
-        public RECTL rOrigSrc;
+        public _RECTL rOrigDest;
+        public _RECTL rOrigSrc;
         public uint dwRectCnt;
         public IntPtr prDestRects;
         public uint dwAFlags;

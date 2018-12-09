@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Base interface for built-in transforms on which precision and caching may be controlled.
-    /// </summary>
     [Guid("1a799d8a-69f7-4e4c-9fed-437ccc6684cc"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1ConcreteTransform : ID2D1TransformNode
     {

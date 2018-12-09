@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfmediaengine.h(1598,5)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -130,7 +129,7 @@ namespace DirectN
         new HRESULT Shutdown();
         
         [PreserveSig]
-        new HRESULT TransferVideoFrame(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDstSurf, /* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* [annotation][in] _In_ */ ref RECT pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
+        new HRESULT TransferVideoFrame(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDstSurf, /* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* [annotation][in] _In_ */ ref tagRECT pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
         
         [PreserveSig]
         new HRESULT OnVideoStreamTick(/* [annotation][out] _Out_ */ out long pPts);
@@ -143,7 +142,7 @@ namespace DirectN
         HRESULT GetStatistics(/* [annotation][in] _In_ */ MF_MEDIA_ENGINE_STATISTIC StatisticID, /* [annotation][out] _Out_ */ [In, Out] PropVariant pStatistic);
         
         [PreserveSig]
-        HRESULT UpdateVideoStream(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(RECT) */ IntPtr pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
+        HRESULT UpdateVideoStream(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(tagRECT) */ IntPtr pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
         
         [PreserveSig]
         void GetBalance();

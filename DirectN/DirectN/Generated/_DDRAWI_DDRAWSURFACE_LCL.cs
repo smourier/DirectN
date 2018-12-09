@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 using LPDDRAWI_DDRAWSURFACE_GBL = DirectN._DDRAWI_DDRAWSURFACE_GBL;
 using LPDDRAWI_DDRAWSURFACE_INT = DirectN._DDRAWI_DDRAWSURFACE_INT;
 using LPDDRAWI_DDRAWSURFACE_MORE = DirectN._DDRAWI_DDRAWSURFACE_MORE;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -32,8 +31,8 @@ namespace DirectN
         public _DDCOLORKEY ddckCKDestOverlay;
         public IntPtr lpSurfaceOverlaying;
         public _DBLNODE dbnOverlayNode;
-        public RECT rcOverlaySrc;
-        public RECT rcOverlayDest;
+        public tagRECT rcOverlaySrc;
+        public tagRECT rcOverlayDest;
         public uint dwClrXparent;
         public uint dwAlpha;
         public int lOverlayX;

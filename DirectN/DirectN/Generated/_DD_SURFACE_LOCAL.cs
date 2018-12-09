@@ -3,7 +3,6 @@ using System;
 using System.Runtime.InteropServices;
 using PDD_ATTACHLIST = DirectN._DD_ATTACHLIST;
 using PDD_SURFACE_GLOBAL = DirectN._DD_SURFACE_GLOBAL;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -19,6 +18,6 @@ namespace DirectN
         public IntPtr lpSurfMore;
         public IntPtr lpAttachList;
         public IntPtr lpAttachListFrom;
-        public RECT rcOverlaySrc;
+        public tagRECT rcOverlaySrc;
     }
 }

@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(21308,5)
 using System;
 using System.Runtime.InteropServices;
-using POINT = DirectN.tagPOINT;
 
 namespace DirectN
 {
@@ -105,10 +104,10 @@ namespace DirectN
         HRESULT SetRoot(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszPath);
         
         [PreserveSig]
-        HRESULT MouseActivate(/* [in] */ POINT point);
+        HRESULT MouseActivate(/* [in] */ tagPOINT point);
         
         [PreserveSig]
-        HRESULT MouseSelect(/* [in] */ POINT point);
+        HRESULT MouseSelect(/* [in] */ tagPOINT point);
         
         [PreserveSig]
         HRESULT ChapterPlayAutoStop(/* [in] */ uint ulTitle, /* [in] */ uint ulChapter, /* [in] */ uint ulChaptersToPlay);

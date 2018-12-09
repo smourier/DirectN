@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0 __field_0 => InteropRuntime.Get<_D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0>(__bits, 0, 64);
-        public ulong Value => InteropRuntime.GetUInt6s(__bits, 0, 64);
+        public _D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0 __field_0 { get => InteropRuntime.Get<_D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0>(__bits, 0, 64); set => InteropRuntime.Set<_D3DDDIGPUVIRTUALADDRESS_PROTECTION_TYPE__union_0__struct_0>(value, __bits, 0, 64); }
+        public ulong Value { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
     }
 }

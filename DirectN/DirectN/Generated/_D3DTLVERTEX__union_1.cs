@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DTLVERTEX__union_1
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public float sy => InteropRuntime.GetSingle(__bits, 0, 32);
-        public float dvSY => InteropRuntime.GetSingle(__bits, 0, 32);
+        public float sy { get => InteropRuntime.GetSingle(__bits, 0, 32); set => InteropRuntime.SetSingle(value, __bits, 0, 32); }
+        public float dvSY { get => InteropRuntime.GetSingle(__bits, 0, 32); set => InteropRuntime.SetSingle(value, __bits, 0, 32); }
     }
 }

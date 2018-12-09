@@ -8,10 +8,11 @@ namespace DirectN
     public partial struct _DDPIXELFORMAT__union_3
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint dwBBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwVBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwStencilBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwBumpLuminanceBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwBBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwVBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwStencilBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwBumpLuminanceBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }
 }

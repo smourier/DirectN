@@ -7,8 +7,6 @@ using LPDDSURFACEDESC2 = DirectN._DDSURFACEDESC2;
 using LPDIRECTDRAWCLIPPER = DirectN.IDirectDrawClipper;
 using LPDIRECTDRAWPALETTE = DirectN.IDirectDrawPalette;
 using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;
-using LPPALETTEENTRY = DirectN.tagPALETTEENTRY;
-using LPSIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -22,7 +20,7 @@ namespace DirectN
         HRESULT CreateClipper(uint __unnamed_0, ref LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
         
         [PreserveSig]
-        HRESULT CreatePalette(uint __unnamed_0, ref LPPALETTEENTRY __unnamed_1, ref LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreatePalette(uint __unnamed_0, ref tagPALETTEENTRY __unnamed_1, ref LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
         
         [PreserveSig]
         HRESULT CreateSurface(ref LPDDSURFACEDESC2 __unnamed_0, ref LPDIRECTDRAWSURFACE7 __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
@@ -91,7 +89,7 @@ namespace DirectN
         HRESULT GetDeviceIdentifier(ref tagDDDEVICEIDENTIFIER2 __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT StartModeTest(ref LPSIZE __unnamed_0, uint __unnamed_1, uint __unnamed_2);
+        HRESULT StartModeTest(ref tagSIZE __unnamed_0, uint __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
         HRESULT EvaluateMode(uint __unnamed_0, ref uint __unnamed_1);

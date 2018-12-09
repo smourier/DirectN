@@ -1,8 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawint.h(980,9)
 using System;
 using System.Runtime.InteropServices;
-using DDVIDEOPORTDESC = DirectN._DDVIDEOPORTDESC;
-using DDVIDEOPORTINFO = DirectN._DDVIDEOPORTINFO;
 using PDD_DIRECTDRAW_LOCAL = DirectN._DD_DIRECTDRAW_LOCAL;
 using PDD_SURFACE_INT = DirectN._DD_SURFACE_INT;
 
@@ -12,8 +10,8 @@ namespace DirectN
     public partial struct _DD_VIDEOPORT_LOCAL
     {
         public IntPtr lpDD;
-        public DDVIDEOPORTDESC ddvpDesc;
-        public DDVIDEOPORTINFO ddvpInfo;
+        public _DDVIDEOPORTDESC ddvpDesc;
+        public _DDVIDEOPORTINFO ddvpInfo;
         public IntPtr lpSurface;
         public IntPtr lpVBISurface;
         public uint dwNumAutoflip;

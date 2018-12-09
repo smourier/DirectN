@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPDDRAWI_DIRECTDRAW_LCL = DirectN._DDRAWI_DIRECTDRAW_LCL;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -10,7 +9,7 @@ namespace DirectN
     public partial struct _ACCESSRECTLIST
     {
         public IntPtr lpLink;
-        public RECT rDest;
+        public tagRECT rDest;
         public IntPtr lpOwner;
         public IntPtr lpSurfaceData;
         public uint dwFlags;

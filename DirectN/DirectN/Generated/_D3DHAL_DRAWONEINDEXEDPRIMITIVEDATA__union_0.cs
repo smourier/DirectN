@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DHAL_DRAWONEINDEXEDPRIMITIVEDATA__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _D3DVERTEXTYPE VertexType => InteropRuntime.Get<_D3DVERTEXTYPE>(__bits, 0, 32);
-        public uint dwFVFControl => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public _D3DVERTEXTYPE VertexType { get => InteropRuntime.Get<_D3DVERTEXTYPE>(__bits, 0, 32); set => InteropRuntime.Set<_D3DVERTEXTYPE>(value, __bits, 0, 32); }
+        public uint dwFVFControl { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }
 }

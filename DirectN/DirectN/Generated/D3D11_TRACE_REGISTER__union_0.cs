@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct D3D11_TRACE_REGISTER__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ushort Index1D => InteropRuntime.GetUInt16(__bits, 0, 16);
-        public ushort[] Index2D => InteropRuntime.GetArray<ushort>(__bits, 0, 32);
+        public ushort Index1D { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
+        public ushort[] Index2D { get => InteropRuntime.GetArray<ushort>(__bits, 0, 32); set => InteropRuntime.SetArray<ushort>(value, __bits, 0, 32); }
     }
 }

@@ -6,10 +6,11 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_RESOURCE_BARRIER__union_0
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D12_RESOURCE_TRANSITION_BARRIER Transition => InteropRuntime.Get<D3D12_RESOURCE_TRANSITION_BARRIER>(__bits, 0, 160);
-        public D3D12_RESOURCE_ALIASING_BARRIER Aliasing => InteropRuntime.Get<D3D12_RESOURCE_ALIASING_BARRIER>(__bits, 0, 128);
-        public D3D12_RESOURCE_UAV_BARRIER UAV => InteropRuntime.Get<D3D12_RESOURCE_UAV_BARRIER>(__bits, 0, 64);
+        public D3D12_RESOURCE_TRANSITION_BARRIER Transition { get => InteropRuntime.Get<D3D12_RESOURCE_TRANSITION_BARRIER>(__bits, 0, 96); set => InteropRuntime.Set<D3D12_RESOURCE_TRANSITION_BARRIER>(value, __bits, 0, 96); }
+        public D3D12_RESOURCE_ALIASING_BARRIER Aliasing { get => InteropRuntime.Get<D3D12_RESOURCE_ALIASING_BARRIER>(__bits, 0, 0); set => InteropRuntime.Set<D3D12_RESOURCE_ALIASING_BARRIER>(value, __bits, 0, 0); }
+        public D3D12_RESOURCE_UAV_BARRIER UAV { get => InteropRuntime.Get<D3D12_RESOURCE_UAV_BARRIER>(__bits, 0, 0); set => InteropRuntime.Set<D3D12_RESOURCE_UAV_BARRIER>(value, __bits, 0, 0); }
     }
 }

@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(676,9)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -10,10 +9,10 @@ namespace DirectN
     {
         public ushort wPictureSourceIndex;
         public ushort wBlendedDestinationIndex;
-        public RECT PictureSourceRect16thPel;
-        public RECT PictureDestinationRect;
-        public RECT GraphicSourceRect;
-        public RECT GraphicDestinationRect;
+        public tagRECT PictureSourceRect16thPel;
+        public tagRECT PictureDestinationRect;
+        public tagRECT GraphicSourceRect;
+        public tagRECT GraphicDestinationRect;
         public ushort wBlendDelay;
         public byte bBlendOn;
         public byte bWholePlaneAlpha;

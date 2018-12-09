@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d.h(594,1)
 using System;
 using System.Runtime.InteropServices;
-using LPD3DVALUE = System.Single;
 using LPDIRECT3DTEXTURE2 = DirectN.IDirect3DTexture2;
 using LPDIRECT3DVERTEXBUFFER = DirectN.IDirect3DVertexBuffer;
 using LPDIRECT3DVIEWPORT3 = DirectN.IDirect3DViewport3;

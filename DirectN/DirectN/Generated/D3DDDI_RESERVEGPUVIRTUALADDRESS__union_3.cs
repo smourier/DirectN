@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct D3DDDI_RESERVEGPUVIRTUALADDRESS__union_3
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ulong PagingFenceValue => InteropRuntime.GetUInt6s(__bits, 0, 64);
-        public ulong Reserved2 => InteropRuntime.GetUInt6s(__bits, 0, 64);
+        public ulong PagingFenceValue { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
+        public ulong Reserved2 { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
     }
 }

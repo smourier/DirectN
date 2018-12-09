@@ -8,9 +8,10 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDBLTFX__union_1
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint dwZSrcConst => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public IntPtr lpDDSZBufferSrc => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public uint dwZSrcConst { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public IntPtr lpDDSZBufferSrc { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
     }
 }

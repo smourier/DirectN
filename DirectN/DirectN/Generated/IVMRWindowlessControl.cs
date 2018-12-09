@@ -22,7 +22,7 @@ namespace DirectN
         HRESULT SetVideoPosition(/* [in] */ ref LPRECT lpSRCRect, /* [in] */ ref LPRECT lpDSTRect);
         
         [PreserveSig]
-        HRESULT GetVideoPosition(/* [out] */ out LPRECT lpSRCRect, /* [out] */ out LPRECT lpDSTRect);
+        HRESULT GetVideoPosition(/* [out] */ out tagRECT lpSRCRect, /* [out] */ out tagRECT lpDSTRect);
         
         [PreserveSig]
         HRESULT GetAspectRatioMode(/* [out] */ out uint lpAspectRatioMode);

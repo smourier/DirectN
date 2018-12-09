@@ -1,0 +1,16 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wmsdkidl.h(2788,9)
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    [StructLayout(LayoutKind.Sequential)]
+    public partial struct WMDRM_IMPORT_INIT_STRUCT
+    {
+        public uint dwVersion;
+        public uint cbEncryptedSessionKeyMessage;
+        public IntPtr pbEncryptedSessionKeyMessage;
+        public uint cbEncryptedKeyMessage;
+        public IntPtr pbEncryptedKeyMessage;
+    }
+}

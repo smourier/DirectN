@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_3.h(1820,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_POINT_2L = DirectN.tagPOINT;
 
 namespace DirectN
 {
@@ -34,18 +33,18 @@ namespace DirectN
         /// <summary>
         /// Left origin along the horizontal Roman baseline.
         /// </summary>
-        public D2D1_POINT_2L horizontalLeftOrigin;
+        public tagPOINT horizontalLeftOrigin;
         /// <summary>
         /// Right origin along the horizontal Roman baseline.
         /// </summary>
-        public D2D1_POINT_2L horizontalRightOrigin;
+        public tagPOINT horizontalRightOrigin;
         /// <summary>
         /// Top origin along the vertical central baseline.
         /// </summary>
-        public D2D1_POINT_2L verticalTopOrigin;
+        public tagPOINT verticalTopOrigin;
         /// <summary>
         /// Bottom origin along vertical central baseline.
         /// </summary>
-        public D2D1_POINT_2L verticalBottomOrigin;
+        public tagPOINT verticalBottomOrigin;
     }
 }

@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DRECT__union_3
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public int y2 => InteropRuntime.GetInt32(__bits, 0, 32);
-        public int lY2 => InteropRuntime.GetInt32(__bits, 0, 32);
+        public int y2 { get => InteropRuntime.GetInt32(__bits, 0, 32); set => InteropRuntime.SetInt32(value, __bits, 0, 32); }
+        public int lY2 { get => InteropRuntime.GetInt32(__bits, 0, 32); set => InteropRuntime.SetInt32(value, __bits, 0, 32); }
     }
 }

@@ -19,6 +19,6 @@ namespace DirectN
         
         // IDWriteColorGlyphRunEnumerator1
         [PreserveSig]
-        HRESULT GetCurrentRun(/* _Outptr_ */ out IntPtr colorGlyphRun);
+        HRESULT GetCurrentRun1(/* _Outptr_ */ out IntPtr colorGlyphRun);
     }
 }

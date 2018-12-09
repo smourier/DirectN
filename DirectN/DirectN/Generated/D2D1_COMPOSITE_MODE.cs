@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(170,9)
 namespace DirectN
 {
+    /// <summary>
+    /// Specifies the composite mode that will be applied.
+    /// </summary>
     public enum D2D1_COMPOSITE_MODE
     {
         D2D1_COMPOSITE_MODE_SOURCE_OVER = 0,

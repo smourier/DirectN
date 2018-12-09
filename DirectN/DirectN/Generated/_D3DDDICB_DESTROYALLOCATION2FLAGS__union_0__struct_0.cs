@@ -8,10 +8,11 @@ namespace DirectN
     public partial struct _D3DDDICB_DESTROYALLOCATION2FLAGS__union_0__struct_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint AssumeNotInUse => InteropRuntime.GetUInt32(__bits, 0, 1);
-        public uint SynchronousDestroy => InteropRuntime.GetUInt32(__bits, 1, 1);
-        public uint Reserved => InteropRuntime.GetUInt32(__bits, 2, 29);
-        public uint SystemUseOnly => InteropRuntime.GetUInt32(__bits, 31, 1);
+        public uint AssumeNotInUse { get => InteropRuntime.GetUInt32(__bits, 0, 1); set => InteropRuntime.SetUInt32(value, __bits, 0, 1); }
+        public uint SynchronousDestroy { get => InteropRuntime.GetUInt32(__bits, 1, 1); set => InteropRuntime.SetUInt32(value, __bits, 1, 1); }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 2, 29); set => InteropRuntime.SetUInt32(value, __bits, 2, 29); }
+        public uint SystemUseOnly { get => InteropRuntime.GetUInt32(__bits, 31, 1); set => InteropRuntime.SetUInt32(value, __bits, 31, 1); }
     }
 }

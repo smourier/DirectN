@@ -1,0 +1,21 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wmsdkidl.h(9138,5)
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    [Guid("d9d6549d-a193-4f24-b308-03123d9b7f8d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IWMWriterPostViewCallback : IWMStatusCallback
+    {
+        // IWMStatusCallback
+        [PreserveSig]
+        new HRESULT OnStatus(/* [in] */ WMT_STATUS Status, /* [in] */ HRESULT hr, /* [in] */ WMT_ATTR_DATATYPE dwType, /* [in] */ ref byte pValue, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        
+        // IWMWriterPostViewCallback
+        [PreserveSig]
+        HRESULT OnPostViewSample(/* [in] */ ushort wStreamNumber, /* [in] */ ulong cnsSampleTime, /* [in] */ ulong cnsSampleDuration, /* [in] */ uint dwFlags, /* [in] */ INSSBuffer pSample, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        
+        [PreserveSig]
+        HRESULT AllocateForPostView(/* [in] */ ushort wStreamNum, /* [in] */ uint cbBuffer, /* [out] */ out INSSBuffer ppBuffer, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+    }
+}

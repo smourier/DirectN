@@ -3,7 +3,6 @@ using System;
 using System.Runtime.InteropServices;
 using PDD_DIRECTDRAW_GLOBAL = DirectN._DD_DIRECTDRAW_GLOBAL;
 using PDD_SURFACE_LOCAL = DirectN._DD_SURFACE_LOCAL;
-using RECTL = DirectN._RECTL;
 
 namespace DirectN
 {
@@ -12,9 +11,9 @@ namespace DirectN
     {
         public IntPtr lpDD;
         public IntPtr lpDDDestSurface;
-        public RECTL rDest;
+        public _RECTL rDest;
         public IntPtr lpDDSrcSurface;
-        public RECTL rSrc;
+        public _RECTL rSrc;
         public uint dwFlags;
         public _DDOVERLAYFX overlayFX;
         public HRESULT ddRVal;

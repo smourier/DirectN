@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct D3D10_BUFFER_SRV__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint FirstElement => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint ElementOffset => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint FirstElement { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint ElementOffset { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }
 }

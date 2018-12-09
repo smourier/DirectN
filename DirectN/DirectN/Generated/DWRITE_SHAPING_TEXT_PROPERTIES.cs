@@ -8,10 +8,11 @@ namespace DirectN
     public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ushort isShapedAlone => InteropRuntime.GetUInt16(__bits, 0, 1);
-        public ushort reserved1 => InteropRuntime.GetUInt16(__bits, 1, 1);
-        public ushort canBreakShapingAfter => InteropRuntime.GetUInt16(__bits, 2, 1);
-        public ushort reserved => InteropRuntime.GetUInt16(__bits, 3, 13);
+        public ushort isShapedAlone { get => InteropRuntime.GetUInt16(__bits, 0, 1); set => InteropRuntime.SetUInt16(value, __bits, 0, 1); }
+        public ushort reserved1 { get => InteropRuntime.GetUInt16(__bits, 1, 1); set => InteropRuntime.SetUInt16(value, __bits, 1, 1); }
+        public ushort canBreakShapingAfter { get => InteropRuntime.GetUInt16(__bits, 2, 1); set => InteropRuntime.SetUInt16(value, __bits, 2, 1); }
+        public ushort reserved { get => InteropRuntime.GetUInt16(__bits, 3, 13); set => InteropRuntime.SetUInt16(value, __bits, 3, 13); }
     }
 }

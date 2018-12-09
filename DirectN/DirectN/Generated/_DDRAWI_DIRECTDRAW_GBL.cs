@@ -10,7 +10,6 @@ using LPDDRAWI_DDVIDEOPORT_INT = DirectN._DDRAWI_DDVIDEOPORT_INT;
 using LPDDRAWI_DIRECTDRAW_GBL = DirectN._DDRAWI_DIRECTDRAW_GBL;
 using LPDDRAWI_DIRECTDRAW_LCL = DirectN._DDRAWI_DIRECTDRAW_LCL;
 using LPDDVIDEOPORTCAPS = DirectN._DDVIDEOPORTCAPS;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -69,7 +68,7 @@ namespace DirectN
         public IntPtr lpDDVideoPortCaps;
         public IntPtr dvpList;
         public IntPtr lpD3DHALCallbacks2;
-        public RECT rectDevice;
+        public tagRECT rectDevice;
         public uint cMonitors;
         public IntPtr gpbmiSrc;
         public IntPtr gpbmiDest;
@@ -82,7 +81,7 @@ namespace DirectN
         public IntPtr lpddNLVBothCaps;
         public IntPtr lpD3DExtendedCaps;
         public uint dwDOSBoxEvent;
-        public RECT rectDesktop;
+        public tagRECT rectDesktop;
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] 
         public string cDriverName;
         public IntPtr lpD3DHALCallbacks3;

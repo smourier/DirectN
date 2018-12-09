@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 using PDD_DIRECTDRAW_LOCAL = DirectN._DD_DIRECTDRAW_LOCAL;
 using PDD_SURFACE_INT = DirectN._DD_SURFACE_INT;
 using PDD_VIDEOPORT_LOCAL = DirectN._DD_VIDEOPORT_LOCAL;
-using PDD_VIDEOPORTINFO = DirectN._DDVIDEOPORTINFO;
 
 namespace DirectN
 {

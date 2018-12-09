@@ -8,9 +8,10 @@ namespace DirectN
     public partial struct D3DDDI_MAKERESIDENT_FLAGS__union_0__struct_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint CantTrimFurther => InteropRuntime.GetUInt32(__bits, 0, 1);
-        public uint MustSucceed => InteropRuntime.GetUInt32(__bits, 1, 1);
-        public uint Reserved => InteropRuntime.GetUInt32(__bits, 2, 30);
+        public uint CantTrimFurther { get => InteropRuntime.GetUInt32(__bits, 0, 1); set => InteropRuntime.SetUInt32(value, __bits, 0, 1); }
+        public uint MustSucceed { get => InteropRuntime.GetUInt32(__bits, 1, 1); set => InteropRuntime.SetUInt32(value, __bits, 1, 1); }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 2, 30); set => InteropRuntime.SetUInt32(value, __bits, 2, 30); }
     }
 }

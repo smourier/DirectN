@@ -2,8 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECTDRAW = DirectN.IDirectDraw;
-using LPRECT = DirectN.tagRECT;
-using LPRGNDATA = DirectN._RGNDATA;
 
 namespace DirectN
 {
@@ -11,7 +9,7 @@ namespace DirectN
     public partial interface IDirectDrawClipper
     {
         [PreserveSig]
-        HRESULT GetClipList(ref LPRECT __unnamed_0, ref LPRGNDATA __unnamed_1, ref uint __unnamed_2);
+        HRESULT GetClipList(ref tagRECT __unnamed_0, ref _RGNDATA __unnamed_1, ref uint __unnamed_2);
         
         [PreserveSig]
         HRESULT GetHWnd(ref IntPtr __unnamed_0);
@@ -23,7 +21,7 @@ namespace DirectN
         HRESULT IsClipListChanged(ref bool __unnamed_0);
         
         [PreserveSig]
-        HRESULT SetClipList(ref LPRGNDATA __unnamed_0, uint __unnamed_1);
+        HRESULT SetClipList(ref _RGNDATA __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
         HRESULT SetHWnd(uint __unnamed_0, ref IntPtr __unnamed_1);

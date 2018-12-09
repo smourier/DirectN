@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(22304,5)
 using System;
 using System.Runtime.InteropServices;
-using POINT = DirectN.tagPOINT;
 
 namespace DirectN
 {
@@ -96,10 +95,10 @@ namespace DirectN
         HRESULT SetDVDDirectory(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszwPath);
         
         [PreserveSig]
-        HRESULT ActivateAtPosition(/* [in] */ POINT point);
+        HRESULT ActivateAtPosition(/* [in] */ tagPOINT point);
         
         [PreserveSig]
-        HRESULT SelectAtPosition(/* [in] */ POINT point);
+        HRESULT SelectAtPosition(/* [in] */ tagPOINT point);
         
         [PreserveSig]
         HRESULT PlayChaptersAutoStop(/* [in] */ uint ulTitle, /* [in] */ uint ulChapter, /* [in] */ uint ulChaptersToPlay, /* [in] */ uint dwFlags, /* [annotation][out] _Out_ */ out IDvdCmd ppCmd);

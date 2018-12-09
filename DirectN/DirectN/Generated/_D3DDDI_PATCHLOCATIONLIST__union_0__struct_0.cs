@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DDDI_PATCHLOCATIONLIST__union_0__struct_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint SlotId => InteropRuntime.GetUInt32(__bits, 0, 24);
-        public uint Reserved => InteropRuntime.GetUInt32(__bits, 24, 8);
+        public uint SlotId { get => InteropRuntime.GetUInt32(__bits, 0, 24); set => InteropRuntime.SetUInt32(value, __bits, 0, 24); }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 24, 8); set => InteropRuntime.SetUInt32(value, __bits, 24, 8); }
     }
 }

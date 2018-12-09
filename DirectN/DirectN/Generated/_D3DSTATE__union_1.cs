@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DSTATE__union_1
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint[] dwArg => InteropRuntime.GetArray<uint>(__bits, 0, 32);
-        public D3DVALUE[] dvArg => InteropRuntime.GetArray<D3DVALUE>(__bits, 0, 32);
+        public uint[] dwArg { get => InteropRuntime.GetArray<uint>(__bits, 0, 32); set => InteropRuntime.SetArray<uint>(value, __bits, 0, 32); }
+        public D3DVALUE[] dvArg { get => InteropRuntime.GetArray<D3DVALUE>(__bits, 0, 32); set => InteropRuntime.SetArray<D3DVALUE>(value, __bits, 0, 32); }
     }
 }

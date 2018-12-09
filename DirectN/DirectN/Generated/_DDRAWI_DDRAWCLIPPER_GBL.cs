@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPDDRAWI_DIRECTDRAW_GBL = DirectN._DDRAWI_DIRECTDRAW_GBL;
-using LPRGNDATA = DirectN._RGNDATA;
 
 namespace DirectN
 {

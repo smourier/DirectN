@@ -8,9 +8,10 @@ namespace DirectN
     public partial struct _DXVA_MBctrl_H264__union_1__struct_0__union_0__struct_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public byte intra_chroma_pred_mode => InteropRuntime.GetByte(__bits, 0, 2);
-        public byte IntraPredAvailFlags => InteropRuntime.GetByte(__bits, 2, 5);
-        public byte ReservedIntraBit => InteropRuntime.GetByte(__bits, 7, 1);
+        public byte intra_chroma_pred_mode { get => InteropRuntime.GetByte(__bits, 0, 2); set => InteropRuntime.SetByte(value, __bits, 0, 2); }
+        public byte IntraPredAvailFlags { get => InteropRuntime.GetByte(__bits, 2, 5); set => InteropRuntime.SetByte(value, __bits, 2, 5); }
+        public byte ReservedIntraBit { get => InteropRuntime.GetByte(__bits, 7, 1); set => InteropRuntime.SetByte(value, __bits, 7, 1); }
     }
 }

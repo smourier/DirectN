@@ -1,8 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1effectauthor.h(897,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_POINT_2L = DirectN.tagPOINT;
-using D2D1_RECT_L = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -28,10 +26,10 @@ namespace DirectN
         HRESULT CreateBorderTransform(D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, /* _COM_Outptr_ */ out ID2D1BorderTransform transform);
         
         [PreserveSig]
-        HRESULT CreateOffsetTransform(D2D1_POINT_2L offset, /* _COM_Outptr_ */ out ID2D1OffsetTransform transform);
+        HRESULT CreateOffsetTransform(tagPOINT offset, /* _COM_Outptr_ */ out ID2D1OffsetTransform transform);
         
         [PreserveSig]
-        HRESULT CreateBoundsAdjustmentTransform(/* _In_ */ ref D2D1_RECT_L outputRectangle, /* _COM_Outptr_ */ out ID2D1BoundsAdjustmentTransform transform);
+        HRESULT CreateBoundsAdjustmentTransform(/* _In_ */ ref tagRECT outputRectangle, /* _COM_Outptr_ */ out ID2D1BoundsAdjustmentTransform transform);
         
         [PreserveSig]
         HRESULT LoadPixelShader([MarshalAs(UnmanagedType.LPStruct)] Guid shaderId, /* _In_reads_(shaderBufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] shaderBuffer, uint shaderBufferCount);

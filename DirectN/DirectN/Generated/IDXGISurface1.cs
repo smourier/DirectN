@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\dxgi.h(1072,5)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -40,6 +39,6 @@ namespace DirectN
         HRESULT GetDC(/* [in] */ bool Discard, /* [annotation][out] _Out_ */ out IntPtr phdc);
         
         [PreserveSig]
-        HRESULT ReleaseDC(/* optional(RECT) */ IntPtr pDirtyRect);
+        HRESULT ReleaseDC(/* optional(tagRECT) */ IntPtr pDirtyRect);
     }
 }

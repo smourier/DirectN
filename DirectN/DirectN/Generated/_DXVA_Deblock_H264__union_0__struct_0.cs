@@ -8,14 +8,15 @@ namespace DirectN
     public partial struct _DXVA_Deblock_H264__union_0__struct_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public byte ReservedBit => InteropRuntime.GetByte(__bits, 0, 1);
-        public byte FieldModeCurrentMbFlag => InteropRuntime.GetByte(__bits, 1, 1);
-        public byte FieldModeLeftMbFlag => InteropRuntime.GetByte(__bits, 2, 1);
-        public byte FieldModeAboveMbFlag => InteropRuntime.GetByte(__bits, 3, 1);
-        public byte FilterInternal8x8EdgesFlag => InteropRuntime.GetByte(__bits, 4, 1);
-        public byte FilterInternal4x4EdgesFlag => InteropRuntime.GetByte(__bits, 5, 1);
-        public byte FilterLeftMbEdgeFlag => InteropRuntime.GetByte(__bits, 6, 1);
-        public byte FilterTopMbEdgeFlag => InteropRuntime.GetByte(__bits, 7, 1);
+        public byte ReservedBit { get => InteropRuntime.GetByte(__bits, 0, 1); set => InteropRuntime.SetByte(value, __bits, 0, 1); }
+        public byte FieldModeCurrentMbFlag { get => InteropRuntime.GetByte(__bits, 1, 1); set => InteropRuntime.SetByte(value, __bits, 1, 1); }
+        public byte FieldModeLeftMbFlag { get => InteropRuntime.GetByte(__bits, 2, 1); set => InteropRuntime.SetByte(value, __bits, 2, 1); }
+        public byte FieldModeAboveMbFlag { get => InteropRuntime.GetByte(__bits, 3, 1); set => InteropRuntime.SetByte(value, __bits, 3, 1); }
+        public byte FilterInternal8x8EdgesFlag { get => InteropRuntime.GetByte(__bits, 4, 1); set => InteropRuntime.SetByte(value, __bits, 4, 1); }
+        public byte FilterInternal4x4EdgesFlag { get => InteropRuntime.GetByte(__bits, 5, 1); set => InteropRuntime.SetByte(value, __bits, 5, 1); }
+        public byte FilterLeftMbEdgeFlag { get => InteropRuntime.GetByte(__bits, 6, 1); set => InteropRuntime.SetByte(value, __bits, 6, 1); }
+        public byte FilterTopMbEdgeFlag { get => InteropRuntime.GetByte(__bits, 7, 1); set => InteropRuntime.SetByte(value, __bits, 7, 1); }
     }
 }

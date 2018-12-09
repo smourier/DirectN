@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct D3DDDI_RESERVEGPUVIRTUALADDRESS__union_2
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ulong DriverProtection => InteropRuntime.GetUInt6s(__bits, 0, 64);
-        public ulong Reserved1 => InteropRuntime.GetUInt6s(__bits, 0, 64);
+        public ulong DriverProtection { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
+        public ulong Reserved1 { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
     }
 }

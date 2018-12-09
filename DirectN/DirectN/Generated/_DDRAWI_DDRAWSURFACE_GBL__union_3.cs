@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _DDRAWI_DDRAWSURFACE_GBL__union_3
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public int lPitch => InteropRuntime.GetInt32(__bits, 0, 32);
-        public uint dwLinearSize => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public int lPitch { get => InteropRuntime.GetInt32(__bits, 0, 32); set => InteropRuntime.SetInt32(value, __bits, 0, 32); }
+        public uint dwLinearSize { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }
 }

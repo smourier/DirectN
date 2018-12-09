@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using D2D1_TAG = System.UInt64;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -175,6 +174,6 @@ namespace DirectN
         
         // ID2D1DCRenderTarget
         [PreserveSig]
-        HRESULT BindDC(/* _In_ */ IntPtr hDC, /* _In_ */ ref RECT pSubRect);
+        HRESULT BindDC(/* _In_ */ IntPtr hDC, /* _In_ */ ref tagRECT pSubRect);
     }
 }

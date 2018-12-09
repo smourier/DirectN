@@ -1,10 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(136,1)
 using System;
 using System.Runtime.InteropServices;
-using PALETTEENTRY = DirectN.tagPALETTEENTRY;
-using POINT = DirectN.tagPOINT;
-using RECT = DirectN.tagRECT;
-using RGNDATA = DirectN._RGNDATA;
 
 namespace DirectN
 {
@@ -54,7 +50,7 @@ namespace DirectN
         HRESULT Reset(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters);
         
         [PreserveSig]
-        HRESULT Present(ref RECT pSourceRect, ref RECT pDestRect, ref IntPtr hDestWindowOverride, ref RGNDATA pDirtyRegion);
+        HRESULT Present(ref tagRECT pSourceRect, ref tagRECT pDestRect, ref IntPtr hDestWindowOverride, ref _RGNDATA pDirtyRegion);
         
         [PreserveSig]
         HRESULT GetBackBuffer(uint iSwapChain, uint iBackBuffer, _D3DBACKBUFFER_TYPE Type, ref IDirect3DSurface9 ppBackBuffer);
@@ -93,7 +89,7 @@ namespace DirectN
         HRESULT CreateDepthStencilSurface(uint Width, uint Height, _D3DFORMAT Format, _D3DMULTISAMPLE_TYPE MultiSample, uint MultisampleQuality, bool Discard, ref IDirect3DSurface9 ppSurface, ref IntPtr pSharedHandle);
         
         [PreserveSig]
-        HRESULT UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref RECT pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref POINT pDestPoint);
+        HRESULT UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref tagRECT pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref tagPOINT pDestPoint);
         
         [PreserveSig]
         HRESULT UpdateTexture(ref IDirect3DBaseTexture9 pSourceTexture, ref IDirect3DBaseTexture9 pDestinationTexture);
@@ -105,10 +101,10 @@ namespace DirectN
         HRESULT GetFrontBufferData(uint iSwapChain, ref IDirect3DSurface9 pDestSurface);
         
         [PreserveSig]
-        HRESULT StretchRect(ref IDirect3DSurface9 pSourceSurface, ref RECT pSourceRect, ref IDirect3DSurface9 pDestSurface, ref RECT pDestRect, _D3DTEXTUREFILTERTYPE Filter);
+        HRESULT StretchRect(ref IDirect3DSurface9 pSourceSurface, ref tagRECT pSourceRect, ref IDirect3DSurface9 pDestSurface, ref tagRECT pDestRect, _D3DTEXTUREFILTERTYPE Filter);
         
         [PreserveSig]
-        HRESULT ColorFill(ref IDirect3DSurface9 pSurface, ref RECT pRect, uint color);
+        HRESULT ColorFill(ref IDirect3DSurface9 pSurface, ref tagRECT pRect, uint color);
         
         [PreserveSig]
         HRESULT CreateOffscreenPlainSurface(uint Width, uint Height, _D3DFORMAT Format, _D3DPOOL Pool, ref IDirect3DSurface9 ppSurface, ref IntPtr pSharedHandle);
@@ -216,10 +212,10 @@ namespace DirectN
         HRESULT ValidateDevice(ref uint pNumPasses);
         
         [PreserveSig]
-        HRESULT SetPaletteEntries(uint PaletteNumber, ref PALETTEENTRY pEntries);
+        HRESULT SetPaletteEntries(uint PaletteNumber, ref tagPALETTEENTRY pEntries);
         
         [PreserveSig]
-        HRESULT GetPaletteEntries(uint PaletteNumber, ref PALETTEENTRY pEntries);
+        HRESULT GetPaletteEntries(uint PaletteNumber, ref tagPALETTEENTRY pEntries);
         
         [PreserveSig]
         HRESULT SetCurrentTexturePalette(uint PaletteNumber);
@@ -228,10 +224,10 @@ namespace DirectN
         HRESULT GetCurrentTexturePalette(ref uint PaletteNumber);
         
         [PreserveSig]
-        HRESULT SetScissorRect(ref RECT pRect);
+        HRESULT SetScissorRect(ref tagRECT pRect);
         
         [PreserveSig]
-        HRESULT GetScissorRect(ref RECT pRect);
+        HRESULT GetScissorRect(ref tagRECT pRect);
         
         [PreserveSig]
         HRESULT SetSoftwareVertexProcessing(bool bSoftware);

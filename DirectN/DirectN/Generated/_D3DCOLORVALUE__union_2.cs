@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DCOLORVALUE__union_2
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public float b => InteropRuntime.GetSingle(__bits, 0, 32);
-        public float dvB => InteropRuntime.GetSingle(__bits, 0, 32);
+        public float b { get => InteropRuntime.GetSingle(__bits, 0, 32); set => InteropRuntime.SetSingle(value, __bits, 0, 32); }
+        public float dvB { get => InteropRuntime.GetSingle(__bits, 0, 32); set => InteropRuntime.SetSingle(value, __bits, 0, 32); }
     }
 }

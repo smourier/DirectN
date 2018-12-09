@@ -5,9 +5,6 @@ using D2D1_TAG = System.UInt64;
 
 namespace DirectN
 {
-    /// <summary>
-    /// This interface performs all the same functions as the ID2D1DeviceContext1 interface, plus it enables functionality such as ink rendering, gradient mesh rendering, and improved image loading.
-    /// </summary>
     [Guid("394ea6a3-0c34-4321-950b-6ca20f0be6c7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DeviceContext2 : ID2D1DeviceContext1
     {
@@ -305,7 +302,7 @@ namespace DirectN
         HRESULT CreateImageSourceFromWic(/* _In_ */ IWICBitmapSource wicBitmapSource, D2D1_IMAGE_SOURCE_LOADING_OPTIONS loadingOptions, D2D1_ALPHA_MODE alphaMode, /* _COM_Outptr_ */ out ID2D1ImageSourceFromWic imageSource);
         
         [PreserveSig]
-        HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, /* _In_reads_(3) */ [MarshalAs(UnmanagedType.LPArray)] uint[] extents, /* _In_reads_(dataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataCount, /* _In_reads_(2) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, /* _COM_Outptr_ */ out ID2D1LookupTable3D lookupTable);
+        HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, /* _In_reads_(3) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] uint[] extents, /* _In_reads_(dataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataCount, /* _In_reads_(2) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] strides, /* _COM_Outptr_ */ out ID2D1LookupTable3D lookupTable);
         
         [PreserveSig]
         HRESULT CreateImageSourceFromDxgi(/* _In_reads_(surfaceCount) */ out IntPtr surfaces, uint surfaceCount, DXGI_COLOR_SPACE_TYPE colorSpace, D2D1_IMAGE_SOURCE_FROM_DXGI_OPTIONS options, /* _COM_Outptr_ */ out ID2D1ImageSource imageSource);

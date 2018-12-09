@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The root factory interface for all DWrite objects.
+    /// </summary>
     [Guid("0439fc60-ca44-4994-8dee-3a9af7b732ec"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFactory2 : IDWriteFactory1
     {

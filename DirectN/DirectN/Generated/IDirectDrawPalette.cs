@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECTDRAW = DirectN.IDirectDraw;
-using LPPALETTEENTRY = DirectN.tagPALETTEENTRY;
 
 namespace DirectN
 {
@@ -13,12 +12,12 @@ namespace DirectN
         HRESULT GetCaps(ref uint __unnamed_0);
         
         [PreserveSig]
-        HRESULT GetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref LPPALETTEENTRY __unnamed_3);
+        HRESULT GetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref tagPALETTEENTRY __unnamed_3);
         
         [PreserveSig]
-        HRESULT Initialize(ref LPDIRECTDRAW __unnamed_0, uint __unnamed_1, ref LPPALETTEENTRY __unnamed_2);
+        HRESULT Initialize(ref LPDIRECTDRAW __unnamed_0, uint __unnamed_1, ref tagPALETTEENTRY __unnamed_2);
         
         [PreserveSig]
-        HRESULT SetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref LPPALETTEENTRY __unnamed_3);
+        HRESULT SetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref tagPALETTEENTRY __unnamed_3);
     }
 }

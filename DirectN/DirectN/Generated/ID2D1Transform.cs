@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1effectauthor.h(674,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_RECT_L = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -14,12 +13,12 @@ namespace DirectN
         
         // ID2D1Transform
         [PreserveSig]
-        HRESULT MapOutputRectToInputRects(/* _In_ */ ref D2D1_RECT_L outputRect, /* _Out_writes_(inputRectsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_RECT_L[] inputRects, uint inputRectsCount);
+        HRESULT MapOutputRectToInputRects(/* _In_ */ ref tagRECT outputRect, /* _Out_writes_(inputRectsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagRECT[] inputRects, uint inputRectsCount);
         
         [PreserveSig]
-        HRESULT MapInputRectsToOutputRect(/* _In_reads_(inputRectCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_RECT_L[] inputRects, /* _In_reads_(inputRectCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D1_RECT_L[] inputOpaqueSubRects, uint inputRectCount, /* _Out_ */ out D2D1_RECT_L outputRect, /* _Out_ */ out D2D1_RECT_L outputOpaqueSubRect);
+        HRESULT MapInputRectsToOutputRect(/* _In_reads_(inputRectCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagRECT[] inputRects, /* _In_reads_(inputRectCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagRECT[] inputOpaqueSubRects, uint inputRectCount, /* _Out_ */ out tagRECT outputRect, /* _Out_ */ out tagRECT outputOpaqueSubRect);
         
         [PreserveSig]
-        HRESULT MapInvalidRect(uint inputIndex, D2D1_RECT_L invalidInputRect, /* _Out_ */ out D2D1_RECT_L invalidOutputRect);
+        HRESULT MapInvalidRect(uint inputIndex, tagRECT invalidInputRect, /* _Out_ */ out tagRECT invalidOutputRect);
     }
 }

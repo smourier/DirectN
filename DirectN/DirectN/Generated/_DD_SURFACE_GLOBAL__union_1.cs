@@ -8,9 +8,10 @@ namespace DirectN
     public partial struct _DD_SURFACE_GLOBAL__union_1
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public IntPtr lpVidMemHeap => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public uint dwBlockSizeX => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwUserMemSize => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public IntPtr lpVidMemHeap { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public uint dwBlockSizeX { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwUserMemSize { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }
 }

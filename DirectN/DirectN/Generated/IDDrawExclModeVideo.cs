@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(23811,5)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -21,7 +20,7 @@ namespace DirectN
         HRESULT GetDDrawSurface(/* [annotation][out] _Out_ */ out IDirectDrawSurface ppDDrawSurface, /* [annotation][out] _Out_ */ out bool pbUsingExternal);
         
         [PreserveSig]
-        HRESULT SetDrawParameters(/* [in] */ ref RECT prcSource, /* [in] */ ref RECT prcTarget);
+        HRESULT SetDrawParameters(/* [in] */ ref tagRECT prcSource, /* [in] */ ref tagRECT prcTarget);
         
         [PreserveSig]
         HRESULT GetNativeVideoProps(/* [annotation][out] _Out_ */ out uint pdwVideoWidth, /* [annotation][out] _Out_ */ out uint pdwVideoHeight, /* [annotation][out] _Out_ */ out uint pdwPictAspectRatioX, /* [annotation][out] _Out_ */ out uint pdwPictAspectRatioY);

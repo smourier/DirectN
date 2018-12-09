@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d11.h(7498,5)
 using System;
 using System.Runtime.InteropServices;
-using D3D11_RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -137,7 +136,7 @@ namespace DirectN
         void RSSetViewports(/* [annotation] _In_range_(0, D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE) */ uint NumViewports, /* [annotation] _In_reads_opt_(NumViewports) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D11_VIEWPORT[] pViewports);
         
         [PreserveSig]
-        void RSSetScissorRects(/* [annotation] _In_range_(0, D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE) */ uint NumRects, /* [annotation] _In_reads_opt_(NumRects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D11_RECT[] pRects);
+        void RSSetScissorRects(/* [annotation] _In_range_(0, D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE) */ uint NumRects, /* [annotation] _In_reads_opt_(NumRects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagRECT[] pRects);
         
         [PreserveSig]
         void CopySubresourceRegion(/* [annotation] _In_ */ ID3D11Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* [annotation] _In_ */ uint DstX, /* [annotation] _In_ */ uint DstY, /* [annotation] _In_ */ uint DstZ, /* [annotation] _In_ */ ID3D11Resource pSrcResource, /* [annotation] _In_ */ uint SrcSubresource, /* optional(D3D11_BOX) */ IntPtr pSrcBox);
@@ -287,10 +286,10 @@ namespace DirectN
         void RSGetState(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11RasterizerState ppRasterizerState);
         
         [PreserveSig]
-        void RSGetViewports(/* [annotation] _Inout_ _range(0, D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ [MarshalAs(UnmanagedType.LPArray)] uint[] pNumViewports, /* [annotation] _Out_writes_opt_(*pNumViewports) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D11_VIEWPORT[] pViewports);
+        void RSGetViewports(/* [annotation] _Inout_ _range(0, D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pNumViewports, /* [annotation] _Out_writes_opt_(*pNumViewports) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D11_VIEWPORT[] pViewports);
         
         [PreserveSig]
-        void RSGetScissorRects(/* [annotation] _Inout_ _range(0, D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ [MarshalAs(UnmanagedType.LPArray)] uint[] pNumRects, /* [annotation] _Out_writes_opt_(*pNumRects) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D11_RECT[] pRects);
+        void RSGetScissorRects(/* [annotation] _Inout_ _range(0, D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pNumRects, /* [annotation] _Out_writes_opt_(*pNumRects) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagRECT[] pRects);
         
         [PreserveSig]
         void HSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);

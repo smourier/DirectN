@@ -8,11 +8,12 @@ namespace DirectN
     public partial struct _DDPIXELFORMAT__union_2
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint dwGBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwUBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwZBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwBumpDvBitMask => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public _DDPIXELFORMAT__union_2__struct_0 MultiSampleCaps => InteropRuntime.Get<_DDPIXELFORMAT__union_2__struct_0>(__bits, 0, 32);
+        public uint dwGBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwUBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwZBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwBumpDvBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public _DDPIXELFORMAT__union_2__struct_0 MultiSampleCaps { get => InteropRuntime.Get<_DDPIXELFORMAT__union_2__struct_0>(__bits, 0, 32); set => InteropRuntime.Set<_DDPIXELFORMAT__union_2__struct_0>(value, __bits, 0, 32); }
     }
 }

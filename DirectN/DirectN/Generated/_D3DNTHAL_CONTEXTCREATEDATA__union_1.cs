@@ -8,9 +8,10 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DNTHAL_CONTEXTCREATEDATA__union_1
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 176)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public IntPtr lpDDS => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr lpDDSLcl => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr lpDDS { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr lpDDSLcl { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
     }
 }

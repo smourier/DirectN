@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DDDI_ALLOCATIONINFO2__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public IntPtr hSection => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr pSystemMem => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr hSection { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr pSystemMem { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
     }
 }

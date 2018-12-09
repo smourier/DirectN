@@ -1,8 +1,6 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(197,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(154,1)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
-using RGNDATA = DirectN._RGNDATA;
 
 namespace DirectN
 {
@@ -10,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DSwapChain9
     {
         [PreserveSig]
-        HRESULT Present(ref RECT pSourceRect, ref RECT pDestRect, ref IntPtr hDestWindowOverride, ref RGNDATA pDirtyRegion, uint dwFlags);
+        HRESULT Present(ref tagRECT pSourceRect, ref tagRECT pDestRect, ref IntPtr hDestWindowOverride, ref _RGNDATA pDirtyRegion, uint dwFlags);
         
         [PreserveSig]
         HRESULT GetFrontBufferData(ref IDirect3DSurface9 pDestSurface);

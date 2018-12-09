@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfapi.h(1666,9)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -10,6 +9,6 @@ namespace DirectN
     {
         public uint Width;
         public uint Height;
-        public RECT Region;
+        public tagRECT Region;
     }
 }

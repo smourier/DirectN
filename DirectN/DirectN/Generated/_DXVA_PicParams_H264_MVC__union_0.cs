@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _DXVA_PicParams_H264_MVC__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _DXVA_PicParams_H264_MVC__union_0__struct_0 __field_0 => InteropRuntime.Get<_DXVA_PicParams_H264_MVC__union_0__struct_0>(__bits, 0, 16);
-        public ushort wBitFields => InteropRuntime.GetUInt16(__bits, 0, 16);
+        public _DXVA_PicParams_H264_MVC__union_0__struct_0 __field_0 { get => InteropRuntime.Get<_DXVA_PicParams_H264_MVC__union_0__struct_0>(__bits, 0, 16); set => InteropRuntime.Set<_DXVA_PicParams_H264_MVC__union_0__struct_0>(value, __bits, 0, 16); }
+        public ushort wBitFields { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
     }
 }

@@ -8,9 +8,10 @@ namespace DirectN
     public partial struct _MFTOPONODE_ATTRIBUTE_UPDATE__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint u32 => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public ulong u64 => InteropRuntime.GetUInt6s(__bits, 0, 64);
-        public double d => InteropRuntime.GetDouble(__bits, 0, 64);
+        public uint u32 { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public ulong u64 { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
+        public double d { get => InteropRuntime.GetDouble(__bits, 0, 64); set => InteropRuntime.SetDouble(value, __bits, 0, 64); }
     }
 }

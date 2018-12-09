@@ -7,14 +7,15 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DXGI_DDI_BASE_ARGS__union_0
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 176)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public IntPtr pDXGIDDIBaseFunctions6_1 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions6 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions5 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions4 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions3 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions2 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr pDXGIDDIBaseFunctions => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr pDXGIDDIBaseFunctions6_1 { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr pDXGIDDIBaseFunctions6 { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr pDXGIDDIBaseFunctions5 { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr pDXGIDDIBaseFunctions4 { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr pDXGIDDIBaseFunctions3 { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr pDXGIDDIBaseFunctions2 { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr pDXGIDDIBaseFunctions { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
     }
 }

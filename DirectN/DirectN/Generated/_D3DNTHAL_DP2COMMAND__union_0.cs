@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DNTHAL_DP2COMMAND__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ushort wPrimitiveCount => InteropRuntime.GetUInt16(__bits, 0, 16);
-        public ushort wStateCount => InteropRuntime.GetUInt16(__bits, 0, 16);
+        public ushort wPrimitiveCount { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
+        public ushort wStateCount { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
     }
 }

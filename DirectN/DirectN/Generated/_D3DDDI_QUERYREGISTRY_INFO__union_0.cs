@@ -8,10 +8,11 @@ namespace DirectN
     public partial struct _D3DDDI_QUERYREGISTRY_INFO__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint OutputDword => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public ulong OutputQword => InteropRuntime.GetUInt6s(__bits, 0, 64);
-        public string OutputString => InteropRuntime.GetString(__bits, 0, 8);
-        public byte[] OutputBinary => InteropRuntime.GetArray<byte>(__bits, 0, 8);
+        public uint OutputDword { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public ulong OutputQword { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
+        public string OutputString { get => InteropRuntime.GetString(__bits, 0, 8); set => InteropRuntime.SetString(value, __bits, 0, 8); }
+        public byte[] OutputBinary { get => InteropRuntime.GetArray<byte>(__bits, 0, 8); set => InteropRuntime.SetArray<byte>(value, __bits, 0, 8); }
     }
 }

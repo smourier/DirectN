@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _segmentation_VP9__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _segmentation_VP9__union_0__struct_0 __field_0 => InteropRuntime.Get<_segmentation_VP9__union_0__struct_0>(__bits, 0, 8);
-        public byte wSegmentInfoFlags => InteropRuntime.GetByte(__bits, 0, 8);
+        public _segmentation_VP9__union_0__struct_0 __field_0 { get => InteropRuntime.Get<_segmentation_VP9__union_0__struct_0>(__bits, 0, 8); set => InteropRuntime.Set<_segmentation_VP9__union_0__struct_0>(value, __bits, 0, 8); }
+        public byte wSegmentInfoFlags { get => InteropRuntime.GetByte(__bits, 0, 8); set => InteropRuntime.SetByte(value, __bits, 0, 8); }
     }
 }

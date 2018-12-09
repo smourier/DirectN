@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
+using ABORTPROC = System.IntPtr;
 using AM_MEDIA_TYPE = DirectN._AMMediaType;
-using BITMAPINFO = DirectN.tagBITMAPINFO;
-using BITMAPINFOHEADER = DirectN.tagBITMAPINFOHEADER;
-using D2D1_POINT_2L = DirectN.tagPOINT;
-using D2D1_RECT_L = DirectN.tagRECT;
+using COLORREF = System.UInt32;
 using DXVA2_Fixed32 = DirectN._DXVA2_Fixed32;
+using ENHMFENUMPROC = System.IntPtr;
+using FONTENUMPROCA = System.IntPtr;
+using FONTENUMPROCW = System.IntPtr;
+using GOBJENUMPROC = System.IntPtr;
+using ICMENUMPROCA = System.IntPtr;
+using ICMENUMPROCW = System.IntPtr;
+using LINEDDAPROC = System.IntPtr;
 using LPCWAVEFORMATEX = DirectN.tWAVEFORMATEX;
 using LPD3DHAL_CALLBACKS = DirectN._D3DHAL_CALLBACKS;
 using LPD3DHAL_GLOBALDRIVERDATA = DirectN._D3DHAL_GLOBALDRIVERDATA;
@@ -24,14 +29,16 @@ using LPHMIDISTRM = DirectN.HMIDISTRM__;
 using LPHMIXER = DirectN.HMIXER__;
 using LPHWAVEIN = DirectN.HWAVEIN__;
 using LPHWAVEOUT = DirectN.HWAVEOUT__;
-using LPPALETTEENTRY = DirectN.tagPALETTEENTRY;
+using LPMETARECORD = DirectN.__tagMETARECORD;
 using MFASYNC_WORKQUEUE_TYPE = DirectN.MF;
 using MFCameraIntrinsic_DistortionModelType = DirectN._MFCameraIntrinsic_DistortionModelType;
+using MFENUMPROC = System.IntPtr;
 using MFPERIODICCALLBACK = System.IntPtr;
 using MFWORKITEM_KEY = System.UInt64;
 using MPEG1VIDEOINFO = DirectN.tagMPEG1VIDEOINFO;
 using MPEG2VIDEOINFO = DirectN.tagMPEG2VIDEOINFO;
 using PDXVAHDSW_Plugin = System.IntPtr;
+using PROC = System.IntPtr;
 using REFWICPixelFormatGUID = System.Guid;
 using VIDEOINFOHEADER = DirectN.tagVIDEOINFOHEADER;
 using VIDEOINFOHEADER2 = DirectN.tagVIDEOINFOHEADER2;
@@ -81,6 +88,30 @@ namespace DirectN
         
         [DllImport("dxgi1_6")]
         public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
+        
+        [DllImport("ks")]
+        public static extern uint KsCreateAllocator(/* _In_ */ IntPtr ConnectionHandle, /* _In_ */ ref KSALLOCATOR_FRAMING AllocatorFraming, /* _Out_ */ out IntPtr AllocatorHandle);
+        
+        [DllImport("ks")]
+        public static extern HRESULT KsCreateAllocator2(/* _In_ */ IntPtr ConnectionHandle, /* _In_ */ ref KSALLOCATOR_FRAMING AllocatorFraming, /* _Out_ */ out IntPtr AllocatorHandle);
+        
+        [DllImport("ks")]
+        public static extern uint KsCreateClock(/* _In_ */ IntPtr ConnectionHandle, /* _In_ */ ref KSCLOCK_CREATE ClockCreate, /* _Out_ */ out IntPtr ClockHandle);
+        
+        [DllImport("ks")]
+        public static extern HRESULT KsCreateClock2(/* _In_ */ IntPtr ConnectionHandle, /* _In_ */ ref KSCLOCK_CREATE ClockCreate, /* _Out_ */ out IntPtr ClockHandle);
+        
+        [DllImport("ks")]
+        public static extern uint KsCreatePin(/* _In_ */ IntPtr FilterHandle, /* _In_ */ ref KSPIN_CONNECT Connect, /* _In_ */ uint DesiredAccess, /* _Out_ */ out IntPtr ConnectionHandle);
+        
+        [DllImport("ks")]
+        public static extern HRESULT KsCreatePin2(/* _In_ */ IntPtr FilterHandle, /* _In_ */ ref KSPIN_CONNECT Connect, /* _In_ */ uint DesiredAccess, /* _Out_ */ out IntPtr ConnectionHandle);
+        
+        [DllImport("ks")]
+        public static extern uint KsCreateTopologyNode(/* _In_ */ IntPtr ParentHandle, /* _In_ */ ref KSNODE_CREATE NodeCreate, /* _In_ */ uint DesiredAccess, /* _Out_ */ out IntPtr NodeHandle);
+        
+        [DllImport("ks")]
+        public static extern HRESULT KsCreateTopologyNode2(/* _In_ */ IntPtr ParentHandle, /* _In_ */ ref KSNODE_CREATE NodeCreate, /* _In_ */ uint DesiredAccess, /* _Out_ */ out IntPtr NodeHandle);
         
         [DllImport("audioenginebaseapo")]
         public static extern HRESULT EnumerateAPOs(IntPtr pfnCallback, ref IntPtr pvRefData);
@@ -138,9 +169,6 @@ namespace DirectN
         
         [DllImport("d2d1")]
         public static extern D2D1_DRAWING_STATE_DESCRIPTION DrawingStateDescription(D2D1_ANTIALIAS_MODE antialiasMode, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode, ulong tag1, ulong tag2, /* _In_ */ ref D2D_MATRIX_3X2_F transform);
-        
-        [DllImport("d2d1")]
-        public static extern D2D1_ELLIPSE Ellipse(/* _In_ */ ref D2D_POINT_2F center, float radiusX, float radiusY);
         
         [DllImport("d2d1")]
         public static extern float FloatMax();
@@ -242,13 +270,13 @@ namespace DirectN
         public static extern D2D1_LAYER_PARAMETERS1 LayerParameters1(/* _In_ */ ref D2D_RECT_F contentBounds, /* _In_opt_ */ ID2D1Geometry geometricMask, D2D1_ANTIALIAS_MODE maskAntialiasMode, D2D_MATRIX_3X2_F maskTransform, float opacity, /* _In_opt_ */ ID2D1Brush opacityBrush, D2D1_LAYER_OPTIONS1 layerOptions);
         
         [DllImport("d2d1")]
-        public static extern D2D1_POINT_2L Point2L(int x, int y);
+        public static extern tagPOINT Point2L(int x, int y);
         
         [DllImport("d2d1")]
         public static extern D2D1_PRINT_CONTROL_PROPERTIES PrintControlProperties(D2D1_PRINT_FONT_SUBSET_MODE fontSubsetMode, float rasterDpi, D2D1_COLOR_SPACE colorSpace);
         
         [DllImport("d2d1")]
-        public static extern D2D1_RECT_L RectL(int left, int top, int right, int bottom);
+        public static extern tagRECT RectL(int left, int top, int right, int bottom);
         
         [DllImport("d2d1")]
         public static extern D2D1_RENDERING_CONTROLS RenderingControls(D2D1_BUFFER_PRECISION bufferPrecision, D2D_SIZE_U tileSize);
@@ -590,13 +618,13 @@ namespace DirectN
         public static extern bool GdiEntry6(int pSurfaceLocal, ref IntPtr hWnd);
         
         [DllImport("ddrawgdi")]
-        public static extern IntPtr GdiEntry7(int pSurfaceLocal, ref LPPALETTEENTRY pColorTable);
+        public static extern IntPtr GdiEntry7(int pSurfaceLocal, ref tagPALETTEENTRY pColorTable);
         
         [DllImport("ddrawgdi")]
         public static extern bool GdiEntry8(int pSurfaceLocal);
         
         [DllImport("ddrawgdi")]
-        public static extern IntPtr GdiEntry9(ref IntPtr hdc, ref BITMAPINFO pbmi, uint iUsage, [MarshalAs(UnmanagedType.IUnknown)] object ppvBits, ref IntPtr hSectionApp, uint dwOffset);
+        public static extern IntPtr GdiEntry9(ref IntPtr hdc, ref tagBITMAPINFO pbmi, uint iUsage, [MarshalAs(UnmanagedType.IUnknown)] object ppvBits, ref IntPtr hSectionApp, uint dwOffset);
         
         [DllImport("ddrawi")]
         public static extern HRESULT D3DParseUnknownCommand(ref IntPtr lpvCommands, [MarshalAs(UnmanagedType.IUnknown)] object lplpvReturnedCommand);
@@ -680,7 +708,7 @@ namespace DirectN
         public static extern HRESULT MFBeginUnregisterWorkQueueWithMMCSS(uint dwWorkQueueId, /* _In_ */ IMFAsyncCallback pDoneCallback, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDoneState);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFCalculateBitmapImageSize(/* _In_reads_bytes_(cbBufSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] BITMAPINFOHEADER[] pBMIH, /* _In_ */ uint cbBufSize, /* _Out_ */ out uint pcbImageSize, /* _Out_opt_ */ out bool pbKnown);
+        public static extern HRESULT MFCalculateBitmapImageSize(/* _In_reads_bytes_(cbBufSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagBITMAPINFOHEADER[] pBMIH, /* _In_ */ uint cbBufSize, /* _Out_ */ out uint pcbImageSize, /* _Out_opt_ */ out bool pbKnown);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFCalculateImageSize(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidSubtype, /* _In_ */ uint unWidth, /* _In_ */ uint unHeight, /* _Out_ */ out uint pcbImageSize);
@@ -806,10 +834,10 @@ namespace DirectN
         public static extern HRESULT MFCreateVideoMediaType(/* _In_ */ ref _MFVIDEOFORMAT pVideoFormat, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader(/* _In_ */ ref BITMAPINFOHEADER pbmihBitMapInfoHeader, uint dwPixelAspectRatioX, uint dwPixelAspectRatioY, _MFVideoInterlaceMode InterlaceMode, ulong VideoFlags, ulong qwFramesPerSecondNumerator, ulong qwFramesPerSecondDenominator, uint dwMaxBitRate, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
+        public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader(/* _In_ */ ref tagBITMAPINFOHEADER pbmihBitMapInfoHeader, uint dwPixelAspectRatioX, uint dwPixelAspectRatioY, _MFVideoInterlaceMode InterlaceMode, ulong VideoFlags, ulong qwFramesPerSecondNumerator, ulong qwFramesPerSecondDenominator, uint dwMaxBitRate, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(/* _In_reads_bytes_(cbBitMapInfoHeader) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] BITMAPINFOHEADER[] pbmihBitMapInfoHeader, /* _In_ */ uint cbBitMapInfoHeader, uint dwPixelAspectRatioX, uint dwPixelAspectRatioY, _MFVideoInterlaceMode InterlaceMode, ulong VideoFlags, uint dwFramesPerSecondNumerator, uint dwFramesPerSecondDenominator, uint dwMaxBitRate, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
+        public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeaderEx(/* _In_reads_bytes_(cbBitMapInfoHeader) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagBITMAPINFOHEADER[] pbmihBitMapInfoHeader, /* _In_ */ uint cbBitMapInfoHeader, uint dwPixelAspectRatioX, uint dwPixelAspectRatioY, _MFVideoInterlaceMode InterlaceMode, ulong VideoFlags, uint dwFramesPerSecondNumerator, uint dwFramesPerSecondDenominator, uint dwMaxBitRate, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFCreateVideoMediaTypeFromSubtype(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pAMSubtype, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
@@ -1304,7 +1332,7 @@ namespace DirectN
         public static extern HRESULT MFSerializeAttributesToStream(ref IMFAttributes pAttr, uint dwOptions, ref IStream pStm);
         
         [DllImport("mfplay")]
-        public static extern HRESULT MFPCreateMediaPlayer(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* _In_ */ bool fStartPlayback, /* _In_opt_ */ uint creationOptions, /* _In_opt_ */ IMFPMediaPlayerCallback pCallback, /* optional(HWND) */ IntPtr hWnd, /* _Out_opt_ */ out IMFPMediaPlayer ppMediaPlayer);
+        public static extern HRESULT MFPCreateMediaPlayer(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* _In_ */ bool fStartPlayback, /* _In_opt_ */ uint creationOptions, /* _In_opt_ */ IMFPMediaPlayerCallback pCallback, /* optional(HWND__) */ IntPtr hWnd, /* _Out_opt_ */ out IMFPMediaPlayer ppMediaPlayer);
         
         [DllImport("mfreadwrite")]
         public static extern HRESULT MFCreateSinkWriterFromMediaSink(/* _In_ */ ref int pMediaSink, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSinkWriter ppSinkWriter);
@@ -1346,16 +1374,16 @@ namespace DirectN
         public static extern uint auxSetVolume(/* _In_ */ uint uDeviceID, /* _In_ */ uint dwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint midiConnect(/* _In_ */ ref HMIDI__ hmi, /* _In_ */ ref HMIDIOUT__ hmo, /* optional(LPVOID) */ IntPtr pReserved);
+        public static extern uint midiConnect(/* _In_ */ IntPtr hmi, /* _In_ */ IntPtr hmo, /* optional(LPVOID) */ IntPtr pReserved);
         
         [DllImport("mmeapi")]
-        public static extern uint midiDisconnect(/* _In_ */ ref HMIDI__ hmi, /* _In_ */ ref HMIDIOUT__ hmo, /* optional(LPVOID) */ IntPtr pReserved);
+        public static extern uint midiDisconnect(/* _In_ */ IntPtr hmi, /* _In_ */ IntPtr hmo, /* optional(LPVOID) */ IntPtr pReserved);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInAddBuffer(/* _In_ */ ref HMIDIIN__ hmi, /* _Out_writes_bytes_(cbmh) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiInAddBuffer(/* _In_ */ IntPtr hmi, /* _Out_writes_bytes_(cbmh) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInClose(/* _In_ */ ref HMIDIIN__ hmi);
+        public static extern uint midiInClose(/* _In_ */ IntPtr hmi);
         
         [DllImport("mmeapi")]
         public static extern uint midiInGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagMIDIINCAPSA[] pmic, /* _In_ */ uint cbmic);
@@ -1370,7 +1398,7 @@ namespace DirectN
         public static extern uint midiInGetErrorTextW(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPWStr)] string pszText, /* _In_ */ uint cchText);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInGetID(/* _In_ */ ref HMIDIIN__ hmi, /* _Out_ */ out uint puDeviceID);
+        public static extern uint midiInGetID(/* _In_ */ IntPtr hmi, /* _Out_ */ out uint puDeviceID);
         
         [DllImport("mmeapi")]
         public static extern uint midiInGetNumDevs();
@@ -1382,28 +1410,28 @@ namespace DirectN
         public static extern uint midiInOpen(/* _Out_ */ out IntPtr phmi, /* _In_ */ uint uDeviceID, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInPrepareHeader(/* _In_ */ ref HMIDIIN__ hmi, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiInPrepareHeader(/* _In_ */ IntPtr hmi, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInReset(/* _In_ */ ref HMIDIIN__ hmi);
+        public static extern uint midiInReset(/* _In_ */ IntPtr hmi);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInStart(/* _In_ */ ref HMIDIIN__ hmi);
+        public static extern uint midiInStart(/* _In_ */ IntPtr hmi);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInStop(/* _In_ */ ref HMIDIIN__ hmi);
+        public static extern uint midiInStop(/* _In_ */ IntPtr hmi);
         
         [DllImport("mmeapi")]
-        public static extern uint midiInUnprepareHeader(/* _In_ */ ref HMIDIIN__ hmi, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiInUnprepareHeader(/* _In_ */ IntPtr hmi, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutCacheDrumPatches(/* _In_ */ ref HMIDIOUT__ hmo, /* _In_ */ uint uPatch, /* _In_reads_(MIDIPATCHSIZE) */ [MarshalAs(UnmanagedType.LPArray)] ushort[] pwkya, /* _In_ */ uint fuCache);
+        public static extern uint midiOutCacheDrumPatches(/* _In_ */ IntPtr hmo, /* _In_ */ uint uPatch, /* _In_reads_(MIDIPATCHSIZE) */ [MarshalAs(UnmanagedType.LPArray)] ushort[] pwkya, /* _In_ */ uint fuCache);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutCachePatches(/* _In_ */ ref HMIDIOUT__ hmo, /* _In_ */ uint uBank, /* _In_reads_(MIDIPATCHSIZE) */ [MarshalAs(UnmanagedType.LPArray)] ushort[] pwpa, /* _In_ */ uint fuCache);
+        public static extern uint midiOutCachePatches(/* _In_ */ IntPtr hmo, /* _In_ */ uint uBank, /* _In_reads_(MIDIPATCHSIZE) */ [MarshalAs(UnmanagedType.LPArray)] ushort[] pwpa, /* _In_ */ uint fuCache);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutClose(/* _In_ */ ref HMIDIOUT__ hmo);
+        public static extern uint midiOutClose(/* _In_ */ IntPtr hmo);
         
         [DllImport("mmeapi")]
         public static extern uint midiOutGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbmoc) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagMIDIOUTCAPSA[] pmoc, /* _In_ */ uint cbmoc);
@@ -1418,7 +1446,7 @@ namespace DirectN
         public static extern uint midiOutGetErrorTextW(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPWStr)] string pszText, /* _In_ */ uint cchText);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutGetID(/* _In_ */ ref HMIDIOUT__ hmo, /* _Out_ */ out uint puDeviceID);
+        public static extern uint midiOutGetID(/* _In_ */ IntPtr hmo, /* _Out_ */ out uint puDeviceID);
         
         [DllImport("mmeapi")]
         public static extern uint midiOutGetNumDevs();
@@ -1427,7 +1455,7 @@ namespace DirectN
         public static extern uint midiOutGetVolume(/* optional(HMIDIOUT__) */ IntPtr hmo, /* _Out_ */ out uint pdwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutLongMsg(/* _In_ */ ref HMIDIOUT__ hmo, /* _In_reads_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiOutLongMsg(/* _In_ */ IntPtr hmo, /* _In_reads_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
         public static extern uint midiOutMessage(/* optional(HMIDIOUT__) */ IntPtr hmo, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dw1, /* optional(DWORD_PTR) */ IntPtr dw2);
@@ -1436,46 +1464,46 @@ namespace DirectN
         public static extern uint midiOutOpen(/* _Out_ */ out IntPtr phmo, /* _In_ */ uint uDeviceID, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutPrepareHeader(/* _In_ */ ref HMIDIOUT__ hmo, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiOutPrepareHeader(/* _In_ */ IntPtr hmo, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutReset(/* _In_ */ ref HMIDIOUT__ hmo);
+        public static extern uint midiOutReset(/* _In_ */ IntPtr hmo);
         
         [DllImport("mmeapi")]
         public static extern uint midiOutSetVolume(/* optional(HMIDIOUT__) */ IntPtr hmo, /* _In_ */ uint dwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutShortMsg(/* _In_ */ ref HMIDIOUT__ hmo, /* _In_ */ uint dwMsg);
+        public static extern uint midiOutShortMsg(/* _In_ */ IntPtr hmo, /* _In_ */ uint dwMsg);
         
         [DllImport("mmeapi")]
-        public static extern uint midiOutUnprepareHeader(/* _In_ */ ref HMIDIOUT__ hmo, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiOutUnprepareHeader(/* _In_ */ IntPtr hmo, /* _Inout_updates_bytes_(cbmh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamClose(/* _In_ */ ref HMIDISTRM__ hms);
+        public static extern uint midiStreamClose(/* _In_ */ IntPtr hms);
         
         [DllImport("mmeapi")]
         public static extern uint midiStreamOpen(/* _Out_ */ out IntPtr phms, /* _Inout_updates_(cMidi) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] puDeviceID, /* _In_ */ uint cMidi, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamOut(/* _In_ */ ref HMIDISTRM__ hms, /* _Out_writes_bytes_(cbmh) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
+        public static extern uint midiStreamOut(/* _In_ */ IntPtr hms, /* _Out_writes_bytes_(cbmh) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] midihdr_tag[] pmh, /* _In_ */ uint cbmh);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamPause(/* _In_ */ ref HMIDISTRM__ hms);
+        public static extern uint midiStreamPause(/* _In_ */ IntPtr hms);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamPosition(/* _In_ */ ref HMIDISTRM__ hms, /* _Out_writes_bytes_(cbmmt) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] lpmmt, /* _In_ */ uint cbmmt);
+        public static extern uint midiStreamPosition(/* _In_ */ IntPtr hms, /* _Out_writes_bytes_(cbmmt) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] lpmmt, /* _In_ */ uint cbmmt);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamProperty(/* _In_ */ ref HMIDISTRM__ hms, /* _Inout_updates_bytes_(sizeof(DWORD) + sizeof(DWORD)) */ [MarshalAs(UnmanagedType.LPArray)] byte[] lppropdata, /* _In_ */ uint dwProperty);
+        public static extern uint midiStreamProperty(/* _In_ */ IntPtr hms, /* _Inout_updates_bytes_(sizeof(DWORD) + sizeof(DWORD)) */ [MarshalAs(UnmanagedType.LPArray)] byte[] lppropdata, /* _In_ */ uint dwProperty);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamRestart(/* _In_ */ ref HMIDISTRM__ hms);
+        public static extern uint midiStreamRestart(/* _In_ */ IntPtr hms);
         
         [DllImport("mmeapi")]
-        public static extern uint midiStreamStop(/* _In_ */ ref HMIDISTRM__ hms);
+        public static extern uint midiStreamStop(/* _In_ */ IntPtr hms);
         
         [DllImport("mmeapi")]
-        public static extern uint mixerClose(/* _In_ */ ref HMIXER__ hmx);
+        public static extern uint mixerClose(/* _In_ */ IntPtr hmx);
         
         [DllImport("mmeapi")]
         public static extern uint mixerGetControlDetailsA(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _Inout_ */ ref tMIXERCONTROLDETAILS pmxcd, /* _In_ */ uint fdwDetails);
@@ -1517,10 +1545,10 @@ namespace DirectN
         public static extern uint mixerSetControlDetails(/* optional(HMIXEROBJ__) */ IntPtr hmxobj, /* _In_ */ ref tMIXERCONTROLDETAILS pmxcd, /* _In_ */ uint fdwDetails);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInAddBuffer(/* _In_ */ ref HWAVEIN__ hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveInAddBuffer(/* _In_ */ IntPtr hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInClose(/* _In_ */ ref HWAVEIN__ hwi);
+        public static extern uint waveInClose(/* _In_ */ IntPtr hwi);
         
         [DllImport("mmeapi")]
         public static extern uint waveInGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_writes_bytes_(cbwic) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagWAVEINCAPSA[] pwic, /* _In_ */ uint cbwic);
@@ -1535,13 +1563,13 @@ namespace DirectN
         public static extern uint waveInGetErrorTextW(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPWStr)] string pszText, /* _In_ */ uint cchText);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInGetID(/* _In_ */ ref HWAVEIN__ hwi, /* _In_ */ ref uint puDeviceID);
+        public static extern uint waveInGetID(/* _In_ */ IntPtr hwi, /* _In_ */ ref uint puDeviceID);
         
         [DllImport("mmeapi")]
         public static extern uint waveInGetNumDevs();
         
         [DllImport("mmeapi")]
-        public static extern uint waveInGetPosition(/* _In_ */ ref HWAVEIN__ hwi, /* _Inout_updates_bytes_(cbmmt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] pmmt, /* _In_ */ uint cbmmt);
+        public static extern uint waveInGetPosition(/* _In_ */ IntPtr hwi, /* _Inout_updates_bytes_(cbmmt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] pmmt, /* _In_ */ uint cbmmt);
         
         [DllImport("mmeapi")]
         public static extern uint waveInMessage(/* optional(HWAVEIN__) */ IntPtr hwi, /* _In_ */ uint uMsg, /* optional(DWORD_PTR) */ IntPtr dw1, /* optional(DWORD_PTR) */ IntPtr dw2);
@@ -1550,25 +1578,25 @@ namespace DirectN
         public static extern uint waveInOpen(/* optional(LPHWAVEIN) */ out IntPtr phwi, /* _In_ */ uint uDeviceID, /* _In_ */ ref LPCWAVEFORMATEX pwfx, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInPrepareHeader(/* _In_ */ ref HWAVEIN__ hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveInPrepareHeader(/* _In_ */ IntPtr hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInReset(/* _In_ */ ref HWAVEIN__ hwi);
+        public static extern uint waveInReset(/* _In_ */ IntPtr hwi);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInStart(/* _In_ */ ref HWAVEIN__ hwi);
+        public static extern uint waveInStart(/* _In_ */ IntPtr hwi);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInStop(/* _In_ */ ref HWAVEIN__ hwi);
+        public static extern uint waveInStop(/* _In_ */ IntPtr hwi);
         
         [DllImport("mmeapi")]
-        public static extern uint waveInUnprepareHeader(/* _In_ */ ref HWAVEIN__ hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveInUnprepareHeader(/* _In_ */ IntPtr hwi, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutBreakLoop(/* _In_ */ ref HWAVEOUT__ hwo);
+        public static extern uint waveOutBreakLoop(/* _In_ */ IntPtr hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutClose(/* _In_ */ ref HWAVEOUT__ hwo);
+        public static extern uint waveOutClose(/* _In_ */ IntPtr hwo);
         
         [DllImport("mmeapi")]
         public static extern uint waveOutGetDevCapsA(/* _In_ */ IntPtr uDeviceID, /* _Out_ */ out tagWAVEOUTCAPSA pwoc, /* _In_ */ uint cbwoc);
@@ -1583,19 +1611,19 @@ namespace DirectN
         public static extern uint waveOutGetErrorTextW(/* _In_ */ uint mmrError, /* _Out_writes_(cchText) */ [MarshalAs(UnmanagedType.LPWStr)] string pszText, /* _In_ */ uint cchText);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetID(/* _In_ */ ref HWAVEOUT__ hwo, /* _Out_ */ out uint puDeviceID);
+        public static extern uint waveOutGetID(/* _In_ */ IntPtr hwo, /* _Out_ */ out uint puDeviceID);
         
         [DllImport("mmeapi")]
         public static extern uint waveOutGetNumDevs();
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetPitch(/* _In_ */ ref HWAVEOUT__ hwo, /* _Out_ */ out uint pdwPitch);
+        public static extern uint waveOutGetPitch(/* _In_ */ IntPtr hwo, /* _Out_ */ out uint pdwPitch);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetPlaybackRate(/* _In_ */ ref HWAVEOUT__ hwo, /* _Out_ */ out uint pdwRate);
+        public static extern uint waveOutGetPlaybackRate(/* _In_ */ IntPtr hwo, /* _Out_ */ out uint pdwRate);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutGetPosition(/* _In_ */ ref HWAVEOUT__ hwo, /* _Inout_updates_bytes_(cbmmt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] pmmt, /* _In_ */ uint cbmmt);
+        public static extern uint waveOutGetPosition(/* _In_ */ IntPtr hwo, /* _Inout_updates_bytes_(cbmmt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] mmtime_tag[] pmmt, /* _In_ */ uint cbmmt);
         
         [DllImport("mmeapi")]
         public static extern uint waveOutGetVolume(/* optional(HWAVEOUT__) */ IntPtr hwo, /* _Out_ */ out uint pdwVolume);
@@ -1607,31 +1635,31 @@ namespace DirectN
         public static extern uint waveOutOpen(/* optional(LPHWAVEOUT) */ out IntPtr phwo, /* _In_ */ uint uDeviceID, /* _In_ */ ref LPCWAVEFORMATEX pwfx, /* optional(DWORD_PTR) */ IntPtr dwCallback, /* optional(DWORD_PTR) */ IntPtr dwInstance, /* _In_ */ uint fdwOpen);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutPause(/* _In_ */ ref HWAVEOUT__ hwo);
+        public static extern uint waveOutPause(/* _In_ */ IntPtr hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutPrepareHeader(/* _In_ */ ref HWAVEOUT__ hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveOutPrepareHeader(/* _In_ */ IntPtr hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutReset(/* _In_ */ ref HWAVEOUT__ hwo);
+        public static extern uint waveOutReset(/* _In_ */ IntPtr hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutRestart(/* _In_ */ ref HWAVEOUT__ hwo);
+        public static extern uint waveOutRestart(/* _In_ */ IntPtr hwo);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutSetPitch(/* _In_ */ ref HWAVEOUT__ hwo, /* _In_ */ uint dwPitch);
+        public static extern uint waveOutSetPitch(/* _In_ */ IntPtr hwo, /* _In_ */ uint dwPitch);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutSetPlaybackRate(/* _In_ */ ref HWAVEOUT__ hwo, /* _In_ */ uint dwRate);
+        public static extern uint waveOutSetPlaybackRate(/* _In_ */ IntPtr hwo, /* _In_ */ uint dwRate);
         
         [DllImport("mmeapi")]
         public static extern uint waveOutSetVolume(/* optional(HWAVEOUT__) */ IntPtr hwo, /* _In_ */ uint dwVolume);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutUnprepareHeader(/* _In_ */ ref HWAVEOUT__ hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveOutUnprepareHeader(/* _In_ */ IntPtr hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("mmeapi")]
-        public static extern uint waveOutWrite(/* _In_ */ ref HWAVEOUT__ hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
+        public static extern uint waveOutWrite(/* _In_ */ IntPtr hwo, /* _Inout_updates_bytes_(cbwh) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] wavehdr_tag[] pwh, /* _In_ */ uint cbwh);
         
         [DllImport("wincodec")]
         public static extern HRESULT WICConvertBitmapSource(/* _In_ */ ref REFWICPixelFormatGUID dstFormat, /* // Destination pixel format _In_ */ IWICBitmapSource pISrc, /* // Source bitmap _Outptr_ */ out IWICBitmapSource ppIDst);
@@ -1659,5 +1687,1238 @@ namespace DirectN
         
         [DllImport("wincodecsdk")]
         public static extern HRESULT WICSerializeMetadataContent(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* _In_ */ IWICMetadataWriter pIWriter, /* _In_ */ uint dwPersistOptions, /* _In_ */ IStream pIStream);
+        
+        [DllImport("wingdi")]
+        public static extern void AbortDoc(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool AbortPath(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr AddFontMemResourceEx(/* _In_reads_bytes_(cjSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pFileView, /* _In_ */ uint cjSize, /* _Reserved_ */ ref IntPtr pvResrved, /* _In_ */ ref uint pNumFonts);
+        
+        [DllImport("wingdi")]
+        public static extern void AddFontResourceA(/* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string __unnamed_0);
+        
+        [DllImport("wingdi")]
+        public static extern void AddFontResourceExA(/* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string name, /* _In_ */ uint fl, /* _Reserved_ */ ref IntPtr res);
+        
+        [DllImport("wingdi")]
+        public static extern void AddFontResourceExW(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, /* _In_ */ uint fl, /* _Reserved_ */ ref IntPtr res);
+        
+        [DllImport("wingdi")]
+        public static extern void AddFontResourceW(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string __unnamed_0);
+        
+        [DllImport("wingdi")]
+        public static extern bool AlphaBlend(/* _In_ */ IntPtr hdcDest, /* _In_ */ int xoriginDest, /* _In_ */ int yoriginDest, /* _In_ */ int wDest, /* _In_ */ int hDest, /* _In_ */ IntPtr hdcSrc, /* _In_ */ int xoriginSrc, /* _In_ */ int yoriginSrc, /* _In_ */ int wSrc, /* _In_ */ int hSrc, /* _In_ */ _BLENDFUNCTION ftn);
+        
+        [DllImport("wingdi")]
+        public static extern bool AngleArc(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ uint r, /* _In_ */ float StartAngle, /* _In_ */ float SweepAngle);
+        
+        [DllImport("wingdi")]
+        public static extern bool AnimatePalette(/* _In_ */ IntPtr hPal, /* _In_ */ uint iStartIndex, /* _In_ */ uint cEntries, /* _In_reads_(cEntries) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPALETTEENTRY[] ppe);
+        
+        [DllImport("wingdi")]
+        public static extern bool Arc(/* _In_ */ IntPtr hdc, /* _In_ */ int x1, /* _In_ */ int y1, /* _In_ */ int x2, /* _In_ */ int y2, /* _In_ */ int x3, /* _In_ */ int y3, /* _In_ */ int x4, /* _In_ */ int y4);
+        
+        [DllImport("wingdi")]
+        public static extern bool ArcTo(/* _In_ */ IntPtr hdc, /* _In_ */ int left, /* _In_ */ int top, /* _In_ */ int right, /* _In_ */ int bottom, /* _In_ */ int xr1, /* _In_ */ int yr1, /* _In_ */ int xr2, /* _In_ */ int yr2);
+        
+        [DllImport("wingdi")]
+        public static extern bool BeginPath(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool BitBlt(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ int cx, /* _In_ */ int cy, /* optional(HDC__) */ IntPtr hdcSrc, /* _In_ */ int x1, /* _In_ */ int y1, /* _In_ */ uint rop);
+        
+        [DllImport("wingdi")]
+        public static extern bool CancelDC(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool CheckColorsInGamut(/* _In_ */ IntPtr hdc, /* _In_reads_(nCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] tagRGBTRIPLE[] lpRGBTriple, /* _Out_writes_bytes_(nCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] dlpBuffer, /* _In_ */ uint nCount);
+        
+        [DllImport("wingdi")]
+        public static extern void ChoosePixelFormat(/* _In_ */ IntPtr hdc, /* _In_ */ ref tagPIXELFORMATDESCRIPTOR ppfd);
+        
+        [DllImport("wingdi")]
+        public static extern bool Chord(/* _In_ */ IntPtr hdc, /* _In_ */ int x1, /* _In_ */ int y1, /* _In_ */ int x2, /* _In_ */ int y2, /* _In_ */ int x3, /* _In_ */ int y3, /* _In_ */ int x4, /* _In_ */ int y4);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CloseEnhMetaFile(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool CloseFigure(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CloseMetaFile(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool ColorCorrectPalette(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hPal, /* _In_ */ uint deFirst, /* _In_ */ uint num);
+        
+        [DllImport("wingdi")]
+        public static extern bool ColorMatchToTarget(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hdcTarget, /* _In_ */ uint action);
+        
+        [DllImport("wingdi")]
+        public static extern void CombineRgn(/* optional(HRGN) */ IntPtr hrgnDst, /* optional(HRGN) */ IntPtr hrgnSrc1, /* optional(HRGN) */ IntPtr hrgnSrc2, /* _In_ */ int iMode);
+        
+        [DllImport("wingdi")]
+        public static extern bool CombineTransform(/* _Out_ */ out tagXFORM lpxfOut, /* _In_ */ ref tagXFORM lpxf1, /* _In_ */ ref tagXFORM lpxf2);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CopyEnhMetaFileA(/* _In_ */ IntPtr hEnh, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string lpFileName);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CopyEnhMetaFileW(/* _In_ */ IntPtr hEnh, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpFileName);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CopyMetaFileA(/* _In_ */ IntPtr __unnamed_0, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string __unnamed_1);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CopyMetaFileW(/* _In_ */ IntPtr __unnamed_0, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string __unnamed_1);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateBitmap(/* _In_ */ int nWidth, /* _In_ */ int nHeight, /* _In_ */ uint nPlanes, /* _In_ */ uint nBitCount, /* optional(void) */ IntPtr lpBits);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateBitmapIndirect(/* _In_ */ ref tagBITMAP pbm);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateBrushIndirect(/* _In_ */ ref tagLOGBRUSH plbrush);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateColorSpaceA(/* _In_ */ ref tagLOGCOLORSPACEA lplcs);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateColorSpaceW(/* _In_ */ ref tagLOGCOLORSPACEW lplcs);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateCompatibleBitmap(/* _In_ */ IntPtr hdc, /* _In_ */ int cx, /* _In_ */ int cy);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateCompatibleDC(/* optional(HDC__) */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateDCA(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pwszDriver, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pwszDevice, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pszPort, /* optional(_devicemodeA) */ IntPtr pdm);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateDCW(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszDriver, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszDevice, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszPort, /* optional(_devicemodeW) */ IntPtr pdm);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateDIBitmap(/* _In_ */ IntPtr hdc, /* optional(tagBITMAPINFOHEADER) */ IntPtr pbmih, /* _In_ */ uint flInit, /* optional(void) */ IntPtr pjBits, /* optional(tagBITMAPINFO) */ IntPtr pbmi, /* _In_ */ uint iUsage);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateDIBPatternBrush(/* _In_ */ IntPtr h, /* _In_ */ uint iUsage);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateDIBPatternBrushPt(/* _In_ */ IntPtr lpPackedDIB, /* _In_ */ uint iUsage);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateDIBSection(/* optional(HDC__) */ IntPtr hdc, /* _In_ */ ref tagBITMAPINFO pbmi, /* _In_ */ uint usage, /* _When_((pbmi->bmiHeader.biBitCount != 0), _Outptr_result_bytebuffer_(_Inexpressible_(GDI_DIBSIZE((pbmi->bmiHeader))))) _When_((pbmi->bmiHeader.biBitCount == 0), _Outptr_result_bytebuffer_((pbmi->bmiHeader).biSizeImage)) */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvBits, /* optional(HANDLE) */ IntPtr hSection, /* _In_ */ uint offset);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateDiscardableBitmap(/* _In_ */ IntPtr hdc, /* _In_ */ int cx, /* _In_ */ int cy);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateEllipticRgn(/* _In_ */ int x1, /* _In_ */ int y1, /* _In_ */ int x2, /* _In_ */ int y2);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateEllipticRgnIndirect(/* _In_ */ ref tagRECT lprect);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateEnhMetaFileA(/* optional(HDC__) */ IntPtr hdc, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string lpFilename, /* optional(tagRECT) */ IntPtr lprc, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string lpDesc);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateEnhMetaFileW(/* optional(HDC__) */ IntPtr hdc, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpFilename, /* optional(tagRECT) */ IntPtr lprc, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpDesc);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateFontA(/* _In_ */ int cHeight, /* _In_ */ int cWidth, /* _In_ */ int cEscapement, /* _In_ */ int cOrientation, /* _In_ */ int cWeight, /* _In_ */ uint bItalic, /* _In_ */ uint bUnderline, /* _In_ */ uint bStrikeOut, /* _In_ */ uint iCharSet, /* _In_ */ uint iOutPrecision, /* _In_ */ uint iClipPrecision, /* _In_ */ uint iQuality, /* _In_ */ uint iPitchAndFamily, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pszFaceName);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateFontIndirectA(/* _In_ */ ref tagLOGFONTA lplf);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateFontIndirectExA(/* _In_ */ ref tagENUMLOGFONTEXDVA __unnamed_0);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateFontIndirectExW(/* _In_ */ ref tagENUMLOGFONTEXDVW __unnamed_0);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateFontIndirectW(/* _In_ */ ref tagLOGFONTW lplf);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateFontW(/* _In_ */ int cHeight, /* _In_ */ int cWidth, /* _In_ */ int cEscapement, /* _In_ */ int cOrientation, /* _In_ */ int cWeight, /* _In_ */ uint bItalic, /* _In_ */ uint bUnderline, /* _In_ */ uint bStrikeOut, /* _In_ */ uint iCharSet, /* _In_ */ uint iOutPrecision, /* _In_ */ uint iClipPrecision, /* _In_ */ uint iQuality, /* _In_ */ uint iPitchAndFamily, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszFaceName);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateHalftonePalette(/* optional(HDC__) */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateHatchBrush(/* _In_ */ int iHatch, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateICA(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pszDriver, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pszDevice, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pszPort, /* optional(_devicemodeA) */ IntPtr pdm);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateICW(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszDriver, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszDevice, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszPort, /* optional(_devicemodeW) */ IntPtr pdm);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateMetaFileA(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pszFile);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateMetaFileW(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszFile);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreatePalette(/* _In_reads_(_Inexpressible_(2*sizeof(WORD) + plpal->palNumEntries * sizeof(PALETTEENTRY))) */ [MarshalAs(UnmanagedType.LPArray)] tagLOGPALETTE[] plpal);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreatePatternBrush(/* _In_ */ IntPtr hbm);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreatePen(/* _In_ */ int iStyle, /* _In_ */ int cWidth, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreatePenIndirect(/* _In_ */ ref tagLOGPEN plpen);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreatePolygonRgn(/* _In_reads_(cPoint) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagPOINT[] pptl, /* _In_ */ int cPoint, /* _In_ */ int iMode);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreatePolyPolygonRgn(/* _In_ */ ref tagPOINT pptl, /* _In_reads_(cPoly) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pc, /* _In_ */ int cPoly, /* _In_ */ int iMode);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateRectRgn(/* _In_ */ int x1, /* _In_ */ int y1, /* _In_ */ int x2, /* _In_ */ int y2);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateRectRgnIndirect(/* _In_ */ ref tagRECT lprect);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateRoundRectRgn(/* _In_ */ int x1, /* _In_ */ int y1, /* _In_ */ int x2, /* _In_ */ int y2, /* _In_ */ int w, /* _In_ */ int h);
+        
+        [DllImport("wingdi")]
+        public static extern bool CreateScalableFontResourceA(/* _In_ */ uint fdwHidden, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string lpszFont, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string lpszFile, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string lpszPath);
+        
+        [DllImport("wingdi")]
+        public static extern bool CreateScalableFontResourceW(/* _In_ */ uint fdwHidden, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpszFont, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpszFile, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpszPath);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr CreateSolidBrush(/* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern bool DeleteColorSpace(/* _In_ */ IntPtr hcs);
+        
+        [DllImport("wingdi")]
+        public static extern bool DeleteDC(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool DeleteEnhMetaFile(/* optional(HENHMETAFILE__) */ IntPtr hmf);
+        
+        [DllImport("wingdi")]
+        public static extern bool DeleteMetaFile(/* _In_ */ IntPtr hmf);
+        
+        [DllImport("wingdi")]
+        public static extern bool DeleteObject(/* _In_ */ ref HGDIOBJ ho);
+        
+        [DllImport("wingdi")]
+        public static extern void DescribePixelFormat(/* _In_ */ IntPtr hdc, /* _In_ */ int iPixelFormat, /* _In_ */ uint nBytes, /* _Out_writes_bytes_opt_(nBytes) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPIXELFORMATDESCRIPTOR[] ppfd);
+        
+        [DllImport("wingdi")]
+        public static extern void DeviceCapabilitiesA(/* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pDevice, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pPort, /* _In_ */ ushort fwCapability, /* _Out_writes_opt_(_Inexpressible_(1)) */ [MarshalAs(UnmanagedType.LPStr)] string pOutput, /* optional(_devicemodeA) */ IntPtr pDevMode);
+        
+        [DllImport("wingdi")]
+        public static extern void DeviceCapabilitiesW(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pDevice, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pPort, /* _In_ */ ushort fwCapability, /* _Out_writes_opt_(_Inexpressible_(1)) */ [MarshalAs(UnmanagedType.LPWStr)] string pOutput, /* optional(_devicemodeW) */ IntPtr pDevMode);
+        
+        [DllImport("wingdi")]
+        public static extern bool DPtoLP(/* _In_ */ IntPtr hdc, /* _Inout_updates_(c) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOINT[] lppt, /* _In_ */ int c);
+        
+        [DllImport("wingdi")]
+        public static extern void DrawEscape(/* _In_ */ IntPtr hdc, /* _In_ */ int iEscape, /* _In_ */ int cjIn, /* _In_reads_bytes_opt_(cjIn) */ [MarshalAs(UnmanagedType.LPStr)] string lpIn);
+        
+        [DllImport("wingdi")]
+        public static extern bool Ellipse(/* _In_ */ IntPtr hdc, /* _In_ */ int left, /* _In_ */ int top, /* _In_ */ int right, /* _In_ */ int bottom);
+        
+        [DllImport("wingdi")]
+        public static extern void EndDoc(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern void EndPage(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool EndPath(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool EnumEnhMetaFile(/* optional(HDC__) */ IntPtr hdc, /* _In_ */ IntPtr hmf, /* _In_ */ ref ENHMFENUMPROC proc, /* optional(LPVOID) */ IntPtr param, /* optional(tagRECT) */ IntPtr lpRect);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumFontFamiliesA(/* _In_ */ IntPtr hdc, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string lpLogfont, /* _In_ */ ref FONTENUMPROCA lpProc, /* _In_ */ long lParam);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumFontFamiliesExA(/* _In_ */ IntPtr hdc, /* _In_ */ ref tagLOGFONTA lpLogfont, /* _In_ */ ref FONTENUMPROCA lpProc, /* _In_ */ long lParam, /* _In_ */ uint dwFlags);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumFontFamiliesExW(/* _In_ */ IntPtr hdc, /* _In_ */ ref tagLOGFONTW lpLogfont, /* _In_ */ ref FONTENUMPROCW lpProc, /* _In_ */ long lParam, /* _In_ */ uint dwFlags);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumFontFamiliesW(/* _In_ */ IntPtr hdc, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpLogfont, /* _In_ */ ref FONTENUMPROCW lpProc, /* _In_ */ long lParam);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumFontsA(/* _In_ */ IntPtr hdc, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string lpLogfont, /* _In_ */ ref FONTENUMPROCA lpProc, /* _In_ */ long lParam);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumFontsW(/* _In_ */ IntPtr hdc, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpLogfont, /* _In_ */ ref FONTENUMPROCW lpProc, /* _In_ */ long lParam);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumICMProfilesA(/* _In_ */ IntPtr hdc, /* _In_ */ ref ICMENUMPROCA proc, /* _In_opt_ */ long param);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumICMProfilesW(/* _In_ */ IntPtr hdc, /* _In_ */ ref ICMENUMPROCW proc, /* _In_opt_ */ long param);
+        
+        [DllImport("wingdi")]
+        public static extern bool EnumMetaFile(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hmf, /* _In_ */ ref MFENUMPROC proc, /* _In_opt_ */ long param);
+        
+        [DllImport("wingdi")]
+        public static extern void EnumObjects(/* _In_ */ IntPtr hdc, /* _In_ */ int nType, /* _In_ */ ref GOBJENUMPROC lpFunc, /* _In_ */ long lParam);
+        
+        [DllImport("wingdi")]
+        public static extern bool EqualRgn(/* _In_ */ IntPtr hrgn1, /* _In_ */ IntPtr hrgn2);
+        
+        [DllImport("wingdi")]
+        public static extern void Escape(/* _In_ */ IntPtr hdc, /* _In_ */ int iEscape, /* _In_ */ int cjIn, /* _In_reads_bytes_opt_(cjIn) */ [MarshalAs(UnmanagedType.LPStr)] string pvIn, /* optional(LPVOID) */ out IntPtr pvOut);
+        
+        [DllImport("wingdi")]
+        public static extern void ExcludeClipRect(/* _In_ */ IntPtr hdc, /* _In_ */ int left, /* _In_ */ int top, /* _In_ */ int right, /* _In_ */ int bottom);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr ExtCreatePen(/* _In_ */ uint iPenStyle, /* _In_ */ uint cWidth, /* _In_ */ ref tagLOGBRUSH plbrush, /* _In_ */ uint cStyle, /* _In_reads_opt_(cStyle) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] uint[] pstyle);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr ExtCreateRegion(/* optional(tagXFORM) */ IntPtr lpx, /* _In_ */ uint nCount, /* _In_reads_bytes_(nCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _RGNDATA[] lpData);
+        
+        [DllImport("wingdi")]
+        public static extern void ExtEscape(/* _In_ */ IntPtr hdc, /* _In_ */ int iEscape, /* _In_ */ int cjInput, /* _In_reads_bytes_opt_(cjInput) */ [MarshalAs(UnmanagedType.LPStr)] string lpInData, /* _In_ */ int cjOutput, /* _Out_writes_bytes_opt_(cjOutput) */ [MarshalAs(UnmanagedType.LPStr)] string lpOutData);
+        
+        [DllImport("wingdi")]
+        public static extern bool ExtFloodFill(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ uint color, /* _In_ */ uint type);
+        
+        [DllImport("wingdi")]
+        public static extern void ExtSelectClipRgn(/* _In_ */ IntPtr hdc, /* optional(HRGN) */ IntPtr hrgn, /* _In_ */ int mode);
+        
+        [DllImport("wingdi")]
+        public static extern bool ExtTextOutA(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ uint options, /* optional(tagRECT) */ IntPtr lprect, /* _In_reads_opt_(c) */ [MarshalAs(UnmanagedType.LPStr)] string lpString, /* _In_ */ uint c, /* _In_reads_opt_(c) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] int[] lpDx);
+        
+        [DllImport("wingdi")]
+        public static extern bool ExtTextOutW(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ uint options, /* optional(tagRECT) */ IntPtr lprect, /* _In_reads_opt_(c) */ [MarshalAs(UnmanagedType.LPWStr)] string lpString, /* _In_ */ uint c, /* _In_reads_opt_(c) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] int[] lpDx);
+        
+        [DllImport("wingdi")]
+        public static extern bool FillPath(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool FillRgn(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hrgn, /* _In_ */ IntPtr hbr);
+        
+        [DllImport("wingdi")]
+        public static extern bool FixBrushOrgEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* optional(tagPOINT) */ IntPtr ptl);
+        
+        [DllImport("wingdi")]
+        public static extern bool FlattenPath(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool FloodFill(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern bool FrameRgn(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hrgn, /* _In_ */ IntPtr hbr, /* _In_ */ int w, /* _In_ */ int h);
+        
+        [DllImport("wingdi")]
+        public static extern bool GdiAlphaBlend(/* _In_ */ IntPtr hdcDest, /* _In_ */ int xoriginDest, /* _In_ */ int yoriginDest, /* _In_ */ int wDest, /* _In_ */ int hDest, /* _In_ */ IntPtr hdcSrc, /* _In_ */ int xoriginSrc, /* _In_ */ int yoriginSrc, /* _In_ */ int wSrc, /* _In_ */ int hSrc, /* _In_ */ _BLENDFUNCTION ftn);
+        
+        [DllImport("wingdi")]
+        public static extern bool GdiComment(/* _In_ */ IntPtr hdc, /* _In_ */ uint nSize, /* _In_reads_bytes_(nSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] lpData);
+        
+        [DllImport("wingdi")]
+        public static extern bool GdiFlush();
+        
+        [DllImport("wingdi")]
+        public static extern uint GdiGetBatchLimit();
+        
+        [DllImport("wingdi")]
+        public static extern bool GdiGradientFill(/* _In_ */ IntPtr hdc, /* _In_reads_(nVertex) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _TRIVERTEX[] pVertex, /* _In_ */ uint nVertex, /* _In_ */ IntPtr pMesh, /* _In_ */ uint nCount, /* _In_ */ uint ulMode);
+        
+        [DllImport("wingdi")]
+        public static extern uint GdiSetBatchLimit(/* _In_ */ uint dw);
+        
+        [DllImport("wingdi")]
+        public static extern bool GdiTransparentBlt(/* _In_ */ IntPtr hdcDest, /* _In_ */ int xoriginDest, /* _In_ */ int yoriginDest, /* _In_ */ int wDest, /* _In_ */ int hDest, /* _In_ */ IntPtr hdcSrc, /* _In_ */ int xoriginSrc, /* _In_ */ int yoriginSrc, /* _In_ */ int wSrc, /* _In_ */ int hSrc, /* _In_ */ uint crTransparent);
+        
+        [DllImport("wingdi")]
+        public static extern void GetArcDirection(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetAspectRatioFilterEx(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagSIZE lpsize);
+        
+        [DllImport("wingdi")]
+        public static extern int GetBitmapBits(/* _In_ */ IntPtr hbit, /* _In_ */ int cb, /* _Out_writes_bytes_(cb) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] lpvBits);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetBitmapDimensionEx(/* _In_ */ IntPtr hbit, /* _Out_ */ out tagSIZE lpsize);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetBkColor(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern void GetBkMode(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetBoundsRect(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagRECT lprect, /* _In_ */ uint flags);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetBrushOrgEx(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharABCWidthsA(/* _In_ */ IntPtr hdc, /* _In_ */ uint wFirst, /* _In_ */ uint wLast, /* _Out_writes_(wLast - wFirst + 1) */ [Out, MarshalAs(UnmanagedType.LPArray)] _ABC[] lpABC);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharABCWidthsFloatA(/* _In_ */ IntPtr hdc, /* _In_ */ uint iFirst, /* _In_ */ uint iLast, /* _Out_writes_(iLast + 1 - iFirst) */ [Out, MarshalAs(UnmanagedType.LPArray)] _ABCFLOAT[] lpABC);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharABCWidthsFloatW(/* _In_ */ IntPtr hdc, /* _In_ */ uint iFirst, /* _In_ */ uint iLast, /* _Out_writes_(iLast + 1 - iFirst) */ [Out, MarshalAs(UnmanagedType.LPArray)] _ABCFLOAT[] lpABC);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharABCWidthsI(/* _In_ */ IntPtr hdc, /* _In_ */ uint giFirst, /* _In_ */ uint cgi, /* _In_reads_opt_(cgi) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ushort[] pgi, /* _Out_writes_(cgi) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _ABC[] pabc);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharABCWidthsW(/* _In_ */ IntPtr hdc, /* _In_ */ uint wFirst, /* _In_ */ uint wLast, /* _Out_writes_(wLast - wFirst + 1) */ [Out, MarshalAs(UnmanagedType.LPArray)] _ABC[] lpABC);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetCharacterPlacementA(/* _In_ */ IntPtr hdc, /* _In_reads_(nCount) */ [MarshalAs(UnmanagedType.LPStr)] string lpString, /* _In_ */ int nCount, /* _In_ */ int nMexExtent, /* _Inout_ */ ref tagGCP_RESULTSA lpResults, /* _In_ */ uint dwFlags);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetCharacterPlacementW(/* _In_ */ IntPtr hdc, /* _In_reads_(nCount) */ [MarshalAs(UnmanagedType.LPWStr)] string lpString, /* _In_ */ int nCount, /* _In_ */ int nMexExtent, /* _Inout_ */ ref tagGCP_RESULTSW lpResults, /* _In_ */ uint dwFlags);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharWidth32A(/* _In_ */ IntPtr hdc, /* _In_ */ uint iFirst, /* _In_ */ uint iLast, /* _Out_writes_(iLast + 1 - iFirst) */ [Out, MarshalAs(UnmanagedType.LPArray)] int[] lpBuffer);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharWidth32W(/* _In_ */ IntPtr hdc, /* _In_ */ uint iFirst, /* _In_ */ uint iLast, /* _Out_writes_(iLast + 1 - iFirst) */ [Out, MarshalAs(UnmanagedType.LPArray)] int[] lpBuffer);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharWidthA(/* _In_ */ IntPtr hdc, /* _In_ */ uint iFirst, /* _In_ */ uint iLast, /* _Out_writes_(iLast + 1 - iFirst) */ [Out, MarshalAs(UnmanagedType.LPArray)] int[] lpBuffer);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharWidthFloatA(/* _In_ */ IntPtr hdc, /* _In_ */ uint iFirst, /* _In_ */ uint iLast, /* _Out_writes_(iLast + 1 - iFirst) */ [Out, MarshalAs(UnmanagedType.LPArray)] PFLOAT[] lpBuffer);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharWidthFloatW(/* _In_ */ IntPtr hdc, /* _In_ */ uint iFirst, /* _In_ */ uint iLast, /* _Out_writes_(iLast + 1 - iFirst) */ [Out, MarshalAs(UnmanagedType.LPArray)] PFLOAT[] lpBuffer);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharWidthI(/* _In_ */ IntPtr hdc, /* _In_ */ uint giFirst, /* _In_ */ uint cgi, /* _In_reads_opt_(cgi) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ushort[] pgi, /* _Out_writes_(cgi) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] piWidths);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCharWidthW(/* _In_ */ IntPtr hdc, /* _In_ */ uint iFirst, /* _In_ */ uint iLast, /* _Out_writes_(iLast + 1 - iFirst) */ [Out, MarshalAs(UnmanagedType.LPArray)] int[] lpBuffer);
+        
+        [DllImport("wingdi")]
+        public static extern void GetClipBox(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagRECT lprect);
+        
+        [DllImport("wingdi")]
+        public static extern void GetClipRgn(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hrgn);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetColorAdjustment(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagCOLORADJUSTMENT lpca);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr GetColorSpace(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern HGDIOBJ GetCurrentObject(/* _In_ */ IntPtr hdc, /* _In_ */ uint type);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetCurrentPositionEx(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetDCBrushColor(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetDCOrgEx(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetDCPenColor(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern void GetDeviceCaps(/* optional(HDC__) */ IntPtr hdc, /* _In_ */ int index);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetDeviceGammaRamp(/* _In_ */ IntPtr hdc, /* _Out_writes_bytes_(3*256*2) */ [Out, MarshalAs(UnmanagedType.LPArray)] IntPtr[] lpRamp);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetDIBColorTable(/* _In_ */ IntPtr hdc, /* _In_ */ uint iStart, /* _In_ */ uint cEntries, /* _Out_writes_to_(cEntries,return) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagRGBQUAD[] prgbq);
+        
+        [DllImport("wingdi")]
+        public static extern void GetDIBits(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hbm, /* _In_ */ uint start, /* _In_ */ uint cLines, /* optional(LPVOID) */ out IntPtr lpvBits, /* _At_((LPBITMAPINFOHEADER)lpbmi, _Inout_) */ [MarshalAs(UnmanagedType.LPArray)] tagBITMAPINFO[] lpbmi, /* _In_ */ uint usage);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr GetEnhMetaFileA(/* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string lpName);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetEnhMetaFileBits(/* _In_ */ IntPtr hEMF, /* _In_ */ uint nSize, /* _Out_writes_bytes_opt_(nSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] lpData);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetEnhMetaFileDescriptionA(/* _In_ */ IntPtr hemf, /* _In_ */ uint cchBuffer, /* _Out_writes_opt_(cchBuffer) */ [MarshalAs(UnmanagedType.LPStr)] string lpDescription);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetEnhMetaFileDescriptionW(/* _In_ */ IntPtr hemf, /* _In_ */ uint cchBuffer, /* _Out_writes_opt_(cchBuffer) */ [MarshalAs(UnmanagedType.LPWStr)] string lpDescription);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetEnhMetaFileHeader(/* _In_ */ IntPtr hemf, /* _In_ */ uint nSize, /* _Out_writes_bytes_opt_(nSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagENHMETAHEADER[] lpEnhMetaHeader);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetEnhMetaFilePaletteEntries(/* _In_ */ IntPtr hemf, /* _In_ */ uint nNumEntries, /* _Out_writes_opt_(nNumEntries) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagPALETTEENTRY[] lpPaletteEntries);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetEnhMetaFilePixelFormat(/* _In_ */ IntPtr hemf, /* _In_ */ uint cbBuffer, /* _Out_writes_bytes_opt_(cbBuffer) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagPIXELFORMATDESCRIPTOR[] ppfd);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr GetEnhMetaFileW(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpName);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetFontData(/* _In_ */ IntPtr hdc, /* _In_ */ uint dwTable, /* _In_ */ uint dwOffset, /* _Out_writes_bytes_to_opt_(cjBuffer, return) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] IntPtr[] pvBuffer, /* _In_ */ uint cjBuffer);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetFontLanguageInfo(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetFontUnicodeRanges(/* _In_ */ IntPtr hdc, /* _Out_opt_ */ out tagGLYPHSET lpgs);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetGlyphIndicesA(/* _In_ */ IntPtr hdc, /* _In_reads_(c) */ [MarshalAs(UnmanagedType.LPStr)] string lpstr, /* _In_ */ int c, /* _Out_writes_(c) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ushort[] pgi, /* _In_ */ uint fl);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetGlyphIndicesW(/* _In_ */ IntPtr hdc, /* _In_reads_(c) */ [MarshalAs(UnmanagedType.LPWStr)] string lpstr, /* _In_ */ int c, /* _Out_writes_(c) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ushort[] pgi, /* _In_ */ uint fl);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetGlyphOutlineA(/* _In_ */ IntPtr hdc, /* _In_ */ uint uChar, /* _In_ */ uint fuFormat, /* _Out_ */ out _GLYPHMETRICS lpgm, /* _In_ */ uint cjBuffer, /* _Out_writes_bytes_opt_(cjBuffer) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] IntPtr[] pvBuffer, /* _In_ */ ref _MAT2 lpmat2);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetGlyphOutlineW(/* _In_ */ IntPtr hdc, /* _In_ */ uint uChar, /* _In_ */ uint fuFormat, /* _Out_ */ out _GLYPHMETRICS lpgm, /* _In_ */ uint cjBuffer, /* _Out_writes_bytes_opt_(cjBuffer) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] IntPtr[] pvBuffer, /* _In_ */ ref _MAT2 lpmat2);
+        
+        [DllImport("wingdi")]
+        public static extern void GetGraphicsMode(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetICMProfileA(/* _In_ */ IntPtr hdc, /* _Inout_ */ ref uint pBufSize, /* _Out_writes_opt_(*pBufSize) */ [MarshalAs(UnmanagedType.LPStr)] string pszFilename);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetICMProfileW(/* _In_ */ IntPtr hdc, /* _Inout_ */ ref uint pBufSize, /* _Out_writes_opt_(*pBufSize) */ [MarshalAs(UnmanagedType.LPWStr)] string pszFilename);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetKerningPairsA(/* _In_ */ IntPtr hdc, /* _In_ */ uint nPairs, /* _Out_writes_to_opt_(nPairs, return) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagKERNINGPAIR[] lpKernPair);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetKerningPairsW(/* _In_ */ IntPtr hdc, /* _In_ */ uint nPairs, /* _Out_writes_to_opt_(nPairs, return) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagKERNINGPAIR[] lpKernPair);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetLayout(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetLogColorSpaceA(/* _In_ */ IntPtr hColorSpace, /* _Out_writes_bytes_(nSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagLOGCOLORSPACEA[] lpBuffer, /* _In_ */ uint nSize);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetLogColorSpaceW(/* _In_ */ IntPtr hColorSpace, /* _Out_writes_bytes_(nSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagLOGCOLORSPACEW[] lpBuffer, /* _In_ */ uint nSize);
+        
+        [DllImport("wingdi")]
+        public static extern void GetMapMode(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr GetMetaFileA(/* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string lpName);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetMetaFileBitsEx(/* _In_ */ IntPtr hMF, /* _In_ */ uint cbBuffer, /* _Out_writes_bytes_opt_(cbBuffer) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] lpData);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr GetMetaFileW(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpName);
+        
+        [DllImport("wingdi")]
+        public static extern void GetMetaRgn(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hrgn);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetMiterLimit(/* _In_ */ IntPtr hdc, /* _Out_ */ out PFLOAT plimit);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetNearestColor(/* _In_ */ IntPtr hdc, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetNearestPaletteIndex(/* _In_ */ IntPtr h, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern void GetObjectA(/* _In_ */ IntPtr h, /* _In_ */ int c, /* _Out_writes_bytes_opt_(c) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pv);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetObjectType(/* _In_ */ ref HGDIOBJ h);
+        
+        [DllImport("wingdi")]
+        public static extern void GetObjectW(/* _In_ */ IntPtr h, /* _In_ */ int c, /* _Out_writes_bytes_opt_(c) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pv);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetOutlineTextMetricsA(/* _In_ */ IntPtr hdc, /* _In_ */ uint cjCopy, /* _Out_writes_bytes_opt_(cjCopy) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _OUTLINETEXTMETRICA[] potm);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetOutlineTextMetricsW(/* _In_ */ IntPtr hdc, /* _In_ */ uint cjCopy, /* _Out_writes_bytes_opt_(cjCopy) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _OUTLINETEXTMETRICW[] potm);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetPaletteEntries(/* _In_ */ IntPtr hpal, /* _In_ */ uint iStart, /* _In_ */ uint cEntries, /* _Out_writes_to_opt_(cEntries,return) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPALETTEENTRY[] pPalEntries);
+        
+        [DllImport("wingdi")]
+        public static extern void GetPath(/* _In_ */ IntPtr hdc, /* _Out_writes_opt_(cpt) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] tagPOINT[] apt, /* _Out_writes_opt_(cpt) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] aj, int cpt);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetPixel(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y);
+        
+        [DllImport("wingdi")]
+        public static extern void GetPixelFormat(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern void GetPolyFillMode(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern void GetRandomRgn(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hrgn, /* _In_ */ int i);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetRasterizerCaps(/* _Out_writes_bytes_(cjBytes) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _RASTERIZER_STATUS[] lpraststat, /* _In_ */ uint cjBytes);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetRegionData(/* _In_ */ IntPtr hrgn, /* _In_ */ uint nCount, /* _Out_writes_bytes_to_opt_(nCount, return) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _RGNDATA[] lpRgnData);
+        
+        [DllImport("wingdi")]
+        public static extern void GetRgnBox(/* _In_ */ IntPtr hrgn, /* _Out_ */ out tagRECT lprc);
+        
+        [DllImport("wingdi")]
+        public static extern void GetROP2(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern HGDIOBJ GetStockObject(/* _In_ */ int i);
+        
+        [DllImport("wingdi")]
+        public static extern void GetStretchBltMode(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetSystemPaletteEntries(/* _In_ */ IntPtr hdc, /* _In_ */ uint iStart, /* _In_ */ uint cEntries, /* _Out_writes_opt_(cEntries) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPALETTEENTRY[] pPalEntries);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetSystemPaletteUse(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetTextAlign(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern void GetTextCharacterExtra(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern void GetTextCharset(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern void GetTextCharsetInfo(/* _In_ */ IntPtr hdc, /* _Out_opt_ */ out tagFONTSIGNATURE lpSig, /* _In_ */ uint dwFlags);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetTextColor(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextExtentExPointA(/* _In_ */ IntPtr hdc, /* _In_reads_(cchString) */ [MarshalAs(UnmanagedType.LPStr)] string lpszString, /* _In_ */ int cchString, /* _In_ */ int nMaxExtent, /* _Out_opt_ */ out int lpnFit, /* _Out_writes_to_opt_ (cchString, *lpnFit) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] lpnDx, /* _Out_ */ out tagSIZE lpSize);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextExtentExPointI(/* _In_ */ IntPtr hdc, /* _In_reads_(cwchString) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ushort[] lpwszString, /* _In_ */ int cwchString, /* _In_ */ int nMaxExtent, /* _Out_opt_ */ out int lpnFit, /* _Out_writes_to_opt_(cwchString, *lpnFit) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] lpnDx, /* _Out_ */ out tagSIZE lpSize);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextExtentExPointW(/* _In_ */ IntPtr hdc, /* _In_reads_(cchString) */ [MarshalAs(UnmanagedType.LPWStr)] string lpszString, /* _In_ */ int cchString, /* _In_ */ int nMaxExtent, /* _Out_opt_ */ out int lpnFit, /* _Out_writes_to_opt_ (cchString, *lpnFit) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] lpnDx, /* _Out_ */ out tagSIZE lpSize);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextExtentPoint32A(/* _In_ */ IntPtr hdc, /* _In_reads_(c) */ [MarshalAs(UnmanagedType.LPStr)] string lpString, /* _In_ */ int c, /* _Out_ */ out tagSIZE psizl);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextExtentPoint32W(/* _In_ */ IntPtr hdc, /* _In_reads_(c) */ [MarshalAs(UnmanagedType.LPWStr)] string lpString, /* _In_ */ int c, /* _Out_ */ out tagSIZE psizl);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextExtentPointA(/* _In_ */ IntPtr hdc, /* _In_reads_(c) */ [MarshalAs(UnmanagedType.LPStr)] string lpString, /* _In_ */ int c, /* _Out_ */ out tagSIZE lpsz);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextExtentPointI(/* _In_ */ IntPtr hdc, /* _In_reads_(cgi) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ushort[] pgiIn, /* _In_ */ int cgi, /* _Out_ */ out tagSIZE psize);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextExtentPointW(/* _In_ */ IntPtr hdc, /* _In_reads_(c) */ [MarshalAs(UnmanagedType.LPWStr)] string lpString, /* _In_ */ int c, /* _Out_ */ out tagSIZE lpsz);
+        
+        [DllImport("wingdi")]
+        public static extern void GetTextFaceA(/* _In_ */ IntPtr hdc, /* _In_ */ int c, /* _Out_writes_to_opt_(c, return) */ [MarshalAs(UnmanagedType.LPStr)] string lpName);
+        
+        [DllImport("wingdi")]
+        public static extern void GetTextFaceW(/* _In_ */ IntPtr hdc, /* _In_ */ int c, /* _Out_writes_to_opt_(c, return) */ [MarshalAs(UnmanagedType.LPWStr)] string lpName);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextMetricsA(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagTEXTMETRICA lptm);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetTextMetricsW(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagTEXTMETRICW lptm);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetViewportExtEx(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagSIZE lpsize);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetViewportOrgEx(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagPOINT lppoint);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetWindowExtEx(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagSIZE lpsize);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetWindowOrgEx(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagPOINT lppoint);
+        
+        [DllImport("wingdi")]
+        public static extern uint GetWinMetaFileBits(/* _In_ */ IntPtr hemf, /* _In_ */ uint cbData16, /* _Out_writes_bytes_opt_(cbData16) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pData16, /* _In_ */ int iMapMode, /* _In_ */ IntPtr hdcRef);
+        
+        [DllImport("wingdi")]
+        public static extern bool GetWorldTransform(/* _In_ */ IntPtr hdc, /* _Out_ */ out tagXFORM lpxf);
+        
+        [DllImport("wingdi")]
+        public static extern bool GradientFill(/* _In_ */ IntPtr hdc, /* _In_reads_(nVertex) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _TRIVERTEX[] pVertex, /* _In_ */ uint nVertex, /* _In_ */ IntPtr pMesh, /* _In_ */ uint nMesh, /* _In_ */ uint ulMode);
+        
+        [DllImport("wingdi")]
+        public static extern void IntersectClipRect(/* _In_ */ IntPtr hdc, /* _In_ */ int left, /* _In_ */ int top, /* _In_ */ int right, /* _In_ */ int bottom);
+        
+        [DllImport("wingdi")]
+        public static extern bool InvertRgn(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hrgn);
+        
+        [DllImport("wingdi")]
+        public static extern bool LineDDA(/* _In_ */ int xStart, /* _In_ */ int yStart, /* _In_ */ int xEnd, /* _In_ */ int yEnd, /* _In_ */ ref LINEDDAPROC lpProc, /* _In_opt_ */ long data);
+        
+        [DllImport("wingdi")]
+        public static extern bool LineTo(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y);
+        
+        [DllImport("wingdi")]
+        public static extern bool LPtoDP(/* _In_ */ IntPtr hdc, /* _Inout_updates_(c) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOINT[] lppt, /* _In_ */ int c);
+        
+        [DllImport("wingdi")]
+        public static extern bool MaskBlt(/* _In_ */ IntPtr hdcDest, /* _In_ */ int xDest, /* _In_ */ int yDest, /* _In_ */ int width, /* _In_ */ int height, /* _In_ */ IntPtr hdcSrc, /* _In_ */ int xSrc, /* _In_ */ int ySrc, /* _In_ */ IntPtr hbmMask, /* _In_ */ int xMask, /* _In_ */ int yMask, /* _In_ */ uint rop);
+        
+        [DllImport("wingdi")]
+        public static extern bool ModifyWorldTransform(/* _In_ */ IntPtr hdc, /* optional(tagXFORM) */ IntPtr lpxf, /* _In_ */ uint mode);
+        
+        [DllImport("wingdi")]
+        public static extern bool MoveToEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _Out_opt_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern void OffsetClipRgn(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y);
+        
+        [DllImport("wingdi")]
+        public static extern void OffsetRgn(/* _In_ */ IntPtr hrgn, /* _In_ */ int x, /* _In_ */ int y);
+        
+        [DllImport("wingdi")]
+        public static extern bool OffsetViewportOrgEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _Out_opt_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern bool OffsetWindowOrgEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _Out_opt_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern bool PaintRgn(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hrgn);
+        
+        [DllImport("wingdi")]
+        public static extern bool PatBlt(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ int w, /* _In_ */ int h, /* _In_ */ uint rop);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr PathToRegion(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool Pie(/* _In_ */ IntPtr hdc, /* _In_ */ int left, /* _In_ */ int top, /* _In_ */ int right, /* _In_ */ int bottom, /* _In_ */ int xr1, /* _In_ */ int yr1, /* _In_ */ int xr2, /* _In_ */ int yr2);
+        
+        [DllImport("wingdi")]
+        public static extern bool PlayEnhMetaFile(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hmf, /* _In_ */ ref tagRECT lprect);
+        
+        [DllImport("wingdi")]
+        public static extern bool PlayEnhMetaFileRecord(/* _In_ */ IntPtr hdc, /* _In_reads_(cht) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] tagHANDLETABLE[] pht, /* _In_ */ ref tagENHMETARECORD pmr, /* _In_ */ uint cht);
+        
+        [DllImport("wingdi")]
+        public static extern bool PlayMetaFile(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hmf);
+        
+        [DllImport("wingdi")]
+        public static extern bool PlayMetaFileRecord(/* _In_ */ IntPtr hdc, /* _In_reads_(noObjs) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] tagHANDLETABLE[] lpHandleTable, /* _In_ */ ref LPMETARECORD lpMR, /* _In_ */ uint noObjs);
+        
+        [DllImport("wingdi")]
+        public static extern bool PlgBlt(/* _In_ */ IntPtr hdcDest, /* _In_reads_(3) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] tagPOINT[] lpPoint, /* _In_ */ IntPtr hdcSrc, /* _In_ */ int xSrc, /* _In_ */ int ySrc, /* _In_ */ int width, /* _In_ */ int height, /* optional(HBITMAP__) */ IntPtr hbmMask, /* _In_ */ int xMask, /* _In_ */ int yMask);
+        
+        [DllImport("wingdi")]
+        public static extern bool PolyBezier(/* _In_ */ IntPtr hdc, /* _In_reads_(cpt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOINT[] apt, /* _In_ */ uint cpt);
+        
+        [DllImport("wingdi")]
+        public static extern bool PolyBezierTo(/* _In_ */ IntPtr hdc, /* _In_reads_(cpt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOINT[] apt, /* _In_ */ uint cpt);
+        
+        [DllImport("wingdi")]
+        public static extern bool PolyDraw(/* _In_ */ IntPtr hdc, /* _In_reads_(cpt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] tagPOINT[] apt, /* _In_reads_(cpt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] aj, /* _In_ */ int cpt);
+        
+        [DllImport("wingdi")]
+        public static extern bool Polygon(/* _In_ */ IntPtr hdc, /* _In_reads_(cpt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOINT[] apt, /* _In_ */ int cpt);
+        
+        [DllImport("wingdi")]
+        public static extern bool Polyline(/* _In_ */ IntPtr hdc, /* _In_reads_(cpt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOINT[] apt, /* _In_ */ int cpt);
+        
+        [DllImport("wingdi")]
+        public static extern bool PolylineTo(/* _In_ */ IntPtr hdc, /* _In_reads_(cpt) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOINT[] apt, /* _In_ */ uint cpt);
+        
+        [DllImport("wingdi")]
+        public static extern bool PolyPolygon(/* _In_ */ IntPtr hdc, /* _In_ */ ref tagPOINT apt, /* _In_reads_(csz) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] int[] asz, /* _In_ */ int csz);
+        
+        [DllImport("wingdi")]
+        public static extern bool PolyPolyline(/* _In_ */ IntPtr hdc, /* _In_ */ ref tagPOINT apt, /* _In_reads_(csz) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] uint[] asz, /* _In_ */ uint csz);
+        
+        [DllImport("wingdi")]
+        public static extern bool PolyTextOutA(/* _In_ */ IntPtr hdc, /* _In_reads_(nstrings) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOLYTEXTA[] ppt, /* _In_ */ int nstrings);
+        
+        [DllImport("wingdi")]
+        public static extern bool PolyTextOutW(/* _In_ */ IntPtr hdc, /* _In_reads_(nstrings) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPOLYTEXTW[] ppt, /* _In_ */ int nstrings);
+        
+        [DllImport("wingdi")]
+        public static extern bool PtInRegion(/* _In_ */ IntPtr hrgn, /* _In_ */ int x, /* _In_ */ int y);
+        
+        [DllImport("wingdi")]
+        public static extern bool PtVisible(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y);
+        
+        [DllImport("wingdi")]
+        public static extern uint RealizePalette(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool Rectangle(/* _In_ */ IntPtr hdc, /* _In_ */ int left, /* _In_ */ int top, /* _In_ */ int right, /* _In_ */ int bottom);
+        
+        [DllImport("wingdi")]
+        public static extern bool RectInRegion(/* _In_ */ IntPtr hrgn, /* _In_ */ ref tagRECT lprect);
+        
+        [DllImport("wingdi")]
+        public static extern bool RectVisible(/* _In_ */ IntPtr hdc, /* _In_ */ ref tagRECT lprect);
+        
+        [DllImport("wingdi")]
+        public static extern bool RemoveFontMemResourceEx(/* _In_ */ IntPtr h);
+        
+        [DllImport("wingdi")]
+        public static extern bool RemoveFontResourceA(/* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string lpFileName);
+        
+        [DllImport("wingdi")]
+        public static extern bool RemoveFontResourceExA(/* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string name, /* _In_ */ uint fl, /* _Reserved_ */ ref IntPtr pdv);
+        
+        [DllImport("wingdi")]
+        public static extern bool RemoveFontResourceExW(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, /* _In_ */ uint fl, /* _Reserved_ */ ref IntPtr pdv);
+        
+        [DllImport("wingdi")]
+        public static extern bool RemoveFontResourceW(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpFileName);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr ResetDCA(/* _In_ */ IntPtr hdc, /* _In_ */ ref _devicemodeA lpdm);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr ResetDCW(/* _In_ */ IntPtr hdc, /* _In_ */ ref _devicemodeW lpdm);
+        
+        [DllImport("wingdi")]
+        public static extern bool ResizePalette(/* _In_ */ IntPtr hpal, /* _In_ */ uint n);
+        
+        [DllImport("wingdi")]
+        public static extern bool RestoreDC(/* _In_ */ IntPtr hdc, /* _In_ */ int nSavedDC);
+        
+        [DllImport("wingdi")]
+        public static extern bool RoundRect(/* _In_ */ IntPtr hdc, /* _In_ */ int left, /* _In_ */ int top, /* _In_ */ int right, /* _In_ */ int bottom, /* _In_ */ int width, /* _In_ */ int height);
+        
+        [DllImport("wingdi")]
+        public static extern void SaveDC(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool ScaleViewportExtEx(/* _In_ */ IntPtr hdc, /* _In_ */ int xn, /* _In_ */ int dx, /* _In_ */ int yn, /* _In_ */ int yd, /* _Out_opt_ */ out tagSIZE lpsz);
+        
+        [DllImport("wingdi")]
+        public static extern bool ScaleWindowExtEx(/* _In_ */ IntPtr hdc, /* _In_ */ int xn, /* _In_ */ int xd, /* _In_ */ int yn, /* _In_ */ int yd, /* _Out_opt_ */ out tagSIZE lpsz);
+        
+        [DllImport("wingdi")]
+        public static extern bool SelectClipPath(/* _In_ */ IntPtr hdc, /* _In_ */ int mode);
+        
+        [DllImport("wingdi")]
+        public static extern void SelectClipRgn(/* _In_ */ IntPtr hdc, /* optional(HRGN) */ IntPtr hrgn);
+        
+        [DllImport("wingdi")]
+        public static extern HGDIOBJ SelectObject(/* _In_ */ IntPtr hdc, /* _In_ */ ref HGDIOBJ h);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr SelectPalette(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hPal, /* _In_ */ bool bForceBkgd);
+        
+        [DllImport("wingdi")]
+        public static extern void SetAbortProc(/* _In_ */ IntPtr hdc, /* _In_ */ ref ABORTPROC proc);
+        
+        [DllImport("wingdi")]
+        public static extern void SetArcDirection(/* _In_ */ IntPtr hdc, /* _In_ */ int dir);
+        
+        [DllImport("wingdi")]
+        public static extern int SetBitmapBits(/* _In_ */ IntPtr hbm, /* _In_ */ uint cb, /* _In_reads_bytes_(cb) */ IntPtr pvBits);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetBitmapDimensionEx(/* _In_ */ IntPtr hbm, /* _In_ */ int w, /* _In_ */ int h, /* _Out_opt_ */ out tagSIZE lpsz);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetBkColor(/* _In_ */ IntPtr hdc, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern void SetBkMode(/* _In_ */ IntPtr hdc, /* _In_ */ int mode);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetBoundsRect(/* _In_ */ IntPtr hdc, /* optional(tagRECT) */ IntPtr lprect, /* _In_ */ uint flags);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetBrushOrgEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _Out_opt_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetColorAdjustment(/* _In_ */ IntPtr hdc, /* _In_ */ ref tagCOLORADJUSTMENT lpca);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr SetColorSpace(/* _In_ */ IntPtr hdc, /* _In_ */ IntPtr hcs);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetDCBrushColor(/* _In_ */ IntPtr hdc, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetDCPenColor(/* _In_ */ IntPtr hdc, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetDeviceGammaRamp(/* _In_ */ IntPtr hdc, /* _In_reads_bytes_(3*256*2) */ [MarshalAs(UnmanagedType.LPArray)] IntPtr[] lpRamp);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetDIBColorTable(/* _In_ */ IntPtr hdc, /* _In_ */ uint iStart, /* _In_ */ uint cEntries, /* _In_reads_(cEntries) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagRGBQUAD[] prgbq);
+        
+        [DllImport("wingdi")]
+        public static extern void SetDIBits(/* optional(HDC__) */ IntPtr hdc, /* _In_ */ IntPtr hbm, /* _In_ */ uint start, /* _In_ */ uint cLines, /* _In_ */ IntPtr lpBits, /* _In_ */ ref tagBITMAPINFO lpbmi, /* _In_ */ uint ColorUse);
+        
+        [DllImport("wingdi")]
+        public static extern void SetDIBitsToDevice(/* _In_ */ IntPtr hdc, /* _In_ */ int xDest, /* _In_ */ int yDest, /* _In_ */ uint w, /* _In_ */ uint h, /* _In_ */ int xSrc, /* _In_ */ int ySrc, /* _In_ */ uint StartScan, /* _In_ */ uint cLines, /* _In_ */ IntPtr lpvBits, /* _In_ */ ref tagBITMAPINFO lpbmi, /* _In_ */ uint ColorUse);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr SetEnhMetaFileBits(/* _In_ */ uint nSize, /* _In_reads_bytes_(nSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pb);
+        
+        [DllImport("wingdi")]
+        public static extern void SetGraphicsMode(/* _In_ */ IntPtr hdc, /* _In_ */ int iMode);
+        
+        [DllImport("wingdi")]
+        public static extern void SetICMMode(/* _In_ */ IntPtr hdc, /* _In_ */ int mode);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetICMProfileA(/* _In_ */ IntPtr hdc, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string lpFileName);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetICMProfileW(/* _In_ */ IntPtr hdc, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpFileName);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetLayout(/* _In_ */ IntPtr hdc, /* _In_ */ uint l);
+        
+        [DllImport("wingdi")]
+        public static extern void SetMapMode(/* _In_ */ IntPtr hdc, /* _In_ */ int iMode);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetMapperFlags(/* _In_ */ IntPtr hdc, /* _In_ */ uint flags);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr SetMetaFileBitsEx(/* _In_ */ uint cbBuffer, /* _In_reads_bytes_(cbBuffer) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] lpData);
+        
+        [DllImport("wingdi")]
+        public static extern void SetMetaRgn(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetMiterLimit(/* _In_ */ IntPtr hdc, /* _In_ */ float limit, /* _Out_opt_ */ out PFLOAT old);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetPaletteEntries(/* _In_ */ IntPtr hpal, /* _In_ */ uint iStart, /* _In_ */ uint cEntries, /* _In_reads_(cEntries) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] tagPALETTEENTRY[] pPalEntries);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetPixel(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetPixelFormat(/* _In_ */ IntPtr hdc, /* _In_ */ int format, /* _In_ */ ref tagPIXELFORMATDESCRIPTOR ppfd);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetPixelV(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern void SetPolyFillMode(/* _In_ */ IntPtr hdc, /* _In_ */ int mode);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetRectRgn(/* _In_ */ IntPtr hrgn, /* _In_ */ int left, /* _In_ */ int top, /* _In_ */ int right, /* _In_ */ int bottom);
+        
+        [DllImport("wingdi")]
+        public static extern void SetROP2(/* _In_ */ IntPtr hdc, /* _In_ */ int rop2);
+        
+        [DllImport("wingdi")]
+        public static extern void SetStretchBltMode(/* _In_ */ IntPtr hdc, /* _In_ */ int mode);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetSystemPaletteUse(/* _In_ */ IntPtr hdc, /* _In_ */ uint use);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetTextAlign(/* _In_ */ IntPtr hdc, /* _In_ */ uint align);
+        
+        [DllImport("wingdi")]
+        public static extern void SetTextCharacterExtra(/* _In_ */ IntPtr hdc, /* _In_ */ int extra);
+        
+        [DllImport("wingdi")]
+        public static extern uint SetTextColor(/* _In_ */ IntPtr hdc, /* _In_ */ uint color);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetTextJustification(/* _In_ */ IntPtr hdc, /* _In_ */ int extra, /* _In_ */ int count);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetViewportExtEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _Out_opt_ */ out tagSIZE lpsz);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetViewportOrgEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _Out_opt_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetWindowExtEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _Out_opt_ */ out tagSIZE lpsz);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetWindowOrgEx(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _Out_opt_ */ out tagPOINT lppt);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr SetWinMetaFileBits(/* _In_ */ uint nSize, /* _In_reads_bytes_(nSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] lpMeta16Data, /* optional(HDC__) */ IntPtr hdcRef, /* optional(tagMETAFILEPICT) */ IntPtr lpMFP);
+        
+        [DllImport("wingdi")]
+        public static extern bool SetWorldTransform(/* _In_ */ IntPtr hdc, /* _In_ */ ref tagXFORM lpxf);
+        
+        [DllImport("wingdi")]
+        public static extern void StartDocA(/* _In_ */ IntPtr hdc, /* _In_ */ ref _DOCINFOA lpdi);
+        
+        [DllImport("wingdi")]
+        public static extern void StartDocW(/* _In_ */ IntPtr hdc, /* _In_ */ ref _DOCINFOW lpdi);
+        
+        [DllImport("wingdi")]
+        public static extern void StartPage(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool StretchBlt(/* _In_ */ IntPtr hdcDest, /* _In_ */ int xDest, /* _In_ */ int yDest, /* _In_ */ int wDest, /* _In_ */ int hDest, /* optional(HDC__) */ IntPtr hdcSrc, /* _In_ */ int xSrc, /* _In_ */ int ySrc, /* _In_ */ int wSrc, /* _In_ */ int hSrc, /* _In_ */ uint rop);
+        
+        [DllImport("wingdi")]
+        public static extern void StretchDIBits(/* _In_ */ IntPtr hdc, /* _In_ */ int xDest, /* _In_ */ int yDest, /* _In_ */ int DestWidth, /* _In_ */ int DestHeight, /* _In_ */ int xSrc, /* _In_ */ int ySrc, /* _In_ */ int SrcWidth, /* _In_ */ int SrcHeight, /* optional(void) */ IntPtr lpBits, /* _In_ */ ref tagBITMAPINFO lpbmi, /* _In_ */ uint iUsage, /* _In_ */ uint rop);
+        
+        [DllImport("wingdi")]
+        public static extern bool StrokeAndFillPath(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool StrokePath(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool SwapBuffers(ref IntPtr __unnamed_0);
+        
+        [DllImport("wingdi")]
+        public static extern bool TextOutA(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_reads_(c) */ [MarshalAs(UnmanagedType.LPStr)] string lpString, /* _In_ */ int c);
+        
+        [DllImport("wingdi")]
+        public static extern bool TextOutW(/* _In_ */ IntPtr hdc, /* _In_ */ int x, /* _In_ */ int y, /* _In_reads_(c) */ [MarshalAs(UnmanagedType.LPWStr)] string lpString, /* _In_ */ int c);
+        
+        [DllImport("wingdi")]
+        public static extern bool TranslateCharsetInfo(/* _Inout_ */ ref uint lpSrc, /* _Out_ */ out tagCHARSETINFO lpCs, /* _In_ */ uint dwFlags);
+        
+        [DllImport("wingdi")]
+        public static extern bool TransparentBlt(/* _In_ */ IntPtr hdcDest, /* _In_ */ int xoriginDest, /* _In_ */ int yoriginDest, /* _In_ */ int wDest, /* _In_ */ int hDest, /* _In_ */ IntPtr hdcSrc, /* _In_ */ int xoriginSrc, /* _In_ */ int yoriginSrc, /* _In_ */ int wSrc, /* _In_ */ int hSrc, /* _In_ */ uint crTransparent);
+        
+        [DllImport("wingdi")]
+        public static extern bool UnrealizeObject(/* _In_ */ ref HGDIOBJ h);
+        
+        [DllImport("wingdi")]
+        public static extern bool UpdateColors(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wingdi")]
+        public static extern bool UpdateICMRegKeyA(/* _Reserved_ */ uint reserved, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string lpszCMID, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string lpszFileName, /* _In_ */ uint command);
+        
+        [DllImport("wingdi")]
+        public static extern bool UpdateICMRegKeyW(/* _Reserved_ */ uint reserved, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpszCMID, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpszFileName, /* _In_ */ uint command);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglCopyContext(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1, uint __unnamed_2);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr wglCreateContext(ref IntPtr __unnamed_0);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr wglCreateLayerContext(ref IntPtr __unnamed_0, int __unnamed_1);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglDeleteContext(ref IntPtr __unnamed_0);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglDescribeLayerPlane(ref IntPtr __unnamed_0, int __unnamed_1, int __unnamed_2, uint __unnamed_3, ref tagLAYERPLANEDESCRIPTOR __unnamed_4);
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr wglGetCurrentContext();
+        
+        [DllImport("wingdi")]
+        public static extern IntPtr wglGetCurrentDC();
+        
+        [DllImport("wingdi")]
+        public static extern void wglGetLayerPaletteEntries(ref IntPtr __unnamed_0, int __unnamed_1, int __unnamed_2, int __unnamed_3, ref COLORREF __unnamed_4);
+        
+        [DllImport("wingdi")]
+        public static extern PROC wglGetProcAddress([MarshalAs(UnmanagedType.LPStr)] string __unnamed_0);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglMakeCurrent(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglRealizeLayerPalette(ref IntPtr __unnamed_0, int __unnamed_1, bool __unnamed_2);
+        
+        [DllImport("wingdi")]
+        public static extern void wglSetLayerPaletteEntries(ref IntPtr __unnamed_0, int __unnamed_1, int __unnamed_2, int __unnamed_3, ref COLORREF __unnamed_4);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglShareLists(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglSwapLayerBuffers(ref IntPtr __unnamed_0, uint __unnamed_1);
+        
+        [DllImport("wingdi")]
+        public static extern uint wglSwapMultipleBuffers(uint __unnamed_0, ref _WGLSWAP __unnamed_1);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglUseFontBitmapsA(ref IntPtr __unnamed_0, uint __unnamed_1, uint __unnamed_2, uint __unnamed_3);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglUseFontBitmapsW(ref IntPtr __unnamed_0, uint __unnamed_1, uint __unnamed_2, uint __unnamed_3);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglUseFontOutlinesA(ref IntPtr __unnamed_0, uint __unnamed_1, uint __unnamed_2, uint __unnamed_3, float __unnamed_4, float __unnamed_5, int __unnamed_6, ref _GLYPHMETRICSFLOAT __unnamed_7);
+        
+        [DllImport("wingdi")]
+        public static extern bool wglUseFontOutlinesW(ref IntPtr __unnamed_0, uint __unnamed_1, uint __unnamed_2, uint __unnamed_3, float __unnamed_4, float __unnamed_5, int __unnamed_6, ref _GLYPHMETRICSFLOAT __unnamed_7);
+        
+        [DllImport("wingdi")]
+        public static extern bool WidenPath(/* _In_ */ IntPtr hdc);
+        
+        [DllImport("wmcodecdsp")]
+        public static extern HRESULT CreateFileIo(/* out */ ref IFileIo ppFileIo);
+        
+        [DllImport("wmcodecdsp")]
+        public static extern HRESULT CreateToc(/* out */ ref IToc ppTableOfContents);
+        
+        [DllImport("wmcodecdsp")]
+        public static extern HRESULT CreateTocCollection(/* out */ ref ITocCollection ppTocCollection);
+        
+        [DllImport("wmcodecdsp")]
+        public static extern HRESULT CreateTocEntry(/* out */ ref ITocEntry ppTocEntry);
+        
+        [DllImport("wmcodecdsp")]
+        public static extern HRESULT CreateTocEntryList(/* out */ ref ITocEntryList ppTocEntryList);
+        
+        [DllImport("wmcodecdsp")]
+        public static extern HRESULT CreateTocParser(/* out */ ref ITocParser ppTocParser);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFContentInfo(/* out */ ref IMFASFContentInfo ppIContentInfo);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFIndexer(/* out */ ref IMFASFIndexer ppIIndexer);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFIndexerByteStream(/* in */ ref IMFByteStream pIContentByteStream, /* in */ ulong cbIndexStartOffset, /* out */ ref IMFByteStream pIIndexByteStream);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFMediaSink(ref IMFByteStream pIByteStream, ref IMFMediaSink ppIMediaSink);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFMediaSinkActivate([MarshalAs(UnmanagedType.LPWStr)] string pwszFileName, ref IMFASFContentInfo pContentInfo, ref IMFActivate ppIActivate);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFMultiplexer(/* out */ ref IMFASFMultiplexer ppIMultiplexer);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFProfile(/* out */ ref IMFASFProfile ppIProfile);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFProfileFromPresentationDescriptor(/* in */ ref IMFPresentationDescriptor pIPD, /* out */ ref IMFASFProfile ppIProfile);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFSplitter(/* out */ ref IMFASFSplitter ppISplitter);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFStreamingMediaSink(ref IMFByteStream pIByteStream, ref IMFMediaSink ppIMediaSink);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFStreamingMediaSinkActivate(ref IMFActivate pByteStreamActivate, ref IMFASFContentInfo pContentInfo, ref IMFActivate ppIActivate);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateASFStreamSelector(/* in */ ref IMFASFProfile pIASFProfile, /* out */ ref IMFASFStreamSelector ppSelector);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreatePresentationDescriptorFromASFProfile(/* in */ ref IMFASFProfile pIProfile, /* out */ ref IMFPresentationDescriptor ppIPD);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateWMAEncoderActivate(ref IMFMediaType pMediaType, ref IPropertyStore pEncodingConfigurationProperties, ref IMFActivate ppActivate);
+        
+        [DllImport("wmcontainer")]
+        public static extern HRESULT MFCreateWMVEncoderActivate(ref IMFMediaType pMediaType, ref IPropertyStore pEncodingConfigurationProperties, ref IMFActivate ppActivate);
+        
+        [DllImport("wmpdevices")]
+        public static extern bool WMPNotifyDeviceArrival();
+        
+        [DllImport("wmpdevices")]
+        public static extern bool WMPNotifyDeviceRemoval();
+        
+        [DllImport("wmpplug")]
+        public static extern bool WMPNotifyPluginAddRemove();
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateBackupRestorer([MarshalAs(UnmanagedType.IUnknown)] object pCallback, ref IWMLicenseBackup ppBackup);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateDeviceRegistration(ref IWMDeviceRegistration ppDevReg);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateDRMTranscryptionManager(ref IWMDRMTranscryptionManager ppTranscryptionManager);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateDRMTranscryptor(ref IWMDRMTranscryptor ppTranscryptor);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateEditor(ref IWMMetadataEditor ppEditor);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateIndexer(ref IWMIndexer ppIndexer);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateLicenseRevocationAgent([MarshalAs(UnmanagedType.IUnknown)] object pCallback, ref IWMLicenseRevocationAgent ppLicenseRevocationAgent);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateProfileManager(ref IWMProfileManager ppProfileManager);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateReader([MarshalAs(UnmanagedType.IUnknown)] object pUnkCert, uint dwRights, ref IWMReader ppReader);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateSyncReader([MarshalAs(UnmanagedType.IUnknown)] object pUnkCert, uint dwRights, ref IWMSyncReader ppSyncReader);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateWriter([MarshalAs(UnmanagedType.IUnknown)] object pUnkCert, ref IWMWriter ppWriter);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateWriterFileSink(ref IWMWriterFileSink ppSink);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateWriterNetworkSink(ref IWMWriterNetworkSink ppSink);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMCreateWriterPushSink(ref IWMWriterPushSink ppSink);
+        
+        [DllImport("wmsdkidl")]
+        public static extern HRESULT WMIsContentProtected([MarshalAs(UnmanagedType.LPWStr)] string pwszFileName, ref bool pfIsProtected);
+        
+        [DllImport("wmsdkvalidate")]
+        public static extern HRESULT WMCheckURLExtension(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL);
+        
+        [DllImport("wmsdkvalidate")]
+        public static extern HRESULT WMCheckURLScheme(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURLScheme);
+        
+        [DllImport("wmsdkvalidate")]
+        public static extern HRESULT WMIsAvailableOffline(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszLanguage, /* [out] */ out bool pfIsAvailableOffline);
+        
+        [DllImport("wmsdkvalidate")]
+        public static extern HRESULT WMValidateData(/* [in] */ ref byte pbData, /* [in, out] */ ref uint pdwDataSize);
+        
+        [DllImport("wmsecure")]
+        public static extern HRESULT WMCreateSecureChannel(ref IWMSecureChannel ppChannel);
+        
+        [DllImport("wmsecure")]
+        public static extern HRESULT WMCreateSecureChannel_Certified(ref IWMSecureChannel ppChannel);
+        
+        [DllImport("wmsecure")]
+        public static extern HRESULT WMCreateSecureChannel_Certified_DES(ref IWMSecureChannel ppChannel);
+        
+        [DllImport("wmsecure")]
+        public static extern HRESULT WMCreateSecureChannel_DES(ref IWMSecureChannel ppChannel);
     }
 }

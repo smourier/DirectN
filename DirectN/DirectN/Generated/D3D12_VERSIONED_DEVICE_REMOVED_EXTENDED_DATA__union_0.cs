@@ -6,8 +6,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA__union_0
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D12_DEVICE_REMOVED_EXTENDED_DATA Dred_1_0 => InteropRuntime.Get<D3D12_DEVICE_REMOVED_EXTENDED_DATA>(__bits, 0, 128);
+        public D3D12_DEVICE_REMOVED_EXTENDED_DATA Dred_1_0 { get => InteropRuntime.Get<D3D12_DEVICE_REMOVED_EXTENDED_DATA>(__bits, 0, 384); set => InteropRuntime.Set<D3D12_DEVICE_REMOVED_EXTENDED_DATA>(value, __bits, 0, 384); }
     }
 }

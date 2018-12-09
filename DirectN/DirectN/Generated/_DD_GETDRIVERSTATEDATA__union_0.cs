@@ -8,9 +8,10 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DD_GETDRIVERSTATEDATA__union_0
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 96)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public IntPtr lpDD => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr dwhContext => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr lpDD { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr dwhContext { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
     }
 }

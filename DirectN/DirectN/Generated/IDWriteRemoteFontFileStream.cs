@@ -29,7 +29,7 @@ namespace DirectN
         HRESULT GetLocalFileSize(/* _Out_ */ out ulong localFileSize);
         
         [PreserveSig]
-        HRESULT GetFileFragmentLocality(ulong fileOffset, ulong fragmentSize, /* _Out_ */ out bool isLocal, /* _Out_range_(0, fragmentSize) */ [Out, MarshalAs(UnmanagedType.LPArray)] ulong[] partialSize);
+        HRESULT GetFileFragmentLocality(ulong fileOffset, ulong fragmentSize, /* _Out_ */ out bool isLocal, /* _Out_range_(0, fragmentSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ulong[] partialSize);
         
         [PreserveSig]
         DWRITE_LOCALITY GetLocality();

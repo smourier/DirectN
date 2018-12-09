@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 using LPDDHALPALCB_SETENTRIES = System.IntPtr;
 using LPDDRAWI_DDRAWPALETTE_GBL = DirectN._DDRAWI_DDRAWPALETTE_GBL;
 using LPDDRAWI_DIRECTDRAW_GBL = DirectN._DDRAWI_DIRECTDRAW_GBL;
-using LPPALETTEENTRY = DirectN.tagPALETTEENTRY;
 
 namespace DirectN
 {

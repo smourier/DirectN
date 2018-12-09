@@ -2,8 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using GPRMARRAY = System.UInt16;
-using POINT = DirectN.tagPOINT;
-using RECT = DirectN.tagRECT;
 using SPRMARRAY = System.UInt16;
 
 namespace DirectN
@@ -105,7 +103,7 @@ namespace DirectN
         HRESULT GetMenuLanguages(/* [annotation][out] _Out_ */ out int pLanguages, /* [in] */ uint ulMaxLanguages, /* [annotation][out] _Out_ */ out uint pulActualLanguages);
         
         [PreserveSig]
-        HRESULT GetButtonAtPosition(/* [in] */ POINT point, /* [annotation][out] _Out_ */ out uint pulButtonIndex);
+        HRESULT GetButtonAtPosition(/* [in] */ tagPOINT point, /* [annotation][out] _Out_ */ out uint pulButtonIndex);
         
         [PreserveSig]
         HRESULT GetCmdFromEvent(/* [in] */ IntPtr lParam1, /* [annotation][out] _Out_ */ out IDvdCmd pCmdObj);
@@ -123,7 +121,7 @@ namespace DirectN
         HRESULT GetDecoderCaps(/* [annotation][out] _Out_ */ out tagDVD_DECODER_CAPS pCaps);
         
         [PreserveSig]
-        HRESULT GetButtonRect(/* [in] */ uint ulButton, /* [annotation][out] _Out_ */ out RECT pRect);
+        HRESULT GetButtonRect(/* [in] */ uint ulButton, /* [annotation][out] _Out_ */ out tagRECT pRect);
         
         [PreserveSig]
         HRESULT IsSubpictureStreamEnabled(/* [in] */ uint ulStreamNum, /* [annotation][out] _Out_ */ out bool pbEnabled);

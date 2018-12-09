@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DVECTOR__union_2
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public float z => InteropRuntime.GetSingle(__bits, 0, 32);
-        public float dvZ => InteropRuntime.GetSingle(__bits, 0, 32);
+        public float z { get => InteropRuntime.GetSingle(__bits, 0, 32); set => InteropRuntime.SetSingle(value, __bits, 0, 32); }
+        public float dvZ { get => InteropRuntime.GetSingle(__bits, 0, 32); set => InteropRuntime.SetSingle(value, __bits, 0, 32); }
     }
 }

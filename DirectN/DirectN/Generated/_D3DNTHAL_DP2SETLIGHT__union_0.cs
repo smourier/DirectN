@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DNTHAL_DP2SETLIGHT__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint lightData => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwDataType => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint lightData { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwDataType { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }
 }

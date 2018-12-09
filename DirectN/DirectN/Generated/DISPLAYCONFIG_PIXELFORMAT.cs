@@ -1,0 +1,13 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\wingdi.h(2897,9)
+namespace DirectN
+{
+    public enum DISPLAYCONFIG_PIXELFORMAT
+    {
+        DISPLAYCONFIG_PIXELFORMAT_8BPP = 1,
+        DISPLAYCONFIG_PIXELFORMAT_16BPP = 2,
+        DISPLAYCONFIG_PIXELFORMAT_24BPP = 3,
+        DISPLAYCONFIG_PIXELFORMAT_32BPP = 4,
+        DISPLAYCONFIG_PIXELFORMAT_NONGDI = 5,
+        DISPLAYCONFIG_PIXELFORMAT_FORCE_UINT32 = -1,
+    }
+}

@@ -8,12 +8,13 @@ namespace DirectN
     public partial struct mmtime_tag__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint ms => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint sample => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint cb => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint ticks => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public mmtime_tag__union_0__struct_0 smpte => InteropRuntime.Get<mmtime_tag__union_0__struct_0>(__bits, 0, 64);
-        public mmtime_tag__union_0__struct_1 midi => InteropRuntime.Get<mmtime_tag__union_0__struct_1>(__bits, 0, 32);
+        public uint ms { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint sample { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint cb { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint ticks { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public mmtime_tag__union_0__struct_0 smpte { get => InteropRuntime.Get<mmtime_tag__union_0__struct_0>(__bits, 0, 64); set => InteropRuntime.Set<mmtime_tag__union_0__struct_0>(value, __bits, 0, 64); }
+        public mmtime_tag__union_0__struct_1 midi { get => InteropRuntime.Get<mmtime_tag__union_0__struct_1>(__bits, 0, 32); set => InteropRuntime.Set<mmtime_tag__union_0__struct_1>(value, __bits, 0, 32); }
     }
 }

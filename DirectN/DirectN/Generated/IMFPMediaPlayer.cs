@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using COLORREF = System.UInt32;
-using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -76,10 +75,10 @@ namespace DirectN
         HRESULT SetMute(/* [annotation][in] _In_ */ bool fMute);
         
         [PreserveSig]
-        HRESULT GetNativeVideoSize(/* [annotation][out] _Out_opt_ */ out SIZE pszVideo, /* [annotation][out] _Out_opt_ */ out SIZE pszARVideo);
+        HRESULT GetNativeVideoSize(/* [annotation][out] _Out_opt_ */ out tagSIZE pszVideo, /* [annotation][out] _Out_opt_ */ out tagSIZE pszARVideo);
         
         [PreserveSig]
-        HRESULT GetIdealVideoSize(/* [annotation][out] _Out_opt_ */ out SIZE pszMin, /* [annotation][out] _Out_opt_ */ out SIZE pszMax);
+        HRESULT GetIdealVideoSize(/* [annotation][out] _Out_opt_ */ out tagSIZE pszMin, /* [annotation][out] _Out_opt_ */ out tagSIZE pszMax);
         
         [PreserveSig]
         HRESULT SetVideoSourceRect(/* [annotation][in] _In_ */ ref MFVideoNormalizedRect pnrcSource);

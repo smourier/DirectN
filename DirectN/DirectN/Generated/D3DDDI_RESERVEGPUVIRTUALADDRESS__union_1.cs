@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct D3DDDI_RESERVEGPUVIRTUALADDRESS__union_1
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE ReservationType => InteropRuntime.Get<_D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE>(__bits, 0, 32);
-        public uint Reserved0 => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public _D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE ReservationType { get => InteropRuntime.Get<_D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE>(__bits, 0, 32); set => InteropRuntime.Set<_D3DDDIGPUVIRTUALADDRESS_RESERVATION_TYPE>(value, __bits, 0, 32); }
+        public uint Reserved0 { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }
 }

@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(23996,5)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -9,7 +8,7 @@ namespace DirectN
     public partial interface IDDrawExclModeVideoCallback
     {
         [PreserveSig]
-        HRESULT OnUpdateOverlay(/* [in] */ bool bBefore, /* [in] */ uint dwFlags, /* [in] */ bool bOldVisible, /* [in] */ ref RECT prcOldSrc, /* [in] */ ref RECT prcOldDest, /* [in] */ bool bNewVisible, /* [in] */ ref RECT prcNewSrc, /* [in] */ ref RECT prcNewDest);
+        HRESULT OnUpdateOverlay(/* [in] */ bool bBefore, /* [in] */ uint dwFlags, /* [in] */ bool bOldVisible, /* [in] */ ref tagRECT prcOldSrc, /* [in] */ ref tagRECT prcOldDest, /* [in] */ bool bNewVisible, /* [in] */ ref tagRECT prcNewSrc, /* [in] */ ref tagRECT prcNewDest);
         
         [PreserveSig]
         HRESULT OnUpdateColorKey(/* [in] */ ref tagCOLORKEY pKey, /* [in] */ uint dwColor);

@@ -2,8 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;
-using RECT = DirectN.tagRECT;
-using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -14,9 +12,9 @@ namespace DirectN
         public IntPtr lpSurf;
         public long rtStart;
         public long rtEnd;
-        public SIZE szAspectRatio;
-        public RECT rcSrc;
-        public RECT rcDst;
+        public tagSIZE szAspectRatio;
+        public tagRECT rcSrc;
+        public tagRECT rcDst;
         public uint dwTypeSpecificFlags;
         public uint dwInterlaceFlags;
     }

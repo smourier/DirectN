@@ -10,6 +10,6 @@ namespace DirectN
         public uint FrameNumber;
         public uint NumDirtyRects;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
-        public RECT[] DirtyRects;
+        public tagRECT[] DirtyRects;
     }
 }

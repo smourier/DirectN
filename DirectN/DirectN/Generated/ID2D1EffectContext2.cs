@@ -1,8 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1effectauthor_1.h(59,1)
 using System;
 using System.Runtime.InteropServices;
-using D2D1_POINT_2L = DirectN.tagPOINT;
-using D2D1_RECT_L = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -32,10 +30,10 @@ namespace DirectN
         new HRESULT CreateBorderTransform(D2D1_EXTEND_MODE extendModeX, D2D1_EXTEND_MODE extendModeY, /* _COM_Outptr_ */ out ID2D1BorderTransform transform);
         
         [PreserveSig]
-        new HRESULT CreateOffsetTransform(D2D1_POINT_2L offset, /* _COM_Outptr_ */ out ID2D1OffsetTransform transform);
+        new HRESULT CreateOffsetTransform(tagPOINT offset, /* _COM_Outptr_ */ out ID2D1OffsetTransform transform);
         
         [PreserveSig]
-        new HRESULT CreateBoundsAdjustmentTransform(/* _In_ */ ref D2D1_RECT_L outputRectangle, /* _COM_Outptr_ */ out ID2D1BoundsAdjustmentTransform transform);
+        new HRESULT CreateBoundsAdjustmentTransform(/* _In_ */ ref tagRECT outputRectangle, /* _COM_Outptr_ */ out ID2D1BoundsAdjustmentTransform transform);
         
         [PreserveSig]
         new HRESULT LoadPixelShader([MarshalAs(UnmanagedType.LPStruct)] Guid shaderId, /* _In_reads_(shaderBufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] shaderBuffer, uint shaderBufferCount);
@@ -78,7 +76,7 @@ namespace DirectN
         
         // ID2D1EffectContext1
         [PreserveSig]
-        new HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, /* _In_reads_(3) */ [MarshalAs(UnmanagedType.LPArray)] uint[] extents, /* _In_reads_(dataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataCount, /* _In_reads_(2) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, /* _COM_Outptr_ */ out ID2D1LookupTable3D lookupTable);
+        new HRESULT CreateLookupTable3D(D2D1_BUFFER_PRECISION precision, /* _In_reads_(3) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] uint[] extents, /* _In_reads_(dataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] data, uint dataCount, /* _In_reads_(2) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] strides, /* _COM_Outptr_ */ out ID2D1LookupTable3D lookupTable);
         
         // ID2D1EffectContext2
         [PreserveSig]

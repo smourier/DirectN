@@ -1,12 +1,8 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d.h(738,1)
 using System;
 using System.Runtime.InteropServices;
-using D3DVALUE = System.Single;
-using LPD3DVALUE = System.Single;
 using LPDIRECT3DVERTEXBUFFER7 = DirectN.IDirect3DVertexBuffer7;
 using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;
-using LPPOINT = DirectN.tagPOINT;
-using LPRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -134,7 +130,7 @@ namespace DirectN
         HRESULT CreateStateBlock(_D3DSTATEBLOCKTYPE __unnamed_0, ref uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT Load(ref LPDIRECTDRAWSURFACE7 __unnamed_0, ref LPPOINT __unnamed_1, ref LPDIRECTDRAWSURFACE7 __unnamed_2, ref LPRECT __unnamed_3, uint __unnamed_4);
+        HRESULT Load(ref LPDIRECTDRAWSURFACE7 __unnamed_0, ref tagPOINT __unnamed_1, ref LPDIRECTDRAWSURFACE7 __unnamed_2, ref tagRECT __unnamed_3, uint __unnamed_4);
         
         [PreserveSig]
         HRESULT LightEnable(uint __unnamed_0, bool __unnamed_1);

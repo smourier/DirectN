@@ -7,7 +7,6 @@ using LPDDSURFACEDESC2 = DirectN._DDSURFACEDESC2;
 using LPDIRECTDRAWCLIPPER = DirectN.IDirectDrawClipper;
 using LPDIRECTDRAWPALETTE = DirectN.IDirectDrawPalette;
 using LPDIRECTDRAWSURFACE4 = DirectN.IDirectDrawSurface4;
-using LPPALETTEENTRY = DirectN.tagPALETTEENTRY;
 
 namespace DirectN
 {
@@ -21,7 +20,7 @@ namespace DirectN
         HRESULT CreateClipper(uint __unnamed_0, ref LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
         
         [PreserveSig]
-        HRESULT CreatePalette(uint __unnamed_0, ref LPPALETTEENTRY __unnamed_1, ref LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreatePalette(uint __unnamed_0, ref tagPALETTEENTRY __unnamed_1, ref LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
         
         [PreserveSig]
         HRESULT CreateSurface(ref LPDDSURFACEDESC2 __unnamed_0, ref LPDIRECTDRAWSURFACE4 __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);

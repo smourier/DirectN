@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DMATERIAL__union_4
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public float power => InteropRuntime.GetSingle(__bits, 0, 32);
-        public float dvPower => InteropRuntime.GetSingle(__bits, 0, 32);
+        public float power { get => InteropRuntime.GetSingle(__bits, 0, 32); set => InteropRuntime.SetSingle(value, __bits, 0, 32); }
+        public float dvPower { get => InteropRuntime.GetSingle(__bits, 0, 32); set => InteropRuntime.SetSingle(value, __bits, 0, 32); }
     }
 }

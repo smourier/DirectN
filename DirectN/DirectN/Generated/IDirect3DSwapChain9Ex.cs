@@ -1,8 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(206,1)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
-using RGNDATA = DirectN._RGNDATA;
 
 namespace DirectN
 {
@@ -11,16 +9,7 @@ namespace DirectN
     {
         // IDirect3DSwapChain9
         [PreserveSig]
-        new HRESULT QueryInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppvObj);
-        
-        [PreserveSig]
-        new uint AddRef();
-        
-        [PreserveSig]
-        new uint Release();
-        
-        [PreserveSig]
-        new HRESULT Present(ref RECT pSourceRect, ref RECT pDestRect, ref IntPtr hDestWindowOverride, ref RGNDATA pDirtyRegion, uint dwFlags);
+        new HRESULT Present(ref tagRECT pSourceRect, ref tagRECT pDestRect, ref IntPtr hDestWindowOverride, ref _RGNDATA pDirtyRegion, uint dwFlags);
         
         [PreserveSig]
         new HRESULT GetFrontBufferData(ref IDirect3DSurface9 pDestSurface);
@@ -41,27 +30,6 @@ namespace DirectN
         new HRESULT GetPresentParameters(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters);
         
         // IDirect3DSwapChain9Ex
-        [PreserveSig]
-        HRESULT Present(ref RECT pSourceRect, ref RECT pDestRect, ref IntPtr hDestWindowOverride, ref RGNDATA pDirtyRegion, uint dwFlags);
-        
-        [PreserveSig]
-        HRESULT GetFrontBufferData(ref IDirect3DSurface9 pDestSurface);
-        
-        [PreserveSig]
-        HRESULT GetBackBuffer(uint iBackBuffer, _D3DBACKBUFFER_TYPE Type, ref IDirect3DSurface9 ppBackBuffer);
-        
-        [PreserveSig]
-        HRESULT GetRasterStatus(ref _D3DRASTER_STATUS pRasterStatus);
-        
-        [PreserveSig]
-        HRESULT GetDisplayMode(ref _D3DDISPLAYMODE pMode);
-        
-        [PreserveSig]
-        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
-        
-        [PreserveSig]
-        HRESULT GetPresentParameters(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters);
-        
         [PreserveSig]
         HRESULT GetLastPresentCount(ref uint pLastPresentCount);
         

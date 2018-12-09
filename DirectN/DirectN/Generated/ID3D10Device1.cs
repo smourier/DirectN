@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d10_1.h(506,5)
 using System;
 using System.Runtime.InteropServices;
-using D3D10_RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -94,7 +93,7 @@ namespace DirectN
         new void RSSetViewports(/* [annotation] _In_range_(0, D3D10_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE) */ uint NumViewports, /* [annotation] _In_reads_opt_(NumViewports) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D10_VIEWPORT[] pViewports);
         
         [PreserveSig]
-        new void RSSetScissorRects(/* [annotation] _In_range_(0, D3D10_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE) */ uint NumRects, /* [annotation] _In_reads_opt_(NumRects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D10_RECT[] pRects);
+        new void RSSetScissorRects(/* [annotation] _In_range_(0, D3D10_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE) */ uint NumRects, /* [annotation] _In_reads_opt_(NumRects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagRECT[] pRects);
         
         [PreserveSig]
         new void CopySubresourceRegion(/* [annotation] _In_ */ ID3D10Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* [annotation] _In_ */ uint DstX, /* [annotation] _In_ */ uint DstY, /* [annotation] _In_ */ uint DstZ, /* [annotation] _In_ */ ID3D10Resource pSrcResource, /* [annotation] _In_ */ uint SrcSubresource, /* optional(D3D10_BOX) */ IntPtr pSrcBox);
@@ -184,10 +183,10 @@ namespace DirectN
         new void RSGetState(/* [annotation] _Out_ */ out ID3D10RasterizerState ppRasterizerState);
         
         [PreserveSig]
-        new void RSGetViewports(/* [annotation] _Inout_ _range(0, D3D10_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ [MarshalAs(UnmanagedType.LPArray)] uint[] NumViewports, /* [annotation] _Out_writes_opt_(*NumViewports) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D10_VIEWPORT[] pViewports);
+        new void RSGetViewports(/* [annotation] _Inout_ _range(0, D3D10_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] NumViewports, /* [annotation] _Out_writes_opt_(*NumViewports) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D10_VIEWPORT[] pViewports);
         
         [PreserveSig]
-        new void RSGetScissorRects(/* [annotation] _Inout_ _range(0, D3D10_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ [MarshalAs(UnmanagedType.LPArray)] uint[] NumRects, /* [annotation] _Out_writes_opt_(*NumRects) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D10_RECT[] pRects);
+        new void RSGetScissorRects(/* [annotation] _Inout_ _range(0, D3D10_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] NumRects, /* [annotation] _Out_writes_opt_(*NumRects) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagRECT[] pRects);
         
         [PreserveSig]
         new HRESULT GetDeviceRemovedReason();

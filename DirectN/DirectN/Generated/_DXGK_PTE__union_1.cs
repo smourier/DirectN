@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _DXGK_PTE__union_1
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ulong PageAddress => InteropRuntime.GetUInt6s(__bits, 0, 64);
-        public ulong PageTableAddress => InteropRuntime.GetUInt6s(__bits, 0, 64);
+        public ulong PageAddress { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
+        public ulong PageTableAddress { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
     }
 }

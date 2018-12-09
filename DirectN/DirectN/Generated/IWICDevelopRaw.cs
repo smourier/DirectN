@@ -42,7 +42,7 @@ namespace DirectN
         HRESULT LoadParameterSet(/* [in] */ WICRawParameterSet ParameterSet);
         
         [PreserveSig]
-        HRESULT GetCurrentParameterSet(/* optional(IPropertyBag2) */ out IntPtr ppCurrentParameterSet);
+        HRESULT GetCurrentParameterSet(/* [out] __RPC__deref_out_opt */ out IPropertyBag2 ppCurrentParameterSet);
         
         [PreserveSig]
         HRESULT SetExposureCompensation(/* [in] */ double ev);

@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DTRIANGLE__union_2
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ushort v3 => InteropRuntime.GetUInt16(__bits, 0, 16);
-        public ushort wV3 => InteropRuntime.GetUInt16(__bits, 0, 16);
+        public ushort v3 { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
+        public ushort wV3 { get => InteropRuntime.GetUInt16(__bits, 0, 16); set => InteropRuntime.SetUInt16(value, __bits, 0, 16); }
     }
 }

@@ -54,7 +54,7 @@ namespace System.Runtime.InteropServices
             return ui;
         }
 
-        public static bool GetBoolean32(byte[] bytes, int offset, int count) => GetUInt32(bytes, offset, count) != 0;
+        public static bool GetBoolean(byte[] bytes, int offset, int count) => GetUInt32(bytes, offset, count) != 0;
         public static int GetInt32(byte[] bytes, int offset, int count) => (int)GetUInt32(bytes, offset, count);
         public static uint GetUInt32(byte[] bytes, int offset, int count)
         {
@@ -70,7 +70,7 @@ namespace System.Runtime.InteropServices
             return ui;
         }
 
-        public static long GetInt64(byte[] bytes, int offset, int count) => (int)GetUInt64(bytes, offset, count);
+        public static long GetInt64(byte[] bytes, int offset, int count) => (long)GetUInt64(bytes, offset, count);
         public static ulong GetUInt64(byte[] bytes, int offset, int count)
         {
             ulong ul = 0;
@@ -120,7 +120,7 @@ namespace System.Runtime.InteropServices
             return buffer;
         }
 
-        private static void CheckAlignement(int offset, int count)
+        private static void CheckByteAlignement(int offset, int count)
         {
             if ((offset % 8) != 0)
                 throw new ArgumentException(null, nameof(offset));
@@ -131,7 +131,7 @@ namespace System.Runtime.InteropServices
 
         public static T[] GetArray<T>(byte[] bytes, int offset, int count)
         {
-            CheckAlignement(offset, count);
+            CheckByteAlignement(offset, count);
             if (!typeof(T).IsValueType)
                 throw new ArgumentException(null, nameof(T));
 
@@ -145,12 +145,6 @@ namespace System.Runtime.InteropServices
 
         public static T Get<T>(byte[] bytes, int offset, int count)
         {
-            if (typeof(T) == typeof(string))
-            {
-                CheckAlignement(offset, count);
-                return (T)(object)Encoding.Default.GetString(bytes, 0, count / 8);
-            }
-
             if (!typeof(T).IsValueType)
                 throw new ArgumentException(null, nameof(T));
 
@@ -174,6 +168,86 @@ namespace System.Runtime.InteropServices
             {
                 ghc.Free();
             }
+        }
+
+        public static void SetSByte(sbyte value, byte[] bytes, int offset, int count) => SetByteArray(new byte[] { (byte)value }, bytes, offset, count);
+        public static void SetByte(byte value, byte[] bytes, int offset, int count) => SetByteArray(new byte[] { value }, bytes, offset, count);
+        public static void SetChar(char value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetInt16(short value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetUInt16(ushort value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetBoolean(bool value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetInt32(int value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetUInt32(uint value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetInt64(long value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetUInt64(ulong value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetSingle(float value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void GetDouble(double value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        public static void SetString(string value, byte[] bytes, int offset, int count, UnmanagedType type)
+        {
+            if (value == null || value.Length == 0)
+                return;
+
+            byte[] valueBytes;
+            if (type == UnmanagedType.LPStr)
+            {
+                var enc = StringEncoding ?? Encoding.Default;
+                valueBytes = enc.GetBytes(value);
+            }
+            else
+            {
+                valueBytes = Encoding.UTF8.GetBytes(value);
+            }
+
+            SetByteArray(valueBytes, bytes, offset, count);
+        }
+
+        public static void SetByteArray(byte[] value, byte[] bytes, int offset, int count)
+        {
+            if (value == null || value.Length == 0)
+                return;
+
+            var size = count / 8;
+            if ((count % 8) != 0)
+            {
+                size++;
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                var bitIndex = i + offset;
+                var index = bytes.Length - 1 - bitIndex / 8;
+                var mask = bitIndex % 8;
+                var data = (byte)(bytes[index] & _mask[mask]);
+
+                bytes[8 * (i / 8)] |= data;
+            }
+        }
+
+        public static void SetArray<T>(T[] value, byte[] bytes, int offset, int count)
+        {
+            if (value == null || value.Length == 0)
+                return;
+
+            CheckByteAlignement(offset, count);
+            if (!typeof(T).IsValueType)
+                throw new ArgumentException(null, nameof(T));
+
+            var valuePtr = Marshal.UnsafeAddrOfPinnedArrayElement(value, 0);
+            Marshal.Copy(valuePtr, bytes, offset / 8, count / 8);
+        }
+
+        public static void Set<T>(T obj, byte[] bytes, int offset, int count)
+        {
+            if (!typeof(T).IsValueType)
+                throw new ArgumentException(null, nameof(T));
+
+            var buffer = new byte[Marshal.SizeOf<T>()];
+            var ptr = Marshal.AllocCoTaskMem(buffer.Length);
+            Marshal.StructureToPtr(obj, ptr, false);
+            Marshal.Copy(ptr, buffer, 0, buffer.Length);
+            Marshal.FreeCoTaskMem(ptr);
+            SetByteArray(buffer, bytes, offset, count);
         }
     }
 }

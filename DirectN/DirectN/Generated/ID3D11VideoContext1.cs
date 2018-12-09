@@ -1,8 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d11_1.h(2646,5)
 using System;
 using System.Runtime.InteropServices;
-using RECT = DirectN.tagRECT;
-using SIZE = DirectN.tagSIZE;
 
 namespace DirectN
 {
@@ -42,7 +40,7 @@ namespace DirectN
         new int DecoderExtension(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ ref D3D11_VIDEO_DECODER_EXTENSION pExtensionData);
         
         [PreserveSig]
-        new void VideoProcessorSetOutputTargetRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ bool Enable, /* optional(RECT) */ IntPtr pRect);
+        new void VideoProcessorSetOutputTargetRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ bool Enable, /* optional(tagRECT) */ IntPtr pRect);
         
         [PreserveSig]
         new void VideoProcessorSetOutputBackgroundColor(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ bool YCbCr, /* [annotation] _In_ */ ref D3D11_VIDEO_COLOR pColor);
@@ -54,7 +52,7 @@ namespace DirectN
         new void VideoProcessorSetOutputAlphaFillMode(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE AlphaFillMode, /* [annotation] _In_ */ uint StreamIndex);
         
         [PreserveSig]
-        new void VideoProcessorSetOutputConstriction(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ bool Enable, /* [annotation] _In_ */ SIZE Size);
+        new void VideoProcessorSetOutputConstriction(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ bool Enable, /* [annotation] _In_ */ tagSIZE Size);
         
         [PreserveSig]
         new void VideoProcessorSetOutputStereoMode(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ bool Enable);
@@ -63,7 +61,7 @@ namespace DirectN
         new int VideoProcessorSetOutputExtension(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pExtensionGuid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
         
         [PreserveSig]
-        new void VideoProcessorGetOutputTargetRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _Out_ */ out bool Enabled, /* [annotation] _Out_ */ out RECT pRect);
+        new void VideoProcessorGetOutputTargetRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _Out_ */ out bool Enabled, /* [annotation] _Out_ */ out tagRECT pRect);
         
         [PreserveSig]
         new void VideoProcessorGetOutputBackgroundColor(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _Out_ */ out bool pYCbCr, /* [annotation] _Out_ */ out D3D11_VIDEO_COLOR pColor);
@@ -75,7 +73,7 @@ namespace DirectN
         new void VideoProcessorGetOutputAlphaFillMode(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _Out_ */ out D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE pAlphaFillMode, /* [annotation] _Out_ */ out uint pStreamIndex);
         
         [PreserveSig]
-        new void VideoProcessorGetOutputConstriction(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out SIZE pSize);
+        new void VideoProcessorGetOutputConstriction(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out tagSIZE pSize);
         
         [PreserveSig]
         new void VideoProcessorGetOutputStereoMode(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _Out_ */ out bool pEnabled);
@@ -93,10 +91,10 @@ namespace DirectN
         new void VideoProcessorSetStreamOutputRate(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate, /* [annotation] _In_ */ bool RepeatFrame, /* optional(DXGI_RATIONAL) */ IntPtr pCustomRate);
         
         [PreserveSig]
-        new void VideoProcessorSetStreamSourceRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ bool Enable, /* optional(RECT) */ IntPtr pRect);
+        new void VideoProcessorSetStreamSourceRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ bool Enable, /* optional(tagRECT) */ IntPtr pRect);
         
         [PreserveSig]
-        new void VideoProcessorSetStreamDestRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ bool Enable, /* optional(RECT) */ IntPtr pRect);
+        new void VideoProcessorSetStreamDestRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ bool Enable, /* optional(tagRECT) */ IntPtr pRect);
         
         [PreserveSig]
         new void VideoProcessorSetStreamAlpha(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ bool Enable, /* [annotation] _In_ */ float Alpha);
@@ -132,10 +130,10 @@ namespace DirectN
         new void VideoProcessorGetStreamOutputRate(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out D3D11_VIDEO_PROCESSOR_OUTPUT_RATE pOutputRate, /* [annotation] _Out_ */ out bool pRepeatFrame, /* [annotation] _Out_ */ out DXGI_RATIONAL pCustomRate);
         
         [PreserveSig]
-        new void VideoProcessorGetStreamSourceRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out RECT pRect);
+        new void VideoProcessorGetStreamSourceRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out tagRECT pRect);
         
         [PreserveSig]
-        new void VideoProcessorGetStreamDestRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out RECT pRect);
+        new void VideoProcessorGetStreamDestRect(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out tagRECT pRect);
         
         [PreserveSig]
         new void VideoProcessorGetStreamAlpha(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out float pAlpha);

@@ -6,7 +6,6 @@ using LPDIRECTDRAW = DirectN.IDirectDraw;
 using LPDIRECTDRAWCLIPPER = DirectN.IDirectDrawClipper;
 using LPDIRECTDRAWPALETTE = DirectN.IDirectDrawPalette;
 using LPDIRECTDRAWSURFACE2 = DirectN.IDirectDrawSurface2;
-using LPRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -17,16 +16,16 @@ namespace DirectN
         HRESULT AddAttachedSurface(ref LPDIRECTDRAWSURFACE2 __unnamed_0);
         
         [PreserveSig]
-        HRESULT AddOverlayDirtyRect(ref LPRECT __unnamed_0);
+        HRESULT AddOverlayDirtyRect(ref tagRECT __unnamed_0);
         
         [PreserveSig]
-        HRESULT Blt(ref LPRECT __unnamed_0, ref LPDIRECTDRAWSURFACE2 __unnamed_1, ref LPRECT __unnamed_2, uint __unnamed_3, ref _DDBLTFX __unnamed_4);
+        HRESULT Blt(ref tagRECT __unnamed_0, ref LPDIRECTDRAWSURFACE2 __unnamed_1, ref tagRECT __unnamed_2, uint __unnamed_3, ref _DDBLTFX __unnamed_4);
         
         [PreserveSig]
         HRESULT BltBatch(ref _DDBLTBATCH __unnamed_0, uint __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
-        HRESULT BltFast(uint __unnamed_0, uint __unnamed_1, ref LPDIRECTDRAWSURFACE2 __unnamed_2, ref LPRECT __unnamed_3, uint __unnamed_4);
+        HRESULT BltFast(uint __unnamed_0, uint __unnamed_1, ref LPDIRECTDRAWSURFACE2 __unnamed_2, ref tagRECT __unnamed_3, uint __unnamed_4);
         
         [PreserveSig]
         HRESULT DeleteAttachedSurface(uint __unnamed_0, ref LPDIRECTDRAWSURFACE2 __unnamed_1);
@@ -80,7 +79,7 @@ namespace DirectN
         HRESULT IsLost();
         
         [PreserveSig]
-        HRESULT Lock(ref LPRECT __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, uint __unnamed_2, ref IntPtr __unnamed_3);
+        HRESULT Lock(ref tagRECT __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, uint __unnamed_2, ref IntPtr __unnamed_3);
         
         [PreserveSig]
         HRESULT ReleaseDC(ref IntPtr __unnamed_0);
@@ -104,7 +103,7 @@ namespace DirectN
         HRESULT Unlock(ref IntPtr __unnamed_0);
         
         [PreserveSig]
-        HRESULT UpdateOverlay(ref LPRECT __unnamed_0, ref LPDIRECTDRAWSURFACE2 __unnamed_1, ref LPRECT __unnamed_2, uint __unnamed_3, ref _DDOVERLAYFX __unnamed_4);
+        HRESULT UpdateOverlay(ref tagRECT __unnamed_0, ref LPDIRECTDRAWSURFACE2 __unnamed_1, ref tagRECT __unnamed_2, uint __unnamed_3, ref _DDOVERLAYFX __unnamed_4);
         
         [PreserveSig]
         HRESULT UpdateOverlayDisplay(uint __unnamed_0);

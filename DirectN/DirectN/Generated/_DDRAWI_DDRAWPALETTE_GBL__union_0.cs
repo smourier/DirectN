@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _DDRAWI_DDRAWPALETTE_GBL__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public IntPtr dwReserved1 => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
-        public IntPtr hHELGDIPalette => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public IntPtr dwReserved1 { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr hHELGDIPalette { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
     }
 }

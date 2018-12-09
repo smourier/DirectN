@@ -7,12 +7,13 @@ namespace DirectN
     public partial struct D3D11_DEPTH_STENCIL_VIEW_DESC__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D11_TEX1D_DSV Texture1D => InteropRuntime.Get<D3D11_TEX1D_DSV>(__bits, 0, 32);
-        public D3D11_TEX1D_ARRAY_DSV Texture1DArray => InteropRuntime.Get<D3D11_TEX1D_ARRAY_DSV>(__bits, 0, 96);
-        public D3D11_TEX2D_DSV Texture2D => InteropRuntime.Get<D3D11_TEX2D_DSV>(__bits, 0, 32);
-        public D3D11_TEX2D_ARRAY_DSV Texture2DArray => InteropRuntime.Get<D3D11_TEX2D_ARRAY_DSV>(__bits, 0, 96);
-        public D3D11_TEX2DMS_DSV Texture2DMS => InteropRuntime.Get<D3D11_TEX2DMS_DSV>(__bits, 0, 32);
-        public D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray => InteropRuntime.Get<D3D11_TEX2DMS_ARRAY_DSV>(__bits, 0, 64);
+        public D3D11_TEX1D_DSV Texture1D { get => InteropRuntime.Get<D3D11_TEX1D_DSV>(__bits, 0, 32); set => InteropRuntime.Set<D3D11_TEX1D_DSV>(value, __bits, 0, 32); }
+        public D3D11_TEX1D_ARRAY_DSV Texture1DArray { get => InteropRuntime.Get<D3D11_TEX1D_ARRAY_DSV>(__bits, 0, 96); set => InteropRuntime.Set<D3D11_TEX1D_ARRAY_DSV>(value, __bits, 0, 96); }
+        public D3D11_TEX2D_DSV Texture2D { get => InteropRuntime.Get<D3D11_TEX2D_DSV>(__bits, 0, 32); set => InteropRuntime.Set<D3D11_TEX2D_DSV>(value, __bits, 0, 32); }
+        public D3D11_TEX2D_ARRAY_DSV Texture2DArray { get => InteropRuntime.Get<D3D11_TEX2D_ARRAY_DSV>(__bits, 0, 96); set => InteropRuntime.Set<D3D11_TEX2D_ARRAY_DSV>(value, __bits, 0, 96); }
+        public D3D11_TEX2DMS_DSV Texture2DMS { get => InteropRuntime.Get<D3D11_TEX2DMS_DSV>(__bits, 0, 32); set => InteropRuntime.Set<D3D11_TEX2DMS_DSV>(value, __bits, 0, 32); }
+        public D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray { get => InteropRuntime.Get<D3D11_TEX2DMS_ARRAY_DSV>(__bits, 0, 64); set => InteropRuntime.Set<D3D11_TEX2DMS_ARRAY_DSV>(value, __bits, 0, 64); }
     }
 }

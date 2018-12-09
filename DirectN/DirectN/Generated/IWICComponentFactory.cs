@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using PROPBAG2 = DirectN.tagPROPBAG2;
 using REFWICPixelFormatGUID = System.Guid;
 
 namespace DirectN
@@ -66,7 +65,7 @@ namespace DirectN
         new HRESULT CreateBitmapFromMemory(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ ref REFWICPixelFormatGUID pixelFormat, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] pbBuffer, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
-        new HRESULT CreateBitmapFromHBITMAP(/* [in] __RPC__in */ IntPtr hBitmap, /* optional(HPALETTE) */ IntPtr hPalette, /* [in] */ WICBitmapAlphaChannelOption options, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        new HRESULT CreateBitmapFromHBITMAP(/* [in] __RPC__in */ IntPtr hBitmap, /* optional(HPALETTE__) */ IntPtr hPalette, /* [in] */ WICBitmapAlphaChannelOption options, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
         new HRESULT CreateBitmapFromHICON(/* [in] __RPC__in */ IntPtr hIcon, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
@@ -106,6 +105,6 @@ namespace DirectN
         HRESULT CreateQueryWriterFromBlockWriter(/* [in] __RPC__in_opt */ IWICMetadataBlockWriter pIBlockWriter, /* [out] __RPC__deref_out_opt */ out IWICMetadataQueryWriter ppIQueryWriter);
         
         [PreserveSig]
-        HRESULT CreateEncoderPropertyBag(/* [size_is][unique][in] __RPC__in_ecount_full_opt(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] PROPBAG2[] ppropOptions, /* [in] */ uint cCount, /* optional(IPropertyBag2) */ out IntPtr ppIPropertyBag);
+        HRESULT CreateEncoderPropertyBag(/* [size_is][unique][in] __RPC__in_ecount_full_opt(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagPROPBAG2[] ppropOptions, /* [in] */ uint cCount, /* [out] __RPC__deref_out_opt */ out IPropertyBag2 ppIPropertyBag);
     }
 }

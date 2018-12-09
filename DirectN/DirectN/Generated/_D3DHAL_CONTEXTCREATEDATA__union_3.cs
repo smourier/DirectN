@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct _D3DHAL_CONTEXTCREATEDATA__union_3
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint dwPID => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public IntPtr dwrstates => InteropRuntime.Get<IntPtr>(__bits, 0, 64);
+        public uint dwPID { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public IntPtr dwrstates { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
     }
 }

@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using COLORREF = System.UInt32;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -33,7 +32,7 @@ namespace DirectN
         HRESULT SetRenderSurface(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pSurface);
         
         [PreserveSig]
-        HRESULT UpdateVideo(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(RECT) */ IntPtr pDst, /* optional(COLORREF) */ IntPtr pBorderClr);
+        HRESULT UpdateVideo(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(tagRECT) */ IntPtr pDst, /* optional(COLORREF) */ IntPtr pBorderClr);
         
         [PreserveSig]
         HRESULT SetSampleCallback(/* [annotation][in] _In_ */ uint dwStreamSinkIndex, /* [annotation][in] _In_ */ IMFCaptureEngineOnSampleCallback pCallback);

@@ -8,9 +8,10 @@ namespace DirectN
     public partial struct _DDSURFACEDESC2__union_2
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint dwMipMapCount => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwRefreshRate => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint dwSrcVBHandle => InteropRuntime.GetUInt32(__bits, 0, 32);
+        public uint dwMipMapCount { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwRefreshRate { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwSrcVBHandle { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }
 }

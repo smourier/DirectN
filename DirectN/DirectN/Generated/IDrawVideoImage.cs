@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\strmif.h(14617,5)
 using System;
 using System.Runtime.InteropServices;
-using LPRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -15,6 +14,6 @@ namespace DirectN
         HRESULT DrawVideoImageEnd();
         
         [PreserveSig]
-        HRESULT DrawVideoImageDraw(/* [in] */ IntPtr hdc, /* [annotation][in] _In_ */ ref LPRECT lprcSrc, /* [annotation][in] _In_ */ ref LPRECT lprcDst);
+        HRESULT DrawVideoImageDraw(/* [in] */ IntPtr hdc, /* [annotation][in] _In_ */ ref tagRECT lprcSrc, /* [annotation][in] _In_ */ ref tagRECT lprcDst);
     }
 }

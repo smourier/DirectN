@@ -5,6 +5,9 @@ using IDWriteGeometrySink = DirectN.ID2D1SimplifiedGeometrySink;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The interface that represents an absolute reference to a font face. It contains font face type, appropriate file references and face identification data. Various font data such as metrics, names and glyph outlines is obtained from IDWriteFontFace.
+    /// </summary>
     [Guid("d8b768ff-64bc-4e66-982b-ec8e87f693f7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFace2 : IDWriteFontFace1
     {

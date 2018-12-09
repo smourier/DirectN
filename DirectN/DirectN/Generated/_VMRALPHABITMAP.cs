@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;
-using RECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -12,7 +11,7 @@ namespace DirectN
         public uint dwFlags;
         public IntPtr hdc;
         public IntPtr pDDS;
-        public RECT rSrc;
+        public tagRECT rSrc;
         public _NORMALIZEDRECT rDest;
         public float fAlpha;
         public uint clrSrcKey;

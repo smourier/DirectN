@@ -7,7 +7,8 @@ namespace DirectN
     public partial struct D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC__union_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D11_TEX2D_VPIV Texture2D => InteropRuntime.Get<D3D11_TEX2D_VPIV>(__bits, 0, 64);
+        public D3D11_TEX2D_VPIV Texture2D { get => InteropRuntime.Get<D3D11_TEX2D_VPIV>(__bits, 0, 64); set => InteropRuntime.Set<D3D11_TEX2D_VPIV>(value, __bits, 0, 64); }
     }
 }

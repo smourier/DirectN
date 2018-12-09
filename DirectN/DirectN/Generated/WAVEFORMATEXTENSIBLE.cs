@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct WAVEFORMATEXTENSIBLE
     {
         public tWAVEFORMATEX Format;
-        public __struct_mmreg_4__union_0 Samples;
+        public __struct_mmreg_18__union_0 Samples;
         public uint dwChannelMask;
         public Guid SubFormat;
     }

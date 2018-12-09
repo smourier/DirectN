@@ -8,9 +8,10 @@ namespace DirectN
     public partial struct _DXVA_PicParams_MPEG4_PART2__union_1__struct_0
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ushort sprite_enable => InteropRuntime.GetUInt16(__bits, 0, 2);
-        public ushort no_of_sprite_warping_points => InteropRuntime.GetUInt16(__bits, 2, 6);
-        public ushort sprite_warping_accuracy => InteropRuntime.GetUInt16(__bits, 8, 2);
+        public ushort sprite_enable { get => InteropRuntime.GetUInt16(__bits, 0, 2); set => InteropRuntime.SetUInt16(value, __bits, 0, 2); }
+        public ushort no_of_sprite_warping_points { get => InteropRuntime.GetUInt16(__bits, 2, 6); set => InteropRuntime.SetUInt16(value, __bits, 2, 6); }
+        public ushort sprite_warping_accuracy { get => InteropRuntime.GetUInt16(__bits, 8, 2); set => InteropRuntime.SetUInt16(value, __bits, 8, 2); }
     }
 }

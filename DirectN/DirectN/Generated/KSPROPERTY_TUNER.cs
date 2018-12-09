@@ -1,0 +1,19 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\ksmedia.h(5265,9)
+namespace DirectN
+{
+    public enum KSPROPERTY_TUNER
+    {
+        KSPROPERTY_TUNER_CAPS = 0,
+        KSPROPERTY_TUNER_MODE_CAPS = 1,
+        KSPROPERTY_TUNER_MODE = 2,
+        KSPROPERTY_TUNER_STANDARD = 3,
+        KSPROPERTY_TUNER_FREQUENCY = 4,
+        KSPROPERTY_TUNER_INPUT = 5,
+        KSPROPERTY_TUNER_STATUS = 6,
+        KSPROPERTY_TUNER_IF_MEDIUM = 7,
+        KSPROPERTY_TUNER_SCAN_CAPS = 8,
+        KSPROPERTY_TUNER_SCAN_STATUS = 9,
+        KSPROPERTY_TUNER_STANDARD_MODE = 10,
+        KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS = 11,
+    }
+}

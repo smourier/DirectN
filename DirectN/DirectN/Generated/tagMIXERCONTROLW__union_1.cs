@@ -8,9 +8,10 @@ namespace DirectN
     public partial struct tagMIXERCONTROLW__union_1
     {
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 24)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint cSteps => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint cbCustomData => InteropRuntime.GetUInt32(__bits, 0, 32);
-        public uint[] dwReserved => InteropRuntime.GetArray<uint>(__bits, 0, 192);
+        public uint cSteps { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint cbCustomData { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint[] dwReserved { get => InteropRuntime.GetArray<uint>(__bits, 0, 192); set => InteropRuntime.SetArray<uint>(value, __bits, 0, 192); }
     }
 }
