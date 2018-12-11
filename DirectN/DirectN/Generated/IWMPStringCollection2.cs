@@ -16,7 +16,7 @@ namespace DirectN
         
         // IWMPStringCollection2
         [PreserveSig]
-        HRESULT isIdentical(/* [in] */ IWMPStringCollection2 pIWMPStringCollection2, /* [retval][out] */ out VARIANT_BOOL pvbool);
+        HRESULT isIdentical(/* [in] */ IWMPStringCollection2 pIWMPStringCollection2, /* [retval][out] */ out bool pvbool);
         
         [PreserveSig]
         HRESULT getItemInfo(/* [in] */ int lCollectionIndex, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out IntPtr pbstrValue);

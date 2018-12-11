@@ -181,7 +181,7 @@ namespace System.Runtime.InteropServices
         public static void SetInt64(long value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
         public static void SetUInt64(ulong value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
         public static void SetSingle(float value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
-        public static void GetDouble(double value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+        public static void SetDouble(double value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
 
         public static void SetString(string value, byte[] bytes, int offset, int count, UnmanagedType type)
         {

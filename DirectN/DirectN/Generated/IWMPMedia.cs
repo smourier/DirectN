@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("94d55e95-3fac-11d3-b155-00c04f79faa6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("94d55e95-3fac-11d3-b155-00c04f79faa6"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPMedia
     {
         [PreserveSig]
-        HRESULT get_isIdentical(/* [in] */ IWMPMedia pIWMPMedia, /* [retval][out] */ out VARIANT_BOOL pvbool);
+        HRESULT get_isIdentical(/* [in] */ IWMPMedia pIWMPMedia, /* [retval][out] */ out bool pvbool);
         
         [PreserveSig]
         HRESULT get_sourceURL(/* [retval][out] */ out IntPtr pbstrSourceURL);
@@ -56,9 +56,9 @@ namespace DirectN
         HRESULT getItemInfoByAtom(/* [in] */ int lAtom, /* [retval][out] */ out IntPtr pbstrVal);
         
         [PreserveSig]
-        HRESULT isMemberOf(/* [in] */ IWMPPlaylist pPlaylist, /* [retval][out] */ out VARIANT_BOOL pvarfIsMemberOf);
+        HRESULT isMemberOf(/* [in] */ IWMPPlaylist pPlaylist, /* [retval][out] */ out bool pvarfIsMemberOf);
         
         [PreserveSig]
-        HRESULT isReadOnlyItem(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out VARIANT_BOOL pvarfIsReadOnly);
+        HRESULT isReadOnlyItem(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out bool pvarfIsReadOnly);
     }
 }

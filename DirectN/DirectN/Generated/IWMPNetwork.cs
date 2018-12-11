@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("ec21b779-edef-462d-bba4-ad9dde2b29a7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("ec21b779-edef-462d-bba4-ad9dde2b29a7"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPNetwork
     {
         [PreserveSig]
@@ -71,10 +71,10 @@ namespace DirectN
         HRESULT setProxyExceptionList(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrProtocol, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string pbstrExceptionList);
         
         [PreserveSig]
-        HRESULT getProxyBypassForLocal(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrProtocol, /* [retval][out] */ out VARIANT_BOOL pfBypassForLocal);
+        HRESULT getProxyBypassForLocal(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrProtocol, /* [retval][out] */ out bool pfBypassForLocal);
         
         [PreserveSig]
-        HRESULT setProxyBypassForLocal(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrProtocol, /* [in] */ short fBypassForLocal);
+        HRESULT setProxyBypassForLocal(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrProtocol, /* [in] */ bool fBypassForLocal);
         
         [PreserveSig]
         HRESULT get_maxBandwidth(/* [retval][out] */ out long lMaxBandwidth);

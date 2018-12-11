@@ -15,7 +15,7 @@ namespace DirectN
         
         // ID2D1Bitmap
         [PreserveSig]
-        new D2D_SIZE_F GetSize();
+        new void GetSize(out D2D_SIZE_F size);
         
         [PreserveSig]
         new D2D_SIZE_U GetPixelSize();

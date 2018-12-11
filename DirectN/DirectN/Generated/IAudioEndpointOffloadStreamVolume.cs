@@ -12,9 +12,9 @@ namespace DirectN
         HRESULT GetVolumeChannelCount(/* [out] */ out uint pu32ChannelCount);
         
         [PreserveSig]
-        HRESULT SetChannelVolumes(/* [in] */ uint u32ChannelCount, /* [in] */ ref FLOAT32 pf32Volumes, /* [in] */ AUDIO_CURVE_TYPE u32CurveType, /* [in] */ ref HNSTIME pCurveDuration);
+        HRESULT SetChannelVolumes(/* [in] */ uint u32ChannelCount, /* [in] */ ref float pf32Volumes, /* [in] */ AUDIO_CURVE_TYPE u32CurveType, /* [in] */ ref HNSTIME pCurveDuration);
         
         [PreserveSig]
-        HRESULT GetChannelVolumes(/* [in] */ uint u32ChannelCount, /* [out] */ out FLOAT32 pf32Volumes);
+        HRESULT GetChannelVolumes(/* [in] */ uint u32ChannelCount, /* [out] */ out float pf32Volumes);
     }
 }

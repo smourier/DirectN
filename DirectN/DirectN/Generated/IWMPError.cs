@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a12dcf7d-14ab-4c1b-a8cd-63909f06025b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("a12dcf7d-14ab-4c1b-a8cd-63909f06025b"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPError
     {
         [PreserveSig]

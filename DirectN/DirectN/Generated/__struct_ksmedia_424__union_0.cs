@@ -13,7 +13,7 @@ namespace DirectN
         public tagDEVCAPS Capabilities { get => InteropRuntime.Get<tagDEVCAPS>(__bits, 0, 736); set => InteropRuntime.Set<tagDEVCAPS>(value, __bits, 0, 736); }
         public uint DevPort { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
         public uint PowerState { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
-        public string pawchString { get => InteropRuntime.GetString(__bits, 0, 2080); set => InteropRuntime.SetString(value, __bits, 0, 2080); }
+        public string pawchString { get => InteropRuntime.GetString(__bits, 0, 2080, UnmanagedType.LPWStr); set => InteropRuntime.SetString(value, __bits, 0, 2080, UnmanagedType.LPWStr); }
         public uint[] NodeUniqueID { get => InteropRuntime.GetArray<uint>(__bits, 0, 64); set => InteropRuntime.SetArray<uint>(value, __bits, 0, 64); }
     }
 }

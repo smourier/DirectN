@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("74c09e02-f828-11d2-a74b-00a0c905f36e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("74c09e02-f828-11d2-a74b-00a0c905f36e"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPControls
     {
         [PreserveSig]
-        HRESULT get_isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out VARIANT_BOOL pIsAvailable);
+        HRESULT get_isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out bool pIsAvailable);
         
         [PreserveSig]
         HRESULT play();

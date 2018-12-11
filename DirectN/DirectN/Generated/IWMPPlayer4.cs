@@ -63,7 +63,7 @@ namespace DirectN
         new HRESULT get_closedCaption(/* [retval][out] */ out IWMPClosedCaption ppClosedCaption);
         
         [PreserveSig]
-        new HRESULT get_isOnline(/* [retval][out] */ out VARIANT_BOOL pfOnline);
+        new HRESULT get_isOnline(/* [retval][out] */ out bool pfOnline);
         
         [PreserveSig]
         new HRESULT get_error(/* [retval][out] */ out IWMPError ppError);
@@ -84,22 +84,22 @@ namespace DirectN
         
         // IWMPPlayer4
         [PreserveSig]
-        HRESULT get_enabled(/* [retval][out] */ out VARIANT_BOOL pbEnabled);
+        HRESULT get_enabled(/* [retval][out] */ out bool pbEnabled);
         
         [PreserveSig]
-        HRESULT put_enabled(/* [in] */ short bEnabled);
+        HRESULT put_enabled(/* [in] */ bool bEnabled);
         
         [PreserveSig]
-        HRESULT get_fullScreen(/* [retval][out] */ out VARIANT_BOOL pbFullScreen);
+        HRESULT get_fullScreen(/* [retval][out] */ out bool pbFullScreen);
         
         [PreserveSig]
-        HRESULT put_fullScreen(short bFullScreen);
+        HRESULT put_fullScreen(bool bFullScreen);
         
         [PreserveSig]
-        HRESULT get_enableContextMenu(/* [retval][out] */ out VARIANT_BOOL pbEnableContextMenu);
+        HRESULT get_enableContextMenu(/* [retval][out] */ out bool pbEnableContextMenu);
         
         [PreserveSig]
-        HRESULT put_enableContextMenu(short bEnableContextMenu);
+        HRESULT put_enableContextMenu(bool bEnableContextMenu);
         
         [PreserveSig]
         HRESULT put_uiMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode);
@@ -108,19 +108,19 @@ namespace DirectN
         HRESULT get_uiMode(/* [retval][out] */ out IntPtr pbstrMode);
         
         [PreserveSig]
-        HRESULT get_stretchToFit(/* [retval][out] */ out VARIANT_BOOL pbEnabled);
+        HRESULT get_stretchToFit(/* [retval][out] */ out bool pbEnabled);
         
         [PreserveSig]
-        HRESULT put_stretchToFit(/* [in] */ short bEnabled);
+        HRESULT put_stretchToFit(/* [in] */ bool bEnabled);
         
         [PreserveSig]
-        HRESULT get_windowlessVideo(/* [retval][out] */ out VARIANT_BOOL pbEnabled);
+        HRESULT get_windowlessVideo(/* [retval][out] */ out bool pbEnabled);
         
         [PreserveSig]
-        HRESULT put_windowlessVideo(/* [in] */ short bEnabled);
+        HRESULT put_windowlessVideo(/* [in] */ bool bEnabled);
         
         [PreserveSig]
-        HRESULT get_isRemote(/* [retval][out] */ out VARIANT_BOOL pvarfIsRemote);
+        HRESULT get_isRemote(/* [retval][out] */ out bool pvarfIsRemote);
         
         [PreserveSig]
         HRESULT get_playerApplication(/* [retval][out] */ out IWMPPlayerApplication ppIWMPPlayerApplication);

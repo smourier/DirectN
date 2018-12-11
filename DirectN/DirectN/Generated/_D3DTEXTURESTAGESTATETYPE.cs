@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3dtypes.h(1609,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9types.h(495,9)
 namespace DirectN
 {
     public enum _D3DTEXTURESTAGESTATETYPE
@@ -14,19 +14,13 @@ namespace DirectN
         D3DTSS_BUMPENVMAT10 = 9,
         D3DTSS_BUMPENVMAT11 = 10,
         D3DTSS_TEXCOORDINDEX = 11,
-        D3DTSS_ADDRESS = 12,
-        D3DTSS_ADDRESSU = 13,
-        D3DTSS_ADDRESSV = 14,
-        D3DTSS_BORDERCOLOR = 15,
-        D3DTSS_MAGFILTER = 16,
-        D3DTSS_MINFILTER = 17,
-        D3DTSS_MIPFILTER = 18,
-        D3DTSS_MIPMAPLODBIAS = 19,
-        D3DTSS_MAXMIPLEVEL = 20,
-        D3DTSS_MAXANISOTROPY = 21,
         D3DTSS_BUMPENVLSCALE = 22,
         D3DTSS_BUMPENVLOFFSET = 23,
         D3DTSS_TEXTURETRANSFORMFLAGS = 24,
+        D3DTSS_COLORARG0 = 26,
+        D3DTSS_ALPHAARG0 = 27,
+        D3DTSS_RESULTARG = 28,
+        D3DTSS_CONSTANT = 32,
         D3DTSS_FORCE_DWORD = 2147483647,
     }
 }

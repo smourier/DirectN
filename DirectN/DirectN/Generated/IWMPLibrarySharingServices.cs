@@ -8,10 +8,10 @@ namespace DirectN
     public partial interface IWMPLibrarySharingServices
     {
         [PreserveSig]
-        HRESULT isLibraryShared(/* [retval][out] */ out VARIANT_BOOL pvbShared);
+        HRESULT isLibraryShared(/* [retval][out] */ out bool pvbShared);
         
         [PreserveSig]
-        HRESULT isLibrarySharingEnabled(/* [retval][out] */ out VARIANT_BOOL pvbEnabled);
+        HRESULT isLibrarySharingEnabled(/* [retval][out] */ out bool pvbEnabled);
         
         [PreserveSig]
         HRESULT showLibrarySharing();

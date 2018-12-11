@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The IDWriteTextLayout interface represents a block of text after it has been fully analyzed and formatted.
+    /// </summary>
     [Guid("53737037-6d14-410b-9bfe-0b182bb70961"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextLayout : IDWriteTextFormat
     {

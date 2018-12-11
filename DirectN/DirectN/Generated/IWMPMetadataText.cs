@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("769a72db-13d2-45e2-9c48-53ca9d5b7450"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("769a72db-13d2-45e2-9c48-53ca9d5b7450"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPMetadataText
     {
         [PreserveSig]

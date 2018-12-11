@@ -24,7 +24,7 @@ namespace DirectN
         new HRESULT get_partnershipIndex(/* [retval][out] */ out long plIndex);
         
         [PreserveSig]
-        new HRESULT get_connected(/* [retval][out] */ out VARIANT_BOOL pvbConnected);
+        new HRESULT get_connected(/* [retval][out] */ out bool pvbConnected);
         
         [PreserveSig]
         new HRESULT get_status(/* [retval][out] */ out WMPDeviceStatus pwmpds);
@@ -39,7 +39,7 @@ namespace DirectN
         new HRESULT getItemInfo(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out IntPtr pbstrVal);
         
         [PreserveSig]
-        new HRESULT createPartnership(/* [in] */ short vbShowUI);
+        new HRESULT createPartnership(/* [in] */ bool vbShowUI);
         
         [PreserveSig]
         new HRESULT deletePartnership();
@@ -54,7 +54,7 @@ namespace DirectN
         new HRESULT showSettings();
         
         [PreserveSig]
-        new HRESULT isIdentical(/* [in] */ IWMPSyncDevice pDevice, /* [retval][out] */ out VARIANT_BOOL pvbool);
+        new HRESULT isIdentical(/* [in] */ IWMPSyncDevice pDevice, /* [retval][out] */ out bool pvbool);
         
         // IWMPSyncDevice2
         [PreserveSig]

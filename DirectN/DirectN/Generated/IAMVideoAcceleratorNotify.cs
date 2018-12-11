@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\videoacc.h(118,5)
 using System;
 using System.Runtime.InteropServices;
-using LPAMVAUncompBufferInfo = DirectN._tag_AMVAUncompBufferInfo;
 
 namespace DirectN
 {
@@ -9,7 +8,7 @@ namespace DirectN
     public partial interface IAMVideoAcceleratorNotify
     {
         [PreserveSig]
-        HRESULT GetUncompSurfacesInfo(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ ref LPAMVAUncompBufferInfo pUncompBufferInfo);
+        HRESULT GetUncompSurfacesInfo(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ ref _tag_AMVAUncompBufferInfo pUncompBufferInfo);
         
         [PreserveSig]
         HRESULT SetUncompSurfacesInfo(/* [in] */ uint dwActualUncompSurfacesAllocated);

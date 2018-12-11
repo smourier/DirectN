@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IWMPCdromBurn
     {
         [PreserveSig]
-        HRESULT isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out VARIANT_BOOL pIsAvailable);
+        HRESULT isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out bool pIsAvailable);
         
         [PreserveSig]
         HRESULT getItemInfo(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out IntPtr pbstrVal);

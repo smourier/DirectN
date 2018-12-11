@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cfab6e98-8730-11d3-b388-00c04f68574b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("cfab6e98-8730-11d3-b388-00c04f68574b"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPCdrom
     {
         [PreserveSig]

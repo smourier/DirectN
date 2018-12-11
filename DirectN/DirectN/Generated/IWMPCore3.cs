@@ -63,7 +63,7 @@ namespace DirectN
         new HRESULT get_closedCaption(/* [retval][out] */ out IWMPClosedCaption ppClosedCaption);
         
         [PreserveSig]
-        new HRESULT get_isOnline(/* [retval][out] */ out VARIANT_BOOL pfOnline);
+        new HRESULT get_isOnline(/* [retval][out] */ out bool pfOnline);
         
         [PreserveSig]
         new HRESULT get_error(/* [retval][out] */ out IWMPError ppError);

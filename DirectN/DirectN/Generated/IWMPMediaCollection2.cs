@@ -30,7 +30,7 @@ namespace DirectN
         new HRESULT getByAttribute(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrAttribute, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrValue, /* [retval][out] */ out IWMPPlaylist ppMediaItems);
         
         [PreserveSig]
-        new HRESULT remove(/* [in] */ IWMPMedia pItem, /* [in] */ short varfDeleteFile);
+        new HRESULT remove(/* [in] */ IWMPMedia pItem, /* [in] */ bool varfDeleteFile);
         
         [PreserveSig]
         new HRESULT getAttributeStringCollection(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrAttribute, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMediaType, /* [retval][out] */ out IWMPStringCollection ppStringCollection);
@@ -39,20 +39,20 @@ namespace DirectN
         new HRESULT getMediaAtom(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out long plAtom);
         
         [PreserveSig]
-        new HRESULT setDeleted(/* [in] */ IWMPMedia pItem, /* [in] */ short varfIsDeleted);
+        new HRESULT setDeleted(/* [in] */ IWMPMedia pItem, /* [in] */ bool varfIsDeleted);
         
         [PreserveSig]
-        new HRESULT isDeleted(/* [in] */ IWMPMedia pItem, /* [retval][out] */ out VARIANT_BOOL pvarfIsDeleted);
+        new HRESULT isDeleted(/* [in] */ IWMPMedia pItem, /* [retval][out] */ out bool pvarfIsDeleted);
         
         // IWMPMediaCollection2
         [PreserveSig]
         HRESULT createQuery(/* [retval][out] */ out IWMPQuery ppQuery);
         
         [PreserveSig]
-        HRESULT getPlaylistByQuery(/* [in] */ IWMPQuery pQuery, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMediaType, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrSortAttribute, /* [in] */ short fSortAscending, /* [retval][out] */ out IWMPPlaylist ppPlaylist);
+        HRESULT getPlaylistByQuery(/* [in] */ IWMPQuery pQuery, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMediaType, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrSortAttribute, /* [in] */ bool fSortAscending, /* [retval][out] */ out IWMPPlaylist ppPlaylist);
         
         [PreserveSig]
-        HRESULT getStringCollectionByQuery(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrAttribute, /* [in] */ IWMPQuery pQuery, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMediaType, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrSortAttribute, /* [in] */ short fSortAscending, /* [retval][out] */ out IWMPStringCollection ppStringCollection);
+        HRESULT getStringCollectionByQuery(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrAttribute, /* [in] */ IWMPQuery pQuery, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMediaType, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrSortAttribute, /* [in] */ bool fSortAscending, /* [retval][out] */ out IWMPStringCollection ppStringCollection);
         
         [PreserveSig]
         HRESULT getByAttributeAndMediaType(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrAttribute, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrValue, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMediaType, /* [retval][out] */ out IWMPPlaylist ppMediaItems);

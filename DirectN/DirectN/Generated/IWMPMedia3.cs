@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IWMPMedia
         [PreserveSig]
-        new HRESULT get_isIdentical(/* [in] */ IWMPMedia pIWMPMedia, /* [retval][out] */ out VARIANT_BOOL pvbool);
+        new HRESULT get_isIdentical(/* [in] */ IWMPMedia pIWMPMedia, /* [retval][out] */ out bool pvbool);
         
         [PreserveSig]
         new HRESULT get_sourceURL(/* [retval][out] */ out IntPtr pbstrSourceURL);
@@ -57,10 +57,10 @@ namespace DirectN
         new HRESULT getItemInfoByAtom(/* [in] */ int lAtom, /* [retval][out] */ out IntPtr pbstrVal);
         
         [PreserveSig]
-        new HRESULT isMemberOf(/* [in] */ IWMPPlaylist pPlaylist, /* [retval][out] */ out VARIANT_BOOL pvarfIsMemberOf);
+        new HRESULT isMemberOf(/* [in] */ IWMPPlaylist pPlaylist, /* [retval][out] */ out bool pvarfIsMemberOf);
         
         [PreserveSig]
-        new HRESULT isReadOnlyItem(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out VARIANT_BOOL pvarfIsReadOnly);
+        new HRESULT isReadOnlyItem(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out bool pvarfIsReadOnly);
         
         // IWMPMedia2
         [PreserveSig]

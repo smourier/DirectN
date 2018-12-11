@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// This defines a single element of the vertex layout.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_INPUT_ELEMENT_DESC
     {

@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT GetMeterChannelCount(/* [out] */ out uint pu32ChannelCount);
         
         [PreserveSig]
-        HRESULT GetMeteringData(/* [in] */ uint u32ChannelCount, /* [out] */ out FLOAT32 pf32PeakValues);
+        HRESULT GetMeteringData(/* [in] */ uint u32ChannelCount, /* [out] */ out float pf32PeakValues);
     }
 }

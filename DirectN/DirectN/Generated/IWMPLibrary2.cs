@@ -18,7 +18,7 @@ namespace DirectN
         new HRESULT get_mediaCollection(/* [retval][out] */ out IWMPMediaCollection ppIWMPMediaCollection);
         
         [PreserveSig]
-        new HRESULT isIdentical(/* [in] */ IWMPLibrary pIWMPLibrary, /* [retval][out] */ out VARIANT_BOOL pvbool);
+        new HRESULT isIdentical(/* [in] */ IWMPLibrary pIWMPLibrary, /* [retval][out] */ out bool pvbool);
         
         // IWMPLibrary2
         [PreserveSig]

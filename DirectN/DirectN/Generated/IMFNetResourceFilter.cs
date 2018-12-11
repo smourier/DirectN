@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFNetResourceFilter
     {
         [PreserveSig]
-        HRESULT OnRedirect(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszUrl, /* [annotation][out] _Out_ */ out VARIANT_BOOL pvbCancel);
+        HRESULT OnRedirect(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszUrl, /* [annotation][out] _Out_ */ out bool pvbCancel);
         
         [PreserveSig]
         HRESULT OnSendingRequest(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszUrl);

@@ -30,13 +30,13 @@ namespace DirectN.Temp
 
         static void SafeMain(string[] args)
         {
-            using (var factory = DXGIFunctions.CreateDXGIFactory5())
+            using (var factory = DXGIFunctions.CreateDXGIFactory1())
             {
-                foreach (var adapter in factory.EnumAdapters<IDXGIAdapter4>())
+                foreach (var adapter in factory.EnumAdapters1<IDXGIAdapter1>())
                 {
                     Console.WriteLine(adapter.GetDesc().Description);
-                    DumpStruct(0, adapter.GetDesc3());
-                    foreach (var output in adapter.EnumOutputs<IDXGIOutput6>())
+                    DumpStruct(0, adapter.GetDesc1());
+                    foreach (var output in adapter.EnumOutputs<IDXGIOutput1>())
                     {
                         output.DuplicateOutput(adapter);
                         //DumpStruct(1, output.GetDesc1());

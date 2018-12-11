@@ -10,6 +10,6 @@ namespace DirectN
         public bool Mute;
         public int Minimum;
         public int Maximum;
-        public __struct_ksmedia_194__union_0 __union_3;
+        public __struct_ksmedia_794__union_0 __union_3;
     }
 }

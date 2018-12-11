@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The IDWriteInlineObject interface wraps an application defined inline graphic, allowing DWrite to query metrics as if it was a glyph inline with the text.
-    /// </summary>
     [Guid("8339fde3-106f-47ab-8373-1c6295eb10b3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteInlineObject
     {

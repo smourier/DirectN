@@ -19,10 +19,10 @@ namespace DirectN
         HRESULT get_Type(/* [out] __RPC__out */ out short pType);
         
         [PreserveSig]
-        HRESULT get_Width(/* [out] __RPC__out */ out OLE_XSIZE_HIMETRIC pWidth);
+        HRESULT get_Width(/* [out] __RPC__out */ out int pWidth);
         
         [PreserveSig]
-        HRESULT get_Height(/* [out] __RPC__out */ out OLE_YSIZE_HIMETRIC pHeight);
+        HRESULT get_Height(/* [out] __RPC__out */ out int pHeight);
         
         [PreserveSig]
         HRESULT Render(/* [in] __RPC__in */ IntPtr hDC, /* [in] */ int x, /* [in] */ int y, /* [in] */ int cx, /* [in] */ int cy, /* [in] */ int xSrc, /* [in] */ int ySrc, /* [in] */ int cxSrc, /* [in] */ int cySrc, /* [in] __RPC__in */ ref LPCRECT pRcWBounds);

@@ -27,7 +27,7 @@ namespace DirectN
         public int WarnGenlock;
         public int SetTracking;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 40)] 
-        public TCHAR[] VolumeName;
+        public char[] VolumeName;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)] 
         public int[] Ballistic;
         public int Speed;

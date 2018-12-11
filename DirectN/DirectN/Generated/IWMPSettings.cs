@@ -4,17 +4,17 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9104d1ab-80c9-4fed-abf0-2e6417a6df14"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("9104d1ab-80c9-4fed-abf0-2e6417a6df14"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPSettings
     {
         [PreserveSig]
-        HRESULT get_isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out VARIANT_BOOL pIsAvailable);
+        HRESULT get_isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out bool pIsAvailable);
         
         [PreserveSig]
-        HRESULT get_autoStart(/* [retval][out] */ out VARIANT_BOOL pfAutoStart);
+        HRESULT get_autoStart(/* [retval][out] */ out bool pfAutoStart);
         
         [PreserveSig]
-        HRESULT put_autoStart(/* [in] */ short fAutoStart);
+        HRESULT put_autoStart(/* [in] */ bool fAutoStart);
         
         [PreserveSig]
         HRESULT get_baseURL(/* [retval][out] */ out IntPtr pbstrBaseURL);
@@ -29,16 +29,16 @@ namespace DirectN
         HRESULT put_defaultFrame(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrDefaultFrame);
         
         [PreserveSig]
-        HRESULT get_invokeURLs(/* [retval][out] */ out VARIANT_BOOL pfInvokeURLs);
+        HRESULT get_invokeURLs(/* [retval][out] */ out bool pfInvokeURLs);
         
         [PreserveSig]
-        HRESULT put_invokeURLs(/* [in] */ short fInvokeURLs);
+        HRESULT put_invokeURLs(/* [in] */ bool fInvokeURLs);
         
         [PreserveSig]
-        HRESULT get_mute(/* [retval][out] */ out VARIANT_BOOL pfMute);
+        HRESULT get_mute(/* [retval][out] */ out bool pfMute);
         
         [PreserveSig]
-        HRESULT put_mute(/* [in] */ short fMute);
+        HRESULT put_mute(/* [in] */ bool fMute);
         
         [PreserveSig]
         HRESULT get_playCount(/* [retval][out] */ out long plCount);
@@ -65,15 +65,15 @@ namespace DirectN
         HRESULT put_volume(/* [in] */ int lVolume);
         
         [PreserveSig]
-        HRESULT getMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode, /* [retval][out] */ out VARIANT_BOOL pvarfMode);
+        HRESULT getMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode, /* [retval][out] */ out bool pvarfMode);
         
         [PreserveSig]
-        HRESULT setMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode, /* [in] */ short varfMode);
+        HRESULT setMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode, /* [in] */ bool varfMode);
         
         [PreserveSig]
-        HRESULT get_enableErrorDialogs(/* [retval][out] */ out VARIANT_BOOL pfEnableErrorDialogs);
+        HRESULT get_enableErrorDialogs(/* [retval][out] */ out bool pfEnableErrorDialogs);
         
         [PreserveSig]
-        HRESULT put_enableErrorDialogs(/* [in] */ short fEnableErrorDialogs);
+        HRESULT put_enableErrorDialogs(/* [in] */ bool fEnableErrorDialogs);
     }
 }

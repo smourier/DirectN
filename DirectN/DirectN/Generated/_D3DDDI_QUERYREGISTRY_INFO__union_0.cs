@@ -12,7 +12,7 @@ namespace DirectN
         public byte[] __bits;
         public uint OutputDword { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
         public ulong OutputQword { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
-        public string OutputString { get => InteropRuntime.GetString(__bits, 0, 8); set => InteropRuntime.SetString(value, __bits, 0, 8); }
+        public string OutputString { get => InteropRuntime.GetString(__bits, 0, 8, UnmanagedType.LPWStr); set => InteropRuntime.SetString(value, __bits, 0, 8, UnmanagedType.LPWStr); }
         public byte[] OutputBinary { get => InteropRuntime.GetArray<byte>(__bits, 0, 8); set => InteropRuntime.SetArray<byte>(value, __bits, 0, 8); }
     }
 }

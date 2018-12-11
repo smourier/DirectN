@@ -5,9 +5,6 @@ using D2D1_TAG = System.UInt64;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Enables creation and drawing of geometry realization objects.
-    /// </summary>
     [Guid("d37f57e4-6908-459f-a199-e72f24f79987"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DeviceContext1 : ID2D1DeviceContext
     {

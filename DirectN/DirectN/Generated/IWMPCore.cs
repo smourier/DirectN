@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("d84cca99-cce2-11d2-9ecc-0000f8085981"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("d84cca99-cce2-11d2-9ecc-0000f8085981"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPCore
     {
         [PreserveSig]
@@ -62,7 +62,7 @@ namespace DirectN
         HRESULT get_closedCaption(/* [retval][out] */ out IWMPClosedCaption ppClosedCaption);
         
         [PreserveSig]
-        HRESULT get_isOnline(/* [retval][out] */ out VARIANT_BOOL pfOnline);
+        HRESULT get_isOnline(/* [retval][out] */ out bool pfOnline);
         
         [PreserveSig]
         HRESULT get_error(/* [retval][out] */ out IWMPError ppError);

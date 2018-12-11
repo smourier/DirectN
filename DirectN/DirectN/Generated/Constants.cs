@@ -325,6 +325,9 @@
         public const int DXGK_MAX_PAGE_TABLE_LEVEL_COUNT = 6;
         public const int DXGK_MIN_PAGE_TABLE_LEVEL_COUNT = 2;
         
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\dmerror.h
+        public const int DMUS_ERRBASE = 4096;
+        
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgi.h
         public const int DXGI_ENUM_MODES_INTERLACED = 1;
         public const int DXGI_ENUM_MODES_SCALING = 2;
@@ -1332,8 +1335,8 @@
         public const int ThNextProcessor = 328;
         public const int ThNpxState = 133;
         public const int ThPreviousMode = 346;
-        public const int ThProcess = 336;
         public const int thProcess = 336;
+        public const int ThProcess = 336;
         public const int ThreadEnvironmentBlockLength = 4096;
         public const int THREAD_FLAGS_ACCOUNTING_ANY = 62;
         public const int THREAD_FLAGS_ACCOUNTING_CSWITCH = 54;
@@ -4120,6 +4123,32 @@
         public const int WMAUDIO_MAX_CHANNELS = 2;
         public const int _INC_MMREG = 158;
         
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\amva.h
+        public const int AMVA_QUERYRENDERSTATUSF_READ = 1;
+        public const int AMVA_TYPEINDEX_OUTPUTFRAME = -1;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\amvideo.h
+        public const int AMDDS_ALL = 255;
+        public const int AMDDS_DCIPS = 1;
+        public const int AMDDS_NONE = 0;
+        public const int AMDDS_PS = 2;
+        public const int AMDDS_RGBFLP = 64;
+        public const int AMDDS_RGBOFF = 16;
+        public const int AMDDS_RGBOVR = 4;
+        public const int AMDDS_YUVFLP = 128;
+        public const int AMDDS_YUVOFF = 32;
+        public const int AMDDS_YUVOVR = 8;
+        public const int iBLUE = 2;
+        public const int iEGA_COLORS = 16;
+        public const int iGREEN = 1;
+        public const int iMASK_COLORS = 3;
+        public const int iMAXBITS = 8;
+        public const int iPALETTE = 8;
+        public const int iPALETTE_COLORS = 256;
+        public const int iRED = 0;
+        public const int iTRUECOLOR = 16;
+        public const int MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
+        
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\AudioClient.h
         public const int AMBISONICS_PARAM_VERSION_1 = 1;
         public const int AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ = 1;
@@ -4131,7 +4160,7 @@
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\audiomediatype.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
@@ -4157,7 +4186,7 @@
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d2d1effectauthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\D2DErr.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\D2DErr.h
         public const int FACILITY_D2D = 2201;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d.h
@@ -5744,6 +5773,73 @@
         public const int D3DWRAP_U = 1;
         public const int D3DWRAP_V = 2;
         
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\ddkernel.h
+        public const int DDIRQ_DISPLAY_VSYNC = 1;
+        public const int DDIRQ_RESERVED1 = 2;
+        public const int DDIRQ_VPORT0_LINE = 8;
+        public const int DDIRQ_VPORT0_VSYNC = 4;
+        public const int DDIRQ_VPORT1_LINE = 32;
+        public const int DDIRQ_VPORT1_VSYNC = 16;
+        public const int DDIRQ_VPORT2_LINE = 128;
+        public const int DDIRQ_VPORT2_VSYNC = 64;
+        public const int DDIRQ_VPORT3_LINE = 512;
+        public const int DDIRQ_VPORT3_VSYNC = 256;
+        public const int DDIRQ_VPORT4_LINE = 2048;
+        public const int DDIRQ_VPORT4_VSYNC = 1024;
+        public const int DDIRQ_VPORT5_LINE = 8192;
+        public const int DDIRQ_VPORT5_VSYNC = 4096;
+        public const int DDIRQ_VPORT6_LINE = 32768;
+        public const int DDIRQ_VPORT6_VSYNC = 16384;
+        public const int DDIRQ_VPORT7_LINE = 131072;
+        public const int DDIRQ_VPORT7_VSYNC = 65536;
+        public const int DDIRQ_VPORT8_LINE = 524288;
+        public const int DDIRQ_VPORT8_VSYNC = 262144;
+        public const int DDIRQ_VPORT9_LINE = 131072;
+        public const int DDIRQ_VPORT9_VSYNC = 65536;
+        public const int DDKERNELCAPS_AUTOFLIP = 2;
+        public const int DDKERNELCAPS_CAPTURE_INVERTED = 512;
+        public const int DDKERNELCAPS_CAPTURE_NONLOCALVIDMEM = 128;
+        public const int DDKERNELCAPS_CAPTURE_SYSMEM = 64;
+        public const int DDKERNELCAPS_FIELDPOLARITY = 256;
+        public const int DDKERNELCAPS_FLIPOVERLAY = 32;
+        public const int DDKERNELCAPS_FLIPVIDEOPORT = 16;
+        public const int DDKERNELCAPS_LOCK = 8;
+        public const int DDKERNELCAPS_SETSTATE = 4;
+        public const int DDKERNELCAPS_SKIPFIELDS = 1;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\ddkmapi.h
+        public const int DDADDBUFF_INVERT = 4;
+        public const int DDADDBUFF_NONLOCALVIDMEM = 2;
+        public const int DDADDBUFF_SYSTEMMEMORY = 1;
+        public const int DDEVENT_DISPLAY_VSYNC = 1;
+        public const int DDEVENT_POSTDOSBOX = 64;
+        public const int DDEVENT_POSTRESCHANGE = 16;
+        public const int DDEVENT_PREDOSBOX = 32;
+        public const int DDEVENT_PRERESCHANGE = 8;
+        public const int DDEVENT_VP_LINE = 4;
+        public const int DDEVENT_VP_VSYNC = 2;
+        public const int DDNOTIFY_CLOSECAPTURE = 1024;
+        public const int DDNOTIFY_CLOSEDIRECTDRAW = 128;
+        public const int DDNOTIFY_CLOSESURFACE = 256;
+        public const int DDNOTIFY_CLOSEVIDEOPORT = 512;
+        public const int DDNOTIFY_DISPLAY_VSYNC = 1;
+        public const int DDNOTIFY_POSTDOSBOX = 64;
+        public const int DDNOTIFY_POSTRESCHANGE = 16;
+        public const int DDNOTIFY_PREDOSBOX = 32;
+        public const int DDNOTIFY_PRERESCHANGE = 8;
+        public const int DDNOTIFY_VP_LINE = 4;
+        public const int DDNOTIFY_VP_VSYNC = 2;
+        public const int DDOPENCAPTURE_VBI = 2;
+        public const int DDOPENCAPTURE_VIDEO = 1;
+        public const int DDSTATE_BOB = 1;
+        public const int DDSTATE_EXPLICITLY_SET = 4;
+        public const int DDSTATE_SKIPEVENFIELDS = 16;
+        public const int DDSTATE_SOFTWARE_AUTOFLIP = 8;
+        public const int DDSTATE_WEAVE = 2;
+        public const int DD_FIRST_DXAPI = 1280;
+        public const int DXAPI_MAJORVERSION = 1;
+        public const int DXAPI_MINORVERSION = 0;
+        
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\ddraw.h
         public const int CO_E_NOTINITIALIZED = -2147221008;
         public const int DDBD_1 = 16384;
@@ -6471,6 +6567,12 @@
         public const int DDHAL_PRIVATECAP_RESERVED1 = 4;
         public const int DDHAL_VPORT32_GETAUTOFLIPSURF = 64;
         
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\dmemmgr.h
+        public const int SURFACEALIGN_DISCARDABLE = 1;
+        public const int VMEMHEAP_ALIGNMENT = 4;
+        public const int VMEMHEAP_LINEAR = 1;
+        public const int VMEMHEAP_RECTANGULAR = 2;
+        
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dshow.h
         public const int OAFALSE = 0;
         
@@ -6586,6 +6688,8 @@
         public const int DDVPD_ID = 4;
         public const int DDVPD_PREFERREDAUTOFLIP = 128;
         public const int DDVPD_WIDTH = 1;
+        public const int DDVPFLIP_VBI = 2;
+        public const int DDVPFLIP_VIDEO = 1;
         public const int DDVPFORMAT_VBI = 2;
         public const int DDVPFORMAT_VIDEO = 1;
         public const int DDVPFX_CROPTOPDATA = 1;
@@ -6658,27 +6762,6 @@
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dxmini.h
         public const int DDIRQ_BUSMASTER = 2;
-        public const int DDIRQ_DISPLAY_VSYNC = 1;
-        public const int DDIRQ_VPORT0_LINE = 8;
-        public const int DDIRQ_VPORT0_VSYNC = 4;
-        public const int DDIRQ_VPORT1_LINE = 32;
-        public const int DDIRQ_VPORT1_VSYNC = 16;
-        public const int DDIRQ_VPORT2_LINE = 128;
-        public const int DDIRQ_VPORT2_VSYNC = 64;
-        public const int DDIRQ_VPORT3_LINE = 512;
-        public const int DDIRQ_VPORT3_VSYNC = 256;
-        public const int DDIRQ_VPORT4_LINE = 2048;
-        public const int DDIRQ_VPORT4_VSYNC = 1024;
-        public const int DDIRQ_VPORT5_LINE = 8192;
-        public const int DDIRQ_VPORT5_VSYNC = 4096;
-        public const int DDIRQ_VPORT6_LINE = 32768;
-        public const int DDIRQ_VPORT6_VSYNC = 16384;
-        public const int DDIRQ_VPORT7_LINE = 131072;
-        public const int DDIRQ_VPORT7_VSYNC = 65536;
-        public const int DDIRQ_VPORT8_LINE = 524288;
-        public const int DDIRQ_VPORT8_VSYNC = 262144;
-        public const int DDIRQ_VPORT9_LINE = 131072;
-        public const int DDIRQ_VPORT9_VSYNC = 65536;
         public const int DDSKIP_ENABLENEXT = 2;
         public const int DDSKIP_SKIPNEXT = 1;
         public const int DDTRANSFER_CANCEL = 128;
@@ -6686,8 +6769,6 @@
         public const int DDTRANSFER_INVERT = 4;
         public const int DDTRANSFER_NONLOCALVIDMEM = 2;
         public const int DDTRANSFER_SYSTEMMEMORY = 1;
-        public const int DDVPFLIP_VBI = 2;
-        public const int DDVPFLIP_VIDEO = 1;
         public const int DXAPI_HALVERSION = 1;
         public const int DXERR_GENERIC = -2147467259;
         public const int DXERR_OUTOFCAPS = -2005532312;
@@ -7220,6 +7301,9 @@
         public const int MULTICLASSINFO_GETNUMRESERVEDDISPIDS = 2;
         public const int MULTICLASSINFO_GETTYPEINFO = 1;
         public const int TIFLAGS_EXTENDDISPATCHONLY = 1;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\SpatialAudioMetadata.h
+        public const int SPATIAL_AUDIO_STANDARD_COMMANDS_START = 200;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\strmif.h
         public const int AM_GBF_NODDSURFACELOCK = 8;

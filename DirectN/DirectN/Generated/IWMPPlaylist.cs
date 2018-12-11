@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("d5f0f4f1-130c-11d3-b14e-00c04f79faa6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("d5f0f4f1-130c-11d3-b14e-00c04f79faa6"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPPlaylist
     {
         [PreserveSig]
@@ -32,7 +32,7 @@ namespace DirectN
         HRESULT setItemInfo(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrName, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrValue);
         
         [PreserveSig]
-        HRESULT get_isIdentical(/* [in] */ IWMPPlaylist pIWMPPlaylist, /* [retval][out] */ out VARIANT_BOOL pvbool);
+        HRESULT get_isIdentical(/* [in] */ IWMPPlaylist pIWMPPlaylist, /* [retval][out] */ out bool pvbool);
         
         [PreserveSig]
         HRESULT clear();

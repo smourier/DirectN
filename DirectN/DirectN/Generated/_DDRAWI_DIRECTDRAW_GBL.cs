@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawi.h(1754,9)
 using System;
 using System.Runtime.InteropServices;
-using LPDDKERNELCAPS = DirectN._DDKERNELCAPS;
 using LPDDRAWI_DDMOTIONCOMP_INT = DirectN._DDRAWI_DDMOTIONCOMP_INT;
 using LPDDRAWI_DDRAWCLIPPER_INT = DirectN._DDRAWI_DDRAWCLIPPER_INT;
 using LPDDRAWI_DDRAWPALETTE_INT = DirectN._DDRAWI_DDRAWPALETTE_INT;

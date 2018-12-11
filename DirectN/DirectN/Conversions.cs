@@ -1034,9 +1034,6 @@ namespace DirectN
 
         public static object ToEnum(object obj, Enum defaultValue)
         {
-            if (defaultValue == null)
-                throw new ArgumentNullException(nameof(defaultValue));
-
             if (obj == null)
                 return defaultValue;
 
@@ -1060,9 +1057,6 @@ namespace DirectN
 
         public static Enum ToEnum(string text, Enum defaultValue)
         {
-            if (defaultValue == null)
-                throw new ArgumentNullException(nameof(defaultValue));
-
             if (EnumTryParse(defaultValue.GetType(), text, out object value))
                 return (Enum)value;
 

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("40897764-ceab-47be-ad4a-8e28537f9bbf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("40897764-ceab-47be-ad4a-8e28537f9bbf"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPPlayerApplication
     {
         [PreserveSig]
@@ -14,9 +14,9 @@ namespace DirectN
         HRESULT switchToControl();
         
         [PreserveSig]
-        HRESULT get_playerDocked(/* [retval][out] */ out VARIANT_BOOL pbPlayerDocked);
+        HRESULT get_playerDocked(/* [retval][out] */ out bool pbPlayerDocked);
         
         [PreserveSig]
-        HRESULT get_hasDisplay(/* [retval][out] */ out VARIANT_BOOL pbHasDisplay);
+        HRESULT get_hasDisplay(/* [retval][out] */ out bool pbHasDisplay);
     }
 }

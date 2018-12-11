@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT GetApplicationName(/* [out] */ out IntPtr pbstrName);
         
         [PreserveSig]
-        HRESULT GetScriptableObject(/* [out] */ out IntPtr pbstrName, /* [out] */ out IntPtr ppDispatch);
+        HRESULT GetScriptableObject(/* [out] */ out IntPtr pbstrName, /* [out] */ [MarshalAs(UnmanagedType.IUnknown)] out object ppDispatch);
         
         [PreserveSig]
         HRESULT GetCustomUIMode(/* [out] */ out IntPtr pbstrFile);

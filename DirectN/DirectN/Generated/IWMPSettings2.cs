@@ -9,13 +9,13 @@ namespace DirectN
     {
         // IWMPSettings
         [PreserveSig]
-        new HRESULT get_isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out VARIANT_BOOL pIsAvailable);
+        new HRESULT get_isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out bool pIsAvailable);
         
         [PreserveSig]
-        new HRESULT get_autoStart(/* [retval][out] */ out VARIANT_BOOL pfAutoStart);
+        new HRESULT get_autoStart(/* [retval][out] */ out bool pfAutoStart);
         
         [PreserveSig]
-        new HRESULT put_autoStart(/* [in] */ short fAutoStart);
+        new HRESULT put_autoStart(/* [in] */ bool fAutoStart);
         
         [PreserveSig]
         new HRESULT get_baseURL(/* [retval][out] */ out IntPtr pbstrBaseURL);
@@ -30,16 +30,16 @@ namespace DirectN
         new HRESULT put_defaultFrame(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrDefaultFrame);
         
         [PreserveSig]
-        new HRESULT get_invokeURLs(/* [retval][out] */ out VARIANT_BOOL pfInvokeURLs);
+        new HRESULT get_invokeURLs(/* [retval][out] */ out bool pfInvokeURLs);
         
         [PreserveSig]
-        new HRESULT put_invokeURLs(/* [in] */ short fInvokeURLs);
+        new HRESULT put_invokeURLs(/* [in] */ bool fInvokeURLs);
         
         [PreserveSig]
-        new HRESULT get_mute(/* [retval][out] */ out VARIANT_BOOL pfMute);
+        new HRESULT get_mute(/* [retval][out] */ out bool pfMute);
         
         [PreserveSig]
-        new HRESULT put_mute(/* [in] */ short fMute);
+        new HRESULT put_mute(/* [in] */ bool fMute);
         
         [PreserveSig]
         new HRESULT get_playCount(/* [retval][out] */ out long plCount);
@@ -66,16 +66,16 @@ namespace DirectN
         new HRESULT put_volume(/* [in] */ int lVolume);
         
         [PreserveSig]
-        new HRESULT getMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode, /* [retval][out] */ out VARIANT_BOOL pvarfMode);
+        new HRESULT getMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode, /* [retval][out] */ out bool pvarfMode);
         
         [PreserveSig]
-        new HRESULT setMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode, /* [in] */ short varfMode);
+        new HRESULT setMode(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMode, /* [in] */ bool varfMode);
         
         [PreserveSig]
-        new HRESULT get_enableErrorDialogs(/* [retval][out] */ out VARIANT_BOOL pfEnableErrorDialogs);
+        new HRESULT get_enableErrorDialogs(/* [retval][out] */ out bool pfEnableErrorDialogs);
         
         [PreserveSig]
-        new HRESULT put_enableErrorDialogs(/* [in] */ short fEnableErrorDialogs);
+        new HRESULT put_enableErrorDialogs(/* [in] */ bool fEnableErrorDialogs);
         
         // IWMPSettings2
         [PreserveSig]
@@ -85,6 +85,6 @@ namespace DirectN
         HRESULT get_mediaAccessRights(/* [retval][out] */ out IntPtr pbstrRights);
         
         [PreserveSig]
-        HRESULT requestMediaAccessRights(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrDesiredAccess, /* [retval][out] */ out VARIANT_BOOL pvbAccepted);
+        HRESULT requestMediaAccessRights(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrDesiredAccess, /* [retval][out] */ out bool pvbAccepted);
     }
 }

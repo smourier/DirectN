@@ -37,6 +37,6 @@ namespace DirectN
         HRESULT GetType(/* [annotation][out] _Out_ */ out AudioObjectType pType);
         
         [PreserveSig]
-        HRESULT GetMetadataItems(/* [annotation][out] _Outptr_result_nullonfailure_ */ out IntPtr ppMetadataItems);
+        HRESULT GetMetadataItems(/* [annotation][out] _Outptr_result_nullonfailure_ */ out ISpatialAudioMetadataItems ppMetadataItems);
     }
 }

@@ -12,7 +12,5 @@ namespace DirectN
         new HRESULT ProcessRecord(uint recordType, /* optional(void) */ IntPtr recordData, uint recordDataSize);
         
         // ID2D1GdiMetafileSink1
-        [PreserveSig]
-        HRESULT ProcessRecord(uint recordType, /* optional(void) */ IntPtr recordData, uint recordDataSize, uint flags);
     }
 }

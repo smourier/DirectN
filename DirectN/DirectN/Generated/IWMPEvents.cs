@@ -29,7 +29,7 @@ namespace DirectN
         void Disconnect(/* [in] */ int Result);
         
         [PreserveSig]
-        void Buffering(/* [in] */ short Start);
+        void Buffering(/* [in] */ bool Start);
         
         [PreserveSig]
         void Error();
@@ -53,7 +53,7 @@ namespace DirectN
         void CdromMediaChange(/* [in] */ int CdromNum);
         
         [PreserveSig]
-        void PlaylistChange(/* [in] */ ref IDispatch Playlist, /* [in] */ WMPPlaylistChangeEventType change);
+        void PlaylistChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object Playlist, /* [in] */ WMPPlaylistChangeEventType change);
         
         [PreserveSig]
         void CurrentPlaylistChange(/* [in] */ WMPPlaylistChangeEventType change);
@@ -62,13 +62,13 @@ namespace DirectN
         void CurrentPlaylistItemAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName);
         
         [PreserveSig]
-        void MediaChange(/* [in] */ ref IDispatch Item);
+        void MediaChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object Item);
         
         [PreserveSig]
         void CurrentMediaItemAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName);
         
         [PreserveSig]
-        void CurrentItemChange(/* [in] */ ref IDispatch pdispMedia);
+        void CurrentItemChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pdispMedia);
         
         [PreserveSig]
         void MediaCollectionChange();
@@ -92,16 +92,16 @@ namespace DirectN
         void PlaylistCollectionPlaylistRemoved(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrPlaylistName);
         
         [PreserveSig]
-        void PlaylistCollectionPlaylistSetAsDeleted(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrPlaylistName, /* [in] */ short varfIsDeleted);
+        void PlaylistCollectionPlaylistSetAsDeleted(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrPlaylistName, /* [in] */ bool varfIsDeleted);
         
         [PreserveSig]
-        void ModeChange(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string ModeName, /* [in] */ short NewValue);
+        void ModeChange(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string ModeName, /* [in] */ bool NewValue);
         
         [PreserveSig]
-        void MediaError(/* [in] */ ref IDispatch pMediaObject);
+        void MediaError(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pMediaObject);
         
         [PreserveSig]
-        void OpenPlaylistSwitch(/* [in] */ ref IDispatch pItem);
+        void OpenPlaylistSwitch(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pItem);
         
         [PreserveSig]
         void DomainChange(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string strDomain);

@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IWMPControls
         [PreserveSig]
-        new HRESULT get_isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out VARIANT_BOOL pIsAvailable);
+        new HRESULT get_isAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItem, /* [retval][out] */ out bool pIsAvailable);
         
         [PreserveSig]
         new HRESULT play();

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("8363bc22-b4b4-4b19-989d-1cd765749dd1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("8363bc22-b4b4-4b19-989d-1cd765749dd1"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPMediaCollection
     {
         [PreserveSig]
@@ -29,7 +29,7 @@ namespace DirectN
         HRESULT getByAttribute(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrAttribute, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrValue, /* [retval][out] */ out IWMPPlaylist ppMediaItems);
         
         [PreserveSig]
-        HRESULT remove(/* [in] */ IWMPMedia pItem, /* [in] */ short varfDeleteFile);
+        HRESULT remove(/* [in] */ IWMPMedia pItem, /* [in] */ bool varfDeleteFile);
         
         [PreserveSig]
         HRESULT getAttributeStringCollection(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrAttribute, /* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrMediaType, /* [retval][out] */ out IWMPStringCollection ppStringCollection);
@@ -38,9 +38,9 @@ namespace DirectN
         HRESULT getMediaAtom(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out long plAtom);
         
         [PreserveSig]
-        HRESULT setDeleted(/* [in] */ IWMPMedia pItem, /* [in] */ short varfIsDeleted);
+        HRESULT setDeleted(/* [in] */ IWMPMedia pItem, /* [in] */ bool varfIsDeleted);
         
         [PreserveSig]
-        HRESULT isDeleted(/* [in] */ IWMPMedia pItem, /* [retval][out] */ out VARIANT_BOOL pvarfIsDeleted);
+        HRESULT isDeleted(/* [in] */ IWMPMedia pItem, /* [retval][out] */ out bool pvarfIsDeleted);
     }
 }

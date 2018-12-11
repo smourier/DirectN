@@ -30,7 +30,7 @@ namespace DirectN
         new void Disconnect(/* [in] */ int Result);
         
         [PreserveSig]
-        new void Buffering(/* [in] */ short Start);
+        new void Buffering(/* [in] */ bool Start);
         
         [PreserveSig]
         new void Error();
@@ -54,7 +54,7 @@ namespace DirectN
         new void CdromMediaChange(/* [in] */ int CdromNum);
         
         [PreserveSig]
-        new void PlaylistChange(/* [in] */ ref IDispatch Playlist, /* [in] */ WMPPlaylistChangeEventType change);
+        new void PlaylistChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object Playlist, /* [in] */ WMPPlaylistChangeEventType change);
         
         [PreserveSig]
         new void CurrentPlaylistChange(/* [in] */ WMPPlaylistChangeEventType change);
@@ -63,13 +63,13 @@ namespace DirectN
         new void CurrentPlaylistItemAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName);
         
         [PreserveSig]
-        new void MediaChange(/* [in] */ ref IDispatch Item);
+        new void MediaChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object Item);
         
         [PreserveSig]
         new void CurrentMediaItemAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName);
         
         [PreserveSig]
-        new void CurrentItemChange(/* [in] */ ref IDispatch pdispMedia);
+        new void CurrentItemChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pdispMedia);
         
         [PreserveSig]
         new void MediaCollectionChange();
@@ -93,16 +93,16 @@ namespace DirectN
         new void PlaylistCollectionPlaylistRemoved(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrPlaylistName);
         
         [PreserveSig]
-        new void PlaylistCollectionPlaylistSetAsDeleted(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrPlaylistName, /* [in] */ short varfIsDeleted);
+        new void PlaylistCollectionPlaylistSetAsDeleted(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrPlaylistName, /* [in] */ bool varfIsDeleted);
         
         [PreserveSig]
-        new void ModeChange(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string ModeName, /* [in] */ short NewValue);
+        new void ModeChange(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string ModeName, /* [in] */ bool NewValue);
         
         [PreserveSig]
-        new void MediaError(/* [in] */ ref IDispatch pMediaObject);
+        new void MediaError(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pMediaObject);
         
         [PreserveSig]
-        new void OpenPlaylistSwitch(/* [in] */ ref IDispatch pItem);
+        new void OpenPlaylistSwitch(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pItem);
         
         [PreserveSig]
         new void DomainChange(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string strDomain);
@@ -157,7 +157,7 @@ namespace DirectN
         new void DeviceSyncStateChange(/* [in] */ IWMPSyncDevice pDevice, /* [in] */ WMPSyncState NewState);
         
         [PreserveSig]
-        new void DeviceSyncError(/* [in] */ IWMPSyncDevice pDevice, /* [in] */ ref IDispatch pMedia);
+        new void DeviceSyncError(/* [in] */ IWMPSyncDevice pDevice, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pMedia);
         
         [PreserveSig]
         new void CreatePartnershipComplete(/* [in] */ IWMPSyncDevice pDevice, /* [in] */ HRESULT hrResult);
@@ -167,13 +167,13 @@ namespace DirectN
         void CdromRipStateChange(/* [in] */ IWMPCdromRip pCdromRip, /* [in] */ WMPRipState wmprs);
         
         [PreserveSig]
-        void CdromRipMediaError(/* [in] */ IWMPCdromRip pCdromRip, /* [in] */ ref IDispatch pMedia);
+        void CdromRipMediaError(/* [in] */ IWMPCdromRip pCdromRip, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pMedia);
         
         [PreserveSig]
         void CdromBurnStateChange(/* [in] */ IWMPCdromBurn pCdromBurn, /* [in] */ WMPBurnState wmpbs);
         
         [PreserveSig]
-        void CdromBurnMediaError(/* [in] */ IWMPCdromBurn pCdromBurn, /* [in] */ ref IDispatch pMedia);
+        void CdromBurnMediaError(/* [in] */ IWMPCdromBurn pCdromBurn, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pMedia);
         
         [PreserveSig]
         void CdromBurnError(/* [in] */ IWMPCdromBurn pCdromBurn, /* [in] */ HRESULT hrError);
@@ -188,12 +188,12 @@ namespace DirectN
         void FolderScanStateChange(/* [in] */ WMPFolderScanState wmpfss);
         
         [PreserveSig]
-        void StringCollectionChange(/* [in] */ ref IDispatch pdispStringCollection, /* [in] */ WMPStringCollectionChangeEventType change, /* [in] */ int lCollectionIndex);
+        void StringCollectionChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pdispStringCollection, /* [in] */ WMPStringCollectionChangeEventType change, /* [in] */ int lCollectionIndex);
         
         [PreserveSig]
-        void MediaCollectionMediaAdded(/* [in] */ ref IDispatch pdispMedia);
+        void MediaCollectionMediaAdded(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pdispMedia);
         
         [PreserveSig]
-        void MediaCollectionMediaRemoved(/* [in] */ ref IDispatch pdispMedia);
+        void MediaCollectionMediaRemoved(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pdispMedia);
     }
 }

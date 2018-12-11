@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("5c29bbe0-f87d-4c45-aa28-a70f0230ffa9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("5c29bbe0-f87d-4c45-aa28-a70f0230ffa9"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPMetadataPicture
     {
         [PreserveSig]

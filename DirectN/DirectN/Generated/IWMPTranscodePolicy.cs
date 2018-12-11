@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IWMPTranscodePolicy
     {
         [PreserveSig]
-        HRESULT allowTranscode(/* [out] */ out VARIANT_BOOL pvbAllow);
+        HRESULT allowTranscode(/* [out] */ out bool pvbAllow);
     }
 }

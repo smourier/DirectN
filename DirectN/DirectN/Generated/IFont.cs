@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(2907,5)
 using System;
 using System.Runtime.InteropServices;
-using CY = DirectN.tagCY;
 
 namespace DirectN
 {
@@ -15,10 +14,10 @@ namespace DirectN
         HRESULT put_Name(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.BStr)] string name);
         
         [PreserveSig]
-        HRESULT get_Size(/* [out] __RPC__out */ out CY pSize);
+        HRESULT get_Size(/* [out] __RPC__out */ out int pSize);
         
         [PreserveSig]
-        HRESULT put_Size(/* [in] */ CY size);
+        HRESULT put_Size(/* [in] */ int size);
         
         [PreserveSig]
         HRESULT get_Bold(/* [out] __RPC__out */ out bool pBold);

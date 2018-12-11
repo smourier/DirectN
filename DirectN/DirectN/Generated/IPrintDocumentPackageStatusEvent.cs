@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("ed90c8ad-5c34-4d05-a1ec-0e8a9b3ad7af"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("ed90c8ad-5c34-4d05-a1ec-0e8a9b3ad7af"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IPrintDocumentPackageStatusEvent
     {
         [PreserveSig]

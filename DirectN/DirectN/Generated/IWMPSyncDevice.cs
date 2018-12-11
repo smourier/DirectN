@@ -23,7 +23,7 @@ namespace DirectN
         HRESULT get_partnershipIndex(/* [retval][out] */ out long plIndex);
         
         [PreserveSig]
-        HRESULT get_connected(/* [retval][out] */ out VARIANT_BOOL pvbConnected);
+        HRESULT get_connected(/* [retval][out] */ out bool pvbConnected);
         
         [PreserveSig]
         HRESULT get_status(/* [retval][out] */ out WMPDeviceStatus pwmpds);
@@ -38,7 +38,7 @@ namespace DirectN
         HRESULT getItemInfo(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName, /* [retval][out] */ out IntPtr pbstrVal);
         
         [PreserveSig]
-        HRESULT createPartnership(/* [in] */ short vbShowUI);
+        HRESULT createPartnership(/* [in] */ bool vbShowUI);
         
         [PreserveSig]
         HRESULT deletePartnership();
@@ -53,6 +53,6 @@ namespace DirectN
         HRESULT showSettings();
         
         [PreserveSig]
-        HRESULT isIdentical(/* [in] */ IWMPSyncDevice pDevice, /* [retval][out] */ out VARIANT_BOOL pvbool);
+        HRESULT isIdentical(/* [in] */ IWMPSyncDevice pDevice, /* [retval][out] */ out bool pvbool);
     }
 }

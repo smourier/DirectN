@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Indicates support for features which are optional on D3D10 feature levels. This may be populated using CheckFeatureSupport.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS
     {

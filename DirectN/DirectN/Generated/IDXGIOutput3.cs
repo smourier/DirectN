@@ -68,7 +68,7 @@ namespace DirectN
         new HRESULT GetDisplaySurfaceData1(/* [annotation][in] _In_ */ IDXGIResource pDestination);
         
         [PreserveSig]
-        new HRESULT DuplicateOutput(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, /* [annotation][out] _COM_Outptr_ */ out IDXGIOutputDuplication ppOutputDuplication);
+        new HRESULT DuplicateOutput(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, /* [annotation][out] _COM_Outptr_ */ out IntPtr ppOutputDuplication);
         
         // IDXGIOutput2
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("10a13217-23a7-439b-b1c0-d847c79b7774"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("10a13217-23a7-439b-b1c0-d847c79b7774"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPPlaylistCollection
     {
         [PreserveSig]
@@ -20,10 +20,10 @@ namespace DirectN
         HRESULT remove(/* [in] */ IWMPPlaylist pItem);
         
         [PreserveSig]
-        HRESULT setDeleted(/* [in] */ IWMPPlaylist pItem, /* [in] */ short varfIsDeleted);
+        HRESULT setDeleted(/* [in] */ IWMPPlaylist pItem, /* [in] */ bool varfIsDeleted);
         
         [PreserveSig]
-        HRESULT isDeleted(/* [in] */ IWMPPlaylist pItem, /* [retval][out] */ out VARIANT_BOOL pvarfIsDeleted);
+        HRESULT isDeleted(/* [in] */ IWMPPlaylist pItem, /* [retval][out] */ out bool pvarfIsDeleted);
         
         [PreserveSig]
         HRESULT importPlaylist(/* [in] */ IWMPPlaylist pItem, /* [retval][out] */ out IWMPPlaylist ppImportedItem);
