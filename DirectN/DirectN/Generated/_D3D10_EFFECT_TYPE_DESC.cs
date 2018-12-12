@@ -9,8 +9,8 @@ namespace DirectN
     {
         [MarshalAs(UnmanagedType.LPStr)] 
         public string TypeName;
-        public int Class;
-        public int Type;
+        public _D3D_SHADER_VARIABLE_CLASS Class;
+        public _D3D_SHADER_VARIABLE_TYPE Type;
         public uint Elements;
         public uint Members;
         public uint Rows;

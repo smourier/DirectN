@@ -27,7 +27,7 @@ namespace DirectN
         
         // IWICPlanarFormatConverter
         [PreserveSig]
-        HRESULT Initialize(/* [size_is][in] __RPC__in_ecount_full(cPlanes) */ out IntPtr ppPlanes, uint cPlanes, /* [in] __RPC__in */ ref REFWICPixelFormatGUID dstFormat, /* [in] */ WICBitmapDitherType dither, /* [unique][in] __RPC__in_opt */ IWICPalette pIPalette, /* [in] */ double alphaThresholdPercent, /* [in] */ WICBitmapPaletteType paletteTranslate);
+        HRESULT Initialize(/* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IWICBitmapSource[] ppPlanes, uint cPlanes, /* [in] __RPC__in */ ref REFWICPixelFormatGUID dstFormat, /* [in] */ WICBitmapDitherType dither, /* [unique][in] __RPC__in_opt */ IWICPalette pIPalette, /* [in] */ double alphaThresholdPercent, /* [in] */ WICBitmapPaletteType paletteTranslate);
         
         [PreserveSig]
         HRESULT CanConvert(/* [size_is][in] __RPC__in_ecount_full(cSrcPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] WICPixelFormatGUID[] pSrcPixelFormats, uint cSrcPlanes, /* [in] __RPC__in */ ref REFWICPixelFormatGUID dstPixelFormat, /* [out] __RPC__out */ out bool pfCanConvert);

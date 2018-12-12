@@ -17,8 +17,8 @@ namespace DirectN
         public uint dwCommitedSize;
         public uint dwCoalesceCount;
         public _HEAPALIGNMENT Alignment;
-        public _DDSCAPSEX ddsCapsEx;
-        public _DDSCAPSEX ddsCapsExAlt;
+        public int ddsCapsEx;
+        public int ddsCapsExAlt;
         public long liPhysAGPBase;
         public IntPtr hdevAGP;
         public IntPtr pvPhysRsrv;

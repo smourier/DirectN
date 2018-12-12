@@ -22,6 +22,6 @@ namespace DirectN
         HRESULT GetLocalityFromKey(/* _In_reads_bytes_(fontFileReferenceKeySize) */ IntPtr fontFileReferenceKey, uint fontFileReferenceKeySize, /* _Out_ */ out DWRITE_LOCALITY locality);
         
         [PreserveSig]
-        HRESULT CreateFontFileReferenceFromUrl(ref IDWriteFactory factory, /* _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string baseUrl, /* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string fontFileUrl, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);
+        HRESULT CreateFontFileReferenceFromUrl(IDWriteFactory factory, /* _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string baseUrl, /* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string fontFileUrl, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);
     }
 }

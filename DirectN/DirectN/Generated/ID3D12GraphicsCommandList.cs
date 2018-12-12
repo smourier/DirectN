@@ -87,7 +87,7 @@ namespace DirectN
         void ExecuteBundle(/* _In_ */ ID3D12GraphicsCommandList pCommandList);
         
         [PreserveSig]
-        void SetDescriptorHeaps(/* _In_ */ uint NumDescriptorHeaps, /* _In_reads_(NumDescriptorHeaps) */ out IntPtr ppDescriptorHeaps);
+        void SetDescriptorHeaps(/* _In_ */ uint NumDescriptorHeaps, /* _In_reads_(NumDescriptorHeaps) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12DescriptorHeap[] ppDescriptorHeaps);
         
         [PreserveSig]
         void SetComputeRootSignature(/* _In_opt_ */ ID3D12RootSignature pRootSignature);

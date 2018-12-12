@@ -11,7 +11,7 @@ namespace DirectN
     {
         // IDirect3DViewport
         [PreserveSig]
-        new HRESULT Initialize(ref IDirect3D __unnamed_0);
+        new HRESULT Initialize(IDirect3D __unnamed_0);
         
         [PreserveSig]
         new HRESULT GetViewport(ref _D3DVIEWPORT __unnamed_0);
@@ -32,22 +32,22 @@ namespace DirectN
         new HRESULT GetBackground(ref uint __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
-        new HRESULT SetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0);
+        new HRESULT SetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0);
         
         [PreserveSig]
-        new HRESULT GetBackgroundDepth(ref LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
+        new HRESULT GetBackgroundDepth(out LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
         new HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
-        new HRESULT AddLight(ref IDirect3DLight __unnamed_0);
+        new HRESULT AddLight(IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        new HRESULT DeleteLight(ref IDirect3DLight __unnamed_0);
+        new HRESULT DeleteLight(IDirect3DLight __unnamed_0);
         
         [PreserveSig]
-        new HRESULT NextLight(ref IDirect3DLight __unnamed_0, ref IDirect3DLight __unnamed_1, uint __unnamed_2);
+        new HRESULT NextLight(IDirect3DLight __unnamed_0, out IDirect3DLight __unnamed_1, uint __unnamed_2);
         
         // IDirect3DViewport2
         [PreserveSig]
@@ -58,10 +58,10 @@ namespace DirectN
         
         // IDirect3DViewport3
         [PreserveSig]
-        HRESULT SetBackgroundDepth2(ref LPDIRECTDRAWSURFACE4 __unnamed_0);
+        HRESULT SetBackgroundDepth2(LPDIRECTDRAWSURFACE4 __unnamed_0);
         
         [PreserveSig]
-        HRESULT GetBackgroundDepth2(ref LPDIRECTDRAWSURFACE4 __unnamed_0, ref bool __unnamed_1);
+        HRESULT GetBackgroundDepth2(out LPDIRECTDRAWSURFACE4 __unnamed_0, ref bool __unnamed_1);
         
         [PreserveSig]
         HRESULT Clear2(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2, uint __unnamed_3, float __unnamed_4, uint __unnamed_5);

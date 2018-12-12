@@ -21,7 +21,7 @@ namespace DirectN
         HRESULT SetPixelFormat(/* [out][in] __RPC__inout */ ref WICPixelFormatGUID pPixelFormat);
         
         [PreserveSig]
-        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ out IntPtr ppIColorContext);
+        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContext);
         
         [PreserveSig]
         HRESULT SetPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);

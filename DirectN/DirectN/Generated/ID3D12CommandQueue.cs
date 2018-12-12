@@ -34,7 +34,7 @@ namespace DirectN
         void CopyTileMappings(/* _In_ */ ID3D12Resource pDstResource, /* _In_ */ ref D3D12_TILED_RESOURCE_COORDINATE pDstRegionStartCoordinate, /* _In_ */ ID3D12Resource pSrcResource, /* _In_ */ ref D3D12_TILED_RESOURCE_COORDINATE pSrcRegionStartCoordinate, /* _In_ */ ref D3D12_TILE_REGION_SIZE pRegionSize, D3D12_TILE_MAPPING_FLAGS Flags);
         
         [PreserveSig]
-        void ExecuteCommandLists(/* _In_ */ uint NumCommandLists, /* _In_reads_(NumCommandLists) */ out IntPtr ppCommandLists);
+        void ExecuteCommandLists(/* _In_ */ uint NumCommandLists, /* _In_reads_(NumCommandLists) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12CommandList[] ppCommandLists);
         
         [PreserveSig]
         void SetMarker(uint Metadata, /* optional(void) */ IntPtr pData, uint Size);
@@ -46,10 +46,10 @@ namespace DirectN
         void EndEvent();
         
         [PreserveSig]
-        HRESULT Signal(ref ID3D12Fence pFence, ulong Value);
+        HRESULT Signal(ID3D12Fence pFence, ulong Value);
         
         [PreserveSig]
-        HRESULT Wait(ref ID3D12Fence pFence, ulong Value);
+        HRESULT Wait(ID3D12Fence pFence, ulong Value);
         
         [PreserveSig]
         HRESULT GetTimestampFrequency(/* _Out_ */ out ulong pFrequency);

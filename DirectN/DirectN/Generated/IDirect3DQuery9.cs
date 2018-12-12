@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(155,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(198,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3DQuery9
     {
         [PreserveSig]
-        HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
+        HRESULT GetDevice(out IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         _D3DQUERYTYPE GetType();

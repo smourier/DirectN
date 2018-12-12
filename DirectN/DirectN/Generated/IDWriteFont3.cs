@@ -66,7 +66,7 @@ namespace DirectN
         HRESULT CreateFontFace(/* _COM_Outptr_ */ out IDWriteFontFace3 fontFace);
         
         [PreserveSig]
-        bool Equals(ref IDWriteFont font);
+        bool Equals(IDWriteFont font);
         
         [PreserveSig]
         HRESULT GetFontFaceReference(/* _COM_Outptr_ */ out IDWriteFontFaceReference fontFaceReference);

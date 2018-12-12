@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// A transform uses this interface to specify how to render a particular pass using pixel and vertex shaders.
+    /// </summary>
     [Guid("693ce632-7f2f-45de-93fe-18d88b37aa21"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DrawInfo : ID2D1RenderInfo
     {
@@ -34,6 +37,6 @@ namespace DirectN
         HRESULT SetPixelShader(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid shaderId, D2D1_PIXEL_OPTIONS pixelOptions);
         
         [PreserveSig]
-        HRESULT SetVertexProcessing(/* _In_opt_ */ ID2D1VertexBuffer vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, /* optional(D2D1_BLEND_DESCRIPTION) */ IntPtr blendDescription, /* optional(D2D1_VERTEX_RANGE) */ IntPtr vertexRange, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid vertexShader);
+        HRESULT SetVertexProcessing(/* _In_opt_ */ ID2D1VertexBuffer vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, /* optional(D2D1_BLEND_DESCRIPTION) */ IntPtr blendDescription, /* optional(D2D1_VERTEX_RANGE) */ IntPtr vertexRange, /* optional(GUID) */ IntPtr vertexShader);
     }
 }

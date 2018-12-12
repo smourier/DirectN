@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(1877,1)
 namespace DirectN
 {
+    /// <summary>
+    /// Typographic feature of text supplied by the font.  <remarks> Use DWRITE_MAKE_FONT_FEATURE_TAG() to create a custom one. <remarks>
+    /// </summary>
     public enum DWRITE_FONT_FEATURE_TAG
     {
         DWRITE_FONT_FEATURE_TAG_ALTERNATIVE_FRACTIONS = 1668441697,

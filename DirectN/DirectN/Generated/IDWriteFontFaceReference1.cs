@@ -15,7 +15,7 @@ namespace DirectN
         new HRESULT CreateFontFaceWithSimulations(DWRITE_FONT_SIMULATIONS fontFaceSimulationFlags, /* _COM_Outptr_ */ out IDWriteFontFace3 fontFace);
         
         [PreserveSig]
-        new bool Equals(ref IDWriteFontFaceReference fontFaceReference);
+        new bool Equals(IDWriteFontFaceReference fontFaceReference);
         
         [PreserveSig]
         new uint GetFontFaceIndex();

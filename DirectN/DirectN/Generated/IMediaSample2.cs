@@ -10,7 +10,7 @@ namespace DirectN
     {
         // IMediaSample
         [PreserveSig]
-        new HRESULT GetPointer(/* [annotation][out] _Outptr_result_buffer_to_(_Inexpressible_(this->GetSize()), _Inexpressible_(this->GetActualDataLength())) */ ref byte ppBuffer);
+        new HRESULT GetPointer(/* [annotation][out] _Outptr_result_buffer_to_(_Inexpressible_(this->GetSize()), _Inexpressible_(this->GetActualDataLength())) */ out byte ppBuffer);
         
         [PreserveSig]
         new void GetSize();

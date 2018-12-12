@@ -71,7 +71,7 @@ namespace DirectN
         HRESULT ProcessMessage(_MFT_MESSAGE_TYPE eMessage, IntPtr ulParam);
         
         [PreserveSig]
-        HRESULT ProcessInput(uint dwInputStreamID, ref IMFSample pSample, uint dwFlags);
+        HRESULT ProcessInput(uint dwInputStreamID, IMFSample pSample, uint dwFlags);
         
         [PreserveSig]
         HRESULT ProcessOutput(uint dwFlags, uint cOutputBufferCount, /* [size_is][out][in] */ [In, Out, MarshalAs(UnmanagedType.LPArray)] _MFT_OUTPUT_DATA_BUFFER[] pOutputSamples, /* [out] */ out uint pdwStatus);

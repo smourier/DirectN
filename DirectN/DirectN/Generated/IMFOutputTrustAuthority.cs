@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT GetAction(/* [annotation][out] _Out_ */ out _MFPOLICYMANAGER_ACTION pAction);
         
         [PreserveSig]
-        HRESULT SetPolicy(/* optional(IMFOutputPolicy) */ out IntPtr ppPolicy, /* [in] */ uint nPolicy, /* optional(BYTE) */ out IntPtr ppbTicket, /* [annotation][out] _Out_opt_ */ out uint pcbTicket);
+        HRESULT SetPolicy(/* [annotation][in] _In_reads_opt_(nPolicy) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IMFOutputPolicy[] ppPolicy, /* [in] */ uint nPolicy, /* optional(BYTE) */ out IntPtr ppbTicket, /* [annotation][out] _Out_opt_ */ out uint pcbTicket);
     }
 }

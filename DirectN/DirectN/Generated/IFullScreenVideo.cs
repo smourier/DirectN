@@ -32,7 +32,7 @@ namespace DirectN
         HRESULT SetClipFactor(int ClipFactor);
         
         [PreserveSig]
-        HRESULT SetMessageDrain(ref IntPtr hwnd);
+        HRESULT SetMessageDrain(IntPtr hwnd);
         
         [PreserveSig]
         HRESULT GetMessageDrain(/* THIS_ _Out_ */ out IntPtr hwnd);

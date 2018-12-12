@@ -18,10 +18,10 @@ namespace DirectN
         HRESULT SetOutputFileName(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpstrFile, /* [annotation][out] _Outptr_ */ out IBaseFilter ppf, /* [annotation][out] _Outptr_opt_ */ out IFileSinkFilter ppSink);
         
         [PreserveSig]
-        HRESULT FindInterface(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ IBaseFilter pf, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppint);
+        HRESULT FindInterface(/* optional(GUID) */ IntPtr pCategory, /* optional(GUID) */ IntPtr pType, /* [in] */ IBaseFilter pf, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppint);
         
         [PreserveSig]
-        HRESULT RenderStream(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ IBaseFilter pfCompressor, /* [in] */ IBaseFilter pfRenderer);
+        HRESULT RenderStream(/* optional(GUID) */ IntPtr pCategory, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ IBaseFilter pfCompressor, /* [in] */ IBaseFilter pfRenderer);
         
         [PreserveSig]
         HRESULT ControlStream(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ IBaseFilter pFilter, /* optional(REFERENCE_TIME) */ IntPtr pstart, /* optional(REFERENCE_TIME) */ IntPtr pstop, /* [in] */ ushort wStartCookie, /* [in] */ ushort wStopCookie);
@@ -33,6 +33,6 @@ namespace DirectN
         HRESULT CopyCaptureFile(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpwstrOld, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpwstrNew, /* [in] */ int fAllowEscAbort, /* [in] */ IAMCopyCaptureFileProgress pCallback);
         
         [PreserveSig]
-        HRESULT FindPin(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ _PinDirection pindir, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ bool fUnconnected, /* [in] */ int num, /* [annotation][out] _Out_ */ out IPin ppPin);
+        HRESULT FindPin(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ _PinDirection pindir, /* optional(GUID) */ IntPtr pCategory, /* optional(GUID) */ IntPtr pType, /* [in] */ bool fUnconnected, /* [in] */ int num, /* [annotation][out] _Out_ */ out IPin ppPin);
     }
 }

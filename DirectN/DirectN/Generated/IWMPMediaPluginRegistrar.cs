@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IWMPMediaPluginRegistrar
     {
         [PreserveSig]
-        HRESULT WMPRegisterPlayerPlugin(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszFriendlyName, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszDescription, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszUninstallString, uint dwPriority, Guid guidPluginType, Guid clsid, uint cMediaTypes, ref IntPtr pMediaTypes);
+        HRESULT WMPRegisterPlayerPlugin(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszFriendlyName, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszDescription, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszUninstallString, uint dwPriority, Guid guidPluginType, Guid clsid, uint cMediaTypes, IntPtr pMediaTypes);
         
         [PreserveSig]
         HRESULT WMPUnRegisterPlayerPlugin(Guid guidPluginType, Guid clsid);

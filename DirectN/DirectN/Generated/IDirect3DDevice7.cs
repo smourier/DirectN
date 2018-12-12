@@ -13,7 +13,7 @@ namespace DirectN
         HRESULT GetCaps(ref _D3DDeviceDesc7 __unnamed_0);
         
         [PreserveSig]
-        HRESULT EnumTextureFormats(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
+        HRESULT EnumTextureFormats(IntPtr __unnamed_0, IntPtr __unnamed_1);
         
         [PreserveSig]
         HRESULT BeginScene();
@@ -22,13 +22,13 @@ namespace DirectN
         HRESULT EndScene();
         
         [PreserveSig]
-        HRESULT GetDirect3D(ref IDirect3D7 __unnamed_0);
+        HRESULT GetDirect3D(out IDirect3D7 __unnamed_0);
         
         [PreserveSig]
-        HRESULT SetRenderTarget(ref LPDIRECTDRAWSURFACE7 __unnamed_0, uint __unnamed_1);
+        HRESULT SetRenderTarget(LPDIRECTDRAWSURFACE7 __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT GetRenderTarget(ref LPDIRECTDRAWSURFACE7 __unnamed_0);
+        HRESULT GetRenderTarget(out LPDIRECTDRAWSURFACE7 __unnamed_0);
         
         [PreserveSig]
         HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2, uint __unnamed_3, float __unnamed_4, uint __unnamed_5);
@@ -73,13 +73,13 @@ namespace DirectN
         HRESULT EndStateBlock(ref uint __unnamed_0);
         
         [PreserveSig]
-        HRESULT PreLoad(ref LPDIRECTDRAWSURFACE7 __unnamed_0);
+        HRESULT PreLoad(LPDIRECTDRAWSURFACE7 __unnamed_0);
         
         [PreserveSig]
-        HRESULT DrawPrimitive(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, ref IntPtr __unnamed_2, uint __unnamed_3, uint __unnamed_4);
+        HRESULT DrawPrimitive(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, IntPtr __unnamed_2, uint __unnamed_3, uint __unnamed_4);
         
         [PreserveSig]
-        HRESULT DrawIndexedPrimitive(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, ref IntPtr __unnamed_2, uint __unnamed_3, ref ushort __unnamed_4, uint __unnamed_5, uint __unnamed_6);
+        HRESULT DrawIndexedPrimitive(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, IntPtr __unnamed_2, uint __unnamed_3, ref ushort __unnamed_4, uint __unnamed_5, uint __unnamed_6);
         
         [PreserveSig]
         HRESULT SetClipStatus(ref _D3DCLIPSTATUS __unnamed_0);
@@ -94,19 +94,19 @@ namespace DirectN
         HRESULT DrawIndexedPrimitiveStrided(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, ref _D3DDRAWPRIMITIVESTRIDEDDATA __unnamed_2, uint __unnamed_3, ref ushort __unnamed_4, uint __unnamed_5, uint __unnamed_6);
         
         [PreserveSig]
-        HRESULT DrawPrimitiveVB(_D3DPRIMITIVETYPE __unnamed_0, ref LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2, uint __unnamed_3, uint __unnamed_4);
+        HRESULT DrawPrimitiveVB(_D3DPRIMITIVETYPE __unnamed_0, LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2, uint __unnamed_3, uint __unnamed_4);
         
         [PreserveSig]
-        HRESULT DrawIndexedPrimitiveVB(_D3DPRIMITIVETYPE __unnamed_0, ref LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2, uint __unnamed_3, ref ushort __unnamed_4, uint __unnamed_5, uint __unnamed_6);
+        HRESULT DrawIndexedPrimitiveVB(_D3DPRIMITIVETYPE __unnamed_0, LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2, uint __unnamed_3, ref ushort __unnamed_4, uint __unnamed_5, uint __unnamed_6);
         
         [PreserveSig]
         HRESULT ComputeSphereVisibility(ref _D3DVECTOR __unnamed_0, ref LPD3DVALUE __unnamed_1, uint __unnamed_2, uint __unnamed_3, ref uint __unnamed_4);
         
         [PreserveSig]
-        HRESULT GetTexture(uint __unnamed_0, ref LPDIRECTDRAWSURFACE7 __unnamed_1);
+        HRESULT GetTexture(uint __unnamed_0, out LPDIRECTDRAWSURFACE7 __unnamed_1);
         
         [PreserveSig]
-        HRESULT SetTexture(uint __unnamed_0, ref LPDIRECTDRAWSURFACE7 __unnamed_1);
+        HRESULT SetTexture(uint __unnamed_0, LPDIRECTDRAWSURFACE7 __unnamed_1);
         
         [PreserveSig]
         HRESULT GetTextureStageState(uint __unnamed_0, _D3DTEXTURESTAGESTATETYPE __unnamed_1, ref uint __unnamed_2);
@@ -130,7 +130,7 @@ namespace DirectN
         HRESULT CreateStateBlock(_D3DSTATEBLOCKTYPE __unnamed_0, ref uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT Load(ref LPDIRECTDRAWSURFACE7 __unnamed_0, ref tagPOINT __unnamed_1, ref LPDIRECTDRAWSURFACE7 __unnamed_2, ref tagRECT __unnamed_3, uint __unnamed_4);
+        HRESULT Load(LPDIRECTDRAWSURFACE7 __unnamed_0, ref tagPOINT __unnamed_1, LPDIRECTDRAWSURFACE7 __unnamed_2, ref tagRECT __unnamed_3, uint __unnamed_4);
         
         [PreserveSig]
         HRESULT LightEnable(uint __unnamed_0, bool __unnamed_1);
@@ -145,6 +145,6 @@ namespace DirectN
         HRESULT GetClipPlane(uint __unnamed_0, ref D3DVALUE __unnamed_1);
         
         [PreserveSig]
-        HRESULT GetInfo(uint __unnamed_0, ref IntPtr __unnamed_1, uint __unnamed_2);
+        HRESULT GetInfo(uint __unnamed_0, IntPtr __unnamed_1, uint __unnamed_2);
     }
 }

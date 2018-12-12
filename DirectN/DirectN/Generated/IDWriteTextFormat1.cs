@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The format of text used for text layout.  <remarks> This object may not be thread-safe and it may carry the state of text format change. </remarks>
-    /// </summary>
     [Guid("5f174b49-0d8b-4cfb-8bca-f1cce9d06c67"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextFormat1 : IDWriteTextFormat
     {
@@ -106,7 +103,7 @@ namespace DirectN
         DWRITE_OPTICAL_ALIGNMENT GetOpticalAlignment();
         
         [PreserveSig]
-        HRESULT SetFontFallback(ref IDWriteFontFallback fontFallback);
+        HRESULT SetFontFallback(IDWriteFontFallback fontFallback);
         
         [PreserveSig]
         HRESULT GetFontFallback(/* __out */ out IDWriteFontFallback fontFallback);

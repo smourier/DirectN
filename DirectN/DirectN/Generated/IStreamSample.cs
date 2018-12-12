@@ -10,7 +10,7 @@ namespace DirectN
     public partial interface IStreamSample
     {
         [PreserveSig]
-        HRESULT GetMediaStream(/* [in] */ IMediaStream ppMediaStream);
+        HRESULT GetMediaStream(/* [in] */ out IMediaStream ppMediaStream);
         
         [PreserveSig]
         HRESULT GetSampleTimes(/* [out] */ out STREAM_TIME pStartTime, /* [out] */ out STREAM_TIME pEndTime, /* [out] */ out STREAM_TIME pCurrentTime);

@@ -22,6 +22,6 @@ namespace DirectN
         
         // IOverlayNotify2
         [PreserveSig]
-        HRESULT OnDisplayChange(ref IntPtr hMonitor);
+        HRESULT OnDisplayChange(IntPtr hMonitor);
     }
 }

@@ -12,10 +12,10 @@ namespace DirectN
         HRESULT GetClipList(ref tagRECT __unnamed_0, ref _RGNDATA __unnamed_1, ref uint __unnamed_2);
         
         [PreserveSig]
-        HRESULT GetHWnd(ref IntPtr __unnamed_0);
+        HRESULT GetHWnd(IntPtr __unnamed_0);
         
         [PreserveSig]
-        HRESULT Initialize(ref LPDIRECTDRAW __unnamed_0, uint __unnamed_1);
+        HRESULT Initialize(LPDIRECTDRAW __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
         HRESULT IsClipListChanged(ref bool __unnamed_0);
@@ -24,6 +24,6 @@ namespace DirectN
         HRESULT SetClipList(ref _RGNDATA __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT SetHWnd(uint __unnamed_0, ref IntPtr __unnamed_1);
+        HRESULT SetHWnd(uint __unnamed_0, IntPtr __unnamed_1);
     }
 }

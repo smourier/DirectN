@@ -18,7 +18,7 @@ namespace DirectN
         new HRESULT CreateAuthenticatedChannel(/* [annotation] _In_ */ D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType, /* [annotation] _COM_Outptr_ */ out ID3D11AuthenticatedChannel ppAuthenticatedChannel);
         
         [PreserveSig]
-        new HRESULT CreateCryptoSession(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pKeyExchangeType, /* [annotation] _COM_Outptr_ */ out ID3D11CryptoSession ppCryptoSession);
+        new HRESULT CreateCryptoSession(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* optional(GUID) */ IntPtr pDecoderProfile, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pKeyExchangeType, /* [annotation] _COM_Outptr_ */ out ID3D11CryptoSession ppCryptoSession);
         
         [PreserveSig]
         new HRESULT CreateVideoDecoderOutputView(/* [annotation] _In_ */ ID3D11Resource pResource, /* [annotation] _In_ */ ref D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11VideoDecoderOutputView ppVDOVView);
@@ -48,10 +48,10 @@ namespace DirectN
         new HRESULT GetVideoDecoderConfig(/* [annotation] _In_ */ ref D3D11_VIDEO_DECODER_DESC pDesc, /* [annotation] _In_ */ uint Index, /* [annotation] _Out_ */ out D3D11_VIDEO_DECODER_CONFIG pConfig);
         
         [PreserveSig]
-        new HRESULT GetContentProtectionCaps(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _Out_ */ out D3D11_VIDEO_CONTENT_PROTECTION_CAPS pCaps);
+        new HRESULT GetContentProtectionCaps(/* optional(GUID) */ IntPtr pCryptoType, /* optional(GUID) */ IntPtr pDecoderProfile, /* [annotation] _Out_ */ out D3D11_VIDEO_CONTENT_PROTECTION_CAPS pCaps);
         
         [PreserveSig]
-        new HRESULT CheckCryptoKeyExchange(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _In_ */ uint Index, /* [annotation] _Out_ */ out Guid pKeyExchangeType);
+        new HRESULT CheckCryptoKeyExchange(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* optional(GUID) */ IntPtr pDecoderProfile, /* [annotation] _In_ */ uint Index, /* [annotation] _Out_ */ out Guid pKeyExchangeType);
         
         [PreserveSig]
         new HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* optional(void) */ IntPtr pData);
@@ -61,10 +61,10 @@ namespace DirectN
         
         // ID3D11VideoDevice1
         [PreserveSig]
-        HRESULT GetCryptoSessionPrivateDataSize(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pKeyExchangeType, /* [annotation] _Out_ */ out uint pPrivateInputSize, /* [annotation] _Out_ */ out uint pPrivateOutputSize);
+        HRESULT GetCryptoSessionPrivateDataSize(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* optional(GUID) */ IntPtr pDecoderProfile, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pKeyExchangeType, /* [annotation] _Out_ */ out uint pPrivateInputSize, /* [annotation] _Out_ */ out uint pPrivateOutputSize);
         
         [PreserveSig]
-        HRESULT GetVideoDecoderCaps(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _In_ */ uint SampleWidth, /* [annotation] _In_ */ uint SampleHeight, /* [annotation] _In_ */ ref DXGI_RATIONAL pFrameRate, /* [annotation] _In_ */ uint BitRate, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _Out_ */ out uint pDecoderCaps);
+        HRESULT GetVideoDecoderCaps(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _In_ */ uint SampleWidth, /* [annotation] _In_ */ uint SampleHeight, /* [annotation] _In_ */ ref DXGI_RATIONAL pFrameRate, /* [annotation] _In_ */ uint BitRate, /* optional(GUID) */ IntPtr pCryptoType, /* [annotation] _Out_ */ out uint pDecoderCaps);
         
         [PreserveSig]
         HRESULT CheckVideoDecoderDownsampling(/* [annotation] _In_ */ ref D3D11_VIDEO_DECODER_DESC pInputDesc, /* [annotation] _In_ */ DXGI_COLOR_SPACE_TYPE InputColorSpace, /* [annotation] _In_ */ ref D3D11_VIDEO_DECODER_CONFIG pInputConfig, /* [annotation] _In_ */ ref DXGI_RATIONAL pFrameRate, /* [annotation] _In_ */ ref D3D11_VIDEO_SAMPLE_DESC pOutputDesc, /* [annotation] _Out_ */ out bool pSupported, /* [annotation] _Out_ */ out bool pRealTimeHint);

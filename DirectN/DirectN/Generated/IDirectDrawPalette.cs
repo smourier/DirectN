@@ -15,7 +15,7 @@ namespace DirectN
         HRESULT GetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref tagPALETTEENTRY __unnamed_3);
         
         [PreserveSig]
-        HRESULT Initialize(ref LPDIRECTDRAW __unnamed_0, uint __unnamed_1, ref tagPALETTEENTRY __unnamed_2);
+        HRESULT Initialize(LPDIRECTDRAW __unnamed_0, uint __unnamed_1, ref tagPALETTEENTRY __unnamed_2);
         
         [PreserveSig]
         HRESULT SetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref tagPALETTEENTRY __unnamed_3);

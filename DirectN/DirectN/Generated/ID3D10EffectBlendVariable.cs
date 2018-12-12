@@ -85,7 +85,7 @@ namespace DirectN
         
         // ID3D10EffectBlendVariable
         [PreserveSig]
-        HRESULT GetBlendState(uint Index, ref ID3D10BlendState ppBlendState);
+        HRESULT GetBlendState(uint Index, out ID3D10BlendState ppBlendState);
         
         [PreserveSig]
         HRESULT GetBackingStore(uint Index, ref D3D10_BLEND_DESC pBlendDesc);

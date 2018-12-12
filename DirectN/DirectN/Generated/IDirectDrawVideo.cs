@@ -27,7 +27,7 @@ namespace DirectN
         HRESULT GetFourCCCodes(/* THIS_ _Out_ */ out uint pCount, /* _Out_ */ out uint pCodes);
         
         [PreserveSig]
-        HRESULT SetDirectDraw(ref LPDIRECTDRAW pDirectDraw);
+        HRESULT SetDirectDraw(LPDIRECTDRAW pDirectDraw);
         
         [PreserveSig]
         HRESULT GetDirectDraw(/* THIS_ _Outptr_ */ out LPDIRECTDRAW ppDirectDraw);

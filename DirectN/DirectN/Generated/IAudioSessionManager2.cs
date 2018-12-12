@@ -9,20 +9,20 @@ namespace DirectN
     {
         // IAudioSessionManager
         [PreserveSig]
-        new HRESULT GetAudioSessionControl(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][out] _Outptr_ */ out IAudioSessionControl SessionControl);
+        new HRESULT GetAudioSessionControl(/* optional(LPCGUID) */ IntPtr AudioSessionGuid, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][out] _Outptr_ */ out IAudioSessionControl SessionControl);
         
         [PreserveSig]
-        new HRESULT GetSimpleAudioVolume(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][out] _Outptr_ */ out ISimpleAudioVolume AudioVolume);
+        new HRESULT GetSimpleAudioVolume(/* optional(LPCGUID) */ IntPtr AudioSessionGuid, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][out] _Outptr_ */ out ISimpleAudioVolume AudioVolume);
         
         // IAudioSessionManager2
         [PreserveSig]
         HRESULT GetSessionEnumerator(/* [retval][out] */ out IAudioSessionEnumerator SessionEnum);
         
         [PreserveSig]
-        HRESULT RegisterSessionNotification(ref IAudioSessionNotification SessionNotification);
+        HRESULT RegisterSessionNotification(IAudioSessionNotification SessionNotification);
         
         [PreserveSig]
-        HRESULT UnregisterSessionNotification(ref IAudioSessionNotification SessionNotification);
+        HRESULT UnregisterSessionNotification(IAudioSessionNotification SessionNotification);
         
         [PreserveSig]
         HRESULT RegisterDuckNotification(/* [string][in] */ [MarshalAs(UnmanagedType.LPWStr)] string sessionID, /* [annotation][in] _In_ */ IAudioVolumeDuckNotification duckNotification);

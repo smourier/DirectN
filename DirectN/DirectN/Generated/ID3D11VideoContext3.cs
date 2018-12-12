@@ -253,7 +253,7 @@ namespace DirectN
         
         // ID3D11VideoContext3
         [PreserveSig]
-        HRESULT DecoderBeginFrame1(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ ID3D11VideoDecoderOutputView pView, uint ContentKeySize, /* optional(void) */ IntPtr pContentKey, /* [annotation] _In_range_(0, D3D11_4_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS) */ uint NumComponentHistograms, /* [annotation] _In_reads_opt_(NumComponentHistograms) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] uint[] pHistogramOffsets, /* optional(ID3D11Buffer) */ out IntPtr ppHistogramBuffers);
+        HRESULT DecoderBeginFrame1(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ ID3D11VideoDecoderOutputView pView, uint ContentKeySize, /* optional(void) */ IntPtr pContentKey, /* [annotation] _In_range_(0, D3D11_4_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS) */ uint NumComponentHistograms, /* [annotation] _In_reads_opt_(NumComponentHistograms) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] uint[] pHistogramOffsets, /* [annotation] _In_reads_opt_(NumComponentHistograms) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] ID3D11Buffer[] ppHistogramBuffers);
         
         [PreserveSig]
         HRESULT SubmitDecoderBuffers2(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ uint NumBuffers, /* [annotation] _In_reads_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_VIDEO_DECODER_BUFFER_DESC2[] pBufferDesc);

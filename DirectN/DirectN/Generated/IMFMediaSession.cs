@@ -28,7 +28,7 @@ namespace DirectN
         HRESULT ClearTopologies();
         
         [PreserveSig]
-        HRESULT Start(/* [unique][in] __RPC__in_opt */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidTimeFormat, /* [unique][in] __RPC__in_opt */ [In, Out] PropVariant pvarStartPosition);
+        HRESULT Start(/* optional(GUID) */ IntPtr pguidTimeFormat, /* [unique][in] __RPC__in_opt */ [In, Out] PropVariant pvarStartPosition);
         
         [PreserveSig]
         HRESULT Pause();

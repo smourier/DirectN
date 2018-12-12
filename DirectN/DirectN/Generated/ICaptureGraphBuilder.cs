@@ -18,13 +18,13 @@ namespace DirectN
         HRESULT SetOutputFileName(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpstrFile, /* [annotation][out] _Out_ */ out IBaseFilter ppf, /* [annotation][out] _Out_ */ out IFileSinkFilter ppSink);
         
         [PreserveSig]
-        HRESULT FindInterface(/* [annotation][unique][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ IBaseFilter pf, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppint);
+        HRESULT FindInterface(/* optional(GUID) */ IntPtr pCategory, /* [in] */ IBaseFilter pf, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppint);
         
         [PreserveSig]
-        HRESULT RenderStream(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ IBaseFilter pfCompressor, /* [in] */ IBaseFilter pfRenderer);
+        HRESULT RenderStream(/* optional(GUID) */ IntPtr pCategory, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ IBaseFilter pfCompressor, /* [in] */ IBaseFilter pfRenderer);
         
         [PreserveSig]
-        HRESULT ControlStream(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCategory, /* [in] */ IBaseFilter pFilter, /* [in] */ ref REFERENCE_TIME pstart, /* [in] */ ref REFERENCE_TIME pstop, /* [in] */ ushort wStartCookie, /* [in] */ ushort wStopCookie);
+        HRESULT ControlStream(/* optional(GUID) */ IntPtr pCategory, /* [in] */ IBaseFilter pFilter, /* [in] */ ref REFERENCE_TIME pstart, /* [in] */ ref REFERENCE_TIME pstop, /* [in] */ ushort wStartCookie, /* [in] */ ushort wStopCookie);
         
         [PreserveSig]
         HRESULT AllocCapFile(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpstr, /* [in] */ ulong dwlSize);

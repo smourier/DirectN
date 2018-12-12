@@ -15,10 +15,10 @@ namespace DirectN
         new HRESULT GetFontFaceReference(uint listIndex, /* _COM_Outptr_ */ out IDWriteFontFaceReference fontFaceReference);
         
         [PreserveSig]
-        new HRESULT FindFontFaceReference(ref IDWriteFontFaceReference fontFaceReference, /* _Out_ */ out uint listIndex, /* _Out_ */ out bool exists);
+        new HRESULT FindFontFaceReference(IDWriteFontFaceReference fontFaceReference, /* _Out_ */ out uint listIndex, /* _Out_ */ out bool exists);
         
         [PreserveSig]
-        new HRESULT FindFontFace(ref IDWriteFontFace fontFace, /* _Out_ */ out uint listIndex, /* _Out_ */ out bool exists);
+        new HRESULT FindFontFace(IDWriteFontFace fontFace, /* _Out_ */ out uint listIndex, /* _Out_ */ out bool exists);
         
         [PreserveSig]
         new HRESULT GetPropertyValues(uint listIndex, DWRITE_FONT_PROPERTY_ID propertyId, /* _Out_ */ out bool exists, /* _COM_Outptr_result_maybenull_ */ out IDWriteLocalizedStrings values);

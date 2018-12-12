@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The GDI interop interface provides interoperability with GDI.
+    /// </summary>
     [Guid("1edd9491-9853-4299-898f-6432983b6f3a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteGdiInterop
     {
@@ -17,7 +20,7 @@ namespace DirectN
         HRESULT ConvertFontFaceToLOGFONT(/* _In_ */ IDWriteFontFace font, /* _Out_ */ out tagLOGFONTW logFont);
         
         [PreserveSig]
-        HRESULT CreateFontFaceFromHdc(ref IntPtr hdc, /* _COM_Outptr_ */ out IDWriteFontFace fontFace);
+        HRESULT CreateFontFaceFromHdc(IntPtr hdc, /* _COM_Outptr_ */ out IDWriteFontFace fontFace);
         
         [PreserveSig]
         HRESULT CreateBitmapRenderTarget(/* optional(HDC__) */ IntPtr hdc, uint width, uint height, /* _COM_Outptr_ */ out IDWriteBitmapRenderTarget renderTarget);

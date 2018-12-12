@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMF2DBuffer
     {
         [PreserveSig]
-        HRESULT Lock2D(/* [annotation][out] _Outptr_result_bytebuffer_(_Inexpressible_(ComputePlaneSize(*plPitch))) */ ref byte ppbScanline0, /* [annotation][out] _Out_ */ out int plPitch);
+        HRESULT Lock2D(/* [annotation][out] _Outptr_result_bytebuffer_(_Inexpressible_(ComputePlaneSize(*plPitch))) */ out byte ppbScanline0, /* [annotation][out] _Out_ */ out int plPitch);
         
         [PreserveSig]
         HRESULT Unlock2D();

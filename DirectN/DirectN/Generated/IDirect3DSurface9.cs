@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(151,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(194,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IDirect3DResource9
         [PreserveSig]
-        new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
+        new HRESULT GetDevice(out IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
@@ -46,9 +46,9 @@ namespace DirectN
         HRESULT UnlockRect();
         
         [PreserveSig]
-        HRESULT GetDC(ref IntPtr phdc);
+        HRESULT GetDC(IntPtr phdc);
         
         [PreserveSig]
-        HRESULT ReleaseDC(ref IntPtr hdc);
+        HRESULT ReleaseDC(IntPtr hdc);
     }
 }

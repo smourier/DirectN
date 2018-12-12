@@ -38,7 +38,7 @@ namespace DirectN
         HRESULT GetCurrentPosition(/* [annotation][out] _Out_ */ out long pCurrent);
         
         [PreserveSig]
-        HRESULT ConvertTimeFormat(/* [annotation][out] _Out_ */ out long pTarget, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pTargetFormat, /* [in] */ long Source, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pSourceFormat);
+        HRESULT ConvertTimeFormat(/* [annotation][out] _Out_ */ out long pTarget, /* optional(GUID) */ IntPtr pTargetFormat, /* [in] */ long Source, /* optional(GUID) */ IntPtr pSourceFormat);
         
         [PreserveSig]
         HRESULT SetPositions(/* [annotation][out][in] _Inout_opt_ */ ref long pCurrent, /* [in] */ uint dwCurrentFlags, /* [annotation][out][in] _Inout_opt_ */ ref long pStop, /* [in] */ uint dwStopFlags);

@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IAudioProcessingObjectRT
     {
         [PreserveSig]
-        void APOProcess(/* [annotation][in] _In_ */ uint u32NumInputConnections, /* [annotation][in] _In_ */ ref APO_CONNECTION_PROPERTY ppInputConnections, /* [annotation][in] _In_ */ uint u32NumOutputConnections, /* [annotation][out][in] _Inout_ */ ref APO_CONNECTION_PROPERTY ppOutputConnections);
+        void APOProcess(/* [annotation][in] _In_ */ uint u32NumInputConnections, /* [annotation][in] _In_ */ ref APO_CONNECTION_PROPERTY ppInputConnections, /* [annotation][in] _In_ */ uint u32NumOutputConnections, /* [annotation][out][in] _Inout_ */ out APO_CONNECTION_PROPERTY ppOutputConnections);
         
         [PreserveSig]
         uint CalcInputFrames(/* [in] */ uint u32OutputFrameCount);

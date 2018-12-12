@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT Initialize(ref _DXDIAG_INIT_PARAMS pParams);
         
         [PreserveSig]
-        HRESULT GetRootContainer(ref IDxDiagContainer ppInstance);
+        HRESULT GetRootContainer(out IDxDiagContainer ppInstance);
     }
 }

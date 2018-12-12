@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IMF2DBuffer
         [PreserveSig]
-        new HRESULT Lock2D(/* [annotation][out] _Outptr_result_bytebuffer_(_Inexpressible_(ComputePlaneSize(*plPitch))) */ ref byte ppbScanline0, /* [annotation][out] _Out_ */ out int plPitch);
+        new HRESULT Lock2D(/* [annotation][out] _Outptr_result_bytebuffer_(_Inexpressible_(ComputePlaneSize(*plPitch))) */ out byte ppbScanline0, /* [annotation][out] _Out_ */ out int plPitch);
         
         [PreserveSig]
         new HRESULT Unlock2D();
@@ -31,7 +31,7 @@ namespace DirectN
         
         // IMF2DBuffer2
         [PreserveSig]
-        HRESULT Lock2DSize(/* [annotation][in] _In_ */ _MF2DBuffer_LockFlags lockFlags, /* [annotation][out] _Outptr_result_bytebuffer_(_Inexpressible_(ComputePlaneSize(*plPitch))) */ ref byte ppbScanline0, /* [annotation][out] _Out_ */ out int plPitch, /* [annotation][out] _Outptr_result_bytebuffer_(*pcbBufferLength) */ out IntPtr ppbBufferStart, /* [annotation][out] _Out_ */ out uint pcbBufferLength);
+        HRESULT Lock2DSize(/* [annotation][in] _In_ */ _MF2DBuffer_LockFlags lockFlags, /* [annotation][out] _Outptr_result_bytebuffer_(_Inexpressible_(ComputePlaneSize(*plPitch))) */ out byte ppbScanline0, /* [annotation][out] _Out_ */ out int plPitch, /* [annotation][out] _Outptr_result_bytebuffer_(*pcbBufferLength) */ out IntPtr ppbBufferStart, /* [annotation][out] _Out_ */ out uint pcbBufferLength);
         
         [PreserveSig]
         HRESULT Copy2DTo(/* [annotation][in] _In_ */ IMF2DBuffer2 pDestBuffer);

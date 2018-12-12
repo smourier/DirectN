@@ -27,7 +27,7 @@ namespace DirectN
         HRESULT GetStartStopPosition(/* [annotation][out] _Out_opt_ */ out Guid pguidStartPositionType, /* [annotation][out] _Out_opt_ */ [In, Out] PropVariant pvStartValue, /* [annotation][out] _Out_opt_ */ out Guid pguidStopPositionType, /* [annotation][out] _Out_opt_ */ [In, Out] PropVariant pvStopValue);
         
         [PreserveSig]
-        HRESULT SetStartStopPosition(/* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidStartPositionType, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pvStartValue, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pguidStopPositionType, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pvStopValue);
+        HRESULT SetStartStopPosition(/* optional(GUID) */ IntPtr pguidStartPositionType, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pvStartValue, /* optional(GUID) */ IntPtr pguidStopPositionType, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pvStopValue);
         
         [PreserveSig]
         HRESULT HasVideo(/* [annotation][out] _Out_opt_ */ out bool pfHasVideo, /* [annotation][out] _Out_opt_ */ out bool pfSelected);

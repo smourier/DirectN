@@ -103,7 +103,7 @@ namespace DirectN
         new DWRITE_OPTICAL_ALIGNMENT GetOpticalAlignment();
         
         [PreserveSig]
-        new HRESULT SetFontFallback(ref IDWriteFontFallback fontFallback);
+        new HRESULT SetFontFallback(IDWriteFontFallback fontFallback);
         
         [PreserveSig]
         new HRESULT GetFontFallback(/* __out */ out IDWriteFontFallback fontFallback);

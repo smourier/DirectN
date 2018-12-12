@@ -14,6 +14,6 @@ namespace DirectN
         HRESULT GetAvailablePass(uint index, /* _COM_Outptr_ */ out IDxcOptimizerPass ppResult);
         
         [PreserveSig]
-        HRESULT RunOptimizer(ref IDxcBlob pBlob, /* _In_count_(optionCount) */ IntPtr ppOptions, uint optionCount, /* _COM_Outptr_ */ out IDxcBlob pOutputModule, /* _COM_Outptr_opt_ */ out IDxcBlobEncoding ppOutputText);
+        HRESULT RunOptimizer(IDxcBlob pBlob, /* _In_count_(optionCount) */ IntPtr ppOptions, uint optionCount, /* _COM_Outptr_ */ out IDxcBlob pOutputModule, /* _COM_Outptr_opt_ */ out IDxcBlobEncoding ppOutputText);
     }
 }

@@ -48,13 +48,13 @@ namespace DirectN
         new bool IsShaderLoaded([MarshalAs(UnmanagedType.LPStruct)] Guid shaderId);
         
         [PreserveSig]
-        new HRESULT CreateResourceTexture(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _In_ */ ref D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, /* _In_reads_opt_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] data, /* _In_reads_opt_(resourceTextureProperties->dimensions - 1) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, uint dataSize, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
+        new HRESULT CreateResourceTexture(/* optional(GUID) */ IntPtr resourceId, /* _In_ */ ref D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, /* _In_reads_opt_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] data, /* _In_reads_opt_(resourceTextureProperties->dimensions - 1) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, uint dataSize, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
         
         [PreserveSig]
         new HRESULT FindResourceTexture(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
         
         [PreserveSig]
-        new HRESULT CreateVertexBuffer(/* _In_ */ ref D2D1_VERTEX_BUFFER_PROPERTIES vertexBufferProperties, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* optional(D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES) */ IntPtr customVertexBufferProperties, /* _COM_Outptr_ */ out ID2D1VertexBuffer buffer);
+        new HRESULT CreateVertexBuffer(/* _In_ */ ref D2D1_VERTEX_BUFFER_PROPERTIES vertexBufferProperties, /* optional(GUID) */ IntPtr resourceId, /* optional(D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES) */ IntPtr customVertexBufferProperties, /* _COM_Outptr_ */ out ID2D1VertexBuffer buffer);
         
         [PreserveSig]
         new HRESULT FindVertexBuffer(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _COM_Outptr_ */ out ID2D1VertexBuffer buffer);

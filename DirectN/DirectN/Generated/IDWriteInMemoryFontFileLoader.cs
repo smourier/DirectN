@@ -16,7 +16,7 @@ namespace DirectN
         
         // IDWriteInMemoryFontFileLoader
         [PreserveSig]
-        HRESULT CreateInMemoryFontFileReference(ref IDWriteFactory factory, /* _In_reads_bytes_(fontDataSize) */ IntPtr fontData, uint fontDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object ownerObject, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);
+        HRESULT CreateInMemoryFontFileReference(IDWriteFactory factory, /* _In_reads_bytes_(fontDataSize) */ IntPtr fontData, uint fontDataSize, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object ownerObject, /* _COM_Outptr_ */ out IDWriteFontFile fontFile);
         
         [PreserveSig]
         uint GetFileCount();

@@ -11,7 +11,7 @@ namespace DirectN
     public partial interface IDWriteFontDownloadQueue
     {
         [PreserveSig]
-        HRESULT AddListener(ref IDWriteFontDownloadListener listener, /* _Out_ */ out uint token);
+        HRESULT AddListener(IDWriteFontDownloadListener listener, /* _Out_ */ out uint token);
         
         [PreserveSig]
         HRESULT RemoveListener(uint token);

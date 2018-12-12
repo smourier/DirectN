@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IWMWriterPostView
     {
         [PreserveSig]
-        HRESULT SetPostViewCallback(ref IWMWriterPostViewCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT SetPostViewCallback(IWMWriterPostViewCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
         
         [PreserveSig]
         HRESULT SetReceivePostViewSamples(/* [in] */ ushort wStreamNum, /* [in] */ bool fReceivePostViewSamples);

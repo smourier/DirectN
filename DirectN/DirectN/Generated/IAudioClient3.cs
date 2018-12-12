@@ -10,7 +10,7 @@ namespace DirectN
     {
         // IAudioClient
         [PreserveSig]
-        new HRESULT Initialize(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ long hnsBufferDuration, /* [annotation][in] _In_ */ long hnsPeriodicity, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
+        new HRESULT Initialize(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ long hnsBufferDuration, /* [annotation][in] _In_ */ long hnsPeriodicity, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* optional(LPCGUID) */ IntPtr AudioSessionGuid);
         
         [PreserveSig]
         new HRESULT GetBufferSize(/* [annotation][out] _Out_ */ out uint pNumBufferFrames);
@@ -63,6 +63,6 @@ namespace DirectN
         HRESULT GetCurrentSharedModeEnginePeriod(/* [unique][annotation][out] _Out_ */ out IntPtr ppFormat, /* [annotation][out] _Out_ */ out uint pCurrentPeriodInFrames);
         
         [PreserveSig]
-        HRESULT InitializeSharedAudioStream(/* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ uint PeriodInFrames, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid AudioSessionGuid);
+        HRESULT InitializeSharedAudioStream(/* [annotation][in] _In_ */ uint StreamFlags, /* [annotation][in] _In_ */ uint PeriodInFrames, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* optional(LPCGUID) */ IntPtr AudioSessionGuid);
     }
 }

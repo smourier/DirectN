@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFDLNASinkInit
     {
         [PreserveSig]
-        HRESULT Initialize(ref IMFByteStream pByteStream, bool fPal);
+        HRESULT Initialize(IMFByteStream pByteStream, bool fPal);
     }
 }

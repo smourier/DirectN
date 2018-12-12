@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IAMFilterGraphCallback
     {
         [PreserveSig]
-        HRESULT UnableToRender(ref IPin pPin);
+        HRESULT UnableToRender(IPin pPin);
     }
 }

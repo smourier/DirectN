@@ -23,7 +23,7 @@ namespace DirectN
         HRESULT CreateEllipseGeometry(/* _In_ */ ref D2D1_ELLIPSE ellipse, /* _COM_Outptr_ */ out ID2D1EllipseGeometry ellipseGeometry);
         
         [PreserveSig]
-        HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ out IntPtr geometries, uint geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
+        HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID2D1Geometry[] geometries, uint geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
         
         [PreserveSig]
         HRESULT CreateTransformedGeometry(/* _In_ */ ID2D1Geometry sourceGeometry, /* _In_ */ ref D2D_MATRIX_3X2_F transform, /* _COM_Outptr_ */ out ID2D1TransformedGeometry transformedGeometry);

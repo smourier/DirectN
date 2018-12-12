@@ -17,7 +17,7 @@ namespace DirectN
         HRESULT CreateAuthenticatedChannel(/* [annotation] _In_ */ D3D11_AUTHENTICATED_CHANNEL_TYPE ChannelType, /* [annotation] _COM_Outptr_ */ out ID3D11AuthenticatedChannel ppAuthenticatedChannel);
         
         [PreserveSig]
-        HRESULT CreateCryptoSession(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pKeyExchangeType, /* [annotation] _COM_Outptr_ */ out ID3D11CryptoSession ppCryptoSession);
+        HRESULT CreateCryptoSession(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* optional(GUID) */ IntPtr pDecoderProfile, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pKeyExchangeType, /* [annotation] _COM_Outptr_ */ out ID3D11CryptoSession ppCryptoSession);
         
         [PreserveSig]
         HRESULT CreateVideoDecoderOutputView(/* [annotation] _In_ */ ID3D11Resource pResource, /* [annotation] _In_ */ ref D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC pDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11VideoDecoderOutputView ppVDOVView);
@@ -47,10 +47,10 @@ namespace DirectN
         HRESULT GetVideoDecoderConfig(/* [annotation] _In_ */ ref D3D11_VIDEO_DECODER_DESC pDesc, /* [annotation] _In_ */ uint Index, /* [annotation] _Out_ */ out D3D11_VIDEO_DECODER_CONFIG pConfig);
         
         [PreserveSig]
-        HRESULT GetContentProtectionCaps(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _Out_ */ out D3D11_VIDEO_CONTENT_PROTECTION_CAPS pCaps);
+        HRESULT GetContentProtectionCaps(/* optional(GUID) */ IntPtr pCryptoType, /* optional(GUID) */ IntPtr pDecoderProfile, /* [annotation] _Out_ */ out D3D11_VIDEO_CONTENT_PROTECTION_CAPS pCaps);
         
         [PreserveSig]
-        HRESULT CheckCryptoKeyExchange(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pDecoderProfile, /* [annotation] _In_ */ uint Index, /* [annotation] _Out_ */ out Guid pKeyExchangeType);
+        HRESULT CheckCryptoKeyExchange(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pCryptoType, /* optional(GUID) */ IntPtr pDecoderProfile, /* [annotation] _In_ */ uint Index, /* [annotation] _Out_ */ out Guid pKeyExchangeType);
         
         [PreserveSig]
         HRESULT SetPrivateData(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* [annotation] _In_ */ uint DataSize, /* optional(void) */ IntPtr pData);

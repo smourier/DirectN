@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The internal context handed to effect authors to create transforms from effects and any other operation tied to context which is not useful to the application facing API.
+    /// </summary>
     [Guid("3d9f916b-27dc-4ad7-b4f1-64945340f563"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1EffectContext
     {
@@ -44,13 +47,13 @@ namespace DirectN
         bool IsShaderLoaded([MarshalAs(UnmanagedType.LPStruct)] Guid shaderId);
         
         [PreserveSig]
-        HRESULT CreateResourceTexture(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _In_ */ ref D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, /* _In_reads_opt_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] data, /* _In_reads_opt_(resourceTextureProperties->dimensions - 1) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, uint dataSize, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
+        HRESULT CreateResourceTexture(/* optional(GUID) */ IntPtr resourceId, /* _In_ */ ref D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, /* _In_reads_opt_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] data, /* _In_reads_opt_(resourceTextureProperties->dimensions - 1) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, uint dataSize, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
         
         [PreserveSig]
         HRESULT FindResourceTexture(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
         
         [PreserveSig]
-        HRESULT CreateVertexBuffer(/* _In_ */ ref D2D1_VERTEX_BUFFER_PROPERTIES vertexBufferProperties, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* optional(D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES) */ IntPtr customVertexBufferProperties, /* _COM_Outptr_ */ out ID2D1VertexBuffer buffer);
+        HRESULT CreateVertexBuffer(/* _In_ */ ref D2D1_VERTEX_BUFFER_PROPERTIES vertexBufferProperties, /* optional(GUID) */ IntPtr resourceId, /* optional(D2D1_CUSTOM_VERTEX_BUFFER_PROPERTIES) */ IntPtr customVertexBufferProperties, /* _COM_Outptr_ */ out ID2D1VertexBuffer buffer);
         
         [PreserveSig]
         HRESULT FindVertexBuffer(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _COM_Outptr_ */ out ID2D1VertexBuffer buffer);

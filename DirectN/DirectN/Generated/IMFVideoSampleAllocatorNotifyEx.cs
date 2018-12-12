@@ -13,6 +13,6 @@ namespace DirectN
         
         // IMFVideoSampleAllocatorNotifyEx
         [PreserveSig]
-        HRESULT NotifyPrune(ref IMFSample __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
+        HRESULT NotifyPrune(IMFSample __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
     }
 }

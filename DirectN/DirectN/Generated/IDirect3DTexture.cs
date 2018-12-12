@@ -10,16 +10,16 @@ namespace DirectN
     public partial interface IDirect3DTexture
     {
         [PreserveSig]
-        HRESULT Initialize(ref IDirect3DDevice __unnamed_0, ref LPDIRECTDRAWSURFACE __unnamed_1);
+        HRESULT Initialize(IDirect3DDevice __unnamed_0, LPDIRECTDRAWSURFACE __unnamed_1);
         
         [PreserveSig]
-        HRESULT GetHandle(ref IDirect3DDevice __unnamed_0, ref uint __unnamed_1);
+        HRESULT GetHandle(IDirect3DDevice __unnamed_0, ref uint __unnamed_1);
         
         [PreserveSig]
         HRESULT PaletteChanged(uint __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT Load(ref LPDIRECT3DTEXTURE __unnamed_0);
+        HRESULT Load(LPDIRECT3DTEXTURE __unnamed_0);
         
         [PreserveSig]
         HRESULT Unload();

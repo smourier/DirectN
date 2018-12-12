@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT WritePixels(uint lineCount, /* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] WICBitmapPlane[] pPlanes, uint cPlanes);
         
         [PreserveSig]
-        HRESULT WriteSource(/* [size_is][in] __RPC__in_ecount_full(cPlanes) */ out IntPtr ppPlanes, uint cPlanes, /* optional(WICRect) */ IntPtr prcSource);
+        HRESULT WriteSource(/* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IWICBitmapSource[] ppPlanes, uint cPlanes, /* optional(WICRect) */ IntPtr prcSource);
     }
 }

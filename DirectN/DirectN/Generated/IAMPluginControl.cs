@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT GetPreferredClsidByIndex(uint index, /* [annotation] _Out_ */ out Guid subType, /* [annotation] _Out_ */ out Guid clsid);
         
         [PreserveSig]
-        HRESULT SetPreferredClsid(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid subType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsid);
+        HRESULT SetPreferredClsid(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid subType, /* optional(CLSID) */ IntPtr clsid);
         
         [PreserveSig]
         HRESULT IsDisabled([MarshalAs(UnmanagedType.LPStruct)] Guid clsid);

@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The interface implemented by a transform author to provide a GPU-based effect.
+    /// </summary>
     [Guid("36bfdcb6-9739-435d-a30d-a653beff6a6f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DrawTransform : ID2D1Transform
     {

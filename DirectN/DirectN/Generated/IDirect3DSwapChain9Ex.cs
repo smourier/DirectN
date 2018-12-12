@@ -9,13 +9,13 @@ namespace DirectN
     {
         // IDirect3DSwapChain9
         [PreserveSig]
-        new HRESULT Present(ref tagRECT pSourceRect, ref tagRECT pDestRect, ref IntPtr hDestWindowOverride, ref _RGNDATA pDirtyRegion, uint dwFlags);
+        new HRESULT Present(ref tagRECT pSourceRect, ref tagRECT pDestRect, IntPtr hDestWindowOverride, ref _RGNDATA pDirtyRegion, uint dwFlags);
         
         [PreserveSig]
-        new HRESULT GetFrontBufferData(ref IDirect3DSurface9 pDestSurface);
+        new HRESULT GetFrontBufferData(IDirect3DSurface9 pDestSurface);
         
         [PreserveSig]
-        new HRESULT GetBackBuffer(uint iBackBuffer, _D3DBACKBUFFER_TYPE Type, ref IDirect3DSurface9 ppBackBuffer);
+        new HRESULT GetBackBuffer(uint iBackBuffer, _D3DBACKBUFFER_TYPE Type, out IDirect3DSurface9 ppBackBuffer);
         
         [PreserveSig]
         new HRESULT GetRasterStatus(ref _D3DRASTER_STATUS pRasterStatus);
@@ -24,7 +24,7 @@ namespace DirectN
         new HRESULT GetDisplayMode(ref _D3DDISPLAYMODE pMode);
         
         [PreserveSig]
-        new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
+        new HRESULT GetDevice(out IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         new HRESULT GetPresentParameters(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters);

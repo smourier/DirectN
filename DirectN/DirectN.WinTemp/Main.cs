@@ -6,32 +6,14 @@ namespace DirectN.WinTemp
 {
     public partial class Main : Form
     {
-        //private Lazy<ComObject<IDXGISwapChain>> _swapChain;
-        //private Lazy<ComObject<IDXGIDevice>> _device;
-        //private Lazy<ComObject<IDXGIAdapter>> _adapter;
-        //private Lazy<ComObject<IDXGIOutput>> _output;
-        //private Lazy<ComObject<IDXGIFactory1>> _factory;
-
-        //private Lazy<ComObject<ID3D11Device>> _d3d11device;
-
         public Main()
         {
             InitializeComponent();
-            //_d3d11device = new Lazy<ComObject<ID3D11Device>>(CreateD3D11Device);
-            //_factory = new Lazy<ComObject<IDXGIFactory1>>(CreateFactory);
-            //_adapter = new Lazy<ComObject<IDXGIAdapter>>(CreateAdapter);
-            //_output = new Lazy<ComObject<IDXGIOutput>>(CreateOutput);
-            //_device = new Lazy<ComObject<IDXGIDevice>>(CreateDevice);
             //_swapChain = new Lazy<ComObject<IDXGISwapChain>>(CreateSwapChain);
         }
 
         protected override void OnHandleCreated(EventArgs e)
         {
-            // force creation now
-            //var sw = _swapChain.Value;
-            //var desc = sw.As<IDXGISwapChain1>().GetDesc1();
-            //var o = sw.GetContainingOutput<IDXGIOutput1>();
-            //var stats = sw.GetFrameStatistics();
         }
 
 //        private ComObject<ID3D11Device> CreateD3D11Device()

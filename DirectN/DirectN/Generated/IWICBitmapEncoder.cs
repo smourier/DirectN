@@ -18,7 +18,7 @@ namespace DirectN
         HRESULT GetEncoderInfo(/* [out] __RPC__deref_out_opt */ out IWICBitmapEncoderInfo ppIEncoderInfo);
         
         [PreserveSig]
-        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ out IntPtr ppIColorContext);
+        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContext);
         
         [PreserveSig]
         HRESULT SetPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);
@@ -30,7 +30,7 @@ namespace DirectN
         HRESULT SetPreview(/* [in] __RPC__in_opt */ IWICBitmapSource pIPreview);
         
         [PreserveSig]
-        HRESULT CreateNewFrame(/* [out] __RPC__deref_out_opt */ out IWICBitmapFrameEncode ppIFrameEncode, /* [unique][out][in] __RPC__deref_opt_inout_opt */ ref IPropertyBag2 ppIEncoderOptions);
+        HRESULT CreateNewFrame(/* [out] __RPC__deref_out_opt */ out IWICBitmapFrameEncode ppIFrameEncode, /* [unique][out][in] __RPC__deref_opt_inout_opt */ out IPropertyBag2 ppIEncoderOptions);
         
         [PreserveSig]
         HRESULT Commit();

@@ -15,28 +15,28 @@ namespace DirectN
     public partial interface IDirect3D3
     {
         [PreserveSig]
-        HRESULT EnumDevices(ref IntPtr __unnamed_0, ref IntPtr __unnamed_1);
+        HRESULT EnumDevices(IntPtr __unnamed_0, IntPtr __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateLight(ref LPDIRECT3DLIGHT __unnamed_0, ref LPUNKNOWN __unnamed_1);
+        HRESULT CreateLight(out LPDIRECT3DLIGHT __unnamed_0, LPUNKNOWN __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateMaterial(ref LPDIRECT3DMATERIAL3 __unnamed_0, ref LPUNKNOWN __unnamed_1);
+        HRESULT CreateMaterial(out LPDIRECT3DMATERIAL3 __unnamed_0, LPUNKNOWN __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateViewport(ref LPDIRECT3DVIEWPORT3 __unnamed_0, ref LPUNKNOWN __unnamed_1);
+        HRESULT CreateViewport(out LPDIRECT3DVIEWPORT3 __unnamed_0, LPUNKNOWN __unnamed_1);
         
         [PreserveSig]
         HRESULT FindDevice(ref _D3DFINDDEVICESEARCH __unnamed_0, ref _D3DFINDDEVICERESULT __unnamed_1);
         
         [PreserveSig]
-        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, ref LPDIRECTDRAWSURFACE4 __unnamed_1, ref LPDIRECT3DDEVICE3 __unnamed_2, ref LPUNKNOWN __unnamed_3);
+        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, LPDIRECTDRAWSURFACE4 __unnamed_1, out LPDIRECT3DDEVICE3 __unnamed_2, LPUNKNOWN __unnamed_3);
         
         [PreserveSig]
-        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, ref LPDIRECT3DVERTEXBUFFER __unnamed_1, uint __unnamed_2, ref LPUNKNOWN __unnamed_3);
+        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, out LPDIRECT3DVERTEXBUFFER __unnamed_1, uint __unnamed_2, LPUNKNOWN __unnamed_3);
         
         [PreserveSig]
-        HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, ref IntPtr __unnamed_1, ref IntPtr __unnamed_2);
+        HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, IntPtr __unnamed_1, IntPtr __unnamed_2);
         
         [PreserveSig]
         HRESULT EvictManagedTextures();

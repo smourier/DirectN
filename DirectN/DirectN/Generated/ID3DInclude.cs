@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface ID3DInclude
     {
         [PreserveSig]
-        HRESULT Open(_D3D_INCLUDE_TYPE IncludeType, [MarshalAs(UnmanagedType.LPStr)] string pFileName, ref IntPtr pParentData, ref IntPtr ppData, ref uint pBytes);
+        HRESULT Open(_D3D_INCLUDE_TYPE IncludeType, [MarshalAs(UnmanagedType.LPStr)] string pFileName, IntPtr pParentData, IntPtr ppData, ref uint pBytes);
         
         [PreserveSig]
-        HRESULT Close(ref IntPtr pData);
+        HRESULT Close(IntPtr pData);
     }
 }

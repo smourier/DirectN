@@ -88,7 +88,7 @@ namespace DirectN
         new void ExecuteBundle(/* _In_ */ ID3D12GraphicsCommandList pCommandList);
         
         [PreserveSig]
-        new void SetDescriptorHeaps(/* _In_ */ uint NumDescriptorHeaps, /* _In_reads_(NumDescriptorHeaps) */ out IntPtr ppDescriptorHeaps);
+        new void SetDescriptorHeaps(/* _In_ */ uint NumDescriptorHeaps, /* _In_reads_(NumDescriptorHeaps) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12DescriptorHeap[] ppDescriptorHeaps);
         
         [PreserveSig]
         new void SetComputeRootSignature(/* _In_opt_ */ ID3D12RootSignature pRootSignature);
@@ -185,10 +185,10 @@ namespace DirectN
         
         // ID3D12GraphicsCommandList1
         [PreserveSig]
-        new void AtomicCopyBufferUINT(/* _In_ */ ID3D12Resource pDstBuffer, ulong DstOffset, /* _In_ */ ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, /* _In_reads_(Dependencies) */ out IntPtr ppDependentResources, /* _In_reads_(Dependencies) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D12_SUBRESOURCE_RANGE_UINT64[] pDependentSubresourceRanges);
+        new void AtomicCopyBufferUINT(/* _In_ */ ID3D12Resource pDstBuffer, ulong DstOffset, /* _In_ */ ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, /* _In_reads_(Dependencies) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] ID3D12Resource[] ppDependentResources, /* _In_reads_(Dependencies) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D12_SUBRESOURCE_RANGE_UINT64[] pDependentSubresourceRanges);
         
         [PreserveSig]
-        new void AtomicCopyBufferUINT64(/* _In_ */ ID3D12Resource pDstBuffer, ulong DstOffset, /* _In_ */ ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, /* _In_reads_(Dependencies) */ out IntPtr ppDependentResources, /* _In_reads_(Dependencies) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D12_SUBRESOURCE_RANGE_UINT64[] pDependentSubresourceRanges);
+        new void AtomicCopyBufferUINT64(/* _In_ */ ID3D12Resource pDstBuffer, ulong DstOffset, /* _In_ */ ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, /* _In_reads_(Dependencies) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] ID3D12Resource[] ppDependentResources, /* _In_reads_(Dependencies) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D12_SUBRESOURCE_RANGE_UINT64[] pDependentSubresourceRanges);
         
         [PreserveSig]
         new void OMSetDepthBounds(/* _In_ */ float Min, /* _In_ */ float Max);

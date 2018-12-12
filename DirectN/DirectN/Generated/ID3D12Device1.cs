@@ -105,10 +105,10 @@ namespace DirectN
         new HRESULT OpenSharedHandleByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string Name, uint Access, /* [annotation][out] _Out_ */ out IntPtr pNTHandle);
         
         [PreserveSig]
-        new HRESULT MakeResident(uint NumObjects, /* _In_reads_(NumObjects) */ out IntPtr ppObjects);
+        new HRESULT MakeResident(uint NumObjects, /* _In_reads_(NumObjects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12Pageable[] ppObjects);
         
         [PreserveSig]
-        new HRESULT Evict(uint NumObjects, /* _In_reads_(NumObjects) */ out IntPtr ppObjects);
+        new HRESULT Evict(uint NumObjects, /* _In_reads_(NumObjects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12Pageable[] ppObjects);
         
         [PreserveSig]
         new HRESULT CreateFence(ulong InitialValue, D3D12_FENCE_FLAGS Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppFence);
@@ -139,9 +139,9 @@ namespace DirectN
         HRESULT CreatePipelineLibrary(/* _In_reads_(BlobLength) */ IntPtr pLibraryBlob, IntPtr BlobLength, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppPipelineLibrary);
         
         [PreserveSig]
-        HRESULT SetEventOnMultipleFenceCompletion(/* _In_reads_(NumFences) */ out IntPtr ppFences, /* _In_reads_(NumFences) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ulong[] pFenceValues, uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, ref IntPtr hEvent);
+        HRESULT SetEventOnMultipleFenceCompletion(/* _In_reads_(NumFences) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID3D12Fence[] ppFences, /* _In_reads_(NumFences) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ulong[] pFenceValues, uint NumFences, D3D12_MULTIPLE_FENCE_WAIT_FLAGS Flags, IntPtr hEvent);
         
         [PreserveSig]
-        HRESULT SetResidencyPriority(uint NumObjects, /* _In_reads_(NumObjects) */ out IntPtr ppObjects, /* _In_reads_(NumObjects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D12_RESIDENCY_PRIORITY[] pPriorities);
+        HRESULT SetResidencyPriority(uint NumObjects, /* _In_reads_(NumObjects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12Pageable[] ppObjects, /* _In_reads_(NumObjects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D12_RESIDENCY_PRIORITY[] pPriorities);
     }
 }

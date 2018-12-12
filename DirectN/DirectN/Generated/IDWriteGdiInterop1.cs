@@ -21,7 +21,7 @@ namespace DirectN
         new HRESULT ConvertFontFaceToLOGFONT(/* _In_ */ IDWriteFontFace font, /* _Out_ */ out tagLOGFONTW logFont);
         
         [PreserveSig]
-        new HRESULT CreateFontFaceFromHdc(ref IntPtr hdc, /* _COM_Outptr_ */ out IDWriteFontFace fontFace);
+        new HRESULT CreateFontFaceFromHdc(IntPtr hdc, /* _COM_Outptr_ */ out IDWriteFontFace fontFace);
         
         [PreserveSig]
         new HRESULT CreateBitmapRenderTarget(/* optional(HDC__) */ IntPtr hdc, uint width, uint height, /* _COM_Outptr_ */ out IDWriteBitmapRenderTarget renderTarget);

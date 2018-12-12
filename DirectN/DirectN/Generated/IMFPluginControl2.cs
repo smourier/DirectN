@@ -15,7 +15,7 @@ namespace DirectN
         new HRESULT GetPreferredClsidByIndex(uint pluginType, uint index, /* [annotation] _Out_ */ out IntPtr selector, /* [annotation] _Out_ */ out Guid clsid);
         
         [PreserveSig]
-        new HRESULT SetPreferredClsid(uint pluginType, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string selector, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clsid);
+        new HRESULT SetPreferredClsid(uint pluginType, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string selector, /* optional(CLSID) */ IntPtr clsid);
         
         [PreserveSig]
         new HRESULT IsDisabled(uint pluginType, [MarshalAs(UnmanagedType.LPStruct)] Guid clsid);

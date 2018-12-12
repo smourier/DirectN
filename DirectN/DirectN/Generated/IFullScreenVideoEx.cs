@@ -33,7 +33,7 @@ namespace DirectN
         new HRESULT SetClipFactor(int ClipFactor);
         
         [PreserveSig]
-        new HRESULT SetMessageDrain(ref IntPtr hwnd);
+        new HRESULT SetMessageDrain(IntPtr hwnd);
         
         [PreserveSig]
         new HRESULT GetMessageDrain(/* THIS_ _Out_ */ out IntPtr hwnd);
@@ -61,10 +61,10 @@ namespace DirectN
         
         // IFullScreenVideoEx
         [PreserveSig]
-        HRESULT SetAcceleratorTable(ref IntPtr hwnd, ref IntPtr hAccel);
+        HRESULT SetAcceleratorTable(IntPtr hwnd, IntPtr hAccel);
         
         [PreserveSig]
-        HRESULT GetAcceleratorTable(/* THIS_ _Out_ */ out IntPtr phwnd, ref IntPtr phAccel);
+        HRESULT GetAcceleratorTable(/* THIS_ _Out_ */ out IntPtr phwnd, IntPtr phAccel);
         
         [PreserveSig]
         HRESULT KeepPixelAspectRatio(int KeepAspect);

@@ -23,6 +23,6 @@ namespace DirectN
         HRESULT RegisterNotificationCallBack(/* [in] */ IAMTunerNotification pNotify, /* [in] */ int lEvents);
         
         [PreserveSig]
-        HRESULT UnRegisterNotificationCallBack(ref IAMTunerNotification pNotify);
+        HRESULT UnRegisterNotificationCallBack(IAMTunerNotification pNotify);
     }
 }

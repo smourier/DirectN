@@ -13,10 +13,10 @@ namespace DirectN
     public partial interface IDDVideoPortContainer
     {
         [PreserveSig]
-        HRESULT CreateVideoPort(uint __unnamed_0, ref LPDDVIDEOPORTDESC __unnamed_1, ref LPDIRECTDRAWVIDEOPORT __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreateVideoPort(uint __unnamed_0, ref LPDDVIDEOPORTDESC __unnamed_1, out LPDIRECTDRAWVIDEOPORT __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
         
         [PreserveSig]
-        HRESULT EnumVideoPorts(uint __unnamed_0, ref LPDDVIDEOPORTCAPS __unnamed_1, ref IntPtr __unnamed_2, ref IntPtr __unnamed_3);
+        HRESULT EnumVideoPorts(uint __unnamed_0, ref LPDDVIDEOPORTCAPS __unnamed_1, IntPtr __unnamed_2, IntPtr __unnamed_3);
         
         [PreserveSig]
         HRESULT GetVideoPortConnectInfo(uint __unnamed_0, /* _Inout_ */ ref uint pcInfo, /* _Out_writes_to_opt_(*pcInfo, *pcInfo) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] LPDDVIDEOPORTCONNECT[] __unnamed_2);

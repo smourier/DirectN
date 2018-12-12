@@ -105,10 +105,10 @@ namespace DirectN
         HRESULT OpenSharedHandleByName(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string Name, uint Access, /* [annotation][out] _Out_ */ out IntPtr pNTHandle);
         
         [PreserveSig]
-        HRESULT MakeResident(uint NumObjects, /* _In_reads_(NumObjects) */ out IntPtr ppObjects);
+        HRESULT MakeResident(uint NumObjects, /* _In_reads_(NumObjects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12Pageable[] ppObjects);
         
         [PreserveSig]
-        HRESULT Evict(uint NumObjects, /* _In_reads_(NumObjects) */ out IntPtr ppObjects);
+        HRESULT Evict(uint NumObjects, /* _In_reads_(NumObjects) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12Pageable[] ppObjects);
         
         [PreserveSig]
         HRESULT CreateFence(ulong InitialValue, D3D12_FENCE_FLAGS Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppFence);

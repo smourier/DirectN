@@ -6,9 +6,6 @@ using PD2D1_EFFECT_FACTORY = System.IntPtr;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Creates Direct2D resources. This interface also enables the creation of ID2D1Device5 objects.
-    /// </summary>
     [Guid("f9976f46-f642-44c1-97ca-da32ea2a2635"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Factory6 : ID2D1Factory5
     {
@@ -29,7 +26,7 @@ namespace DirectN
         new HRESULT CreateEllipseGeometry(/* _In_ */ ref D2D1_ELLIPSE ellipse, /* _COM_Outptr_ */ out ID2D1EllipseGeometry ellipseGeometry);
         
         [PreserveSig]
-        new HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ out IntPtr geometries, uint geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
+        new HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID2D1Geometry[] geometries, uint geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
         
         [PreserveSig]
         new HRESULT CreateTransformedGeometry(/* _In_ */ ID2D1Geometry sourceGeometry, /* _In_ */ ref D2D_MATRIX_3X2_F transform, /* _COM_Outptr_ */ out ID2D1TransformedGeometry transformedGeometry);

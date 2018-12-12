@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint PresentationTimeStamp;
         public uint SourceClockReference;
-        public __struct_ks_316__union_0 __union_2;
+        public __struct_ks_151__union_0 __union_2;
         public ushort Reserved0;
         public uint Reserved1;
     }

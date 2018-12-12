@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct KSEVENTDATA
     {
         public uint NotificationType;
-        public __struct_ks_396__union_0 __union_1;
+        public __struct_ks_121__union_0 __union_1;
     }
 }

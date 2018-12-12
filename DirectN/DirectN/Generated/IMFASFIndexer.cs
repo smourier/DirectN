@@ -21,7 +21,7 @@ namespace DirectN
         HRESULT GetIndexPosition(/* [in] */ IMFASFContentInfo pIContentInfo, /* [out] */ out ulong pcbIndexOffset);
         
         [PreserveSig]
-        HRESULT SetIndexByteStreams(/* [in] */ IMFByteStream ppIByteStreams, /* [in] */ uint cByteStreams);
+        HRESULT SetIndexByteStreams(/* [in] */ out IMFByteStream ppIByteStreams, /* [in] */ uint cByteStreams);
         
         [PreserveSig]
         HRESULT GetIndexByteStreamCount(/* [out] */ out uint pcByteStreams);

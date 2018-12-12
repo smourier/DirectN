@@ -15,22 +15,22 @@ namespace DirectN
         HRESULT Compact();
         
         [PreserveSig]
-        HRESULT CreateClipper(uint __unnamed_0, ref LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateClipper(uint __unnamed_0, out LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
         
         [PreserveSig]
-        HRESULT CreatePalette(uint __unnamed_0, ref tagPALETTEENTRY __unnamed_1, ref LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreatePalette(uint __unnamed_0, ref tagPALETTEENTRY __unnamed_1, out LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
         
         [PreserveSig]
-        HRESULT CreateSurface(ref LPDDSURFACEDESC __unnamed_0, ref LPDIRECTDRAWSURFACE __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateSurface(ref LPDDSURFACEDESC __unnamed_0, out LPDIRECTDRAWSURFACE __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
         
         [PreserveSig]
-        HRESULT DuplicateSurface(ref LPDIRECTDRAWSURFACE __unnamed_0, ref LPDIRECTDRAWSURFACE __unnamed_1);
+        HRESULT DuplicateSurface(LPDIRECTDRAWSURFACE __unnamed_0, out LPDIRECTDRAWSURFACE __unnamed_1);
         
         [PreserveSig]
-        HRESULT EnumDisplayModes(uint __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, ref IntPtr __unnamed_2, ref IntPtr __unnamed_3);
+        HRESULT EnumDisplayModes(uint __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, IntPtr __unnamed_2, IntPtr __unnamed_3);
         
         [PreserveSig]
-        HRESULT EnumSurfaces(uint __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, ref IntPtr __unnamed_2, ref IntPtr __unnamed_3);
+        HRESULT EnumSurfaces(uint __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, IntPtr __unnamed_2, IntPtr __unnamed_3);
         
         [PreserveSig]
         HRESULT FlipToGDISurface();
@@ -45,7 +45,7 @@ namespace DirectN
         HRESULT GetFourCCCodes(ref uint __unnamed_0, ref uint __unnamed_1);
         
         [PreserveSig]
-        HRESULT GetGDISurface(ref LPDIRECTDRAWSURFACE __unnamed_0);
+        HRESULT GetGDISurface(out LPDIRECTDRAWSURFACE __unnamed_0);
         
         [PreserveSig]
         HRESULT GetMonitorFrequency(ref uint __unnamed_0);
@@ -63,12 +63,12 @@ namespace DirectN
         HRESULT RestoreDisplayMode();
         
         [PreserveSig]
-        HRESULT SetCooperativeLevel(ref IntPtr __unnamed_0, uint __unnamed_1);
+        HRESULT SetCooperativeLevel(IntPtr __unnamed_0, uint __unnamed_1);
         
         [PreserveSig]
         HRESULT SetDisplayMode(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2);
         
         [PreserveSig]
-        HRESULT WaitForVerticalBlank(uint __unnamed_0, ref IntPtr __unnamed_1);
+        HRESULT WaitForVerticalBlank(uint __unnamed_0, IntPtr __unnamed_1);
     }
 }

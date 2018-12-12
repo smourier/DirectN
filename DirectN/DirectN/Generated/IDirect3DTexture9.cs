@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(144,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\d3d9.h(187,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IDirect3DResource9
         [PreserveSig]
-        new HRESULT GetDevice(ref IDirect3DDevice9 ppDevice);
+        new HRESULT GetDevice(out IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
@@ -56,7 +56,7 @@ namespace DirectN
         HRESULT GetLevelDesc(uint Level, ref _D3DSURFACE_DESC pDesc);
         
         [PreserveSig]
-        HRESULT GetSurfaceLevel(uint Level, ref IDirect3DSurface9 ppSurfaceLevel);
+        HRESULT GetSurfaceLevel(uint Level, out IDirect3DSurface9 ppSurfaceLevel);
         
         [PreserveSig]
         HRESULT LockRect(uint Level, ref _D3DLOCKED_RECT pLockedRect, ref tagRECT pRect, uint Flags);

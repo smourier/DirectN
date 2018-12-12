@@ -31,7 +31,7 @@ namespace DirectN
         new ulong GetCompletedValue();
         
         [PreserveSig]
-        new HRESULT SetEventOnCompletion(ulong Value, ref IntPtr hEvent);
+        new HRESULT SetEventOnCompletion(ulong Value, IntPtr hEvent);
         
         [PreserveSig]
         new HRESULT Signal(ulong Value);

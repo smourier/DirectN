@@ -25,7 +25,7 @@ namespace DirectN
         HRESULT EnumAdapters(/* [in] */ uint Adapter, /* [annotation][out] _COM_Outptr_ */ out IDXGIAdapter ppAdapter);
         
         [PreserveSig]
-        HRESULT MakeWindowAssociation(ref IntPtr WindowHandle, uint Flags);
+        HRESULT MakeWindowAssociation(IntPtr WindowHandle, uint Flags);
         
         [PreserveSig]
         HRESULT GetWindowAssociation(/* [annotation][out] _Out_ */ out IntPtr pWindowHandle);

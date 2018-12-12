@@ -7,6 +7,6 @@ namespace DirectN
     public partial struct KSPROPERTY_EXTDEVICE_S
     {
         public KSIDENTIFIER Property;
-        public __struct_ksmedia_574__union_0 u;
+        public __struct_ksmedia_874__union_0 u;
     }
 }
