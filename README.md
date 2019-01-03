@@ -1,9 +1,15 @@
 # DirectN
 Direct Wrappers for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, etc.
 
-You don't have to use the whole library (more than 6000 .cs files...), you can pick the files you want.
+The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/
 
-The code that you will find here allows you to port C/C++ code to C#, or to write C# code from scratch, more easily than with other existing libraries. For example, the exact same C# version of the "Capture screen using DirectX" code here: https://stackoverflow.com/questions/30021274/capture-screen-using-directx is this:
+Or you can pick the C# source files you want (among the 6000 .cs provided), but it can be difficult because the dependencies between all these technologies make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...).
+
+DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the same names and types (interfaces, enums, structures, constants, methods, arguments, guids, etc.) that the native concepts. So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
+
+Everything is in the same namespace so you don't need to know where is defined this or that interface, constants, etc.
+
+For example, the exact same C# version of the "Capture screen using DirectX" code here: https://stackoverflow.com/questions/30021274/capture-screen-using-directx is this:
 
     static HRESULT Direct3D9TakeScreenshots(uint adapter, int count)
     {
@@ -204,3 +210,7 @@ And the C++ version is this:
         if (coInit) CoUninitialize();
         return hr;
       }
+
+ * Note 1: there are currently some issues with sructures that contain unions. This will be fixed soon. If you have a specific problem with that, just create an issue
+ * Note 2: the functions.cs file has some issues. everything in the Generated folder is, well, automatically generated. If you have a specific problem with that, just create an issue
+ * Note 3: the tool that builds the Generated folder is not open source.
