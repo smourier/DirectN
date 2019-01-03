@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<license type="expression">MIT</license>
+		<projectUrl>https://github.com/smourier/DirectN</projectUrl>
+		<iconUrl>https://github.com/smourier/DirectN/raw/master/DirectN.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<copyright>$copyright$</copyright>
+		<tags>.NET DXGI WIC DirectX Direct2D DirectWrite MediaFoundation WASAPI CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop</tags>
+	</metadata>
+</package>
