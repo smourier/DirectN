@@ -8,7 +8,7 @@
 		<owners>$author$</owners>
 		<license type="expression">MIT</license>
 		<projectUrl>https://github.com/smourier/DirectN</projectUrl>
-		<iconUrl>https://github.com/smourier/DirectN/raw/master/DirectN.png</iconUrl>
+		<iconUrl>https://github.com/smourier/DirectN/raw/master/DirectN/DirectN/DirectN.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>$description$</description>
 		<copyright>$copyright$</copyright>
