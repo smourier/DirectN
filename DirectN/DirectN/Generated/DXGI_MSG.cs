@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxgimessages.h(14,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxgimessages.h(14,9)
 namespace DirectN
 {
     public enum DXGI_MSG
@@ -330,5 +330,6 @@ namespace DirectN
         DXGI_MSG_Phone_IDXGISwapChain_Present1_RequiresOverlays = 1029,
         DXGI_MSG_Phone_IDXGISwapChain_SetBackgroundColor_FlipSequentialRequired = 1030,
         DXGI_MSG_Phone_IDXGISwapChain_GetBackgroundColor_FlipSequentialRequired = 1031,
+        DXGI_MSG_IDXGISwapChain_Present_11On12_Released_Resource = 1032,
     }
 }

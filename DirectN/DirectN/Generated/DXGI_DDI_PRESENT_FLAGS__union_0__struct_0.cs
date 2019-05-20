@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxgiddi.h(68,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxgiddi.h(68,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -16,6 +16,7 @@ namespace DirectN
         public uint TemporaryMono { get => InteropRuntime.GetUInt32(__bits, 3, 1); set => InteropRuntime.SetUInt32(value, __bits, 3, 1); }
         public uint AllowTearing { get => InteropRuntime.GetUInt32(__bits, 4, 1); set => InteropRuntime.SetUInt32(value, __bits, 4, 1); }
         public uint AllowFlexibleRefresh { get => InteropRuntime.GetUInt32(__bits, 5, 1); set => InteropRuntime.SetUInt32(value, __bits, 5, 1); }
-        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 6, 26); set => InteropRuntime.SetUInt32(value, __bits, 6, 26); }
+        public uint NoScanoutTransform { get => InteropRuntime.GetUInt32(__bits, 6, 1); set => InteropRuntime.SetUInt32(value, __bits, 6, 1); }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 7, 25); set => InteropRuntime.SetUInt32(value, __bits, 7, 25); }
     }
 }

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxgiddi.h(926,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxgiddi.h(928,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -14,5 +14,8 @@ namespace DirectN
         public uint BroadcastHwQueueCount;
         public uint PrivateDriverDataSize;
         public IntPtr pPrivateDriverData;
+        public byte bOptimizeForComposition;
+        public bool SyncIntervalOverrideValid;
+        public DXGI_DDI_FLIP_INTERVAL_TYPE SyncIntervalOverride;
     }
 }

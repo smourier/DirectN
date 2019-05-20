@@ -1,9 +1,12 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_2.h(525,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dwrite_2.h(525,1)
 using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// A font fallback definition used for mapping characters to fonts capable of supporting them.
+    /// </summary>
     [Guid("efa008f9-f7a1-48bf-b05c-f224713cc0ff"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFallback
     {

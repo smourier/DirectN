@@ -1,8 +1,11 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(68,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d2d1_3.h(68,9)
 using System;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Option flags controlling how images sources are loaded during CreateImageSourceFromWic.
+    /// </summary>
     [Flags]
     public enum D2D1_IMAGE_SOURCE_LOADING_OPTIONS
     {

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mfidl.h(12992,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfidl.h(12996,1)
 namespace DirectN
 {
     public enum _MFPOLICYMANAGER_ACTION

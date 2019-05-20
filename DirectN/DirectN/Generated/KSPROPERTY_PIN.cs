@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\ks.h(1019,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ks.h(1024,9)
 namespace DirectN
 {
     public enum KSPROPERTY_PIN
@@ -19,5 +19,6 @@ namespace DirectN
         KSPROPERTY_PIN_CONSTRAINEDDATARANGES = 13,
         KSPROPERTY_PIN_PROPOSEDATAFORMAT = 14,
         KSPROPERTY_PIN_PROPOSEDATAFORMAT2 = 15,
+        KSPROPERTY_PIN_MODEDATAFORMATS = 16,
     }
 }

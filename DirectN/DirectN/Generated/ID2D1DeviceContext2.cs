@@ -1,13 +1,10 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(793,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d2d1_3.h(793,1)
 using System;
 using System.Runtime.InteropServices;
 using D2D1_TAG = System.UInt64;
 
 namespace DirectN
 {
-    /// <summary>
-    /// This interface performs all the same functions as the ID2D1DeviceContext1 interface, plus it enables functionality such as ink rendering, gradient mesh rendering, and improved image loading.
-    /// </summary>
     [Guid("394ea6a3-0c34-4321-950b-6ca20f0be6c7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DeviceContext2 : ID2D1DeviceContext1
     {

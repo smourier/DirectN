@@ -1,0 +1,11 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(13490,1)
+namespace DirectN
+{
+    public enum D3D12_MEASUREMENTS_ACTION
+    {
+        D3D12_MEASUREMENTS_ACTION_KEEP_ALL = 0,
+        D3D12_MEASUREMENTS_ACTION_COMMIT_RESULTS = 1,
+        D3D12_MEASUREMENTS_ACTION_COMMIT_RESULTS_HIGH_PRIORITY = 2,
+        D3D12_MEASUREMENTS_ACTION_DISCARD_PREVIOUS = 3,
+    }
+}

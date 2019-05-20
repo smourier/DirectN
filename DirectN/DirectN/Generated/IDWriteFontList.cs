@@ -1,12 +1,9 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(1508,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dwrite.h(1508,1)
 using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The IDWriteFontList interface represents an ordered set of fonts that are part of an IDWriteFontCollection.
-    /// </summary>
     [Guid("1a0d8438-1d97-4ec1-aef9-a2fb86ed6acb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontList
     {

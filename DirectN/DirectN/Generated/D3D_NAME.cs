@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3dcommon.h(806,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3dcommon.h(807,1)
 namespace DirectN
 {
     public enum D3D_NAME
@@ -21,6 +21,7 @@ namespace DirectN
         D3D_NAME_FINAL_LINE_DETAIL_TESSFACTOR = 15,
         D3D_NAME_FINAL_LINE_DENSITY_TESSFACTOR = 16,
         D3D_NAME_BARYCENTRICS = 23,
+        D3D_NAME_SHADINGRATE = 24,
         D3D_NAME_TARGET = 64,
         D3D_NAME_DEPTH = 65,
         D3D_NAME_COVERAGE = 66,
@@ -53,5 +54,6 @@ namespace DirectN
         D3D11_NAME_STENCIL_REF = 69,
         D3D11_NAME_INNER_COVERAGE = 70,
         D3D12_NAME_BARYCENTRICS = 23,
+        D3D12_NAME_SHADINGRATE = 24,
     }
 }

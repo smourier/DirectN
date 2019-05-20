@@ -1,12 +1,9 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_1.h(1495,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d2d1_1.h(1495,1)
 using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents drawing state.
-    /// </summary>
     [Guid("689f1f85-c72e-4e33-8f19-85754efd5ace"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock
     {

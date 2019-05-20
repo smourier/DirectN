@@ -1,12 +1,9 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite_2.h(807,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dwrite_2.h(807,1)
 using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Enumerator for an ordered collection of color glyph runs.
-    /// </summary>
     [Guid("d31fbe17-f157-41a2-8d24-cb779e0560e8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteColorGlyphRunEnumerator
     {

@@ -2,7 +2,7 @@
 {
     public static partial class Constants
     {
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\d3d9.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\d3d9.h
         public const int D3D9b_SDK_VERSION = 31;
         public const int D3DCREATE_DISABLE_DRIVER_MANAGEMENT_EX = 1024;
         public const int D3DCREATE_DISABLE_PRINTSCREEN = 32768;
@@ -21,7 +21,7 @@
         public const int D3DPRESENT_VIDEO_RESTRICT_TO_MONITOR = 16;
         public const int D3D_SDK_VERSION = 32;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\d3d9caps.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\d3d9caps.h
         public const int D3DCAPS2_CANAUTOGENMIPMAP = 1073741824;
         public const int D3DCAPS2_CANCALIBRATEGAMMA = 1048576;
         public const int D3DCAPS2_CANMANAGERESOURCE = 268435456;
@@ -151,7 +151,7 @@
         public const int D3DVTXPCAPS_TEXGEN_SPHEREMAP = 256;
         public const int D3DVTXPCAPS_TWEENING = 64;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\d3d9types.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\d3d9types.h
         public const int D3D9_RESOURCE_PRIORITY_HIGH = -1610612736;
         public const int D3D9_RESOURCE_PRIORITY_LOW = 1342177280;
         public const int D3D9_RESOURCE_PRIORITY_MAXIMUM = -939524096;
@@ -267,7 +267,79 @@
         public const int MAXD3DDECLUSAGEINDEX = 15;
         public const int MAX_DEVICE_IDENTIFIER_STRING = 512;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\d3dukmdt.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\d3dkmddi.h
+        public const int D3DKM_INVALID_GAMMA_INDEX = -1;
+        public const int DXGK_ALLOCATION_LIST_SIZE_GDICONTEXT = 256;
+        public const int DXGK_DSI2_CHECKSUM_ERROR_CORRECTED = 256;
+        public const int DXGK_DSI2_CHECKSUM_ERROR_NOT_CORRECTED = 512;
+        public const int DXGK_DSI2_CONTENTION_DETECTED = 128;
+        public const int DXGK_DSI2_DSI_DATA_TYPE_NOT_RECOGNIZED = 2048;
+        public const int DXGK_DSI2_DSI_PROTOCOL_VIOLATION = 32768;
+        public const int DXGK_DSI2_DSI_VC_ID_INVALID = 4096;
+        public const int DXGK_DSI2_EOT_SYNC_ERROR = 4;
+        public const int DXGK_DSI2_ESCAPE_MODE_ENTRY_COMMAND_ERROR = 8;
+        public const int DXGK_DSI2_FALSE_CONTROL_ERROR = 64;
+        public const int DXGK_DSI2_INVALID_PACKET_INDEX = 255;
+        public const int DXGK_DSI2_INVALID_TRANSMISSION_LENGTH = 8192;
+        public const int DXGK_DSI2_LONG_PACKET_PAYLOAD_CHECKSUM_ERROR = 1024;
+        public const int DXGK_DSI2_LOW_POWER_TRANSMIT_SYNC_ERROR = 16;
+        public const int DXGK_DSI2_PACKET_EMBEDDED_PAYLOAD_SIZE = 8;
+        public const int DXGK_DSI2_PERIPHERAL_TIMEOUT_ERROR = 32;
+        public const int DXGK_DSI2_SOT_ERROR = 1;
+        public const int DXGK_DSI2_SOT_SYNC_ERROR = 2;
+        public const int DXGK_FSTATE_UNKNOWN_POWER = -1;
+        public const long DXGK_FSTATE_UNKNOWN_TIME = -1;
+        public const int DXGK_HOST_DSI2_BAD_TRANSMISSION_MODE = 4096;
+        public const int DXGK_HOST_DSI2_DEVICE_NOT_READY = 1;
+        public const int DXGK_HOST_DSI2_DEVICE_RESET = 4;
+        public const int DXGK_HOST_DSI2_DRIVER_REJECTED_PACKET = 1024;
+        public const int DXGK_HOST_DSI2_INTERFACE_RESET = 2;
+        public const int DXGK_HOST_DSI2_INVALID_TRANSMISSION = 256;
+        public const int DXGK_HOST_DSI2_OS_REJECTED_PACKET = 512;
+        public const int DXGK_HOST_DSI2_TRANSMISSION_CANCELLED = 16;
+        public const int DXGK_HOST_DSI2_TRANSMISSION_DROPPED = 32;
+        public const int DXGK_HOST_DSI2_TRANSMISSION_TIMEOUT = 64;
+        public const int DXGK_KEYWORD_LOG_FLAGS_STABLE_POWER = 4096;
+        public const int DXGK_KEYWORD_LOG_FLAGS_STABLE_POWER2 = 8192;
+        public const int DXGK_MAX_ASYMETRICAL_PROCESSING_NODES = 64;
+        public const int DXGK_MAX_F_STATES = 8;
+        public const int DXGK_MAX_INTEGRATED_DISPLAYS = 16;
+        public const int DXGK_MAX_PACKET_COUNT = 128;
+        public const int DXGK_MAX_POWER_COMPONENT_PROVIDERS = 16;
+        public const int DXGK_MAX_P_STATES = 32;
+        public const int DXGK_POWER_COMPONENT_NAME_SIZE = 40;
+        public const int DXGK_PRESENT_DESTINATION_INDEX = 2;
+        public const int DXGK_PRESENT_SOURCE_INDEX = 1;
+        public const int DXGK_SEGMENT_ID_INVALID = 0;
+        public const int DXGK_SEGMENT_ID_SYSTEMMEMORY = 31;
+        public const int DXGK_SEGMENT_SET_SYSTEMMEMORY = -2147483648;
+        public const int DXGK_TEXTURE_SIZE_SHIFT = 11;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\d3dkmdt.h
+        public const int D3DKMDT_BITS_PER_COMPONENT_06 = 1;
+        public const int D3DKMDT_BITS_PER_COMPONENT_08 = 2;
+        public const int D3DKMDT_BITS_PER_COMPONENT_10 = 4;
+        public const int D3DKMDT_BITS_PER_COMPONENT_12 = 8;
+        public const int D3DKMDT_BITS_PER_COMPONENT_14 = 16;
+        public const int D3DKMDT_BITS_PER_COMPONENT_16 = 32;
+        public const int D3DKMDT_MACROVISION_OEMCOPYPROTECTION_SIZE = 256;
+        public const int D3DKMDT_MAX_OVERLAYS_BITCOUNT = 2;
+        public const int DISPLAYID_DETAILED_TIMING_TYPE_I_SIZE = 20;
+        public const int DXGKMDT_I2C_DEVICE_TRANSMITS_DATA_LENGTH = 1;
+        public const int DXGKMDT_I2C_NO_FLAGS = 0;
+        public const int DXGKMDT_OPM_128_BIT_RANDOM_NUMBER_SIZE = 16;
+        public const int DXGKMDT_OPM_CONFIGURE_SETTING_DATA_SIZE = 4056;
+        public const int DXGKMDT_OPM_ENCRYPTED_PARAMETERS_SIZE = 256;
+        public const int DXGKMDT_OPM_GET_INFORMATION_PARAMETERS_SIZE = 4056;
+        public const int DXGKMDT_OPM_HDCP_KEY_SELECTION_VECTOR_SIZE = 5;
+        public const int DXGKMDT_OPM_OMAC_SIZE = 16;
+        public const int DXGKMDT_OPM_PROTECTION_TYPE_SIZE = 4;
+        public const int DXGKMDT_OPM_REQUESTED_INFORMATION_SIZE = 4076;
+        public const int DXGK_BRIGHTNESS_MAXIMUM_NIT_RANGE_COUNT = 16;
+        public const int DXGK_MAX_GPUVERSION_NAME_LENGTH = 32;
+        public const int DXGK_MAX_METADATA_NAME_LENGTH = 32;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\d3dukmdt.h
         public const int D3DDDI_ALLOCATIONPRIORITY_HIGH = -1610612736;
         public const int D3DDDI_ALLOCATIONPRIORITY_LOW = 1342177280;
         public const int D3DDDI_ALLOCATIONPRIORITY_MAXIMUM = -939524096;
@@ -304,6 +376,10 @@
         public const int D3D_UMD_INTERFACE_VERSION_WDDM2_5_1 = 40960;
         public const int D3D_UMD_INTERFACE_VERSION_WDDM2_5_2 = 40961;
         public const int D3D_UMD_INTERFACE_VERSION_WDDM2_5_3 = 40962;
+        public const int D3D_UMD_INTERFACE_VERSION_WDDM2_6_1 = 45056;
+        public const int D3D_UMD_INTERFACE_VERSION_WDDM2_6_2 = 45057;
+        public const int D3D_UMD_INTERFACE_VERSION_WDDM2_6_3 = 45058;
+        public const int D3D_UMD_INTERFACE_VERSION_WDDM2_6_4 = 45059;
         public const int D3D_UMD_INTERFACE_VERSION_WIN7 = 8195;
         public const int D3D_UMD_INTERFACE_VERSION_WIN8 = 12292;
         public const int D3D_UMD_INTERFACE_VERSION_WIN8_CP = 12290;
@@ -316,19 +392,21 @@
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_0 = 20515;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_1 = 24579;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_1_5 = 24592;
+        public const int DXGKDDI_INTERFACE_VERSION_WDDM2_1_6 = 24593;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_2 = 28682;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_3 = 32769;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_4 = 36870;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_5 = 40971;
+        public const int DXGKDDI_INTERFACE_VERSION_WDDM2_6 = 45060;
         public const int DXGKDDI_INTERFACE_VERSION_WIN7 = 8197;
         public const int DXGKDDI_INTERFACE_VERSION_WIN8 = 12302;
         public const int DXGK_MAX_PAGE_TABLE_LEVEL_COUNT = 6;
         public const int DXGK_MIN_PAGE_TABLE_LEVEL_COUNT = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\dmerror.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\dmerror.h
         public const int DMUS_ERRBASE = 4096;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgi.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\dxgi.h
         public const int DXGI_ENUM_MODES_INTERLACED = 1;
         public const int DXGI_ENUM_MODES_SCALING = 2;
         public const int DXGI_MAP_DISCARD = 4;
@@ -358,23 +436,23 @@
         public const int DXGI_USAGE_SHARED = 128;
         public const int DXGI_USAGE_UNORDERED_ACCESS = 1024;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgi1_2.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\dxgi1_2.h
         public const int DXGI_ENUM_MODES_DISABLED_STEREO = 8;
         public const int DXGI_ENUM_MODES_STEREO = 4;
         public const int DXGI_SHARED_RESOURCE_READ = -2147483648;
         public const int DXGI_SHARED_RESOURCE_WRITE = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgi1_3.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\dxgi1_3.h
         public const int DXGI_CREATE_FACTORY_DEBUG = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgicommon.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\dxgicommon.h
         public const int DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN = -2;
         public const int DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgiformat.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\dxgiformat.h
         public const int DXGI_FORMAT_DEFINED = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\dxgitype.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\dxgitype.h
         public const int DXGI_CPU_ACCESS_DYNAMIC = 1;
         public const int DXGI_CPU_ACCESS_FIELD = 15;
         public const int DXGI_CPU_ACCESS_NONE = 0;
@@ -382,7 +460,7 @@
         public const int DXGI_CPU_ACCESS_SCRATCH = 3;
         public const int _FACDXGI = 2170;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\ks.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\ks.h
         public const int KSALLOCATOR_FLAG_2D_BUFFER_REQUIRED = 32768;
         public const int KSALLOCATOR_FLAG_ALLOCATOR_EXISTS = 2048;
         public const int KSALLOCATOR_FLAG_ATTENTION_STEPPING = 8192;
@@ -482,7 +560,7 @@
         public const int KSSTREAM_UVC_SECURE_ATTRIBUTE_SIZE = 8192;
         public const int NANOSECONDS = 10000000;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\ksarm.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\ksarm.h
         public const int AaCp15_Cr0_CpuId = 0;
         public const int AaCp15_Cr10_NormalMemoryRemap = 328;
         public const int AaCp15_Cr10_PrimaryMemoryRemap = 324;
@@ -508,14 +586,69 @@
         public const int AaCp15_Cr9_PmOverflowStatus = 312;
         public const int AaCp15_Cr9_PmSelect = 316;
         public const int AaCp15_Cr9_PmUserEnable = 320;
+        public const int AfBitmap = 8;
+        public const int AfCount = 0;
+        public const int AffinityExLength = 12;
+        public const int ApApcListEntry = 12;
+        public const int ApApcMode = 45;
+        public const int ApApcStateIndex = 44;
+        public const int ApcObjectLength = 48;
+        public const int APC_INDEX_MISMATCH = 1;
+        public const int APC_LEVEL = 1;
+        public const int ApInserted = 46;
+        public const int ApKernelRoutine = 20;
+        public const int ApNormalContext = 32;
+        public const int ApNormalRoutine = 28;
+        public const int ApRundownRoutine = 24;
+        public const int ApSize = 2;
+        public const int ApSystemArgument1 = 36;
+        public const int ApSystemArgument2 = 40;
+        public const int ApThread = 8;
+        public const int ApType = 0;
+        public const int ArFlags = 16;
         public const int ARM_RED_ZONE_BYTES = 8;
         public const int ARM_VFP_ALWAYSON = 0;
         public const int ARM_VFP_ENABLE_STATISTICS = 0;
         public const int ARM_VFP_LAZY_ONEWAY = 1;
         public const int ARM_VFP_LAZY_WITH_DEMOTION = 2;
         public const int ARM_VFP_MANAGEMENT = 0;
+        public const int ArNormalContext = 4;
+        public const int ArNormalRoutine = 0;
+        public const int ArSystemArgument1 = 8;
+        public const int ArSystemArgument2 = 12;
+        public const int AsApcListHead = 0;
+        public const int AsKernelApcPending = 21;
+        public const int AsProcess = 16;
+        public const int AsUserApcPendingAll = 22;
+        public const int ATTEMPTED_SWITCH_FROM_DPC = 184;
+        public const int BASE_PRIORITY_THRESHOLD = 8;
+        public const int BREAKPOINT_BREAK = 0;
+        public const int BREAKPOINT_COMMAND_STRING = 5;
         public const int BREAKPOINT_HW_ASYNCH_WATCH = 7;
+        public const int BREAKPOINT_HW_BREAK = 8;
         public const int BREAKPOINT_HW_SYNCH_WATCH = 6;
+        public const int BREAKPOINT_LOAD_SYMBOLS = 3;
+        public const int BREAKPOINT_PRINT = 1;
+        public const int BREAKPOINT_PROMPT = 2;
+        public const int BREAKPOINT_UNLOAD_SYMBOLS = 4;
+        public const int BUGCHECK_CONTEXT_MODIFIER = -2147483648;
+        public const int CalloutFrameLength = 24;
+        public const int CidUniqueProcess = 0;
+        public const int CidUniqueThread = 4;
+        public const int CkApiNumber = 8;
+        public const int CkBuffer = 0;
+        public const int CkLength = 4;
+        public const int CkPc = 20;
+        public const int CkSp = 16;
+        public const int CLOCK_QUANTUM_DECREMENT = 3;
+        public const int CmThreadEnvironmentBlockOffset = 4096;
+        public const int CONTEXT_ALIGN = 8;
+        public const int CONTEXT_CONTROL = 2097153;
+        public const int CONTEXT_DEBUG_REGISTERS = 2097160;
+        public const int CONTEXT_FLOATING_POINT = 2097156;
+        public const int CONTEXT_FRAME_LENGTH = 416;
+        public const int CONTEXT_FULL = 2097159;
+        public const int CONTEXT_INTEGER = 2097154;
         public const int CP14_DBGBCR_ENABLE_BIT = 1;
         public const int CP14_DBGBCR_MISMATCH_BIT = 4194304;
         public const int CP14_DBGDSCR_MOE_BKPT = 3;
@@ -557,6 +690,7 @@
         public const int CPSRM_ABT = 23;
         public const int CPSRM_FIQ = 17;
         public const int CPSRM_INT = 18;
+        public const int CPSRM_MASK = 31;
         public const int CPSRM_SVC = 19;
         public const int CPSRM_SYS = 31;
         public const int CPSRM_UDF = 27;
@@ -569,9 +703,15 @@
         public const int CuOutputBuffer = 8;
         public const int CuOutputLength = 12;
         public const int CuTrapFrame = 4;
+        public const int CxBcr = 368;
+        public const int CxBvr = 336;
+        public const int CxContextFlags = 0;
+        public const int CxCpsr = 68;
         public const int CxD = 80;
         public const int CxD8 = 144;
         public const int CxFpscr = 72;
+        public const int CxLr = 60;
+        public const int CxPc = 64;
         public const int CxQ = 80;
         public const int CxR0 = 4;
         public const int CxR1 = 8;
@@ -587,8 +727,94 @@
         public const int CxR8 = 36;
         public const int CxR9 = 40;
         public const int CxS = 80;
+        public const int CxSp = 56;
+        public const int CxWcr = 404;
+        public const int CxWvr = 400;
+        public const int CxxLegacyLength = 12;
+        public const int CxxLegacyOffset = 8;
+        public const int CxxXStateLength = 20;
+        public const int CxxXStateOffset = 16;
+        public const int DATA_BUS_ERROR = 46;
+        public const int DATA_COHERENCY_EXCEPTION = 85;
         public const int DBGDSCR_MON_EN_BIT = 32768;
+        public const int DBG_STATUS_CONTROL_C = 1;
+        public const int DcContextRecord = 20;
+        public const int DcControlPc = 0;
+        public const int DcControlPcIsUnwound = 40;
+        public const int DcEstablisherFrame = 12;
+        public const int DcFunctionEntry = 8;
+        public const int DcHandlerData = 28;
+        public const int DcHistoryTable = 32;
+        public const int DcImageBase = 4;
+        public const int DcLanguageHandler = 24;
+        public const int DcNonVolatileRegisters = 44;
         public const int DcReserved = 48;
+        public const int DcScopeIndex = 36;
+        public const int DcTargetPc = 16;
+        public const int DEBUG_ACTIVE_DBG = 1;
+        public const int DEBUG_ACTIVE_DBG_INSTRUMENTED = 3;
+        public const int DEBUG_ACTIVE_INSTRUMENTED = 2;
+        public const int DEBUG_ACTIVE_MINIMAL_THREAD = 4;
+        public const int DeDeviceListEntry = 0;
+        public const int DeferredReady = 7;
+        public const int DeInserted = 12;
+        public const int DeSortKey = 8;
+        public const int DeviceQueueEntryLength = 16;
+        public const int DeviceQueueObjectLength = 20;
+        public const int DISPATCH_LEVEL = 2;
+        public const int DOUBLE_FAULT_STACK_SIZE = 12288;
+        public const int DpcObjectLength = 32;
+        public const int DpDeferredContext = 16;
+        public const int DpDeferredRoutine = 12;
+        public const int DpDpcData = 28;
+        public const int DpDpcListEntry = 4;
+        public const int DpImportance = 1;
+        public const int DpNumber = 2;
+        public const int DpPc = 12;
+        public const int DpSp = 8;
+        public const int DpSystemArgument1 = 20;
+        public const int DpSystemArgument2 = 24;
+        public const int DpType = 0;
+        public const int DvBusy = 16;
+        public const int DvDeviceListHead = 4;
+        public const int DvSize = 2;
+        public const int DvSpinLock = 12;
+        public const int DvType = 0;
+        public const int EpDebugPort = 348;
+        public const int ErExceptionAddress = 12;
+        public const int ErExceptionCode = 0;
+        public const int ErExceptionFlags = 4;
+        public const int ErExceptionInformation = 20;
+        public const int ErExceptionRecord = 8;
+        public const int ErNumberParameters = 16;
+        public const int EtCid = 892;
+        public const int EtPicoContext = 1092;
+        public const int EtwTSLength = 32;
+        public const int EventObjectLength = 16;
+        public const int EvSignalState = 4;
+        public const int EvSize = 2;
+        public const int EvType = 0;
+        public const int EvWaitListHead = 8;
+        public const int ExceptionCollidedUnwind = 3;
+        public const int ExceptionContinueExecution = 0;
+        public const int ExceptionContinueSearch = 1;
+        public const int ExceptionNestedException = 2;
+        public const int ExceptionRecordLength = 80;
+        public const int EXCEPTION_COLLIDED_UNWIND = 64;
+        public const int EXCEPTION_CONTINUE_EXECUTION = -1;
+        public const int EXCEPTION_CONTINUE_SEARCH = 0;
+        public const int EXCEPTION_EXECUTE_HANDLER = 1;
+        public const int EXCEPTION_EXIT_UNWIND = 4;
+        public const int EXCEPTION_NESTED_CALL = 16;
+        public const int EXCEPTION_NONCONTINUABLE = 1;
+        public const int EXCEPTION_RECORD_LENGTH = 80;
+        public const int EXCEPTION_STACK_INVALID = 8;
+        public const int EXCEPTION_TARGET_UNWIND = 32;
+        public const int EXCEPTION_UNWIND = 102;
+        public const int EXCEPTION_UNWINDING = 2;
+        public const int Executive = 0;
+        public const int ExecutiveProcessObjectLength = 1280;
+        public const int ExecutiveThreadObjectLength = 1152;
         public const int EXHANDLE_CACHED_REFS = 31;
         public const int EXHANDLE_REFERENCE_SHIFT = 27;
         public const int EXHANDLE_REF_ACQUIRE_LOCK = -1;
@@ -603,8 +829,32 @@
         public const int ExR7 = 32;
         public const int ExR8 = 36;
         public const int ExR9 = 40;
+        public const int ExReturn = 52;
         public const int ExTrapFrame = 4;
+        public const int FALSE = 0;
         public const int FAST_FAIL_DEPRECATED_SERVICE_INVOKED = 27;
+        public const int FAST_FAIL_ENCLAVE_CALL_FAILURE = 53;
+        public const int FAST_FAIL_FLAGS_CORRUPTION = 59;
+        public const int FAST_FAIL_GUARD_ICALL_CHECK_FAILURE = 10;
+        public const int FAST_FAIL_INVALID_BUFFER_ACCESS = 28;
+        public const int FAST_FAIL_INVALID_CONTROL_STACK = 47;
+        public const int FAST_FAIL_INVALID_NEXT_THREAD = 30;
+        public const int FAST_FAIL_SET_CONTEXT_DENIED = 48;
+        public const int FbActivationContextStackPointer = 444;
+        public const int FbDeallocationStack = 16;
+        public const int FbExceptionList = 4;
+        public const int FbFiberContext = 24;
+        public const int FbFiberData = 0;
+        public const int FbFlsData = 448;
+        public const int FbGuaranteedStackBytes = 452;
+        public const int FbStackBase = 8;
+        public const int FbStackLimit = 12;
+        public const int FbTebFlags = 456;
+        public const int FbWx86Tib = 440;
+        public const int FmContention = 8;
+        public const int FmCount = 0;
+        public const int FmOldIrql = 28;
+        public const int FmOwner = 4;
         public const int FPSCRF_C = 536870912;
         public const int FPSCRF_N = -2147483648;
         public const int FPSCRF_QC = 134217728;
@@ -631,7 +881,58 @@
         public const int FPSCR_OFE = 1024;
         public const int FPSCR_UFC = 8;
         public const int FPSCR_UFE = 2048;
+        public const int GateWaitObsolete = 8;
+        public const int HAL1_INITIALIZATION_FAILED = 97;
+        public const int HARDWARE_INTERRUPT_STORM = 242;
+        public const int HIGH_LEVEL = 15;
+        public const int IbCfgBitMap = 176;
+        public const int IbMitigationOptionsMap = 160;
+        public const int IbWow64CfgBitMap = 192;
+        public const int InActualLock = 36;
+        public const int InConnected = 51;
+        public const int InDispatchAddress = 40;
+        public const int InDispatchCount = 76;
+        public const int InFloatingSave = 50;
+        public const int InInternalState = 60;
+        public const int InInterruptListEntry = 4;
+        public const int InIrql = 48;
+        public const int Initialized = 0;
+        public const int INITIAL_STALL_COUNT = 100;
+        public const int InLatched = 1;
+        public const int InLevelSensitive = 0;
+        public const int InMode = 64;
+        public const int InNumber = 52;
+        public const int InServiceContext = 24;
+        public const int InServiceCount = 72;
+        public const int InServiceRoutine = 12;
+        public const int InShareVector = 56;
+        public const int InSize = 2;
+        public const int InSpinLock = 28;
+        public const int INSTRUCTION_BUS_ERROR = 47;
+        public const int INSTRUCTION_COHERENCY_EXCEPTION = 86;
+        public const int InSynchronizeIrql = 49;
+        public const int InterruptObjectLength = 176;
+        public const int INTERRUPT_EXCEPTION_NOT_HANDLED = 61;
+        public const int INTERRUPT_UNWIND_ATTEMPTED = 60;
+        public const int InTickCount = 32;
+        public const int InTrapFrame = 84;
+        public const int InType = 0;
+        public const int INVALID_AFFINITY_SET = 3;
+        public const int INVALID_CALLBACK_STACK_ADDRESS = 461;
+        public const int INVALID_DATA_ACCESS_TRAP = 4;
+        public const int INVALID_KERNEL_STACK_ADDRESS = 462;
+        public const int InVector = 44;
+        public const int IPI_APC = 1;
+        public const int IPI_DPC = 2;
+        public const int IPI_FREEZE = 4;
+        public const int IPI_LEVEL = 14;
+        public const int IPI_PACKET_READY = 5;
+        public const int IRQL_GT_ZERO_AT_SYSTEM_SERVICE = 74;
+        public const int IRQL_NOT_GREATER_OR_EQUAL = 9;
+        public const int IRQL_NOT_LESS_OR_EQUAL = 10;
+        public const int JbD = 48;
         public const int JbFpscr = 44;
+        public const int JbFrame = 0;
         public const int JbPc = 40;
         public const int JbR10 = 28;
         public const int JbR11 = 32;
@@ -641,7 +942,43 @@
         public const int JbR7 = 16;
         public const int JbR8 = 20;
         public const int JbR9 = 24;
+        public const int JbSp = 36;
+        public const int KAPC_RECORD_FLAGS_CHECK_ALERT = 1;
+        public const int KAPC_RECORD_LENGTH = 24;
+        public const int KAPC_STATE_ANY_USER_APC_PENDING_MASK = 3;
+        public const int KcActualLimit = 4;
+        public const int KcCurrentBase = 0;
+        public const int KcPreviousBase = 8;
+        public const int KcPreviousInitial = 20;
+        public const int KcPreviousKernel = 16;
+        public const int KcPreviousLimit = 12;
+        public const int KENTROPY_TIMING_ANALYSIS = 0;
+        public const int KENTROPY_TIMING_BUFFER_MASK = 2047;
+        public const int KENTROPY_TIMING_INTERRUPTS_PER_BUFFER = 1024;
+        public const int KernelMode = 0;
+        public const int KernelProcessObjectLength = 176;
+        public const int KernelThreadObjectLength = 848;
+        public const int KERNEL_APC_PENDING_DURING_EXIT = 32;
+        public const int KERNEL_LARGE_STACK_COMMIT = 12288;
+        public const int KERNEL_LARGE_STACK_SIZE = 61440;
+        public const int KERNEL_SECURITY_CHECK_FAILURE = 313;
+        public const int KEXCEPTION_ACTIVE_EXCEPTION_FRAME = 1;
+        public const int KEXCEPTION_ACTIVE_INTERRUPT_FRAME = 0;
+        public const int KEXCEPTION_ACTIVE_SERVICE_FRAME = 2;
+        public const int KEXCEPTION_FRAME_LENGTH = 56;
         public const int KF_VFP_32REG = 16;
+        public const int KINTERRUPT_STATE_DISABLED = 1;
+        public const int KINTERRUPT_STATE_DISABLED_BIT = 0;
+        public const int KI_DPC_ALL_FLAGS = 63;
+        public const int KI_DPC_ANY_DPC_ACTIVE = 65537;
+        public const int KI_DPC_INTERRUPT_FLAGS = 47;
+        public const int KI_EXCEPTION_ACCESS_VIOLATION = 268435460;
+        public const int KI_EXCEPTION_GP_FAULT = 268435457;
+        public const int KI_EXCEPTION_HARDWARE_ERROR = 268435461;
+        public const int KI_EXCEPTION_INTERNAL = 268435456;
+        public const int KI_EXCEPTION_INVALID_OP = 268435458;
+        public const int KI_SPINLOCK_ORDER_PRCB_LOCK = 64;
+        public const int KMODE_EXCEPTION_NOT_HANDLED = 30;
         public const int KsAbortLr = 136;
         public const int KsAbortSp = 132;
         public const int KsAbortSpsr = 140;
@@ -654,12 +991,51 @@
         public const int KsIrqLr = 160;
         public const int KsIrqSp = 156;
         public const int KsIrqSpsr = 164;
+        public const int KsKernelBcr = 72;
+        public const int KsKernelBvr = 40;
+        public const int KsKernelWcr = 108;
+        public const int KSTACK_ACTUAL_LIMIT_EXPANDED = 1;
+        public const int KSTACK_CONTROL_LENGTH = 24;
+        public const int KSTART_FRAME_LENGTH = 16;
         public const int KsUdfLr = 148;
         public const int KsUdfSp = 144;
         public const int KsUdfSpsr = 152;
         public const int KsUserLr = 128;
         public const int KsUserSp = 124;
+        public const int KSWITCH_FRAME_LENGTH = 16;
+        public const int KTHREAD_AUTO_ALIGNMENT_BIT = 2;
+        public const int KTHREAD_BAM_QOS_LEVEL_MASK = 3;
+        public const int KTHREAD_CET_USER_SHADOW_STACK_BIT = 20;
+        public const int KTHREAD_GUI_THREAD_MASK = 128;
+        public const int KTHREAD_QUEUE_DEFER_PREEMPTION_BIT = 11;
+        public const int KTHREAD_RESTRICTED_GUI_THREAD_MASK = 2097152;
+        public const int KTHREAD_SYSTEM_THREAD_BIT = 10;
+        public const int KTRAP_FRAME_ARGUMENTS = 56;
+        public const int KTRAP_FRAME_LENGTH = 136;
+        public const int LiHighPart = 4;
+        public const int LiLowPart = 0;
+        public const int LOCK_QUEUE_HEADER_SIZE = 8;
+        public const int LOCK_QUEUE_OWNER = 2;
+        public const int LOCK_QUEUE_WAIT = 1;
+        public const int LOW_REALTIME_PRIORITY = 16;
+        public const int LpbKernelStack = 72;
+        public const int LpbPrcb = 76;
+        public const int LpbProcess = 80;
+        public const int LpbThread = 84;
+        public const int LqhLock = 4;
+        public const int LqhLockQueue = 0;
+        public const int LqhNext = 0;
+        public const int LqhOldIrql = 8;
+        public const int LqLock = 4;
+        public const int LqNext = 0;
+        public const int LsBlink = 4;
+        public const int LsFlink = 0;
+        public const int MachineFrameLength = 8;
+        public const int MAXIMUM_PROCESSORS = 32;
+        public const int MfPc = 4;
+        public const int MfSp = 0;
         public const int MiniStackLength = 32;
+        public const int MM_SHARED_USER_DATA_VA = 2147352576;
         public const int MsCpsr = 4;
         public const int MsPc = 0;
         public const int MsR4 = 8;
@@ -667,30 +1043,297 @@
         public const int MsR6 = 16;
         public const int MsR7 = 20;
         public const int MsReserved = 24;
+        public const int MUTEX_ALREADY_OWNED = 191;
+        public const int NMI_HARDWARE_FAILURE = 128;
+        public const int NO_USER_MODE_CONTEXT = 14;
+        public const int NTOS_YIELD_MACRO = 1;
+        public const int NUMBER_SERVICE_TABLES = 2;
+        public const int PAGE_FAULT_WITH_INTERRUPTS_OFF = 73;
+        public const int PAGE_SHIFT = 12;
+        public const int PAGE_SIZE = 4096;
+        public const int PANIC_STACK_SWITCH = 43;
+        public const int PASSIVE_LEVEL = 0;
         public const int PbAbtMiniStack = 4016;
+        public const int PbAdjustDpcThreshold = 2324;
+        public const int PbAlignmentFixupCount = 3328;
+        public const int PbBuildType = 1040;
+        public const int PbCcFastMdlReadNoWait = 2816;
+        public const int PbContextSwitches = 1588;
+        public const int PbCopyReadNoWait = 1604;
+        public const int PbCopyReadNoWaitMiss = 1612;
+        public const int PbCopyReadWait = 1608;
+        public const int PbCoresPerPhysicalProcessor = 1042;
+        public const int PbCurrentThread = 4;
         public const int PbCycleCounterHigh = 2416;
+        public const int PbCycleTime = 2752;
+        public const int PbDeferredReadyListHead = 1540;
+        public const int PbDispatcherReadyListHead = 2048;
+        public const int PbDpcCount = 1696;
+        public const int PbDpcGate = 1792;
+        public const int PbDpcLastCount = 1748;
+        public const int PbDpcList = 1680;
+        public const int PbDpcLock = 1688;
+        public const int PbDpcRequestRate = 1740;
+        public const int PbDpcRequestSummary = 1756;
+        public const int PbDpcRoutineActive = 1754;
+        public const int PbDpcStack = 1728;
+        public const int PbDpcTime = 2316;
+        public const int PbEntropyBuffer = 2432;
+        public const int PbEntropyCount = 2428;
+        public const int PbExceptionDispatchCount = 2356;
+        public const int PbFastReadNotPossible = 1600;
+        public const int PbFastReadNoWait = 1592;
+        public const int PbFastReadWait = 1596;
+        public const int PbFeatureBits = 1292;
         public const int PbFiqMiniStack = 3920;
         public const int PbGroup = 1052;
         public const int PbGroupIndex = 1053;
+        public const int PbHalReserved = 976;
+        public const int PbIdleHalt = 2;
+        public const int PbIdleSchedule = 1755;
+        public const int PbIdleThread = 12;
+        public const int PbInterruptCount = 2304;
+        public const int PbInterruptTime = 2320;
+        public const int PbIpiFrozen = 1672;
         public const int PbIrqMiniStack = 3952;
+        public const int PbKernelTime = 2308;
+        public const int PbKeSpinLockOrdering = 1860;
+        public const int PbLockQueue = 1152;
+        public const int PbLogicalProcessorsPerCore = 1043;
+        public const int PbLookasideIrpFloat = 1616;
+        public const int PbMailbox = 1664;
+        public const int PbMajorVersion = 1038;
+        public const int PbMaximumDpcQueueDepth = 1736;
+        public const int PbMinimumDpcRate = 1744;
+        public const int PbMinorVersion = 1036;
+        public const int PbNestingLevel = 16;
+        public const int PbNextThread = 8;
+        public const int PbNodeColor = 2736;
+        public const int PbNodeShiftedColor = 2740;
+        public const int PbNormalDpcState = 1756;
+        public const int PbNumber = 20;
+        public const int PbOtherOperationCount = 1628;
+        public const int PbOtherTransferCount = 1648;
+        public const int PbPacketBarrier = 1536;
+        public const int PbPageColor = 2732;
         public const int PbPanicMiniStack = 4048;
+        public const int PbPanicStackBase = 4080;
+        public const int PbParentNode = 2360;
+        public const int PbPowerState = 2944;
+        public const int PbPPLookasideList = 1408;
+        public const int PbPPNPagedLookasideList = 12928;
+        public const int PbPPPagedLookasideList = 15232;
+        public const int PbPrcbLock = 24;
+        public const int PbPriorityState = 28;
+        public const int PbProcessorState = 32;
+        public const int PbProcessorVendorString = 1288;
+        public const int PbQuantumEnd = 1753;
+        public const int PbReadOperationCount = 1620;
+        public const int PbReadTransferCount = 1632;
+        public const int PbRequestMailbox = 18560;
+        public const int PbSecondaryColorMask = 2744;
+        public const int PbSpBase = 1732;
+        public const int PbSpinLockAcquireCount = 3712;
+        public const int PbStartCycles = 2376;
+        public const int PbSystemCalls = 1584;
         public const int PbUdfMiniStack = 3984;
+        public const int PbUserTime = 2312;
+        public const int PbWaitListHead = 1920;
+        public const int PbWriteOperationCount = 1624;
+        public const int PbWriteTransferCount = 1640;
         public const int PcCurrentPrcb = 16;
+        public const int PcCurrentThread = 1412;
         public const int PcCycleCounterHigh = 3824;
+        public const int PcDebuggerSavedIRQL = 3737;
+        public const int PcDeferredReadyListHead = 2948;
+        public const int PcDpcRoutineActive = 3162;
+        public const int PcFeatureBits = 2700;
+        public const int PcGroupSetMember = 2456;
+        public const int PcHalReserved = 132;
+        public const int PcIdleHalt = 1410;
+        public const int PcIdleThread = 1420;
+        public const int PcInterruptCount = 3712;
+        public const int PcLockArray = 20;
+        public const int PcNestingLevel = 1424;
+        public const int PcNextThread = 1416;
+        public const int PcNumber = 1428;
+        public const int PcPrcb = 1408;
+        public const int PcPrcbLock = 1432;
+        public const int PcSelf = 12;
+        public const int PcSkipTick = 3736;
+        public const int PcSpBase = 3140;
+        public const int PcStallScaleFactor = 48;
+        public const int PcStartCycles = 3784;
+        public const int PcSystemCalls = 2992;
+        public const int PcTeb = 24;
+        public const int PeBeingDebugged = 2;
+        public const int PeKernelCallbackTable = 44;
+        public const int PeProcessParameters = 16;
+        public const int PERF_CONTEXTSWAP_FLAG = 4;
+        public const int PERF_CONTEXTSWAP_OFFSET = 4;
+        public const int PERF_INTERRUPT = 536887296;
+        public const int PERF_INTERRUPT_FLAG = 16384;
+        public const int PERF_INTERRUPT_OFFSET = 4;
+        public const int PERF_SPEC_CONTROL_FLAG = 2;
+        public const int PERF_SPEC_CONTROL_OFFSET = 20;
+        public const int PERF_SYSCALL_FLAG = 64;
+        public const int PERF_SYSCALL_OFFSET = 8;
+        public const int PfAffinity = 36;
+        public const int PfBucketShift = 24;
+        public const int PfBuffer = 28;
+        public const int PfProcess = 12;
+        public const int PfProfileListEntry = 4;
+        public const int PfRangeBase = 16;
+        public const int PfRangeLimit = 20;
+        public const int PfSegment = 32;
+        public const int PfSize = 2;
+        public const int PfSource = 48;
+        public const int PfStarted = 50;
+        public const int PfType = 0;
         public const int PF_ARM_EXTERNAL_CACHE_AVAILABLE = 26;
+        public const int PiEndTime = 8;
+        public const int PiStartTime = 0;
+        public const int POWER_LEVEL = 14;
+        public const int PpFlags = 8;
+        public const int PppArchitecturalState = 24;
+        public const int PppArchitecturalStateVirtualAddress = 16;
         public const int PprDispatchSystemCall = 4;
+        public const int PrActiveProcessors = 88;
+        public const int PrAffinity = 64;
+        public const int PrBasePriority = 104;
+        public const int PrCycleTime = 128;
+        public const int PrDirectoryTableBase = 24;
+        public const int PrInstrumentationCallback = 164;
+        public const int PrKernelTime = 152;
+        public const int ProcessEnvironmentBlockLength = 1152;
+        public const int ProcessInMemory = 0;
+        public const int ProcessInTransition = 2;
+        public const int ProcessorControlRegisterLength = 21088;
+        public const int ProcessorParkedPageLength = 4096;
+        public const int ProcessorStartBlockLength = 8;
+        public const int ProcessorStateLength = 928;
+        public const int ProcessOutOfMemory = 1;
+        public const int ProfileObjectLength = 52;
+        public const int PROFILE_LEVEL = 15;
         public const int PrPageDirectory = 28;
+        public const int PrProcessFlags = 100;
+        public const int PrProfileListHead = 16;
+        public const int PrQuantumReset = 105;
+        public const int PrReadyListHead = 76;
+        public const int PrSignalState = 4;
+        public const int PrSize = 2;
+        public const int PrSwapListEntry = 84;
+        public const int PrThreadListHead = 40;
+        public const int PrType = 0;
+        public const int PrUserTime = 156;
+        public const int PsArchState = 168;
         public const int PsAsid = 504;
+        public const int PsAuxControl = 176;
+        public const int PsbSelfMap = 0;
+        public const int PsbTiledTtb0 = 4;
+        public const int PsContextFrame = 512;
         public const int PsContextId = 504;
+        public const int PsControl = 172;
+        public const int PsCpacr = 180;
+        public const int PsCpuid = 168;
         public const int PsDacr = 196;
         public const int PsNormalMemoryRemap = 496;
         public const int PsPrimaryMemoryRemap = 492;
+        public const int PsSpecialRegisters = 0;
+        public const int PsSvcRW = 36;
         public const int PsTtb0 = 188;
         public const int PsTtb1 = 192;
+        public const int PsTtbControl = 184;
+        public const int PsUsrRO = 32;
+        public const int PsUsrRW = 28;
+        public const int PsVBARns = 500;
+        public const int PS_MITIGATION_OPTION_ALWAYS_OFF = 2;
+        public const int PS_MITIGATION_OPTION_ALWAYS_ON = 1;
+        public const int PS_MITIGATION_OPTION_BITS_PER_OPTION = 4;
+        public const int PS_MITIGATION_OPTION_CET_USER_SHADOW_STACKS = 31;
+        public const int PS_MITIGATION_OPTION_MASK = 3;
+        public const int PS_MITIGATION_OPTION_RESTRICT_SET_THREAD_CONTEXT = 19;
+        public const int PS_MITIGATION_OPTION_RETURN_FLOW_GUARD = 16;
         public const int PTE_TOP = -1069547521;
+        public const int QuCurrentCount = 24;
+        public const int QuEntryListHead = 16;
+        public const int QueueObjectLength = 40;
+        public const int QuMaximumCount = 28;
+        public const int QuSignalState = 4;
+        public const int QuThreadListHead = 32;
+        public const int Ready = 1;
+        public const int READY_SKIP_QUANTUM = 2;
+        public const int RECURSIVE_MACHINE_CHECK = 251;
+        public const int RECURSIVE_NMI = 273;
+        public const int ROUND_TRIP_DECREMENT_COUNT = 16;
+        public const int Running = 2;
+        public const int SdBase = 0;
+        public const int SdLength = 16;
+        public const int SdLimit = 8;
+        public const int SdNumber = 12;
+        public const int SERVICE_NUMBER_MASK = 4095;
+        public const int SERVICE_TABLE_MASK = 16;
+        public const int SERVICE_TABLE_SHIFT = 8;
+        public const int SERVICE_TABLE_TEST = 16;
         public const int SfR0 = 0;
         public const int SfR1 = 4;
         public const int SfR2 = 8;
+        public const int SfReturn = 12;
+        public const int SizeofPointer = 4;
+        public const int SPIN_LOCK_ALREADY_OWNED = 15;
+        public const int SPIN_LOCK_INIT_FAILURE = 129;
+        public const int SPIN_LOCK_NOT_OWNED = 16;
+        public const int Standby = 3;
+        public const int STATUS_ACCESS_VIOLATION = -1073741819;
+        public const int STATUS_ARRAY_BOUNDS_EXCEEDED = -1073741684;
+        public const int STATUS_ASSERTION_FAILURE = -1073740768;
+        public const int STATUS_BAD_COMPRESSION_BUFFER = -1073741246;
+        public const int STATUS_BREAKPOINT = -2147483645;
+        public const int STATUS_CALLBACK_POP_STACK = -1073740765;
+        public const int STATUS_DATATYPE_MISALIGNMENT = -2147483646;
+        public const int STATUS_FLOAT_DENORMAL_OPERAND = -1073741683;
+        public const int STATUS_FLOAT_DIVIDE_BY_ZERO = -1073741682;
+        public const int STATUS_FLOAT_INEXACT_RESULT = -1073741681;
+        public const int STATUS_FLOAT_INVALID_OPERATION = -1073741680;
+        public const int STATUS_FLOAT_MULTIPLE_FAULTS = -1073741132;
+        public const int STATUS_FLOAT_MULTIPLE_TRAPS = -1073741131;
+        public const int STATUS_FLOAT_OVERFLOW = -1073741679;
+        public const int STATUS_FLOAT_STACK_CHECK = -1073741678;
+        public const int STATUS_FLOAT_UNDERFLOW = -1073741677;
+        public const int STATUS_GUARD_PAGE_VIOLATION = -2147483647;
+        public const int STATUS_ILLEGAL_FLOAT_CONTEXT = -1073741494;
+        public const int STATUS_ILLEGAL_INSTRUCTION = -1073741795;
+        public const int STATUS_INSTRUCTION_MISALIGNMENT = -1073741654;
+        public const int STATUS_INTEGER_DIVIDE_BY_ZERO = -1073741676;
+        public const int STATUS_INTEGER_OVERFLOW = -1073741675;
+        public const int STATUS_INVALID_HANDLE = -1073741816;
+        public const int STATUS_INVALID_LOCK_SEQUENCE = -1073741794;
+        public const int STATUS_INVALID_OWNER = -1073741734;
+        public const int STATUS_INVALID_PARAMETER = -1073741811;
+        public const int STATUS_INVALID_PARAMETER_1 = -1073741585;
+        public const int STATUS_INVALID_SYSTEM_SERVICE = -1073741796;
+        public const int STATUS_INVALID_THREAD = -1073740004;
+        public const int STATUS_IN_PAGE_ERROR = -1073741818;
+        public const int STATUS_KERNEL_APC = 256;
+        public const int STATUS_LONGJUMP = -2147483610;
+        public const int STATUS_NO_CALLBACK_ACTIVE = -1073741224;
+        public const int STATUS_PRIVILEGED_INSTRUCTION = -1073741674;
+        public const int STATUS_SET_CONTEXT_DENIED = -1073740278;
+        public const int STATUS_SINGLE_STEP = -2147483644;
+        public const int STATUS_STACK_BUFFER_OVERRUN = -1073740791;
+        public const int STATUS_STACK_OVERFLOW = -1073741571;
+        public const int STATUS_SUCCESS = 0;
+        public const int STATUS_THREAD_IS_TERMINATING = -1073741749;
+        public const int STATUS_TIMEOUT = 258;
+        public const int STATUS_UNWIND = -1073741785;
+        public const int STATUS_UNWIND_CONSOLIDATE = -2147483607;
+        public const int STATUS_USER_APC = 192;
+        public const int STATUS_WAKE_SYSTEM = 1073742484;
+        public const int STATUS_WAKE_SYSTEM_DEBUGGER = -2147483641;
+        public const int StrBuffer = 4;
+        public const int StrLength = 0;
+        public const int StrMaximumLength = 2;
+        public const int SwApcBypass = 0;
         public const int SWFS_ALIGN_FAULT = 32;
         public const int SWFS_DEBUG_FAULT = 128;
         public const int SWFS_EXECUTE = 8;
@@ -698,35 +1341,253 @@
         public const int SWFS_PAGE_FAULT = 16;
         public const int SWFS_WRITE = 1;
         public const int SwR11 = 8;
+        public const int SwReturn = 12;
+        public const int SYNCH_LEVEL = 12;
+        public const int SYSCALL_PSR = 48;
+        public const int SYSTEM_EXIT_OWNED_MUTEX = 57;
+        public const int SYSTEM_SERVICE_EXCEPTION = 59;
+        public const int SYSTEM_UNWIND_PREVIOUS_USER = 58;
+        public const int TeActivationContextStackPointer = 424;
+        public const int TeActiveRpcHandle = 40;
+        public const int TeClientId = 32;
+        public const int TeCountOfOwnedCriticalSections = 56;
+        public const int TeCsrClientThread = 60;
+        public const int TeDeallocationStack = 3596;
+        public const int TeEnvironmentPointer = 28;
+        public const int TeExceptionCode = 420;
+        public const int TeFiberData = 16;
+        public const int TeFlsData = 4020;
+        public const int TeGdiBatchCount = 3952;
+        public const int TeGdiClientPID = 1728;
+        public const int TeGdiClientTID = 1732;
+        public const int TeGdiThreadLocalInfo = 1736;
+        public const int TeglContext = 3056;
+        public const int TeglCurrentRC = 3052;
+        public const int TeglDispatchTable = 1988;
+        public const int TeglReserved1 = 2920;
+        public const int TeglReserved2 = 3036;
+        public const int TeglSection = 3044;
+        public const int TeglSectionInfo = 3040;
+        public const int TeglTable = 3048;
+        public const int TeGuaranteedStackBytes = 3960;
+        public const int TeInstrumentation = 3884;
+        public const int TeInstrumentationCallbackPreviousPc = 432;
+        public const int TeInstrumentationCallbackPreviousSp = 436;
+        public const int TeInstrumentationCallbackSp = 428;
+        public const int TeLastErrorValue = 52;
+        public const int TePeb = 48;
+        public const int Terminated = 4;
+        public const int TeSelf = 24;
+        public const int TeSoftFpcr = 200;
+        public const int TeStackBase = 4;
+        public const int TeStackLimit = 8;
+        public const int TeThreadLocalStoragePointer = 44;
+        public const int TeTlsExpansionSlots = 3988;
+        public const int TeTlsSlots = 3600;
+        public const int TeVdm = 3864;
+        public const int TeWOW32Reserved = 192;
+        public const int TfDay = 4;
+        public const int TfHour = 6;
+        public const int TfMilliseconds = 12;
+        public const int TfMinute = 8;
+        public const int TfMonth = 2;
+        public const int TfSecond = 10;
+        public const int TfWeekday = 14;
+        public const int TfYear = 0;
+        public const int ThAdjustIncrement = 351;
+        public const int ThAdjustReason = 350;
+        public const int ThAlerted = 74;
+        public const int ThApcState = 100;
+        public const int ThApcStateIndex = 362;
+        public const int ThCombinedApcDisable = 308;
+        public const int ThContextSwitches = 128;
+        public const int ThCurrentRunTime = 56;
+        public const int ThCycleTime = 48;
+        public const int ThDebugActive = 3;
+        public const int ThFirstArgument = 92;
+        public const int ThInitialStack = 32;
+        public const int ThKernelApcDisable = 308;
+        public const int ThKernelStack = 64;
+        public const int ThLegoData = 440;
+        public const int ThLock = 0;
+        public const int ThMiscFlags = 76;
+        public const int ThNextProcessor = 328;
         public const int ThNpxState = 133;
+        public const int ThPreviousMode = 346;
+        public const int ThProcess = 336;
+        public const int thProcess = 336;
+        public const int ThreadEnvironmentBlockLength = 4096;
+        public const int THREAD_FLAGS_ACCOUNTING_ANY = 62;
+        public const int THREAD_FLAGS_ACCOUNTING_CSWITCH = 54;
+        public const int THREAD_FLAGS_ACCOUNTING_INTERRUPT = 114;
+        public const int THREAD_FLAGS_AFFINITY_SET = 8;
+        public const int THREAD_FLAGS_COUNTER_PROFILING = 2;
+        public const int THREAD_FLAGS_COUNTER_PROFILING_LOCK = 131072;
+        public const int THREAD_FLAGS_COUNTER_PROFILING_LOCK_BIT = 17;
+        public const int THREAD_FLAGS_CYCLE_PROFILING = 1;
+        public const int THREAD_FLAGS_CYCLE_PROFILING_LOCK = 65536;
+        public const int THREAD_FLAGS_CYCLE_PROFILING_LOCK_BIT = 16;
+        public const int THREAD_FLAGS_GROUP_SCHEDULING = 4;
+        public const int THREAD_NOT_MUTEX_OWNER = 17;
+        public const int THREAD_QUANTUM = 6;
+        public const int ThRunning = 73;
+        public const int ThSignalState = 4;
+        public const int ThSize = 2;
+        public const int ThSpecialApcDisable = 310;
+        public const int ThStackBase = 40;
+        public const int ThStackLimit = 36;
+        public const int ThState = 132;
+        public const int ThSystemCallNumber = 88;
+        public const int ThTeb = 156;
+        public const int ThThreadControlFlags = 2;
+        public const int ThThreadFlags = 80;
+        public const int ThThreadLock = 44;
+        public const int ThTimer = 168;
+        public const int ThTrapFrame = 96;
+        public const int ThType = 0;
         public const int THUMB_ASSERT = 57084;
         public const int THUMB_BREAKPOINT = 57086;
         public const int THUMB_DEBUG_SERVICE = 57085;
         public const int THUMB_DIVIDE_BY_0 = 57081;
         public const int THUMB_FASTFAIL = 57083;
         public const int THUMB_READ_CYCLES = 57082;
-        public const int ThUserRoBase = 1088;
-        public const int ThUserRwBase = 1092;
+        public const int ThUserRoBase = 1096;
+        public const int ThUserRwBase = 1100;
+        public const int ThVfpState = 320;
+        public const int ThWaitIrql = 134;
+        public const int ThWaitReason = 395;
+        public const int ThWaitTime = 304;
+        public const int ThWin32Thread = 284;
+        public const int TiDpc = 32;
+        public const int TiDueTime = 16;
+        public const int TimerObjectLength = 48;
+        public const int TiPeriod = 40;
+        public const int TiSignalState = 4;
+        public const int TiSize = 2;
+        public const int TiTimerListEntry = 24;
+        public const int TiType = 0;
+        public const int TlCpsr = 44;
+        public const int TlCpuNumber = 4;
+        public const int TlLr = 32;
+        public const int TlPadding = 6;
+        public const int TlPc = 40;
         public const int TlR0 = 8;
         public const int TlR1 = 12;
         public const int TlR11 = 36;
         public const int TlR12 = 24;
         public const int TlR2 = 16;
         public const int TlR3 = 20;
+        public const int TlSp = 28;
+        public const int TLS_EXPANSION_SLOTS = 1024;
+        public const int TLS_MINIMUM_AVAILABLE = 64;
+        public const int TlThread = 0;
+        public const int TlTrapType = 5;
+        public const int TmHighTime = 4;
+        public const int TmLowTime = 0;
+        public const int Transition = 6;
+        public const int TRANSITION_ASID = 255;
+        public const int TRAP_CAUSE_UNKNOWN = 18;
+        public const int TRAP_TYPE_DATA_ABORT = 4;
+        public const int TRAP_TYPE_FIQ = 7;
+        public const int TRAP_TYPE_INTERRUPT = 1;
+        public const int TRAP_TYPE_PREFETCH_ABORT = 5;
+        public const int TRAP_TYPE_RESET = 6;
+        public const int TRAP_TYPE_SYSCALL = 2;
+        public const int TRAP_TYPE_UNDEFINED = 3;
         public const int TrArg3 = 0;
+        public const int TrBcr = 56;
+        public const int TrBvr = 24;
         public const int TrCpsr = 132;
+        public const int TrDebugRegistersValid = 18;
+        public const int TrExceptionActive = 16;
+        public const int TrFaultAddress = 8;
         public const int TrFaultStatus = 4;
+        public const int TrLr = 120;
+        public const int TrPc = 128;
+        public const int TrPreviousMode = 19;
         public const int TrR0 = 96;
         public const int TrR1 = 100;
         public const int TrR11 = 124;
         public const int TrR12 = 112;
         public const int TrR2 = 104;
         public const int TrR3 = 108;
+        public const int TrReserved = 12;
+        public const int TrSp = 116;
+        public const int TrTrapFrame = 8;
+        public const int TRUE = 1;
+        public const int TrVfpState = 20;
+        public const int TrWcr = 92;
+        public const int TrWvr = 88;
+        public const int TwFindAny = 0;
+        public const int TwFindIdeal = 4;
+        public const int TwFindLast = 8;
+        public const int TwIdleAny = 12;
+        public const int TwIdleCurrent = 16;
+        public const int TwIdleIdeal = 20;
+        public const int TwIdleLast = 24;
+        public const int TwPreemptAny = 28;
+        public const int TwPreemptCurrent = 32;
+        public const int TwPreemptLast = 36;
+        public const int TwSwitchToIdle = 40;
+        public const int UNEXPECTED_KERNEL_MODE_TRAP = 127;
+        public const int UNSUPPORTED_INSTRUCTION_MODE = 337;
+        public const int UsActiveConsoleId = 728;
+        public const int UsAlternativeArchitecture = 704;
+        public const int UsComPlusPackage = 736;
+        public const int UsCryptoExponent = 572;
+        public const int UsDismountCount = 732;
+        public const int UserMode = 1;
+        public const int USER_CALLBACK_FILTER = 524288;
+        public const int USER_SHARED_DATA = -28672;
+        public const int UsImageNumberHigh = 46;
+        public const int UsImageNumberLow = 44;
+        public const int UsInterruptTime = 8;
+        public const int UsKdDebuggerEnabled = 724;
+        public const int UsLargePageMinimum = 580;
+        public const int UsLastSystemRITEventTickCount = 740;
+        public const int UsMaxStackTraceDepth = 568;
+        public const int UsNtBuildNumber = 608;
+        public const int UsNtMajorVersion = 620;
+        public const int UsNtMinorVersion = 624;
+        public const int UsNtProductType = 612;
+        public const int UsNtSystemRoot = 48;
+        public const int UsNumberOfPhysicalPages = 744;
+        public const int UsProcessorFeatures = 628;
+        public const int UsProductTypeIsValid = 616;
+        public const int UsReserved1 = 692;
+        public const int UsReserved3 = 696;
+        public const int UsSafeBootMode = 748;
+        public const int UsSuiteMask = 720;
+        public const int UsSystemCallPad = 784;
+        public const int UsSystemExpirationDate = 712;
+        public const int UsSystemTime = 20;
+        public const int UsTestRetInstruction = 760;
+        public const int UsTickCount = 800;
+        public const int UsTickCountMultiplier = 4;
+        public const int UsTickCountQuad = 800;
+        public const int UsTimeSlip = 700;
+        public const int UsTimeZoneBias = 32;
+        public const int UsTimeZoneId = 576;
+        public const int UsXState = 984;
+        public const int VFP_STATE_LENGTH = 272;
         public const int VsFpscr = 4;
+        public const int VsLink = 0;
         public const int VsVfpD = 16;
         public const int VsVfpD8 = 80;
+        public const int WaitAll = 0;
+        public const int WaitAny = 1;
+        public const int Waiting = 5;
+        public const int WAIT_QUANTUM_DECREMENT = 1;
+        public const int WbObject = 16;
+        public const int WbThread = 12;
+        public const int WbWaitKey = 10;
+        public const int WbWaitListEntry = 0;
+        public const int WbWaitType = 8;
+        public const int Win32BatchFlushCallout = 7;
+        public const int WrDispatchInt = 31;
+        public const int WrExecutive = 0;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\ksarm64.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\ksarm64.h
         public const int AaActlr_El1 = 16;
         public const int AaCpacr_El1 = 24;
         public const int AaEsr_El1 = 56;
@@ -746,32 +1607,13 @@
         public const int AaTtbr0_El1 = 40;
         public const int AaTtbr1_El1 = 48;
         public const int AaVbar_El1 = 624;
-        public const int AfBitmap = 8;
-        public const int AfCount = 0;
-        public const int AffinityExLength = 168;
-        public const int ApApcListEntry = 16;
-        public const int ApApcMode = 81;
-        public const int ApApcStateIndex = 80;
-        public const int ApcObjectLength = 88;
-        public const int APC_INDEX_MISMATCH = 1;
-        public const int APC_LEVEL = 1;
-        public const int ApInserted = 82;
-        public const int ApKernelRoutine = 32;
-        public const int ApNormalContext = 56;
-        public const int ApNormalRoutine = 48;
-        public const int ApRundownRoutine = 40;
-        public const int ApSize = 2;
-        public const int ApSystemArgument1 = 64;
-        public const int ApSystemArgument2 = 72;
-        public const int ApThread = 8;
-        public const int ApType = 0;
-        public const int ArFlags = 32;
         public const int ARM64_ACTLR_EL1 = 16513;
         public const int ARM64_ACTLR_EL2 = 24705;
         public const int ARM64_AFSR0_EL2 = 25224;
         public const int ARM64_AFSR1_EL2 = 25225;
         public const int ARM64_AIDR_EL1 = 18439;
         public const int ARM64_AMAIR_EL2 = 25880;
+        public const int ARM64_ASID_KVA_SHADOW = 32768;
         public const int ARM64_ASSERT = 61441;
         public const int ARM64_AT_S1E0R = 962;
         public const int ARM64_AT_S1E0W = 963;
@@ -1002,43 +1844,8 @@
         public const int ARM64_VBAR_EL2 = 26112;
         public const int ARM64_VMPIDR_EL2 = 24581;
         public const int ARM64_VPIDR_EL2 = 24576;
-        public const int ArNormalContext = 8;
-        public const int ArNormalRoutine = 0;
-        public const int ArSystemArgument1 = 16;
-        public const int ArSystemArgument2 = 24;
-        public const int AsApcListHead = 0;
-        public const int AsKernelApcPending = 41;
-        public const int AsProcess = 32;
-        public const int AsUserApcPendingAll = 42;
-        public const int ATTEMPTED_SWITCH_FROM_DPC = 184;
-        public const int BASE_PRIORITY_THRESHOLD = 8;
-        public const int BREAKPOINT_BREAK = 0;
-        public const int BREAKPOINT_COMMAND_STRING = 5;
-        public const int BREAKPOINT_HW_BREAK = 7;
         public const int BREAKPOINT_HW_WATCH = 6;
-        public const int BREAKPOINT_LOAD_SYMBOLS = 3;
-        public const int BREAKPOINT_PRINT = 1;
-        public const int BREAKPOINT_PROMPT = 2;
-        public const int BREAKPOINT_UNLOAD_SYMBOLS = 4;
-        public const int BUGCHECK_CONTEXT_MODIFIER = -2147483648;
-        public const int CalloutFrameLength = 48;
-        public const int CidUniqueProcess = 0;
-        public const int CidUniqueThread = 8;
-        public const int CkApiNumber = 12;
-        public const int CkBuffer = 0;
-        public const int CkLength = 8;
         public const int CkOriginalLr = 24;
-        public const int CkPc = 40;
-        public const int CkSp = 32;
-        public const int CLOCK_QUANTUM_DECREMENT = 3;
-        public const int CmThreadEnvironmentBlockOffset = 8192;
-        public const int CONTEXT_ALIGN = 16;
-        public const int CONTEXT_CONTROL = 4194305;
-        public const int CONTEXT_DEBUG_REGISTERS = 4194312;
-        public const int CONTEXT_FLOATING_POINT = 4194308;
-        public const int CONTEXT_FRAME_LENGTH = 912;
-        public const int CONTEXT_FULL = 4194311;
-        public const int CONTEXT_INTEGER = 4194306;
         public const int CPSREL_0 = 0;
         public const int CPSREL_1 = 4;
         public const int CPSREL_1_BIT = 2;
@@ -1053,30 +1860,16 @@
         public const int CPSRM_EL2t = 8;
         public const int CPSRM_EL3h = 13;
         public const int CPSRM_EL3t = 12;
-        public const int CPSRM_MASK = 15;
         public const int CPSRM_T = 32;
         public const int CPSR_IL = 1048576;
         public const int CPSR_IL_BIT = 20;
         public const int CPSR_SS = 2097152;
         public const int CPSR_SS_BIT = 21;
-        public const int CxBcr = 792;
-        public const int CxBvr = 824;
-        public const int CxContextFlags = 0;
-        public const int CxCpsr = 4;
         public const int CxFp = 240;
         public const int CxFpcr = 784;
         public const int CxFpsr = 788;
-        public const int CxLr = 248;
-        public const int CxPc = 264;
-        public const int CxSp = 256;
         public const int CxV = 272;
-        public const int CxWcr = 888;
-        public const int CxWvr = 896;
         public const int CxX = 8;
-        public const int CxxLegacyLength = 12;
-        public const int CxxLegacyOffset = 8;
-        public const int CxxXStateLength = 20;
-        public const int CxxXStateOffset = 16;
         public const int DAIF_ABORT = 256;
         public const int DAIF_ABORT_BIT = 8;
         public const int DAIF_DEBUG = 512;
@@ -1085,91 +1878,11 @@
         public const int DAIF_FIQ_BIT = 6;
         public const int DAIF_INT = 128;
         public const int DAIF_INT_BIT = 7;
-        public const int DATA_BUS_ERROR = 46;
-        public const int DATA_COHERENCY_EXCEPTION = 85;
-        public const int DBG_STATUS_CONTROL_C = 1;
-        public const int DcContextRecord = 40;
-        public const int DcControlPc = 0;
-        public const int DcControlPcIsUnwound = 76;
-        public const int DcEstablisherFrame = 24;
-        public const int DcFunctionEntry = 16;
-        public const int DcHandlerData = 56;
-        public const int DcHistoryTable = 64;
-        public const int DcImageBase = 8;
-        public const int DcLanguageHandler = 48;
-        public const int DcNonVolatileRegisters = 80;
-        public const int DcScopeIndex = 72;
-        public const int DcTargetPc = 32;
-        public const int DEBUG_ACTIVE_DBG = 1;
         public const int DEBUG_ACTIVE_DBG_BIT = 0;
-        public const int DEBUG_ACTIVE_DBG_INSTRUMENTED = 3;
-        public const int DEBUG_ACTIVE_INSTRUMENTED = 2;
-        public const int DEBUG_ACTIVE_MINIMAL_THREAD = 4;
         public const int DEBUG_ACTIVE_MINIMAL_THREAD_BIT = 2;
-        public const int DeDeviceListEntry = 0;
-        public const int DeferredReady = 7;
-        public const int DeInserted = 20;
-        public const int DeSortKey = 16;
-        public const int DeviceQueueEntryLength = 24;
-        public const int DeviceQueueObjectLength = 40;
-        public const int DISPATCH_LEVEL = 2;
-        public const int DOUBLE_FAULT_STACK_SIZE = 32768;
-        public const int DpcObjectLength = 64;
-        public const int DpDeferredContext = 32;
-        public const int DpDeferredRoutine = 24;
-        public const int DpDpcData = 56;
-        public const int DpDpcListEntry = 8;
-        public const int DpImportance = 1;
-        public const int DpNumber = 2;
-        public const int DpPc = 8;
-        public const int DpSp = 0;
-        public const int DpSystemArgument1 = 40;
-        public const int DpSystemArgument2 = 48;
-        public const int DpType = 0;
-        public const int DvBusy = 32;
-        public const int DvDeviceListHead = 8;
-        public const int DvSize = 2;
-        public const int DvSpinLock = 24;
-        public const int DvType = 0;
         public const int Enable_Feature_DTrace = 1;
-        public const int EpDebugPort = 976;
-        public const int EpSecurityDomain = 2016;
-        public const int ErExceptionAddress = 16;
-        public const int ErExceptionCode = 0;
-        public const int ErExceptionFlags = 4;
-        public const int ErExceptionInformation = 32;
-        public const int ErExceptionRecord = 8;
-        public const int ErNumberParameters = 24;
-        public const int EtCid = 1624;
-        public const int EtPicoContext = 1976;
-        public const int EtwTSLength = 32;
-        public const int EventObjectLength = 24;
-        public const int EvSignalState = 4;
-        public const int EvSize = 2;
-        public const int EvType = 0;
-        public const int EvWaitListHead = 8;
-        public const int ExceptionCollidedUnwind = 3;
-        public const int ExceptionContinueExecution = 0;
-        public const int ExceptionContinueSearch = 1;
-        public const int ExceptionNestedException = 2;
-        public const int ExceptionRecordLength = 160;
-        public const int EXCEPTION_COLLIDED_UNWIND = 64;
-        public const int EXCEPTION_CONTINUE_EXECUTION = -1;
-        public const int EXCEPTION_CONTINUE_SEARCH = 0;
-        public const int EXCEPTION_EXECUTE_HANDLER = 1;
-        public const int EXCEPTION_EXIT_UNWIND = 4;
-        public const int EXCEPTION_NESTED_CALL = 16;
-        public const int EXCEPTION_NONCONTINUABLE = 1;
-        public const int EXCEPTION_RECORD_LENGTH = 160;
-        public const int EXCEPTION_STACK_INVALID = 8;
-        public const int EXCEPTION_TARGET_UNWIND = 32;
-        public const int EXCEPTION_UNWIND = 102;
-        public const int EXCEPTION_UNWINDING = 2;
-        public const int Executive = 0;
-        public const int ExecutiveProcessObjectLength = 2048;
-        public const int ExecutiveThreadObjectLength = 2088;
+        public const int EpSecurityDomain = 2336;
         public const int ExFp = 80;
-        public const int ExReturn = 88;
         public const int ExX19 = 0;
         public const int ExX20 = 8;
         public const int ExX21 = 16;
@@ -1180,28 +1893,6 @@
         public const int ExX26 = 56;
         public const int ExX27 = 64;
         public const int ExX28 = 72;
-        public const int FALSE = 0;
-        public const int FAST_FAIL_ENCLAVE_CALL_FAILURE = 53;
-        public const int FAST_FAIL_GUARD_ICALL_CHECK_FAILURE = 10;
-        public const int FAST_FAIL_INVALID_BUFFER_ACCESS = 28;
-        public const int FAST_FAIL_INVALID_CONTROL_STACK = 47;
-        public const int FAST_FAIL_INVALID_NEXT_THREAD = 30;
-        public const int FAST_FAIL_SET_CONTEXT_DENIED = 48;
-        public const int FbActivationContextStackPointer = 968;
-        public const int FbDeallocationStack = 32;
-        public const int FbExceptionList = 8;
-        public const int FbFiberContext = 48;
-        public const int FbFiberData = 0;
-        public const int FbFlsData = 976;
-        public const int FbGuaranteedStackBytes = 984;
-        public const int FbStackBase = 16;
-        public const int FbStackLimit = 24;
-        public const int FbTebFlags = 988;
-        public const int FbWx86Tib = 960;
-        public const int FmContention = 16;
-        public const int FmCount = 0;
-        public const int FmOldIrql = 48;
-        public const int FmOwner = 8;
         public const int FPCRM_AHP = 67108864;
         public const int FPCRM_AHP_BIT = 26;
         public const int FPCRM_DN = 33554432;
@@ -1225,62 +1916,10 @@
         public const int FPSR_IXC = 16;
         public const int FPSR_OFC = 4;
         public const int FPSR_UFC = 8;
-        public const int GateWaitObsolete = 8;
-        public const int HAL1_INITIALIZATION_FAILED = 97;
-        public const int HARDWARE_INTERRUPT_STORM = 242;
-        public const int HIGH_LEVEL = 15;
-        public const int IbCfgBitMap = 176;
-        public const int IbMitigationOptionsMap = 160;
-        public const int IbWow64CfgBitMap = 192;
-        public const int InActualLock = 72;
-        public const int InConnected = 95;
-        public const int InDispatchAddress = 80;
-        public const int InDispatchCount = 120;
-        public const int InFloatingSave = 94;
-        public const int InInternalState = 104;
-        public const int InInterruptListEntry = 8;
-        public const int InIrql = 92;
-        public const int Initialized = 0;
-        public const int INITIAL_STALL_COUNT = 100;
-        public const int InLatched = 1;
-        public const int InLevelSensitive = 0;
-        public const int InMode = 108;
-        public const int InNumber = 96;
-        public const int InServiceContext = 48;
-        public const int InServiceCount = 116;
-        public const int InServiceRoutine = 24;
-        public const int InShareVector = 100;
-        public const int InSize = 2;
-        public const int InSpinLock = 56;
-        public const int INSTRUCTION_BUS_ERROR = 47;
-        public const int INSTRUCTION_COHERENCY_EXCEPTION = 86;
-        public const int InSynchronizeIrql = 93;
-        public const int InterruptObjectLength = 248;
-        public const int INTERRUPT_EXCEPTION_NOT_HANDLED = 61;
-        public const int INTERRUPT_UNWIND_ATTEMPTED = 60;
-        public const int InTickCount = 64;
-        public const int InTrapFrame = 136;
-        public const int InType = 0;
-        public const int INVALID_AFFINITY_SET = 3;
-        public const int INVALID_CALLBACK_STACK_ADDRESS = 461;
-        public const int INVALID_DATA_ACCESS_TRAP = 4;
-        public const int INVALID_KERNEL_STACK_ADDRESS = 462;
-        public const int InVector = 88;
-        public const int IPI_APC = 1;
-        public const int IPI_DPC = 2;
-        public const int IPI_FREEZE = 4;
-        public const int IPI_LEVEL = 14;
-        public const int IPI_PACKET_READY = 5;
-        public const int IRQL_GT_ZERO_AT_SYSTEM_SERVICE = 74;
-        public const int IRQL_NOT_GREATER_OR_EQUAL = 9;
-        public const int IRQL_NOT_LESS_OR_EQUAL = 10;
-        public const int JbD = 128;
         public const int JbFp = 96;
         public const int JbFpcr = 120;
         public const int JbFpsr = 124;
-        public const int JbFrame = 0;
         public const int JbLr = 104;
-        public const int JbSp = 112;
         public const int JbX19 = 16;
         public const int JbX20 = 24;
         public const int JbX21 = 32;
@@ -1291,92 +1930,13 @@
         public const int JbX26 = 72;
         public const int JbX27 = 80;
         public const int JbX28 = 88;
-        public const int KAPC_RECORD_FLAGS_CHECK_ALERT = 1;
-        public const int KAPC_RECORD_LENGTH = 48;
-        public const int KAPC_STATE_ANY_USER_APC_PENDING_MASK = 3;
-        public const int KcActualLimit = 8;
-        public const int KcCurrentBase = 0;
-        public const int KcPreviousBase = 32;
-        public const int KcPreviousInitial = 56;
-        public const int KcPreviousKernel = 48;
-        public const int KcPreviousLimit = 40;
-        public const int KENTROPY_TIMING_ANALYSIS = 0;
-        public const int KENTROPY_TIMING_BUFFER_MASK = 2047;
-        public const int KENTROPY_TIMING_INTERRUPTS_PER_BUFFER = 1024;
-        public const int KernelMode = 0;
-        public const int KernelProcessObjectLength = 656;
-        public const int KernelThreadObjectLength = 1552;
-        public const int KERNEL_APC_PENDING_DURING_EXIT = 32;
-        public const int KERNEL_LARGE_STACK_COMMIT = 32768;
-        public const int KERNEL_LARGE_STACK_SIZE = 73728;
-        public const int KERNEL_SECURITY_CHECK_FAILURE = 313;
-        public const int KEXCEPTION_ACTIVE_EXCEPTION_FRAME = 1;
-        public const int KEXCEPTION_ACTIVE_INTERRUPT_FRAME = 0;
-        public const int KEXCEPTION_ACTIVE_SERVICE_FRAME = 2;
-        public const int KEXCEPTION_FRAME_LENGTH = 96;
-        public const int KINTERRUPT_STATE_DISABLED = 1;
-        public const int KINTERRUPT_STATE_DISABLED_BIT = 0;
-        public const int KI_DPC_ALL_FLAGS = 63;
-        public const int KI_DPC_ANY_DPC_ACTIVE = 65537;
-        public const int KI_DPC_INTERRUPT_FLAGS = 47;
         public const int KI_DYNAMIC_TRACE_SYSCALL_FLAG_BIT = 0;
-        public const int KI_EXCEPTION_ACCESS_VIOLATION = 268435460;
-        public const int KI_EXCEPTION_GP_FAULT = 268435457;
-        public const int KI_EXCEPTION_HARDWARE_ERROR = 268435461;
-        public const int KI_EXCEPTION_INTERNAL = 268435456;
-        public const int KI_EXCEPTION_INVALID_OP = 268435458;
-        public const int KI_SPINLOCK_ORDER_PRCB_LOCK = 64;
-        public const int KMODE_EXCEPTION_NOT_HANDLED = 30;
         public const int KsElr_El1 = 0;
-        public const int KsKernelBcr = 104;
-        public const int KsKernelBvr = 40;
-        public const int KsKernelWcr = 152;
         public const int KsSpsr_El1 = 8;
-        public const int KSTACK_ACTUAL_LIMIT_EXPANDED = 1;
-        public const int KSTACK_CONTROL_LENGTH = 64;
-        public const int KSTART_FRAME_LENGTH = 32;
         public const int KsTpidrro_El0 = 24;
         public const int KsTpidr_El0 = 16;
         public const int KsTpidr_El1 = 32;
-        public const int KSWITCH_FRAME_LENGTH = 32;
-        public const int KTHREAD_AUTO_ALIGNMENT_BIT = 2;
-        public const int KTHREAD_BAM_QOS_LEVEL_MASK = 3;
-        public const int KTHREAD_CET_SHADOW_STACK_BIT = 20;
-        public const int KTHREAD_GUI_THREAD_MASK = 128;
-        public const int KTHREAD_QUEUE_DEFER_PREEMPTION_BIT = 11;
-        public const int KTHREAD_RESTRICTED_GUI_THREAD_MASK = 2097152;
-        public const int KTHREAD_SYSTEM_THREAD_BIT = 10;
-        public const int KTRAP_FRAME_ARGUMENTS = 80;
-        public const int KTRAP_FRAME_LENGTH = 336;
         public const int KTRAP_FRAME_SIGNATURE = 1886540875;
-        public const int LiHighPart = 4;
-        public const int LiLowPart = 0;
-        public const int LOCK_QUEUE_HEADER_SIZE = 16;
-        public const int LOCK_QUEUE_OWNER = 2;
-        public const int LOCK_QUEUE_WAIT = 1;
-        public const int LOW_REALTIME_PRIORITY = 16;
-        public const int LpbKernelStack = 128;
-        public const int LpbPrcb = 136;
-        public const int LpbProcess = 144;
-        public const int LpbThread = 152;
-        public const int LqhLock = 8;
-        public const int LqhLockQueue = 0;
-        public const int LqhNext = 0;
-        public const int LqhOldIrql = 16;
-        public const int LqLock = 8;
-        public const int LqNext = 0;
-        public const int LsBlink = 8;
-        public const int LsFlink = 0;
-        public const int MachineFrameLength = 16;
-        public const int MAXIMUM_PROCESSORS = 64;
-        public const int MfPc = 8;
-        public const int MfSp = 0;
-        public const int MM_SHARED_USER_DATA_VA = 2147352576;
-        public const int MUTEX_ALREADY_OWNED = 191;
-        public const int NMI_HARDWARE_FAILURE = 128;
-        public const int NO_USER_MODE_CONTEXT = 14;
-        public const int NTOS_YIELD_MACRO = 1;
-        public const int NUMBER_SERVICE_TABLES = 2;
         public const int NZCV_C = 536870912;
         public const int NZCV_C_BIT = 29;
         public const int NZCV_N = -2147483648;
@@ -1385,110 +1945,11 @@
         public const int NZCV_V_BIT = 28;
         public const int NZCV_Z = 1073741824;
         public const int NZCV_Z_BIT = 30;
-        public const int PAGE_FAULT_WITH_INTERRUPTS_OFF = 73;
-        public const int PAGE_SHIFT = 12;
-        public const int PAGE_SIZE = 4096;
-        public const int PANIC_STACK_SWITCH = 43;
-        public const int PASSIVE_LEVEL = 0;
-        public const int PbAdjustDpcThreshold = 3860;
-        public const int PbAlignmentFixupCount = 5168;
-        public const int PbBuildType = 1876;
-        public const int PbCcFastMdlReadNoWait = 4480;
-        public const int PbContextSwitches = 2620;
-        public const int PbCopyReadNoWait = 2636;
-        public const int PbCopyReadNoWaitMiss = 2644;
-        public const int PbCopyReadWait = 2640;
-        public const int PbCoresPerPhysicalProcessor = 1878;
-        public const int PbCurrentThread = 8;
-        public const int PbCycleTime = 4320;
-        public const int PbDeferredReadyListHead = 2568;
-        public const int PbDispatcherReadyListHead = 3328;
-        public const int PbDpcCount = 2740;
-        public const int PbDpcGate = 2944;
-        public const int PbDpcLastCount = 2820;
-        public const int PbDpcList = 2712;
-        public const int PbDpcLock = 2728;
-        public const int PbDpcRequestRate = 2812;
-        public const int PbDpcRequestSummary = 2828;
-        public const int PbDpcRoutineActive = 2826;
-        public const int PbDpcStack = 2792;
-        public const int PbDpcTime = 3852;
-        public const int PbEntropyBuffer = 3956;
-        public const int PbEntropyCount = 3952;
-        public const int PbExceptionDispatchCount = 3892;
-        public const int PbFastReadNotPossible = 2632;
-        public const int PbFastReadNoWait = 2624;
-        public const int PbFastReadWait = 2628;
-        public const int PbFeatureBits = 2196;
-        public const int PbHalReserved = 1792;
-        public const int PbIdleHalt = 2;
-        public const int PbIdleSchedule = 2827;
-        public const int PbIdleThread = 24;
-        public const int PbInterruptCount = 3840;
-        public const int PbInterruptTime = 3856;
-        public const int PbIpiFrozen = 2700;
-        public const int PbKernelTime = 3844;
-        public const int PbKeSpinLockOrdering = 3056;
-        public const int PbLockQueue = 1920;
-        public const int PbLogicalProcessorsPerCore = 1879;
-        public const int PbLookasideIrpFloat = 2648;
-        public const int PbMailbox = 2688;
-        public const int PbMajorVersion = 1874;
-        public const int PbMaximumDpcQueueDepth = 2808;
-        public const int PbMinimumDpcRate = 2816;
-        public const int PbMinorVersion = 1872;
-        public const int PbNestingLevel = 32;
-        public const int PbNextThread = 16;
-        public const int PbNodeColor = 4308;
-        public const int PbNodeShiftedColor = 4312;
-        public const int PbNormalDpcState = 2828;
-        public const int PbNumber = 36;
-        public const int PbOtherOperationCount = 2660;
-        public const int PbOtherTransferCount = 2680;
-        public const int PbPacketBarrier = 2560;
-        public const int PbPageColor = 4304;
-        public const int PbPanicStackBase = 6104;
-        public const int PbParentNode = 3896;
-        public const int PbPowerState = 4608;
-        public const int PbPPLookasideList = 2304;
-        public const int PbPPNPagedLookasideList = 17920;
-        public const int PbPPPagedLookasideList = 20992;
-        public const int PbPrcbLock = 40;
-        public const int PbPriorityState = 48;
-        public const int PbProcessorState = 64;
-        public const int PbProcessorVendorString = 2192;
-        public const int PbQuantumEnd = 2825;
-        public const int PbReadOperationCount = 2652;
-        public const int PbReadTransferCount = 2664;
-        public const int PbRequestMailbox = 25472;
-        public const int PbSecondaryColorMask = 4316;
-        public const int PbSpBase = 2800;
-        public const int PbSpinLockAcquireCount = 5888;
-        public const int PbStartCycles = 3912;
-        public const int PbSystemCalls = 2616;
-        public const int PbUserTime = 3848;
-        public const int PbWaitListHead = 3072;
-        public const int PbWriteOperationCount = 2656;
-        public const int PbWriteTransferCount = 2672;
         public const int PcBtiMitigation = 76;
         public const int PcCurrentIrql = 56;
-        public const int PcCurrentThread = 2440;
-        public const int PcDebuggerSavedIRQL = 6297;
-        public const int PcDeferredReadyListHead = 5000;
-        public const int PcDpcRoutineActive = 5258;
-        public const int PcFeatureBits = 4628;
-        public const int PcGroupSetMember = 4320;
-        public const int PcHalReserved = 136;
-        public const int PcIdleHalt = 2434;
-        public const int PcIdleThread = 2456;
-        public const int PcInterruptCount = 6272;
-        public const int PcLockArray = 40;
-        public const int PcNestingLevel = 2464;
-        public const int PcNextThread = 2448;
-        public const int PcNumber = 2468;
+        public const int PcGroup = 4328;
+        public const int PcKvaUserModeTtbr1 = 248;
         public const int PcPanicStorage = 80;
-        public const int PcPrcb = 2432;
-        public const int PcPrcbLock = 2472;
         public const int PCR_BTI_MITIGATION_CSWAP_HVC = 4;
         public const int PCR_BTI_MITIGATION_CSWAP_HVC_BIT = 2;
         public const int PCR_BTI_MITIGATION_CSWAP_SMC = 8;
@@ -1498,310 +1959,24 @@
         public const int PCR_BTI_MITIGATION_TRAP_HVC_BIT = 0;
         public const int PCR_BTI_MITIGATION_TRAP_SMC = 2;
         public const int PCR_BTI_MITIGATION_TRAP_SMC_BIT = 1;
-        public const int PcSelf = 24;
-        public const int PcSkipTick = 6296;
-        public const int PcSpBase = 5232;
-        public const int PcStallScaleFactor = 64;
-        public const int PcStartCycles = 6344;
-        public const int PcSystemCalls = 5048;
-        public const int PcTeb = 48;
         public const int PcTrappedSecurityDomain = 5288;
         public const int PcVirtualApicAssist = 8216;
-        public const int PeBeingDebugged = 2;
-        public const int PeKernelCallbackTable = 88;
-        public const int PeProcessParameters = 32;
-        public const int PERF_CONTEXTSWAP_FLAG = 4;
-        public const int PERF_CONTEXTSWAP_OFFSET = 4;
-        public const int PERF_INTERRUPT = 536887296;
-        public const int PERF_INTERRUPT_FLAG = 16384;
-        public const int PERF_INTERRUPT_OFFSET = 4;
-        public const int PERF_SPEC_CONTROL_FLAG = 2;
-        public const int PERF_SPEC_CONTROL_OFFSET = 20;
-        public const int PERF_SYSCALL_FLAG = 64;
         public const int PERF_SYSCALL_FLAG_BIT = 6;
-        public const int PERF_SYSCALL_OFFSET = 8;
-        public const int PfAffinity = 72;
-        public const int PfBucketShift = 48;
-        public const int PfBuffer = 56;
-        public const int PfProcess = 24;
-        public const int PfProfileListEntry = 8;
-        public const int PfRangeBase = 32;
-        public const int PfRangeLimit = 40;
-        public const int PfSegment = 64;
-        public const int PfSize = 2;
-        public const int PfSource = 240;
-        public const int PfStarted = 242;
-        public const int PfType = 0;
-        public const int PiEndTime = 8;
-        public const int PiStartTime = 0;
-        public const int POWER_LEVEL = 14;
-        public const int PpFlags = 8;
-        public const int PppArchitecturalState = 32;
-        public const int PppArchitecturalStateVirtualAddress = 16;
-        public const int PrActiveProcessors = 280;
-        public const int PrAffinity = 88;
-        public const int PrBasePriority = 452;
-        public const int PrCycleTime = 600;
-        public const int PrDirectoryTableBase = 40;
-        public const int PrInstrumentationCallback = 640;
-        public const int PrKernelTime = 628;
-        public const int ProcessEnvironmentBlockLength = 1992;
-        public const int ProcessInMemory = 0;
-        public const int ProcessInTransition = 2;
-        public const int ProcessorControlRegisterLength = 109888;
-        public const int ProcessorParkedPageLength = 4096;
-        public const int ProcessorStartBlockLength = 16;
-        public const int ProcessorStateLength = 1712;
-        public const int ProcessOutOfMemory = 1;
-        public const int ProfileObjectLength = 248;
-        public const int PROFILE_LEVEL = 15;
-        public const int PrProcessFlags = 448;
-        public const int PrProfileListHead = 24;
-        public const int PrQuantumReset = 453;
-        public const int PrReadyListHead = 256;
-        public const int PrSignalState = 4;
-        public const int PrSize = 2;
-        public const int PrSwapListEntry = 272;
-        public const int PrThreadListHead = 56;
-        public const int PrType = 0;
-        public const int PrUserTime = 632;
-        public const int PsArchState = 160;
-        public const int PsAuxControl = 176;
-        public const int PsbSelfMap = 0;
-        public const int PsbTiledTtb0 = 8;
+        public const int PF_ARM_V81_ATOMIC_INSTRUCTIONS_AVAILABLE = 34;
         public const int PSCI_FUNCTION_CODE_SMCCC_ARCH_WORKAROUND_1 = -2147450880;
-        public const int PsContextFrame = 800;
-        public const int PsControl = 168;
-        public const int PsCpacr = 184;
-        public const int PsCpuid = 160;
         public const int PsMemoryRemap = 776;
-        public const int PsSpecialRegisters = 0;
-        public const int PsSvcRW = 32;
-        public const int PsTtbControl = 192;
         public const int PsTtbr0 = 200;
         public const int PsTtbr1 = 208;
-        public const int PsUsrRO = 24;
-        public const int PsUsrRW = 16;
-        public const int PsVBARns = 784;
-        public const int PS_MITIGATION_OPTION_ALWAYS_OFF = 2;
-        public const int PS_MITIGATION_OPTION_ALWAYS_ON = 1;
-        public const int PS_MITIGATION_OPTION_BITS_PER_OPTION = 4;
-        public const int PS_MITIGATION_OPTION_CET_SHADOW_STACKS = 31;
-        public const int PS_MITIGATION_OPTION_MASK = 3;
-        public const int PS_MITIGATION_OPTION_RESTRICT_SET_THREAD_CONTEXT = 19;
-        public const int PS_MITIGATION_OPTION_RETURN_FLOW_GUARD = 16;
-        public const int QuCurrentCount = 40;
-        public const int QuEntryListHead = 24;
-        public const int QueueObjectLength = 64;
-        public const int QuMaximumCount = 44;
-        public const int QuSignalState = 4;
-        public const int QuThreadListHead = 48;
-        public const int Ready = 1;
-        public const int READY_SKIP_QUANTUM = 2;
-        public const int RECURSIVE_MACHINE_CHECK = 251;
-        public const int RECURSIVE_NMI = 273;
-        public const int ROUND_TRIP_DECREMENT_COUNT = 16;
-        public const int Running = 2;
-        public const int SdBase = 0;
-        public const int SdLength = 32;
-        public const int SdLimit = 16;
-        public const int SdNumber = 24;
-        public const int SERVICE_NUMBER_MASK = 4095;
-        public const int SERVICE_TABLE_MASK = 32;
-        public const int SERVICE_TABLE_SHIFT = 7;
-        public const int SERVICE_TABLE_TEST = 32;
-        public const int SfReturn = 24;
         public const int SfX0 = 0;
         public const int SfX1 = 8;
         public const int SfX2 = 16;
-        public const int SizeofPointer = 8;
         public const int SKCALL_MAXPARAMETERS = 12;
-        public const int SPIN_LOCK_ALREADY_OWNED = 15;
-        public const int SPIN_LOCK_INIT_FAILURE = 129;
-        public const int SPIN_LOCK_NOT_OWNED = 16;
-        public const int Standby = 3;
-        public const int STATUS_ACCESS_VIOLATION = -1073741819;
-        public const int STATUS_ARRAY_BOUNDS_EXCEEDED = -1073741684;
-        public const int STATUS_ASSERTION_FAILURE = -1073740768;
-        public const int STATUS_BAD_COMPRESSION_BUFFER = -1073741246;
-        public const int STATUS_BREAKPOINT = -2147483645;
-        public const int STATUS_CALLBACK_POP_STACK = -1073740765;
-        public const int STATUS_DATATYPE_MISALIGNMENT = -2147483646;
-        public const int STATUS_FLOAT_DENORMAL_OPERAND = -1073741683;
-        public const int STATUS_FLOAT_DIVIDE_BY_ZERO = -1073741682;
-        public const int STATUS_FLOAT_INEXACT_RESULT = -1073741681;
-        public const int STATUS_FLOAT_INVALID_OPERATION = -1073741680;
-        public const int STATUS_FLOAT_MULTIPLE_FAULTS = -1073741132;
-        public const int STATUS_FLOAT_MULTIPLE_TRAPS = -1073741131;
-        public const int STATUS_FLOAT_OVERFLOW = -1073741679;
-        public const int STATUS_FLOAT_STACK_CHECK = -1073741678;
-        public const int STATUS_FLOAT_UNDERFLOW = -1073741677;
-        public const int STATUS_GUARD_PAGE_VIOLATION = -2147483647;
-        public const int STATUS_ILLEGAL_FLOAT_CONTEXT = -1073741494;
-        public const int STATUS_ILLEGAL_INSTRUCTION = -1073741795;
-        public const int STATUS_INSTRUCTION_MISALIGNMENT = -1073741654;
-        public const int STATUS_INTEGER_DIVIDE_BY_ZERO = -1073741676;
-        public const int STATUS_INTEGER_OVERFLOW = -1073741675;
-        public const int STATUS_INVALID_HANDLE = -1073741816;
-        public const int STATUS_INVALID_LOCK_SEQUENCE = -1073741794;
-        public const int STATUS_INVALID_OWNER = -1073741734;
-        public const int STATUS_INVALID_PARAMETER = -1073741811;
-        public const int STATUS_INVALID_PARAMETER_1 = -1073741585;
-        public const int STATUS_INVALID_SYSTEM_SERVICE = -1073741796;
-        public const int STATUS_INVALID_THREAD = -1073740004;
-        public const int STATUS_IN_PAGE_ERROR = -1073741818;
-        public const int STATUS_KERNEL_APC = 256;
-        public const int STATUS_LONGJUMP = -2147483610;
-        public const int STATUS_NO_CALLBACK_ACTIVE = -1073741224;
-        public const int STATUS_PRIVILEGED_INSTRUCTION = -1073741674;
-        public const int STATUS_SET_CONTEXT_DENIED = -1073740278;
-        public const int STATUS_SINGLE_STEP = -2147483644;
-        public const int STATUS_STACK_BUFFER_OVERRUN = -1073740791;
-        public const int STATUS_STACK_OVERFLOW = -1073741571;
-        public const int STATUS_SUCCESS = 0;
-        public const int STATUS_THREAD_IS_TERMINATING = -1073741749;
-        public const int STATUS_TIMEOUT = 258;
         public const int STATUS_UNSUCCESSFUL = -1073741823;
-        public const int STATUS_UNWIND = -1073741785;
-        public const int STATUS_UNWIND_CONSOLIDATE = -2147483607;
-        public const int STATUS_USER_APC = 192;
-        public const int STATUS_WAKE_SYSTEM = 1073742484;
-        public const int STATUS_WAKE_SYSTEM_DEBUGGER = -2147483641;
-        public const int StrBuffer = 8;
-        public const int StrLength = 0;
-        public const int StrMaximumLength = 2;
-        public const int SwApcBypass = 0;
         public const int SwFp = 16;
-        public const int SwReturn = 24;
-        public const int SYNCH_LEVEL = 12;
-        public const int SYSCALL_PSR = 0;
-        public const int SYSTEM_EXIT_OWNED_MUTEX = 57;
-        public const int SYSTEM_SERVICE_EXCEPTION = 59;
-        public const int SYSTEM_UNWIND_PREVIOUS_USER = 58;
-        public const int TeActivationContextStackPointer = 712;
-        public const int TeActiveRpcHandle = 80;
-        public const int TeClientId = 64;
         public const int TeCmTeb = 0;
-        public const int TeCountOfOwnedCriticalSections = 108;
-        public const int TeCsrClientThread = 112;
-        public const int TeDeallocationStack = 5240;
-        public const int TeEnvironmentPointer = 56;
-        public const int TeExceptionCode = 704;
-        public const int TeFiberData = 32;
-        public const int TeFlsData = 6088;
-        public const int TeGdiBatchCount = 5952;
-        public const int TeGdiClientPID = 2032;
-        public const int TeGdiClientTID = 2036;
-        public const int TeGdiThreadLocalInfo = 2040;
-        public const int TeglContext = 4680;
-        public const int TeglCurrentRC = 4672;
-        public const int TeglDispatchTable = 2544;
-        public const int TeglReserved1 = 4408;
-        public const int TeglReserved2 = 4640;
-        public const int TeglSection = 4656;
-        public const int TeglSectionInfo = 4648;
-        public const int TeglTable = 4664;
-        public const int TeGuaranteedStackBytes = 5960;
-        public const int TeInstrumentation = 5816;
-        public const int TeInstrumentationCallbackPreviousPc = 728;
-        public const int TeInstrumentationCallbackPreviousSp = 736;
-        public const int TeInstrumentationCallbackSp = 720;
-        public const int TeLastErrorValue = 104;
-        public const int TePeb = 96;
-        public const int Terminated = 4;
-        public const int TeSelf = 48;
-        public const int TeSoftFpcr = 268;
-        public const int TeStackBase = 8;
-        public const int TeStackLimit = 16;
-        public const int TeThreadLocalStoragePointer = 88;
-        public const int TeTlsExpansionSlots = 6016;
-        public const int TeTlsSlots = 5248;
         public const int TeUnalignedLoadStoreExceptions = 749;
-        public const int TeVdm = 5776;
-        public const int TeWOW32Reserved = 256;
-        public const int TfDay = 4;
-        public const int TfHour = 6;
-        public const int TfMilliseconds = 12;
-        public const int TfMinute = 8;
-        public const int TfMonth = 2;
-        public const int TfSecond = 10;
-        public const int TfWeekday = 14;
-        public const int TfYear = 0;
-        public const int ThAdjustIncrement = 599;
-        public const int ThAdjustReason = 598;
-        public const int ThAlerted = 106;
-        public const int ThApcState = 144;
-        public const int ThApcStateIndex = 618;
-        public const int ThCombinedApcDisable = 476;
-        public const int ThContextSwitches = 332;
-        public const int ThCurrentRunTime = 80;
-        public const int ThCycleTime = 72;
-        public const int ThDebugActive = 3;
-        public const int ThFirstArgument = 128;
-        public const int ThInitialStack = 40;
-        public const int ThKernelApcDisable = 476;
-        public const int ThKernelStack = 88;
-        public const int ThLegoData = 752;
-        public const int ThLock = 0;
-        public const int ThMiscFlags = 108;
-        public const int ThNextProcessor = 568;
-        public const int ThPreviousMode = 594;
-        public const int thProcess = 576;
-        public const int ThProcess = 576;
-        public const int ThreadEnvironmentBlockLength = 6200;
-        public const int THREAD_FLAGS_ACCOUNTING_ANY = 62;
-        public const int THREAD_FLAGS_ACCOUNTING_CSWITCH = 54;
-        public const int THREAD_FLAGS_ACCOUNTING_INTERRUPT = 114;
-        public const int THREAD_FLAGS_AFFINITY_SET = 8;
-        public const int THREAD_FLAGS_COUNTER_PROFILING = 2;
-        public const int THREAD_FLAGS_COUNTER_PROFILING_LOCK = 131072;
-        public const int THREAD_FLAGS_COUNTER_PROFILING_LOCK_BIT = 17;
-        public const int THREAD_FLAGS_CYCLE_PROFILING = 1;
         public const int THREAD_FLAGS_CYCLE_PROFILING_BIT = 0;
-        public const int THREAD_FLAGS_CYCLE_PROFILING_LOCK = 65536;
-        public const int THREAD_FLAGS_CYCLE_PROFILING_LOCK_BIT = 16;
-        public const int THREAD_FLAGS_GROUP_SCHEDULING = 4;
-        public const int THREAD_NOT_MUTEX_OWNER = 17;
-        public const int THREAD_QUANTUM = 6;
-        public const int ThRunning = 105;
-        public const int ThSignalState = 4;
-        public const int ThSize = 2;
-        public const int ThSpecialApcDisable = 478;
-        public const int ThStackBase = 56;
-        public const int ThStackLimit = 48;
-        public const int ThState = 380;
-        public const int ThSystemCallNumber = 120;
-        public const int ThTeb = 232;
-        public const int ThThreadControlFlags = 2;
-        public const int ThThreadFlags = 112;
-        public const int ThThreadLock = 64;
-        public const int ThTimer = 248;
-        public const int ThTrapFrame = 136;
-        public const int ThType = 0;
-        public const int ThVfpState = 560;
-        public const int ThWaitIrql = 382;
-        public const int ThWaitReason = 675;
-        public const int ThWaitTime = 428;
-        public const int ThWin32Thread = 448;
-        public const int TiDpc = 48;
-        public const int TiDueTime = 24;
-        public const int TimerObjectLength = 64;
-        public const int TiPeriod = 60;
-        public const int TiSignalState = 4;
-        public const int TiSize = 2;
-        public const int TiTimerListEntry = 32;
-        public const int TiType = 0;
-        public const int TlCpsr = 12;
-        public const int TlCpuNumber = 8;
         public const int TlFp = 80;
-        public const int TlLr = 88;
-        public const int TlPadding = 10;
-        public const int TlPc = 104;
-        public const int TlSp = 96;
-        public const int TLS_EXPANSION_SLOTS = 1024;
-        public const int TLS_MINIMUM_AVAILABLE = 64;
-        public const int TlThread = 0;
-        public const int TlTrapType = 9;
         public const int TlX0 = 16;
         public const int TlX1 = 24;
         public const int TlX2 = 32;
@@ -1810,109 +1985,17 @@
         public const int TlX5 = 56;
         public const int TlX6 = 64;
         public const int TlX7 = 72;
-        public const int TmHighTime = 4;
-        public const int TmLowTime = 0;
-        public const int Transition = 6;
-        public const int TRANSITION_ASID = 0;
-        public const int TRAP_CAUSE_UNKNOWN = 18;
-        public const int TRAP_TYPE_DATA_ABORT = 4;
-        public const int TRAP_TYPE_FIQ = 7;
-        public const int TRAP_TYPE_INTERRUPT = 1;
-        public const int TRAP_TYPE_PREFETCH_ABORT = 5;
-        public const int TRAP_TYPE_RESET = 6;
-        public const int TRAP_TYPE_SYSCALL = 2;
-        public const int TRAP_TYPE_UNDEFINED = 3;
-        public const int TrBcr = 24;
-        public const int TrBvr = 56;
         public const int TrContextFromKFramesUnwound = 1;
-        public const int TrDebugRegistersValid = 2;
         public const int TrEsr = 148;
-        public const int TrExceptionActive = 0;
-        public const int TrFaultAddress = 8;
         public const int TrFp = 320;
-        public const int TrLr = 312;
-        public const int TrPc = 328;
         public const int TrPreviousIrql = 3;
-        public const int TrPreviousMode = 3;
-        public const int TrReserved = 4;
-        public const int TrSp = 152;
         public const int TrSpsr = 144;
-        public const int TrTrapFrame = 8;
-        public const int TRUE = 1;
-        public const int TrVfpState = 16;
-        public const int TrWcr = 120;
-        public const int TrWvr = 128;
         public const int TrX = 160;
-        public const int TwFindAny = 0;
-        public const int TwFindIdeal = 4;
-        public const int TwFindLast = 8;
-        public const int TwIdleAny = 12;
-        public const int TwIdleCurrent = 16;
-        public const int TwIdleIdeal = 20;
-        public const int TwIdleLast = 24;
-        public const int TwPreemptAny = 28;
-        public const int TwPreemptCurrent = 32;
-        public const int TwPreemptLast = 36;
-        public const int TwSwitchToIdle = 40;
-        public const int UNEXPECTED_KERNEL_MODE_TRAP = 127;
-        public const int UNSUPPORTED_INSTRUCTION_MODE = 337;
-        public const int UsActiveConsoleId = 728;
-        public const int UsAlternativeArchitecture = 704;
-        public const int UsComPlusPackage = 736;
-        public const int UsCryptoExponent = 572;
-        public const int UsDismountCount = 732;
-        public const int UserMode = 1;
-        public const int USER_CALLBACK_FILTER = 524288;
-        public const long USER_SHARED_DATA = -9345848836096;
-        public const int UsImageNumberHigh = 46;
-        public const int UsImageNumberLow = 44;
-        public const int UsInterruptTime = 8;
-        public const int UsKdDebuggerEnabled = 724;
-        public const int UsLargePageMinimum = 580;
-        public const int UsLastSystemRITEventTickCount = 740;
-        public const int UsMaxStackTraceDepth = 568;
-        public const int UsNtBuildNumber = 608;
-        public const int UsNtMajorVersion = 620;
-        public const int UsNtMinorVersion = 624;
-        public const int UsNtProductType = 612;
-        public const int UsNtSystemRoot = 48;
-        public const int UsNumberOfPhysicalPages = 744;
-        public const int UsProcessorFeatures = 628;
-        public const int UsProductTypeIsValid = 616;
-        public const int UsReserved1 = 692;
-        public const int UsReserved3 = 696;
-        public const int UsSafeBootMode = 748;
-        public const int UsSuiteMask = 720;
-        public const int UsSystemCallPad = 784;
-        public const int UsSystemExpirationDate = 712;
-        public const int UsSystemTime = 20;
-        public const int UsTestRetInstruction = 760;
-        public const int UsTickCount = 800;
-        public const int UsTickCountMultiplier = 4;
-        public const int UsTickCountQuad = 800;
-        public const int UsTimeSlip = 700;
-        public const int UsTimeZoneBias = 32;
-        public const int UsTimeZoneId = 576;
-        public const int UsXState = 984;
-        public const int VFP_STATE_LENGTH = 528;
         public const int VsFpcr = 8;
         public const int VsFpsr = 12;
-        public const int VsLink = 0;
         public const int VsV = 16;
-        public const int WaitAll = 0;
-        public const int WaitAny = 1;
-        public const int Waiting = 5;
-        public const int WAIT_QUANTUM_DECREMENT = 1;
-        public const int WbObject = 32;
-        public const int WbThread = 24;
-        public const int WbWaitKey = 18;
-        public const int WbWaitListEntry = 0;
-        public const int WbWaitType = 16;
-        public const int Win32BatchFlushCallout = 7;
-        public const int WrDispatchInt = 31;
-        public const int WrExecutive = 0;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\ksmedia.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\ksmedia.h
         public const int AUDIOMODULE_MAX_DATA_SIZE = 64000;
         public const int AUDIOMODULE_MAX_NAME_CCH_SIZE = 128;
         public const int CC_MAX_HW_DECODE_LINES = 12;
@@ -2010,6 +2093,9 @@
         public const int KSCAMERA_EXTENDEDPROP_FOCUS_UNLOCK = 1024;
         public const int KSCAMERA_EXTENDEDPROP_HISTOGRAM_OFF = 0;
         public const int KSCAMERA_EXTENDEDPROP_HISTOGRAM_ON = 1;
+        public const int KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATING_FRAME_ILLUMINATION = 4;
+        public const int KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALWAYS_ON = 2;
+        public const int KSCAMERA_EXTENDEDPROP_IRTORCHMODE_OFF = 1;
         public const int KSCAMERA_EXTENDEDPROP_ISO_100 = 8;
         public const int KSCAMERA_EXTENDEDPROP_ISO_12800 = 1024;
         public const int KSCAMERA_EXTENDEDPROP_ISO_1600 = 128;
@@ -2296,7 +2382,7 @@
         public const int WST_TVTUNER_CHANGE_BEGIN_TUNE = 4096;
         public const int WST_TVTUNER_CHANGE_END_TUNE = 8192;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared\mmreg.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\mmreg.h
         public const int ACM_MPEG_COPYRIGHT = 2;
         public const int ACM_MPEG_DUALCHANNEL = 4;
         public const int ACM_MPEG_ID_MPEG1 = 16;
@@ -3898,7 +3984,6 @@
         public const int WAVE_FORMAT_DIVIO_MPEG4_AAC = 16707;
         public const int WAVE_FORMAT_DOLBY_AC2 = 48;
         public const int WAVE_FORMAT_DOLBY_AC3_SPDIF = 146;
-        public const int WAVE_FORMAT_DRM = 9;
         public const int WAVE_FORMAT_DSAT = 102;
         public const int WAVE_FORMAT_DSAT_DISPLAY = 103;
         public const int WAVE_FORMAT_DSPGROUP_TRUESPEECH = 34;
@@ -4124,11 +4209,11 @@
         public const int WMAUDIO_MAX_CHANNELS = 2;
         public const int _INC_MMREG = 158;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\amva.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\amva.h
         public const int AMVA_QUERYRENDERSTATUSF_READ = 1;
         public const int AMVA_TYPEINDEX_OUTPUTFRAME = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\amvideo.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\amvideo.h
         public const int AMDDS_ALL = 255;
         public const int AMDDS_DCIPS = 1;
         public const int AMDDS_NONE = 0;
@@ -4150,23 +4235,23 @@
         public const int iTRUECOLOR = 16;
         public const int MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\AudioClient.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\AudioClient.h
         public const int AMBISONICS_PARAM_VERSION_1 = 1;
         public const int AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\audioendpoints.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\audioendpoints.h
         public const int ENDPOINT_FORMAT_RESET_MIX_ONLY = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\audioenginebaseapo.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\audioenginebaseapo.h
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\audiomediatype.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\AudioSessionTypes.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\AudioSessionTypes.h
         public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDE = 536870912;
         public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDEWHENEXPIRED = 1073741824;
         public const int AUDCLNT_SESSIONFLAGS_EXPIREWHENUNOWNED = 268435456;
@@ -4175,22 +4260,21 @@
         public const int AUDCLNT_STREAMFLAGS_EVENTCALLBACK = 262144;
         public const int AUDCLNT_STREAMFLAGS_LOOPBACK = 131072;
         public const int AUDCLNT_STREAMFLAGS_NOPERSIST = 524288;
-        public const int AUDCLNT_STREAMFLAGS_PREVENT_LOOPBACK_CAPTURE = 16777216;
         public const int AUDCLNT_STREAMFLAGS_RATEADJUST = 1048576;
         public const int AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY = 134217728;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\codecapi.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\codecapi.h
         public const int AVENC_H263V_LEVELCOUNT = 8;
         public const int AVENC_H264V_LEVELCOUNT = 16;
         public const int AVENC_H264V_MAX_MBBITS = 3200;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\D2D1EffectAuthor.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d2d1effectauthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\D2DErr.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\D2DErr.h
         public const int FACILITY_D2D = 2201;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d.h
         public const int D3DDP_DONOTCLIP = 4;
         public const int D3DDP_DONOTLIGHT = 16;
         public const int D3DDP_DONOTUPDATEEXTENTS = 8;
@@ -4199,7 +4283,7 @@
         public const int D3DNEXT_NEXT = 1;
         public const int D3DNEXT_TAIL = 4;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d10.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d10.h
         public const int D3D10_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D10_32BIT_INDEX_STRIP_CUT_VALUE = -1;
         public const int D3D10_8BIT_INDEX_STRIP_CUT_VALUE = 255;
@@ -4381,18 +4465,121 @@
         public const int D3D_SPEC_DATE_YEAR = 2006;
         public const int _FACD3D10 = 2169;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d10sdklayers.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d10sdklayers.h
         public const int D3D10_DEBUG_FEATURE_FINISH_PER_RENDER_OP = 2;
         public const int D3D10_DEBUG_FEATURE_FLUSH_PER_RENDER_OP = 1;
         public const int D3D10_DEBUG_FEATURE_PRESENT_PER_RENDER_OP = 4;
         public const int D3D10_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int D3D10_SDK_LAYERS_VERSION = 11;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d10shader.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d10shader.h
         public const int D3D10_SHADER_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
         public const int D3D10_SHADER_OPTIMIZATION_LEVEL1 = 0;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d10_1.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d10umddi.h
+        public const int D3D10DDI_CREATEDEVICE_FLAG_DISABLE_EXTRA_THREAD_CREATION = 1;
+        public const int D3D10DDI_MINOR_HEADER_VERSION = 2;
+        public const int D3D10DDI_QUERY_MISCFLAG_PREDICATEHINT = 1;
+        public const int D3D10on9_DDI_BUILD_VERSION = 0;
+        public const int D3D10on9_DDI_MINOR_VERSION = 0;
+        public const int D3D10_0_7_DDI_BUILD_VERSION = 0;
+        public const int D3D10_0_7_DDI_MINOR_VERSION = 9;
+        public const int D3D10_0_DDI_BUILD_VERSION = 4;
+        public const int D3D10_0_DDI_MINOR_VERSION = 1;
+        public const int D3D10_0_x_DDI_BUILD_VERSION = 0;
+        public const int D3D10_0_x_DDI_MINOR_VERSION = 6;
+        public const int D3D10_0_x_vista_DDI_BUILD_VERSION = 0;
+        public const int D3D10_0_x_vista_DDI_MINOR_VERSION = 3;
+        public const int D3D10_1_7_DDI_BUILD_VERSION = 0;
+        public const int D3D10_1_7_DDI_MINOR_VERSION = 10;
+        public const int D3D10_1_DDI_BUILD_VERSION = 1;
+        public const int D3D10_1_DDI_MINOR_VERSION = 2;
+        public const int D3D10_1_x_DDI_BUILD_VERSION = 0;
+        public const int D3D10_1_x_DDI_MINOR_VERSION = 7;
+        public const int D3D10_1_x_vista_DDI_BUILD_VERSION = 0;
+        public const int D3D10_1_x_vista_DDI_MINOR_VERSION = 4;
+        public const int D3D10_DDI_FORMAT_SUPPORT_BLENDABLE = 4;
+        public const int D3D10_DDI_FORMAT_SUPPORT_MULTISAMPLE_LOAD = 16;
+        public const int D3D10_DDI_FORMAT_SUPPORT_MULTISAMPLE_RENDERTARGET = 8;
+        public const int D3D10_DDI_FORMAT_SUPPORT_NOT_SUPPORTED = -2147483648;
+        public const int D3D10_DDI_FORMAT_SUPPORT_RENDERTARGET = 2;
+        public const int D3D10_DDI_FORMAT_SUPPORT_SHADER_SAMPLE = 1;
+        public const int D3D10_DDI_MAJOR_VERSION = 10;
+        public const int D3D10_DDI_SIMULTANEOUS_RENDER_TARGET_COUNT = 8;
+        public const int D3D11DDICAPS_COMMANDLISTS = 2;
+        public const int D3D11DDICAPS_COMMANDLISTS_BUILD_2 = 4;
+        public const int D3D11DDICAPS_FREETHREADED = 1;
+        public const int D3D11DDICAPS_SHADER_COMPUTE_PLUS_RAW_AND_STRUCTURED_BUFFERS_IN_SHADER_4_X = 2;
+        public const int D3D11DDICAPS_SHADER_DEBUGGABLE = 4;
+        public const int D3D11DDICAPS_SHADER_DOUBLES = 1;
+        public const int D3D11DDICAPS_SHADER_REQUIRES_TRANSLATION_INFO_FOR_DX9 = 8;
+        public const int D3D11DDICAPS_SHADER_ROVS = 64;
+        public const int D3D11DDICAPS_SHADER_SPECIFIED_STENCIL_REF = 16;
+        public const int D3D11DDICAPS_SHADER_TYPED_UAV_LOAD_ADDITIONAL_FORMATS = 32;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_3DPIPELINESUPPORT_SHIFT = 1;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_3DPIPELINESUPPORT_SHIFT2 = 3;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_DEBUGGABLE = 32;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_ENABLE_INCREASED_PRIORITY = 4096;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_SINGLETHREADED = 16;
+        public const int D3D11DDI_MINOR_HEADER_VERSION = 15;
+        public const int D3D11_0_7_DDI_BUILD_VERSION = 2;
+        public const int D3D11_0_7_DDI_MINOR_VERSION = 11;
+        public const int D3D11_0_DDI_BUILD_VERSION = 2;
+        public const int D3D11_0_DDI_MINOR_VERSION = 10;
+        public const int D3D11_0_vista_DDI_BUILD_VERSION = 0;
+        public const int D3D11_0_vista_DDI_MINOR_VERSION = 9;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_BUFFER = 1024;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_CAPTURE = 2048;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_DECODER_OUTPUT = 32;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_MULTIPLANE_OVERLAY = 32768;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_OUTPUT_MERGER_LOGIC_OP = 8192;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_SHADER_GATHER = 16384;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_UAV_WRITES = 512;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_VERTEX_BUFFER = 256;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_VIDEO_ENCODER = 4096;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_VIDEO_PROCESSOR_INPUT = 128;
+        public const int D3D11_1DDI_FORMAT_SUPPORT_VIDEO_PROCESSOR_OUTPUT = 64;
+        public const int D3D11_1DDI_VIDEO_FUNCTIONS = 2;
+        public const int D3D11_1_DDI_BUILD_VERSION = 0;
+        public const int D3D11_1_DDI_BUILD_VERSION_RC = 1;
+        public const int D3D11_1_DDI_MINOR_VERSION = 15;
+        public const int D3D11_1_DDI_MINOR_VERSION_RC = 14;
+        public const int D3D11_DDI_BUFFEREX_SRV_FLAG_RAW = 1;
+        public const int D3D11_DDI_BUFFER_UAV_FLAG_APPEND = 2;
+        public const int D3D11_DDI_BUFFER_UAV_FLAG_COUNTER = 4;
+        public const int D3D11_DDI_BUFFER_UAV_FLAG_RAW = 1;
+        public const int D3D11_DDI_MAJOR_VERSION = 11;
+        public const int D3DWDDM1_3DDI_FORMAT_SUPPORT_TILED = 65536;
+        public const int D3DWDDM1_3DDI_SETMARKERMODE_CUSTOMDRIVEREVENTS = 1;
+        public const int D3DWDDM1_3_DDI_BUILD_VERSION = 1;
+        public const int D3DWDDM1_3_DDI_BUILD_VERSION_M1 = 0;
+        public const int D3DWDDM1_3_DDI_MINOR_VERSION = 16;
+        public const int D3DWDDM2_0DDI_FORMAT_SUPPORT_UAV_READS = 131072;
+        public const int D3DWDDM2_0DDI_VIDEO_FUNCTIONS = 3;
+        public const int D3DWDDM2_0_DDI_BUILD_VERSION = 9;
+        public const int D3DWDDM2_0_DDI_MINOR_VERSION = 32;
+        public const int D3DWDDM2_1DDI_VIDEO_FUNCTIONS = 5;
+        public const int D3DWDDM2_1_DDI_BUILD_VERSION = 2;
+        public const int D3DWDDM2_1_DDI_MINOR_VERSION = 34;
+        public const int D3DWDDM2_2_DDI_BUILD_VERSION = 5;
+        public const int D3DWDDM2_2_DDI_MINOR_VERSION = 35;
+        public const int D3DWDDM2_3_DDI_BUILD_VERSION = 1;
+        public const int D3DWDDM2_3_DDI_MINOR_VERSION = 36;
+        public const int D3DWDDM2_4DDI_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS = 4;
+        public const int D3DWDDM2_4DDI_VIDEO_FUNCTIONS = 7;
+        public const int D3DWDDM2_4DDI_VIDEO_FUNCTIONS_RS4_0 = 6;
+        public const int D3DWDDM2_4_DDI_BUILD_VERSION = 1;
+        public const int D3DWDDM2_4_DDI_MINOR_VERSION = 37;
+        public const int D3DWDDM2_5_DDI_BUILD_VERSION = 0;
+        public const int D3DWDDM2_5_DDI_MINOR_VERSION = 38;
+        public const int D3DWDDM2_6_DDI_BUILD_VERSION = 4;
+        public const int D3DWDDM2_6_DDI_MINOR_VERSION = 39;
+        public const int DXGI_OFFER_RECLAIM = 10;
+        public const int DXGI_QFE_1 = 8;
+        public const int DXGI_RESOLVE_SHARED_RESOURCE = 9;
+        public const int VISTA_GOLD_PRODUCT_VER = 6000;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d10_1.h
         public const int D3D10_1_DEFAULT_SAMPLE_MASK = -1;
         public const int D3D10_1_GS_INPUT_REGISTER_COUNT = 32;
         public const int D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT = 32;
@@ -4413,7 +4600,7 @@
         public const int D3D10_1_VS_INPUT_REGISTER_COUNT = 32;
         public const int D3D10_1_VS_OUTPUT_REGISTER_COUNT = 32;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d11.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d11.h
         public const int D3D11_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D11_1_UAV_SLOT_COUNT = 64;
         public const int D3D11_2_TILED_RESOURCE_TILE_SIZE_IN_BYTES = 65536;
@@ -4751,7 +4938,7 @@
         public const int D3D11_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
         public const int _FACD3D11 = 2172;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d11sdklayers.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d11sdklayers.h
         public const int D3D11_DEBUG_FEATURE_ALWAYS_DISCARD_OFFERED_RESOURCE = 8;
         public const int D3D11_DEBUG_FEATURE_AVOID_BEHAVIOR_CHANGING_DEBUG_AIDS = 64;
         public const int D3D11_DEBUG_FEATURE_DISABLE_TILED_RESOURCE_MAPPING_TRACKING_AND_VALIDATION = 128;
@@ -4762,7 +4949,7 @@
         public const int D3D11_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int D3D11_SDK_LAYERS_VERSION = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\d3d11shadertracing.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d11shadertracing.h
         public const int D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_READS = 2;
         public const int D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_WRITES = 1;
         public const int D3D11_TRACE_COMPONENT_W = 8;
@@ -4778,10 +4965,10 @@
         public const int D3D11_TRACE_MISC_PS_DISCARD = 4;
         public const int D3D11_TRACE_REGISTER_FLAGS_RELATIVE_INDEXING = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d11_2.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d11_2.h
         public const int D3D11_PACKED_TILE = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d12.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d12.h
         public const int D3D12_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D12_32BIT_INDEX_STRIP_CUT_VALUE = -1;
         public const int D3D12_8BIT_INDEX_STRIP_CUT_VALUE = 255;
@@ -5054,6 +5241,11 @@
         public const int D3D12_RAYTRACING_INSTANCE_DESCS_BYTE_ALIGNMENT = 16;
         public const int D3D12_RAYTRACING_MAX_ATTRIBUTE_SIZE_IN_BYTES = 32;
         public const int D3D12_RAYTRACING_MAX_DECLARABLE_TRACE_RECURSION_DEPTH = 31;
+        public const int D3D12_RAYTRACING_MAX_GEOMETRIES_PER_BOTTOM_LEVEL_ACCELERATION_STRUCTURE = 16777216;
+        public const int D3D12_RAYTRACING_MAX_INSTANCES_PER_TOP_LEVEL_ACCELERATION_STRUCTURE = 16777216;
+        public const int D3D12_RAYTRACING_MAX_PRIMITIVES_PER_BOTTOM_LEVEL_ACCELERATION_STRUCTURE = 536870912;
+        public const int D3D12_RAYTRACING_MAX_RAY_GENERATION_SHADER_THREADS = 1073741824;
+        public const int D3D12_RAYTRACING_MAX_SHADER_RECORD_STRIDE = 4096;
         public const int D3D12_RAYTRACING_SHADER_RECORD_BYTE_ALIGNMENT = 32;
         public const int D3D12_RAYTRACING_SHADER_TABLE_BYTE_ALIGNMENT = 64;
         public const int D3D12_RAYTRACING_TRANSFORM3X4_BYTE_ALIGNMENT = 16;
@@ -5084,6 +5276,7 @@
         public const int D3D12_REQ_TEXTURECUBE_DIMENSION = 16384;
         public const int D3D12_RESINFO_INSTRUCTION_MISSING_COMPONENT_RETVAL = 0;
         public const int D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES = -1;
+        public const int D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT = 2;
         public const int D3D12_SHADER_COMPONENT_MAPPING_MASK = 7;
         public const int D3D12_SHADER_COMPONENT_MAPPING_SHIFT = 3;
         public const int D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES = 32;
@@ -5093,6 +5286,8 @@
         public const int D3D12_SHADER_MAX_INTERFACE_CALL_SITES = 4096;
         public const int D3D12_SHADER_MAX_TYPES = 65535;
         public const int D3D12_SHADER_MINOR_VERSION = 1;
+        public const int D3D12_SHADING_RATE_VALID_MASK = 3;
+        public const int D3D12_SHADING_RATE_X_AXIS_SHIFT = 2;
         public const int D3D12_SHIFT_INSTRUCTION_PAD_VALUE = 0;
         public const int D3D12_SHIFT_INSTRUCTION_SHIFT_VALUE_BIT_COUNT = 5;
         public const int D3D12_SIMULTANEOUS_RENDER_TARGET_COUNT = 8;
@@ -5157,10 +5352,10 @@
         public const int D3D12_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
         public const int D3D12_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d12sdklayers.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d12sdklayers.h
         public const int D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3d12shader.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d12shader.h
         public const int D3D_SHADER_REQUIRES_11_1_DOUBLE_EXTENSIONS = 32;
         public const int D3D_SHADER_REQUIRES_11_1_SHADER_EXTENSIONS = 64;
         public const int D3D_SHADER_REQUIRES_64_UAVS = 8;
@@ -5176,7 +5371,105 @@
         public const int D3D_SHADER_REQUIRES_UAVS_AT_EVERY_STAGE = 4;
         public const int D3D_SHADER_REQUIRES_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER = 8192;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\d3d9helper.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d12umddi.h
+        public const int D3D12DDI_BUILD_VERSION = 8;
+        public const int D3D12DDI_BUILD_VERSION_0010 = 0;
+        public const int D3D12DDI_BUILD_VERSION_0011 = 1;
+        public const int D3D12DDI_BUILD_VERSION_0012 = 2;
+        public const int D3D12DDI_BUILD_VERSION_0013 = 3;
+        public const int D3D12DDI_BUILD_VERSION_0014 = 4;
+        public const int D3D12DDI_BUILD_VERSION_0015 = 5;
+        public const int D3D12DDI_BUILD_VERSION_0020 = 0;
+        public const int D3D12DDI_BUILD_VERSION_0021 = 1;
+        public const int D3D12DDI_BUILD_VERSION_0022 = 2;
+        public const int D3D12DDI_BUILD_VERSION_0023 = 3;
+        public const int D3D12DDI_BUILD_VERSION_0024 = 4;
+        public const int D3D12DDI_BUILD_VERSION_0025 = 5;
+        public const int D3D12DDI_BUILD_VERSION_0026 = 6;
+        public const int D3D12DDI_BUILD_VERSION_0027 = 7;
+        public const int D3D12DDI_BUILD_VERSION_0028 = 8;
+        public const int D3D12DDI_BUILD_VERSION_0030 = 0;
+        public const int D3D12DDI_BUILD_VERSION_0031 = 1;
+        public const int D3D12DDI_BUILD_VERSION_0032 = 2;
+        public const int D3D12DDI_BUILD_VERSION_0033 = 3;
+        public const int D3D12DDI_BUILD_VERSION_0034 = 4;
+        public const int D3D12DDI_BUILD_VERSION_0040 = 0;
+        public const int D3D12DDI_BUILD_VERSION_0041 = 1;
+        public const int D3D12DDI_BUILD_VERSION_0042 = 2;
+        public const int D3D12DDI_BUILD_VERSION_0043 = 3;
+        public const int D3D12DDI_BUILD_VERSION_0050 = 0;
+        public const int D3D12DDI_BUILD_VERSION_0051 = 1;
+        public const int D3D12DDI_BUILD_VERSION_0052 = 2;
+        public const int D3D12DDI_BUILD_VERSION_0053 = 3;
+        public const int D3D12DDI_BUILD_VERSION_0054 = 4;
+        public const int D3D12DDI_BUILD_VERSION_0060 = 0;
+        public const int D3D12DDI_BUILD_VERSION_0061 = 1;
+        public const int D3D12DDI_BUILD_VERSION_0062 = 2;
+        public const int D3D12DDI_BUILD_VERSION_0063 = 3;
+        public const int D3D12DDI_BUILD_VERSION_0064 = 4;
+        public const int D3D12DDI_BUILD_VERSION_BEFORE_ASTC_PROFILE = 1;
+        public const int D3D12DDI_BUILD_VERSION_BEFORE_CROSS_ADAPTER = 2;
+        public const int D3D12DDI_BUILD_VERSION_BEFORE_DX10_DX12_HEADER_REFACTOR = 6;
+        public const int D3D12DDI_BUILD_VERSION_BEFORE_IMAGE_QUEUE_MULTI_ADAPTER = 4;
+        public const int D3D12DDI_BUILD_VERSION_BEFORE_SUBRESOURCE_REFACTOR = 3;
+        public const int D3D12DDI_BUILD_VERSION_BEFORE_SUBRESOURCE_REFACTOR2 = 5;
+        public const int D3D12DDI_BUILD_VERSION_DX10_DX12_HEADER_REFACTOR = 7;
+        public const int D3D12DDI_BUILD_VERSION_PARAMETERIZED_SWIZZLE_XOR3 = 8;
+        public const int D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0030_0 = 1;
+        public const int D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0040_0 = 2;
+        public const int D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_STREAMING_0030_0 = 1;
+        public const int D3D12DDI_FEATURE_VERSION_DOWNLEVEL_SUPPORT_0054_0 = 1;
+        public const int D3D12DDI_FEATURE_VERSION_DOWNLEVEL_SUPPORT_0054_1 = 2;
+        public const int D3D12DDI_FEATURE_VERSION_PASS_EXPERIMENT_0020_0 = 1;
+        public const int D3D12DDI_FEATURE_VERSION_RENDER_PASS_0043_0 = 1;
+        public const int D3D12DDI_FEATURE_VERSION_RENDER_PASS_0053_0 = 2;
+        public const int D3D12DDI_FEATURE_VERSION_SHADERCACHE_0021_0 = 1;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0033_0 = 8;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0040_0 = 9;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0041_0 = 10;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0041_1 = 11;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0043_0 = 12;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0053_0 = 13;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0060_0 = 14;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0063_0 = 15;
+        public const int D3D12DDI_FORMAT_SUPPORT_BLENDABLE = 4;
+        public const int D3D12DDI_FORMAT_SUPPORT_BUFFER = 1024;
+        public const int D3D12DDI_FORMAT_SUPPORT_CAPTURE = 2048;
+        public const int D3D12DDI_FORMAT_SUPPORT_DECODER_OUTPUT = 32;
+        public const int D3D12DDI_FORMAT_SUPPORT_MULTIPLANE_OVERLAY = 32768;
+        public const int D3D12DDI_FORMAT_SUPPORT_MULTISAMPLE_LOAD = 16;
+        public const int D3D12DDI_FORMAT_SUPPORT_MULTISAMPLE_RENDERTARGET = 8;
+        public const int D3D12DDI_FORMAT_SUPPORT_NOT_SUPPORTED = -2147483648;
+        public const int D3D12DDI_FORMAT_SUPPORT_OUTPUT_MERGER_LOGIC_OP = 8192;
+        public const int D3D12DDI_FORMAT_SUPPORT_RENDERTARGET = 2;
+        public const int D3D12DDI_FORMAT_SUPPORT_SHADER_GATHER = 16384;
+        public const int D3D12DDI_FORMAT_SUPPORT_SHADER_SAMPLE = 1;
+        public const int D3D12DDI_FORMAT_SUPPORT_TILED = 65536;
+        public const int D3D12DDI_FORMAT_SUPPORT_UAV_READS = 131072;
+        public const int D3D12DDI_FORMAT_SUPPORT_UAV_WRITES = 512;
+        public const int D3D12DDI_FORMAT_SUPPORT_VERTEX_BUFFER = 256;
+        public const int D3D12DDI_FORMAT_SUPPORT_VIDEO_ENCODER = 4096;
+        public const int D3D12DDI_FORMAT_SUPPORT_VIDEO_PROCESSOR_INPUT = 128;
+        public const int D3D12DDI_FORMAT_SUPPORT_VIDEO_PROCESSOR_OUTPUT = 64;
+        public const int D3D12DDI_MAJOR_VERSION = 12;
+        public const int D3D12DDI_MINOR_HEADER_VERSION = 3;
+        public const int D3D12DDI_MINOR_VERSION = 2;
+        public const int D3D12DDI_MINOR_VERSION_R1 = 10;
+        public const int D3D12DDI_MINOR_VERSION_R2 = 20;
+        public const int D3D12DDI_MINOR_VERSION_R3 = 30;
+        public const int D3D12DDI_MINOR_VERSION_R4 = 40;
+        public const int D3D12DDI_MINOR_VERSION_R5 = 50;
+        public const int D3D12DDI_MINOR_VERSION_R6 = 60;
+        public const int D3D12DDI_NODE_MAP_HIDE_NODE = -1;
+        public const int D3D12DDI_SHADER_COMPONENT_MAPPING_MASK = 7;
+        public const int D3D12DDI_SHADER_COMPONENT_MAPPING_SHIFT = 3;
+        public const int D3D12DDI_SIMULTANEOUS_RENDER_TARGET_COUNT = 8;
+        public const int D3D12DDI_VIDEO_DECODE_MACROBLOCKS_AFFECTED_UNKNOWN_0032 = -1;
+        public const int D3D12DDI_VIDEO_DECODE_MAX_ARGUMENTS_0020 = 10;
+        public const int D3D12DDI_VIDEO_DECODE_MAX_HISTOGRAM_COMPONENTS = 4;
+        public const int D3D12DDI_VIDEO_PROCESS_MAX_FILTERS_0020 = 32;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d9helper.h
         public const int D3DADAPTER_DEFAULT = 0;
         public const int D3DCREATE_ADAPTERGROUP_DEVICE = 512;
         public const int D3DCREATE_DISABLE_DRIVER_MANAGEMENT = 256;
@@ -5196,7 +5489,7 @@
         public const int D3DSPD_IUNKNOWN = 1;
         public const int _FACD3D = 2166;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3dcaps.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3dcaps.h
         public const int D3DDD_BCLIPPING = 16;
         public const int D3DDD_COLORMODEL = 1;
         public const int D3DDD_DEVCAPS = 2;
@@ -5407,7 +5700,7 @@
         public const int D3DVTXPCAPS_TEXGEN = 1;
         public const int D3DVTXPCAPS_VERTEXFOG = 4;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3dcommon.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3dcommon.h
         public const int D3D_COMPONENT_MASK_W = 8;
         public const int D3D_COMPONENT_MASK_X = 1;
         public const int D3D_COMPONENT_MASK_Y = 2;
@@ -5428,7 +5721,7 @@
         public const int D3D_FL9_3_REQ_TEXTURECUBE_DIMENSION = 4096;
         public const int D3D_FL9_3_SIMULTANEOUS_RENDER_TARGET_COUNT = 4;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\d3dcompiler.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3dcompiler.h
         public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
         public const int D3DCOMPILE_OPTIMIZATION_LEVEL1 = 0;
         public const int D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS = 1;
@@ -5446,12 +5739,12 @@
         public const int D3D_DISASM_PRINT_HEX_LITERALS = 128;
         public const int D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\d3dcsx.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3dcsx.h
         public const int D3DX11_FFT_MAX_DIMENSIONS = 32;
         public const int D3DX11_FFT_MAX_PRECOMPUTE_BUFFERS = 4;
         public const int D3DX11_FFT_MAX_TEMP_BUFFERS = 4;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3dhal.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3dhal.h
         public const int D3DCLEAR_COMPUTERECTS = 8;
         public const int D3DDEVCAPS_HWINDEXBUFFER = 67108864;
         public const int D3DDEVCAPS_HWVERTEXBUFFER = 33554432;
@@ -5625,7 +5918,7 @@
         public const int D3DVS_TEMPREG_MAX_V2_1 = 32;
         public const int D3DVS_TEMPREG_MAX_V3_0 = 32;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\d3dnthal.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3dnthal.h
         public const int D3DNTHAL2_CB32_SETRENDERTARGET = 1;
         public const int D3DNTHAL3_CB32_CLEAR2 = 1;
         public const int D3DNTHAL3_CB32_DRAWPRIMITIVES2 = 8;
@@ -5649,7 +5942,7 @@
         public const int D3DNTHAL_TSS_STATESPERSTAGE = 64;
         public const int _NT_D3DRS_DELETERTPATCH = 169;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\d3dtypes.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3dtypes.h
         public const int D3DCLEAR_STENCIL = 4;
         public const int D3DCLEAR_TARGET = 1;
         public const int D3DCLEAR_ZBUFFER = 2;
@@ -5774,7 +6067,146 @@
         public const int D3DWRAP_U = 1;
         public const int D3DWRAP_V = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\ddkernel.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3dumddi.h
+        public const int D3DDDIDEVINFOID_VCACHE = 4;
+        public const int D3DDDISETPALETTE_256 = 1;
+        public const int D3DDDISETPALETTE_ALLOW256 = 512;
+        public const int D3DDDISETPALETTE_ALPHA = 8192;
+        public const int D3DDDI_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS = 16;
+        public const int D3DDDI_SETMARKERMODE_CUSTOMDRIVEREVENTS = 1;
+        public const long D3DDDI_VERSION64_BUILD16_MASK = 4294901760;
+        public const long D3DDDI_VERSION64_MAJOR16_MASK = -281474976710656;
+        public const long D3DDDI_VERSION64_MINOR16_MASK = 281470681743360;
+        public const long D3DDDI_VERSION64_REVISION16_MASK = 65535;
+        public const int DDRAW_CAPS2_CANDROPZ16BIT = 2;
+        public const int DDRAW_CAPS2_DYNAMICTEXTURES = 16;
+        public const int DDRAW_CAPS2_FLIPINTERVAL = 4;
+        public const int DDRAW_CAPS2_FLIPNOVSYNC = 8;
+        public const int DDRAW_CAPS_BLTDEPTHFILL = 4;
+        public const int DDRAW_CAPS_COLORKEY = 2;
+        public const int DDRAW_CAPS_ZBLTS = 1;
+        public const int DDRAW_CKEYCAPS_DESTBLT = 2;
+        public const int DDRAW_CKEYCAPS_SRCBLT = 1;
+        public const int DDRAW_FXCAPS_BLTMIRRORLEFTRIGHT = 1;
+        public const int DDRAW_FXCAPS_BLTMIRRORUPDOWN = 2;
+        public const int DXVADDI_DEINTERLACETECH_BOBLINEREPLICATE = 1;
+        public const int DXVADDI_DEINTERLACETECH_BOBVERTICALSTRETCH = 2;
+        public const int DXVADDI_DEINTERLACETECH_BOBVERTICALSTRETCH4TAP = 4;
+        public const int DXVADDI_DEINTERLACETECH_EDGEFILTERING = 16;
+        public const int DXVADDI_DEINTERLACETECH_FIELDADAPTIVE = 32;
+        public const int DXVADDI_DEINTERLACETECH_INVERSETELECINE = 256;
+        public const int DXVADDI_DEINTERLACETECH_MEDIANFILTERING = 8;
+        public const int DXVADDI_DEINTERLACETECH_MOTIONVECTORSTEERED = 128;
+        public const int DXVADDI_DEINTERLACETECH_PIXELADAPTIVE = 64;
+        public const int DXVADDI_DEINTERLACETECH_UNKNOWN = 0;
+        public const int DXVADDI_DESTDATA_RFF = 1;
+        public const int DXVADDI_DESTDATA_RFF_TFF_PRESENT = 4;
+        public const int DXVADDI_DESTDATA_TFF = 2;
+        public const int DXVADDI_DETAILFILTERTECH_EDGE = 2;
+        public const int DXVADDI_DETAILFILTERTECH_SHARPENING = 4;
+        public const int DXVADDI_DETAILFILTERTECH_UNKNOWN = 1;
+        public const int DXVADDI_DETAILFILTERTECH_UNSUPPORTED = 0;
+        public const int DXVADDI_DETAILFILTER_CHROMALEVEL = 10;
+        public const int DXVADDI_DETAILFILTER_CHROMARADIUS = 12;
+        public const int DXVADDI_DETAILFILTER_CHROMATHREASHOLD = 11;
+        public const int DXVADDI_DETAILFILTER_LUMALEVEL = 7;
+        public const int DXVADDI_DETAILFILTER_LUMARADIUS = 9;
+        public const int DXVADDI_DETAILFILTER_LUMATHREASHOLD = 8;
+        public const int DXVADDI_EXTENSION_CAPTYPE_MAX = 400;
+        public const int DXVADDI_EXTENSION_CAPTYPE_MIN = 300;
+        public const int DXVADDI_EXTENSION_CATEGORY_ALL = 7;
+        public const int DXVADDI_EXTENSION_CATEGORY_DECODER = 1;
+        public const int DXVADDI_EXTENSION_CATEGORY_ENCODER = 2;
+        public const int DXVADDI_EXTENSION_CATEGORY_PROCESSOR = 4;
+        public const int DXVADDI_NOISEFILTERTECH_BLOCKNOISE = 8;
+        public const int DXVADDI_NOISEFILTERTECH_MEDIAN = 2;
+        public const int DXVADDI_NOISEFILTERTECH_MOSQUITONOISE = 16;
+        public const int DXVADDI_NOISEFILTERTECH_TEMPORAL = 4;
+        public const int DXVADDI_NOISEFILTERTECH_UNKNOWN = 1;
+        public const int DXVADDI_NOISEFILTERTECH_UNSUPPORTED = 0;
+        public const int DXVADDI_NOISEFILTER_CHROMALEVEL = 4;
+        public const int DXVADDI_NOISEFILTER_CHROMARADIUS = 6;
+        public const int DXVADDI_NOISEFILTER_CHROMATHREASHOLD = 5;
+        public const int DXVADDI_NOISEFILTER_LUMALEVEL = 1;
+        public const int DXVADDI_NOISEFILTER_LUMARADIUS = 3;
+        public const int DXVADDI_NOISEFILTER_LUMATHREASHOLD = 2;
+        public const int DXVADDI_PROCAMP_BRIGHTNESS = 1;
+        public const int DXVADDI_PROCAMP_CONTRAST = 2;
+        public const int DXVADDI_PROCAMP_HUE = 4;
+        public const int DXVADDI_PROCAMP_NONE = 0;
+        public const int DXVADDI_PROCAMP_SATURATION = 8;
+        public const int DXVADDI_SAMPLEDATA_RFF = 1;
+        public const int DXVADDI_SAMPLEDATA_RFF_TFF_PRESENT = 4;
+        public const int DXVADDI_SAMPLEDATA_TFF = 2;
+        public const int DXVADDI_VIDEOPROCESS_ALPHABLEND = 8;
+        public const int DXVADDI_VIDEOPROCESS_ALPHABLENDEXTENDED = 256;
+        public const int DXVADDI_VIDEOPROCESS_CONSTRICTION = 512;
+        public const int DXVADDI_VIDEOPROCESS_DETAILFILTER = 2048;
+        public const int DXVADDI_VIDEOPROCESS_GAMMACOMPENSATED = 16384;
+        public const int DXVADDI_VIDEOPROCESS_LINEARSCALING = 8192;
+        public const int DXVADDI_VIDEOPROCESS_MAINTAINSORIGINALFIELDDATA = 32768;
+        public const int DXVADDI_VIDEOPROCESS_NOISEFILTER = 1024;
+        public const int DXVADDI_VIDEOPROCESS_NONE = 0;
+        public const int DXVADDI_VIDEOPROCESS_PLANARALPHA = 4096;
+        public const int DXVADDI_VIDEOPROCESS_STRETCHX = 2;
+        public const int DXVADDI_VIDEOPROCESS_STRETCHY = 4;
+        public const int DXVADDI_VIDEOPROCESS_SUBRECTS = 16;
+        public const int DXVADDI_VIDEOPROCESS_SUBSTREAMS = 32;
+        public const int DXVADDI_VIDEOPROCESS_SUBSTREAMSEXTENDED = 64;
+        public const int DXVADDI_VIDEOPROCESS_YUV2RGB = 1;
+        public const int DXVADDI_VIDEOPROCESS_YUV2RGBEXTENDED = 128;
+        public const int FORMATOP_3DACCELERATION = 2048;
+        public const int FORMATOP_AUTOGENMIPMAP = 4194304;
+        public const int FORMATOP_BUMPMAP = 65536;
+        public const int FORMATOP_CAPTURE = 134217728;
+        public const int FORMATOP_CONVERT_TO_ARGB = 8192;
+        public const int FORMATOP_CUBETEXTURE = 4;
+        public const int FORMATOP_DISPLAYMODE = 1024;
+        public const int FORMATOP_DMAP = 131072;
+        public const int FORMATOP_MEMBEROFGROUP_ARGB = 524288;
+        public const int FORMATOP_MULTIPLANE_OVERLAY = 536870912;
+        public const int FORMATOP_NOALPHABLEND = 2097152;
+        public const int FORMATOP_NOFILTER = 262144;
+        public const int FORMATOP_NOTEXCOORDWRAPNORMIP = 16777216;
+        public const int FORMATOP_OFFSCREENPLAIN = 16384;
+        public const int FORMATOP_OFFSCREEN_RENDERTARGET = 8;
+        public const int FORMATOP_OVERLAY = 67108864;
+        public const int FORMATOP_PIXELSIZE = 4096;
+        public const int FORMATOP_PLANAR = 33554432;
+        public const int FORMATOP_SAME_FORMAT_RENDERTARGET = 16;
+        public const int FORMATOP_SAME_FORMAT_UP_TO_ALPHA_RENDERTARGET = 256;
+        public const int FORMATOP_SRGBREAD = 32768;
+        public const int FORMATOP_SRGBWRITE = 1048576;
+        public const int FORMATOP_TEXTURE = 1;
+        public const int FORMATOP_VERTEXTEXTURE = 8388608;
+        public const int FORMATOP_VIDEO_ENCODER = 268435456;
+        public const int FORMATOP_VOLUMETEXTURE = 2;
+        public const int FORMATOP_ZSTENCIL = 64;
+        public const int FORMATOP_ZSTENCIL_WITH_ARBITRARY_COLOR_DEPTH = 128;
+        public const int GAMMA_CAP_RGB256x3x16 = 1;
+        public const int MODE_CAPS_CANBOBINTERLEAVED = 4;
+        public const int MODE_CAPS_CANBOBNONINTERLEAVED = 8;
+        public const int MODE_CAPS_CANFLIPODDEVEN = 16;
+        public const int MODE_CAPS_COLORCONTROLOVERLAY = 64;
+        public const int MODE_CAPS_OVERLAY = 1;
+        public const int MODE_CAPS_OVERLAYSTRETCH = 2;
+        public const int MODE_CAPS_READSCANLINE = 32;
+        public const int MODE_CKEYCAPS_DESTOVERLAY = 1;
+        public const int MODE_CKEYCAPS_DESTOVERLAYYUV = 2;
+        public const int MODE_CKEYCAPS_SRCOVERLAY = 4;
+        public const int MODE_CKEYCAPS_SRCOVERLAYCLRSPACE = 8;
+        public const int MODE_CKEYCAPS_SRCOVERLAYCLRSPACEYUV = 16;
+        public const int MODE_CKEYCAPS_SRCOVERLAYYUV = 32;
+        public const int MODE_FXCAPS_OVERLAYDEINTERLACE = 64;
+        public const int MODE_FXCAPS_OVERLAYMIRRORLEFTRIGHT = 16;
+        public const int MODE_FXCAPS_OVERLAYMIRRORUPDOWN = 32;
+        public const int MODE_FXCAPS_OVERLAYSHRINKX = 1;
+        public const int MODE_FXCAPS_OVERLAYSHRINKY = 2;
+        public const int MODE_FXCAPS_OVERLAYSTRETCHX = 4;
+        public const int MODE_FXCAPS_OVERLAYSTRETCHY = 8;
+        public const int _FACD3DDDI = 2166;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\ddkernel.h
         public const int DDIRQ_RESERVED1 = 2;
         public const int DDKERNELCAPS_AUTOFLIP = 2;
         public const int DDKERNELCAPS_CAPTURE_INVERTED = 512;
@@ -5787,7 +6219,7 @@
         public const int DDKERNELCAPS_SETSTATE = 4;
         public const int DDKERNELCAPS_SKIPFIELDS = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\ddkmapi.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ddkmapi.h
         public const int DDADDBUFF_INVERT = 4;
         public const int DDADDBUFF_NONLOCALVIDMEM = 2;
         public const int DDADDBUFF_SYSTEMMEMORY = 1;
@@ -5820,7 +6252,7 @@
         public const int DXAPI_MAJORVERSION = 1;
         public const int DXAPI_MINORVERSION = 0;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\ddraw.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\ddraw.h
         public const int CO_E_NOTINITIALIZED = -2147221008;
         public const int DDBD_1 = 16384;
         public const int DDBD_16 = 1024;
@@ -6248,7 +6680,7 @@
         public const int MAX_DDDEVICEID_STRING = 512;
         public const int _FACDD = 2166;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\ddrawi.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\ddrawi.h
         public const int ACCESSRECT_BROKEN = 4;
         public const int ACCESSRECT_NOTHOLDINGWIN16LOCK = 2;
         public const int ACCESSRECT_VRAMSTYLE = 1;
@@ -6532,7 +6964,7 @@
         public const int VIDMEM_ISRECTANGULAR = 2;
         public const int VIDMEM_ISWC = 16;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\ddrawint.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\ddrawint.h
         public const int DDABLT_SRCOVERDEST = 1;
         public const int DDBLT_AFLAGS = -2147483648;
         public const int DDHAL_CB32_MAPMEMORY = -2147483648;
@@ -6547,22 +6979,22 @@
         public const int DDHAL_PRIVATECAP_RESERVED1 = 4;
         public const int DDHAL_VPORT32_GETAUTOFLIPSURF = 64;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\dmemmgr.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\dmemmgr.h
         public const int SURFACEALIGN_DISCARDABLE = 1;
         public const int VMEMHEAP_ALIGNMENT = 4;
         public const int VMEMHEAP_LINEAR = 1;
         public const int VMEMHEAP_RECTANGULAR = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dshow.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dshow.h
         public const int OAFALSE = 0;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dshowasf.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dshowasf.h
         public const int EC_PREPROCESS_COMPLETE = 86;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\dvdevcod.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dvdevcod.h
         public const int EC_DVDBASE = 256;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dvdmedia.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dvdmedia.h
         public const int AMCONTROL_COLORINFO_PRESENT = 128;
         public const int AMCONTROL_PAD_TO_16x9 = 4;
         public const int AMCONTROL_PAD_TO_4x3 = 2;
@@ -6628,7 +7060,7 @@
         public const int AM_VIDEO_FLAG_REPEAT_FIELD = 64;
         public const int AM_VIDEO_FLAG_WEAVE = 8;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\dvp.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\dvp.h
         public const int DDVPBCAPS_DESTINATION = 2;
         public const int DDVPBCAPS_SOURCE = 1;
         public const int DDVPB_OVERLAY = 2;
@@ -6716,15 +7148,15 @@
         public const int DDVP_VBINOINTERLEAVE = 16384;
         public const int DDVP_VBINOSCALE = 2048;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\DWrite.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\DWrite.h
         public const int DWRITE_ALPHA_MAX = 255;
         public const int DWRITE_ERR_BASE = 20480;
         public const int FACILITY_DWRITE = 2200;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dxdiag.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxdiag.h
         public const int DXDIAG_DX9_SDK_VERSION = 111;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dxgiddi.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxgiddi.h
         public const int DXGI_DDI_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS = 16;
         public const int DXGI_DDI_PRIMARY_DRIVER_FLAG_NO_SCANOUT = 1;
         public const int DXGI_DDI_PRIMARY_INDIRECT = 8;
@@ -6733,12 +7165,12 @@
         public const int DXGI_DDI_PRIMARY_STEREO = 4;
         public const int _FACDXGI_DDI = 2171;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dxgidebug.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxgidebug.h
         public const int DXGI_DEBUG_BINARY_VERSION = 1;
         public const int DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION = 0;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dxmini.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxmini.h
         public const int DDIRQ_BUSMASTER = 2;
         public const int DDIRQ_DISPLAY_VSYNC = 1;
         public const int DDIRQ_VPORT0_LINE = 8;
@@ -6794,7 +7226,7 @@
         public const int MDL_SOURCE_IS_NONPAGED_POOL = 4;
         public const int MDL_WRITE_OPERATION = 128;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dxva.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxva.h
         public const int DXVA_ALPHA_BLEND_COMBINATION_FUNCTION = 3;
         public const int DXVA_ALPHA_BLEND_DATA_LOAD_FUNCTION = 2;
         public const int DXVA_BIDIRECTIONAL_AVERAGING_H263_TRUNC = 1;
@@ -6887,12 +7319,12 @@
         public const int DXVA_USUAL_BLOCK_HEIGHT = 8;
         public const int DXVA_USUAL_BLOCK_WIDTH = 8;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dxva2api.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxva2api.h
         public const int DXVA2_DECODE_GET_DRIVER_HANDLE = 1829;
         public const int DXVA2_DECODE_SPECIFY_ENCRYPTED_BLOCKS = 1828;
         public const int MAX_SUBSTREAMS = 15;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\dxva9typ.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxva9typ.h
         public const int COPP_DefaultProtectionLevel = 0;
         public const int COPP_ImageAspectRatio_EN300294_Mask = 7;
         public const int DIRECT3D_VERSION = 2304;
@@ -6934,7 +7366,7 @@
         public const int MAX_DEINTERLACE_DEVICE_GUIDS = 32;
         public const int MAX_DEINTERLACE_SURFACES = 32;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\mfapi.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mfapi.h
         public const int D3DFMT_A16B16G16R16F = 113;
         public const int D3DFMT_A2B10G10R10 = 31;
         public const int D3DFMT_A8R8G8B8 = 21;
@@ -6991,7 +7423,7 @@
         public const int MF_METADATATIMESTAMPS_PRESENTATION = 2;
         public const int MF_SDK_VERSION = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\Mferror.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\Mferror.h
         public const int FACILITY_MF = 13;
         public const int FACILITY_MF_WIN32 = 7;
         public const int MF_INDEX_SIZE_ERR = -2140143615;
@@ -7008,7 +7440,7 @@
         public const int STATUS_SEVERITY_SUCCESS = 0;
         public const int STATUS_SEVERITY_WARNING = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\mfidl.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\mfidl.h
         public const int MEDIASINK_CANNOT_MATCH_CLOCK = 2;
         public const int MEDIASINK_CAN_PREROLL = 16;
         public const int MEDIASINK_CLOCK_REQUIRED = 8;
@@ -7044,10 +7476,10 @@
         public const long PRESENTATION_CURRENT_POSITION = 9223372036854775807;
         public const int SHA_HASH_LEN = 20;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\MFMediaEngine.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\MFMediaEngine.h
         public const long MF_INVALID_PRESENTATION_TIME = -9223372036854775808;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\mfobjects.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\mfobjects.h
         public const int MFASYNC_BLOCKING_CALLBACK = 4;
         public const int MFASYNC_CALLBACK_QUEUE_ALL = -1;
         public const int MFASYNC_CALLBACK_QUEUE_IO = 3;
@@ -7078,10 +7510,10 @@
         public const int MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
         public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\mftransform.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\mftransform.h
         public const int MFT_STREAMS_UNLIMITED = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\mmdeviceapi.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmdeviceapi.h
         public const int DEVICE_STATEMASK_ALL = 15;
         public const int DEVICE_STATE_ACTIVE = 1;
         public const int DEVICE_STATE_DISABLED = 2;
@@ -7090,7 +7522,7 @@
         public const int ENDPOINT_SYSFX_DISABLED = 1;
         public const int ENDPOINT_SYSFX_ENABLED = 0;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\mmeapi.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\mmeapi.h
         public const int AUXCAPS_AUXIN = 2;
         public const int AUXCAPS_CDAUDIO = 1;
         public const int AUXCAPS_LRVOLUME = 2;
@@ -7229,7 +7661,7 @@
         public const int WHDR_INQUEUE = 16;
         public const int WHDR_PREPARED = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\mmsyscom.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\mmsyscom.h
         public const int CALLBACK_EVENT = 327680;
         public const int CALLBACK_FUNCTION = 196608;
         public const int CALLBACK_NULL = 0;
@@ -7296,17 +7728,17 @@
         public const int TIME_TICKS = 32;
         public const int WAVERR_BASE = 32;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\ocidl.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\ocidl.h
         public const int MULTICLASSINFO_GETIIDPRIMARY = 4;
         public const int MULTICLASSINFO_GETIIDSOURCE = 8;
         public const int MULTICLASSINFO_GETNUMRESERVEDDISPIDS = 2;
         public const int MULTICLASSINFO_GETTYPEINFO = 1;
         public const int TIFLAGS_EXTENDDISPATCHONLY = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\SpatialAudioMetadata.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\SpatialAudioMetadata.h
         public const int SPATIAL_AUDIO_STANDARD_COMMANDS_START = 200;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\strmif.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\strmif.h
         public const int AM_GBF_NODDSURFACELOCK = 8;
         public const int AM_GBF_NOTASYNCPOINT = 2;
         public const int AM_GBF_NOWAIT = 4;
@@ -7362,7 +7794,7 @@
         public const int VMR_NOTSUPPORTED = 0;
         public const int VMR_SUPPORTED = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wincodec.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\wincodec.h
         public const int FACILITY_WINCODEC_ERR = 2200;
         public const int WICRawChangeNotification_Contrast = 16;
         public const int WICRawChangeNotification_DestinationColorContext = 1024;
@@ -7393,7 +7825,7 @@
         public const int WINCODEC_SDK_VERSION1 = 566;
         public const int WINCODEC_SDK_VERSION2 = 567;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um\wingdi.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\wingdi.h
         public const int ABORTDOC = 2;
         public const int ABSOLUTE = 1;
         public const int AC_SRC_ALPHA = 1;
@@ -8736,7 +9168,7 @@
         public const int WHITE_PEN = 6;
         public const int WINDING = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wmcodecdsp.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmcodecdsp.h
         public const int AEC_MAX_SYSTEM_MODES = 6;
         public const int SYSFXUI_DONOTSHOW_BASSBOOST = 8;
         public const int SYSFXUI_DONOTSHOW_BASSMANAGEMENT = 4;
@@ -8755,7 +9187,7 @@
         public const int WM_CODEC_TWOPASS_VBR_PEAKCONSTRAINED = 16;
         public const int WM_CODEC_TWOPASS_VBR_UNCONSTRAINED = 8;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wmcontainer.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmcontainer.h
         public const long MFASFINDEXER_APPROX_SEEK_TIME_UNKNOWN = -1;
         public const int MFASFINDEXER_NO_FIXED_INTERVAL = -1;
         public const int MFASFINDEXER_PER_ENTRY_BYTES_DYNAMIC = 65535;
@@ -8765,19 +9197,19 @@
         public const int MFASF_PAYLOADEXTENSION_MAX_SIZE = 255;
         public const int MFASF_PAYLOADEXTENSION_VARIABLE_SIZE = 65535;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wmdmlog.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmdmlog.h
         public const int WMDM_LOG_NOTIMESTAMP = 16;
         public const int WMDM_LOG_SEV_ERROR = 4;
         public const int WMDM_LOG_SEV_INFO = 1;
         public const int WMDM_LOG_SEV_WARN = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wmpdevices.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmpdevices.h
         public const int IOCTL_WMP_DEVICE_CAN_SYNC = 844123479;
         public const int IOCTL_WMP_METADATA_ROUND_TRIP = 827346263;
         public const int WMP_MDRT_FLAGS_UNREPORTED_ADDED_ITEMS = 2;
         public const int WMP_MDRT_FLAGS_UNREPORTED_DELETED_ITEMS = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wmpids.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmpids.h
         public const int DISPID_DELTA = 50;
         public const int DISPID_WMPCORE_BASE = 0;
         public const int DISPID_WMPCORE_MIN = 1;
@@ -8792,7 +9224,7 @@
         public const int WMPCOREEVENT_WARNING_BASE = 5600;
         public const int WMPOCXEVENT_BASE = 6500;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wmpplug.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmpplug.h
         public const int PLUGIN_FLAGS_ACCEPTSMEDIA = 268435456;
         public const int PLUGIN_FLAGS_ACCEPTSPLAYLISTS = 134217728;
         public const int PLUGIN_FLAGS_HASPRESETS = 67108864;
@@ -8806,15 +9238,16 @@
         public const int PLUGIN_TYPE_SEPARATEWINDOW = 2;
         public const int PLUGIN_TYPE_SETTINGSAREA = 4;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wmpservices.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmpservices.h
         public const int WMPGC_FLAGS_ALLOW_PREROLL = 1;
         public const int WMPGC_FLAGS_DISABLE_PLUGINS = 8;
         public const int WMPGC_FLAGS_IGNORE_AV_SYNC = 4;
         public const int WMPGC_FLAGS_SUPPRESS_DIALOGS = 2;
         public const int WMPGC_FLAGS_USE_CUSTOM_GRAPH = 16;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\um\wmsdkidl.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmsdkidl.h
         public const int DRM_OPL_TYPES = 1;
+        public const int WAVE_FORMAT_DRM = 9;
         public const int WMDRM_IMPORT_INIT_STRUCT_DEFINED = 1;
         public const int WMT_VIDEOIMAGE_INTEGER_DENOMINATOR = 65536;
         public const int WMT_VIDEOIMAGE_MAGIC_NUMBER = 491406834;

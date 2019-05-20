@@ -1,0 +1,10 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dukmdt.h(927,9)
+namespace DirectN
+{
+    public enum _D3DKMDT_COLORSPACE_TRANSFORM_STAGE_CONTROL
+    {
+        D3DKMDT_COLORSPACE_TRANSFORM_STAGE_CONTROL_NO_CHANGE = 0,
+        D3DKMDT_COLORSPACE_TRANSFORM_STAGE_CONTROL_ENABLE = 1,
+        D3DKMDT_COLORSPACE_TRANSFORM_STAGE_CONTROL_BYPASS = 2,
+    }
+}

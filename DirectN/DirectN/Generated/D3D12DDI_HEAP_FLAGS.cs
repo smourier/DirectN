@@ -1,0 +1,17 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(286,9)
+using System;
+
+namespace DirectN
+{
+    [Flags]
+    public enum D3D12DDI_HEAP_FLAGS
+    {
+        D3D12DDI_HEAP_FLAG_NONE = 0x00000000,
+        D3D12DDI_HEAP_FLAG_NON_RT_DS_TEXTURES = 0x00000002,
+        D3D12DDI_HEAP_FLAG_BUFFERS = 0x00000004,
+        D3D12DDI_HEAP_FLAG_COHERENT_SYSTEMWIDE = 0x00000008,
+        D3D12DDI_HEAP_FLAG_PRIMARY = 0x00000010,
+        D3D12DDI_HEAP_FLAG_RT_DS_TEXTURES = 0x00000020,
+        D3D12DDI_HEAP_FLAG_0041_DENY_L0_DEMOTION = 0x00000040,
+    }
+}

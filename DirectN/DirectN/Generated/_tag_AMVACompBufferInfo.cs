@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\amva.h(50,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\amva.h(50,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -11,7 +11,7 @@ namespace DirectN
         public uint dwWidthToCreate;
         public uint dwHeightToCreate;
         public uint dwBytesToAllocate;
-        public _DDSCAPS2 ddCompCaps;
-        public _DDPIXELFORMAT ddPixelFormat;
+        public int ddCompCaps;
+        public int ddPixelFormat;
     }
 }

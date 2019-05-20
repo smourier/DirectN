@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxgiddi.h(348,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxgiddi.h(349,9)
 using System;
 
 namespace DirectN
@@ -9,5 +9,6 @@ namespace DirectN
         DXGI_DDI_MULTIPLANE_OVERLAY_FLAG_VERTICAL_FLIP = 0x00000001,
         DXGI_DDI_MULTIPLANE_OVERLAY_FLAG_HORIZONTAL_FLIP = 0x00000002,
         DXGI_DDI_MULTIPLANE_OVERLAY_FLAG_FULLSCREEN_POST_COMPOSITION = 0x00000004,
+        DXGI_DDI_MULTIPLANE_OVERLAY_FLAG_NO_SCANOUT_TRANFORMATION = 0x00000008,
     }
 }

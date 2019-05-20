@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12.h(1139,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(1179,1)
 namespace DirectN
 {
     public enum D3D12_COMMAND_LIST_TYPE
@@ -9,5 +9,6 @@ namespace DirectN
         D3D12_COMMAND_LIST_TYPE_COPY = 3,
         D3D12_COMMAND_LIST_TYPE_VIDEO_DECODE = 4,
         D3D12_COMMAND_LIST_TYPE_VIDEO_PROCESS = 5,
+        D3D12_COMMAND_LIST_TYPE_VIDEO_ENCODE = 6,
     }
 }

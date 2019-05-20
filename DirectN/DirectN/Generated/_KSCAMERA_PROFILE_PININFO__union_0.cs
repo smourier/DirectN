@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\ksmedia.h(6546,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ksmedia.h(6599,5)
 using System;
 using System.Runtime.InteropServices;
 

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(135,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3d9.h(178,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -26,7 +26,7 @@ namespace DirectN
         HRESULT GetAdapterDisplayMode(uint Adapter, ref _D3DDISPLAYMODE pMode);
         
         [PreserveSig]
-        HRESULT CheckDeviceType(uint iAdapter, _D3DDEVTYPE DevType, _D3DFORMAT DisplayFormat, _D3DFORMAT BackBufferFormat, bool bWindowed);
+        HRESULT CheckDeviceType(uint Adapter, _D3DDEVTYPE DevType, _D3DFORMAT AdapterFormat, _D3DFORMAT BackBufferFormat, bool bWindowed);
         
         [PreserveSig]
         HRESULT CheckDeviceFormat(uint Adapter, _D3DDEVTYPE DeviceType, _D3DFORMAT AdapterFormat, uint Usage, _D3DRESOURCETYPE RType, _D3DFORMAT CheckFormat);

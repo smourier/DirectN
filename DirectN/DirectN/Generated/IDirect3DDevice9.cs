@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d9helper.h(136,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3d9.h(179,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -302,13 +302,13 @@ namespace DirectN
         HRESULT SetStreamSource(uint StreamNumber, IDirect3DVertexBuffer9 pStreamData, uint OffsetInBytes, uint Stride);
         
         [PreserveSig]
-        HRESULT GetStreamSource(uint StreamNumber, out IDirect3DVertexBuffer9 ppStreamData, ref uint OffsetInBytes, ref uint pStride);
+        HRESULT GetStreamSource(uint StreamNumber, out IDirect3DVertexBuffer9 ppStreamData, ref uint pOffsetInBytes, ref uint pStride);
         
         [PreserveSig]
-        HRESULT SetStreamSourceFreq(uint StreamNumber, uint Divider);
+        HRESULT SetStreamSourceFreq(uint StreamNumber, uint Setting);
         
         [PreserveSig]
-        HRESULT GetStreamSourceFreq(uint StreamNumber, ref uint Divider);
+        HRESULT GetStreamSourceFreq(uint StreamNumber, ref uint pSetting);
         
         [PreserveSig]
         HRESULT SetIndices(IDirect3DIndexBuffer9 pIndexData);

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12.h(2194,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(2238,1)
 using System;
 
 namespace DirectN
@@ -13,5 +13,6 @@ namespace DirectN
         D3D12_COMMAND_LIST_SUPPORT_FLAG_COPY = 0x00000008,
         D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_DECODE = 0x00000010,
         D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_PROCESS = 0x00000020,
+        D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_ENCODE = 0x00000040,
     }
 }

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ddrawi.h(1927,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\ddrawi.h(1927,9)
 using System;
 using System.Runtime.InteropServices;
 using LPDDRAWI_DDVIDEOPORT_INT = DirectN._DDRAWI_DDVIDEOPORT_INT;

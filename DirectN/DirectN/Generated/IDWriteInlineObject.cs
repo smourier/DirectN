@@ -1,9 +1,12 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(3506,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dwrite.h(3506,1)
 using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The IDWriteInlineObject interface wraps an application defined inline graphic, allowing DWrite to query metrics as if it was a glyph inline with the text.
+    /// </summary>
     [Guid("8339fde3-106f-47ab-8373-1c6295eb10b3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteInlineObject
     {

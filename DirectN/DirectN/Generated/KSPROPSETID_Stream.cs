@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\ks.h(2150,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ks.h(2156,1)
 using System.Runtime.InteropServices;
 
 namespace DirectN

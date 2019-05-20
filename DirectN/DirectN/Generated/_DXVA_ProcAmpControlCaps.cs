@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dxva.h(1995,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxva9typ.h(660,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint Size;
         public uint InputPool;
-        public uint d3dOutputFormat;
+        public int d3dOutputFormat;
         public uint ProcAmpControlProps;
         public uint VideoProcessingCaps;
     }

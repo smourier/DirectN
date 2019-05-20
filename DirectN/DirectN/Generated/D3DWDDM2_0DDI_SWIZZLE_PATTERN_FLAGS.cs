@@ -1,0 +1,13 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d10umddi.h(7448,9)
+using System;
+
+namespace DirectN
+{
+    [Flags]
+    public enum D3DWDDM2_0DDI_SWIZZLE_PATTERN_FLAGS
+    {
+        D3DWDDM2_0DDI_SWIZZLE_PATTERN_FLAGS_NONE = 0x00000000,
+        D3DWDDM2_0DDI_SWIZZLE_PATTERN_FLAGS_STACK_DEPTH_SLICES = 0x00000001,
+        D3DWDDM2_2DDI_SWIZZLE_PATTERN_FLAGS_CONDITIONAL_POSTAMBLE_XORS = 0x00000002,
+    }
+}

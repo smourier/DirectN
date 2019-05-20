@@ -1,12 +1,9 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dwrite.h(4540,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dwrite.h(4540,1)
 using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The GDI interop interface provides interoperability with GDI.
-    /// </summary>
     [Guid("1edd9491-9853-4299-898f-6432983b6f3a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteGdiInterop
     {

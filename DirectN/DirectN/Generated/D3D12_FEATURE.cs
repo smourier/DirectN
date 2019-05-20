@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12.h(1898,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(1939,1)
 namespace DirectN
 {
     public enum D3D12_FEATURE
@@ -24,5 +24,7 @@ namespace DirectN
         D3D12_FEATURE_SERIALIZATION = 24,
         D3D12_FEATURE_CROSS_NODE = 25,
         D3D12_FEATURE_D3D12_OPTIONS5 = 27,
+        D3D12_FEATURE_D3D12_OPTIONS6 = 30,
+        D3D12_FEATURE_QUERY_META_COMMAND = 31,
     }
 }

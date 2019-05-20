@@ -1,9 +1,12 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1.h(886,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d2d1.h(886,9)
 using System;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Contains rendering options (hardware or software), pixel format, DPI information, remoting options, and Direct3D support requirements for a render target.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_RENDER_TARGET_PROPERTIES
     {

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12.h(14124,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(15162,1)
 namespace DirectN
 {
     public enum D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE

@@ -1,0 +1,16 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dkmdt.h(837,5)
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    [StructLayout(LayoutKind.Sequential)]
+    public partial struct _D3DKMDT_MONITOR_FREQUENCY_RANGE__union_0
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        public byte[] __bits;
+        public _D3DKMDT_2DREGION ActiveSize { get => InteropRuntime.Get<_D3DKMDT_2DREGION>(__bits, 0, 64); set => InteropRuntime.Set<_D3DKMDT_2DREGION>(value, __bits, 0, 64); }
+        public IntPtr MaxPixelRate { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+    }
+}

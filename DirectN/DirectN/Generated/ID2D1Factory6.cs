@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d2d1_3.h(1678,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d2d1_3.h(1678,1)
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
@@ -6,6 +6,9 @@ using PD2D1_EFFECT_FACTORY = System.IntPtr;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Creates Direct2D resources. This interface also enables the creation of ID2D1Device5 objects.
+    /// </summary>
     [Guid("f9976f46-f642-44c1-97ca-da32ea2a2635"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Factory6 : ID2D1Factory5
     {

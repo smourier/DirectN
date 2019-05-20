@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\d3d12video.h(158,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12video.h(186,1)
 namespace DirectN
 {
     public enum D3D12_FEATURE_VIDEO
@@ -16,5 +16,8 @@ namespace DirectN
         D3D12_FEATURE_VIDEO_DECODE_FORMAT_COUNT = 11,
         D3D12_FEATURE_VIDEO_ARCHITECTURE = 17,
         D3D12_FEATURE_VIDEO_DECODE_HISTOGRAM = 18,
+        D3D12_FEATURE_VIDEO_FEATURE_AREA_SUPPORT = 19,
+        D3D12_FEATURE_VIDEO_MOTION_ESTIMATOR = 20,
+        D3D12_FEATURE_VIDEO_MOTION_ESTIMATOR_SIZE = 21,
     }
 }
