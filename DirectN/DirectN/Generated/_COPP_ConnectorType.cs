@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxva9typ.h(939,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxva.h(2298,9)
 namespace DirectN
 {
     public enum _COPP_ConnectorType
@@ -13,6 +13,11 @@ namespace DirectN
         COPP_ConnectorType_LVDS = 6,
         COPP_ConnectorType_TMDS = 7,
         COPP_ConnectorType_D_JPN = 8,
+        COPP_ConnectorType_SDI = 9,
+        COPP_ConnectorType_DisplayPortExternal = 10,
+        COPP_ConnectorType_DisplayPortEmbedded = 11,
+        COPP_ConnectorType_UDIExternal = 12,
+        COPP_ConnectorType_UDIEmbedded = 13,
         COPP_ConnectorType_Internal = -2147483648,
         COPP_ConnectorType_ForceDWORD = 2147483647,
     }

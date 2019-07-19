@@ -23,9 +23,9 @@ namespace DirectN
         public D3D12DDI_PRIMITIVE_TOPOLOGY_TYPE PrimitiveTopologyType;
         public uint NumRenderTargets;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)] 
-        public int[] RTVFormats;
-        public int DSVFormat;
-        public int SampleDesc;
+        public DXGI_FORMAT[] RTVFormats;
+        public DXGI_FORMAT DSVFormat;
+        public DXGI_SAMPLE_DESC SampleDesc;
         public uint NodeMask;
         public D3D12DDI_LIBRARY_REFERENCE_0010 LibraryReference;
         public D3D12DDI_VIEW_INSTANCING_DESC ViewInstancingDesc;

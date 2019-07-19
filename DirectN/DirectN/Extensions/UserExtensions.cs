@@ -8,15 +8,13 @@ namespace DirectN
     public static class UserExtensions
     {
         [DllImport("user32", CharSet = CharSet.Auto)]
-        internal static extern bool EnumDisplayDevices(string lpDevice, int iDevNum, ref DISPLAY_DEVICE lpDisplayDevice, EDD_FLAGS dwFlags);
+        internal static extern bool EnumDisplayDevices([MarshalAs(UnmanagedType.LPWStr)] string lpDevice, int iDevNum, ref DISPLAY_DEVICE lpDisplayDevice, EDD_FLAGS dwFlags);
 
         public static string GetDisplayDeviceName(string deviceName) => GetDisplayDevice(deviceName)?.DeviceName;
         public static DISPLAY_DEVICE? GetDisplayDevice(string deviceName)
         {
             if (deviceName == null)
                 throw new ArgumentNullException(nameof(deviceName));
-
-            var devs = EnumerateDisplayDevices().ToList();
 
             var dd = new DISPLAY_DEVICE();
             dd.cb = Marshal.SizeOf<DISPLAY_DEVICE>();

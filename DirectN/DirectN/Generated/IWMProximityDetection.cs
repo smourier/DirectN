@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IWMProximityDetection
     {
         [PreserveSig]
-        HRESULT StartDetection(/* [size_is][in] */ [MarshalAs(UnmanagedType.LPArray)] byte[] pbRegistrationMsg, /* [in] */ uint cbRegistrationMsg, /* [size_is][in] */ [MarshalAs(UnmanagedType.LPArray)] byte[] pbLocalAddress, /* [in] */ uint cbLocalAddress, /* [in] */ uint dwExtraPortsAllowed, /* [out] */ out INSSBuffer ppRegistrationResponseMsg, /* [in] */ IWMStatusCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT StartDetection(/* [size_is][in] */ [MarshalAs(UnmanagedType.LPArray)] byte[] pbRegistrationMsg, /* [in] */ uint cbRegistrationMsg, /* [size_is][in] */ [MarshalAs(UnmanagedType.LPArray)] byte[] pbLocalAddress, /* [in] */ uint cbLocalAddress, /* [in] */ uint dwExtraPortsAllowed, /* [out] */ out INSSBuffer ppRegistrationResponseMsg, /* [in] */ IWMStatusCallback pCallback, /* [in] */ IntPtr pvContext);
     }
 }

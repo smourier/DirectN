@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12DDIARG_PHYSICAL_SUBRESOURCE_PITCHED_LAYOUT
     {
-        public int Format;
+        public DXGI_FORMAT Format;
         public uint PhysicalWidth;
         public uint PhysicalHeight;
         public uint PhysicalDepth;

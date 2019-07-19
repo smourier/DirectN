@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents a geometry that has been transformed.
+    /// </summary>
     [Guid("2cd906bb-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1TransformedGeometry : ID2D1Geometry
     {

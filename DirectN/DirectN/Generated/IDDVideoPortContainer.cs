@@ -13,15 +13,15 @@ namespace DirectN
     public partial interface IDDVideoPortContainer
     {
         [PreserveSig]
-        HRESULT CreateVideoPort(uint __unnamed_0, ref LPDDVIDEOPORTDESC __unnamed_1, out LPDIRECTDRAWVIDEOPORT __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreateVideoPort(uint unnamed__0, ref LPDDVIDEOPORTDESC unnamed__1, out LPDIRECTDRAWVIDEOPORT unnamed__2, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__3);
         
         [PreserveSig]
-        HRESULT EnumVideoPorts(uint __unnamed_0, ref LPDDVIDEOPORTCAPS __unnamed_1, IntPtr __unnamed_2, IntPtr __unnamed_3);
+        HRESULT EnumVideoPorts(uint unnamed__0, ref LPDDVIDEOPORTCAPS unnamed__1, IntPtr unnamed__2, IntPtr unnamed__3);
         
         [PreserveSig]
-        HRESULT GetVideoPortConnectInfo(uint __unnamed_0, /* _Inout_ */ ref uint pcInfo, /* _Out_writes_to_opt_(*pcInfo, *pcInfo) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] LPDDVIDEOPORTCONNECT[] __unnamed_2);
+        HRESULT GetVideoPortConnectInfo(uint unnamed__0, /* _Inout_ */ ref uint pcInfo, /* _Out_writes_to_opt_(*pcInfo, *pcInfo) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] LPDDVIDEOPORTCONNECT[] unnamed__2);
         
         [PreserveSig]
-        HRESULT QueryVideoPortStatus(uint __unnamed_0, ref LPDDVIDEOPORTSTATUS __unnamed_1);
+        HRESULT QueryVideoPortStatus(uint unnamed__0, ref LPDDVIDEOPORTSTATUS unnamed__1);
     }
 }

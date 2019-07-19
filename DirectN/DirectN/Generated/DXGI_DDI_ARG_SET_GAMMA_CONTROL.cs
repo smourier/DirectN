@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct DXGI_DDI_ARG_SET_GAMMA_CONTROL
     {
         public ulong hDevice;
-        public int GammaControl;
+        public DXGI_GAMMA_CONTROL GammaControl;
     }
 }

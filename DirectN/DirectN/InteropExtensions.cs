@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -48,7 +49,7 @@ namespace DirectN
                 return name;
             }
 
-            return guid.ToString(formatIfNotFound);
+            return guid.ToString(formatIfNotFound, CultureInfo.InvariantCulture);
         }
 
         private static ConcurrentDictionary<Guid, string> ExtractAllGuids()

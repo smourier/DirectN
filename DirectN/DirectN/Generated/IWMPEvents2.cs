@@ -54,7 +54,7 @@ namespace DirectN
         new void CdromMediaChange(/* [in] */ int CdromNum);
         
         [PreserveSig]
-        new void PlaylistChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object Playlist, /* [in] */ WMPPlaylistChangeEventType change);
+        new void PlaylistChange(/* [in] */ [MarshalAs(UnmanagedType.IDispatch)] object Playlist, /* [in] */ WMPPlaylistChangeEventType change);
         
         [PreserveSig]
         new void CurrentPlaylistChange(/* [in] */ WMPPlaylistChangeEventType change);
@@ -63,13 +63,13 @@ namespace DirectN
         new void CurrentPlaylistItemAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName);
         
         [PreserveSig]
-        new void MediaChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object Item);
+        new void MediaChange(/* [in] */ [MarshalAs(UnmanagedType.IDispatch)] object Item);
         
         [PreserveSig]
         new void CurrentMediaItemAvailable(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrItemName);
         
         [PreserveSig]
-        new void CurrentItemChange(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pdispMedia);
+        new void CurrentItemChange(/* [in] */ [MarshalAs(UnmanagedType.IDispatch)] object pdispMedia);
         
         [PreserveSig]
         new void MediaCollectionChange();
@@ -99,10 +99,10 @@ namespace DirectN
         new void ModeChange(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string ModeName, /* [in] */ bool NewValue);
         
         [PreserveSig]
-        new void MediaError(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pMediaObject);
+        new void MediaError(/* [in] */ [MarshalAs(UnmanagedType.IDispatch)] object pMediaObject);
         
         [PreserveSig]
-        new void OpenPlaylistSwitch(/* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pItem);
+        new void OpenPlaylistSwitch(/* [in] */ [MarshalAs(UnmanagedType.IDispatch)] object pItem);
         
         [PreserveSig]
         new void DomainChange(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string strDomain);
@@ -157,7 +157,7 @@ namespace DirectN
         void DeviceSyncStateChange(/* [in] */ IWMPSyncDevice pDevice, /* [in] */ WMPSyncState NewState);
         
         [PreserveSig]
-        void DeviceSyncError(/* [in] */ IWMPSyncDevice pDevice, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pMedia);
+        void DeviceSyncError(/* [in] */ IWMPSyncDevice pDevice, /* [in] */ [MarshalAs(UnmanagedType.IDispatch)] object pMedia);
         
         [PreserveSig]
         void CreatePartnershipComplete(/* [in] */ IWMPSyncDevice pDevice, /* [in] */ HRESULT hrResult);

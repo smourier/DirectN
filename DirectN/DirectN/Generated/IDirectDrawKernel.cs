@@ -9,10 +9,10 @@ namespace DirectN
     public partial interface IDirectDrawKernel
     {
         [PreserveSig]
-        HRESULT GetCaps(ref LPDDKERNELCAPS __unnamed_0);
+        HRESULT GetCaps(ref LPDDKERNELCAPS unnamed__0);
         
         [PreserveSig]
-        HRESULT GetKernelHandle(ref ulong __unnamed_0);
+        HRESULT GetKernelHandle(ref ulong unnamed__0);
         
         [PreserveSig]
         HRESULT ReleaseKernelHandle();

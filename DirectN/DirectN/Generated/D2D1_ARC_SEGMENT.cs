@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Describes an arc that is defined as part of a path.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_ARC_SEGMENT
     {

@@ -51,15 +51,15 @@ namespace DirectN
         public override string ToString() => ToString(null, null);
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            switch (format?.ToLowerInvariant())
+            switch (format?.ToUpperInvariant())
             {
-                case "i":
-                    return Value.ToString();
+                case "I":
+                    return Value.ToString(formatProvider);
 
-                case "u":
-                    return UValue.ToString();
+                case "U":
+                    return UValue.ToString(formatProvider);
 
-                case "n":
+                case "N":
                     if (!_names.TryGetValue(Value, out string text))
                     {
                         var value = Value;
@@ -68,15 +68,15 @@ namespace DirectN
                     }
                     return text;
 
-                case "x":
-                    return "0x" + Value.ToString("X8");
+                case "X":
+                    return "0x" + Value.ToString("X8", formatProvider);
 
                 default: // f
                     string name = ToString("n", formatProvider);
                     if (name != null)
-                        return name + " (0x" + Value.ToString("X8") + ")";
+                        return name + " (0x" + Value.ToString("X8", formatProvider) + ")";
 
-                    return "0x" + Value.ToString("X8");
+                    return "0x" + Value.ToString("X8", formatProvider);
             }
         }
 
@@ -84,11 +84,19 @@ namespace DirectN
         public static bool operator !=(HRESULT left, HRESULT right) => left.Value != right.Value;
 
         public static implicit operator HRESULT(int value) => new HRESULT(value);
-        public static implicit operator HRESULT(uint result) => new HRESULT(result);
-        public static implicit operator HRESULT(HRESULTS result) => new HRESULT(result);
+        public static implicit operator HRESULT(uint value) => new HRESULT(value);
+        public static implicit operator HRESULT(HRESULTS value) => new HRESULT(value);
 
         public static explicit operator uint(HRESULT hr) => hr.UValue;
         public static explicit operator int(HRESULT hr) => hr.Value;
         public static explicit operator HRESULTS(HRESULT hr) => (HRESULTS)hr.UValue;
+
+        public uint ToUInt32() => UValue;
+        public int ToInt32() => Value;
+        public HRESULTS ToHRESULTS() => (HRESULTS)UValue;
+
+        public static HRESULT FromHRESULTS(HRESULTS result) => new HRESULT(result);
+        public static HRESULT FromUInt32(uint value) => new HRESULT(value);
+        public static HRESULT FromInt32(int value) => new HRESULT(value);
     }
 }

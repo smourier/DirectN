@@ -14,8 +14,8 @@ namespace DirectN
         public uint BindFlags;
         public uint MapFlags;
         public uint MiscFlags;
-        public int Format;
-        public int SampleDesc;
+        public DXGI_FORMAT Format;
+        public DXGI_SAMPLE_DESC SampleDesc;
         public uint MipLevels;
         public uint ArraySize;
         public IntPtr pPrimaryDesc;

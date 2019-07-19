@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _VBICAP_PROPERTIES_PROTECTION_S
     {
-        public KSIDENTIFIER Property;
+        public int Property;
         public uint StreamIndex;
         public uint Status;
     }

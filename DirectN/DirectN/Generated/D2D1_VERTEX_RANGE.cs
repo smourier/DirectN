@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// This defines the range of vertices from a vertex buffer to draw.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_VERTEX_RANGE
     {

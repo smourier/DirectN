@@ -32,7 +32,7 @@ namespace DirectN
                 (uint)(featureLevels?.Length).GetValueOrDefault(),
                 SdkVersion,
                 out ID3D11Device device,
-                out D3D_FEATURE_LEVEL level,
+                out _,
                 out ID3D11DeviceContext dc).ThrowOnError();
             if (dc != null)
             {

@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetTime(/* [in] */ ref ulong pcnsNow);
         
         [PreserveSig]
-        HRESULT SetTimer(/* [in] */ ulong cnsWhen, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvParam, /* [out] */ out uint pdwTimerId);
+        HRESULT SetTimer(/* [in] */ ulong cnsWhen, /* [in] */ IntPtr pvParam, /* [out] */ out uint pdwTimerId);
         
         [PreserveSig]
         HRESULT KillTimer(/* [in] */ uint dwTimerId);

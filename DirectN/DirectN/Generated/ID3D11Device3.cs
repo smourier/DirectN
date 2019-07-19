@@ -195,6 +195,6 @@ namespace DirectN
         void WriteToSubresource(/* [annotation] _In_ */ ID3D11Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* optional(D3D11_BOX) */ IntPtr pDstBox, /* [annotation] _In_ */ IntPtr pSrcData, /* [annotation] _In_ */ uint SrcRowPitch, /* [annotation] _In_ */ uint SrcDepthPitch);
         
         [PreserveSig]
-        void ReadFromSubresource(/* [annotation] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object pDstData, /* [annotation] _In_ */ uint DstRowPitch, /* [annotation] _In_ */ uint DstDepthPitch, /* [annotation] _In_ */ ID3D11Resource pSrcResource, /* [annotation] _In_ */ uint SrcSubresource, /* optional(D3D11_BOX) */ IntPtr pSrcBox);
+        void ReadFromSubresource(/* [annotation] _Out_ */ out IntPtr pDstData, /* [annotation] _In_ */ uint DstRowPitch, /* [annotation] _In_ */ uint DstDepthPitch, /* [annotation] _In_ */ ID3D11Resource pSrcResource, /* [annotation] _In_ */ uint SrcSubresource, /* optional(D3D11_BOX) */ IntPtr pSrcBox);
     }
 }

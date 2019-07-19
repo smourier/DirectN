@@ -11,6 +11,6 @@ namespace DirectN
         public ulong hDevice;
         public IntPtr pResources;
         public uint Resources;
-        public _D3DDDI_OFFER_PRIORITY Priority;
+        public int Priority;
     }
 }

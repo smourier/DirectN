@@ -11,7 +11,7 @@ namespace DirectN
         public Guid DecodeProfile;
         public uint Width;
         public uint Height;
-        public int DecodeFormat;
+        public DXGI_FORMAT DecodeFormat;
         public D3D12DDI_VIDEO_DECODE_HISTOGRAM_COMPONENT_FLAGS_0041 Components;
         public uint BinCount;
         public uint CounterBitDepth;

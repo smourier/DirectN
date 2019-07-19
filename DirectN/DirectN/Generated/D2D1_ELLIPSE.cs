@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Contains the center point, x-radius, and y-radius of an ellipse.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_ELLIPSE
     {

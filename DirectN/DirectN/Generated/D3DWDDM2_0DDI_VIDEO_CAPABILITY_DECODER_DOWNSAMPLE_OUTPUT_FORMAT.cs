@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3DWDDM2_0DDI_VIDEO_CAPABILITY_DECODER_DOWNSAMPLE_OUTPUT_FORMAT
     {
         public Guid DecodeProfile;
-        public int Format;
+        public DXGI_FORMAT Format;
         public bool Supported;
     }
 }

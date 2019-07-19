@@ -11,8 +11,8 @@ namespace DirectN
         public D3D12DDI_VIDEO_PROCESS_DEINTERLACE_FLAGS_0020 DeinterlaceMode;
         public D3D12DDI_VIDEO_PROCESS_FILTER_FLAGS_0020 Filters;
         public D3D12DDI_VIDEO_PROCESS_FEATURE_SUPPORT_FLAGS_0020 FeatureSupport;
-        public int InputFrameRate;
-        public int OutputFrameRate;
+        public DXGI_RATIONAL InputFrameRate;
+        public DXGI_RATIONAL OutputFrameRate;
         public bool EnableAutoProcessing;
         public uint PastFrames;
         public uint FutureFrames;

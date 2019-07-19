@@ -7,9 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3DWDDM2_0DDI_CHECK_VIDEO_PROCESSOR_FORMAT_CONVERSION
     {
-        public int InputFormat;
+        public DXGI_FORMAT InputFormat;
         public D3DDDI_COLOR_SPACE_TYPE InputColorSpace;
-        public int OutputFormat;
+        public DXGI_FORMAT OutputFormat;
         public D3DDDI_COLOR_SPACE_TYPE OutputColorSpace;
         public bool Supported;
     }

@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct tagKSATTRIBUTE_AUDIOSIGNALPROCESSING_MODE
     {
-        public KSATTRIBUTE AttributeHeader;
+        public int AttributeHeader;
         public Guid SignalProcessingMode;
     }
 }

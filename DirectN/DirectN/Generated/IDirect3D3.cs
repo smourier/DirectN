@@ -15,28 +15,28 @@ namespace DirectN
     public partial interface IDirect3D3
     {
         [PreserveSig]
-        HRESULT EnumDevices(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT EnumDevices(IntPtr unnamed__0, IntPtr unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateLight(out LPDIRECT3DLIGHT __unnamed_0, LPUNKNOWN __unnamed_1);
+        HRESULT CreateLight(out LPDIRECT3DLIGHT unnamed__0, LPUNKNOWN unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateMaterial(out LPDIRECT3DMATERIAL3 __unnamed_0, LPUNKNOWN __unnamed_1);
+        HRESULT CreateMaterial(out LPDIRECT3DMATERIAL3 unnamed__0, LPUNKNOWN unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateViewport(out LPDIRECT3DVIEWPORT3 __unnamed_0, LPUNKNOWN __unnamed_1);
+        HRESULT CreateViewport(out LPDIRECT3DVIEWPORT3 unnamed__0, LPUNKNOWN unnamed__1);
         
         [PreserveSig]
-        HRESULT FindDevice(ref _D3DFINDDEVICESEARCH __unnamed_0, ref _D3DFINDDEVICERESULT __unnamed_1);
+        HRESULT FindDevice(ref _D3DFINDDEVICESEARCH unnamed__0, ref _D3DFINDDEVICERESULT unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, LPDIRECTDRAWSURFACE4 __unnamed_1, out LPDIRECT3DDEVICE3 __unnamed_2, LPUNKNOWN __unnamed_3);
+        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid unnamed__0, LPDIRECTDRAWSURFACE4 unnamed__1, out LPDIRECT3DDEVICE3 unnamed__2, LPUNKNOWN unnamed__3);
         
         [PreserveSig]
-        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, out LPDIRECT3DVERTEXBUFFER __unnamed_1, uint __unnamed_2, LPUNKNOWN __unnamed_3);
+        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC unnamed__0, out LPDIRECT3DVERTEXBUFFER unnamed__1, uint unnamed__2, LPUNKNOWN unnamed__3);
         
         [PreserveSig]
-        HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, IntPtr __unnamed_1, IntPtr __unnamed_2);
+        HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid unnamed__0, IntPtr unnamed__1, IntPtr unnamed__2);
         
         [PreserveSig]
         HRESULT EvictManagedTextures();

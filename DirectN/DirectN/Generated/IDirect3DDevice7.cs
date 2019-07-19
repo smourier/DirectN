@@ -10,10 +10,10 @@ namespace DirectN
     public partial interface IDirect3DDevice7
     {
         [PreserveSig]
-        HRESULT GetCaps(ref _D3DDeviceDesc7 __unnamed_0);
+        HRESULT GetCaps(ref _D3DDeviceDesc7 unnamed__0);
         
         [PreserveSig]
-        HRESULT EnumTextureFormats(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT EnumTextureFormats(IntPtr unnamed__0, IntPtr unnamed__1);
         
         [PreserveSig]
         HRESULT BeginScene();
@@ -22,129 +22,129 @@ namespace DirectN
         HRESULT EndScene();
         
         [PreserveSig]
-        HRESULT GetDirect3D(out IDirect3D7 __unnamed_0);
+        HRESULT GetDirect3D(out IDirect3D7 unnamed__0);
         
         [PreserveSig]
-        HRESULT SetRenderTarget(LPDIRECTDRAWSURFACE7 __unnamed_0, uint __unnamed_1);
+        HRESULT SetRenderTarget(LPDIRECTDRAWSURFACE7 unnamed__0, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT GetRenderTarget(out LPDIRECTDRAWSURFACE7 __unnamed_0);
+        HRESULT GetRenderTarget(out LPDIRECTDRAWSURFACE7 unnamed__0);
         
         [PreserveSig]
-        HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2, uint __unnamed_3, float __unnamed_4, uint __unnamed_5);
+        HRESULT Clear(uint unnamed__0, ref _D3DRECT unnamed__1, uint unnamed__2, uint unnamed__3, float unnamed__4, uint unnamed__5);
         
         [PreserveSig]
-        HRESULT SetTransform(_D3DTRANSFORMSTATETYPE __unnamed_0, ref _D3DMATRIX __unnamed_1);
+        HRESULT SetTransform(_D3DTRANSFORMSTATETYPE unnamed__0, ref _D3DMATRIX unnamed__1);
         
         [PreserveSig]
-        HRESULT GetTransform(_D3DTRANSFORMSTATETYPE __unnamed_0, ref _D3DMATRIX __unnamed_1);
+        HRESULT GetTransform(_D3DTRANSFORMSTATETYPE unnamed__0, ref _D3DMATRIX unnamed__1);
         
         [PreserveSig]
-        HRESULT SetViewport(ref _D3DVIEWPORT7 __unnamed_0);
+        HRESULT SetViewport(ref _D3DVIEWPORT7 unnamed__0);
         
         [PreserveSig]
-        HRESULT MultiplyTransform(_D3DTRANSFORMSTATETYPE __unnamed_0, ref _D3DMATRIX __unnamed_1);
+        HRESULT MultiplyTransform(_D3DTRANSFORMSTATETYPE unnamed__0, ref _D3DMATRIX unnamed__1);
         
         [PreserveSig]
-        HRESULT GetViewport(ref _D3DVIEWPORT7 __unnamed_0);
+        HRESULT GetViewport(ref _D3DVIEWPORT7 unnamed__0);
         
         [PreserveSig]
-        HRESULT SetMaterial(ref _D3DMATERIAL7 __unnamed_0);
+        HRESULT SetMaterial(ref _D3DMATERIAL7 unnamed__0);
         
         [PreserveSig]
-        HRESULT GetMaterial(ref _D3DMATERIAL7 __unnamed_0);
+        HRESULT GetMaterial(ref _D3DMATERIAL7 unnamed__0);
         
         [PreserveSig]
-        HRESULT SetLight(uint __unnamed_0, ref _D3DLIGHT7 __unnamed_1);
+        HRESULT SetLight(uint unnamed__0, ref _D3DLIGHT7 unnamed__1);
         
         [PreserveSig]
-        HRESULT GetLight(uint __unnamed_0, ref _D3DLIGHT7 __unnamed_1);
+        HRESULT GetLight(uint unnamed__0, ref _D3DLIGHT7 unnamed__1);
         
         [PreserveSig]
-        HRESULT SetRenderState(_D3DRENDERSTATETYPE __unnamed_0, uint __unnamed_1);
+        HRESULT SetRenderState(_D3DRENDERSTATETYPE unnamed__0, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT GetRenderState(_D3DRENDERSTATETYPE __unnamed_0, ref uint __unnamed_1);
+        HRESULT GetRenderState(_D3DRENDERSTATETYPE unnamed__0, ref uint unnamed__1);
         
         [PreserveSig]
         HRESULT BeginStateBlock();
         
         [PreserveSig]
-        HRESULT EndStateBlock(ref uint __unnamed_0);
+        HRESULT EndStateBlock(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT PreLoad(LPDIRECTDRAWSURFACE7 __unnamed_0);
+        HRESULT PreLoad(LPDIRECTDRAWSURFACE7 unnamed__0);
         
         [PreserveSig]
-        HRESULT DrawPrimitive(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, IntPtr __unnamed_2, uint __unnamed_3, uint __unnamed_4);
+        HRESULT DrawPrimitive(_D3DPRIMITIVETYPE unnamed__0, uint unnamed__1, IntPtr unnamed__2, uint unnamed__3, uint unnamed__4);
         
         [PreserveSig]
-        HRESULT DrawIndexedPrimitive(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, IntPtr __unnamed_2, uint __unnamed_3, ref ushort __unnamed_4, uint __unnamed_5, uint __unnamed_6);
+        HRESULT DrawIndexedPrimitive(_D3DPRIMITIVETYPE unnamed__0, uint unnamed__1, IntPtr unnamed__2, uint unnamed__3, ref ushort unnamed__4, uint unnamed__5, uint unnamed__6);
         
         [PreserveSig]
-        HRESULT SetClipStatus(ref _D3DCLIPSTATUS __unnamed_0);
+        HRESULT SetClipStatus(ref _D3DCLIPSTATUS unnamed__0);
         
         [PreserveSig]
-        HRESULT GetClipStatus(ref _D3DCLIPSTATUS __unnamed_0);
+        HRESULT GetClipStatus(ref _D3DCLIPSTATUS unnamed__0);
         
         [PreserveSig]
-        HRESULT DrawPrimitiveStrided(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, ref _D3DDRAWPRIMITIVESTRIDEDDATA __unnamed_2, uint __unnamed_3, uint __unnamed_4);
+        HRESULT DrawPrimitiveStrided(_D3DPRIMITIVETYPE unnamed__0, uint unnamed__1, ref _D3DDRAWPRIMITIVESTRIDEDDATA unnamed__2, uint unnamed__3, uint unnamed__4);
         
         [PreserveSig]
-        HRESULT DrawIndexedPrimitiveStrided(_D3DPRIMITIVETYPE __unnamed_0, uint __unnamed_1, ref _D3DDRAWPRIMITIVESTRIDEDDATA __unnamed_2, uint __unnamed_3, ref ushort __unnamed_4, uint __unnamed_5, uint __unnamed_6);
+        HRESULT DrawIndexedPrimitiveStrided(_D3DPRIMITIVETYPE unnamed__0, uint unnamed__1, ref _D3DDRAWPRIMITIVESTRIDEDDATA unnamed__2, uint unnamed__3, ref ushort unnamed__4, uint unnamed__5, uint unnamed__6);
         
         [PreserveSig]
-        HRESULT DrawPrimitiveVB(_D3DPRIMITIVETYPE __unnamed_0, LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2, uint __unnamed_3, uint __unnamed_4);
+        HRESULT DrawPrimitiveVB(_D3DPRIMITIVETYPE unnamed__0, LPDIRECT3DVERTEXBUFFER7 unnamed__1, uint unnamed__2, uint unnamed__3, uint unnamed__4);
         
         [PreserveSig]
-        HRESULT DrawIndexedPrimitiveVB(_D3DPRIMITIVETYPE __unnamed_0, LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2, uint __unnamed_3, ref ushort __unnamed_4, uint __unnamed_5, uint __unnamed_6);
+        HRESULT DrawIndexedPrimitiveVB(_D3DPRIMITIVETYPE unnamed__0, LPDIRECT3DVERTEXBUFFER7 unnamed__1, uint unnamed__2, uint unnamed__3, ref ushort unnamed__4, uint unnamed__5, uint unnamed__6);
         
         [PreserveSig]
-        HRESULT ComputeSphereVisibility(ref _D3DVECTOR __unnamed_0, ref LPD3DVALUE __unnamed_1, uint __unnamed_2, uint __unnamed_3, ref uint __unnamed_4);
+        HRESULT ComputeSphereVisibility(ref _D3DVECTOR unnamed__0, ref LPD3DVALUE unnamed__1, uint unnamed__2, uint unnamed__3, ref uint unnamed__4);
         
         [PreserveSig]
-        HRESULT GetTexture(uint __unnamed_0, out LPDIRECTDRAWSURFACE7 __unnamed_1);
+        HRESULT GetTexture(uint unnamed__0, out LPDIRECTDRAWSURFACE7 unnamed__1);
         
         [PreserveSig]
-        HRESULT SetTexture(uint __unnamed_0, LPDIRECTDRAWSURFACE7 __unnamed_1);
+        HRESULT SetTexture(uint unnamed__0, LPDIRECTDRAWSURFACE7 unnamed__1);
         
         [PreserveSig]
-        HRESULT GetTextureStageState(uint __unnamed_0, _D3DTEXTURESTAGESTATETYPE __unnamed_1, ref uint __unnamed_2);
+        HRESULT GetTextureStageState(uint unnamed__0, _D3DTEXTURESTAGESTATETYPE unnamed__1, ref uint unnamed__2);
         
         [PreserveSig]
-        HRESULT SetTextureStageState(uint __unnamed_0, _D3DTEXTURESTAGESTATETYPE __unnamed_1, uint __unnamed_2);
+        HRESULT SetTextureStageState(uint unnamed__0, _D3DTEXTURESTAGESTATETYPE unnamed__1, uint unnamed__2);
         
         [PreserveSig]
-        HRESULT ValidateDevice(ref uint __unnamed_0);
+        HRESULT ValidateDevice(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT ApplyStateBlock(uint __unnamed_0);
+        HRESULT ApplyStateBlock(uint unnamed__0);
         
         [PreserveSig]
-        HRESULT CaptureStateBlock(uint __unnamed_0);
+        HRESULT CaptureStateBlock(uint unnamed__0);
         
         [PreserveSig]
-        HRESULT DeleteStateBlock(uint __unnamed_0);
+        HRESULT DeleteStateBlock(uint unnamed__0);
         
         [PreserveSig]
-        HRESULT CreateStateBlock(_D3DSTATEBLOCKTYPE __unnamed_0, ref uint __unnamed_1);
+        HRESULT CreateStateBlock(_D3DSTATEBLOCKTYPE unnamed__0, ref uint unnamed__1);
         
         [PreserveSig]
-        HRESULT Load(LPDIRECTDRAWSURFACE7 __unnamed_0, ref tagPOINT __unnamed_1, LPDIRECTDRAWSURFACE7 __unnamed_2, ref tagRECT __unnamed_3, uint __unnamed_4);
+        HRESULT Load(LPDIRECTDRAWSURFACE7 unnamed__0, ref tagPOINT unnamed__1, LPDIRECTDRAWSURFACE7 unnamed__2, ref tagRECT unnamed__3, uint unnamed__4);
         
         [PreserveSig]
-        HRESULT LightEnable(uint __unnamed_0, bool __unnamed_1);
+        HRESULT LightEnable(uint unnamed__0, bool unnamed__1);
         
         [PreserveSig]
-        HRESULT GetLightEnable(uint __unnamed_0, ref bool __unnamed_1);
+        HRESULT GetLightEnable(uint unnamed__0, ref bool unnamed__1);
         
         [PreserveSig]
-        HRESULT SetClipPlane(uint __unnamed_0, ref D3DVALUE __unnamed_1);
+        HRESULT SetClipPlane(uint unnamed__0, ref D3DVALUE unnamed__1);
         
         [PreserveSig]
-        HRESULT GetClipPlane(uint __unnamed_0, ref D3DVALUE __unnamed_1);
+        HRESULT GetClipPlane(uint unnamed__0, ref D3DVALUE unnamed__1);
         
         [PreserveSig]
-        HRESULT GetInfo(uint __unnamed_0, IntPtr __unnamed_1, uint __unnamed_2);
+        HRESULT GetInfo(uint unnamed__0, IntPtr unnamed__1, uint unnamed__2);
     }
 }

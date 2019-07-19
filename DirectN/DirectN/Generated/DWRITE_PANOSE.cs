@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Typeface classification values, used for font selection and matching.  <remarks> Note the family type (index 0) is the only stable entry in the 10-byte array, as all the following entries can change dynamically depending on context of the first field. </remarks>
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DWRITE_PANOSE
     {

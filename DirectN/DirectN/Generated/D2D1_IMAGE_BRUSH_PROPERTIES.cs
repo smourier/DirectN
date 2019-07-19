@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Creation properties for an image brush.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_IMAGE_BRUSH_PROPERTIES
     {

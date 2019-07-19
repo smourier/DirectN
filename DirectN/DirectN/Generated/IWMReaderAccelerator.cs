@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IWMReaderAccelerator
     {
         [PreserveSig]
-        HRESULT GetCodecInterface(/* [in] */ uint dwOutputNum, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [out] */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvCodecInterface);
+        HRESULT GetCodecInterface(/* [in] */ uint dwOutputNum, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [out] */ out IntPtr ppvCodecInterface);
         
         [PreserveSig]
         HRESULT Notify(/* [in] */ uint dwOutputNum, /* [in] */ ref _WMMediaType pSubtype);

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ksproxy.h(783,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\devicetopology.h(560,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,12 +8,12 @@ namespace DirectN
     public partial interface IKsControl
     {
         [PreserveSig]
-        HRESULT KsProperty(/* THIS_ _In_reads_bytes_(PropertyLength) */ int Property, /* _In_ */ uint PropertyLength, /* _Inout_updates_bytes_(DataLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] PropertyData, /* _In_ */ uint DataLength, /* optional(ULONG) */ IntPtr BytesReturned);
+        HRESULT KsProperty(/* [in] */ ref KSIDENTIFIER Property, /* [in] */ uint PropertyLength, /* [out][in] */ out IntPtr PropertyData, /* [in] */ uint DataLength, /* [out] */ out uint BytesReturned);
         
         [PreserveSig]
-        HRESULT KsMethod(/* THIS_ _In_reads_bytes_(MethodLength) */ int Method, /* _In_ */ uint MethodLength, /* _Inout_updates_bytes_(DataLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] MethodData, /* _In_ */ uint DataLength, /* optional(ULONG) */ IntPtr BytesReturned);
+        HRESULT KsMethod(/* [in] */ ref KSIDENTIFIER Method, /* [in] */ uint MethodLength, /* [out][in] */ out IntPtr MethodData, /* [in] */ uint DataLength, /* [out] */ out uint BytesReturned);
         
         [PreserveSig]
-        HRESULT KsEvent(/* THIS_ _In_reads_bytes_opt_(EventLength) */ int Event, /* _In_ */ uint EventLength, /* _Inout_updates_bytes_(DataLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] EventData, /* _In_ */ uint DataLength, /* optional(ULONG) */ IntPtr BytesReturned);
+        HRESULT KsEvent(/* [in] */ ref KSIDENTIFIER Event, /* [in] */ uint EventLength, /* [out][in] */ out IntPtr EventData, /* [in] */ uint DataLength, /* [out] */ out uint BytesReturned);
     }
 }

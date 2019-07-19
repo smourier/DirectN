@@ -371,7 +371,7 @@ namespace DirectN
                 value = new string(chars);
             }
 
-            if (value is char[][] charss)
+            if (value is char[][])
             {
                 var charray = value as char[][];
                 var strings = new string[charray.GetLength(0)];
@@ -415,7 +415,9 @@ namespace DirectN
                     if (ft == 0)
                         break; // stay empty
 
+#pragma warning disable CA1806 // Do not ignore method results
                     InitPropVariantFromFileTime(ref ft, this);
+#pragma warning restore CA1806 // Do not ignore method results
                     break;
 
                 case TypeCode.Empty:
@@ -577,7 +579,7 @@ namespace DirectN
                             if (TryGetVectorValue(et, out object vector))
                                 return vector;
                         }
-                        throw new ArgumentException("Value of property type " + _vt + " is not supported.", nameof(Value));
+                        throw new NotSupportedException("Value of property type " + _vt + " is not supported.");
                 }
             }
         }
@@ -672,7 +674,9 @@ namespace DirectN
             return bytes;
         }
 
+#pragma warning disable CA2000 // Dispose objects before losing scope
         public static PropVariant Deserialize(byte[] bytes) => Deserialize(bytes, true);
+#pragma warning restore CA2000 // Dispose objects before losing scope
         public static PropVariant Deserialize(byte[] bytes, bool throwOnError)
         {
             if (bytes == null)
@@ -692,14 +696,16 @@ namespace DirectN
             return pv;
         }
 
-        public static PropVariant Deserialize(IntPtr ptr, int size) => Deserialize(ptr, size, true);
-        public static PropVariant Deserialize(IntPtr ptr, int size, bool throwOnError)
+#pragma warning disable CA2000 // Dispose objects before losing scope
+        public static PropVariant Deserialize(IntPtr propVariant, int size) => Deserialize(propVariant, size, true);
+#pragma warning restore CA2000 // Dispose objects before losing scope
+        public static PropVariant Deserialize(IntPtr propVariant, int size, bool throwOnError)
         {
-            if (ptr == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(ptr));
+            if (propVariant == IntPtr.Zero)
+                throw new ArgumentException(null, nameof(propVariant));
 
             var pv = new PropVariant();
-            int hr = StgDeserializePropVariant(ptr, size, pv);
+            int hr = StgDeserializePropVariant(propVariant, size, pv);
             if (hr != 0)
             {
                 pv.Dispose();

@@ -32,16 +32,16 @@ namespace DirectN
         
         // INSSBuffer3
         [PreserveSig]
-        new HRESULT SetProperty(/* [in] */ Guid guidBufferProperty, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvBufferProperty, /* [in] */ uint dwBufferPropertySize);
+        new HRESULT SetProperty(/* [in] */ Guid guidBufferProperty, /* [in] */ IntPtr pvBufferProperty, /* [in] */ uint dwBufferPropertySize);
         
         [PreserveSig]
-        new HRESULT GetProperty(/* [in] */ Guid guidBufferProperty, /* [out] */ [MarshalAs(UnmanagedType.IUnknown)] out object pvBufferProperty, /* [out][in] */ ref uint pdwBufferPropertySize);
+        new HRESULT GetProperty(/* [in] */ Guid guidBufferProperty, /* [out] */ out IntPtr pvBufferProperty, /* [out][in] */ ref uint pdwBufferPropertySize);
         
         // INSSBuffer4
         [PreserveSig]
         HRESULT GetPropertyCount(/* [out] */ out uint pcBufferProperties);
         
         [PreserveSig]
-        HRESULT GetPropertyByIndex(/* [in] */ uint dwBufferPropertyIndex, /* [out] */ out Guid pguidBufferProperty, /* [out] */ [MarshalAs(UnmanagedType.IUnknown)] out object pvBufferProperty, /* [out][in] */ ref uint pdwBufferPropertySize);
+        HRESULT GetPropertyByIndex(/* [in] */ uint dwBufferPropertyIndex, /* [out] */ out Guid pguidBufferProperty, /* [out] */ out IntPtr pvBufferProperty, /* [out][in] */ ref uint pdwBufferPropertySize);
     }
 }

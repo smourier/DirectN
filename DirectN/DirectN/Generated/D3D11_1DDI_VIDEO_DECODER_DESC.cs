@@ -10,6 +10,6 @@ namespace DirectN
         public Guid Guid;
         public uint SampleWidth;
         public uint SampleHeight;
-        public int OutputFormat;
+        public DXGI_FORMAT OutputFormat;
     }
 }

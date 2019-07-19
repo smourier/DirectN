@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT SetRate(/* [in] */ bool fThin, /* [in] */ float flRate);
         
         [PreserveSig]
-        HRESULT GetRate(/* [unique][out][in] __RPC__inout_opt */ ref bool pfThin, /* [unique][out][in] __RPC__inout_opt */ ref float pflRate);
+        HRESULT GetRate(/* optional(BOOL) */ IntPtr pfThin, /* [unique][out][in] __RPC__inout_opt */ ref float pflRate);
     }
 }

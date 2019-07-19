@@ -10,7 +10,9 @@ namespace DirectN
             if (bitmap == null)
                 throw new ArgumentNullException(nameof(bitmap));
 
+#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             bitmap.GetDpi(out var dx, out var dy);
+#pragma warning restore CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             return new D2D_SIZE_F(dx, dy);
         }
 
@@ -23,7 +25,9 @@ namespace DirectN
             // if this doesn't compile, you must change ID2B1Bitmap method like this:
             // [PreserveSig]
             // void GetSize(out D2D_SIZE_F size);
+#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             bitmap.GetSize(out var size);
+#pragma warning restore CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             return size;
         }
     }

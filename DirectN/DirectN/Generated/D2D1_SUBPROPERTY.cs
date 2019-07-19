@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d2d1_1.h(115,9)
 namespace DirectN
 {
+    /// <summary>
+    /// This defines the indices of sub-properties that may be present on any parent property.
+    /// </summary>
     public enum D2D1_SUBPROPERTY
     {
         D2D1_SUBPROPERTY_DISPLAYNAME = -2147483648,

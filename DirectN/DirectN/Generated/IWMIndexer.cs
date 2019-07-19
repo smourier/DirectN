@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IWMIndexer
     {
         [PreserveSig]
-        HRESULT StartIndexing(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ IWMStatusCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT StartIndexing(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ IWMStatusCallback pCallback, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
         HRESULT Cancel();

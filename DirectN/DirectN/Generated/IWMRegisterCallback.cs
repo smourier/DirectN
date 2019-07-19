@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IWMRegisterCallback
     {
         [PreserveSig]
-        HRESULT Advise(/* [in] */ IWMStatusCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT Advise(/* [in] */ IWMStatusCallback pCallback, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
-        HRESULT Unadvise(/* [in] */ IWMStatusCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT Unadvise(/* [in] */ IWMStatusCallback pCallback, /* [in] */ IntPtr pvContext);
     }
 }

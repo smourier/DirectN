@@ -3,6 +3,7 @@
 namespace DirectN
 {
     [Flags]
+#pragma warning disable CA1028 // Enum Storage should be Int32
     public enum VARTYPE : ushort
     {
         VT_EMPTY = 0,

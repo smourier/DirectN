@@ -11,7 +11,7 @@ namespace DirectN
         public D3D10DDI_HRESOURCE hDstResource;
         public uint SubresourceCount;
         public IntPtr pSubresourceParameters;
-        public int Format;
+        public DXGI_FORMAT Format;
         public D3D12DDI_RESOLVE_MODE ResolveMode;
     }
 }

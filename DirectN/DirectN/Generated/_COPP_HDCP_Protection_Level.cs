@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxva9typ.h(772,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxva.h(2126,9)
 namespace DirectN
 {
     public enum _COPP_HDCP_Protection_Level

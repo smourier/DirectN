@@ -8,10 +8,10 @@ namespace DirectN
     public partial struct D3D11_1DDI_VIDEO_PROCESSOR_CONTENT_DESC
     {
         public D3D11_1DDI_VIDEO_FRAME_FORMAT InputFrameFormat;
-        public int InputFrameRate;
+        public DXGI_RATIONAL InputFrameRate;
         public uint InputWidth;
         public uint InputHeight;
-        public int OutputFrameRate;
+        public DXGI_RATIONAL OutputFrameRate;
         public uint OutputWidth;
         public uint OutputHeight;
         public D3D11_1DDI_VIDEO_USAGE Usage;

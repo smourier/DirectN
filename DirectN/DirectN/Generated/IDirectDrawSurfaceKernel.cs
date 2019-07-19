@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirectDrawSurfaceKernel
     {
         [PreserveSig]
-        HRESULT GetKernelHandle(ref ulong __unnamed_0);
+        HRESULT GetKernelHandle(ref ulong unnamed__0);
         
         [PreserveSig]
         HRESULT ReleaseKernelHandle();

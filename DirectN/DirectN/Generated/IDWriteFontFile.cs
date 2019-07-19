@@ -4,11 +4,14 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The interface that represents a reference to a font file.
+    /// </summary>
     [Guid("739d886a-cef5-47dc-8769-1a8b41bebbb0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFile
     {
         [PreserveSig]
-        HRESULT GetReferenceKey(/* _Outptr_result_bytebuffer_(*fontFileReferenceKeySize) */ [MarshalAs(UnmanagedType.IUnknown)] out object fontFileReferenceKey, /* _Out_ */ out uint fontFileReferenceKeySize);
+        HRESULT GetReferenceKey(/* _Outptr_result_bytebuffer_(*fontFileReferenceKeySize) */ out IntPtr fontFileReferenceKey, /* _Out_ */ out uint fontFileReferenceKeySize);
         
         [PreserveSig]
         HRESULT GetLoader(/* _COM_Outptr_ */ out IDWriteFontFileLoader fontFileLoader);

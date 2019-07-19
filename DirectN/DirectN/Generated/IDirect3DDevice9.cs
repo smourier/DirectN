@@ -137,7 +137,7 @@ namespace DirectN
         HRESULT GetTransform(_D3DTRANSFORMSTATETYPE State, ref _D3DMATRIX pMatrix);
         
         [PreserveSig]
-        HRESULT MultiplyTransform(_D3DTRANSFORMSTATETYPE __unnamed_0, ref _D3DMATRIX __unnamed_1);
+        HRESULT MultiplyTransform(_D3DTRANSFORMSTATETYPE unnamed__0, ref _D3DMATRIX unnamed__1);
         
         [PreserveSig]
         HRESULT SetViewport(ref _D3DVIEWPORT9 pViewport);
@@ -152,10 +152,10 @@ namespace DirectN
         HRESULT GetMaterial(ref _D3DMATERIAL9 pMaterial);
         
         [PreserveSig]
-        HRESULT SetLight(uint Index, ref _D3DLIGHT9 __unnamed_1);
+        HRESULT SetLight(uint Index, ref _D3DLIGHT9 unnamed__1);
         
         [PreserveSig]
-        HRESULT GetLight(uint Index, ref _D3DLIGHT9 __unnamed_1);
+        HRESULT GetLight(uint Index, ref _D3DLIGHT9 unnamed__1);
         
         [PreserveSig]
         HRESULT LightEnable(uint Index, bool Enable);
@@ -245,7 +245,7 @@ namespace DirectN
         HRESULT DrawPrimitive(_D3DPRIMITIVETYPE PrimitiveType, uint StartVertex, uint PrimitiveCount);
         
         [PreserveSig]
-        HRESULT DrawIndexedPrimitive(_D3DPRIMITIVETYPE __unnamed_0, int BaseVertexIndex, uint MinVertexIndex, uint NumVertices, uint startIndex, uint primCount);
+        HRESULT DrawIndexedPrimitive(_D3DPRIMITIVETYPE unnamed__0, int BaseVertexIndex, uint MinVertexIndex, uint NumVertices, uint startIndex, uint primCount);
         
         [PreserveSig]
         HRESULT DrawPrimitiveUP(_D3DPRIMITIVETYPE PrimitiveType, uint PrimitiveCount, IntPtr pVertexStreamZeroData, uint VertexStreamZeroStride);

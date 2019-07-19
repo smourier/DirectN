@@ -7,11 +7,11 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12DDI_VIDEO_PROCESSOR_INPUT_STREAM_DESC_0032
     {
-        public int Format;
-        public int ColorSpace;
-        public int SourceAspectRatio;
-        public int DestinationAspectRatio;
-        public int FrameRate;
+        public DXGI_FORMAT Format;
+        public DXGI_COLOR_SPACE_TYPE ColorSpace;
+        public DXGI_RATIONAL SourceAspectRatio;
+        public DXGI_RATIONAL DestinationAspectRatio;
+        public DXGI_RATIONAL FrameRate;
         public D3D12DDI_VIDEO_SIZE_RANGE_0032 SourceSizeRange;
         public D3D12DDI_VIDEO_SIZE_RANGE_0032 DestinationSizeRange;
         public bool EnableOrientation;

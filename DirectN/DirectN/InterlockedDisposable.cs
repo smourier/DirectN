@@ -27,10 +27,19 @@ namespace DirectN
             }
         }
 
-        public virtual void Dispose()
+        public void Dispose()
         {
-            var disposable = Interlocked.Exchange(ref _disposable, null);
-            disposable?.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                var disposable = Interlocked.Exchange(ref _disposable, null);
+                disposable?.Dispose();
+            }
         }
     }
 }

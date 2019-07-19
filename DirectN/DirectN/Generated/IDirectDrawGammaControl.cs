@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface IDirectDrawGammaControl
     {
         [PreserveSig]
-        HRESULT GetGammaRamp(uint __unnamed_0, ref _DDGAMMARAMP __unnamed_1);
+        HRESULT GetGammaRamp(uint unnamed__0, ref _DDGAMMARAMP unnamed__1);
         
         [PreserveSig]
-        HRESULT SetGammaRamp(uint __unnamed_0, ref _DDGAMMARAMP __unnamed_1);
+        HRESULT SetGammaRamp(uint unnamed__0, ref _DDGAMMARAMP unnamed__1);
     }
 }

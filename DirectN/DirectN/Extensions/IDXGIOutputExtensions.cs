@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
+#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
+
 namespace DirectN
 {
     public static class IDXGIOutputExtensions
@@ -13,8 +15,7 @@ namespace DirectN
             if (output == null)
                 throw new ArgumentNullException(nameof(output));
 
-            var desc = new DXGI_OUTPUT_DESC();
-            output.GetDesc(out desc).ThrowOnError();
+            output.GetDesc(out var desc).ThrowOnError();
             return desc;
         }
 
@@ -25,8 +26,7 @@ namespace DirectN
             if (output == null)
                 throw new ArgumentNullException(nameof(output));
 
-            var desc = new DXGI_GAMMA_CONTROL_CAPABILITIES();
-            if (output.GetGammaControlCapabilities(out desc).IsError)
+            if (output.GetGammaControlCapabilities(out var desc).IsError)
                 return null;
 
             return desc;
@@ -39,8 +39,7 @@ namespace DirectN
             if (output == null)
                 throw new ArgumentNullException(nameof(output));
 
-            var control = new DXGI_GAMMA_CONTROL();
-            if (output.GetGammaControl(out control).IsError)
+            if (output.GetGammaControl(out var control).IsError)
                 return null;
 
             return control;
@@ -53,8 +52,7 @@ namespace DirectN
             if (output == null)
                 throw new ArgumentNullException(nameof(output));
 
-            var stats = new DXGI_FRAME_STATISTICS();
-            if (output.GetFrameStatistics(out stats).IsError)
+            if (output.GetFrameStatistics(out var stats).IsError)
                 return null;
 
             return stats;
@@ -112,8 +110,7 @@ namespace DirectN
             if (output == null)
                 throw new ArgumentNullException(nameof(output));
 
-            var closest = new DXGI_MODE_DESC();
-            if (output.FindClosestMatchingMode(ref modeToMatch, out closest, ComObject.Unwrap(concernedDevice)).IsError)
+            if (output.FindClosestMatchingMode(ref modeToMatch, out var closest, ComObject.Unwrap(concernedDevice)).IsError)
                 return null;
 
             return closest;
@@ -125,8 +122,7 @@ namespace DirectN
             if (output == null)
                 throw new ArgumentNullException(nameof(output));
 
-            var closest = new DXGI_MODE_DESC1();
-            if (output.FindClosestMatchingMode1(ref modeToMatch, out closest, ComObject.Unwrap(concernedDevice)).IsError)
+            if (output.FindClosestMatchingMode1(ref modeToMatch, out var closest, ComObject.Unwrap(concernedDevice)).IsError)
                 return null;
 
             return closest;
@@ -182,7 +178,10 @@ namespace DirectN
             }
 
             private static readonly Guid IID_IUnknown = new Guid("00000000-0000-0000-c000-000000000046");
+
+#pragma warning disable IDE0060 // Remove unused parameter
             public int QueryInterface(IntPtr pThis, ref Guid riid, ref IntPtr ppInterface)
+#pragma warning restore IDE0060 // Remove unused parameter
             {
                 // note this works because IDXGIOutputDuplication maps IDXGIObject and IUnknown
                 // we just return the original COM pointer

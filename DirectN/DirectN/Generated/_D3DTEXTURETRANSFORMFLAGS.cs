@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3dtypes.h(2090,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3d9types.h(1272,9)
 using System;
 
 namespace DirectN

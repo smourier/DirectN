@@ -157,6 +157,9 @@
         public const int D3D9_RESOURCE_PRIORITY_MAXIMUM = -939524096;
         public const int D3D9_RESOURCE_PRIORITY_MINIMUM = 671088640;
         public const int D3D9_RESOURCE_PRIORITY_NORMAL = 2013265920;
+        public const int D3DCLEAR_STENCIL = 4;
+        public const int D3DCLEAR_TARGET = 1;
+        public const int D3DCLEAR_ZBUFFER = 2;
         public const int D3DCOMPOSERECTS_MAXNUMRECTS = 65535;
         public const int D3DCONVOLUTIONMONO_MAXWIDTH = 7;
         public const int D3DCS_BACK = 32;
@@ -172,11 +175,40 @@
         public const int D3DCS_RIGHT = 2;
         public const int D3DCS_TOP = 4;
         public const int D3DDMAPSAMPLER = 256;
+        public const int D3DDP_MAXTEXCOORD = 8;
         public const int D3DFMT_A1_SURFACE_MAXHEIGHT = 2048;
         public const int D3DFMT_A1_SURFACE_MAXWIDTH = 8192;
+        public const int D3DFVF_DIFFUSE = 64;
         public const int D3DFVF_LASTBETA_D3DCOLOR = 32768;
         public const int D3DFVF_LASTBETA_UBYTE4 = 4096;
+        public const int D3DFVF_NORMAL = 16;
+        public const int D3DFVF_POSITION_MASK = 16398;
         public const int D3DFVF_PSIZE = 32;
+        public const int D3DFVF_RESERVED0 = 1;
+        public const int D3DFVF_RESERVED2 = 24576;
+        public const int D3DFVF_SPECULAR = 128;
+        public const int D3DFVF_TEX0 = 0;
+        public const int D3DFVF_TEX1 = 256;
+        public const int D3DFVF_TEX2 = 512;
+        public const int D3DFVF_TEX3 = 768;
+        public const int D3DFVF_TEX4 = 1024;
+        public const int D3DFVF_TEX5 = 1280;
+        public const int D3DFVF_TEX6 = 1536;
+        public const int D3DFVF_TEX7 = 1792;
+        public const int D3DFVF_TEX8 = 2048;
+        public const int D3DFVF_TEXCOUNT_MASK = 3840;
+        public const int D3DFVF_TEXCOUNT_SHIFT = 8;
+        public const int D3DFVF_TEXTUREFORMAT1 = 3;
+        public const int D3DFVF_TEXTUREFORMAT2 = 0;
+        public const int D3DFVF_TEXTUREFORMAT3 = 1;
+        public const int D3DFVF_TEXTUREFORMAT4 = 2;
+        public const int D3DFVF_XYZ = 2;
+        public const int D3DFVF_XYZB1 = 6;
+        public const int D3DFVF_XYZB2 = 8;
+        public const int D3DFVF_XYZB3 = 10;
+        public const int D3DFVF_XYZB4 = 12;
+        public const int D3DFVF_XYZB5 = 14;
+        public const int D3DFVF_XYZRHW = 4;
         public const int D3DFVF_XYZW = 16386;
         public const int D3DLOCK_DISCARD = 8192;
         public const int D3DLOCK_DONOTWAIT = 16384;
@@ -184,6 +216,7 @@
         public const int D3DLOCK_NOSYSLOCK = 2048;
         public const int D3DLOCK_NO_DIRTY_UPDATE = 32768;
         public const int D3DLOCK_READONLY = 16;
+        public const int D3DMAXUSERCLIPPLANES = 32;
         public const int D3DPRESENTFLAG_DEVICECLIP = 4;
         public const int D3DPRESENTFLAG_DISCARD_DEPTHSTENCIL = 2;
         public const int D3DPRESENTFLAG_LOCKABLE_BACKBUFFER = 1;
@@ -196,6 +229,7 @@
         public const int D3DPRESENTFLAG_UNPRUNEDMODE = 64;
         public const int D3DPRESENTFLAG_VIDEO = 16;
         public const int D3DPRESENT_RATE_DEFAULT = 0;
+        public const int D3DRENDERSTATE_WRAPBIAS = 128;
         public const int D3DSHADER_ADDRESSMODE_SHIFT = 13;
         public const int D3DSI_COISSUE = 1073741824;
         public const int D3DSI_COMMENTSIZE_MASK = 2147418112;
@@ -231,8 +265,20 @@
         public const int D3DSP_WRITEMASK_2 = 262144;
         public const int D3DSP_WRITEMASK_3 = 524288;
         public const int D3DSP_WRITEMASK_ALL = 983040;
+        public const int D3DTA_ALPHAREPLICATE = 32;
+        public const int D3DTA_COMPLEMENT = 16;
         public const int D3DTA_CONSTANT = 6;
+        public const int D3DTA_CURRENT = 1;
+        public const int D3DTA_DIFFUSE = 0;
+        public const int D3DTA_SELECTMASK = 15;
+        public const int D3DTA_SPECULAR = 4;
         public const int D3DTA_TEMP = 5;
+        public const int D3DTA_TEXTURE = 2;
+        public const int D3DTA_TFACTOR = 3;
+        public const int D3DTSS_TCI_CAMERASPACENORMAL = 65536;
+        public const int D3DTSS_TCI_CAMERASPACEPOSITION = 131072;
+        public const int D3DTSS_TCI_CAMERASPACEREFLECTIONVECTOR = 196608;
+        public const int D3DTSS_TCI_PASSTHRU = 0;
         public const int D3DTSS_TCI_SPHEREMAP = 262144;
         public const int D3DUSAGE_AUTOGENMIPMAP = 1024;
         public const int D3DUSAGE_DEPTHSTENCIL = 2;
@@ -260,9 +306,16 @@
         public const int D3DVS_ADDRESSMODE_SHIFT = 13;
         public const int D3DVS_SWIZZLE_MASK = 16711680;
         public const int D3DVS_SWIZZLE_SHIFT = 16;
+        public const int D3DWRAPCOORD_0 = 1;
+        public const int D3DWRAPCOORD_1 = 2;
+        public const int D3DWRAPCOORD_2 = 4;
+        public const int D3DWRAPCOORD_3 = 8;
+        public const int D3DWRAP_U = 1;
+        public const int D3DWRAP_V = 2;
         public const int D3DWRAP_W = 4;
         public const int D3D_MAX_SIMULTANEOUS_RENDERTARGETS = 4;
         public const int D3D_OMAC_SIZE = 16;
+        public const int DIRECT3D_VERSION = 2304;
         public const int MAXD3DDECLLENGTH = 64;
         public const int MAXD3DDECLUSAGEINDEX = 15;
         public const int MAX_DEVICE_IDENTIFIER_STRING = 512;
@@ -1995,10 +2048,11 @@
         public const int VsFpsr = 12;
         public const int VsV = 16;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\ksmedia.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\ksmedia.h
         public const int AUDIOMODULE_MAX_DATA_SIZE = 64000;
         public const int AUDIOMODULE_MAX_NAME_CCH_SIZE = 128;
         public const int CC_MAX_HW_DECODE_LINES = 12;
+        public const int DDPF_FOURCC = 4;
         public const int JACKDESC2_DYNAMIC_FORMAT_CHANGE_CAPABILITY = 2;
         public const int JACKDESC2_PRESENCE_DETECT_CAPABILITY = 1;
         public const int KSAC3_ALTERNATE_AUDIO_1 = 1;
@@ -2378,6 +2432,27 @@
         public const int NABTS_BYTES_PER_LINE = 36;
         public const int NABTS_LINES_PER_BUNDLE = 16;
         public const int NABTS_PAYLOAD_PER_LINE = 28;
+        public const int SPEAKER_ALL = -2147483648;
+        public const int SPEAKER_BACK_CENTER = 256;
+        public const int SPEAKER_BACK_LEFT = 16;
+        public const int SPEAKER_BACK_RIGHT = 32;
+        public const int SPEAKER_FRONT_CENTER = 4;
+        public const int SPEAKER_FRONT_LEFT = 1;
+        public const int SPEAKER_FRONT_LEFT_OF_CENTER = 64;
+        public const int SPEAKER_FRONT_RIGHT = 2;
+        public const int SPEAKER_FRONT_RIGHT_OF_CENTER = 128;
+        public const int SPEAKER_LOW_FREQUENCY = 8;
+        public const int SPEAKER_RESERVED = 2147221504;
+        public const int SPEAKER_SIDE_LEFT = 512;
+        public const int SPEAKER_SIDE_RIGHT = 1024;
+        public const int SPEAKER_TOP_BACK_CENTER = 65536;
+        public const int SPEAKER_TOP_BACK_LEFT = 32768;
+        public const int SPEAKER_TOP_BACK_RIGHT = 131072;
+        public const int SPEAKER_TOP_CENTER = 2048;
+        public const int SPEAKER_TOP_FRONT_CENTER = 8192;
+        public const int SPEAKER_TOP_FRONT_LEFT = 4096;
+        public const int SPEAKER_TOP_FRONT_RIGHT = 16384;
+        public const int WAVE_FORMAT_EXTENSIBLE = 65534;
         public const int WST_BYTES_PER_LINE = 42;
         public const int WST_TVTUNER_CHANGE_BEGIN_TUNE = 4096;
         public const int WST_TVTUNER_CHANGE_END_TUNE = 8192;
@@ -3916,26 +3991,6 @@
         public const int ROCKWELL_WA2_SYNTH = 202;
         public const int ROCKWELL_WA2_WAVEIN = 200;
         public const int ROCKWELL_WA2_WAVEOUT = 201;
-        public const int SPEAKER_ALL = -2147483648;
-        public const int SPEAKER_BACK_CENTER = 256;
-        public const int SPEAKER_BACK_LEFT = 16;
-        public const int SPEAKER_BACK_RIGHT = 32;
-        public const int SPEAKER_FRONT_CENTER = 4;
-        public const int SPEAKER_FRONT_LEFT = 1;
-        public const int SPEAKER_FRONT_LEFT_OF_CENTER = 64;
-        public const int SPEAKER_FRONT_RIGHT = 2;
-        public const int SPEAKER_FRONT_RIGHT_OF_CENTER = 128;
-        public const int SPEAKER_LOW_FREQUENCY = 8;
-        public const int SPEAKER_RESERVED = 2147221504;
-        public const int SPEAKER_SIDE_LEFT = 512;
-        public const int SPEAKER_SIDE_RIGHT = 1024;
-        public const int SPEAKER_TOP_BACK_CENTER = 65536;
-        public const int SPEAKER_TOP_BACK_LEFT = 32768;
-        public const int SPEAKER_TOP_BACK_RIGHT = 131072;
-        public const int SPEAKER_TOP_CENTER = 2048;
-        public const int SPEAKER_TOP_FRONT_CENTER = 8192;
-        public const int SPEAKER_TOP_FRONT_LEFT = 4096;
-        public const int SPEAKER_TOP_FRONT_RIGHT = 16384;
         public const int WAVE_FILTER_DEVELOPMENT = 65535;
         public const int WAVE_FILTER_ECHO = 2;
         public const int WAVE_FILTER_UNKNOWN = 0;
@@ -3997,7 +4052,6 @@
         public const int WAVE_FORMAT_ENCORE_G726 = 41223;
         public const int WAVE_FORMAT_ESPCM = 97;
         public const int WAVE_FORMAT_ESST_AC3 = 577;
-        public const int WAVE_FORMAT_EXTENSIBLE = 65534;
         public const int WAVE_FORMAT_FAAD_AAC = 28781;
         public const int WAVE_FORMAT_FLAC = 61868;
         public const int WAVE_FORMAT_FM_TOWNS_SND = 768;
@@ -4246,7 +4300,7 @@
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\audiomediatype.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
@@ -4271,7 +4325,7 @@
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d2d1effectauthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\D2DErr.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\D2DErr.h
         public const int FACILITY_D2D = 2201;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d.h
@@ -4964,6 +5018,109 @@
         public const int D3D11_TRACE_MISC_MESSAGE = 64;
         public const int D3D11_TRACE_MISC_PS_DISCARD = 4;
         public const int D3D11_TRACE_REGISTER_FLAGS_RELATIVE_INDEXING = 1;
+        
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d11tokenizedprogramformat.hpp
+        public const int D3D10_SB_4_COMPONENT_NAME_MASK = 3;
+        public const int D3D10_SB_CONSTANT_BUFFER_ACCESS_PATTERN_MASK = 2048;
+        public const int D3D10_SB_CONSTANT_BUFFER_ACCESS_PATTERN_SHIFT = 11;
+        public const int D3D10_SB_CUSTOMDATA_CLASS_MASK = -2048;
+        public const int D3D10_SB_CUSTOMDATA_CLASS_SHIFT = 11;
+        public const int D3D10_SB_EXTENDED_OPCODE_TYPE_MASK = 63;
+        public const int D3D10_SB_EXTENDED_OPERAND_TYPE_MASK = 63;
+        public const int D3D10_SB_GLOBAL_FLAGS_MASK = 16775168;
+        public const int D3D10_SB_GS_INPUT_PRIMITIVE_MASK = 129024;
+        public const int D3D10_SB_GS_INPUT_PRIMITIVE_SHIFT = 11;
+        public const int D3D10_SB_GS_OUTPUT_PRIMITIVE_TOPOLOGY_MASK = 129024;
+        public const int D3D10_SB_GS_OUTPUT_PRIMITIVE_TOPOLOGY_SHIFT = 11;
+        public const int D3D10_SB_IMMEDIATE_ADDRESS_OFFSET_COORD_MASK = 3;
+        public const int D3D10_SB_INPUT_INTERPOLATION_MODE_MASK = 30720;
+        public const int D3D10_SB_INPUT_INTERPOLATION_MODE_SHIFT = 11;
+        public const int D3D10_SB_INSTRUCTION_RETURN_TYPE_MASK = 6144;
+        public const int D3D10_SB_INSTRUCTION_RETURN_TYPE_SHIFT = 11;
+        public const int D3D10_SB_INSTRUCTION_SATURATE_MASK = 8192;
+        public const int D3D10_SB_INSTRUCTION_TEST_BOOLEAN_MASK = 262144;
+        public const int D3D10_SB_INSTRUCTION_TEST_BOOLEAN_SHIFT = 18;
+        public const int D3D10_SB_NAME_MASK = 65535;
+        public const int D3D10_SB_OPCODE_EXTENDED_MASK = -2147483648;
+        public const int D3D10_SB_OPCODE_EXTENDED_SHIFT = 31;
+        public const int D3D10_SB_OPCODE_TYPE_MASK = 2047;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_MASK = 240;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_SHIFT = 4;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_W = 128;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_X = 16;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_Y = 32;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_Z = 64;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_SELECTION_MODE_MASK = 12;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_SELECTION_MODE_SHIFT = 2;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_SELECT_1_MASK = 48;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_SELECT_1_SHIFT = 4;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_SWIZZLE_MASK = 4080;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_SWIZZLE_SHIFT = 4;
+        public const int D3D10_SB_OPERAND_DOUBLE_EXTENDED_MASK = -2147483648;
+        public const int D3D10_SB_OPERAND_DOUBLE_EXTENDED_SHIFT = 31;
+        public const int D3D10_SB_OPERAND_EXTENDED_MASK = -2147483648;
+        public const int D3D10_SB_OPERAND_EXTENDED_SHIFT = 31;
+        public const int D3D10_SB_OPERAND_INDEX_DIMENSION_MASK = 3145728;
+        public const int D3D10_SB_OPERAND_INDEX_DIMENSION_SHIFT = 20;
+        public const int D3D10_SB_OPERAND_MODIFIER_MASK = 16320;
+        public const int D3D10_SB_OPERAND_MODIFIER_SHIFT = 6;
+        public const int D3D10_SB_OPERAND_NUM_COMPONENTS_MASK = 3;
+        public const int D3D10_SB_OPERAND_TYPE_MASK = 1044480;
+        public const int D3D10_SB_OPERAND_TYPE_SHIFT = 12;
+        public const int D3D10_SB_RESINFO_INSTRUCTION_RETURN_TYPE_MASK = 6144;
+        public const int D3D10_SB_RESINFO_INSTRUCTION_RETURN_TYPE_SHIFT = 11;
+        public const int D3D10_SB_RESOURCE_DIMENSION_MASK = 63488;
+        public const int D3D10_SB_RESOURCE_DIMENSION_SHIFT = 11;
+        public const int D3D10_SB_RESOURCE_RETURN_TYPE_MASK = 15;
+        public const int D3D10_SB_RESOURCE_RETURN_TYPE_NUMBITS = 4;
+        public const int D3D10_SB_RESOURCE_SAMPLE_COUNT_MASK = 8323072;
+        public const int D3D10_SB_RESOURCE_SAMPLE_COUNT_SHIFT = 16;
+        public const int D3D10_SB_SAMPLER_MODE_MASK = 30720;
+        public const int D3D10_SB_SAMPLER_MODE_SHIFT = 11;
+        public const int D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH_MASK = 2130706432;
+        public const int D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH_SHIFT = 24;
+        public const int D3D10_SB_TOKENIZED_PROGRAM_MAJOR_VERSION_MASK = 240;
+        public const int D3D10_SB_TOKENIZED_PROGRAM_MAJOR_VERSION_SHIFT = 4;
+        public const int D3D10_SB_TOKENIZED_PROGRAM_MINOR_VERSION_MASK = 15;
+        public const int D3D10_SB_TOKENIZED_PROGRAM_TYPE_MASK = -65536;
+        public const int D3D10_SB_TOKENIZED_PROGRAM_TYPE_SHIFT = 16;
+        public const int D3D11_SB_ACCESS_COHERENCY_MASK = 65536;
+        public const int D3D11_SB_EXTENDED_RESOURCE_DIMENSION_MASK = 1984;
+        public const int D3D11_SB_EXTENDED_RESOURCE_DIMENSION_SHIFT = 6;
+        public const int D3D11_SB_EXTENDED_RESOURCE_DIMENSION_STRUCTURE_STRIDE_MASK = 8386560;
+        public const int D3D11_SB_EXTENDED_RESOURCE_DIMENSION_STRUCTURE_STRIDE_SHIFT = 11;
+        public const int D3D11_SB_EXTENDED_RESOURCE_RETURN_TYPE_SHIFT = 6;
+        public const int D3D11_SB_GLOBALLY_COHERENT_ACCESS = 65536;
+        public const int D3D11_SB_INPUT_CONTROL_POINT_COUNT_MASK = 129024;
+        public const int D3D11_SB_INPUT_CONTROL_POINT_COUNT_SHIFT = 11;
+        public const int D3D11_SB_INSTRUCTION_PRECISE_VALUES_MASK = 7864320;
+        public const int D3D11_SB_INSTRUCTION_PRECISE_VALUES_SHIFT = 19;
+        public const int D3D11_SB_INTERFACE_ARRAY_LENGTH_MASK = -65536;
+        public const int D3D11_SB_INTERFACE_ARRAY_LENGTH_SHIFT = 16;
+        public const int D3D11_SB_INTERFACE_INDEXED_BIT_MASK = 2048;
+        public const int D3D11_SB_INTERFACE_INDEXED_BIT_SHIFT = 11;
+        public const int D3D11_SB_INTERFACE_TABLE_LENGTH_MASK = 65535;
+        public const int D3D11_SB_INTERFACE_TABLE_LENGTH_SHIFT = 0;
+        public const int D3D11_SB_MAX_SIMULTANEOUS_EXTENDED_OPCODES = 3;
+        public const int D3D11_SB_OPERAND_MIN_PRECISION_MASK = 114688;
+        public const int D3D11_SB_OPERAND_MIN_PRECISION_SHIFT = 14;
+        public const int D3D11_SB_OUTPUT_CONTROL_POINT_COUNT_MASK = 129024;
+        public const int D3D11_SB_OUTPUT_CONTROL_POINT_COUNT_SHIFT = 11;
+        public const int D3D11_SB_SYNC_FLAGS_MASK = 30720;
+        public const int D3D11_SB_SYNC_THREADS_IN_GROUP = 2048;
+        public const int D3D11_SB_SYNC_THREAD_GROUP_SHARED_MEMORY = 4096;
+        public const int D3D11_SB_SYNC_UNORDERED_ACCESS_VIEW_MEMORY_GLOBAL = 16384;
+        public const int D3D11_SB_SYNC_UNORDERED_ACCESS_VIEW_MEMORY_GROUP = 8192;
+        public const int D3D11_SB_TESS_DOMAIN_MASK = 6144;
+        public const int D3D11_SB_TESS_DOMAIN_SHIFT = 11;
+        public const int D3D11_SB_TESS_OUTPUT_PRIMITIVE_MASK = 14336;
+        public const int D3D11_SB_TESS_OUTPUT_PRIMITIVE_SHIFT = 11;
+        public const int D3D11_SB_TESS_PARTITIONING_MASK = 14336;
+        public const int D3D11_SB_TESS_PARTITIONING_SHIFT = 11;
+        public const int D3D11_SB_UAV_FLAGS_MASK = 8388608;
+        public const int D3D11_SB_UAV_HAS_ORDER_PRESERVING_COUNTER = 8388608;
+        public const int MAX_D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH = 127;
+        public const int MAX_D3D10_SB_TOKENIZED_PROGRAM_LENGTH = -1;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3d11_2.h
         public const int D3D11_PACKED_TILE = -1;
@@ -5943,9 +6100,6 @@
         public const int _NT_D3DRS_DELETERTPATCH = 169;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3dtypes.h
-        public const int D3DCLEAR_STENCIL = 4;
-        public const int D3DCLEAR_TARGET = 1;
-        public const int D3DCLEAR_ZBUFFER = 2;
         public const int D3DCLIPSTATUS_EXTENTS2 = 2;
         public const int D3DCLIPSTATUS_EXTENTS3 = 4;
         public const int D3DCLIPSTATUS_STATUS = 1;
@@ -5966,41 +6120,11 @@
         public const int D3DDEVINFOID_D3DTEXTUREMANAGER = 2;
         public const int D3DDEVINFOID_TEXTUREMANAGER = 1;
         public const int D3DDEVINFOID_TEXTURING = 3;
-        public const int D3DDP_MAXTEXCOORD = 8;
         public const int D3DEXECUTE_CLIPPED = 1;
         public const int D3DEXECUTE_UNCLIPPED = 2;
-        public const int D3DFVF_DIFFUSE = 64;
-        public const int D3DFVF_NORMAL = 16;
-        public const int D3DFVF_POSITION_MASK = 14;
-        public const int D3DFVF_RESERVED0 = 1;
         public const int D3DFVF_RESERVED1 = 32;
-        public const int D3DFVF_RESERVED2 = 61440;
-        public const int D3DFVF_SPECULAR = 128;
-        public const int D3DFVF_TEX0 = 0;
-        public const int D3DFVF_TEX1 = 256;
-        public const int D3DFVF_TEX2 = 512;
-        public const int D3DFVF_TEX3 = 768;
-        public const int D3DFVF_TEX4 = 1024;
-        public const int D3DFVF_TEX5 = 1280;
-        public const int D3DFVF_TEX6 = 1536;
-        public const int D3DFVF_TEX7 = 1792;
-        public const int D3DFVF_TEX8 = 2048;
-        public const int D3DFVF_TEXCOUNT_MASK = 3840;
-        public const int D3DFVF_TEXCOUNT_SHIFT = 8;
-        public const int D3DFVF_TEXTUREFORMAT1 = 3;
-        public const int D3DFVF_TEXTUREFORMAT2 = 0;
-        public const int D3DFVF_TEXTUREFORMAT3 = 1;
-        public const int D3DFVF_TEXTUREFORMAT4 = 2;
-        public const int D3DFVF_XYZ = 2;
-        public const int D3DFVF_XYZB1 = 6;
-        public const int D3DFVF_XYZB2 = 8;
-        public const int D3DFVF_XYZB3 = 10;
-        public const int D3DFVF_XYZB4 = 12;
-        public const int D3DFVF_XYZB5 = 14;
-        public const int D3DFVF_XYZRHW = 4;
         public const int D3DLIGHT_ACTIVE = 1;
         public const int D3DLIGHT_NO_SPECULAR = 2;
-        public const int D3DMAXUSERCLIPPLANES = 32;
         public const int D3DPAL_FREE = 0;
         public const int D3DPAL_READONLY = 64;
         public const int D3DPAL_RESERVED = 128;
@@ -6010,7 +6134,6 @@
         public const int D3DPROCESSVERTICES_TRANSFORM = 1;
         public const int D3DPROCESSVERTICES_TRANSFORMLIGHT = 0;
         public const int D3DPROCESSVERTICES_UPDATEEXTENTS = 8;
-        public const int D3DRENDERSTATE_WRAPBIAS = 128;
         public const int D3DSETSTATUS_EXTENTS = 2;
         public const int D3DSETSTATUS_STATUS = 1;
         public const int D3DSTATE_OVERRIDE_BIAS = 256;
@@ -6027,14 +6150,6 @@
         public const int D3DSTATUS_CLIPINTERSECTIONRIGHT = 8192;
         public const int D3DSTATUS_CLIPINTERSECTIONTOP = 16384;
         public const int D3DSTATUS_ZNOTVISIBLE = 16777216;
-        public const int D3DTA_ALPHAREPLICATE = 32;
-        public const int D3DTA_COMPLEMENT = 16;
-        public const int D3DTA_CURRENT = 1;
-        public const int D3DTA_DIFFUSE = 0;
-        public const int D3DTA_SELECTMASK = 15;
-        public const int D3DTA_SPECULAR = 4;
-        public const int D3DTA_TEXTURE = 2;
-        public const int D3DTA_TFACTOR = 3;
         public const int D3DTRANSFORM_CLIPPED = 1;
         public const int D3DTRANSFORM_UNCLIPPED = 2;
         public const int D3DTRIFLAG_EDGEENABLE1 = 256;
@@ -6043,10 +6158,6 @@
         public const int D3DTRIFLAG_EVEN = 31;
         public const int D3DTRIFLAG_ODD = 30;
         public const int D3DTRIFLAG_START = 0;
-        public const int D3DTSS_TCI_CAMERASPACENORMAL = 65536;
-        public const int D3DTSS_TCI_CAMERASPACEPOSITION = 131072;
-        public const int D3DTSS_TCI_CAMERASPACEREFLECTIONVECTOR = 196608;
-        public const int D3DTSS_TCI_PASSTHRU = 0;
         public const int D3DVBCAPS_DONOTCLIP = 1;
         public const int D3DVBCAPS_OPTIMIZED = -2147483648;
         public const int D3DVBCAPS_SYSTEMMEMORY = 2048;
@@ -6060,14 +6171,8 @@
         public const int D3DVIS_INSIDE_TOP = 0;
         public const int D3DVIS_INTERSECT_FRUSTUM = 1;
         public const int D3DVIS_OUTSIDE_FRUSTUM = 2;
-        public const int D3DWRAPCOORD_0 = 1;
-        public const int D3DWRAPCOORD_1 = 2;
-        public const int D3DWRAPCOORD_2 = 4;
-        public const int D3DWRAPCOORD_3 = 8;
-        public const int D3DWRAP_U = 1;
-        public const int D3DWRAP_V = 2;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3dumddi.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d3dumddi.h
         public const int D3DDDIDEVINFOID_VCACHE = 4;
         public const int D3DDDISETPALETTE_256 = 1;
         public const int D3DDDISETPALETTE_ALLOW256 = 512;
@@ -6513,18 +6618,14 @@
         public const int DDOVER_ALPHASRCNEG = 128;
         public const int DDOVER_ALPHASRCSURFACEOVERRIDE = 256;
         public const int DDOVER_ARGBSCALEFACTORS = 33554432;
-        public const int DDOVER_AUTOFLIP = 1048576;
-        public const int DDOVER_BOB = 2097152;
         public const int DDOVER_BOBHARDWARE = 16777216;
         public const int DDOVER_DDFX = 524288;
         public const int DDOVER_DEGRADEARGBSCALING = 67108864;
         public const int DDOVER_HIDE = 512;
-        public const int DDOVER_INTERLEAVED = 8388608;
         public const int DDOVER_KEYDEST = 1024;
         public const int DDOVER_KEYDESTOVERRIDE = 2048;
         public const int DDOVER_KEYSRC = 4096;
         public const int DDOVER_KEYSRCOVERRIDE = 8192;
-        public const int DDOVER_OVERRIDEBOBWEAVE = 4194304;
         public const int DDOVER_REFRESHALL = 131072;
         public const int DDOVER_REFRESHDIRTYRECTS = 65536;
         public const int DDOVER_SHOW = 16384;
@@ -6545,7 +6646,6 @@
         public const int DDPF_BUMPDUDV = 524288;
         public const int DDPF_BUMPLUMINANCE = 262144;
         public const int DDPF_COMPRESSED = 128;
-        public const int DDPF_FOURCC = 4;
         public const int DDPF_LUMINANCE = 131072;
         public const int DDPF_PALETTEINDEXED1 = 2048;
         public const int DDPF_PALETTEINDEXED2 = 4096;
@@ -7060,7 +7160,7 @@
         public const int AM_VIDEO_FLAG_REPEAT_FIELD = 64;
         public const int AM_VIDEO_FLAG_WEAVE = 8;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\dvp.h
+        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dvp.h
         public const int DDVPBCAPS_DESTINATION = 2;
         public const int DDVPBCAPS_SOURCE = 1;
         public const int DDVPB_OVERLAY = 2;
@@ -7156,7 +7256,7 @@
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxdiag.h
         public const int DXDIAG_DX9_SDK_VERSION = 111;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxgiddi.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\dxgiddi.h
         public const int DXGI_DDI_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS = 16;
         public const int DXGI_DDI_PRIMARY_DRIVER_FLAG_NO_SCANOUT = 1;
         public const int DXGI_DDI_PRIMARY_INDIRECT = 8;
@@ -7170,7 +7270,7 @@
         public const int DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION = 0;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxmini.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\dxmini.h
         public const int DDIRQ_BUSMASTER = 2;
         public const int DDIRQ_DISPLAY_VSYNC = 1;
         public const int DDIRQ_VPORT0_LINE = 8;
@@ -7193,6 +7293,10 @@
         public const int DDIRQ_VPORT8_VSYNC = 262144;
         public const int DDIRQ_VPORT9_LINE = 131072;
         public const int DDIRQ_VPORT9_VSYNC = 65536;
+        public const int DDOVER_AUTOFLIP = 1048576;
+        public const int DDOVER_BOB = 2097152;
+        public const int DDOVER_INTERLEAVED = 8388608;
+        public const int DDOVER_OVERRIDEBOBWEAVE = 4194304;
         public const int DDSKIP_ENABLENEXT = 2;
         public const int DDSKIP_SKIPNEXT = 1;
         public const int DDTRANSFER_CANCEL = 128;
@@ -7319,15 +7423,15 @@
         public const int DXVA_USUAL_BLOCK_HEIGHT = 8;
         public const int DXVA_USUAL_BLOCK_WIDTH = 8;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxva2api.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\dxva2api.h
         public const int DXVA2_DECODE_GET_DRIVER_HANDLE = 1829;
         public const int DXVA2_DECODE_SPECIFY_ENCRYPTED_BLOCKS = 1828;
+        public const int MAX_DEINTERLACE_SURFACES = 32;
         public const int MAX_SUBSTREAMS = 15;
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dxva9typ.h
         public const int COPP_DefaultProtectionLevel = 0;
         public const int COPP_ImageAspectRatio_EN300294_Mask = 7;
-        public const int DIRECT3D_VERSION = 2304;
         public const int DXVA_ALPHA_BLEND_COMBINATION_BUFFER = 13;
         public const int DXVA_AYUV_BUFFER = 8;
         public const int DXVA_BITSTREAM_DATA_BUFFER = 7;
@@ -7364,7 +7468,6 @@
         public const int DXVA_RESIDUAL_DIFFERENCE_BUFFER = 3;
         public const int DXVA_SLICE_CONTROL_BUFFER = 6;
         public const int MAX_DEINTERLACE_DEVICE_GUIDS = 32;
-        public const int MAX_DEINTERLACE_SURFACES = 32;
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mfapi.h
         public const int D3DFMT_A16B16G16R16F = 113;

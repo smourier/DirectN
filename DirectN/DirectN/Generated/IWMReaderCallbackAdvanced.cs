@@ -8,21 +8,21 @@ namespace DirectN
     public partial interface IWMReaderCallbackAdvanced
     {
         [PreserveSig]
-        HRESULT OnStreamSample(/* [in] */ ushort wStreamNum, /* [in] */ ulong cnsSampleTime, /* [in] */ ulong cnsSampleDuration, /* [in] */ uint dwFlags, /* [in] */ INSSBuffer pSample, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT OnStreamSample(/* [in] */ ushort wStreamNum, /* [in] */ ulong cnsSampleTime, /* [in] */ ulong cnsSampleDuration, /* [in] */ uint dwFlags, /* [in] */ INSSBuffer pSample, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
-        HRESULT OnTime(/* [in] */ ulong cnsCurrentTime, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT OnTime(/* [in] */ ulong cnsCurrentTime, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
-        HRESULT OnStreamSelection(/* [in] */ ushort wStreamCount, /* [in] */ ref ushort pStreamNumbers, /* [in] */ ref WMT_STREAM_SELECTION pSelections, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT OnStreamSelection(/* [in] */ ushort wStreamCount, /* [in] */ ref ushort pStreamNumbers, /* [in] */ ref WMT_STREAM_SELECTION pSelections, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
-        HRESULT OnOutputPropsChanged(/* [in] */ uint dwOutputNum, /* [in] */ ref _WMMediaType pMediaType, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT OnOutputPropsChanged(/* [in] */ uint dwOutputNum, /* [in] */ ref _WMMediaType pMediaType, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
-        HRESULT AllocateForStream(/* [in] */ ushort wStreamNum, /* [in] */ uint cbBuffer, /* [out] */ out INSSBuffer ppBuffer, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT AllocateForStream(/* [in] */ ushort wStreamNum, /* [in] */ uint cbBuffer, /* [out] */ out INSSBuffer ppBuffer, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
-        HRESULT AllocateForOutput(/* [in] */ uint dwOutputNum, /* [in] */ uint cbBuffer, /* [out] */ out INSSBuffer ppBuffer, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT AllocateForOutput(/* [in] */ uint dwOutputNum, /* [in] */ uint cbBuffer, /* [out] */ out INSSBuffer ppBuffer, /* [in] */ IntPtr pvContext);
     }
 }

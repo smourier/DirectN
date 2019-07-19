@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3D12DDI_VIDEO_MOTION_ESTIMATOR_DATA_0053
     {
         public uint NodeIndex;
-        public int InputFormat;
+        public DXGI_FORMAT InputFormat;
         public D3D12DDI_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_FLAGS_0053 BlockSizeFlags;
         public D3D12DDI_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAGS_0053 PrecisionFlags;
         public D3D12DDI_VIDEO_MOTION_ESTIMATOR_DIFFERENCES_METRIC_FLAGS_0053 DifferencesMetricFlags;

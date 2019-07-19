@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetFiltergraph(/* [annotation][out] _Out_ */ out IGraphBuilder ppGB);
         
         [PreserveSig]
-        HRESULT GetDvdInterface(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvIF);
+        HRESULT GetDvdInterface(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ out IntPtr ppvIF);
         
         [PreserveSig]
         HRESULT RenderDvdVideoVolume(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpcwszPathName, /* [in] */ uint dwFlags, /* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_strmif_0000_0138_0001 pStatus);

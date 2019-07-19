@@ -9,13 +9,13 @@ namespace DirectN
     {
         // IWMStatusCallback
         [PreserveSig]
-        new HRESULT OnStatus(/* [in] */ WMT_STATUS Status, /* [in] */ HRESULT hr, /* [in] */ WMT_ATTR_DATATYPE dwType, /* [in] */ ref byte pValue, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        new HRESULT OnStatus(/* [in] */ WMT_STATUS Status, /* [in] */ HRESULT hr, /* [in] */ WMT_ATTR_DATATYPE dwType, /* [in] */ ref byte pValue, /* [in] */ IntPtr pvContext);
         
         // IWMWriterPostViewCallback
         [PreserveSig]
-        HRESULT OnPostViewSample(/* [in] */ ushort wStreamNumber, /* [in] */ ulong cnsSampleTime, /* [in] */ ulong cnsSampleDuration, /* [in] */ uint dwFlags, /* [in] */ INSSBuffer pSample, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT OnPostViewSample(/* [in] */ ushort wStreamNumber, /* [in] */ ulong cnsSampleTime, /* [in] */ ulong cnsSampleDuration, /* [in] */ uint dwFlags, /* [in] */ INSSBuffer pSample, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
-        HRESULT AllocateForPostView(/* [in] */ ushort wStreamNum, /* [in] */ uint cbBuffer, /* [out] */ out INSSBuffer ppBuffer, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT AllocateForPostView(/* [in] */ ushort wStreamNum, /* [in] */ uint cbBuffer, /* [out] */ out INSSBuffer ppBuffer, /* [in] */ IntPtr pvContext);
     }
 }

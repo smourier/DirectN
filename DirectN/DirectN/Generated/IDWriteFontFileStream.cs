@@ -4,11 +4,14 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The interface for loading font file data.
+    /// </summary>
     [Guid("6d4865fe-0ab8-4d91-8f62-5dd6be34a3e0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFileStream
     {
         [PreserveSig]
-        HRESULT ReadFileFragment(/* _Outptr_result_bytebuffer_(fragmentSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object fragmentStart, ulong fileOffset, ulong fragmentSize, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object fragmentContext);
+        HRESULT ReadFileFragment(/* _Outptr_result_bytebuffer_(fragmentSize) */ out IntPtr fragmentStart, ulong fileOffset, ulong fragmentSize, /* _Out_ */ out IntPtr fragmentContext);
         
         [PreserveSig]
         void ReleaseFileFragment([MarshalAs(UnmanagedType.IUnknown)] object fragmentContext);

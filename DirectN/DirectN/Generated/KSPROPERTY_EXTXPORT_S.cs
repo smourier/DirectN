@@ -7,6 +7,6 @@ namespace DirectN
     public partial struct KSPROPERTY_EXTXPORT_S
     {
         public KSIDENTIFIER Property;
-        public __struct_ksmedia_586__union_0 u;
+        public __struct_ksmedia_737__union_0 u;
     }
 }

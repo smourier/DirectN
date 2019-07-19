@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Provides access to an device context that can accept GDI drawing commands.
+    /// </summary>
     [Guid("e0db51c3-6f77-4bae-b3d5-e47509b35838"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1GdiInteropRenderTarget
     {

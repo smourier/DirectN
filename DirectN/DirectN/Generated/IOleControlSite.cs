@@ -15,7 +15,7 @@ namespace DirectN
         HRESULT LockInPlaceActive(/* [in] */ bool fLock);
         
         [PreserveSig]
-        HRESULT GetExtendedControl(/* [out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppDisp);
+        HRESULT GetExtendedControl(/* [out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IDispatch)] out object ppDisp);
         
         [PreserveSig]
         HRESULT TransformCoords(/* [out][in] __RPC__inout */ ref _POINTL pPtlHimetric, /* [out][in] __RPC__inout */ ref tagPOINTF pPtfContainer, /* [in] */ uint dwFlags);

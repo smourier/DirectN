@@ -10,7 +10,7 @@ namespace DirectN
         public Guid DecodeProfile;
         public uint SampleWidth;
         public uint SampleHeight;
-        public int FrameRate;
+        public DXGI_RATIONAL FrameRate;
         public uint BitRate;
         public IntPtr pCryptoType;
         public uint Caps;

@@ -122,10 +122,10 @@ namespace DirectN
         new HRESULT SetColorSpace1(/* [annotation][in] _In_ */ DXGI_COLOR_SPACE_TYPE ColorSpace);
         
         [PreserveSig]
-        new HRESULT ResizeBuffers1(/* [annotation][in] _In_ */ uint BufferCount, /* [annotation][in] _In_ */ uint Width, /* [annotation][in] _In_ */ uint Height, /* [annotation][in] _In_ */ DXGI_FORMAT Format, /* [annotation][in] _In_ */ uint SwapChainFlags, /* [annotation][in] _In_reads_(BufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pCreationNodeMask, /* [annotation][in] _In_reads_(BufferCount) */ IntPtr ppPresentQueue);
+        new HRESULT ResizeBuffers1(/* [annotation][in] _In_ */ uint BufferCount, /* [annotation][in] _In_ */ uint Width, /* [annotation][in] _In_ */ uint Height, /* [annotation][in] _In_ */ DXGI_FORMAT Format, /* [annotation][in] _In_ */ uint SwapChainFlags, /* [annotation][in] _In_reads_(BufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pCreationNodeMask, /* [annotation][in] _In_reads_(BufferCount) */ [MarshalAs(UnmanagedType.IUnknown)] object ppPresentQueue);
         
         // IDXGISwapChain4
         [PreserveSig]
-        HRESULT SetHDRMetaData(/* [annotation][in] _In_ */ DXGI_HDR_METADATA_TYPE Type, /* [annotation][in] _In_ */ uint Size, /* [annotation][size_is][in] _In_reads_opt_(Size) */ [MarshalAs(UnmanagedType.IUnknown)] object pMetaData);
+        HRESULT SetHDRMetaData(/* [annotation][in] _In_ */ DXGI_HDR_METADATA_TYPE Type, /* [annotation][in] _In_ */ uint Size, /* optional(void) */ IntPtr pMetaData);
     }
 }

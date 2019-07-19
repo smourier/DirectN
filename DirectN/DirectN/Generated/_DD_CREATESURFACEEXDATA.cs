@@ -6,6 +6,9 @@ using PDD_SURFACE_LOCAL = DirectN._DD_SURFACE_LOCAL;
 
 namespace DirectN
 {
+    /// <summary>
+    /// **************************************************************************
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DD_CREATESURFACEEXDATA
     {

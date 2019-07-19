@@ -1,10 +1,9 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\dxgitype.h(31,9)
-using System;
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3dtypes.h(165,9)
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public partial struct _D3DCOLORVALUE
     {
         public float r;

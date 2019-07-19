@@ -12,16 +12,16 @@ namespace DirectN
     public partial interface IDirect3D7
     {
         [PreserveSig]
-        HRESULT EnumDevices(ref LPD3DENUMDEVICESCALLBACK7 __unnamed_0, IntPtr __unnamed_1);
+        HRESULT EnumDevices(ref LPD3DENUMDEVICESCALLBACK7 unnamed__0, IntPtr unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, LPDIRECTDRAWSURFACE7 __unnamed_1, out LPDIRECT3DDEVICE7 __unnamed_2);
+        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid unnamed__0, LPDIRECTDRAWSURFACE7 unnamed__1, out LPDIRECT3DDEVICE7 unnamed__2);
         
         [PreserveSig]
-        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC __unnamed_0, out LPDIRECT3DVERTEXBUFFER7 __unnamed_1, uint __unnamed_2);
+        HRESULT CreateVertexBuffer(ref _D3DVERTEXBUFFERDESC unnamed__0, out LPDIRECT3DVERTEXBUFFER7 unnamed__1, uint unnamed__2);
         
         [PreserveSig]
-        HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, IntPtr __unnamed_1, IntPtr __unnamed_2);
+        HRESULT EnumZBufferFormats([MarshalAs(UnmanagedType.LPStruct)] Guid unnamed__0, IntPtr unnamed__1, IntPtr unnamed__2);
         
         [PreserveSig]
         HRESULT EvictManagedTextures();

@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint Width;
         public uint Height;
-        public int Format;
+        public DXGI_FORMAT Format;
         public DXGI_DDI_RATIONAL RefreshRate;
         public DXGI_DDI_MODE_SCANLINE_ORDER ScanlineOrdering;
         public DXGI_DDI_MODE_ROTATION Rotation;

@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Describes a triangle.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_TRIANGLE
     {

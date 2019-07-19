@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\strmif.h(12361,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ksproxy.h(740,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,12 +8,12 @@ namespace DirectN
     public partial interface IKsPropertySet
     {
         [PreserveSig]
-        HRESULT Set(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPropSet, /* [in] */ uint dwPropID, /* [annotation][size_is][in] _In_reads_bytes_(cbInstanceData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] pInstanceData, /* [in] */ uint cbInstanceData, /* [annotation][size_is][in] _In_reads_bytes_(cbPropData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] IntPtr[] pPropData, /* [in] */ uint cbPropData);
+        HRESULT Set(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _In_reads_bytes_(InstanceLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] InstanceData, /* _In_ */ uint InstanceLength, /* _In_reads_bytes_(DataLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] IntPtr[] PropertyData, /* _In_ */ uint DataLength);
         
         [PreserveSig]
-        HRESULT Get(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPropSet, /* [in] */ uint dwPropID, /* [annotation][size_is][in] _In_reads_bytes_(cbInstanceData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] pInstanceData, /* [in] */ uint cbInstanceData, /* [annotation][size_is][out] _Out_writes_bytes_to_(cbPropData, *pcbReturned) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] IntPtr[] pPropData, /* [in] */ uint cbPropData, /* [annotation][out] _Out_ */ out uint pcbReturned);
+        HRESULT Get(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _In_reads_bytes_(InstanceLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] InstanceData, /* _In_ */ uint InstanceLength, /* _Out_writes_bytes_(DataLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] IntPtr[] PropertyData, /* _In_ */ uint DataLength, /* _Out_ */ out uint BytesReturned);
         
         [PreserveSig]
-        HRESULT QuerySupported(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidPropSet, /* [in] */ uint dwPropID, /* [annotation][out] _Out_ */ out uint pTypeSupport);
+        HRESULT QuerySupported(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _Out_ */ out uint TypeSupport);
     }
 }

@@ -18,7 +18,7 @@ namespace DirectN
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
 
-            obj.GetDevice(riid, out object parent);
+            obj.GetDevice(riid, out object parent).ThrowOnError();
             return parent;
         }
     }

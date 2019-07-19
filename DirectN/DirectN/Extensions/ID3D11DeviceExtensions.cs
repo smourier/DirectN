@@ -23,7 +23,9 @@ namespace DirectN
             if (obj == null)
                 throw new ArgumentNullException(nameof(obj));
 
+#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             obj.GetImmediateContext(out var value);
+#pragma warning restore CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             return value != null ? new ComObject<ID3D11DeviceContext>(value) : null;
         }
     }

@@ -4,16 +4,19 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The IDWritePixelSnapping interface defines the pixel snapping properties of a text renderer.
+    /// </summary>
     [Guid("eaf3a2da-ecf4-4d24-b644-b34f6842024b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWritePixelSnapping
     {
         [PreserveSig]
-        HRESULT IsPixelSnappingDisabled(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out bool isDisabled);
+        HRESULT IsPixelSnappingDisabled(/* optional(void) */ IntPtr clientDrawingContext, /* _Out_ */ out bool isDisabled);
         
         [PreserveSig]
-        HRESULT GetCurrentTransform(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out DWRITE_MATRIX transform);
+        HRESULT GetCurrentTransform(/* optional(void) */ IntPtr clientDrawingContext, /* _Out_ */ out DWRITE_MATRIX transform);
         
         [PreserveSig]
-        HRESULT GetPixelsPerDip(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object clientDrawingContext, /* _Out_ */ out float pixelsPerDip);
+        HRESULT GetPixelsPerDip(/* optional(void) */ IntPtr clientDrawingContext, /* _Out_ */ out float pixelsPerDip);
     }
 }

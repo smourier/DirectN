@@ -32,7 +32,7 @@ namespace DirectN
         
         // ID3D10Buffer
         [PreserveSig]
-        HRESULT Map(/* [annotation] _In_ */ D3D10_MAP MapType, /* [annotation] _In_ */ uint MapFlags, /* [annotation] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppData);
+        HRESULT Map(/* [annotation] _In_ */ D3D10_MAP MapType, /* [annotation] _In_ */ uint MapFlags, /* [annotation] _Out_ */ out IntPtr ppData);
         
         [PreserveSig]
         void Unmap();

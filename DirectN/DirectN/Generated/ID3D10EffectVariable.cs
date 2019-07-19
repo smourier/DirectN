@@ -77,7 +77,7 @@ namespace DirectN
         ID3D10EffectSamplerVariable AsSampler();
         
         [PreserveSig]
-        HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ [MarshalAs(UnmanagedType.IUnknown)] object pData, uint Offset, uint ByteCount);
+        HRESULT SetRawValue(/* THIS_ _In_reads_bytes_(ByteCount) */ IntPtr pData, uint Offset, uint ByteCount);
         
         [PreserveSig]
         HRESULT GetRawValue(/* THIS_ _Out_writes_bytes_(ByteCount) */ IntPtr pData, uint Offset, uint ByteCount);

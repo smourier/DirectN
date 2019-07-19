@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IWMReader
     {
         [PreserveSig]
-        HRESULT Open(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ IWMReaderCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT Open(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ IWMReaderCallback pCallback, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
         HRESULT Close();
@@ -29,7 +29,7 @@ namespace DirectN
         HRESULT GetOutputFormat(/* [in] */ uint dwOutputNumber, /* [in] */ uint dwFormatNumber, /* [out] */ out IWMOutputMediaProps ppProps);
         
         [PreserveSig]
-        HRESULT Start(/* [in] */ ulong cnsStart, /* [in] */ ulong cnsDuration, /* [in] */ float fRate, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT Start(/* [in] */ ulong cnsStart, /* [in] */ ulong cnsDuration, /* [in] */ float fRate, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
         HRESULT Stop();

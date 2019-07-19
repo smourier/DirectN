@@ -12,10 +12,10 @@ namespace DirectN
         HRESULT GetType(/* [annotation][out] _Out_ */ out VARTYPE pVType);
         
         [PreserveSig]
-        HRESULT GetValue(/* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object pvValue, /* [annotation][out][in] _Inout_ */ ref uint pcbValue);
+        HRESULT GetValue(/* [annotation][out] _Out_ */ out IntPtr pvValue, /* [annotation][out][in] _Inout_ */ ref uint pcbValue);
         
         [PreserveSig]
-        HRESULT SetValue(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pvValue, /* [in] */ uint cbValue, /* optional(LPCGUID) */ IntPtr pguidEventContext);
+        HRESULT SetValue(/* [annotation][in] _In_ */ IntPtr pvValue, /* [in] */ uint cbValue, /* optional(LPCGUID) */ IntPtr pguidEventContext);
         
         [PreserveSig]
         HRESULT Get4BRange(/* [annotation][out] _Out_ */ out int plMin, /* [annotation][out] _Out_ */ out int plMax, /* [annotation][out] _Out_ */ out int plStepping);

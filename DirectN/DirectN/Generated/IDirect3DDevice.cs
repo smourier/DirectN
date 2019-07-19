@@ -12,52 +12,52 @@ namespace DirectN
     public partial interface IDirect3DDevice
     {
         [PreserveSig]
-        HRESULT Initialize(IDirect3D __unnamed_0, [MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_1, ref _D3DDeviceDesc __unnamed_2);
+        HRESULT Initialize(IDirect3D unnamed__0, [MarshalAs(UnmanagedType.LPStruct)] Guid unnamed__1, ref _D3DDeviceDesc unnamed__2);
         
         [PreserveSig]
-        HRESULT GetCaps(ref _D3DDeviceDesc __unnamed_0, ref _D3DDeviceDesc __unnamed_1);
+        HRESULT GetCaps(ref _D3DDeviceDesc unnamed__0, ref _D3DDeviceDesc unnamed__1);
         
         [PreserveSig]
-        HRESULT SwapTextureHandles(LPDIRECT3DTEXTURE __unnamed_0, LPDIRECT3DTEXTURE __unnamed_1);
+        HRESULT SwapTextureHandles(LPDIRECT3DTEXTURE unnamed__0, LPDIRECT3DTEXTURE unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateExecuteBuffer(ref _D3DExecuteBufferDesc __unnamed_0, out LPDIRECT3DEXECUTEBUFFER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateExecuteBuffer(ref _D3DExecuteBufferDesc unnamed__0, out LPDIRECT3DEXECUTEBUFFER unnamed__1, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__2);
         
         [PreserveSig]
-        HRESULT GetStats(ref _D3DSTATS __unnamed_0);
+        HRESULT GetStats(ref _D3DSTATS unnamed__0);
         
         [PreserveSig]
-        HRESULT Execute(LPDIRECT3DEXECUTEBUFFER __unnamed_0, LPDIRECT3DVIEWPORT __unnamed_1, uint __unnamed_2);
+        HRESULT Execute(LPDIRECT3DEXECUTEBUFFER unnamed__0, LPDIRECT3DVIEWPORT unnamed__1, uint unnamed__2);
         
         [PreserveSig]
-        HRESULT AddViewport(LPDIRECT3DVIEWPORT __unnamed_0);
+        HRESULT AddViewport(LPDIRECT3DVIEWPORT unnamed__0);
         
         [PreserveSig]
-        HRESULT DeleteViewport(LPDIRECT3DVIEWPORT __unnamed_0);
+        HRESULT DeleteViewport(LPDIRECT3DVIEWPORT unnamed__0);
         
         [PreserveSig]
-        HRESULT NextViewport(LPDIRECT3DVIEWPORT __unnamed_0, out LPDIRECT3DVIEWPORT __unnamed_1, uint __unnamed_2);
+        HRESULT NextViewport(LPDIRECT3DVIEWPORT unnamed__0, out LPDIRECT3DVIEWPORT unnamed__1, uint unnamed__2);
         
         [PreserveSig]
-        HRESULT Pick(LPDIRECT3DEXECUTEBUFFER __unnamed_0, LPDIRECT3DVIEWPORT __unnamed_1, uint __unnamed_2, ref _D3DRECT __unnamed_3);
+        HRESULT Pick(LPDIRECT3DEXECUTEBUFFER unnamed__0, LPDIRECT3DVIEWPORT unnamed__1, uint unnamed__2, ref _D3DRECT unnamed__3);
         
         [PreserveSig]
-        HRESULT GetPickRecords(ref uint __unnamed_0, ref _D3DPICKRECORD __unnamed_1);
+        HRESULT GetPickRecords(ref uint unnamed__0, ref _D3DPICKRECORD unnamed__1);
         
         [PreserveSig]
-        HRESULT EnumTextureFormats(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT EnumTextureFormats(IntPtr unnamed__0, IntPtr unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateMatrix(ref uint __unnamed_0);
+        HRESULT CreateMatrix(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT SetMatrix(uint __unnamed_0, ref LPD3DMATRIX __unnamed_1);
+        HRESULT SetMatrix(uint unnamed__0, ref LPD3DMATRIX unnamed__1);
         
         [PreserveSig]
-        HRESULT GetMatrix(uint __unnamed_0, ref _D3DMATRIX __unnamed_1);
+        HRESULT GetMatrix(uint unnamed__0, ref _D3DMATRIX unnamed__1);
         
         [PreserveSig]
-        HRESULT DeleteMatrix(uint __unnamed_0);
+        HRESULT DeleteMatrix(uint unnamed__0);
         
         [PreserveSig]
         HRESULT BeginScene();
@@ -66,6 +66,6 @@ namespace DirectN
         HRESULT EndScene();
         
         [PreserveSig]
-        HRESULT GetDirect3D(out IDirect3D __unnamed_0);
+        HRESULT GetDirect3D(out IDirect3D unnamed__0);
     }
 }

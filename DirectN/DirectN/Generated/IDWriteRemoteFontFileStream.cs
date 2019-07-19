@@ -13,7 +13,7 @@ namespace DirectN
     {
         // IDWriteFontFileStream
         [PreserveSig]
-        new HRESULT ReadFileFragment(/* _Outptr_result_bytebuffer_(fragmentSize) */ [MarshalAs(UnmanagedType.IUnknown)] out object fragmentStart, ulong fileOffset, ulong fragmentSize, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object fragmentContext);
+        new HRESULT ReadFileFragment(/* _Outptr_result_bytebuffer_(fragmentSize) */ out IntPtr fragmentStart, ulong fileOffset, ulong fragmentSize, /* _Out_ */ out IntPtr fragmentContext);
         
         [PreserveSig]
         new void ReleaseFileFragment([MarshalAs(UnmanagedType.IUnknown)] object fragmentContext);

@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D11_1DDI_VIDEO_PROCESSOR_CUSTOM_RATE
     {
-        public int CustomRate;
+        public DXGI_RATIONAL CustomRate;
         public uint OutputFrames;
         public bool InputInterlaced;
         public uint InputFramesOrFields;

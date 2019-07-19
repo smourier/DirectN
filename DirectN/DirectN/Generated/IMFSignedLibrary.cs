@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFSignedLibrary
     {
         [PreserveSig]
-        HRESULT GetProcedureAddress(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStr)] string name, /* [annotation] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object address);
+        HRESULT GetProcedureAddress(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStr)] string name, /* [annotation] _Outptr_ */ out IntPtr address);
     }
 }

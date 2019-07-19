@@ -4,23 +4,23 @@ namespace DirectN
 {
     public static class IMFSampleExtensions
     {
-        public static long GetSampleDuration(this ComObject<IMFSample> obj) => GetSampleDuration(obj?.Object);
-        public static long GetSampleDuration(this IMFSample obj)
+        public static long GetSampleDuration(this ComObject<IMFSample> input) => GetSampleDuration(input?.Object);
+        public static long GetSampleDuration(this IMFSample input)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
 
-            obj.GetSampleDuration(out var value).ThrowOnError();
+            input.GetSampleDuration(out var value).ThrowOnError();
             return value;
         }
 
-        public static long GetSampleTime(this ComObject<IMFSample> obj) => GetSampleTime(obj?.Object);
-        public static long GetSampleTime(this IMFSample obj)
+        public static long GetSampleTime(this ComObject<IMFSample> input) => GetSampleTime(input?.Object);
+        public static long GetSampleTime(this IMFSample input)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
 
-            obj.GetSampleTime(out var value).ThrowOnError();
+            input.GetSampleTime(out var value).ThrowOnError();
             return value;
         }
     }

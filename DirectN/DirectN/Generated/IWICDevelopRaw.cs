@@ -114,7 +114,7 @@ namespace DirectN
         HRESULT SetToneCurve(/* [in] */ uint cbToneCurveSize, /* [annotation][in] _In_reads_bytes_(cbToneCurveSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICRawToneCurve[] pToneCurve);
         
         [PreserveSig]
-        HRESULT GetToneCurve(/* [in] */ uint cbToneCurveBufferSize, /* [annotation][unique][out] _Out_writes_bytes_to_opt_(cbToneCurveBufferSize, *pcbActualToneCurveBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICRawToneCurve[] pToneCurve, /* [annotation][unique][out] _Inout_opt_ */ ref uint pcbActualToneCurveBufferSize);
+        HRESULT GetToneCurve(/* [in] */ uint cbToneCurveBufferSize, /* [annotation][unique][out] _Out_writes_bytes_to_opt_(cbToneCurveBufferSize, *pcbActualToneCurveBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICRawToneCurve[] pToneCurve, /* optional(UINT) */ IntPtr pcbActualToneCurveBufferSize);
         
         [PreserveSig]
         HRESULT SetRotation(/* [in] */ double Rotation);

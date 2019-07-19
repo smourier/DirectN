@@ -28,7 +28,7 @@ namespace DirectN
         
         // ID3D12Resource
         [PreserveSig]
-        HRESULT Map(uint Subresource, /* optional(D3D12_RANGE) */ IntPtr pReadRange, /* _Outptr_opt_result_bytebuffer_(_Inexpressible_("Dependent on resource")) */ [MarshalAs(UnmanagedType.IUnknown)] out object ppData);
+        HRESULT Map(uint Subresource, /* optional(D3D12_RANGE) */ IntPtr pReadRange, /* optional(void) */ out IntPtr ppData);
         
         [PreserveSig]
         void Unmap(uint Subresource, /* optional(D3D12_RANGE) */ IntPtr pWrittenRange);
@@ -43,7 +43,7 @@ namespace DirectN
         HRESULT WriteToSubresource(uint DstSubresource, /* optional(D3D12_BOX) */ IntPtr pDstBox, /* _In_ */ IntPtr pSrcData, uint SrcRowPitch, uint SrcDepthPitch);
         
         [PreserveSig]
-        HRESULT ReadFromSubresource(/* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, /* optional(D3D12_BOX) */ IntPtr pSrcBox);
+        HRESULT ReadFromSubresource(/* _Out_ */ out IntPtr pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, /* optional(D3D12_BOX) */ IntPtr pSrcBox);
         
         [PreserveSig]
         HRESULT GetHeapProperties(/* _Out_opt_ */ out D3D12_HEAP_PROPERTIES pHeapProperties, /* _Out_opt_ */ out D3D12_HEAP_FLAGS pHeapFlags);

@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint InputSlot;
         public uint AlignedByteOffset;
-        public int Format;
+        public DXGI_FORMAT Format;
         public D3D10_DDI_INPUT_CLASSIFICATION InputSlotClass;
         public uint InstanceDataStepRate;
         public uint InputRegister;

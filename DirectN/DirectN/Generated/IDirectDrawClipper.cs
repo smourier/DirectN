@@ -9,21 +9,21 @@ namespace DirectN
     public partial interface IDirectDrawClipper
     {
         [PreserveSig]
-        HRESULT GetClipList(ref tagRECT __unnamed_0, ref _RGNDATA __unnamed_1, ref uint __unnamed_2);
+        HRESULT GetClipList(ref tagRECT unnamed__0, ref _RGNDATA unnamed__1, ref uint unnamed__2);
         
         [PreserveSig]
-        HRESULT GetHWnd(IntPtr __unnamed_0);
+        HRESULT GetHWnd(IntPtr unnamed__0);
         
         [PreserveSig]
-        HRESULT Initialize(LPDIRECTDRAW __unnamed_0, uint __unnamed_1);
+        HRESULT Initialize(LPDIRECTDRAW unnamed__0, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT IsClipListChanged(ref bool __unnamed_0);
+        HRESULT IsClipListChanged(ref bool unnamed__0);
         
         [PreserveSig]
-        HRESULT SetClipList(ref _RGNDATA __unnamed_0, uint __unnamed_1);
+        HRESULT SetClipList(ref _RGNDATA unnamed__0, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT SetHWnd(uint __unnamed_0, IntPtr __unnamed_1);
+        HRESULT SetHWnd(uint unnamed__0, IntPtr unnamed__1);
     }
 }

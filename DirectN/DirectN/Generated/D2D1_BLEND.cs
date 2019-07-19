@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d2d1effectauthor.h(182,9)
 namespace DirectN
 {
+    /// <summary>
+    /// Describes a particular blend in the D2D1_BLEND_DESCRIPTION structure.
+    /// </summary>
     public enum D2D1_BLEND
     {
         D2D1_BLEND_ZERO = 1,

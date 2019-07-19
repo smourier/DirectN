@@ -62,7 +62,7 @@ namespace DirectN
         HRESULT GetAdapterDisplayModeEx(uint Adapter, ref D3DDISPLAYMODEEX pMode, ref D3DDISPLAYROTATION pRotation);
         
         [PreserveSig]
-        HRESULT CreateDeviceEx(uint Adapter, _D3DDEVTYPE DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, ref D3DDISPLAYMODEEX pFullscreenDisplayMode, out IDirect3DDevice9Ex ppReturnedDeviceInterface);
+        HRESULT CreateDeviceEx(uint Adapter, _D3DDEVTYPE DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, IntPtr pFullscreenDisplayMode, out IDirect3DDevice9Ex ppReturnedDeviceInterface);
         
         [PreserveSig]
         HRESULT GetAdapterLUID(uint Adapter, ref LUID pLUID);

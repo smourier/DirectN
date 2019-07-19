@@ -4,13 +4,13 @@ namespace DirectN
 {
     public static class IMF2DBufferExtensions
     {
-        public static uint GetContiguousLength(this ComObject<IMF2DBuffer> obj) => GetContiguousLength(obj?.Object);
-        public static uint GetContiguousLength(this IMF2DBuffer obj)
+        public static uint GetContiguousLength(this ComObject<IMF2DBuffer> input) => GetContiguousLength(input?.Object);
+        public static uint GetContiguousLength(this IMF2DBuffer input)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
 
-            obj.GetContiguousLength(out var length).ThrowOnError();
+            input.GetContiguousLength(out var length).ThrowOnError();
             return length;
         }
     }

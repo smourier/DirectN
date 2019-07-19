@@ -51,7 +51,7 @@ namespace DirectN
         public static void BeginDraw(this ComObject<ID2D1DeviceContext> device) => BeginDraw(device?.Object);
         public static void BeginDraw(this ID2D1DeviceContext device) => device?.BeginDraw();
         public static void EndDraw(this ComObject<ID2D1DeviceContext> device) => EndDraw(device?.Object);
-        public static void EndDraw(this ID2D1DeviceContext device) => device?.EndDraw(out var tag1, out var tag2).ThrowOnError();
+        public static void EndDraw(this ID2D1DeviceContext device) => device?.EndDraw(out _, out _).ThrowOnError();
         public static void Clear(this ComObject<ID2D1DeviceContext> device) => Clear(device?.Object);
         public static void Clear(this ID2D1DeviceContext device) => device?.Clear(IntPtr.Zero);
 
@@ -80,7 +80,9 @@ namespace DirectN
             if (text == null)
                 return;
 
+#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             device.DrawTextW(text, (uint)text.Length, format, ref rect, brush, options, measuringMode);
+#pragma warning restore CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
         }
 
         public static void DrawBitmap(this ComObject<ID2D1DeviceContext> device,
@@ -111,7 +113,9 @@ namespace DirectN
             {
                 using (var src = sourceRectangle.StructureToMemory())
                 {
+#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
                     device.DrawBitmap(bitmap, drc.Pointer, opacity, interpolationMode, src.Pointer);
+#pragma warning restore CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
                 }
             }
         }

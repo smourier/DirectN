@@ -1,6 +1,9 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d2d1effectauthor.h(206,9)
 namespace DirectN
 {
+    /// <summary>
+    /// Allows a caller to control the channel depth of a stage in the rendering pipeline.
+    /// </summary>
     public enum D2D1_CHANNEL_DEPTH
     {
         D2D1_CHANNEL_DEPTH_DEFAULT = 0,

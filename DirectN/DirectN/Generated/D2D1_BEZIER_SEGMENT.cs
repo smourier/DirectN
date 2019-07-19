@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Describes a cubic bezier in a path.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_BEZIER_SEGMENT
     {

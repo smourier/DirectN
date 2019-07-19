@@ -10,6 +10,6 @@ namespace DirectN
         public bool Enable;
         public uint Width;
         public uint Height;
-        public int Format;
+        public DXGI_FORMAT Format;
     }
 }

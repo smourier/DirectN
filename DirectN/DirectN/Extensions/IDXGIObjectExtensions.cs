@@ -4,51 +4,51 @@ namespace DirectN
 {
     public static class IDXGIObjectExtensions
     {
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIObject> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDeviceSubObject> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter1> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter2> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter3> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter4> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice1> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice2> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice3> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice4> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory1> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory2> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory3> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory4> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory5> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput1> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput2> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput3> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput4> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput5> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput6> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain1> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain2> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain3> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain4> obj) => GetParent<T>(obj?.Object);
-        public static ComObject<T> GetParent<T>(this IDXGIObject obj)
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIObject> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDeviceSubObject> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter1> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter2> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter3> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIAdapter4> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice1> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice2> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice3> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIDevice4> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory1> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory2> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory3> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory4> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIFactory5> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput1> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput2> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput3> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput4> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput5> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGIOutput6> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain1> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain2> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain3> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this ComObject<IDXGISwapChain4> input) => GetParent<T>(input?.Object);
+        public static ComObject<T> GetParent<T>(this IDXGIObject input)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
 
-            obj.GetParent(typeof(T).GUID, out object parent);
+            input.GetParent(typeof(T).GUID, out var parent).ThrowOnError();
             return new ComObject<T>((T)parent);
         }
 
-        public static ComObject GetParent(this IDXGIObject obj, Guid riid)
+        public static ComObject GetParent(this IDXGIObject input, Guid riid)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
 
-            obj.GetParent(riid, out object parent);
+            input.GetParent(riid, out var parent).ThrowOnError();
             return new ComObject(parent);
         }
     }

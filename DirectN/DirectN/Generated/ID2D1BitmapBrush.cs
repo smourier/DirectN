@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// A bitmap brush allows a bitmap to be used to fill a geometry.
+    /// </summary>
     [Guid("2cd906aa-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1BitmapBrush : ID2D1Brush
     {

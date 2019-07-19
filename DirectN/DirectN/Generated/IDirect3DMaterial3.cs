@@ -8,12 +8,12 @@ namespace DirectN
     public partial interface IDirect3DMaterial3
     {
         [PreserveSig]
-        HRESULT SetMaterial(ref _D3DMATERIAL __unnamed_0);
+        HRESULT SetMaterial(ref _D3DMATERIAL unnamed__0);
         
         [PreserveSig]
-        HRESULT GetMaterial(ref _D3DMATERIAL __unnamed_0);
+        HRESULT GetMaterial(ref _D3DMATERIAL unnamed__0);
         
         [PreserveSig]
-        HRESULT GetHandle(IDirect3DDevice3 __unnamed_0, ref uint __unnamed_1);
+        HRESULT GetHandle(IDirect3DDevice3 unnamed__0, ref uint unnamed__1);
     }
 }

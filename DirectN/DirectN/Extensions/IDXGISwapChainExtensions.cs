@@ -4,13 +4,13 @@ namespace DirectN
 {
     public static class IDXGISwapChainExtensions
     {
-        public static DXGI_SWAP_CHAIN_DESC1 GetDesc1(this ComObject<IDXGISwapChain1> obj) => GetDesc1(obj?.Object);
-        public static DXGI_SWAP_CHAIN_DESC1 GetDesc1(this IDXGISwapChain1 obj)
+        public static DXGI_SWAP_CHAIN_DESC1 GetDesc1(this ComObject<IDXGISwapChain1> input) => GetDesc1(input?.Object);
+        public static DXGI_SWAP_CHAIN_DESC1 GetDesc1(this IDXGISwapChain1 input)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
 
-            obj.GetDesc1(out var value);
+            input.GetDesc1(out var value).ThrowOnError();
             return value;
         }
 

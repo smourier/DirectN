@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Contains the control point and end point for a quadratic Bezier segment.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_QUADRATIC_BEZIER_SEGMENT
     {

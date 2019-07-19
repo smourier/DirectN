@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _KSAUDIOMODULE_PROPERTY
     {
-        public KSIDENTIFIER Property;
+        public int Property;
         public Guid ClassId;
         public uint InstanceId;
     }

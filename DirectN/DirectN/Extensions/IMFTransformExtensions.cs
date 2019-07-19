@@ -6,25 +6,25 @@ namespace DirectN
 {
     public static class IMFTransformExtensions
     {
-        public static bool IsBuiltinEncoder(this ComObject<IMFTransform> obj) => IsBuiltinEncoder(obj?.Object);
-        public static bool IsBuiltinEncoder(this IMFTransform obj) => obj is IMFObjectInformation;
+        public static bool IsBuiltinEncoder(this ComObject<IMFTransform> input) => IsBuiltinEncoder(input?.Object);
+        public static bool IsBuiltinEncoder(this IMFTransform input) => input is IMFObjectInformation;
 
-        public static ComObject<IMFAttributes> GetAttributes(this ComObject<IMFTransform> obj) => GetAttributes(obj?.Object);
-        public static ComObject<IMFAttributes> GetAttributes(this IMFTransform obj)
+        public static ComObject<IMFAttributes> GetAttributes(this ComObject<IMFTransform> input) => GetAttributes(input?.Object);
+        public static ComObject<IMFAttributes> GetAttributes(this IMFTransform input)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
 
-            if (obj.GetAttributes(out var atts).IsError)
+            if (input.GetAttributes(out var atts).IsError)
                 return null;
 
             return new ComObject<IMFAttributes>(atts);
         }
 
-        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> EnumerateAttributes(this ComObject<IMFTransform> obj) => EnumerateAttributes(obj?.Object);
-        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> EnumerateAttributes(this IMFTransform obj)
+        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> EnumerateAttributes(this ComObject<IMFTransform> input) => EnumerateAttributes(input?.Object);
+        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> EnumerateAttributes(this IMFTransform input)
         {
-            if (obj == null || obj.GetAttributes(out var atts).IsError)
+            if (input == null || input.GetAttributes(out var atts).IsError)
                 return Enumerable.Empty<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>>();
 
             return atts.Enumerate();

@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Allows the drawing state to be atomically created. This also specifies the drawing state that is saved into an IDrawingStateBlock object.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_DRAWING_STATE_DESCRIPTION
     {

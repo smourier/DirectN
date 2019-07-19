@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Interface encapsulating a GDI/GDI+ metafile.
+    /// </summary>
     [Guid("2e69f9e8-dd3f-4bf9-95ba-c04f49d788df"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1GdiMetafile1 : ID2D1GdiMetafile
     {

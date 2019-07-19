@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ksmedia.h(7389,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\ddraw.h(752,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -12,6 +12,7 @@ namespace DirectN
         public byte[] __bits;
         public uint dwRGBAlphaBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
         public uint dwYUVAlphaBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public uint dwLuminanceAlphaBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
         public uint dwRGBZBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
         public uint dwYUVZBitMask { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
     }

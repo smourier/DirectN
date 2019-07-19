@@ -8,8 +8,8 @@ namespace DirectN
     public partial struct D3D12DDI_RAYTRACING_GEOMETRY_TRIANGLES_DESC_0054
     {
         public ulong ColumnMajorTransform3x4;
-        public int IndexFormat;
-        public int VertexFormat;
+        public DXGI_FORMAT IndexFormat;
+        public DXGI_FORMAT VertexFormat;
         public uint IndexCount;
         public uint VertexCount;
         public ulong IndexBuffer;

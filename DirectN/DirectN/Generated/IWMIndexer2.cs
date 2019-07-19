@@ -9,13 +9,13 @@ namespace DirectN
     {
         // IWMIndexer
         [PreserveSig]
-        new HRESULT StartIndexing(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ IWMStatusCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        new HRESULT StartIndexing(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* [in] */ IWMStatusCallback pCallback, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
         new HRESULT Cancel();
         
         // IWMIndexer2
         [PreserveSig]
-        HRESULT Configure(/* [in] */ ushort wStreamNum, /* [in] */ tagWMT_INDEXER_TYPE nIndexerType, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvInterval, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvIndexType);
+        HRESULT Configure(/* [in] */ ushort wStreamNum, /* [in] */ tagWMT_INDEXER_TYPE nIndexerType, /* [in] */ IntPtr pvInterval, /* [in] */ IntPtr pvIndexType);
     }
 }

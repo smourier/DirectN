@@ -9,6 +9,6 @@ namespace DirectN
     {
         public ulong BufferLocation;
         public uint SizeInBytes;
-        public int Format;
+        public DXGI_FORMAT Format;
     }
 }

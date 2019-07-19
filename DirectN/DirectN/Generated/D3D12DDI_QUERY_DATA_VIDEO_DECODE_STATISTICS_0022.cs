@@ -9,7 +9,7 @@ namespace DirectN
     {
         public ulong Status;
         public ulong NumMacroblocksAffected;
-        public int FrameRate;
+        public DXGI_RATIONAL FrameRate;
         public uint BitRate;
     }
 }

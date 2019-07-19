@@ -32,7 +32,7 @@ namespace DirectN
             if (!(debug is IDXGIDebug dbg))
                 return;
 
-            dbg.ReportLiveObjects(apiid, flags);
+            dbg.ReportLiveObjects(apiid, flags).ThrowOnError();
             Marshal.ReleaseComObject(debug);
         }
 

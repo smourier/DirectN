@@ -12,8 +12,7 @@ namespace DirectN
             if (adapter == null)
                 throw new ArgumentNullException(nameof(adapter));
 
-            var desc = new DXGI_ADAPTER_DESC();
-            adapter.GetDesc(out desc).ThrowOnError();
+            adapter.GetDesc(out var desc).ThrowOnError();
             return desc;
         }
 
@@ -23,8 +22,7 @@ namespace DirectN
             if (adapter == null)
                 throw new ArgumentNullException(nameof(adapter));
 
-            var desc = new DXGI_ADAPTER_DESC1();
-            adapter.GetDesc1(out desc).ThrowOnError();
+            adapter.GetDesc1(out var desc).ThrowOnError();
             return desc;
         }
 

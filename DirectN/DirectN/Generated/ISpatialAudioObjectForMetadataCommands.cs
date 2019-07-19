@@ -22,6 +22,6 @@ namespace DirectN
         
         // ISpatialAudioObjectForMetadataCommands
         [PreserveSig]
-        HRESULT WriteNextMetadataCommand(/* [annotation][in] _In_ */ byte commandID, /* [annotation][size_is][in] _In_reads_bytes_opt_(valueBufferLength) */ [MarshalAs(UnmanagedType.IUnknown)] object valueBuffer, /* [annotation][in] _In_ */ uint valueBufferLength);
+        HRESULT WriteNextMetadataCommand(/* [annotation][in] _In_ */ byte commandID, /* optional(void) */ IntPtr valueBuffer, /* [annotation][in] _In_ */ uint valueBufferLength);
     }
 }

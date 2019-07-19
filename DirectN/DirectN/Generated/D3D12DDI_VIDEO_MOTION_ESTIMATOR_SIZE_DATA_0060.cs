@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct D3D12DDI_VIDEO_MOTION_ESTIMATOR_SIZE_DATA_0060
     {
         public uint NodeMask;
-        public int InputFormat;
+        public DXGI_FORMAT InputFormat;
         public D3D12DDI_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_0053 BlockSize;
         public D3D12DDI_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_0053 Precision;
         public D3D12DDI_VIDEO_SIZE_RANGE_0032 SizeRange;

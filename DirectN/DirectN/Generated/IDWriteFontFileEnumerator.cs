@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The font file enumerator interface encapsulates a collection of font files. The font system uses this interface to enumerate font files when building a font collection.
+    /// </summary>
     [Guid("72755049-5ff7-435d-8348-4be97cfa6c7c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFileEnumerator
     {

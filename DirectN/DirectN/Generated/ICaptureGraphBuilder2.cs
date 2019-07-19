@@ -18,7 +18,7 @@ namespace DirectN
         HRESULT SetOutputFileName(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string lpstrFile, /* [annotation][out] _Outptr_ */ out IBaseFilter ppf, /* [annotation][out] _Outptr_opt_ */ out IFileSinkFilter ppSink);
         
         [PreserveSig]
-        HRESULT FindInterface(/* optional(GUID) */ IntPtr pCategory, /* optional(GUID) */ IntPtr pType, /* [in] */ IBaseFilter pf, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppint);
+        HRESULT FindInterface(/* optional(GUID) */ IntPtr pCategory, /* optional(GUID) */ IntPtr pType, /* [in] */ IBaseFilter pf, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ out IntPtr ppint);
         
         [PreserveSig]
         HRESULT RenderStream(/* optional(GUID) */ IntPtr pCategory, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pType, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pSource, /* [in] */ IBaseFilter pfCompressor, /* [in] */ IBaseFilter pfRenderer);

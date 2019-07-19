@@ -77,6 +77,6 @@ namespace DirectN
         HRESULT CheckFeatureSupport(D3D11_FEATURE_VIDEO Feature, /* [annotation] _Out_writes_bytes_(FeatureSupportDataSize) */ IntPtr pFeatureSupportData, uint FeatureSupportDataSize);
         
         [PreserveSig]
-        HRESULT NegotiateCryptoSessionKeyExchangeMT(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, /* [annotation] _In_ */ uint DataSize, /* [annotation] _Inout_updates_bytes_(DataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        HRESULT NegotiateCryptoSessionKeyExchangeMT(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS flags, /* [annotation] _In_ */ uint DataSize, /* [annotation] _Inout_updates_bytes_(DataSize) */ IntPtr pData);
     }
 }

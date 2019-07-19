@@ -13,8 +13,8 @@ namespace DirectN
         public uint Height;
         public ushort DepthOrArraySize;
         public ushort MipLevels;
-        public int Format;
-        public int SampleDesc;
+        public DXGI_FORMAT Format;
+        public DXGI_SAMPLE_DESC SampleDesc;
         public D3D12DDI_TEXTURE_LAYOUT Layout;
         public D3D12DDI_RESOURCE_FLAGS_0003 Flags;
         public D3D12DDI_RESOURCE_STATES InitialResourceState;

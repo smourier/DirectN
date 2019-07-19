@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents an SVG viewBox.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_SVG_VIEWBOX
     {

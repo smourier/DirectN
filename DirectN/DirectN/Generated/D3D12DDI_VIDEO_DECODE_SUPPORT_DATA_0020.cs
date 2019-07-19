@@ -11,8 +11,8 @@ namespace DirectN
         public D3D12DDI_VIDEO_DECODE_CONFIGURATION_0020 Configuration;
         public uint Width;
         public uint Height;
-        public int DecodeFormat;
-        public int FrameRate;
+        public DXGI_FORMAT DecodeFormat;
+        public DXGI_RATIONAL FrameRate;
         public uint BitRate;
         public D3D12DDI_VIDEO_DECODE_SUPPORT_FLAGS_0020 SupportFlags;
         public D3D12DDI_VIDEO_DECODE_CONFIGURATION_FLAGS_0020 ConfigurationFlags;

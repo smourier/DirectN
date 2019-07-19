@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IWMReaderPlaylistBurn
     {
         [PreserveSig]
-        HRESULT InitPlaylistBurn(/* [in] */ uint cFiles, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string ppwszFilenames, /* [in] */ IWMStatusCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT InitPlaylistBurn(/* [in] */ uint cFiles, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string ppwszFilenames, /* [in] */ IWMStatusCallback pCallback, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
         HRESULT GetInitResults(/* [in] */ uint cFiles, /* [out] */ out HRESULT phrStati);

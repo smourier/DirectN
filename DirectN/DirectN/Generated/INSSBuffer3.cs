@@ -32,9 +32,9 @@ namespace DirectN
         
         // INSSBuffer3
         [PreserveSig]
-        HRESULT SetProperty(/* [in] */ Guid guidBufferProperty, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvBufferProperty, /* [in] */ uint dwBufferPropertySize);
+        HRESULT SetProperty(/* [in] */ Guid guidBufferProperty, /* [in] */ IntPtr pvBufferProperty, /* [in] */ uint dwBufferPropertySize);
         
         [PreserveSig]
-        HRESULT GetProperty(/* [in] */ Guid guidBufferProperty, /* [out] */ [MarshalAs(UnmanagedType.IUnknown)] out object pvBufferProperty, /* [out][in] */ ref uint pdwBufferPropertySize);
+        HRESULT GetProperty(/* [in] */ Guid guidBufferProperty, /* [out] */ out IntPtr pvBufferProperty, /* [out][in] */ ref uint pdwBufferPropertySize);
     }
 }

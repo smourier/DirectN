@@ -10,45 +10,45 @@ namespace DirectN
     public partial interface IDirectDrawVideoPort
     {
         [PreserveSig]
-        HRESULT Flip(int LPDIRECTDRAWSURFACE, uint __unnamed_1);
+        HRESULT Flip(int LPDIRECTDRAWSURFACE, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT GetBandwidthInfo(int LPDDPIXELFORMAT, uint __unnamed_1, uint __unnamed_2, uint __unnamed_3, ref LPDDVIDEOPORTBANDWIDTH __unnamed_4);
+        HRESULT GetBandwidthInfo(int LPDDPIXELFORMAT, uint unnamed__1, uint unnamed__2, uint unnamed__3, ref LPDDVIDEOPORTBANDWIDTH unnamed__4);
         
         [PreserveSig]
-        HRESULT GetColorControls(int __unnamed_0);
+        HRESULT GetColorControls(int unnamed__0);
         
         [PreserveSig]
-        HRESULT GetInputFormats(ref uint lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ int LPDDPIXELFORMAT, uint __unnamed_2);
+        HRESULT GetInputFormats(ref uint lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ int LPDDPIXELFORMAT, uint unnamed__2);
         
         [PreserveSig]
-        HRESULT GetOutputFormats(int LPDDPIXELFORMAT, ref uint lpNumFormats, int __unnamed_2, uint __unnamed_3);
+        HRESULT GetOutputFormats(int LPDDPIXELFORMAT, ref uint lpNumFormats, int unnamed__2, uint unnamed__3);
         
         [PreserveSig]
-        HRESULT GetFieldPolarity(ref bool __unnamed_0);
+        HRESULT GetFieldPolarity(ref bool unnamed__0);
         
         [PreserveSig]
-        HRESULT GetVideoLine(ref uint __unnamed_0);
+        HRESULT GetVideoLine(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT GetVideoSignalStatus(ref uint __unnamed_0);
+        HRESULT GetVideoSignalStatus(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT SetColorControls(int __unnamed_0);
+        HRESULT SetColorControls(int unnamed__0);
         
         [PreserveSig]
-        HRESULT SetTargetSurface(int LPDIRECTDRAWSURFACE, uint __unnamed_1);
+        HRESULT SetTargetSurface(int LPDIRECTDRAWSURFACE, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT StartVideo(ref LPDDVIDEOPORTINFO __unnamed_0);
+        HRESULT StartVideo(ref LPDDVIDEOPORTINFO unnamed__0);
         
         [PreserveSig]
         HRESULT StopVideo();
         
         [PreserveSig]
-        HRESULT UpdateVideo(ref LPDDVIDEOPORTINFO __unnamed_0);
+        HRESULT UpdateVideo(ref LPDDVIDEOPORTINFO unnamed__0);
         
         [PreserveSig]
-        HRESULT WaitForSync(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2);
+        HRESULT WaitForSync(uint unnamed__0, uint unnamed__1, uint unnamed__2);
     }
 }

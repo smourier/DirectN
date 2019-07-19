@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// The implementation of the actual graph.
+    /// </summary>
     [Guid("13d29038-c3e6-4034-9081-13b53a417992"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1TransformGraph
     {

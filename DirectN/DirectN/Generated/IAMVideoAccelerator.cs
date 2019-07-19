@@ -29,7 +29,7 @@ namespace DirectN
         HRESULT EndFrame(/* [in] */ ref _tag_AMVAEndFrameInfo pEndFrameInfo);
         
         [PreserveSig]
-        HRESULT GetBuffer(/* [in] */ uint dwTypeIndex, /* [in] */ uint dwBufferIndex, /* [in] */ bool bReadOnly, /* [annotation][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppBuffer, /* [annotation][out] _Out_ */ out int lpStride);
+        HRESULT GetBuffer(/* [in] */ uint dwTypeIndex, /* [in] */ uint dwBufferIndex, /* [in] */ bool bReadOnly, /* [annotation][out] _Out_ */ out IntPtr ppBuffer, /* [annotation][out] _Out_ */ out int lpStride);
         
         [PreserveSig]
         HRESULT ReleaseBuffer(/* [in] */ uint dwTypeIndex, /* [in] */ uint dwBufferIndex);

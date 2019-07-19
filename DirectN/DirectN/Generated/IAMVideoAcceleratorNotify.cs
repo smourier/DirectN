@@ -14,6 +14,6 @@ namespace DirectN
         HRESULT SetUncompSurfacesInfo(/* [in] */ uint dwActualUncompSurfacesAllocated);
         
         [PreserveSig]
-        HRESULT GetCreateVideoAcceleratorData(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out] _Out_ */ out uint pdwSizeMiscData, /* [annotation][out] _Outptr_result_bytebuffer_(*pdwSizeMiscData) */ [MarshalAs(UnmanagedType.IUnknown)] out object ppMiscData);
+        HRESULT GetCreateVideoAcceleratorData(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out] _Out_ */ out uint pdwSizeMiscData, /* [annotation][out] _Outptr_result_bytebuffer_(*pdwSizeMiscData) */ out IntPtr ppMiscData);
     }
 }

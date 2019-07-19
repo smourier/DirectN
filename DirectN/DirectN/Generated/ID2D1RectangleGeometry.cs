@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Describes a two-dimensional rectangle.
+    /// </summary>
     [Guid("2cd906a2-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1RectangleGeometry : ID2D1Geometry
     {

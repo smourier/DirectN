@@ -91,6 +91,6 @@ namespace DirectN
         
         // IDXGIFactory5
         [PreserveSig]
-        HRESULT CheckFeatureSupport(DXGI_FEATURE Feature, /* [annotation] _Inout_updates_bytes_(FeatureSupportDataSize) */ [MarshalAs(UnmanagedType.IUnknown)] object pFeatureSupportData, uint FeatureSupportDataSize);
+        HRESULT CheckFeatureSupport(DXGI_FEATURE Feature, /* [annotation] _Inout_updates_bytes_(FeatureSupportDataSize) */ IntPtr pFeatureSupportData, uint FeatureSupportDataSize);
     }
 }

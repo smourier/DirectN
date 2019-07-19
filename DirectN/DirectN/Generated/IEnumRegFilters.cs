@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IEnumRegFilters
     {
         [PreserveSig]
-        HRESULT Next(/* [in] */ uint cFilters, /* [annotation][out] _Out_writes_to_(cFilters, *pcFetched) */ out IntPtr apRegFilter, /* [annotation][out] _Inout_opt_ */ ref uint pcFetched);
+        HRESULT Next(/* [in] */ uint cFilters, /* [annotation][out] _Out_writes_to_(cFilters, *pcFetched) */ out IntPtr apRegFilter, /* optional(ULONG) */ IntPtr pcFetched);
         
         [PreserveSig]
         HRESULT Skip(/* [in] */ uint cFilters);

@@ -7,10 +7,10 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DDDIARG_SETMATERIAL
     {
-        public _D3DCOLORVALUE Diffuse;
-        public _D3DCOLORVALUE Ambient;
-        public _D3DCOLORVALUE Specular;
-        public _D3DCOLORVALUE Emissive;
+        public int Diffuse;
+        public int Ambient;
+        public int Specular;
+        public int Emissive;
         public float Power;
     }
 }

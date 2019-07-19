@@ -11,21 +11,21 @@ namespace DirectN
     public partial interface IDirect3D
     {
         [PreserveSig]
-        HRESULT Initialize([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0);
+        HRESULT Initialize([MarshalAs(UnmanagedType.LPStruct)] Guid unnamed__0);
         
         [PreserveSig]
-        HRESULT EnumDevices(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT EnumDevices(IntPtr unnamed__0, IntPtr unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateLight(out LPDIRECT3DLIGHT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateLight(out LPDIRECT3DLIGHT unnamed__0, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateMaterial(out LPDIRECT3DMATERIAL __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateMaterial(out LPDIRECT3DMATERIAL unnamed__0, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateViewport(out LPDIRECT3DVIEWPORT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateViewport(out LPDIRECT3DVIEWPORT unnamed__0, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__1);
         
         [PreserveSig]
-        HRESULT FindDevice(ref _D3DFINDDEVICESEARCH __unnamed_0, ref _D3DFINDDEVICERESULT __unnamed_1);
+        HRESULT FindDevice(ref _D3DFINDDEVICESEARCH unnamed__0, ref _D3DFINDDEVICERESULT unnamed__1);
     }
 }

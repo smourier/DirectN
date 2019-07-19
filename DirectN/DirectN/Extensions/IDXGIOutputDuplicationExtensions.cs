@@ -10,8 +10,9 @@ namespace DirectN
             if (duplication == null)
                 throw new ArgumentNullException(nameof(duplication));
 
-            var desc = new DXGI_OUTDUPL_DESC();
-            duplication.GetDesc(out desc);
+#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
+            duplication.GetDesc(out var desc);
+#pragma warning restore CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             return desc;
         }
     }

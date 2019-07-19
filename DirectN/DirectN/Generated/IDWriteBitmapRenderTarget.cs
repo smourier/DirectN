@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Encapsulates a 32-bit device independent bitmap and device context, which can be used for rendering glyphs.
+    /// </summary>
     [Guid("5e5a32a3-8dff-4773-9ff6-0696eab77267"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteBitmapRenderTarget
     {

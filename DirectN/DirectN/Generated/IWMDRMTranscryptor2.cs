@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IWMDRMTranscryptor
         [PreserveSig]
-        new HRESULT Initialize(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrFileName, /* [size_is][in] */ [MarshalAs(UnmanagedType.LPArray)] byte[] pbLicenseRequestMsg, /* [in] */ uint cbLicenseRequestMsg, /* [out] */ out INSSBuffer ppLicenseResponseMsg, /* [in] */ IWMStatusCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        new HRESULT Initialize(/* [in] */ [MarshalAs(UnmanagedType.BStr)] string bstrFileName, /* [size_is][in] */ [MarshalAs(UnmanagedType.LPArray)] byte[] pbLicenseRequestMsg, /* [in] */ uint cbLicenseRequestMsg, /* [out] */ out INSSBuffer ppLicenseResponseMsg, /* [in] */ IWMStatusCallback pCallback, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
         new HRESULT Seek(/* [in] */ ulong hnsTime);

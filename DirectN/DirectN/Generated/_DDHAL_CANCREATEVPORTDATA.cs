@@ -7,6 +7,9 @@ using LPDDVIDEOPORTDESC = DirectN._DDVIDEOPORTDESC;
 
 namespace DirectN
 {
+    /// <summary>
+    /// **************************************************************************
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDHAL_CANCREATEVPORTDATA
     {

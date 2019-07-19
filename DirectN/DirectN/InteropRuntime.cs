@@ -6,17 +6,18 @@ namespace System.Runtime.InteropServices
     {
         public static Encoding StringEncoding { get; set; }
 
-        private static readonly byte[] _mask;
+        private static readonly byte[] _mask = BuildMask();
 
-        static InteropRuntime()
+        private static byte[] BuildMask()
         {
-            _mask = new byte[8];
-            var mask = 1;
+            var mask = new byte[8];
+            var m = 1;
             for (int i = 0; i < 8; i++)
             {
-                _mask[i] = (byte)mask;
-                mask *= 2;
+                mask[i] = (byte)m;
+                m *= 2;
             }
+            return mask;
         }
 
         // "The ordering of data declared as bit fields is from low to high bit"
@@ -26,6 +27,9 @@ namespace System.Runtime.InteropServices
         public static sbyte GetSByte(byte[] bytes, int offset, int count) => (sbyte)GetByte(bytes, offset, count);
         public static byte GetByte(byte[] bytes, int offset, int count)
         {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
             byte b = 0;
             for (int i = 0; i < count; i++)
             {
@@ -42,6 +46,9 @@ namespace System.Runtime.InteropServices
         public static short GetInt16(byte[] bytes, int offset, int count) => (short)GetUInt16(bytes, offset, count);
         public static ushort GetUInt16(byte[] bytes, int offset, int count)
         {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
             ushort ui = 0;
             for (int i = 0; i < count; i++)
             {
@@ -58,6 +65,9 @@ namespace System.Runtime.InteropServices
         public static int GetInt32(byte[] bytes, int offset, int count) => (int)GetUInt32(bytes, offset, count);
         public static uint GetUInt32(byte[] bytes, int offset, int count)
         {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
             uint ui = 0;
             for (int i = 0; i < count; i++)
             {
@@ -73,6 +83,9 @@ namespace System.Runtime.InteropServices
         public static long GetInt64(byte[] bytes, int offset, int count) => (long)GetUInt64(bytes, offset, count);
         public static ulong GetUInt64(byte[] bytes, int offset, int count)
         {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
             ulong ul = 0;
             for (int i = 0; i < count; i++)
             {
@@ -102,6 +115,9 @@ namespace System.Runtime.InteropServices
 
         public static byte[] GetByteArray(byte[] bytes, int offset, int count)
         {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
             var size = count / 8;
             if ((count % 8) != 0)
             {
@@ -133,7 +149,7 @@ namespace System.Runtime.InteropServices
         {
             CheckByteAlignement(offset, count);
             if (!typeof(T).IsValueType)
-                throw new ArgumentException(null, nameof(T));
+                throw new InvalidOperationException();
 
             var elementSize = Marshal.SizeOf<T>();
             var arrayLength = count / 8 / elementSize;
@@ -146,7 +162,10 @@ namespace System.Runtime.InteropServices
         public static T Get<T>(byte[] bytes, int offset, int count)
         {
             if (!typeof(T).IsValueType)
-                throw new ArgumentException(null, nameof(T));
+                throw new InvalidOperationException();
+
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
 
             var size = Marshal.SizeOf<T>();
             var buffer = new byte[size];
@@ -207,11 +226,8 @@ namespace System.Runtime.InteropServices
             if (value == null || value.Length == 0)
                 return;
 
-            var size = count / 8;
-            if ((count % 8) != 0)
-            {
-                size++;
-            }
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
 
             for (int i = 0; i < count; i++)
             {
@@ -231,20 +247,20 @@ namespace System.Runtime.InteropServices
 
             CheckByteAlignement(offset, count);
             if (!typeof(T).IsValueType)
-                throw new ArgumentException(null, nameof(T));
+                throw new InvalidOperationException();
 
             var valuePtr = Marshal.UnsafeAddrOfPinnedArrayElement(value, 0);
             Marshal.Copy(valuePtr, bytes, offset / 8, count / 8);
         }
 
-        public static void Set<T>(T obj, byte[] bytes, int offset, int count)
+        public static void Set<T>(T input, byte[] bytes, int offset, int count)
         {
             if (!typeof(T).IsValueType)
-                throw new ArgumentException(null, nameof(T));
+                throw new InvalidOperationException();
 
             var buffer = new byte[Marshal.SizeOf<T>()];
             var ptr = Marshal.AllocCoTaskMem(buffer.Length);
-            Marshal.StructureToPtr(obj, ptr, false);
+            Marshal.StructureToPtr(input, ptr, false);
             Marshal.Copy(ptr, buffer, 0, buffer.Length);
             Marshal.FreeCoTaskMem(ptr);
             SetByteArray(buffer, bytes, offset, count);

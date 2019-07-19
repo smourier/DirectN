@@ -15,63 +15,63 @@ namespace DirectN
         HRESULT Compact();
         
         [PreserveSig]
-        HRESULT CreateClipper(uint __unnamed_0, out LPDIRECTDRAWCLIPPER __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateClipper(uint unnamed__0, out LPDIRECTDRAWCLIPPER unnamed__1, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__2);
         
         [PreserveSig]
-        HRESULT CreatePalette(uint __unnamed_0, ref tagPALETTEENTRY __unnamed_1, out LPDIRECTDRAWPALETTE __unnamed_2, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_3);
+        HRESULT CreatePalette(uint unnamed__0, ref tagPALETTEENTRY unnamed__1, out LPDIRECTDRAWPALETTE unnamed__2, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__3);
         
         [PreserveSig]
-        HRESULT CreateSurface(ref LPDDSURFACEDESC __unnamed_0, out LPDIRECTDRAWSURFACE __unnamed_1, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_2);
+        HRESULT CreateSurface(ref LPDDSURFACEDESC unnamed__0, out LPDIRECTDRAWSURFACE unnamed__1, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__2);
         
         [PreserveSig]
-        HRESULT DuplicateSurface(LPDIRECTDRAWSURFACE __unnamed_0, out LPDIRECTDRAWSURFACE __unnamed_1);
+        HRESULT DuplicateSurface(LPDIRECTDRAWSURFACE unnamed__0, out LPDIRECTDRAWSURFACE unnamed__1);
         
         [PreserveSig]
-        HRESULT EnumDisplayModes(uint __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, IntPtr __unnamed_2, IntPtr __unnamed_3);
+        HRESULT EnumDisplayModes(uint unnamed__0, ref LPDDSURFACEDESC unnamed__1, IntPtr unnamed__2, IntPtr unnamed__3);
         
         [PreserveSig]
-        HRESULT EnumSurfaces(uint __unnamed_0, ref LPDDSURFACEDESC __unnamed_1, IntPtr __unnamed_2, IntPtr __unnamed_3);
+        HRESULT EnumSurfaces(uint unnamed__0, ref LPDDSURFACEDESC unnamed__1, IntPtr unnamed__2, IntPtr unnamed__3);
         
         [PreserveSig]
         HRESULT FlipToGDISurface();
         
         [PreserveSig]
-        HRESULT GetCaps(ref _DDCAPS_DX7 __unnamed_0, ref _DDCAPS_DX7 __unnamed_1);
+        HRESULT GetCaps(ref _DDCAPS_DX7 unnamed__0, ref _DDCAPS_DX7 unnamed__1);
         
         [PreserveSig]
-        HRESULT GetDisplayMode(ref LPDDSURFACEDESC __unnamed_0);
+        HRESULT GetDisplayMode(ref LPDDSURFACEDESC unnamed__0);
         
         [PreserveSig]
-        HRESULT GetFourCCCodes(ref uint __unnamed_0, ref uint __unnamed_1);
+        HRESULT GetFourCCCodes(ref uint unnamed__0, ref uint unnamed__1);
         
         [PreserveSig]
-        HRESULT GetGDISurface(out LPDIRECTDRAWSURFACE __unnamed_0);
+        HRESULT GetGDISurface(out LPDIRECTDRAWSURFACE unnamed__0);
         
         [PreserveSig]
-        HRESULT GetMonitorFrequency(ref uint __unnamed_0);
+        HRESULT GetMonitorFrequency(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT GetScanLine(ref uint __unnamed_0);
+        HRESULT GetScanLine(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT GetVerticalBlankStatus(ref bool __unnamed_0);
+        HRESULT GetVerticalBlankStatus(ref bool unnamed__0);
         
         [PreserveSig]
-        HRESULT Initialize([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0);
+        HRESULT Initialize([MarshalAs(UnmanagedType.LPStruct)] Guid unnamed__0);
         
         [PreserveSig]
         HRESULT RestoreDisplayMode();
         
         [PreserveSig]
-        HRESULT SetCooperativeLevel(IntPtr __unnamed_0, uint __unnamed_1);
+        HRESULT SetCooperativeLevel(IntPtr unnamed__0, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT SetDisplayMode(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, uint __unnamed_3, uint __unnamed_4);
+        HRESULT SetDisplayMode(uint unnamed__0, uint unnamed__1, uint unnamed__2, uint unnamed__3, uint unnamed__4);
         
         [PreserveSig]
-        HRESULT WaitForVerticalBlank(uint __unnamed_0, IntPtr __unnamed_1);
+        HRESULT WaitForVerticalBlank(uint unnamed__0, IntPtr unnamed__1);
         
         [PreserveSig]
-        HRESULT GetAvailableVidMem(ref _DDSCAPS __unnamed_0, ref uint __unnamed_1, ref uint __unnamed_2);
+        HRESULT GetAvailableVidMem(ref _DDSCAPS unnamed__0, ref uint unnamed__1, ref uint unnamed__2);
     }
 }

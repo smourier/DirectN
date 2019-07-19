@@ -10,7 +10,7 @@ namespace DirectN
         public bool Enable;
         public D3D10DDI_HRESOURCE hDrvReferenceTexture2D;
         public uint ReferenceSubresource;
-        public int OutputColorSpace;
-        public int DecodeColorSpace;
+        public DXGI_COLOR_SPACE_TYPE OutputColorSpace;
+        public DXGI_COLOR_SPACE_TYPE DecodeColorSpace;
     }
 }

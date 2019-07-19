@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DDDIARG_DRAWPRIMITIVE
     {
-        public _D3DPRIMITIVETYPE PrimitiveType;
+        public int PrimitiveType;
         public uint VStart;
         public uint PrimitiveCount;
     }

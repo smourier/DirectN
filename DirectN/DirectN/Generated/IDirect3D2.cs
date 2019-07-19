@@ -13,21 +13,21 @@ namespace DirectN
     public partial interface IDirect3D2
     {
         [PreserveSig]
-        HRESULT EnumDevices(IntPtr __unnamed_0, IntPtr __unnamed_1);
+        HRESULT EnumDevices(IntPtr unnamed__0, IntPtr unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateLight(out LPDIRECT3DLIGHT __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateLight(out LPDIRECT3DLIGHT unnamed__0, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateMaterial(out LPDIRECT3DMATERIAL2 __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateMaterial(out LPDIRECT3DMATERIAL2 unnamed__0, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateViewport(out LPDIRECT3DVIEWPORT2 __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1);
+        HRESULT CreateViewport(out LPDIRECT3DVIEWPORT2 unnamed__0, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__1);
         
         [PreserveSig]
-        HRESULT FindDevice(ref _D3DFINDDEVICESEARCH __unnamed_0, ref _D3DFINDDEVICERESULT __unnamed_1);
+        HRESULT FindDevice(ref _D3DFINDDEVICESEARCH unnamed__0, ref _D3DFINDDEVICERESULT unnamed__1);
         
         [PreserveSig]
-        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid __unnamed_0, LPDIRECTDRAWSURFACE __unnamed_1, out LPDIRECT3DDEVICE2 __unnamed_2);
+        HRESULT CreateDevice([MarshalAs(UnmanagedType.LPStruct)] Guid unnamed__0, LPDIRECTDRAWSURFACE unnamed__1, out LPDIRECT3DDEVICE2 unnamed__2);
     }
 }

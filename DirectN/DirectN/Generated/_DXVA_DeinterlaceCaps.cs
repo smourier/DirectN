@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxva9typ.h(533,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxva.h(1859,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -12,7 +12,7 @@ namespace DirectN
         public uint InputPool;
         public uint NumForwardRefSamples;
         public uint NumBackwardRefSamples;
-        public int d3dOutputFormat;
+        public uint d3dOutputFormat;
         public _DXVA_VideoProcessCaps VideoProcessingCaps;
         public _DXVA_DeinterlaceTech DeinterlaceTechnology;
     }

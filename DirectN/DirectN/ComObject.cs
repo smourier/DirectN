@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Diagnostics.Eventing;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -16,7 +14,7 @@ namespace DirectN
                 throw new ArgumentNullException(nameof(comObject));
 
             if (!Marshal.IsComObject(comObject))
-                throw new ArgumentException("Argument is not a COM object", nameof(comObject));
+                throw new ArgumentException(null, nameof(comObject));
 
             _object = comObject;
         }
@@ -35,12 +33,21 @@ namespace DirectN
             }
         }
 
-        public virtual void Dispose()
+        public void Dispose()
         {
-            var obj = Interlocked.Exchange(ref _object, null);
-            if (obj != null)
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                Marshal.ReleaseComObject(obj);
+                var obj = Interlocked.Exchange(ref _object, null);
+                if (obj != null)
+                {
+                    Marshal.ReleaseComObject(obj);
+                }
             }
         }
 
@@ -73,7 +80,7 @@ namespace DirectN
                 return co.Object;
 
             if (!Marshal.IsComObject(obj))
-                throw new ArgumentException("Argument is not a COM object", nameof(obj));
+                throw new ArgumentException(null, nameof(obj));
 
             return obj;
         }
@@ -84,7 +91,7 @@ namespace DirectN
                 return (T)co.Object;
 
             if (!Marshal.IsComObject(obj))
-                throw new ArgumentException("Argument is not a COM object", nameof(obj));
+                throw new ArgumentException(null, nameof(obj));
 
             return (T)obj;
         }

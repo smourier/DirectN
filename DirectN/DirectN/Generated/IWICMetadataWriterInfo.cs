@@ -56,7 +56,7 @@ namespace DirectN
         
         // IWICMetadataWriterInfo
         [PreserveSig]
-        HRESULT GetHeader(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* [in] */ uint cbSize, /* [annotation][unique][out][in] _Out_writes_bytes_opt_(cbSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] WICMetadataHeader[] pHeader, /* [annotation][unique][out][in] _Out_opt_ */ ref uint pcbActual);
+        HRESULT GetHeader(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* [in] */ uint cbSize, /* [annotation][unique][out][in] _Out_writes_bytes_opt_(cbSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] WICMetadataHeader[] pHeader, /* optional(UINT) */ IntPtr pcbActual);
         
         [PreserveSig]
         HRESULT CreateInstance(/* [out] __RPC__deref_out_opt */ out IWICMetadataWriter ppIWriter);

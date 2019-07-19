@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT GetVideoService(/* [annotation] _In_ */ IntPtr hDevice, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppService);
         
         [PreserveSig]
-        HRESULT LockDevice(/* [annotation] _In_ */ IntPtr hDevice, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation] _Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnkDevice, /* [annotation] _In_ */ bool fBlock);
+        HRESULT LockDevice(/* [annotation] _In_ */ IntPtr hDevice, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation] _Outptr_ */ out IntPtr ppUnkDevice, /* [annotation] _In_ */ bool fBlock);
         
         [PreserveSig]
         HRESULT OpenDeviceHandle(/* [annotation] _Out_ */ out IntPtr phDevice);

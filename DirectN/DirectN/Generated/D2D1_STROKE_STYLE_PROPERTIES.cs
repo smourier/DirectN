@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Properties, aside from the width, that allow geometric penning to be specified.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_STROKE_STYLE_PROPERTIES
     {

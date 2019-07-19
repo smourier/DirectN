@@ -7,10 +7,10 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D11_1DDIARG_SIGNATURE_ENTRY
     {
-        public int SystemValue;
+        public D3D10_SB_NAME SystemValue;
         public uint Register;
         public byte Mask;
-        public int RegisterComponentType;
-        public int MinPrecision;
+        public D3D10_SB_REGISTER_COMPONENT_TYPE RegisterComponentType;
+        public D3D11_SB_OPERAND_MIN_PRECISION MinPrecision;
     }
 }

@@ -9,9 +9,9 @@ namespace DirectN
     public partial interface IDirectDrawColorControl
     {
         [PreserveSig]
-        HRESULT GetColorControls(ref LPDDCOLORCONTROL __unnamed_0);
+        HRESULT GetColorControls(ref LPDDCOLORCONTROL unnamed__0);
         
         [PreserveSig]
-        HRESULT SetColorControls(ref LPDDCOLORCONTROL __unnamed_0);
+        HRESULT SetColorControls(ref LPDDCOLORCONTROL unnamed__0);
     }
 }

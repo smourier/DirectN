@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DDDIARG_DRAWINDEXEDPRIMITIVE
     {
-        public _D3DPRIMITIVETYPE PrimitiveType;
+        public int PrimitiveType;
         public int BaseVertexIndex;
         public uint MinIndex;
         public uint NumVertices;

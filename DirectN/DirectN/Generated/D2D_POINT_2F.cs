@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// Represents an x-coordinate and y-coordinate pair in two-dimensional space.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D_POINT_2F
     {

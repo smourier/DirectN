@@ -9,21 +9,21 @@ namespace DirectN
     public partial interface IDirect3DVertexBuffer7
     {
         [PreserveSig]
-        HRESULT Lock(uint __unnamed_0, [MarshalAs(UnmanagedType.IUnknown)] object __unnamed_1, ref uint __unnamed_2);
+        HRESULT Lock(uint unnamed__0, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__1, ref uint unnamed__2);
         
         [PreserveSig]
         HRESULT Unlock();
         
         [PreserveSig]
-        HRESULT ProcessVertices(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, LPDIRECT3DVERTEXBUFFER7 __unnamed_3, uint __unnamed_4, IDirect3DDevice7 __unnamed_5, uint __unnamed_6);
+        HRESULT ProcessVertices(uint unnamed__0, uint unnamed__1, uint unnamed__2, LPDIRECT3DVERTEXBUFFER7 unnamed__3, uint unnamed__4, IDirect3DDevice7 unnamed__5, uint unnamed__6);
         
         [PreserveSig]
-        HRESULT GetVertexBufferDesc(ref _D3DVERTEXBUFFERDESC __unnamed_0);
+        HRESULT GetVertexBufferDesc(ref _D3DVERTEXBUFFERDESC unnamed__0);
         
         [PreserveSig]
-        HRESULT Optimize(IDirect3DDevice7 __unnamed_0, uint __unnamed_1);
+        HRESULT Optimize(IDirect3DDevice7 unnamed__0, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT ProcessVerticesStrided(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref _D3DDRAWPRIMITIVESTRIDEDDATA __unnamed_3, uint __unnamed_4, IDirect3DDevice7 __unnamed_5, uint __unnamed_6);
+        HRESULT ProcessVerticesStrided(uint unnamed__0, uint unnamed__1, uint unnamed__2, ref _D3DDRAWPRIMITIVESTRIDEDDATA unnamed__3, uint unnamed__4, IDirect3DDevice7 unnamed__5, uint unnamed__6);
     }
 }

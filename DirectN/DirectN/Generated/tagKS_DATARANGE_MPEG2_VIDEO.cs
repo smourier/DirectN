@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct tagKS_DATARANGE_MPEG2_VIDEO
     {
-        public KSDATAFORMAT DataRange;
+        public int DataRange;
         public bool bFixedSizeSamples;
         public bool bTemporalCompression;
         public uint StreamDescriptionFlags;

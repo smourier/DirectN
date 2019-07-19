@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT GetDevice(out IDirect3DDevice9 ppDevice);
         
         [PreserveSig]
-        HRESULT GetFunction([MarshalAs(UnmanagedType.IUnknown)] object __unnamed_0, ref uint pSizeOfData);
+        HRESULT GetFunction([MarshalAs(UnmanagedType.IUnknown)] object unnamed__0, ref uint pSizeOfData);
     }
 }

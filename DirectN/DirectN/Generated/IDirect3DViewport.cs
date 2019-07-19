@@ -9,42 +9,42 @@ namespace DirectN
     public partial interface IDirect3DViewport
     {
         [PreserveSig]
-        HRESULT Initialize(IDirect3D __unnamed_0);
+        HRESULT Initialize(IDirect3D unnamed__0);
         
         [PreserveSig]
-        HRESULT GetViewport(ref _D3DVIEWPORT __unnamed_0);
+        HRESULT GetViewport(ref _D3DVIEWPORT unnamed__0);
         
         [PreserveSig]
-        HRESULT SetViewport(ref _D3DVIEWPORT __unnamed_0);
+        HRESULT SetViewport(ref _D3DVIEWPORT unnamed__0);
         
         [PreserveSig]
-        HRESULT TransformVertices(uint __unnamed_0, ref _D3DTRANSFORMDATA __unnamed_1, uint __unnamed_2, ref uint __unnamed_3);
+        HRESULT TransformVertices(uint unnamed__0, ref _D3DTRANSFORMDATA unnamed__1, uint unnamed__2, ref uint unnamed__3);
         
         [PreserveSig]
-        HRESULT LightElements(uint __unnamed_0, ref _D3DLIGHTDATA __unnamed_1);
+        HRESULT LightElements(uint unnamed__0, ref _D3DLIGHTDATA unnamed__1);
         
         [PreserveSig]
-        HRESULT SetBackground(uint __unnamed_0);
+        HRESULT SetBackground(uint unnamed__0);
         
         [PreserveSig]
-        HRESULT GetBackground(ref uint __unnamed_0, ref bool __unnamed_1);
+        HRESULT GetBackground(ref uint unnamed__0, ref bool unnamed__1);
         
         [PreserveSig]
-        HRESULT SetBackgroundDepth(LPDIRECTDRAWSURFACE __unnamed_0);
+        HRESULT SetBackgroundDepth(LPDIRECTDRAWSURFACE unnamed__0);
         
         [PreserveSig]
-        HRESULT GetBackgroundDepth(out LPDIRECTDRAWSURFACE __unnamed_0, ref bool __unnamed_1);
+        HRESULT GetBackgroundDepth(out LPDIRECTDRAWSURFACE unnamed__0, ref bool unnamed__1);
         
         [PreserveSig]
-        HRESULT Clear(uint __unnamed_0, ref _D3DRECT __unnamed_1, uint __unnamed_2);
+        HRESULT Clear(uint unnamed__0, ref _D3DRECT unnamed__1, uint unnamed__2);
         
         [PreserveSig]
-        HRESULT AddLight(IDirect3DLight __unnamed_0);
+        HRESULT AddLight(IDirect3DLight unnamed__0);
         
         [PreserveSig]
-        HRESULT DeleteLight(IDirect3DLight __unnamed_0);
+        HRESULT DeleteLight(IDirect3DLight unnamed__0);
         
         [PreserveSig]
-        HRESULT NextLight(IDirect3DLight __unnamed_0, out IDirect3DLight __unnamed_1, uint __unnamed_2);
+        HRESULT NextLight(IDirect3DLight unnamed__0, out IDirect3DLight unnamed__1, uint unnamed__2);
     }
 }

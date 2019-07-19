@@ -92,7 +92,7 @@ namespace DirectN
         HRESULT GetProtocolName(/* [size_is][out] */ [MarshalAs(UnmanagedType.LPWStr)] string pwszProtocol, /* [out][in] */ ref uint pcchProtocol);
         
         [PreserveSig]
-        HRESULT StartAtMarker(/* [in] */ ushort wMarkerIndex, /* [in] */ ulong cnsDuration, /* [in] */ float fRate, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT StartAtMarker(/* [in] */ ushort wMarkerIndex, /* [in] */ ulong cnsDuration, /* [in] */ float fRate, /* [in] */ IntPtr pvContext);
         
         [PreserveSig]
         HRESULT GetOutputSetting(/* [in] */ uint dwOutputNum, /* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* [out] */ out WMT_ATTR_DATATYPE pType, /* [size_is][out] */ [Out, MarshalAs(UnmanagedType.LPArray)] byte[] pValue, /* [out][in] */ ref ushort pcbLength);
@@ -113,6 +113,6 @@ namespace DirectN
         HRESULT StopBuffering();
         
         [PreserveSig]
-        HRESULT OpenStream(/* [in] */ IStream pStream, /* [in] */ IWMReaderCallback pCallback, /* [in] */ [MarshalAs(UnmanagedType.IUnknown)] object pvContext);
+        HRESULT OpenStream(/* [in] */ IStream pStream, /* [in] */ IWMReaderCallback pCallback, /* [in] */ IntPtr pvContext);
     }
 }

@@ -9,15 +9,15 @@ namespace DirectN
     public partial interface IDirectDrawPalette
     {
         [PreserveSig]
-        HRESULT GetCaps(ref uint __unnamed_0);
+        HRESULT GetCaps(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT GetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref tagPALETTEENTRY __unnamed_3);
+        HRESULT GetEntries(uint unnamed__0, uint unnamed__1, uint unnamed__2, ref tagPALETTEENTRY unnamed__3);
         
         [PreserveSig]
-        HRESULT Initialize(LPDIRECTDRAW __unnamed_0, uint __unnamed_1, ref tagPALETTEENTRY __unnamed_2);
+        HRESULT Initialize(LPDIRECTDRAW unnamed__0, uint unnamed__1, ref tagPALETTEENTRY unnamed__2);
         
         [PreserveSig]
-        HRESULT SetEntries(uint __unnamed_0, uint __unnamed_1, uint __unnamed_2, ref tagPALETTEENTRY __unnamed_3);
+        HRESULT SetEntries(uint unnamed__0, uint unnamed__1, uint unnamed__2, ref tagPALETTEENTRY unnamed__3);
     }
 }

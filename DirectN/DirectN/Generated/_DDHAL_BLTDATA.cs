@@ -7,6 +7,9 @@ using LPDDRAWI_DIRECTDRAW_GBL = DirectN._DDRAWI_DIRECTDRAW_GBL;
 
 namespace DirectN
 {
+    /// <summary>
+    /// **************************************************************************
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDHAL_BLTDATA
     {

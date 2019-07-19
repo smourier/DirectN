@@ -9,9 +9,9 @@ namespace DirectN
     public partial interface IDirectDrawVideoPortNotify
     {
         [PreserveSig]
-        HRESULT AcquireNotification(IntPtr __unnamed_0, ref LPDDVIDEOPORTNOTIFY __unnamed_1);
+        HRESULT AcquireNotification(IntPtr unnamed__0, ref LPDDVIDEOPORTNOTIFY unnamed__1);
         
         [PreserveSig]
-        HRESULT ReleaseNotification(IntPtr __unnamed_0);
+        HRESULT ReleaseNotification(IntPtr unnamed__0);
     }
 }

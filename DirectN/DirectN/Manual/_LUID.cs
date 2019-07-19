@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Globalization;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
@@ -6,6 +7,7 @@ namespace DirectN
     public struct _LUID
     {
         public long luid;
-        public override string ToString() => luid.ToString();
+
+        public override string ToString() => luid.ToString(CultureInfo.InvariantCulture);
     }
 }
