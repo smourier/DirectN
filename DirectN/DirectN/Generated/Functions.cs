@@ -424,22 +424,22 @@ namespace DirectN
         public static extern HRESULT D3D10ReflectShader(/* _In_reads_bytes_(BytecodeLength) */ IntPtr pShaderBytecode, IntPtr BytecodeLength, /* _Out_ */ out ID3D10ShaderReflection ppReflector);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HADAPTER MAKE_D3D10DDI_HADAPTER([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HADAPTER MAKE_D3D10DDI_HADAPTER(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HBLENDSTATE MAKE_D3D10DDI_HBLENDSTATE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HBLENDSTATE MAKE_D3D10DDI_HBLENDSTATE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HDEPTHSTENCILSTATE MAKE_D3D10DDI_HDEPTHSTENCILSTATE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HDEPTHSTENCILSTATE MAKE_D3D10DDI_HDEPTHSTENCILSTATE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HDEPTHSTENCILVIEW MAKE_D3D10DDI_HDEPTHSTENCILVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HDEPTHSTENCILVIEW MAKE_D3D10DDI_HDEPTHSTENCILVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HDEVICE MAKE_D3D10DDI_HDEVICE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HDEVICE MAKE_D3D10DDI_HDEVICE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HELEMENTLAYOUT MAKE_D3D10DDI_HELEMENTLAYOUT([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HELEMENTLAYOUT MAKE_D3D10DDI_HELEMENTLAYOUT(IntPtr h);
         
         [DllImport("d3d10")]
         public static extern D3D10DDI_HKMALLOCATION MAKE_D3D10DDI_HKMALLOCATION(uint h);
@@ -451,133 +451,133 @@ namespace DirectN
         public static extern D3D10DDI_HKMRESOURCE MAKE_D3D10DDI_HKMRESOURCE(uint h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HQUERY MAKE_D3D10DDI_HQUERY([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HQUERY MAKE_D3D10DDI_HQUERY(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRASTERIZERSTATE MAKE_D3D10DDI_HRASTERIZERSTATE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRASTERIZERSTATE MAKE_D3D10DDI_HRASTERIZERSTATE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRENDERTARGETVIEW MAKE_D3D10DDI_HRENDERTARGETVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRENDERTARGETVIEW MAKE_D3D10DDI_HRENDERTARGETVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRESOURCE MAKE_D3D10DDI_HRESOURCE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRESOURCE MAKE_D3D10DDI_HRESOURCE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTADAPTER MAKE_D3D10DDI_HRTADAPTER([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTADAPTER MAKE_D3D10DDI_HRTADAPTER(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTBLENDSTATE MAKE_D3D10DDI_HRTBLENDSTATE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTBLENDSTATE MAKE_D3D10DDI_HRTBLENDSTATE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTCORELAYER MAKE_D3D10DDI_HRTCORELAYER([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTCORELAYER MAKE_D3D10DDI_HRTCORELAYER(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTDEPTHSTENCILSTATE MAKE_D3D10DDI_HRTDEPTHSTENCILSTATE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTDEPTHSTENCILSTATE MAKE_D3D10DDI_HRTDEPTHSTENCILSTATE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTDEPTHSTENCILVIEW MAKE_D3D10DDI_HRTDEPTHSTENCILVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTDEPTHSTENCILVIEW MAKE_D3D10DDI_HRTDEPTHSTENCILVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTDEVICE MAKE_D3D10DDI_HRTDEVICE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTDEVICE MAKE_D3D10DDI_HRTDEVICE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTELEMENTLAYOUT MAKE_D3D10DDI_HRTELEMENTLAYOUT([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTELEMENTLAYOUT MAKE_D3D10DDI_HRTELEMENTLAYOUT(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTQUERY MAKE_D3D10DDI_HRTQUERY([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTQUERY MAKE_D3D10DDI_HRTQUERY(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTRASTERIZERSTATE MAKE_D3D10DDI_HRTRASTERIZERSTATE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTRASTERIZERSTATE MAKE_D3D10DDI_HRTRASTERIZERSTATE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTRENDERTARGETVIEW MAKE_D3D10DDI_HRTRENDERTARGETVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTRENDERTARGETVIEW MAKE_D3D10DDI_HRTRENDERTARGETVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTRESOURCE MAKE_D3D10DDI_HRTRESOURCE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTRESOURCE MAKE_D3D10DDI_HRTRESOURCE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTSAMPLER MAKE_D3D10DDI_HRTSAMPLER([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTSAMPLER MAKE_D3D10DDI_HRTSAMPLER(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTSHADER MAKE_D3D10DDI_HRTSHADER([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTSHADER MAKE_D3D10DDI_HRTSHADER(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HRTSHADERRESOURCEVIEW MAKE_D3D10DDI_HRTSHADERRESOURCEVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HRTSHADERRESOURCEVIEW MAKE_D3D10DDI_HRTSHADERRESOURCEVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HSAMPLER MAKE_D3D10DDI_HSAMPLER([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HSAMPLER MAKE_D3D10DDI_HSAMPLER(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HSHADER MAKE_D3D10DDI_HSHADER([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HSHADER MAKE_D3D10DDI_HSHADER(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D10DDI_HSHADERRESOURCEVIEW MAKE_D3D10DDI_HSHADERRESOURCEVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D10DDI_HSHADERRESOURCEVIEW MAKE_D3D10DDI_HSHADERRESOURCEVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11DDI_HCOMMANDLIST MAKE_D3D11DDI_HCOMMANDLIST([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11DDI_HCOMMANDLIST MAKE_D3D11DDI_HCOMMANDLIST(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11DDI_HRTCOMMANDLIST MAKE_D3D11DDI_HRTCOMMANDLIST([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11DDI_HRTCOMMANDLIST MAKE_D3D11DDI_HRTCOMMANDLIST(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11DDI_HRTUNORDEREDACCESSVIEW MAKE_D3D11DDI_HRTUNORDEREDACCESSVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11DDI_HRTUNORDEREDACCESSVIEW MAKE_D3D11DDI_HRTUNORDEREDACCESSVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11DDI_HUNORDEREDACCESSVIEW MAKE_D3D11DDI_HUNORDEREDACCESSVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11DDI_HUNORDEREDACCESSVIEW MAKE_D3D11DDI_HUNORDEREDACCESSVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HAUTHCHANNEL MAKE_D3D11_1DDI_HAUTHCHANNEL([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HAUTHCHANNEL MAKE_D3D11_1DDI_HAUTHCHANNEL(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HCRYPTOSESSION MAKE_D3D11_1DDI_HCRYPTOSESSION([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HCRYPTOSESSION MAKE_D3D11_1DDI_HCRYPTOSESSION(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HDECODE MAKE_D3D11_1DDI_HDECODE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HDECODE MAKE_D3D11_1DDI_HDECODE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HRTAUTHCHANNEL MAKE_D3D11_1DDI_HRTAUTHCHANNEL([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HRTAUTHCHANNEL MAKE_D3D11_1DDI_HRTAUTHCHANNEL(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HRTCRYPTOSESSION MAKE_D3D11_1DDI_HRTCRYPTOSESSION([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HRTCRYPTOSESSION MAKE_D3D11_1DDI_HRTCRYPTOSESSION(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HRTDECODE MAKE_D3D11_1DDI_HRTDECODE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HRTDECODE MAKE_D3D11_1DDI_HRTDECODE(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HRTVIDEODECODEROUTPUTVIEW MAKE_D3D11_1DDI_HRTVIDEODECODEROUTPUTVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HRTVIDEODECODEROUTPUTVIEW MAKE_D3D11_1DDI_HRTVIDEODECODEROUTPUTVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HRTVIDEOPROCESSOR MAKE_D3D11_1DDI_HRTVIDEOPROCESSOR([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HRTVIDEOPROCESSOR MAKE_D3D11_1DDI_HRTVIDEOPROCESSOR(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HRTVIDEOPROCESSORENUM MAKE_D3D11_1DDI_HRTVIDEOPROCESSORENUM([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HRTVIDEOPROCESSORENUM MAKE_D3D11_1DDI_HRTVIDEOPROCESSORENUM(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HRTVIDEOPROCESSORINPUTVIEW MAKE_D3D11_1DDI_HRTVIDEOPROCESSORINPUTVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HRTVIDEOPROCESSORINPUTVIEW MAKE_D3D11_1DDI_HRTVIDEOPROCESSORINPUTVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HRTVIDEOPROCESSOROUTPUTVIEW MAKE_D3D11_1DDI_HRTVIDEOPROCESSOROUTPUTVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HRTVIDEOPROCESSOROUTPUTVIEW MAKE_D3D11_1DDI_HRTVIDEOPROCESSOROUTPUTVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HVIDEODECODEROUTPUTVIEW MAKE_D3D11_1DDI_HVIDEODECODEROUTPUTVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HVIDEODECODEROUTPUTVIEW MAKE_D3D11_1DDI_HVIDEODECODEROUTPUTVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HVIDEOPROCESSOR MAKE_D3D11_1DDI_HVIDEOPROCESSOR([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HVIDEOPROCESSOR MAKE_D3D11_1DDI_HVIDEOPROCESSOR(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HVIDEOPROCESSORENUM MAKE_D3D11_1DDI_HVIDEOPROCESSORENUM([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HVIDEOPROCESSORENUM MAKE_D3D11_1DDI_HVIDEOPROCESSORENUM(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HVIDEOPROCESSORINPUTVIEW MAKE_D3D11_1DDI_HVIDEOPROCESSORINPUTVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HVIDEOPROCESSORINPUTVIEW MAKE_D3D11_1DDI_HVIDEOPROCESSORINPUTVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3D11_1DDI_HVIDEOPROCESSOROUTPUTVIEW MAKE_D3D11_1DDI_HVIDEOPROCESSOROUTPUTVIEW([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D11_1DDI_HVIDEOPROCESSOROUTPUTVIEW MAKE_D3D11_1DDI_HVIDEOPROCESSOROUTPUTVIEW(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3DWDDM2_2DDI_HCACHESESSION MAKE_D3DWDDM2_2DDI_HCACHESESSION([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3DWDDM2_2DDI_HCACHESESSION MAKE_D3DWDDM2_2DDI_HCACHESESSION(IntPtr h);
         
         [DllImport("d3d10")]
-        public static extern D3DWDDM2_2DDI_HRTCACHESESSION MAKE_D3DWDDM2_2DDI_HRTCACHESESSION([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3DWDDM2_2DDI_HRTCACHESESSION MAKE_D3DWDDM2_2DDI_HRTCACHESESSION(IntPtr h);
         
         [DllImport("d3d10")]
         public static extern HRESULT D3D10CreateDevice1(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D10_DRIVER_TYPE DriverType, IntPtr Software, uint Flags, D3D10_FEATURE_LEVEL1 HardwareLevel, uint SDKVersion, /* _Out_opt_ */ out ID3D10Device1 ppDevice);
@@ -622,22 +622,22 @@ namespace DirectN
         public static extern HRESULT D3D12SerializeVersionedRootSignature(/* _In_ */ ref D3D12_VERSIONED_ROOT_SIGNATURE_DESC pRootSignature, /* _Out_ */ out ID3D10Blob ppBlob, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorBlob);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HCOMMANDALLOCATOR MAKE_D3D12DDI_HCOMMANDALLOCATOR([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HCOMMANDALLOCATOR MAKE_D3D12DDI_HCOMMANDALLOCATOR(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HCOMMANDLIST MAKE_D3D12DDI_HCOMMANDLIST([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HCOMMANDLIST MAKE_D3D12DDI_HCOMMANDLIST(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HCOMMANDPOOL_0040 MAKE_D3D12DDI_HCOMMANDPOOL_0040([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HCOMMANDPOOL_0040 MAKE_D3D12DDI_HCOMMANDPOOL_0040(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HCOMMANDQUEUE MAKE_D3D12DDI_HCOMMANDQUEUE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HCOMMANDQUEUE MAKE_D3D12DDI_HCOMMANDQUEUE(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HCOMMANDRECORDER_0040 MAKE_D3D12DDI_HCOMMANDRECORDER_0040([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HCOMMANDRECORDER_0040 MAKE_D3D12DDI_HCOMMANDRECORDER_0040(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HCOMMANDSIGNATURE MAKE_D3D12DDI_HCOMMANDSIGNATURE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HCOMMANDSIGNATURE MAKE_D3D12DDI_HCOMMANDSIGNATURE(IntPtr h);
         
         [DllImport("d3d12umddi")]
         public static extern D3D12DDI_HCONTENTPROTECTIONSESSION_0020 MAKE_D3D12DDI_HCONTENTPROTECTIONSESSION_0020(/* optional(void) */ IntPtr h);
@@ -649,16 +649,16 @@ namespace DirectN
         public static extern D3D12DDI_HCRYPTOSESSION_0030 MAKE_D3D12DDI_HCRYPTOSESSION_0030(/* Build rev 0. #define D3D12DDI_MINOR_VERSION_R3 30 #define D3D12DDI_INTERFACE_VERSION_R3 ((D3D12DDI_MAJOR_VERSION << 16) | D3D12DDI_MINOR_VERSION_R3) #define D3D12DDI_BUILD_VERSION_0030 0 #define D3D12DDI_SUPPORTED_0030 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R3) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0030) << 16)) */ IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HDESCRIPTORHEAP MAKE_D3D12DDI_HDESCRIPTORHEAP([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HDESCRIPTORHEAP MAKE_D3D12DDI_HDESCRIPTORHEAP(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HFENCE MAKE_D3D12DDI_HFENCE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HFENCE MAKE_D3D12DDI_HFENCE(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HHEAP MAKE_D3D12DDI_HHEAP([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HHEAP MAKE_D3D12DDI_HHEAP(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HMETACOMMAND_0052 MAKE_D3D12DDI_HMETACOMMAND_0052([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HMETACOMMAND_0052 MAKE_D3D12DDI_HMETACOMMAND_0052(IntPtr h);
         
         [DllImport("d3d12umddi")]
         public static extern D3D12DDI_HPASS MAKE_D3D12DDI_HPASS(/* optional(void) */ IntPtr h);
@@ -667,52 +667,52 @@ namespace DirectN
         public static extern D3D12DDI_HPIPELINELIBRARY MAKE_D3D12DDI_HPIPELINELIBRARY(/* } D3D12DDI_3DPIPELINELEVEL; typedef VOID ( APIENTRY* PFND3D12DDI_CHECKFORMATSUPPORT )( D3D12DDI_HDEVICE, DXGI_FORMAT, _Out_ UINT* ); typedef VOID ( APIENTRY* PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS )( D3D12DDI_HDEVICE hDevice, DXGI_FORMAT Format, UINT SampleCount, D3D12DDI_MULTISAMPLE_QUALITY_LEVEL_FLAGS Flags, _Out_ UINT* pNumQualityLevels ); typedef VOID ( APIENTRY* PFND3D12DDI_GETMIPPACKING )( D3D12DDI_HDEVICE hDevice, D3D12DDI_HRESOURCE hTiledResource, _Out_ UINT* pNumPackedMips, _Out_ UINT* pNumTilesForPackedMips ); typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_CREATEELEMENTLAYOUT* ); typedef VOID ( APIENTRY* PFND3D12DDI_CREATEELEMENTLAYOUT_0003 )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_CREATEELEMENTLAYOUT*, D3D12DDI_HELEMENTLAYOUT ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYELEMENTLAYOUT )( D3D12DDI_HDEVICE, D3D12DDI_HELEMENTLAYOUT ); typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDI_BLEND_DESC* ); typedef VOID ( APIENTRY* PFND3D12DDI_CREATEBLENDSTATE_0003 )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDI_BLEND_DESC*, D3D12DDI_HBLENDSTATE ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYBLENDSTATE )( D3D12DDI_HDEVICE, D3D12DDI_HBLENDSTATE ); typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDI_DEPTH_STENCIL_DESC* ); typedef VOID ( APIENTRY* PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0003 )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDI_DEPTH_STENCIL_DESC*, D3D12DDI_HDEPTHSTENCILSTATE ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYDEPTHSTENCILSTATE )( D3D12DDI_HDEVICE, D3D12DDI_HDEPTHSTENCILSTATE ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYRASTERIZERSTATE )( D3D12DDI_HDEVICE, D3D12DDI_HRASTERIZERSTATE ); typedef VOID ( APIENTRY* PFND3D12DDI_CLEAR_ROOT_ARGUMENTS )(D3D12DDI_HCOMMANDLIST); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYSHADER )( D3D12DDI_HDEVICE, D3D12DDI_HSHADER ); typedef VOID ( APIENTRY* PFND3D12DDI_BEGIN_END_QUERY_0003 )( D3D12DDI_HCOMMANDLIST, D3D12DDI_HQUERYHEAP, D3D12DDI_QUERY_TYPE, UINT ); typedef D3DKMT_HANDLE ( APIENTRY* PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE )( D3D12DDI_HDEVICE, D3D10DDI_HRESOURCE ); //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 DDI Tables // typedef struct D3D12DDI_COMMAND_LIST_FUNCS_3D_0003 { PFND3D12DDI_CLOSECOMMANDLIST pfnCloseCommandList; PFND3D12DDI_RESETCOMMANDLIST pfnResetCommandList; PFND3D12DDI_DRAWINSTANCED pfnDrawInstanced; PFND3D12DDI_DRAWINDEXEDINSTANCED pfnDrawIndexedInstanced; PFND3D12DDI_DISPATCH pfnDispatch; PFND3D12DDI_CLEAR_UNORDERED_ACCESS_VIEW_UINT_0003 pfnClearUnorderedAccessViewUint; PFND3D12DDI_CLEAR_UNORDERED_ACCESS_VIEW_FLOAT_0003 pfnClearUnorderedAccessViewFloat; PFND3D12DDI_CLEAR_RENDER_TARGET_VIEW_0003 pfnClearRenderTargetView; PFND3D12DDI_CLEAR_DEPTH_STENCIL_VIEW_0003 pfnClearDepthStencilView; PFND3D12DDI_DISCARD_RESOURCE_0003 pfnDiscardResource; PFND3D12DDI_COPYTEXTUREREGION_0003 pfnCopyTextureRegion; PFND3D12DDI_RESOURCECOPY pfnResourceCopy; PFND3D12DDI_COPYTILES pfnCopyTiles; PFND3D12DDI_COPYBUFFERREGION_0003 pfnCopyBufferRegion; PFND3D12DDI_RESOURCERESOLVESUBRESOURCE pfnResourceResolveSubresource; PFND3D12DDI_EXECUTE_BUNDLE pfnExecuteBundle; PFND3D12DDI_EXECUTE_INDIRECT pfnExecuteIndirect; PFND3D12DDI_RESOURCEBARRIER_0003 pfnResourceBarrier; PFND3D12DDI_BLT pfnBlt; PFND3D12DDI_PRESENT_0003 pfnPresent; PFND3D12DDI_BEGIN_END_QUERY_0003 pfnBeginQuery; PFND3D12DDI_BEGIN_END_QUERY_0003 pfnEndQuery; PFND3D12DDI_RESOLVE_QUERY_DATA pfnResolveQueryData; PFND3D12DDI_SET_PREDICATION pfnSetPredication; PFND3D12DDI_IA_SETTOPOLOGY_0003 pfnIaSetTopology; PFND3D12DDI_RS_SETVIEWPORTS_0003 pfnRsSetViewports; PFND3D12DDI_RS_SETSCISSORRECTS_0003 pfnRsSetScissorRects; PFND3D12DDI_OM_SETBLENDFACTOR pfnOmSetBlendFactor; PFND3D12DDI_OM_SETSTENCILREF pfnOmSetStencilRef; PFND3D12DDI_SET_PIPELINE_STATE pfnSetPipelineState; PFND3D12DDI_SET_DESCRIPTOR_HEAPS_0003 pfnSetDescriptorHeaps; PFND3D12DDI_SET_ROOT_SIGNATURE pfnSetComputeRootSignature; PFND3D12DDI_SET_ROOT_SIGNATURE pfnSetGraphicsRootSignature; PFND3D12DDI_SET_ROOT_DESCRIPTOR_TABLE pfnSetComputeRootDescriptorTable; PFND3D12DDI_SET_ROOT_DESCRIPTOR_TABLE pfnSetGraphicsRootDescriptorTable; PFND3D12DDI_SET_ROOT_32BIT_CONSTANT pfnSetComputeRoot32BitConstant; PFND3D12DDI_SET_ROOT_32BIT_CONSTANT pfnSetGraphicsRoot32BitConstant; PFND3D12DDI_SET_ROOT_32BIT_CONSTANTS_0003 pfnSetComputeRoot32BitConstants; PFND3D12DDI_SET_ROOT_32BIT_CONSTANTS_0003 pfnSetGraphicsRoot32BitConstants; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootConstantBufferView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootConstantBufferView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootShaderResourceView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootShaderResourceView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootUnorderedAccessView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootUnorderedAccessView; PFND3D12DDI_IA_SET_INDEX_BUFFER pfnIASetIndexBuffer; PFND3D12DDI_IA_SET_VERTEX_BUFFERS_0003 pfnIASetVertexBuffers; PFND3D12DDI_SO_SET_TARGETS_0003 pfnSOSetTargets; PFND3D12DDI_OM_SET_RENDER_TARGETS_0003 pfnOMSetRenderTargets; PFND3D12DDI_SET_MARKER pfnSetMarker; PFND3D12DDI_CLEAR_ROOT_ARGUMENTS pfnClearRootArguments; } D3D12DDI_COMMAND_LIST_FUNCS_3D_0003; typedef struct D3D12DDI_DEVICE_FUNCS_CORE_0003 { PFND3D12DDI_CHECKFORMATSUPPORT pfnCheckFormatSupport; PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS pfnCheckMultisampleQualityLevels; PFND3D12DDI_GETMIPPACKING pfnGetMipPacking; PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE pfnCalcPrivateElementLayoutSize; PFND3D12DDI_CREATEELEMENTLAYOUT_0003 pfnCreateElementLayout; PFND3D12DDI_DESTROYELEMENTLAYOUT pfnDestroyElementLayout; PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE pfnCalcPrivateBlendStateSize; PFND3D12DDI_CREATEBLENDSTATE_0003 pfnCreateBlendState; PFND3D12DDI_DESTROYBLENDSTATE pfnDestroyBlendState; PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE pfnCalcPrivateDepthStencilStateSize; PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0003 pfnCreateDepthStencilState; PFND3D12DDI_DESTROYDEPTHSTENCILSTATE pfnDestroyDepthStencilState; PFND3D12DDI_CALCPRIVATERASTERIZERSTATESIZE pfnCalcPrivateRasterizerStateSize; PFND3D12DDI_CREATERASTERIZERSTATE_0003 pfnCreateRasterizerState; PFND3D12DDI_DESTROYRASTERIZERSTATE pfnDestroyRasterizerState; PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE pfnCalcPrivateShaderSize; PFND3D12DDI_CREATE_SHADER_0003 pfnCreateVertexShader; PFND3D12DDI_CREATE_SHADER_0003 pfnCreatePixelShader; PFND3D12DDI_CREATE_SHADER_0003 pfnCreateGeometryShader; PFND3D12DDI_CREATE_COMPUTE_SHADER_0003 pfnCreateComputeShader; PFND3D12DDI_CALC_PRIVATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT pfnCalcPrivateGeometryShaderWithStreamOutput; PFND3D12DDI_CREATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0003 pfnCreateGeometryShaderWithStreamOutput; PFND3D12DDI_CALC_PRIVATE_TESSELLATION_SHADER_SIZE pfnCalcPrivateTessellationShaderSize; PFND3D12DDI_CREATE_TESS_SHADER_0003 pfnCreateHullShader; PFND3D12DDI_CREATE_TESS_SHADER_0003 pfnCreateDomainShader; PFND3D12DDI_DESTROYSHADER pfnDestroyShader; PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0001 pfnCalcPrivateCommandQueueSize; PFND3D12DDI_CREATECOMMANDQUEUE_0001 pfnCreateCommandQueue; PFND3D12DDI_DESTROYCOMMANDQUEUE pfnDestroyCommandQueue; PFND3D12DDI_CALCPRIVATECOMMANDALLOCATORSIZE pfnCalcPrivateCommandAllocatorSize; PFND3D12DDI_CREATECOMMANDALLOCATOR pfnCreateCommandAllocator; PFND3D12DDI_DESTROYCOMMANDALLOCATOR pfnDestroyCommandAllocator; PFND3D12DDI_RESETCOMMANDALLOCATOR pfnResetCommandAllocator; PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0001 pfnCalcPrivatePipelineStateSize; PFND3D12DDI_CREATE_PIPELINE_STATE_0001 pfnCreatePipelineState; PFND3D12DDI_DESTROY_PIPELINE_STATE pfnDestroyPipelineState; PFND3D12DDI_CALC_PRIVATE_COMMAND_LIST_SIZE_0001 pfnCalcPrivateCommandListSize; PFND3D12DDI_CREATE_COMMAND_LIST_0001 pfnCreateCommandList; PFND3D12DDI_DESTROYCOMMANDLIST pfnDestroyCommandList; PFND3D12DDI_CALCPRIVATEFENCESIZE pfnCalcPrivateFenceSize; PFND3D12DDI_CREATEFENCE pfnCreateFence; PFND3D12DDI_DESTROYFENCE pfnDestroyFence; PFND3D12DDI_CALC_PRIVATE_DESCRIPTOR_HEAP_SIZE_0001 pfnCalcPrivateDescriptorHeapSize; PFND3D12DDI_CREATE_DESCRIPTOR_HEAP_0001 pfnCreateDescriptorHeap; PFND3D12DDI_DESTROY_DESCRIPTOR_HEAP pfnDestroyDescriptorHeap; PFND3D12DDI_GET_DESCRIPTOR_SIZE_IN_BYTES pfnGetDescriptorSizeInBytes; PFND3D12DDI_GET_CPU_DESCRIPTOR_HANDLE_FOR_HEAP_START pfnGetCPUDescriptorHandleForHeapStart; PFND3D12DDI_GET_GPU_DESCRIPTOR_HANDLE_FOR_HEAP_START pfnGetGPUDescriptorHandleForHeapStart; PFND3D12DDI_CREATE_SHADER_RESOURCE_VIEW_0002 pfnCreateShaderResourceView; PFND3D12DDI_CREATE_CONSTANT_BUFFER_VIEW pfnCreateConstantBufferView; PFND3D12DDI_CREATE_SAMPLER pfnCreateSampler; PFND3D12DDI_CREATE_UNORDERED_ACCESS_VIEW_0002 pfnCreateUnorderedAccessView; PFND3D12DDI_CREATE_RENDER_TARGET_VIEW_0002 pfnCreateRenderTargetView; PFND3D12DDI_CREATE_DEPTH_STENCIL_VIEW pfnCreateDepthStencilView; PFND3D12DDI_CALC_PRIVATE_ROOT_SIGNATURE_SIZE_0001 pfnCalcPrivateRootSignatureSize; PFND3D12DDI_CREATE_ROOT_SIGNATURE_0001 pfnCreateRootSignature; PFND3D12DDI_DESTROY_ROOT_SIGNATURE pfnDestroyRootSignature; PFND3D12DDI_SERIALIZEOBJECT pfnSerializeObject; PFND3D12DDI_DESTROYOBJECTSERIALIZATION pfnDestroyObjectSerialization; PFND3D12DDI_CALCPRIVATEDESERIALIZEDOBJECTSIZE pfnCalcPrivateDeserializedObjectSize; PFND3D12DDI_CREATEDESERIALIZEDOBJECT pfnCreateDeserializedObject; PFND3D12DDI_MAPHEAP pfnMapHeap; PFND3D12DDI_UNMAPHEAP pfnUnmapHeap; PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0003 pfnCalcPrivateHeapAndResourceSizes; PFND3D12DDI_CREATEHEAPANDRESOURCE_0003 pfnCreateHeapAndResource; PFND3D12DDI_DESTROYHEAPANDRESOURCE pfnDestroyHeapAndResource; PFND3D12DDI_MAKERESIDENT_0001 pfnMakeResident; PFND3D12DDI_EVICT2 pfnEvict; PFND3D12DDI_CALCPRIVATEOPENEDHEAPANDRESOURCESIZES_0003 pfnCalcPrivateOpenedHeapAndResourceSizes; PFND3D12DDI_OPENHEAPANDRESOURCE_0003 pfnOpenHeapAndResource; PFND3D12DDI_COPY_DESCRIPTORS_0003 pfnCopyDescriptors; PFND3D12DDI_COPY_DESCRIPTORS_SIMPLE_0003 pfnCopyDescriptorsSimple; PFND3D12DDI_CALC_PRIVATE_QUERY_HEAP_SIZE_0001 pfnCalcPrivateQueryHeapSize; PFND3D12DDI_CREATE_QUERY_HEAP_0001 pfnCreateQueryHeap; PFND3D12DDI_DESTROY_QUERY_HEAP pfnDestroyQueryHeap; PFND3D12DDI_CALC_PRIVATE_COMMAND_SIGNATURE_SIZE_0001 pfnCalcPrivateCommandSignatureSize; PFND3D12DDI_CREATE_COMMAND_SIGNATURE_0001 pfnCreateCommandSignature; PFND3D12DDI_DESTROY_COMMAND_SIGNATURE pfnDestroyCommandSignature; PFND3D12DDI_CHECKRESOURCEVIRTUALADDRESS pfnCheckResourceVirtualAddress; PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0003 pfnCheckResourceAllocationInfo; PFND3D12DDI_CHECKSUBRESOURCEINFO pfnCheckSubresourceInfo; PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO pfnCheckExistingResourceAllocationInfo; PFND3D12DDI_OFFERRESOURCES pfnOfferResources; PFND3D12DDI_RECLAIMRESOURCES_0001 pfnReclaimResources; PFND3D12DDI_GETIMPLICITPHYSICALADAPTERMASK pfnGetImplicitPhysicalAdapterMask; PFND3D12DDI_GET_PRESENT_PRIVATE_DRIVER_DATA_SIZE pfnGetPresentPrivateDriverDataSize; PFND3D12DDI_QUERY_NODE_MAP pfnQueryNodeMap; PFND3D12DDI_RETRIEVE_SHADER_COMMENT_0003 pfnRetrieveShaderComment; PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE pfnCheckResourceAllocationHandle; } D3D12DDI_DEVICE_FUNCS_CORE_0003; //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 Release 1 #define D3D12DDI_MINOR_VERSION_R1 10 #define D3D12DDI_INTERFACE_VERSION_R1 ((D3D12DDI_MAJOR_VERSION << 16) | D3D12DDI_MINOR_VERSION_R1) #define D3D12DDI_BUILD_VERSION_0010 0 #define D3D12DDI_SUPPORTED_0010 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R1) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0010) << 16)) // UMD handle types */ out IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HPIPELINESTATE MAKE_D3D12DDI_HPIPELINESTATE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HPIPELINESTATE MAKE_D3D12DDI_HPIPELINESTATE(IntPtr h);
         
         [DllImport("d3d12umddi")]
         public static extern D3D12DDI_HPROTECTEDRESOURCESESSION_0030 MAKE_D3D12DDI_HPROTECTEDRESOURCESESSION_0030(/* Build rev 0. #define D3D12DDI_MINOR_VERSION_R3 30 #define D3D12DDI_INTERFACE_VERSION_R3 ((D3D12DDI_MAJOR_VERSION << 16) | D3D12DDI_MINOR_VERSION_R3) #define D3D12DDI_BUILD_VERSION_0030 0 #define D3D12DDI_SUPPORTED_0030 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R3) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0030) << 16)) D3D10DDI_H( D3D12DDI_HCRYPTOSESSION_0030 ) D3D10DDI_H( D3D12DDI_HCRYPTOSESSIONPOLICY_0030 ) */ IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HQUERYHEAP MAKE_D3D12DDI_HQUERYHEAP([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HQUERYHEAP MAKE_D3D12DDI_HQUERYHEAP(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HROOTSIGNATURE MAKE_D3D12DDI_HROOTSIGNATURE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HROOTSIGNATURE MAKE_D3D12DDI_HROOTSIGNATURE(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HRTCOMMANDLIST MAKE_D3D12DDI_HRTCOMMANDLIST([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HRTCOMMANDLIST MAKE_D3D12DDI_HRTCOMMANDLIST(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HRTCOMMANDQUEUE MAKE_D3D12DDI_HRTCOMMANDQUEUE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HRTCOMMANDQUEUE MAKE_D3D12DDI_HRTCOMMANDQUEUE(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HRTMETACOMMAND_0052 MAKE_D3D12DDI_HRTMETACOMMAND_0052([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HRTMETACOMMAND_0052 MAKE_D3D12DDI_HRTMETACOMMAND_0052(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HRTPAGINGQUEUE MAKE_D3D12DDI_HRTPAGINGQUEUE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HRTPAGINGQUEUE MAKE_D3D12DDI_HRTPAGINGQUEUE(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HRTPIPELINESTATE MAKE_D3D12DDI_HRTPIPELINESTATE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HRTPIPELINESTATE MAKE_D3D12DDI_HRTPIPELINESTATE(IntPtr h);
         
         [DllImport("d3d12umddi")]
         public static extern D3D12DDI_HRTPROTECTEDSESSION_0030 MAKE_D3D12DDI_HRTPROTECTEDSESSION_0030(/* Build rev 4. // This version is introduced to detect the presence of the SubmitHistorySequence callback // in the KT callback table. #define D3D12DDI_BUILD_VERSION_0064 4 #define D3D12DDI_SUPPORTED_0064 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R6) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0064) << 16)) //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 Extended Feature Content Protection Resources // Feature: D3D12DDI_FEATURE_0030_CONTENT_PROTECTION_RESOURCES // Version: D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0030_0 // Usermode DDI Min Version: D3D12DDI_SUPPORTED_0030 #define D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0030_0 1u */ IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HRTSCHEDULINGGROUP_0050 MAKE_D3D12DDI_HRTSCHEDULINGGROUP_0050([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HRTSCHEDULINGGROUP_0050 MAKE_D3D12DDI_HRTSCHEDULINGGROUP_0050(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HRTSTATEOBJECT_0054 MAKE_D3D12DDI_HRTSTATEOBJECT_0054([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HRTSTATEOBJECT_0054 MAKE_D3D12DDI_HRTSTATEOBJECT_0054(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HRTTABLE MAKE_D3D12DDI_HRTTABLE([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HRTTABLE MAKE_D3D12DDI_HRTTABLE(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HSCHEDULINGGROUP_0050 MAKE_D3D12DDI_HSCHEDULINGGROUP_0050([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HSCHEDULINGGROUP_0050 MAKE_D3D12DDI_HSCHEDULINGGROUP_0050(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HSTATEOBJECT_0054 MAKE_D3D12DDI_HSTATEOBJECT_0054([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HSTATEOBJECT_0054 MAKE_D3D12DDI_HSTATEOBJECT_0054(IntPtr h);
         
         [DllImport("d3d12umddi")]
-        public static extern D3D12DDI_HUNORDEREDACCESSVIEWCOUNTER MAKE_D3D12DDI_HUNORDEREDACCESSVIEWCOUNTER([MarshalAs(UnmanagedType.IUnknown)] object h);
+        public static extern D3D12DDI_HUNORDEREDACCESSVIEWCOUNTER MAKE_D3D12DDI_HUNORDEREDACCESSVIEWCOUNTER(IntPtr h);
         
         [DllImport("d3d12umddi")]
         public static extern D3D12DDI_HVIDEODECODERHEAP_0032 MAKE_D3D12DDI_HVIDEODECODERHEAP_0032(/* } D3D12DDI_CRYPTO_SESSION_TRANSFORM_OPERATION_0030; // D3D12DDICAPS_TYPE_0030_CRYPTO_SESSION_TRANSFORM_SUPPORT typedef struct D3D12DDI_VIDEO_CRYPTO_SESSION_TRANSFORM_SUPPORT_DATA_0030 { UINT NodeIndex; // input GUID DecodeProfile; // input GUID ContentProtectionSystem; // input D3D12DDI_CRYPTO_SESSION_FLAGS_0030 Flags; // input D3D12DDI_BITSTREAM_ENCRYPTION_TYPE_0030 BitstreamEncryption; // input D3D12DDI_CRYPTO_SESSION_TRANSFORM_OPERATION_0030 Operation; // input BOOL ProtectedOutputRequired; // output UINT64 InputAlignment; // output UINT64 InputPreambleSize; // output UINT64 OutputAlignment; // output UINT64 OutputPreambleSize; // output D3D12DDI_CRYPTO_SESSION_TRANSFORM_SUPPORT_FLAGS_0030 Support; // output } D3D12DDI_VIDEO_CRYPTO_SESSION_TRANSFORM_SUPPORT_DATA_0030; typedef struct D3D12DDIARG_CREATE_PROTECTED_RESOURCE_SESSION_0030 { UINT NodeMask; } D3D12DDIARG_CREATE_PROTECTED_RESOURCE_SESSION_0030; typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEPROTECTEDRESOURCESESSIONSIZE_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_PROTECTED_RESOURCE_SESSION_0030* pArgs ); typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATEPROTECTEDRESOURCESESSION_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_PROTECTED_RESOURCE_SESSION_0030* pArgs, D3D12DDI_HPROTECTEDRESOURCESESSION_0030 hDrvProtectedResourceSession, D3D12DDI_HRTPROTECTEDSESSION_0030 hRtProtectedSession ); typedef struct D3D12DDIARG_OPEN_PROTECTED_RESOURCE_SESSION_0030 { CONST VOID* pPrivateDriverData; UINT PrivateDriverDataSize; } D3D12DDIARG_OPEN_PROTECTED_RESOURCE_SESSION_0030; typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEOPENEDPROTECTEDRESOURCESESSIONSIZE_0030)( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_OPEN_PROTECTED_RESOURCE_SESSION_0030* pArgs ); typedef HRESULT ( APIENTRY* PFND3D12DDI_OPENPROTECTEDRESOURCESESSION_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_OPEN_PROTECTED_RESOURCE_SESSION_0030* pArgs, D3D12DDI_HPROTECTEDRESOURCESESSION_0030 hDrvProtectedResourceSession ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYPROTECTEDRESOURCESESSION_0030 )( D3D12DDI_HDEVICE hDrvDevice, D3D12DDI_HPROTECTEDRESOURCESESSION_0030 hDrvProtectedResourceSession ); // D3D12DDI_TABLE_TYPE_0030_DEVICE_CONTENT_PROTECTION_RESOURCES typedef struct D3D12DDI_DEVICE_FUNCS_CONTENT_PROTECTION_RESOURCES_0030 { PFND3D12DDI_CALCPRIVATEPROTECTEDRESOURCESESSIONSIZE_0030 pfnCalcPrivateProtectedResourceSessionSize; PFND3D12DDI_CREATEPROTECTEDRESOURCESESSION_0030 pfnCreateProtectedResourceSession; PFND3D12DDI_CALCPRIVATEOPENEDPROTECTEDRESOURCESESSIONSIZE_0030 pfnCalcPrivateOpenedProtectedResourceSessionSize; PFND3D12DDI_OPENPROTECTEDRESOURCESESSION_0030 pfnOpenProtectedResourceSession; PFND3D12DDI_DESTROYPROTECTEDRESOURCESESSION_0030 pfnDestroyProtectedResourceSession; } D3D12DDI_DEVICE_FUNCS_CONTENT_PROTECTION_RESOURCES_0030; typedef struct D3D12DDICB_CREATE_PROTECTED_SESSION_0030 { CONST VOID* pPrivateDriverData; UINT PrivateDriverDataSize; } D3D12DDICB_CREATE_PROTECTED_SESSION_0030; typedef HRESULT(APIENTRY CALLBACK* PFND3D12DDI_CREATE_PROTECTED_SESSION_CB_0030)( D3D12DDI_HRTDEVICE hRTDevice, D3D12DDI_HRTPROTECTEDSESSION_0030 hRTProtectedSession, _In_ D3D12DDICB_CREATE_PROTECTED_SESSION_0030* pArgs ); // D3D12DDI_TABLE_TYPE_0030_CONTENT_PROTECTION_CALLBACKS typedef struct D3D12DDI_CONTENT_PROTECTION_CALLBACKS_0030 { PFND3D12DDI_CREATE_PROTECTED_SESSION_CB_0030 pfnCreateProtectedSessionCB; } D3D12DDI_CONTENT_PROTECTION_CALLBACKS_0030; //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 Extended Feature Content Protection Resources // Feature: D3D12DDI_FEATURE_0030_CONTENT_PROTECTION_RESOURCES // Version: D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0030_0 // Usermode DDI Min Version: D3D12DDI_SUPPORTED_0040 #define D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0040_0 2u //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 Extended Feature Content Protection Streaming // Feature: D3D12DDI_FEATURE_0030_CONTENT_PROTECTION_STREAMING // Version: D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_STREAMING_0030_0 // Usermode DDI Min Version: D3D12DDI_SUPPORTED_0030 #define D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_STREAMING_0030_0 1u typedef struct D3D12DDIARG_CREATE_CRYPTO_SESSION_0030 { UINT NodeMask; GUID DecodeProfile; GUID ContentProtectionSystem; D3D12DDI_BITSTREAM_ENCRYPTION_TYPE_0030 BitstreamEncryption; D3D12DDI_CRYPTO_SESSION_FLAGS_0030 Flags; } D3D12DDIARG_CREATE_CRYPTO_SESSION_0030; typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATECRYPTOSESSIONSIZE_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_CRYPTO_SESSION_0030* pArgs ); typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATECRYPTOSESSION_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_CRYPTO_SESSION_0030* pArgs, D3D12DDI_HCRYPTOSESSION_0030 hDrvCryptoSession, D3D12DDI_HRTPROTECTEDSESSION_0030 hRtProtectedSession ); typedef struct D3D12DDIARG_OPEN_CRYPTO_SESSION_0030 { CONST VOID* pPrivateDriverData; UINT PrivateDriverDataSize; } D3D12DDIARG_OPEN_CRYPTO_SESSION_0030; typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEOPENEDCRYPTOSESSIONSIZE_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_OPEN_CRYPTO_SESSION_0030* pArgs ); typedef HRESULT ( APIENTRY* PFND3D12DDI_OPENCRYPTOSESSION_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_OPEN_CRYPTO_SESSION_0030* pArgs, D3D12DDI_HCRYPTOSESSION_0030 hDrvCryptoSession ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYCRYPTOSESSION_0030 )( D3D12DDI_HDEVICE hDrvDevice, D3D12DDI_HCRYPTOSESSION_0030 hDrvCryptoSession ); typedef HRESULT ( APIENTRY* PFND3D12DDI_GETKEYBASEDATA_0030 ) ( D3D12DDI_HDEVICE hDrvDevice, D3D12DDI_HCRYPTOSESSION_0030 hDrvCryptoSession, _In_reads_bytes_(KeyInputDataSize) CONST VOID* pKeyInputData, UINT KeyInputDataSize, _Out_writes_bytes_(KeyBaseDataSize) VOID* pKeyBaseData, UINT KeyBaseDataSize ); typedef struct D3D12DDIARG_CREATE_CRYPTO_SESSION_POLICY_0030 { const void* pKeyInfo; UINT KeyInfoSize; } D3D12DDIARG_CREATE_CRYPTO_SESSION_POLICY_0030; typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATECRYPTOSESSIONPOLICYSIZE_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_CRYPTO_SESSION_POLICY_0030* pArgs, D3D12DDI_HCRYPTOSESSION_0030 hDrvCryptoSession ); typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATECRYPTOSESSIONPOLICY_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_CRYPTO_SESSION_POLICY_0030* pArgs, D3D12DDI_HCRYPTOSESSION_0030 hDrvCryptoSession, D3D12DDI_HCRYPTOSESSIONPOLICY_0030 hDrvCryptoSessionPolicy, D3D12DDI_HRTPROTECTEDSESSION_0030 hRtProtectedSession ); typedef struct D3D12DDIARG_OPEN_CRYPTO_SESSION_POLICY_0030 { const void* pPrivateDriverData; UINT PrivateDriverDataSize; } D3D12DDIARG_OPEN_CRYPTO_SESSION_POLICY_0030; typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEOPENEDCRYPTOSESSIONPOLICYSIZE_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_OPEN_CRYPTO_SESSION_POLICY_0030* pArgs ); typedef HRESULT ( APIENTRY* PFND3D12DDI_OPENCRYPTOSESSIONPOLICY_0030 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_OPEN_CRYPTO_SESSION_POLICY_0030* pArgs, D3D12DDI_HCRYPTOSESSIONPOLICY_0030 hDrvCryptoSessionPolicy ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYCRYPTOSESSIONPOLICY_0030 )( D3D12DDI_HDEVICE hDrvDevice, D3D12DDI_HCRYPTOSESSIONPOLICY_0030 hDrvCryptoSessionPolicy ); typedef struct D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_HEADER_INPUT_ARGUMENTS_0030 { BOOL Enable; _Field_size_bytes_full_(SliceHeadersSize) const void* pSliceHeaders; UINT64 SliceHeadersSize; _Field_size_full_(SliceHeaderCount) const DWORD* pSliceHeadersOffsets; UINT64 SliceHeaderCount; _Field_size_bytes_full_(ContextSize) const void* pContext; UINT64 ContextSize; } D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_HEADER_INPUT_ARGUMENTS_0030; typedef struct D3D12DDI_CRYPTO_SESSION_TRANSFORM_INPUT_ARGUMENTS_0030 { D3D12DDI_HCRYPTOSESSIONPOLICY_0030 hDrvCryptoSessionPolicy; D3D12DDI_HRESOURCE hDrvBuffer; UINT64 Size; UINT64 Offset; _Field_size_bytes_full_(IVSize) const void* pIV; UINT IVSize; _Field_size_bytes_full_(SubSampleMappingCount) const void* pSubSampleMappingBlock; UINT SubSampleMappingCount; _Field_size_bytes_full_(ContextSize) const void* pContext; UINT64 ContextSize; D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_HEADER_INPUT_ARGUMENTS_0030 EncryptedHeader; } D3D12DDI_CRYPTO_SESSION_TRANSFORM_INPUT_ARGUMENTS_0030; typedef struct D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_HEADER_OUTPUT_ARGUMENTS_0030 { BOOL Enable; _Field_size_bytes_full_(SliceHeadersSize) const void *pSliceHeaders; UINT64 SliceHeadersSize; _Field_size_bytes_full_(ContextSize) const void* pContext; UINT64 ContextSize; } D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_HEADER_OUTPUT_ARGUMENTS_0030; typedef struct D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_OUTPUT_ARGUMENTS_0030 { BOOL Enable; D3D12DDI_HRESOURCE hDrvBuffer; UINT64 Size; UINT64 Offset; } D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_OUTPUT_ARGUMENTS_0030; typedef struct D3D12DDI_CRYPTO_SESSION_TRANSFORM_TRANSCRYPT_OUTPUT_ARGUMENTS_0030 { BOOL Enable; _Field_size_bytes_full_(IVSize) void* pIV; UINT IVSize; } D3D12DDI_CRYPTO_SESSION_TRANSFORM_TRANSCRYPT_OUTPUT_ARGUMENTS_0030; typedef struct D3D12DDI_CRYPTO_SESSION_TRANSFORM_OUTPUT_ARGUMENTS_0030 { D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_OUTPUT_ARGUMENTS_0030 Decrypt; D3D12DDI_CRYPTO_SESSION_TRANSFORM_TRANSCRYPT_OUTPUT_ARGUMENTS_0030 Transcrypt; D3D12DDI_CRYPTO_SESSION_TRANSFORM_DECRYPT_HEADER_OUTPUT_ARGUMENTS_0030 ClearHeader; } D3D12DDI_CRYPTO_SESSION_TRANSFORM_OUTPUT_ARGUMENTS_0030; typedef HRESULT ( APIENTRY* PFND3D12DDI_TRANSFORMENCRYPTEDDATA_0030 )( D3D12DDI_HDEVICE hDrvDevice, D3D12DDI_CRYPTO_SESSION_TRANSFORM_OPERATION_0030 Operation, _In_ const D3D12DDI_CRYPTO_SESSION_TRANSFORM_OUTPUT_ARGUMENTS_0030* pOutputArguments, _In_ const D3D12DDI_CRYPTO_SESSION_TRANSFORM_INPUT_ARGUMENTS_0030* pInputArguments ); // D3D12DDI_TABLE_TYPE_0030_DEVICE_CONTENT_PROTECTION_STREAMING typedef struct D3D12DDI_DEVICE_FUNCS_CONTENT_PROTECTION_STREAMING_0030 { PFND3D12DDI_CALCPRIVATECRYPTOSESSIONSIZE_0030 pfnCalcPrivateCryptoSessionSize; PFND3D12DDI_CREATECRYPTOSESSION_0030 pfnCreateCryptoSession; PFND3D12DDI_CALCPRIVATEOPENEDCRYPTOSESSIONSIZE_0030 pfnCalcPrivateOpenedCryptoSessionSize; PFND3D12DDI_OPENCRYPTOSESSION_0030 pfnOpenCryptoSession; PFND3D12DDI_DESTROYCRYPTOSESSION_0030 pfnDestroyCryptoSession; PFND3D12DDI_GETKEYBASEDATA_0030 pfnGetKeyBaseData; PFND3D12DDI_CALCPRIVATECRYPTOSESSIONPOLICYSIZE_0030 pfnCalcPrivateCryptoSessionPolicySize; PFND3D12DDI_CREATECRYPTOSESSIONPOLICY_0030 pfnCreateCryptoSessionPolicy; PFND3D12DDI_CALCPRIVATEOPENEDCRYPTOSESSIONPOLICYSIZE_0030 pfnCalcPrivateOpenedCryptoSessionPolicySize; PFND3D12DDI_OPENCRYPTOSESSIONPOLICY_0030 pfnOpenCryptoSessionPolicy; PFND3D12DDI_DESTROYCRYPTOSESSIONPOLICY_0030 pfnDestroyCryptoSessionPolicy; PFND3D12DDI_TRANSFORMENCRYPTEDDATA_0030 pfnTransformEncryptedData; } D3D12DDI_DEVICE_FUNCS_CONTENT_PROTECTION_STREAMING_0030; //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 Extended Feature Video // Version: D3D12DDI_FEATURE_VERSION_VIDEO_0030_0 // Usermode DDI Min Version: D3D12DDI_SUPPORTED_0021 typedef struct D3D12DDI_VIDEO_DECODE_DECRYPTION_ARGUMENTS_0030 { D3D12DDI_HCRYPTOSESSIONPOLICY_0030 hDrvCryptoSessionPolicy; CONST VOID* pIV; UINT IVSize; CONST VOID* pSubSampleMappingBlock; UINT SubSampleMappingCount; } D3D12DDI_VIDEO_DECODE_DECRYPTION_ARGUMENTS_0030; //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 Extended Feature Video // Version: D3D12DDI_FEATURE_VERSION_VIDEO_0032_0 // Usermode DDI Min Version: D3D12DDI_SUPPORTED_0021 // UMD handle types */ IntPtr h);
@@ -847,7 +847,7 @@ namespace DirectN
         public static extern HRESULT DirectDrawCreateClipper(uint dwFlags, out LPDIRECTDRAWCLIPPER lplpDDClipper, [MarshalAs(UnmanagedType.IUnknown)] object pUnkOuter);
         
         [DllImport("ddraw")]
-        public static extern HRESULT DirectDrawCreateEx([MarshalAs(UnmanagedType.LPStruct)] Guid lpGuid, [MarshalAs(UnmanagedType.IUnknown)] object lplpDD, [MarshalAs(UnmanagedType.LPStruct)] Guid iid, [MarshalAs(UnmanagedType.IUnknown)] object pUnkOuter);
+        public static extern HRESULT DirectDrawCreateEx([MarshalAs(UnmanagedType.LPStruct)] Guid lpGuid, IntPtr lplpDD, [MarshalAs(UnmanagedType.LPStruct)] Guid iid, [MarshalAs(UnmanagedType.IUnknown)] object pUnkOuter);
         
         [DllImport("ddraw")]
         public static extern HRESULT DirectDrawEnumerateA(ref LPDDENUMCALLBACKA lpCallback, IntPtr lpContext);
@@ -907,10 +907,10 @@ namespace DirectN
         public static extern bool GdiEntry8(int pSurfaceLocal);
         
         [DllImport("ddrawgdi")]
-        public static extern IntPtr GdiEntry9(IntPtr hdc, ref tagBITMAPINFO pbmi, uint iUsage, [MarshalAs(UnmanagedType.IUnknown)] object ppvBits, IntPtr hSectionApp, uint dwOffset);
+        public static extern IntPtr GdiEntry9(IntPtr hdc, ref tagBITMAPINFO pbmi, uint iUsage, IntPtr ppvBits, IntPtr hSectionApp, uint dwOffset);
         
         [DllImport("ddrawi")]
-        public static extern HRESULT D3DParseUnknownCommand(IntPtr lpvCommands, [MarshalAs(UnmanagedType.IUnknown)] object lplpvReturnedCommand);
+        public static extern HRESULT D3DParseUnknownCommand(IntPtr lpvCommands, IntPtr lplpvReturnedCommand);
         
         [DllImport("ddrawi")]
         public static extern bool DDHAL_SetInfo(ref _DDHALINFO lpDDHALInfo, bool reset);
@@ -946,7 +946,7 @@ namespace DirectN
         public static extern HRESULT DxcCreateInstance2(/* _In_ */ ref IMalloc pMalloc, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rclsid, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Out_ */ out IntPtr ppv);
         
         [DllImport("dxgidebug")]
-        public static extern HRESULT DXGIGetDebugInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppDebug);
+        public static extern HRESULT DXGIGetDebugInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, IntPtr ppDebug);
         
         [DllImport("dxva2api")]
         public static extern void DXVA2FixedToFloat(/* _In_ */ DXVA2_Fixed32 _fixed_);
@@ -1210,7 +1210,7 @@ namespace DirectN
         public static extern void MFHeapAlloc(ulong nSize, uint dwFlags, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pszFile, int line, _EAllocationType eat);
         
         [DllImport("mfplat")]
-        public static extern void MFHeapFree([MarshalAs(UnmanagedType.IUnknown)] object pv);
+        public static extern void MFHeapFree(IntPtr pv);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFInitAMMediaTypeFromMFMediaType(/* _In_ */ IMFMediaType pMFType, /* _In_ */ Guid guidFormatBlockType, /* _Inout_ */ ref AM_MEDIA_TYPE pAMType);
@@ -1492,7 +1492,7 @@ namespace DirectN
         public static extern HRESULT MFCreateMuxSink(/* _In_ */ Guid guidOutputSubType, /* _In_opt_ */ IMFAttributes pOutputAttributes, /* _In_opt_ */ IMFByteStream pOutputByteStream, /* _Outptr_ */ out IMFMediaSink ppMuxSink);
         
         [DllImport("mfplat")]
-        public static extern HRESULT MFCreateNetSchemePlugin([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppvHandler);
+        public static extern HRESULT MFCreateNetSchemePlugin([MarshalAs(UnmanagedType.LPStruct)] Guid riid, IntPtr ppvHandler);
         
         [DllImport("mfplat")]
         public static extern HRESULT MFCreatePMPMediaSession(uint dwCreationFlags, IMFAttributes pConfiguration, /* _Outptr_ */ out IMFMediaSession ppMediaSession, /* _Outptr_opt_ */ out IMFActivate ppEnablerActivate);

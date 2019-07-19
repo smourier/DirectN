@@ -36,7 +36,7 @@ namespace DirectN.Temp
                     {
                         var rc = new _D3DLOCKED_RECT();
                         var rect = new tagRECT();
-                        surf.LockRect(ref rc, ref rect, 0).ThrowOnError();
+                        surf.LockRect(ref rc, IntPtr.Zero, 0).ThrowOnError();
                         var pitch = rc.Pitch;
                         surf.UnlockRect();
 
@@ -51,7 +51,7 @@ namespace DirectN.Temp
                         for (var i = 0; i < count; i++)
                         {
                             dev.GetFrontBufferData(0, surf).ThrowOnError();
-                            surf.LockRect(ref rc, ref rect, 0).ThrowOnError();
+                            surf.LockRect(ref rc, IntPtr.Zero, 0).ThrowOnError();
                             Marshal.Copy(rc.pBits, shots[i], 0, shots[i].Length);
                             surf.UnlockRect().ThrowOnError();
                         }

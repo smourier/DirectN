@@ -6,6 +6,6 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct KSIDENTIFIER
     {
-        public __struct_ks_332__union_0 __union_0;
+        public __struct_ks_442__union_0 __union_0;
     }
 }

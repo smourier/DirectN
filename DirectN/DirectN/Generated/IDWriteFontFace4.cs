@@ -164,6 +164,6 @@ namespace DirectN
         HRESULT GetGlyphImageData(/* _In_ */ ushort glyphId, uint pixelsPerEm, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, /* _Out_ */ out DWRITE_GLYPH_IMAGE_DATA glyphData, /* _Outptr_result_maybenull_ */ out IntPtr glyphDataContext);
         
         [PreserveSig]
-        void ReleaseGlyphImageData([MarshalAs(UnmanagedType.IUnknown)] object glyphDataContext);
+        void ReleaseGlyphImageData(IntPtr glyphDataContext);
     }
 }

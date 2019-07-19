@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDirect3D9
     {
         [PreserveSig]
-        HRESULT RegisterSoftwareDevice([MarshalAs(UnmanagedType.IUnknown)] object pInitializeFunction);
+        HRESULT RegisterSoftwareDevice(IntPtr pInitializeFunction);
         
         [PreserveSig]
         uint GetAdapterCount();

@@ -23,6 +23,6 @@ namespace DirectN
         HRESULT FindFirstPartKind(uint kind, /* _Out_ */ out uint pResult);
         
         [PreserveSig]
-        HRESULT GetPartReflection(uint idx, [MarshalAs(UnmanagedType.LPStruct)] Guid iid, [MarshalAs(UnmanagedType.IUnknown)] object ppvObject);
+        HRESULT GetPartReflection(uint idx, [MarshalAs(UnmanagedType.LPStruct)] Guid iid, IntPtr ppvObject);
     }
 }

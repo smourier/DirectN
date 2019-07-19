@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
-        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
+        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, ref uint pSizeOfData);
         
         [PreserveSig]
         HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);

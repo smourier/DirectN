@@ -15,7 +15,7 @@ namespace DirectN
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
-        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
+        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, ref uint pSizeOfData);
         
         [PreserveSig]
         new HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
@@ -34,13 +34,13 @@ namespace DirectN
         
         // IDirect3DSurface9
         [PreserveSig]
-        HRESULT GetContainer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppContainer);
+        HRESULT GetContainer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, IntPtr ppContainer);
         
         [PreserveSig]
         HRESULT GetDesc(ref _D3DSURFACE_DESC pDesc);
         
         [PreserveSig]
-        HRESULT LockRect(ref _D3DLOCKED_RECT pLockedRect, ref tagRECT pRect, uint Flags);
+        HRESULT LockRect(ref _D3DLOCKED_RECT pLockedRect, IntPtr pRect, uint Flags);
         
         [PreserveSig]
         HRESULT UnlockRect();

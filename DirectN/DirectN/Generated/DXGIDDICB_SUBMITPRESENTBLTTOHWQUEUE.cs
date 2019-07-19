@@ -7,8 +7,8 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DXGIDDICB_SUBMITPRESENTBLTTOHWQUEUE
     {
-        public int hSrcAllocation;
-        public int hDstAllocation;
+        public uint hSrcAllocation;
+        public uint hDstAllocation;
         public IntPtr pDXGIContext;
         public IntPtr hHwQueue;
         public ulong HwQueueProgressFenceId;

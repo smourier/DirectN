@@ -14,9 +14,9 @@ namespace DirectN
         public tagRECT rCrop;
         public uint dwPrescaleWidth;
         public uint dwPrescaleHeight;
-        public int lpddpfInputFormat;
-        public int lpddpfVBIInputFormat;
-        public int lpddpfVBIOutputFormat;
+        public IntPtr lpddpfInputFormat;
+        public IntPtr lpddpfVBIInputFormat;
+        public IntPtr lpddpfVBIOutputFormat;
         public uint dwVBIHeight;
         public IntPtr dwReserved1;
         public IntPtr dwReserved2;

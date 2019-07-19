@@ -1,8 +1,10 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dvp.h(148,1)
 using System;
 using System.Runtime.InteropServices;
+using LPDDCOLORCONTROL = DirectN._DDCOLORCONTROL;
 using LPDDVIDEOPORTBANDWIDTH = DirectN._DDVIDEOPORTBANDWIDTH;
 using LPDDVIDEOPORTINFO = DirectN._DDVIDEOPORTINFO;
+using LPDIRECTDRAWSURFACE = DirectN.IDirectDrawSurface;
 
 namespace DirectN
 {
@@ -10,19 +12,19 @@ namespace DirectN
     public partial interface IDirectDrawVideoPort
     {
         [PreserveSig]
-        HRESULT Flip(int LPDIRECTDRAWSURFACE, uint unnamed__1);
+        HRESULT Flip(LPDIRECTDRAWSURFACE unnamed__0, uint unnamed__1);
         
         [PreserveSig]
-        HRESULT GetBandwidthInfo(int LPDDPIXELFORMAT, uint unnamed__1, uint unnamed__2, uint unnamed__3, ref LPDDVIDEOPORTBANDWIDTH unnamed__4);
+        HRESULT GetBandwidthInfo(ref _DDPIXELFORMAT unnamed__0, uint unnamed__1, uint unnamed__2, uint unnamed__3, ref LPDDVIDEOPORTBANDWIDTH unnamed__4);
         
         [PreserveSig]
-        HRESULT GetColorControls(int unnamed__0);
+        HRESULT GetColorControls(ref LPDDCOLORCONTROL unnamed__0);
         
         [PreserveSig]
-        HRESULT GetInputFormats(ref uint lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ int LPDDPIXELFORMAT, uint unnamed__2);
+        HRESULT GetInputFormats(ref uint lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _DDPIXELFORMAT[] unnamed__1, uint unnamed__2);
         
         [PreserveSig]
-        HRESULT GetOutputFormats(int LPDDPIXELFORMAT, ref uint lpNumFormats, int unnamed__2, uint unnamed__3);
+        HRESULT GetOutputFormats(ref _DDPIXELFORMAT unnamed__0, ref uint lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _DDPIXELFORMAT[] unnamed__2, uint unnamed__3);
         
         [PreserveSig]
         HRESULT GetFieldPolarity(ref bool unnamed__0);
@@ -34,10 +36,10 @@ namespace DirectN
         HRESULT GetVideoSignalStatus(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT SetColorControls(int unnamed__0);
+        HRESULT SetColorControls(ref LPDDCOLORCONTROL unnamed__0);
         
         [PreserveSig]
-        HRESULT SetTargetSurface(int LPDIRECTDRAWSURFACE, uint unnamed__1);
+        HRESULT SetTargetSurface(LPDIRECTDRAWSURFACE unnamed__0, uint unnamed__1);
         
         [PreserveSig]
         HRESULT StartVideo(ref LPDDVIDEOPORTINFO unnamed__0);

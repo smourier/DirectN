@@ -14,24 +14,24 @@ namespace DirectN
         HRESULT GetCertificate(uint CertifacteSize, ref byte ppCertificate);
         
         [PreserveSig]
-        HRESULT NegotiateKeyExchange(uint DataSize, [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        HRESULT NegotiateKeyExchange(uint DataSize, IntPtr pData);
         
         [PreserveSig]
-        HRESULT EncryptionBlt(IDirect3DSurface9 pSrcSurface, IDirect3DSurface9 pDstSurface, uint DstSurfaceSize, [MarshalAs(UnmanagedType.IUnknown)] object pIV);
+        HRESULT EncryptionBlt(IDirect3DSurface9 pSrcSurface, IDirect3DSurface9 pDstSurface, uint DstSurfaceSize, IntPtr pIV);
         
         [PreserveSig]
-        HRESULT DecryptionBlt(IDirect3DSurface9 pSrcSurface, IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref _D3DENCRYPTED_BLOCK_INFO pEncryptedBlockInfo, [MarshalAs(UnmanagedType.IUnknown)] object pContentKey, [MarshalAs(UnmanagedType.IUnknown)] object pIV);
+        HRESULT DecryptionBlt(IDirect3DSurface9 pSrcSurface, IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref _D3DENCRYPTED_BLOCK_INFO pEncryptedBlockInfo, IntPtr pContentKey, IntPtr pIV);
         
         [PreserveSig]
         HRESULT GetSurfacePitch(IDirect3DSurface9 pSrcSurface, ref uint pSurfacePitch);
         
         [PreserveSig]
-        HRESULT StartSessionKeyRefresh([MarshalAs(UnmanagedType.IUnknown)] object pRandomNumber, uint RandomNumberSize);
+        HRESULT StartSessionKeyRefresh(IntPtr pRandomNumber, uint RandomNumberSize);
         
         [PreserveSig]
         HRESULT FinishSessionKeyRefresh();
         
         [PreserveSig]
-        HRESULT GetEncryptionBltKey([MarshalAs(UnmanagedType.IUnknown)] object pReadbackKey, uint KeySize);
+        HRESULT GetEncryptionBltKey(IntPtr pReadbackKey, uint KeySize);
     }
 }

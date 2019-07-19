@@ -4322,7 +4322,7 @@
         public const int AVENC_H264V_LEVELCOUNT = 16;
         public const int AVENC_H264V_MAX_MBBITS = 3200;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d2d1effectauthor.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\D2D1EffectAuthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\D2DErr.h

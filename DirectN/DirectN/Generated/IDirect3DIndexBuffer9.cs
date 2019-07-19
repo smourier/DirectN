@@ -15,7 +15,7 @@ namespace DirectN
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
-        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
+        new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, ref uint pSizeOfData);
         
         [PreserveSig]
         new HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
@@ -34,7 +34,7 @@ namespace DirectN
         
         // IDirect3DIndexBuffer9
         [PreserveSig]
-        HRESULT Lock(uint OffsetToLock, uint SizeToLock, [MarshalAs(UnmanagedType.IUnknown)] object ppbData, uint Flags);
+        HRESULT Lock(uint OffsetToLock, uint SizeToLock, IntPtr ppbData, uint Flags);
         
         [PreserveSig]
         HRESULT Unlock();

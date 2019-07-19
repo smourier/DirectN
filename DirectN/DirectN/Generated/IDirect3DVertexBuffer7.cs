@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface IDirect3DVertexBuffer7
     {
         [PreserveSig]
-        HRESULT Lock(uint unnamed__0, [MarshalAs(UnmanagedType.IUnknown)] object unnamed__1, ref uint unnamed__2);
+        HRESULT Lock(uint unnamed__0, IntPtr unnamed__1, ref uint unnamed__2);
         
         [PreserveSig]
         HRESULT Unlock();

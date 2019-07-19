@@ -8,7 +8,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DHAL_DRAWPRIMITIVES2DATA__union_0
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1856)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1904)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
         public IntPtr lpDDVertex { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }

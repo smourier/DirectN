@@ -14,10 +14,10 @@ namespace DirectN
         HRESULT GetCertificate(uint CertifacteSize, ref byte ppCertificate);
         
         [PreserveSig]
-        HRESULT NegotiateKeyExchange(uint DataSize, [MarshalAs(UnmanagedType.IUnknown)] object pData);
+        HRESULT NegotiateKeyExchange(uint DataSize, IntPtr pData);
         
         [PreserveSig]
-        HRESULT Query(uint InputSize, IntPtr pInput, uint OutputSize, [MarshalAs(UnmanagedType.IUnknown)] object pOutput);
+        HRESULT Query(uint InputSize, IntPtr pInput, uint OutputSize, IntPtr pOutput);
         
         [PreserveSig]
         HRESULT Configure(uint InputSize, IntPtr pInput, ref _D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT pOutput);

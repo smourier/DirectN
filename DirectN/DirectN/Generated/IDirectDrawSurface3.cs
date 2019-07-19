@@ -112,7 +112,7 @@ namespace DirectN
         HRESULT UpdateOverlayZOrder(uint unnamed__0, LPDIRECTDRAWSURFACE3 unnamed__1);
         
         [PreserveSig]
-        HRESULT GetDDInterface([MarshalAs(UnmanagedType.IUnknown)] object unnamed__0);
+        HRESULT GetDDInterface(IntPtr unnamed__0);
         
         [PreserveSig]
         HRESULT PageLock(uint unnamed__0);

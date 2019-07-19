@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT ReadFileFragment(/* _Outptr_result_bytebuffer_(fragmentSize) */ out IntPtr fragmentStart, ulong fileOffset, ulong fragmentSize, /* _Out_ */ out IntPtr fragmentContext);
         
         [PreserveSig]
-        void ReleaseFileFragment([MarshalAs(UnmanagedType.IUnknown)] object fragmentContext);
+        void ReleaseFileFragment(IntPtr fragmentContext);
         
         [PreserveSig]
         HRESULT GetFileSize(/* _Out_ */ out ulong fileSize);

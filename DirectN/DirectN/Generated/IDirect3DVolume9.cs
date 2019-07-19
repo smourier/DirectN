@@ -14,13 +14,13 @@ namespace DirectN
         HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
         
         [PreserveSig]
-        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, [MarshalAs(UnmanagedType.IUnknown)] object pData, ref uint pSizeOfData);
+        HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, ref uint pSizeOfData);
         
         [PreserveSig]
         HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
         
         [PreserveSig]
-        HRESULT GetContainer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object ppContainer);
+        HRESULT GetContainer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, IntPtr ppContainer);
         
         [PreserveSig]
         HRESULT GetDesc(ref _D3DVOLUME_DESC pDesc);
