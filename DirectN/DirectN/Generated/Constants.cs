@@ -456,6 +456,10 @@
         public const int DXGK_MAX_PAGE_TABLE_LEVEL_COUNT = 6;
         public const int DXGK_MIN_PAGE_TABLE_LEVEL_COUNT = 2;
         
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared\dcomptypes.h
+        public const int COMPOSITIONOBJECT_READ = 1;
+        public const int COMPOSITIONOBJECT_WRITE = 2;
+        
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\dmerror.h
         public const int DMUS_ERRBASE = 4096;
         
@@ -4322,7 +4326,7 @@
         public const int AVENC_H264V_LEVELCOUNT = 16;
         public const int AVENC_H264V_MAX_MBBITS = 3200;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\D2D1EffectAuthor.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\d2d1effectauthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
         
         // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\D2DErr.h
@@ -7091,7 +7095,7 @@
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dshowasf.h
         public const int EC_PREPROCESS_COMPLETE = 86;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dvdevcod.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\dvdevcod.h
         public const int EC_DVDBASE = 256;
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\dvdmedia.h
@@ -7613,7 +7617,7 @@
         public const int MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
         public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 1;
         
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\mftransform.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\MFTransform.h
         public const int MFT_STREAMS_UNLIMITED = -1;
         
         // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\mmdeviceapi.h
@@ -9348,7 +9352,7 @@
         public const int WMPGC_FLAGS_SUPPRESS_DIALOGS = 2;
         public const int WMPGC_FLAGS_USE_CUSTOM_GRAPH = 16;
         
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\wmsdkidl.h
+        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um\wmsdkidl.h
         public const int DRM_OPL_TYPES = 1;
         public const int WAVE_FORMAT_DRM = 9;
         public const int WMDRM_IMPORT_INIT_STRUCT_DEFINED = 1;

@@ -34,7 +34,7 @@ namespace DirectN
         
         // IDirect3DSurface9
         [PreserveSig]
-        HRESULT GetContainer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, IntPtr ppContainer);
+        HRESULT GetContainer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppContainer);
         
         [PreserveSig]
         HRESULT GetDesc(ref _D3DSURFACE_DESC pDesc);

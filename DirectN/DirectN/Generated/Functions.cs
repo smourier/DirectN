@@ -44,6 +44,7 @@ using MPEG2VIDEOINFO = DirectN.tagMPEG2VIDEOINFO;
 using PDXVAHDSW_Plugin = System.IntPtr;
 using PROC = System.IntPtr;
 using REFWICPixelFormatGUID = System.Guid;
+using SECURITY_ATTRIBUTES = DirectN._SECURITY_ATTRIBUTES;
 using VIDEOINFOHEADER = DirectN.tagVIDEOINFOHEADER;
 using VIDEOINFOHEADER2 = DirectN.tagVIDEOINFOHEADER2;
 
@@ -343,7 +344,7 @@ namespace DirectN
         public static extern uint D3D10CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels);
         
         [DllImport("d3d10")]
-        public static extern HRESULT D3D10CompileEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, [MarshalAs(UnmanagedType.LPStr)] string pSrcFileName, /* optional(int) */ IntPtr pDefines, /* optional(int) */ IntPtr pInclude, uint HLSLFlags, uint FXFlags, /* _Out_ */ out ID3D10Blob ppCompiledEffect, /* _Out_opt_ */ out ID3D10Blob ppErrors);
+        public static extern HRESULT D3D10CompileEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, [MarshalAs(UnmanagedType.LPStr)] string pSrcFileName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, uint HLSLFlags, uint FXFlags, /* _Out_ */ out ID3D10Blob ppCompiledEffect, /* _Out_opt_ */ out ID3D10Blob ppErrors);
         
         [DllImport("d3d10")]
         public static extern HRESULT D3D10CreateEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, uint FXFlags, /* _In_ */ ID3D10Device pDevice, /* _In_opt_ */ ID3D10EffectPool pEffectPool, /* _Out_ */ out ID3D10Effect ppEffect);
@@ -836,6 +837,24 @@ namespace DirectN
         
         [DllImport("d3dcsx")]
         public static extern HRESULT D3DX11CreateSegmentedScan(/* _In_ */ ID3D11DeviceContext pDeviceContext, uint MaxElementScanSize, /* _Out_ */ out ID3DX11SegmentedScan ppScan);
+        
+        [DllImport("dcomp")]
+        public static extern HRESULT DCompositionAttachMouseDragToHwnd(/* _In_ */ IDCompositionVisual visual, /* _In_ */ IntPtr hwnd, /* _In_ */ bool enable);
+        
+        [DllImport("dcomp")]
+        public static extern HRESULT DCompositionAttachMouseWheelToHwnd(/* _In_ */ IDCompositionVisual visual, /* _In_ */ IntPtr hwnd, /* _In_ */ bool enable);
+        
+        [DllImport("dcomp")]
+        public static extern HRESULT DCompositionCreateDevice(/* _In_opt_ */ IDXGIDevice dxgiDevice, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid iid, /* _Outptr_ */ out IntPtr dcompositionDevice);
+        
+        [DllImport("dcomp")]
+        public static extern HRESULT DCompositionCreateDevice2(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object renderingDevice, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid iid, /* _Outptr_ */ out IntPtr dcompositionDevice);
+        
+        [DllImport("dcomp")]
+        public static extern HRESULT DCompositionCreateDevice3(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object renderingDevice, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid iid, /* _Outptr_ */ out IntPtr dcompositionDevice);
+        
+        [DllImport("dcomp")]
+        public static extern HRESULT DCompositionCreateSurfaceHandle(/* _In_ */ uint desiredAccess, /* optional(SECURITY_ATTRIBUTES) */ IntPtr securityAttributes, /* _Out_ */ out IntPtr surfaceHandle);
         
         [DllImport("ddkmapi")]
         public static extern uint DxApi(uint dwFunctionNum, IntPtr lpvInBuffer, uint cbInBuffer, IntPtr lpvOutBuffer, uint cbOutBuffer);
@@ -1665,7 +1684,7 @@ namespace DirectN
         [DllImport("mfreadwrite")]
         public static extern HRESULT MFCreateSourceReaderFromURL(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
         
-        [DllImport("mftransform")]
+        [DllImport("MFTransform")]
         public static extern HRESULT MFCreateTransformActivate(/* _Out_ */ out IMFActivate ppActivate);
         
         [DllImport("mmdeviceapi")]

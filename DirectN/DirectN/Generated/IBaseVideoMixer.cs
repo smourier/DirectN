@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("00000000-0000-0000-0000-000000000000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("61ded640-e912-11ce-a099-00aa00479a58"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IBaseVideoMixer
     {
         [PreserveSig]

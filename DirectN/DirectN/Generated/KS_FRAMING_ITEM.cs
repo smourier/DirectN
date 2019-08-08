@@ -13,7 +13,7 @@ namespace DirectN
         public uint BusFlags;
         public uint Flags;
         public uint Frames;
-        public __struct_ks_144__union_0 __union_6;
+        public __struct_ks_364__union_0 __union_6;
         public uint MemoryTypeWeight;
         public KS_FRAMING_RANGE PhysicalRange;
         public KS_FRAMING_RANGE_WEIGHTED FramingRange;

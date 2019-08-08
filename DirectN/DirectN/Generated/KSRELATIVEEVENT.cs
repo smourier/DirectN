@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint Size;
         public uint Flags;
-        public __struct_ks_233__union_0 __union_2;
+        public __struct_ks_178__union_0 __union_2;
         public IntPtr Reserved;
         public KSIDENTIFIER Event;
         public KSEVENTDATA EventData;

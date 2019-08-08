@@ -12,6 +12,6 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>$description$</description>
 		<copyright>$copyright$</copyright>
-		<tags>.NET DXGI WIC DirectX Direct2D DirectWrite MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop</tags>
+		<tags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop</tags>
 	</metadata>
 </package>
