@@ -10,6 +10,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.5.0.0")]
 [assembly: AssemblyInformationalVersion("1.5.0.0")]
-[assembly: AssemblyDescription("Direct Wrappers for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.")]
+[assembly: AssemblyDescription("Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.")]
 [assembly: AssemblyCompany("Simon Mourier")]
 
