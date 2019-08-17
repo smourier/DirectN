@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetPalette(/* [annotation][out] _Inout_ */ ref uint pdwColors, /* [annotation][size_is][size_is][out] _Outptr_result_buffer_to_(*pdwColors, *pdwColors) */ out IntPtr ppPalette);
         
         [PreserveSig]
-        HRESULT SetPalette(/* [in] */ uint dwColors, /* [annotation][size_is][in] _In_reads_(dwColors) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagPALETTEENTRY[] pPalette);
+        HRESULT SetPalette(/* [in] */ int dwColors, /* [annotation][size_is][in] _In_reads_(dwColors) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagPALETTEENTRY[] pPalette);
         
         [PreserveSig]
         HRESULT GetDefaultColorKey(/* [annotation][out] _Out_ */ out tagCOLORKEY pColorKey);

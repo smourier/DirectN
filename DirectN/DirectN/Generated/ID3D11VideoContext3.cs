@@ -34,7 +34,7 @@ namespace DirectN
         new HRESULT DecoderEndFrame(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder);
         
         [PreserveSig]
-        new HRESULT SubmitDecoderBuffers(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ uint NumBuffers, /* [annotation] _In_reads_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_VIDEO_DECODER_BUFFER_DESC[] pBufferDesc);
+        new HRESULT SubmitDecoderBuffers(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ int NumBuffers, /* [annotation] _In_reads_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_VIDEO_DECODER_BUFFER_DESC[] pBufferDesc);
         
         [PreserveSig]
         new int DecoderExtension(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ ref D3D11_VIDEO_DECODER_EXTENSION pExtensionData);
@@ -100,7 +100,7 @@ namespace DirectN
         new void VideoProcessorSetStreamAlpha(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ bool Enable, /* [annotation] _In_ */ float Alpha);
         
         [PreserveSig]
-        new void VideoProcessorSetStreamPalette(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ uint Count, /* [annotation] _In_reads_opt_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pEntries);
+        new void VideoProcessorSetStreamPalette(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ int Count, /* [annotation] _In_reads_opt_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pEntries);
         
         [PreserveSig]
         new void VideoProcessorSetStreamPixelAspectRatio(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ bool Enable, /* optional(DXGI_RATIONAL) */ IntPtr pSourceAspectRatio, /* optional(DXGI_RATIONAL) */ IntPtr pDestinationAspectRatio);
@@ -139,7 +139,7 @@ namespace DirectN
         new void VideoProcessorGetStreamAlpha(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out float pAlpha);
         
         [PreserveSig]
-        new void VideoProcessorGetStreamPalette(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ uint Count, /* [annotation] _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pEntries);
+        new void VideoProcessorGetStreamPalette(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ int Count, /* [annotation] _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pEntries);
         
         [PreserveSig]
         new void VideoProcessorGetStreamPixelAspectRatio(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out bool pEnabled, /* [annotation] _Out_ */ out DXGI_RATIONAL pSourceAspectRatio, /* [annotation] _Out_ */ out DXGI_RATIONAL pDestinationAspectRatio);
@@ -160,7 +160,7 @@ namespace DirectN
         new int VideoProcessorGetStreamExtension(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pExtensionGuid, /* [annotation] _In_ */ uint DataSize, /* [annotation] _Out_writes_bytes_(DataSize) */ IntPtr pData);
         
         [PreserveSig]
-        new HRESULT VideoProcessorBlt(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ ID3D11VideoProcessorOutputView pView, /* [annotation] _In_ */ uint OutputFrame, /* [annotation] _In_ */ uint StreamCount, /* [annotation] _In_reads_(StreamCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D11_VIDEO_PROCESSOR_STREAM[] pStreams);
+        new HRESULT VideoProcessorBlt(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ ID3D11VideoProcessorOutputView pView, /* [annotation] _In_ */ uint OutputFrame, /* [annotation] _In_ */ int StreamCount, /* [annotation] _In_reads_(StreamCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D11_VIDEO_PROCESSOR_STREAM[] pStreams);
         
         [PreserveSig]
         new HRESULT NegotiateCryptoSessionKeyExchange(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ uint DataSize, /* [annotation] _Inout_updates_bytes_(DataSize) */ IntPtr pData);
@@ -197,7 +197,7 @@ namespace DirectN
         
         // ID3D11VideoContext1
         [PreserveSig]
-        new HRESULT SubmitDecoderBuffers1(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ uint NumBuffers, /* [annotation] _In_reads_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_VIDEO_DECODER_BUFFER_DESC1[] pBufferDesc);
+        new HRESULT SubmitDecoderBuffers1(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ int NumBuffers, /* [annotation] _In_reads_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_VIDEO_DECODER_BUFFER_DESC1[] pBufferDesc);
         
         [PreserveSig]
         new HRESULT GetDataForNewHardwareKey(/* [annotation] _In_ */ ID3D11CryptoSession pCryptoSession, /* [annotation] _In_ */ uint PrivateInputSize, /* [annotation] _In_reads_(PrivateInputSize) */ IntPtr pPrivatInputData, /* [annotation] _Out_ */ out ulong pPrivateOutputData);
@@ -236,7 +236,7 @@ namespace DirectN
         new void VideoProcessorGetStreamMirror(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint StreamIndex, /* [annotation] _Out_ */ out bool pEnable, /* [annotation] _Out_ */ out bool pFlipHorizontal, /* [annotation] _Out_ */ out bool pFlipVertical);
         
         [PreserveSig]
-        new HRESULT VideoProcessorGetBehaviorHints(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint OutputWidth, /* [annotation] _In_ */ uint OutputHeight, /* [annotation] _In_ */ DXGI_FORMAT OutputFormat, /* [annotation] _In_ */ uint StreamCount, /* [annotation] _In_reads_(StreamCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT[] pStreams, /* [annotation] _Out_ */ out uint pBehaviorHints);
+        new HRESULT VideoProcessorGetBehaviorHints(/* [annotation] _In_ */ ID3D11VideoProcessor pVideoProcessor, /* [annotation] _In_ */ uint OutputWidth, /* [annotation] _In_ */ uint OutputHeight, /* [annotation] _In_ */ DXGI_FORMAT OutputFormat, /* [annotation] _In_ */ int StreamCount, /* [annotation] _In_reads_(StreamCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT[] pStreams, /* [annotation] _Out_ */ out uint pBehaviorHints);
         
         // ID3D11VideoContext2
         [PreserveSig]
@@ -253,9 +253,9 @@ namespace DirectN
         
         // ID3D11VideoContext3
         [PreserveSig]
-        HRESULT DecoderBeginFrame1(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ ID3D11VideoDecoderOutputView pView, uint ContentKeySize, /* optional(void) */ IntPtr pContentKey, /* [annotation] _In_range_(0, D3D11_4_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS) */ uint NumComponentHistograms, /* [annotation] _In_reads_opt_(NumComponentHistograms) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] uint[] pHistogramOffsets, /* [annotation] _In_reads_opt_(NumComponentHistograms) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] ID3D11Buffer[] ppHistogramBuffers);
+        HRESULT DecoderBeginFrame1(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ ID3D11VideoDecoderOutputView pView, uint ContentKeySize, /* optional(void) */ IntPtr pContentKey, /* [annotation] _In_range_(0, D3D11_4_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS) */ int NumComponentHistograms, /* [annotation] _In_reads_opt_(NumComponentHistograms) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] uint[] pHistogramOffsets, /* [annotation] _In_reads_opt_(NumComponentHistograms) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] ID3D11Buffer[] ppHistogramBuffers);
         
         [PreserveSig]
-        HRESULT SubmitDecoderBuffers2(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ uint NumBuffers, /* [annotation] _In_reads_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_VIDEO_DECODER_BUFFER_DESC2[] pBufferDesc);
+        HRESULT SubmitDecoderBuffers2(/* [annotation] _In_ */ ID3D11VideoDecoder pDecoder, /* [annotation] _In_ */ int NumBuffers, /* [annotation] _In_reads_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D11_VIDEO_DECODER_BUFFER_DESC2[] pBufferDesc);
     }
 }

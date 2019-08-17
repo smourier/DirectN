@@ -74,7 +74,7 @@ namespace DirectN
             // DXGI_FORMAT_B8G8R8A8_UNORM_SRGB
 
             var list = new List<DXGI_MODE_DESC>();
-            uint num = 0;
+            int num = 0;
             output.GetDisplayModeList(format, (uint)modes, ref num, null);
             if (num > 0)
             {
@@ -92,7 +92,7 @@ namespace DirectN
                 throw new ArgumentNullException(nameof(output));
 
             var list = new List<DXGI_MODE_DESC1>();
-            uint num = 0;
+            int num = 0;
             output.GetDisplayModeList(format, (uint)modes, ref num, null);
             if (num > 0)
             {

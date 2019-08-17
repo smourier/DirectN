@@ -45,7 +45,7 @@ namespace DirectN
         new HRESULT EnqueueCharacterDownloadRequest(/* _In_reads_(characterCount) */ [MarshalAs(UnmanagedType.LPWStr)] string characters, uint characterCount);
         
         [PreserveSig]
-        new HRESULT EnqueueGlyphDownloadRequest(/* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, uint glyphCount);
+        new HRESULT EnqueueGlyphDownloadRequest(/* _In_reads_(glyphCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ushort[] glyphIndices, int glyphCount);
         
         [PreserveSig]
         new HRESULT EnqueueFileFragmentDownloadRequest(ulong fileOffset, ulong fragmentSize);
@@ -58,6 +58,6 @@ namespace DirectN
         uint GetFontAxisValueCount();
         
         [PreserveSig]
-        HRESULT GetFontAxisValues(/* _Out_writes_(fontAxisValueCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount);
+        HRESULT GetFontAxisValues(/* _Out_writes_(fontAxisValueCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, int fontAxisValueCount);
     }
 }

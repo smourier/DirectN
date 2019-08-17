@@ -21,7 +21,7 @@ namespace DirectN
         HRESULT SetPixelFormat(/* [out][in] __RPC__inout */ ref WICPixelFormatGUID pPixelFormat);
         
         [PreserveSig]
-        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContext);
+        HRESULT SetColorContexts(/* [in] */ int cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContext);
         
         [PreserveSig]
         HRESULT SetPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);
@@ -30,7 +30,7 @@ namespace DirectN
         HRESULT SetThumbnail(/* [in] __RPC__in_opt */ IWICBitmapSource pIThumbnail);
         
         [PreserveSig]
-        HRESULT WritePixels(/* [in] */ uint lineCount, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbPixels);
+        HRESULT WritePixels(/* [in] */ uint lineCount, /* [in] */ uint cbStride, /* [in] */ int cbBufferSize, /* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbPixels);
         
         [PreserveSig]
         HRESULT WriteSource(/* [in] __RPC__in_opt */ IWICBitmapSource pIBitmapSource, /* optional(WICRect) */ IntPtr prc);

@@ -29,7 +29,7 @@ namespace DirectN
         new HRESULT CreateEllipseGeometry(/* _In_ */ ref D2D1_ELLIPSE ellipse, /* _COM_Outptr_ */ out ID2D1EllipseGeometry ellipseGeometry);
         
         [PreserveSig]
-        new HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID2D1Geometry[] geometries, uint geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
+        new HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID2D1Geometry[] geometries, int geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
         
         [PreserveSig]
         new HRESULT CreateTransformedGeometry(/* _In_ */ ID2D1Geometry sourceGeometry, /* _In_ */ ref D2D_MATRIX_3X2_F transform, /* _COM_Outptr_ */ out ID2D1TransformedGeometry transformedGeometry);
@@ -38,7 +38,7 @@ namespace DirectN
         new HRESULT CreatePathGeometry(/* _COM_Outptr_ */ out ID2D1PathGeometry pathGeometry);
         
         [PreserveSig]
-        new HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, uint dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle strokeStyle);
+        new HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, int dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle strokeStyle);
         
         [PreserveSig]
         new HRESULT CreateDrawingStateBlock(/* optional(D2D1_DRAWING_STATE_DESCRIPTION) */ IntPtr drawingStateDescription, /* _In_opt_ */ IDWriteRenderingParams textRenderingParams, /* _COM_Outptr_ */ out ID2D1DrawingStateBlock drawingStateBlock);
@@ -60,7 +60,7 @@ namespace DirectN
         HRESULT CreateDevice(/* _In_ */ IDXGIDevice dxgiDevice, /* _COM_Outptr_ */ out ID2D1Device d2dDevice);
         
         [PreserveSig]
-        HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, uint dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle1 strokeStyle);
+        HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES1 strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, int dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle1 strokeStyle);
         
         [PreserveSig]
         HRESULT CreatePathGeometry(/* _COM_Outptr_ */ out ID2D1PathGeometry1 pathGeometry);
@@ -72,10 +72,10 @@ namespace DirectN
         HRESULT CreateGdiMetafile(/* _In_ */ IStream metafileStream, /* _COM_Outptr_ */ out ID2D1GdiMetafile metafile);
         
         [PreserveSig]
-        HRESULT RegisterEffectFromStream(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId, /* _In_ */ IStream propertyXml, /* _In_reads_opt_(bindingsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_PROPERTY_BINDING[] bindings, uint bindingsCount, /* _In_ */ ref PD2D1_EFFECT_FACTORY effectFactory);
+        HRESULT RegisterEffectFromStream(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId, /* _In_ */ IStream propertyXml, /* _In_reads_opt_(bindingsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_PROPERTY_BINDING[] bindings, int bindingsCount, /* _In_ */ ref PD2D1_EFFECT_FACTORY effectFactory);
         
         [PreserveSig]
-        HRESULT RegisterEffectFromString(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string propertyXml, /* _In_reads_opt_(bindingsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_PROPERTY_BINDING[] bindings, uint bindingsCount, /* _In_ */ ref PD2D1_EFFECT_FACTORY effectFactory);
+        HRESULT RegisterEffectFromString(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string propertyXml, /* _In_reads_opt_(bindingsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_PROPERTY_BINDING[] bindings, int bindingsCount, /* _In_ */ ref PD2D1_EFFECT_FACTORY effectFactory);
         
         [PreserveSig]
         HRESULT UnregisterEffect(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId);

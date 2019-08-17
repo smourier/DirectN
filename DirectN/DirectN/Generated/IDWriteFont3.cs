@@ -52,7 +52,7 @@ namespace DirectN
         new void GetPanose(/* _Out_ */ out DWRITE_PANOSE panose);
         
         [PreserveSig]
-        new HRESULT GetUnicodeRanges(uint maxRangeCount, /* _Out_writes_to_opt_(maxRangeCount, *actualRangeCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] DWRITE_UNICODE_RANGE[] unicodeRanges, /* _Out_ */ out uint actualRangeCount);
+        new HRESULT GetUnicodeRanges(int maxRangeCount, /* _Out_writes_to_opt_(maxRangeCount, *actualRangeCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] DWRITE_UNICODE_RANGE[] unicodeRanges, /* _Out_ */ out uint actualRangeCount);
         
         [PreserveSig]
         new bool IsMonospacedFont();

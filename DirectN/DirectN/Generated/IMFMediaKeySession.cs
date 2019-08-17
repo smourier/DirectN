@@ -17,7 +17,7 @@ namespace DirectN
         HRESULT get_SessionId(/* [annotation] _COM_Outptr_ */ out IntPtr sessionId);
         
         [PreserveSig]
-        HRESULT Update(/* [annotation] _In_reads_bytes_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] key, /* [annotation] _In_ */ uint cb);
+        HRESULT Update(/* [annotation] _In_reads_bytes_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] key, /* [annotation] _In_ */ int cb);
         
         [PreserveSig]
         HRESULT Close();

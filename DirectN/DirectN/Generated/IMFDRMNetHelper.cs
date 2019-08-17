@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFDRMNetHelper
     {
         [PreserveSig]
-        HRESULT ProcessLicenseRequest(/* [size_is][in] __RPC__in_ecount_full(cbLicenseRequest) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pLicenseRequest, /* [in] */ uint cbLicenseRequest, /* optional(BYTE) */ out IntPtr ppLicenseResponse, /* [out] __RPC__out */ out uint pcbLicenseResponse, /* optional(BSTR) */ out IntPtr pbstrKID);
+        HRESULT ProcessLicenseRequest(/* [size_is][in] __RPC__in_ecount_full(cbLicenseRequest) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pLicenseRequest, /* [in] */ int cbLicenseRequest, /* optional(BYTE) */ out IntPtr ppLicenseResponse, /* [out] __RPC__out */ out uint pcbLicenseResponse, /* optional(BSTR) */ out IntPtr pbstrKID);
         
         [PreserveSig]
         HRESULT GetChainedLicenseResponse(/* optional(BYTE) */ out IntPtr ppLicenseResponse, /* [out] __RPC__out */ out uint pcbLicenseResponse);

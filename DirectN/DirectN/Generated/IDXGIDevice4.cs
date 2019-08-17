@@ -28,7 +28,7 @@ namespace DirectN
         new HRESULT CreateSurface(/* [annotation][in] _In_ */ ref DXGI_SURFACE_DESC pDesc, /* [in] */ uint NumSurfaces, /* [in] */ uint Usage, /* optional(DXGI_SHARED_RESOURCE) */ IntPtr pSharedResource, /* [annotation][out] _COM_Outptr_ */ out IDXGISurface ppSurface);
         
         [PreserveSig]
-        new HRESULT QueryResourceResidency(/* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2, ArraySubType = UnmanagedType.IUnknown)] object[] ppResources, /* [annotation][size_is][out] _Out_writes_(NumResources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_RESIDENCY[] pResidencyStatus, /* [in] */ uint NumResources);
+        new HRESULT QueryResourceResidency(/* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2, ArraySubType = UnmanagedType.IUnknown)] object[] ppResources, /* [annotation][size_is][out] _Out_writes_(NumResources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_RESIDENCY[] pResidencyStatus, /* [in] */ int NumResources);
         
         [PreserveSig]
         new HRESULT SetGPUThreadPriority(/* [in] */ int Priority);
@@ -45,10 +45,10 @@ namespace DirectN
         
         // IDXGIDevice2
         [PreserveSig]
-        new HRESULT OfferResources(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IDXGIResource[] ppResources, /* [annotation][in] _In_ */ _DXGI_OFFER_RESOURCE_PRIORITY Priority);
+        new HRESULT OfferResources(/* [annotation][in] _In_ */ int NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IDXGIResource[] ppResources, /* [annotation][in] _In_ */ _DXGI_OFFER_RESOURCE_PRIORITY Priority);
         
         [PreserveSig]
-        new HRESULT ReclaimResources(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IDXGIResource[] ppResources, /* [annotation][size_is][out] _Out_writes_all_opt_(NumResources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] bool[] pDiscarded);
+        new HRESULT ReclaimResources(/* [annotation][in] _In_ */ int NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IDXGIResource[] ppResources, /* [annotation][size_is][out] _Out_writes_all_opt_(NumResources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] bool[] pDiscarded);
         
         [PreserveSig]
         new HRESULT EnqueueSetEvent(/* [annotation][in] _In_ */ IntPtr hEvent);
@@ -59,9 +59,9 @@ namespace DirectN
         
         // IDXGIDevice4
         [PreserveSig]
-        HRESULT OfferResources1(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IDXGIResource[] ppResources, /* [annotation][in] _In_ */ _DXGI_OFFER_RESOURCE_PRIORITY Priority, /* [annotation][in] _In_ */ uint Flags);
+        HRESULT OfferResources1(/* [annotation][in] _In_ */ int NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IDXGIResource[] ppResources, /* [annotation][in] _In_ */ _DXGI_OFFER_RESOURCE_PRIORITY Priority, /* [annotation][in] _In_ */ uint Flags);
         
         [PreserveSig]
-        HRESULT ReclaimResources1(/* [annotation][in] _In_ */ uint NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IDXGIResource[] ppResources, /* [annotation][size_is][out] _Out_writes_all_(NumResources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _DXGI_RECLAIM_RESOURCE_RESULTS[] pResults);
+        HRESULT ReclaimResources1(/* [annotation][in] _In_ */ int NumResources, /* [annotation][size_is][in] _In_reads_(NumResources) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IDXGIResource[] ppResources, /* [annotation][size_is][out] _Out_writes_all_(NumResources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _DXGI_RECLAIM_RESOURCE_RESULTS[] pResults);
     }
 }

@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFTopologyNodeAttributeEditor
     {
         [PreserveSig]
-        HRESULT UpdateNodeAttributes(/* [in] */ ulong TopoId, /* [in] */ uint cUpdates, /* [size_is][in] __RPC__in_ecount_full(cUpdates) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _MFTOPONODE_ATTRIBUTE_UPDATE[] pUpdates);
+        HRESULT UpdateNodeAttributes(/* [in] */ ulong TopoId, /* [in] */ int cUpdates, /* [size_is][in] __RPC__in_ecount_full(cUpdates) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _MFTOPONODE_ATTRIBUTE_UPDATE[] pUpdates);
     }
 }

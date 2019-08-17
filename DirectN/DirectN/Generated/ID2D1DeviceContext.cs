@@ -32,7 +32,7 @@ namespace DirectN
         new HRESULT CreateSolidColorBrush(/* _In_ */ ref _D3DCOLORVALUE color, /* optional(D2D1_BRUSH_PROPERTIES) */ IntPtr brushProperties, /* _COM_Outptr_ */ out ID2D1SolidColorBrush solidColorBrush);
         
         [PreserveSig]
-        new HRESULT CreateGradientStopCollection(/* _In_reads_(gradientStopsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, /* _In_range_(>=,1) */ uint gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, /* _COM_Outptr_ */ out ID2D1GradientStopCollection gradientStopCollection);
+        new HRESULT CreateGradientStopCollection(/* _In_reads_(gradientStopsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, /* _In_range_(>=,1) */ int gradientStopsCount, D2D1_GAMMA colorInterpolationGamma, D2D1_EXTEND_MODE extendMode, /* _COM_Outptr_ */ out ID2D1GradientStopCollection gradientStopCollection);
         
         [PreserveSig]
         new HRESULT CreateLinearGradientBrush(/* _In_ */ ref D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES linearGradientBrushProperties, /* optional(D2D1_BRUSH_PROPERTIES) */ IntPtr brushProperties, /* _In_ */ ID2D1GradientStopCollection gradientStopCollection, /* _COM_Outptr_ */ out ID2D1LinearGradientBrush linearGradientBrush);
@@ -183,7 +183,7 @@ namespace DirectN
         HRESULT CreateBitmapFromWicBitmap(/* _In_ */ IWICBitmapSource wicBitmapSource, /* optional(D2D1_BITMAP_PROPERTIES1) */ IntPtr bitmapProperties, /* _COM_Outptr_ */ out ID2D1Bitmap1 bitmap);
         
         [PreserveSig]
-        HRESULT CreateColorContext(D2D1_COLOR_SPACE space, /* _In_reads_opt_(profileSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] profile, uint profileSize, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
+        HRESULT CreateColorContext(D2D1_COLOR_SPACE space, /* _In_reads_opt_(profileSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] profile, int profileSize, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
         
         [PreserveSig]
         HRESULT CreateColorContextFromFilename(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string filename, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
@@ -198,7 +198,7 @@ namespace DirectN
         HRESULT CreateEffect(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid effectId, /* _COM_Outptr_ */ out ID2D1Effect effect);
         
         [PreserveSig]
-        HRESULT CreateGradientStopCollection(/* _In_reads_(straightAlphaGradientStopsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] straightAlphaGradientStops, /* _In_range_(>=,1) */ uint straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, /* _COM_Outptr_ */ out ID2D1GradientStopCollection1 gradientStopCollection1);
+        HRESULT CreateGradientStopCollection(/* _In_reads_(straightAlphaGradientStopsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] straightAlphaGradientStops, /* _In_range_(>=,1) */ int straightAlphaGradientStopsCount, D2D1_COLOR_SPACE preInterpolationSpace, D2D1_COLOR_SPACE postInterpolationSpace, D2D1_BUFFER_PRECISION bufferPrecision, D2D1_EXTEND_MODE extendMode, D2D1_COLOR_INTERPOLATION_MODE colorInterpolationMode, /* _COM_Outptr_ */ out ID2D1GradientStopCollection1 gradientStopCollection1);
         
         [PreserveSig]
         HRESULT CreateImageBrush(/* _In_opt_ */ ID2D1Image image, /* _In_ */ ref D2D1_IMAGE_BRUSH_PROPERTIES imageBrushProperties, /* optional(D2D1_BRUSH_PROPERTIES) */ IntPtr brushProperties, /* _COM_Outptr_ */ out ID2D1ImageBrush imageBrush);
@@ -273,10 +273,10 @@ namespace DirectN
         HRESULT GetEffectInvalidRectangleCount(/* _In_ */ ID2D1Effect effect, /* _Out_ */ out uint rectangleCount);
         
         [PreserveSig]
-        HRESULT GetEffectInvalidRectangles(/* _In_ */ ID2D1Effect effect, /* _Out_writes_(rectanglesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D_RECT_F[] rectangles, uint rectanglesCount);
+        HRESULT GetEffectInvalidRectangles(/* _In_ */ ID2D1Effect effect, /* _Out_writes_(rectanglesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D2D_RECT_F[] rectangles, int rectanglesCount);
         
         [PreserveSig]
-        HRESULT GetEffectRequiredInputRectangles(/* _In_ */ ID2D1Effect renderEffect, /* optional(D2D_RECT_F) */ IntPtr renderImageRectangle, /* _In_reads_(inputCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D2D1_EFFECT_INPUT_DESCRIPTION[] inputDescriptions, /* _Out_writes_(inputCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D2D_RECT_F[] requiredInputRects, uint inputCount);
+        HRESULT GetEffectRequiredInputRectangles(/* _In_ */ ID2D1Effect renderEffect, /* optional(D2D_RECT_F) */ IntPtr renderImageRectangle, /* _In_reads_(inputCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D2D1_EFFECT_INPUT_DESCRIPTION[] inputDescriptions, /* _Out_writes_(inputCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D2D_RECT_F[] requiredInputRects, int inputCount);
         
         [PreserveSig]
         void FillOpacityMask(/* _In_ */ ID2D1Bitmap opacityMask, /* _In_ */ ID2D1Brush brush, /* optional(D2D_RECT_F) */ IntPtr destinationRectangle, /* optional(D2D_RECT_F) */ IntPtr sourceRectangle);

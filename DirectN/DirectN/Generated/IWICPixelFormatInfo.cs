@@ -46,6 +46,6 @@ namespace DirectN
         HRESULT GetChannelCount(/* [out] __RPC__out */ out uint puiChannelCount);
         
         [PreserveSig]
-        HRESULT GetChannelMask(/* [in] */ uint uiChannelIndex, /* [in] */ uint cbMaskBuffer, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cbMaskBuffer) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbMaskBuffer, /* [out] __RPC__out */ out uint pcbActual);
+        HRESULT GetChannelMask(/* [in] */ uint uiChannelIndex, /* [in] */ int cbMaskBuffer, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cbMaskBuffer) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbMaskBuffer, /* [out] __RPC__out */ out uint pcbActual);
     }
 }

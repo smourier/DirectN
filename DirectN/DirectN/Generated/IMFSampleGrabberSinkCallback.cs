@@ -28,7 +28,7 @@ namespace DirectN
         HRESULT OnSetPresentationClock(/* [in] */ IMFPresentationClock pPresentationClock);
         
         [PreserveSig]
-        HRESULT OnProcessSample(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMajorMediaType, /* [in] */ uint dwSampleFlags, /* [in] */ long llSampleTime, /* [in] */ long llSampleDuration, /* [annotation][in] _In_reads_bytes_(dwSampleSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] pSampleBuffer, /* [in] */ uint dwSampleSize);
+        HRESULT OnProcessSample(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMajorMediaType, /* [in] */ uint dwSampleFlags, /* [in] */ long llSampleTime, /* [in] */ long llSampleDuration, /* [annotation][in] _In_reads_bytes_(dwSampleSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] pSampleBuffer, /* [in] */ int dwSampleSize);
         
         [PreserveSig]
         HRESULT OnShutdown();

@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     public static class UserExtensions
     {
-        [DllImport("user32", CharSet = CharSet.Auto)]
-        internal static extern bool EnumDisplayDevices([MarshalAs(UnmanagedType.LPWStr)] string lpDevice, int iDevNum, ref DISPLAY_DEVICE lpDisplayDevice, EDD_FLAGS dwFlags);
+        [DllImport("user32", CharSet = CharSet.Auto, ExactSpelling = true)]
+        internal static extern bool EnumDisplayDevicesW([MarshalAs(UnmanagedType.LPWStr)] string lpDevice, int iDevNum, ref DISPLAY_DEVICE lpDisplayDevice, EDD_FLAGS dwFlags);
 
         public static string GetDisplayDeviceName(string deviceName) => GetDisplayDevice(deviceName)?.DeviceName;
         public static DISPLAY_DEVICE? GetDisplayDevice(string deviceName)
@@ -18,7 +17,7 @@ namespace DirectN
 
             var dd = new DISPLAY_DEVICE();
             dd.cb = Marshal.SizeOf<DISPLAY_DEVICE>();
-            if (!EnumDisplayDevices(deviceName, 0, ref dd, 0))
+            if (!EnumDisplayDevicesW(deviceName, 0, ref dd, 0))
                 return null;
 
             return dd;
@@ -31,7 +30,7 @@ namespace DirectN
             {
                 var dd = new DISPLAY_DEVICE();
                 dd.cb = Marshal.SizeOf<DISPLAY_DEVICE>();
-                if (!EnumDisplayDevices(deviceName, i++, ref dd, flags))
+                if (!EnumDisplayDevicesW(deviceName, i++, ref dd, flags))
                     yield break;
 
                 yield return dd;

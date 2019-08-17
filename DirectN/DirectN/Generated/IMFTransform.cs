@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT GetStreamCount(/* [out] __RPC__out */ out uint pcInputStreams, /* [out] __RPC__out */ out uint pcOutputStreams);
         
         [PreserveSig]
-        HRESULT GetStreamIDs(uint dwInputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwInputIDArraySize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pdwInputIDs, uint dwOutputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwOutputIDArraySize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pdwOutputIDs);
+        HRESULT GetStreamIDs(int dwInputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwInputIDArraySize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pdwInputIDs, int dwOutputIDArraySize, /* [size_is][out] __RPC__out_ecount_full(dwOutputIDArraySize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pdwOutputIDs);
         
         [PreserveSig]
         HRESULT GetInputStreamInfo(uint dwInputStreamID, /* [out] __RPC__out */ out _MFT_INPUT_STREAM_INFO pStreamInfo);

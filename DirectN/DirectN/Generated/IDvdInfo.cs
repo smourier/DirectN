@@ -68,7 +68,7 @@ namespace DirectN
         HRESULT GetCurrentVolumeInfo(/* [annotation][out] _Out_ */ out uint pulNumOfVol, /* [annotation][out] _Out_ */ out uint pulThisVolNum, /* [annotation][out] _Out_ */ out tagDVD_DISC_SIDE pSide, /* [annotation][out] _Out_ */ out uint pulNumOfTitles);
         
         [PreserveSig]
-        HRESULT GetDVDTextInfo(/* [annotation][size_is][out] _Out_writes_bytes_to_(ulBufSize, *pulActualSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pTextManager, /* [in] */ uint ulBufSize, /* [annotation][out] _Out_ */ out uint pulActualSize);
+        HRESULT GetDVDTextInfo(/* [annotation][size_is][out] _Out_writes_bytes_to_(ulBufSize, *pulActualSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pTextManager, /* [in] */ int ulBufSize, /* [annotation][out] _Out_ */ out uint pulActualSize);
         
         [PreserveSig]
         HRESULT GetPlayerParentalLevel(/* [annotation][out] _Out_ */ out uint pulParentalLevel, /* [annotation][out] _Out_ */ out uint pulCountryCode);

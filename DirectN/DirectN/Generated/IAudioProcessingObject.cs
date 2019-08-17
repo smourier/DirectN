@@ -18,7 +18,7 @@ namespace DirectN
         HRESULT GetRegistrationProperties(/* optional(APO_REG_PROPERTIES) */ out IntPtr ppRegProps);
         
         [PreserveSig]
-        HRESULT Initialize(/* [in] */ uint cbDataSize, /* [size_is][in] __RPC__in_ecount_full(cbDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbyData);
+        HRESULT Initialize(/* [in] */ int cbDataSize, /* [size_is][in] __RPC__in_ecount_full(cbDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbyData);
         
         [PreserveSig]
         HRESULT IsInputFormatSupported(/* [unique][in] __RPC__in_opt */ IAudioMediaType pOppositeFormat, /* [in] __RPC__in_opt */ IAudioMediaType pRequestedInputFormat, /* [out] __RPC__deref_out_opt */ out IAudioMediaType ppSupportedInputFormat);

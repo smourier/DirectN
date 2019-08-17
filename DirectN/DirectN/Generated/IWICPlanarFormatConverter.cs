@@ -23,13 +23,13 @@ namespace DirectN
         new HRESULT CopyPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);
         
         [PreserveSig]
-        new HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbBuffer);
+        new HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint cbStride, /* [in] */ int cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbBuffer);
         
         // IWICPlanarFormatConverter
         [PreserveSig]
-        HRESULT Initialize(/* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IWICBitmapSource[] ppPlanes, uint cPlanes, /* [in] __RPC__in */ ref REFWICPixelFormatGUID dstFormat, /* [in] */ WICBitmapDitherType dither, /* [unique][in] __RPC__in_opt */ IWICPalette pIPalette, /* [in] */ double alphaThresholdPercent, /* [in] */ WICBitmapPaletteType paletteTranslate);
+        HRESULT Initialize(/* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IWICBitmapSource[] ppPlanes, int cPlanes, /* [in] __RPC__in */ ref REFWICPixelFormatGUID dstFormat, /* [in] */ WICBitmapDitherType dither, /* [unique][in] __RPC__in_opt */ IWICPalette pIPalette, /* [in] */ double alphaThresholdPercent, /* [in] */ WICBitmapPaletteType paletteTranslate);
         
         [PreserveSig]
-        HRESULT CanConvert(/* [size_is][in] __RPC__in_ecount_full(cSrcPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] WICPixelFormatGUID[] pSrcPixelFormats, uint cSrcPlanes, /* [in] __RPC__in */ ref REFWICPixelFormatGUID dstPixelFormat, /* [out] __RPC__out */ out bool pfCanConvert);
+        HRESULT CanConvert(/* [size_is][in] __RPC__in_ecount_full(cSrcPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] WICPixelFormatGUID[] pSrcPixelFormats, int cSrcPlanes, /* [in] __RPC__in */ ref REFWICPixelFormatGUID dstPixelFormat, /* [out] __RPC__out */ out bool pfCanConvert);
     }
 }

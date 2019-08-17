@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface IMediaObjectInPlace
     {
         [PreserveSig]
-        HRESULT Process(/* [in] */ uint ulSize, /* [annotation][size_is][out][in] _Out_writes_bytes_(ulSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pData, /* [in] */ long refTimeStart, /* [in] */ uint dwFlags);
+        HRESULT Process(/* [in] */ int ulSize, /* [annotation][size_is][out][in] _Out_writes_bytes_(ulSize) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pData, /* [in] */ long refTimeStart, /* [in] */ uint dwFlags);
         
         [PreserveSig]
         HRESULT Clone(/* [annotation][out] _Out_ */ out IMediaObjectInPlace ppMediaObject);

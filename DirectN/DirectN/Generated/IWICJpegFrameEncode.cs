@@ -17,6 +17,6 @@ namespace DirectN
         HRESULT GetQuantizationTable(uint scanIndex, /* [range] __RPC__in_range(0,WIC_JPEG_MAX_TABLE_INDEX) */ uint tableIndex, /* [out] __RPC__out */ out DXGI_JPEG_QUANTIZATION_TABLE pQuantizationTable);
         
         [PreserveSig]
-        HRESULT WriteScan(/* [in] */ uint cbScanData, /* [size_is][in] __RPC__in_ecount_full(cbScanData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbScanData);
+        HRESULT WriteScan(/* [in] */ int cbScanData, /* [size_is][in] __RPC__in_ecount_full(cbScanData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbScanData);
     }
 }

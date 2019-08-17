@@ -11,6 +11,6 @@ namespace DirectN
     public partial interface ID2D1AnalysisTransform
     {
         [PreserveSig]
-        HRESULT ProcessAnalysisResults(/* _In_reads_(analysisDataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] analysisData, uint analysisDataCount);
+        HRESULT ProcessAnalysisResults(/* _In_reads_(analysisDataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] analysisData, int analysisDataCount);
     }
 }

@@ -15,16 +15,16 @@ namespace DirectN
         
         // IDCompositionTableTransferEffect
         [PreserveSig]
-        HRESULT SetRedTable(/* THIS_ _In_count_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] tableValues, /* _In_ */ uint count);
+        HRESULT SetRedTable(/* THIS_ _In_count_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] tableValues, /* _In_ */ int count);
         
         [PreserveSig]
-        HRESULT SetGreenTable(/* THIS_ _In_count_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] tableValues, /* _In_ */ uint count);
+        HRESULT SetGreenTable(/* THIS_ _In_count_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] tableValues, /* _In_ */ int count);
         
         [PreserveSig]
-        HRESULT SetBlueTable(/* THIS_ _In_count_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] tableValues, /* _In_ */ uint count);
+        HRESULT SetBlueTable(/* THIS_ _In_count_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] tableValues, /* _In_ */ int count);
         
         [PreserveSig]
-        HRESULT SetAlphaTable(/* THIS_ _In_count_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] tableValues, /* _In_ */ uint count);
+        HRESULT SetAlphaTable(/* THIS_ _In_count_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] tableValues, /* _In_ */ int count);
         
         [PreserveSig]
         HRESULT SetRedDisable(/* THIS_ _In_ */ bool redDisable);

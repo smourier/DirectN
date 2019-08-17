@@ -11,16 +11,16 @@ namespace DirectN
         HRESULT GetVideoAcceleratorGUIDs(/* [annotation][out][in] _Inout_ */ ref uint pdwNumGuidsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumGuidsSupported, *pdwNumGuidsSupported) */ out Guid pGuidsSupported);
         
         [PreserveSig]
-        HRESULT GetUncompFormatsSupported(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ ref uint pdwNumFormatsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumFormatsSupported, *pdwNumFormatsSupported) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _DDPIXELFORMAT[] pFormatsSupported);
+        HRESULT GetUncompFormatsSupported(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ ref int pdwNumFormatsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumFormatsSupported, *pdwNumFormatsSupported) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _DDPIXELFORMAT[] pFormatsSupported);
         
         [PreserveSig]
         HRESULT GetInternalMemInfo(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [in] */ ref _tag_AMVAUncompDataInfo pamvaUncompDataInfo, /* [annotation][out][in] _Inout_ */ ref _tag_AMVAInternalMemInfo pamvaInternalMemInfo);
         
         [PreserveSig]
-        HRESULT GetCompBufferInfo(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [in] */ ref _tag_AMVAUncompDataInfo pamvaUncompDataInfo, /* [annotation][out][in] _Inout_ */ ref uint pdwNumTypesCompBuffers, /* [annotation][out] _Out_writes_to_opt_(*pdwNumTypesCompBuffers, *pdwNumTypesCompBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _tag_AMVACompBufferInfo[] pamvaCompBufferInfo);
+        HRESULT GetCompBufferInfo(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [in] */ ref _tag_AMVAUncompDataInfo pamvaUncompDataInfo, /* [annotation][out][in] _Inout_ */ ref int pdwNumTypesCompBuffers, /* [annotation][out] _Out_writes_to_opt_(*pdwNumTypesCompBuffers, *pdwNumTypesCompBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _tag_AMVACompBufferInfo[] pamvaCompBufferInfo);
         
         [PreserveSig]
-        HRESULT GetInternalCompBufferInfo(/* [annotation][out][in] _Inout_ */ ref uint pdwNumTypesCompBuffers, /* [annotation][out] _Out_writes_to_opt_(*pdwNumTypesCompBuffers, *pdwNumTypesCompBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _tag_AMVACompBufferInfo[] pamvaCompBufferInfo);
+        HRESULT GetInternalCompBufferInfo(/* [annotation][out][in] _Inout_ */ ref int pdwNumTypesCompBuffers, /* [annotation][out] _Out_writes_to_opt_(*pdwNumTypesCompBuffers, *pdwNumTypesCompBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _tag_AMVACompBufferInfo[] pamvaCompBufferInfo);
         
         [PreserveSig]
         HRESULT BeginFrame(/* [in] */ ref _tag_AMVABeginFrameInfo amvaBeginFrameInfo);
@@ -35,7 +35,7 @@ namespace DirectN
         HRESULT ReleaseBuffer(/* [in] */ uint dwTypeIndex, /* [in] */ uint dwBufferIndex);
         
         [PreserveSig]
-        HRESULT Execute(/* [in] */ uint dwFunction, /* [in] */ IntPtr lpPrivateInputData, /* [in] */ uint cbPrivateInputData, /* [in] */ IntPtr lpPrivateOutputDat, /* [in] */ uint cbPrivateOutputData, /* [in] */ uint dwNumBuffers, /* [annotation][in] _In_reads_(dwNumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] _tag_AMVABUFFERINFO[] pamvaBufferInfo);
+        HRESULT Execute(/* [in] */ uint dwFunction, /* [in] */ IntPtr lpPrivateInputData, /* [in] */ uint cbPrivateInputData, /* [in] */ IntPtr lpPrivateOutputDat, /* [in] */ uint cbPrivateOutputData, /* [in] */ int dwNumBuffers, /* [annotation][in] _In_reads_(dwNumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] _tag_AMVABUFFERINFO[] pamvaBufferInfo);
         
         [PreserveSig]
         HRESULT QueryRenderStatus(/* [in] */ uint dwTypeIndex, /* [in] */ uint dwBufferIndex, /* [in] */ uint dwFlags);

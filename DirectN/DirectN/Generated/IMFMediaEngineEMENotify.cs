@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFMediaEngineEMENotify
     {
         [PreserveSig]
-        void Encrypted(/* [annotation] _In_reads_bytes_opt_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbInitData, /* [annotation] _In_ */ uint cb, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.BStr)] string bstrInitDataType);
+        void Encrypted(/* [annotation] _In_reads_bytes_opt_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbInitData, /* [annotation] _In_ */ int cb, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.BStr)] string bstrInitDataType);
         
         [PreserveSig]
         void WaitingForKey();

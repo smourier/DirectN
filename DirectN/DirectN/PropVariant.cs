@@ -733,22 +733,22 @@ namespace DirectN
             return VarType + ": " + value;
         }
 
-        [DllImport("propsys.dll")]
+        [DllImport("propsys", ExactSpelling = true)]
         private extern static int StgDeserializePropVariant(IntPtr ppProp, int cbMax, [Out] PropVariant ppropvar);
 
-        [DllImport("propsys.dll")]
+        [DllImport("propsys", ExactSpelling = true)]
         private extern static int StgDeserializePropVariant([MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] ppProp, int cbMax, [Out] PropVariant ppropvar);
 
-        [DllImport("propsys.dll")]
+        [DllImport("propsys", ExactSpelling = true)]
         private extern static int StgSerializePropVariant(PropVariant ppropvar, out IntPtr ppProp, out int pcb);
 
-        [DllImport("ole32.dll")]
+        [DllImport("ole32", ExactSpelling = true)]
         private extern static int PropVariantClear([In, Out] PropVariant pvar);
 
-        [DllImport("propsys.dll")]
+        [DllImport("propsys", ExactSpelling = true)]
         private static extern int InitPropVariantFromFileTime(ref long pftIn, [Out] PropVariant ppropvar);
 
-        [DllImport("kernel32.dll", EntryPoint = "RtlMoveMemory")]
+        [DllImport("kernel32.dll", EntryPoint = "RtlMoveMemory", ExactSpelling = true)]
         private static extern void CopyMemory(IntPtr destination, IntPtr source, int length);
     }
 }

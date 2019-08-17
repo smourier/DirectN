@@ -29,7 +29,7 @@ namespace DirectN
         HRESULT InitializeFromFilename(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzFileName, /* [in] */ uint dwDesiredAccess);
         
         [PreserveSig]
-        HRESULT InitializeFromMemory(/* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [in] */ uint cbBufferSize);
+        HRESULT InitializeFromMemory(/* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [in] */ int cbBufferSize);
         
         [PreserveSig]
         HRESULT InitializeFromIStreamRegion(/* [in] __RPC__in_opt */ IStream pIStream, /* [in] */ ulong ulOffset, /* [in] */ ulong ulMaxSize);

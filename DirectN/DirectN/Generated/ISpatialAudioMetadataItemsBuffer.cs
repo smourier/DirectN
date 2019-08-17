@@ -8,10 +8,10 @@ namespace DirectN
     public partial interface ISpatialAudioMetadataItemsBuffer
     {
         [PreserveSig]
-        HRESULT AttachToBuffer(/* [annotation][size_is][in] _Out_writes_bytes_(bufferLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, /* [annotation][in] _In_ */ uint bufferLength);
+        HRESULT AttachToBuffer(/* [annotation][size_is][in] _Out_writes_bytes_(bufferLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, /* [annotation][in] _In_ */ int bufferLength);
         
         [PreserveSig]
-        HRESULT AttachToPopulatedBuffer(/* [annotation][size_is][in] _Out_writes_bytes_(bufferLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, /* [annotation][in] _In_ */ uint bufferLength);
+        HRESULT AttachToPopulatedBuffer(/* [annotation][size_is][in] _Out_writes_bytes_(bufferLength) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, /* [annotation][in] _In_ */ int bufferLength);
         
         [PreserveSig]
         HRESULT DetachBuffer();

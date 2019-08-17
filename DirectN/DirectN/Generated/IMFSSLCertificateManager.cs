@@ -20,6 +20,6 @@ namespace DirectN
         HRESULT GetCertificatePolicy(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [out] */ out bool pfOverrideAutomaticCheck, /* [out] */ out bool pfClientCertificateAvailable);
         
         [PreserveSig]
-        HRESULT OnServerCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [annotation][size_is][in] _In_reads_bytes_(cbData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbData, /* [in] */ uint cbData, /* [out] */ out bool pfIsGood);
+        HRESULT OnServerCertificate(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszURL, /* [annotation][size_is][in] _In_reads_bytes_(cbData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbData, /* [in] */ int cbData, /* [out] */ out bool pfIsGood);
     }
 }

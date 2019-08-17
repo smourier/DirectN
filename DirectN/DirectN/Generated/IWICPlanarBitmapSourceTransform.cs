@@ -9,9 +9,9 @@ namespace DirectN
     public partial interface IWICPlanarBitmapSourceTransform
     {
         [PreserveSig]
-        HRESULT DoesSupportTransform(/* [out][in] __RPC__inout */ ref uint puiWidth, /* [out][in] __RPC__inout */ ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, /* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] WICPixelFormatGUID[] pguidDstFormats, /* [size_is][out] __RPC__out_ecount_full(cPlanes) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] WICBitmapPlaneDescription[] pPlaneDescriptions, uint cPlanes, /* [out] __RPC__out */ out bool pfIsSupported);
+        HRESULT DoesSupportTransform(/* [out][in] __RPC__inout */ ref uint puiWidth, /* [out][in] __RPC__inout */ ref uint puiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, /* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] WICPixelFormatGUID[] pguidDstFormats, /* [size_is][out] __RPC__out_ecount_full(cPlanes) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] WICBitmapPlaneDescription[] pPlaneDescriptions, int cPlanes, /* [out] __RPC__out */ out bool pfIsSupported);
         
         [PreserveSig]
-        HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prcSource, uint uiWidth, uint uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, /* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] WICBitmapPlane[] pDstPlanes, uint cPlanes);
+        HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prcSource, uint uiWidth, uint uiHeight, WICBitmapTransformOptions dstTransform, WICPlanarOptions dstPlanarOptions, /* [size_is][in] __RPC__in_ecount_full(cPlanes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] WICBitmapPlane[] pDstPlanes, int cPlanes);
     }
 }

@@ -35,7 +35,7 @@ namespace DirectN
         
         // IWICFormatConverterInfo
         [PreserveSig]
-        HRESULT GetPixelFormats(/* [in] */ uint cFormats, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cFormats) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICPixelFormatGUID[] pPixelFormatGUIDs, /* [out] __RPC__out */ out uint pcActual);
+        HRESULT GetPixelFormats(/* [in] */ int cFormats, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cFormats) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICPixelFormatGUID[] pPixelFormatGUIDs, /* [out] __RPC__out */ out uint pcActual);
         
         [PreserveSig]
         HRESULT CreateInstance(/* [out] __RPC__deref_out_opt */ out IWICFormatConverter ppIConverter);

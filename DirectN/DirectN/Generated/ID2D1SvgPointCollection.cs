@@ -26,10 +26,10 @@ namespace DirectN
         HRESULT RemovePointsAtEnd(uint pointsCount);
         
         [PreserveSig]
-        HRESULT UpdatePoints(/* _In_reads_(pointsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, uint pointsCount, uint startIndex);
+        HRESULT UpdatePoints(/* _In_reads_(pointsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, int pointsCount, uint startIndex);
         
         [PreserveSig]
-        HRESULT GetPoints(/* _Out_writes_(pointsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, uint pointsCount, uint startIndex);
+        HRESULT GetPoints(/* _Out_writes_(pointsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, int pointsCount, uint startIndex);
         
         [PreserveSig]
         uint GetPointsCount();

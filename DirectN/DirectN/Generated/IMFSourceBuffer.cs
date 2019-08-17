@@ -32,7 +32,7 @@ namespace DirectN
         HRESULT SetAppendWindowEnd(/* [annotation][in] _In_ */ double time);
         
         [PreserveSig]
-        HRESULT Append(/* [annotation][in] _In_reads_bytes_(len) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pData, /* [annotation][in] _In_ */ uint len);
+        HRESULT Append(/* [annotation][in] _In_reads_bytes_(len) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pData, /* [annotation][in] _In_ */ int len);
         
         [PreserveSig]
         HRESULT AppendByteStream(/* [annotation][in] _In_ */ IMFByteStream pStream, /* optional(DWORDLONG) */ IntPtr pMaxLen);

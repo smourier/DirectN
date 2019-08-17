@@ -10,7 +10,7 @@ namespace DirectN
     {
         // IMediaSample
         [PreserveSig]
-        new HRESULT GetPointer(/* [annotation][out] _Outptr_result_buffer_to_(_Inexpressible_(this->GetSize()), _Inexpressible_(this->GetActualDataLength())) */ out byte ppBuffer);
+        new HRESULT GetPointer(/* [annotation][out] _Outptr_result_buffer_to_(_Inexpressible_(this->GetSize()), _Inexpressible_(this->GetActualDataLength())) */ out byte[] ppBuffer);
         
         [PreserveSig]
         new void GetSize();
@@ -59,9 +59,9 @@ namespace DirectN
         
         // IMediaSample2
         [PreserveSig]
-        HRESULT GetProperties(/* [in] */ uint cbProperties, /* [annotation][size_is][out] _Out_writes_bytes_(cbProperties) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbProperties);
+        HRESULT GetProperties(/* [in] */ int cbProperties, /* [annotation][size_is][out] _Out_writes_bytes_(cbProperties) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbProperties);
         
         [PreserveSig]
-        HRESULT SetProperties(/* [in] */ uint cbProperties, /* [annotation][size_is][in] _In_reads_bytes_(cbProperties) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbProperties);
+        HRESULT SetProperties(/* [in] */ int cbProperties, /* [annotation][size_is][in] _In_reads_bytes_(cbProperties) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbProperties);
     }
 }

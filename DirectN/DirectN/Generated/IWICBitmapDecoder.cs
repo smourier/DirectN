@@ -30,7 +30,7 @@ namespace DirectN
         HRESULT GetPreview(/* [out] __RPC__deref_out_opt */ out IWICBitmapSource ppIBitmapSource);
         
         [PreserveSig]
-        HRESULT GetColorContexts(/* [in] */ uint cCount, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContexts, /* [out] __RPC__out */ out uint pcActualCount);
+        HRESULT GetColorContexts(/* [in] */ int cCount, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContexts, /* [out] __RPC__out */ out uint pcActualCount);
         
         [PreserveSig]
         HRESULT GetThumbnail(/* [out] __RPC__deref_out_opt */ out IWICBitmapSource ppIThumbnail);

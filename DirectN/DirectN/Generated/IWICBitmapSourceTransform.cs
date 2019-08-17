@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface IWICBitmapSourceTransform
     {
         [PreserveSig]
-        HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* optional(WICPixelFormatGUID) */ IntPtr pguidDstFormat, /* [in] */ WICBitmapTransformOptions dstTransform, /* [in] */ uint nStride, /* [in] */ uint cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] byte[] pbBuffer);
+        HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* optional(WICPixelFormatGUID) */ IntPtr pguidDstFormat, /* [in] */ WICBitmapTransformOptions dstTransform, /* [in] */ uint nStride, /* [in] */ int cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] byte[] pbBuffer);
         
         [PreserveSig]
         HRESULT GetClosestSize(/* [out][in] __RPC__inout */ ref uint puiWidth, /* [out][in] __RPC__inout */ ref uint puiHeight);

@@ -18,7 +18,7 @@ namespace DirectN
         HRESULT GetEncoderInfo(/* [out] __RPC__deref_out_opt */ out IWICBitmapEncoderInfo ppIEncoderInfo);
         
         [PreserveSig]
-        HRESULT SetColorContexts(/* [in] */ uint cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContext);
+        HRESULT SetColorContexts(/* [in] */ int cCount, /* [size_is][in] __RPC__in_ecount_full(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContext);
         
         [PreserveSig]
         HRESULT SetPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);

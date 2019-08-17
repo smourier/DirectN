@@ -21,10 +21,10 @@ namespace DirectN
         HRESULT GetColorControls(ref LPDDCOLORCONTROL unnamed__0);
         
         [PreserveSig]
-        HRESULT GetInputFormats(ref uint lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _DDPIXELFORMAT[] unnamed__1, uint unnamed__2);
+        HRESULT GetInputFormats(ref int lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] _DDPIXELFORMAT[] unnamed__1, uint unnamed__2);
         
         [PreserveSig]
-        HRESULT GetOutputFormats(ref _DDPIXELFORMAT unnamed__0, ref uint lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _DDPIXELFORMAT[] unnamed__2, uint unnamed__3);
+        HRESULT GetOutputFormats(ref _DDPIXELFORMAT unnamed__0, ref int lpNumFormats, /* _Out_writes_to_opt_(*lpNumFormats, *lpNumFormats) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _DDPIXELFORMAT[] unnamed__2, uint unnamed__3);
         
         [PreserveSig]
         HRESULT GetFieldPolarity(ref bool unnamed__0);

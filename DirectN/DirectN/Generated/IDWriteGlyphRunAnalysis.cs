@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT GetAlphaTextureBounds(DWRITE_TEXTURE_TYPE textureType, /* _Out_ */ out tagRECT textureBounds);
         
         [PreserveSig]
-        HRESULT CreateAlphaTexture(DWRITE_TEXTURE_TYPE textureType, /* _In_ */ ref tagRECT textureBounds, /* _Out_writes_bytes_(bufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] alphaValues, uint bufferSize);
+        HRESULT CreateAlphaTexture(DWRITE_TEXTURE_TYPE textureType, /* _In_ */ ref tagRECT textureBounds, /* _Out_writes_bytes_(bufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] alphaValues, int bufferSize);
         
         [PreserveSig]
         HRESULT GetAlphaBlendParams(/* _In_ */ IDWriteRenderingParams renderingParams, /* _Out_ */ out float blendGamma, /* _Out_ */ out float blendEnhancedContrast, /* _Out_ */ out float blendClearTypeLevel);

@@ -23,6 +23,6 @@ namespace DirectN
         HRESULT SetContentProtectionManager(/* [annotation][in] _In_opt_ */ IMFContentProtectionManager pCPM);
         
         [PreserveSig]
-        HRESULT SetApplicationCertificate(/* [annotation][in] _In_reads_bytes_(cbBlob) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBlob, /* [annotation][in] _In_ */ uint cbBlob);
+        HRESULT SetApplicationCertificate(/* [annotation][in] _In_reads_bytes_(cbBlob) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBlob, /* [annotation][in] _In_ */ int cbBlob);
     }
 }

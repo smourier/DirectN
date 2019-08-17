@@ -6,7 +6,7 @@ namespace DirectN.Temp
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             // capture 10 shots and saves them as PNG
             // this is a C# port of https://stackoverflow.com/a/30138664/403671
@@ -35,7 +35,6 @@ namespace DirectN.Temp
                     using (var surface = new ComObject<IDirect3DSurface9>(surf))
                     {
                         var rc = new _D3DLOCKED_RECT();
-                        var rect = new tagRECT();
                         surf.LockRect(ref rc, IntPtr.Zero, 0).ThrowOnError();
                         var pitch = rc.Pitch;
                         surf.UnlockRect();
@@ -89,7 +88,7 @@ namespace DirectN.Temp
                             frame.Initialize(null).ThrowOnError();
                             frame.SetSize(width, height).ThrowOnError();
                             frame.SetPixelFormat(ref format).ThrowOnError();
-                            frame.WritePixels(height, stride, stride * height, pixels).ThrowOnError();
+                            frame.WritePixels(height, stride, (int)(stride * height), pixels).ThrowOnError();
                             frame.Commit().ThrowOnError();
                             encoder.Commit().ThrowOnError();
                         }

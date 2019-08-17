@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IValidateBinding
     {
         [PreserveSig]
-        HRESULT GetIdentifier(/* [in] */ Guid guidLicensorID, /* [size_is][in] __RPC__in_ecount_full(cbEphemeron) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbEphemeron, /* [in] */ uint cbEphemeron, /* optional(BYTE) */ out IntPtr ppbBlobValidationID, /* [out] __RPC__out */ out uint pcbBlobSize);
+        HRESULT GetIdentifier(/* [in] */ Guid guidLicensorID, /* [size_is][in] __RPC__in_ecount_full(cbEphemeron) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbEphemeron, /* [in] */ int cbEphemeron, /* optional(BYTE) */ out IntPtr ppbBlobValidationID, /* [out] __RPC__out */ out uint pcbBlobSize);
     }
 }

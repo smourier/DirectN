@@ -28,6 +28,6 @@ namespace DirectN
         HRESULT Resize(/* THIS_ _In_ */ uint width, /* _In_ */ uint height);
         
         [PreserveSig]
-        HRESULT Trim(/* THIS_ _In_reads_opt_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagRECT[] rectangles, /* _In_ */ uint count);
+        HRESULT Trim(/* THIS_ _In_reads_opt_(count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagRECT[] rectangles, /* _In_ */ int count);
     }
 }

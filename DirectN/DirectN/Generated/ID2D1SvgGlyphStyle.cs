@@ -22,12 +22,12 @@ namespace DirectN
         void GetFill(/* _Outptr_result_maybenull_ */ out ID2D1Brush brush);
         
         [PreserveSig]
-        HRESULT SetStroke(/* _In_opt_ */ ID2D1Brush brush, float strokeWidth, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, uint dashesCount, float dashOffset);
+        HRESULT SetStroke(/* _In_opt_ */ ID2D1Brush brush, float strokeWidth, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, int dashesCount, float dashOffset);
         
         [PreserveSig]
         uint GetStrokeDashesCount();
         
         [PreserveSig]
-        void GetStroke(/* _Outptr_opt_result_maybenull_ */ out ID2D1Brush brush, /* _Out_opt_ */ out float strokeWidth, /* _Out_writes_opt_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, uint dashesCount, /* _Out_opt_ */ out float dashOffset);
+        void GetStroke(/* _Outptr_opt_result_maybenull_ */ out ID2D1Brush brush, /* _Out_opt_ */ out float strokeWidth, /* _Out_writes_opt_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, int dashesCount, /* _Out_opt_ */ out float dashOffset);
     }
 }

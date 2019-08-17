@@ -17,7 +17,7 @@ namespace DirectN
         HRESULT CreateEffect(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid effectId, /* _COM_Outptr_ */ out ID2D1Effect effect);
         
         [PreserveSig]
-        HRESULT GetMaximumSupportedFeatureLevel(/* _In_reads_(featureLevelsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D_FEATURE_LEVEL[] featureLevels, uint featureLevelsCount, /* _Out_ */ out D3D_FEATURE_LEVEL maximumSupportedFeatureLevel);
+        HRESULT GetMaximumSupportedFeatureLevel(/* _In_reads_(featureLevelsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D_FEATURE_LEVEL[] featureLevels, int featureLevelsCount, /* _Out_ */ out D3D_FEATURE_LEVEL maximumSupportedFeatureLevel);
         
         [PreserveSig]
         HRESULT CreateTransformNodeFromEffect(/* _In_ */ ID2D1Effect effect, /* _COM_Outptr_ */ out ID2D1TransformNode transformNode);
@@ -35,19 +35,19 @@ namespace DirectN
         HRESULT CreateBoundsAdjustmentTransform(/* _In_ */ ref tagRECT outputRectangle, /* _COM_Outptr_ */ out ID2D1BoundsAdjustmentTransform transform);
         
         [PreserveSig]
-        HRESULT LoadPixelShader([MarshalAs(UnmanagedType.LPStruct)] Guid shaderId, /* _In_reads_(shaderBufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] shaderBuffer, uint shaderBufferCount);
+        HRESULT LoadPixelShader([MarshalAs(UnmanagedType.LPStruct)] Guid shaderId, /* _In_reads_(shaderBufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] shaderBuffer, int shaderBufferCount);
         
         [PreserveSig]
-        HRESULT LoadVertexShader([MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _In_reads_(shaderBufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] shaderBuffer, uint shaderBufferCount);
+        HRESULT LoadVertexShader([MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _In_reads_(shaderBufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] shaderBuffer, int shaderBufferCount);
         
         [PreserveSig]
-        HRESULT LoadComputeShader([MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _In_reads_(shaderBufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] shaderBuffer, uint shaderBufferCount);
+        HRESULT LoadComputeShader([MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _In_reads_(shaderBufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] shaderBuffer, int shaderBufferCount);
         
         [PreserveSig]
         bool IsShaderLoaded([MarshalAs(UnmanagedType.LPStruct)] Guid shaderId);
         
         [PreserveSig]
-        HRESULT CreateResourceTexture(/* optional(GUID) */ IntPtr resourceId, /* _In_ */ ref D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, /* _In_reads_opt_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] data, /* _In_reads_opt_(resourceTextureProperties->dimensions - 1) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, uint dataSize, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
+        HRESULT CreateResourceTexture(/* optional(GUID) */ IntPtr resourceId, /* _In_ */ ref D2D1_RESOURCE_TEXTURE_PROPERTIES resourceTextureProperties, /* _In_reads_opt_(dataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] data, /* _In_reads_opt_(resourceTextureProperties->dimensions - 1) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, int dataSize, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
         
         [PreserveSig]
         HRESULT FindResourceTexture(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _COM_Outptr_ */ out ID2D1ResourceTexture resourceTexture);
@@ -59,7 +59,7 @@ namespace DirectN
         HRESULT FindVertexBuffer(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid resourceId, /* _COM_Outptr_ */ out ID2D1VertexBuffer buffer);
         
         [PreserveSig]
-        HRESULT CreateColorContext(D2D1_COLOR_SPACE space, /* _In_reads_opt_(profileSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] profile, uint profileSize, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
+        HRESULT CreateColorContext(D2D1_COLOR_SPACE space, /* _In_reads_opt_(profileSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] profile, int profileSize, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);
         
         [PreserveSig]
         HRESULT CreateColorContextFromFilename(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string filename, /* _COM_Outptr_ */ out ID2D1ColorContext colorContext);

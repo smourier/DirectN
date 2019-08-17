@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\wincodec.h(2097,5)
 using System;
 using System.Runtime.InteropServices;
-using WICInProcPointer = System.Byte;
 using WICPixelFormatGUID = System.Guid;
 
 namespace DirectN

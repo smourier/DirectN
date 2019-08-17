@@ -32,9 +32,9 @@ namespace DirectN
         HRESULT GetScanHeader(uint scanIndex, /* [out] __RPC__out */ out WICJpegScanHeader pScanHeader);
         
         [PreserveSig]
-        HRESULT CopyScan(uint scanIndex, uint scanOffset, /* [in] */ uint cbScanData, /* [length_is][size_is][out] __RPC__out_ecount_part(cbScanData, *pcbScanDataActual) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbScanData, /* [out] __RPC__out */ out uint pcbScanDataActual);
+        HRESULT CopyScan(uint scanIndex, uint scanOffset, /* [in] */ int cbScanData, /* [length_is][size_is][out] __RPC__out_ecount_part(cbScanData, *pcbScanDataActual) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbScanData, /* [out] __RPC__out */ out uint pcbScanDataActual);
         
         [PreserveSig]
-        HRESULT CopyMinimalStream(uint streamOffset, /* [in] */ uint cbStreamData, /* [length_is][size_is][out] __RPC__out_ecount_part(cbStreamData, *pcbStreamDataActual) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbStreamData, /* [out] __RPC__out */ out uint pcbStreamDataActual);
+        HRESULT CopyMinimalStream(uint streamOffset, /* [in] */ int cbStreamData, /* [length_is][size_is][out] __RPC__out_ecount_part(cbStreamData, *pcbStreamDataActual) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbStreamData, /* [out] __RPC__out */ out uint pcbStreamDataActual);
     }
 }

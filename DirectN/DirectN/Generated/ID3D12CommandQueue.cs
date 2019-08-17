@@ -28,13 +28,13 @@ namespace DirectN
         
         // ID3D12CommandQueue
         [PreserveSig]
-        void UpdateTileMappings(/* _In_ */ ID3D12Resource pResource, uint NumResourceRegions, /* _In_reads_opt_(NumResourceRegions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_TILED_RESOURCE_COORDINATE[] pResourceRegionStartCoordinates, /* _In_reads_opt_(NumResourceRegions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_TILE_REGION_SIZE[] pResourceRegionSizes, /* _In_opt_ */ ID3D12Heap pHeap, uint NumRanges, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D12_TILE_RANGE_FLAGS[] pRangeFlags, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pHeapRangeStartOffsets, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags);
+        void UpdateTileMappings(/* _In_ */ ID3D12Resource pResource, int NumResourceRegions, /* _In_reads_opt_(NumResourceRegions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_TILED_RESOURCE_COORDINATE[] pResourceRegionStartCoordinates, /* _In_reads_opt_(NumResourceRegions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_TILE_REGION_SIZE[] pResourceRegionSizes, /* _In_opt_ */ ID3D12Heap pHeap, int NumRanges, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D12_TILE_RANGE_FLAGS[] pRangeFlags, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pHeapRangeStartOffsets, /* _In_reads_opt_(NumRanges) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] uint[] pRangeTileCounts, D3D12_TILE_MAPPING_FLAGS Flags);
         
         [PreserveSig]
         void CopyTileMappings(/* _In_ */ ID3D12Resource pDstResource, /* _In_ */ ref D3D12_TILED_RESOURCE_COORDINATE pDstRegionStartCoordinate, /* _In_ */ ID3D12Resource pSrcResource, /* _In_ */ ref D3D12_TILED_RESOURCE_COORDINATE pSrcRegionStartCoordinate, /* _In_ */ ref D3D12_TILE_REGION_SIZE pRegionSize, D3D12_TILE_MAPPING_FLAGS Flags);
         
         [PreserveSig]
-        void ExecuteCommandLists(/* _In_ */ uint NumCommandLists, /* _In_reads_(NumCommandLists) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12CommandList[] ppCommandLists);
+        void ExecuteCommandLists(/* _In_ */ int NumCommandLists, /* _In_reads_(NumCommandLists) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ID3D12CommandList[] ppCommandLists);
         
         [PreserveSig]
         void SetMarker(uint Metadata, /* optional(void) */ IntPtr pData, uint Size);

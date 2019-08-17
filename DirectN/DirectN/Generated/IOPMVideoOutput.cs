@@ -20,6 +20,6 @@ namespace DirectN
         HRESULT COPPCompatibleGetInformation(/* [annotation][in] _In_ */ ref _OPM_COPP_COMPATIBLE_GET_INFO_PARAMETERS pParameters, /* [annotation][out] _Out_ */ out _OPM_REQUESTED_INFORMATION pRequestedInformation);
         
         [PreserveSig]
-        HRESULT Configure(/* [annotation][in] _In_ */ ref _OPM_CONFIGURE_PARAMETERS pParameters, /* [annotation][in] _In_ */ uint ulAdditionalParametersSize, /* [annotation][in] _In_reads_bytes_opt_(ulAdditionalParametersSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbAdditionalParameters);
+        HRESULT Configure(/* [annotation][in] _In_ */ ref _OPM_CONFIGURE_PARAMETERS pParameters, /* [annotation][in] _In_ */ int ulAdditionalParametersSize, /* [annotation][in] _In_reads_bytes_opt_(ulAdditionalParametersSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbAdditionalParameters);
     }
 }

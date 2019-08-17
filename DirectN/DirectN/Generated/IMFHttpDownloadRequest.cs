@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT AddHeader(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string szHeader);
         
         [PreserveSig]
-        HRESULT BeginSendRequest(/* [annotation][size_is][in] _In_reads_opt_(cbPayload) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbPayload, /* [annotation][in] _In_ */ uint cbPayload, /* [annotation][in] _In_ */ IMFAsyncCallback pCallback, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        HRESULT BeginSendRequest(/* [annotation][size_is][in] _In_reads_opt_(cbPayload) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbPayload, /* [annotation][in] _In_ */ int cbPayload, /* [annotation][in] _In_ */ IMFAsyncCallback pCallback, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
         HRESULT EndSendRequest(/* [annotation][in] _In_ */ IMFAsyncResult pResult);
@@ -23,7 +23,7 @@ namespace DirectN
         HRESULT EndReceiveResponse(/* [annotation][in] _In_ */ IMFAsyncResult pResult);
         
         [PreserveSig]
-        HRESULT BeginReadPayload(/* [annotation][size_is][out] _Out_writes_(cb) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pb, /* [annotation][in] _In_ */ uint cb, /* [annotation][in] _In_ */ IMFAsyncCallback pCallback, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
+        HRESULT BeginReadPayload(/* [annotation][size_is][out] _Out_writes_(cb) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pb, /* [annotation][in] _In_ */ int cb, /* [annotation][in] _In_ */ IMFAsyncCallback pCallback, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkState);
         
         [PreserveSig]
         HRESULT EndReadPayload(/* [annotation][in] _In_ */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out ulong pqwOffset, /* [annotation][out] _Out_ */ out uint pcbRead);

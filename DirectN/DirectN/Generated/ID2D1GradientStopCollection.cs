@@ -19,7 +19,7 @@ namespace DirectN
         uint GetGradientStopCount();
         
         [PreserveSig]
-        void GetGradientStops(/* _Out_writes_to_(gradientStopsCount, _Inexpressible_("Retrieved through GetGradientStopCount()") ) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, uint gradientStopsCount);
+        void GetGradientStops(/* _Out_writes_to_(gradientStopsCount, _Inexpressible_("Retrieved through GetGradientStopCount()") ) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, int gradientStopsCount);
         
         [PreserveSig]
         D2D1_GAMMA GetColorInterpolationGamma();

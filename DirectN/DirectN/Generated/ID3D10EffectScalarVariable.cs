@@ -91,10 +91,10 @@ namespace DirectN
         HRESULT GetFloat(/* THIS_ _Out_ */ out float pValue);
         
         [PreserveSig]
-        HRESULT SetFloatArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] pData, uint Offset, uint Count);
+        HRESULT SetFloatArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] pData, uint Offset, int Count);
         
         [PreserveSig]
-        HRESULT GetFloatArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] pData, uint Offset, uint Count);
+        HRESULT GetFloatArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] pData, uint Offset, int Count);
         
         [PreserveSig]
         HRESULT SetInt(int Value);
@@ -103,10 +103,10 @@ namespace DirectN
         HRESULT GetInt(/* THIS_ _Out_ */ out int pValue);
         
         [PreserveSig]
-        HRESULT SetIntArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pData, uint Offset, uint Count);
+        HRESULT SetIntArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pData, uint Offset, int Count);
         
         [PreserveSig]
-        HRESULT GetIntArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pData, uint Offset, uint Count);
+        HRESULT GetIntArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] int[] pData, uint Offset, int Count);
         
         [PreserveSig]
         HRESULT SetBool(bool Value);
@@ -115,9 +115,9 @@ namespace DirectN
         HRESULT GetBool(/* THIS_ _Out_ */ out bool pValue);
         
         [PreserveSig]
-        HRESULT SetBoolArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] bool[] pData, uint Offset, uint Count);
+        HRESULT SetBoolArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] bool[] pData, uint Offset, int Count);
         
         [PreserveSig]
-        HRESULT GetBoolArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] bool[] pData, uint Offset, uint Count);
+        HRESULT GetBoolArray(/* THIS_ _Out_writes_(Count) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] bool[] pData, uint Offset, int Count);
     }
 }

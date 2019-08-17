@@ -62,7 +62,7 @@ namespace DirectN
         new HRESULT CreateBitmapFromSourceRect(/* [in] __RPC__in_opt */ IWICBitmapSource pIBitmapSource, /* [in] */ uint x, /* [in] */ uint y, /* [in] */ uint width, /* [in] */ uint height, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
-        new HRESULT CreateBitmapFromMemory(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ ref REFWICPixelFormatGUID pixelFormat, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] pbBuffer, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
+        new HRESULT CreateBitmapFromMemory(/* [in] */ uint uiWidth, /* [in] */ uint uiHeight, /* [in] __RPC__in */ ref REFWICPixelFormatGUID pixelFormat, /* [in] */ uint cbStride, /* [in] */ int cbBufferSize, /* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] pbBuffer, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
         
         [PreserveSig]
         new HRESULT CreateBitmapFromHBITMAP(/* [in] __RPC__in */ IntPtr hBitmap, /* optional(HPALETTE__) */ IntPtr hPalette, /* [in] */ WICBitmapAlphaChannelOption options, /* [out] __RPC__deref_out_opt */ out IWICBitmap ppIBitmap);
@@ -105,6 +105,6 @@ namespace DirectN
         HRESULT CreateQueryWriterFromBlockWriter(/* [in] __RPC__in_opt */ IWICMetadataBlockWriter pIBlockWriter, /* [out] __RPC__deref_out_opt */ out IWICMetadataQueryWriter ppIQueryWriter);
         
         [PreserveSig]
-        HRESULT CreateEncoderPropertyBag(/* [size_is][unique][in] __RPC__in_ecount_full_opt(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagPROPBAG2[] ppropOptions, /* [in] */ uint cCount, /* [out] __RPC__deref_out_opt */ out IPropertyBag2 ppIPropertyBag);
+        HRESULT CreateEncoderPropertyBag(/* [size_is][unique][in] __RPC__in_ecount_full_opt(cCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] tagPROPBAG2[] ppropOptions, /* [in] */ int cCount, /* [out] __RPC__deref_out_opt */ out IPropertyBag2 ppIPropertyBag);
     }
 }

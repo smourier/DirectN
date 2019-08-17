@@ -22,14 +22,14 @@ namespace DirectN
         new HRESULT CopyPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);
         
         [PreserveSig]
-        new HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbBuffer);
+        new HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint cbStride, /* [in] */ int cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] pbBuffer);
         
         // IWICBitmapFrameDecode
         [PreserveSig]
         HRESULT GetMetadataQueryReader(/* [out] __RPC__deref_out_opt */ out IWICMetadataQueryReader ppIMetadataQueryReader);
         
         [PreserveSig]
-        HRESULT GetColorContexts(/* [in] */ uint cCount, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContexts, /* [out] __RPC__out */ out uint pcActualCount);
+        HRESULT GetColorContexts(/* [in] */ int cCount, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cCount) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IWICColorContext[] ppIColorContexts, /* [out] __RPC__out */ out uint pcActualCount);
         
         [PreserveSig]
         HRESULT GetThumbnail(/* [out] __RPC__deref_out_opt */ out IWICBitmapSource ppIThumbnail);

@@ -310,7 +310,7 @@ namespace DirectN
                 return null;
 
             var bytes = new byte[(int)size];
-            input.GetBlob(key, bytes, size, IntPtr.Zero).ThrowOnError();
+            input.GetBlob(key, bytes, (int)size, IntPtr.Zero).ThrowOnError();
             return bytes;
         }
 

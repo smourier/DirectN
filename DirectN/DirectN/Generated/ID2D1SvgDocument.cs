@@ -38,12 +38,12 @@ namespace DirectN
         HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, /* optional(_D3DCOLORVALUE) */ IntPtr color, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string id, /* _COM_Outptr_ */ out ID2D1SvgPaint paint);
         
         [PreserveSig]
-        HRESULT CreateStrokeDashArray(/* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_SVG_LENGTH[] dashes, uint dashesCount, /* _COM_Outptr_ */ out ID2D1SvgStrokeDashArray strokeDashArray);
+        HRESULT CreateStrokeDashArray(/* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_SVG_LENGTH[] dashes, int dashesCount, /* _COM_Outptr_ */ out ID2D1SvgStrokeDashArray strokeDashArray);
         
         [PreserveSig]
-        HRESULT CreatePointCollection(/* _In_reads_opt_(pointsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, uint pointsCount, /* _COM_Outptr_ */ out ID2D1SvgPointCollection pointCollection);
+        HRESULT CreatePointCollection(/* _In_reads_opt_(pointsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, int pointsCount, /* _COM_Outptr_ */ out ID2D1SvgPointCollection pointCollection);
         
         [PreserveSig]
-        HRESULT CreatePathData(/* _In_reads_opt_(segmentDataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] segmentData, uint segmentDataCount, /* _In_reads_opt_(commandsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_SVG_PATH_COMMAND[] commands, uint commandsCount, /* _COM_Outptr_ */ out ID2D1SvgPathData pathData);
+        HRESULT CreatePathData(/* _In_reads_opt_(segmentDataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] segmentData, int segmentDataCount, /* _In_reads_opt_(commandsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D2D1_SVG_PATH_COMMAND[] commands, int commandsCount, /* _COM_Outptr_ */ out ID2D1SvgPathData pathData);
     }
 }

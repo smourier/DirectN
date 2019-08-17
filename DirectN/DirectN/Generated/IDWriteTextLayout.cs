@@ -181,7 +181,7 @@ namespace DirectN
         HRESULT Draw(/* optional(void) */ IntPtr clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY);
         
         [PreserveSig]
-        HRESULT GetLineMetrics(/* _Out_writes_opt_(maxLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
+        HRESULT GetLineMetrics(/* _Out_writes_opt_(maxLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS[] lineMetrics, int maxLineCount, /* _Out_ */ out uint actualLineCount);
         
         [PreserveSig]
         HRESULT GetMetrics(/* _Out_ */ out DWRITE_TEXT_METRICS textMetrics);
@@ -190,7 +190,7 @@ namespace DirectN
         HRESULT GetOverhangMetrics(/* _Out_ */ out DWRITE_OVERHANG_METRICS overhangs);
         
         [PreserveSig]
-        HRESULT GetClusterMetrics(/* _Out_writes_opt_(maxClusterCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_CLUSTER_METRICS[] clusterMetrics, uint maxClusterCount, /* _Out_ */ out uint actualClusterCount);
+        HRESULT GetClusterMetrics(/* _Out_writes_opt_(maxClusterCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_CLUSTER_METRICS[] clusterMetrics, int maxClusterCount, /* _Out_ */ out uint actualClusterCount);
         
         [PreserveSig]
         HRESULT DetermineMinWidth(/* _Out_ */ out float minWidth);
@@ -202,6 +202,6 @@ namespace DirectN
         HRESULT HitTestTextPosition(uint textPosition, bool isTrailingHit, /* _Out_ */ out float pointX, /* _Out_ */ out float pointY, /* _Out_ */ out DWRITE_HIT_TEST_METRICS hitTestMetrics);
         
         [PreserveSig]
-        HRESULT HitTestTextRange(uint textPosition, uint textLength, float originX, float originY, /* _Out_writes_opt_(maxHitTestMetricsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DWRITE_HIT_TEST_METRICS[] hitTestMetrics, uint maxHitTestMetricsCount, /* _Out_ */ out uint actualHitTestMetricsCount);
+        HRESULT HitTestTextRange(uint textPosition, uint textLength, float originX, float originY, /* _Out_writes_opt_(maxHitTestMetricsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DWRITE_HIT_TEST_METRICS[] hitTestMetrics, int maxHitTestMetricsCount, /* _Out_ */ out uint actualHitTestMetricsCount);
     }
 }

@@ -15,7 +15,7 @@ namespace DirectN
         new HRESULT SetScriptAnalysis(uint textPosition, uint textLength, /* _In_ */ ref DWRITE_SCRIPT_ANALYSIS scriptAnalysis);
         
         [PreserveSig]
-        new HRESULT SetLineBreakpoints(uint textPosition, uint textLength, /* _In_reads_(textLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_BREAKPOINT[] lineBreakpoints);
+        new HRESULT SetLineBreakpoints(uint textPosition, int textLength, /* _In_reads_(textLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_BREAKPOINT[] lineBreakpoints);
         
         [PreserveSig]
         new HRESULT SetBidiLevel(uint textPosition, uint textLength, byte explicitLevel, byte resolvedLevel);

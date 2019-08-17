@@ -19,7 +19,7 @@ namespace DirectN
         HRESULT EnumVideoPorts(uint unnamed__0, ref LPDDVIDEOPORTCAPS unnamed__1, IntPtr unnamed__2, IntPtr unnamed__3);
         
         [PreserveSig]
-        HRESULT GetVideoPortConnectInfo(uint unnamed__0, /* _Inout_ */ ref uint pcInfo, /* _Out_writes_to_opt_(*pcInfo, *pcInfo) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] LPDDVIDEOPORTCONNECT[] unnamed__2);
+        HRESULT GetVideoPortConnectInfo(uint unnamed__0, /* _Inout_ */ ref int pcInfo, /* _Out_writes_to_opt_(*pcInfo, *pcInfo) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] LPDDVIDEOPORTCONNECT[] unnamed__2);
         
         [PreserveSig]
         HRESULT QueryVideoPortStatus(uint unnamed__0, ref LPDDVIDEOPORTSTATUS unnamed__1);

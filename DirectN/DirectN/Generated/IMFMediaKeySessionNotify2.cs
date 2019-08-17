@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IMFMediaKeySessionNotify
         [PreserveSig]
-        new void KeyMessage(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string destinationURL, /* [annotation] _In_reads_bytes_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] message, /* [annotation] _In_ */ uint cb);
+        new void KeyMessage(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string destinationURL, /* [annotation] _In_reads_bytes_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] message, /* [annotation] _In_ */ int cb);
         
         [PreserveSig]
         new void KeyAdded();
@@ -19,7 +19,7 @@ namespace DirectN
         
         // IMFMediaKeySessionNotify2
         [PreserveSig]
-        void KeyMessage2(/* [annotation] _In_ */ MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string destinationURL, /* [annotation] _In_reads_bytes_(cbMessage) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] pbMessage, /* [annotation] _In_ */ uint cbMessage);
+        void KeyMessage2(/* [annotation] _In_ */ MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, /* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string destinationURL, /* [annotation] _In_reads_bytes_(cbMessage) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] byte[] pbMessage, /* [annotation] _In_ */ int cbMessage);
         
         [PreserveSig]
         void KeyStatusChange();

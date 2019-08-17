@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT GetCertificate(/* [annotation][out] _Outptr_result_bytebuffer_(*pcbCert) */ out IntPtr ppCert, /* [annotation][out] _Out_ */ out uint pcbCert);
         
         [PreserveSig]
-        HRESULT SetupSession(/* [annotation][in] _In_reads_bytes_(cbSessionKey) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbEncryptedSessionKey, /* [in] */ uint cbSessionKey);
+        HRESULT SetupSession(/* [annotation][in] _In_reads_bytes_(cbSessionKey) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbEncryptedSessionKey, /* [in] */ int cbSessionKey);
     }
 }

@@ -26,7 +26,7 @@ namespace DirectN
         HRESULT CreateEllipseGeometry(/* _In_ */ ref D2D1_ELLIPSE ellipse, /* _COM_Outptr_ */ out ID2D1EllipseGeometry ellipseGeometry);
         
         [PreserveSig]
-        HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID2D1Geometry[] geometries, uint geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
+        HRESULT CreateGeometryGroup(D2D1_FILL_MODE fillMode, /* _In_reads_(geometriesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID2D1Geometry[] geometries, int geometriesCount, /* _COM_Outptr_ */ out ID2D1GeometryGroup geometryGroup);
         
         [PreserveSig]
         HRESULT CreateTransformedGeometry(/* _In_ */ ID2D1Geometry sourceGeometry, /* _In_ */ ref D2D_MATRIX_3X2_F transform, /* _COM_Outptr_ */ out ID2D1TransformedGeometry transformedGeometry);
@@ -35,7 +35,7 @@ namespace DirectN
         HRESULT CreatePathGeometry(/* _COM_Outptr_ */ out ID2D1PathGeometry pathGeometry);
         
         [PreserveSig]
-        HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, uint dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle strokeStyle);
+        HRESULT CreateStrokeStyle(/* _In_ */ ref D2D1_STROKE_STYLE_PROPERTIES strokeStyleProperties, /* _In_reads_opt_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] float[] dashes, int dashesCount, /* _COM_Outptr_ */ out ID2D1StrokeStyle strokeStyle);
         
         [PreserveSig]
         HRESULT CreateDrawingStateBlock(/* optional(D2D1_DRAWING_STATE_DESCRIPTION) */ IntPtr drawingStateDescription, /* _In_opt_ */ IDWriteRenderingParams textRenderingParams, /* _COM_Outptr_ */ out ID2D1DrawingStateBlock drawingStateBlock);

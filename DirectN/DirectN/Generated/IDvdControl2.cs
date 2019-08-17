@@ -83,7 +83,7 @@ namespace DirectN
         HRESULT SelectParentalLevel(/* [in] */ uint ulParentalLevel);
         
         [PreserveSig]
-        HRESULT SelectParentalCountry(/* [in] */ [In, Out, MarshalAs(UnmanagedType.LPArray)] byte bCountry);
+        HRESULT SelectParentalCountry(/* [in] */ [In, Out, MarshalAs(UnmanagedType.LPArray)] byte[] bCountry);
         
         [PreserveSig]
         HRESULT SelectKaraokeAudioPresentationMode(/* [in] */ uint ulMode);

@@ -22,6 +22,6 @@ namespace DirectN
         uint GetProfileSize();
         
         [PreserveSig]
-        HRESULT GetProfile(/* _Out_writes_(profileSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] profile, uint profileSize);
+        HRESULT GetProfile(/* _Out_writes_(profileSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] profile, int profileSize);
     }
 }

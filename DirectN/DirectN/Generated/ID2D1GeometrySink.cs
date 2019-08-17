@@ -21,10 +21,10 @@ namespace DirectN
         new void BeginFigure(D2D_POINT_2F startPoint, D2D1_FIGURE_BEGIN figureBegin);
         
         [PreserveSig]
-        new void AddLines(/* _In_reads_(pointsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, uint pointsCount);
+        new void AddLines(/* _In_reads_(pointsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D_POINT_2F[] points, int pointsCount);
         
         [PreserveSig]
-        new void AddBeziers(/* _In_reads_(beziersCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_BEZIER_SEGMENT[] beziers, uint beziersCount);
+        new void AddBeziers(/* _In_reads_(beziersCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_BEZIER_SEGMENT[] beziers, int beziersCount);
         
         [PreserveSig]
         new void EndFigure(D2D1_FIGURE_END figureEnd);
@@ -43,7 +43,7 @@ namespace DirectN
         void AddQuadraticBezier(/* _In_ */ ref D2D1_QUADRATIC_BEZIER_SEGMENT bezier);
         
         [PreserveSig]
-        void AddQuadraticBeziers(/* _In_reads_(beziersCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_QUADRATIC_BEZIER_SEGMENT[] beziers, uint beziersCount);
+        void AddQuadraticBeziers(/* _In_reads_(beziersCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_QUADRATIC_BEZIER_SEGMENT[] beziers, int beziersCount);
         
         [PreserveSig]
         void AddArc(/* _In_ */ ref D2D1_ARC_SEGMENT arc);

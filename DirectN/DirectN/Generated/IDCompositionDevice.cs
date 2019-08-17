@@ -50,7 +50,7 @@ namespace DirectN
         HRESULT CreateMatrixTransform(/* THIS_ _Outptr_ */ out IDCompositionMatrixTransform matrixTransform);
         
         [PreserveSig]
-        HRESULT CreateTransformGroup(/* THIS_ _In_reads_(elements) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IDCompositionTransform[] transforms, uint elements, /* _Outptr_ */ out IDCompositionTransform transformGroup);
+        HRESULT CreateTransformGroup(/* THIS_ _In_reads_(elements) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IDCompositionTransform[] transforms, int elements, /* _Outptr_ */ out IDCompositionTransform transformGroup);
         
         [PreserveSig]
         HRESULT CreateTranslateTransform3D(/* THIS_ _Outptr_ */ out IDCompositionTranslateTransform3D translateTransform3D);
@@ -65,7 +65,7 @@ namespace DirectN
         HRESULT CreateMatrixTransform3D(/* THIS_ _Outptr_ */ out IDCompositionMatrixTransform3D matrixTransform3D);
         
         [PreserveSig]
-        HRESULT CreateTransform3DGroup(/* THIS_ _In_reads_(elements) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IDCompositionTransform3D[] transforms3D, uint elements, /* _Outptr_ */ out IDCompositionTransform3D transform3DGroup);
+        HRESULT CreateTransform3DGroup(/* THIS_ _In_reads_(elements) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IDCompositionTransform3D[] transforms3D, int elements, /* _Outptr_ */ out IDCompositionTransform3D transform3DGroup);
         
         [PreserveSig]
         HRESULT CreateEffectGroup(/* THIS_ _Outptr_ */ out IDCompositionEffectGroup effectGroup);

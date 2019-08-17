@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IEnumStreamIdMap
     {
         [PreserveSig]
-        HRESULT Next(/* [in] */ uint cRequest, /* [annotation][size_is][out][in] _Out_writes_to_(cRequest, *pcReceived) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] STREAM_ID_MAP[] pStreamIdMap, /* [annotation][out] _Out_opt_ */ out uint pcReceived);
+        HRESULT Next(/* [in] */ int cRequest, /* [annotation][size_is][out][in] _Out_writes_to_(cRequest, *pcReceived) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] STREAM_ID_MAP[] pStreamIdMap, /* [annotation][out] _Out_opt_ */ out uint pcReceived);
         
         [PreserveSig]
         HRESULT Skip(/* [in] */ uint cRecords);

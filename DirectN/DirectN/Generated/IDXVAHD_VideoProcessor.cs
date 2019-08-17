@@ -20,6 +20,6 @@ namespace DirectN
         HRESULT GetVideoProcessStreamState(/* [annotation][in] _In_ */ uint StreamNumber, /* [annotation][in] _In_ */ _DXVAHD_STREAM_STATE State, /* [annotation][in] _In_ */ uint DataSize, /* [annotation][out] _Inout_updates_bytes_(DataSize) */ out IntPtr pData);
         
         [PreserveSig]
-        HRESULT VideoProcessBltHD(/* [annotation][in] _In_ */ ref int pOutputSurface, /* [annotation][in] _In_ */ uint OutputFrame, /* [annotation][in] _In_ */ uint StreamCount, /* [annotation][size_is][in] _In_reads_(StreamCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _DXVAHD_STREAM_DATA[] pStreams);
+        HRESULT VideoProcessBltHD(/* [annotation][in] _In_ */ ref int pOutputSurface, /* [annotation][in] _In_ */ uint OutputFrame, /* [annotation][in] _In_ */ int StreamCount, /* [annotation][size_is][in] _In_reads_(StreamCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] _DXVAHD_STREAM_DATA[] pStreams);
     }
 }

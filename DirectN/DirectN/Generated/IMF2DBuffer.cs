@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMF2DBuffer
     {
         [PreserveSig]
-        HRESULT Lock2D(/* [annotation][out] _Outptr_result_bytebuffer_(_Inexpressible_(ComputePlaneSize(*plPitch))) */ out byte ppbScanline0, /* [annotation][out] _Out_ */ out int plPitch);
+        HRESULT Lock2D(/* [annotation][out] _Outptr_result_bytebuffer_(_Inexpressible_(ComputePlaneSize(*plPitch))) */ out byte[] ppbScanline0, /* [annotation][out] _Out_ */ out int plPitch);
         
         [PreserveSig]
         HRESULT Unlock2D();
@@ -23,9 +23,9 @@ namespace DirectN
         HRESULT GetContiguousLength(/* [annotation][out] _Out_ */ out uint pcbLength);
         
         [PreserveSig]
-        HRESULT ContiguousCopyTo(/* [annotation][size_is][out] _Out_writes_bytes_(cbDestBuffer) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbDestBuffer, /* [in] */ uint cbDestBuffer);
+        HRESULT ContiguousCopyTo(/* [annotation][size_is][out] _Out_writes_bytes_(cbDestBuffer) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbDestBuffer, /* [in] */ int cbDestBuffer);
         
         [PreserveSig]
-        HRESULT ContiguousCopyFrom(/* [annotation][size_is][in] _In_reads_bytes_(cbSrcBuffer) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbSrcBuffer, /* [in] */ uint cbSrcBuffer);
+        HRESULT ContiguousCopyFrom(/* [annotation][size_is][in] _In_reads_bytes_(cbSrcBuffer) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbSrcBuffer, /* [in] */ int cbSrcBuffer);
     }
 }

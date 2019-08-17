@@ -11,10 +11,10 @@ namespace DirectN
         HRESULT CreateModuleInstance(/* THIS_ _COM_Outptr_ */ out ID3D11ModuleInstance ppModuleInstance, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorBuffer);
         
         [PreserveSig]
-        HRESULT SetInputSignature(/* THIS_ __in_ecount(cInputParameters) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _D3D11_PARAMETER_DESC[] pInputParameters, /* _In_ */ uint cInputParameters, /* _COM_Outptr_ */ out ID3D11LinkingNode ppInputNode);
+        HRESULT SetInputSignature(/* THIS_ __in_ecount(cInputParameters) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _D3D11_PARAMETER_DESC[] pInputParameters, /* _In_ */ int cInputParameters, /* _COM_Outptr_ */ out ID3D11LinkingNode ppInputNode);
         
         [PreserveSig]
-        HRESULT SetOutputSignature(/* THIS_ __in_ecount(cOutputParameters) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _D3D11_PARAMETER_DESC[] pOutputParameters, /* _In_ */ uint cOutputParameters, /* _COM_Outptr_ */ out ID3D11LinkingNode ppOutputNode);
+        HRESULT SetOutputSignature(/* THIS_ __in_ecount(cOutputParameters) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _D3D11_PARAMETER_DESC[] pOutputParameters, /* _In_ */ int cOutputParameters, /* _COM_Outptr_ */ out ID3D11LinkingNode ppOutputNode);
         
         [PreserveSig]
         HRESULT CallFunction(/* THIS_ _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string pModuleInstanceNamespace, /* _In_ */ ID3D11Module pModuleWithFunctionPrototype, /* _In_ */ [MarshalAs(UnmanagedType.LPStr)] string pFunctionName, /* _COM_Outptr_ */ out ID3D11LinkingNode ppCallNode);

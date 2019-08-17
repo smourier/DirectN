@@ -178,7 +178,7 @@ namespace DirectN
         new HRESULT Draw(/* optional(void) */ IntPtr clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY);
         
         [PreserveSig]
-        new HRESULT GetLineMetrics(/* _Out_writes_opt_(maxLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
+        new HRESULT GetLineMetrics(/* _Out_writes_opt_(maxLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS[] lineMetrics, int maxLineCount, /* _Out_ */ out uint actualLineCount);
         
         [PreserveSig]
         new HRESULT GetMetrics(/* _Out_ */ out DWRITE_TEXT_METRICS textMetrics);
@@ -187,7 +187,7 @@ namespace DirectN
         new HRESULT GetOverhangMetrics(/* _Out_ */ out DWRITE_OVERHANG_METRICS overhangs);
         
         [PreserveSig]
-        new HRESULT GetClusterMetrics(/* _Out_writes_opt_(maxClusterCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_CLUSTER_METRICS[] clusterMetrics, uint maxClusterCount, /* _Out_ */ out uint actualClusterCount);
+        new HRESULT GetClusterMetrics(/* _Out_writes_opt_(maxClusterCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_CLUSTER_METRICS[] clusterMetrics, int maxClusterCount, /* _Out_ */ out uint actualClusterCount);
         
         [PreserveSig]
         new HRESULT DetermineMinWidth(/* _Out_ */ out float minWidth);
@@ -199,7 +199,7 @@ namespace DirectN
         new HRESULT HitTestTextPosition(uint textPosition, bool isTrailingHit, /* _Out_ */ out float pointX, /* _Out_ */ out float pointY, /* _Out_ */ out DWRITE_HIT_TEST_METRICS hitTestMetrics);
         
         [PreserveSig]
-        new HRESULT HitTestTextRange(uint textPosition, uint textLength, float originX, float originY, /* _Out_writes_opt_(maxHitTestMetricsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DWRITE_HIT_TEST_METRICS[] hitTestMetrics, uint maxHitTestMetricsCount, /* _Out_ */ out uint actualHitTestMetricsCount);
+        new HRESULT HitTestTextRange(uint textPosition, uint textLength, float originX, float originY, /* _Out_writes_opt_(maxHitTestMetricsCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DWRITE_HIT_TEST_METRICS[] hitTestMetrics, int maxHitTestMetricsCount, /* _Out_ */ out uint actualHitTestMetricsCount);
         
         // IDWriteTextLayout1
         [PreserveSig]
@@ -253,17 +253,17 @@ namespace DirectN
         new HRESULT GetLineSpacing(/* _Out_ */ out DWRITE_LINE_SPACING lineSpacingOptions);
         
         [PreserveSig]
-        new HRESULT GetLineMetrics(/* _Out_writes_to_opt_(maxLineCount, *actualLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS1[] lineMetrics, uint maxLineCount, /* _Out_ */ out uint actualLineCount);
+        new HRESULT GetLineMetrics(/* _Out_writes_to_opt_(maxLineCount, *actualLineCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_LINE_METRICS1[] lineMetrics, int maxLineCount, /* _Out_ */ out uint actualLineCount);
         
         // IDWriteTextLayout4
         [PreserveSig]
-        HRESULT SetFontAxisValues(/* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, DWRITE_TEXT_RANGE textRange);
+        HRESULT SetFontAxisValues(/* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, int fontAxisValueCount, DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         uint GetFontAxisValueCount(uint currentPosition);
         
         [PreserveSig]
-        HRESULT GetFontAxisValues(uint currentPosition, /* _Out_writes_(fontAxisValueCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, uint fontAxisValueCount, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        HRESULT GetFontAxisValues(uint currentPosition, /* _Out_writes_(fontAxisValueCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, int fontAxisValueCount, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
         DWRITE_AUTOMATIC_FONT_AXES GetAutomaticFontAxes();

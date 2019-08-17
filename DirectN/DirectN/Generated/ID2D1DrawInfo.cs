@@ -25,13 +25,13 @@ namespace DirectN
         
         // ID2D1DrawInfo
         [PreserveSig]
-        HRESULT SetPixelShaderConstantBuffer(/* _In_reads_(bufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, uint bufferCount);
+        HRESULT SetPixelShaderConstantBuffer(/* _In_reads_(bufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, int bufferCount);
         
         [PreserveSig]
         HRESULT SetResourceTexture(uint textureIndex, /* _In_ */ ID2D1ResourceTexture resourceTexture);
         
         [PreserveSig]
-        HRESULT SetVertexShaderConstantBuffer(/* _In_reads_(bufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, uint bufferCount);
+        HRESULT SetVertexShaderConstantBuffer(/* _In_reads_(bufferCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] buffer, int bufferCount);
         
         [PreserveSig]
         HRESULT SetPixelShader(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid shaderId, D2D1_PIXEL_OPTIONS pixelOptions);

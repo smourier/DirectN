@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT GetData(/* [annotation] _Out_ */ out uint size, /* [annotation] _Outptr_result_bytebuffer_(*size) */ out IntPtr data);
         
         [PreserveSig]
-        HRESULT Setup(uint stage, uint cbIn, /* [annotation] _In_reads_bytes_(cbIn) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbIn, /* [annotation] _Out_ */ out uint pcbOut, /* [annotation] _Outptr_result_bytebuffer_(*pcbOut) */ out IntPtr ppbOut);
+        HRESULT Setup(uint stage, int cbIn, /* [annotation] _In_reads_bytes_(cbIn) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbIn, /* [annotation] _Out_ */ out uint pcbOut, /* [annotation] _Outptr_result_bytebuffer_(*pcbOut) */ out IntPtr ppbOut);
     }
 }

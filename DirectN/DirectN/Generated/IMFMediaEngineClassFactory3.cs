@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMFMediaEngineClassFactory3
     {
         [PreserveSig]
-        HRESULT CreateMediaKeySystemAccess(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.BStr)] string keySystem, /* [annotation] _In_count_(uSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IPropertyStore[] ppSupportedConfigurationsArray, /* [annotation] _In_ */ uint uSize, /* [annotation] _COM_Outptr_ */ out IMFMediaKeySystemAccess ppKeyAccess);
+        HRESULT CreateMediaKeySystemAccess(/* [annotation] _In_ */ [MarshalAs(UnmanagedType.BStr)] string keySystem, /* [annotation] _In_count_(uSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IPropertyStore[] ppSupportedConfigurationsArray, /* [annotation] _In_ */ int uSize, /* [annotation] _COM_Outptr_ */ out IMFMediaKeySystemAccess ppKeyAccess);
     }
 }

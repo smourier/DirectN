@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IMFMediaKeys
         [PreserveSig]
-        new HRESULT CreateSession(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string mimeType, /* [annotation] _In_reads_bytes_opt_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] initData, /* [annotation] _In_opt_ */ uint cb, /* [annotation] _In_reads_bytes_opt_(cbCustomData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] customData, /* [annotation] _In_ */ uint cbCustomData, /* [annotation] _In_ */ IMFMediaKeySessionNotify notify, /* [annotation] _COM_Outptr_ */ out IMFMediaKeySession ppSession);
+        new HRESULT CreateSession(/* [annotation] _In_opt_ */ [MarshalAs(UnmanagedType.BStr)] string mimeType, /* [annotation] _In_reads_bytes_opt_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] byte[] initData, /* [annotation] _In_opt_ */ int cb, /* [annotation] _In_reads_bytes_opt_(cbCustomData) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] byte[] customData, /* [annotation] _In_ */ int cbCustomData, /* [annotation] _In_ */ IMFMediaKeySessionNotify notify, /* [annotation] _COM_Outptr_ */ out IMFMediaKeySession ppSession);
         
         [PreserveSig]
         new HRESULT get_KeySystem(/* [annotation] _COM_Outptr_ */ out IntPtr keySystem);
@@ -25,7 +25,7 @@ namespace DirectN
         HRESULT CreateSession2(/* [annotation] _In_ */ MF_MEDIAKEYSESSION_TYPE eSessionType, /* [annotation] _In_ */ IMFMediaKeySessionNotify2 pMFMediaKeySessionNotify2, /* [annotation] _COM_Outptr_ */ out IMFMediaKeySession2 ppSession);
         
         [PreserveSig]
-        HRESULT SetServerCertificate(/* [annotation] _In_reads_bytes_opt_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbServerCertificate, /* [annotation] _In_ */ uint cb);
+        HRESULT SetServerCertificate(/* [annotation] _In_reads_bytes_opt_(cb) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbServerCertificate, /* [annotation] _In_ */ int cb);
         
         [PreserveSig]
         HRESULT GetDOMException(/* [annotation] _In_ */ HRESULT systemCode, /* [annotation] _Out_ */ out HRESULT code);

@@ -11,9 +11,9 @@ namespace DirectN
         HRESULT CreateWrappedResource(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pResource12, /* _In_ */ ref D3D11_RESOURCE_FLAGS pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppResource11);
         
         [PreserveSig]
-        void ReleaseWrappedResources(/* _In_reads_( NumResources ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ID3D11Resource[] ppResources, uint NumResources);
+        void ReleaseWrappedResources(/* _In_reads_( NumResources ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ID3D11Resource[] ppResources, int NumResources);
         
         [PreserveSig]
-        void AcquireWrappedResources(/* _In_reads_( NumResources ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ID3D11Resource[] ppResources, uint NumResources);
+        void AcquireWrappedResources(/* _In_reads_( NumResources ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ID3D11Resource[] ppResources, int NumResources);
     }
 }

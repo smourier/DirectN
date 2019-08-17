@@ -18,13 +18,13 @@ namespace DirectN
         HRESULT CreateBlobFromFile([MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* optional(UINT32) */ IntPtr codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
-        HRESULT CreateBlobWithEncodingFromPinned(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pText, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobWithEncodingFromPinned(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pText, int size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
-        HRESULT CreateBlobWithEncodingOnHeapCopy(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pText, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobWithEncodingOnHeapCopy(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pText, int size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
-        HRESULT CreateBlobWithEncodingOnMalloc(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IntPtr[] pText, ref IMalloc pIMalloc, uint size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobWithEncodingOnMalloc(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IntPtr[] pText, ref IMalloc pIMalloc, int size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
         HRESULT CreateIncludeHandler(/* _COM_Outptr_ */ out IDxcIncludeHandler ppResult);

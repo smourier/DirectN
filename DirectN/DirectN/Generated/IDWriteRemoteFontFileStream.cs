@@ -29,12 +29,12 @@ namespace DirectN
         HRESULT GetLocalFileSize(/* _Out_ */ out ulong localFileSize);
         
         [PreserveSig]
-        HRESULT GetFileFragmentLocality(ulong fileOffset, ulong fragmentSize, /* _Out_ */ out bool isLocal, /* _Out_range_(0, fragmentSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] ulong[] partialSize);
+        HRESULT GetFileFragmentLocality(ulong fileOffset, ulong fragmentSize, /* _Out_ */ out bool isLocal, /* _Out_range_(0, fragmentSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeConst = 0)] ulong[] partialSize);
         
         [PreserveSig]
         DWRITE_LOCALITY GetLocality();
         
         [PreserveSig]
-        HRESULT BeginDownload(/* _In_ */ ref UUID downloadOperationID, /* _In_reads_(fragmentCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FILE_FRAGMENT[] fileFragments, uint fragmentCount, /* _COM_Outptr_result_maybenull_ */ out IDWriteAsyncResult asyncResult);
+        HRESULT BeginDownload(/* _In_ */ ref UUID downloadOperationID, /* _In_reads_(fragmentCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FILE_FRAGMENT[] fileFragments, int fragmentCount, /* _COM_Outptr_result_maybenull_ */ out IDWriteAsyncResult asyncResult);
     }
 }

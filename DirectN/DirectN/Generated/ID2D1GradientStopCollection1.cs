@@ -19,7 +19,7 @@ namespace DirectN
         new uint GetGradientStopCount();
         
         [PreserveSig]
-        new void GetGradientStops(/* _Out_writes_to_(gradientStopsCount, _Inexpressible_("Retrieved through GetGradientStopCount()") ) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, uint gradientStopsCount);
+        new void GetGradientStops(/* _Out_writes_to_(gradientStopsCount, _Inexpressible_("Retrieved through GetGradientStopCount()") ) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, int gradientStopsCount);
         
         [PreserveSig]
         new D2D1_GAMMA GetColorInterpolationGamma();
@@ -29,7 +29,7 @@ namespace DirectN
         
         // ID2D1GradientStopCollection1
         [PreserveSig]
-        void GetGradientStops1(/* _Out_writes_to_(gradientStopsCount, _Inexpressible_("Retrieved through GetGradientStopCount()") ) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, uint gradientStopsCount);
+        void GetGradientStops1(/* _Out_writes_to_(gradientStopsCount, _Inexpressible_("Retrieved through GetGradientStopCount()") ) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_GRADIENT_STOP[] gradientStops, int gradientStopsCount);
         
         [PreserveSig]
         D2D1_COLOR_SPACE GetPreInterpolationSpace();

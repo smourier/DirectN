@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface ID2D1ResourceTexture
     {
         [PreserveSig]
-        HRESULT Update(/* _In_reads_opt_(dimensions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] uint[] minimumExtents, /* _In_reads_opt_(dimensions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] uint[] maximimumExtents, /* _In_reads_opt_(dimensions - 1) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, uint dimensions, /* _In_reads_(dataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] data, uint dataCount);
+        HRESULT Update(/* _In_reads_opt_(dimensions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] uint[] minimumExtents, /* _In_reads_opt_(dimensions) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] uint[] maximimumExtents, /* _In_reads_opt_(dimensions - 1) */ [MarshalAs(UnmanagedType.LPArray)] uint[] strides, int dimensions, /* _In_reads_(dataCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] byte[] data, int dataCount);
     }
 }

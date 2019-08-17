@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT InitializeFromFilename(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string wzFilename);
         
         [PreserveSig]
-        HRESULT InitializeFromMemory(/* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [in] */ uint cbBufferSize);
+        HRESULT InitializeFromMemory(/* [size_is][in] __RPC__in_ecount_full(cbBufferSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] pbBuffer, /* [in] */ int cbBufferSize);
         
         [PreserveSig]
         HRESULT InitializeFromExifColorSpace(/* [in] */ uint value);
@@ -20,7 +20,7 @@ namespace DirectN
         HRESULT GetType(/* [out] __RPC__out */ out WICColorContextType pType);
         
         [PreserveSig]
-        HRESULT GetProfileBytes(/* [in] */ uint cbBuffer, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cbBuffer) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbBuffer, /* [out] __RPC__out */ out uint pcbActual);
+        HRESULT GetProfileBytes(/* [in] */ int cbBuffer, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cbBuffer) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbBuffer, /* [out] __RPC__out */ out uint pcbActual);
         
         [PreserveSig]
         HRESULT GetExifColorSpace(/* [out] __RPC__out */ out uint pValue);

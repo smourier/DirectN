@@ -7,15 +7,15 @@ namespace DirectN
 {
     public static class MFFunctions
     {
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFShutdown();
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFStartup(uint Version, uint dwFlags);
 
         public static void MFStartup() => MFStartup((Constants.MF_SDK_VERSION << 16) | Constants.MF_API_VERSION, Constants.MFSTARTUP_FULL).ThrowOnError();
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMFByteStreamOnStream(IStream pStream, out IMFByteStream ppByteStream);
 
         public static ComObject<IMFByteStream> MFCreateMFByteStreamOnStream(this IStream stream) => MFCreateMFByteStreamOnStream<IMFByteStream>(stream);
@@ -28,7 +28,7 @@ namespace DirectN
             return new ComObject<T>((T)bs);
         }
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMediaType(out IMFMediaType ppMFType);
 
         public static ComObject<IMFMediaType> MFCreateMediaType() => MFCreateMediaType<IMFMediaType>();
@@ -38,7 +38,7 @@ namespace DirectN
             return new ComObject<T>((T)type);
         }
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateAttributes(out IMFAttributes ppMFAttributes, uint cInitialSize);
 
         public static ComObject<IMFAttributes> MFCreateAttributes(uint initialSize = 0) => MFCreateAttributes<IMFAttributes>(initialSize);
@@ -48,10 +48,10 @@ namespace DirectN
             return new ComObject<T>((T)attributes);
         }
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFAverageTimePerFrameToFrameRate(ulong unAverageTimePerFrame, out uint punNumerator, out uint punDenominator);
 
-        [DllImport("mfreadwrite")]
+        [DllImport("mfreadwrite", ExactSpelling = true)]
         public static extern HRESULT MFCreateSinkWriterFromURL([MarshalAs(UnmanagedType.LPWStr)] string pwszOutputURL, IMFByteStream pByteStream, IMFAttributes pAttributes, out IMFSinkWriter ppSinkWriter);
 
         public static ComObject<IMFSinkWriter> MFCreateSinkWriterFromURL(string outputUrl, IMFByteStream byteStream, IMFAttributes attributes) => MFCreateSinkWriterFromURL<IMFSinkWriter>(outputUrl, byteStream, attributes);
@@ -64,7 +64,7 @@ namespace DirectN
             return new ComObject<T>((T)writer);
         }
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMemoryBuffer(uint cbMaxLength, out IMFMediaBuffer ppBuffer);
 
         public static ComObject<IMFMediaBuffer> MFCreateMemoryBuffer(uint cbMaxLength) => MFCreateMemoryBuffer<IMFMediaBuffer>(cbMaxLength);
@@ -74,7 +74,7 @@ namespace DirectN
             return new ComObject<T>((T)sample);
         }
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateSample(out IMFSample ppIMFSample);
 
         public static ComObject<IMFSample> MFCreateSample() => MFCreateSample<IMFSample>();
@@ -84,7 +84,7 @@ namespace DirectN
             return new ComObject<T>((T)sample);
         }
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGISurfaceBuffer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object punkSurface, uint uSubresourceIndex, bool fBottomUpWhenLinear, out IMFMediaBuffer ppBuffer);
 
         public static ComObject<T> MFCreateDXGISurfaceBuffer<T>(object surface, int resourceIndex, bool bottomUpWhenLinear) where T : IMFMediaBuffer
@@ -93,7 +93,7 @@ namespace DirectN
             return new ComObject<T>((T)buffer);
         }
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGIDeviceManager(out uint resetToken, out IMFDXGIDeviceManager ppDeviceManager);
 
         public static ComObject<IMFDXGIDeviceManager> MFCreateDXGIDeviceManager() => MFCreateDXGIDeviceManager();
@@ -104,7 +104,7 @@ namespace DirectN
             return new ComObject<T>((T)manager);
         }
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTEnumEx(
             Guid guidCategory,
             _MFT_ENUM_FLAG Flags,
@@ -113,7 +113,7 @@ namespace DirectN
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out IMFActivate[] pppMFTActivate,
             out int pnumMFTActivate);
 
-        [DllImport("mfplat")]
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTEnumEx(
             Guid guidCategory,
             _MFT_ENUM_FLAG Flags,

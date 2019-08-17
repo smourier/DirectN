@@ -40,7 +40,7 @@ namespace DirectN
         new uint GetDashesCount();
         
         [PreserveSig]
-        new void GetDashes(/* _Out_writes_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] dashes, uint dashesCount);
+        new void GetDashes(/* _Out_writes_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] dashes, int dashesCount);
         
         // ID2D1StrokeStyle1
         [PreserveSig]

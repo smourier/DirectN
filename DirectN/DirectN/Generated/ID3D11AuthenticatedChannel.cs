@@ -25,7 +25,7 @@ namespace DirectN
         HRESULT GetCertificateSize(/* [annotation] _Out_ */ out uint pCertificateSize);
         
         [PreserveSig]
-        HRESULT GetCertificate(/* [annotation] _In_ */ uint CertificateSize, /* [annotation] _Out_writes_bytes_(CertificateSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pCertificate);
+        HRESULT GetCertificate(/* [annotation] _In_ */ int CertificateSize, /* [annotation] _Out_writes_bytes_(CertificateSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pCertificate);
         
         [PreserveSig]
         void GetChannelHandle(/* [annotation] _Out_ */ out IntPtr pChannelHandle);

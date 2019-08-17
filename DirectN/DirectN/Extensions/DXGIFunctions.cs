@@ -36,22 +36,22 @@ namespace DirectN
             Marshal.ReleaseComObject(debug);
         }
 
-        [DllImport("dxgi")]
+        [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
 
-        [DllImport("dxgi")]
+        [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT CreateDXGIFactory([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
 
-        [DllImport("dxgi")]
+        [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT CreateDXGIFactory1([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
 
-        [DllImport("dxgi")]
+        [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT CreateDXGIFactory2(DXGI_CREATE_FACTORY_FLAGS Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppFactory);
 
-        [DllImport("dxgidebug")]
+        [DllImport("dxgidebug", ExactSpelling = true)]
         public static extern HRESULT DXGIGetDebugInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
 
-        [DllImport("dxgi")]
+        [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT DXGIGetDebugInterface1(int Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
 
         public static ComObject<IDXGIDebug> DXGIGetDebugInterface()

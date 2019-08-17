@@ -22,7 +22,7 @@ namespace DirectN
         new uint GetProfileSize();
         
         [PreserveSig]
-        new HRESULT GetProfile(/* _Out_writes_(profileSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] profile, uint profileSize);
+        new HRESULT GetProfile(/* _Out_writes_(profileSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] profile, int profileSize);
         
         // ID2D1ColorContext1
         [PreserveSig]

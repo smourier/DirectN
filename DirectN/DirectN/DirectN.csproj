@@ -8863,6 +8863,14 @@
     <Compile Include="Generated\IDCompositionVisual2.cs" />
     <Compile Include="Generated\IDCompositionVisual3.cs" />
     <Compile Include="Generated\IDCompositionVisualDebug.cs" />
+    <Compile Include="Generated\ISurfaceImageSourceManagerNative.cs" />
+    <Compile Include="Generated\ISurfaceImageSourceNative.cs" />
+    <Compile Include="Generated\ISurfaceImageSourceNativeWithD2D.cs" />
+    <Compile Include="Generated\ISwapChainBackgroundPanelNative.cs" />
+    <Compile Include="Generated\ISwapChainPanelNative.cs" />
+    <Compile Include="Generated\ISwapChainPanelNative2.cs" />
+    <Compile Include="Generated\IVirtualSurfaceImageSourceNative.cs" />
+    <Compile Include="Generated\IVirtualSurfaceUpdatesCallbackNative.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectN.nuspec">
