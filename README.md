@@ -1,5 +1,5 @@
 # DirectN
-Direct Interop code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, etc.
+Direct Interop code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.
 
 The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/
 
@@ -86,7 +86,7 @@ For example, the exact same C# version of the "Capture screen using DirectX" cod
                         frame.Initialize(null).ThrowOnError();
                         frame.SetSize(width, height).ThrowOnError();
                         frame.SetPixelFormat(ref format).ThrowOnError();
-                        frame.WritePixels(height, stride, stride * height, pixels).ThrowOnError();
+                        frame.WritePixels(height, stride, (int)(stride * height), pixels).ThrowOnError();
                         frame.Commit().ThrowOnError();
                         encoder.Commit().ThrowOnError();
                     }
