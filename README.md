@@ -1,5 +1,5 @@
 # DirectN
-Direct Wrappers for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, etc.
+Direct Interop code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, etc.
 
 The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/
 
