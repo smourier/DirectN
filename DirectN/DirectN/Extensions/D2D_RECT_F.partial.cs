@@ -12,7 +12,7 @@ namespace DirectN
             this.bottom = bottom;
         }
 
-        public float Width => Math.Abs(right - bottom);
+        public float Width => Math.Abs(right - left);
         public float Height => Math.Abs(bottom - top);
 
         public override string ToString() => "L=" + left + ",T=" + top + ",W=" + Width + ",H=" + Height;
