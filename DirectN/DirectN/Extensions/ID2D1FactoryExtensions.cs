@@ -4,8 +4,8 @@ namespace DirectN
 {
     public static class ID2D1FactoryExtensions
     {
-        public static ComObject<ID2D1Device> CreateDevice(this ComObject<ID2D1Factory1> factory, ComObject<IDXGIDevice> device) => CreateDevice<ID2D1Device>(factory?.Object, device?.Object);
-        public static ComObject<T> CreateDevice<T>(this ComObject<ID2D1Factory1> factory, ComObject<IDXGIDevice> device) where T : ID2D1Device => CreateDevice<T>(factory?.Object, device?.Object);
+        public static ComObject<ID2D1Device1> CreateDevice(this ComObject<ID2D1Factory1> factory, ComObject<IDXGIDevice1> device) => CreateDevice<ID2D1Device1>(factory?.Object, device?.Object);
+        public static ComObject<T> CreateDevice<T>(this ComObject<ID2D1Factory1> factory, ComObject<IDXGIDevice1> device) where T : ID2D1Device => CreateDevice<T>(factory?.Object, device?.Object);
         public static ComObject<T> CreateDevice<T>(this ID2D1Factory1 factory, IDXGIDevice device) where T : ID2D1Device
         {
             if (factory == null)

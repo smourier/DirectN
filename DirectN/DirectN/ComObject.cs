@@ -184,8 +184,8 @@ namespace DirectN
         // use that guid in TraceSpy's ETW Trace Provider (https://github.com/smourier/TraceSpy) 
         // or use is with MFTrace https://msdn.microsoft.com/en-us/library/windows/desktop/ff685116 as MFTrace can also display our custom traces
         // you can use trace.bat and config.xml in the project. Make sure you use mftrace X64 if this is ran as X4 also.
-        private static readonly EventProvider _provider = new EventProvider(new Guid("92f01f42-b22a-4d49-8be6-3f06355841aa"));
-        private static readonly Stopwatch _sw = new Stopwatch();
+        private static readonly System.Diagnostics.Eventing.EventProvider _provider = new System.Diagnostics.Eventing.EventProvider(new Guid("92f01f42-b22a-4d49-8be6-3f06355841aa"));
+        private static readonly System.Diagnostics.Stopwatch _sw = new System.Diagnostics.Stopwatch();
 
         static ComObject()
         {
@@ -224,10 +224,10 @@ namespace DirectN
             return Id.ToString();
         }
 
-        public override void Dispose()
+        protected override void Dispose(bool disposing)
         {
             Trace("-ComObject", "duration=" + Duration.Milliseconds);
-            base.Dispose();
+            base.Dispose(disposing);
         }
 #endif
 
