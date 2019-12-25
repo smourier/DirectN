@@ -19,6 +19,6 @@ namespace DirectN
         void SetOffset(tagPOINT offset);
         
         [PreserveSig]
-        tagPOINT GetOffset();
+        void GetOffset(out tagPOINT size);
     }
 }

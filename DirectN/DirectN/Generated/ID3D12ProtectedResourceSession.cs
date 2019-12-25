@@ -33,6 +33,6 @@ namespace DirectN
         
         // ID3D12ProtectedResourceSession
         [PreserveSig]
-        D3D12_PROTECTED_RESOURCE_SESSION_DESC GetDesc();
+        void GetDesc(out D3D12_PROTECTED_RESOURCE_SESSION_DESC size);
     }
 }

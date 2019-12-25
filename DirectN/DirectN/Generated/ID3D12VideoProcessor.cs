@@ -37,6 +37,6 @@ namespace DirectN
         HRESULT GetInputStreamDescs(int NumInputStreamDescs, /* _Out_writes_(NumInputStreamDescs) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC[] pInputStreamDescs);
         
         [PreserveSig]
-        D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC GetOutputStreamDesc();
+        void GetOutputStreamDesc(out D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC size);
     }
 }

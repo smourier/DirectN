@@ -28,6 +28,6 @@ namespace DirectN
         
         // ID3D12VideoDecoderHeap
         [PreserveSig]
-        D3D12_VIDEO_DECODER_HEAP_DESC GetDesc();
+        void GetDesc(out D3D12_VIDEO_DECODER_HEAP_DESC size);
     }
 }

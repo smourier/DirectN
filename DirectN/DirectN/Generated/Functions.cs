@@ -344,7 +344,7 @@ namespace DirectN
         public static extern uint D3D10CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels);
         
         [DllImport("d3d10", ExactSpelling = true)]
-        public static extern HRESULT D3D10CompileEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, [MarshalAs(UnmanagedType.LPStr)] string pSrcFileName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, uint HLSLFlags, uint FXFlags, /* _Out_ */ out ID3D10Blob ppCompiledEffect, /* _Out_opt_ */ out ID3D10Blob ppErrors);
+        public static extern HRESULT D3D10CompileEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, [MarshalAs(UnmanagedType.LPStr)] string pSrcFileName, /* optional(int) */ IntPtr pDefines, /* optional(int) */ IntPtr pInclude, uint HLSLFlags, uint FXFlags, /* _Out_ */ out ID3D10Blob ppCompiledEffect, /* _Out_opt_ */ out ID3D10Blob ppErrors);
         
         [DllImport("d3d10", ExactSpelling = true)]
         public static extern HRESULT D3D10CreateEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, uint FXFlags, /* _In_ */ ID3D10Device pDevice, /* _In_opt_ */ ID3D10EffectPool pEffectPool, /* _Out_ */ out ID3D10Effect ppEffect);
@@ -1684,7 +1684,7 @@ namespace DirectN
         [DllImport("mfreadwrite", ExactSpelling = true)]
         public static extern HRESULT MFCreateSourceReaderFromURL(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
         
-        [DllImport("mftransform", ExactSpelling = true)]
+        [DllImport("MFTransform", ExactSpelling = true)]
         public static extern HRESULT MFCreateTransformActivate(/* _Out_ */ out IMFActivate ppActivate);
         
         [DllImport("mmdeviceapi", ExactSpelling = true)]
@@ -3064,61 +3064,61 @@ namespace DirectN
         [DllImport("gdi32", ExactSpelling = true)]
         public static extern bool UpdateICMRegKeyW(/* _Reserved_ */ uint reserved, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpszCMID, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string lpszFileName, /* _In_ */ uint command);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglCopyContext(IntPtr unnamed__0, IntPtr unnamed__1, uint unnamed__2);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern IntPtr wglCreateContext(IntPtr unnamed__0);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern IntPtr wglCreateLayerContext(IntPtr unnamed__0, int unnamed__1);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglDeleteContext(IntPtr unnamed__0);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglDescribeLayerPlane(IntPtr unnamed__0, int unnamed__1, int unnamed__2, uint unnamed__3, ref tagLAYERPLANEDESCRIPTOR unnamed__4);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern IntPtr wglGetCurrentContext();
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern IntPtr wglGetCurrentDC();
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern void wglGetLayerPaletteEntries(IntPtr unnamed__0, int unnamed__1, int unnamed__2, int unnamed__3, ref COLORREF unnamed__4);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern PROC wglGetProcAddress([MarshalAs(UnmanagedType.LPStr)] string unnamed__0);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglMakeCurrent(IntPtr unnamed__0, IntPtr unnamed__1);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglRealizeLayerPalette(IntPtr unnamed__0, int unnamed__1, bool unnamed__2);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern void wglSetLayerPaletteEntries(IntPtr unnamed__0, int unnamed__1, int unnamed__2, int unnamed__3, ref COLORREF unnamed__4);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglShareLists(IntPtr unnamed__0, IntPtr unnamed__1);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglSwapLayerBuffers(IntPtr unnamed__0, uint unnamed__1);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern uint wglSwapMultipleBuffers(uint unnamed__0, ref _WGLSWAP unnamed__1);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglUseFontBitmapsA(IntPtr unnamed__0, uint unnamed__1, uint unnamed__2, uint unnamed__3);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglUseFontBitmapsW(IntPtr unnamed__0, uint unnamed__1, uint unnamed__2, uint unnamed__3);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglUseFontOutlinesA(IntPtr unnamed__0, uint unnamed__1, uint unnamed__2, uint unnamed__3, float unnamed__4, float unnamed__5, int unnamed__6, ref _GLYPHMETRICSFLOAT unnamed__7);
         
-        [DllImport("gdi32", ExactSpelling = true)]
+        [DllImport("opengl32", ExactSpelling = true)]
         public static extern bool wglUseFontOutlinesW(IntPtr unnamed__0, uint unnamed__1, uint unnamed__2, uint unnamed__3, float unnamed__4, float unnamed__5, int unnamed__6, ref _GLYPHMETRICSFLOAT unnamed__7);
         
         [DllImport("gdi32", ExactSpelling = true)]
@@ -3186,15 +3186,6 @@ namespace DirectN
         
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateWMVEncoderActivate(IMFMediaType pMediaType, ref IPropertyStore pEncodingConfigurationProperties, out IMFActivate ppActivate);
-        
-        [DllImport("wmpdevices", ExactSpelling = true)]
-        public static extern bool WMPNotifyDeviceArrival();
-        
-        [DllImport("wmpdevices", ExactSpelling = true)]
-        public static extern bool WMPNotifyDeviceRemoval();
-        
-        [DllImport("wmpplug", ExactSpelling = true)]
-        public static extern bool WMPNotifyPluginAddRemove();
         
         [DllImport("wmvcore", ExactSpelling = true)]
         public static extern HRESULT WMCreateBackupRestorer([MarshalAs(UnmanagedType.IUnknown)] object pCallback, out IWMLicenseBackup ppBackup);

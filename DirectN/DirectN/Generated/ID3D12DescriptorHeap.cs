@@ -28,12 +28,12 @@ namespace DirectN
         
         // ID3D12DescriptorHeap
         [PreserveSig]
-        D3D12_DESCRIPTOR_HEAP_DESC GetDesc();
+        void GetDesc(out D3D12_DESCRIPTOR_HEAP_DESC size);
         
         [PreserveSig]
-        D3D12_CPU_DESCRIPTOR_HANDLE GetCPUDescriptorHandleForHeapStart();
+        void GetCPUDescriptorHandleForHeapStart(out D3D12_CPU_DESCRIPTOR_HANDLE size);
         
         [PreserveSig]
-        D3D12_GPU_DESCRIPTOR_HANDLE GetGPUDescriptorHandleForHeapStart();
+        void GetGPUDescriptorHandleForHeapStart(out D3D12_GPU_DESCRIPTOR_HANDLE size);
     }
 }

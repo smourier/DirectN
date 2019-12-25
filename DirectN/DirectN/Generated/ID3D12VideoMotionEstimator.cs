@@ -28,7 +28,7 @@ namespace DirectN
         
         // ID3D12VideoMotionEstimator
         [PreserveSig]
-        D3D12_VIDEO_MOTION_ESTIMATOR_DESC GetDesc();
+        void GetDesc(out D3D12_VIDEO_MOTION_ESTIMATOR_DESC size);
         
         [PreserveSig]
         HRESULT GetProtectedResourceSession([MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppProtectedSession);

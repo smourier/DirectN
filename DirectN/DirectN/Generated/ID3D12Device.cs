@@ -1,7 +1,6 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(7820,5)
 using System;
 using System.Runtime.InteropServices;
-using LUID = DirectN._LUID;
 using SECURITY_ATTRIBUTES = DirectN._SECURITY_ATTRIBUTES;
 
 namespace DirectN
@@ -78,10 +77,10 @@ namespace DirectN
         void CopyDescriptorsSimple(/* _In_ */ uint NumDescriptors, /* _In_ */ D3D12_CPU_DESCRIPTOR_HANDLE DestDescriptorRangeStart, /* _In_ */ D3D12_CPU_DESCRIPTOR_HANDLE SrcDescriptorRangeStart, /* _In_ */ D3D12_DESCRIPTOR_HEAP_TYPE DescriptorHeapsType);
         
         [PreserveSig]
-        D3D12_RESOURCE_ALLOCATION_INFO GetResourceAllocationInfo(/* _In_ */ uint visibleMask, /* _In_ */ int numResourceDescs, /* _In_reads_(numResourceDescs) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_RESOURCE_DESC[] pResourceDescs);
+        void GetResourceAllocationInfo(out D3D12_RESOURCE_ALLOCATION_INFO size, /* _In_ */ uint visibleMask, /* _In_ */ int numResourceDescs, /* _In_reads_(numResourceDescs) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D3D12_RESOURCE_DESC[] pResourceDescs);
         
         [PreserveSig]
-        D3D12_HEAP_PROPERTIES GetCustomHeapProperties(/* _In_ */ uint nodeMask, D3D12_HEAP_TYPE heapType);
+        void GetCustomHeapProperties(out D3D12_HEAP_PROPERTIES size, /* _In_ */ uint nodeMask, D3D12_HEAP_TYPE heapType);
         
         [PreserveSig]
         HRESULT CreateCommittedResource(/* _In_ */ ref D3D12_HEAP_PROPERTIES pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, /* _In_ */ ref D3D12_RESOURCE_DESC pDesc, D3D12_RESOURCE_STATES InitialResourceState, /* optional(D3D12_CLEAR_VALUE) */ IntPtr pOptimizedClearValue, [MarshalAs(UnmanagedType.LPStruct)] Guid riidResource, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvResource);
@@ -132,6 +131,6 @@ namespace DirectN
         void GetResourceTiling(/* _In_ */ ID3D12Resource pTiledResource, /* _Out_opt_ */ out uint pNumTilesForEntireResource, /* _Out_opt_ */ out D3D12_PACKED_MIP_INFO pPackedMipDesc, /* _Out_opt_ */ out D3D12_TILE_SHAPE pStandardTileShapeForNonPackedMips, /* optional(UINT) */ IntPtr pNumSubresourceTilings, /* _In_ */ uint FirstSubresourceTilingToGet, /* _Out_writes_(*pNumSubresourceTilings) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D12_SUBRESOURCE_TILING[] pSubresourceTilingsForNonPackedMips);
         
         [PreserveSig]
-        LUID GetAdapterLuid();
+        void GetAdapterLuid(out _LUID size);
     }
 }

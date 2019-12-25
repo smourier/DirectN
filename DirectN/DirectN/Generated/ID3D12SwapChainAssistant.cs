@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface ID3D12SwapChainAssistant
     {
         [PreserveSig]
-        LUID GetLUID();
+        void GetLUID(out _LUID size);
         
         [PreserveSig]
         HRESULT GetSwapChainObject([MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppv);

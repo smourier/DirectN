@@ -10,7 +10,7 @@ namespace DirectN
         public uint dwSize;
         public uint dwFlags;
         public bool bHardware;
-        public int dcmColorModel;
+        public uint dcmColorModel;
         public Guid guid;
         public uint dwCaps;
         public _D3DPrimCaps dpcPrimCaps;

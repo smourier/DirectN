@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT GetRootSignatureDescAtVersion(D3D_ROOT_SIGNATURE_VERSION convertToVersion, /* _Out_ */ out IntPtr ppDesc);
         
         [PreserveSig]
-        D3D12_VERSIONED_ROOT_SIGNATURE_DESC GetUnconvertedRootSignatureDesc();
+        void GetUnconvertedRootSignatureDesc(out D3D12_VERSIONED_ROOT_SIGNATURE_DESC size);
     }
 }

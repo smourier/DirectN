@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface ID3D12RootSignatureDeserializer
     {
         [PreserveSig]
-        D3D12_ROOT_SIGNATURE_DESC GetRootSignatureDesc();
+        void GetRootSignatureDesc(out D3D12_ROOT_SIGNATURE_DESC size);
     }
 }

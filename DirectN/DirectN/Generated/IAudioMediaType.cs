@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT IsEqual(/* [annotation][in] _In_ */ IAudioMediaType pIAudioType, /* [annotation][out] _Out_ */ out uint pdwFlags);
         
         [PreserveSig]
-        tWAVEFORMATEX GetAudioFormat();
+        IntPtr GetAudioFormat();
         
         [PreserveSig]
         HRESULT GetUncompressedAudioFormat(/* [annotation][out] _Out_ */ out _UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat);

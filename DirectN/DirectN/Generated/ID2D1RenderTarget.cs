@@ -155,7 +155,7 @@ namespace DirectN
         HRESULT EndDraw(/* _Out_opt_ */ out D2D1_TAG tag1, /* _Out_opt_ */ out D2D1_TAG tag2);
         
         [PreserveSig]
-        D2D1_PIXEL_FORMAT GetPixelFormat();
+        void GetPixelFormat(out D2D1_PIXEL_FORMAT size);
         
         [PreserveSig]
         void SetDpi(float dpiX, float dpiY);
@@ -164,10 +164,10 @@ namespace DirectN
         void GetDpi(/* _Out_ */ out float dpiX, /* _Out_ */ out float dpiY);
         
         [PreserveSig]
-        D2D_SIZE_F GetSize();
+        void GetSize(out D2D_SIZE_F size);
         
         [PreserveSig]
-        D2D_SIZE_U GetPixelSize();
+        void GetPixelSize(out D2D_SIZE_U size);
         
         [PreserveSig]
         uint GetMaximumBitmapSize();

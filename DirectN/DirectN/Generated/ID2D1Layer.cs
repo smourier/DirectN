@@ -16,6 +16,6 @@ namespace DirectN
         
         // ID2D1Layer
         [PreserveSig]
-        D2D_SIZE_F GetSize();
+        void GetSize(out D2D_SIZE_F size);
     }
 }

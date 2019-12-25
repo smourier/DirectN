@@ -17,7 +17,7 @@ namespace DirectN
         HRESULT SetViewportSize(D2D_SIZE_F viewportSize);
         
         [PreserveSig]
-        D2D_SIZE_F GetViewportSize();
+        void GetViewportSize(out D2D_SIZE_F size);
         
         [PreserveSig]
         HRESULT SetRoot(/* _In_opt_ */ ID2D1SvgElement root);

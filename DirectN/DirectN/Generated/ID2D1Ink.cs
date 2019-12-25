@@ -19,7 +19,7 @@ namespace DirectN
         void SetStartPoint(/* _In_ */ ref D2D1_INK_POINT startPoint);
         
         [PreserveSig]
-        D2D1_INK_POINT GetStartPoint();
+        void GetStartPoint(out D2D1_INK_POINT size);
         
         [PreserveSig]
         HRESULT AddSegments(/* _In_reads_(segmentsCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_INK_BEZIER_SEGMENT[] segments, int segmentsCount);

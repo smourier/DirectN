@@ -116,6 +116,6 @@ namespace DirectN
         
         // IMFAudioMediaType
         [PreserveSig]
-        tWAVEFORMATEX GetAudioFormat();
+        IntPtr GetAudioFormat();
     }
 }

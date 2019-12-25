@@ -58,6 +58,6 @@ namespace DirectN
         HRESULT GetClockCalibration(/* _Out_ */ out ulong pGpuTimestamp, /* _Out_ */ out ulong pCpuTimestamp);
         
         [PreserveSig]
-        D3D12_COMMAND_QUEUE_DESC GetDesc();
+        void GetDesc(out D3D12_COMMAND_QUEUE_DESC size);
     }
 }

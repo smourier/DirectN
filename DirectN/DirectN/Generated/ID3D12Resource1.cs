@@ -34,7 +34,7 @@ namespace DirectN
         new void Unmap(uint Subresource, /* optional(D3D12_RANGE) */ IntPtr pWrittenRange);
         
         [PreserveSig]
-        new D3D12_RESOURCE_DESC GetDesc();
+        new void GetDesc(out D3D12_RESOURCE_DESC size);
         
         [PreserveSig]
         new ulong GetGPUVirtualAddress();

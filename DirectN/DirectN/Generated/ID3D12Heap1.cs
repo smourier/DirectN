@@ -28,7 +28,7 @@ namespace DirectN
         
         // ID3D12Heap
         [PreserveSig]
-        new D3D12_HEAP_DESC GetDesc();
+        new void GetDesc(out D3D12_HEAP_DESC size);
         
         // ID3D12Heap1
         [PreserveSig]

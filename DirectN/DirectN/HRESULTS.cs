@@ -9,8 +9,15 @@
         E_INVALIDARG = unchecked((int)0x80070057),
         E_ACCESSDENIED = unchecked((int)0x80070005),
         E_NOTIMPL = unchecked((int)0x80004001),
-        ERROR_CANCELLED = unchecked((int)0x800704C7),
+        E_NOT_VALID_STATE = unchecked((int)0x8007139F),
         E_UNEXPECTED = unchecked((int)0x8000FFFF),
+        ERROR_CANCELLED = unchecked((int)0x800704C7),
+        ERROR_INTERNAL_ERROR = unchecked((int)0x8007054F),
+        ERROR_INVALID_DATA = unchecked((int)0x8007000D),
+        ERROR_INVALID_OPERATION = unchecked((int)0x800710DD),
+        ERROR_INVALID_NAME = unchecked((int)0x8007007B),
+        ERROR_INVALID_HANDLE = unchecked((int)0x80070006),
+        DISP_E_EXCEPTION = unchecked((int)0x80020009),
 
         // storage
         STG_E_INVALIDFUNCTION = unchecked((int)0x80030001),

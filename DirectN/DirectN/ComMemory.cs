@@ -4,17 +4,36 @@ using System.Threading;
 
 namespace DirectN
 {
-    public sealed class ComMemory : IDisposable
+    public class ComMemory : IDisposable
     {
         private IntPtr _pointer;
+        private bool _disposedValue = false;
 
         public ComMemory(object structure)
         {
             if (structure != null)
             {
-                Size = Marshal.SizeOf(structure);
-                _pointer = Marshal.AllocCoTaskMem(Size);
-                Marshal.StructureToPtr(structure, _pointer, false);
+                if (structure is Array array)
+                {
+                    if (array.Rank != 1)
+                        throw new ArgumentException(null, nameof(structure));
+
+                    var elementType = array.GetType().GetElementType();
+                    var elementSize = Marshal.SizeOf(elementType);
+                    var length = array.GetLength(0);
+                    Size = elementSize * length;
+                    _pointer = Marshal.AllocCoTaskMem(Size);
+                    for (int i = 0; i < length; i++)
+                    {
+                        Marshal.StructureToPtr(array.GetValue(i), _pointer + i * elementSize, false);
+                    }
+                }
+                else
+                {
+                    Size = Marshal.SizeOf(structure);
+                    _pointer = Marshal.AllocCoTaskMem(Size);
+                    Marshal.StructureToPtr(structure, _pointer, false);
+                }
             }
         }
 
@@ -38,7 +57,7 @@ namespace DirectN
             Replace(pointer, size);
         }
 
-        public int Size { get; private set; }
+        public int Size { get; protected set; }
 
         public IntPtr Pointer
         {
@@ -52,6 +71,15 @@ namespace DirectN
             }
         }
 
+        public virtual void Replace(object structure)
+        {
+#if DEBUG
+            if (Marshal.SizeOf(structure) != Size)
+                throw new ArgumentException(null, nameof(structure));
+#endif
+            Marshal.StructureToPtr(structure, _pointer, false);
+        }
+
         public void Replace(IntPtr pointer, uint size) => Replace(pointer, (int)size);
         public void Replace(IntPtr pointer, int size)
         {
@@ -59,13 +87,61 @@ namespace DirectN
             Size = size;
         }
 
+        public static void Free(ref IntPtr ptr)
+        {
+            var p = Interlocked.Exchange(ref ptr, IntPtr.Zero);
+            if (p == IntPtr.Zero)
+                return;
+
+            Marshal.FreeCoTaskMem(p);
+        }
+
+        public static IntPtr AllocAndCopy(object structure)
+        {
+            var size = Marshal.SizeOf(structure);
+            var p = Marshal.AllocCoTaskMem(size);
+            Marshal.StructureToPtr(structure, p, false);
+            return p;
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposedValue)
+            {
+                if (disposing)
+                {
+                    // dispose managed state (managed objects).
+                }
+
+                // free unmanaged resources (unmanaged objects) and override a finalizer below.
+                // set large fields to null.
+                var pointer = Interlocked.Exchange(ref _pointer, IntPtr.Zero);
+                if (pointer != IntPtr.Zero)
+                {
+                    Marshal.FreeCoTaskMem(pointer);
+                }
+
+                _disposedValue = true;
+            }
+        }
+
+        ~ComMemory()
+        {
+            Dispose(false);
+        }
+
         public void Dispose()
         {
-            var pointer = Interlocked.Exchange(ref _pointer, IntPtr.Zero);
-            if (pointer != IntPtr.Zero)
-            {
-                Marshal.FreeCoTaskMem(pointer);
-            }
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+    }
+
+    public class ComMemory<T> : ComMemory
+    {
+        public ComMemory(T structure)
+            : base(structure)
+        {
         }
     }
 }

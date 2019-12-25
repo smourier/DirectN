@@ -35,10 +35,10 @@ namespace DirectN
         void SetEndPoint(D2D_POINT_2F endPoint);
         
         [PreserveSig]
-        D2D_POINT_2F GetStartPoint();
+        void GetStartPoint(out D2D_POINT_2F size);
         
         [PreserveSig]
-        D2D_POINT_2F GetEndPoint();
+        void GetEndPoint(out D2D_POINT_2F size);
         
         [PreserveSig]
         void GetGradientStopCollection(/* _Outptr_ */ out ID2D1GradientStopCollection gradientStopCollection);

@@ -4,21 +4,24 @@ using System.Linq;
 
 namespace DirectN
 {
+    // https://docs.microsoft.com/en-us/windows/desktop/medfound/video-fourccs
+    // https://docs.microsoft.com/en-us/windows/desktop/medfound/video-subtype-guids
     public struct FourCC : IEquatable<FourCC>, IFormattable
     {
+        public const string Postfix = "0000-0010-8000-00aa00389b71";
         public static readonly FourCC Empty = new FourCC(0);
-        private const string _fourCCSuffix = "0000-0010-8000-00aa00389b71";
+
         private readonly uint _value;
 
-        public FourCC(Guid id)
+        public FourCC(Guid guid)
         {
-            var s = id.ToString();
-            if (!s.EndsWith(_fourCCSuffix, StringComparison.OrdinalIgnoreCase))
-                throw new ArgumentNullException(nameof(id));
+            var s = guid.ToString();
+            if (!s.EndsWith(Postfix, StringComparison.OrdinalIgnoreCase))
+                throw new ArgumentNullException(nameof(guid));
 
-            var bytes = id.ToByteArray();
+            var bytes = guid.ToByteArray();
             if (bytes.Take(4).Any(b => b < 32 || b > 127))
-                throw new ArgumentNullException(nameof(id));
+                throw new ArgumentNullException(nameof(guid));
 
             var fourCC = new string(bytes.Take(4).Select(b => (char)b).ToArray());
             _value = ((uint)fourCC[3]) << 24 | ((uint)fourCC[2]) << 16 | ((uint)fourCC[1]) << 8 | fourCC[0];
@@ -60,25 +63,25 @@ namespace DirectN
             return false;
         }
 
-        public Guid ToGuid() => new Guid(ToString("I", null) + "-0000-0010-8000-00aa00389b71");
+        public Guid ToGuid() => new Guid(ToString("I", null) + "-" + Postfix);
 
-        public static bool IsFourCC(Guid id)
+        public static bool IsFourCC(Guid guid)
         {
-            var s = id.ToString();
-            if (!s.EndsWith(_fourCCSuffix, StringComparison.OrdinalIgnoreCase))
+            var s = guid.ToString();
+            if (!s.EndsWith(Postfix, StringComparison.OrdinalIgnoreCase))
                 return false;
 
-            var bytes = id.ToByteArray();
+            var bytes = guid.ToByteArray();
             return !bytes.Take(4).Any(b => b < 32 || b > 127);
         }
 
-        public static string ToString(Guid id)
+        public static string ToString(Guid guid)
         {
-            var s = id.ToString();
-            if (!s.EndsWith(_fourCCSuffix, StringComparison.OrdinalIgnoreCase))
+            var s = guid.ToString();
+            if (!s.EndsWith(Postfix, StringComparison.OrdinalIgnoreCase))
                 return s;
 
-            var bytes = id.ToByteArray();
+            var bytes = guid.ToByteArray();
             if (bytes.Take(4).Any(b => b < 32 || b > 127))
                 return s;
 
@@ -126,9 +129,6 @@ namespace DirectN
 
         public uint ToUInt32() => _value;
         public int ToInt32() => unchecked((int)_value);
-
-        public static FourCC FromUInt32(uint fcc) => new FourCC(fcc);
-        public static FourCC FromInt32(int fcc) => new FourCC(fcc);
-        public static FourCC FromString(string fcc) => new FourCC(fcc);
+        public FourCC ToFourCC() => new FourCC(_value);
     }
 }

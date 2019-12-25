@@ -32,6 +32,6 @@ namespace DirectN
         void SetColor(/* _In_ */ ref _D3DCOLORVALUE color);
         
         [PreserveSig]
-        _D3DCOLORVALUE GetColor();
+        void GetColor(out _D3DCOLORVALUE size);
     }
 }

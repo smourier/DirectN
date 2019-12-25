@@ -28,7 +28,7 @@ namespace DirectN
         
         // ID3D12VideoMotionVectorHeap
         [PreserveSig]
-        D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC GetDesc();
+        void GetDesc(out D3D12_VIDEO_MOTION_VECTOR_HEAP_DESC size);
         
         [PreserveSig]
         HRESULT GetProtectedResourceSession([MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppProtectedSession);

@@ -21,10 +21,10 @@ namespace DirectN
         void GetSize(out D2D_SIZE_F size);
         
         [PreserveSig]
-        D2D_SIZE_U GetPixelSize();
+        void GetPixelSize(out D2D_SIZE_U size);
         
         [PreserveSig]
-        D2D1_PIXEL_FORMAT GetPixelFormat();
+        void GetPixelFormat(out D2D1_PIXEL_FORMAT size);
         
         [PreserveSig]
         void GetDpi(/* _Out_ */ out float dpiX, /* _Out_ */ out float dpiY);

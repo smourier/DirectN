@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -8,68 +10,40 @@ namespace DirectN
     {
         private object _object;
 
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
         public ComObject(object comObject)
         {
             if (comObject == null)
                 throw new ArgumentNullException(nameof(comObject));
 
             if (!Marshal.IsComObject(comObject))
-                throw new ArgumentException(null, nameof(comObject));
+                throw new ArgumentException("Argument is not a COM object", nameof(comObject));
 
             _object = comObject;
+
+#if DEBUG
+            Id = Interlocked.Increment(ref _id);
+            ConstructorThreadId = Environment.CurrentManagedThreadId;
+            Trace("+");
+#endif
         }
 
-        public string Name { get; set; }
-
+        public bool IsDisposed => _object == null;
         public object Object
         {
             get
             {
                 var obj = _object;
                 if (obj == null)
+                {
+#if DEBUG
+                    Trace("!!!", "Already disposed");
+#endif
                     throw new ObjectDisposedException(nameof(Object));
+                }
 
                 return obj;
             }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                var obj = Interlocked.Exchange(ref _object, null);
-                if (obj != null)
-                {
-                    Marshal.ReleaseComObject(obj);
-                }
-            }
-        }
-
-        public bool IsDisposed => _object == null;
-
-        public override string ToString()
-        {
-            string s = null;
-            if (_object == null)
-            {
-                s = "<disposed>";
-            }
-
-            if (Name != null)
-            {
-                if (s != null)
-                {
-                    s += " ";
-                }
-                s += Name;
-            }
-            return s;
         }
 
         public static ComObject<T> From<T>(T comObject) => comObject == null ? null : new ComObject<T>(comObject);
@@ -80,7 +54,7 @@ namespace DirectN
                 return co.Object;
 
             if (!Marshal.IsComObject(obj))
-                throw new ArgumentException(null, nameof(obj));
+                throw new ArgumentException("Argument is not a COM object", nameof(obj));
 
             return obj;
         }
@@ -91,23 +65,18 @@ namespace DirectN
                 return (T)co.Object;
 
             if (!Marshal.IsComObject(obj))
-                throw new ArgumentException(null, nameof(obj));
+                throw new ArgumentException("Argument is not a COM object", nameof(obj));
 
             return (T)obj;
         }
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
 
-        public ComObject<T> As<T>(bool throwOnError = true) where T : class
+        public T As<T>(bool throwOnError = true) where T : class
         {
-            T obj;
             if (throwOnError)
-            {
-                obj = (T)Object;
-            }
-            else
-            {
-                obj = Object as T;
-            }
-            return obj != null ? new ComObject<T>(obj) : null;
+                return (T)Object;
+
+            return Object as T;
         }
 
         public static ComObject WrapAsGeneric(Type comType, object instance)
@@ -145,6 +114,97 @@ namespace DirectN
             return type.GetGenericArguments()[0];
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+#if DEBUG
+            Trace("~", "disposing: " + disposing + " duration: " + Duration.Milliseconds);
+#endif
+            if (!IsDisposed)
+            {
+                if (disposing)
+                {
+                    // dispose managed state (managed objects).
+                }
+
+                // free unmanaged resources (unmanaged objects) and override a finalizer below.
+                // set large fields to null.
+
+                var obj = Interlocked.Exchange(ref _object, null);
+                if (obj != null)
+                {
+                    Marshal.ReleaseComObject(obj);
+                }
+            }
+        }
+
+        ~ComObject() { Dispose(false); }
+        public void Dispose() { Dispose(true); GC.SuppressFinalize(this); }
+
+#if DEBUG
+        public string Name { get; set; }
+        public static ILogger Logger { get; set; }
+        protected virtual string ObjectTypeName => null;
+        private static long _id;
+        private static readonly Stopwatch _sw = new Stopwatch();
+
+        static ComObject()
+        {
+            _sw.Start();
+        }
+
+        protected void Trace(string methodName, string message = null)
+        {
+            // many COM objects (like DXGI ones) dont' like to be used on different threads
+            // so we tracks calls on different threads
+            string s = Id.ToString(CultureInfo.InvariantCulture);
+
+            var tid = Thread.CurrentThread.ManagedThreadId;
+            if (tid != ConstructorThreadId)
+            {
+                s += "!" + ConstructorThreadId + "!";
+            }
+
+            var tn = ObjectTypeName;
+            if (tn != null)
+            {
+                s += "<" + tn + ">";
+            }
+
+            if (message != null)
+            {
+                s += " " + message;
+            }
+
+            Logger?.Log(TraceLevel.Info, s, methodName);
+        }
+
+        public long Id { get; }
+        public int ConstructorThreadId { get; }
+        public static TimeSpan Duration => _sw.Elapsed;
+
+        public override string ToString()
+        {
+            string s = null;
+            if (IsDisposed)
+            {
+                s = "<disposed>";
+            }
+
+            if (Name != null)
+            {
+                if (s != null)
+                {
+                    s += " ";
+                }
+                s += Name;
+            }
+
+            if (s != null)
+                return Id + " " + s;
+
+            return Id.ToString(CultureInfo.InvariantCulture);
+        }
+#endif
     }
 
     public class ComObject<T> : ComObject
@@ -152,85 +212,13 @@ namespace DirectN
         public ComObject(T comObject)
             : base(comObject)
         {
-#if DEBUG
-            // note _start is first so we don't get negative values...
-            Id = _sw.ElapsedTicks;
-            ConstructorThreadId = Environment.CurrentManagedThreadId;
-            Trace("+ComObject");
-#endif
         }
 
-#if DEBUG
-        public new T Object
-        {
-            get
-            {
-                try
-                {
-                    return (T)base.Object;
-                }
-                catch (Exception e)
-                {
-                    Trace("-ComObjectQI", e.Message);
-                    throw;
-                }
-            }
-        }
-#else
         public new T Object => (T)base.Object;
-#endif
 
 #if DEBUG
-        // use that guid in TraceSpy's ETW Trace Provider (https://github.com/smourier/TraceSpy) 
-        // or use is with MFTrace https://msdn.microsoft.com/en-us/library/windows/desktop/ff685116 as MFTrace can also display our custom traces
-        // you can use trace.bat and config.xml in the project. Make sure you use mftrace X64 if this is ran as X4 also.
-        private static readonly System.Diagnostics.Eventing.EventProvider _provider = new System.Diagnostics.Eventing.EventProvider(new Guid("92f01f42-b22a-4d49-8be6-3f06355841aa"));
-        private static readonly System.Diagnostics.Stopwatch _sw = new System.Diagnostics.Stopwatch();
-
-        static ComObject()
-        {
-            _sw.Start();
-        }
-
-        private void Trace(string method, string message = null)
-        {
-            // many COM objects (like DXGI ones) dont' like to be used on different threads
-            // so we tracks calls on different threads
-            var tir = Thread.CurrentThread.ManagedThreadId;
-            var ti = tir.ToString();
-            if (tir != ConstructorThreadId)
-            {
-                ti += "!" + ConstructorThreadId;
-            }
-
-            string s = ti + method + "<" + typeof(T).Name + ">" + ToString();
-            if (message != null)
-            {
-                s += " " + message;
-            }
-            _provider.WriteMessageEvent(s, 0, 0);
-        }
-
-        public long Id { get; }
-        public int ConstructorThreadId { get; }
-        public TimeSpan Duration => _sw.Elapsed;
-
-        public override string ToString()
-        {
-            var s = base.ToString();
-            if (s != null)
-                return Id + ":" + s;
-
-            return Id.ToString();
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            Trace("-ComObject", "duration=" + Duration.Milliseconds);
-            base.Dispose(disposing);
-        }
+        protected override string ObjectTypeName => typeof(T).Name;
 #endif
-
 
         //public static implicit operator ComObject<T>(T value) => new ComObject<T>(value);
         //public static implicit operator T(ComObject<T> value) => value.Object;

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodecApi.cs" />
+    <Compile Include="ComError.cs" />
     <Compile Include="Conversions.cs" />
     <Compile Include="Extensions\D2D1Functions.cs" />
     <Compile Include="Extensions\D2D_RECT_F.partial.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Extensions\WICImagingFactory2.cs" />
     <Compile Include="Extensions\WICImagingFactory.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="Manual\D3DVALUE.cs" />
     <Compile Include="Extensions\DWriteFunctions.cs" />
     <Compile Include="Generated\adpcmcoef_tag.cs" />

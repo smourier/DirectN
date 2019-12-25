@@ -41,10 +41,10 @@ namespace DirectN
         void SetRadiusY(float radiusY);
         
         [PreserveSig]
-        D2D_POINT_2F GetCenter();
+        void GetCenter(out D2D_POINT_2F size);
         
         [PreserveSig]
-        D2D_POINT_2F GetGradientOriginOffset();
+        void GetGradientOriginOffset(out D2D_POINT_2F size);
         
         [PreserveSig]
         float GetRadiusX();

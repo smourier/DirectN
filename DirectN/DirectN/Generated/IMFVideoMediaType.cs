@@ -116,7 +116,7 @@ namespace DirectN
         
         // IMFVideoMediaType
         [PreserveSig]
-        _MFVIDEOFORMAT GetVideoFormat();
+        IntPtr GetVideoFormat();
         
         [PreserveSig]
         HRESULT GetVideoRepresentation(/* [in] */ Guid guidRepresentation, /* [annotation][out] _Out_ */ out IntPtr ppvRepresentation, /* [in] */ int lStride);
