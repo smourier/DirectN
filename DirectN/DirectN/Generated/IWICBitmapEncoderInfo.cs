@@ -37,7 +37,7 @@ namespace DirectN
         new HRESULT GetContainerFormat(/* [out] __RPC__out */ out Guid pguidContainerFormat);
         
         [PreserveSig]
-        new HRESULT GetPixelFormats(/* [in] */ uint cFormats, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cFormats) */ out Guid pguidPixelFormats, /* [out] __RPC__out */ out uint pcActual);
+        new HRESULT GetPixelFormats(/* [in] */ int cFormats, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cFormats) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] Guid[] pguidPixelFormats, /* [out] __RPC__out */ out uint pcActual);
         
         [PreserveSig]
         new HRESULT GetColorManagementVersion(/* [in] */ uint cchColorManagementVersion, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cchColorManagementVersion) */ [MarshalAs(UnmanagedType.LPWStr)] string wzColorManagementVersion, /* [out] __RPC__out */ out uint pcchActual);

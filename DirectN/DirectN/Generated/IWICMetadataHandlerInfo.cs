@@ -37,7 +37,7 @@ namespace DirectN
         HRESULT GetMetadataFormat(/* [out] __RPC__out */ out Guid pguidMetadataFormat);
         
         [PreserveSig]
-        HRESULT GetContainerFormats(/* [in] */ uint cContainerFormats, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cContainerFormats) */ out Guid pguidContainerFormats, /* [out] __RPC__out */ out uint pcchActual);
+        HRESULT GetContainerFormats(/* [in] */ int cContainerFormats, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cContainerFormats) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] Guid[] pguidContainerFormats, /* [out] __RPC__out */ out uint pcchActual);
         
         [PreserveSig]
         HRESULT GetDeviceManufacturer(/* [in] */ uint cchDeviceManufacturer, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cchDeviceManufacturer) */ [MarshalAs(UnmanagedType.LPWStr)] string wzDeviceManufacturer, /* [out] __RPC__out */ out uint pcchActual);

@@ -344,7 +344,7 @@ namespace DirectN
         public static extern uint D3D10CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels);
         
         [DllImport("d3d10", ExactSpelling = true)]
-        public static extern HRESULT D3D10CompileEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, [MarshalAs(UnmanagedType.LPStr)] string pSrcFileName, /* optional(int) */ IntPtr pDefines, /* optional(int) */ IntPtr pInclude, uint HLSLFlags, uint FXFlags, /* _Out_ */ out ID3D10Blob ppCompiledEffect, /* _Out_opt_ */ out ID3D10Blob ppErrors);
+        public static extern HRESULT D3D10CompileEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, [MarshalAs(UnmanagedType.LPStr)] string pSrcFileName, /* optional(_D3D_SHADER_MACRO) */ IntPtr pDefines, /* _In_opt_ */ ID3DInclude pInclude, uint HLSLFlags, uint FXFlags, /* _Out_ */ out ID3D10Blob ppCompiledEffect, /* _Out_opt_ */ out ID3D10Blob ppErrors);
         
         [DllImport("d3d10", ExactSpelling = true)]
         public static extern HRESULT D3D10CreateEffectFromMemory(/* _In_reads_bytes_(DataLength) */ IntPtr pData, IntPtr DataLength, uint FXFlags, /* _In_ */ ID3D10Device pDevice, /* _In_opt_ */ ID3D10EffectPool pEffectPool, /* _Out_ */ out ID3D10Effect ppEffect);
@@ -611,7 +611,7 @@ namespace DirectN
         public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializer(/* _In_reads_bytes_(SrcDataSizeInBytes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pSrcData, /* _In_ */ IntPtr SrcDataSizeInBytes, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pRootSignatureDeserializerInterface, /* _Out_ */ out IntPtr ppRootSignatureDeserializer);
         
         [DllImport("d3d12", ExactSpelling = true)]
-        public static extern HRESULT D3D12EnableExperimentalFeatures(int NumFeatures, /* __in_ecount(NumFeatures) */ [MarshalAs(UnmanagedType.LPStruct)] Guid pIIDs, /* optional(void) */ IntPtr pConfigurationStructs, /* __in_ecount_opt(NumFeatures) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pConfigurationStructSizes);
+        public static extern HRESULT D3D12EnableExperimentalFeatures(int NumFeatures, /* __in_ecount(NumFeatures) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] Guid[] pIIDs, /* optional(void) */ IntPtr pConfigurationStructs, /* __in_ecount_opt(NumFeatures) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pConfigurationStructSizes);
         
         [DllImport("d3d12", ExactSpelling = true)]
         public static extern HRESULT D3D12GetDebugInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvDebug);

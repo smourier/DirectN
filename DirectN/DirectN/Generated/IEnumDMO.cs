@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IEnumDMO
     {
         [PreserveSig]
-        HRESULT Next(uint cItemsToFetch, /* [annotation][length_is][size_is][out] _Out_writes_to_(cItemsToFetch, *pcItemsFetched) */ out Guid pCLSID, /* [annotation][string][length_is][size_is][out] _Out_writes_to_(cItemsToFetch, *pcItemsFetched) */ IntPtr Names, /* [annotation][out] _Out_ */ out uint pcItemsFetched);
+        HRESULT Next(int cItemsToFetch, /* [annotation][length_is][size_is][out] _Out_writes_to_(cItemsToFetch, *pcItemsFetched) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] Guid[] pCLSID, /* [annotation][string][length_is][size_is][out] _Out_writes_to_(cItemsToFetch, *pcItemsFetched) */ IntPtr Names, /* [annotation][out] _Out_ */ out uint pcItemsFetched);
         
         [PreserveSig]
         HRESULT Skip(uint cItemsToSkip);

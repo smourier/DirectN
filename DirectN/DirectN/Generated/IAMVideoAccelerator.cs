@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IAMVideoAccelerator
     {
         [PreserveSig]
-        HRESULT GetVideoAcceleratorGUIDs(/* [annotation][out][in] _Inout_ */ ref uint pdwNumGuidsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumGuidsSupported, *pdwNumGuidsSupported) */ out Guid pGuidsSupported);
+        HRESULT GetVideoAcceleratorGUIDs(/* [annotation][out][in] _Inout_ */ ref int pdwNumGuidsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumGuidsSupported, *pdwNumGuidsSupported) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] Guid[] pGuidsSupported);
         
         [PreserveSig]
         HRESULT GetUncompFormatsSupported(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid pGuid, /* [annotation][out][in] _Inout_ */ ref int pdwNumFormatsSupported, /* [annotation][out][in] _Out_writes_to_opt_(*pdwNumFormatsSupported, *pdwNumFormatsSupported) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] _DDPIXELFORMAT[] pFormatsSupported);
