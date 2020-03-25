@@ -72,7 +72,7 @@ namespace DirectN
         
         // IWICBitmapDecoderInfo
         [PreserveSig]
-        HRESULT GetPatterns(/* [in] */ int cbSizePatterns, /* [annotation][unique][size_is][out] _Out_writes_bytes_to_opt_(cbSizePatterns, *pcbPatternsActual) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] WICBitmapPattern[] pPatterns, /* [annotation][unique][out] _Out_opt_ */ out uint pcPatterns, /* [annotation][out] _Out_ */ out uint pcbPatternsActual);
+        HRESULT GetPatterns(/* [in] */ uint cbSizePatterns, /* optional(WICBitmapPattern) */ IntPtr pPatterns, /* optional(UINT) */ IntPtr pcPatterns, /* [annotation][out] _Out_ */ out uint pcbPatternsActual);
         
         [PreserveSig]
         HRESULT MatchesPattern(/* [in] __RPC__in_opt */ IStream pIStream, /* [out] __RPC__out */ out bool pfMatches);

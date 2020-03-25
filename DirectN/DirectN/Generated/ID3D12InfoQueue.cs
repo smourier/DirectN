@@ -14,7 +14,7 @@ namespace DirectN
         void ClearStoredMessages();
         
         [PreserveSig]
-        HRESULT GetMessageW(/* _In_ */ ulong MessageIndex, /* _Out_writes_bytes_opt_(*pMessageByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D3D12_MESSAGE[] pMessage, /* _Inout_ */ IntPtr pMessageByteLength);
+        HRESULT GetMessageW(/* _In_ */ ulong MessageIndex, /* optional(D3D12_MESSAGE) */ IntPtr pMessage, /* _Inout_ */ IntPtr pMessageByteLength);
         
         [PreserveSig]
         ulong GetNumMessagesAllowedByStorageFilter();
@@ -38,7 +38,7 @@ namespace DirectN
         HRESULT AddStorageFilterEntries(/* _In_ */ ref D3D12_INFO_QUEUE_FILTER pFilter);
         
         [PreserveSig]
-        HRESULT GetStorageFilter(/* _Out_writes_bytes_opt_(*pFilterByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_INFO_QUEUE_FILTER[] pFilter, /* _Inout_ */ IntPtr pFilterByteLength);
+        HRESULT GetStorageFilter(/* optional(D3D12_INFO_QUEUE_FILTER) */ IntPtr pFilter, /* _Inout_ */ IntPtr pFilterByteLength);
         
         [PreserveSig]
         void ClearStorageFilter();
@@ -62,7 +62,7 @@ namespace DirectN
         HRESULT AddRetrievalFilterEntries(/* _In_ */ ref D3D12_INFO_QUEUE_FILTER pFilter);
         
         [PreserveSig]
-        HRESULT GetRetrievalFilter(/* _Out_writes_bytes_opt_(*pFilterByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D3D12_INFO_QUEUE_FILTER[] pFilter, /* _Inout_ */ IntPtr pFilterByteLength);
+        HRESULT GetRetrievalFilter(/* optional(D3D12_INFO_QUEUE_FILTER) */ IntPtr pFilter, /* _Inout_ */ IntPtr pFilterByteLength);
         
         [PreserveSig]
         void ClearRetrievalFilter();

@@ -26,7 +26,7 @@ namespace DirectN
         HRESULT SetCurrentPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidTimeFormat, /* [annotation][in] _In_ */ [In, Out] PropVariant varPosition);
         
         [PreserveSig]
-        HRESULT ReadSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwControlFlags, /* [annotation][out] _Out_opt_ */ out uint pdwActualStreamIndex, /* [annotation][out] _Out_opt_ */ out uint pdwStreamFlags, /* [annotation][out] _Out_opt_ */ out long pllTimestamp, /* [annotation][out] _Out_opt_ */ out IMFSample ppSample);
+        HRESULT ReadSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwControlFlags, /* optional(DWORD) */ IntPtr pdwActualStreamIndex, /* optional(DWORD) */ IntPtr pdwStreamFlags, /* optional(LONGLONG) */ IntPtr pllTimestamp, /* [annotation][out] _Out_opt_ */ out IMFSample ppSample);
         
         [PreserveSig]
         HRESULT Flush(/* [annotation][in] _In_ */ uint dwStreamIndex);

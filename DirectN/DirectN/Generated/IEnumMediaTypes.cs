@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IEnumMediaTypes
     {
         [PreserveSig]
-        HRESULT Next(/* [in] */ uint cMediaTypes, /* [annotation][size_is][out] _Out_writes_to_(cMediaTypes, *pcFetched) */ out IntPtr ppMediaTypes, /* [annotation][out] _Out_opt_ */ out uint pcFetched);
+        HRESULT Next(/* [in] */ uint cMediaTypes, /* [annotation][size_is][out] _Out_writes_to_(cMediaTypes, *pcFetched) */ out IntPtr ppMediaTypes, /* optional(ULONG) */ IntPtr pcFetched);
         
         [PreserveSig]
         HRESULT Skip(/* [in] */ uint cMediaTypes);

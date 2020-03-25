@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT SetLanguage(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPWStr)] string pwszRFC1766);
         
         [PreserveSig]
-        HRESULT GetLanguage(/* optional(LPWSTR) */ out IntPtr ppwszRFC1766);
+        HRESULT GetLanguage(/* [out] __RPC__deref_out_opt */ out IntPtr ppwszRFC1766);
         
         [PreserveSig]
         HRESULT GetAllLanguages(/* [out] __RPC__out */ [In, Out] PropVariant ppvLanguages);

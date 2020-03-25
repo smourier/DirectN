@@ -7,6 +7,6 @@ namespace DirectN
     public partial struct KSPROPERTY_EXTXPORT_NODE_S
     {
         public KSP_NODE NodeProperty;
-        public __struct_ksmedia_434__union_0 u;
+        public __struct_ksmedia_739__union_0 u;
     }
 }

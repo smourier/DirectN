@@ -46,6 +46,6 @@ namespace DirectN
         HRESULT ReadFromSubresource(/* _Out_ */ out IntPtr pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, /* optional(D3D12_BOX) */ IntPtr pSrcBox);
         
         [PreserveSig]
-        HRESULT GetHeapProperties(/* _Out_opt_ */ out D3D12_HEAP_PROPERTIES pHeapProperties, /* _Out_opt_ */ out D3D12_HEAP_FLAGS pHeapFlags);
+        HRESULT GetHeapProperties(/* optional(D3D12_HEAP_PROPERTIES) */ IntPtr pHeapProperties, /* optional(D3D12_HEAP_FLAGS) */ IntPtr pHeapFlags);
     }
 }

@@ -61,16 +61,16 @@ namespace DirectN
         HRESULT CreateChild(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string tagName, /* _COM_Outptr_ */ out ID2D1SvgElement newChild);
         
         [PreserveSig]
-        bool IsAttributeSpecified(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, /* _Out_opt_ */ out bool inherited);
+        bool IsAttributeSpecified(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name, /* optional(BOOL) */ IntPtr inherited);
         
         [PreserveSig]
         uint GetSpecifiedAttributeCount();
         
         [PreserveSig]
-        HRESULT GetSpecifiedAttributeName(uint index, /* _Out_writes_(nameCount) */ [MarshalAs(UnmanagedType.LPWStr)] string name, uint nameCount, /* _Out_opt_ */ out bool inherited);
+        HRESULT GetSpecifiedAttributeName(uint index, /* _Out_writes_(nameCount) */ [MarshalAs(UnmanagedType.LPWStr)] string name, uint nameCount, /* optional(BOOL) */ IntPtr inherited);
         
         [PreserveSig]
-        HRESULT GetSpecifiedAttributeNameLength(uint index, /* _Out_ */ out uint nameLength, /* _Out_opt_ */ out bool inherited);
+        HRESULT GetSpecifiedAttributeNameLength(uint index, /* _Out_ */ out uint nameLength, /* optional(BOOL) */ IntPtr inherited);
         
         [PreserveSig]
         HRESULT RemoveAttribute(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string name);

@@ -57,7 +57,7 @@ namespace DirectN
         
         // IWICMetadataReaderInfo
         [PreserveSig]
-        HRESULT GetPatterns(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* [in] */ int cbSize, /* [annotation][unique][size_is][out] _Out_writes_bytes_to_opt_(cbSize, *pcbActual) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] WICMetadataPattern[] pPattern, /* [annotation][unique][out] _Out_opt_ */ out uint pcCount, /* [annotation][unique][out] _Out_opt_ */ out uint pcbActual);
+        HRESULT GetPatterns(/* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* [in] */ uint cbSize, /* optional(WICMetadataPattern) */ IntPtr pPattern, /* optional(UINT) */ IntPtr pcCount, /* optional(UINT) */ IntPtr pcbActual);
         
         [PreserveSig]
         HRESULT MatchesPattern(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* [in] __RPC__in_opt */ IStream pIStream, /* [out] __RPC__out */ out bool pfMatches);

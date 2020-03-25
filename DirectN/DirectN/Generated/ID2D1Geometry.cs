@@ -49,7 +49,7 @@ namespace DirectN
         HRESULT ComputeLength(/* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_ */ out float length);
         
         [PreserveSig]
-        HRESULT ComputePointAtLength(float length, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _Out_opt_ */ out D2D_POINT_2F point, /* _Out_opt_ */ out D2D_POINT_2F unitTangentVector);
+        HRESULT ComputePointAtLength(float length, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* optional(D2D_POINT_2F) */ IntPtr point, /* optional(D2D_POINT_2F) */ IntPtr unitTangentVector);
         
         [PreserveSig]
         HRESULT Widen(float strokeWidth, /* _In_opt_ */ ID2D1StrokeStyle strokeStyle, /* optional(D2D_MATRIX_3X2_F) */ IntPtr worldTransform, float flatteningTolerance, /* _In_ */ ID2D1SimplifiedGeometrySink geometrySink);

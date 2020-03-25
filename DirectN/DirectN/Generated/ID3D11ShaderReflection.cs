@@ -59,7 +59,7 @@ namespace DirectN
         HRESULT GetMinFeatureLevel(/* THIS_ _Out_ */ out D3D_FEATURE_LEVEL pLevel);
         
         [PreserveSig]
-        uint GetThreadGroupSize(/* THIS_ _Out_opt_ */ out uint pSizeX, /* _Out_opt_ */ out uint pSizeY, /* _Out_opt_ */ out uint pSizeZ);
+        uint GetThreadGroupSize(/* optional(UINT) */ IntPtr pSizeX, /* optional(UINT) */ IntPtr pSizeY, /* optional(UINT) */ IntPtr pSizeZ);
         
         [PreserveSig]
         ulong GetRequiresFlags();

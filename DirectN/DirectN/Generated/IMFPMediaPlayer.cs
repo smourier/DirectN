@@ -75,10 +75,10 @@ namespace DirectN
         HRESULT SetMute(/* [annotation][in] _In_ */ bool fMute);
         
         [PreserveSig]
-        HRESULT GetNativeVideoSize(/* [annotation][out] _Out_opt_ */ out tagSIZE pszVideo, /* [annotation][out] _Out_opt_ */ out tagSIZE pszARVideo);
+        HRESULT GetNativeVideoSize(/* optional(tagSIZE) */ IntPtr pszVideo, /* optional(tagSIZE) */ IntPtr pszARVideo);
         
         [PreserveSig]
-        HRESULT GetIdealVideoSize(/* [annotation][out] _Out_opt_ */ out tagSIZE pszMin, /* [annotation][out] _Out_opt_ */ out tagSIZE pszMax);
+        HRESULT GetIdealVideoSize(/* optional(tagSIZE) */ IntPtr pszMin, /* optional(tagSIZE) */ IntPtr pszMax);
         
         [PreserveSig]
         HRESULT SetVideoSourceRect(/* [annotation][in] _In_ */ ref MFVideoNormalizedRect pnrcSource);

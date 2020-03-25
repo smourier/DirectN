@@ -139,10 +139,10 @@ namespace DirectN
         HRESULT GetLightEnable(uint unnamed__0, ref bool unnamed__1);
         
         [PreserveSig]
-        HRESULT SetClipPlane(uint unnamed__0, ref D3DVALUE unnamed__1);
+        HRESULT SetClipPlane(uint unnamed__0, ref float unnamed__1);
         
         [PreserveSig]
-        HRESULT GetClipPlane(uint unnamed__0, ref D3DVALUE unnamed__1);
+        HRESULT GetClipPlane(uint unnamed__0, ref float unnamed__1);
         
         [PreserveSig]
         HRESULT GetInfo(uint unnamed__0, IntPtr unnamed__1, uint unnamed__2);

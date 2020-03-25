@@ -11,6 +11,6 @@ namespace DirectN
         public bool AutoFocusLock;
         public bool AutoExposureLock;
         public bool AutoWhitebalanceLock;
-        public __struct_ksmedia_117__union_0 __union_4;
+        public __struct_ksmedia_879__union_0 __union_4;
     }
 }

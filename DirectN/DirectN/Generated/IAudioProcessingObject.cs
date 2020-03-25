@@ -15,7 +15,7 @@ namespace DirectN
         HRESULT GetLatency(/* [out] __RPC__out */ out HNSTIME pTime);
         
         [PreserveSig]
-        HRESULT GetRegistrationProperties(/* optional(APO_REG_PROPERTIES) */ out IntPtr ppRegProps);
+        HRESULT GetRegistrationProperties(/* [out] __RPC__deref_out_opt */ out IntPtr ppRegProps);
         
         [PreserveSig]
         HRESULT Initialize(/* [in] */ int cbDataSize, /* [size_is][in] __RPC__in_ecount_full(cbDataSize) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] byte[] pbyData);

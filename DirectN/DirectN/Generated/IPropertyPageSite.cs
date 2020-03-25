@@ -1,6 +1,7 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\ocidl.h(2092,5)
 using System;
 using System.Runtime.InteropServices;
+using LCID = System.UInt32;
 using MSG = DirectN.tagMSG;
 
 namespace DirectN
@@ -12,7 +13,7 @@ namespace DirectN
         HRESULT OnStatusChange(/* [in] */ uint dwFlags);
         
         [PreserveSig]
-        HRESULT GetLocaleID(/* [out] __RPC__out */ out int pLocaleID);
+        HRESULT GetLocaleID(/* [out] __RPC__out */ out LCID pLocaleID);
         
         [PreserveSig]
         HRESULT GetPageContainer(/* [out] __RPC__deref_out_opt */ [MarshalAs(UnmanagedType.IUnknown)] out object ppUnk);

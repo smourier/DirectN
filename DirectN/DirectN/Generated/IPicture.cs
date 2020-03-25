@@ -31,10 +31,10 @@ namespace DirectN
         HRESULT set_hPal(/* [in] */ IntPtr hPal);
         
         [PreserveSig]
-        HRESULT get_CurDC(/* optional(HDC__) */ out IntPtr phDC);
+        HRESULT get_CurDC(/* [out] __RPC__deref_out_opt */ out IntPtr phDC);
         
         [PreserveSig]
-        HRESULT SelectPicture(/* [in] __RPC__in */ IntPtr hDCIn, /* optional(HDC__) */ out IntPtr phDCOut, /* [out] __RPC__out */ out IntPtr phBmpOut);
+        HRESULT SelectPicture(/* [in] __RPC__in */ IntPtr hDCIn, /* [out] __RPC__deref_out_opt */ out IntPtr phDCOut, /* [out] __RPC__out */ out IntPtr phBmpOut);
         
         [PreserveSig]
         HRESULT get_KeepOriginalFormat(/* [out] __RPC__out */ out bool pKeep);

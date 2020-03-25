@@ -30,10 +30,10 @@ namespace DirectN
         HRESULT SetStartStopPosition(/* optional(GUID) */ IntPtr pguidStartPositionType, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pvStartValue, /* optional(GUID) */ IntPtr pguidStopPositionType, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pvStopValue);
         
         [PreserveSig]
-        HRESULT HasVideo(/* [annotation][out] _Out_opt_ */ out bool pfHasVideo, /* [annotation][out] _Out_opt_ */ out bool pfSelected);
+        HRESULT HasVideo(/* optional(BOOL) */ IntPtr pfHasVideo, /* optional(BOOL) */ IntPtr pfSelected);
         
         [PreserveSig]
-        HRESULT HasAudio(/* [annotation][out] _Out_opt_ */ out bool pfHasAudio, /* [annotation][out] _Out_opt_ */ out bool pfSelected);
+        HRESULT HasAudio(/* optional(BOOL) */ IntPtr pfHasAudio, /* optional(BOOL) */ IntPtr pfSelected);
         
         [PreserveSig]
         HRESULT IsProtected(/* [annotation][out] _Out_ */ out bool pfProtected);

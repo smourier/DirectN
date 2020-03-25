@@ -119,12 +119,12 @@ namespace DirectN
         HRESULT SetGPRM(/* [in] */ uint ulIndex, /* [in] */ ushort wValue, /* [in] */ uint dwFlags, /* [annotation][out] _Out_ */ out IDvdCmd ppCmd);
         
         [PreserveSig]
-        HRESULT SelectDefaultMenuLanguage(/* [in] */ int Language);
+        HRESULT SelectDefaultMenuLanguage(/* [in] */ uint Language);
         
         [PreserveSig]
-        HRESULT SelectDefaultAudioLanguage(/* [in] */ int Language, /* [in] */ tagDVD_AUDIO_LANG_EXT audioExtension);
+        HRESULT SelectDefaultAudioLanguage(/* [in] */ uint Language, /* [in] */ tagDVD_AUDIO_LANG_EXT audioExtension);
         
         [PreserveSig]
-        HRESULT SelectDefaultSubpictureLanguage(/* [in] */ int Language, /* [in] */ tagDVD_SUBPICTURE_LANG_EXT subpictureExtension);
+        HRESULT SelectDefaultSubpictureLanguage(/* [in] */ uint Language, /* [in] */ tagDVD_SUBPICTURE_LANG_EXT subpictureExtension);
     }
 }

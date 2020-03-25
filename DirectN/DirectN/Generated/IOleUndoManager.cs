@@ -35,10 +35,10 @@ namespace DirectN
         HRESULT EnumRedoable(/* [out] __RPC__deref_out_opt */ out IEnumOleUndoUnits ppEnum);
         
         [PreserveSig]
-        HRESULT GetLastUndoDescription(/* optional(BSTR) */ out IntPtr pBstr);
+        HRESULT GetLastUndoDescription(/* [out] __RPC__deref_out_opt */ out IntPtr pBstr);
         
         [PreserveSig]
-        HRESULT GetLastRedoDescription(/* optional(BSTR) */ out IntPtr pBstr);
+        HRESULT GetLastRedoDescription(/* [out] __RPC__deref_out_opt */ out IntPtr pBstr);
         
         [PreserveSig]
         HRESULT Enable(/* [in] */ bool fEnable);

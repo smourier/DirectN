@@ -8,7 +8,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DDRAWI_DDRAWSURFACE_GBL__union_2
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3016)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
         public IntPtr lpDD { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }

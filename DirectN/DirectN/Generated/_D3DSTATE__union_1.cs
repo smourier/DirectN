@@ -11,6 +11,6 @@ namespace DirectN
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
         public uint[] dwArg { get => InteropRuntime.GetArray<uint>(__bits, 0, 32); set => InteropRuntime.SetArray<uint>(value, __bits, 0, 32); }
-        public D3DVALUE[] dvArg { get => InteropRuntime.GetArray<D3DVALUE>(__bits, 0, 32); set => InteropRuntime.SetArray<D3DVALUE>(value, __bits, 0, 32); }
+        public float[] dvArg { get => InteropRuntime.GetArray<float>(__bits, 0, 32); set => InteropRuntime.SetArray<float>(value, __bits, 0, 32); }
     }
 }

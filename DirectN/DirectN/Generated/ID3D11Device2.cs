@@ -142,7 +142,7 @@ namespace DirectN
         new HRESULT CreateRasterizerState1(/* [annotation] _In_ */ ref D3D11_RASTERIZER_DESC1 pRasterizerDesc, /* [annotation] _COM_Outptr_opt_ */ out ID3D11RasterizerState1 ppRasterizerState);
         
         [PreserveSig]
-        new HRESULT CreateDeviceContextState(uint Flags, /* [annotation] _In_reads_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D3D_FEATURE_LEVEL[] pFeatureLevels, int FeatureLevels, uint SDKVersion, [MarshalAs(UnmanagedType.LPStruct)] Guid EmulatedInterface, /* [annotation] _Out_opt_ */ out D3D_FEATURE_LEVEL pChosenFeatureLevel, /* [annotation] _Out_opt_ */ out ID3DDeviceContextState ppContextState);
+        new HRESULT CreateDeviceContextState(uint Flags, /* [annotation] _In_reads_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D3D_FEATURE_LEVEL[] pFeatureLevels, int FeatureLevels, uint SDKVersion, [MarshalAs(UnmanagedType.LPStruct)] Guid EmulatedInterface, /* optional(D3D_FEATURE_LEVEL) */ IntPtr pChosenFeatureLevel, /* [annotation] _Out_opt_ */ out ID3DDeviceContextState ppContextState);
         
         [PreserveSig]
         new HRESULT OpenSharedResource1(/* [annotation] _In_ */ IntPtr hResource, /* [annotation] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid returnedInterface, /* [annotation] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppResource);
@@ -158,7 +158,7 @@ namespace DirectN
         HRESULT CreateDeferredContext2(uint ContextFlags, /* [annotation] _COM_Outptr_opt_ */ out ID3D11DeviceContext2 ppDeferredContext);
         
         [PreserveSig]
-        void GetResourceTiling(/* [annotation] _In_ */ ID3D11Resource pTiledResource, /* [annotation] _Out_opt_ */ out uint pNumTilesForEntireResource, /* [annotation] _Out_opt_ */ out D3D11_PACKED_MIP_DESC pPackedMipDesc, /* [annotation] _Out_opt_ */ out D3D11_TILE_SHAPE pStandardTileShapeForNonPackedMips, /* optional(UINT) */ IntPtr pNumSubresourceTilings, /* [annotation] _In_ */ uint FirstSubresourceTilingToGet, /* [annotation] _Out_writes_(*pNumSubresourceTilings) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D11_SUBRESOURCE_TILING[] pSubresourceTilingsForNonPackedMips);
+        void GetResourceTiling(/* [annotation] _In_ */ ID3D11Resource pTiledResource, /* optional(UINT) */ IntPtr pNumTilesForEntireResource, /* optional(D3D11_PACKED_MIP_DESC) */ IntPtr pPackedMipDesc, /* optional(D3D11_TILE_SHAPE) */ IntPtr pStandardTileShapeForNonPackedMips, /* optional(UINT) */ IntPtr pNumSubresourceTilings, /* [annotation] _In_ */ uint FirstSubresourceTilingToGet, /* [annotation] _Out_writes_(*pNumSubresourceTilings) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D11_SUBRESOURCE_TILING[] pSubresourceTilingsForNonPackedMips);
         
         [PreserveSig]
         HRESULT CheckMultisampleQualityLevels1(/* [annotation] _In_ */ DXGI_FORMAT Format, /* [annotation] _In_ */ uint SampleCount, /* [annotation] _In_ */ uint Flags, /* [annotation] _Out_ */ out uint pNumQualityLevels);

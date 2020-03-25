@@ -9,6 +9,6 @@ namespace DirectN
     {
         public uint PhysicalAdapterIndex;
         public IntPtr CommitSize;
-        public IntPtr pMdl;
+        public int pMdl;
     }
 }

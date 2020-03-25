@@ -67,7 +67,7 @@ namespace DirectN
         HRESULT GetPalette(out LPDIRECTDRAWPALETTE unnamed__0);
         
         [PreserveSig]
-        HRESULT GetPixelFormat(ref _DDPIXELFORMAT unnamed__0);
+        HRESULT GetPixelFormat(ref int unnamed__0);
         
         [PreserveSig]
         HRESULT GetSurfaceDesc(ref LPDDSURFACEDESC unnamed__0);

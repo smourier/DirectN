@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IFont
     {
         [PreserveSig]
-        HRESULT get_Name(/* optional(BSTR) */ out IntPtr pName);
+        HRESULT get_Name(/* [out] __RPC__deref_out_opt */ out IntPtr pName);
         
         [PreserveSig]
         HRESULT put_Name(/* [in] __RPC__in */ [MarshalAs(UnmanagedType.BStr)] string name);
@@ -56,7 +56,7 @@ namespace DirectN
         HRESULT put_Charset(/* [in] */ short charset);
         
         [PreserveSig]
-        HRESULT get_hFont(/* optional(HFONT__) */ out IntPtr phFont);
+        HRESULT get_hFont(/* [out] __RPC__deref_out_opt */ out IntPtr phFont);
         
         [PreserveSig]
         HRESULT Clone(/* [out] __RPC__deref_out_opt */ out IFont ppFont);

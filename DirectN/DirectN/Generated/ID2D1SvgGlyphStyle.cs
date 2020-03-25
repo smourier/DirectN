@@ -28,6 +28,6 @@ namespace DirectN
         uint GetStrokeDashesCount();
         
         [PreserveSig]
-        void GetStroke(/* _Outptr_opt_result_maybenull_ */ out ID2D1Brush brush, /* _Out_opt_ */ out float strokeWidth, /* _Out_writes_opt_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, int dashesCount, /* _Out_opt_ */ out float dashOffset);
+        void GetStroke(/* _Outptr_opt_result_maybenull_ */ out ID2D1Brush brush, /* optional(FLOAT) */ IntPtr strokeWidth, /* _Out_writes_opt_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] float[] dashes, int dashesCount, /* optional(FLOAT) */ IntPtr dashOffset);
     }
 }

@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IAudioClock2
     {
         [PreserveSig]
-        HRESULT GetDevicePosition(/* [annotation][out] _Out_ */ out ulong DevicePosition, /* [annotation][unique][out] _Out_opt_ */ out ulong QPCPosition);
+        HRESULT GetDevicePosition(/* [annotation][out] _Out_ */ out ulong DevicePosition, /* optional(UINT64) */ IntPtr QPCPosition);
     }
 }

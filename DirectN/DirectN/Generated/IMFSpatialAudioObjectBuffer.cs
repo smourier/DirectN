@@ -9,7 +9,7 @@ namespace DirectN
     {
         // IMFMediaBuffer
         [PreserveSig]
-        new HRESULT Lock(/* [annotation][out] _Outptr_result_bytebuffer_to_(*pcbMaxLength, *pcbCurrentLength) */ out IntPtr ppbBuffer, /* [annotation][out] _Out_opt_ */ out uint pcbMaxLength, /* [annotation][out] _Out_opt_ */ out uint pcbCurrentLength);
+        new HRESULT Lock(/* [annotation][out] _Outptr_result_bytebuffer_to_(*pcbMaxLength, *pcbCurrentLength) */ out IntPtr ppbBuffer, /* optional(DWORD) */ IntPtr pcbMaxLength, /* optional(DWORD) */ IntPtr pcbCurrentLength);
         
         [PreserveSig]
         new HRESULT Unlock();

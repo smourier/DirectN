@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface ID3D11ShaderTrace
     {
         [PreserveSig]
-        HRESULT TraceReady(/* [annotation] _Out_opt_ */ out ulong pTestCount);
+        HRESULT TraceReady(/* optional(UINT64) */ IntPtr pTestCount);
         
         [PreserveSig]
         void ResetTrace();

@@ -12,7 +12,7 @@ namespace DirectN
         public uint SegmentId;
         public IntPtr OffsetInPages;
         public IntPtr NumberOfPages;
-        public int pMdl;
+        public IntPtr pMdl;
         public _DXGK_MAPAPERTUREFLAGS Flags;
         public uint MdlOffset;
     }

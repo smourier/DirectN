@@ -13,7 +13,7 @@ namespace DirectN
     public partial interface ID2D1PrintControl
     {
         [PreserveSig]
-        HRESULT AddPage(/* _In_ */ ID2D1CommandList commandList, D2D_SIZE_F pageSize, /* _In_opt_ */ IStream pagePrintTicketStream, /* _Out_opt_ */ out D2D1_TAG tag1, /* _Out_opt_ */ out D2D1_TAG tag2);
+        HRESULT AddPage(/* _In_ */ ID2D1CommandList commandList, D2D_SIZE_F pageSize, /* _In_opt_ */ IStream pagePrintTicketStream, /* optional(D2D1_TAG) */ IntPtr tag1, /* optional(D2D1_TAG) */ IntPtr tag2);
         
         [PreserveSig]
         HRESULT Close();

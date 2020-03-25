@@ -51,7 +51,7 @@ namespace DirectN
         public static void BeginDraw(this ComObject<ID2D1DeviceContext> device) => BeginDraw(device?.Object);
         public static void BeginDraw(this ID2D1DeviceContext device) => device?.BeginDraw();
         public static void EndDraw(this ComObject<ID2D1DeviceContext> device) => EndDraw(device?.Object);
-        public static void EndDraw(this ID2D1DeviceContext device) => device?.EndDraw(out _, out _).ThrowOnError();
+        public static void EndDraw(this ID2D1DeviceContext device) => device?.EndDraw(IntPtr.Zero, IntPtr.Zero).ThrowOnError();
         public static void Clear(this ComObject<ID2D1DeviceContext> device) => Clear(device?.Object);
         public static void Clear(this ID2D1DeviceContext device) => device?.Clear(IntPtr.Zero);
 

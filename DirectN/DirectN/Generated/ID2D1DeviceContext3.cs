@@ -119,7 +119,7 @@ namespace DirectN
         new void SetTags(ulong tag1, ulong tag2);
         
         [PreserveSig]
-        new void GetTags(/* _Out_opt_ */ out D2D1_TAG tag1, /* _Out_opt_ */ out D2D1_TAG tag2);
+        new void GetTags(/* optional(D2D1_TAG) */ IntPtr tag1, /* optional(D2D1_TAG) */ IntPtr tag2);
         
         [PreserveSig]
         new void PushLayer(/* _In_ */ ref D2D1_LAYER_PARAMETERS layerParameters, /* _In_opt_ */ ID2D1Layer layer);
@@ -128,7 +128,7 @@ namespace DirectN
         new void PopLayer();
         
         [PreserveSig]
-        new HRESULT Flush(/* _Out_opt_ */ out D2D1_TAG tag1, /* _Out_opt_ */ out D2D1_TAG tag2);
+        new HRESULT Flush(/* optional(D2D1_TAG) */ IntPtr tag1, /* optional(D2D1_TAG) */ IntPtr tag2);
         
         [PreserveSig]
         new void SaveDrawingState(/* _Inout_ */ ID2D1DrawingStateBlock drawingStateBlock);
@@ -149,7 +149,7 @@ namespace DirectN
         new void BeginDraw();
         
         [PreserveSig]
-        new HRESULT EndDraw(/* _Out_opt_ */ out D2D1_TAG tag1, /* _Out_opt_ */ out D2D1_TAG tag2);
+        new HRESULT EndDraw(/* optional(D2D1_TAG) */ IntPtr tag1, /* optional(D2D1_TAG) */ IntPtr tag2);
         
         [PreserveSig]
         new void GetPixelFormat(out D2D1_PIXEL_FORMAT size);

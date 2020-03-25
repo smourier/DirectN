@@ -77,7 +77,7 @@ namespace DirectN
         HRESULT PauseOff();
         
         [PreserveSig]
-        HRESULT MenuLanguageSelect(/* [in] */ int Language);
+        HRESULT MenuLanguageSelect(/* [in] */ uint Language);
         
         [PreserveSig]
         HRESULT AudioStreamChange(/* [in] */ uint ulAudio);

@@ -8,10 +8,10 @@ namespace DirectN
     public partial interface IKsPropertySet
     {
         [PreserveSig]
-        HRESULT Set(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _In_reads_bytes_(InstanceLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] InstanceData, /* _In_ */ int InstanceLength, /* _In_reads_bytes_(DataLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] IntPtr[] PropertyData, /* _In_ */ int DataLength);
+        HRESULT Set(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _In_reads_bytes_(InstanceLength) */ IntPtr InstanceData, /* _In_ */ uint InstanceLength, /* _In_reads_bytes_(DataLength) */ IntPtr PropertyData, /* _In_ */ uint DataLength);
         
         [PreserveSig]
-        HRESULT Get(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _In_reads_bytes_(InstanceLength) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] IntPtr[] InstanceData, /* _In_ */ int InstanceLength, /* _Out_writes_bytes_(DataLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] IntPtr[] PropertyData, /* _In_ */ int DataLength, /* _Out_ */ out uint BytesReturned);
+        HRESULT Get(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _In_reads_bytes_(InstanceLength) */ IntPtr InstanceData, /* _In_ */ uint InstanceLength, /* _Out_writes_bytes_(DataLength) */ out IntPtr PropertyData, /* _In_ */ uint DataLength, /* _Out_ */ out uint BytesReturned);
         
         [PreserveSig]
         HRESULT QuerySupported(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _Out_ */ out uint TypeSupport);

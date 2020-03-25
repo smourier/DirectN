@@ -81,7 +81,7 @@ namespace DirectN
         new HRESULT UnregisterEffect(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid classId);
         
         [PreserveSig]
-        new HRESULT GetRegisteredEffects(/* _Out_writes_to_opt_(effectsCount, *effectsReturned) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] Guid[] effects, int effectsCount, /* _Out_opt_ */ out uint effectsReturned, /* _Out_opt_ */ out uint effectsRegistered);
+        new HRESULT GetRegisteredEffects(/* _Out_writes_to_opt_(effectsCount, *effectsReturned) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] Guid[] effects, int effectsCount, /* optional(UINT32) */ IntPtr effectsReturned, /* optional(UINT32) */ IntPtr effectsRegistered);
         
         [PreserveSig]
         new HRESULT GetEffectProperties(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid effectId, /* _COM_Outptr_ */ out ID2D1Properties properties);

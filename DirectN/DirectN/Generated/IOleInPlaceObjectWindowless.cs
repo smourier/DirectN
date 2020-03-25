@@ -12,6 +12,6 @@ namespace DirectN
         HRESULT OnWindowMessage(/* [in] */ uint msg, /* [in] */ ulong wParam, /* [in] */ long lParam, /* [out] __RPC__out */ out LRESULT plResult);
         
         [PreserveSig]
-        HRESULT GetDropTarget(/* optional(IDropTarget) */ out IntPtr ppDropTarget);
+        HRESULT GetDropTarget(/* [out] __RPC__deref_out_opt */ out IntPtr ppDropTarget);
     }
 }

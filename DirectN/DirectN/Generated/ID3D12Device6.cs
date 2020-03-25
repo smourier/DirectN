@@ -117,7 +117,7 @@ namespace DirectN
         new HRESULT GetDeviceRemovedReason();
         
         [PreserveSig]
-        new void GetCopyableFootprints(/* _In_ */ ref D3D12_RESOURCE_DESC pResourceDesc, /* _In_range_(0,D3D12_REQ_SUBRESOURCES) */ uint FirstSubresource, /* _In_range_(0,D3D12_REQ_SUBRESOURCES-FirstSubresource) */ int NumSubresources, ulong BaseOffset, /* _Out_writes_opt_(NumSubresources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D3D12_PLACED_SUBRESOURCE_FOOTPRINT[] pLayouts, /* _Out_writes_opt_(NumSubresources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pNumRows, /* _Out_writes_opt_(NumSubresources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ulong[] pRowSizeInBytes, /* _Out_opt_ */ out ulong pTotalBytes);
+        new void GetCopyableFootprints(/* _In_ */ ref D3D12_RESOURCE_DESC pResourceDesc, /* _In_range_(0,D3D12_REQ_SUBRESOURCES) */ uint FirstSubresource, /* _In_range_(0,D3D12_REQ_SUBRESOURCES-FirstSubresource) */ int NumSubresources, ulong BaseOffset, /* _Out_writes_opt_(NumSubresources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] D3D12_PLACED_SUBRESOURCE_FOOTPRINT[] pLayouts, /* _Out_writes_opt_(NumSubresources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] uint[] pNumRows, /* _Out_writes_opt_(NumSubresources) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ulong[] pRowSizeInBytes, /* optional(UINT64) */ IntPtr pTotalBytes);
         
         [PreserveSig]
         new HRESULT CreateQueryHeap(/* _In_ */ ref D3D12_QUERY_HEAP_DESC pDesc, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvHeap);
@@ -129,7 +129,7 @@ namespace DirectN
         new HRESULT CreateCommandSignature(/* _In_ */ ref D3D12_COMMAND_SIGNATURE_DESC pDesc, /* _In_opt_ */ ID3D12RootSignature pRootSignature, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvCommandSignature);
         
         [PreserveSig]
-        new void GetResourceTiling(/* _In_ */ ID3D12Resource pTiledResource, /* _Out_opt_ */ out uint pNumTilesForEntireResource, /* _Out_opt_ */ out D3D12_PACKED_MIP_INFO pPackedMipDesc, /* _Out_opt_ */ out D3D12_TILE_SHAPE pStandardTileShapeForNonPackedMips, /* optional(UINT) */ IntPtr pNumSubresourceTilings, /* _In_ */ uint FirstSubresourceTilingToGet, /* _Out_writes_(*pNumSubresourceTilings) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D12_SUBRESOURCE_TILING[] pSubresourceTilingsForNonPackedMips);
+        new void GetResourceTiling(/* _In_ */ ID3D12Resource pTiledResource, /* optional(UINT) */ IntPtr pNumTilesForEntireResource, /* optional(D3D12_PACKED_MIP_INFO) */ IntPtr pPackedMipDesc, /* optional(D3D12_TILE_SHAPE) */ IntPtr pStandardTileShapeForNonPackedMips, /* optional(UINT) */ IntPtr pNumSubresourceTilings, /* _In_ */ uint FirstSubresourceTilingToGet, /* _Out_writes_(*pNumSubresourceTilings) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] D3D12_SUBRESOURCE_TILING[] pSubresourceTilingsForNonPackedMips);
         
         [PreserveSig]
         new void GetAdapterLuid(out _LUID size);
@@ -188,7 +188,7 @@ namespace DirectN
         new HRESULT EnumerateMetaCommands(/* _Inout_ */ ref int pNumMetaCommands, /* _Out_writes_opt_(*pNumMetaCommands) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] D3D12_META_COMMAND_DESC[] pDescs);
         
         [PreserveSig]
-        new HRESULT EnumerateMetaCommandParameters(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid CommandId, /* _In_ */ D3D12_META_COMMAND_PARAMETER_STAGE Stage, /* _Out_opt_ */ out uint pTotalStructureSizeInBytes, /* _Inout_ */ ref int pParameterCount, /* _Out_writes_opt_(*pParameterCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D12_META_COMMAND_PARAMETER_DESC[] pParameterDescs);
+        new HRESULT EnumerateMetaCommandParameters(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid CommandId, /* _In_ */ D3D12_META_COMMAND_PARAMETER_STAGE Stage, /* optional(UINT) */ IntPtr pTotalStructureSizeInBytes, /* _Inout_ */ ref int pParameterCount, /* _Out_writes_opt_(*pParameterCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D12_META_COMMAND_PARAMETER_DESC[] pParameterDescs);
         
         [PreserveSig]
         new HRESULT CreateMetaCommand(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid CommandId, /* _In_ */ uint NodeMask, /* optional(void) */ IntPtr pCreationParametersData, /* _In_ */ IntPtr CreationParametersDataSizeInBytes, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppMetaCommand);
@@ -204,6 +204,6 @@ namespace DirectN
         
         // ID3D12Device6
         [PreserveSig]
-        HRESULT SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, /* optional(HANDLE) */ IntPtr hEventToSignalUponCompletion, /* _Out_opt_ */ out bool pbFurtherMeasurementsDesired);
+        HRESULT SetBackgroundProcessingMode(D3D12_BACKGROUND_PROCESSING_MODE Mode, D3D12_MEASUREMENTS_ACTION MeasurementsAction, /* optional(HANDLE) */ IntPtr hEventToSignalUponCompletion, /* optional(BOOL) */ IntPtr pbFurtherMeasurementsDesired);
     }
 }

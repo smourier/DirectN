@@ -15,7 +15,7 @@ namespace DirectN
         HRESULT DeleteTopology(/* [in] */ uint dwId);
         
         [PreserveSig]
-        HRESULT GetPresentationContext(/* [in] */ IMFPresentationDescriptor pPD, /* [annotation][optional][out] _Out_opt_ */ out MFSequencerElementId pId, /* [annotation][optional][out] _Out_opt_ */ out IMFTopology ppTopology);
+        HRESULT GetPresentationContext(/* [in] */ IMFPresentationDescriptor pPD, /* optional(MFSequencerElementId) */ IntPtr pId, /* [annotation][optional][out] _Out_opt_ */ out IMFTopology ppTopology);
         
         [PreserveSig]
         HRESULT UpdateTopology(/* [in] */ uint dwId, /* [in] */ IMFTopology pTopology);

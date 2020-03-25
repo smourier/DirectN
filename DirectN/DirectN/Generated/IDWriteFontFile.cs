@@ -17,6 +17,6 @@ namespace DirectN
         HRESULT GetLoader(/* _COM_Outptr_ */ out IDWriteFontFileLoader fontFileLoader);
         
         [PreserveSig]
-        HRESULT Analyze(/* _Out_ */ out bool isSupportedFontType, /* _Out_ */ out DWRITE_FONT_FILE_TYPE fontFileType, /* _Out_opt_ */ out DWRITE_FONT_FACE_TYPE fontFaceType, /* _Out_ */ out uint numberOfFaces);
+        HRESULT Analyze(/* _Out_ */ out bool isSupportedFontType, /* _Out_ */ out DWRITE_FONT_FILE_TYPE fontFileType, /* optional(DWRITE_FONT_FACE_TYPE) */ IntPtr fontFaceType, /* _Out_ */ out uint numberOfFaces);
     }
 }

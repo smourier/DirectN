@@ -119,10 +119,10 @@ namespace DirectN
         bool HasAudio();
         
         [PreserveSig]
-        HRESULT GetNativeVideoSize(/* [annotation][out] _Out_opt_ */ out uint cx, /* [annotation][out] _Out_opt_ */ out uint cy);
+        HRESULT GetNativeVideoSize(/* optional(DWORD) */ IntPtr cx, /* optional(DWORD) */ IntPtr cy);
         
         [PreserveSig]
-        HRESULT GetVideoAspectRatio(/* [annotation][out] _Out_opt_ */ out uint cx, /* [annotation][out] _Out_opt_ */ out uint cy);
+        HRESULT GetVideoAspectRatio(/* optional(DWORD) */ IntPtr cx, /* optional(DWORD) */ IntPtr cy);
         
         [PreserveSig]
         HRESULT Shutdown();

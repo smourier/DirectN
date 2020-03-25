@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetFrequency(/* [annotation][out] _Out_ */ out ulong pu64Frequency);
         
         [PreserveSig]
-        HRESULT GetPosition(/* [annotation][out] _Out_ */ out ulong pu64Position, /* [annotation][unique][out] _Out_opt_ */ out ulong pu64QPCPosition);
+        HRESULT GetPosition(/* [annotation][out] _Out_ */ out ulong pu64Position, /* optional(UINT64) */ IntPtr pu64QPCPosition);
         
         [PreserveSig]
         HRESULT GetCharacteristics(/* [annotation][out] _Out_ */ out uint pdwCharacteristics);

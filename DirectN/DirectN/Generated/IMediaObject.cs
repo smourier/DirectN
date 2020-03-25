@@ -18,10 +18,10 @@ namespace DirectN
         HRESULT GetOutputStreamInfo(uint dwOutputStreamIndex, /* [annotation][out] _Out_ */ out uint pdwFlags);
         
         [PreserveSig]
-        HRESULT GetInputType(uint dwInputStreamIndex, uint dwTypeIndex, /* [annotation][out] _Out_opt_ */ out _DMOMediaType pmt);
+        HRESULT GetInputType(uint dwInputStreamIndex, uint dwTypeIndex, /* optional(_DMOMediaType) */ IntPtr pmt);
         
         [PreserveSig]
-        HRESULT GetOutputType(uint dwOutputStreamIndex, uint dwTypeIndex, /* [annotation][out] _Out_opt_ */ out _DMOMediaType pmt);
+        HRESULT GetOutputType(uint dwOutputStreamIndex, uint dwTypeIndex, /* optional(_DMOMediaType) */ IntPtr pmt);
         
         [PreserveSig]
         HRESULT SetInputType(uint dwInputStreamIndex, /* optional(_DMOMediaType) */ IntPtr pmt, uint dwFlags);

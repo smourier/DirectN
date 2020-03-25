@@ -32,7 +32,7 @@ namespace DirectN
         HRESULT get_WindowSize(/* [annotation][out] _Out_ */ out ulong pWindowSize);
         
         [PreserveSig]
-        HRESULT GetInfo(/* [annotation][size_is][out] _Out_writes_bytes_opt_(*pcbVersion) */ [MarshalAs(UnmanagedType.LPWStr)] string pszVersion, /* [annotation][out][in] _Inout_opt_ */ ref int pcbVersion, /* [annotation][size_is][out] _Out_writes_bytes_opt_(*pcbDescription) */ [MarshalAs(UnmanagedType.LPWStr)] string pszDescription, /* [annotation][out][in] _Inout_opt_ */ ref int pcbDescription, /* [annotation][out] _Out_opt_ */ out long pDefaultKeyFrameRate, /* [annotation][out] _Out_opt_ */ out long pDefaultPFramesPerKey, /* [annotation][out] _Out_opt_ */ out double pDefaultQuality, /* [annotation][out] _Out_opt_ */ out long pCapabilities);
+        HRESULT GetInfo(/* [annotation][size_is][out] _Out_writes_bytes_opt_(*pcbVersion) */ [MarshalAs(UnmanagedType.LPWStr)] string pszVersion, /* [annotation][out][in] _Inout_opt_ */ ref int pcbVersion, /* [annotation][size_is][out] _Out_writes_bytes_opt_(*pcbDescription) */ [MarshalAs(UnmanagedType.LPWStr)] string pszDescription, /* [annotation][out][in] _Inout_opt_ */ ref int pcbDescription, /* optional(long) */ IntPtr pDefaultKeyFrameRate, /* optional(long) */ IntPtr pDefaultPFramesPerKey, /* optional(double) */ IntPtr pDefaultQuality, /* optional(long) */ IntPtr pCapabilities);
         
         [PreserveSig]
         HRESULT OverrideKeyFrame(/* [in] */ int FrameNumber);

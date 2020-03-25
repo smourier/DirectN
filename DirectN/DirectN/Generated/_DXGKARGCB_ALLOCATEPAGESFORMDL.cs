@@ -15,6 +15,6 @@ namespace DirectN
         public _DXGK_MEMORY_CACHING_TYPE CacheType;
         public uint Flags;
         public IntPtr hMemoryHandle;
-        public IntPtr pMdl;
+        public int pMdl;
     }
 }

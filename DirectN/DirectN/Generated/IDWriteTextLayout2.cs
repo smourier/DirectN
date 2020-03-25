@@ -136,46 +136,46 @@ namespace DirectN
         new float GetMaxHeight();
         
         [PreserveSig]
-        new HRESULT GetFontCollection(uint currentPosition, /* _COM_Outptr_ */ out IDWriteFontCollection fontCollection, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetFontCollection(uint currentPosition, /* _COM_Outptr_ */ out IDWriteFontCollection fontCollection, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetFontFamilyNameLength(uint currentPosition, /* _Out_ */ out uint nameLength, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetFontFamilyNameLength(uint currentPosition, /* _Out_ */ out uint nameLength, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetFontFamilyName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string fontFamilyName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetFontFamilyName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string fontFamilyName, uint nameSize, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetFontWeight(uint currentPosition, /* _Out_ */ out DWRITE_FONT_WEIGHT fontWeight, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetFontWeight(uint currentPosition, /* _Out_ */ out DWRITE_FONT_WEIGHT fontWeight, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetFontStyle(uint currentPosition, /* _Out_ */ out DWRITE_FONT_STYLE fontStyle, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetFontStyle(uint currentPosition, /* _Out_ */ out DWRITE_FONT_STYLE fontStyle, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetFontStretch(uint currentPosition, /* _Out_ */ out DWRITE_FONT_STRETCH fontStretch, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetFontStretch(uint currentPosition, /* _Out_ */ out DWRITE_FONT_STRETCH fontStretch, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetFontSize(uint currentPosition, /* _Out_ */ out float fontSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetFontSize(uint currentPosition, /* _Out_ */ out float fontSize, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetUnderline(uint currentPosition, /* _Out_ */ out bool hasUnderline, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetUnderline(uint currentPosition, /* _Out_ */ out bool hasUnderline, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetStrikethrough(uint currentPosition, /* _Out_ */ out bool hasStrikethrough, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetStrikethrough(uint currentPosition, /* _Out_ */ out bool hasStrikethrough, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetDrawingEffect(uint currentPosition, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object drawingEffect, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetDrawingEffect(uint currentPosition, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object drawingEffect, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetInlineObject(uint currentPosition, /* _COM_Outptr_ */ out IDWriteInlineObject inlineObject, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetInlineObject(uint currentPosition, /* _COM_Outptr_ */ out IDWriteInlineObject inlineObject, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetTypography(uint currentPosition, /* _COM_Outptr_ */ out IDWriteTypography typography, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetTypography(uint currentPosition, /* _COM_Outptr_ */ out IDWriteTypography typography, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetLocaleNameLength(uint currentPosition, /* _Out_ */ out uint nameLength, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetLocaleNameLength(uint currentPosition, /* _Out_ */ out uint nameLength, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
-        new HRESULT GetLocaleName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, uint nameSize, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetLocaleName(uint currentPosition, /* _Out_writes_z_(nameSize) */ [MarshalAs(UnmanagedType.LPWStr)] string localeName, uint nameSize, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
         new HRESULT Draw(/* optional(void) */ IntPtr clientDrawingContext, /* _In_ */ IDWriteTextRenderer renderer, float originX, float originY);
@@ -209,13 +209,13 @@ namespace DirectN
         new HRESULT SetPairKerning(bool isPairKerningEnabled, DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        new HRESULT GetPairKerning(uint currentPosition, /* _Out_ */ out bool isPairKerningEnabled, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetPairKerning(uint currentPosition, /* _Out_ */ out bool isPairKerningEnabled, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         [PreserveSig]
         new HRESULT SetCharacterSpacing(float leadingSpacing, float trailingSpacing, float minimumAdvanceWidth, DWRITE_TEXT_RANGE textRange);
         
         [PreserveSig]
-        new HRESULT GetCharacterSpacing(uint currentPosition, /* _Out_ */ out float leadingSpacing, /* _Out_ */ out float trailingSpacing, /* _Out_ */ out float minimumAdvanceWidth, /* _Out_opt_ */ out DWRITE_TEXT_RANGE textRange);
+        new HRESULT GetCharacterSpacing(uint currentPosition, /* _Out_ */ out float leadingSpacing, /* _Out_ */ out float trailingSpacing, /* _Out_ */ out float minimumAdvanceWidth, /* optional(DWRITE_TEXT_RANGE) */ IntPtr textRange);
         
         // IDWriteTextLayout2
         [PreserveSig]

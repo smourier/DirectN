@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT Do(/* [in] __RPC__in_opt */ IOleUndoManager pUndoManager);
         
         [PreserveSig]
-        HRESULT GetDescription(/* optional(BSTR) */ out IntPtr pBstr);
+        HRESULT GetDescription(/* [out] __RPC__deref_out_opt */ out IntPtr pBstr);
         
         [PreserveSig]
         HRESULT GetUnitType(/* [out] __RPC__out */ out Guid pClsid, /* [out] __RPC__out */ out int plID);

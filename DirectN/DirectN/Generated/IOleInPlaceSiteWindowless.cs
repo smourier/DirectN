@@ -36,7 +36,7 @@ namespace DirectN
         HRESULT SetFocus(/* [in] */ bool fFocus);
         
         [PreserveSig]
-        HRESULT GetDC(/* optional(LPCRECT) */ IntPtr pRect, /* [in] */ uint grfFlags, /* optional(HDC__) */ out IntPtr phDC);
+        HRESULT GetDC(/* optional(LPCRECT) */ IntPtr pRect, /* [in] */ uint grfFlags, /* [out] __RPC__deref_out_opt */ out IntPtr phDC);
         
         [PreserveSig]
         HRESULT ReleaseDC(/* [in] __RPC__in */ IntPtr hDC);

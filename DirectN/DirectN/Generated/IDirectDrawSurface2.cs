@@ -67,7 +67,7 @@ namespace DirectN
         HRESULT GetPalette(out LPDIRECTDRAWPALETTE unnamed__0);
         
         [PreserveSig]
-        HRESULT GetPixelFormat(ref _DDPIXELFORMAT unnamed__0);
+        HRESULT GetPixelFormat(ref int unnamed__0);
         
         [PreserveSig]
         HRESULT GetSurfaceDesc(ref LPDDSURFACEDESC unnamed__0);
@@ -112,7 +112,7 @@ namespace DirectN
         HRESULT UpdateOverlayZOrder(uint unnamed__0, LPDIRECTDRAWSURFACE2 unnamed__1);
         
         [PreserveSig]
-        HRESULT GetDDInterface(IntPtr unnamed__0);
+        HRESULT GetDDInterface([MarshalAs(UnmanagedType.IUnknown)] out object unnamed__0);
         
         [PreserveSig]
         HRESULT PageLock(uint unnamed__0);

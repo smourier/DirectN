@@ -14,6 +14,6 @@ namespace DirectN
         HRESULT GetFormat(/* [in] */ uint nFormat, /* [out] __RPC__deref_out_opt */ out IAudioMediaType ppFormat);
         
         [PreserveSig]
-        HRESULT GetFormatRepresentation(/* [in] */ uint nFormat, /* optional(LPWSTR) */ out IntPtr ppwstrFormatRep);
+        HRESULT GetFormatRepresentation(/* [in] */ uint nFormat, /* [out] __RPC__deref_out_opt */ out IntPtr ppwstrFormatRep);
     }
 }

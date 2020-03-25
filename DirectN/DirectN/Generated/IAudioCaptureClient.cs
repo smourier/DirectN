@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IAudioCaptureClient
     {
         [PreserveSig]
-        HRESULT GetBuffer(/* [annotation][out] _Outptr_result_buffer_(_Inexpressible_("*pNumFramesToRead * pFormat->nBlockAlign")) */ out byte[] ppData, /* [annotation][out] _Out_ */ out uint pNumFramesToRead, /* [annotation][out] _Out_ */ out uint pdwFlags, /* [annotation][unique][out] _Out_opt_ */ out ulong pu64DevicePosition, /* [annotation][unique][out] _Out_opt_ */ out ulong pu64QPCPosition);
+        HRESULT GetBuffer(/* [annotation][out] _Outptr_result_buffer_(_Inexpressible_("*pNumFramesToRead * pFormat->nBlockAlign")) */ out byte[] ppData, /* [annotation][out] _Out_ */ out uint pNumFramesToRead, /* [annotation][out] _Out_ */ out uint pdwFlags, /* optional(UINT64) */ IntPtr pu64DevicePosition, /* optional(UINT64) */ IntPtr pu64QPCPosition);
         
         [PreserveSig]
         HRESULT ReleaseBuffer(/* [annotation][in] _In_ */ uint NumFramesRead);

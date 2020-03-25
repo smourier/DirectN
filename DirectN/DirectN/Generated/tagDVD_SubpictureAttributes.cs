@@ -9,7 +9,7 @@ namespace DirectN
     {
         public tagDVD_SUBPICTURE_TYPE Type;
         public tagDVD_SUBPICTURE_CODING CodingMode;
-        public int Language;
+        public uint Language;
         public tagDVD_SUBPICTURE_LANG_EXT LanguageExtension;
     }
 }

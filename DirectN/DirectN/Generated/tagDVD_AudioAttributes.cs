@@ -10,7 +10,7 @@ namespace DirectN
         public tagDVD_AUDIO_APPMODE AppMode;
         public byte AppModeData;
         public tagDVD_AUDIO_FORMAT AudioFormat;
-        public int Language;
+        public uint Language;
         public tagDVD_AUDIO_LANG_EXT LanguageExtension;
         public bool fHasMultichannelInfo;
         public uint dwFrequency;

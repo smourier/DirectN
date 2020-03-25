@@ -15,7 +15,7 @@ namespace DirectN
         void ClearStoredMessages(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer);
         
         [PreserveSig]
-        HRESULT GetMessageW(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* [annotation] _In_ */ ulong MessageIndex, /* [annotation] _Out_writes_bytes_opt_(*pMessageByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] DXGI_INFO_QUEUE_MESSAGE[] pMessage, /* [annotation] _Inout_ */ IntPtr pMessageByteLength);
+        HRESULT GetMessageW(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* [annotation] _In_ */ ulong MessageIndex, /* optional(DXGI_INFO_QUEUE_MESSAGE) */ IntPtr pMessage, /* [annotation] _Inout_ */ IntPtr pMessageByteLength);
         
         [PreserveSig]
         ulong GetNumStoredMessagesAllowedByRetrievalFilters(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer);
@@ -39,7 +39,7 @@ namespace DirectN
         HRESULT AddStorageFilterEntries(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* [annotation] _In_ */ ref DXGI_INFO_QUEUE_FILTER pFilter);
         
         [PreserveSig]
-        HRESULT GetStorageFilter(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* [annotation] _Out_writes_bytes_opt_(*pFilterByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_INFO_QUEUE_FILTER[] pFilter, /* [annotation] _Inout_ */ IntPtr pFilterByteLength);
+        HRESULT GetStorageFilter(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* optional(DXGI_INFO_QUEUE_FILTER) */ IntPtr pFilter, /* [annotation] _Inout_ */ IntPtr pFilterByteLength);
         
         [PreserveSig]
         void ClearStorageFilter(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer);
@@ -66,7 +66,7 @@ namespace DirectN
         HRESULT AddRetrievalFilterEntries(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* [annotation] _In_ */ ref DXGI_INFO_QUEUE_FILTER pFilter);
         
         [PreserveSig]
-        HRESULT GetRetrievalFilter(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* [annotation] _Out_writes_bytes_opt_(*pFilterByteLength) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DXGI_INFO_QUEUE_FILTER[] pFilter, /* [annotation] _Inout_ */ IntPtr pFilterByteLength);
+        HRESULT GetRetrievalFilter(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer, /* optional(DXGI_INFO_QUEUE_FILTER) */ IntPtr pFilter, /* [annotation] _Inout_ */ IntPtr pFilterByteLength);
         
         [PreserveSig]
         void ClearRetrievalFilter(/* [annotation] _In_ */ DXGI_DEBUG_ID Producer);

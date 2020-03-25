@@ -44,10 +44,10 @@ namespace DirectN
         HRESULT SetPositions(/* optional(LONGLONG) */ IntPtr pCurrent, /* [in] */ uint dwCurrentFlags, /* optional(LONGLONG) */ IntPtr pStop, /* [in] */ uint dwStopFlags);
         
         [PreserveSig]
-        HRESULT GetPositions(/* [annotation][out] _Out_opt_ */ out long pCurrent, /* [annotation][out] _Out_opt_ */ out long pStop);
+        HRESULT GetPositions(/* optional(LONGLONG) */ IntPtr pCurrent, /* optional(LONGLONG) */ IntPtr pStop);
         
         [PreserveSig]
-        HRESULT GetAvailable(/* [annotation][out] _Out_opt_ */ out long pEarliest, /* [annotation][out] _Out_opt_ */ out long pLatest);
+        HRESULT GetAvailable(/* optional(LONGLONG) */ IntPtr pEarliest, /* optional(LONGLONG) */ IntPtr pLatest);
         
         [PreserveSig]
         HRESULT SetRate(/* [in] */ double dRate);

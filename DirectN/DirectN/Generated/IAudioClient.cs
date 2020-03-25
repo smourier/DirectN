@@ -21,13 +21,13 @@ namespace DirectN
         HRESULT GetCurrentPadding(/* [annotation][out] _Out_ */ out uint pNumPaddingFrames);
         
         [PreserveSig]
-        HRESULT IsFormatSupported(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* optional(tWAVEFORMATEX) */ out IntPtr ppClosestMatch);
+        HRESULT IsFormatSupported(/* [annotation][in] _In_ */ _AUDCLNT_SHAREMODE ShareMode, /* [annotation][in] _In_ */ ref tWAVEFORMATEX pFormat, /* optional(tWAVEFORMATEX) */ IntPtr ppClosestMatch);
         
         [PreserveSig]
         HRESULT GetMixFormat(/* [annotation][out] _Out_ */ out IntPtr ppDeviceFormat);
         
         [PreserveSig]
-        HRESULT GetDevicePeriod(/* [annotation][out] _Out_opt_ */ out REFERENCE_TIME phnsDefaultDevicePeriod, /* [annotation][out] _Out_opt_ */ out REFERENCE_TIME phnsMinimumDevicePeriod);
+        HRESULT GetDevicePeriod(/* optional(REFERENCE_TIME) */ IntPtr phnsDefaultDevicePeriod, /* optional(REFERENCE_TIME) */ IntPtr phnsMinimumDevicePeriod);
         
         [PreserveSig]
         HRESULT Start();

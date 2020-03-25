@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IPerPropertyBrowsing
     {
         [PreserveSig]
-        HRESULT GetDisplayString(/* [in] */ int dispID, /* optional(BSTR) */ out IntPtr pBstr);
+        HRESULT GetDisplayString(/* [in] */ int dispID, /* [out] __RPC__deref_out_opt */ out IntPtr pBstr);
         
         [PreserveSig]
         HRESULT MapPropertyToPage(/* [in] */ int dispID, /* [out] __RPC__out */ out Guid pClsid);

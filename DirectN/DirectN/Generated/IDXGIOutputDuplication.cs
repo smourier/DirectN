@@ -28,10 +28,10 @@ namespace DirectN
         HRESULT AcquireNextFrame(/* [annotation][in] _In_ */ uint TimeoutInMilliseconds, /* [annotation][out] _Out_ */ out DXGI_OUTDUPL_FRAME_INFO pFrameInfo, /* [annotation][out] _COM_Outptr_ */ out IDXGIResource ppDesktopResource);
         
         [PreserveSig]
-        HRESULT GetFrameDirtyRects(/* [annotation][in] _In_ */ int DirtyRectsBufferSize, /* [annotation][out] _Out_writes_bytes_to_(DirtyRectsBufferSize, *pDirtyRectsBufferSizeRequired) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagRECT[] pDirtyRectsBuffer, /* [annotation][out] _Out_ */ out uint pDirtyRectsBufferSizeRequired);
+        HRESULT GetFrameDirtyRects(/* [annotation][in] _In_ */ uint DirtyRectsBufferSize, /* [annotation][out] _Out_writes_bytes_to_(DirtyRectsBufferSize, *pDirtyRectsBufferSizeRequired) */ out IntPtr pDirtyRectsBuffer, /* [annotation][out] _Out_ */ out uint pDirtyRectsBufferSizeRequired);
         
         [PreserveSig]
-        HRESULT GetFrameMoveRects(/* [annotation][in] _In_ */ int MoveRectsBufferSize, /* [annotation][out] _Out_writes_bytes_to_(MoveRectsBufferSize, *pMoveRectsBufferSizeRequired) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] DXGI_OUTDUPL_MOVE_RECT[] pMoveRectBuffer, /* [annotation][out] _Out_ */ out uint pMoveRectsBufferSizeRequired);
+        HRESULT GetFrameMoveRects(/* [annotation][in] _In_ */ uint MoveRectsBufferSize, /* [annotation][out] _Out_writes_bytes_to_(MoveRectsBufferSize, *pMoveRectsBufferSizeRequired) */ out IntPtr pMoveRectBuffer, /* [annotation][out] _Out_ */ out uint pMoveRectsBufferSizeRequired);
         
         [PreserveSig]
         HRESULT GetFramePointerShape(/* [annotation][in] _In_ */ uint PointerShapeBufferSize, /* [annotation][out] _Out_writes_bytes_to_(PointerShapeBufferSize, *pPointerShapeBufferSizeRequired) */ IntPtr pPointerShapeBuffer, /* [annotation][out] _Out_ */ out uint pPointerShapeBufferSizeRequired, /* [annotation][out] _Out_ */ out DXGI_OUTDUPL_POINTER_SHAPE_INFO pPointerShapeInfo);

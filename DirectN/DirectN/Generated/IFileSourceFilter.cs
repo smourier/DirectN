@@ -11,6 +11,6 @@ namespace DirectN
         HRESULT Load(/* [in] */ [MarshalAs(UnmanagedType.LPWStr)] string pszFileName, /* optional(_AMMediaType) */ IntPtr pmt);
         
         [PreserveSig]
-        HRESULT GetCurFile(/* [annotation][out] _Out_ */ out IntPtr ppszFileName, /* [annotation][out] _Out_opt_ */ out _AMMediaType pmt);
+        HRESULT GetCurFile(/* [annotation][out] _Out_ */ out IntPtr ppszFileName, /* optional(_AMMediaType) */ IntPtr pmt);
     }
 }

@@ -17,6 +17,6 @@ namespace DirectN
         HRESULT GetReaderByIndex(/* [in] */ uint nIndex, /* [out] __RPC__deref_out_opt */ out IWICMetadataReader ppIMetadataReader);
         
         [PreserveSig]
-        HRESULT GetEnumerator(/* optional(IEnumUnknown) */ out IntPtr ppIEnumMetadata);
+        HRESULT GetEnumerator(/* [out] __RPC__deref_out_opt */ out IntPtr ppIEnumMetadata);
     }
 }
