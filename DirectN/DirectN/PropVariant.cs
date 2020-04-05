@@ -81,7 +81,7 @@ namespace DirectN
             if (array is bool[] bools)
             {
                 var shorts = new short[bools.Length];
-                for (int i = 0; i < bools.Length; i++)
+                for (var i = 0; i < bools.Length; i++)
                 {
                     shorts[i] = bools[i] ? ((short)(-1)) : ((short)0);
                 }
@@ -115,7 +115,7 @@ namespace DirectN
 
                 if (type == typeof(string))
                 {
-                    for (int i = 0; i < array.Length; i++)
+                    for (var i = 0; i < array.Length; i++)
                     {
                         var str = Marshal.StringToCoTaskMemUni((string)array.GetValue(i));
                         Marshal.WriteIntPtr(ptr, IntPtr.Size * i, str);
@@ -375,7 +375,7 @@ namespace DirectN
             {
                 var charray = value as char[][];
                 var strings = new string[charray.GetLength(0)];
-                for (int i = 0; i < charray.Length; i++)
+                for (var i = 0; i < charray.Length; i++)
                 {
                     strings[i] = new string(charray[i]);
                 }
@@ -415,9 +415,7 @@ namespace DirectN
                     if (ft == 0)
                         break; // stay empty
 
-#pragma warning disable CA1806 // Do not ignore method results
                     InitPropVariantFromFileTime(ref ft, this);
-#pragma warning restore CA1806 // Do not ignore method results
                     break;
 
                 case TypeCode.Empty:
@@ -603,7 +601,7 @@ namespace DirectN
                 case PropertyType.VT_LPSTR:
                 case PropertyType.VT_LPWSTR:
                     var strings = new string[_ca.cElems];
-                    for (int i = 0; i < strings.Length; i++)
+                    for (var i = 0; i < strings.Length; i++)
                     {
                         var str = Marshal.ReadIntPtr(_ca.pElems, IntPtr.Size * i);
                         strings[i] = vt == PropertyType.VT_LPSTR ? Marshal.PtrToStringAnsi(str) : Marshal.PtrToStringUni(str);
@@ -617,7 +615,7 @@ namespace DirectN
                     size = _ca.cElems * Marshal.SizeOf(typeof(short));
                     CopyMemory(Marshal.UnsafeAddrOfPinnedArrayElement(shorts, 0), _ca.pElems, size);
                     var bools = new bool[shorts.Length];
-                    for (int i = 0; i < shorts.Length; i++)
+                    for (var i = 0; i < shorts.Length; i++)
                     {
                         bools[i] = shorts[i] == 0 ? false : true;
                     }
@@ -674,9 +672,7 @@ namespace DirectN
             return bytes;
         }
 
-#pragma warning disable CA2000 // Dispose objects before losing scope
         public static PropVariant Deserialize(byte[] bytes) => Deserialize(bytes, true);
-#pragma warning restore CA2000 // Dispose objects before losing scope
         public static PropVariant Deserialize(byte[] bytes, bool throwOnError)
         {
             if (bytes == null)
@@ -696,16 +692,14 @@ namespace DirectN
             return pv;
         }
 
-#pragma warning disable CA2000 // Dispose objects before losing scope
-        public static PropVariant Deserialize(IntPtr propVariant, int size) => Deserialize(propVariant, size, true);
-#pragma warning restore CA2000 // Dispose objects before losing scope
-        public static PropVariant Deserialize(IntPtr propVariant, int size, bool throwOnError)
+        public static PropVariant Deserialize(IntPtr ptr, int size) => Deserialize(ptr, size, true);
+        public static PropVariant Deserialize(IntPtr ptr, int size, bool throwOnError)
         {
-            if (propVariant == IntPtr.Zero)
-                throw new ArgumentException(null, nameof(propVariant));
+            if (ptr == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(ptr));
 
             var pv = new PropVariant();
-            int hr = StgDeserializePropVariant(propVariant, size, pv);
+            int hr = StgDeserializePropVariant(ptr, size, pv);
             if (hr != 0)
             {
                 pv.Dispose();
@@ -721,16 +715,22 @@ namespace DirectN
         public override string ToString()
         {
             object value = Value;
+            if (value == null)
+                return "<null>";
+
             if (value is string svalue)
-                return "'" + svalue + "'";
+                return "[" + VarType + "] `" + svalue + "`";
+
+            if (value is Guid guid)
+                return "[" + VarType + "] " + guid.ToName();
 
             if (!(value is byte[]) && value is IEnumerable enumerable)
-                return VarType + ": " + string.Join(", ", enumerable.OfType<object>());
+                return "[" + VarType + "] " + string.Join(", ", enumerable.OfType<object>());
 
             if (value is byte[] bytes)
-                return VarType + ": bytes[" + bytes.Length + "]";
+                return "[" + VarType + "] bytes[" + bytes.Length + "] " + Conversions.ToHexa(bytes, 64);
 
-            return VarType + ": " + value;
+            return "[" + VarType + "] " + value;
         }
 
         [DllImport("propsys", ExactSpelling = true)]
@@ -748,7 +748,7 @@ namespace DirectN
         [DllImport("propsys", ExactSpelling = true)]
         private static extern int InitPropVariantFromFileTime(ref long pftIn, [Out] PropVariant ppropvar);
 
-        [DllImport("kernel32.dll", EntryPoint = "RtlMoveMemory", ExactSpelling = true)]
+        [DllImport("kernel32", ExactSpelling = true, EntryPoint = "RtlMoveMemory")]
         private static extern void CopyMemory(IntPtr destination, IntPtr source, int length);
     }
 }

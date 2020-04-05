@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -10,7 +9,6 @@ namespace DirectN
     {
         private object _object;
 
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
         public ComObject(object comObject)
         {
             if (comObject == null)
@@ -69,12 +67,11 @@ namespace DirectN
 
             return (T)obj;
         }
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
 
-        public T As<T>(bool throwOnError = true) where T : class
+        public T As<T>(bool throwOnError = false) where T : class
         {
             if (throwOnError)
-                return (T)Object;
+                return (T)Object; // will throw
 
             return Object as T;
         }
@@ -132,13 +129,31 @@ namespace DirectN
                 var obj = Interlocked.Exchange(ref _object, null);
                 if (obj != null)
                 {
+#if DEBUG
+                    var typeName = GetType().FullName;
+                    var count = Marshal.ReleaseComObject(obj);
+                    Trace("~", "disposing: " + disposing + " count: " + count + " type: " + typeName);
+#else
                     Marshal.ReleaseComObject(obj);
+#endif
+
                 }
             }
         }
 
         ~ComObject() { Dispose(false); }
         public void Dispose() { Dispose(true); GC.SuppressFinalize(this); }
+
+        public static int Release(object comObject)
+        {
+            if (comObject == null)
+                return 0;
+
+            if (!Marshal.IsComObject(comObject))
+                throw new ArgumentException("Argument is not a COM object", nameof(comObject));
+
+            return Marshal.ReleaseComObject(comObject);
+        }
 
 #if DEBUG
         public string Name { get; set; }
@@ -156,7 +171,7 @@ namespace DirectN
         {
             // many COM objects (like DXGI ones) dont' like to be used on different threads
             // so we tracks calls on different threads
-            string s = Id.ToString(CultureInfo.InvariantCulture);
+            string s = Id.ToString();
 
             var tid = Thread.CurrentThread.ManagedThreadId;
             if (tid != ConstructorThreadId)
@@ -180,7 +195,7 @@ namespace DirectN
 
         public long Id { get; }
         public int ConstructorThreadId { get; }
-        public static TimeSpan Duration => _sw.Elapsed;
+        public TimeSpan Duration => _sw.Elapsed;
 
         public override string ToString()
         {
@@ -202,7 +217,7 @@ namespace DirectN
             if (s != null)
                 return Id + " " + s;
 
-            return Id.ToString(CultureInfo.InvariantCulture);
+            return Id.ToString();
         }
 #endif
     }

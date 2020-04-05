@@ -3,13 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Runtime.InteropServices;
+using System.Security;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace DirectN
 {
-    internal static class Conversions
+    public static class Conversions
     {
-#pragma warning disable CA1031 // Do not catch general exception types
+        private const string ParamName = "securePassword";
         private static readonly char[] _enumSeparators = new char[] { ',', ';', '+', '|', ' ' };
+        private static readonly Regex _decodeUnicode = new Regex(@"\\u(?<v>[a-zA-Z0-9]{4})", RegexOptions.Compiled);
+        private static readonly string[] _dateFormatsUtc = { "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'", "yyyy'-'MM'-'dd'T'HH':'mm'Z'", "yyyyMMdd'T'HH':'mm':'ss'Z'" };
+
+        public static bool IsValid(this DateTime dt) => dt != DateTime.MinValue && dt != DateTime.MaxValue && dt.Kind != DateTimeKind.Unspecified;
+        public static bool IsValid(this DateTime? dt) => dt.HasValue && IsValid(dt.Value);
 
         public static bool EqualsIgnoreCase(this string thisString, string text) => EqualsIgnoreCase(thisString, text, false);
         public static bool EqualsIgnoreCase(this string thisString, string text, bool trim)
@@ -44,12 +54,396 @@ namespace DirectN
             return t.Length == 0 ? null : t;
         }
 
+        public static bool IsFlagsEnum(Type enumType)
+        {
+            if (enumType == null)
+                throw new ArgumentNullException(nameof(enumType));
+
+            if (!enumType.IsEnum)
+                throw new ArgumentException(null, nameof(enumType));
+
+            return enumType.IsDefined(typeof(FlagsAttribute), true);
+        }
+
+        public static T CoerceToEnum<T>(object input) => (T)CoerceToEnum(typeof(T), input);
+        public static object CoerceToEnum(Type enumType, object input)
+        {
+            if (enumType == null)
+                throw new ArgumentNullException(nameof(enumType));
+
+            if (!enumType.IsEnum)
+                throw new ArgumentException(null, nameof(enumType));
+
+            if (!TryChangeType(input, enumType, out object result))
+                return Activator.CreateInstance(enumType);
+
+            // validate
+            var s = result.ToString();
+            if (!char.IsDigit(s[0]) && s[0] != '-')
+                return result;
+
+            if (!IsFlagsEnum(enumType))
+                return Activator.CreateInstance(enumType);
+
+            var names = System.Enum.GetNames(enumType);
+            if (names.Length == 0) // nothing defined...
+                return Activator.CreateInstance(enumType);
+
+            var values = System.Enum.GetValues(enumType);
+            var tc = Type.GetTypeCode(result.GetType());
+            if (tc == TypeCode.Int32 || tc == TypeCode.Int16 || tc == TypeCode.Int64 || tc == TypeCode.SByte)
+            {
+                long lvalue = 0;
+                var l = long.Parse(s, NumberStyles.Integer, CultureInfo.InvariantCulture);
+                for (var i = 0; i < names.Length; i++)
+                {
+                    if (TryChangeType(values.GetValue(i), out long vl) && vl != 0 && (l & vl) == vl)
+                    {
+                        lvalue |= vl;
+                    }
+                }
+                return ChangeType(lvalue, enumType);
+            }
+
+            ulong ulvalue = 0;
+            var ul = ulong.Parse(s, NumberStyles.Integer, CultureInfo.InvariantCulture);
+            for (var i = 0; i < names.Length; i++)
+            {
+                if (TryChangeType(values.GetValue(i), out ulong vul) && vul != 0 && (ul & vul) == vul)
+                {
+                    ulvalue |= vul;
+                }
+            }
+            return ChangeType(ulvalue, enumType);
+        }
+
+        public static bool TryCoerceToEnum<T>(object input, out object value) => TryCoerceToEnum(typeof(T), input, out value);
+        public static bool TryCoerceToEnum(Type enumType, object input, out object value)
+        {
+            if (enumType == null)
+                throw new ArgumentNullException(nameof(enumType));
+
+            if (!enumType.IsEnum)
+                throw new ArgumentException(null, nameof(enumType));
+
+            if (!TryChangeType(input, enumType, out object result))
+            {
+                value = Activator.CreateInstance(enumType);
+                return false;
+            }
+
+            // validate
+            var s = result.ToString();
+            if (!char.IsDigit(s[0]) && s[0] != '-')
+            {
+                value = result;
+                return true;
+            }
+
+            value = Activator.CreateInstance(enumType);
+            return false;
+        }
+
+        public static Type GetEnumeratedType(Type collectionType)
+        {
+            if (collectionType == null)
+                throw new ArgumentNullException(nameof(collectionType));
+
+            foreach (Type type in collectionType.GetInterfaces())
+            {
+                if (!type.IsGenericType)
+                    continue;
+
+                if (type.GetGenericTypeDefinition() == typeof(IEnumerable<>))
+                    return type.GetGenericArguments()[0];
+
+                if (type.GetGenericTypeDefinition() == typeof(ICollection<>))
+                    return type.GetGenericArguments()[0];
+
+                if (type.GetGenericTypeDefinition() == typeof(IList<>))
+                    return type.GetGenericArguments()[0];
+            }
+            return null;
+        }
+
+        public static long ToPositiveFileTime(DateTime dt)
+        {
+            var ft = ToFileTimeUtc(dt.ToUniversalTime());
+            return ft < 0 ? 0 : ft;
+        }
+
+        public static long ToPositiveFileTimeUtc(DateTime dt)
+        {
+            var ft = ToFileTimeUtc(dt);
+            return ft < 0 ? 0 : ft;
+        }
+
+        public static long ToFileTime(DateTime dt) => ToFileTimeUtc(dt.ToUniversalTime());
+        public static long ToFileTimeUtc(DateTime dt)
+        {
+            const long ticksPerMillisecond = 10000;
+            const long ticksPerSecond = ticksPerMillisecond * 1000;
+            const long ticksPerMinute = ticksPerSecond * 60;
+            const long ticksPerHour = ticksPerMinute * 60;
+            const long ticksPerDay = ticksPerHour * 24;
+            const int daysPerYear = 365;
+            const int daysPer4Years = daysPerYear * 4 + 1;
+            const int daysPer100Years = daysPer4Years * 25 - 1;
+            const int daysPer400Years = daysPer100Years * 4 + 1;
+            const int daysTo1601 = daysPer400Years * 4;
+            const long fileTimeOffset = daysTo1601 * ticksPerDay;
+            long ticks = dt.Kind == DateTimeKind.Local ? dt.ToUniversalTime().Ticks : dt.Ticks;
+            ticks -= fileTimeOffset;
+            return ticks;
+        }
+
+        public static Guid ComputeGuidHash(string text)
+        {
+            if (text == null)
+                return Guid.Empty;
+
+#pragma warning disable CA5351 // Do Not Use Broken Cryptographic Algorithms
+            using (var md5 = MD5.Create())
+#pragma warning restore CA5351 // Do Not Use Broken Cryptographic Algorithms
+            {
+                return new Guid(md5.ComputeHash(Encoding.UTF8.GetBytes(text)));
+            }
+        }
+
+        public static byte[] ToBytesFromHexa(string text)
+        {
+            if (text == null)
+                return null;
+
+            var list = new List<byte>();
+            var lo = false;
+            byte prev = 0;
+            int offset;
+
+            // handle 0x or 0X notation
+            if (text.Length >= 2 && text[0] == '0' && (text[1] == 'x' || text[1] == 'X'))
+            {
+                offset = 2;
+            }
+            else
+            {
+                offset = 0;
+            }
+
+            for (var i = 0; i < text.Length - offset; i++)
+            {
+                var b = GetHexaByte(text[i + offset]);
+                if (b == 0xFF)
+                    continue;
+
+                if (lo)
+                {
+                    list.Add((byte)(prev * 16 + b));
+                }
+                else
+                {
+                    prev = b;
+                }
+                lo = !lo;
+            }
+            return list.ToArray();
+        }
+
+        public static byte GetHexaByte(char c)
+        {
+            if (c >= '0' && c <= '9')
+                return (byte)(c - '0');
+
+            if (c >= 'A' && c <= 'F')
+                return (byte)(c - 'A' + 10);
+
+            if (c >= 'a' && c <= 'f')
+                return (byte)(c - 'a' + 10);
+
+            return 0xFF;
+        }
+
+        public static string ToHexa(this byte[] bytes) => bytes != null ? ToHexa(bytes, 0, bytes.Length) : "0x";
+        public static string ToHexa(this byte[] bytes, int count) => ToHexa(bytes, 0, count);
+        public static string ToHexa(this byte[] bytes, int offset, int count)
+        {
+            if (bytes == null)
+                return "0x";
+
+            if (offset < 0)
+                throw new ArgumentException(null, nameof(offset));
+
+            if (count < 0)
+                throw new ArgumentException(null, nameof(count));
+
+            if (offset >= bytes.Length)
+                throw new ArgumentException(null, nameof(offset));
+
+            count = Math.Min(count, bytes.Length - offset);
+            var sb = new StringBuilder(count * 2);
+            for (var i = offset; i < (offset + count); i++)
+            {
+                sb.Append(bytes[i].ToString("X2", CultureInfo.InvariantCulture));
+            }
+            return "0x" + sb.ToString();
+        }
+
+        public static string ToHexaDump(string text) => ToHexaDump(text, null);
+        public static string ToHexaDump(string text, Encoding encoding)
+        {
+            if (text == null)
+                return null;
+
+            if (encoding == null)
+            {
+                encoding = Encoding.Unicode;
+            }
+
+            return ToHexaDump(encoding.GetBytes(text));
+        }
+
+        public static string ToHexaDump(this byte[] bytes)
+        {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
+            return ToHexaDump(bytes, null);
+        }
+
+        public static string ToHexaDump(this byte[] bytes, string prefix)
+        {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
+            return ToHexaDump(bytes, 0, bytes.Length, prefix, true);
+        }
+
+        public static string ToHexaDump(this IntPtr ptr, int count) => ToHexaDump(ptr, 0, count, null, true);
+
+        public static string ToHexaDump(this IntPtr ptr, int offset, int count, string prefix, bool addHeader)
+        {
+            if (ptr == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(ptr));
+
+            var bytes = new byte[count];
+            Marshal.Copy(ptr, bytes, offset, count);
+            return ToHexaDump(bytes, 0, count, prefix, addHeader);
+        }
+
+        public static string ToHexaDump(this byte[] bytes, int count) => ToHexaDump(bytes, 0, count, null, true);
+        public static string ToHexaDump(this byte[] bytes, int offset, int count) => ToHexaDump(bytes, offset, count, null, true);
+        public static string ToHexaDump(this byte[] bytes, int offset, int count, string prefix, bool addHeader)
+        {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
+            if (offset < 0)
+            {
+                offset = 0;
+            }
+
+            if (count < 0)
+            {
+                count = bytes.Length;
+            }
+
+            if ((offset + count) > bytes.Length)
+            {
+                count = bytes.Length - offset;
+            }
+
+            var sb = new StringBuilder();
+            if (addHeader)
+            {
+                sb.Append(prefix);
+                //             0         1         2         3         4         5         6         7
+                //             01234567890123456789012345678901234567890123456789012345678901234567890123456789
+                sb.AppendLine("Offset    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F  0123456789ABCDEF");
+                sb.AppendLine("--------  -----------------------------------------------  ----------------");
+            }
+
+            for (var i = 0; i < count; i += 16)
+            {
+                sb.Append(prefix);
+                sb.AppendFormat("{0:X8}  ", i + offset);
+
+                int j;
+                for (j = 0; (j < 16) && ((i + j) < count); j++)
+                {
+                    sb.AppendFormat("{0:X2} ", bytes[i + j + offset]);
+                }
+
+                sb.Append(' ');
+                if (j < 16)
+                {
+                    sb.Append(new string(' ', 3 * (16 - j)));
+                }
+                for (j = 0; j < 16 && (i + j) < count; j++)
+                {
+                    var b = bytes[i + j + offset];
+                    if (b > 31 && b < 128)
+                    {
+                        sb.Append((char)b);
+                    }
+                    else
+                    {
+                        sb.Append('.');
+                    }
+                }
+
+                sb.AppendLine();
+            }
+            return sb.ToString();
+        }
+
+        public static IReadOnlyList<T> SplitToList<T>(string text, params char[] separators) => SplitToList<T>(text, null, separators);
+        public static IReadOnlyList<T> SplitToList<T>(string text, IFormatProvider provider, params char[] separators)
+        {
+            var al = new List<T>();
+            if (text == null || separators == null || separators.Length == 0)
+                return al;
+
+            foreach (string s in text.Split(separators))
+            {
+                string value = s.Nullify();
+                if (value == null)
+                    continue;
+
+                var item = ChangeType(value, default(T), provider);
+                al.Add(item);
+            }
+            return al;
+        }
+
+        public static string ToNullifiedString(object input, string defaultValue = null, IFormatProvider provider = null)
+        {
+            if (input == null)
+                return defaultValue;
+
+            if (input is string s)
+                return s;
+
+            s = string.Format(provider, "{0}", input).Nullify();
+            if (s == null)
+                return defaultValue;
+
+            return s;
+        }
+
         public static object ChangeType(object input, Type conversionType) => ChangeType(input, conversionType, null, null);
         public static object ChangeType(object input, Type conversionType, object defaultValue) => ChangeType(input, conversionType, defaultValue, null);
         public static object ChangeType(object input, Type conversionType, object defaultValue, IFormatProvider provider)
         {
             if (!TryChangeType(input, conversionType, provider, out object value))
-                return defaultValue;
+            {
+                if (TryChangeType(defaultValue, conversionType, provider, out var def))
+                    return def;
+
+                if (conversionType.IsReallyValueType())
+                    return Activator.CreateInstance(conversionType);
+
+                return null;
+            }
 
             return value;
         }
@@ -62,6 +456,112 @@ namespace DirectN
                 return defaultValue;
 
             return value;
+        }
+
+        public static DateTime ChangeTypeToDateTime(object input, DateTimeStyles styles = DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal) => ChangeTypeToDateTime(input, styles, DateTime.MinValue);
+        public static DateTime ChangeTypeToDateTime(object input, DateTimeStyles styles, DateTime defaultValue) => ChangeTypeToDateTime(input, null, styles, defaultValue);
+        public static DateTime ChangeTypeToDateTime(object input, IFormatProvider provider, DateTimeStyles styles, DateTime defaultValue)
+        {
+            if (!TryChangeToDateTime(input, provider, styles, out var value))
+                return defaultValue;
+
+            return value;
+        }
+
+        public static bool TryChangeToDateTime(object input, DateTimeStyles styles, out DateTime value) => TryChangeToDateTime(input, null, styles, out value);
+        public static bool TryChangeToDateTime(object input, IFormatProvider provider, DateTimeStyles styles, out DateTime value)
+        {
+            if (input == null)
+            {
+                value = DateTime.MinValue;
+                return false;
+            }
+
+            if (input is long)
+            {
+                if (styles.HasFlag(DateTimeStyles.AssumeLocal))
+                {
+                    value = new DateTime((long)input, DateTimeKind.Local);
+                }
+                else
+                {
+                    value = new DateTime((long)input, DateTimeKind.Utc);
+                }
+                return true;
+            }
+
+            if (input is DateTimeOffset)
+            {
+                value = ((DateTimeOffset)input).DateTime;
+                return true;
+            }
+
+            var text = string.Format(provider, "{0}", input).Nullify();
+            if (text == null)
+            {
+                value = DateTime.MinValue;
+                return false;
+            }
+
+            if (DateTime.TryParse(text, provider, styles, out value))
+                return true;
+
+            DateTime dt;
+            // 01234567890123456
+            // 20150525T15:50:00
+            if (text != null && text.Length == 17)
+            {
+                if ((text[8] == 'T' || text[8] == 't') && text[11] == ':' && text[14] == ':')
+                {
+                    int.TryParse(text.Substring(0, 4), NumberStyles.Integer, CultureInfo.InvariantCulture, out int year);
+                    int.TryParse(text.Substring(4, 2), NumberStyles.Integer, CultureInfo.InvariantCulture, out int month);
+                    int.TryParse(text.Substring(6, 2), NumberStyles.Integer, CultureInfo.InvariantCulture, out int day);
+                    int.TryParse(text.Substring(9, 2), NumberStyles.Integer, CultureInfo.InvariantCulture, out int hour);
+                    int.TryParse(text.Substring(12, 2), NumberStyles.Integer, CultureInfo.InvariantCulture, out int minute);
+                    int.TryParse(text.Substring(15, 2), NumberStyles.Integer, CultureInfo.InvariantCulture, out int second);
+                    if (month > 0 && month < 13 &&
+                        day > 0 && day < 32 &&
+                        year >= 0 &&
+                        hour >= 0 && hour < 24 &&
+                        minute >= 0 && minute < 60 &&
+                        second >= 0 && second < 60)
+                    {
+                        try
+                        {
+                            dt = new DateTime(year, month, day, hour, minute, second);
+                            value = dt;
+                            return true;
+                        }
+                        catch
+                        {
+                            // do nothing
+                        }
+                    }
+                }
+            }
+
+            if (text != null && text.EndsWith("Z", StringComparison.OrdinalIgnoreCase))
+            {
+                if (DateTime.TryParseExact(text, _dateFormatsUtc, CultureInfo.InvariantCulture, DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AdjustToUniversal | DateTimeStyles.AssumeUniversal, out dt))
+                {
+                    value = dt;
+                    return true;
+                }
+            }
+
+            if (long.TryParse(text, out var l))
+            {
+                if (styles.HasFlag(DateTimeStyles.AssumeLocal))
+                {
+                    value = new DateTime(l, DateTimeKind.Local);
+                }
+                else
+                {
+                    value = new DateTime(l, DateTimeKind.Utc);
+                }
+                return true;
+            }
+            return false;
         }
 
         public static bool TryChangeType<T>(object input, out T value) => TryChangeType(input, null, out value);
@@ -109,13 +609,24 @@ namespace DirectN
                 return false;
             }
 
-            value = conversionType.IsValueType ? Activator.CreateInstance(conversionType) : null;
+            value = conversionType.IsReallyValueType() ? Activator.CreateInstance(conversionType) : null;
             if (input == null)
-                return !conversionType.IsValueType;
+                return !conversionType.IsReallyValueType();
 
             var inputType = input.GetType();
-            if (inputType.IsAssignableFrom(conversionType))
+            if (conversionType.IsAssignableFrom(inputType))
             {
+                value = input;
+                return true;
+            }
+
+            if (Marshal.IsComObject(input))
+            {
+                var p = Marshal.GetComInterfaceForObject(input, conversionType);
+                if (p == IntPtr.Zero)
+                    return false;
+
+                Marshal.Release(p);
                 value = input;
                 return true;
             }
@@ -705,7 +1216,7 @@ namespace DirectN
             {
                 if (inputType == typeof(long))
                 {
-                    value = new DateTime((long)input);
+                    value = new DateTime((long)input, DateTimeKind.Utc);
                     return true;
                 }
 
@@ -714,19 +1225,35 @@ namespace DirectN
                     value = ((DateTimeOffset)input).DateTime;
                     return true;
                 }
+
+                if (TryChangeToDateTime(input, DateTimeStyles.None, out var dt))
+                {
+                    value = dt;
+                    return true;
+                }
             }
 
             if (conversionType == typeof(DateTimeOffset))
             {
                 if (inputType == typeof(long))
                 {
-                    value = new DateTimeOffset(new DateTime((long)input));
+                    value = new DateTimeOffset(new DateTime((long)input, DateTimeKind.Utc));
                     return true;
                 }
 
                 if (inputType == typeof(DateTime))
                 {
-                    value = new DateTimeOffset((DateTime)input);
+                    var dt = (DateTime)input;
+                    if (dt.IsValid())
+                    {
+                        value = new DateTimeOffset((DateTime)input);
+                        return true;
+                    }
+                }
+
+                if (TryChangeToDateTime(input, DateTimeStyles.None, out var dt2))
+                {
+                    value = new DateTimeOffset(dt2);
                     return true;
                 }
             }
@@ -799,16 +1326,23 @@ namespace DirectN
             {
                 try
                 {
-                    if (TryChangeType(input, provider, out int lcid))
+                    if (input is int lcid)
                     {
-                        value = CultureInfo.GetCultureInfo((int)input);
+                        value = CultureInfo.GetCultureInfo(lcid);
                         return true;
                     }
                     else
                     {
-                        if (TryChangeType(input, provider, out string s))
+                        var si = input?.ToString();
+                        if (si != null)
                         {
-                            value = CultureInfo.GetCultureInfo(s);
+                            if (int.TryParse(si, out lcid))
+                            {
+                                value = CultureInfo.GetCultureInfo(lcid);
+                                return true;
+                            }
+
+                            value = CultureInfo.GetCultureInfo(si);
                             return true;
                         }
                     }
@@ -816,6 +1350,52 @@ namespace DirectN
                 catch
                 {
                     // do nothing, wrong culture, etc.
+                }
+                return false;
+            }
+
+            if (conversionType == typeof(bool))
+            {
+                if (true.Equals(input))
+                {
+                    value = true;
+                    return true;
+                }
+
+                if (false.Equals(input))
+                {
+                    value = false;
+                    return true;
+                }
+
+                var svalue = string.Format(provider, "{0}", input).Nullify();
+                if (svalue == null)
+                    return false;
+
+                if (bool.TryParse(svalue, out bool b))
+                {
+                    value = b;
+                    return true;
+                }
+
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                if (svalue.EqualsIgnoreCase("y") || svalue.EqualsIgnoreCase("yes"))
+                {
+                    value = true;
+                    return true;
+                }
+
+                if (svalue.EqualsIgnoreCase("n") || svalue.EqualsIgnoreCase("no"))
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                {
+                    value = false;
+                    return true;
+                }
+
+                if (TryChangeType(input, out long bl))
+                {
+                    value = bl != 0;
+                    return true;
                 }
                 return false;
             }
@@ -840,6 +1420,9 @@ namespace DirectN
                 try
                 {
                     value = convertible.ToType(conversionType, provider);
+                    if (value is DateTime dt && !dt.IsValid())
+                        return false;
+
                     return true;
                 }
                 catch
@@ -848,29 +1431,16 @@ namespace DirectN
                 }
             }
 
-            if (value != null)
+            if (input != null)
             {
-                var converter = TypeDescriptor.GetConverter(value);
-                if (converter != null)
+                var inputConverter = TypeDescriptor.GetConverter(input);
+                if (inputConverter != null)
                 {
-                    if (converter.CanConvertTo(conversionType))
+                    if (inputConverter.CanConvertTo(conversionType))
                     {
                         try
                         {
-                            value = converter.ConvertTo(null, provider as CultureInfo, input, conversionType);
-                            return true;
-                        }
-                        catch
-                        {
-                            // continue;
-                        }
-                    }
-
-                    if (converter.CanConvertFrom(inputType))
-                    {
-                        try
-                        {
-                            value = converter.ConvertFrom(null, provider as CultureInfo, input);
+                            value = inputConverter.ConvertTo(null, provider as CultureInfo, input, conversionType);
                             return true;
                         }
                         catch
@@ -881,22 +1451,32 @@ namespace DirectN
                 }
             }
 
-            if (input != null)
+            var converter = TypeDescriptor.GetConverter(conversionType);
+            if (converter != null)
             {
-                var converter = TypeDescriptor.GetConverter(input);
-                if (converter != null)
+                if (converter.CanConvertTo(conversionType))
                 {
-                    if (converter.CanConvertTo(conversionType))
+                    try
                     {
-                        try
-                        {
-                            value = converter.ConvertTo(null, provider as CultureInfo, input, conversionType);
-                            return true;
-                        }
-                        catch
-                        {
-                            // continue;
-                        }
+                        value = converter.ConvertTo(null, provider as CultureInfo, input, conversionType);
+                        return true;
+                    }
+                    catch
+                    {
+                        // continue;
+                    }
+                }
+
+                if (converter.CanConvertFrom(inputType))
+                {
+                    try
+                    {
+                        value = converter.ConvertFrom(null, provider as CultureInfo, input);
+                        return true;
+                    }
+                    catch
+                    {
+                        // continue;
                     }
                 }
             }
@@ -908,6 +1488,337 @@ namespace DirectN
             }
 
             return false;
+        }
+
+        public static T GetNumber<T>(string value, T defaultValue) => GetNumber(value, null, defaultValue);
+        public static T GetNumber<T>(object value, T defaultValue) => GetNumber(value, null, defaultValue);
+        public static T GetNumber<T>(object input, IFormatProvider provider, T defaultValue)
+        {
+            if (!TryGetNumber(input, provider, out T value))
+                return defaultValue;
+
+            return value;
+        }
+
+        public static bool TryGetNumber<T>(object input, IFormatProvider provider, out T value)
+        {
+            if (!TryGetNumber(input, typeof(T), provider, out object obj))
+            {
+                value = default;
+                return false;
+            }
+
+            value = (T)obj;
+            return true;
+        }
+
+        public static bool TryGetNumber(object input, Type conversionType, IFormatProvider provider, out object value)
+        {
+            if (conversionType == null)
+                throw new ArgumentNullException(nameof(conversionType));
+
+            value = Activator.CreateInstance(conversionType);
+            if (provider == null)
+            {
+                provider = CultureInfo.InvariantCulture;
+            }
+
+            if (input is byte[] bytes)
+            {
+                switch (bytes.Length)
+                {
+                    case 1:
+                        if (conversionType == typeof(sbyte))
+                        {
+                            value = (sbyte)bytes[0];
+                            return true;
+                        }
+
+                        return TryGetNumber(bytes[0], conversionType, provider, out value);
+
+                    case 2:
+                        if (conversionType == typeof(ushort))
+                        {
+                            value = BitConverter.ToUInt16(bytes, 0);
+                            return true;
+                        }
+
+                        return TryGetNumber(BitConverter.ToInt16(bytes, 0), conversionType, provider, out value);
+
+                    case 4:
+                        if (conversionType == typeof(float))
+                        {
+                            try
+                            {
+                                value = BitConverter.ToSingle(bytes, 0);
+                                return true;
+                            }
+                            catch
+                            {
+                                return false;
+                            }
+                        }
+
+                        if (conversionType == typeof(uint))
+                        {
+                            value = BitConverter.ToUInt32(bytes, 0);
+                            return true;
+                        }
+
+                        return TryGetNumber(BitConverter.ToInt32(bytes, 0), conversionType, provider, out value);
+
+                    case 8:
+                        if (conversionType == typeof(double))
+                        {
+                            try
+                            {
+                                value = BitConverter.ToDouble(bytes, 0);
+                                return true;
+                            }
+                            catch
+                            {
+                                return false;
+                            }
+                        }
+
+                        if (conversionType == typeof(ulong))
+                        {
+                            value = BitConverter.ToUInt64(bytes, 0);
+                            return true;
+                        }
+
+                        return TryGetNumber(BitConverter.ToInt64(bytes, 0), conversionType, provider, out value);
+                }
+                return false;
+            }
+
+            string s = input as string;
+            if (input == null || s != null)
+                return TryGetNumber(s, conversionType, provider, out value);
+
+            Type type = input.GetType();
+            if (conversionType == typeof(object))
+            {
+                TypeCode tc = Type.GetTypeCode(type);
+                switch (tc)
+                {
+                    case TypeCode.Int32:
+                    case TypeCode.Int64:
+                    case TypeCode.Single:
+                    case TypeCode.Double:
+                    case TypeCode.Decimal:
+                        value = input;
+                        return true;
+
+                    case TypeCode.Boolean:
+                        bool b = (bool)input;
+                        value = b ? 1 : 0;
+                        return true;
+
+                    case TypeCode.Byte:
+                        byte by = (byte)input;
+                        value = (int)by;
+                        return true;
+
+                    case TypeCode.Int16:
+                        short sh = (short)input;
+                        value = (int)sh;
+                        return true;
+
+                    case TypeCode.SByte:
+                        sbyte sb = (sbyte)input;
+                        value = (int)sb;
+                        return true;
+
+                    case TypeCode.UInt16:
+                        ushort us = (ushort)input;
+                        value = (int)us;
+                        return true;
+
+                    case TypeCode.UInt32:
+                        uint ui = (uint)input;
+                        value = (long)ui;
+                        return true;
+
+                    case TypeCode.UInt64:
+                        ulong ul = (ulong)input;
+                        value = (decimal)ul;
+                        return true;
+                }
+            }
+
+            if (conversionType == type)
+            {
+                value = input;
+                return true;
+            }
+
+            s = string.Format(provider, "{0}", input);
+            return TryGetNumber(s, conversionType, provider, out value);
+        }
+
+        public static T GetNumber<T>(string input, IFormatProvider provider, T defaultValue)
+        {
+            if (!TryGetNumber(input, provider, out T value))
+                return defaultValue;
+
+            return value;
+        }
+
+        public static bool TryGetNumber<T>(string input, IFormatProvider provider, out T value)
+        {
+            if (!TryGetNumber(input, typeof(T), provider, out object obj))
+            {
+                value = default;
+                return false;
+            }
+
+            value = (T)obj;
+            return true;
+        }
+
+        private static bool IsHexNumber(string input, out string output)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                output = input;
+                return false;
+            }
+
+            if (input[0] == 'x' || input[0] == 'X')
+            {
+                output = input.Substring(1);
+                return true;
+            }
+
+            if (input.Length < 2)
+            {
+                output = input;
+                return false;
+            }
+
+            if (input[1] == 'x' || input[1] == 'X')
+            {
+                output = input.Substring(2);
+                return true;
+            }
+
+            output = input;
+            return false;
+        }
+
+        public static bool TryGetNumber(string input, Type conversionType, IFormatProvider provider, out object value)
+        {
+            if (conversionType == null)
+                throw new ArgumentNullException(nameof(conversionType));
+
+            value = Activator.CreateInstance(conversionType);
+            if (provider == null)
+            {
+                provider = CultureInfo.InvariantCulture;
+            }
+
+            if (input == null)
+                return false;
+
+            input = input.Trim();
+            if (input.Length == 0)
+                return false;
+
+            var ns = IsHexNumber(input, out string hexInput) ? NumberStyles.HexNumber | NumberStyles.AllowHexSpecifier : NumberStyles.Any;
+
+            if (conversionType == typeof(int))
+            {
+                if (!int.TryParse(hexInput, ns, provider, out int n))
+                    return false;
+
+                value = n;
+                return true;
+            }
+
+            if (conversionType == typeof(long))
+            {
+                if (!long.TryParse(hexInput, ns, provider, out long n))
+                    return false;
+
+                value = n;
+                return true;
+            }
+
+            if (conversionType == typeof(float))
+            {
+                if (!float.TryParse(input, NumberStyles.Any, provider, out float n))
+                    return false;
+
+                value = n;
+                return true;
+            }
+
+            if (conversionType == typeof(double))
+            {
+                if (!double.TryParse(input, NumberStyles.Any, provider, out double n))
+                    return false;
+
+                value = n;
+                return true;
+            }
+
+            if (conversionType == typeof(decimal))
+            {
+                if (!decimal.TryParse(input, NumberStyles.Any, provider, out decimal n))
+                    return false;
+
+                value = n;
+                return true;
+            }
+
+            // asked for the "best number"...
+            string decSep = GetDecimalSeparator(provider);
+            bool hasDecimal = input.IndexOf(decSep, StringComparison.OrdinalIgnoreCase) >= 0;
+            if (!hasDecimal)
+            {
+                if (int.TryParse(hexInput, ns, provider, out int i))
+                {
+                    value = i;
+                    return true;
+                }
+
+                if (long.TryParse(hexInput, ns, provider, out long l))
+                {
+                    value = l;
+                    return true;
+                }
+            }
+            else
+            {
+                if (float.TryParse(input, NumberStyles.Any, provider, out float f))
+                {
+                    value = f;
+                    return true;
+                }
+
+                if (double.TryParse(input, NumberStyles.Any, provider, out double d))
+                {
+                    value = d;
+                    return true;
+                }
+            }
+
+            if (decimal.TryParse(input, NumberStyles.Any, provider, out decimal dec))
+            {
+                value = dec;
+                return true;
+            }
+
+            return false;
+        }
+
+        private static string GetDecimalSeparator(IFormatProvider provider)
+        {
+            if (!(provider is CultureInfo ci) || ci.NumberFormat == null)
+                return ".";
+
+            return ci.NumberFormat.CurrencyDecimalSeparator ?? ".";
         }
 
         public static ulong EnumToUInt64(string text, Type enumType)
@@ -938,7 +1849,7 @@ namespace DirectN
                 case TypeCode.UInt64:
                     return Convert.ToUInt64(value, CultureInfo.InvariantCulture);
 
-                case TypeCode.String:
+                //case TypeCode.String:
                 default:
                     return ChangeType<ulong>(value, 0, CultureInfo.InvariantCulture);
             }
@@ -946,7 +1857,7 @@ namespace DirectN
 
         private static bool StringToEnum(Type type, string[] names, Array values, string input, out object value)
         {
-            for (int i = 0; i < names.Length; i++)
+            for (var i = 0; i < names.Length; i++)
             {
                 if (names[i].EqualsIgnoreCase(input))
                 {
@@ -955,9 +1866,9 @@ namespace DirectN
                 }
             }
 
-            for (int i = 0; i < values.GetLength(0); i++)
+            for (var i = 0; i < values.GetLength(0); i++)
             {
-                object valuei = values.GetValue(i);
+                var valuei = values.GetValue(i);
                 if (input.Length > 0 && input[0] == '-')
                 {
                     var ul = (long)EnumToUInt64(valuei);
@@ -1005,30 +1916,30 @@ namespace DirectN
             if (value == null)
                 throw new ArgumentNullException(nameof(value));
 
-            var underlyingType = Enum.GetUnderlyingType(enumType);
+            var underlyingType = System.Enum.GetUnderlyingType(enumType);
             if (underlyingType == typeof(long))
-                return Enum.ToObject(enumType, ChangeType<long>(value));
+                return System.Enum.ToObject(enumType, ChangeType<long>(value));
 
             if (underlyingType == typeof(ulong))
-                return Enum.ToObject(enumType, ChangeType<ulong>(value));
+                return System.Enum.ToObject(enumType, ChangeType<ulong>(value));
 
             if (underlyingType == typeof(int))
-                return Enum.ToObject(enumType, ChangeType<int>(value));
+                return System.Enum.ToObject(enumType, ChangeType<int>(value));
 
             if ((underlyingType == typeof(uint)))
-                return Enum.ToObject(enumType, ChangeType<uint>(value));
+                return System.Enum.ToObject(enumType, ChangeType<uint>(value));
 
             if (underlyingType == typeof(short))
-                return Enum.ToObject(enumType, ChangeType<short>(value));
+                return System.Enum.ToObject(enumType, ChangeType<short>(value));
 
             if (underlyingType == typeof(ushort))
-                return Enum.ToObject(enumType, ChangeType<ushort>(value));
+                return System.Enum.ToObject(enumType, ChangeType<ushort>(value));
 
             if (underlyingType == typeof(byte))
-                return Enum.ToObject(enumType, ChangeType<byte>(value));
+                return System.Enum.ToObject(enumType, ChangeType<byte>(value));
 
             if (underlyingType == typeof(sbyte))
-                return Enum.ToObject(enumType, ChangeType<sbyte>(value));
+                return System.Enum.ToObject(enumType, ChangeType<sbyte>(value));
 
             throw new ArgumentException(null, nameof(enumType));
         }
@@ -1095,15 +2006,14 @@ namespace DirectN
                 }
             }
 
-            var names = Enum.GetNames(type);
+            var names = System.Enum.GetNames(type);
             if (names.Length == 0)
             {
                 value = Activator.CreateInstance(type);
                 return false;
             }
 
-            var underlyingType = Enum.GetUnderlyingType(type);
-            var values = Enum.GetValues(type);
+            var values = System.Enum.GetValues(type);
             // some enums like System.CodeDom.MemberAttributes *are* flags but are not declared with Flags...
             if (!type.IsDefined(typeof(FlagsAttribute), true) && stringInput.IndexOfAny(_enumSeparators) < 0)
                 return StringToEnum(type, names, values, stringInput, out value);
@@ -1146,7 +2056,7 @@ namespace DirectN
 
                 ul |= tokenUl;
             }
-            value = Enum.ToObject(type, ul);
+            value = System.Enum.ToObject(type, ul);
             return true;
         }
 
@@ -1165,12 +2075,47 @@ namespace DirectN
             return false;
         }
 
-        public static bool IsNullable(Type type)
+        public static bool IsReallyValueType(this Type type)
+        {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
+            return type.IsValueType && !IsNullable(type);
+        }
+
+        public static bool IsNullable(this Type type)
         {
             if (type == null)
                 throw new ArgumentNullException(nameof(type));
 
             return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);
         }
+
+        public static string ConvertToUnsecureString(this SecureString securePassword)
+        {
+            if (securePassword == null)
+                throw new ArgumentNullException(nameof(securePassword));
+
+            var unmanagedString = IntPtr.Zero;
+            try
+            {
+                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(securePassword);
+                return Marshal.PtrToStringUni(unmanagedString);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
+            }
+        }
+
+        public static string FormatByteSize(long size)
+        {
+            var sb = new StringBuilder(64);
+            StrFormatByteSizeW(size, sb, sb.Capacity);
+            return sb.ToString();
+        }
+
+        [DllImport("shlwapi", CharSet = CharSet.Unicode, ExactSpelling = true)]
+        private static extern long StrFormatByteSizeW(long qdw, [MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszBuf, int cchBuf);
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -49,7 +48,7 @@ namespace DirectN
                 return name;
             }
 
-            return guid.ToString(formatIfNotFound, CultureInfo.InvariantCulture);
+            return guid.ToString(formatIfNotFound);
         }
 
         private static ConcurrentDictionary<Guid, string> ExtractAllGuids()
@@ -74,6 +73,22 @@ namespace DirectN
                 }
             }
             return dic;
+        }
+
+        public static string ToStringUni(this IntPtr ptr)
+        {
+            if (ptr == IntPtr.Zero)
+                return null;
+
+            return Marshal.PtrToStringUni(ptr);
+        }
+
+        public static string ToStringUni(this IntPtr ptr, int len)
+        {
+            if (ptr == IntPtr.Zero)
+                return null;
+
+            return Marshal.PtrToStringUni(ptr, len);
         }
     }
 }

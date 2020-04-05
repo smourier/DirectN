@@ -7,13 +7,18 @@ namespace DirectN
     public class ComMemory : IDisposable
     {
         private IntPtr _pointer;
-        private bool _disposedValue = false;
 
         public ComMemory(object structure)
         {
             if (structure != null)
             {
-                if (structure is Array array)
+                if (structure is byte[] bytes)
+                {
+                    Size = bytes.Length;
+                    _pointer = Marshal.AllocCoTaskMem(Size);
+                    Marshal.Copy(bytes, 0, _pointer, Size);
+                }
+                else if (structure is Array array)
                 {
                     if (array.Rank != 1)
                         throw new ArgumentException(null, nameof(structure));
@@ -23,7 +28,7 @@ namespace DirectN
                     var length = array.GetLength(0);
                     Size = elementSize * length;
                     _pointer = Marshal.AllocCoTaskMem(Size);
-                    for (int i = 0; i < length; i++)
+                    for (var i = 0; i < length; i++)
                     {
                         Marshal.StructureToPtr(array.GetValue(i), _pointer + i * elementSize, false);
                     }
@@ -71,6 +76,13 @@ namespace DirectN
             }
         }
 
+        public byte[] ToArray()
+        {
+            var bytes = new byte[Size];
+            Marshal.Copy(Pointer, bytes, 0, bytes.Length);
+            return bytes;
+        }
+
         public virtual void Replace(object structure)
         {
 #if DEBUG
@@ -81,7 +93,7 @@ namespace DirectN
         }
 
         public void Replace(IntPtr pointer, uint size) => Replace(pointer, (int)size);
-        public void Replace(IntPtr pointer, int size)
+        public virtual void Replace(IntPtr pointer, int size)
         {
             _pointer = pointer;
             Size = size;
@@ -106,35 +118,15 @@ namespace DirectN
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!_disposedValue)
+            var pointer = Interlocked.Exchange(ref _pointer, IntPtr.Zero);
+            if (pointer != IntPtr.Zero)
             {
-                if (disposing)
-                {
-                    // dispose managed state (managed objects).
-                }
-
-                // free unmanaged resources (unmanaged objects) and override a finalizer below.
-                // set large fields to null.
-                var pointer = Interlocked.Exchange(ref _pointer, IntPtr.Zero);
-                if (pointer != IntPtr.Zero)
-                {
-                    Marshal.FreeCoTaskMem(pointer);
-                }
-
-                _disposedValue = true;
+                Marshal.FreeCoTaskMem(pointer);
             }
         }
 
-        ~ComMemory()
-        {
-            Dispose(false);
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
+        ~ComMemory() { Dispose(false); }
+        public void Dispose() { Dispose(true); GC.SuppressFinalize(this); }
     }
 
     public class ComMemory<T> : ComMemory

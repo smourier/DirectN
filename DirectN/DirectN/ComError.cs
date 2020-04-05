@@ -30,7 +30,6 @@ namespace DirectN
                 return null;
 
             COMException error;
-#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             info.GetDescription(out var description);
 
             info.GetSource(out var source);
@@ -61,7 +60,6 @@ namespace DirectN
                 error.HelpLink = help;
             }
 
-#pragma warning restore CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             return error;
         }
 
