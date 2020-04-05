@@ -10,12 +10,12 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1408)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public IntPtr p11ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
-        public IntPtr p11_1ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
-        public IntPtr pWDDM1_3ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
-        public IntPtr pWDDM2_0ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
-        public IntPtr pWDDM2_1ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
-        public IntPtr pWDDM2_2ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
-        public IntPtr pWDDM2_6ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public IntPtr p11ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set { if (__bits == null) __bits = new byte[1408]; InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); } }
+        public IntPtr p11_1ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set { if (__bits == null) __bits = new byte[1408]; InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); } }
+        public IntPtr pWDDM1_3ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set { if (__bits == null) __bits = new byte[1408]; InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); } }
+        public IntPtr pWDDM2_0ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set { if (__bits == null) __bits = new byte[1408]; InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); } }
+        public IntPtr pWDDM2_1ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set { if (__bits == null) __bits = new byte[1408]; InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); } }
+        public IntPtr pWDDM2_2ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set { if (__bits == null) __bits = new byte[1408]; InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); } }
+        public IntPtr pWDDM2_6ContextFuncs { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set { if (__bits == null) __bits = new byte[1408]; InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); } }
     }
 }

@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _DXGK_PTE__union_0__struct_0 __field_0 { get => InteropRuntime.Get<_DXGK_PTE__union_0__struct_0>(__bits, 0, 64); set => InteropRuntime.Set<_DXGK_PTE__union_0__struct_0>(value, __bits, 0, 64); }
-        public ulong Flags { get => InteropRuntime.GetUInt64(__bits, 0, 64); set => InteropRuntime.SetUInt64(value, __bits, 0, 64); }
+        public _DXGK_PTE__union_0__struct_0 __field_0 { get => InteropRuntime.Get<_DXGK_PTE__union_0__struct_0>(__bits, 0, 64); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.Set<_DXGK_PTE__union_0__struct_0>(value, __bits, 0, 64); } }
+        public ulong Flags { get => InteropRuntime.GetUInt64(__bits, 0, 64); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.SetUInt64(value, __bits, 0, 64); } }
     }
 }

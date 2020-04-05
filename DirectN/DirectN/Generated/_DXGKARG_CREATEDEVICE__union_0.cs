@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 24)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _DXGK_CREATEDEVICEFLAGS Flags { get => InteropRuntime.Get<_DXGK_CREATEDEVICEFLAGS>(__bits, 0, 32); set => InteropRuntime.Set<_DXGK_CREATEDEVICEFLAGS>(value, __bits, 0, 32); }
-        public IntPtr pInfo { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set => InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); }
+        public _DXGK_CREATEDEVICEFLAGS Flags { get => InteropRuntime.Get<_DXGK_CREATEDEVICEFLAGS>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[24]; InteropRuntime.Set<_DXGK_CREATEDEVICEFLAGS>(value, __bits, 0, 32); } }
+        public IntPtr pInfo { get => InteropRuntime.Get<IntPtr>(__bits, 0, IntPtr.Size); set { if (__bits == null) __bits = new byte[24]; InteropRuntime.Set<IntPtr>(value, __bits, 0, IntPtr.Size); } }
     }
 }

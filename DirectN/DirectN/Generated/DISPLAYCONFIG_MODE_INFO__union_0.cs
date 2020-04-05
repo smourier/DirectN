@@ -9,8 +9,8 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public DISPLAYCONFIG_TARGET_MODE targetMode { get => InteropRuntime.Get<DISPLAYCONFIG_TARGET_MODE>(__bits, 0, 384); set => InteropRuntime.Set<DISPLAYCONFIG_TARGET_MODE>(value, __bits, 0, 384); }
-        public DISPLAYCONFIG_SOURCE_MODE sourceMode { get => InteropRuntime.Get<DISPLAYCONFIG_SOURCE_MODE>(__bits, 0, 192); set => InteropRuntime.Set<DISPLAYCONFIG_SOURCE_MODE>(value, __bits, 0, 192); }
-        public DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo { get => InteropRuntime.Get<DISPLAYCONFIG_DESKTOP_IMAGE_INFO>(__bits, 0, 320); set => InteropRuntime.Set<DISPLAYCONFIG_DESKTOP_IMAGE_INFO>(value, __bits, 0, 320); }
+        public DISPLAYCONFIG_TARGET_MODE targetMode { get => InteropRuntime.Get<DISPLAYCONFIG_TARGET_MODE>(__bits, 0, 384); set { if (__bits == null) __bits = new byte[48]; InteropRuntime.Set<DISPLAYCONFIG_TARGET_MODE>(value, __bits, 0, 384); } }
+        public DISPLAYCONFIG_SOURCE_MODE sourceMode { get => InteropRuntime.Get<DISPLAYCONFIG_SOURCE_MODE>(__bits, 0, 192); set { if (__bits == null) __bits = new byte[48]; InteropRuntime.Set<DISPLAYCONFIG_SOURCE_MODE>(value, __bits, 0, 192); } }
+        public DISPLAYCONFIG_DESKTOP_IMAGE_INFO desktopImageInfo { get => InteropRuntime.Get<DISPLAYCONFIG_DESKTOP_IMAGE_INFO>(__bits, 0, 320); set { if (__bits == null) __bits = new byte[48]; InteropRuntime.Set<DISPLAYCONFIG_DESKTOP_IMAGE_INFO>(value, __bits, 0, 320); } }
     }
 }

@@ -9,7 +9,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _DXGK_ALLOCATIONINFOFLAGS Flags { get => InteropRuntime.Get<_DXGK_ALLOCATIONINFOFLAGS>(__bits, 0, 32); set => InteropRuntime.Set<_DXGK_ALLOCATIONINFOFLAGS>(value, __bits, 0, 32); }
-        public _DXGK_ALLOCATIONINFOFLAGS_WDDM2_0 FlagsWddm2 { get => InteropRuntime.Get<_DXGK_ALLOCATIONINFOFLAGS_WDDM2_0>(__bits, 0, 32); set => InteropRuntime.Set<_DXGK_ALLOCATIONINFOFLAGS_WDDM2_0>(value, __bits, 0, 32); }
+        public _DXGK_ALLOCATIONINFOFLAGS Flags { get => InteropRuntime.Get<_DXGK_ALLOCATIONINFOFLAGS>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<_DXGK_ALLOCATIONINFOFLAGS>(value, __bits, 0, 32); } }
+        public _DXGK_ALLOCATIONINFOFLAGS_WDDM2_0 FlagsWddm2 { get => InteropRuntime.Get<_DXGK_ALLOCATIONINFOFLAGS_WDDM2_0>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<_DXGK_ALLOCATIONINFOFLAGS_WDDM2_0>(value, __bits, 0, 32); } }
     }
 }

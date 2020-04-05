@@ -9,7 +9,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public __struct_0 __field_0 { get => InteropRuntime.Get<__struct_0>(__bits, 0, 64); set => InteropRuntime.Set<__struct_0>(value, __bits, 0, 64); }
-        public __struct_1 __field_1 { get => InteropRuntime.Get<__struct_1>(__bits, 0, 64); set => InteropRuntime.Set<__struct_1>(value, __bits, 0, 64); }
+        public __struct_0 __field_0 { get => InteropRuntime.Get<__struct_0>(__bits, 0, 64); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.Set<__struct_0>(value, __bits, 0, 64); } }
+        public __struct_1 __field_1 { get => InteropRuntime.Get<__struct_1>(__bits, 0, 64); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.Set<__struct_1>(value, __bits, 0, 64); } }
     }
 }

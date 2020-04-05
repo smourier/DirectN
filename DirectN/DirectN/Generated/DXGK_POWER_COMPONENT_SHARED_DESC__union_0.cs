@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public DXGK_POWER_COMPONENT_SHARED_DESC__union_0__struct_0 __field_0 { get => InteropRuntime.Get<DXGK_POWER_COMPONENT_SHARED_DESC__union_0__struct_0>(__bits, 0, 32); set => InteropRuntime.Set<DXGK_POWER_COMPONENT_SHARED_DESC__union_0__struct_0>(value, __bits, 0, 32); }
-        public uint SharedType { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public DXGK_POWER_COMPONENT_SHARED_DESC__union_0__struct_0 __field_0 { get => InteropRuntime.Get<DXGK_POWER_COMPONENT_SHARED_DESC__union_0__struct_0>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<DXGK_POWER_COMPONENT_SHARED_DESC__union_0__struct_0>(value, __bits, 0, 32); } }
+        public uint SharedType { get => InteropRuntime.GetUInt32(__bits, 0, 32); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 0, 32); } }
     }
 }

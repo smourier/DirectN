@@ -9,7 +9,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC Triangles { get => InteropRuntime.Get<D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC>(__bits, 0, 384); set => InteropRuntime.Set<D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC>(value, __bits, 0, 384); }
-        public D3D12_RAYTRACING_GEOMETRY_AABBS_DESC AABBs { get => InteropRuntime.Get<D3D12_RAYTRACING_GEOMETRY_AABBS_DESC>(__bits, 0, 192); set => InteropRuntime.Set<D3D12_RAYTRACING_GEOMETRY_AABBS_DESC>(value, __bits, 0, 192); }
+        public D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC Triangles { get => InteropRuntime.Get<D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC>(__bits, 0, 384); set { if (__bits == null) __bits = new byte[48]; InteropRuntime.Set<D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC>(value, __bits, 0, 384); } }
+        public D3D12_RAYTRACING_GEOMETRY_AABBS_DESC AABBs { get => InteropRuntime.Get<D3D12_RAYTRACING_GEOMETRY_AABBS_DESC>(__bits, 0, 192); set { if (__bits == null) __bits = new byte[48]; InteropRuntime.Set<D3D12_RAYTRACING_GEOMETRY_AABBS_DESC>(value, __bits, 0, 192); } }
     }
 }

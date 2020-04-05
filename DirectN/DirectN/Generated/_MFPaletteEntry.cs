@@ -9,7 +9,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _MFARGB ARGB { get => InteropRuntime.Get<_MFARGB>(__bits, 0, 32); set => InteropRuntime.Set<_MFARGB>(value, __bits, 0, 32); }
-        public __MFAYUVSample AYCbCr { get => InteropRuntime.Get<__MFAYUVSample>(__bits, 0, 32); set => InteropRuntime.Set<__MFAYUVSample>(value, __bits, 0, 32); }
+        public _MFARGB ARGB { get => InteropRuntime.Get<_MFARGB>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<_MFARGB>(value, __bits, 0, 32); } }
+        public __MFAYUVSample AYCbCr { get => InteropRuntime.Get<__MFAYUVSample>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<__MFAYUVSample>(value, __bits, 0, 32); } }
     }
 }

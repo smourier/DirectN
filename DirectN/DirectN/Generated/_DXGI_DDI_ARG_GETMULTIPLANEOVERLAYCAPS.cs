@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct _DXGI_DDI_ARG_GETMULTIPLANEOVERLAYCAPS
     {
         public ulong hDevice;
-        public int VidPnSourceId;
+        public uint VidPnSourceId;
         public DXGI_DDI_MULTIPLANE_OVERLAY_CAPS MultiplaneOverlayCaps;
     }
 }

@@ -10,8 +10,8 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint FailingPlane { get => InteropRuntime.GetUInt32(__bits, 0, 4); set => InteropRuntime.SetUInt32(value, __bits, 0, 4); }
-        public uint TryAgain { get => InteropRuntime.GetUInt32(__bits, 4, 1); set => InteropRuntime.SetUInt32(value, __bits, 4, 1); }
-        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 5, 27); set => InteropRuntime.SetUInt32(value, __bits, 5, 27); }
+        public uint FailingPlane { get => InteropRuntime.GetUInt32(__bits, 0, 4); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 0, 4); } }
+        public uint TryAgain { get => InteropRuntime.GetUInt32(__bits, 4, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 4, 1); } }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 5, 27); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 5, 27); } }
     }
 }

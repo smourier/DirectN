@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public ushort Counter { get => InteropRuntime.GetUInt16(__bits, 0, 11); set => InteropRuntime.SetUInt16(value, __bits, 0, 11); }
-        public ushort Reserved { get => InteropRuntime.GetUInt16(__bits, 11, 5); set => InteropRuntime.SetUInt16(value, __bits, 11, 5); }
+        public ushort Counter { get => InteropRuntime.GetUInt16(__bits, 0, 11); set { if (__bits == null) __bits = new byte[2]; InteropRuntime.SetUInt16(value, __bits, 0, 11); } }
+        public ushort Reserved { get => InteropRuntime.GetUInt16(__bits, 11, 5); set { if (__bits == null) __bits = new byte[2]; InteropRuntime.SetUInt16(value, __bits, 11, 5); } }
     }
 }

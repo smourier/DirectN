@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint IsDeviceSpecificCode { get => InteropRuntime.GetUInt32(__bits, 0, 1); set => InteropRuntime.SetUInt32(value, __bits, 0, 1); }
-        public _DXGK_GENERAL_ERROR_CODE GeneralErrorCode { get => InteropRuntime.Get<_DXGK_GENERAL_ERROR_CODE>(__bits, 1, 31); set => InteropRuntime.Set<_DXGK_GENERAL_ERROR_CODE>(value, __bits, 1, 31); }
+        public uint IsDeviceSpecificCode { get => InteropRuntime.GetUInt32(__bits, 0, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 0, 1); } }
+        public _DXGK_GENERAL_ERROR_CODE GeneralErrorCode { get => InteropRuntime.Get<_DXGK_GENERAL_ERROR_CODE>(__bits, 1, 31); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<_DXGK_GENERAL_ERROR_CODE>(value, __bits, 1, 31); } }
     }
 }

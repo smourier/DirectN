@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _D3DKMDT_MODE_PREFERENCE Preference { get => InteropRuntime.Get<_D3DKMDT_MODE_PREFERENCE>(__bits, 0, 2); set => InteropRuntime.Set<_D3DKMDT_MODE_PREFERENCE>(value, __bits, 0, 2); }
+        public _D3DKMDT_MODE_PREFERENCE Preference { get => InteropRuntime.Get<_D3DKMDT_MODE_PREFERENCE>(__bits, 0, 2); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<_D3DKMDT_MODE_PREFERENCE>(value, __bits, 0, 2); } }
         // a field here has no name.
     }
 }

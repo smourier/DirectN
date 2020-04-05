@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint MatrixSizeX { get => InteropRuntime.GetUInt32(__bits, 0, 10); set => InteropRuntime.SetUInt32(value, __bits, 0, 10); }
-        public uint MatrixSizeY { get => InteropRuntime.GetUInt32(__bits, 10, 10); set => InteropRuntime.SetUInt32(value, __bits, 10, 10); }
+        public uint MatrixSizeX { get => InteropRuntime.GetUInt32(__bits, 0, 10); set { if (__bits == null) __bits = new byte[3]; InteropRuntime.SetUInt32(value, __bits, 0, 10); } }
+        public uint MatrixSizeY { get => InteropRuntime.GetUInt32(__bits, 10, 10); set { if (__bits == null) __bits = new byte[3]; InteropRuntime.SetUInt32(value, __bits, 10, 10); } }
     }
 }

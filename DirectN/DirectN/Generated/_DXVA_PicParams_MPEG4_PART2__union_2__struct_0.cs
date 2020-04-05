@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public byte vop_fcode_forward { get => InteropRuntime.GetByte(__bits, 0, 3); set => InteropRuntime.SetByte(value, __bits, 0, 3); }
-        public byte vop_fcode_backward { get => InteropRuntime.GetByte(__bits, 3, 3); set => InteropRuntime.SetByte(value, __bits, 3, 3); }
+        public byte vop_fcode_forward { get => InteropRuntime.GetByte(__bits, 0, 3); set { if (__bits == null) __bits = new byte[1]; InteropRuntime.SetByte(value, __bits, 0, 3); } }
+        public byte vop_fcode_backward { get => InteropRuntime.GetByte(__bits, 3, 3); set { if (__bits == null) __bits = new byte[1]; InteropRuntime.SetByte(value, __bits, 3, 3); } }
     }
 }

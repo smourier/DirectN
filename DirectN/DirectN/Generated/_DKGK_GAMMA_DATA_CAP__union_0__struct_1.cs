@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public uint BitCountOfExponent { get => InteropRuntime.GetUInt32(__bits, 0, 6); set => InteropRuntime.SetUInt32(value, __bits, 0, 6); }
-        public uint BitCountOfMantissa { get => InteropRuntime.GetUInt32(__bits, 6, 6); set => InteropRuntime.SetUInt32(value, __bits, 6, 6); }
+        public uint BitCountOfExponent { get => InteropRuntime.GetUInt32(__bits, 0, 6); set { if (__bits == null) __bits = new byte[2]; InteropRuntime.SetUInt32(value, __bits, 0, 6); } }
+        public uint BitCountOfMantissa { get => InteropRuntime.GetUInt32(__bits, 6, 6); set { if (__bits == null) __bits = new byte[2]; InteropRuntime.SetUInt32(value, __bits, 6, 6); } }
     }
 }

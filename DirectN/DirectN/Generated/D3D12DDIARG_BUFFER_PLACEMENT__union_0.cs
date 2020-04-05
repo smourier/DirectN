@@ -9,6 +9,6 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D12DDIARG_HRESOURCE_PLACEMENT UMD { get => InteropRuntime.Get<D3D12DDIARG_HRESOURCE_PLACEMENT>(__bits, 0, 128); set => InteropRuntime.Set<D3D12DDIARG_HRESOURCE_PLACEMENT>(value, __bits, 0, 128); }
+        public D3D12DDIARG_HRESOURCE_PLACEMENT UMD { get => InteropRuntime.Get<D3D12DDIARG_HRESOURCE_PLACEMENT>(__bits, 0, 128); set { if (__bits == null) __bits = new byte[16]; InteropRuntime.Set<D3D12DDIARG_HRESOURCE_PLACEMENT>(value, __bits, 0, 128); } }
     }
 }

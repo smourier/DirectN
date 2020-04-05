@@ -9,7 +9,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 308)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D12_ROOT_SIGNATURE_DESC Desc_1_0 { get => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC>(__bits, 0, 2208); set => InteropRuntime.Set<D3D12_ROOT_SIGNATURE_DESC>(value, __bits, 0, 2208); }
-        public D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1 { get => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC1>(__bits, 0, 2464); set => InteropRuntime.Set<D3D12_ROOT_SIGNATURE_DESC1>(value, __bits, 0, 2464); }
+        public D3D12_ROOT_SIGNATURE_DESC Desc_1_0 { get => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC>(__bits, 0, 2208); set { if (__bits == null) __bits = new byte[308]; InteropRuntime.Set<D3D12_ROOT_SIGNATURE_DESC>(value, __bits, 0, 2208); } }
+        public D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1 { get => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC1>(__bits, 0, 2464); set { if (__bits == null) __bits = new byte[308]; InteropRuntime.Set<D3D12_ROOT_SIGNATURE_DESC1>(value, __bits, 0, 2464); } }
     }
 }

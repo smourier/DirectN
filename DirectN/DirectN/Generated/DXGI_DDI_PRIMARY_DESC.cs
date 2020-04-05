@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct DXGI_DDI_PRIMARY_DESC
     {
         public uint Flags;
-        public int VidPnSourceId;
+        public uint VidPnSourceId;
         public DXGI_DDI_MODE_DESC ModeDesc;
         public uint DriverFlags;
     }

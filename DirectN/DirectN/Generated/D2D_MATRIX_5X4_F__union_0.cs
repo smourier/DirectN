@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 80)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D2D_MATRIX_5X4_F__union_0__struct_0 __field_0 { get => InteropRuntime.Get<D2D_MATRIX_5X4_F__union_0__struct_0>(__bits, 0, 640); set => InteropRuntime.Set<D2D_MATRIX_5X4_F__union_0__struct_0>(value, __bits, 0, 640); }
-        public float[] m { get => InteropRuntime.GetArray<float>(__bits, 0, 640); set => InteropRuntime.SetArray<float>(value, __bits, 0, 640); }
+        public D2D_MATRIX_5X4_F__union_0__struct_0 __field_0 { get => InteropRuntime.Get<D2D_MATRIX_5X4_F__union_0__struct_0>(__bits, 0, 640); set { if (__bits == null) __bits = new byte[80]; InteropRuntime.Set<D2D_MATRIX_5X4_F__union_0__struct_0>(value, __bits, 0, 640); } }
+        public float[] m { get => InteropRuntime.GetArray<float>(__bits, 0, 640); set { if (__bits == null) __bits = new byte[80]; InteropRuntime.SetArray<float>(value, __bits, 0, 640); } }
     }
 }

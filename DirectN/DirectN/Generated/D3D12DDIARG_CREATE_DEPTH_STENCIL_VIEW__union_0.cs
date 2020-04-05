@@ -9,8 +9,8 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D12DDIARG_TEX1D_DEPTH_STENCIL_VIEW Tex1D { get => InteropRuntime.Get<D3D12DDIARG_TEX1D_DEPTH_STENCIL_VIEW>(__bits, 0, 96); set => InteropRuntime.Set<D3D12DDIARG_TEX1D_DEPTH_STENCIL_VIEW>(value, __bits, 0, 96); }
-        public D3D12DDIARG_TEX2D_DEPTH_STENCIL_VIEW Tex2D { get => InteropRuntime.Get<D3D12DDIARG_TEX2D_DEPTH_STENCIL_VIEW>(__bits, 0, 96); set => InteropRuntime.Set<D3D12DDIARG_TEX2D_DEPTH_STENCIL_VIEW>(value, __bits, 0, 96); }
-        public D3D12DDIARG_TEXCUBE_DEPTH_STENCIL_VIEW TexCube { get => InteropRuntime.Get<D3D12DDIARG_TEXCUBE_DEPTH_STENCIL_VIEW>(__bits, 0, 96); set => InteropRuntime.Set<D3D12DDIARG_TEXCUBE_DEPTH_STENCIL_VIEW>(value, __bits, 0, 96); }
+        public D3D12DDIARG_TEX1D_DEPTH_STENCIL_VIEW Tex1D { get => InteropRuntime.Get<D3D12DDIARG_TEX1D_DEPTH_STENCIL_VIEW>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D12DDIARG_TEX1D_DEPTH_STENCIL_VIEW>(value, __bits, 0, 96); } }
+        public D3D12DDIARG_TEX2D_DEPTH_STENCIL_VIEW Tex2D { get => InteropRuntime.Get<D3D12DDIARG_TEX2D_DEPTH_STENCIL_VIEW>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D12DDIARG_TEX2D_DEPTH_STENCIL_VIEW>(value, __bits, 0, 96); } }
+        public D3D12DDIARG_TEXCUBE_DEPTH_STENCIL_VIEW TexCube { get => InteropRuntime.Get<D3D12DDIARG_TEXCUBE_DEPTH_STENCIL_VIEW>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D12DDIARG_TEXCUBE_DEPTH_STENCIL_VIEW>(value, __bits, 0, 96); } }
     }
 }

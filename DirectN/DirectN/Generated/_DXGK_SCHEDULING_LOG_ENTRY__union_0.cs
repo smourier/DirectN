@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE ContextStateChange { get => InteropRuntime.Get<_DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE>(__bits, 0, 96); set => InteropRuntime.Set<_DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE>(value, __bits, 0, 96); }
-        public ulong[] ReservedOperationData { get => InteropRuntime.GetArray<ulong>(__bits, 0, 128); set => InteropRuntime.SetArray<ulong>(value, __bits, 0, 128); }
+        public _DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE ContextStateChange { get => InteropRuntime.Get<_DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[16]; InteropRuntime.Set<_DXGK_SCHEDULING_LOG_CONTEXT_STATE_CHANGE>(value, __bits, 0, 96); } }
+        public ulong[] ReservedOperationData { get => InteropRuntime.GetArray<ulong>(__bits, 0, 128); set { if (__bits == null) __bits = new byte[16]; InteropRuntime.SetArray<ulong>(value, __bits, 0, 128); } }
     }
 }

@@ -9,8 +9,8 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 48)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable { get => InteropRuntime.Get<D3D12_ROOT_DESCRIPTOR_TABLE1>(__bits, 0, 384); set => InteropRuntime.Set<D3D12_ROOT_DESCRIPTOR_TABLE1>(value, __bits, 0, 384); }
-        public D3D12_ROOT_CONSTANTS Constants { get => InteropRuntime.Get<D3D12_ROOT_CONSTANTS>(__bits, 0, 96); set => InteropRuntime.Set<D3D12_ROOT_CONSTANTS>(value, __bits, 0, 96); }
-        public D3D12_ROOT_DESCRIPTOR1 Descriptor { get => InteropRuntime.Get<D3D12_ROOT_DESCRIPTOR1>(__bits, 0, 96); set => InteropRuntime.Set<D3D12_ROOT_DESCRIPTOR1>(value, __bits, 0, 96); }
+        public D3D12_ROOT_DESCRIPTOR_TABLE1 DescriptorTable { get => InteropRuntime.Get<D3D12_ROOT_DESCRIPTOR_TABLE1>(__bits, 0, 384); set { if (__bits == null) __bits = new byte[48]; InteropRuntime.Set<D3D12_ROOT_DESCRIPTOR_TABLE1>(value, __bits, 0, 384); } }
+        public D3D12_ROOT_CONSTANTS Constants { get => InteropRuntime.Get<D3D12_ROOT_CONSTANTS>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[48]; InteropRuntime.Set<D3D12_ROOT_CONSTANTS>(value, __bits, 0, 96); } }
+        public D3D12_ROOT_DESCRIPTOR1 Descriptor { get => InteropRuntime.Get<D3D12_ROOT_DESCRIPTOR1>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[48]; InteropRuntime.Set<D3D12_ROOT_DESCRIPTOR1>(value, __bits, 0, 96); } }
     }
 }

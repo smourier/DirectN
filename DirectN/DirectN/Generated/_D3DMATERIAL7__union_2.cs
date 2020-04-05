@@ -9,7 +9,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _D3DCOLORVALUE specular { get => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128); set => InteropRuntime.Set<_D3DCOLORVALUE>(value, __bits, 0, 128); }
-        public _D3DCOLORVALUE dcvSpecular { get => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128); set => InteropRuntime.Set<_D3DCOLORVALUE>(value, __bits, 0, 128); }
+        public _D3DCOLORVALUE specular { get => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128); set { if (__bits == null) __bits = new byte[16]; InteropRuntime.Set<_D3DCOLORVALUE>(value, __bits, 0, 128); } }
+        public _D3DCOLORVALUE dcvSpecular { get => InteropRuntime.Get<_D3DCOLORVALUE>(__bits, 0, 128); set { if (__bits == null) __bits = new byte[16]; InteropRuntime.Set<_D3DCOLORVALUE>(value, __bits, 0, 128); } }
     }
 }

@@ -10,10 +10,10 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public byte enabled { get => InteropRuntime.GetByte(__bits, 0, 1); set => InteropRuntime.SetByte(value, __bits, 0, 1); }
-        public byte update_map { get => InteropRuntime.GetByte(__bits, 1, 1); set => InteropRuntime.SetByte(value, __bits, 1, 1); }
-        public byte temporal_update { get => InteropRuntime.GetByte(__bits, 2, 1); set => InteropRuntime.SetByte(value, __bits, 2, 1); }
-        public byte abs_delta { get => InteropRuntime.GetByte(__bits, 3, 1); set => InteropRuntime.SetByte(value, __bits, 3, 1); }
-        public byte ReservedSegmentFlags4Bits { get => InteropRuntime.GetByte(__bits, 4, 4); set => InteropRuntime.SetByte(value, __bits, 4, 4); }
+        public byte enabled { get => InteropRuntime.GetByte(__bits, 0, 1); set { if (__bits == null) __bits = new byte[1]; InteropRuntime.SetByte(value, __bits, 0, 1); } }
+        public byte update_map { get => InteropRuntime.GetByte(__bits, 1, 1); set { if (__bits == null) __bits = new byte[1]; InteropRuntime.SetByte(value, __bits, 1, 1); } }
+        public byte temporal_update { get => InteropRuntime.GetByte(__bits, 2, 1); set { if (__bits == null) __bits = new byte[1]; InteropRuntime.SetByte(value, __bits, 2, 1); } }
+        public byte abs_delta { get => InteropRuntime.GetByte(__bits, 3, 1); set { if (__bits == null) __bits = new byte[1]; InteropRuntime.SetByte(value, __bits, 3, 1); } }
+        public byte ReservedSegmentFlags4Bits { get => InteropRuntime.GetByte(__bits, 4, 4); set { if (__bits == null) __bits = new byte[1]; InteropRuntime.SetByte(value, __bits, 4, 4); } }
     }
 }

@@ -10,7 +10,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 28)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint { get => InteropRuntime.Get<D3D12_PLACED_SUBRESOURCE_FOOTPRINT>(__bits, 0, 224); set => InteropRuntime.Set<D3D12_PLACED_SUBRESOURCE_FOOTPRINT>(value, __bits, 0, 224); }
-        public uint SubresourceIndex { get => InteropRuntime.GetUInt32(__bits, 0, 32); set => InteropRuntime.SetUInt32(value, __bits, 0, 32); }
+        public D3D12_PLACED_SUBRESOURCE_FOOTPRINT PlacedFootprint { get => InteropRuntime.Get<D3D12_PLACED_SUBRESOURCE_FOOTPRINT>(__bits, 0, 224); set { if (__bits == null) __bits = new byte[28]; InteropRuntime.Set<D3D12_PLACED_SUBRESOURCE_FOOTPRINT>(value, __bits, 0, 224); } }
+        public uint SubresourceIndex { get => InteropRuntime.GetUInt32(__bits, 0, 32); set { if (__bits == null) __bits = new byte[28]; InteropRuntime.SetUInt32(value, __bits, 0, 32); } }
     }
 }

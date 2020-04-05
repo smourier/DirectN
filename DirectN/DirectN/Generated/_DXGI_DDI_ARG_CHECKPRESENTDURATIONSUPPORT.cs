@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct _DXGI_DDI_ARG_CHECKPRESENTDURATIONSUPPORT
     {
         public ulong hDevice;
-        public int VidPnSourceId;
+        public uint VidPnSourceId;
         public uint DesiredPresentDuration;
         public uint ClosestSmallerDuration;
         public uint ClosestLargerDuration;
