@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(12393,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(12521,1)
 using System;
 
 namespace DirectN
@@ -15,5 +15,7 @@ namespace DirectN
         D3D12_RAY_FLAG_CULL_FRONT_FACING_TRIANGLES = 0x00000020,
         D3D12_RAY_FLAG_CULL_OPAQUE = 0x00000040,
         D3D12_RAY_FLAG_CULL_NON_OPAQUE = 0x00000080,
+        D3D12_RAY_FLAG_SKIP_TRIANGLES = 0x00000100,
+        D3D12_RAY_FLAG_SKIP_PROCEDURAL_PRIMITIVES = 0x00000200,
     }
 }

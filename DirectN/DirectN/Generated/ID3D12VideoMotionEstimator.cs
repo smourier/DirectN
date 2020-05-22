@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12video.h(2529,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12video.h(2591,5)
 using System;
 using System.Runtime.InteropServices;
 

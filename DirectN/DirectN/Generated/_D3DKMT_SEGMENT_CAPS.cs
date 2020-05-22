@@ -1,0 +1,17 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(2488,9)
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    [StructLayout(LayoutKind.Sequential)]
+    public partial struct _D3DKMT_SEGMENT_CAPS
+    {
+        public ulong Size;
+        public uint PageSize;
+        public uint SegmentId;
+        public byte bAperture;
+        public byte bReservedSysMem;
+        public _D3DKMT_MEMORY_SEGMENT_GROUP BudgetGroup;
+    }
+}

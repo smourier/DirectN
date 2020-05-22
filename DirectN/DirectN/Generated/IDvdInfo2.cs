@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\strmif.h(22983,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\strmif.h(22983,5)
 using System;
 using System.Runtime.InteropServices;
 using LCID = System.UInt32;
@@ -33,10 +33,10 @@ namespace DirectN
         HRESULT GetCurrentUOPS(/* [annotation][out] _Out_ */ out uint pulUOPs);
         
         [PreserveSig]
-        HRESULT GetAllSPRMs(/* [annotation][out] _Out_ */ IntPtr pRegisterArray);
+        HRESULT GetAllSPRMs(/* [annotation][out] _Out_ */ out IntPtr pRegisterArray);
         
         [PreserveSig]
-        HRESULT GetAllGPRMs(/* [annotation][out] _Out_ */ IntPtr pRegisterArray);
+        HRESULT GetAllGPRMs(/* [annotation][out] _Out_ */ out IntPtr pRegisterArray);
         
         [PreserveSig]
         HRESULT GetAudioLanguage(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out LCID pLanguage);
@@ -51,7 +51,7 @@ namespace DirectN
         HRESULT GetVMGAttributes(/* [annotation][out] _Out_ */ out tagDVD_MenuAttributes pATR);
         
         [PreserveSig]
-        HRESULT GetCurrentVideoAttributes(/* [annotation][out] _Out_ */ out tagDVD_VideoAttributes pATR);
+        HRESULT GetCurrentVideoAttributes(/* [annotation][out] _Out_ */ out IntPtr pATR);
         
         [PreserveSig]
         HRESULT GetAudioAttributes(/* [in] */ uint ulStream, /* [annotation][out] _Out_ */ out tagDVD_AudioAttributes pATR);

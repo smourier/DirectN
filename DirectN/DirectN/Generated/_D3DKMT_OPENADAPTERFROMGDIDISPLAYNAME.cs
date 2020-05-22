@@ -1,0 +1,17 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(2094,9)
+using System;
+using System.Runtime.InteropServices;
+using LUID = DirectN._LUID;
+
+namespace DirectN
+{
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    public partial struct _D3DKMT_OPENADAPTERFROMGDIDISPLAYNAME
+    {
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] 
+        public string DeviceName;
+        public uint hAdapter;
+        public LUID AdapterLuid;
+        public uint VidPnSourceId;
+    }
+}

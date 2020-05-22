@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfidl.h(11146,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfidl.h(11287,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -13,7 +13,7 @@ namespace DirectN
         
         // IMFByteStreamCacheControl2
         [PreserveSig]
-        HRESULT GetByteRanges(/* [out] __RPC__out */ out uint pcRanges, /* optional(__MIDL___MIDL_itf_mfidl_0000_0058_0001) */ out IntPtr ppRanges);
+        HRESULT GetByteRanges(/* [out] __RPC__out */ out uint pcRanges, /* optional(__MIDL___MIDL_itf_mfidl_0000_0059_0001) */ out IntPtr ppRanges);
         
         [PreserveSig]
         HRESULT SetCacheLimit(/* [in] */ ulong qwBytes);

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\dxgi1_6.h(727,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\dxgi1_6.h(727,1)
 namespace DirectN
 {
     public enum DXGI_GPU_PREFERENCE

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\ksopmapi.h(59,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\ksopmapi.h(59,1)
 using System;
 
 namespace DirectN

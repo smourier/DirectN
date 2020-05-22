@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxgiddi.h(438,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dxgiddi.h(438,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct _DXGI_DDI_ARG_GETMULTIPLANEOVERLAYGROUPCAPS
     {
         public ulong hDevice;
-        public uint VidPnSourceId;
+        public int VidPnSourceId;
         public uint GroupIndex;
         public DXGI_DDI_MULTIPLANE_OVERLAY_GROUP_CAPS MultiplaneOverlayGroupCaps;
     }

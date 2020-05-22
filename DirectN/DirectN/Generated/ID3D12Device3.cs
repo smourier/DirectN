@@ -1,7 +1,6 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(9878,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(9989,5)
 using System;
 using System.Runtime.InteropServices;
-using LUID = DirectN._LUID;
 using SECURITY_ATTRIBUTES = DirectN._SECURITY_ATTRIBUTES;
 
 namespace DirectN

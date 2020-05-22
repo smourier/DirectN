@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ksmedia.h(938,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\ksmedia.h(938,9)
 using System.Runtime.InteropServices;
 
 namespace DirectN

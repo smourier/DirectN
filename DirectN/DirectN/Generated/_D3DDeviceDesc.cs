@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3dcaps.h(346,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3dcaps.h(346,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint dwSize;
         public uint dwFlags;
-        public uint dcmColorModel;
+        public int dcmColorModel;
         public uint dwDevCaps;
         public _D3DTRANSFORMCAPS dtcTransformCaps;
         public bool bClipping;
@@ -31,11 +31,11 @@ namespace DirectN
         public uint dwMaxTextureRepeat;
         public uint dwMaxTextureAspectRatio;
         public uint dwMaxAnisotropy;
-        public float dvGuardBandLeft;
-        public float dvGuardBandTop;
-        public float dvGuardBandRight;
-        public float dvGuardBandBottom;
-        public float dvExtentsAdjust;
+        public int dvGuardBandLeft;
+        public int dvGuardBandTop;
+        public int dvGuardBandRight;
+        public int dvGuardBandBottom;
+        public int dvExtentsAdjust;
         public uint dwStencilCaps;
         public uint dwFVFCaps;
         public uint dwTextureOpCaps;

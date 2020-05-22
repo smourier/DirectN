@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\dxgiddi.h(640,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dxgiddi.h(640,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -9,7 +9,7 @@ namespace DirectN
     {
         public ulong hDevice;
         public IntPtr pDXGIContext;
-        public uint VidPnSourceId;
+        public int VidPnSourceId;
         public DXGI_DDI_PRESENT_FLAGS Flags;
         public DXGI_DDI_FLIP_INTERVAL_TYPE FlipInterval;
         public uint PresentPlaneCount;

@@ -30,9 +30,9 @@ namespace DirectN
                 return null;
 
             COMException error;
-            info.GetDescription(out var description);
+            _ = info.GetDescription(out var description);
 
-            info.GetSource(out var source);
+            _ = info.GetSource(out var source);
             if (!string.IsNullOrWhiteSpace(source))
             {
                 if (description == null)
@@ -54,7 +54,7 @@ namespace DirectN
                 error = new COMException(description);
             }
 
-            info.GetHelpFile(out var help);
+            _ = info.GetHelpFile(out var help);
             if (!string.IsNullOrWhiteSpace(help))
             {
                 error.HelpLink = help;

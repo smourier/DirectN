@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfidl.h(19623,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfidl.h(19772,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -17,12 +17,12 @@ namespace DirectN
         HRESULT AddProfile(/* [annotation][in] _In_ */ IMFSensorProfile pProfile);
         
         [PreserveSig]
-        HRESULT FindProfile(/* [annotation][in] _In_ */ ref __MIDL___MIDL_itf_mfidl_0000_0113_0001 ProfileId, /* [annotation][out] _COM_Outptr_ */ out IMFSensorProfile ppProfile);
+        HRESULT FindProfile(/* [annotation][in] _In_ */ ref __MIDL___MIDL_itf_mfidl_0000_0114_0001 ProfileId, /* [annotation][out] _COM_Outptr_ */ out IMFSensorProfile ppProfile);
         
         [PreserveSig]
         void RemoveProfileByIndex(/* [annotation][in] _In_ */ uint Index);
         
         [PreserveSig]
-        void RemoveProfile(/* [annotation][in] _In_ */ ref __MIDL___MIDL_itf_mfidl_0000_0113_0001 ProfileId);
+        void RemoveProfile(/* [annotation][in] _In_ */ ref __MIDL___MIDL_itf_mfidl_0000_0114_0001 ProfileId);
     }
 }

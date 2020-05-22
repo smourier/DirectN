@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dukmdt.h(1737,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dukmdt.h(1745,9)
 using System.Runtime.InteropServices;
 
 namespace DirectN

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(3321,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(3426,1)
 namespace DirectN
 {
     public enum D3D12_SHADER_VISIBILITY
@@ -9,5 +9,7 @@ namespace DirectN
         D3D12_SHADER_VISIBILITY_DOMAIN = 3,
         D3D12_SHADER_VISIBILITY_GEOMETRY = 4,
         D3D12_SHADER_VISIBILITY_PIXEL = 5,
+        D3D12_SHADER_VISIBILITY_AMPLIFICATION = 6,
+        D3D12_SHADER_VISIBILITY_MESH = 7,
     }
 }

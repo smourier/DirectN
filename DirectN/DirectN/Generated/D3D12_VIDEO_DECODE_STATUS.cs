@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12video.h(754,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12video.h(821,1)
 namespace DirectN
 {
     public enum D3D12_VIDEO_DECODE_STATUS
@@ -7,5 +7,6 @@ namespace DirectN
         D3D12_VIDEO_DECODE_STATUS_CONTINUE = 1,
         D3D12_VIDEO_DECODE_STATUS_CONTINUE_SKIP_DISPLAY = 2,
         D3D12_VIDEO_DECODE_STATUS_RESTART = 3,
+        D3D12_VIDEO_DECODE_STATUS_RATE_EXCEEDED = 4,
     }
 }

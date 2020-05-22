@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\ddrawi.h(2927,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\ddrawi.h(2927,9)
 using System;
 using System.Runtime.InteropServices;
 using LPDDRAWI_DDRAWSURFACE_LCL = DirectN._DDRAWI_DDRAWSURFACE_LCL;

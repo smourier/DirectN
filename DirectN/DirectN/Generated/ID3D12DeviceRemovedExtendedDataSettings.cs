@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(13300,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(13483,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,12 +8,12 @@ namespace DirectN
     public partial interface ID3D12DeviceRemovedExtendedDataSettings
     {
         [PreserveSig]
-        void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0000);
+        void SetAutoBreadcrumbsEnablement(D3D12_DRED_ENABLEMENT Enablement);
         
         [PreserveSig]
-        void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0001);
+        void SetPageFaultEnablement(D3D12_DRED_ENABLEMENT Enablement);
         
         [PreserveSig]
-        void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT __MIDL__ID3D12DeviceRemovedExtendedDataSettings0002);
+        void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement);
     }
 }

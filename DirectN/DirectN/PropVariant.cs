@@ -415,7 +415,7 @@ namespace DirectN
                     if (ft == 0)
                         break; // stay empty
 
-                    InitPropVariantFromFileTime(ref ft, this);
+                    _ = InitPropVariantFromFileTime(ref ft, this);
                     break;
 
                 case TypeCode.Empty:
@@ -672,8 +672,7 @@ namespace DirectN
             return bytes;
         }
 
-        public static PropVariant Deserialize(byte[] bytes) => Deserialize(bytes, true);
-        public static PropVariant Deserialize(byte[] bytes, bool throwOnError)
+        public static PropVariant Deserialize(byte[] bytes, bool throwOnError = true)
         {
             if (bytes == null)
                 throw new ArgumentNullException(nameof(bytes));
@@ -692,8 +691,7 @@ namespace DirectN
             return pv;
         }
 
-        public static PropVariant Deserialize(IntPtr ptr, int size) => Deserialize(ptr, size, true);
-        public static PropVariant Deserialize(IntPtr ptr, int size, bool throwOnError)
+        public static PropVariant Deserialize(IntPtr ptr, int size, bool throwOnError = true)
         {
             if (ptr == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(ptr));

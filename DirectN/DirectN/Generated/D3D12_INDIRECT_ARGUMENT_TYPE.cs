@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(3824,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(3933,1)
 namespace DirectN
 {
     public enum D3D12_INDIRECT_ARGUMENT_TYPE
@@ -12,5 +12,7 @@ namespace DirectN
         D3D12_INDIRECT_ARGUMENT_TYPE_CONSTANT_BUFFER_VIEW = 6,
         D3D12_INDIRECT_ARGUMENT_TYPE_SHADER_RESOURCE_VIEW = 7,
         D3D12_INDIRECT_ARGUMENT_TYPE_UNORDERED_ACCESS_VIEW = 8,
+        D3D12_INDIRECT_ARGUMENT_TYPE_DISPATCH_RAYS = 9,
+        D3D12_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH = 10,
     }
 }

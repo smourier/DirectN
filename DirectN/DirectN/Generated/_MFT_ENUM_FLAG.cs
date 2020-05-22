@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfapi.h(1889,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfapi.h(1889,1)
 namespace DirectN
 {
     public enum _MFT_ENUM_FLAG

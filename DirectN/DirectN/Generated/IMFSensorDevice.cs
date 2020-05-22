@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfidl.h(18577,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfidl.h(18726,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT GetDeviceId(/* [annotation][out] _Out_ */ out ulong pDeviceId);
         
         [PreserveSig]
-        HRESULT GetDeviceType(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0109_0001 pType);
+        HRESULT GetDeviceType(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0110_0001 pType);
         
         [PreserveSig]
         HRESULT GetFlags(/* [annotation][out] _Out_ */ out ulong pFlags);
@@ -23,15 +23,15 @@ namespace DirectN
         HRESULT GetDeviceAttributes(/* [annotation][out] _COM_Outptr_result_maybenull_ */ out IMFAttributes ppAttributes);
         
         [PreserveSig]
-        HRESULT GetStreamAttributesCount(/* [annotation][in] _In_ */ __MIDL___MIDL_itf_mfidl_0000_0109_0002 eType, /* [annotation][out] _Out_ */ out uint pdwCount);
+        HRESULT GetStreamAttributesCount(/* [annotation][in] _In_ */ __MIDL___MIDL_itf_mfidl_0000_0110_0002 eType, /* [annotation][out] _Out_ */ out uint pdwCount);
         
         [PreserveSig]
-        HRESULT GetStreamAttributes(/* [annotation][in] _In_ */ __MIDL___MIDL_itf_mfidl_0000_0109_0002 eType, /* [annotation][in] _In_ */ uint dwIndex, /* [annotation][out] _COM_Outptr_ */ out IMFAttributes ppAttributes);
+        HRESULT GetStreamAttributes(/* [annotation][in] _In_ */ __MIDL___MIDL_itf_mfidl_0000_0110_0002 eType, /* [annotation][in] _In_ */ uint dwIndex, /* [annotation][out] _COM_Outptr_ */ out IMFAttributes ppAttributes);
         
         [PreserveSig]
-        HRESULT SetSensorDeviceMode(/* [annotation][in] _In_ */ __MIDL___MIDL_itf_mfidl_0000_0109_0003 eMode);
+        HRESULT SetSensorDeviceMode(/* [annotation][in] _In_ */ __MIDL___MIDL_itf_mfidl_0000_0110_0003 eMode);
         
         [PreserveSig]
-        HRESULT GetSensorDeviceMode(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0109_0003 peMode);
+        HRESULT GetSensorDeviceMode(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0110_0003 peMode);
     }
 }

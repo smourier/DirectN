@@ -4,7 +4,9 @@ namespace DirectN
 {
     // stupid .NET's VarEnum does not define Flags and does not derive from ushort ...
     [Flags]
+#pragma warning disable CA1028 // Enum Storage should be Int32
     public enum PropertyType : ushort
+#pragma warning restore CA1028 // Enum Storage should be Int32
     {
         VT_EMPTY = 0,
         VT_NULL = 1,

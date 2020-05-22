@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\strmif.h(2640,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\strmif.h(2640,5)
 using System;
 using System.Runtime.InteropServices;
 using REFERENCE_TIME = System.Int64;

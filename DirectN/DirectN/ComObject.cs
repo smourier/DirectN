@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -114,7 +115,7 @@ namespace DirectN
         protected virtual void Dispose(bool disposing)
         {
 #if DEBUG
-            Trace("~", "disposing: " + disposing + " duration: " + Duration.Milliseconds);
+            Trace("~", "disposing: " + disposing + " duration: " + _sw.Elapsed);
 #endif
             if (!IsDisposed)
             {
@@ -171,7 +172,7 @@ namespace DirectN
         {
             // many COM objects (like DXGI ones) dont' like to be used on different threads
             // so we tracks calls on different threads
-            string s = Id.ToString();
+            string s = Id.ToString(CultureInfo.InvariantCulture);
 
             var tid = Thread.CurrentThread.ManagedThreadId;
             if (tid != ConstructorThreadId)
@@ -195,7 +196,6 @@ namespace DirectN
 
         public long Id { get; }
         public int ConstructorThreadId { get; }
-        public TimeSpan Duration => _sw.Elapsed;
 
         public override string ToString()
         {
@@ -217,7 +217,7 @@ namespace DirectN
             if (s != null)
                 return Id + " " + s;
 
-            return Id.ToString();
+            return Id.ToString(CultureInfo.InvariantCulture);
         }
 #endif
     }

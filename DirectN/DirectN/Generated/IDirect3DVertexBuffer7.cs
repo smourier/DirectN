@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d.h(1449,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d.h(1449,1)
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECT3DVERTEXBUFFER7 = DirectN.IDirect3DVertexBuffer7;

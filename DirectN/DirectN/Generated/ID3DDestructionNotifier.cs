@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3dcommon.h(472,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3dcommon.h(472,5)
 using System;
 using System.Runtime.InteropServices;
 using PFN_DESTRUCTION_CALLBACK = System.IntPtr;

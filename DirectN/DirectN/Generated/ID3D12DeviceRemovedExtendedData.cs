@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(13399,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(13683,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,9 +8,9 @@ namespace DirectN
     public partial interface ID3D12DeviceRemovedExtendedData
     {
         [PreserveSig]
-        HRESULT GetAutoBreadcrumbsOutput(ref D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT pOutput);
+        HRESULT GetAutoBreadcrumbsOutput(/* _Out_ */ out D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT pOutput);
         
         [PreserveSig]
-        HRESULT GetPageFaultAllocationOutput(ref D3D12_DRED_PAGE_FAULT_OUTPUT pOutput);
+        HRESULT GetPageFaultAllocationOutput(/* _Out_ */ out D3D12_DRED_PAGE_FAULT_OUTPUT pOutput);
     }
 }

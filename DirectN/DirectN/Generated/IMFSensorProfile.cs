@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfidl.h(19493,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfidl.h(19642,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IMFSensorProfile
     {
         [PreserveSig]
-        HRESULT GetProfileId(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0113_0001 pId);
+        HRESULT GetProfileId(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0114_0001 pId);
         
         [PreserveSig]
         HRESULT AddProfileFilter(/* [annotation][in] _In_ */ uint StreamId, /* [annotation][in] _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string wzFilterSetString);

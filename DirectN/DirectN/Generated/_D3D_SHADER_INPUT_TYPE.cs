@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3dcommon.h(755,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3dcommon.h(755,1)
 namespace DirectN
 {
     public enum _D3D_SHADER_INPUT_TYPE
@@ -15,6 +15,8 @@ namespace DirectN
         D3D_SIT_UAV_APPEND_STRUCTURED = 9,
         D3D_SIT_UAV_CONSUME_STRUCTURED = 10,
         D3D_SIT_UAV_RWSTRUCTURED_WITH_COUNTER = 11,
+        D3D_SIT_RTACCELERATIONSTRUCTURE = 12,
+        D3D_SIT_UAV_FEEDBACKTEXTURE = 13,
         D3D10_SIT_CBUFFER = 0,
         D3D10_SIT_TBUFFER = 1,
         D3D10_SIT_TEXTURE = 2,

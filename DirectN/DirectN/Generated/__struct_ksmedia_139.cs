@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ksmedia.h(7089,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\ksmedia.h(7077,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,11 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_139
     {
         public int Property;
-        public uint StreamIndex;
-        public int DefaultKeyFrameRate;
-        public int DefaultPFrameRate;
-        public int DefaultQuality;
-        public int NumberOfQualitySettings;
-        public int Capabilities;
+        public uint Mode;
     }
 }

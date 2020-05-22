@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dkmdt.h(754,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmdt.h(757,9)
 namespace DirectN
 {
     public enum _D3DKMDT_MONITOR_TIMING_TYPE

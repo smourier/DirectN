@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ksmedia.h(7031,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\ksmedia.h(7000,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,8 +8,7 @@ namespace DirectN
     public partial struct __struct_ksmedia_137
     {
         public int Property;
-        public uint Capabilities;
-        public int InputMedium;
-        public int OutputMedium;
+        public uint IndexInputPin;
+        public uint Active;
     }
 }

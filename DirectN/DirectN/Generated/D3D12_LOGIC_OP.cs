@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(1402,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(1451,1)
 namespace DirectN
 {
     public enum D3D12_LOGIC_OP

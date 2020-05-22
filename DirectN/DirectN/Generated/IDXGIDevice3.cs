@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\dxgi1_3.h(131,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\dxgi1_3.h(131,5)
 using System;
 using System.Runtime.InteropServices;
 

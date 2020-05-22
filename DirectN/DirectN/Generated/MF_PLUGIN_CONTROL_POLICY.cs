@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfobjects.h(5784,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfobjects.h(5791,1)
 namespace DirectN
 {
     public enum MF_PLUGIN_CONTROL_POLICY

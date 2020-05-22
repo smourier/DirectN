@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\dxgiformat.h(10,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\dxgiformat.h(10,9)
 namespace DirectN
 {
     public enum DXGI_FORMAT
@@ -122,6 +122,8 @@ namespace DirectN
         DXGI_FORMAT_P208 = 130,
         DXGI_FORMAT_V208 = 131,
         DXGI_FORMAT_V408 = 132,
+        DXGI_FORMAT_SAMPLER_FEEDBACK_MIN_MIP_OPAQUE = 189,
+        DXGI_FORMAT_SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE = 190,
         DXGI_FORMAT_FORCE_UINT = -1,
     }
 }

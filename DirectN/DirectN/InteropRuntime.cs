@@ -55,7 +55,7 @@ namespace System.Runtime.InteropServices
             return ui;
         }
 
-        public static bool GetBoolean32(byte[] bytes, int offset, int count) => EnumerateBits(bytes, offset, count).Any(b => b);
+        public static bool GetBoolean(byte[] bytes, int offset, int count) => EnumerateBits(bytes, offset, count).Any(b => b);
 
         public static int GetInt32(byte[] bytes, int offset, int count) => (int)GetUInt32(bytes, offset, count);
         public static uint GetUInt32(byte[] bytes, int offset, int count)
@@ -283,7 +283,9 @@ namespace System.Runtime.InteropServices
             {
                 if (bit)
                 {
+#pragma warning disable CA1062 // Validate arguments of public methods
                     bytes[byteIndex] |= (byte)(1 << bitIndex);
+#pragma warning restore CA1062 // Validate arguments of public methods
                 }
                 bitIndex++;
                 if (bitIndex == 8)
@@ -302,24 +304,28 @@ namespace System.Runtime.InteropServices
                 return;
 
             if (!typeof(T).IsValueType)
+#pragma warning disable CA2208 // Instantiate argument exceptions correctly
                 throw new ArgumentException(null, nameof(T));
+#pragma warning restore CA2208 // Instantiate argument exceptions correctly
 
             var valuePtr = Marshal.UnsafeAddrOfPinnedArrayElement(value, 0);
             Marshal.Copy(valuePtr, bytes, offset / 8, count / 8);
         }
 
-        public static void Set<T>(T obj, byte[] bytes, int offset, int count)
+        public static void Set<T>(T value, byte[] bytes, int offset, int count)
         {
             Debug.Assert((offset % 8) == 0);
             Debug.Assert((count % 8) == 0);
             if (!typeof(T).IsValueType)
+#pragma warning disable CA2208 // Instantiate argument exceptions correctly
                 throw new ArgumentException(null, nameof(T));
+#pragma warning restore CA2208 // Instantiate argument exceptions correctly
 
             var buffer = new byte[Marshal.SizeOf<T>()];
             var ptr = Marshal.AllocCoTaskMem(buffer.Length);
             try
             {
-                Marshal.StructureToPtr(obj, ptr, false);
+                Marshal.StructureToPtr(value, ptr, false);
                 Marshal.Copy(ptr, buffer, 0, buffer.Length);
                 SetByteArray(buffer, bytes, offset, count);
             }

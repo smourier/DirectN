@@ -7,15 +7,12 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace DirectN
 {
     public static class Conversions
     {
-        private const string ParamName = "securePassword";
         private static readonly char[] _enumSeparators = new char[] { ',', ';', '+', '|', ' ' };
-        private static readonly Regex _decodeUnicode = new Regex(@"\\u(?<v>[a-zA-Z0-9]{4})", RegexOptions.Compiled);
         private static readonly string[] _dateFormatsUtc = { "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'", "yyyy'-'MM'-'dd'T'HH':'mm'Z'", "yyyyMMdd'T'HH':'mm':'ss'Z'" };
 
         public static bool IsValid(this DateTime dt) => dt != DateTime.MinValue && dt != DateTime.MaxValue && dt.Kind != DateTimeKind.Unspecified;

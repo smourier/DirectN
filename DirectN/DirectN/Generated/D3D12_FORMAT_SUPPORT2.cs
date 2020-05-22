@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12.h(2039,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(2093,1)
 using System;
 
 namespace DirectN
@@ -18,5 +18,6 @@ namespace DirectN
         D3D12_FORMAT_SUPPORT2_OUTPUT_MERGER_LOGIC_OP = 0x00000100,
         D3D12_FORMAT_SUPPORT2_TILED = 0x00000200,
         D3D12_FORMAT_SUPPORT2_MULTIPLANE_OVERLAY = 0x00004000,
+        D3D12_FORMAT_SUPPORT2_SAMPLER_FEEDBACK = 0x00008000,
     }
 }

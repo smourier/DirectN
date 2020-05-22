@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfidl.h(19790,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfidl.h(19939,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -14,7 +14,7 @@ namespace DirectN
         HRESULT GetStreamingState(/* [annotation][out] _Out_ */ out bool pfStreaming);
         
         [PreserveSig]
-        HRESULT GetStreamingMode(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0109_0003 pMode);
+        HRESULT GetStreamingMode(/* [annotation][out] _Out_ */ out __MIDL___MIDL_itf_mfidl_0000_0110_0003 pMode);
         
         [PreserveSig]
         HRESULT GetReportTime(/* [annotation][out] _Out_ */ out long pft);

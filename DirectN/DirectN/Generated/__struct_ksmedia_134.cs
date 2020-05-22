@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\ksmedia.h(6945,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\ksmedia.h(6978,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,10 +8,7 @@ namespace DirectN
     public partial struct __struct_ksmedia_134
     {
         public int Property;
-        public int Direction;
-        public uint Index;
-        public uint PinType;
-        public uint RelatedPinIndex;
-        public int Medium;
+        public uint NumberOfInputs;
+        public uint NumberOfOutputs;
     }
 }
