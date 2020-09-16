@@ -4,22 +4,22 @@ namespace DirectN
 {
     public static class IDXGIDeviceSubObjectExtensions
     {
-        public static T GetDevice<T>(this ComObject<IDXGISwapChain> obj) => GetDevice<T>(obj?.Object);
-        public static T GetDevice<T>(this ComObject<IDXGISwapChain1> obj) => GetDevice<T>(obj?.Object);
-        public static T GetDevice<T>(this ComObject<IDXGISwapChain2> obj) => GetDevice<T>(obj?.Object);
-        public static T GetDevice<T>(this ComObject<IDXGISwapChain3> obj) => GetDevice<T>(obj?.Object);
-        public static T GetDevice<T>(this ComObject<IDXGISwapChain4> obj) => GetDevice<T>(obj?.Object);
-        public static T GetDevice<T>(this ComObject<IDXGIResource> obj) => GetDevice<T>(obj?.Object);
-        public static T GetDevice<T>(this ComObject<IDXGIResource1> obj) => GetDevice<T>(obj?.Object);
-        public static T GetDevice<T>(this ComObject<IDXGIDeviceSubObject> obj) => GetDevice<T>(obj?.Object);
-        public static T GetDevice<T>(this IDXGIDeviceSubObject obj) => (T)GetDevice(obj, typeof(T).GUID);
-        public static object GetDevice(this IDXGIDeviceSubObject obj, Guid riid)
+        public static IComObject<IDXGIDevice> GetDevice(this IDXGIDeviceSubObject subObject)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj));
+            if (subObject == null)
+                throw new ArgumentNullException(nameof(subObject));
 
-            obj.GetDevice(riid, out object parent).ThrowOnError();
-            return parent;
+            subObject.GetDevice(typeof(IDXGIDevice).GUID, out var device).ThrowOnError();
+            return new ComObject<IDXGIDevice>((IDXGIDevice)device);
+        }
+
+        public static IComObject<IDXGIDevice1> GetDevice1(this IDXGIDeviceSubObject subObject)
+        {
+            if (subObject == null)
+                throw new ArgumentNullException(nameof(subObject));
+
+            subObject.GetDevice(typeof(IDXGIDevice1).GUID, out var device).ThrowOnError();
+            return new ComObject<IDXGIDevice1>((IDXGIDevice1)device);
         }
     }
 }

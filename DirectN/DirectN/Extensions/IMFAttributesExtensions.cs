@@ -8,13 +8,42 @@ namespace DirectN
     // we want to avoid PropVariant stuff
     public static class IMFAttributesExtensions
     {
-        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> Enumerate(this ComObject<IMFAttributes> input) => Enumerate(input?.Object);
+        public static string Trace(this IMFAttributes input)
+        {
+            if (input == null)
+                return "<null>";
+
+            return string.Join("|", Enumerate(input).Select(kv => kv.Key.ToName() + "=" + TraceValue(input, kv.Key)));
+        }
+
+        public static string TraceValue(this IMFAttributes input, Guid key)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            var value = GetValue(input, key);
+            if (value == null)
+                return "<null>";
+
+            if (value is byte[] bytes)
+                return Conversions.ToHexa(bytes, 64);
+
+            if (value is Guid guid)
+                return guid.ToName();
+
+            if (value is string s)
+                return "`" + s + "`";
+
+            return string.Format(CultureInfo.InvariantCulture, "{0}", value);
+        }
+
+        public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> Enumerate(this IComObject<IMFAttributes> input) => Enumerate(input?.Object);
         public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> Enumerate(this IMFAttributes input)
         {
             if (input == null)
                 yield break;
 
-            for (int i = 0; i < Count(input); i++)
+            for (var i = 0; i < Count(input); i++)
             {
                 input.GetItemByIndex((uint)i, out Guid guid, null).ThrowOnError();
                 input.GetItemType(guid, out var type).ThrowOnError();
@@ -22,7 +51,7 @@ namespace DirectN
             }
         }
 
-        public static KeyValuePair<Guid, object>[] ToValues(this ComObject<IMFAttributes> input) => ToValues(input?.Object);
+        public static KeyValuePair<Guid, object>[] ToValues(this IComObject<IMFAttributes> input) => ToValues(input?.Object);
         public static KeyValuePair<Guid, object>[] ToValues(this IMFAttributes input)
         {
             if (input == null)
@@ -31,7 +60,7 @@ namespace DirectN
             return Enumerate(input).Select(kv => new KeyValuePair<Guid, object>(kv.Key, GetValue(input, kv.Key))).ToArray();
         }
 
-        public static int Count(this ComObject<IMFAttributes> input) => Count(input?.Object);
+        public static int Count(this IComObject<IMFAttributes> input) => Count(input?.Object);
         public static int Count(this IMFAttributes input)
         {
             if (input == null)
@@ -41,18 +70,18 @@ namespace DirectN
             return (int)value;
         }
 
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, ComObject value) => input?.Object.SetUnknown(key, value?.Object).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, string value) => input?.Object.SetString(key, value).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, double value) => input?.Object.SetDouble(key, value).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, Guid value) => input?.Object.SetGUID(key, value).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, long value) => input?.Object.SetUINT64(key, (ulong)value).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, ulong value) => input?.Object.SetUINT64(key, value).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, int value) => input?.Object.SetUINT32(key, (uint)value).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, uint value) => input?.Object.SetUINT32(key, value).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, bool value) => input?.Object.SetUINT32(key, (uint)(value ? 1 : 0)).ThrowOnError();
-        public static void Set(this ComObject<IMFAttributes> input, Guid key, Enum value) => input?.Object.SetUINT32(key, (uint)Convert.ChangeType(value, typeof(uint), CultureInfo.InvariantCulture)).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, ComObject value) => input?.Object.SetUnknown(key, value?.Object).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, string value) => input?.Object.SetString(key, value).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, double value) => input?.Object.SetDouble(key, value).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, Guid value) => input?.Object.SetGUID(key, value).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, long value) => input?.Object.SetUINT64(key, (ulong)value).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, ulong value) => input?.Object.SetUINT64(key, value).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, int value) => input?.Object.SetUINT32(key, (uint)value).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, uint value) => input?.Object.SetUINT32(key, value).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, bool value) => input?.Object.SetUINT32(key, (uint)(value ? 1 : 0)).ThrowOnError();
+        public static void Set(this IComObject<IMFAttributes> input, Guid key, Enum value) => input?.Object.SetUINT32(key, (uint)Convert.ChangeType(value, typeof(uint), CultureInfo.InvariantCulture)).ThrowOnError();
 
-        public static T Get<T>(this ComObject<IMFAttributes> input, Guid key, T defaultValue = default, IFormatProvider provider = null) => Get(input?.Object, key, defaultValue, provider);
+        public static T Get<T>(this IComObject<IMFAttributes> input, Guid key, T defaultValue = default, IFormatProvider provider = null) => Get(input?.Object, key, defaultValue, provider);
         public static T Get<T>(this IMFAttributes input, Guid key, T defaultValue = default, IFormatProvider provider = null)
         {
             if (!TryGet(input, key, provider, out T value))
@@ -61,8 +90,8 @@ namespace DirectN
             return value;
         }
 
-        public static bool TryGet<T>(this ComObject<IMFAttributes> input, Guid key, out T value) => TryGet(input?.Object, key, null, out value);
-        public static bool TryGet<T>(this ComObject<IMFAttributes> input, Guid key, IFormatProvider provider, out T value) => TryGet(input?.Object, key, provider, out value);
+        public static bool TryGet<T>(this IComObject<IMFAttributes> input, Guid key, out T value) => TryGet(input?.Object, key, null, out value);
+        public static bool TryGet<T>(this IComObject<IMFAttributes> input, Guid key, IFormatProvider provider, out T value) => TryGet(input?.Object, key, provider, out value);
         public static bool TryGet<T>(this IMFAttributes input, Guid key, out T value) => TryGet(input, key, null, out value);
         public static bool TryGet<T>(this IMFAttributes input, Guid key, IFormatProvider provider, out T value)
         {
@@ -173,7 +202,7 @@ namespace DirectN
             }
         }
 
-        public static object GetValue(this ComObject<IMFAttributes> input, Guid key) => GetValue(input?.Object, key);
+        public static object GetValue(this IComObject<IMFAttributes> input, Guid key) => GetValue(input?.Object, key);
         public static object GetValue(this IMFAttributes input, Guid key)
         {
             if (input == null)
@@ -188,8 +217,8 @@ namespace DirectN
             }
         }
 
-        public static Guid GetGuid(this ComObject<IMFAttributes> input, Guid key) => GetGuid(input?.Object, key, Guid.Empty);
-        public static Guid GetGuid(this ComObject<IMFAttributes> input, Guid key, Guid defaultValue) => GetGuid(input?.Object, key, defaultValue);
+        public static Guid GetGuid(this IComObject<IMFAttributes> input, Guid key) => GetGuid(input?.Object, key, Guid.Empty);
+        public static Guid GetGuid(this IComObject<IMFAttributes> input, Guid key, Guid defaultValue) => GetGuid(input?.Object, key, defaultValue);
         public static Guid GetGuid(this IMFAttributes input, Guid key) => GetGuid(input, key, Guid.Empty);
         public static Guid GetGuid(this IMFAttributes input, Guid key, Guid defaultValue)
         {
@@ -202,7 +231,7 @@ namespace DirectN
             return value;
         }
 
-        public static double GetDouble(this ComObject<IMFAttributes> input, Guid key, double defaultValue = 0) => GetDouble(input?.Object, key, defaultValue);
+        public static double GetDouble(this IComObject<IMFAttributes> input, Guid key, double defaultValue = 0) => GetDouble(input?.Object, key, defaultValue);
         public static double GetDouble(this IMFAttributes input, Guid key, double defaultValue = 0)
         {
             if (input == null)
@@ -214,7 +243,7 @@ namespace DirectN
             return value;
         }
 
-        public static bool GetBoolean(this ComObject<IMFAttributes> input, Guid key, bool defaultValue = false) => GetBoolean(input?.Object, key, defaultValue);
+        public static bool GetBoolean(this IComObject<IMFAttributes> input, Guid key, bool defaultValue = false) => GetBoolean(input?.Object, key, defaultValue);
         public static bool GetBoolean(this IMFAttributes input, Guid key, bool defaultValue = false)
         {
             if (input == null)
@@ -226,7 +255,7 @@ namespace DirectN
             return value != 0;
         }
 
-        public static int GetInt32(this ComObject<IMFAttributes> input, Guid key, int defaultValue = 0) => GetInt32(input?.Object, key, defaultValue);
+        public static int GetInt32(this IComObject<IMFAttributes> input, Guid key, int defaultValue = 0) => GetInt32(input?.Object, key, defaultValue);
         public static int GetInt32(this IMFAttributes input, Guid key, int defaultValue = 0)
         {
             if (input == null)
@@ -238,7 +267,7 @@ namespace DirectN
             return (int)value;
         }
 
-        public static uint GetUInt32(this ComObject<IMFAttributes> input, Guid key, uint defaultValue = 0) => GetUInt32(input?.Object, key, defaultValue);
+        public static uint GetUInt32(this IComObject<IMFAttributes> input, Guid key, uint defaultValue = 0) => GetUInt32(input?.Object, key, defaultValue);
         public static uint GetUInt32(this IMFAttributes input, Guid key, uint defaultValue = 0)
         {
             if (input == null)
@@ -250,7 +279,7 @@ namespace DirectN
             return value;
         }
 
-        public static ulong GetUInt64(this ComObject<IMFAttributes> input, Guid key, ulong defaultValue = 0) => GetUInt64(input?.Object, key, defaultValue);
+        public static ulong GetUInt64(this IComObject<IMFAttributes> input, Guid key, ulong defaultValue = 0) => GetUInt64(input?.Object, key, defaultValue);
         public static ulong GetUInt64(this IMFAttributes input, Guid key, ulong defaultValue = 0)
         {
             if (input == null)
@@ -262,7 +291,7 @@ namespace DirectN
             return value;
         }
 
-        public static long GetInt64(this ComObject<IMFAttributes> input, Guid key, long defaultValue = 0) => GetInt64(input?.Object, key, defaultValue);
+        public static long GetInt64(this IComObject<IMFAttributes> input, Guid key, long defaultValue = 0) => GetInt64(input?.Object, key, defaultValue);
         public static long GetInt64(this IMFAttributes input, Guid key, long defaultValue = 0)
         {
             if (input == null)
@@ -274,7 +303,7 @@ namespace DirectN
             return (long)value;
         }
 
-        public static object GetUnknown(this ComObject<IMFAttributes> input, Guid key, Guid interfaceId) => GetUnknown(input?.Object, key, interfaceId);
+        public static object GetUnknown(this IComObject<IMFAttributes> input, Guid key, Guid interfaceId) => GetUnknown(input?.Object, key, interfaceId);
         public static object GetUnknown(this IMFAttributes input, Guid key, Guid interfaceId)
         {
             if (input == null)
@@ -286,10 +315,10 @@ namespace DirectN
             return value;
         }
 
-        public static ComObject<T> GetUnknown<T>(this ComObject<IMFAttributes> input, Guid key) => GetUnknown<T>(input, key, typeof(T).GUID);
-        public static ComObject<T> GetUnknown<T>(this ComObject<IMFAttributes> input, Guid key, Guid interfaceId) => GetUnknown<T>(input?.Object, key, interfaceId);
-        public static ComObject<T> GetUnknown<T>(this IMFAttributes input, Guid key) => GetUnknown<T>(input, key, typeof(T).GUID);
-        public static ComObject<T> GetUnknown<T>(this IMFAttributes input, Guid key, Guid interfaceId)
+        public static IComObject<T> GetUnknown<T>(this IComObject<IMFAttributes> input, Guid key) => GetUnknown<T>(input, key, typeof(T).GUID);
+        public static IComObject<T> GetUnknown<T>(this IComObject<IMFAttributes> input, Guid key, Guid interfaceId) => GetUnknown<T>(input?.Object, key, interfaceId);
+        public static IComObject<T> GetUnknown<T>(this IMFAttributes input, Guid key) => GetUnknown<T>(input, key, typeof(T).GUID);
+        public static IComObject<T> GetUnknown<T>(this IMFAttributes input, Guid key, Guid interfaceId)
         {
             if (input == null)
                 throw new ArgumentNullException(nameof(input));
@@ -300,7 +329,7 @@ namespace DirectN
             return new ComObject<T>((T)value);
         }
 
-        public static byte[] GetBlob(this ComObject<IMFAttributes> input, Guid key) => GetBlob(input, key);
+        public static byte[] GetBlob(this IComObject<IMFAttributes> input, Guid key) => GetBlob(input, key);
         public static byte[] GetBlob(this IMFAttributes input, Guid key)
         {
             if (input == null)
@@ -314,7 +343,7 @@ namespace DirectN
             return bytes;
         }
 
-        public static string GetString(this ComObject<IMFAttributes> input, Guid key, string defaultValue = null) => GetString(input?.Object, key, defaultValue);
+        public static string GetString(this IComObject<IMFAttributes> input, Guid key, string defaultValue = null) => GetString(input?.Object, key, defaultValue);
         public static string GetString(this IMFAttributes input, Guid key, string defaultValue = null)
         {
             if (input == null)

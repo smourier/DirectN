@@ -4,7 +4,7 @@ namespace DirectN
 {
     public static class IDXGIDeviceExtensions
     {
-        public static int GetGPUThreadPriority(this ComObject<IDXGIDevice> output) => GetGPUThreadPriority(output?.Object);
+        public static int GetGPUThreadPriority(this IComObject<IDXGIDevice> output) => GetGPUThreadPriority(output?.Object);
         public static int GetGPUThreadPriority(this IDXGIDevice device)
         {
             if (device == null)
@@ -14,7 +14,7 @@ namespace DirectN
             return priority;
         }
 
-        public static uint GetMaximumFrameLatency(this ComObject<IDXGIDevice1> output) => GetMaximumFrameLatency(output?.Object);
+        public static uint GetMaximumFrameLatency(this IComObject<IDXGIDevice1> output) => GetMaximumFrameLatency(output?.Object);
         public static uint GetMaximumFrameLatency(this IDXGIDevice1 device)
         {
             if (device == null)
@@ -24,8 +24,8 @@ namespace DirectN
             return latency;
         }
 
-        public static ComObject<IDXGIAdapter> GetAdapter(this ComObject<IDXGIDevice> output) => GetAdapter(output?.Object);
-        public static ComObject<IDXGIAdapter> GetAdapter(this IDXGIDevice device)
+        public static IComObject<IDXGIAdapter> GetAdapter(this IComObject<IDXGIDevice> output) => GetAdapter(output?.Object);
+        public static IComObject<IDXGIAdapter> GetAdapter(this IDXGIDevice device)
         {
             if (device == null)
                 throw new ArgumentNullException(nameof(device));

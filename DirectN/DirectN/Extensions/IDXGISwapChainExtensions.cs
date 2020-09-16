@@ -4,19 +4,19 @@ namespace DirectN
 {
     public static class IDXGISwapChainExtensions
     {
-        public static DXGI_SWAP_CHAIN_DESC1 GetDesc1(this ComObject<IDXGISwapChain1> input) => GetDesc1(input?.Object);
-        public static DXGI_SWAP_CHAIN_DESC1 GetDesc1(this IDXGISwapChain1 input)
+        public static DXGI_SWAP_CHAIN_DESC1 GetDesc1(this IComObject<IDXGISwapChain1> swapChain) => GetDesc1(swapChain?.Object);
+        public static DXGI_SWAP_CHAIN_DESC1 GetDesc1(this IDXGISwapChain1 swapChain)
         {
-            if (input == null)
-                throw new ArgumentNullException(nameof(input));
+            if (swapChain == null)
+                throw new ArgumentNullException(nameof(swapChain));
 
-            input.GetDesc1(out var value).ThrowOnError();
+            swapChain.GetDesc1(out var value);
             return value;
         }
 
-        public static ComObject<T> GetBuffer<T>(this ComObject<IDXGISwapChain> swapChain, uint index) => GetBuffer<T>(swapChain?.Object, index);
-        public static ComObject<T> GetBuffer<T>(this ComObject<IDXGISwapChain1> swapChain, uint index) => GetBuffer<T>(swapChain?.Object, index);
-        public static ComObject<T> GetBuffer<T>(this IDXGISwapChain swapChain, uint index)
+        public static IComObject<T> GetBuffer<T>(this IComObject<IDXGISwapChain> swapChain, uint index) => GetBuffer<T>(swapChain?.Object, index);
+        //public static IComObject<T> GetBuffer<T>(this IComObject<IDXGISwapChain1> swapChain, uint index) => GetBuffer<T>(swapChain?.Object, index);
+        public static IComObject<T> GetBuffer<T>(this IDXGISwapChain swapChain, uint index)
         {
             if (swapChain == null)
                 throw new ArgumentNullException(nameof(swapChain));
@@ -26,6 +26,15 @@ namespace DirectN
 
             swapChain.GetBuffer(index, typeof(T).GUID, out var dc).ThrowOnError();
             return new ComObject<T>((T)dc);
+        }
+
+        public static void SetBackgroundColor(this IComObject<IDXGISwapChain1> swapChain, _D3DCOLORVALUE value) => SetBackgroundColor(swapChain?.Object, value);
+        public static void SetBackgroundColor(this IDXGISwapChain1 swapChain, _D3DCOLORVALUE value)
+        {
+            if (swapChain == null)
+                throw new ArgumentNullException(nameof(swapChain));
+
+            swapChain.SetBackgroundColor(ref value).ThrowOnError();
         }
     }
 }

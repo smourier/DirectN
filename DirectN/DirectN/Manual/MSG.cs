@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public struct MSG
+    public partial struct MSG
     {
         public IntPtr hwnd;
         public int message;
