@@ -35,7 +35,7 @@ namespace DirectN.MinimalD3D11
 
         public Main()
         {
-            Text = "minimal d3d11 by d7samurai - On .NET Core 3.1";
+            Text = "minimal d3d11 by d7samurai - On .NET Core 5.0";
             int size = 1000;
             Size = new Size(size, size);
         }
