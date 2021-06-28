@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("ce8bd576-e440-43b3-be34-1e53f565f7e8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ce8bd576-e440-43b3-be34-1e53f565f7e8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMuxStreamAttributesManager
     {
         [PreserveSig]

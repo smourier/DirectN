@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("df6b87b6-ce12-45db-aba7-432fe054e57d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("df6b87b6-ce12-45db-aba7-432fe054e57d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTimedTextNotify
     {
         [PreserveSig]

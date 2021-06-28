@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("eb533d5d-2db6-40f8-97a9-494692014f07"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("eb533d5d-2db6-40f8-97a9-494692014f07"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFDXGIDeviceManager
     {
         [PreserveSig]

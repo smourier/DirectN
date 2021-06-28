@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("eed9c2ee-66b4-4f18-a697-ac7d3960215c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("eed9c2ee-66b4-4f18-a697-ac7d3960215c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSensorTransformFactory
     {
         [PreserveSig]

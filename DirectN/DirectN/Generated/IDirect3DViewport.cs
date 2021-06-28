@@ -5,7 +5,7 @@ using LPDIRECTDRAWSURFACE = DirectN.IDirectDrawSurface;
 
 namespace DirectN
 {
-    [Guid("4417c146-33ad-11cf-816f-0000c020156e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4417c146-33ad-11cf-816f-0000c020156e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3DViewport
     {
         [PreserveSig]

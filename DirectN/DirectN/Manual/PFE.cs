@@ -3,7 +3,9 @@
 namespace DirectN
 {
     [Flags]
+#pragma warning disable CA1028 // Enum Storage should be Int32
     public enum PFE : short
+#pragma warning restore CA1028 // Enum Storage should be Int32
     {
         PFE_RTLPARA = (PFM.PFM_RTLPARA >> 16),
         PFE_KEEP = (PFM.PFM_KEEP >> 16),

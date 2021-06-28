@@ -5,7 +5,7 @@ using COLORREF = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("77346cfd-5b49-4d73-ace0-5b52a859f2e0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("77346cfd-5b49-4d73-ace0-5b52a859f2e0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFCapturePreviewSink : IMFCaptureSink
     {
         // IMFCaptureSink

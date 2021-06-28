@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The internal context handed to effect authors to create transforms from effects and any other operation tied to context which is not useful to the application facing API.
     /// </summary>
-    [Guid("577ad2a0-9fc7-4dda-8b18-dab810140052"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("577ad2a0-9fc7-4dda-8b18-dab810140052"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1EffectContext2 : ID2D1EffectContext1
     {
         // ID2D1EffectContext

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7f91ce67-090c-4bb7-b78e-ed8ff2e31da0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7f91ce67-090c-4bb7-b78e-ed8ff2e31da0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12VersionedRootSignatureDeserializer
     {
         [PreserveSig]

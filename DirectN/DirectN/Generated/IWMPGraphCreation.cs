@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bfb377e5-c594-4369-a970-de896d5ece74"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bfb377e5-c594-4369-a970-de896d5ece74"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPGraphCreation
     {
         [PreserveSig]

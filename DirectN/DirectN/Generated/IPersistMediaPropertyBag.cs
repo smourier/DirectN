@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("5738e040-b67f-11d0-bd4d-00a0c911ce86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("5738e040-b67f-11d0-bd4d-00a0c911ce86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPersistMediaPropertyBag
     {
         [PreserveSig]

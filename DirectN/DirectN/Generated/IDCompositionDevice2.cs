@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("75f6468d-1b8e-447c-9bc6-75fea80b5b25"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("75f6468d-1b8e-447c-9bc6-75fea80b5b25"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDCompositionDevice2
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("766c8ffb-5fdb-4fea-a28d-b912996f51bd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("766c8ffb-5fdb-4fea-a28d-b912996f51bd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFPMediaPlayerCallback
     {
         [PreserveSig]

@@ -130,7 +130,7 @@ namespace DirectN
             }
         }
 
-        public static IComObject<ID3D11ShaderResourceView> CreateShaderResourceView(this IComObject<ID3D11Device> device, IComObject<ID3D11Resource> resource, D3D11_SHADER_RESOURCE_VIEW_DESC? desc = null) => CreateShaderResourceView(device?.Object, resource.Object, desc);
+        public static IComObject<ID3D11ShaderResourceView> CreateShaderResourceView(this IComObject<ID3D11Device> device, IComObject<ID3D11Resource> resource, D3D11_SHADER_RESOURCE_VIEW_DESC? desc = null) => CreateShaderResourceView(device?.Object, resource?.Object, desc);
         public static IComObject<ID3D11ShaderResourceView> CreateShaderResourceView(this ID3D11Device device, ID3D11Resource resource, D3D11_SHADER_RESOURCE_VIEW_DESC? desc = null)
         {
             if (device == null)

@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Represents a set of run-time bindable and discoverable properties that allow a data-driven application to modify the state of a Direct2D effect.
     /// </summary>
-    [Guid("483473d7-cd46-4f9d-9d3a-3112aa80159d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("483473d7-cd46-4f9d-9d3a-3112aa80159d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Properties
     {
         [PreserveSig]

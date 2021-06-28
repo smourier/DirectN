@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("dcdaa858-895a-4a22-a5eb-67bda506096d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("dcdaa858-895a-4a22-a5eb-67bda506096d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioFormatEnumerator
     {
         [PreserveSig]

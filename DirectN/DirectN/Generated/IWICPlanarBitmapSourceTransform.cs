@@ -5,7 +5,7 @@ using WICPixelFormatGUID = System.Guid;
 
 namespace DirectN
 {
-    [Guid("3aff9cce-be95-4303-b927-e7d16ff4a613"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3aff9cce-be95-4303-b927-e7d16ff4a613"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICPlanarBitmapSourceTransform
     {
         [PreserveSig]

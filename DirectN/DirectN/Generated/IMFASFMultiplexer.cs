@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("57bdd80a-9b38-4838-b737-c58f670d7d4f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("57bdd80a-9b38-4838-b737-c58f670d7d4f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFASFMultiplexer
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("d396ec8c-605e-4249-978d-72ad1c312872"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d396ec8c-605e-4249-978d-72ad1c312872"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSpatialAudioObjectBuffer : IMFMediaBuffer
     {
         // IMFMediaBuffer

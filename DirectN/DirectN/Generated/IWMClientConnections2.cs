@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4091571e-4701-4593-bb3d-d5f5f0c74246"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4091571e-4701-4593-bb3d-d5f5f0c74246"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMClientConnections2 : IWMClientConnections
     {
         // IWMClientConnections

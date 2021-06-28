@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e79c6349-5997-4ce4-917c-22a3391ec564"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e79c6349-5997-4ce4-917c-22a3391ec564"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPAudioRenderConfig
     {
         [PreserveSig]

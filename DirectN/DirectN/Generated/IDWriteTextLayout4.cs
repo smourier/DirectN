@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("05a9bf42-223f-4441-b5fb-8263685f55e9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("05a9bf42-223f-4441-b5fb-8263685f55e9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextLayout4 : IDWriteTextLayout3
     {
         // IDWriteTextFormat

@@ -5,7 +5,7 @@ using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("ebec459c-2eca-4d42-a8af-30df557614b8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ebec459c-2eca-4d42-a8af-30df557614b8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IReferenceClockTimerControl
     {
         [PreserveSig]

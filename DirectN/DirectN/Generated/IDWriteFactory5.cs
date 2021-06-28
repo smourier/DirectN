@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The root factory interface for all DWrite objects.
     /// </summary>
-    [Guid("958db99a-be2a-4f09-af7d-65189803d1d3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("958db99a-be2a-4f09-af7d-65189803d1d3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFactory5 : IDWriteFactory4
     {
         // IDWriteFactory

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("36b73882-c2c8-11cf-8b46-00805f6cef60"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("36b73882-c2c8-11cf-8b46-00805f6cef60"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IFilterGraph2 : IGraphBuilder
     {
         // IFilterGraph

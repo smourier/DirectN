@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6bf52a51-394a-11d3-b153-00c04f79faa6"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+    [ComImport, Guid("6bf52a51-394a-11d3-b153-00c04f79faa6"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface _WMPOCXEvents
     {
     }

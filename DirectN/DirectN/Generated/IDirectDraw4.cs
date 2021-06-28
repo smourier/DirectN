@@ -10,7 +10,7 @@ using LPDIRECTDRAWSURFACE4 = DirectN.IDirectDrawSurface4;
 
 namespace DirectN
 {
-    [Guid("9c59509a-39bd-11d1-8c4a-00c04fd930c5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9c59509a-39bd-11d1-8c4a-00c04fd930c5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirectDraw4
     {
         [PreserveSig]

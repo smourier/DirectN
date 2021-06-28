@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("433685fe-e22b-4ca0-a8db-b5b4f4dd0e4a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("433685fe-e22b-4ca0-a8db-b5b4f4dd0e4a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12Fence1 : ID3D12Fence
     {
         // ID3D12Object

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("b1a887b2-a4f0-407a-b02e-efbd23bbecdf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b1a887b2-a4f0-407a-b02e-efbd23bbecdf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMDRMTranscryptionManager
     {
         [PreserveSig]

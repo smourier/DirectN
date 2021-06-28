@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("2633066b-4514-4c7a-8fd8-12ea98059d18"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2633066b-4514-4c7a-8fd8-12ea98059d18"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXGIDecodeSwapChain
     {
         [PreserveSig]

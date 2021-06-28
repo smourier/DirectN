@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cb164104-3aa9-45a7-9ac9-4daee131d6e1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cb164104-3aa9-45a7-9ac9-4daee131d6e1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMStreamConfig3 : IWMStreamConfig2
     {
         // IWMStreamConfig

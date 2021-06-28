@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("2b4b1cc8-a4ad-41f8-8322-ca86fc3ec675"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2b4b1cc8-a4ad-41f8-8322-ca86fc3ec675"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D10DepthStencilState : ID3D10DeviceChild
     {
         // ID3D10DeviceChild

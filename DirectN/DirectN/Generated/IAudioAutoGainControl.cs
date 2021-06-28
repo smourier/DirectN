@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("85401fd4-6de4-4b9d-9869-2d6753a82f3c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("85401fd4-6de4-4b9d-9869-2d6753a82f3c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioAutoGainControl
     {
         [PreserveSig]

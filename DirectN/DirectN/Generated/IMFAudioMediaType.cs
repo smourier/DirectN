@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("26a0adc3-ce26-4672-9304-69552edd3faf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("26a0adc3-ce26-4672-9304-69552edd3faf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFAudioMediaType : IMFMediaType
     {
         // IMFAttributes

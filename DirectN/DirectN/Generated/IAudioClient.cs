@@ -5,7 +5,7 @@ using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("1cb9ad4c-dbfa-4c32-b178-c2f568a703b2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1cb9ad4c-dbfa-4c32-b178-c2f568a703b2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioClient
     {
         [PreserveSig]

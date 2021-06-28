@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3ff7715f-3cdc-4dc6-9b72-ec5621dccafd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3ff7715f-3cdc-4dc6-9b72-ec5621dccafd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontSetBuilder1 : IDWriteFontSetBuilder
     {
         // IDWriteFontSetBuilder

@@ -5,7 +5,7 @@ using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("651b9ad0-0fc7-4aa9-9538-d89931010741"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("651b9ad0-0fc7-4aa9-9538-d89931010741"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMediaObjectInPlace
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4e233efd-1dd2-49e8-b577-d63eee4c0d33"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4e233efd-1dd2-49e8-b577-d63eee4c0d33"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFContentDecryptionModuleSession
     {
         [PreserveSig]

@@ -5,7 +5,7 @@ using COLORREF = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("a714590a-58af-430a-85bf-44f5ec838d85"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a714590a-58af-430a-85bf-44f5ec838d85"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFPMediaPlayer
     {
         [PreserveSig]

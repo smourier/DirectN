@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9d8e1289-d7b3-465f-8126-250e349af85d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9d8e1289-d7b3-465f-8126-250e349af85d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXGIKeyedMutex : IDXGIDeviceSubObject
     {
         // IDXGIObject

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cbfd91d9-51b2-45e4-b3de-d19ccfb863c5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cbfd91d9-51b2-45e4-b3de-d19ccfb863c5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDCompositionAnimation
     {
         [PreserveSig]

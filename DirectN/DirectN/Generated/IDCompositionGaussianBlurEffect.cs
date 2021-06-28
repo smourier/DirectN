@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("45d4d0b7-1bd4-454e-8894-2bfa68443033"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("45d4d0b7-1bd4-454e-8894-2bfa68443033"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDCompositionGaussianBlurEffect : IDCompositionFilterEffect
     {
         // IDCompositionEffect

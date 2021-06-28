@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4050560e-42a7-413a-85c2-09269a2d0f44"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4050560e-42a7-413a-85c2-09269a2d0f44"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVideoProcAmp
     {
         [PreserveSig]

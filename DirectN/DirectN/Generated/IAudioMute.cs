@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("df45aeea-b74a-4b6b-afad-2366b6aa012e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("df45aeea-b74a-4b6b-afad-2366b6aa012e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioMute
     {
         [PreserveSig]

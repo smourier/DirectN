@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("465217f2-5568-43cf-b5b9-f61d54531ca1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("465217f2-5568-43cf-b5b9-f61d54531ca1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D11VideoProcessorEnumerator1 : ID3D11VideoProcessorEnumerator
     {
         // ID3D11DeviceChild

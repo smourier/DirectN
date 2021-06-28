@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("554e41e8-ae8e-4a8c-b7d2-5b4f274a30e4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("554e41e8-ae8e-4a8c-b7d2-5b4f274a30e4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12VideoExtensionCommand : ID3D12Pageable
     {
         // ID3D12Object

@@ -1,20 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net5.0-windows8.0</TargetFramework>
     <ApplicationIcon>DirectN.ico</ApplicationIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.</Description>
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
     <Copyright>Copyright © 2017-2021 Simon Mourier. All rights reserved.</Copyright>
-    <FileVersion>1.9.0.2</FileVersion>
+    <FileVersion>1.9.1.0</FileVersion>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.9.0.2</Version>
+    <Version>1.9.1.0</Version>
     <RootNamespace>DirectN</RootNamespace>
   </PropertyGroup>
 
@@ -6144,6 +6144,7 @@
     <Compile Include="..\DirectN\Manual\MF_MEDIATYPE_EQUAL_FLAGS.cs" Link="Manual\MF_MEDIATYPE_EQUAL_FLAGS.cs" />
     <Compile Include="..\DirectN\Manual\MINMAXINFO.cs" Link="Manual\MINMAXINFO.cs" />
     <Compile Include="..\DirectN\Manual\MONITORINFO.cs" Link="Manual\MONITORINFO.cs" />
+    <Compile Include="..\DirectN\Manual\MONITORINFOEX.cs" Link="Manual\MONITORINFOEX.cs" />
     <Compile Include="..\DirectN\Manual\MONITOR_FLAGS.cs" Link="Manual\MONITOR_FLAGS.cs" />
     <Compile Include="..\DirectN\Manual\PAINTSTRUCT.cs" Link="Manual\PAINTSTRUCT.cs" />
     <Compile Include="..\DirectN\Manual\PARAFORMAT2.cs" Link="Manual\PARAFORMAT2.cs" />

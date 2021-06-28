@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7587c667-628f-499f-88e7-6a6f4e888464"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7587c667-628f-499f-88e7-6a6f4e888464"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPCore3 : IWMPCore2
     {
         // IWMPCore

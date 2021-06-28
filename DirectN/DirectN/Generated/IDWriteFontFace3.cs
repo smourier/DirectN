@@ -8,7 +8,7 @@ namespace DirectN
     /// <summary>
     /// The interface that represents an absolute reference to a font face. It contains font face type, appropriate file references and face identification data. Various font data such as metrics, names and glyph outlines is obtained from IDWriteFontFace.
     /// </summary>
-    [Guid("d37d7598-09be-4222-a236-2081341cc1f2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d37d7598-09be-4222-a236-2081341cc1f2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFace3 : IDWriteFontFace2
     {
         // IDWriteFontFace

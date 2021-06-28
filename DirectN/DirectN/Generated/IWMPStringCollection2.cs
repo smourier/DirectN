@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("46ad648d-53f1-4a74-92e2-2a1b68d63fd4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("46ad648d-53f1-4a74-92e2-2a1b68d63fd4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPStringCollection2 : IWMPStringCollection
     {
         // IWMPStringCollection

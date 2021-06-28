@@ -5,7 +5,7 @@ using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("36b73881-c2c8-11cf-8b46-00805f6cef60"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("36b73881-c2c8-11cf-8b46-00805f6cef60"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMStreamControl
     {
         [PreserveSig]

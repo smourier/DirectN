@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("676aa6dd-238a-410d-bb99-65668d01605a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("676aa6dd-238a-410d-bb99-65668d01605a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTopologyNodeAttributeEditor
     {
         [PreserveSig]

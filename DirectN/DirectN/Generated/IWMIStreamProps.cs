@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6816dad3-2b4b-4c8e-8149-874c3483a753"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6816dad3-2b4b-4c8e-8149-874c3483a753"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMIStreamProps
     {
         [PreserveSig]

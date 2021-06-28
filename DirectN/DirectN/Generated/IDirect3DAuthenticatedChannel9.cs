@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("ff24beee-da21-4beb-98b5-d2f899f98af9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ff24beee-da21-4beb-98b5-d2f899f98af9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3DAuthenticatedChannel9
     {
         [PreserveSig]

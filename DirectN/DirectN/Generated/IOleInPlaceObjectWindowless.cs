@@ -5,7 +5,7 @@ using LRESULT = System.Int64;
 
 namespace DirectN
 {
-    [Guid("1c2056cc-5ef4-101b-8bc8-00aa003e3b29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1c2056cc-5ef4-101b-8bc8-00aa003e3b29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IOleInPlaceObjectWindowless
     {
         [PreserveSig]

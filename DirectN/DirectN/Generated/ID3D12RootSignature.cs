@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c54a6b66-72df-4ee8-8be5-a946a1429214"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c54a6b66-72df-4ee8-8be5-a946a1429214"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12RootSignature : ID3D12DeviceChild
     {
         // ID3D12Object

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c2f8e001-f205-4bc9-99bc-c13b1e048ccb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c2f8e001-f205-4bc9-99bc-c13b1e048ccb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPerChannelDbLevel
     {
         [PreserveSig]

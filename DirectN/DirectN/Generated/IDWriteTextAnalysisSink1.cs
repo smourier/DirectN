@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The interface implemented by the client to receive the output of the text analyzers.
     /// </summary>
-    [Guid("b0d941a0-85e7-4d8b-9fd3-5ced9934482a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b0d941a0-85e7-4d8b-9fd3-5ced9934482a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextAnalysisSink1 : IDWriteTextAnalysisSink
     {
         // IDWriteTextAnalysisSink

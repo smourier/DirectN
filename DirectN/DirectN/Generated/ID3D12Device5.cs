@@ -1,11 +1,12 @@
 ﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(12560,5)
 using System;
 using System.Runtime.InteropServices;
+using LUID = DirectN._LUID;
 using SECURITY_ATTRIBUTES = DirectN._SECURITY_ATTRIBUTES;
 
 namespace DirectN
 {
-    [Guid("8b4f173b-2fea-4b80-8f58-4307191ab95d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("8b4f173b-2fea-4b80-8f58-4307191ab95d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12Device5 : ID3D12Device4
     {
         // ID3D12Object

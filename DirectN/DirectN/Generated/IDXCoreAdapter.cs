@@ -5,7 +5,7 @@ using size_t = System.UInt64;
 
 namespace DirectN
 {
-    [Guid("f0db4c7f-fe5a-42a2-bd62-f2a6cf6fc83e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f0db4c7f-fe5a-42a2-bd62-f2a6cf6fc83e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXCoreAdapter
     {
         [PreserveSig]

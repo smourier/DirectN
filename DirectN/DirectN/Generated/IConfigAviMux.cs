@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("5acd6aa0-f482-11ce-8b67-00aa00a3f1a6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("5acd6aa0-f482-11ce-8b67-00aa00a3f1a6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IConfigAviMux
     {
         [PreserveSig]

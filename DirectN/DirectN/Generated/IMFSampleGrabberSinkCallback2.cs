@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("ca86aa50-c46e-429e-ab27-16d6ac6844cb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ca86aa50-c46e-429e-ab27-16d6ac6844cb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSinkCallback
     {
         // IMFClockStateSink

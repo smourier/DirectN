@@ -5,7 +5,7 @@ using OLE_HWND = System.Int64;
 
 namespace DirectN
 {
-    [Guid("96740bfa-c56a-45d1-a3a4-762914d4ade9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("96740bfa-c56a-45d1-a3a4-762914d4ade9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPNodeWindowed
     {
         [PreserveSig]

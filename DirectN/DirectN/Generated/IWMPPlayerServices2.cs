@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("1bb1592f-f040-418a-9f71-17c7512b4d70"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1bb1592f-f040-418a-9f71-17c7512b4d70"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPPlayerServices2 : IWMPPlayerServices
     {
         // IWMPPlayerServices

@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The IDWriteFont interface represents a font in a font collection.
     /// </summary>
-    [Guid("29748ed6-8c9c-4a6a-be0b-d912e8538944"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("29748ed6-8c9c-4a6a-be0b-d912e8538944"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFont3 : IDWriteFont2
     {
         // IDWriteFont

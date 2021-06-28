@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("508e71d3-ec66-4fc3-8775-b4b9ed6ba847"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("508e71d3-ec66-4fc3-8775-b4b9ed6ba847"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFFieldOfUseMFTUnlock
     {
         [PreserveSig]

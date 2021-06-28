@@ -5,7 +5,7 @@ using DXGI_USAGE = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("035f3ab4-482e-4e50-b41f-8a7f8bd8960b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("035f3ab4-482e-4e50-b41f-8a7f8bd8960b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXGIResource : IDXGIDeviceSubObject
     {
         // IDXGIObject

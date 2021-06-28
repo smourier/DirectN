@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// An effect uses this interface to configure a blending operation.
     /// </summary>
-    [Guid("63ac0b32-ba44-450f-8806-7f4ca1ff2f1b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("63ac0b32-ba44-450f-8806-7f4ca1ff2f1b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1BlendTransform : ID2D1ConcreteTransform
     {
         // ID2D1TransformNode

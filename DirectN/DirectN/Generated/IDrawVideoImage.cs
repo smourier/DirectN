@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("48efb120-ab49-11d2-aed2-00a0c995e8d5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("48efb120-ab49-11d2-aed2-00a0c995e8d5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDrawVideoImage
     {
         [PreserveSig]

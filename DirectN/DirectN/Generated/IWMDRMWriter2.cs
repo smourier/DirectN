@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("38ee7a94-40e2-4e10-aa3f-33fd3210ed5b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("38ee7a94-40e2-4e10-aa3f-33fd3210ed5b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMDRMWriter2 : IWMDRMWriter
     {
         // IWMDRMWriter

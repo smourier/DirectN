@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7e51f487-4d93-4f98-8ab4-27d0565adc51"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7e51f487-4d93-4f98-8ab4-27d0565adc51"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMCodecInfo3 : IWMCodecInfo2
     {
         // IWMCodecInfo

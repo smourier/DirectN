@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("60eccbc1-378d-4df1-894c-f8ac5ce4d7dd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("60eccbc1-378d-4df1-894c-f8ac5ce4d7dd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12DebugDevice2 : ID3D12DebugDevice
     {
         // ID3D12DebugDevice

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("777d4a3b-f6ff-4a26-85dc-68d7cdeda1d4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("777d4a3b-f6ff-4a26-85dc-68d7cdeda1d4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ISpatialAudioMetadataClient
     {
         [PreserveSig]

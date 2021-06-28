@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bfccd196-1244-4840-ab44-480975c4ffe4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bfccd196-1244-4840-ab44-480975c4ffe4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IFileClient
     {
         [PreserveSig]

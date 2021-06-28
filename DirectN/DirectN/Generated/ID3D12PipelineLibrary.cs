@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c64226a8-9201-46af-b4cc-53fb9ff7414f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c64226a8-9201-46af-b4cc-53fb9ff7414f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12PipelineLibrary : ID3D12DeviceChild
     {
         // ID3D12Object

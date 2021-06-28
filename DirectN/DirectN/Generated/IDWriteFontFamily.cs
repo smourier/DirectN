@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The IDWriteFontFamily interface represents a set of fonts that share the same design but are differentiated by weight, stretch, and style.
     /// </summary>
-    [Guid("da20d8ef-812a-4c43-9802-62ec4abd7add"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("da20d8ef-812a-4c43-9802-62ec4abd7add"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFamily : IDWriteFontList
     {
         // IDWriteFontList

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4f528693-1035-43fe-b428-757561ad3a68"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4f528693-1035-43fe-b428-757561ad3a68"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface INSSBuffer2 : INSSBuffer
     {
         // INSSBuffer

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0a15159d-41c7-4456-93e1-284cd61d4e8d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0a15159d-41c7-4456-93e1-284cd61d4e8d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IOPMVideoOutput
     {
         [PreserveSig]

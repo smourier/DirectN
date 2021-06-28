@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The interface that represents text rendering settings for glyph rasterization and filtering.
     /// </summary>
-    [Guid("b7924baa-391b-412a-8c5c-e44cc2d867dc"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b7924baa-391b-412a-8c5c-e44cc2d867dc"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteRenderingParams3 : IDWriteRenderingParams2
     {
         // IDWriteRenderingParams

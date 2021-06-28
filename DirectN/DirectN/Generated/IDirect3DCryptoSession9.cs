@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("fa0ab799-7a9c-48ca-8c5b-237e71a54434"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("fa0ab799-7a9c-48ca-8c5b-237e71a54434"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3DCryptoSession9
     {
         [PreserveSig]

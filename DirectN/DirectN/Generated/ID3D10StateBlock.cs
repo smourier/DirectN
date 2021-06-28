@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0803425a-57f5-4dd6-9465-a87570834a08"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0803425a-57f5-4dd6-9465-a87570834a08"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D10StateBlock
     {
         [PreserveSig]

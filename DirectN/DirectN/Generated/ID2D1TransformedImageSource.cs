@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Represents an image source which shares resources with an original image source.
     /// </summary>
-    [Guid("7f1f79e5-2796-416c-8f55-700f911445e5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7f1f79e5-2796-416c-8f55-700f911445e5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1TransformedImageSource : ID2D1Image
     {
         // ID2D1Resource

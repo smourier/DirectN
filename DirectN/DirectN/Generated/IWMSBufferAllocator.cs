@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("61103ca4-2033-11d2-9ef1-006097d2d7cf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("61103ca4-2033-11d2-9ef1-006097d2d7cf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMSBufferAllocator
     {
         [PreserveSig]

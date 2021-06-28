@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0302b57d-89d1-4ba2-85c9-166f2c53eb91"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0302b57d-89d1-4ba2-85c9-166f2c53eb91"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMMutualExclusion2 : IWMMutualExclusion
     {
         // IWMStreamList

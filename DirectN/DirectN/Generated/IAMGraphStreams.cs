@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("632105fa-072e-11d3-8af9-00c04fb6bd3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("632105fa-072e-11d3-8af9-00c04fb6bd3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMGraphStreams
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3e02c918-cc79-4985-b622-2d92ad701623"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3e02c918-cc79-4985-b622-2d92ad701623"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D10EffectDepthStencilViewVariable : ID3D10EffectVariable
     {
         // ID3D10EffectVariable

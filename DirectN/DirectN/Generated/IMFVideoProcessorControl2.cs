@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bde633d3-e1dc-4a7f-a693-bbae399c4a20"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bde633d3-e1dc-4a7f-a693-bbae399c4a20"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFVideoProcessorControl2 : IMFVideoProcessorControl
     {
         // IMFVideoProcessorControl

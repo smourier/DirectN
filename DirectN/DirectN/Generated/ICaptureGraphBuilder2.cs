@@ -5,7 +5,7 @@ using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("93e5a4e0-2d50-11d2-abfa-00a0c9c6e38d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("93e5a4e0-2d50-11d2-abfa-00a0c9c6e38d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ICaptureGraphBuilder2
     {
         [PreserveSig]

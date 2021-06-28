@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4ef6100a-af88-11d0-9846-00c04fc29993"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+    [ComImport, Guid("4ef6100a-af88-11d0-9846-00c04fc29993"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IFontEventsDisp
     {
     }

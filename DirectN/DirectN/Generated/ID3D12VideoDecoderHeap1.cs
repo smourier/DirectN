@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("da1d98c5-539f-41b2-bf6b-1198a03b6d26"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("da1d98c5-539f-41b2-bf6b-1198a03b6d26"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap
     {
         // ID3D12Object

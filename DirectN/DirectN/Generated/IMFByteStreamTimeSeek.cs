@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("64976bfa-fb61-4041-9069-8c9a5f659beb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("64976bfa-fb61-4041-9069-8c9a5f659beb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFByteStreamTimeSeek
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("aac18c18-e186-46d2-825d-a1f8dc8e395a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("aac18c18-e186-46d2-825d-a1f8dc8e395a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVPManager
     {
         [PreserveSig]

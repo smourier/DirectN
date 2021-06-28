@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f22f5e06-585c-4def-8523-6555cfbc0cb3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f22f5e06-585c-4def-8523-6555cfbc0cb3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ITocEntry
     {
         [PreserveSig]

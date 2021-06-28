@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f744d97b-9988-44fb-abd6-5378844cfa8b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f744d97b-9988-44fb-abd6-5378844cfa8b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IResourceManager
     {
         [PreserveSig]

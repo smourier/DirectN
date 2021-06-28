@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c081fe77-2fd1-41ac-a5a3-34983c4ba61a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c081fe77-2fd1-41ac-a5a3-34983c4ba61a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFaceReference1 : IDWriteFontFaceReference
     {
         // IDWriteFontFaceReference

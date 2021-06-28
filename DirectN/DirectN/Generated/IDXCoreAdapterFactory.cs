@@ -3,10 +3,11 @@ using System;
 using System.Runtime.InteropServices;
 using LUID = DirectN._LUID;
 using PFN_DXCORE_NOTIFICATION_CALLBACK = System.IntPtr;
+using uint32_t = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("78ee5945-c36e-4b13-a669-005dd11c0f06"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("78ee5945-c36e-4b13-a669-005dd11c0f06"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXCoreAdapterFactory
     {
         [PreserveSig]
@@ -19,9 +20,9 @@ namespace DirectN
         void IsNotificationTypeSupported(DXCoreNotificationType notificationType);
         
         [PreserveSig]
-        HRESULT RegisterEventNotification(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object dxCoreObject, DXCoreNotificationType notificationType, /* _In_ */ ref PFN_DXCORE_NOTIFICATION_CALLBACK callbackFunction, /* optional(void) */ IntPtr callbackContext, /* _Out_ */ out int eventCookie);
+        HRESULT RegisterEventNotification(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object dxCoreObject, DXCoreNotificationType notificationType, /* _In_ */ ref PFN_DXCORE_NOTIFICATION_CALLBACK callbackFunction, /* optional(void) */ IntPtr callbackContext, /* _Out_ */ out uint32_t eventCookie);
         
         [PreserveSig]
-        HRESULT UnregisterEventNotification(int eventCookie);
+        HRESULT UnregisterEventNotification(uint eventCookie);
     }
 }

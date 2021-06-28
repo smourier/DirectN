@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0df2c94b-f5f9-472d-af6b-c46e0ac9cd05"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0df2c94b-f5f9-472d-af6b-c46e0ac9cd05"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ISpatialAudioObjectForMetadataCommands : ISpatialAudioObjectBase
     {
         // ISpatialAudioObjectBase

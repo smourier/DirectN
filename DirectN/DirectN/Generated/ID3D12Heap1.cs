@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("572f7389-2168-49e3-9693-d6df5871bf6d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("572f7389-2168-49e3-9693-d6df5871bf6d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12Heap1 : ID3D12Heap
     {
         // ID3D12Object

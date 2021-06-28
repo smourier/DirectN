@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Analyzes various text properties for complex script processing.
     /// </summary>
-    [Guid("80dad800-e21f-4e83-96ce-bfcce500db7c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("80dad800-e21f-4e83-96ce-bfcce500db7c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextAnalyzer1 : IDWriteTextAnalyzer
     {
         // IDWriteTextAnalyzer

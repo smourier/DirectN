@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9fd52741-176d-4b36-8f51-ca8f933223be"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9fd52741-176d-4b36-8f51-ca8f933223be"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMClockSlave
     {
         [PreserveSig]

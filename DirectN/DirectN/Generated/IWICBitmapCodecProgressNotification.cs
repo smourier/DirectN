@@ -5,7 +5,7 @@ using PFNProgressNotification = System.IntPtr;
 
 namespace DirectN
 {
-    [Guid("64c1024e-c3cf-4462-8078-88c2b11c46d9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("64c1024e-c3cf-4462-8078-88c2b11c46d9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICBitmapCodecProgressNotification
     {
         [PreserveSig]

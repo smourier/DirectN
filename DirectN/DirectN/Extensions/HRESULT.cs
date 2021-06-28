@@ -69,7 +69,9 @@ namespace DirectN
         public override string ToString() => ToString(null, null);
         public string ToString(string format, IFormatProvider formatProvider)
         {
+#pragma warning disable CA1308 // Normalize strings to uppercase
             switch (format?.ToLowerInvariant())
+#pragma warning restore CA1308 // Normalize strings to uppercase
             {
                 case "i":
                     return Value.ToString();

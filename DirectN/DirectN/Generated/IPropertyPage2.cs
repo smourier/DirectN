@@ -6,7 +6,7 @@ using MSG = DirectN.tagMSG;
 
 namespace DirectN
 {
-    [Guid("01e44665-24ac-101b-84ed-08002b2ec713"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("01e44665-24ac-101b-84ed-08002b2ec713"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPropertyPage2 : IPropertyPage
     {
         // IPropertyPage

@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The interface implemented by the client to provide needed information to the text analyzer, such as the text and associated text properties. If any of these callbacks returns an error, the analysis functions will stop prematurely and return a callback error.
     /// </summary>
-    [Guid("639cfad8-0fb4-4b21-a58a-067920120009"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("639cfad8-0fb4-4b21-a58a-067920120009"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextAnalysisSource1 : IDWriteTextAnalysisSource
     {
         // IDWriteTextAnalysisSource

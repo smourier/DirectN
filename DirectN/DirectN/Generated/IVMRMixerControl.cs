@@ -5,7 +5,7 @@ using COLORREF = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("1c1a17b0-bed0-415d-974b-dc6696131599"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1c1a17b0-bed0-415d-974b-dc6696131599"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVMRMixerControl
     {
         [PreserveSig]

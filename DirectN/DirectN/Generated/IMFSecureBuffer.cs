@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c1209904-e584-4752-a2d6-7f21693f8b21"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c1209904-e584-4752-a2d6-7f21693f8b21"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSecureBuffer
     {
         [PreserveSig]

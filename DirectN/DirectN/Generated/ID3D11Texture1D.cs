@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f8fb5c27-c6b3-4f75-a4c8-439af2ef564c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f8fb5c27-c6b3-4f75-a4c8-439af2ef564c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D11Texture1D : ID3D11Resource
     {
         // ID3D11DeviceChild

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3b0d0ea4-d0a9-4b0e-935b-09516746fac0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3b0d0ea4-d0a9-4b0e-935b-09516746fac0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMMDeviceActivator
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a2b1a1d9-4db3-425d-a2b2-bd335cb3e2e5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a2b1a1d9-4db3-425d-a2b2-bd335cb3e2e5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioBass : IPerChannelDbLevel
     {
         // IPerChannelDbLevel

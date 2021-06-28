@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f369e2f0-e081-4fe6-8450-b810b2f410d1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f369e2f0-e081-4fe6-8450-b810b2f410d1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMReaderTimecode
     {
         [PreserveSig]

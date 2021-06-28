@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("720d4ac0-7533-11d0-a5d6-28db04c10000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("720d4ac0-7533-11d0-a5d6-28db04c10000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IKsTopologyInfo
     {
         [PreserveSig]

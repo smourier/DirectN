@@ -7,9 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DXCoreAdapterMemoryBudget
     {
-        public int budget;
-        public int currentUsage;
-        public int availableForReservation;
-        public int currentReservation;
+        public ulong budget;
+        public ulong currentUsage;
+        public ulong availableForReservation;
+        public ulong currentReservation;
     }
 }

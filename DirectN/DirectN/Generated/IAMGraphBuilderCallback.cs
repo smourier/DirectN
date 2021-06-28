@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("4995f511-9ddb-4f12-bd3b-f04611807b79"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4995f511-9ddb-4f12-bd3b-f04611807b79"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMGraphBuilderCallback
     {
         [PreserveSig]

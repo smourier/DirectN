@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("332ec562-3758-468d-a784-e38f23552128"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("332ec562-3758-468d-a784-e38f23552128"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFExtendedDRMTypeSupport
     {
         [PreserveSig]

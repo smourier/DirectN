@@ -5,7 +5,7 @@ using D3D12_GPU_VIRTUAL_ADDRESS = System.UInt64;
 
 namespace DirectN
 {
-    [Guid("8754318e-d3a9-4541-98cf-645b50dc4874"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("8754318e-d3a9-4541-98cf-645b50dc4874"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12GraphicsCommandList4 : ID3D12GraphicsCommandList3
     {
         // ID3D12Object

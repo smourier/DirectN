@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("8e1c39a1-de53-11cf-aa63-0080c744528d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("8e1c39a1-de53-11cf-aa63-0080c744528d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMOpenProgress
     {
         [PreserveSig]

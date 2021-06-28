@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cfccfa72-c343-48c3-a2de-b7a4402e39f2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cfccfa72-c343-48c3-a2de-b7a4402e39f2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPUserEventSink
     {
         [PreserveSig]

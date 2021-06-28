@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("84d2054a-3aa1-4728-a3b0-440a418cf49c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("84d2054a-3aa1-4728-a3b0-440a418cf49c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFPMPHostApp
     {
         [PreserveSig]

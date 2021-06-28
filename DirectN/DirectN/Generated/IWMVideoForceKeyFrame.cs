@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9f8496be-5b9a-41b9-a9e8-f21cd80596c2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9f8496be-5b9a-41b9-a9e8-f21cd80596c2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMVideoForceKeyFrame
     {
         [PreserveSig]

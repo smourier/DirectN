@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0e5ed805-aba6-49c3-8f9a-2b8c889c4fa8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0e5ed805-aba6-49c3-8f9a-2b8c889c4fa8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioProcessingObjectConfiguration
     {
         [PreserveSig]

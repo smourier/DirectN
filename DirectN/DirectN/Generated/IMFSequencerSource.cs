@@ -5,7 +5,7 @@ using MFSequencerElementId = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("197cd219-19cb-4de1-a64c-acf2edcbe59e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("197cd219-19cb-4de1-a64c-acf2edcbe59e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSequencerSource
     {
         [PreserveSig]

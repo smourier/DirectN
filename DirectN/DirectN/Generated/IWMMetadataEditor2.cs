@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("203cffe3-2e18-4fdf-b59d-6e71530534cf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("203cffe3-2e18-4fdf-b59d-6e71530534cf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMMetadataEditor2 : IWMMetadataEditor
     {
         // IWMMetadataEditor

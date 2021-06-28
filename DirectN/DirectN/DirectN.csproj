@@ -6158,6 +6158,7 @@
     <Compile Include="Manual\MF_MEDIATYPE_EQUAL_FLAGS.cs" />
     <Compile Include="Manual\MINMAXINFO.cs" />
     <Compile Include="Manual\MONITORINFO.cs" />
+    <Compile Include="Manual\MONITORINFOEX.cs" />
     <Compile Include="Manual\MONITOR_FLAGS.cs" />
     <Compile Include="Manual\PAINTSTRUCT.cs" />
     <Compile Include="Manual\PARAFORMAT2.cs" />

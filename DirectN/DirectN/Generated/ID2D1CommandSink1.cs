@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// This interface performs all the same functions as the existing ID2D1CommandSink interface. It also enables access to the new primitive blend modes, MIN and ADD, through its SetPrimitiveBlend1 method.
     /// </summary>
-    [Guid("9eb767fd-4269-4467-b8c2-eb30cb305743"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9eb767fd-4269-4467-b8c2-eb30cb305743"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1CommandSink1 : ID2D1CommandSink
     {
         // ID2D1CommandSink

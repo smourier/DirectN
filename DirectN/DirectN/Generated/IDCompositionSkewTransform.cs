@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e57aa735-dcdb-4c72-9c61-0591f58889ee"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e57aa735-dcdb-4c72-9c61-0591f58889ee"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDCompositionSkewTransform : IDCompositionTransform
     {
         // IDCompositionEffect

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7b3b6153-a886-4544-ab37-6537c8500403"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7b3b6153-a886-4544-ab37-6537c8500403"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D11UnorderedAccessView1 : ID3D11UnorderedAccessView
     {
         // ID3D11DeviceChild

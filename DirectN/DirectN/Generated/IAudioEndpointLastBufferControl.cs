@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f8520dd3-8f9d-4437-9861-62f584c33dd6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f8520dd3-8f9d-4437-9861-62f584c33dd6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioEndpointLastBufferControl
     {
         [PreserveSig]

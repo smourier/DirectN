@@ -5,7 +5,7 @@ using LCID = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("34151510-eec0-11d2-8201-00a0c9d74842"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("34151510-eec0-11d2-8201-00a0c9d74842"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDvdInfo2
     {
         [PreserveSig]

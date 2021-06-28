@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bd1ae5e0-a6ae-11ce-bd37-504200c10000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bd1ae5e0-a6ae-11ce-bd37-504200c10000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPersistMemory
     {
         [PreserveSig]

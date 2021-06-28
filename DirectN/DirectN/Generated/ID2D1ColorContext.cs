@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Represents a color context that can be used with an ID2D1Bitmap1 object.
     /// </summary>
-    [Guid("1c4820bb-5771-4518-a581-2fe4dd0ec657"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1c4820bb-5771-4518-a581-2fe4dd0ec657"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1ColorContext : ID2D1Resource
     {
         // ID2D1Resource

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0c0e4080-9081-11d2-beec-0060082f2054"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0c0e4080-9081-11d2-beec-0060082f2054"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface INSNetSourceCreator
     {
         [PreserveSig]

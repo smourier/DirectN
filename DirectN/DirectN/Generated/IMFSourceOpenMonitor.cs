@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("059054b3-027c-494c-a27d-9113291cf87f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("059054b3-027c-494c-a27d-9113291cf87f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSourceOpenMonitor
     {
         [PreserveSig]

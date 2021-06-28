@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("04c75bf8-3ce1-473b-acc5-3cc4f5e94999"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("04c75bf8-3ce1-473b-acc5-3cc4f5e94999"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICImageEncoder
     {
         [PreserveSig]

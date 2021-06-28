@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("1e560447-9a2b-43e1-a94c-b0aaabfbfbc9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1e560447-9a2b-43e1-a94c-b0aaabfbfbc9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTimedTextCue
     {
         [PreserveSig]

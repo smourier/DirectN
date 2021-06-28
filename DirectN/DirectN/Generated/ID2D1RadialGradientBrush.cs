@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Paints an area with a radial gradient.
     /// </summary>
-    [Guid("2cd906ac-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd906ac-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1RadialGradientBrush : ID2D1Brush
     {
         // ID2D1Resource

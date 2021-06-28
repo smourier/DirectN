@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("be8f4f4e-5b16-4d29-b350-7f6b5d9298ac"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("be8f4f4e-5b16-4d29-b350-7f6b5d9298ac"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDMOVideoOutputOptimizations
     {
         [PreserveSig]

@@ -6,7 +6,7 @@ using WICPixelFormatGUID = System.Guid;
 
 namespace DirectN
 {
-    [Guid("b66f034f-d0e2-40ab-b436-6de39e321a94"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b66f034f-d0e2-40ab-b436-6de39e321a94"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICColorTransform : IWICBitmapSource
     {
         // IWICBitmapSource

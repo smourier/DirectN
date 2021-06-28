@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3cb4a69d-bb6f-4d2b-95b7-452d2c155db5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3cb4a69d-bb6f-4d2b-95b7-452d2c155db5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IKsFormatSupport
     {
         [PreserveSig]

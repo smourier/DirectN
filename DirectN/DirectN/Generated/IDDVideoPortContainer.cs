@@ -9,7 +9,7 @@ using LPDIRECTDRAWVIDEOPORT = DirectN.IDirectDrawVideoPort;
 
 namespace DirectN
 {
-    [Guid("6c142760-a733-11ce-a521-0020af0be560"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6c142760-a733-11ce-a521-0020af0be560"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDDVideoPortContainer
     {
         [PreserveSig]

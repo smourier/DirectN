@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4c06bb9b-626c-4614-8329-cc6a21b93fa0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4c06bb9b-626c-4614-8329-cc6a21b93fa0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMFrameInterpProps
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("350ba78b-6bc8-4113-a5f5-312056934eb6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("350ba78b-6bc8-4113-a5f5-312056934eb6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPClosedCaption2 : IWMPClosedCaption
     {
         // IWMPClosedCaption

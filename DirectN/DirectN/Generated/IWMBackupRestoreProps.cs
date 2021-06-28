@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3c8e0da6-996f-4ff3-a1af-4838f9377e2e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3c8e0da6-996f-4ff3-a1af-4838f9377e2e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMBackupRestoreProps
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a70efe61-e2a3-11d0-a9be-00aa0061be93"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a70efe61-e2a3-11d0-a9be-00aa0061be93"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDvdControl
     {
         [PreserveSig]

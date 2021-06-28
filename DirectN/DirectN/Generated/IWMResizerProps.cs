@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("57665d4c-0414-4faa-905b-10e546f81c33"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("57665d4c-0414-4faa-905b-10e546f81c33"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMResizerProps
     {
         [PreserveSig]

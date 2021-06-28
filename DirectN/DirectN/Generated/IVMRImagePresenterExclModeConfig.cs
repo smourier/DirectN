@@ -6,7 +6,7 @@ using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;
 
 namespace DirectN
 {
-    [Guid("e6f7ce40-4673-44f1-8f77-5499d68cb4ea"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e6f7ce40-4673-44f1-8f77-5499d68cb4ea"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVMRImagePresenterExclModeConfig : IVMRImagePresenterConfig
     {
         // IVMRImagePresenterConfig

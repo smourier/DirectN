@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("992388b4-3372-4f67-8b6f-c84c071f4751"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("992388b4-3372-4f67-8b6f-c84c071f4751"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFVideoSampleAllocatorCallback
     {
         [PreserveSig]

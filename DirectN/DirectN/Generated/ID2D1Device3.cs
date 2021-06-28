@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("852f2087-802c-4037-ab60-ff2e7ee6fc01"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("852f2087-802c-4037-ab60-ff2e7ee6fc01"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Device3 : ID2D1Device2
     {
         // ID2D1Resource

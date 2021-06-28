@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// An effect uses this interface to configure border generation.
     /// </summary>
-    [Guid("4998735c-3a19-473c-9781-656847e3a347"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4998735c-3a19-473c-9781-656847e3a347"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1BorderTransform : ID2D1ConcreteTransform
     {
         // ID2D1TransformNode

@@ -5,7 +5,7 @@ using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("bee3d220-157b-11d0-bd23-00a0c911ce86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bee3d220-157b-11d0-bd23-00a0c911ce86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IConfigInterleaving
     {
         [PreserveSig]

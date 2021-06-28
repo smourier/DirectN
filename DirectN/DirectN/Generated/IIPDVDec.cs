@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("b8e8bd60-0bfe-11d0-af91-00aa00b67a42"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b8e8bd60-0bfe-11d0-af91-00aa00b67a42"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IIPDVDec
     {
         [PreserveSig]

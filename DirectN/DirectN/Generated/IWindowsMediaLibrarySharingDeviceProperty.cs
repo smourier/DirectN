@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("81e26927-7a7d-40a7-81d4-bddc02960e3e"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+    [ComImport, Guid("81e26927-7a7d-40a7-81d4-bddc02960e3e"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWindowsMediaLibrarySharingDeviceProperty
     {
         [PreserveSig]

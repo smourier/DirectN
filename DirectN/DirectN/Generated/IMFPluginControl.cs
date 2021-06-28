@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("5c6c44bf-1db6-435b-9249-e8cd10fdec96"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("5c6c44bf-1db6-435b-9249-e8cd10fdec96"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFPluginControl
     {
         [PreserveSig]

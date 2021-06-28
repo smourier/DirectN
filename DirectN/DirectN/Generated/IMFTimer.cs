@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e56e4cbd-8f70-49d8-a0f8-edb3d6ab9bf2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e56e4cbd-8f70-49d8-a0f8-edb3d6ab9bf2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTimer
     {
         [PreserveSig]

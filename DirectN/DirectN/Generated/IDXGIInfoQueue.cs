@@ -5,7 +5,7 @@ using DXGI_DEBUG_ID = System.Guid;
 
 namespace DirectN
 {
-    [Guid("d67441c7-672a-476f-9e82-cd55b44949ce"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d67441c7-672a-476f-9e82-cd55b44949ce"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXGIInfoQueue
     {
         [PreserveSig]

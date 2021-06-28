@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("23ff334c-442c-445f-bccc-edc438aa11e2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("23ff334c-442c-445f-bccc-edc438aa11e2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTimedTextTrackList
     {
         [PreserveSig]

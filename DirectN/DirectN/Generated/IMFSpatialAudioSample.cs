@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("abf28a9b-3393-4290-ba79-5ffc46d986b2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("abf28a9b-3393-4290-ba79-5ffc46d986b2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSpatialAudioSample : IMFSample
     {
         // IMFAttributes

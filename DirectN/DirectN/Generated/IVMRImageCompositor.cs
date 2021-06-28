@@ -5,7 +5,7 @@ using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;
 
 namespace DirectN
 {
-    [Guid("7a4fb5af-479f-4074-bb40-ce6722e43c82"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7a4fb5af-479f-4074-bb40-ce6722e43c82"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVMRImageCompositor
     {
         [PreserveSig]

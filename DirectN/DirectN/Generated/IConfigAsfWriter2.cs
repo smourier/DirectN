@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7989ccaa-53f0-44f0-884a-f3b03f6ae066"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7989ccaa-53f0-44f0-884a-f3b03f6ae066"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IConfigAsfWriter2 : IConfigAsfWriter
     {
         // IConfigAsfWriter

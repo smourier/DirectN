@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("62fae250-7e65-4460-bfc9-6398b322073c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("62fae250-7e65-4460-bfc9-6398b322073c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMOverlayFX
     {
         [PreserveSig]

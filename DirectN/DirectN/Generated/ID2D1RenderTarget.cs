@@ -8,7 +8,7 @@ namespace DirectN
     /// <summary>
     /// Represents an object that can receive drawing commands. Interfaces that inherit from ID2D1RenderTarget render the drawing commands they receive in different ways.
     /// </summary>
-    [Guid("2cd90694-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd90694-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1RenderTarget : ID2D1Resource
     {
         // ID2D1Resource

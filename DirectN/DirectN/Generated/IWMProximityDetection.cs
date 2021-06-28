@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6a9fd8ee-b651-4bf0-b849-7d4ece79a2b1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6a9fd8ee-b651-4bf0-b849-7d4ece79a2b1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMProximityDetection
     {
         [PreserveSig]

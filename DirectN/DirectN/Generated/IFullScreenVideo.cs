@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("dd1d7110-7836-11cf-bf47-00aa0055595a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("dd1d7110-7836-11cf-bf47-00aa0055595a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IFullScreenVideo
     {
         [PreserveSig]

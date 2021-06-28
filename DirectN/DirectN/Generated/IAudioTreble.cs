@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0a717812-694e-4907-b74b-bafa5cfdca7b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0a717812-694e-4907-b74b-bafa5cfdca7b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioTreble : IPerChannelDbLevel
     {
         // IPerChannelDbLevel

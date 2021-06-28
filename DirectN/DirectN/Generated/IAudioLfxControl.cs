@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("076a6922-d802-4f83-baf6-409d9ca11bfe"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("076a6922-d802-4f83-baf6-409d9ca11bfe"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioLfxControl
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f6211f03-8d21-4e94-93e6-8510805f2d99"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f6211f03-8d21-4e94-93e6-8510805f2d99"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMDeviceRegistration
     {
         [PreserveSig]

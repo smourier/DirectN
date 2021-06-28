@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("96bf961b-40fe-42f1-ba9d-320238b49700"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("96bf961b-40fe-42f1-ba9d-320238b49700"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFWorkQueueServicesEx : IMFWorkQueueServices
     {
         // IMFWorkQueueServices

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e9550983-360b-4f53-b391-afd695078691"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e9550983-360b-4f53-b391-afd695078691"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVirtualSurfaceImageSourceNative : ISurfaceImageSourceNative
     {
         // ISurfaceImageSourceNative

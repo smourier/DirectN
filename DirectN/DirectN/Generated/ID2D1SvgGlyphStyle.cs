@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// This object supplies the values for context-fill, context-stroke, and context-value that are used when rendering SVG glyphs.
     /// </summary>
-    [Guid("af671749-d241-4db8-8e41-dcc2e5c1a438"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("af671749-d241-4db8-8e41-dcc2e5c1a438"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgGlyphStyle : ID2D1Resource
     {
         // ID2D1Resource

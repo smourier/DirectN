@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e9a42171-c56e-498a-8b39-eda5a070b7fc"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e9a42171-c56e-498a-8b39-eda5a070b7fc"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSensorStream : IMFAttributes
     {
         // IMFAttributes

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c5bc37d6-75c7-46a1-a132-81b5f723c20f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c5bc37d6-75c7-46a1-a132-81b5f723c20f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaStream2 : IMFMediaStream
     {
         // IMFMediaEventGenerator

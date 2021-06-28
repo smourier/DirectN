@@ -5,7 +5,7 @@ using LPDIRECTDRAW = DirectN.IDirectDraw;
 
 namespace DirectN
 {
-    [Guid("36d39eb0-dd75-11ce-bf0e-00aa0055595a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("36d39eb0-dd75-11ce-bf0e-00aa0055595a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirectDrawVideo
     {
         [PreserveSig]

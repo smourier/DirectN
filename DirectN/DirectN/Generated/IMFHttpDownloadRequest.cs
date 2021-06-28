@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f779fddf-26e7-4270-8a8b-b983d1859de0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f779fddf-26e7-4270-8a8b-b983d1859de0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFHttpDownloadRequest
     {
         [PreserveSig]

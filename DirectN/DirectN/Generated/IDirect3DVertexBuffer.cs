@@ -5,7 +5,7 @@ using LPDIRECT3DVERTEXBUFFER = DirectN.IDirect3DVertexBuffer;
 
 namespace DirectN
 {
-    [Guid("7a503555-4a83-11d1-a5db-00a0c90367f8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7a503555-4a83-11d1-a5db-00a0c90367f8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3DVertexBuffer
     {
         [PreserveSig]

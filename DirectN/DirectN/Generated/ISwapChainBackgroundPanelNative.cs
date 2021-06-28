@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("43bebd4e-add5-4035-8f85-5608d08e9dc9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("43bebd4e-add5-4035-8f85-5608d08e9dc9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ISwapChainBackgroundPanelNative
     {
         [PreserveSig]

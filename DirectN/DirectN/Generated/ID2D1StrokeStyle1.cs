@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Extends a stroke style to allow nominal width strokes.
     /// </summary>
-    [Guid("10a72a66-e91c-43f4-993f-ddf4b82b0b4a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("10a72a66-e91c-43f4-993f-ddf4b82b0b4a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1StrokeStyle1 : ID2D1StrokeStyle
     {
         // ID2D1Resource

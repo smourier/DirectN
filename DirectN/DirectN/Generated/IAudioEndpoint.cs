@@ -5,7 +5,7 @@ using HNSTIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("30a99515-1527-4451-af9f-00c5f0234daf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("30a99515-1527-4451-af9f-00c5f0234daf"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioEndpoint
     {
         [PreserveSig]

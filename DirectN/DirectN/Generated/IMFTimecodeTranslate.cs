@@ -5,7 +5,7 @@ using MFTIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("ab9d8661-f7e8-4ef4-9861-89f334f94e74"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ab9d8661-f7e8-4ef4-9861-89f334f94e74"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTimecodeTranslate
     {
         [PreserveSig]

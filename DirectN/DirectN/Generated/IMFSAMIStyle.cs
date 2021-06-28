@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a7e025dd-5303-4a62-89d6-e747e1efac73"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a7e025dd-5303-4a62-89d6-e747e1efac73"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSAMIStyle
     {
         [PreserveSig]

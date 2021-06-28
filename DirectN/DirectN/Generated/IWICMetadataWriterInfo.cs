@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("b22e3fba-3925-4323-b5c1-9ebfc430f236"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b22e3fba-3925-4323-b5c1-9ebfc430f236"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICMetadataWriterInfo : IWICMetadataHandlerInfo
     {
         // IWICComponentInfo

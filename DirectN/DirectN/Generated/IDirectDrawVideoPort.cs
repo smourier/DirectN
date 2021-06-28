@@ -8,7 +8,7 @@ using LPDIRECTDRAWSURFACE = DirectN.IDirectDrawSurface;
 
 namespace DirectN
 {
-    [Guid("b36d93e0-2b43-11cf-a2de-00aa00b93356"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b36d93e0-2b43-11cf-a2de-00aa00b93356"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirectDrawVideoPort
     {
         [PreserveSig]

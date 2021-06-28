@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("36f846fc-2256-48b6-b58e-e2b638316581"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("36f846fc-2256-48b6-b58e-e2b638316581"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaEventQueue
     {
         [PreserveSig]

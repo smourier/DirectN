@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("110a3200-5a79-11d3-8d78-444553540000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("110a3200-5a79-11d3-8d78-444553540000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMDMLogger
     {
         [PreserveSig]

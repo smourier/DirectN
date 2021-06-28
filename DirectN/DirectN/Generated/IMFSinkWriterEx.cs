@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("588d72ab-5bc1-496a-8714-b70617141b25"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("588d72ab-5bc1-496a-8714-b70617141b25"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSinkWriterEx : IMFSinkWriter
     {
         // IMFSinkWriter

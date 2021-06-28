@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("19f68549-ca8a-4706-a4ef-481dbc95e12c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("19f68549-ca8a-4706-a4ef-481dbc95e12c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFCapturePhotoConfirmation
     {
         [PreserveSig]

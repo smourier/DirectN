@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3de21209-8ba6-4f2a-a577-2819b56ff14d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3de21209-8ba6-4f2a-a577-2819b56ff14d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAdvancedMediaCaptureInitializationSettings
     {
         [PreserveSig]

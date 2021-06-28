@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("18a2e7f8-428f-4acd-8a00-e64639bc93de"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("18a2e7f8-428f-4acd-8a00-e64639bc93de"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMReaderAdvanced6 : IWMReaderAdvanced5
     {
         // IWMReaderAdvanced

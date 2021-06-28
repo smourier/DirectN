@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Represents the backing store required to render a layer.
     /// </summary>
-    [Guid("2cd9069b-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd9069b-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Layer : ID2D1Resource
     {
         // ID2D1Resource

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("33ae5ea6-4316-436f-8ddd-d73d22f829ec"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("33ae5ea6-4316-436f-8ddd-d73d22f829ec"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMF2DBuffer2 : IMF2DBuffer
     {
         // IMF2DBuffer

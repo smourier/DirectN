@@ -5,7 +5,7 @@ using IDWriteGeometrySink = DirectN.ID2D1SimplifiedGeometrySink;
 
 namespace DirectN
 {
-    [Guid("98eff3a5-b667-479a-b145-e2fa5b9fdc29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("98eff3a5-b667-479a-b145-e2fa5b9fdc29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFace5 : IDWriteFontFace4
     {
         // IDWriteFontFace

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3fd03d36-4eb1-424a-a582-494ecb8ba813"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3fd03d36-4eb1-424a-a582-494ecb8ba813"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12LifetimeTracker : ID3D12DeviceChild
     {
         // ID3D12Object

@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The root brush interface. All brushes can be used to fill or pen a geometry.
     /// </summary>
-    [Guid("2cd906a8-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd906a8-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Brush : ID2D1Resource
     {
         // ID2D1Resource

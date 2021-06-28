@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bddc4d08-944d-4d52-a612-46c3fda07dd4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bddc4d08-944d-4d52-a612-46c3fda07dd4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMReaderAccelerator
     {
         [PreserveSig]

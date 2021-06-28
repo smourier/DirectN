@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e08672de-f1e7-4ff4-a0a3-fc4b08e4caf8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e08672de-f1e7-4ff4-a0a3-fc4b08e4caf8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMDRMReader3 : IWMDRMReader2
     {
         // IWMDRMReader

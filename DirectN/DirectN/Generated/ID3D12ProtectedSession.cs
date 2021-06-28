@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a1533d18-0ac1-4084-85b9-89a96116806b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a1533d18-0ac1-4084-85b9-89a96116806b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12ProtectedSession : ID3D12DeviceChild
     {
         // ID3D12Object

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4c8798b7-1d88-4a0f-b59b-b93f600de8c8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4c8798b7-1d88-4a0f-b59b-b93f600de8c8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ISurfaceImageSourceManagerNative
     {
         [PreserveSig]

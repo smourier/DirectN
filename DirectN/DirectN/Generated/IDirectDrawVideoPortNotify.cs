@@ -5,7 +5,7 @@ using LPDDVIDEOPORTNOTIFY = DirectN._DDVIDEOPORTNOTIFY;
 
 namespace DirectN
 {
-    [Guid("a655fb94-0589-4e57-b333-567a89468c88"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a655fb94-0589-4e57-b333-567a89468c88"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirectDrawVideoPortNotify
     {
         [PreserveSig]

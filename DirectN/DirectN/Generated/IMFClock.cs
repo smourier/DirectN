@@ -5,7 +5,7 @@ using MFTIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("2eb1e945-18b8-4139-9b1a-d5d584818530"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2eb1e945-18b8-4139-9b1a-d5d584818530"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFClock
     {
         [PreserveSig]

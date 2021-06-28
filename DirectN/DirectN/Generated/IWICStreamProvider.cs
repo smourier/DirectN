@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("449494bc-b468-4927-96d7-ba90d31ab505"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("449494bc-b468-4927-96d7-ba90d31ab505"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICStreamProvider
     {
         [PreserveSig]

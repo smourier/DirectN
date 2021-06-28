@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bafe99d2-7436-44ce-9e0e-4d89afbfff56"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bafe99d2-7436-44ce-9e0e-4d89afbfff56"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioSystemEffects2 : IAudioSystemEffects
     {
         // IAudioSystemEffects

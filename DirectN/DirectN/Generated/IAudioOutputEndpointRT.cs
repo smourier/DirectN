@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("8fa906e4-c31c-4e31-932e-19a66385e9aa"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("8fa906e4-c31c-4e31-932e-19a66385e9aa"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioOutputEndpointRT
     {
         [PreserveSig]

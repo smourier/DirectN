@@ -6,7 +6,7 @@ using REFWICPixelFormatGUID = System.Guid;
 
 namespace DirectN
 {
-    [Guid("7b816b45-1996-4476-b132-de9e247c8af0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7b816b45-1996-4476-b132-de9e247c8af0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICImagingFactory2 : IWICImagingFactory
     {
         // IWICImagingFactory

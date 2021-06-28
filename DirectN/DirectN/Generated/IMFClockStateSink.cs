@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f6696e82-74f7-4f3d-a178-8a5e09c3659f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f6696e82-74f7-4f3d-a178-8a5e09c3659f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFClockStateSink
     {
         [PreserveSig]

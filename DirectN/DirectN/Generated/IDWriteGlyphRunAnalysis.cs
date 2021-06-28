@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Interface that encapsulates information used to render a glyph run.
     /// </summary>
-    [Guid("7d97dbf7-e085-42d4-81e3-6a883bded118"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7d97dbf7-e085-42d4-81e3-6a883bded118"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteGlyphRunAnalysis
     {
         [PreserveSig]

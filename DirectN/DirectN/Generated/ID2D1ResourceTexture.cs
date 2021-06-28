@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("688d15c3-02b0-438d-b13a-d1b44c32c39a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("688d15c3-02b0-438d-b13a-d1b44c32c39a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1ResourceTexture
     {
         [PreserveSig]

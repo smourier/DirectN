@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a81ba647-6227-43b7-b231-c7b15135dd7d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a81ba647-6227-43b7-b231-c7b15135dd7d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMCodecLeakyBucket
     {
         [PreserveSig]

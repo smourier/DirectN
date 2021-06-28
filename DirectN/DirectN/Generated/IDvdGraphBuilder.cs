@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("fcc152b6-f372-11d0-8e00-00c04fd7c08b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("fcc152b6-f372-11d0-8e00-00c04fd7c08b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDvdGraphBuilder
     {
         [PreserveSig]

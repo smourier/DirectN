@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Produces 2D pixel data that has been sourced from WIC.
     /// </summary>
-    [Guid("77395441-1c8f-4555-8683-f50dab0fe792"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("77395441-1c8f-4555-8683-f50dab0fe792"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1ImageSourceFromWic : ID2D1ImageSource
     {
         // ID2D1Resource

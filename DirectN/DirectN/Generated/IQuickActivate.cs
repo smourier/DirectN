@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cf51ed10-62fe-11cf-bf86-00a0c9034836"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cf51ed10-62fe-11cf-bf86-00a0c9034836"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IQuickActivate
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6d5cb646-29ec-41fb-8179-8c4c6d750811"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6d5cb646-29ec-41fb-8179-8c4c6d750811"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFDeviceTransformCallback
     {
         [PreserveSig]

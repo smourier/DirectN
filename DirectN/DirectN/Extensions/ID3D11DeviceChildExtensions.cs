@@ -16,7 +16,9 @@ namespace DirectN
 
             using (var mem = new ComMemory(name))
             {
-                child.SetPrivateData(WKPDID_D3DDebugObjectNameW, (uint)(name.Length * 2), mem.Pointer).ThrowOnError();
+#pragma warning disable CA1062 // Validate arguments of public methods
+                _ = child.SetPrivateData(WKPDID_D3DDebugObjectNameW, (uint)(name.Length * 2), mem.Pointer).ThrowOnError();
+#pragma warning restore CA1062 // Validate arguments of public methods
             }
         }
     }

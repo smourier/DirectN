@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Interface describing SVG path data. Path data can be set as the 'd' attribute on a 'path' element.
     /// </summary>
-    [Guid("c095e4f4-bb98-43d6-9745-4d1b84ec9888"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c095e4f4-bb98-43d6-9745-4d1b84ec9888"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgPathData : ID2D1SvgAttribute
     {
         // ID2D1Resource

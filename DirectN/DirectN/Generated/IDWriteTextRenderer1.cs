@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The text renderer interface represents a set of application-defined callbacks that perform rendering of text, inline objects, and decorations such as underlines.
     /// </summary>
-    [Guid("d3e0e934-22a0-427e-aae4-7d9574b59db1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d3e0e934-22a0-427e-aae4-7d9574b59db1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextRenderer1 : IDWriteTextRenderer
     {
         // IDWritePixelSnapping

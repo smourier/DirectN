@@ -5,7 +5,7 @@ using TOPOID = System.UInt64;
 
 namespace DirectN
 {
-    [Guid("83cf873a-f6da-4bc8-823f-bacfd55dc430"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("83cf873a-f6da-4bc8-823f-bacfd55dc430"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTopologyNode : IMFAttributes
     {
         // IMFAttributes

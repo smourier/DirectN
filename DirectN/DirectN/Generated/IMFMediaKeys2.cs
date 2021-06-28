@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("45892507-ad66-4de2-83a2-acbb13cd8d43"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("45892507-ad66-4de2-83a2-acbb13cd8d43"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaKeys2 : IMFMediaKeys
     {
         // IMFMediaKeys

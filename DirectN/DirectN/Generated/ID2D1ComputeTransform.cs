@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The interface implemented by a transform author to provide a Compute Shader based effect.
     /// </summary>
-    [Guid("0d85573c-01e3-4f7d-bfd9-0d60608bf3c3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0d85573c-01e3-4f7d-bfd9-0d60608bf3c3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1ComputeTransform : ID2D1Transform
     {
         // ID2D1TransformNode

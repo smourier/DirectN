@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9cf0b1b6-fbaa-4b7f-88cf-cf1f130a0dce"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9cf0b1b6-fbaa-4b7f-88cf-cf1f130a0dce"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVMRMonitorConfig
     {
         [PreserveSig]

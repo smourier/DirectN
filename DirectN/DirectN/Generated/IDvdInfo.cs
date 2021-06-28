@@ -6,7 +6,7 @@ using VALID_UOP_SOMTHING_OR_OTHER = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("a70efe60-e2a3-11d0-a9be-00aa0061be93"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a70efe60-e2a3-11d0-a9be-00aa0061be93"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDvdInfo
     {
         [PreserveSig]

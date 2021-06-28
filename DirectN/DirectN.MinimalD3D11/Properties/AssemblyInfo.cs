@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 #if DEBUG
 [assembly: AssemblyTitle("DirectN.MinimalD3D11 - Debug")]
@@ -17,5 +18,7 @@ using System.Runtime.InteropServices;
 [assembly: Guid("3a848cdf-7b72-49de-92f7-30b640369d75")]
 
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.9.0.2")]
-[assembly: AssemblyInformationalVersion("1.9.0.2")]
+[assembly: AssemblyFileVersion("1.9.1.0")]
+[assembly: AssemblyInformationalVersion("1.9.1.0")]
+
+[assembly: SupportedOSPlatform("windows8.0")]

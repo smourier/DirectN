@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("1911c771-1587-413e-a7e0-fb26c3de0268"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1911c771-1587-413e-a7e0-fb26c3de0268"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D11TracingDevice
     {
         [PreserveSig]

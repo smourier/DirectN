@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("962dc1ec-c046-4db8-9cc7-26ceae500817"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("962dc1ec-c046-4db8-9cc7-26ceae500817"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMWriterAdvanced2 : IWMWriterAdvanced
     {
         // IWMWriterAdvanced

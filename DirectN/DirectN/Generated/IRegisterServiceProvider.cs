@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7b3a2f01-0751-48dd-b556-004785171c54"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7b3a2f01-0751-48dd-b556-004785171c54"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IRegisterServiceProvider
     {
         [PreserveSig]

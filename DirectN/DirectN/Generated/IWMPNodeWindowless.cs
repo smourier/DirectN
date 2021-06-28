@@ -5,7 +5,7 @@ using LRESULT = System.Int64;
 
 namespace DirectN
 {
-    [Guid("9b9199ad-780c-4eda-b816-261eba5d1575"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9b9199ad-780c-4eda-b816-261eba5d1575"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPNodeWindowless : IWMPWindowMessageSink
     {
         // IWMPWindowMessageSink

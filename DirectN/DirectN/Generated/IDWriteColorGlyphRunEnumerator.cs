@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Enumerator for an ordered collection of color glyph runs.
     /// </summary>
-    [Guid("d31fbe17-f157-41a2-8d24-cb779e0560e8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d31fbe17-f157-41a2-8d24-cb779e0560e8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteColorGlyphRunEnumerator
     {
         [PreserveSig]

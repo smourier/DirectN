@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("26dc4561-a1ee-4ae7-96da-118a36c0ec95"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("26dc4561-a1ee-4ae7-96da-118a36c0ec95"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3DDevice9Video
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("342e0eb7-e651-450c-975b-2ace2c90c48e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("342e0eb7-e651-450c-975b-2ace2c90c48e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMCredentialCallback
     {
         [PreserveSig]

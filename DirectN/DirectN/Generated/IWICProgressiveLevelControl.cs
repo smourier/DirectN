@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("daac296f-7aa5-4dbf-8d15-225c5976f891"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("daac296f-7aa5-4dbf-8d15-225c5976f891"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICProgressiveLevelControl
     {
         [PreserveSig]

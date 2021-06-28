@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("65a83fc2-3e98-4d4d-81b5-2a742886b33d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("65a83fc2-3e98-4d4d-81b5-2a742886b33d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMAddressAccess2 : IWMAddressAccess
     {
         // IWMAddressAccess

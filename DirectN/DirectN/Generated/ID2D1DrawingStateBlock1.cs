@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Represents drawing state.
     /// </summary>
-    [Guid("689f1f85-c72e-4e33-8f19-85754efd5ace"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("689f1f85-c72e-4e33-8f19-85754efd5ace"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock
     {
         // ID2D1Resource

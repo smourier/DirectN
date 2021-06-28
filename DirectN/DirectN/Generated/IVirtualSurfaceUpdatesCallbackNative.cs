@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("dbf2e947-8e6c-4254-9eee-7738f71386c9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("dbf2e947-8e6c-4254-9eee-7738f71386c9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVirtualSurfaceUpdatesCallbackNative
     {
         [PreserveSig]

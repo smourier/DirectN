@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DXCoreAdapterMemoryBudgetNodeSegmentGroup
     {
-        public int nodeIndex;
+        public uint nodeIndex;
         public DXCoreSegmentGroup segmentGroup;
     }
 }

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("b70f1e42-6255-4df0-a6b9-02b212d9e2bb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b70f1e42-6255-4df0-a6b9-02b212d9e2bb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMIndexer2 : IWMIndexer
     {
         // IWMIndexer

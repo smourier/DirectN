@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cbb92747-741f-44fe-ab5b-f1a48f3b2a59"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cbb92747-741f-44fe-ab5b-f1a48f3b2a59"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPRemoteMediaServices
     {
         [PreserveSig]

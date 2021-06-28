@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("dbd5ae51-3317-4f0a-adf9-1d7cedcaae0b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("dbd5ae51-3317-4f0a-adf9-1d7cedcaae0b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12DeviceRemovedExtendedDataSettings1 : ID3D12DeviceRemovedExtendedDataSettings
     {
         // ID3D12DeviceRemovedExtendedDataSettings

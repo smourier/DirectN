@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("1217d7a6-5039-418c-b042-9cbe256afd6e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1217d7a6-5039-418c-b042-9cbe256afd6e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D11RasterizerState1 : ID3D11RasterizerState
     {
         // ID3D11DeviceChild

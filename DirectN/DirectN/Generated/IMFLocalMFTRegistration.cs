@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("149c4d73-b4be-4f8d-8b87-079e926b6add"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("149c4d73-b4be-4f8d-8b87-079e926b6add"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFLocalMFTRegistration
     {
         [PreserveSig]

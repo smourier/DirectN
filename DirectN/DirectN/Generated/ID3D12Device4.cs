@@ -5,7 +5,7 @@ using SECURITY_ATTRIBUTES = DirectN._SECURITY_ATTRIBUTES;
 
 namespace DirectN
 {
-    [Guid("e865df17-a9ee-46f9-a463-3098315aa2e5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e865df17-a9ee-46f9-a463-3098315aa2e5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12Device4 : ID3D12Device3
     {
         // ID3D12Object

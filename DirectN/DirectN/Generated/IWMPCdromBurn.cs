@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bd94dbeb-417f-4928-aa06-087d56ed9b59"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bd94dbeb-417f-4928-aa06-087d56ed9b59"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPCdromBurn
     {
         [PreserveSig]

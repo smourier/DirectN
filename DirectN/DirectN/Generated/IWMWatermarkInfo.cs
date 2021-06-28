@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6f497062-f2e2-4624-8ea7-9dd40d81fc8d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6f497062-f2e2-4624-8ea7-9dd40d81fc8d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMWatermarkInfo
     {
         [PreserveSig]

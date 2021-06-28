@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("70423839-6acc-4b23-b079-21dbf08156a5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("70423839-6acc-4b23-b079-21dbf08156a5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IEncoderAPI
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("091878a3-bf11-4a5c-bc9f-33995b06ef2d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("091878a3-bf11-4a5c-bc9f-33995b06ef2d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFNetResourceFilter
     {
         [PreserveSig]

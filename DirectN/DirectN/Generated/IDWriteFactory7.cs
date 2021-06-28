@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("35d0e0b3-9076-4d2e-a016-a91b568a06b4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("35d0e0b3-9076-4d2e-a016-a91b568a06b4"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFactory7 : IDWriteFactory6
     {
         // IDWriteFactory

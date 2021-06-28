@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Represents a collection of strings indexed by locale name.
     /// </summary>
-    [Guid("08256209-099a-4b34-b86d-c22b110e7771"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("08256209-099a-4b34-b86d-c22b110e7771"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteLocalizedStrings
     {
         [PreserveSig]

@@ -8,7 +8,7 @@ namespace DirectN
     /// <summary>
     /// Renders drawing instructions to a window.
     /// </summary>
-    [Guid("2cd90698-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd90698-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1HwndRenderTarget : ID2D1RenderTarget
     {
         // ID2D1Resource

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a005a9d9-b8bb-4594-b5c9-0e633bec4d37"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a005a9d9-b8bb-4594-b5c9-0e633bec4d37"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDxcCompiler2 : IDxcCompiler
     {
         // IDxcCompiler

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("db71a2fc-078a-414e-9df9-8c2531b0aa6c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("db71a2fc-078a-414e-9df9-8c2531b0aa6c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaTimeRange
     {
         [PreserveSig]

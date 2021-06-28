@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("00855b90-ce1b-11d0-bd4f-00a0c911ce86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("00855b90-ce1b-11d0-bd4f-00a0c911ce86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IFileSinkFilter2 : IFileSinkFilter
     {
         // IFileSinkFilter

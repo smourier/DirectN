@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3f07f7b7-c680-41d9-9423-915107ec9ff9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3f07f7b7-c680-41d9-9423-915107ec9ff9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IClusterDetector
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("04a578b2-e778-422a-a805-b3ee54d90bd9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("04a578b2-e778-422a-a805-b3ee54d90bd9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IValidateBinding
     {
         [PreserveSig]

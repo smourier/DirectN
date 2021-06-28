@@ -5,7 +5,7 @@ using MFTIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("53590f48-dc3b-4297-813f-787761ad7b3e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("53590f48-dc3b-4297-813f-787761ad7b3e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFASFIndexer
     {
         [PreserveSig]

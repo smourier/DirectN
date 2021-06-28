@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c56e9858-dbf3-4f6b-8119-384af2060deb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c56e9858-dbf3-4f6b-8119-384af2060deb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPinFlowControl
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("d5a2f60c-37b2-44a2-937b-8d8eb9726821"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d5a2f60c-37b2-44a2-937b-8d8eb9726821"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ISwapChainPanelNative2 : ISwapChainPanelNative
     {
         // ISwapChainPanelNative

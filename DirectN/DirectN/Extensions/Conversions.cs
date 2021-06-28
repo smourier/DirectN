@@ -13,7 +13,6 @@ namespace DirectN
 {
     public static class Conversions
     {
-        private const string ParamName = "securePassword";
         private static readonly char[] _enumSeparators = new char[] { ',', ';', '+', '|', ' ' };
         private static readonly Regex _decodeUnicode = new Regex(@"\\u(?<v>[a-zA-Z0-9]{4})", RegexOptions.Compiled);
         private static readonly string[] _dateFormatsUtc = { "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'", "yyyy'-'MM'-'dd'T'HH':'mm'Z'", "yyyyMMdd'T'HH':'mm':'ss'Z'" };
@@ -29,11 +28,11 @@ namespace DirectN
                 if (c > 127)
                 {
                     var encodedValue = "\\u" + ((int)c).ToString("x4");
-                    sb.Append(encodedValue);
+                    _ = sb.Append(encodedValue);
                 }
                 else
                 {
-                    sb.Append(c);
+                    _ = sb.Append(c);
                 }
             }
             return sb.ToString();
@@ -183,23 +182,25 @@ namespace DirectN
 
             }
 
+#pragma warning disable CA1062 // Validate arguments of public methods
             if (options.HasFlag(DecamelizeOptions.UnescapeUnicode) && CanUnicodeEscape(text, 0))
+#pragma warning restore CA1062 // Validate arguments of public methods
             {
-                sb.Append(GetUnicodeEscape(text, ref i));
+                _ = sb.Append(GetUnicodeEscape(text, ref i));
             }
             else if (options.HasFlag(DecamelizeOptions.UnescapeHexadecimal) && CanHexadecimalEscape(text, 0))
             {
-                sb.Append(GetHexadecimalEscape(text, ref i));
+                _ = sb.Append(GetHexadecimalEscape(text, ref i));
             }
             else
             {
                 if (options.HasFlag(DecamelizeOptions.ForceFirstUpper))
                 {
-                    sb.Append(char.ToUpper(text[0]));
+                    _ = sb.Append(char.ToUpper(text[0]));
                 }
                 else
                 {
-                    sb.Append(text[0]);
+                    _ = sb.Append(text[0]);
                 }
             }
 
@@ -208,24 +209,24 @@ namespace DirectN
                 char c = text[i];
                 if (options.HasFlag(DecamelizeOptions.UnescapeUnicode) && CanUnicodeEscape(text, i))
                 {
-                    sb.Append(GetUnicodeEscape(text, ref i));
+                    _ = sb.Append(GetUnicodeEscape(text, ref i));
                     separated = true;
                 }
                 else if (options.HasFlag(DecamelizeOptions.UnescapeHexadecimal) && CanHexadecimalEscape(text, i))
                 {
-                    sb.Append(GetHexadecimalEscape(text, ref i));
+                    _ = sb.Append(GetHexadecimalEscape(text, ref i));
                     separated = true;
                 }
                 else if (c == '_')
                 {
                     if (!firstIsStillUnderscore || !options.HasFlag(DecamelizeOptions.KeepFirstUnderscores))
                     {
-                        sb.Append(' ');
+                        _ = sb.Append(' ');
                         separated = true;
                     }
                     else
                     {
-                        sb.Append(c);
+                        _ = sb.Append(c);
                     }
                 }
                 else
@@ -251,7 +252,7 @@ namespace DirectN
                                 while (c != '}')
                                 {
                                     c = text[i++];
-                                    sb.Append(c);
+                                    _ = sb.Append(c);
                                 }
 
                                 i--;
@@ -261,16 +262,16 @@ namespace DirectN
 
                             if (options.HasFlag(DecamelizeOptions.ForceRestLower))
                             {
-                                sb.Append(char.ToLower(c));
+                                _ = sb.Append(char.ToLower(c));
                             }
                             else
                             {
-                                sb.Append(c);
+                                _ = sb.Append(c);
                             }
 
                             if (c != ' ' && !separated)
                             {
-                                sb.Append(' ');
+                                _ = sb.Append(' ');
                             }
                             separated = true;
                             break;
@@ -298,16 +299,16 @@ namespace DirectN
                                 if (!separated && prevCategory != UnicodeCategory.UppercaseLetter &&
                                     (!firstIsStillUnderscore || !options.HasFlag(DecamelizeOptions.KeepFirstUnderscores)))
                                 {
-                                    sb.Append(' ');
+                                    _ = sb.Append(' ');
                                 }
 
                                 if (options.HasFlag(DecamelizeOptions.ForceRestLower))
                                 {
-                                    sb.Append(char.ToLower(c));
+                                    _ = sb.Append(char.ToLower(c));
                                 }
                                 else
                                 {
-                                    sb.Append(char.ToUpper(c));
+                                    _ = sb.Append(char.ToUpper(c));
                                 }
 
                                 var upper = char.ToUpper(c);
@@ -325,11 +326,11 @@ namespace DirectN
                             {
                                 if (options.HasFlag(DecamelizeOptions.ForceRestLower))
                                 {
-                                    sb.Append(char.ToLower(c));
+                                    _ = sb.Append(char.ToLower(c));
                                 }
                                 else
                                 {
-                                    sb.Append(c);
+                                    _ = sb.Append(c);
                                 }
                             }
                             separated = false;
@@ -442,7 +443,9 @@ namespace DirectN
             if (text == null)
                 return Guid.Empty;
 
+#pragma warning disable CA5351 // Do Not Use Broken Cryptographic Algorithms
             using (var md5 = MD5.Create())
+#pragma warning restore CA5351 // Do Not Use Broken Cryptographic Algorithms
             {
                 return new Guid(md5.ComputeHash(Encoding.UTF8.GetBytes(text)));
             }
@@ -501,9 +504,9 @@ namespace DirectN
             return 0xFF;
         }
 
-        public static string ToHexa(this byte[] bytes) => bytes != null ? ToHexa(bytes, 0, bytes.Length) : "0x";
-        public static string ToHexa(this byte[] bytes, int count) => ToHexa(bytes, 0, count);
-        public static string ToHexa(this byte[] bytes, int offset, int count)
+        public static string ToHexa(this byte[] bytes, bool addEllipsis = false) => bytes != null ? ToHexa(bytes, 0, bytes.Length, addEllipsis) : "0x";
+        public static string ToHexa(this byte[] bytes, int count, bool addEllipsis = false) => ToHexa(bytes, 0, count, addEllipsis);
+        public static string ToHexa(this byte[] bytes, int offset, int count, bool addEllipsis = false)
         {
             if (bytes == null)
                 return "0x";
@@ -521,9 +524,15 @@ namespace DirectN
             var sb = new StringBuilder(count * 2);
             for (var i = offset; i < (offset + count); i++)
             {
-                sb.Append(bytes[i].ToString("X2"));
+                _ = sb.Append(bytes[i].ToString("X2"));
             }
-            return "0x" + sb.ToString();
+
+            var s = "0x" + sb.ToString();
+            if (addEllipsis && bytes.Length > (offset + count))
+            {
+                s += "... (" + (bytes.Length - (offset + count)) + ")";
+            }
+            return s;
         }
 
         public static string ToHexaDump(string text) => ToHexaDump(text, null);
@@ -593,43 +602,43 @@ namespace DirectN
             var sb = new StringBuilder();
             if (addHeader)
             {
-                sb.Append(prefix);
+                _ = sb.Append(prefix);
                 //             0         1         2         3         4         5         6         7
                 //             01234567890123456789012345678901234567890123456789012345678901234567890123456789
-                sb.AppendLine("Offset    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F  0123456789ABCDEF");
-                sb.AppendLine("--------  -----------------------------------------------  ----------------");
+                _ = sb.AppendLine("Offset    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F  0123456789ABCDEF");
+                _ = sb.AppendLine("--------  -----------------------------------------------  ----------------");
             }
 
             for (var i = 0; i < count; i += 16)
             {
-                sb.Append(prefix);
-                sb.AppendFormat("{0:X8}  ", i + offset);
+                _ = sb.Append(prefix);
+                _ = sb.AppendFormat("{0:X8}  ", i + offset);
 
                 int j;
                 for (j = 0; (j < 16) && ((i + j) < count); j++)
                 {
-                    sb.AppendFormat("{0:X2} ", bytes[i + j + offset]);
+                    _ = sb.AppendFormat("{0:X2} ", bytes[i + j + offset]);
                 }
 
-                sb.Append(' ');
+                _ = sb.Append(' ');
                 if (j < 16)
                 {
-                    sb.Append(new string(' ', 3 * (16 - j)));
+                    _ = sb.Append(new string(' ', 3 * (16 - j)));
                 }
                 for (j = 0; j < 16 && (i + j) < count; j++)
                 {
                     var b = bytes[i + j + offset];
                     if (b > 31 && b < 128)
                     {
-                        sb.Append((char)b);
+                        _ = sb.Append((char)b);
                     }
                     else
                     {
-                        sb.Append('.');
+                        _ = sb.Append('.');
                     }
                 }
 
-                sb.AppendLine();
+                _ = sb.AppendLine();
             }
             return sb.ToString();
         }
@@ -715,22 +724,22 @@ namespace DirectN
                 return false;
             }
 
-            if (input is long)
+            if (input is long il)
             {
                 if (styles.HasFlag(DateTimeStyles.AssumeLocal))
                 {
-                    value = new DateTime((long)input, DateTimeKind.Local);
+                    value = new DateTime(il, DateTimeKind.Local);
                 }
                 else
                 {
-                    value = new DateTime((long)input, DateTimeKind.Utc);
+                    value = new DateTime(il, DateTimeKind.Utc);
                 }
                 return true;
             }
 
-            if (input is DateTimeOffset)
+            if (input is DateTimeOffset offset)
             {
-                value = ((DateTimeOffset)input).DateTime;
+                value = offset.DateTime;
                 return true;
             }
 
@@ -751,12 +760,12 @@ namespace DirectN
             {
                 if ((text[8] == 'T' || text[8] == 't') && text[11] == ':' && text[14] == ':')
                 {
-                    int.TryParse(text.Substring(0, 4), out int year);
-                    int.TryParse(text.Substring(4, 2), out int month);
-                    int.TryParse(text.Substring(6, 2), out int day);
-                    int.TryParse(text.Substring(9, 2), out int hour);
-                    int.TryParse(text.Substring(12, 2), out int minute);
-                    int.TryParse(text.Substring(15, 2), out int second);
+                    _ = int.TryParse(text.Substring(0, 4), out int year);
+                    _ = int.TryParse(text.Substring(4, 2), out int month);
+                    _ = int.TryParse(text.Substring(6, 2), out int day);
+                    _ = int.TryParse(text.Substring(9, 2), out int hour);
+                    _ = int.TryParse(text.Substring(12, 2), out int minute);
+                    _ = int.TryParse(text.Substring(15, 2), out int second);
                     if (month > 0 && month < 13 &&
                         day > 0 && day < 32 &&
                         year >= 0 &&
@@ -858,13 +867,13 @@ namespace DirectN
                 return true;
             }
 
-            if (Marshal.IsComObject(input))
+            if (Marshal.IsComObject(input) && conversionType.IsInterface)
             {
                 var p = Marshal.GetComInterfaceForObject(input, conversionType);
                 if (p == IntPtr.Zero)
                     return false;
 
-                Marshal.Release(p);
+                _ = Marshal.Release(p);
                 value = input;
                 return true;
             }
@@ -1464,7 +1473,7 @@ namespace DirectN
                     return true;
                 }
 
-                if (TryChangeToDateTime(input, DateTimeStyles.None, out var dt))
+                if (TryChangeToDateTime(input, provider, DateTimeStyles.None, out var dt))
                 {
                     value = dt;
                     return true;
@@ -1489,7 +1498,7 @@ namespace DirectN
                     }
                 }
 
-                if (TryChangeToDateTime(input, DateTimeStyles.None, out var dt2))
+                if (TryChangeToDateTime(input, provider, DateTimeStyles.None, out var dt2))
                 {
                     value = new DateTimeOffset(dt2);
                     return true;
@@ -1523,7 +1532,7 @@ namespace DirectN
                 }
             }
 
-            bool isGenericList = IsGenericList(conversionType, out var elementType);
+            var isGenericList = IsGenericList(conversionType, out var elementType);
             if (conversionType.IsArray || isGenericList)
             {
                 if (input is IEnumerable enumerable)
@@ -1540,7 +1549,7 @@ namespace DirectN
                         count++;
                         if (TryChangeType(obj, elementType, provider, out object element))
                         {
-                            list.Add(element);
+                            _ = list.Add(element);
                         }
                     }
 
@@ -2091,6 +2100,53 @@ namespace DirectN
             }
         }
 
+        public static int GetEnumMaxPower(Type enumType)
+        {
+            if (enumType == null)
+                throw new ArgumentNullException(nameof(enumType));
+
+            if (!enumType.IsEnum)
+                throw new ArgumentException(null, nameof(enumType));
+
+            return GetEnumUnderlyingTypeMaxPower(Enum.GetUnderlyingType(enumType));
+        }
+
+        public static Type GetEnumUnderlyingType(int enumMaxPower)
+        {
+            switch (enumMaxPower)
+            {
+                case 8:
+                    return typeof(sbyte);
+
+                case 16:
+                    return typeof(short);
+
+                case 64:
+                    return typeof(long);
+            }
+            return typeof(int);
+        }
+
+        public static int GetEnumUnderlyingTypeMaxPower(Type underlyingType)
+        {
+            if (underlyingType == null)
+                throw new ArgumentNullException(nameof(underlyingType));
+
+            if (underlyingType == typeof(long) || underlyingType == typeof(ulong))
+                return 64;
+
+            if (underlyingType == typeof(int) || underlyingType == typeof(uint))
+                return 32;
+
+            if (underlyingType == typeof(short) || underlyingType == typeof(ushort))
+                return 16;
+
+            if (underlyingType == typeof(byte) || underlyingType == typeof(sbyte))
+                return 8;
+
+            throw new ArgumentException(null, nameof(underlyingType));
+        }
+
         private static bool StringToEnum(Type type, string[] names, Array values, string input, out object value)
         {
             for (var i = 0; i < names.Length; i++)
@@ -2182,9 +2238,6 @@ namespace DirectN
 
         public static object ToEnum(object obj, Enum defaultValue)
         {
-            if (defaultValue == null)
-                throw new ArgumentNullException(nameof(defaultValue));
-
             if (obj == null)
                 return defaultValue;
 
@@ -2202,15 +2255,12 @@ namespace DirectN
             if (enumType == null)
                 throw new ArgumentNullException(nameof(enumType));
 
-            EnumTryParse(enumType, text, out object value);
+            _ = EnumTryParse(enumType, text, out object value);
             return value;
         }
 
         public static Enum ToEnum(string text, Enum defaultValue)
         {
-            if (defaultValue == null)
-                throw new ArgumentNullException(nameof(defaultValue));
-
             if (EnumTryParse(defaultValue.GetType(), text, out object value))
                 return (Enum)value;
 
@@ -2353,7 +2403,7 @@ namespace DirectN
         public static string FormatByteSize(long size)
         {
             var sb = new StringBuilder(64);
-            StrFormatByteSizeW(size, sb, sb.Capacity);
+            _ = StrFormatByteSizeW(size, sb, sb.Capacity);
             return sb.ToString();
         }
 

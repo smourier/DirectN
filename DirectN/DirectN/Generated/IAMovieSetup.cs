@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a3d8cec0-7e5a-11cf-bbc5-00805f6cef20"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a3d8cec0-7e5a-11cf-bbc5-00805f6cef20"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMovieSetup
     {
         [PreserveSig]

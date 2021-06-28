@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9204fe99-d8fc-4fd5-a001-9536b067a899"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9204fe99-d8fc-4fd5-a001-9536b067a899"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICMetadataReader
     {
         [PreserveSig]

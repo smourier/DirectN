@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("71ce469c-f34b-49ea-a56b-2d2a10e51149"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("71ce469c-f34b-49ea-a56b-2d2a10e51149"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFByteStreamCacheControl2 : IMFByteStreamCacheControl
     {
         // IMFByteStreamCacheControl

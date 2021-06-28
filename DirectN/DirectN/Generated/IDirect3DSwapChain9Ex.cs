@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("91886caf-1c3d-4d2e-a0ab-3e4c7d8d3303"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("91886caf-1c3d-4d2e-a0ab-3e4c7d8d3303"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3DSwapChain9Ex : IDirect3DSwapChain9
     {
         // IDirect3DSwapChain9

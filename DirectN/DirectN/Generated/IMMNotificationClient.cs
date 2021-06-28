@@ -5,7 +5,7 @@ using PROPERTYKEY = DirectN._tagpropertykey;
 
 namespace DirectN
 {
-    [Guid("7991eec9-7e89-4d85-8390-6c703cec60c0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7991eec9-7e89-4d85-8390-6c703cec60c0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMMNotificationClient
     {
         [PreserveSig]

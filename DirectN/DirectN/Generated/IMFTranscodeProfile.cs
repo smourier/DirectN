@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4adfdba3-7ab0-4953-a62b-461e7ff3da1e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4adfdba3-7ab0-4953-a62b-461e7ff3da1e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTranscodeProfile
     {
         [PreserveSig]

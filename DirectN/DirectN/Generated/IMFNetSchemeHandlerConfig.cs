@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7be19e73-c9bf-468a-ac5a-a5e8653bec87"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7be19e73-c9bf-468a-ac5a-a5e8653bec87"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFNetSchemeHandlerConfig
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("24fa67d5-d1d0-4dc5-995c-c0efdc191fb5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("24fa67d5-d1d0-4dc5-995c-c0efdc191fb5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaKeySession
     {
         [PreserveSig]

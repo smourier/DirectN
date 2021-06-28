@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f019ac49-f838-4a95-9b17-579437c8f513"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f019ac49-f838-4a95-9b17-579437c8f513"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12VideoDevice2 : ID3D12VideoDevice1
     {
         // ID3D12VideoDevice

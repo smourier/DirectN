@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9c2cad80-3424-11cf-b670-00aa004cd6d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9c2cad80-3424-11cf-b670-00aa004cd6d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IOleInPlaceSiteEx
     {
         [PreserveSig]

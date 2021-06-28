@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("45bda2ac-88e2-4923-98ba-3949080711a3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("45bda2ac-88e2-4923-98ba-3949080711a3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMVideoDecoderReconBuffer
     {
         [PreserveSig]

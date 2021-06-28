@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("eaecb74a-9a50-42ce-9541-6a7f57aa4ad7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("eaecb74a-9a50-42ce-9541-6a7f57aa4ad7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFFinalizableMediaSink : IMFMediaSink
     {
         // IMFMediaSink

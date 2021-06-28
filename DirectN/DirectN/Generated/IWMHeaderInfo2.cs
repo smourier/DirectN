@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("15cf9781-454e-482e-b393-85fae487a810"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("15cf9781-454e-482e-b393-85fae487a810"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMHeaderInfo2 : IWMHeaderInfo
     {
         // IWMHeaderInfo

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4968b601-9d00-4cde-8346-8e7f675819b6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4968b601-9d00-4cde-8346-8e7f675819b6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D10PixelShader : ID3D10DeviceChild
     {
         // ID3D10DeviceChild

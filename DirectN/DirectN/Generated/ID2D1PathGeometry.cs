@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Represents a complex shape that may be composed of arcs, curves, and lines.
     /// </summary>
-    [Guid("2cd906a5-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd906a5-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1PathGeometry : ID2D1Geometry
     {
         // ID2D1Resource

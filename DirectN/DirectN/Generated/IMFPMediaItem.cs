@@ -5,7 +5,7 @@ using MFP_MEDIAITEM_CHARACTERISTICS = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("90eb3e6b-ecbf-45cc-b1da-c6fe3ea70d57"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("90eb3e6b-ecbf-45cc-b1da-c6fe3ea70d57"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFPMediaItem
     {
         [PreserveSig]

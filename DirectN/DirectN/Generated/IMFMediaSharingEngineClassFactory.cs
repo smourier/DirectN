@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("524d2bc4-b2b1-4fe5-8fac-fa4e4512b4e0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("524d2bc4-b2b1-4fe5-8fac-fa4e4512b4e0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaSharingEngineClassFactory
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("b99f381f-a8f9-47a2-a5af-ca3a225a3890"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b99f381f-a8f9-47a2-a5af-ca3a225a3890"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFVideoMediaType : IMFMediaType
     {
         // IMFAttributes

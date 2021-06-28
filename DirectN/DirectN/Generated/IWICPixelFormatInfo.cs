@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e8eda601-3d48-431a-ab44-69059be88bbe"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e8eda601-3d48-431a-ab44-69059be88bbe"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICPixelFormatInfo : IWICComponentInfo
     {
         // IWICComponentInfo

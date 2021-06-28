@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4509f757-2d46-4637-8e62-ce7db944f57b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4509f757-2d46-4637-8e62-ce7db944f57b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IKsJackDescription
     {
         [PreserveSig]

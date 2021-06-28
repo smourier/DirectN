@@ -5,7 +5,7 @@ using LCID = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("c1960960-17f5-11d1-abe1-00a0c905f375"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c1960960-17f5-11d1-abe1-00a0c905f375"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMStreamSelect
     {
         [PreserveSig]

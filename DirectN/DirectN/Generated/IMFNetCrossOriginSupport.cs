@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bc2b7d44-a72d-49d5-8376-1480dee58b22"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bc2b7d44-a72d-49d5-8376-1480dee58b22"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFNetCrossOriginSupport
     {
         [PreserveSig]

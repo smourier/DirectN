@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("7fd52380-4e07-101b-ae2d-08002b2ec713"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7fd52380-4e07-101b-ae2d-08002b2ec713"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPersistStreamInit
     {
         [PreserveSig]

@@ -6,7 +6,7 @@ using LRESULT = System.Int64;
 
 namespace DirectN
 {
-    [Guid("922eada0-3424-11cf-b670-00aa004cd6d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("922eada0-3424-11cf-b670-00aa004cd6d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IOleInPlaceSiteWindowless : IOleInPlaceSiteEx
     {
         // IOleInPlaceSiteEx

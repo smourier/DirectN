@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Represents an ellipse.
     /// </summary>
-    [Guid("2cd906a4-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd906a4-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1EllipseGeometry : ID2D1Geometry
     {
         // ID2D1Resource

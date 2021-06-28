@@ -5,7 +5,7 @@ using LUID = DirectN._LUID;
 
 namespace DirectN
 {
-    [Guid("f1df64b6-57fd-49cd-8807-c0eb88b45c8f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f1df64b6-57fd-49cd-8807-c0eb88b45c8f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12SwapChainAssistant
     {
         [PreserveSig]

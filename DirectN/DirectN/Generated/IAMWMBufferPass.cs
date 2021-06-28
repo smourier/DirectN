@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6dd816d7-e740-4123-9e24-2444412644d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6dd816d7-e740-4123-9e24-2444412644d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMWMBufferPass
     {
         [PreserveSig]

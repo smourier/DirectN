@@ -6,7 +6,7 @@ using D2D1_TAG = System.UInt64;
 
 namespace DirectN
 {
-    [Guid("7836d248-68cc-4df6-b9e8-de991bf62eb7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7836d248-68cc-4df6-b9e8-de991bf62eb7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1DeviceContext5 : ID2D1DeviceContext4
     {
         // ID2D1Resource

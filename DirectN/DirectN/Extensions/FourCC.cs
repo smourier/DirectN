@@ -29,8 +29,11 @@ namespace DirectN
 
         public FourCC(string fourCC)
         {
+            if (fourCC == null)
+                throw new ArgumentNullException(nameof(fourCC));
+
             if (fourCC.Length != 4)
-                throw new ArgumentException(null, nameof(FourCC));
+                throw new ArgumentException(null, nameof(fourCC));
 
             _value = ((uint)fourCC[3]) << 24 | ((uint)fourCC[2]) << 16 | ((uint)fourCC[1]) << 8 | fourCC[0];
         }

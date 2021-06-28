@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cc86fabe-da55-401d-85e7-e3c9de2877e9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cc86fabe-da55-401d-85e7-e3c9de2877e9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D11BlendState1 : ID3D11BlendState
     {
         // ID3D11DeviceChild

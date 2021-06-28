@@ -5,7 +5,7 @@ using WICPixelFormatGUID = System.Guid;
 
 namespace DirectN
 {
-    [Guid("fbec5e44-f7be-4b65-b7f8-c0c81fef026d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("fbec5e44-f7be-4b65-b7f8-c0c81fef026d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICDevelopRaw : IWICBitmapFrameDecode
     {
         // IWICBitmapSource

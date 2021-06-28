@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("604d33d7-cf23-41d5-8224-5bbbb1a87475"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("604d33d7-cf23-41d5-8224-5bbbb1a87475"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFVideoRendererEffectControl
     {
         [PreserveSig]

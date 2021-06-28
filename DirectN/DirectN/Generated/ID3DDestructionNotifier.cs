@@ -5,7 +5,7 @@ using PFN_DESTRUCTION_CALLBACK = System.IntPtr;
 
 namespace DirectN
 {
-    [Guid("a06eb39a-50da-425b-8c31-4eecd6c270f3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a06eb39a-50da-425b-8c31-4eecd6c270f3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3DDestructionNotifier
     {
         [PreserveSig]

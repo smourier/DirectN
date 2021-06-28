@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("3fea4feb-2945-47a7-a1dd-c53a8fc4c45c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3fea4feb-2945-47a7-a1dd-c53a8fc4c45c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMWriterFileSink3 : IWMWriterFileSink2
     {
         // IWMWriterSink

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f75ccec0-c67c-475c-931e-8719870bee7d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f75ccec0-c67c-475c-931e-8719870bee7d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPErrorItem2 : IWMPErrorItem
     {
         // IWMPErrorItem

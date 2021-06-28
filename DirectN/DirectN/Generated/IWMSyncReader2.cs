@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("faed3d21-1b6b-4af7-8cb6-3e189bbc187b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("faed3d21-1b6b-4af7-8cb6-3e189bbc187b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMSyncReader2 : IWMSyncReader
     {
         // IWMSyncReader

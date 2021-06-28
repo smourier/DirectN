@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a0638c2b-6465-4395-9ae7-a321a9fd2856"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a0638c2b-6465-4395-9ae7-a321a9fd2856"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFAudioPolicy
     {
         [PreserveSig]

@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Set of fonts used for creating font faces, selecting nearest matching fonts, and filtering. Unlike IDWriteFontFamily and IDWriteFontList, which are part of the IDWriteFontCollection heirarchy, font sets are unordered flat lists.
     /// </summary>
-    [Guid("53585141-d9f8-4095-8321-d73cf6bd116b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("53585141-d9f8-4095-8321-d73cf6bd116b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontSet
     {
         [PreserveSig]

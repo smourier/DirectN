@@ -5,7 +5,7 @@ using VARTYPE = System.UInt16;
 
 namespace DirectN
 {
-    [Guid("3b22bcbf-2586-4af0-8583-205d391b807c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3b22bcbf-2586-4af0-8583-205d391b807c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDeviceSpecificProperty
     {
         [PreserveSig]

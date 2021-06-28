@@ -6,7 +6,7 @@ using LPRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
-    [Guid("0eb1088c-4dcd-46f0-878f-39dae86a51b7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0eb1088c-4dcd-46f0-878f-39dae86a51b7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVMRWindowlessControl
     {
         [PreserveSig]

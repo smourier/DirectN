@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Builder interface to add font face references and create a font set.
     /// </summary>
-    [Guid("2f642afe-9c68-4f40-b8be-457401afcb3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2f642afe-9c68-4f40-b8be-457401afcb3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontSetBuilder
     {
         [PreserveSig]

@@ -5,7 +5,7 @@ using boolean = System.Byte;
 
 namespace DirectN
 {
-    [Guid("dfe21355-5ec2-40e0-8d6b-710ac3c00249"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("dfe21355-5ec2-40e0-8d6b-710ac3c00249"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioEndpointOffloadStreamMute
     {
         [PreserveSig]

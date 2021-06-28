@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("334b1f50-2292-4b35-99a1-25588d8c17fe"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("334b1f50-2292-4b35-99a1-25588d8c17fe"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDxcContainerBuilder
     {
         [PreserveSig]

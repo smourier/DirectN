@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("607574eb-f4b6-45c1-b08c-cb715122901d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("607574eb-f4b6-45c1-b08c-cb715122901d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPlayToControl
     {
         [PreserveSig]

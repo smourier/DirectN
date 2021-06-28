@@ -269,6 +269,9 @@ namespace System.Runtime.InteropServices
             if (value == null || value.Length == 0)
                 return;
 
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
             var countMod = count % 8;
             var offsetMod = offset % 8;
             if (countMod == 0 && offsetMod == 0)
@@ -302,18 +305,20 @@ namespace System.Runtime.InteropServices
                 return;
 
             if (!typeof(T).IsValueType)
-                throw new ArgumentException(null, nameof(T));
+                throw new InvalidOperationException();
 
             var valuePtr = Marshal.UnsafeAddrOfPinnedArrayElement(value, 0);
             Marshal.Copy(valuePtr, bytes, offset / 8, count / 8);
         }
 
+#pragma warning disable CA1720 // Identifier contains type name
         public static void Set<T>(T obj, byte[] bytes, int offset, int count)
+#pragma warning restore CA1720 // Identifier contains type name
         {
             Debug.Assert((offset % 8) == 0);
             Debug.Assert((count % 8) == 0);
             if (!typeof(T).IsValueType)
-                throw new ArgumentException(null, nameof(T));
+                throw new InvalidOperationException();
 
             var buffer = new byte[Marshal.SizeOf<T>()];
             var ptr = Marshal.AllocCoTaskMem(buffer.Length);

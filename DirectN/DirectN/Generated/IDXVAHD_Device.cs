@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("95f12dfd-d77e-49be-815f-57d579634d6d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("95f12dfd-d77e-49be-815f-57d579634d6d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXVAHD_Device
     {
         [PreserveSig]

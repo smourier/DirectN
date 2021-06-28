@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("5c595e64-4630-4231-855a-12842f733245"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("5c595e64-4630-4231-855a-12842f733245"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFExtendedCameraIntrinsicModel
     {
         [PreserveSig]

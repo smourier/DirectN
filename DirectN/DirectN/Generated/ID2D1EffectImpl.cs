@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// This is the interface implemented by an effect author, along with the constructor and registration information.
     /// </summary>
-    [Guid("a248fd3f-3e6c-4e63-9f03-7f68ecc91db9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a248fd3f-3e6c-4e63-9f03-7f68ecc91db9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1EffectImpl
     {
         [PreserveSig]

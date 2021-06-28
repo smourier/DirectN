@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f90a6130-b658-11d2-ae49-0000f8754b99"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f90a6130-b658-11d2-ae49-0000f8754b99"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMDeviceRemoval
     {
         [PreserveSig]

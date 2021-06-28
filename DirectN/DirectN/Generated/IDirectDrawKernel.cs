@@ -5,7 +5,7 @@ using LPDDKERNELCAPS = DirectN._DDKERNELCAPS;
 
 namespace DirectN
 {
-    [Guid("8d56c120-6a08-11d0-9b06-00a0c903a3b8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("8d56c120-6a08-11d0-9b06-00a0c903a3b8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirectDrawKernel
     {
         [PreserveSig]

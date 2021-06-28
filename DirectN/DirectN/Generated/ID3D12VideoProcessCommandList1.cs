@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("542c5c4d-7596-434f-8c93-4efa6766f267"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("542c5c4d-7596-434f-8c93-4efa6766f267"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12VideoProcessCommandList1 : ID3D12VideoProcessCommandList
     {
         // ID3D12Object

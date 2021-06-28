@@ -8,7 +8,7 @@ namespace DirectN
     /// <summary>
     /// Renders to an intermediate texture created by the CreateCompatibleRenderTarget method.
     /// </summary>
-    [Guid("2cd90695-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd90695-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1BitmapRenderTarget : ID2D1RenderTarget
     {
         // ID2D1Resource

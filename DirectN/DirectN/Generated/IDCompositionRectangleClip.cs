@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9842ad7d-d9cf-4908-aed7-48b51da5e7c2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9842ad7d-d9cf-4908-aed7-48b51da5e7c2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDCompositionRectangleClip : IDCompositionClip
     {
         // IDCompositionClip

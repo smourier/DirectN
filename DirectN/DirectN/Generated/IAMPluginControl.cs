@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0e26a181-f40c-4635-8786-976284b52981"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0e26a181-f40c-4635-8786-976284b52981"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMPluginControl
     {
         [PreserveSig]

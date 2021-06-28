@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("2a07407e-6497-4a18-9787-32f79bd0d98f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2a07407e-6497-4a18-9787-32f79bd0d98f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDeviceTopology
     {
         [PreserveSig]

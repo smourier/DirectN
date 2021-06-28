@@ -6,7 +6,7 @@ using PAudioStateMonitorCallback = System.IntPtr;
 
 namespace DirectN
 {
-    [Guid("1d13d136-0199-4cdc-b84e-e72c2b581ece"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1d13d136-0199-4cdc-b84e-e72c2b581ece"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioStateMonitor
     {
         [PreserveSig]

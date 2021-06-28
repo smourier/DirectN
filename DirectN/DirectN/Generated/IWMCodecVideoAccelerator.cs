@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("990641b0-739f-4e94-a808-9888da8f75af"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("990641b0-739f-4e94-a808-9888da8f75af"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMCodecVideoAccelerator
     {
         [PreserveSig]

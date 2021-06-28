@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("65abea96-cf36-453f-af8a-705e98f16260"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("65abea96-cf36-453f-af8a-705e98f16260"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDMOQualityControl
     {
         [PreserveSig]

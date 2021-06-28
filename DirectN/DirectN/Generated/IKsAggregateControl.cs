@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7f40eac0-3947-11d2-874e-00a0c9223196"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7f40eac0-3947-11d2-874e-00a0c9223196"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IKsAggregateControl
     {
         [PreserveSig]

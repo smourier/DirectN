@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("62b98c44-1f82-4c67-bcd0-72cf8f217e81"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("62b98c44-1f82-4c67-bcd0-72cf8f217e81"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D10EffectVectorVariable : ID3D10EffectVariable
     {
         // ID3D10EffectVariable

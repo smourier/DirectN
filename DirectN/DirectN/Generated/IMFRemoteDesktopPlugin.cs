@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("1cde6309-cae0-4940-907e-c1ec9c3d1d4a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1cde6309-cae0-4940-907e-c1ec9c3d1d4a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFRemoteDesktopPlugin
     {
         [PreserveSig]

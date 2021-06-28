@@ -5,7 +5,7 @@ using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("b25b8372-d2d2-44b2-8653-1b8dae332489"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b25b8372-d2d2-44b2-8653-1b8dae332489"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMWMBufferPassCallback
     {
         [PreserveSig]

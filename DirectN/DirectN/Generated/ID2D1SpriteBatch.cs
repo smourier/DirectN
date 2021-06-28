@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4dc583bf-3a10-438a-8722-e9765224f1f1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4dc583bf-3a10-438a-8722-e9765224f1f1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SpriteBatch : ID2D1Resource
     {
         // ID2D1Resource

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("788c8743-e57f-439d-a468-5bc77f2e59c6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("788c8743-e57f-439d-a468-5bc77f2e59c6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPFolderMonitorServices
     {
         [PreserveSig]

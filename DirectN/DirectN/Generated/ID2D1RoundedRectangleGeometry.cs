@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Describes a rounded rectangle.
     /// </summary>
-    [Guid("2cd906a3-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2cd906a3-12e2-11dc-9fed-001143a055f9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1RoundedRectangleGeometry : ID2D1Geometry
     {
         // ID2D1Resource

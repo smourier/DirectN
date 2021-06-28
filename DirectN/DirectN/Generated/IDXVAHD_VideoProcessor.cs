@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("95f4edf4-6e03-4cd7-be1b-3075d665aa52"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("95f4edf4-6e03-4cd7-be1b-3075d665aa52"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXVAHD_VideoProcessor
     {
         [PreserveSig]

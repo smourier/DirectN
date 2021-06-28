@@ -5,7 +5,7 @@ using REFERENCE_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("f185fe76-e64e-11d2-b76e-00c04fb6bd3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f185fe76-e64e-11d2-b76e-00c04fb6bd3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMPushSource : IAMLatency
     {
         // IAMLatency

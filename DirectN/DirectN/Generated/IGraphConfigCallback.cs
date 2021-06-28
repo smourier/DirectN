@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("ade0fd60-d19d-11d2-abf6-00a0c905f375"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ade0fd60-d19d-11d2-abf6-00a0c905f375"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IGraphConfigCallback
     {
         [PreserveSig]

@@ -5,7 +5,7 @@ using LRESULT = System.Int64;
 
 namespace DirectN
 {
-    [Guid("a300415a-54aa-4081-adbf-3b13610d8958"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a300415a-54aa-4081-adbf-3b13610d8958"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPNodeWindowedHost
     {
         [PreserveSig]

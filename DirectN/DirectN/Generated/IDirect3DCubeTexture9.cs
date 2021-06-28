@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("fff32f81-d953-473a-9223-93d652aba93f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("fff32f81-d953-473a-9223-93d652aba93f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3DCubeTexture9 : IDirect3DBaseTexture9
     {
         // IDirect3DResource9

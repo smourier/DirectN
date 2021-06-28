@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("1f504270-a66b-4223-8e96-26a06c63d69f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1f504270-a66b-4223-8e96-26a06c63d69f"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPEvents3 : IWMPEvents2
     {
         // IWMPEvents

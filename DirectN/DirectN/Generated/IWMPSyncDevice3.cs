@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("b22c85f9-263c-4372-a0da-b518db9b4098"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b22c85f9-263c-4372-a0da-b518db9b4098"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPSyncDevice3 : IWMPSyncDevice2
     {
         // IWMPSyncDevice

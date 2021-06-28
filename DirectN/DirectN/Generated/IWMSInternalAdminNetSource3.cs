@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6b63d08e-4590-44af-9eb3-57ff1e73bf80"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6b63d08e-4590-44af-9eb3-57ff1e73bf80"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMSInternalAdminNetSource3 : IWMSInternalAdminNetSource2
     {
         // IWMSInternalAdminNetSource2

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("2ba1785d-4d1b-44ef-85e8-c7f1d3f20184"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2ba1785d-4d1b-44ef-85e8-c7f1d3f20184"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ICameraControl
     {
         [PreserveSig]

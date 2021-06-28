@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("a721791a-0def-4d06-bd91-2118bf1db10b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a721791a-0def-4d06-bd91-2118bf1db10b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICMetadataQueryWriter : IWICMetadataQueryReader
     {
         // IWICMetadataQueryReader

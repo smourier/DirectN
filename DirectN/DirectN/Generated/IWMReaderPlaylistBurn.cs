@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f28c0300-9baa-4477-a846-1744d9cbf533"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f28c0300-9baa-4477-a846-1744d9cbf533"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMReaderPlaylistBurn
     {
         [PreserveSig]

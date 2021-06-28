@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("47016943-fca8-4594-93ea-af258b55346d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("47016943-fca8-4594-93ea-af258b55346d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12StateObject : ID3D12Pageable
     {
         // ID3D12Object

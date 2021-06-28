@@ -6,7 +6,7 @@ using STREAM_TIME = System.Int64;
 
 namespace DirectN
 {
-    [Guid("b502d1be-9a57-11d0-8fde-00c04fd9189d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b502d1be-9a57-11d0-8fde-00c04fd9189d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IStreamSample
     {
         [PreserveSig]

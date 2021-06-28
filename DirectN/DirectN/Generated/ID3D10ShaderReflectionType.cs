@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c530ad7d-9b16-4395-a979-ba2ecff83add"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c530ad7d-9b16-4395-a979-ba2ecff83add"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D10ShaderReflectionType
     {
         [PreserveSig]

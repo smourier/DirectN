@@ -6,7 +6,7 @@ using LPCRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
-    [Guid("3af24292-0c96-11ce-a0cf-00aa00600ab8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3af24292-0c96-11ce-a0cf-00aa00600ab8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IViewObjectEx
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6daa848c-5eb0-45cc-aea5-998a2cda1ffb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6daa848c-5eb0-45cc-aea5-998a2cda1ffb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPartsList
     {
         [PreserveSig]

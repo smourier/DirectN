@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("d9b67d36-a9ad-4eb4-baef-db284ef5504c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d9b67d36-a9ad-4eb4-baef-db284ef5504c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMAuthorizer
     {
         [PreserveSig]

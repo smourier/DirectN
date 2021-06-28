@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("ff130ebc-a6c3-42a6-b401-c3382c3e08b3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ff130ebc-a6c3-42a6-b401-c3382c3e08b3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMDRMEditor
     {
         [PreserveSig]

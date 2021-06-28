@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("dddf83e6-68d7-4c70-883f-a1836afb4a50"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("dddf83e6-68d7-4c70-883f-a1836afb4a50"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ISpatialAudioObjectRenderStreamNotify
     {
         [PreserveSig]

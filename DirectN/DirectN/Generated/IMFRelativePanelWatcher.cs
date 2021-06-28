@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("421af7f6-573e-4ad0-8fda-2e57cedb18c6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("421af7f6-573e-4ad0-8fda-2e57cedb18c6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFRelativePanelWatcher : IMFShutdown
     {
         // IMFShutdown

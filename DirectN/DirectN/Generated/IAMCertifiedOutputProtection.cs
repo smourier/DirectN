@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6feded3e-0ff1-4901-a2f1-43f7012c8515"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6feded3e-0ff1-4901-a2f1-43f7012c8515"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMCertifiedOutputProtection
     {
         [PreserveSig]

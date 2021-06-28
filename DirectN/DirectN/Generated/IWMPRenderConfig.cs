@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("959506c1-0314-4ec5-9e61-8528db5e5478"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("959506c1-0314-4ec5-9e61-8528db5e5478"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPRenderConfig
     {
         [PreserveSig]

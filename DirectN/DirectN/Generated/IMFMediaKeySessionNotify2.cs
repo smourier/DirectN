@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c3a9e92a-da88-46b0-a110-6cf953026cb9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c3a9e92a-da88-46b0-a110-6cf953026cb9"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotify
     {
         // IMFMediaKeySessionNotify

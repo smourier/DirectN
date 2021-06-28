@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("8da61686-4668-4a5c-ae5d-803193293dbe"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+    [ComImport, Guid("8da61686-4668-4a5c-ae5d-803193293dbe"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPDVD
     {
         [PreserveSig]

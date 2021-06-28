@@ -5,7 +5,7 @@ using LUID = DirectN._LUID;
 
 namespace DirectN
 {
-    [Guid("1bc6ea02-ef36-464f-bf0c-21ca39e5168a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1bc6ea02-ef36-464f-bf0c-21ca39e5168a"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXGIFactory4 : IDXGIFactory3
     {
         // IDXGIObject

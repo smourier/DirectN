@@ -5,7 +5,7 @@ using MSPID = System.Guid;
 
 namespace DirectN
 {
-    [Guid("b502d1bd-9a57-11d0-8fde-00c04fd9189d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b502d1bd-9a57-11d0-8fde-00c04fd9189d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMediaStream
     {
         [PreserveSig]

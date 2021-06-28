@@ -369,6 +369,9 @@ namespace DirectN
             if (name == null)
                 throw new ArgumentNullException(nameof(name));
 
+            if (value == null)
+                throw new ArgumentNullException(nameof(value));
+
             properties.SetValueByName(name, type, value, value.Length).ThrowOnError();
         }
     }

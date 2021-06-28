@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("f25362ea-2c0e-447f-81e2-755914cdc0c3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("f25362ea-2c0e-447f-81e2-755914cdc0c3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFRelativePanelReport
     {
         [PreserveSig]

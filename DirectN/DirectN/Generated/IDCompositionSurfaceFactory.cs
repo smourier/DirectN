@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e334bc12-3937-4e02-85eb-fcf4eb30d2c8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e334bc12-3937-4e02-85eb-fcf4eb30d2c8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDCompositionSurfaceFactory
     {
         [PreserveSig]

@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The interface implemented by the text analyzer's client to receive the output of a given text analysis. The Text analyzer disregards any current state of the analysis sink, therefore a Set method call on a range overwrites the previously set analysis result of the same range.
     /// </summary>
-    [Guid("5810cd44-0ca0-4701-b3fa-bec5182ae4f6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("5810cd44-0ca0-4701-b3fa-bec5182ae4f6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextAnalysisSink
     {
         [PreserveSig]

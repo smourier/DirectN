@@ -8,6 +8,9 @@ namespace DirectN
     {
         public static async void Forget(this Task task, params Type[] acceptableExceptions)
         {
+            if (task == null)
+                throw new ArgumentNullException(nameof(task));
+
             try
             {
                 await task.ConfigureAwait(false);

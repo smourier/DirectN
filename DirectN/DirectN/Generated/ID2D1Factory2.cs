@@ -9,7 +9,7 @@ namespace DirectN
     /// <summary>
     /// Creates Direct2D resources. This interface also enables the creation of ID2D1Device1 objects.
     /// </summary>
-    [Guid("94f81a73-9212-4376-9c58-b16a3a0d3992"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("94f81a73-9212-4376-9c58-b16a3a0d3992"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Factory2 : ID2D1Factory1
     {
         // ID2D1Factory

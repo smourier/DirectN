@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("8389d2d0-77d7-11d1-abe6-00a0c905f375"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("8389d2d0-77d7-11d1-abe6-00a0c905f375"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMResourceControl
     {
         [PreserveSig]

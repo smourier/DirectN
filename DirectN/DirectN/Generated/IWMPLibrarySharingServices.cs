@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("82cba86b-9f04-474b-a365-d6dd1466e541"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("82cba86b-9f04-474b-a365-d6dd1466e541"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPLibrarySharingServices
     {
         [PreserveSig]

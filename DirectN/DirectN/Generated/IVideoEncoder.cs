@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("02997c3b-8e1b-460e-9270-545e0de9563e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("02997c3b-8e1b-460e-9270-545e0de9563e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVideoEncoder : IEncoderAPI
     {
         // IEncoderAPI

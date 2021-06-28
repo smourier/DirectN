@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("d0e04c47-25b8-4369-925a-362a01d95444"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d0e04c47-25b8-4369-925a-362a01d95444"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMPEG2StreamIdMap
     {
         [PreserveSig]

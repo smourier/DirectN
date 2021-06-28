@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The text layout interface represents a block of text after it has been fully analyzed and formatted.
     /// </summary>
-    [Guid("1093c18f-8d5e-43f0-b064-0917311b525e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1093c18f-8d5e-43f0-b064-0917311b525e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteTextLayout2 : IDWriteTextLayout1
     {
         // IDWriteTextFormat

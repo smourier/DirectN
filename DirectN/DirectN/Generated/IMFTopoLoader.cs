@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("de9a6157-f660-4643-b56a-df9f7998c7cd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("de9a6157-f660-4643-b56a-df9f7998c7cd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFTopoLoader
     {
         [PreserveSig]

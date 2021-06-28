@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The GDI interop interface provides interoperability with GDI.
     /// </summary>
-    [Guid("4556be70-3abd-4f70-90be-421780a6f515"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4556be70-3abd-4f70-90be-421780a6f515"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteGdiInterop1 : IDWriteGdiInterop
     {
         // IDWriteGdiInterop

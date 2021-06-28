@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cf7b26fc-9a00-485b-8147-3e789d5e8f67"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cf7b26fc-9a00-485b-8147-3e789d5e8f67"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMAsyncReaderTimestampScaling
     {
         [PreserveSig]

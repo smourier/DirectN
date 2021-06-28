@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Interface for all SVG elements.
     /// </summary>
-    [Guid("ac7b67a6-183e-49c1-a823-0ebe40b0db29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ac7b67a6-183e-49c1-a823-0ebe40b0db29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgElement : ID2D1Resource
     {
         // ID2D1Resource

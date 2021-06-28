@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("5d1abfd6-450a-4d92-9efc-d6b6cbc1f4da"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("5d1abfd6-450a-4d92-9efc-d6b6cbc1f4da"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaSourceExtensionLiveSeekableRange
     {
         [PreserveSig]

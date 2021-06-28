@@ -6,7 +6,7 @@ using LPCRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
-    [Guid("7bf80980-bf32-101a-8bbb-00aa00300cab"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7bf80980-bf32-101a-8bbb-00aa00300cab"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPicture
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("de400f54-5bf1-40cf-8964-0bea136b1e3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("de400f54-5bf1-40cf-8964-0bea136b1e3d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFHDCPStatus
     {
         [PreserveSig]

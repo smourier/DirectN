@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("680efa10-d535-11d1-87c8-00a0c9223196"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("680efa10-d535-11d1-87c8-00a0c9223196"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IOverlayNotify2 : IOverlayNotify
     {
         // IOverlayNotify

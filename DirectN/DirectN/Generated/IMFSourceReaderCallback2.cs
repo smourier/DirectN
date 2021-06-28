@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cf839fe6-8c2a-4dd2-b6ea-c22d6961af05"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cf839fe6-8c2a-4dd2-b6ea-c22d6961af05"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSourceReaderCallback2 : IMFSourceReaderCallback
     {
         // IMFSourceReaderCallback

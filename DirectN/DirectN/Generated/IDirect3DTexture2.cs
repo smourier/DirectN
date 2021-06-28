@@ -5,7 +5,7 @@ using LPDIRECT3DTEXTURE2 = DirectN.IDirect3DTexture2;
 
 namespace DirectN
 {
-    [Guid("93281502-8cf8-11d0-89ab-00a0c9054129"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("93281502-8cf8-11d0-89ab-00a0c9054129"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3DTexture2
     {
         [PreserveSig]

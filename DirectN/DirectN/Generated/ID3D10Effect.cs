@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("51b0ca8b-ec0b-4519-870d-8ee1cb5017c7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("51b0ca8b-ec0b-4519-870d-8ee1cb5017c7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D10Effect
     {
         [PreserveSig]

@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The IDWriteFontList interface represents a list of fonts.
     /// </summary>
-    [Guid("da20d8ef-812a-4c43-9802-62ec4abd7ade"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("da20d8ef-812a-4c43-9802-62ec4abd7ade"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontList1 : IDWriteFontList
     {
         // IDWriteFontList

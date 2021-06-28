@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7047dd26-b1e7-44a7-959a-8349e2144fa8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7047dd26-b1e7-44a7-959a-8349e2144fa8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1CommandSink5 : ID2D1CommandSink4
     {
         // ID2D1CommandSink

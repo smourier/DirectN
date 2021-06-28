@@ -5,7 +5,7 @@ using LPCRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
-    [Guid("55980ba0-35aa-11cf-b671-00aa004cd6d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("55980ba0-35aa-11cf-b671-00aa004cd6d8"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPointerInactive
     {
         [PreserveSig]

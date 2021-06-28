@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e1546dce-9dd1-418b-9ab2-348ced161c86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e1546dce-9dd1-418b-9ab2-348ced161c86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioEndpointOffloadStreamMeter
     {
         [PreserveSig]

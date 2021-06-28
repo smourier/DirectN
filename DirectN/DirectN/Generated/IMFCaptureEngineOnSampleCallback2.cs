@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e37ceed7-340f-4514-9f4d-9c2ae026100b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e37ceed7-340f-4514-9f4d-9c2ae026100b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback
     {
         // IMFCaptureEngineOnSampleCallback

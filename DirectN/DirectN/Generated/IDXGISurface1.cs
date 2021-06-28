@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("4ae63092-6327-4c1b-80ae-bfe12ea32b86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("4ae63092-6327-4c1b-80ae-bfe12ea32b86"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXGISurface1 : IDXGISurface
     {
         // IDXGIObject

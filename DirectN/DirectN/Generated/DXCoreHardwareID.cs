@@ -7,9 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DXCoreHardwareID
     {
-        public int vendorID;
-        public int deviceID;
-        public int subSysID;
-        public int revision;
+        public uint vendorID;
+        public uint deviceID;
+        public uint subSysID;
+        public uint revision;
     }
 }

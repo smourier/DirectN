@@ -5,7 +5,7 @@ using LPDIRECTDRAW7 = DirectN.IDirectDraw7;
 
 namespace DirectN
 {
-    [Guid("aada05a8-5a4e-4729-af0b-cea27aed51e2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("aada05a8-5a4e-4729-af0b-cea27aed51e2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVMRSurfaceAllocatorNotify
     {
         [PreserveSig]

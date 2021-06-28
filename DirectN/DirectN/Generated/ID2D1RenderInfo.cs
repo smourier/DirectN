@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// A transform uses this interface to specify how to render a particular pass in D2D.
     /// </summary>
-    [Guid("519ae1bd-d19a-420d-b849-364f594776b7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("519ae1bd-d19a-420d-b849-364f594776b7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1RenderInfo
     {
         [PreserveSig]

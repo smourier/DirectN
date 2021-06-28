@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("cd63314f-3fba-4a1b-812c-ef96358728e7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("cd63314f-3fba-4a1b-812c-ef96358728e7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioClock
     {
         [PreserveSig]

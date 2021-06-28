@@ -5,7 +5,7 @@ using MediaEventType = System.UInt32;
 
 namespace DirectN
 {
-    [Guid("df598932-f10c-4e39-bba2-c308f101daa3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("df598932-f10c-4e39-bba2-c308f101daa3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFMediaEvent : IMFAttributes
     {
         // IMFAttributes

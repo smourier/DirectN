@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e2cd3a4b-af25-4d3d-9110-da0e6f8ee877"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e2cd3a4b-af25-4d3d-9110-da0e6f8ee877"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSourceBuffer
     {
         [PreserveSig]

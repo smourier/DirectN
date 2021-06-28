@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e6a49e22-c099-421d-aad3-c061fb4ae85b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e6a49e22-c099-421d-aad3-c061fb4ae85b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMColorConvProps
     {
         [PreserveSig]

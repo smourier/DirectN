@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Interface to return axis information for a font resource and create specific font face instances.
     /// </summary>
-    [Guid("1f803a76-6871-48e8-987f-b975551c50f2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("1f803a76-6871-48e8-987f-b975551c50f2"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontResource
     {
         [PreserveSig]

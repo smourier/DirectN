@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9104d1ab-80c9-4fed-abf0-2e6417a6df14"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+    [ComImport, Guid("9104d1ab-80c9-4fed-abf0-2e6417a6df14"), InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
     public partial interface IWMPSettings
     {
         [PreserveSig]

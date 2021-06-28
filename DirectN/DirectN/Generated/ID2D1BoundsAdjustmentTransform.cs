@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// An effect uses this interface to alter the image rectangle of its input.
     /// </summary>
-    [Guid("90f732e2-5092-4606-a819-8651970baccd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("90f732e2-5092-4606-a819-8651970baccd"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1BoundsAdjustmentTransform : ID2D1TransformNode
     {
         // ID2D1TransformNode

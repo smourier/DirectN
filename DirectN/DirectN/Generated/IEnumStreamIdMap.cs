@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("945c1566-6202-46fc-96c7-d87f289c6534"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("945c1566-6202-46fc-96c7-d87f289c6534"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IEnumStreamIdMap
     {
         [PreserveSig]

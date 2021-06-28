@@ -5,7 +5,7 @@ using LRESULT = System.Int64;
 
 namespace DirectN
 {
-    [Guid("3a0daa30-908d-4789-ba87-aed879b5c49b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3a0daa30-908d-4789-ba87-aed879b5c49b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPWindowMessageSink
     {
         [PreserveSig]

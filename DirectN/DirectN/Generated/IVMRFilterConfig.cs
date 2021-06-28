@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9e5530c5-7034-48b4-bb46-0b8a6efc8e36"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9e5530c5-7034-48b4-bb46-0b8a6efc8e36"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVMRFilterConfig
     {
         [PreserveSig]

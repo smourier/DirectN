@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("d8cd007f-d08f-4191-9bfc-236ea7f0e4b5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d8cd007f-d08f-4191-9bfc-236ea7f0e4b5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICBitmapDecoderInfo : IWICBitmapCodecInfo
     {
         // IWICComponentInfo

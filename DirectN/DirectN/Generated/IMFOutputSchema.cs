@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("7be0fc5b-abd9-44fb-a5c8-f50136e71599"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("7be0fc5b-abd9-44fb-a5c8-f50136e71599"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFOutputSchema : IMFAttributes
     {
         // IMFAttributes

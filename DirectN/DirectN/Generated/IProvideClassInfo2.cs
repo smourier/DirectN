@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    [Guid("a6bc3ac0-dbaa-11ce-9de3-00aa004bb851"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a6bc3ac0-dbaa-11ce-9de3-00aa004bb851"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IProvideClassInfo2 : IProvideClassInfo
     {
         // IProvideClassInfo

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9b32f9ad-bdcc-40a6-a39d-d5c865845720"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9b32f9ad-bdcc-40a6-a39d-d5c865845720"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D11CryptoSession : ID3D11DeviceChild
     {
         // ID3D11DeviceChild

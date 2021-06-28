@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("2f0c601f-d2c6-468c-abfa-49495d983ed1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("2f0c601f-d2c6-468c-abfa-49495d983ed1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWICJpegFrameEncode
     {
         [PreserveSig]

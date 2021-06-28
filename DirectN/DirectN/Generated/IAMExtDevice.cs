@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("b5730a90-1a2c-11cf-8c23-00aa006b6814"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("b5730a90-1a2c-11cf-8c23-00aa006b6814"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMExtDevice
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("81e20ce4-75ef-491a-8004-fc53c45bdc3e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("81e20ce4-75ef-491a-8004-fc53c45bdc3e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMWriterPostView
     {
         [PreserveSig]

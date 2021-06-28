@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("61f7d887-1230-4a8b-aeba-8ad434d1a64d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("61f7d887-1230-4a8b-aeba-8ad434d1a64d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSSLCertificateManager
     {
         [PreserveSig]

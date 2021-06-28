@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// Builder used to create a font fallback definition by appending a series of fallback mappings, followed by a creation call.  <remarks> This object may not be thread-safe. </remarks>
     /// </summary>
-    [Guid("fd882d06-8aba-4fb8-b849-8be8b73e14de"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("fd882d06-8aba-4fb8-b849-8be8b73e14de"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDWriteFontFallbackBuilder
     {
         [PreserveSig]

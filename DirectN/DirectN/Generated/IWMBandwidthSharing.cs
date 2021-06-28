@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("ad694af1-f8d9-42f8-bc47-70311b0c4f9e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("ad694af1-f8d9-42f8-bc47-70311b0c4f9e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMBandwidthSharing : IWMStreamList
     {
         // IWMStreamList

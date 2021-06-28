@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("fed2b808-5eb4-43a0-aea3-35f65280f91b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("fed2b808-5eb4-43a0-aea3-35f65280f91b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDCompositionVisualDebug : IDCompositionVisual2
     {
         // IDCompositionVisual

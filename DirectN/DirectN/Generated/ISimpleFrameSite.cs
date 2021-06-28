@@ -5,7 +5,7 @@ using LRESULT = System.Int64;
 
 namespace DirectN
 {
-    [Guid("742b0e01-14e6-101b-914e-00aa00300cab"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("742b0e01-14e6-101b-914e-00aa00300cab"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ISimpleFrameSite
     {
         [PreserveSig]

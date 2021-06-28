@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("bef6e002-a874-101a-8bba-00aa00300cab"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bef6e002-a874-101a-8bba-00aa00300cab"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IFont
     {
         [PreserveSig]

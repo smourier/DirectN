@@ -57,7 +57,7 @@ namespace DirectN
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
             if (destinationType == typeof(string))
-                return ((Cursor)value).Id.ToString();
+                return ((Cursor)value)?.Id.ToString();
 
             return base.ConvertTo(context, culture, value, destinationType);
         }

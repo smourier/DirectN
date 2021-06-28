@@ -7,7 +7,7 @@ using LPDIRECT3DVIEWPORT = DirectN.IDirect3DViewport;
 
 namespace DirectN
 {
-    [Guid("3bba0080-2421-11cf-a31a-00aa00b93356"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("3bba0080-2421-11cf-a31a-00aa00b93356"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3D
     {
         [PreserveSig]

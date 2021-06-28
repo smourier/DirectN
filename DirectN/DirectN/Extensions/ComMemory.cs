@@ -62,10 +62,9 @@ namespace DirectN
             }
         }
 
-        public ComMemory(IntPtr pointer, int size)
-        {
-            Replace(pointer, size);
-        }
+#pragma warning disable CA2214 // Do not call overridable methods in constructors
+        public ComMemory(IntPtr pointer, int size) => Replace(pointer, size);
+#pragma warning restore CA2214 // Do not call overridable methods in constructors
 
         public int Size { get; protected set; }
 

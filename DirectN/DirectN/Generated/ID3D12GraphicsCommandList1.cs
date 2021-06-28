@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("553103fb-1fe7-4557-bb38-946d7d0e7ca7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("553103fb-1fe7-4557-bb38-946d7d0e7ca7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12GraphicsCommandList1 : ID3D12GraphicsCommandList
     {
         // ID3D12Object

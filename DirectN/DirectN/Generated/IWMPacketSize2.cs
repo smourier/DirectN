@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("8bfc2b9e-b646-4233-a877-1c6a079669dc"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("8bfc2b9e-b646-4233-a877-1c6a079669dc"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMPacketSize2 : IWMPacketSize
     {
         // IWMPacketSize

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("e30eb3a5-b36b-42dc-8527-cd25136c083c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e30eb3a5-b36b-42dc-8527-cd25136c083c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ISelector
     {
         [PreserveSig]

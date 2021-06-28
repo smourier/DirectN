@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("a09513ed-c709-4d21-bd7b-5f34c47f3947"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a09513ed-c709-4d21-bd7b-5f34c47f3947"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IControlChangeNotify
     {
         [PreserveSig]

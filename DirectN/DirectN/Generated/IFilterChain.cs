@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("dcfbdcf6-0dc2-45f5-9ab2-7c330ea09c29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("dcfbdcf6-0dc2-45f5-9ab2-7c330ea09c29"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IFilterChain
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("6967f2c9-4e26-4b57-8894-799880f7ac7b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("6967f2c9-4e26-4b57-8894-799880f7ac7b"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IWMLicenseRevocationAgent
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("436eee9c-264f-4242-90e1-4e330c107512"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("436eee9c-264f-4242-90e1-4e330c107512"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMpeg2Demultiplexer
     {
         [PreserveSig]

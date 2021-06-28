@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("d01bad4a-4fa0-4a60-9349-c27e62da9d41"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d01bad4a-4fa0-4a60-9349-c27e62da9d41"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFASFStreamSelector
     {
         [PreserveSig]

@@ -11,7 +11,7 @@ using LPUNKNOWN = System.Object;
 
 namespace DirectN
 {
-    [Guid("bb223240-e72b-11d0-a9b4-00aa00c0993e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("bb223240-e72b-11d0-a9b4-00aa00c0993e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3D3
     {
         [PreserveSig]

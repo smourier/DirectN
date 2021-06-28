@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("72d6135b-35e9-412c-b926-fd5265f2a885"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("72d6135b-35e9-412c-b926-fd5265f2a885"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFCaptureSink
     {
         [PreserveSig]

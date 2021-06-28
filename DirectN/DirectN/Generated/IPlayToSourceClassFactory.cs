@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("842b32a3-9b9b-4d1c-b3f3-49193248a554"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("842b32a3-9b9b-4d1c-b3f3-49193248a554"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IPlayToSourceClassFactory
     {
         [PreserveSig]

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("c3b284d4-6d39-4359-b3cf-b56ddb3bb39c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c3b284d4-6d39-4359-b3cf-b56ddb3bb39c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioVolumeDuckNotification
     {
         [PreserveSig]

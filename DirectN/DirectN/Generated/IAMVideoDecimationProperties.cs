@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("60d32930-13da-11d3-9ec6-c4fcaef5c7be"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("60d32930-13da-11d3-9ec6-c4fcaef5c7be"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAMVideoDecimationProperties
     {
         [PreserveSig]

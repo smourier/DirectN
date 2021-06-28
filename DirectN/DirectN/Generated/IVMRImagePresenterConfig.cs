@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("9f3a1c85-8555-49ba-935f-be5b5b29d178"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9f3a1c85-8555-49ba-935f-be5b5b29d178"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IVMRImagePresenterConfig
     {
         [PreserveSig]

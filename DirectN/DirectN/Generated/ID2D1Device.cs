@@ -7,7 +7,7 @@ namespace DirectN
     /// <summary>
     /// The device defines a resource domain whose objects and device contexts can be used together.
     /// </summary>
-    [Guid("47dd575d-ac05-4cdd-8049-9b02cd16f44c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("47dd575d-ac05-4cdd-8049-9b02cd16f44c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1Device : ID2D1Resource
     {
         // ID2D1Resource

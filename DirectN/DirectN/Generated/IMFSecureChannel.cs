@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("d0ae555d-3b12-4d97-b060-0990bc5aeb67"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("d0ae555d-3b12-4d97-b060-0990bc5aeb67"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IMFSecureChannel
     {
         [PreserveSig]

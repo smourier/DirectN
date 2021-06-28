@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("dd79923c-0599-45e0-b8b6-c8df7db6e796"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("dd79923c-0599-45e0-b8b6-c8df7db6e796"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IAudioPeakMeter
     {
         [PreserveSig]

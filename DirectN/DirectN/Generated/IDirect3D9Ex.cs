@@ -5,7 +5,7 @@ using LUID = DirectN._LUID;
 
 namespace DirectN
 {
-    [Guid("02177241-69fc-400c-8ff1-93a44df6861d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("02177241-69fc-400c-8ff1-93a44df6861d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDirect3D9Ex : IDirect3D9
     {
         // IDirect3D9
