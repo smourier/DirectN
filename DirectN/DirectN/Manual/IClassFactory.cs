@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown), Guid("00000001-0000-0000-C000-000000000046")]
+    [ComImport, InterfaceType(ComInterfaceType.InterfaceIsIUnknown), Guid("00000001-0000-0000-C000-000000000046")]
     public interface IClassFactory
     {
         [return: MarshalAs(UnmanagedType.Interface)]

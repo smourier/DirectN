@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("00000100-0000-0000-C000-000000000046"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("00000100-0000-0000-C000-000000000046"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IEnumUnknown
     {
         [PreserveSig]

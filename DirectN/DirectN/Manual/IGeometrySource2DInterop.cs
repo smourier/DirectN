@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("0657AF73-53FD-47CF-84FF-C8492D2A80A3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("0657AF73-53FD-47CF-84FF-C8492D2A80A3"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface IGeometrySource2DInterop
     {
         [PreserveSig]

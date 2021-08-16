@@ -14,7 +14,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.9.1.0</Version>
+    <Version>1.9.1.1</Version>
     <RootNamespace>DirectN</RootNamespace>
   </PropertyGroup>
 

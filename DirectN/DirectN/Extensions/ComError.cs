@@ -63,7 +63,7 @@ namespace DirectN
             return error;
         }
 
-        [Guid("22F03340-547D-101B-8E65-08002B2BD119"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [ComImport, Guid("22F03340-547D-101B-8E65-08002B2BD119"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         private interface ICreateErrorInfo
         {
             [PreserveSig]
@@ -82,7 +82,7 @@ namespace DirectN
             HRESULT SetHelpContext(int dwHelpContext);
         }
 
-        [Guid("1CF2B120-547D-101B-8E65-08002B2BD119"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [ComImport, Guid("1CF2B120-547D-101B-8E65-08002B2BD119"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         private interface IErrorInfo
         {
             [PreserveSig]

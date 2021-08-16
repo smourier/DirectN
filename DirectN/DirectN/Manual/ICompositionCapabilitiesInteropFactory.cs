@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("2C9DB356-E70D-4642-8298-BC4AA5B4865C"), InterfaceType(ComInterfaceType.InterfaceIsIInspectable)]
+    [ComImport, Guid("2C9DB356-E70D-4642-8298-BC4AA5B4865C"), InterfaceType(ComInterfaceType.InterfaceIsIInspectable)]
     public interface ICompositionCapabilitiesInteropFactory
     {
         [PreserveSig]

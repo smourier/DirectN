@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [Guid("13e670f5-1a5a-11cf-abeb-00aa00b65ea1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("13e670f5-1a5a-11cf-abeb-00aa00b65ea1"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface ITextHost2 : ITextHost
     {
         // ITextHost
