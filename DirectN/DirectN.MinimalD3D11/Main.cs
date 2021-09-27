@@ -28,8 +28,8 @@ namespace DirectN.MinimalD3D11
         private XMFLOAT3 _modelTranslation = new XMFLOAT3(0, 0, 1500);
         private float _width;
         private float _height;
-        private readonly float _n = 1000.0f;
-        private readonly float _f = 1000000.0f;
+        private readonly float _zNear = 1000.0f;
+        private readonly float _zFar = 1000000.0f;
 
         private VerticalBlankTicker _ticker;
 
@@ -158,7 +158,7 @@ namespace DirectN.MinimalD3D11
             blendDesc.RenderTarget[0].SrcBlendAlpha = D3D11_BLEND.D3D11_BLEND_ZERO;
             blendDesc.RenderTarget[0].DestBlendAlpha = D3D11_BLEND.D3D11_BLEND_ZERO;
             blendDesc.RenderTarget[0].BlendOpAlpha = D3D11_BLEND_OP.D3D11_BLEND_OP_ADD;
-            blendDesc.RenderTarget[0].RenderTargetWriteMask = (byte)(D3D11_COLOR_WRITE_ENABLE.D3D11_COLOR_WRITE_ENABLE_ALL);
+            blendDesc.RenderTarget[0].RenderTargetWriteMask = (byte)D3D11_COLOR_WRITE_ENABLE.D3D11_COLOR_WRITE_ENABLE_ALL;
             _blendState = d3D11Device.CreateBlendState(blendDesc);
 
             var constantBufferDesc = new D3D11_BUFFER_DESC();
@@ -213,6 +213,30 @@ namespace DirectN.MinimalD3D11
             _shaderResourceView = d3D11Device.CreateShaderResourceView(texture);
         }
 
+        // https://docs.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrixortholh
+        private static D2D_MATRIX_4X4_F OrthographicProjection(
+            float width,
+            float height,
+            float zn,
+            float zf)
+            => new D2D_MATRIX_4X4_F(
+                2 / width, 0, 0, 0,
+                0, 2 / height, 0, 0,
+                0, 0, 1 / (zf - zn), 0,
+                0, 0, -zn / (zf - zn), 1);
+
+        // https://docs.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrixperspectivelh
+        private static D2D_MATRIX_4X4_F PerspectiveProjection(
+            float width,
+            float height,
+            float zn,
+            float zf)
+            => new D2D_MATRIX_4X4_F(
+                    2 * zn / width, 0, 0, 0,
+                    0, 2 * zn / height, 0, 0,
+                    0, 0, zf / (zf - zn), 1,
+                    0, 0, zn * zf / (zn - zf), 0);
+
         private void Render()
         {
             var rotateX = D2D_MATRIX_4X4_F.RotationX(_modelRotation.x);
@@ -228,7 +252,7 @@ namespace DirectN.MinimalD3D11
             void mapAction(ref D3D11_MAPPED_SUBRESOURCE mapped, ref VS_CONSTANT_BUFFER buffer)
             {
                 buffer.Transform = rotateX * rotateY * rotateZ * scale * translate;
-                buffer.Projection = new D2D_MATRIX_4X4_F((2 * _n) / _width, 0, 0, 0, 0, (2 * _n) / _height, 0, 0, 0, 0, _f / (_f - _n), 1, 0, 0, (_n * _f) / (_n - _f), 0);
+                buffer.Projection = PerspectiveProjection(_width, _height, _zNear, _zFar);
                 buffer.LightVector = new XMFLOAT3(1, -1, 1);
             }
 
