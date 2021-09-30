@@ -10,7 +10,7 @@ namespace DirectN
         public static IReadOnlyList<D2D1Property> GetProperties(this ID2D1Properties properties)
         {
             if (properties == null)
-                return new D2D1Property[0];
+                return Array.Empty<D2D1Property>();
 
             var list = new List<D2D1Property>();
             for (uint i = 0; i < properties.GetPropertyCount(); i++)

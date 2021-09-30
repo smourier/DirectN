@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace DirectN
@@ -10,7 +11,7 @@ namespace DirectN
             D3D_DRIVER_TYPE driverType,
             D3D11_CREATE_DEVICE_FLAG flags,
             D3D_FEATURE_LEVEL[] featureLevels = null,
-            uint SdkVersion = Constants.D3D11_SDK_VERSION)
+            uint sdkVersion = Constants.D3D11_SDK_VERSION)
         {
             //featureLevels = featureLevels ?? new D3D_FEATURE_LEVEL[]
             //{
@@ -30,7 +31,7 @@ namespace DirectN
                 (uint)flags,
                 featureLevels,
                 (uint)(featureLevels?.Length).GetValueOrDefault(),
-                SdkVersion,
+                sdkVersion,
                 out ID3D11Device device,
                 out D3D_FEATURE_LEVEL level,
                 out ID3D11DeviceContext dc).ThrowOnError();
@@ -47,7 +48,7 @@ namespace DirectN
             D3D11_CREATE_DEVICE_FLAG flags,
             out IComObject<ID3D11DeviceContext> deviceContext,
             D3D_FEATURE_LEVEL[] featureLevels = null,
-            uint SdkVersion = Constants.D3D11_SDK_VERSION)
+            uint sdkVersion = Constants.D3D11_SDK_VERSION)
         {
             //featureLevels = featureLevels ?? new D3D_FEATURE_LEVEL[]
             //{
@@ -67,7 +68,7 @@ namespace DirectN
                 (uint)flags,
                 featureLevels,
                 (uint)(featureLevels?.Length).GetValueOrDefault(),
-                SdkVersion,
+                sdkVersion,
                 out ID3D11Device device,
                 out D3D_FEATURE_LEVEL level,
                 out ID3D11DeviceContext dc).ThrowOnError();
@@ -86,11 +87,26 @@ namespace DirectN
             if (target == null)
                 throw new ArgumentNullException(nameof(target));
 
-            D3DCompileFromFile(filename, null, null, entrypoint, target, 0, 0, out var blob, out var msg).ThrowOnError();
+            var hr = D3DCompileFromFile(filename, null, null, entrypoint, target, 0, 0, out var blob, out var msg);
             if (msg != null)
             {
+                if (hr.IsError)
+                {
+                    var ptr = msg.GetBufferPointer();
+                    var len = msg.GetBufferSize().ToInt32();
+                    if (ptr != IntPtr.Zero && len > 0)
+                    {
+                        var str = Marshal.PtrToStringAnsi(ptr, len).Nullify();
+                        if (str != null)
+                        {
+                            Marshal.ReleaseComObject(msg);
+                            throw new Win32Exception(hr.Value, str);
+                        }
+                    }
+                }
                 Marshal.ReleaseComObject(msg);
             }
+            hr.ThrowOnError();
             return new ComObject<ID3D10Blob>(blob);
         }
 

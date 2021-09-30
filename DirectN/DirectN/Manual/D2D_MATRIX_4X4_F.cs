@@ -235,6 +235,30 @@ namespace DirectN
             return m;
         }
 
+        // https://docs.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrixortholh
+        public static D2D_MATRIX_4X4_F OrthographicProjection(
+            float width,
+            float height,
+            float zn,
+            float zf)
+            => new D2D_MATRIX_4X4_F(
+                2 / width, 0, 0, 0,
+                0, 2 / height, 0, 0,
+                0, 0, 1 / (zf - zn), 0,
+                0, 0, -zn / (zf - zn), 1);
+
+        // https://docs.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrixperspectivelh
+        public static D2D_MATRIX_4X4_F PerspectiveProjection(
+            float width,
+            float height,
+            float zn,
+            float zf)
+            => new D2D_MATRIX_4X4_F(
+                    2 * zn / width, 0, 0, 0,
+                    0, 2 * zn / height, 0, 0,
+                    0, 0, zf / (zf - zn), 1,
+                    0, 0, zn * zf / (zn - zf), 0);
+
         public static D2D_MATRIX_4X4_F operator *(D2D_MATRIX_4X4_F left, D2D_MATRIX_4X4_F right) => Multiply(left, right);
     }
 }

@@ -21,4 +21,4 @@ using System.Runtime.Versioning;
 [assembly: AssemblyFileVersion("1.9.1.0")]
 [assembly: AssemblyInformationalVersion("1.9.1.0")]
 
-[assembly: SupportedOSPlatform("windows8.0")]
+[assembly: SupportedOSPlatform("windows10.0.19041.0")]

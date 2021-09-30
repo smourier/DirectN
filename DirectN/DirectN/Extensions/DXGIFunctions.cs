@@ -22,7 +22,7 @@ namespace DirectN
             }
         }
 
-        public static void DXGIReportLiveObjects() => DXGIReportLiveObjects(DXGIConstants.DXGI_DEBUG_ALL);
+        public static void DXGIReportLiveObjects(DXGI_DEBUG_RLO_FLAGS flags = DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_ALL) => DXGIReportLiveObjects(DXGIConstants.DXGI_DEBUG_ALL, flags);
         public static void DXGIReportLiveObjects(Guid apiid, DXGI_DEBUG_RLO_FLAGS flags = DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_ALL)
         {
             if (!IsDebugLayerAvailable)

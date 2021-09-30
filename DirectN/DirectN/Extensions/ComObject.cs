@@ -148,6 +148,38 @@ namespace DirectN
         ~ComObject() { Dispose(false); }
         public void Dispose() { Dispose(true); GC.SuppressFinalize(this); }
 
+        public static void FinalDispose(ComObject comObject)
+        {
+            if (comObject == null || comObject.IsDisposed)
+                return;
+
+            var obj = Interlocked.Exchange(ref comObject._object, null);
+            if (obj != null)
+            {
+#if DEBUG
+                //var typeName = GetType().FullName;
+                //if (typeName.IndexOf("textlayout", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                //    typeName.IndexOf("textformat", StringComparison.OrdinalIgnoreCase) >= 0)
+                //    return;
+
+                Marshal.FinalReleaseComObject(obj);
+#else
+                Marshal.FinalReleaseComObject(obj);
+#endif
+            }
+        }
+
+        public static int FinalRelease(object comObject)
+        {
+            if (comObject == null)
+                return 0;
+
+            if (!Marshal.IsComObject(comObject))
+                throw new ArgumentException("Argument is not a COM object", nameof(comObject));
+
+            return Marshal.FinalReleaseComObject(comObject);
+        }
+
         public static int Release(object comObject)
         {
             if (comObject == null)
@@ -163,12 +195,6 @@ namespace DirectN
         public static ILogger Logger { get; set; }
         protected virtual string ObjectTypeName => null;
         private static long _id;
-        private static readonly Stopwatch _sw = new Stopwatch();
-
-        static ComObject()
-        {
-            _sw.Start();
-        }
 
         protected void Trace(string methodName, string message = null)
         {
@@ -198,7 +224,6 @@ namespace DirectN
 
         public long Id { get; }
         public int ConstructorThreadId { get; }
-        public TimeSpan Duration => _sw.Elapsed;
 
         public override string ToString()
         {
