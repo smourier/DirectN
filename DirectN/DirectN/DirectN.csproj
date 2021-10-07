@@ -6095,6 +6095,12 @@
     <Compile Include="Extensions\IMFMediaBufferExtensions.cs" />
     <Compile Include="Extensions\IMFMediaTypeExtensions.cs" />
     <Compile Include="Manual\IGeometrySource2DInterop.cs" />
+    <Compile Include="Manual\IInkCommitRequestHandler.cs" />
+    <Compile Include="Manual\IInkD2DRenderer.cs" />
+    <Compile Include="Manual\IInkD2DRenderer2.cs" />
+    <Compile Include="Manual\IInkDesktopHost.cs" />
+    <Compile Include="Manual\IInkHostWorkItem.cs" />
+    <Compile Include="Manual\IInkPresenterDesktop.cs" />
     <Compile Include="Manual\IInspectable.cs" />
     <Compile Include="Manual\IMFObjectInformation.cs" />
     <Compile Include="Generated\IMFSample.cs" />
@@ -6138,6 +6144,7 @@
     <Compile Include="Generated\IWICPixelFormatInfo2.cs" />
     <Compile Include="Generated\IWICPlanarFormatConverter.cs" />
     <Compile Include="Generated\IWICStream.cs" />
+    <Compile Include="Manual\INK_HIGH_CONTRAST_ADJUSTMENT.cs" />
     <Compile Include="Manual\IPropertyStore.cs" />
     <Compile Include="Extensions\MFConstants.cs" />
     <Compile Include="Extensions\MFFunctions.cs" />

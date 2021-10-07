@@ -6080,6 +6080,12 @@
     <Compile Include="..\DirectN\Extensions\IMFMediaBufferExtensions.cs" Link="Extensions\IMFMediaBufferExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\IMFMediaTypeExtensions.cs" Link="Extensions\IMFMediaTypeExtensions.cs" />
     <Compile Include="..\DirectN\Manual\IGeometrySource2DInterop.cs" Link="Manual\IGeometrySource2DInterop.cs" />
+    <Compile Include="..\DirectN\Manual\IInkCommitRequestHandler.cs" Link="Manual\IInkCommitRequestHandler.cs" />
+    <Compile Include="..\DirectN\Manual\IInkD2DRenderer.cs" Link="Manual\IInkD2DRenderer.cs" />
+    <Compile Include="..\DirectN\Manual\IInkD2DRenderer2.cs" Link="Manual\IInkD2DRenderer2.cs" />
+    <Compile Include="..\DirectN\Manual\IInkDesktopHost.cs" Link="Manual\IInkDesktopHost.cs" />
+    <Compile Include="..\DirectN\Manual\IInkHostWorkItem.cs" Link="Manual\IInkHostWorkItem.cs" />
+    <Compile Include="..\DirectN\Manual\IInkPresenterDesktop.cs" Link="Manual\IInkPresenterDesktop.cs" />
     <Compile Include="..\DirectN\Manual\IInspectable.cs" Link="Manual\IInspectable.cs" />
     <Compile Include="..\DirectN\Manual\IMFObjectInformation.cs" Link="Manual\IMFObjectInformation.cs" />
     <Compile Include="..\DirectN\Generated\IMFSample.cs" Link="Generated\IMFSample.cs" />
@@ -6123,6 +6129,7 @@
     <Compile Include="..\DirectN\Generated\IWICPixelFormatInfo2.cs" Link="Generated\IWICPixelFormatInfo2.cs" />
     <Compile Include="..\DirectN\Generated\IWICPlanarFormatConverter.cs" Link="Generated\IWICPlanarFormatConverter.cs" />
     <Compile Include="..\DirectN\Generated\IWICStream.cs" Link="Generated\IWICStream.cs" />
+    <Compile Include="..\DirectN\Manual\INK_HIGH_CONTRAST_ADJUSTMENT.cs" Link="Manual\INK_HIGH_CONTRAST_ADJUSTMENT.cs" />
     <Compile Include="..\DirectN\Manual\IPropertyStore.cs" Link="Manual\IPropertyStore.cs" />
     <Compile Include="..\DirectN\Extensions\MFConstants.cs" Link="Extensions\MFConstants.cs" />
     <Compile Include="..\DirectN\Extensions\MFFunctions.cs" Link="Extensions\MFFunctions.cs" />
