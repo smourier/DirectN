@@ -6155,9 +6155,19 @@
     <Compile Include="..\DirectN\Manual\MONITOR_FLAGS.cs" Link="Manual\MONITOR_FLAGS.cs" />
     <Compile Include="..\DirectN\Manual\PAINTSTRUCT.cs" Link="Manual\PAINTSTRUCT.cs" />
     <Compile Include="..\DirectN\Manual\PARAFORMAT2.cs" Link="Manual\PARAFORMAT2.cs" />
+    <Compile Include="..\DirectN\Manual\PEN_FLAGS.cs" Link="Manual\PEN_FLAGS.cs" />
+    <Compile Include="..\DirectN\Manual\PEN_MASK.cs" Link="Manual\PEN_MASK.cs" />
     <Compile Include="..\DirectN\Manual\PFA.cs" Link="Manual\PFA.cs" />
     <Compile Include="..\DirectN\Manual\PFE.cs" Link="Manual\PFE.cs" />
     <Compile Include="..\DirectN\Manual\PFM.cs" Link="Manual\PFM.cs" />
+    <Compile Include="..\DirectN\Manual\POINTER_BUTTON_CHANGE_TYPE.cs" Link="Manual\POINTER_BUTTON_CHANGE_TYPE.cs" />
+    <Compile Include="..\DirectN\Manual\POINTER_FLAGS.cs" Link="Manual\POINTER_FLAGS.cs" />
+    <Compile Include="..\DirectN\Manual\POINTER_INFO.cs" Link="Manual\POINTER_INFO.cs" />
+    <Compile Include="..\DirectN\Manual\POINTER_INPUT_TYPE.cs" Link="Manual\POINTER_INPUT_TYPE.cs" />
+    <Compile Include="..\DirectN\Manual\POINTER_MESSAGE_FLAGS.cs" Link="Manual\POINTER_MESSAGE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Manual\POINTER_MOD.cs" Link="Manual\POINTER_MOD.cs" />
+    <Compile Include="..\DirectN\Manual\POINTER_PEN_INFO.cs" Link="Manual\POINTER_PEN_INFO.cs" />
+    <Compile Include="..\DirectN\Manual\POINTER_TOUCH_INFO.cs" Link="Manual\POINTER_TOUCH_INFO.cs" />
     <Compile Include="..\DirectN\Manual\RDW.cs" Link="Manual\RDW.cs" />
     <Compile Include="..\DirectN\Manual\SB.cs" Link="Manual\SB.cs" />
     <Compile Include="..\DirectN\Manual\SBOUT.cs" Link="Manual\SBOUT.cs" />
@@ -6182,6 +6192,8 @@
     <Compile Include="..\DirectN\Manual\TASKDIALOG_COMMON_BUTTON_FLAGS.cs" Link="Manual\TASKDIALOG_COMMON_BUTTON_FLAGS.cs" />
     <Compile Include="..\DirectN\Manual\TASKDIALOG_FLAGS.cs" Link="Manual\TASKDIALOG_FLAGS.cs" />
     <Compile Include="..\DirectN\Manual\TITLEBARINFOEX.cs" Link="Manual\TITLEBARINFOEX.cs" />
+    <Compile Include="..\DirectN\Manual\TOUCH_FLAGS.cs" Link="Manual\TOUCH_FLAGS.cs" />
+    <Compile Include="..\DirectN\Manual\TOUCH_MASK.cs" Link="Manual\TOUCH_MASK.cs" />
     <Compile Include="..\DirectN\Manual\TRACKMOUSEEVENT.cs" Link="Manual\TRACKMOUSEEVENT.cs" />
     <Compile Include="..\DirectN\Manual\TSW.cs" Link="Manual\TSW.cs" />
     <Compile Include="..\DirectN\Manual\TXES.cs" Link="Manual\TXES.cs" />
