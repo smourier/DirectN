@@ -148,8 +148,6 @@ namespace DirectN
             return factory != null ? new ComObject<ID2D1Factory>(factory) : null;
         }
 
-        //public static void SetTarget(this IComObject<ID2D1DeviceContext> context, ComObject<ID2D1Bitmap1> target) => SetTarget(context?.Object, target?.Object);
-        //public static void SetTarget(this IComObject<ID2D1DeviceContext> context, IComObject<ID2D1Bitmap> target) => SetTarget(context?.Object, target?.Object);
         public static void SetTarget(this IComObject<ID2D1DeviceContext> context, IComObject<ID2D1Image> target) => SetTarget(context?.Object, target?.Object);
         public static void SetTarget(this ID2D1DeviceContext context, ID2D1Image target)
         {
@@ -279,6 +277,132 @@ namespace DirectN
                 throw new ArgumentNullException(nameof(layout));
 
             context.DrawTextLayout(origin, layout, defaultFillBrush, options);
+        }
+
+        public static void DrawSvgDocument(this IComObject<ID2D1DeviceContext5> context, IComObject<ID2D1SvgDocument> svgDocument) => DrawSvgDocument(context?.Object, svgDocument?.Object);
+        public static void DrawSvgDocument(this ID2D1DeviceContext5 context, ID2D1SvgDocument svgDocument)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (svgDocument == null)
+                throw new ArgumentNullException(nameof(svgDocument));
+
+            context.DrawSvgDocument(svgDocument);
+        }
+
+        public static void DrawGeometry(this IComObject<ID2D1DeviceContext> context, IComObject<ID2D1Geometry> geometry, IComObject<ID2D1Brush> brush, float strokeWidth, IComObject<ID2D1StrokeStyle> strokeStyle = null) => DrawGeometry(context?.Object, geometry?.Object, brush?.Object, strokeWidth, strokeStyle?.Object);
+        public static void DrawGeometry(this ID2D1DeviceContext context, ID2D1Geometry geometry, ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle strokeStyle = null)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (geometry == null)
+                throw new ArgumentNullException(nameof(geometry));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.DrawGeometry(geometry, brush, strokeWidth, strokeStyle);
+        }
+
+        public static void FillGeometry(this IComObject<ID2D1DeviceContext> context, IComObject<ID2D1Geometry> geometry, IComObject<ID2D1Brush> brush, IComObject<ID2D1Brush> opacityBrush = null) => FillGeometry(context?.Object, geometry?.Object, brush?.Object, opacityBrush?.Object);
+        public static void FillGeometry(this ID2D1DeviceContext context, ID2D1Geometry geometry, ID2D1Brush brush, ID2D1Brush opacityBrush = null)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (geometry == null)
+                throw new ArgumentNullException(nameof(geometry));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.FillGeometry(geometry, brush, opacityBrush);
+        }
+
+        public static void DrawLine(this IComObject<ID2D1DeviceContext> context, D2D_POINT_2F point0, D2D_POINT_2F point1, IComObject<ID2D1Brush> brush, float strokeWidth, IComObject<ID2D1StrokeStyle> strokeStyle = null) => DrawLine(context?.Object, point0, point1, brush?.Object, strokeWidth, strokeStyle?.Object);
+        public static void DrawLine(this ID2D1DeviceContext context, D2D_POINT_2F point0, D2D_POINT_2F point1, ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle strokeStyle = null)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.DrawLine(point0, point1, brush, strokeWidth, strokeStyle);
+        }
+
+        public static void DrawRoundedRectangle(this IComObject<ID2D1DeviceContext> context, D2D1_ROUNDED_RECT roundedRect, IComObject<ID2D1Brush> brush, float strokeWidth, IComObject<ID2D1StrokeStyle> strokeStyle = null) => DrawRoundedRectangle(context?.Object, roundedRect, brush?.Object, strokeWidth, strokeStyle?.Object);
+        public static void DrawRoundedRectangle(this ID2D1DeviceContext context, D2D1_ROUNDED_RECT roundedRect, ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle strokeStyle = null)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.DrawRoundedRectangle(ref roundedRect, brush, strokeWidth, strokeStyle);
+        }
+
+        public static void FillRoundedRectangle(this IComObject<ID2D1DeviceContext> context, D2D1_ROUNDED_RECT roundedRect, IComObject<ID2D1Brush> brush) => FillRoundedRectangle(context?.Object, roundedRect, brush?.Object);
+        public static void FillRoundedRectangle(this ID2D1DeviceContext context, D2D1_ROUNDED_RECT roundedRect, ID2D1Brush brush)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.FillRoundedRectangle(ref roundedRect, brush);
+        }
+
+        public static void DrawRectangle(this IComObject<ID2D1DeviceContext> context, D2D_RECT_F rect, IComObject<ID2D1Brush> brush, float strokeWidth, IComObject<ID2D1StrokeStyle> strokeStyle = null) => DrawRectangle(context?.Object, rect, brush?.Object, strokeWidth, strokeStyle?.Object);
+        public static void DrawRectangle(this ID2D1DeviceContext context, D2D_RECT_F rect, ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle strokeStyle = null)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.DrawRectangle(ref rect, brush, strokeWidth, strokeStyle);
+        }
+
+        public static void FillRectangle(this IComObject<ID2D1DeviceContext> context, D2D_RECT_F rect, IComObject<ID2D1Brush> brush) => FillRectangle(context?.Object, rect, brush?.Object);
+        public static void FillRectangle(this ID2D1DeviceContext context, D2D_RECT_F rect, ID2D1Brush brush)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.FillRectangle(ref rect, brush);
+        }
+
+        public static void DrawEllipse(this IComObject<ID2D1DeviceContext> context, D2D1_ELLIPSE ellipse, IComObject<ID2D1Brush> brush, float strokeWidth, IComObject<ID2D1StrokeStyle> strokeStyle = null) => DrawEllipse(context?.Object, ellipse, brush?.Object, strokeWidth, strokeStyle?.Object);
+        public static void DrawEllipse(this ID2D1DeviceContext context, D2D1_ELLIPSE ellipse, ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle strokeStyle = null)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.DrawEllipse(ref ellipse, brush, strokeWidth, strokeStyle);
+        }
+
+        public static void FillEllipse(this IComObject<ID2D1DeviceContext> context, D2D1_ELLIPSE ellipse, IComObject<ID2D1Brush> brush) => FillEllipse(context?.Object, ellipse, brush?.Object);
+        public static void FillEllipse(this ID2D1DeviceContext context, D2D1_ELLIPSE ellipse, ID2D1Brush brush)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (brush == null)
+                throw new ArgumentNullException(nameof(brush));
+
+            context.FillEllipse(ref ellipse, brush);
         }
 
         public static void DrawBitmap(this IComObject<ID2D1DeviceContext> context,
