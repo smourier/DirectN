@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d11.h(7261,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d11.h(7520,1)
 namespace DirectN
 {
     public enum D3D11_FEATURE
@@ -23,5 +23,6 @@ namespace DirectN
         D3D11_FEATURE_D3D11_OPTIONS4 = 17,
         D3D11_FEATURE_SHADER_CACHE = 18,
         D3D11_FEATURE_D3D11_OPTIONS5 = 19,
+        D3D11_FEATURE_DISPLAYABLE = 20,
     }
 }

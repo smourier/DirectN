@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\strmif.h(18515,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\strmif.h(19505,9)
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\wmsdkidl.h(1506,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wmsdkidl.h(1514,9)
 using System;
 using System.Runtime.InteropServices;
 using LPARAM = System.Int64;
@@ -10,17 +10,17 @@ namespace DirectN
     {
         public uint cbSize;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char wszLang;
+        public IntPtr wszLang;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char wszBrowserUserAgent;
+        public IntPtr wszBrowserUserAgent;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char wszBrowserWebPage;
+        public IntPtr wszBrowserWebPage;
         public ulong qwReserved;
         public IntPtr pReserved;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char wszHostExe;
+        public IntPtr wszHostExe;
         public ulong qwHostVersion;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char wszPlayerUserAgent;
+        public IntPtr wszPlayerUserAgent;
     }
 }

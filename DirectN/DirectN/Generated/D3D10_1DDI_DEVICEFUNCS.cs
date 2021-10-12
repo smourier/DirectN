@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d10umddi.h(1841,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d10umddi.h(1844,9)
 using System;
 using System.Runtime.InteropServices;
 using PFND3D10_1DDI_CALCPRIVATEBLENDSTATESIZE = System.IntPtr;

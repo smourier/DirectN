@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\strmif.h(5027,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\strmif.h(5271,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -15,7 +15,7 @@ namespace DirectN
         public bool bMany;
         public IntPtr clsConnectsToFilter;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char strConnectsToPin;
+        public string strConnectsToPin;
         public uint nMediaTypes;
         public IntPtr lpMediaType;
     }

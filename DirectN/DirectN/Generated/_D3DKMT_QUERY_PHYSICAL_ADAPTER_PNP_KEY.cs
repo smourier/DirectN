@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(1815,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(1936,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -10,7 +10,7 @@ namespace DirectN
         public uint PhysicalAdapterIndex;
         public _D3DKMT_PNP_KEY_TYPE PnPKeyType;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char pDest;
+        public IntPtr pDest;
         public IntPtr pCchDest;
     }
 }

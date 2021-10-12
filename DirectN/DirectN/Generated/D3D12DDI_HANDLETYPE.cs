@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(309,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(315,9)
 namespace DirectN
 {
     public enum D3D12DDI_HANDLETYPE
@@ -29,5 +29,7 @@ namespace DirectN
         D3D12DDI_HT_0053_VIDEO_MOTION_ESTIMATOR = 45,
         D3D12DDI_HT_0053_VIDEO_MOTION_VECTOR_HEAP = 46,
         D3D12DDI_HT_0061_VIDEO_EXTENSION_COMMAND = 47,
+        D3D12DDI_HT_0080_VIDEO_ENCODER = 48,
+        D3D12DDI_HT_0080_VIDEO_ENCODER_HEAP = 49,
     }
 }

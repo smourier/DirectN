@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dwrite_3.h(226,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dwrite_3.h(226,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -18,11 +18,11 @@ namespace DirectN
         /// Specifies the property value, such as "Segoe UI".
         /// </summary>
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char propertyValue;
+        public string propertyValue;
         /// <summary>
         /// Specifies the language / locale to use, such as "en-US".  <remarks> When passing property information to AddFontFaceReference, localeName indicates the language of the property value. BCP 47 language tags should be used. If a property value is inherently non-linguistic, this can be left empty.
         /// </summary>
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char localeName;
+        public string localeName;
     }
 }

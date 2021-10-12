@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dkmddi.h(776,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmddi.h(991,5)
 using System.Runtime.InteropServices;
 
 namespace DirectN
@@ -26,6 +26,7 @@ namespace DirectN
         public _DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_13 SchedulingLogInterrupt { get => InteropRuntime.Get<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_13>(__bits, 0, 64); set { if (__bits == null) __bits = new byte[240]; InteropRuntime.Set<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_13>(value, __bits, 0, 64); } }
         public _DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_14 GpuEngineTimeout { get => InteropRuntime.Get<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_14>(__bits, 0, 64); set { if (__bits == null) __bits = new byte[240]; InteropRuntime.Set<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_14>(value, __bits, 0, 64); } }
         public _DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_15 SuspendContextCompleted { get => InteropRuntime.Get<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_15>(__bits, 0, 128); set { if (__bits == null) __bits = new byte[240]; InteropRuntime.Set<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_15>(value, __bits, 0, 128); } }
-        public _DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_16 Reserved { get => InteropRuntime.Get<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_16>(__bits, 0, 512); set { if (__bits == null) __bits = new byte[240]; InteropRuntime.Set<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_16>(value, __bits, 0, 512); } }
+        public _DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_16 CrtcVsyncWithMultiPlaneOverlay3 { get => InteropRuntime.Get<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_16>(__bits, 0, 320); set { if (__bits == null) __bits = new byte[240]; InteropRuntime.Set<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_16>(value, __bits, 0, 320); } }
+        public _DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_17 Reserved { get => InteropRuntime.Get<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_17>(__bits, 0, 512); set { if (__bits == null) __bits = new byte[240]; InteropRuntime.Set<_DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_17>(value, __bits, 0, 512); } }
     }
 }

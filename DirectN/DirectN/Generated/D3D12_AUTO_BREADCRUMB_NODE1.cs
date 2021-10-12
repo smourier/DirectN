@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(13322,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12.h(14211,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -10,11 +10,11 @@ namespace DirectN
         [MarshalAs(UnmanagedType.LPStr)] 
         public byte pCommandListDebugNameA;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char pCommandListDebugNameW;
+        public string pCommandListDebugNameW;
         [MarshalAs(UnmanagedType.LPStr)] 
         public byte pCommandQueueDebugNameA;
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char pCommandQueueDebugNameW;
+        public string pCommandQueueDebugNameW;
         public IntPtr pCommandList;
         public IntPtr pCommandQueue;
         public uint BreadcrumbCount;

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfmediaengine.h(1583,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfmediaengine.h(1686,1)
 namespace DirectN
 {
     public enum MF_MEDIA_ENGINE_SEEK_MODE

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\wincodec.h(7783,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wincodec.h(8265,1)
 namespace DirectN
 {
     public enum WICDdsDimension

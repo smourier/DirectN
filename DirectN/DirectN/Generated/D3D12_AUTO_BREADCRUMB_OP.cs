@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(13255,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12.h(14142,1)
 namespace DirectN
 {
     public enum D3D12_AUTO_BREADCRUMB_OP
@@ -46,5 +46,7 @@ namespace DirectN
         D3D12_AUTO_BREADCRUMB_OP_INITIALIZEEXTENSIONCOMMAND = 40,
         D3D12_AUTO_BREADCRUMB_OP_EXECUTEEXTENSIONCOMMAND = 41,
         D3D12_AUTO_BREADCRUMB_OP_DISPATCHMESH = 42,
+        D3D12_AUTO_BREADCRUMB_OP_ENCODEFRAME = 43,
+        D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA = 44,
     }
 }

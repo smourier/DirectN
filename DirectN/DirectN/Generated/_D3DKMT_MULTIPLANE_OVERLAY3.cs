@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(1006,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(1094,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -16,5 +16,9 @@ namespace DirectN
         public uint DriverPrivateDataSize;
         public IntPtr pDriverPrivateData;
         public IntPtr pPlaneAttributes;
+        public uint hFlipToFence;
+        public uint hFlipAwayFence;
+        public ulong FlipToFenceValue;
+        public ulong FlipAwayFenceValue;
     }
 }

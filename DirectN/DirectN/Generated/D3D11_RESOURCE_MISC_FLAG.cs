@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d11.h(1240,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d11.h(1248,1)
 using System;
 
 namespace DirectN
@@ -23,5 +23,7 @@ namespace DirectN
         D3D11_RESOURCE_MISC_TILE_POOL = 0x00020000,
         D3D11_RESOURCE_MISC_TILED = 0x00040000,
         D3D11_RESOURCE_MISC_HW_PROTECTED = 0x00080000,
+        D3D11_RESOURCE_MISC_SHARED_DISPLAYABLE = 0x00100000,
+        D3D11_RESOURCE_MISC_SHARED_EXCLUSIVE_WRITER = 0x00200000,
     }
 }

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dwrite_3.h(256,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dwrite_3.h(256,1)
 namespace DirectN
 {
     /// <summary>

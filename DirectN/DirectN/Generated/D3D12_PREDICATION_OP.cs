@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(3860,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12.h(3985,1)
 namespace DirectN
 {
     public enum D3D12_PREDICATION_OP

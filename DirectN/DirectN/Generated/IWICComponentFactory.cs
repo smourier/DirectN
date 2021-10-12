@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\wincodecsdk.h(1850,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wincodecsdk.h(1975,5)
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;

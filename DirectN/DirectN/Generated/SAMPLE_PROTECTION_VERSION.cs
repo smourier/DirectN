@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfidl.h(14542,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfidl.h(15374,1)
 namespace DirectN
 {
     public enum SAMPLE_PROTECTION_VERSION

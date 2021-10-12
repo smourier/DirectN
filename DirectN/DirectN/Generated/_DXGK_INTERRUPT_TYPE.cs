@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dkmddi.h(682,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmddi.h(687,9)
 namespace DirectN
 {
     public enum _DXGK_INTERRUPT_TYPE
@@ -20,5 +20,6 @@ namespace DirectN
         DXGK_INTERRUPT_SCHEDULING_LOG_INTERRUPT = 15,
         DXGK_INTERRUPT_GPU_ENGINE_TIMEOUT = 16,
         DXGK_INTERRUPT_SUSPEND_CONTEXT_COMPLETED = 17,
+        DXGK_INTERRUPT_CRTC_VSYNC_WITH_MULTIPLANE_OVERLAY3 = 18,
     }
 }

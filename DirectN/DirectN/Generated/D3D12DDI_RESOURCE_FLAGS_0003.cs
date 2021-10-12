@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(347,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(356,9)
 using System;
 
 namespace DirectN
@@ -18,5 +18,7 @@ namespace DirectN
         D3D12DDI_RESOURCE_FLAG_0041_ONLY_NON_RT_DS_TEXTURE_PLACEMENT = 0x00000100,
         D3D12DDI_RESOURCE_FLAG_0041_ONLY_RT_DS_TEXTURE_PLACEMENT = 0x00000200,
         D3D12DDI_RESOURCE_FLAG_0041_4MB_ALIGNED = 0x00000400,
+        D3D12DDI_RESOURCE_FLAG_0073_SAMPLER_FEEDBACK = 0x00000800,
+        D3D12DDI_RESOURCE_FLAG_0080_VIDEO_ENCODE_REFERENCE_ONLY = 0x00001000,
     }
 }

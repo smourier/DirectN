@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dkmddi.h(8893,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmddi.h(9253,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint NumDataMemoryRanges;
         public IntPtr pDataMemoryRanges;
-        public int pDataMdl;
+        public IntPtr pDataMdl;
         public uint DataSize;
         public IntPtr pData;
         public uint MetaDataSize;

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12video.h(1308,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12video.h(1385,9)
 using System.Runtime.InteropServices;
 
 namespace DirectN

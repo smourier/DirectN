@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dwrite.h(3124,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dwrite.h(3124,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -38,7 +38,7 @@ namespace DirectN
         /// Locale of the text the underline is being drawn under. Can be pertinent where the locale affects how the underline is drawn. For example, in vertical text, the underline belongs on the left for Chinese but on the right for Japanese. This choice is completely left up to higher levels.
         /// </summary>
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char localeName;
+        public string localeName;
         /// <summary>
         /// The measuring mode can be useful to the renderer to determine how underlines are rendered, e.g. rounding the thickness to a whole pixel in GDI-compatible modes.
         /// </summary>

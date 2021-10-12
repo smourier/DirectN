@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d10umddi.h(372,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d10umddi.h(372,9)
 using System;
 
 namespace DirectN
@@ -22,5 +22,6 @@ namespace DirectN
         D3DWDDM2_0DDI_RESOURCE_MISC_HW_PROTECTED = 0x00010000,
         D3DWDDM2_0DDI_RESOURCE_MISC_DISPLAYABLE_SURFACE = 0x00020000,
         D3DWDDM2_0DDI_RESOURCE_MISC_CONTAINS_HW_PROTECTED = 0x00040000,
+        D3DWDDM2_5DDI_RESOURCE_MISC_PHYSICALLY_CONTIGUOUS = 0x01000000,
     }
 }

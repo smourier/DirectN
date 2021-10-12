@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dxva2api.h(429,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxva2api.h(437,1)
 using System;
 
 namespace DirectN

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(231,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(235,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -18,6 +18,7 @@ namespace DirectN
         public uint AdvancedScanCapable { get => InteropRuntime.GetUInt32(__bits, 37, 1); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.SetUInt32(value, __bits, 37, 1); } }
         public uint PreferredTiming { get => InteropRuntime.GetUInt32(__bits, 38, 1); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.SetUInt32(value, __bits, 38, 1); } }
         public uint PhysicalModeSupported { get => InteropRuntime.GetUInt32(__bits, 39, 1); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.SetUInt32(value, __bits, 39, 1); } }
-        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 40, 24); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.SetUInt32(value, __bits, 40, 24); } }
+        public uint VirtualRefreshRate { get => InteropRuntime.GetUInt32(__bits, 40, 1); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.SetUInt32(value, __bits, 40, 1); } }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 41, 23); set { if (__bits == null) __bits = new byte[8]; InteropRuntime.SetUInt32(value, __bits, 41, 23); } }
     }
 }

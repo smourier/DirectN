@@ -1,0 +1,9 @@
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(11985,9)
+namespace DirectN
+{
+    public enum D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS_0072
+    {
+        D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAG_0072_NONE = 0,
+        D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAG_0072_SUPPORTED = 1,
+    }
+}

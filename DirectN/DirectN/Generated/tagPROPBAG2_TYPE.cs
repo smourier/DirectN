@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\ocidl.h(6006,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ocidl.h(6372,1)
 namespace DirectN
 {
     public enum tagPROPBAG2_TYPE

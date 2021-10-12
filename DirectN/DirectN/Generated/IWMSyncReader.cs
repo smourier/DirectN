@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\wmsdkidl.h(3609,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wmsdkidl.h(3708,5)
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;

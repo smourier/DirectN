@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(3931,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(4014,9)
 namespace DirectN
 {
     public enum D3D12DDI_FEATURE_0020
@@ -11,5 +11,6 @@ namespace DirectN
         D3D12DDI_FEATURE_0033_METACOMMAND = 9,
         D3D12DDI_FEATURE_0043_RENDER_PASS = 10,
         D3D12DDI_FEATURE_0054_DOWNLEVEL_SUPPORT = 11,
+        D3D12DDI_FEATURE_0076_PIN_RESOURCES = 12,
     }
 }

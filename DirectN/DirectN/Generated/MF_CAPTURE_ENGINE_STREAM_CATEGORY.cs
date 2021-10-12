@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfcaptureengine.h(171,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfcaptureengine.h(180,1)
 namespace DirectN
 {
     public enum MF_CAPTURE_ENGINE_STREAM_CATEGORY
@@ -9,5 +9,6 @@ namespace DirectN
         MF_CAPTURE_ENGINE_STREAM_CATEGORY_PHOTO_DEPENDENT = 3,
         MF_CAPTURE_ENGINE_STREAM_CATEGORY_AUDIO = 4,
         MF_CAPTURE_ENGINE_STREAM_CATEGORY_UNSUPPORTED = 5,
+        MF_CAPTURE_ENGINE_STREAM_CATEGORY_METADATA = 6,
     }
 }

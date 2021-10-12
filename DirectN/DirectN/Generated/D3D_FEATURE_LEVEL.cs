@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3dcommon.h(80,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3dcommon.h(94,1)
 namespace DirectN
 {
     public enum D3D_FEATURE_LEVEL
@@ -13,5 +13,6 @@ namespace DirectN
         D3D_FEATURE_LEVEL_11_1 = 45312,
         D3D_FEATURE_LEVEL_12_0 = 49152,
         D3D_FEATURE_LEVEL_12_1 = 49408,
+        D3D_FEATURE_LEVEL_12_2 = 49664,
     }
 }

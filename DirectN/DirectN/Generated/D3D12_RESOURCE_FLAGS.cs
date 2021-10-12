@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(2524,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12.h(2634,1)
 using System;
 
 namespace DirectN
@@ -14,5 +14,6 @@ namespace DirectN
         D3D12_RESOURCE_FLAG_ALLOW_CROSS_ADAPTER = 0x00000010,
         D3D12_RESOURCE_FLAG_ALLOW_SIMULTANEOUS_ACCESS = 0x00000020,
         D3D12_RESOURCE_FLAG_VIDEO_DECODE_REFERENCE_ONLY = 0x00000040,
+        D3D12_RESOURCE_FLAG_VIDEO_ENCODE_REFERENCE_ONLY = 0x00000080,
     }
 }

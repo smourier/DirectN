@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(2113,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(2274,9)
 using System;
 using System.Runtime.InteropServices;
 using LUID = DirectN._LUID;
@@ -11,6 +11,6 @@ namespace DirectN
         public uint hAdapter;
         public LUID AdapterLuid;
         public uint NumOfSources;
-        public bool bPresentMoveRegionsPreferred;
+        public bool bPrecisePresentRegionsPreferred;
     }
 }

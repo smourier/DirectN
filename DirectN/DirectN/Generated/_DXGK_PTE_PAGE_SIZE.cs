@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dukmdt.h(207,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dukmdt.h(222,9)
 namespace DirectN
 {
     public enum _DXGK_PTE_PAGE_SIZE

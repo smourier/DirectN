@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dcomp.h(1478,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dcomp.h(1553,1)
 using System;
 using System.Runtime.InteropServices;
 

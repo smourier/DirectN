@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dkmddi.h(1524,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmddi.h(1751,9)
 namespace DirectN
 {
     public enum _DXGK_QUERYADAPTERINFOTYPE
@@ -35,7 +35,8 @@ namespace DirectN
         DXGKQAITYPE_WDDMDEVICECAPS = 29,
         DXGKQAITYPE_GPUPCAPS = 30,
         DXGKQAITYPE_QUERYTARGETGAMMACAPS = 31,
-        DXGKQAITYPE_MIPI_DSI2_QUERY_CAPS = 32,
         DXGKQAITYPE_SCANOUT_CAPS = 33,
+        DXGKQAITYPE_PHYSICAL_MEMORY_CAPS = 34,
+        DXGKQAITYPE_IOMMU_CAPS = 35,
     }
 }

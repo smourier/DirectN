@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(3357,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(3436,9)
 namespace DirectN
 {
     public enum D3D12DDI_SHADER_MODEL
@@ -15,5 +15,9 @@ namespace DirectN
         D3D12DDI_SHADER_MODEL_6_4_EXPERIMENTAL_0054 = 393280,
         D3D12DDI_SHADER_MODEL_6_4_RELEASE_0062 = 393285,
         D3D12DDI_SHADER_MODEL_6_5_EXPERIMENTAL_0062 = 393296,
+        D3D12DDI_SHADER_MODEL_6_5_RELEASE_0071 = 393301,
+        D3D12DDI_SHADER_MODEL_6_6_EXPERIMENTAL_0071 = 393312,
+        D3D12DDI_SHADER_MODEL_6_6_RELEASE_0082 = 393317,
+        D3D12DDI_SHADER_MODEL_6_7_EXPERIMENTAL_0082 = 393328,
     }
 }

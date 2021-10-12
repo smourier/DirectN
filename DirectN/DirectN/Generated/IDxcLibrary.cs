@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dxcapi.h(125,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxcapi.h(225,1)
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
@@ -15,7 +15,7 @@ namespace DirectN
         HRESULT CreateBlobFromBlob(/* _In_ */ IDxcBlob pBlob, uint offset, uint length, /* _COM_Outptr_ */ out IDxcBlob ppResult);
         
         [PreserveSig]
-        HRESULT CreateBlobFromFile([MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* optional(UINT32) */ IntPtr codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobFromFile(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pFileName, /* optional(UINT32) */ IntPtr codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
         HRESULT CreateBlobWithEncodingFromPinned(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pText, int size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);

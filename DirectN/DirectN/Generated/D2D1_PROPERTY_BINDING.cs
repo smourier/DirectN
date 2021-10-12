@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d2d1effectauthor.h(252,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d2d1effectauthor.h(252,9)
 using System;
 using System.Runtime.InteropServices;
 using PD2D1_PROPERTY_GET_FUNCTION = System.IntPtr;

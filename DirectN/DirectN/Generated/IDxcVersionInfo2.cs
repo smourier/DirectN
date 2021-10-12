@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dxcapi.h(349,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxcapi.h(581,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -16,6 +16,6 @@ namespace DirectN
         
         // IDxcVersionInfo2
         [PreserveSig]
-        HRESULT GetCommitInfo(/* _Out_ */ out uint pCommitCount, /* _Out_ */ out IntPtr pCommitHash);
+        HRESULT GetCommitInfo(/* _Out_ */ out uint pCommitCount, /* // The total number commits. _Outptr_result_z_ */ out IntPtr pCommitHash);
     }
 }

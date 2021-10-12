@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(2314,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(2482,9)
 namespace DirectN
 {
     public enum _D3DKMT_VIDMMESCAPETYPE
@@ -21,5 +21,6 @@ namespace DirectN
         D3DKMT_VIDMMESCAPETYPE_DEFRAG = 15,
         D3DKMT_VIDMMESCAPETYPE_DELAYEXECUTION = 16,
         D3DKMT_VIDMMESCAPETYPE_VALIDATE_INTEGRITY = 17,
+        D3DKMT_VIDMMESCAPETYPE_SET_EVICTION_CONFIG = 18,
     }
 }

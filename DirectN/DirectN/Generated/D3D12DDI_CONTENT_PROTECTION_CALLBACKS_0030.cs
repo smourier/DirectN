@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(8920,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(10591,9)
 using System;
 using System.Runtime.InteropServices;
 using PFND3D12DDI_CREATE_PROTECTED_SESSION_CB_0030 = System.IntPtr;

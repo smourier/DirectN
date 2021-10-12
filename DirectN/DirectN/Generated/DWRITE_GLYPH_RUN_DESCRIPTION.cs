@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dwrite.h(3088,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dwrite.h(3088,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -14,12 +14,12 @@ namespace DirectN
         /// The locale name associated with this run.
         /// </summary>
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char localeName;
+        public string localeName;
         /// <summary>
         /// The text associated with the glyphs.
         /// </summary>
         [MarshalAs(UnmanagedType.LPWStr)] 
-        public char @string;
+        public string @string;
         /// <summary>
         /// The number of characters (UTF16 code-units). Note that this may be different than the number of glyphs.
         /// </summary>

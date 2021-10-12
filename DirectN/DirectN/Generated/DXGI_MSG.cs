@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dxgimessages.h(14,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxgimessages.h(14,9)
 namespace DirectN
 {
     public enum DXGI_MSG
@@ -301,6 +301,7 @@ namespace DirectN
         DXGI_MSG_IDXGISwapChain4_SetHDRMetaData_MetadataUnchanged = 295,
         DXGI_MSG_IDXGISwapChain_Present_11On12_Released_Resource = 296,
         DXGI_MSG_IDXGIFactory_CreateSwapChain_MultipleSwapchainRefToSurface_DeferredDtr = 297,
+        DXGI_MSG_IDXGIFactory_MakeWindowAssociation_NoOpBehavior = 298,
         DXGI_MSG_Phone_IDXGIFactory_CreateSwapChain_NotForegroundWindow = 1000,
         DXGI_MSG_Phone_IDXGIFactory_CreateSwapChain_DISCARD_BufferCount = 1001,
         DXGI_MSG_Phone_IDXGISwapChain_SetFullscreenState_NotAvailable = 1002,

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(19466,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12.h(22295,5)
 using System;
 using System.Runtime.InteropServices;
 using D3D12_GPU_VIRTUAL_ADDRESS = System.UInt64;

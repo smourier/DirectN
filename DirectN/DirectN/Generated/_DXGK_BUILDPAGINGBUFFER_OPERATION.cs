@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dkmddi.h(3705,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmddi.h(4134,9)
 namespace DirectN
 {
     public enum _DXGK_BUILDPAGINGBUFFER_OPERATION
@@ -20,5 +20,6 @@ namespace DirectN
         DXGK_OPERATION_COPY_PAGE_TABLE_ENTRIES = 14,
         DXGK_OPERATION_NOTIFY_RESIDENCY = 15,
         DXGK_OPERATION_SIGNAL_MONITORED_FENCE = 16,
+        DXGK_OPERATION_MAP_APERTURE_SEGMENT2 = 17,
     }
 }

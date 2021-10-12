@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\dxgi1_2.h(1969,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\dxgi1_2.h(2096,1)
 namespace DirectN
 {
     public enum DXGI_COMPUTE_PREEMPTION_GRANULARITY

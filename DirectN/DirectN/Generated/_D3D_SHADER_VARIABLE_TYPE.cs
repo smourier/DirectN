@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3dcommon.h(622,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3dcommon.h(676,1)
 namespace DirectN
 {
     public enum _D3D_SHADER_VARIABLE_TYPE
@@ -61,6 +61,11 @@ namespace DirectN
         D3D_SVT_MIN12INT = 55,
         D3D_SVT_MIN16INT = 56,
         D3D_SVT_MIN16UINT = 57,
+        D3D_SVT_INT16 = 58,
+        D3D_SVT_UINT16 = 59,
+        D3D_SVT_FLOAT16 = 60,
+        D3D_SVT_INT64 = 61,
+        D3D_SVT_UINT64 = 62,
         D3D10_SVT_VOID = 0,
         D3D10_SVT_BOOL = 1,
         D3D10_SVT_INT = 2,

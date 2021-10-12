@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d10umddi.h(6898,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d10umddi.h(6904,9)
 using System;
 using System.Runtime.InteropServices;
 using PFND3D10DDI_DISABLE_DEFERRED_STAGING_RESOURCE_DESTRUCTION_CB = System.IntPtr;

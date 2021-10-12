@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(3720,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(4558,9)
 namespace DirectN
 {
     public enum _D3DKMT_GPU_PREFERENCE_QUERY_TYPE

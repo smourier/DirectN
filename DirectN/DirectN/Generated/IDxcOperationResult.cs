@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\dxcapi.h(154,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxcapi.h(253,1)
 using System;
 using System.Runtime.InteropServices;
 
@@ -11,9 +11,9 @@ namespace DirectN
         HRESULT GetStatus(/* _Out_ */ out HRESULT pStatus);
         
         [PreserveSig]
-        HRESULT GetResult(/* _COM_Outptr_result_maybenull_ */ out IDxcBlob pResult);
+        HRESULT GetResult(/* _COM_Outptr_result_maybenull_ */ out IDxcBlob ppResult);
         
         [PreserveSig]
-        HRESULT GetErrorBuffer(/* _COM_Outptr_result_maybenull_ */ out IDxcBlobEncoding pErrors);
+        HRESULT GetErrorBuffer(/* _COM_Outptr_result_maybenull_ */ out IDxcBlobEncoding ppErrors);
     }
 }

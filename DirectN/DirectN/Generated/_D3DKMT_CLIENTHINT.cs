@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(68,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(68,9)
 namespace DirectN
 {
     public enum _D3DKMT_CLIENTHINT
@@ -19,6 +19,10 @@ namespace DirectN
         D3DKMT_CLIENTHINT_9ON12 = 13,
         D3DKMT_CLIENTHINT_11ON12 = 14,
         D3DKMT_CLIENTHINT_MFT_ENCODE = 15,
-        D3DKMT_CLIENTHINT_MAX = 16,
+        D3DKMT_CLIENTHINT_GLON12 = 16,
+        D3DKMT_CLIENTHINT_CLON12 = 17,
+        D3DKMT_CLIENTHINT_DML_TENSORFLOW = 18,
+        D3DKMT_CLIENTHINT_ONEAPI_LEVEL0 = 19,
+        D3DKMT_CLIENTHINT_MAX = 20,
     }
 }

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mmeapi.h(773,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mmeapi.h(759,1)
 using System;
 using System.Runtime.InteropServices;
 

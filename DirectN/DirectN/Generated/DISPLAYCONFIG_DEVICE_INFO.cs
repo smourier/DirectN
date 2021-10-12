@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\wingdi.h(3027,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wingdi.h(3031,9)
 namespace DirectN
 {
     public enum DISPLAYCONFIG_DEVICE_INFO
@@ -14,6 +14,8 @@ namespace DirectN
         DISPLAYCONFIG_DEVICE_INFO_GET_ADVANCED_COLOR_INFO = 9,
         DISPLAYCONFIG_DEVICE_INFO_SET_ADVANCED_COLOR_STATE = 10,
         DISPLAYCONFIG_DEVICE_INFO_GET_SDR_WHITE_LEVEL = 11,
+        DISPLAYCONFIG_DEVICE_INFO_GET_MONITOR_SPECIALIZATION = 12,
+        DISPLAYCONFIG_DEVICE_INFO_SET_MONITOR_SPECIALIZATION = 13,
         DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32 = -1,
     }
 }

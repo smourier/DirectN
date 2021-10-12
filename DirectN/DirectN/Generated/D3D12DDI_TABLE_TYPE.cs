@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(2374,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(2451,9)
 namespace DirectN
 {
     public enum D3D12DDI_TABLE_TYPE
@@ -25,5 +25,6 @@ namespace DirectN
         D3D12DDI_TABLE_TYPE_0053_COMMAND_QUEUE_VIDEO_ENCODE = 22,
         D3D12DDI_TABLE_TYPE_0054_DOWNLEVEL_SUPPORT_CALLBACKS = 23,
         D3D12DDI_TABLE_TYPE_0054_DEVICE_DOWNLEVEL_SUPPORT = 24,
+        D3D12DDI_TABLE_TYPE_0076_PIN_RESOURCES_CALLBACKS = 25,
     }
 }

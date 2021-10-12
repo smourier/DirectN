@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\audioengineendpoint.h(1220,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\audioengineendpoint.h(1288,5)
 using System;
 using System.Runtime.InteropServices;
 

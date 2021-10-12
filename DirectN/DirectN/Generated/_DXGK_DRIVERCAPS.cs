@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\shared\d3dkmddi.h(2028,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmddi.h(2306,9)
 using System;
 using System.Runtime.InteropServices;
 using PHYSICAL_ADDRESS = System.Int64;
@@ -46,5 +46,7 @@ namespace DirectN
         public byte HybridAcpiChainingRequired;
         public uint MaxQueuedMultiPlaneOverlayFlipVSync;
         public _DXGK_DRIVERCAPS__union_1 MiscCaps;
+        public uint MaxHwQueuedFlips;
+        public _DXGK_HWQUEUEDFLIP_CAPS HwQueuedFlipCaps;
     }
 }

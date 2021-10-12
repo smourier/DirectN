@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12video.h(384,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12video.h(421,1)
 namespace DirectN
 {
     public enum D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE

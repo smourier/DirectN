@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\ocidl.h(5636,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ocidl.h(5984,5)
 using System;
 using System.Runtime.InteropServices;
 using LPCRECT = DirectN.tagRECT;

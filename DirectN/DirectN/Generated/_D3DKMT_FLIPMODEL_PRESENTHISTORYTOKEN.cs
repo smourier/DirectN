@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(514,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(564,9)
 using System;
 using System.Runtime.InteropServices;
 using LUID = DirectN._LUID;
@@ -28,7 +28,7 @@ namespace DirectN
         public float[] RevealColor;
         public _D3DDDI_ROTATION Rotation;
         public _D3DKMT_FLIPMODEL_PRESENTHISTORYTOKEN__union_0 __union_18;
-        public uint Reserved;
+        public uint InkCookie;
         public tagRECT SourceRect;
         public uint DestWidth;
         public uint DestHeight;

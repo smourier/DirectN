@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(719,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(804,9)
 using System;
 
 namespace DirectN
@@ -8,5 +8,6 @@ namespace DirectN
     {
         D3DKMT_MULTIPLANE_OVERLAY_FLAG_VERTICAL_FLIP = 0x00000001,
         D3DKMT_MULTIPLANE_OVERLAY_FLAG_HORIZONTAL_FLIP = 0x00000002,
+        D3DKMT_MULTIPLANE_OVERLAY_FLAG_STATIC_CHECK = 0x00000004,
     }
 }

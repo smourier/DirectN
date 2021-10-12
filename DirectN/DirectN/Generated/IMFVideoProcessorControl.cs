@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfidl.h(3315,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfidl.h(3473,5)
 using System;
 using System.Runtime.InteropServices;
 

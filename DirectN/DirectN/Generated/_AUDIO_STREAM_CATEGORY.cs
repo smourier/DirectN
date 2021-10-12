@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\audiosessiontypes.h(54,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\audiosessiontypes.h(57,9)
 namespace DirectN
 {
     public enum _AUDIO_STREAM_CATEGORY
@@ -14,5 +14,8 @@ namespace DirectN
         AudioCategory_Speech = 9,
         AudioCategory_Movie = 10,
         AudioCategory_Media = 11,
+        AudioCategory_FarFieldSpeech = 12,
+        AudioCategory_UniformSpeech = 13,
+        AudioCategory_VoiceTyping = 14,
     }
 }

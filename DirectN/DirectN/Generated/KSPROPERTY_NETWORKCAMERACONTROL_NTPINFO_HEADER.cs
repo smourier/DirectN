@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\ksmedia.h(6681,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\ksmedia.h(6800,9)
 using System;
 using System.Runtime.InteropServices;
 using KSPROPERTY_NETWORKCAMERACONTROL_NTPINFO_TYPE = DirectN.KSPROPER;

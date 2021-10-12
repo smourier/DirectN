@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\mfcaptureengine.h(182,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfcaptureengine.h(192,1)
 namespace DirectN
 {
     public enum MF_CAPTURE_ENGINE_MEDIA_CATEGORY_TYPE
@@ -8,5 +8,8 @@ namespace DirectN
         MF_CAPTURE_ENGINE_MEDIA_CATEGORY_TYPE_MEDIA = 2,
         MF_CAPTURE_ENGINE_MEDIA_CATEGORY_TYPE_GAMECHAT = 3,
         MF_CAPTURE_ENGINE_MEDIA_CATEGORY_TYPE_SPEECH = 4,
+        MF_CAPTURE_ENGINE_MEDIA_CATEGORY_TYPE_FARFIELDSPEECH = 5,
+        MF_CAPTURE_ENGINE_MEDIA_CATEGORY_TYPE_UNIFORMSPEECH = 6,
+        MF_CAPTURE_ENGINE_MEDIA_CATEGORY_TYPE_VOICETYPING = 7,
     }
 }

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(2203,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(2251,9)
 namespace DirectN
 {
     public enum D3D12DDI_QUERY_TYPE
@@ -12,5 +12,6 @@ namespace DirectN
         D3D12DDI_QUERY_TYPE_SO_STATISTICS_STREAM2 = 6,
         D3D12DDI_QUERY_TYPE_SO_STATISTICS_STREAM3 = 7,
         D3D12DDI_QUERY_TYPE_0020_VIDEO_DECODE_STATISTICS = 8,
+        D3D12DDI_QUERY_TYPE_PIPELINE_STATISTICS1 = 10,
     }
 }

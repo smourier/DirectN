@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\d3dkmthk.h(1620,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(1727,9)
 namespace DirectN
 {
     public enum _QAI_DRIVERVERSION
@@ -16,5 +16,8 @@ namespace DirectN
         KMT_DRIVERVERSION_WDDM_2_5 = 2500,
         KMT_DRIVERVERSION_WDDM_2_6 = 2600,
         KMT_DRIVERVERSION_WDDM_2_7 = 2700,
+        KMT_DRIVERVERSION_WDDM_2_8 = 2800,
+        KMT_DRIVERVERSION_WDDM_2_9 = 2900,
+        KMT_DRIVERVERSION_WDDM_3_0 = 3000,
     }
 }

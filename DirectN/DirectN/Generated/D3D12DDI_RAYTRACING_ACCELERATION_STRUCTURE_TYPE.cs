@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\d3d12umddi.h(7798,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(7926,9)
 namespace DirectN
 {
     public enum D3D12DDI_RAYTRACING_ACCELERATION_STRUCTURE_TYPE

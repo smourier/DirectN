@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\shared\dxgi1_3.h(1334,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\dxgi1_3.h(1446,1)
 using System;
 
 namespace DirectN

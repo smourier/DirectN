@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.19041.0\um\d3d12.h(13370,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12.h(14260,1)
 namespace DirectN
 {
     public enum D3D12_DRED_ALLOCATION_TYPE
@@ -29,6 +29,8 @@ namespace DirectN
         D3D12_DRED_ALLOCATION_TYPE_VIDEO_MOTION_ESTIMATOR = 45,
         D3D12_DRED_ALLOCATION_TYPE_VIDEO_MOTION_VECTOR_HEAP = 46,
         D3D12_DRED_ALLOCATION_TYPE_VIDEO_EXTENSION_COMMAND = 47,
+        D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER = 48,
+        D3D12_DRED_ALLOCATION_TYPE_VIDEO_ENCODER_HEAP = 49,
         D3D12_DRED_ALLOCATION_TYPE_INVALID = -1,
     }
 }
