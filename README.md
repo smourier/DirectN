@@ -1,13 +1,17 @@
 # DirectN
-Direct Interop code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.
+Direct Interop code for .NET Framework, .NET Core and .NET 5+ : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.
 
-The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/
+The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/ (.NET Framework) or https://www.nuget.org/packages/DirectNCore/ (.NET Core and .NET 5+)
 
-Or you can pick the C# source files you want (among the 6000 .cs provided), but it can be difficult because the dependencies between all these technologies make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...).
+Or you can pick the C# source files you want (among the 9000 .cs provided ...), but it can be difficult because the dependencies between all these technologies make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is possible as demonstrated in this project: [Windows Interface Composition Engine ("Wice")](https://github.com/aelyo-softworks/Wice) wich uses only ~700 files from DirectN.
 
-DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the same names and types (interfaces, enums, structures, constants, methods, arguments, guids, etc.) that the native concepts. So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
+DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the **same names and types than the native concepts** (interfaces, enums, structures, constants, methods, arguments, guids, etc.) . So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
 
-Everything is in the same namespace so you don't need to know where is defined this or that interface, constants, etc.
+By design, everything is in the same namespace (and in the same assembly if you use the whole package) so you don't need to know where is defined this or that interface, constants, etc.
+
+All native COM interfaces are generated as .NET (COM) interfaces, not classes or fancy structs. COM wrappers are provided (ComObject, ComMemory, etc.), and some extension methods are also provided for some COM interfaces (the principle used can be extended to any COM method, but this part is not generated). They allow easier .NET programming, but they are not strictly needed. Most of this is possible because **DirectN represent COM inheritance by .NET inheritance** (so, DirectN.IWICImagingFactory2 derives from DirectN.IWICImagingFactory for example).
+
+And last but not least, marking code using DirectN as *unsafe is not required*. 😅
 
 For example, the exact same C# version of the "Capture screen using DirectX" code here: https://stackoverflow.com/questions/30021274/capture-screen-using-directx is this:
 
@@ -220,7 +224,7 @@ cleanup:
  * Note 3: the tool that builds the Generated folder is not open source.
 
  # .NET Core 3.1 => .NET 5 - DirectD311 minimal sample.
- This sample has been ported from here: https://gist.github.com/d7samurai/261c69490cce0620d0bfc93003cd1052 which features a minimal DirectD311 "uncluttered direct3d 11 setup and rendering primer for newcomers to the api" sample.
+ The "DirectN.MinimalD3D11" sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.MinimalD3D11 has been ported from here: https://gist.github.com/d7samurai/261c69490cce0620d0bfc93003cd1052 which features a minimal DirectD311 "uncluttered direct3d 11 setup and rendering primer for newcomers to the api" sample.
  
  It's dependent on DirectN, .NET Core 3.1 or .NET 5, Windows Forms and ... that's it. Here is the output (believe me, it rotates):
 
