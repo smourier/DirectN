@@ -8,6 +8,16 @@ namespace DirectN
         [DllImport("DWrite", ExactSpelling = true)]
         public static extern HRESULT DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [MarshalAs(UnmanagedType.LPStruct)] Guid iid, [MarshalAs(UnmanagedType.IUnknown)] out object factory);
 
+        [DllImport("DWriteCore", ExactSpelling = true)]
+        public static extern HRESULT DWriteCoreCreateFactory(DWRITE_FACTORY_TYPE factoryType, [MarshalAs(UnmanagedType.LPStruct)] Guid iid, [MarshalAs(UnmanagedType.IUnknown)] out object factory);
+
+        public static IComObject<IDWriteFactory> DWriteCoreCreateFactory(DWRITE_FACTORY_TYPE type = DWRITE_FACTORY_TYPE.DWRITE_FACTORY_TYPE_SHARED) => DWriteCoreCreateFactory<IDWriteFactory>(type);
+        public static IComObject<T> DWriteCoreCreateFactory<T>(DWRITE_FACTORY_TYPE type = DWRITE_FACTORY_TYPE.DWRITE_FACTORY_TYPE_SHARED) where T : IDWriteFactory
+        {
+            DWriteCoreCreateFactory(type, typeof(T).GUID, out object factory).ThrowOnError();
+            return new ComObject<T>((T)factory);
+        }
+
         public static IComObject<IDWriteFactory> DWriteCreateFactory(DWRITE_FACTORY_TYPE type = DWRITE_FACTORY_TYPE.DWRITE_FACTORY_TYPE_SHARED) => DWriteCreateFactory<IDWriteFactory>(type);
         public static IComObject<T> DWriteCreateFactory<T>(DWRITE_FACTORY_TYPE type = DWRITE_FACTORY_TYPE.DWRITE_FACTORY_TYPE_SHARED) where T : IDWriteFactory
         {

@@ -15,5 +15,11 @@ namespace DirectN
         /// Objects created from the isolated factory do not interact with internal DirectWrite state from other components.
         /// </summary>
         DWRITE_FACTORY_TYPE_ISOLATED = 1,
+
+        /// <summary>
+        /// Objects created from an "isolated2" factory do not use or modify internal state or cached data
+        /// used by other factories. In addition, the system font collection contains only well-known fonts.
+        /// </summary>
+        DWRITE_FACTORY_TYPE_ISOLATED2 = 2,
     }
 }
