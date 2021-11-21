@@ -15,36 +15,36 @@ namespace DirectN
         
         // IDCompositionShadowEffect
         [PreserveSig]
-        HRESULT SetStandardDeviation(/* THIS_ _In_ */ float amount);
+        HRESULT SetStandardDeviation(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetStandardDeviation(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        HRESULT SetStandardDeviation(/* THIS_ _In_ */ float amount);
         
         [PreserveSig]
         HRESULT SetColor(/* THIS_ _In_ */ ref D2D_VECTOR_4F color);
         
         [PreserveSig]
-        HRESULT SetRed(/* THIS_ _In_ */ float amount);
-        
-        [PreserveSig]
         HRESULT SetRed(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetGreen(/* THIS_ _In_ */ float amount);
+        HRESULT SetRed(/* THIS_ _In_ */ float amount);
         
         [PreserveSig]
         HRESULT SetGreen(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBlue(/* THIS_ _In_ */ float amount);
+        HRESULT SetGreen(/* THIS_ _In_ */ float amount);
         
         [PreserveSig]
         HRESULT SetBlue(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetAlpha(/* THIS_ _In_ */ float amount);
+        HRESULT SetBlue(/* THIS_ _In_ */ float amount);
         
         [PreserveSig]
         HRESULT SetAlpha(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetAlpha(/* THIS_ _In_ */ float amount);
     }
 }

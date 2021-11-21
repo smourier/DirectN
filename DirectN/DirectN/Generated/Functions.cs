@@ -1415,7 +1415,7 @@ namespace DirectN
 
         [DllImport("mfgphone", ExactSpelling = true)]
         public static extern HRESULT MfgPhoneUninitialize();
-
+        
         [DllImport("mfcontentdecryptionmodule", ExactSpelling = true)]
         public static extern HRESULT MFCreateEncryptedMediaExtensionsStoreActivate(/* _In_ */ IMFPMPHostApp pmpHost, /* _In_ */ IStream objectStream, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string classId, /* _Outptr_ */ out IMFActivate activate);
         

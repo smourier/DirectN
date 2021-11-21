@@ -26,16 +26,16 @@ namespace DirectN
         HRESULT RemoveDashesAtEnd(uint dashesCount);
         
         [PreserveSig]
-        HRESULT UpdateDashes(/* _In_reads_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] dashes, int dashesCount, uint startIndex);
-        
-        [PreserveSig]
         HRESULT UpdateDashes(/* _In_reads_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_SVG_LENGTH[] dashes, int dashesCount, uint startIndex);
         
         [PreserveSig]
-        HRESULT GetDashes(/* _Out_writes_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] dashes, int dashesCount, uint startIndex);
+        HRESULT UpdateDashes(/* _In_reads_(dashesCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] dashes, int dashesCount, uint startIndex);
         
         [PreserveSig]
         HRESULT GetDashes(/* _Out_writes_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] D2D1_SVG_LENGTH[] dashes, int dashesCount, uint startIndex);
+        
+        [PreserveSig]
+        HRESULT GetDashes(/* _Out_writes_(dashesCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] float[] dashes, int dashesCount, uint startIndex);
         
         [PreserveSig]
         uint GetDashesCount();

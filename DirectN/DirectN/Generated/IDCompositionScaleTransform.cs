@@ -15,27 +15,27 @@ namespace DirectN
         
         // IDCompositionScaleTransform
         [PreserveSig]
-        HRESULT SetScaleX(float scaleX);
-        
-        [PreserveSig]
         HRESULT SetScaleX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetScaleY(float scaleY);
+        HRESULT SetScaleX(float scaleX);
         
         [PreserveSig]
         HRESULT SetScaleY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCenterX(float centerX);
+        HRESULT SetScaleY(float scaleY);
         
         [PreserveSig]
         HRESULT SetCenterX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCenterY(float centerY);
+        HRESULT SetCenterX(float centerX);
         
         [PreserveSig]
         HRESULT SetCenterY(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetCenterY(float centerY);
     }
 }

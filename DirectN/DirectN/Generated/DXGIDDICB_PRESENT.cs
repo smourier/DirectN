@@ -7,12 +7,13 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DXGIDDICB_PRESENT
     {
-        public int hSrcAllocation;
-        public int hDstAllocation;
+        public uint hSrcAllocation;
+        public uint hDstAllocation;
         public IntPtr pDXGIContext;
         public IntPtr hContext;
         public uint BroadcastContextCount;
-        public IntPtr BroadcastContext;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)] 
+        public IntPtr[] BroadcastContext;
         public IntPtr BroadcastSrcAllocation;
         public IntPtr BroadcastDstAllocation;
         public uint PrivateDriverDataSize;

@@ -15,10 +15,10 @@ namespace DirectN
         
         // IDCompositionGaussianBlurEffect
         [PreserveSig]
-        HRESULT SetStandardDeviation(/* THIS_ _In_ */ float amount);
+        HRESULT SetStandardDeviation(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetStandardDeviation(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        HRESULT SetStandardDeviation(/* THIS_ _In_ */ float amount);
         
         [PreserveSig]
         HRESULT SetBorderMode(/* THIS_ _In_ */ D2D1_BORDER_MODE mode);

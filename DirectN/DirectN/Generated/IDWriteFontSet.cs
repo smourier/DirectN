@@ -23,21 +23,21 @@ namespace DirectN
         HRESULT FindFontFace(IDWriteFontFace fontFace, /* _Out_ */ out uint listIndex, /* _Out_ */ out bool exists);
         
         [PreserveSig]
-        HRESULT GetPropertyValues(uint listIndex, DWRITE_FONT_PROPERTY_ID propertyId, /* _Out_ */ out bool exists, /* _COM_Outptr_result_maybenull_ */ out IDWriteLocalizedStrings values);
+        HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, /* _COM_Outptr_ */ out IDWriteStringList values);
         
         [PreserveSig]
         HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, /* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string preferredLocaleNames, /* _COM_Outptr_ */ out IDWriteStringList values);
         
         [PreserveSig]
-        HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, /* _COM_Outptr_ */ out IDWriteStringList values);
+        HRESULT GetPropertyValues(uint listIndex, DWRITE_FONT_PROPERTY_ID propertyId, /* _Out_ */ out bool exists, /* _COM_Outptr_result_maybenull_ */ out IDWriteLocalizedStrings values);
         
         [PreserveSig]
         HRESULT GetPropertyOccurrenceCount(/* _In_ */ ref DWRITE_FONT_PROPERTY property, /* _Out_ */ out uint propertyOccurrenceCount);
         
         [PreserveSig]
-        HRESULT GetMatchingFonts(/* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_PROPERTY[] properties, int propertyCount, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);
+        HRESULT GetMatchingFonts(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);
         
         [PreserveSig]
-        HRESULT GetMatchingFonts(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);
+        HRESULT GetMatchingFonts(/* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_PROPERTY[] properties, int propertyCount, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);
     }
 }

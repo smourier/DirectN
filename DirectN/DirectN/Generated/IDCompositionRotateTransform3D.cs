@@ -13,45 +13,45 @@ namespace DirectN
         
         // IDCompositionRotateTransform3D
         [PreserveSig]
-        HRESULT SetAngle(float angle);
-        
-        [PreserveSig]
         HRESULT SetAngle(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetAxisX(float axisX);
+        HRESULT SetAngle(float angle);
         
         [PreserveSig]
         HRESULT SetAxisX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetAxisY(float axisY);
+        HRESULT SetAxisX(float axisX);
         
         [PreserveSig]
         HRESULT SetAxisY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetAxisZ(float axisZ);
+        HRESULT SetAxisY(float axisY);
         
         [PreserveSig]
         HRESULT SetAxisZ(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCenterX(float centerX);
+        HRESULT SetAxisZ(float axisZ);
         
         [PreserveSig]
         HRESULT SetCenterX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCenterY(float centerY);
+        HRESULT SetCenterX(float centerX);
         
         [PreserveSig]
         HRESULT SetCenterY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCenterZ(float centerZ);
+        HRESULT SetCenterY(float centerY);
         
         [PreserveSig]
         HRESULT SetCenterZ(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetCenterZ(float centerZ);
     }
 }

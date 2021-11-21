@@ -15,9 +15,9 @@ namespace DirectN
         
         // IDCompositionSaturationEffect
         [PreserveSig]
-        HRESULT SetSaturation(/* THIS_ _In_ */ float ratio);
+        HRESULT SetSaturation(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetSaturation(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        HRESULT SetSaturation(/* THIS_ _In_ */ float ratio);
     }
 }

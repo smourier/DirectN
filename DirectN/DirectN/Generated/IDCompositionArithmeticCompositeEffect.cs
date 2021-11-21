@@ -21,27 +21,27 @@ namespace DirectN
         HRESULT SetClampOutput(/* THIS_ _In_ */ bool clampoutput);
         
         [PreserveSig]
-        HRESULT SetCoefficient1(/* THIS_ _In_ */ float Coeffcient1);
-        
-        [PreserveSig]
         HRESULT SetCoefficient1(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCoefficient2(/* THIS_ _In_ */ float Coefficient2);
+        HRESULT SetCoefficient1(/* THIS_ _In_ */ float Coeffcient1);
         
         [PreserveSig]
         HRESULT SetCoefficient2(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCoefficient3(/* THIS_ _In_ */ float Coefficient3);
+        HRESULT SetCoefficient2(/* THIS_ _In_ */ float Coefficient2);
         
         [PreserveSig]
         HRESULT SetCoefficient3(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCoefficient4(/* THIS_ _In_ */ float Coefficient4);
+        HRESULT SetCoefficient3(/* THIS_ _In_ */ float Coefficient3);
         
         [PreserveSig]
         HRESULT SetCoefficient4(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetCoefficient4(/* THIS_ _In_ */ float Coefficient4);
     }
 }

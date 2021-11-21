@@ -15,9 +15,9 @@ namespace DirectN
         
         // IDCompositionHueRotationEffect
         [PreserveSig]
-        HRESULT SetAngle(/* THIS_ _In_ */ float amountDegrees);
+        HRESULT SetAngle(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetAngle(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        HRESULT SetAngle(/* THIS_ _In_ */ float amountDegrees);
     }
 }

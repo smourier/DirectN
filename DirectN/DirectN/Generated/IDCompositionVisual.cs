@@ -8,22 +8,22 @@ namespace DirectN
     public partial interface IDCompositionVisual
     {
         [PreserveSig]
-        HRESULT SetOffsetX(float offsetX);
-        
-        [PreserveSig]
         HRESULT SetOffsetX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetOffsetY(float offsetY);
+        HRESULT SetOffsetX(float offsetX);
         
         [PreserveSig]
         HRESULT SetOffsetY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetTransform(ref D2D_MATRIX_3X2_F matrix);
+        HRESULT SetOffsetY(float offsetY);
         
         [PreserveSig]
         HRESULT SetTransform(/* THIS_ _In_opt_ */ IDCompositionTransform transform);
+        
+        [PreserveSig]
+        HRESULT SetTransform(ref D2D_MATRIX_3X2_F matrix);
         
         [PreserveSig]
         HRESULT SetTransformParent(/* THIS_ _In_opt_ */ IDCompositionVisual visual);
@@ -38,10 +38,10 @@ namespace DirectN
         HRESULT SetBorderMode(/* THIS_ _In_ */ DCOMPOSITION_BORDER_MODE borderMode);
         
         [PreserveSig]
-        HRESULT SetClip(ref D2D_RECT_F rect);
+        HRESULT SetClip(/* THIS_ _In_opt_ */ IDCompositionClip clip);
         
         [PreserveSig]
-        HRESULT SetClip(/* THIS_ _In_opt_ */ IDCompositionClip clip);
+        HRESULT SetClip(ref D2D_RECT_F rect);
         
         [PreserveSig]
         HRESULT SetContent(/* THIS_ _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object content);

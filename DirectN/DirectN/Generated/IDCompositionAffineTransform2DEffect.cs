@@ -24,15 +24,15 @@ namespace DirectN
         HRESULT SetTransformMatrix(/* THIS_ _In_ */ ref D2D_MATRIX_3X2_F transformMatrix);
         
         [PreserveSig]
-        HRESULT SetTransformMatrixElement(/* THIS_ _In_ */ int row, /* _In_ */ int column, /* _In_ */ float value);
-        
-        [PreserveSig]
         HRESULT SetTransformMatrixElement(/* THIS_ _In_ */ int row, /* _In_ */ int column, /* _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetSharpness(/* THIS_ _In_ */ float sharpness);
+        HRESULT SetTransformMatrixElement(/* THIS_ _In_ */ int row, /* _In_ */ int column, /* _In_ */ float value);
         
         [PreserveSig]
         HRESULT SetSharpness(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetSharpness(/* THIS_ _In_ */ float sharpness);
     }
 }

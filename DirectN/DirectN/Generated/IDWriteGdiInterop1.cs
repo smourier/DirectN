@@ -31,10 +31,10 @@ namespace DirectN
         HRESULT CreateFontFromLOGFONT(/* _In_ */ ref tagLOGFONTW logFont, /* _In_opt_ */ IDWriteFontCollection fontCollection, /* _COM_Outptr_ */ out IDWriteFont font);
         
         [PreserveSig]
-        HRESULT GetFontSignature(/* _In_ */ IDWriteFont font, /* _Out_ */ out tagFONTSIGNATURE fontSignature);
+        HRESULT GetFontSignature(/* _In_ */ IDWriteFontFace fontFace, /* _Out_ */ out tagFONTSIGNATURE fontSignature);
         
         [PreserveSig]
-        HRESULT GetFontSignature(/* _In_ */ IDWriteFontFace fontFace, /* _Out_ */ out tagFONTSIGNATURE fontSignature);
+        HRESULT GetFontSignature(/* _In_ */ IDWriteFont font, /* _Out_ */ out tagFONTSIGNATURE fontSignature);
         
         [PreserveSig]
         HRESULT GetMatchingFontsByLOGFONT(/* _In_ */ ref tagLOGFONTW logFont, /* _In_ */ IDWriteFontSet fontSet, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);

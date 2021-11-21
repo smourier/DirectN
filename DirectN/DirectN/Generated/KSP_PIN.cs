@@ -9,6 +9,6 @@ namespace DirectN
     {
         public KSIDENTIFIER Property;
         public uint PinId;
-        public __struct_ks_354__union_0 __union_2;
+        public __struct_ks_79__union_0 __union_2;
     }
 }

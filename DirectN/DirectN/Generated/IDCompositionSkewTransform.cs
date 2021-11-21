@@ -15,27 +15,27 @@ namespace DirectN
         
         // IDCompositionSkewTransform
         [PreserveSig]
-        HRESULT SetAngleX(float angleX);
-        
-        [PreserveSig]
         HRESULT SetAngleX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetAngleY(float angleY);
+        HRESULT SetAngleX(float angleX);
         
         [PreserveSig]
         HRESULT SetAngleY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCenterX(float centerX);
+        HRESULT SetAngleY(float angleY);
         
         [PreserveSig]
         HRESULT SetCenterX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetCenterY(float centerY);
+        HRESULT SetCenterX(float centerX);
         
         [PreserveSig]
         HRESULT SetCenterY(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetCenterY(float centerY);
     }
 }

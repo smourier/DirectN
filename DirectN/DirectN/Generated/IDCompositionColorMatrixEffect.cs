@@ -18,10 +18,10 @@ namespace DirectN
         HRESULT SetMatrix(/* THIS_ _In_ */ ref D2D_MATRIX_5X4_F matrix);
         
         [PreserveSig]
-        HRESULT SetMatrixElement(/* THIS_ _In_ */ int row, /* _In_ */ int column, /* _In_ */ float value);
+        HRESULT SetMatrixElement(/* THIS_ _In_ */ int row, /* _In_ */ int column, /* _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetMatrixElement(/* THIS_ _In_ */ int row, /* _In_ */ int column, /* _In_ */ IDCompositionAnimation animation);
+        HRESULT SetMatrixElement(/* THIS_ _In_ */ int row, /* _In_ */ int column, /* _In_ */ float value);
         
         [PreserveSig]
         HRESULT SetAlphaMode(/* THIS_ _In_ */ D2D1_COLORMATRIX_ALPHA_MODE mode);

@@ -11,10 +11,10 @@ namespace DirectN
     public partial interface IDWriteFontSetBuilder
     {
         [PreserveSig]
-        HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference);
+        HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference, /* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_PROPERTY[] properties, int propertyCount);
         
         [PreserveSig]
-        HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference, /* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_PROPERTY[] properties, int propertyCount);
+        HRESULT AddFontFaceReference(/* _In_ */ IDWriteFontFaceReference fontFaceReference);
         
         [PreserveSig]
         HRESULT AddFontSet(/* _In_ */ IDWriteFontSet fontSet);

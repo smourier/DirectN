@@ -11,10 +11,10 @@ namespace DirectN
         
         // IDCompositionEffectGroup
         [PreserveSig]
-        HRESULT SetOpacity(float opacity);
+        HRESULT SetOpacity(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetOpacity(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        HRESULT SetOpacity(float opacity);
         
         [PreserveSig]
         HRESULT SetTransform3D(/* THIS_ _In_opt_ */ IDCompositionTransform3D transform3D);

@@ -42,27 +42,27 @@ namespace DirectN
         HRESULT SetClampOutput(/* THIS_ _In_ */ bool clampOutput);
         
         [PreserveSig]
-        HRESULT SetRedTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ float value);
-        
-        [PreserveSig]
         HRESULT SetRedTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetGreenTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ float value);
+        HRESULT SetRedTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ float value);
         
         [PreserveSig]
         HRESULT SetGreenTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBlueTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ float value);
+        HRESULT SetGreenTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ float value);
         
         [PreserveSig]
         HRESULT SetBlueTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetAlphaTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ float value);
+        HRESULT SetBlueTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ float value);
         
         [PreserveSig]
         HRESULT SetAlphaTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetAlphaTableValue(/* THIS_ _In_ */ uint index, /* _In_ */ float value);
     }
 }

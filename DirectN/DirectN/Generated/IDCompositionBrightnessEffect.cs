@@ -21,27 +21,27 @@ namespace DirectN
         HRESULT SetBlackPoint(/* THIS_ _In_ */ ref D2D_VECTOR_2F blackPoint);
         
         [PreserveSig]
-        HRESULT SetWhitePointX(/* THIS_ _In_ */ float whitePointX);
-        
-        [PreserveSig]
         HRESULT SetWhitePointX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetWhitePointY(/* THIS_ _In_ */ float whitePointY);
+        HRESULT SetWhitePointX(/* THIS_ _In_ */ float whitePointX);
         
         [PreserveSig]
         HRESULT SetWhitePointY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBlackPointX(/* THIS_ _In_ */ float blackPointX);
+        HRESULT SetWhitePointY(/* THIS_ _In_ */ float whitePointY);
         
         [PreserveSig]
         HRESULT SetBlackPointX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBlackPointY(/* THIS_ _In_ */ float blackPointY);
+        HRESULT SetBlackPointX(/* THIS_ _In_ */ float blackPointX);
         
         [PreserveSig]
         HRESULT SetBlackPointY(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetBlackPointY(/* THIS_ _In_ */ float blackPointY);
     }
 }

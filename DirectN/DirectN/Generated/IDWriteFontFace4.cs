@@ -155,10 +155,10 @@ namespace DirectN
         
         // IDWriteFontFace4
         [PreserveSig]
-        DWRITE_GLYPH_IMAGE_FORMATS GetGlyphImageFormats();
+        HRESULT GetGlyphImageFormats(ushort glyphId, uint pixelsPerEmFirst, uint pixelsPerEmLast, /* _Out_ */ out DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormats);
         
         [PreserveSig]
-        HRESULT GetGlyphImageFormats(ushort glyphId, uint pixelsPerEmFirst, uint pixelsPerEmLast, /* _Out_ */ out DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormats);
+        DWRITE_GLYPH_IMAGE_FORMATS GetGlyphImageFormats();
         
         [PreserveSig]
         HRESULT GetGlyphImageData(/* _In_ */ ushort glyphId, uint pixelsPerEm, DWRITE_GLYPH_IMAGE_FORMATS glyphImageFormat, /* _Out_ */ out DWRITE_GLYPH_IMAGE_DATA glyphData, /* _Outptr_result_maybenull_ */ out IntPtr glyphDataContext);

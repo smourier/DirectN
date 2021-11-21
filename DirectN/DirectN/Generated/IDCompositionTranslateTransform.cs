@@ -15,15 +15,15 @@ namespace DirectN
         
         // IDCompositionTranslateTransform
         [PreserveSig]
-        HRESULT SetOffsetX(float offsetX);
-        
-        [PreserveSig]
         HRESULT SetOffsetX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetOffsetY(float offsetY);
+        HRESULT SetOffsetX(float offsetX);
         
         [PreserveSig]
         HRESULT SetOffsetY(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetOffsetY(float offsetY);
     }
 }

@@ -15,61 +15,61 @@ namespace DirectN
         
         // IDCompositionLinearTransferEffect
         [PreserveSig]
-        HRESULT SetRedYIntercept(/* THIS_ _In_ */ float redYIntercept);
-        
-        [PreserveSig]
         HRESULT SetRedYIntercept(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetRedSlope(/* THIS_ _In_ */ float redSlope);
+        HRESULT SetRedYIntercept(/* THIS_ _In_ */ float redYIntercept);
         
         [PreserveSig]
         HRESULT SetRedSlope(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetRedDisable(/* THIS_ _In_ */ bool redDisable);
+        HRESULT SetRedSlope(/* THIS_ _In_ */ float redSlope);
         
         [PreserveSig]
-        HRESULT SetGreenYIntercept(/* THIS_ _In_ */ float greenYIntercept);
+        HRESULT SetRedDisable(/* THIS_ _In_ */ bool redDisable);
         
         [PreserveSig]
         HRESULT SetGreenYIntercept(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetGreenSlope(/* THIS_ _In_ */ float greenSlope);
+        HRESULT SetGreenYIntercept(/* THIS_ _In_ */ float greenYIntercept);
         
         [PreserveSig]
         HRESULT SetGreenSlope(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetGreenDisable(/* THIS_ _In_ */ bool greenDisable);
+        HRESULT SetGreenSlope(/* THIS_ _In_ */ float greenSlope);
         
         [PreserveSig]
-        HRESULT SetBlueYIntercept(/* THIS_ _In_ */ float blueYIntercept);
+        HRESULT SetGreenDisable(/* THIS_ _In_ */ bool greenDisable);
         
         [PreserveSig]
         HRESULT SetBlueYIntercept(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBlueSlope(/* THIS_ _In_ */ float blueSlope);
+        HRESULT SetBlueYIntercept(/* THIS_ _In_ */ float blueYIntercept);
         
         [PreserveSig]
         HRESULT SetBlueSlope(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBlueDisable(/* THIS_ _In_ */ bool blueDisable);
+        HRESULT SetBlueSlope(/* THIS_ _In_ */ float blueSlope);
         
         [PreserveSig]
-        HRESULT SetAlphaYIntercept(/* THIS_ _In_ */ float alphaYIntercept);
+        HRESULT SetBlueDisable(/* THIS_ _In_ */ bool blueDisable);
         
         [PreserveSig]
         HRESULT SetAlphaYIntercept(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetAlphaSlope(/* THIS_ _In_ */ float alphaSlope);
+        HRESULT SetAlphaYIntercept(/* THIS_ _In_ */ float alphaYIntercept);
         
         [PreserveSig]
         HRESULT SetAlphaSlope(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetAlphaSlope(/* THIS_ _In_ */ float alphaSlope);
         
         [PreserveSig]
         HRESULT SetAlphaDisable(/* THIS_ _In_ */ bool alphaDisable);

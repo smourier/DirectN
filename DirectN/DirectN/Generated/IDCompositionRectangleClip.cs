@@ -11,75 +11,75 @@ namespace DirectN
         
         // IDCompositionRectangleClip
         [PreserveSig]
-        HRESULT SetLeft(float left);
-        
-        [PreserveSig]
         HRESULT SetLeft(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetTop(float top);
+        HRESULT SetLeft(float left);
         
         [PreserveSig]
         HRESULT SetTop(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetRight(float right);
+        HRESULT SetTop(float top);
         
         [PreserveSig]
         HRESULT SetRight(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBottom(float bottom);
+        HRESULT SetRight(float right);
         
         [PreserveSig]
         HRESULT SetBottom(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetTopLeftRadiusX(float radius);
+        HRESULT SetBottom(float bottom);
         
         [PreserveSig]
         HRESULT SetTopLeftRadiusX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetTopLeftRadiusY(float radius);
+        HRESULT SetTopLeftRadiusX(float radius);
         
         [PreserveSig]
         HRESULT SetTopLeftRadiusY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetTopRightRadiusX(float radius);
+        HRESULT SetTopLeftRadiusY(float radius);
         
         [PreserveSig]
         HRESULT SetTopRightRadiusX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetTopRightRadiusY(float radius);
+        HRESULT SetTopRightRadiusX(float radius);
         
         [PreserveSig]
         HRESULT SetTopRightRadiusY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBottomLeftRadiusX(float radius);
+        HRESULT SetTopRightRadiusY(float radius);
         
         [PreserveSig]
         HRESULT SetBottomLeftRadiusX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBottomLeftRadiusY(float radius);
+        HRESULT SetBottomLeftRadiusX(float radius);
         
         [PreserveSig]
         HRESULT SetBottomLeftRadiusY(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBottomRightRadiusX(float radius);
+        HRESULT SetBottomLeftRadiusY(float radius);
         
         [PreserveSig]
         HRESULT SetBottomRightRadiusX(/* THIS_ _In_ */ IDCompositionAnimation animation);
         
         [PreserveSig]
-        HRESULT SetBottomRightRadiusY(float radius);
+        HRESULT SetBottomRightRadiusX(float radius);
         
         [PreserveSig]
         HRESULT SetBottomRightRadiusY(/* THIS_ _In_ */ IDCompositionAnimation animation);
+        
+        [PreserveSig]
+        HRESULT SetBottomRightRadiusY(float radius);
     }
 }
