@@ -21,12 +21,14 @@ namespace DirectN.Temp
                 var mode = new _D3DDISPLAYMODE();
                 d3d.Object.GetAdapterDisplayMode(adapter, ref mode).ThrowOnError();
 
-                var parameters = new _D3DPRESENT_PARAMETERS_();
-                parameters.Windowed = true;
-                parameters.BackBufferCount = 1;
-                parameters.BackBufferHeight = mode.Height;
-                parameters.BackBufferWidth = mode.Width;
-                parameters.SwapEffect = _D3DSWAPEFFECT.D3DSWAPEFFECT_DISCARD;
+                var parameters = new _D3DPRESENT_PARAMETERS_
+                {
+                    Windowed = true,
+                    BackBufferCount = 1,
+                    BackBufferHeight = mode.Height,
+                    BackBufferWidth = mode.Width,
+                    SwapEffect = _D3DSWAPEFFECT.D3DSWAPEFFECT_DISCARD
+                };
 
                 d3d.Object.CreateDevice(adapter, _D3DDEVTYPE.D3DDEVTYPE_HAL, IntPtr.Zero, Constants.D3DCREATE_SOFTWARE_VERTEXPROCESSING, ref parameters, out var dev).ThrowOnError();
                 using (var device = new ComObject<IDirect3DDevice9>(dev))
