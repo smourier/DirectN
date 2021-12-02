@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
@@ -35,6 +36,24 @@ namespace DirectN
                 return "`" + s + "`";
 
             return string.Format(CultureInfo.InvariantCulture, "{0}", value);
+        }
+
+        public static IEnumerable<IComObject<IMFActivate>> EnumDeviceSources(this IComObject<IMFAttributes> input) => EnumDeviceSources(input?.Object).Select(a => new ComObject<IMFActivate>(a));
+        public static IEnumerable<IMFActivate> EnumDeviceSources(this IMFAttributes input)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            Functions.MFEnumDeviceSources(input, out var array, out var count).ThrowOnError();
+            for (var i = 0; i < count; i++)
+            {
+                var ptr = Marshal.ReadIntPtr(array, i * IntPtr.Size);
+                var activate = (IMFActivate)Marshal.GetObjectForIUnknown(ptr);
+                yield return activate;
+                Marshal.Release(ptr);
+            }
+
+            Marshal.FreeCoTaskMem(array);
         }
 
         public static IEnumerable<KeyValuePair<Guid, _MF_ATTRIBUTE_TYPE>> Enumerate(this IComObject<IMFAttributes> input) => Enumerate(input?.Object);
