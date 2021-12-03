@@ -582,8 +582,12 @@ namespace DirectN
             }
         }
 
-        public void Dispose() => GC.SuppressFinalize(this);
         ~PropVariant() => Dispose();
+        public void Dispose()
+        {
+            _ = PropVariantClear(this);
+            GC.SuppressFinalize(this);
+        }
 
         private static long ToPositiveFileTime(DateTime dt)
         {
