@@ -93,6 +93,7 @@
     <Compile Include="Extensions\TextServices32.cs" />
     <Compile Include="Extensions\TextServicesFunctions.cs" />
     <Compile Include="Extensions\VerticalBlankTicker.cs" />
+    <Compile Include="Extensions\VerticalBlankTickerErrorEventArgs.cs" />
     <Compile Include="Extensions\VerticalBlankTickerEventArgs.cs" />
     <Compile Include="Extensions\WICFunctions.cs" />
     <Compile Include="Extensions\WICImagingFactory2.cs" />
@@ -10240,11 +10241,6 @@
     <Content Include="DirectN.ico" />
     <Content Include="DirectN.png" />
     <None Include="nugetpub.bat" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">
-      <Version>2.9.3</Version>
-    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

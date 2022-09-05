@@ -21,7 +21,7 @@ namespace DirectN
         new HRESULT GetCurrentMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out] _Out_ */ out IMFMediaType ppMediaType);
         
         [PreserveSig]
-        new HRESULT SetCurrentMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out][in] _Reserved_ */ ref uint pdwReserved, /* [annotation][in] _In_ */ IMFMediaType pMediaType);
+        new HRESULT SetCurrentMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out][in] _Reserved_ */ IntPtr pdwReserved, /* [annotation][in] _In_ */ IMFMediaType pMediaType);
         
         [PreserveSig]
         new HRESULT SetCurrentPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidTimeFormat, /* [annotation][in] _In_ */ [In, Out] PropVariant varPosition);

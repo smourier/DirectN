@@ -7,16 +7,16 @@
     <Description>Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.</Description>
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
-    <Copyright>Copyright © 2017-2021 Simon Mourier. All rights reserved.</Copyright>
-    <FileVersion>1.13.0.0</FileVersion>
+    <Copyright>Copyright © 2017-2022 Simon Mourier. All rights reserved.</Copyright>
+    <FileVersion>1.13.0.1</FileVersion>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.13.0.0</Version>
+    <Version>1.13.0.1</Version>
     <RootNamespace>DirectN</RootNamespace>
-    <AssemblyVersion>1.13.0.0</AssemblyVersion>
+    <AssemblyVersion>1.13.0.1</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -105,6 +105,7 @@
     <Compile Include="..\DirectN\Extensions\TextServicesFunctions.cs" Link="Extensions\TextServicesFunctions.cs" />
     <Compile Include="..\DirectN\Extensions\UserExtensions.cs" Link="Extensions\UserExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\VerticalBlankTicker.cs" Link="Extensions\VerticalBlankTicker.cs" />
+    <Compile Include="..\DirectN\Extensions\VerticalBlankTickerErrorEventArgs.cs" Link="Extensions\VerticalBlankTickerErrorEventArgs.cs" />
     <Compile Include="..\DirectN\Extensions\VerticalBlankTickerEventArgs.cs" Link="Extensions\VerticalBlankTickerEventArgs.cs" />
     <Compile Include="..\DirectN\Extensions\WICConstants.cs" Link="Extensions\WICConstants.cs" />
     <Compile Include="..\DirectN\Extensions\WICFunctions.cs" Link="Extensions\WICFunctions.cs" />
