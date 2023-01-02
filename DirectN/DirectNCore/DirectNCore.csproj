@@ -1,22 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <ApplicationIcon>DirectN.ico</ApplicationIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.</Description>
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
-    <Copyright>Copyright © 2017-2022 Simon Mourier. All rights reserved.</Copyright>
+    <Copyright>Copyright © 2017-2023 Simon Mourier. All rights reserved.</Copyright>
     <FileVersion>1.13.0.1</FileVersion>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.13.0.1</Version>
+    <Version>1.13.0.2</Version>
     <RootNamespace>DirectN</RootNamespace>
-    <AssemblyVersion>1.13.0.1</AssemblyVersion>
+    <AssemblyVersion>1.13.0.2</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
