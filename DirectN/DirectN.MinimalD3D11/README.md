@@ -6,5 +6,5 @@
 
   ![Sample](../../Assets/minimald3d11.png?raw=true)
 
-
+ Full credits go to d7Samurai: https://gist.github.com/d7samurai
  Note: the code still works with .NET Core 3.1 to 5, it's just a project configuration matter.

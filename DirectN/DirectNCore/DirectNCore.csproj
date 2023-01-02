@@ -17,6 +17,7 @@
     <Version>1.13.0.2</Version>
     <RootNamespace>DirectN</RootNamespace>
     <AssemblyVersion>1.13.0.2</AssemblyVersion>
+    <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
