@@ -13,6 +13,10 @@ namespace DirectN
 {
     public static class Extensions
     {
+        public static void CopyTo(this IntPtr source, IntPtr destination, int length) => PropVariant.CopyMemory(destination, source, (IntPtr)length);
+        public static void CopyTo(this IntPtr source, IntPtr destination, long length) => PropVariant.CopyMemory(destination, source, (IntPtr)length);
+        public static void CopyTo(this IntPtr source, IntPtr destination, IntPtr length) => PropVariant.CopyMemory(destination, source, length);
+
         public static bool IsValid(this float value) => !float.IsNaN(value);
         public static bool IsInvalid(this float value) => float.IsNaN(value);
         public static bool IsSet(this float value) => IsValid(value) && !float.IsInfinity(value);

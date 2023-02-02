@@ -123,7 +123,7 @@ namespace DirectN
                 }
                 else
                 {
-                    CopyMemory(ptr, Marshal.UnsafeAddrOfPinnedArrayElement(array, 0), size);
+                    CopyMemory(ptr, Marshal.UnsafeAddrOfPinnedArrayElement(array, 0), (IntPtr)size);
                 }
             }
         }
@@ -617,7 +617,7 @@ namespace DirectN
                 case PropertyType.VT_BOOL:
                     var shorts = new short[_ca.cElems];
                     size = _ca.cElems * Marshal.SizeOf(typeof(short));
-                    CopyMemory(Marshal.UnsafeAddrOfPinnedArrayElement(shorts, 0), _ca.pElems, size);
+                    CopyMemory(Marshal.UnsafeAddrOfPinnedArrayElement(shorts, 0), _ca.pElems, (IntPtr)size);
                     var bools = new bool[shorts.Length];
                     for (var i = 0; i < shorts.Length; i++)
                     {
@@ -647,7 +647,7 @@ namespace DirectN
                     var et = FromType(vt);
                     var values = Array.CreateInstance(et, _ca.cElems);
                     size = _ca.cElems * Marshal.SizeOf(et);
-                    CopyMemory(Marshal.UnsafeAddrOfPinnedArrayElement(values, 0), _ca.pElems, size);
+                    CopyMemory(Marshal.UnsafeAddrOfPinnedArrayElement(values, 0), _ca.pElems, (IntPtr)size);
                     value = values;
                     ret = true;
                     break;
@@ -751,6 +751,6 @@ namespace DirectN
         private static extern int InitPropVariantFromFileTime(ref long pftIn, [Out] PropVariant ppropvar);
 
         [DllImport("kernel32", ExactSpelling = true, EntryPoint = "RtlMoveMemory")]
-        private static extern void CopyMemory(IntPtr destination, IntPtr source, int length);
+        internal static extern void CopyMemory(IntPtr destination, IntPtr source, IntPtr length);
     }
 }
