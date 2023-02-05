@@ -36,7 +36,7 @@ namespace DirectN.MinimalD3D11
         public Main()
         {
             Text = "minimal d3d11 by d7samurai - On .NET Core 6.0";
-            int size = 1000;
+            var size = 1000;
             Size = new Size(size, size);
         }
 
@@ -101,7 +101,7 @@ namespace DirectN.MinimalD3D11
             var frameBuffer = _swapChain.GetBuffer<ID3D11Texture2D>(0);
             _renderTargetView = d3D11Device.CreateRenderTargetView(frameBuffer);
 
-            frameBuffer.Object.GetDesc(out var depthBufferDesc);
+            var depthBufferDesc = frameBuffer.GetDesc();
             _width = depthBufferDesc.Width;
             _height = depthBufferDesc.Height;
 
@@ -239,35 +239,35 @@ namespace DirectN.MinimalD3D11
             uint stride = 12 * 4; // vertex size (12 floats: float3 position, float3 normal, float2 texcoord, float4 color)
             uint offset = 0;
 
-            _deviceContext.Object.ClearRenderTargetView(_renderTargetView.Object, backgroundColor);
-            _deviceContext.Object.ClearDepthStencilView(_depthBufferView.Object, (uint)D3D11_CLEAR_FLAG.D3D11_CLEAR_DEPTH, 1, 0);
+            _deviceContext.ClearRenderTargetView(_renderTargetView, backgroundColor);
+            _deviceContext.ClearDepthStencilView(_depthBufferView, D3D11_CLEAR_FLAG.D3D11_CLEAR_DEPTH, 1, 0);
 
-            _deviceContext.Object.IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY.D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-            _deviceContext.Object.IASetInputLayout(_inputLayout.Object);
-            _deviceContext.Object.IASetVertexBuffers(0, 1, new ID3D11Buffer[] { _vertexBuffer.Object }, new uint[] { stride }, new uint[] { offset });
-            _deviceContext.Object.IASetIndexBuffer(_indexBuffer.Object, DXGI_FORMAT.DXGI_FORMAT_R32_UINT, 0);
+            _deviceContext.IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY.D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+            _deviceContext.IASetInputLayout(_inputLayout);
+            _deviceContext.IASetVertexBuffers(0, new[] { _vertexBuffer }, new[] { (int)stride }, new[] { (int)offset });
+            _deviceContext.IASetIndexBuffer(_indexBuffer);
 
-            _deviceContext.Object.VSSetShader(_vertexShader.Object, null, 0);
-            _deviceContext.Object.VSSetConstantBuffers(0, 1, new ID3D11Buffer[] { _constantBuffer.Object });
+            _deviceContext.VSSetShader(_vertexShader);
+            _deviceContext.VSSetConstantBuffers(0, new[] { _constantBuffer });
 
             var viewport = new D3D11_VIEWPORT();
             viewport.Width = _width;
             viewport.Height = _height;
             viewport.MaxDepth = 1;
-            _deviceContext.Object.RSSetViewports(1, new D3D11_VIEWPORT[] { viewport });
-            _deviceContext.Object.RSSetState(_rasterizerState.Object);
+            _deviceContext.RSSetViewports(new[] { viewport });
+            _deviceContext.RSSetState(_rasterizerState);
 
-            _deviceContext.Object.PSSetShader(_pixelShader.Object, null, 0);
-            _deviceContext.Object.PSSetShaderResources(0, 1, new ID3D11ShaderResourceView[] { _shaderResourceView.Object });
-            _deviceContext.Object.PSSetSamplers(0, 1, new ID3D11SamplerState[] { _samplerState.Object });
+            _deviceContext.PSSetShader(_pixelShader);
+            _deviceContext.PSSetShaderResources(0, new[] { _shaderResourceView });
+            _deviceContext.PSSetSamplers(0, new[] { _samplerState });
 
-            _deviceContext.Object.OMSetRenderTargets(1, new ID3D11RenderTargetView[] { _renderTargetView.Object }, _depthBufferView.Object);
-            _deviceContext.Object.OMSetDepthStencilState(_depthStencilState.Object, 0);
-            _deviceContext.Object.OMSetBlendState(_blendState.Object, null, 0xffffffff);
+            _deviceContext.OMSetRenderTargets(new[] { _renderTargetView }, _depthBufferView);
+            _deviceContext.OMSetDepthStencilState(_depthStencilState);
+            _deviceContext.OMSetBlendState(_blendState);
 
-            _deviceContext.Object.DrawIndexed((uint)Data.IndexData.Length, 0, 0);
+            _deviceContext.DrawIndexed(Data.IndexData.Length, 0, 0);
 
-            _swapChain.Object.Present(1, 0).ThrowOnError();
+            _swapChain.Present(1, 0);
         }
 
         [StructLayout(LayoutKind.Sequential)]

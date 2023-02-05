@@ -15,7 +15,6 @@ namespace DirectN
         }
 
         public static IComObject<T> GetBuffer<T>(this IComObject<IDXGISwapChain> swapChain, uint index) => GetBuffer<T>(swapChain?.Object, index);
-        //public static IComObject<T> GetBuffer<T>(this IComObject<IDXGISwapChain1> swapChain, uint index) => GetBuffer<T>(swapChain?.Object, index);
         public static IComObject<T> GetBuffer<T>(this IDXGISwapChain swapChain, uint index)
         {
             if (swapChain == null)
@@ -35,6 +34,15 @@ namespace DirectN
                 throw new ArgumentNullException(nameof(swapChain));
 
             swapChain.SetBackgroundColor(ref value).ThrowOnError();
+        }
+
+        public static void Present(this IComObject<IDXGISwapChain> swapChain, uint syncInterval, uint flags) => Present(swapChain?.Object, syncInterval, flags);
+        public static void Present(this IDXGISwapChain swapChain, uint syncInterval, uint flags)
+        {
+            if (swapChain == null)
+                throw new ArgumentNullException(nameof(swapChain));
+
+            swapChain.Present(syncInterval, flags).ThrowOnError();
         }
     }
 }

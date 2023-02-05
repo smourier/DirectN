@@ -4,7 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <ApplicationIcon>DirectN.ico</ApplicationIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.</Description>
+    <Description>Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, WinUI3, etc.</Description>
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
     <Copyright>Copyright © 2017-2023 Simon Mourier. All rights reserved.</Copyright>
@@ -14,7 +14,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.13.0.2</Version>
+    <Version>1.13.1.0</Version>
     <RootNamespace>DirectN</RootNamespace>
     <AssemblyVersion>1.13.0.2</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
@@ -59,6 +59,7 @@
     <Compile Include="..\DirectN\Extensions\ID3D11DeviceChildExtensions.cs" Link="Extensions\ID3D11DeviceChildExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D11DeviceContextExtensions.cs" Link="Extensions\ID3D11DeviceContextExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D11DeviceExtensions.cs" Link="Extensions\ID3D11DeviceExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\ID3D11Texture2DExtensions.cs" Link="Extensions\ID3D11Texture2DExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\IDWriteFactoryExtensions.cs" Link="Extensions\IDWriteFactoryExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\IDWriteFontCollectionExtensions.cs" Link="Extensions\IDWriteFontCollectionExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\IDWriteFontFamilyExtensions.cs" Link="Extensions\IDWriteFontFamilyExtensions.cs" />
@@ -258,6 +259,7 @@
     <Compile Include="..\DirectN\Manual\WS.cs" Link="Manual\WS.cs" />
     <Compile Include="..\DirectN\Manual\WS_EX.cs" Link="Manual\WS_EX.cs" />
     <Compile Include="..\DirectN\Manual\XMFLOAT3.cs" Link="Manual\XMFLOAT3.cs" />
+    <Compile Include="..\DirectN\Manual\XMFLOAT4.cs" Link="Manual\XMFLOAT4.cs" />
     <Compile Include="..\DirectN\Manual\_D3DCOLORVALUE.partial.cs" Link="Manual\_D3DCOLORVALUE.partial.cs" />
     <Compile Include="..\DirectN\Manual\_LUID.cs" Link="Manual\_LUID.cs" />
     <Compile Include="..\DirectN\Manual\_SECURITY_ATTRIBUTES.cs" Link="Manual\_SECURITY_ATTRIBUTES.cs" />

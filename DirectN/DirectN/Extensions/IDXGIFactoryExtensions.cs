@@ -115,6 +115,11 @@ namespace DirectN
             DXGI_SWAP_CHAIN_DESC1 desc,
             IComObject<IDXGIOutput1> restrictToOutput = null) where T : IDXGISwapChain1 => CreateSwapChainForComposition<T>(factory?.Object, device?.Object, desc, restrictToOutput?.Object);
 
+        public static IComObject<IDXGISwapChain1> CreateSwapChainForComposition(this IComObject<IDXGIFactory2> factory,
+            IComObject<IDXGIDevice1> device,
+            DXGI_SWAP_CHAIN_DESC1 desc,
+            IComObject<IDXGIOutput1> restrictToOutput = null) => CreateSwapChainForComposition<IDXGISwapChain1>(factory?.Object, device?.Object, desc, restrictToOutput?.Object);
+
         public static IComObject<T> CreateSwapChainForComposition<T>(this IDXGIFactory2 factory,
             IDXGIDevice1 device,
             DXGI_SWAP_CHAIN_DESC1 desc,

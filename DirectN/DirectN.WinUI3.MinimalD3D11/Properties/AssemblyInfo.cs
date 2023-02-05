@@ -7,14 +7,14 @@ using System.Runtime.Versioning;
 #else
 [assembly: AssemblyConfiguration("RELEASE")]
 #endif
-[assembly: AssemblyTitle("DirectN.MinimalD3D11")]
+[assembly: AssemblyTitle("DirectN.WinUI3.MinimalD3D11")]
 [assembly: AssemblyCompany("Simon Mourier")]
 [assembly: AssemblyProduct("DirectN")]
 [assembly: AssemblyDescription("Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.")]
 [assembly: AssemblyCopyright("Copyright © 2017-2023 Simon Mourier. All rights reserved. Original code by d7samurai.")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("3a848cdf-7b72-49de-92f7-30b640369d75")]
+[assembly: Guid("99873e46-b92d-47ce-b5be-d453cad3895b")]
 
 [assembly: AssemblyVersion("1.13.1.0")]
 [assembly: AssemblyFileVersion("1.13.1.0")]

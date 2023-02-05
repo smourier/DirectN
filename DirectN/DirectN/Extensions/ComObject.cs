@@ -76,6 +76,7 @@ namespace DirectN
             return Object as T;
         }
 
+        public static ComObject<T> WrapAsGeneric<T>(object instance) => (ComObject<T>)WrapAsGeneric(typeof(T), instance);
         public static ComObject WrapAsGeneric(Type comType, object instance)
         {
             if (comType == null)
@@ -266,6 +267,20 @@ namespace DirectN
 
         //public static implicit operator ComObject<T>(T value) => new ComObject<T>(value);
         //public static implicit operator T(ComObject<T> value) => value.Object;
+    }
+
+    public sealed class NoDisposeComObject<T> : IComObject<T>
+    {
+        public NoDisposeComObject(object comObject)
+        {
+            Object = (T)comObject;
+        }
+
+        public T Object { get; }
+        public bool IsDisposed => false;
+
+        public I As<I>(bool throwOnError = false) where I : class => throwOnError ? (I)(object)Object : Object as I;
+        public void Dispose() { }
     }
 
     public interface IComObject<out T> : IDisposable

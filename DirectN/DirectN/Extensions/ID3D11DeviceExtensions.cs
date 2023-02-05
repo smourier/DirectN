@@ -6,6 +6,7 @@ namespace DirectN
     {
         public static IComObject<T> CreateTexture2D<T>(this IComObject<ID3D11Device> device, D3D11_TEXTURE2D_DESC desc, D3D11_SUBRESOURCE_DATA initialData) where T : ID3D11Texture2D => CreateTexture2D<T>(device?.Object, desc, new D3D11_SUBRESOURCE_DATA[] { initialData });
         public static IComObject<T> CreateTexture2D<T>(this IComObject<ID3D11Device> device, D3D11_TEXTURE2D_DESC desc, D3D11_SUBRESOURCE_DATA[] initialData = null) where T : ID3D11Texture2D => CreateTexture2D<T>(device?.Object, desc, initialData);
+        public static IComObject<ID3D11Texture2D> CreateTexture2D(this IComObject<ID3D11Device> device, D3D11_TEXTURE2D_DESC desc, D3D11_SUBRESOURCE_DATA[] initialData = null) => CreateTexture2D<ID3D11Texture2D>(device?.Object, desc, initialData);
         public static IComObject<T> CreateTexture2D<T>(this ID3D11Device device, D3D11_TEXTURE2D_DESC desc, D3D11_SUBRESOURCE_DATA[] initialData = null) where T : ID3D11Texture2D
         {
             if (device == null)

@@ -1,11 +1,11 @@
 # DirectN
-Direct Interop code for .NET Framework, .NET Core and .NET 5+ : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.
+Direct Interop code for .NET Framework, .NET Core and .NET 5+ : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, WinUI3, etc.
 
 The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/ (.NET Framework) or https://www.nuget.org/packages/DirectNCore/ (.NET Core and .NET 5, 6, 7, etc.)
 
 Or you can pick the C# source files you want (among the 9000 .cs provided ...). It can be sometimes difficult because the dependencies between all these technologies can make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is possible as demonstrated in this other project: [Windows Interface Composition Engine ("Wice")](https://github.com/aelyo-softworks/Wice) wich uses only ~700 files (less than 10%) from DirectN.
 
-## Same names and types than the native DirectX concepts!
+## Same names and types than the native concepts!
 DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, probably more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the **same names and types than the native concepts** (interfaces, enums, structures, constants, methods, arguments, guids, etc.) . So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
 
 By design, everything is in the same namespace (and in the same assembly if you use the whole package) so you don't need to know where is defined this or that interface, constants, etc.
@@ -226,11 +226,22 @@ cleanup:
  * Note 2: the functions.cs file has some issues as everything in the Generated folder is, well, automatically generated. If you have a specific problem with that, just create an issue;
  * Note 3: the tool that builds the Generated folder is not open source.
 
- # .NET 6 - DirectD311 minimal sample.
- The "DirectN.MinimalD3D11" sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.MinimalD3D11 has been ported from here: https://gist.github.com/d7samurai/261c69490cce0620d0bfc93003cd1052 which features a minimal DirectD311 "uncluttered direct3d 11 setup and rendering primer for newcomers to the api" sample.
+ # Winforms .NET 6 - DirectD311 minimal sample.
+ The **DirectN.MinimalD3D11** sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.MinimalD3D11 has been ported to C# from here: https://gist.github.com/d7samurai/261c69490cce0620d0bfc93003cd1052 which features *"a minimal DirectD311 "uncluttered direct3d 11 setup and rendering primer for newcomers to the api"* sample.
  
  It's dependent on DirectN, .NET 6, Windows Forms and ... that's it. Here is the output (believe me, it rotates):
 
   ![Sample](/Assets/minimald3d11.png?raw=true)
+Full credits go to d7Samurai: https://gist.github.com/d7samurai
 
-Note: the code still works with .NET Core 3.1 to 5, it's just a project configuration matter.
+Note: the code also works with .NET Core 3.1 to 5, it's just a project configuration matter.
+
+ # WinUI3 .NET 6 - DirectD311 minimal sample.
+ The **DirectN.WinUI3.MinimalD3D11** sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.WinUI3.MinimalD3D11 has been ported to C# from here: https://gist.github.com/d7samurai/abab8a580d0298cb2f34a44eec41d39d which features a minimal DirectD311 *"'API familiarizer' - an uncluttered Direct3D 11 setup & basic rendering reference implementation, in the form of a complete, runnable Windows application contained in a single function and laid out in a linear, step-by-step fashion"* sample.
+
+ It's dependent on DirectN, .NET 6, WinUI3 (using **SwapChainPanel** https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel), and ... that's it. Here is the output (believe me, it rotates):
+
+  ![Sample](/Assets/minimald3d11_pt3.png?raw=true)
+Full credits go to d7Samurai: https://gist.github.com/d7samurai
+
+

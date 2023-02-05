@@ -66,6 +66,7 @@
     <Compile Include="Extensions\ID2D1PropertiesExtensions.cs" />
     <Compile Include="Extensions\ID2D1RenderTargetExtensions.cs" />
     <Compile Include="Extensions\ID2D1SimplifiedGeometrySinkExtensions.cs" />
+    <Compile Include="Extensions\ID3D11Texture2DExtensions.cs" />
     <Compile Include="Extensions\ID3D11DeviceChildExtensions.cs" />
     <Compile Include="Extensions\ID3D11DeviceContextExtensions.cs" />
     <Compile Include="Extensions\IDWriteFontCollectionExtensions.cs" />
@@ -6225,6 +6226,7 @@
     <Compile Include="Manual\WndProc.cs" />
     <Compile Include="Manual\WS.cs" />
     <Compile Include="Manual\WS_EX.cs" />
+    <Compile Include="Manual\XMFLOAT4.cs" />
     <Compile Include="Manual\XMFLOAT3.cs" />
     <Compile Include="Manual\_D3DCOLORVALUE.partial.cs" />
     <Compile Include="Manual\tagEXCEPINFO.cs" />

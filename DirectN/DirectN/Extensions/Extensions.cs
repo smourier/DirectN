@@ -313,6 +313,14 @@ namespace DirectN
             }
         }
 
+        public static T[] ToArray<T>(this IEnumerable<IComObject<T>> enumerable)
+        {
+            if (enumerable == null)
+                return null;
+
+            return enumerable?.Select(e => e != null ? e.Object : default)?.ToArray();
+        }
+
         public static T[] ToArrayNullify<T>(this IEnumerable<IComObject<T>> enumerable)
         {
             if (enumerable == null)

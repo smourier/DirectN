@@ -7,6 +7,7 @@ namespace DirectN
     public static class ID3D11DeviceContextExtensions
     {
         public delegate void MapAction<T>(ref D3D11_MAPPED_SUBRESOURCE mapped, ref T structure);
+        public delegate void MapAction(ref D3D11_MAPPED_SUBRESOURCE mapped);
 
         public static void WithMap<T>(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, MapAction<T> action, D3D11_MAP_FLAG mapFlag = 0)
         {
@@ -19,6 +20,119 @@ namespace DirectN
                 var structure = Marshal.PtrToStructure<T>(map.pData);
                 action(ref map, ref structure);
                 Marshal.StructureToPtr(structure, map.pData, false);
+            }
+            finally
+            {
+                Unmap(context, resource, subResource);
+            }
+        }
+
+        public static void WithMap(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, MapAction action, D3D11_MAP_FLAG mapFlag = 0)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            var map = Map(context, resource, subResource, mapType, mapFlag);
+            try
+            {
+                action(ref map);
+            }
+            finally
+            {
+                Unmap(context, resource, subResource);
+            }
+        }
+
+        public static void WithMapCopyTo(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, object structure, D3D11_MAP_FLAG mapFlag = 0)
+        {
+            if (structure == null)
+                throw new ArgumentNullException(nameof(structure));
+
+            using (var mem = new ComMemory(structure))
+            {
+                var map = Map(context, resource, subResource, mapType, mapFlag);
+                try
+                {
+                    mem.Pointer.CopyTo(map.pData, mem.Size);
+                }
+                finally
+                {
+                    Unmap(context, resource, subResource);
+                }
+            }
+        }
+
+        public static void WithMapCopyTo(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, IntPtr source, IntPtr size, D3D11_MAP_FLAG mapFlag = 0)
+        {
+            var map = Map(context, resource, subResource, mapType, mapFlag);
+            try
+            {
+                source.CopyTo(map.pData, size);
+            }
+            finally
+            {
+                Unmap(context, resource, subResource);
+            }
+        }
+
+        public static void WithMapCopyTo(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, IntPtr source, long size, D3D11_MAP_FLAG mapFlag = 0)
+        {
+            var map = Map(context, resource, subResource, mapType, mapFlag);
+            try
+            {
+                source.CopyTo(map.pData, size);
+            }
+            finally
+            {
+                Unmap(context, resource, subResource);
+            }
+        }
+
+        public static void WithMapCopyTo(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, IntPtr source, int size, D3D11_MAP_FLAG mapFlag = 0)
+        {
+            var map = Map(context, resource, subResource, mapType, mapFlag);
+            try
+            {
+                source.CopyTo(map.pData, size);
+            }
+            finally
+            {
+                Unmap(context, resource, subResource);
+            }
+        }
+
+        public static void WithMapCopyFrom(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, IntPtr destination, IntPtr size, D3D11_MAP_FLAG mapFlag = 0)
+        {
+            var map = Map(context, resource, subResource, mapType, mapFlag);
+            try
+            {
+                map.pData.CopyTo(destination, size);
+            }
+            finally
+            {
+                Unmap(context, resource, subResource);
+            }
+        }
+
+        public static void WithMapCopyFrom(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, IntPtr destination, long size, D3D11_MAP_FLAG mapFlag = 0)
+        {
+            var map = Map(context, resource, subResource, mapType, mapFlag);
+            try
+            {
+                map.pData.CopyTo(destination, size);
+            }
+            finally
+            {
+                Unmap(context, resource, subResource);
+            }
+        }
+
+        public static void WithMapCopyFrom(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11Resource> resource, int subResource, D3D11_MAP mapType, IntPtr destination, int size, D3D11_MAP_FLAG mapFlag = 0)
+        {
+            var map = Map(context, resource, subResource, mapType, mapFlag);
+            try
+            {
+                map.pData.CopyTo(destination, size);
             }
             finally
             {
@@ -164,9 +278,6 @@ namespace DirectN
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (inputLayout == null)
-                throw new ArgumentNullException(nameof(inputLayout));
-
             context.IASetInputLayout(inputLayout);
         }
 
@@ -197,7 +308,7 @@ namespace DirectN
                 offsets = new int[vertexBuffers.Length];
             }
 
-            IASetVertexBuffers(context?.Object, startSlot, vertexBuffers.ToArrayNullify(), strides, offsets);
+            IASetVertexBuffers(context?.Object, startSlot, vertexBuffers.ToArray(), strides, offsets);
         }
 
         public static void IASetVertexBuffers(this ID3D11DeviceContext context, int startSlot, ID3D11Buffer[] vertexBuffers, int[] strides, int[] offsets)
@@ -232,34 +343,34 @@ namespace DirectN
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (indexBuffer == null)
-                throw new ArgumentNullException(nameof(indexBuffer));
-
             context.IASetIndexBuffer(indexBuffer, format, (uint)offset);
         }
 
-        public static void VSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11VertexShader> vertexShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => VSSetShader(context?.Object, vertexShader?.Object, classInstances.ToArrayNullify());
+        public static void VSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11VertexShader> vertexShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => VSSetShader(context?.Object, vertexShader?.Object, classInstances.ToArray());
         public static void VSSetShader(this ID3D11DeviceContext context, ID3D11VertexShader vertexShader, ID3D11ClassInstance[] classInstances = null)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (vertexShader == null)
-                throw new ArgumentNullException(nameof(vertexShader));
-
             context.VSSetShader(vertexShader, classInstances, (classInstances?.Length).GetValueOrDefault());
         }
 
-        public static void PSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11PixelShader> pixelShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => PSSetShader(context?.Object, pixelShader?.Object, classInstances.ToArrayNullify());
+        public static void PSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11PixelShader> pixelShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => PSSetShader(context?.Object, pixelShader?.Object, classInstances.ToArray());
         public static void PSSetShader(this ID3D11DeviceContext context, ID3D11PixelShader pixelShader, ID3D11ClassInstance[] classInstances = null)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (pixelShader == null)
-                throw new ArgumentNullException(nameof(pixelShader));
-
             context.PSSetShader(pixelShader, classInstances, (classInstances?.Length).GetValueOrDefault());
+        }
+
+        public static void DrawInstanced(this IComObject<ID3D11DeviceContext> context, uint vertexCountPerInstance, uint instanceCount, uint startVertexLocation, uint startInstanceLocation) => DrawInstanced(context?.Object, vertexCountPerInstance, instanceCount, startVertexLocation, startInstanceLocation);
+        public static void DrawInstanced(this ID3D11DeviceContext context, uint vertexCountPerInstance, uint instanceCount, uint startVertexLocation, uint startInstanceLocation)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            context.DrawInstanced(vertexCountPerInstance, instanceCount, startVertexLocation, startInstanceLocation);
         }
 
         public static void VSSetConstantBuffer(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11Buffer> constantBuffer)
@@ -279,19 +390,22 @@ namespace DirectN
             context.Object.VSSetConstantBuffers((uint)startSlot, 1, new[] { constantBuffer.Object });
         }
 
-        public static void VSSetConstantBuffers(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11Buffer>[] constantBuffers) => VSSetConstantBuffers(context?.Object, startSlot, constantBuffers.ToArrayNullify());
+        public static void VSSetConstantBuffers(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11Buffer>[] constantBuffers) => VSSetConstantBuffers(context?.Object, startSlot, constantBuffers.ToArray());
         public static void VSSetConstantBuffers(this ID3D11DeviceContext context, int startSlot, ID3D11Buffer[] constantBuffers)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (constantBuffers == null)
-                throw new ArgumentNullException(nameof(constantBuffers));
+            context.VSSetConstantBuffers((uint)startSlot, (constantBuffers?.Length).GetValueOrDefault(), constantBuffers);
+        }
 
-            if (constantBuffers.Length == 0)
-                throw new ArgumentException(null, nameof(constantBuffers));
+        public static void VSSetShaderResources(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView>[] shaderResourceViews) => VSSetShaderResources(context?.Object, startSlot, shaderResourceViews.ToArray());
+        public static void VSSetShaderResources(this ID3D11DeviceContext context, int startSlot, ID3D11ShaderResourceView[] shaderResourceViews)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
 
-            context.VSSetConstantBuffers((uint)startSlot, constantBuffers.Length, constantBuffers);
+            context.VSSetShaderResources((uint)startSlot, (shaderResourceViews?.Length).GetValueOrDefault(), shaderResourceViews);
         }
 
         public static void PSSetSampler(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11SamplerState> samplerState)
@@ -311,19 +425,13 @@ namespace DirectN
             context.Object.PSSetSamplers((uint)startSlot, 1, new[] { samplerState.Object });
         }
 
-        public static void PSSetSamplers(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11SamplerState>[] samplerStates) => PSSetSamplers(context?.Object, startSlot, samplerStates.ToArrayNullify());
+        public static void PSSetSamplers(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11SamplerState>[] samplerStates) => PSSetSamplers(context?.Object, startSlot, samplerStates.ToArray());
         public static void PSSetSamplers(this ID3D11DeviceContext context, int startSlot, ID3D11SamplerState[] samplerStates)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (samplerStates == null)
-                throw new ArgumentNullException(nameof(samplerStates));
-
-            if (samplerStates.Length == 0)
-                throw new ArgumentException(null, nameof(samplerStates));
-
-            context.PSSetSamplers((uint)startSlot, samplerStates.Length, samplerStates);
+            context.PSSetSamplers((uint)startSlot, (samplerStates?.Length).GetValueOrDefault(), samplerStates);
         }
 
         public static void PSSetShaderResource(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView> shaderResourceView)
@@ -343,19 +451,13 @@ namespace DirectN
             context.Object.PSSetShaderResources((uint)startSlot, 1, new[] { shaderResourceView.Object });
         }
 
-        public static void PSSetShaderResources(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView>[] shaderResourceViews) => PSSetShaderResources(context?.Object, startSlot, shaderResourceViews.ToArrayNullify());
+        public static void PSSetShaderResources(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView>[] shaderResourceViews) => PSSetShaderResources(context?.Object, startSlot, shaderResourceViews?.ToArray());
         public static void PSSetShaderResources(this ID3D11DeviceContext context, int startSlot, ID3D11ShaderResourceView[] shaderResourceViews)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (shaderResourceViews == null)
-                throw new ArgumentNullException(nameof(shaderResourceViews));
-
-            if (shaderResourceViews.Length == 0)
-                throw new ArgumentException(null, nameof(shaderResourceViews));
-
-            context.PSSetShaderResources((uint)startSlot, shaderResourceViews.Length, shaderResourceViews);
+            context.PSSetShaderResources((uint)startSlot, (shaderResourceViews?.Length).GetValueOrDefault(), shaderResourceViews);
         }
 
         public static void OMSetRenderTarget(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11RenderTargetView> renderTargetView, IComObject<ID3D11DepthStencilView> depthStencilView = null)
@@ -375,14 +477,11 @@ namespace DirectN
             context.Object.OMSetRenderTargets(1, new[] { renderTargetView.Object }, depthStencilView?.Object);
         }
 
-        public static void OMSetRenderTargets(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11RenderTargetView>[] renderTargetViews, IComObject<ID3D11DepthStencilView> depthStencilView = null) => OMSetRenderTargets(context?.Object, renderTargetViews.ToArrayNullify(), depthStencilView?.Object);
+        public static void OMSetRenderTargets(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11RenderTargetView>[] renderTargetViews, IComObject<ID3D11DepthStencilView> depthStencilView = null) => OMSetRenderTargets(context?.Object, renderTargetViews.ToArray(), depthStencilView?.Object);
         public static void OMSetRenderTargets(this ID3D11DeviceContext context, ID3D11RenderTargetView[] renderTargetViews, ID3D11DepthStencilView depthStencilView = null)
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
-
-            if (renderTargetViews == null)
-                throw new ArgumentNullException(nameof(renderTargetViews));
 
             context.OMSetRenderTargets((renderTargetViews?.Length).GetValueOrDefault(), renderTargetViews, depthStencilView);
         }
@@ -393,9 +492,6 @@ namespace DirectN
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (depthStencilState == null)
-                throw new ArgumentNullException(nameof(depthStencilState));
-
             context.OMSetDepthStencilState(depthStencilState, (uint)stencilfRef);
         }
 
@@ -404,9 +500,6 @@ namespace DirectN
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
-
-            if (blendState == null)
-                throw new ArgumentNullException(nameof(blendState));
 
             context.OMSetBlendState(blendState, blendFactor, sampleMask);
         }
