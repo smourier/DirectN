@@ -69,6 +69,75 @@ namespace DirectN
             return new ComObject<ID3D11DepthStencilState>(state);
         }
 
+        public static IComObject<ID3D11DomainShader> CreateDomainShader(this IComObject<ID3D11Device> device, IComObject<ID3D10Blob> blob, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateDomainShader(device?.Object, blob?.Object, classLinkage?.Object);
+        public static IComObject<ID3D11DomainShader> CreateDomainShader(this ID3D11Device device, ID3D10Blob blob, ID3D11ClassLinkage classLinkage = null)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            if (blob == null)
+                throw new ArgumentNullException(nameof(blob));
+
+            device.CreateDomainShader(blob.GetBufferPointer(), blob.GetBufferSize(), classLinkage, out var shader).ThrowOnError();
+            return new ComObject<ID3D11DomainShader>(shader);
+        }
+
+        public static IComObject<ID3D11DomainShader> CreateDomainShader(this IComObject<ID3D11Device> device, IntPtr shaderBytecode, int bytecodeLength, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateDomainShader(device?.Object, shaderBytecode, bytecodeLength, classLinkage?.Object);
+        public static IComObject<ID3D11DomainShader> CreateDomainShader(this ID3D11Device device, IntPtr shaderBytecode, int bytecodeLength, ID3D11ClassLinkage classLinkage = null)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            device.CreateDomainShader(shaderBytecode, (IntPtr)bytecodeLength, classLinkage, out var shader).ThrowOnError();
+            return new ComObject<ID3D11DomainShader>(shader);
+        }
+
+        public static IComObject<ID3D11ComputeShader> CreateComputeShader(this IComObject<ID3D11Device> device, IComObject<ID3D10Blob> blob, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateComputeShader(device?.Object, blob?.Object, classLinkage?.Object);
+        public static IComObject<ID3D11ComputeShader> CreateComputeShader(this ID3D11Device device, ID3D10Blob blob, ID3D11ClassLinkage classLinkage = null)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            if (blob == null)
+                throw new ArgumentNullException(nameof(blob));
+
+            device.CreateComputeShader(blob.GetBufferPointer(), blob.GetBufferSize(), classLinkage, out var shader).ThrowOnError();
+            return new ComObject<ID3D11ComputeShader>(shader);
+        }
+
+        public static IComObject<ID3D11ComputeShader> CreateComputeShader(this IComObject<ID3D11Device> device, IntPtr shaderBytecode, int bytecodeLength, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateComputeShader(device?.Object, shaderBytecode, bytecodeLength, classLinkage?.Object);
+        public static IComObject<ID3D11ComputeShader> CreateComputeShader(this ID3D11Device device, IntPtr shaderBytecode, int bytecodeLength, ID3D11ClassLinkage classLinkage = null)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            device.CreateComputeShader(shaderBytecode, (IntPtr)bytecodeLength, classLinkage, out var shader).ThrowOnError();
+            return new ComObject<ID3D11ComputeShader>(shader);
+        }
+
+        public static IComObject<ID3D11HullShader> CreateHullShader(this IComObject<ID3D11Device> device, IComObject<ID3D10Blob> blob, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateHullShader(device?.Object, blob?.Object, classLinkage?.Object);
+        public static IComObject<ID3D11HullShader> CreateHullShader(this ID3D11Device device, ID3D10Blob blob, ID3D11ClassLinkage classLinkage = null)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            if (blob == null)
+                throw new ArgumentNullException(nameof(blob));
+
+            device.CreateHullShader(blob.GetBufferPointer(), blob.GetBufferSize(), classLinkage, out var shader).ThrowOnError();
+            return new ComObject<ID3D11HullShader>(shader);
+        }
+
+        public static IComObject<ID3D11HullShader> CreateHullShader(this IComObject<ID3D11Device> device, IntPtr shaderBytecode, int bytecodeLength, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateHullShader(device?.Object, shaderBytecode, bytecodeLength, classLinkage?.Object);
+        public static IComObject<ID3D11HullShader> CreateHullShader(this ID3D11Device device, IntPtr shaderBytecode, int bytecodeLength, ID3D11ClassLinkage classLinkage = null)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            device.CreateHullShader(shaderBytecode, (IntPtr)bytecodeLength, classLinkage, out var shader).ThrowOnError();
+            return new ComObject<ID3D11HullShader>(shader);
+        }
+
         public static IComObject<ID3D11PixelShader> CreatePixelShader(this IComObject<ID3D11Device> device, IComObject<ID3D10Blob> blob, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreatePixelShader(device?.Object, blob?.Object, classLinkage?.Object);
         public static IComObject<ID3D11PixelShader> CreatePixelShader(this ID3D11Device device, ID3D10Blob blob, ID3D11ClassLinkage classLinkage = null)
         {
@@ -90,6 +159,26 @@ namespace DirectN
 
             device.CreatePixelShader(shaderBytecode, (IntPtr)bytecodeLength, classLinkage, out var shader).ThrowOnError();
             return new ComObject<ID3D11PixelShader>(shader);
+        }
+
+        public static IComObject<ID3D11GeometryShader> CreateGeometryShader(this IComObject<ID3D11Device> device, IComObject<ID3D10Blob> blob, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateGeometryShader(device?.Object, blob?.Object, classLinkage?.Object);
+        public static IComObject<ID3D11GeometryShader> CreateGeometryShader(this ID3D11Device device, ID3D10Blob blob, ID3D11ClassLinkage classLinkage = null)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            device.CreateGeometryShader(blob.GetBufferPointer(), blob.GetBufferSize(), classLinkage, out var shader).ThrowOnError();
+            return new ComObject<ID3D11GeometryShader>(shader);
+        }
+
+        public static IComObject<ID3D11GeometryShader> CreateGeometryShader(this IComObject<ID3D11Device> device, IntPtr shaderBytecode, int bytecodeLength, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateGeometryShader(device?.Object, shaderBytecode, bytecodeLength, classLinkage?.Object);
+        public static IComObject<ID3D11GeometryShader> CreateGeometryShader(this ID3D11Device device, IntPtr shaderBytecode, int bytecodeLength, ID3D11ClassLinkage classLinkage = null)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            device.CreateGeometryShader(shaderBytecode, (IntPtr)bytecodeLength, classLinkage, out var shader).ThrowOnError();
+            return new ComObject<ID3D11GeometryShader>(shader);
         }
 
         public static IComObject<ID3D11VertexShader> CreateVertexShader(this IComObject<ID3D11Device> device, IComObject<ID3D10Blob> blob, IComObject<ID3D11ClassLinkage> classLinkage = null) => CreateVertexShader(device?.Object, blob?.Object, classLinkage?.Object);

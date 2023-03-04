@@ -76,6 +76,15 @@ namespace DirectN
             return new ComObject<ID3D11Device>(device);
         }
 
+        public static IComObject<ID3D10Blob> D3DReadFileToBlob(string filename)
+        {
+            if (filename == null)
+                throw new ArgumentNullException(nameof(filename));
+
+            D3DReadFileToBlob(filename, out var blob).ThrowOnError();
+            return new ComObject<ID3D10Blob>(blob);
+        }
+
         public static IComObject<ID3D10Blob> D3DCompileFromFile(string filename, string entrypoint, string target)
         {
             if (filename == null)
@@ -115,5 +124,8 @@ namespace DirectN
 
         [DllImport("D3DCompiler_47", ExactSpelling = true, CharSet = CharSet.Ansi)]
         public static extern HRESULT D3DCompileFromFile([MarshalAs(UnmanagedType.LPWStr)] string pFileName, _D3D_SHADER_MACRO[] pDefines, ID3DInclude pInclude, [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, [MarshalAs(UnmanagedType.LPStr)] string pTarget, uint Flags1, uint Flags2, out ID3D10Blob ppCode, out ID3D10Blob ppErrorMsgs);
+
+        [DllImport("D3DCompiler_47", ExactSpelling = true)]
+        public static extern HRESULT D3DReadFileToBlob([MarshalAs(UnmanagedType.LPWStr)] string pFileName, out ID3D10Blob ppContents);
     }
 }
