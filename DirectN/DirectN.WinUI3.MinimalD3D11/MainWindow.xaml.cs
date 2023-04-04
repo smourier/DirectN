@@ -183,8 +183,8 @@ namespace DirectN.WinUI3.MinimalD3D11
             _framebufferClear = new float[] { 0.025f, 0.025f, 0.025f, 1 };
 
             _framebufferVP = new D3D11_VIEWPORT();
-            _framebufferVP.Width = framebufferDepthDesc.Width;
-            _framebufferVP.Height = framebufferDepthDesc.Height;
+            _framebufferVP.Width = framebufferDepthDesc.Width / panel.CompositionScaleX;
+            _framebufferVP.Height = framebufferDepthDesc.Height / panel.CompositionScaleY;
             _framebufferVP.MaxDepth = 1;
 
             _shadowmapVP = new D3D11_VIEWPORT();
