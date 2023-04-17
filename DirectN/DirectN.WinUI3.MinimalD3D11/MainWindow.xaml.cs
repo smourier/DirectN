@@ -44,11 +44,27 @@ namespace DirectN.WinUI3.MinimalD3D11
 
             Closed += (s, e) => Dispose();
             panel.SizeChanged += OnSizeChanged;
+
+            if (Content is FrameworkElement fe)
+            {
+                // this whole convoluted thing is to detect dpi has changed...
+                fe.Loaded += (s, e) =>
+                {
+                    var scale = fe.XamlRoot.RasterizationScale;
+                    fe.XamlRoot.Changed += (s2, e2) =>
+                    {
+                        if (fe.XamlRoot.RasterizationScale != scale)
+                        {
+                            Dispose();
+                            Init();
+                        }
+                    };
+                };
+            }
         }
 
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
-            var window = AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(WindowNative.GetWindowHandle(this)));
             Dispose();
             Init();
         }
@@ -82,6 +98,11 @@ namespace DirectN.WinUI3.MinimalD3D11
 
             _swapChain = dxgiFactory.CreateSwapChainForComposition(dxgiDevice, swapChainDesc);
             using var framebufferTexture = _swapChain.GetBuffer<ID3D11Texture2D>(0);
+
+            var panelScaleTransform = new DXGI_MATRIX_3X2_F();
+            panelScaleTransform._11 = (float)(1 / Content.XamlRoot.RasterizationScale);
+            panelScaleTransform._22 = (float)(1 / Content.XamlRoot.RasterizationScale);
+            _swapChain.As<IDXGISwapChain2>()?.SetMatrixTransform(panelScaleTransform);
 
             var framebufferDesc = new D3D11_RENDER_TARGET_VIEW_DESC();
             framebufferDesc.Format = DXGI_FORMAT.DXGI_FORMAT_B8G8R8A8_UNORM_SRGB;
@@ -183,8 +204,8 @@ namespace DirectN.WinUI3.MinimalD3D11
             _framebufferClear = new float[] { 0.025f, 0.025f, 0.025f, 1 };
 
             _framebufferVP = new D3D11_VIEWPORT();
-            _framebufferVP.Width = framebufferDepthDesc.Width / panel.CompositionScaleX;
-            _framebufferVP.Height = framebufferDepthDesc.Height / panel.CompositionScaleY;
+            _framebufferVP.Width = framebufferDepthDesc.Width;
+            _framebufferVP.Height = framebufferDepthDesc.Height;
             _framebufferVP.MaxDepth = 1;
 
             _shadowmapVP = new D3D11_VIEWPORT();
