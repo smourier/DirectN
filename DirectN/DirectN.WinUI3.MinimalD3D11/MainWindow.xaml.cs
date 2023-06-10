@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
@@ -32,6 +33,8 @@ namespace DirectN.WinUI3.MinimalD3D11
         private D3D11_VIEWPORT _shadowmapVP;
         private D3D11_VIEWPORT _framebufferVP;
         private float[] _framebufferClear;
+        private bool _disposed;
+        private bool _rendering;
 
         public MainWindow()
         {
@@ -42,12 +45,13 @@ namespace DirectN.WinUI3.MinimalD3D11
             var size = 1000;
             window.Resize(new SizeInt32(size, size));
 
-            Closed += (s, e) => Dispose();
+            // we dispose on another thread or a lock will happen when closing under Visual Studio debugger for some reason... (doesn't happen under WinDbg)
+            Closed += (s, e) => Task.Run(Dispose);
             panel.SizeChanged += OnSizeChanged;
 
             if (Content is FrameworkElement fe)
             {
-                // this whole convoluted thing is to detect dpi has changed...
+                // this whole convoluted thing is just to detect dpi has changed...
                 fe.Loaded += (s, e) =>
                 {
                     var scale = fe.XamlRoot.RasterizationScale;
@@ -86,8 +90,8 @@ namespace DirectN.WinUI3.MinimalD3D11
             using var dxgiFactory = dxgiAdapter.GetFactory2();
 
             var swapChainDesc = new DXGI_SWAP_CHAIN_DESC1();
-            swapChainDesc.Width = (uint)window.Size.Width;
-            swapChainDesc.Height = (uint)window.Size.Height;
+            swapChainDesc.Width = (uint)panel.ActualWidth;
+            swapChainDesc.Height = (uint)panel.ActualHeight;
             swapChainDesc.Format = DXGI_FORMAT.DXGI_FORMAT_B8G8R8A8_UNORM;
             swapChainDesc.SampleDesc.Count = 1;
             swapChainDesc.BufferUsage = DirectN.Constants.DXGI_USAGE_RENDER_TARGET_OUTPUT;
@@ -225,57 +229,73 @@ namespace DirectN.WinUI3.MinimalD3D11
             var nativePanel = panel.As<ISwapChainPanelNative>();
             nativePanel.SetSwapChain(_swapChain.Object).ThrowOnError();
 
-            CompositionTarget.Rendering += (s, e) => Render();
+            _disposed = false;
+            CompositionTarget.Rendering += Render;
         }
 
-        private void Render()
+        private void Render(object sender, object e)
         {
-            _constants.ModelRotation.x += 0.001f;
-            _constants.ModelRotation.y += 0.005f;
-            _constants.ModelRotation.z += 0.003f;
+            if (_disposed)
+                return;
 
-            _deviceContext.WithMapCopyTo(_constantBuffer, 0, D3D11_MAP.D3D11_MAP_WRITE_DISCARD, _constants);
+            _rendering = true;
+            try
+            {
+                _constants.ModelRotation.x += 0.001f;
+                _constants.ModelRotation.y += 0.005f;
+                _constants.ModelRotation.z += 0.003f;
 
-            _deviceContext.ClearDepthStencilView(_shadowmapDSV, D3D11_CLEAR_FLAG.D3D11_CLEAR_DEPTH, 1.0f, 0);
+                _deviceContext.WithMapCopyTo(_constantBuffer, 0, D3D11_MAP.D3D11_MAP_WRITE_DISCARD, _constants);
 
-            _deviceContext.OMSetRenderTargets(null, _shadowmapDSV);
-            _deviceContext.OMSetDepthStencilState(_depthStencilState);
+                _deviceContext.ClearDepthStencilView(_shadowmapDSV, D3D11_CLEAR_FLAG.D3D11_CLEAR_DEPTH, 1.0f, 0);
 
-            _deviceContext.IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY.D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
+                _deviceContext.OMSetRenderTargets(null, _shadowmapDSV);
+                _deviceContext.OMSetDepthStencilState(_depthStencilState);
 
-            _deviceContext.VSSetConstantBuffers(0, new[] { _constantBuffer });
-            _deviceContext.VSSetShaderResources(0, new[] { _vertexBufferSRV });
-            _deviceContext.VSSetShader(_shadowmapVS);
+                _deviceContext.IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY.D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 
-            _deviceContext.RSSetViewports(new[] { _shadowmapVP });
-            _deviceContext.RSSetState(_cullFrontRS);
+                _deviceContext.VSSetConstantBuffers(0, new[] { _constantBuffer });
+                _deviceContext.VSSetShaderResources(0, new[] { _vertexBufferSRV });
+                _deviceContext.VSSetShader(_shadowmapVS);
 
-            _deviceContext.PSSetShader(null);
+                _deviceContext.RSSetViewports(new[] { _shadowmapVP });
+                _deviceContext.RSSetState(_cullFrontRS);
 
-            _deviceContext.DrawInstanced(8, 24, 0, 0);
+                _deviceContext.PSSetShader(null);
 
-            _deviceContext.ClearRenderTargetView(_framebufferRTV, _framebufferClear);
-            _deviceContext.ClearDepthStencilView(_framebufferDSV, D3D11_CLEAR_FLAG.D3D11_CLEAR_DEPTH, 1.0f, 0);
+                _deviceContext.DrawInstanced(8, 24, 0, 0);
 
-            _deviceContext.OMSetRenderTargets(new[] { _framebufferRTV }, _framebufferDSV);
+                _deviceContext.ClearRenderTargetView(_framebufferRTV, _framebufferClear);
+                _deviceContext.ClearDepthStencilView(_framebufferDSV, D3D11_CLEAR_FLAG.D3D11_CLEAR_DEPTH, 1.0f, 0);
 
-            _deviceContext.VSSetShader(_framebufferVS);
+                _deviceContext.OMSetRenderTargets(new[] { _framebufferRTV }, _framebufferDSV);
 
-            _deviceContext.RSSetViewports(new[] { _framebufferVP });
-            _deviceContext.RSSetState(_cullBackRS);
+                _deviceContext.VSSetShader(_framebufferVS);
 
-            _deviceContext.PSSetShaderResources(1, new[] { _shadowmapSRV });
-            _deviceContext.PSSetShader(_framebufferPS);
+                _deviceContext.RSSetViewports(new[] { _framebufferVP });
+                _deviceContext.RSSetState(_cullBackRS);
 
-            _deviceContext.DrawInstanced(8, 24, 0, 0);
+                _deviceContext.PSSetShaderResources(1, new[] { _shadowmapSRV });
+                _deviceContext.PSSetShader(_framebufferPS);
 
-            _deviceContext.PSSetShaderResources(1, new IComObject<ID3D11ShaderResourceView>[] { null });
+                _deviceContext.DrawInstanced(8, 24, 0, 0);
 
-            _swapChain.Present(1, 0);
+                _deviceContext.PSSetShaderResources(1, new IComObject<ID3D11ShaderResourceView>[] { null });
+
+                _swapChain.Present(1, 0);
+            }
+            finally
+            {
+                _rendering = false;
+            }
         }
 
         private void Dispose()
         {
+            _disposed = true;
+
+            // we want to dispose all objects as a whole
+            while (_rendering) { }
             _deviceContext?.Dispose();
             _swapChain?.Dispose();
             _framebufferRTV?.Dispose();
