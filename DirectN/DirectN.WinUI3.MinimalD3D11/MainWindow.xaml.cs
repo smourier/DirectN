@@ -2,13 +2,11 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
 using Windows.Graphics;
 using WinRT;
-using WinRT.Interop;
 
 namespace DirectN.WinUI3.MinimalD3D11
 {
@@ -41,9 +39,8 @@ namespace DirectN.WinUI3.MinimalD3D11
             InitializeComponent();
             Title = "minimal d3d11 pt3 by d7samurai - On WinUI3 and .NET 6.0";
 
-            var window = AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(WindowNative.GetWindowHandle(this)));
             var size = 1000;
-            window.Resize(new SizeInt32(size, size));
+            AppWindow.Resize(new SizeInt32(size, size));
 
             // we dispose on another thread or a lock will happen when closing under Visual Studio debugger for some reason... (doesn't happen under WinDbg)
             Closed += (s, e) => Task.Run(Dispose);
@@ -75,7 +72,6 @@ namespace DirectN.WinUI3.MinimalD3D11
 
         private void Init()
         {
-            var window = AppWindow.GetFromWindowId(Win32Interop.GetWindowIdFromWindow(WindowNative.GetWindowHandle(this)));
             // this code is ported from https://gist.github.com/d7samurai/abab8a580d0298cb2f34a44eec41d39d
             // with slight changes to use CreateSwapChainForComposition to accomodate with WinUI3's SwapChainPanel
             var flags = D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_BGRA_SUPPORT;
