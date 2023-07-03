@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d10.h(5046,5)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\d3d10.h(5046,5)
 using System;
 using System.Runtime.InteropServices;
 
@@ -116,34 +116,34 @@ namespace DirectN
         void ResolveSubresource(/* [annotation] _In_ */ ID3D10Resource pDstResource, /* [annotation] _In_ */ uint DstSubresource, /* [annotation] _In_ */ ID3D10Resource pSrcResource, /* [annotation] _In_ */ uint SrcSubresource, /* [annotation] _In_ */ DXGI_FORMAT Format);
         
         [PreserveSig]
-        void VSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D10Buffer) */ out IntPtr ppConstantBuffers);
+        void VSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D10Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
-        void PSGetShaderResources(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D10ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void PSGetShaderResources(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D10ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
         void PSGetShader(/* [annotation] _Out_ */ out ID3D10PixelShader ppPixelShader);
         
         [PreserveSig]
-        void PSGetSamplers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D10SamplerState) */ out IntPtr ppSamplers);
+        void PSGetSamplers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D10SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
         void VSGetShader(/* [annotation] _Out_ */ out ID3D10VertexShader ppVertexShader);
         
         [PreserveSig]
-        void PSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D10Buffer) */ out IntPtr ppConstantBuffers);
+        void PSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D10Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
         void IAGetInputLayout(/* [annotation] _Out_ */ out ID3D10InputLayout ppInputLayout);
         
         [PreserveSig]
-        void IAGetVertexBuffers(/* [annotation] _In_range_( 0, D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ int NumBuffers, /* optional(ID3D10Buffer) */ out IntPtr ppVertexBuffers, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pStrides, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pOffsets);
+        void IAGetVertexBuffers(/* [annotation] _In_range_( 0, D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ int NumBuffers, /* optional(ID3D10Buffer) */ IntPtr ppVertexBuffers, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pStrides, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pOffsets);
         
         [PreserveSig]
         void IAGetIndexBuffer(/* [annotation] _Out_opt_ */ out ID3D10Buffer pIndexBuffer, /* optional(DXGI_FORMAT) */ IntPtr Format, /* optional(UINT) */ IntPtr Offset);
         
         [PreserveSig]
-        void GSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D10Buffer) */ out IntPtr ppConstantBuffers);
+        void GSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D10Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
         void GSGetShader(/* [annotation] _Out_ */ out ID3D10GeometryShader ppGeometryShader);
@@ -152,22 +152,22 @@ namespace DirectN
         void IAGetPrimitiveTopology(/* [annotation] _Out_ */ out D3D_PRIMITIVE_TOPOLOGY pTopology);
         
         [PreserveSig]
-        void VSGetShaderResources(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D10ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void VSGetShaderResources(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D10ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
-        void VSGetSamplers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D10SamplerState) */ out IntPtr ppSamplers);
+        void VSGetSamplers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D10SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
         void GetPredication(/* [annotation] _Out_opt_ */ out ID3D10Predicate ppPredicate, /* optional(BOOL) */ IntPtr pPredicateValue);
         
         [PreserveSig]
-        void GSGetShaderResources(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D10ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void GSGetShaderResources(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D10ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
-        void GSGetSamplers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D10SamplerState) */ out IntPtr ppSamplers);
+        void GSGetSamplers(/* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D10SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
-        void OMGetRenderTargets(/* [annotation] _In_range_( 0, D3D10_SIMULTANEOUS_RENDER_TARGET_COUNT ) */ uint NumViews, /* optional(ID3D10RenderTargetView) */ out IntPtr ppRenderTargetViews, /* [annotation] _Out_opt_ */ out ID3D10DepthStencilView ppDepthStencilView);
+        void OMGetRenderTargets(/* [annotation] _In_range_( 0, D3D10_SIMULTANEOUS_RENDER_TARGET_COUNT ) */ uint NumViews, /* optional(ID3D10RenderTargetView) */ IntPtr ppRenderTargetViews, /* [annotation] _Out_opt_ */ out ID3D10DepthStencilView ppDepthStencilView);
         
         [PreserveSig]
         void OMGetBlendState(/* [annotation] _Out_opt_ */ out ID3D10BlendState ppBlendState, /* [annotation] _Out_opt_ */ [In, Out, MarshalAs(UnmanagedType.LPArray)] float[] BlendFactor, /* optional(UINT) */ IntPtr pSampleMask);
@@ -176,7 +176,7 @@ namespace DirectN
         void OMGetDepthStencilState(/* [annotation] _Out_opt_ */ out ID3D10DepthStencilState ppDepthStencilState, /* optional(UINT) */ IntPtr pStencilRef);
         
         [PreserveSig]
-        void SOGetTargets(/* [annotation] _In_range_( 0, D3D10_SO_BUFFER_SLOT_COUNT ) */ int NumBuffers, /* optional(ID3D10Buffer) */ out IntPtr ppSOTargets, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pOffsets);
+        void SOGetTargets(/* [annotation] _In_range_( 0, D3D10_SO_BUFFER_SLOT_COUNT ) */ int NumBuffers, /* optional(ID3D10Buffer) */ IntPtr ppSOTargets, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pOffsets);
         
         [PreserveSig]
         void RSGetState(/* [annotation] _Out_ */ out ID3D10RasterizerState ppRasterizerState);

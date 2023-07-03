@@ -217,61 +217,61 @@ namespace DirectN
         void CSSetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ int NumBuffers, /* [annotation] _In_reads_opt_(NumBuffers) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] ID3D11Buffer[] ppConstantBuffers);
         
         [PreserveSig]
-        void VSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ out IntPtr ppConstantBuffers);
+        void VSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
-        void PSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void PSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
-        void PSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11PixelShader ppPixelShader, /* optional(ID3D11ClassInstance) */ out IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
+        void PSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11PixelShader ppPixelShader, /* optional(ID3D11ClassInstance) */ IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
         
         [PreserveSig]
-        void PSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ out IntPtr ppSamplers);
+        void PSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
-        void VSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11VertexShader ppVertexShader, /* optional(ID3D11ClassInstance) */ out IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
+        void VSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11VertexShader ppVertexShader, /* optional(ID3D11ClassInstance) */ IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
         
         [PreserveSig]
-        void PSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ out IntPtr ppConstantBuffers);
+        void PSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
         void IAGetInputLayout(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11InputLayout ppInputLayout);
         
         [PreserveSig]
-        void IAGetVertexBuffers(/* [annotation] _In_range_( 0, D3D11_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ int NumBuffers, /* optional(ID3D11Buffer) */ out IntPtr ppVertexBuffers, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pStrides, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pOffsets);
+        void IAGetVertexBuffers(/* [annotation] _In_range_( 0, D3D11_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ int NumBuffers, /* optional(ID3D11Buffer) */ IntPtr ppVertexBuffers, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pStrides, /* [annotation] _Out_writes_opt_(NumBuffers) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] pOffsets);
         
         [PreserveSig]
         void IAGetIndexBuffer(/* [annotation] _Outptr_opt_result_maybenull_ */ out ID3D11Buffer pIndexBuffer, /* optional(DXGI_FORMAT) */ IntPtr Format, /* optional(UINT) */ IntPtr Offset);
         
         [PreserveSig]
-        void GSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ out IntPtr ppConstantBuffers);
+        void GSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
-        void GSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11GeometryShader ppGeometryShader, /* optional(ID3D11ClassInstance) */ out IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
+        void GSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11GeometryShader ppGeometryShader, /* optional(ID3D11ClassInstance) */ IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
         
         [PreserveSig]
         void IAGetPrimitiveTopology(/* [annotation] _Out_ */ out D3D_PRIMITIVE_TOPOLOGY pTopology);
         
         [PreserveSig]
-        void VSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void VSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
-        void VSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ out IntPtr ppSamplers);
+        void VSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
         void GetPredication(/* [annotation] _Outptr_opt_result_maybenull_ */ out ID3D11Predicate ppPredicate, /* optional(BOOL) */ IntPtr pPredicateValue);
         
         [PreserveSig]
-        void GSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void GSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
-        void GSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ out IntPtr ppSamplers);
+        void GSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
-        void OMGetRenderTargets(/* [annotation] _In_range_( 0, D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT ) */ uint NumViews, /* optional(ID3D11RenderTargetView) */ out IntPtr ppRenderTargetViews, /* [annotation] _Outptr_opt_result_maybenull_ */ out ID3D11DepthStencilView ppDepthStencilView);
+        void OMGetRenderTargets(/* [annotation] _In_range_( 0, D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT ) */ uint NumViews, /* optional(ID3D11RenderTargetView) */ IntPtr ppRenderTargetViews, /* [annotation] _Outptr_opt_result_maybenull_ */ out ID3D11DepthStencilView ppDepthStencilView);
         
         [PreserveSig]
-        void OMGetRenderTargetsAndUnorderedAccessViews(/* [annotation] _In_range_( 0, D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT ) */ uint NumRTVs, /* optional(ID3D11RenderTargetView) */ out IntPtr ppRenderTargetViews, /* [annotation] _Outptr_opt_result_maybenull_ */ out ID3D11DepthStencilView ppDepthStencilView, /* [annotation] _In_range_( 0, D3D11_PS_CS_UAV_REGISTER_COUNT - 1 ) */ uint UAVStartSlot, /* [annotation] _In_range_( 0, D3D11_PS_CS_UAV_REGISTER_COUNT - UAVStartSlot ) */ uint NumUAVs, /* optional(ID3D11UnorderedAccessView) */ out IntPtr ppUnorderedAccessViews);
+        void OMGetRenderTargetsAndUnorderedAccessViews(/* [annotation] _In_range_( 0, D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT ) */ uint NumRTVs, /* optional(ID3D11RenderTargetView) */ IntPtr ppRenderTargetViews, /* [annotation] _Outptr_opt_result_maybenull_ */ out ID3D11DepthStencilView ppDepthStencilView, /* [annotation] _In_range_( 0, D3D11_PS_CS_UAV_REGISTER_COUNT - 1 ) */ uint UAVStartSlot, /* [annotation] _In_range_( 0, D3D11_PS_CS_UAV_REGISTER_COUNT - UAVStartSlot ) */ uint NumUAVs, /* optional(ID3D11UnorderedAccessView) */ IntPtr ppUnorderedAccessViews);
         
         [PreserveSig]
         void OMGetBlendState(/* [annotation] _Outptr_opt_result_maybenull_ */ out ID3D11BlendState ppBlendState, /* [annotation] _Out_opt_ */ [In, Out, MarshalAs(UnmanagedType.LPArray)] float[] BlendFactor, /* optional(UINT) */ IntPtr pSampleMask);
@@ -280,7 +280,7 @@ namespace DirectN
         void OMGetDepthStencilState(/* [annotation] _Outptr_opt_result_maybenull_ */ out ID3D11DepthStencilState ppDepthStencilState, /* optional(UINT) */ IntPtr pStencilRef);
         
         [PreserveSig]
-        void SOGetTargets(/* [annotation] _In_range_( 0, D3D11_SO_BUFFER_SLOT_COUNT ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ out IntPtr ppSOTargets);
+        void SOGetTargets(/* [annotation] _In_range_( 0, D3D11_SO_BUFFER_SLOT_COUNT ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ IntPtr ppSOTargets);
         
         [PreserveSig]
         void RSGetState(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11RasterizerState ppRasterizerState);
@@ -292,43 +292,43 @@ namespace DirectN
         void RSGetScissorRects(/* [annotation] _Inout_ _range(0, D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE ) */ ref int pNumRects, /* [annotation] _Out_writes_opt_(*pNumRects) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagRECT[] pRects);
         
         [PreserveSig]
-        void HSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void HSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
-        void HSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11HullShader ppHullShader, /* optional(ID3D11ClassInstance) */ out IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
+        void HSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11HullShader ppHullShader, /* optional(ID3D11ClassInstance) */ IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
         
         [PreserveSig]
-        void HSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ out IntPtr ppSamplers);
+        void HSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
-        void HSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ out IntPtr ppConstantBuffers);
+        void HSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
-        void DSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void DSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
-        void DSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11DomainShader ppDomainShader, /* optional(ID3D11ClassInstance) */ out IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
+        void DSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11DomainShader ppDomainShader, /* optional(ID3D11ClassInstance) */ IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
         
         [PreserveSig]
-        void DSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ out IntPtr ppSamplers);
+        void DSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
-        void DSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ out IntPtr ppConstantBuffers);
+        void DSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
-        void CSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ out IntPtr ppShaderResourceViews);
+        void CSGetShaderResources(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT - StartSlot ) */ uint NumViews, /* optional(ID3D11ShaderResourceView) */ IntPtr ppShaderResourceViews);
         
         [PreserveSig]
-        void CSGetUnorderedAccessViews(/* [annotation] _In_range_( 0, D3D11_1_UAV_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_1_UAV_SLOT_COUNT - StartSlot ) */ uint NumUAVs, /* optional(ID3D11UnorderedAccessView) */ out IntPtr ppUnorderedAccessViews);
+        void CSGetUnorderedAccessViews(/* [annotation] _In_range_( 0, D3D11_1_UAV_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_1_UAV_SLOT_COUNT - StartSlot ) */ uint NumUAVs, /* optional(ID3D11UnorderedAccessView) */ IntPtr ppUnorderedAccessViews);
         
         [PreserveSig]
-        void CSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11ComputeShader ppComputeShader, /* optional(ID3D11ClassInstance) */ out IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
+        void CSGetShader(/* [annotation] _Outptr_result_maybenull_ */ out ID3D11ComputeShader ppComputeShader, /* optional(ID3D11ClassInstance) */ IntPtr ppClassInstances, /* optional(UINT) */ IntPtr pNumClassInstances);
         
         [PreserveSig]
-        void CSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ out IntPtr ppSamplers);
+        void CSGetSamplers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT - StartSlot ) */ uint NumSamplers, /* optional(ID3D11SamplerState) */ IntPtr ppSamplers);
         
         [PreserveSig]
-        void CSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ out IntPtr ppConstantBuffers);
+        void CSGetConstantBuffers(/* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - 1 ) */ uint StartSlot, /* [annotation] _In_range_( 0, D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT - StartSlot ) */ uint NumBuffers, /* optional(ID3D11Buffer) */ IntPtr ppConstantBuffers);
         
         [PreserveSig]
         void ClearState();

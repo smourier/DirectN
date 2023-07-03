@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmdt.h(1555,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dkmdt.h(1555,9)
 namespace DirectN
 {
     public enum _DXGKMDT_OPM_BUS_TYPE_AND_IMPLEMENTATION

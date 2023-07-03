@@ -62,6 +62,6 @@ namespace DirectN
         uint GetSourceGeometryCount();
         
         [PreserveSig]
-        void GetSourceGeometries(/* _Out_writes_(geometriesCount) */ out IntPtr geometries, uint geometriesCount);
+        void GetSourceGeometries(/* _Out_writes_(geometriesCount) */ IntPtr geometries, uint geometriesCount);
     }
 }

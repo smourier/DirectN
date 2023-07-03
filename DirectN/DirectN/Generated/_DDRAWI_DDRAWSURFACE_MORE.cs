@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ddrawi.h(1439,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\ddrawi.h(1439,9)
 using System;
 using System.Runtime.InteropServices;
 using LPDDRAWI_DDRAWCLIPPER_INT = DirectN._DDRAWI_DDRAWCLIPPER_INT;

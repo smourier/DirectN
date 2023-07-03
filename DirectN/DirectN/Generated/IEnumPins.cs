@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IEnumPins
     {
         [PreserveSig]
-        HRESULT Next(/* [in] */ uint cPins, /* [annotation][size_is][out] _Out_writes_to_(cPins, *pcFetched) */ out IntPtr ppPins, /* optional(ULONG) */ IntPtr pcFetched);
+        HRESULT Next(/* [in] */ uint cPins, /* [annotation][size_is][out] _Out_writes_to_(cPins, *pcFetched) */ IntPtr ppPins, /* optional(ULONG) */ IntPtr pcFetched);
         
         [PreserveSig]
         HRESULT Skip(/* [in] */ uint cPins);

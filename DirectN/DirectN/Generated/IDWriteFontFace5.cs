@@ -13,7 +13,7 @@ namespace DirectN
         new DWRITE_FONT_FACE_TYPE GetType();
         
         [PreserveSig]
-        new HRESULT GetFiles(/* _Inout_ */ ref uint numberOfFiles, /* optional(IDWriteFontFile) */ out IntPtr fontFiles);
+        new HRESULT GetFiles(/* _Inout_ */ ref uint numberOfFiles, /* optional(IDWriteFontFile) */ IntPtr fontFiles);
         
         [PreserveSig]
         new uint GetIndex();

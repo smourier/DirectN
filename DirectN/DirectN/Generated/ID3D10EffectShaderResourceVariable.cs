@@ -94,6 +94,6 @@ namespace DirectN
         HRESULT SetResourceArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID3D10ShaderResourceView[] ppResources, uint Offset, int Count);
         
         [PreserveSig]
-        HRESULT GetResourceArray(/* THIS_ _Out_writes_(Count) */ out IntPtr ppResources, uint Offset, uint Count);
+        HRESULT GetResourceArray(/* THIS_ _Out_writes_(Count) */ IntPtr ppResources, uint Offset, uint Count);
     }
 }

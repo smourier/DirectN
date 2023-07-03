@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IDXVAHD_Device
     {
         [PreserveSig]
-        HRESULT CreateVideoSurface(/* [annotation][in] _In_ */ uint Width, /* [annotation][in] _In_ */ uint Height, /* [annotation][in] _In_ */ int Format, /* [annotation][in] _In_ */ int Pool, /* [annotation][in] _In_ */ uint Usage, /* [annotation][in] _In_ */ _DXVAHD_SURFACE_TYPE Type, /* [annotation][in] _In_ */ uint NumSurfaces, /* [annotation][size_is][out] _Out_writes_(NumSurfaces) */ out IntPtr ppSurfaces, /* optional(HANDLE) */ IntPtr pSharedHandle);
+        HRESULT CreateVideoSurface(/* [annotation][in] _In_ */ uint Width, /* [annotation][in] _In_ */ uint Height, /* [annotation][in] _In_ */ int Format, /* [annotation][in] _In_ */ int Pool, /* [annotation][in] _In_ */ uint Usage, /* [annotation][in] _In_ */ _DXVAHD_SURFACE_TYPE Type, /* [annotation][in] _In_ */ uint NumSurfaces, /* [annotation][size_is][out] _Out_writes_(NumSurfaces) */ IntPtr ppSurfaces, /* optional(HANDLE) */ IntPtr pSharedHandle);
         
         [PreserveSig]
         HRESULT GetVideoProcessorDeviceCaps(/* [annotation][out] _Out_ */ out _DXVAHD_VPDEVCAPS pCaps);

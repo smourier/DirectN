@@ -94,6 +94,6 @@ namespace DirectN
         HRESULT SetRenderTargetArray(/* THIS_ _In_reads_(Count) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] ID3D10RenderTargetView[] ppResources, uint Offset, int Count);
         
         [PreserveSig]
-        HRESULT GetRenderTargetArray(/* THIS_ _Out_writes_(Count) */ out IntPtr ppResources, uint Offset, uint Count);
+        HRESULT GetRenderTargetArray(/* THIS_ _Out_writes_(Count) */ IntPtr ppResources, uint Offset, uint Count);
     }
 }

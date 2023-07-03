@@ -38,7 +38,7 @@ namespace DirectN
         HRESULT EnumMediaTypes(/* [annotation][out] _Out_ */ out IEnumMediaTypes ppEnum);
         
         [PreserveSig]
-        HRESULT QueryInternalConnections(/* optional(IPin) */ out IntPtr apPin, /* [out][in] */ ref uint nPin);
+        HRESULT QueryInternalConnections(/* optional(IPin) */ IntPtr apPin, /* [out][in] */ ref uint nPin);
         
         [PreserveSig]
         HRESULT EndOfStream();

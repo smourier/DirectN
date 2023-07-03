@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dukmdt.h(1827,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dukmdt.h(1959,9)
 namespace DirectN
 {
     public enum _D3DDDI_QUERYREGISTRY_STATUS

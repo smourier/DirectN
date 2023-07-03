@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d10.h(4215,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\d3d10.h(4215,1)
 using System;
 
 namespace DirectN

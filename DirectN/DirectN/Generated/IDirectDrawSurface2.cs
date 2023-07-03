@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ddraw.h(1570,1)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\ddraw.h(1570,1)
 using System;
 using System.Runtime.InteropServices;
 using LPDDSURFACEDESC = DirectN._DDSURFACEDESC;

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(1117,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dkmthk.h(1211,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -20,6 +20,7 @@ namespace DirectN
         public uint HDRMetaDataValid { get => InteropRuntime.GetUInt32(__bits, 7, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 7, 1); } }
         public uint HMD { get => InteropRuntime.GetUInt32(__bits, 8, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 8, 1); } }
         public uint TrueImmediate { get => InteropRuntime.GetUInt32(__bits, 9, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 9, 1); } }
-        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 10, 22); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 10, 22); } }
+        public uint FromDDisplay { get => InteropRuntime.GetUInt32(__bits, 10, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 10, 1); } }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 11, 21); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 11, 21); } }
     }
 }

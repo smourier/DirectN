@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct DXGIDDI_MULTIPLANE_OVERLAY_ALLOCATION_INFO
     {
-        public uint PresentAllocation;
+        public int PresentAllocation;
         public uint SubResourceIndex;
     }
 }

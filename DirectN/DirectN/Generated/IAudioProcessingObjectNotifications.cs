@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IAudioProcessingObjectNotifications
     {
         [PreserveSig]
-        HRESULT GetApoNotificationRegistrationInfo(/* [annotation][out] _Out_writes_(*count) */ out IntPtr apoNotifications, /* [annotation][out] _Out_ */ out uint count);
+        HRESULT GetApoNotificationRegistrationInfo(/* [annotation][out] _Out_writes_(*count) */ IntPtr apoNotifications, /* [annotation][out] _Out_ */ out uint count);
         
         [PreserveSig]
         void HandleNotification(/* [annotation][in] _In_ */ ref APO_NOTIFICATION apoNotification);

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dukmdt.h(1663,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dukmdt.h(1744,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -19,7 +19,8 @@ namespace DirectN
         public uint NoSignalMaxValueOnTdr { get => InteropRuntime.GetUInt32(__bits, 6, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 6, 1); } }
         public uint NoGPUAccess { get => InteropRuntime.GetUInt32(__bits, 7, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 7, 1); } }
         public uint SignalByKmd { get => InteropRuntime.GetUInt32(__bits, 8, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 8, 1); } }
-        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 9, 22); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 9, 22); } }
+        public uint LocalMemoryPreferred { get => InteropRuntime.GetUInt32(__bits, 9, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 9, 1); } }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 10, 21); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 10, 21); } }
         public uint Reserved0 { get => InteropRuntime.GetUInt32(__bits, 31, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 31, 1); } }
     }
 }

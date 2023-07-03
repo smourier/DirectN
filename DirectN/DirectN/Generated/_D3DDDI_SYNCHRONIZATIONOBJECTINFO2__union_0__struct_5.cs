@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dukmdt.h(1760,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dukmdt.h(1853,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -13,5 +13,6 @@ namespace DirectN
         public IntPtr FenceValueCPUVirtualAddress;
         public ulong FenceValueGPUVirtualAddress;
         public uint EngineAffinity;
+        public uint Padding;
     }
 }

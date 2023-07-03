@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\ksmedia.h(8090,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\ksmedia.h(8186,9)
 namespace DirectN
 {
     public enum KSPROPERTY_AUDIOENGINE
@@ -12,5 +12,6 @@ namespace DirectN
         KSPROPERTY_AUDIOENGINE_BUFFER_SIZE_RANGE = 7,
         KSPROPERTY_AUDIOENGINE_LOOPBACK_PROTECTION = 8,
         KSPROPERTY_AUDIOENGINE_VOLUMELEVEL = 9,
+        KSPROPERTY_AUDIOENGINE_DEVICECONTROLS = 10,
     }
 }

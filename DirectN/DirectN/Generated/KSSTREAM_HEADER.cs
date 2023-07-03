@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\ks.h(2058,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\ks.h(2072,9)
 using System;
 using System.Runtime.InteropServices;
 

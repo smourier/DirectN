@@ -10,7 +10,7 @@ namespace DirectN
     {
         public _DXGK_SEGMENTFLAGS2 Flags;
         public IntPtr Size;
-        public IntPtr pMdl;
+        public int pMdl;
         public PHYSICAL_ADDRESS BaseAddress;
         public PHYSICAL_ADDRESS CpuTranslatedAddress;
     }

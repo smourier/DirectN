@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(2132,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dkmthk.h(2262,9)
 namespace DirectN
 {
     public enum _KMTQUERYADAPTERINFOTYPE
@@ -80,5 +80,8 @@ namespace DirectN
         KMTQAITYPE_WDDM_2_9_CAPS = 75,
         KMTQAITYPE_CROSSADAPTERRESOURCE_SUPPORT = 76,
         KMTQAITYPE_WDDM_3_0_CAPS = 77,
+        KMTQAITYPE_WSAUMDIMAGENAME = 78,
+        KMTQAITYPE_VGPUINTERFACEID = 79,
+        KMTQAITYPE_WDDM_3_1_CAPS = 80,
     }
 }

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dukmdt.h(166,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dukmdt.h(220,9)
 namespace DirectN
 {
     public enum _DXGKVGPU_ESCAPE_TYPE
@@ -9,5 +9,7 @@ namespace DirectN
         DXGKVGPU_ESCAPE_TYPE_RELEASE = 3,
         DXGKVGPU_ESCAPE_TYPE_GET_VGPU_TYPE = 4,
         DXGKVGPU_ESCAPE_TYPE_POWERTRANSITIONCOMPLETE = 5,
+        DXGKVGPU_ESCAPE_TYPE_PAUSE = 6,
+        DXGKVGPU_ESCAPE_TYPE_RESUME = 7,
     }
 }

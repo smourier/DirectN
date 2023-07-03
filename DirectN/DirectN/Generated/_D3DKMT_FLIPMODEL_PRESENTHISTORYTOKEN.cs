@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(564,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dkmthk.h(584,9)
 using System;
 using System.Runtime.InteropServices;
 using LUID = DirectN._LUID;
@@ -10,7 +10,7 @@ namespace DirectN
     {
         public ulong FenceValue;
         public ulong hLogicalSurface;
-        public IntPtr dxgContext;
+        public ulong dxgContext;
         public uint VidPnSourceId;
         public uint SwapChainIndex;
         public ulong PresentLimitSemaphoreId;

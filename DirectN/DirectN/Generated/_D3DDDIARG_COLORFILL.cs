@@ -10,7 +10,7 @@ namespace DirectN
         public IntPtr hResource;
         public uint SubResourceIndex;
         public tagRECT DstRect;
-        public uint Color;
+        public int Color;
         public _D3DDDI_COLORFILLFLAGS Flags;
     }
 }

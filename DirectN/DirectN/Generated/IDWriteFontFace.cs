@@ -15,7 +15,7 @@ namespace DirectN
         DWRITE_FONT_FACE_TYPE GetType();
         
         [PreserveSig]
-        HRESULT GetFiles(/* _Inout_ */ ref uint numberOfFiles, /* optional(IDWriteFontFile) */ out IntPtr fontFiles);
+        HRESULT GetFiles(/* _Inout_ */ ref uint numberOfFiles, /* optional(IDWriteFontFile) */ IntPtr fontFiles);
         
         [PreserveSig]
         uint GetIndex();

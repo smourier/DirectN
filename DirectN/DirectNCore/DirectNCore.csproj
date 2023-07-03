@@ -8,15 +8,15 @@
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
     <Copyright>Copyright © 2017-2023 Simon Mourier. All rights reserved.</Copyright>
-    <FileVersion>1.13.0.1</FileVersion>
+    <FileVersion>1.13.2.0</FileVersion>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.13.1.0</Version>
+    <Version>1.13.2.0</Version>
     <RootNamespace>DirectN</RootNamespace>
-    <AssemblyVersion>1.13.0.2</AssemblyVersion>
+    <AssemblyVersion>1.13.2.0</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
 
@@ -116,6 +116,73 @@
     <Compile Include="..\DirectN\Extensions\WindowsConstants.cs" Link="Extensions\WindowsConstants.cs" />
     <Compile Include="..\DirectN\Extensions\WindowsFunctions.cs" Link="Extensions\WindowsFunctions.cs" />
     <Compile Include="..\DirectN\Extensions\WindowsVersionUtilities.cs" Link="Extensions\WindowsVersionUtilities.cs" />
+    <Compile Include="..\DirectN\Generated\eDeviceControlUse.cs" Link="Generated\eDeviceControlUse.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_CREATENATIVEFENCEINFO.cs" Link="Generated\_D3DDDI_CREATENATIVEFENCEINFO.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_DOORBELLSTATUS.cs" Link="Generated\_D3DDDI_DOORBELLSTATUS.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_NATIVEFENCEMAPPING.cs" Link="Generated\_D3DDDI_NATIVEFENCEMAPPING.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CONNECT_DOORBELL.cs" Link="Generated\_D3DKMT_CONNECT_DOORBELL.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CONNECT_DOORBELL_FLAGS.cs" Link="Generated\_D3DKMT_CONNECT_DOORBELL_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CONNECT_DOORBELL_FLAGS__union_0.cs" Link="Generated\_D3DKMT_CONNECT_DOORBELL_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CONNECT_DOORBELL_FLAGS__union_0__struct_0.cs" Link="Generated\_D3DKMT_CONNECT_DOORBELL_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATENATIVEFENCE.cs" Link="Generated\_D3DKMT_CREATENATIVEFENCE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATESYNCFILE.cs" Link="Generated\_D3DKMT_CREATESYNCFILE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATE_DOORBELL.cs" Link="Generated\_D3DKMT_CREATE_DOORBELL.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATE_DOORBELL_FLAGS.cs" Link="Generated\_D3DKMT_CREATE_DOORBELL_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATE_DOORBELL_FLAGS__union_0.cs" Link="Generated\_D3DKMT_CREATE_DOORBELL_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATE_DOORBELL_FLAGS__union_0__struct_0.cs" Link="Generated\_D3DKMT_CREATE_DOORBELL_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_DESTROY_DOORBELL.cs" Link="Generated\_D3DKMT_DESTROY_DOORBELL.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_NOTIFY_WORK_SUBMISSION.cs" Link="Generated\_D3DKMT_NOTIFY_WORK_SUBMISSION.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_NOTIFY_WORK_SUBMISSION_FLAGS.cs" Link="Generated\_D3DKMT_NOTIFY_WORK_SUBMISSION_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_NOTIFY_WORK_SUBMISSION_FLAGS__union_0.cs" Link="Generated\_D3DKMT_NOTIFY_WORK_SUBMISSION_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_NOTIFY_WORK_SUBMISSION_FLAGS__union_0__struct_0.cs" Link="Generated\_D3DKMT_NOTIFY_WORK_SUBMISSION_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_MEMORY_USAGE.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_MEMORY_USAGE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_QUERY_ADAPTER2.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_QUERY_ADAPTER2.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_QUERY_ADAPTER_INFORMATION2.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_QUERY_ADAPTER_INFORMATION2.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_QUERY_NODE2.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_QUERY_NODE2.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_QUERY_PROCESS_SEGMENT_GROUP2.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_QUERY_PROCESS_SEGMENT_GROUP2.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_QUERY_SEGMENT2.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_QUERY_SEGMENT2.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_QUERY_SEGMENT_GROUP_USAGE.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_QUERY_SEGMENT_GROUP_USAGE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_QUERY_SEGMENT_USAGE.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_QUERY_SEGMENT_USAGE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_QUERYSTATISTICS_SEGMENT_TYPE.cs" Link="Generated\_D3DKMT_QUERYSTATISTICS_SEGMENT_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_SHAREOBJECTWITHHOST.cs" Link="Generated\_D3DKMT_SHAREOBJECTWITHHOST.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_VGPUINTERFACEID.cs" Link="Generated\_D3DKMT_VGPUINTERFACEID.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_WDDM_3_1_CAPS.cs" Link="Generated\_D3DKMT_WDDM_3_1_CAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_WDDM_3_1_CAPS__union_0.cs" Link="Generated\_D3DKMT_WDDM_3_1_CAPS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_WDDM_3_1_CAPS__union_0__struct_0.cs" Link="Generated\_D3DKMT_WDDM_3_1_CAPS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKVGPU_ESCAPE_PAUSE.cs" Link="Generated\_DXGKVGPU_ESCAPE_PAUSE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKVGPU_ESCAPE_PAUSE__union_0.cs" Link="Generated\_DXGKVGPU_ESCAPE_PAUSE__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKVGPU_ESCAPE_PAUSE__union_0__struct_0.cs" Link="Generated\_DXGKVGPU_ESCAPE_PAUSE__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKVGPU_ESCAPE_RESUME.cs" Link="Generated\_DXGKVGPU_ESCAPE_RESUME.cs" />
+    <Compile Include="..\DirectN\Generated\_tagKSAUDIOENGINE_DEVICECONTROLS.cs" Link="Generated\_tagKSAUDIOENGINE_DEVICECONTROLS.cs" />
+    <Compile Include="..\DirectN\Generated\_tagKSJACK_DESCRIPTION3.cs" Link="Generated\_tagKSJACK_DESCRIPTION3.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1042__union_0.cs" Link="Generated\__struct_ksmedia_1042__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1051__union_0.cs" Link="Generated\__struct_ksmedia_1051__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1054__union_0.cs" Link="Generated\__struct_ksmedia_1054__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1054__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_1054__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1054__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_1054__union_0__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1124__union_0.cs" Link="Generated\__struct_ksmedia_1124__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_117__union_0.cs" Link="Generated\__struct_ksmedia_117__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1196__union_0.cs" Link="Generated\__struct_ksmedia_1196__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1205__union_0.cs" Link="Generated\__struct_ksmedia_1205__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1208__union_0.cs" Link="Generated\__struct_ksmedia_1208__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1208__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_1208__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1208__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_1208__union_0__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_199__union_0.cs" Link="Generated\__struct_ksmedia_199__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_271__union_0.cs" Link="Generated\__struct_ksmedia_271__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_280__union_0.cs" Link="Generated\__struct_ksmedia_280__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_45__union_0.cs" Link="Generated\__struct_ksmedia_45__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_465__union_0.cs" Link="Generated\__struct_ksmedia_465__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_662__union_0.cs" Link="Generated\__struct_ksmedia_662__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_734__union_0.cs" Link="Generated\__struct_ksmedia_734__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_746__union_0.cs" Link="Generated\__struct_ksmedia_746__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_746__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_746__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_746__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_746__union_0__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_816__union_0.cs" Link="Generated\__struct_ksmedia_816__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_888__union_0.cs" Link="Generated\__struct_ksmedia_888__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_897__union_0.cs" Link="Generated\__struct_ksmedia_897__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_900__union_0.cs" Link="Generated\__struct_ksmedia_900__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_900__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_900__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_900__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_900__union_0__struct_1.cs" />
     <Compile Include="..\DirectN\ILogger.cs" Link="ILogger.cs" />
     <Compile Include="..\DirectN\Manual\ACCENT_POLICY.cs" Link="Manual\ACCENT_POLICY.cs" />
     <Compile Include="..\DirectN\Manual\ACCENT_STATE.cs" Link="Manual\ACCENT_STATE.cs" />
@@ -355,48 +422,18 @@
     <Compile Include="..\DirectN\Generated\AUDIO_DUCKING_OPTIONS.cs" Link="Generated\AUDIO_DUCKING_OPTIONS.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_EFFECT.cs" Link="Generated\AUDIO_EFFECT.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_STATE.cs" Link="Generated\AUDIO_EFFECT_STATE.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_ACOUSTIC_ECHO_CANCELLATION.cs" Link="Generated\AUDIO_EFFECT_TYPE_ACOUSTIC_ECHO_CANCELLATION.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_AUTOMATIC_GAIN_CONTROL.cs" Link="Generated\AUDIO_EFFECT_TYPE_AUTOMATIC_GAIN_CONTROL.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_BASS_BOOST.cs" Link="Generated\AUDIO_EFFECT_TYPE_BASS_BOOST.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_BASS_MANAGEMENT.cs" Link="Generated\AUDIO_EFFECT_TYPE_BASS_MANAGEMENT.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_BEAMFORMING.cs" Link="Generated\AUDIO_EFFECT_TYPE_BEAMFORMING.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_CONSTANT_TONE_REMOVAL.cs" Link="Generated\AUDIO_EFFECT_TYPE_CONSTANT_TONE_REMOVAL.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_DEEP_NOISE_SUPPRESSION.cs" Link="Generated\AUDIO_EFFECT_TYPE_DEEP_NOISE_SUPPRESSION.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_DYNAMIC_RANGE_COMPRESSION.cs" Link="Generated\AUDIO_EFFECT_TYPE_DYNAMIC_RANGE_COMPRESSION.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_ENVIRONMENTAL_EFFECTS.cs" Link="Generated\AUDIO_EFFECT_TYPE_ENVIRONMENTAL_EFFECTS.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_EQUALIZER.cs" Link="Generated\AUDIO_EFFECT_TYPE_EQUALIZER.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_FAR_FIELD_BEAMFORMING.cs" Link="Generated\AUDIO_EFFECT_TYPE_FAR_FIELD_BEAMFORMING.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_LOUDNESS_EQUALIZER.cs" Link="Generated\AUDIO_EFFECT_TYPE_LOUDNESS_EQUALIZER.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_NOISE_SUPPRESSION.cs" Link="Generated\AUDIO_EFFECT_TYPE_NOISE_SUPPRESSION.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_ROOM_CORRECTION.cs" Link="Generated\AUDIO_EFFECT_TYPE_ROOM_CORRECTION.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_SPEAKER_COMPENSATION.cs" Link="Generated\AUDIO_EFFECT_TYPE_SPEAKER_COMPENSATION.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_SPEAKER_FILL.cs" Link="Generated\AUDIO_EFFECT_TYPE_SPEAKER_FILL.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_SPEAKER_PROTECTION.cs" Link="Generated\AUDIO_EFFECT_TYPE_SPEAKER_PROTECTION.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_VIRTUAL_HEADPHONES.cs" Link="Generated\AUDIO_EFFECT_TYPE_VIRTUAL_HEADPHONES.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_EFFECT_TYPE_VIRTUAL_SURROUND.cs" Link="Generated\AUDIO_EFFECT_TYPE_VIRTUAL_SURROUND.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR.cs" Link="Generated\AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION.cs" Link="Generated\AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_ENDPOINT_SHARED_CREATE_PARAMS.cs" Link="Generated\AUDIO_ENDPOINT_SHARED_CREATE_PARAMS.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR.cs" Link="Generated\AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION.cs" Link="Generated\AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_FLOW_TYPE.cs" Link="Generated\AUDIO_FLOW_TYPE.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS.cs" Link="Generated\AUDIO_SIGNALPROCESSINGMODE_COMMUNICATIONS.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_SIGNALPROCESSINGMODE_DEFAULT.cs" Link="Generated\AUDIO_SIGNALPROCESSINGMODE_DEFAULT.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_SIGNALPROCESSINGMODE_FAR_FIELD_SPEECH.cs" Link="Generated\AUDIO_SIGNALPROCESSINGMODE_FAR_FIELD_SPEECH.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_SIGNALPROCESSINGMODE_MEDIA.cs" Link="Generated\AUDIO_SIGNALPROCESSINGMODE_MEDIA.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_SIGNALPROCESSINGMODE_MOVIE.cs" Link="Generated\AUDIO_SIGNALPROCESSINGMODE_MOVIE.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION.cs" Link="Generated\AUDIO_SIGNALPROCESSINGMODE_NOTIFICATION.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_SIGNALPROCESSINGMODE_RAW.cs" Link="Generated\AUDIO_SIGNALPROCESSINGMODE_RAW.cs" />
-    <Compile Include="..\DirectN\Generated\AUDIO_SIGNALPROCESSINGMODE_SPEECH.cs" Link="Generated\AUDIO_SIGNALPROCESSINGMODE_SPEECH.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_SYSTEMEFFECT.cs" Link="Generated\AUDIO_SYSTEMEFFECT.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR.cs" Link="Generated\AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_APO_NOTIFICATION_DESCRIPTOR.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION.cs" Link="Generated\AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION.cs" />
     <Compile Include="..\DirectN\Generated\AUDIO_SYSTEMEFFECT_STATE.cs" Link="Generated\AUDIO_SYSTEMEFFECT_STATE.cs" />
     <Compile Include="..\DirectN\Generated\BITMAPV4HEADER.cs" Link="Generated\BITMAPV4HEADER.cs" />
     <Compile Include="..\DirectN\Generated\BITMAPV5HEADER.cs" Link="Generated\BITMAPV5HEADER.cs" />
-    <Compile Include="..\DirectN\Generated\BLUETOOTHLE_MIDI_SERVICE_UUID.cs" Link="Generated\BLUETOOTHLE_MIDI_SERVICE_UUID.cs" />
-    <Compile Include="..\DirectN\Generated\BLUETOOTH_MIDI_DATAIO_CHARACTERISTIC.cs" Link="Generated\BLUETOOTH_MIDI_DATAIO_CHARACTERISTIC.cs" />
-    <Compile Include="..\DirectN\Generated\CLSID_KsIBasicAudioInterfaceHandler.cs" Link="Generated\CLSID_KsIBasicAudioInterfaceHandler.cs" />
     <Compile Include="..\DirectN\Generated\CodecAPIEventData.cs" Link="Generated\CodecAPIEventData.cs" />
     <Compile Include="..\DirectN\Generated\COMPOSITION_FRAME_ID_TYPE.cs" Link="Generated\COMPOSITION_FRAME_ID_TYPE.cs" />
     <Compile Include="..\DirectN\Generated\CompressionCaps.cs" Link="Generated\CompressionCaps.cs" />
@@ -10012,24 +10049,12 @@
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_147.cs" Link="Generated\__struct_ksmedia_147.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_148.cs" Link="Generated\__struct_ksmedia_148.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_150.cs" Link="Generated\__struct_ksmedia_150.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_200__union_0.cs" Link="Generated\__struct_ksmedia_200__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_272__union_0.cs" Link="Generated\__struct_ksmedia_272__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_281__union_0.cs" Link="Generated\__struct_ksmedia_281__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_284__union_0.cs" Link="Generated\__struct_ksmedia_284__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_284__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_284__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_284__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_284__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_285__union_0.cs" Link="Generated\__struct_ksmedia_285__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_285__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_285__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_285__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_285__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_354__union_0.cs" Link="Generated\__struct_ksmedia_354__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_426__union_0.cs" Link="Generated\__struct_ksmedia_426__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_435__union_0.cs" Link="Generated\__struct_ksmedia_435__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_438__union_0.cs" Link="Generated\__struct_ksmedia_438__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_438__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_438__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_438__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_438__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_439__union_0.cs" Link="Generated\__struct_ksmedia_439__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_439__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_439__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_439__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_439__union_0__struct_1.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_508__union_0.cs" Link="Generated\__struct_ksmedia_508__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_580__union_0.cs" Link="Generated\__struct_ksmedia_580__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_589__union_0.cs" Link="Generated\__struct_ksmedia_589__union_0.cs" />
@@ -10039,52 +10064,18 @@
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_593__union_0.cs" Link="Generated\__struct_ksmedia_593__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_593__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_593__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_593__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_593__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_620__union_0.cs" Link="Generated\__struct_ksmedia_620__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_663__union_0.cs" Link="Generated\__struct_ksmedia_663__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_735__union_0.cs" Link="Generated\__struct_ksmedia_735__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_744__union_0.cs" Link="Generated\__struct_ksmedia_744__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_747__union_0.cs" Link="Generated\__struct_ksmedia_747__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_747__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_747__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_747__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_747__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_748__union_0.cs" Link="Generated\__struct_ksmedia_748__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_748__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_748__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_748__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_748__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_817__union_0.cs" Link="Generated\__struct_ksmedia_817__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_889__union_0.cs" Link="Generated\__struct_ksmedia_889__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_898__union_0.cs" Link="Generated\__struct_ksmedia_898__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_901__union_0.cs" Link="Generated\__struct_ksmedia_901__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_901__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_901__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_901__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_901__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_902__union_0.cs" Link="Generated\__struct_ksmedia_902__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_902__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_902__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_902__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_902__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_971__union_0.cs" Link="Generated\__struct_ksmedia_971__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1043__union_0.cs" Link="Generated\__struct_ksmedia_1043__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1052__union_0.cs" Link="Generated\__struct_ksmedia_1052__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_1055__union_0.cs" Link="Generated\__struct_ksmedia_1055__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_1055__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_1055__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_1055__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_1055__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1056__union_0.cs" Link="Generated\__struct_ksmedia_1056__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1056__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_1056__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1056__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_1056__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1125__union_0.cs" Link="Generated\__struct_ksmedia_1125__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1197__union_0.cs" Link="Generated\__struct_ksmedia_1197__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1206__union_0.cs" Link="Generated\__struct_ksmedia_1206__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_1209__union_0.cs" Link="Generated\__struct_ksmedia_1209__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_1209__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_1209__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_1209__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_1209__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1210__union_0.cs" Link="Generated\__struct_ksmedia_1210__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1210__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_1210__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1210__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_1210__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1279__union_0.cs" Link="Generated\__struct_ksmedia_1279__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1351__union_0.cs" Link="Generated\__struct_ksmedia_1351__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1360__union_0.cs" Link="Generated\__struct_ksmedia_1360__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1363__union_0.cs" Link="Generated\__struct_ksmedia_1363__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1363__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_1363__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1363__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_1363__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1364__union_0.cs" Link="Generated\__struct_ksmedia_1364__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1364__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_1364__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_1364__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_1364__union_0__struct_1.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ks_2__union_0.cs" Link="Generated\__struct_ks_2__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ks_2__union_0__struct_0.cs" Link="Generated\__struct_ks_2__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ks_11__union_0.cs" Link="Generated\__struct_ks_11__union_0.cs" />
@@ -10202,19 +10193,6 @@
     <Compile Include="..\DirectN\Generated\__struct_ks_474__union_0.cs" Link="Generated\__struct_ks_474__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ks_481__union_0.cs" Link="Generated\__struct_ks_481__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ks_481__union_0__struct_0.cs" Link="Generated\__struct_ks_481__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_497__union_0.cs" Link="Generated\__struct_ks_497__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_497__union_0__struct_0.cs" Link="Generated\__struct_ks_497__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_506__union_0.cs" Link="Generated\__struct_ks_506__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_506__union_0__struct_0.cs" Link="Generated\__struct_ks_506__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_506__union_0__struct_1.cs" Link="Generated\__struct_ks_506__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_506__union_0__struct_2.cs" Link="Generated\__struct_ks_506__union_0__struct_2.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_508__union_0.cs" Link="Generated\__struct_ks_508__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_519__union_0.cs" Link="Generated\__struct_ks_519__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_525__union_0.cs" Link="Generated\__struct_ks_525__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_525__union_1.cs" Link="Generated\__struct_ks_525__union_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_529__union_0.cs" Link="Generated\__struct_ks_529__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_536__union_0.cs" Link="Generated\__struct_ks_536__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ks_536__union_0__struct_0.cs" Link="Generated\__struct_ks_536__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_mmreg_1__union_0.cs" Link="Generated\__struct_mmreg_1__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_mmreg_2__union_0.cs" Link="Generated\__struct_mmreg_2__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_mmreg_3__union_0.cs" Link="Generated\__struct_mmreg_3__union_0.cs" />
@@ -10241,7 +10219,6 @@
     <Compile Include="..\DirectN\Generated\__struct_mmreg_24__union_0.cs" Link="Generated\__struct_mmreg_24__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_mmreg_25__union_0.cs" Link="Generated\__struct_mmreg_25__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_mmreg_26__union_0.cs" Link="Generated\__struct_mmreg_26__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_mmreg_27__union_0.cs" Link="Generated\__struct_mmreg_27__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__tagDRM_COPY_OPL.cs" Link="Generated\__tagDRM_COPY_OPL.cs" />
     <Compile Include="..\DirectN\Generated\__tagDRM_MINIMUM_OUTPUT_PROTECTION_LEVELS.cs" Link="Generated\__tagDRM_MINIMUM_OUTPUT_PROTECTION_LEVELS.cs" />
     <Compile Include="..\DirectN\Generated\__tagDRM_OPL_OUTPUT_IDS.cs" Link="Generated\__tagDRM_OPL_OUTPUT_IDS.cs" />
@@ -10261,7 +10238,6 @@
   <ItemGroup>
     <Folder Include="Manual\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Generated\" />
   </ItemGroup>
 
 </Project>

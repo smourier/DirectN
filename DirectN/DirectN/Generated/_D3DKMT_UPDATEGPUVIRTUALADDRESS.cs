@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(4780,9)
+﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dkmthk.h(5019,9)
 using System;
 using System.Runtime.InteropServices;
 
@@ -12,7 +12,7 @@ namespace DirectN
         public uint hFenceObject;
         public uint NumOperations;
         public IntPtr Operations;
-        public uint Reserved0;
+        public ulong Reserved0;
         public ulong Reserved1;
         public ulong FenceValue;
         public _D3DKMT_UPDATEGPUVIRTUALADDRESS__union_0 Flags;

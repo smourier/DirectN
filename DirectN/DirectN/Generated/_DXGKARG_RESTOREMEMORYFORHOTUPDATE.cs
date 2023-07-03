@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct _DXGKARG_RESTOREMEMORYFORHOTUPDATE
     {
         public _DXGK_RESTOREMEMORYFORHOTUPDATEFLAGS Flags;
-        public IntPtr pDataMdl;
+        public int pDataMdl;
         public uint MetaDataSize;
         public IntPtr pMetaData;
     }
