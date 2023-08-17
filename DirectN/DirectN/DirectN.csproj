@@ -62,6 +62,8 @@
     <Compile Include="Extensions\Hsl.cs" />
     <Compile Include="Extensions\Hsv.cs" />
     <Compile Include="Extensions\ID2D1EffectExtensions.cs" />
+    <Compile Include="Extensions\ID2D1GeometryExtensions.cs" />
+    <Compile Include="Extensions\ID2D1GeometrySinkExtensions.cs" />
     <Compile Include="Extensions\ID2D1PathGeometryExtensions.cs" />
     <Compile Include="Extensions\ID2D1PropertiesExtensions.cs" />
     <Compile Include="Extensions\ID2D1RenderTargetExtensions.cs" />
@@ -78,8 +80,11 @@
     <Compile Include="Extensions\InterlockedDisposable.cs" />
     <Compile Include="Extensions\InteropExtensions.cs" />
     <Compile Include="Extensions\InteropRuntime.cs" />
+    <Compile Include="Extensions\IWICBitmapFrameDecodeExtensions.cs" />
     <Compile Include="Extensions\IWicBitmapSourceExtensions.cs" />
+    <Compile Include="Extensions\IWICColorContextExtensions.cs" />
     <Compile Include="Extensions\KSMedia.cs" />
+    <Compile Include="Extensions\ManagedIStream.cs" />
     <Compile Include="Extensions\MessageDecoder.cs" />
     <Compile Include="Extensions\MFMediaTypeWrapper.cs" />
     <Compile Include="Extensions\MFW.cs" />

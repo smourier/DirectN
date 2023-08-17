@@ -52,6 +52,8 @@
     <Compile Include="..\DirectN\Extensions\ID2D1DeviceExtensions.cs" Link="Extensions\ID2D1DeviceExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID2D1EffectExtensions.cs" Link="Extensions\ID2D1EffectExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID2D1FactoryExtensions.cs" Link="Extensions\ID2D1FactoryExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\ID2D1GeometryExtensions.cs" Link="Extensions\ID2D1GeometryExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\ID2D1GeometrySinkExtensions.cs" Link="Extensions\ID2D1GeometrySinkExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID2D1PathGeometryExtensions.cs" Link="Extensions\ID2D1PathGeometryExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID2D1PropertiesExtensions.cs" Link="Extensions\ID2D1PropertiesExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID2D1RenderTargetExtensions.cs" Link="Extensions\ID2D1RenderTargetExtensions.cs" />
@@ -86,8 +88,11 @@
     <Compile Include="..\DirectN\Extensions\InterlockedDisposable.cs" Link="Extensions\InterlockedDisposable.cs" />
     <Compile Include="..\DirectN\Extensions\InteropExtensions.cs" Link="Extensions\InteropExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\InteropRuntime.cs" Link="Extensions\InteropRuntime.cs" />
+    <Compile Include="..\DirectN\Extensions\IWICBitmapFrameDecodeExtensions.cs" Link="Extensions\IWICBitmapFrameDecodeExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\IWicBitmapSourceExtensions.cs" Link="Extensions\IWicBitmapSourceExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\IWICColorContextExtensions.cs" Link="Extensions\IWICColorContextExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\KSMedia.cs" Link="Extensions\KSMedia.cs" />
+    <Compile Include="..\DirectN\Extensions\ManagedIStream.cs" Link="Extensions\ManagedIStream.cs" />
     <Compile Include="..\DirectN\Extensions\MessageDecoder.cs" Link="Extensions\MessageDecoder.cs" />
     <Compile Include="..\DirectN\Extensions\MFConstants.cs" Link="Extensions\MFConstants.cs" />
     <Compile Include="..\DirectN\Extensions\MFFunctions.cs" Link="Extensions\MFFunctions.cs" />

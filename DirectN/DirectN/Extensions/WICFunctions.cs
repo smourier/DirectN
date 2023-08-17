@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Threading;
 
 namespace DirectN
 {
-    public static class WICFunctions
+    public static partial class WICFunctions
     {
-        public static ComObject<IWICBitmapSource> LoadBitmapSource(string filePath, WICDecodeOptions metadataOptions = WICDecodeOptions.WICDecodeMetadataCacheOnDemand)
+        public static IComObject<IWICBitmapSource> LoadBitmapSource(string filePath, WICDecodeOptions metadataOptions = WICDecodeOptions.WICDecodeMetadataCacheOnDemand)
         {
             if (filePath == null)
                 throw new ArgumentNullException(nameof(filePath));
@@ -32,7 +31,7 @@ namespace DirectN
             }
         }
 
-        public static ComObject<IWICBitmapSource> LoadBitmapSource(Stream stream, WICDecodeOptions metadataOptions = WICDecodeOptions.WICDecodeMetadataCacheOnDemand)
+        public static IComObject<IWICBitmapSource> LoadBitmapSource(Stream stream, WICDecodeOptions metadataOptions = WICDecodeOptions.WICDecodeMetadataCacheOnDemand)
         {
             if (stream == null)
                 throw new ArgumentNullException(nameof(stream));
@@ -58,91 +57,35 @@ namespace DirectN
             }
         }
 
-        private class ManagedIStream : System.Runtime.InteropServices.ComTypes.IStream
+        public static IComObject<IWICColorContext> CreateColorContext()
         {
-            private Stream _stream;
-
-            public ManagedIStream(Stream stream)
+            var wfac = (IWICImagingFactory)new WICImagingFactory();
+            try
             {
-                _stream = stream;
+                wfac.CreateColorContext(out var context).ThrowOnError();
+                return new ComObject<IWICColorContext>(context);
             }
-
-            public void Clone(out System.Runtime.InteropServices.ComTypes.IStream ppstm) => throw new NotSupportedException();
-            public void CopyTo(System.Runtime.InteropServices.ComTypes.IStream pstm, long cb, IntPtr pcbRead, IntPtr pcbWritten) => throw new NotSupportedException();
-            public void LockRegion(long libOffset, long cb, int dwLockType) => throw new NotSupportedException();
-            public void UnlockRegion(long libOffset, long cb, int dwLockType) => throw new NotSupportedException();
-            public void Revert() => throw new NotSupportedException();
-
-            public void Commit(int grfCommitFlags)
+            finally
             {
-                // do nothing
+                ComObject.Release(wfac);
             }
+        }
 
-            public void Read(byte[] pv, int cb, IntPtr pcbRead)
-            {
-                var read = _stream.Read(pv, 0, cb);
-                if (pcbRead != IntPtr.Zero)
-                {
-                    Marshal.WriteInt32(pcbRead, read);
-                }
-            }
+        public static IComObject<IWICColorContext> CreateColorContext(uint exifColorSpace)
+        {
+            var context = CreateColorContext();
+            context.Object.InitializeFromExifColorSpace(exifColorSpace).ThrowOnError();
+            return context;
+        }
 
-            public void Seek(long dlibMove, int dwOrigin, IntPtr plibNewPosition)
-            {
-                var newPos = _stream.Seek(dlibMove, (SeekOrigin)dwOrigin);
-                if (plibNewPosition != IntPtr.Zero)
-                {
-                    Marshal.WriteInt64(plibNewPosition, newPos);
-                }
-            }
+        public static IComObject<IWICColorContext> CreateColorContext(string fileName)
+        {
+            if (fileName == null)
+                throw new ArgumentNullException(nameof(fileName));
 
-            ~ManagedIStream()
-            {
-                Interlocked.Exchange(ref _stream, null)?.Dispose();
-            }
-
-            public void SetSize(long libNewSize) => _stream.SetLength(libNewSize);
-
-            public void Stat(out System.Runtime.InteropServices.ComTypes.STATSTG pstatstg, int grfStatFlag)
-            {
-                const int STGTY_STREAM = 2;
-                pstatstg = new System.Runtime.InteropServices.ComTypes.STATSTG();
-                pstatstg.type = STGTY_STREAM;
-                pstatstg.cbSize = _stream.Length;
-                pstatstg.grfMode = 0;
-
-                if (_stream.CanRead && _stream.CanWrite)
-                {
-                    const int STGM_READWRITE = 0x00000002;
-                    pstatstg.grfMode |= STGM_READWRITE;
-                    return;
-                }
-
-                if (_stream.CanRead)
-                {
-                    const int STGM_READ = 0x00000000;
-                    pstatstg.grfMode |= STGM_READ;
-                    return;
-                }
-
-                if (_stream.CanWrite)
-                {
-                    const int STGM_WRITE = 0x00000001;
-                    pstatstg.grfMode |= STGM_WRITE;
-                    return;
-                }
-
-                throw new IOException();
-            }
-
-            public void Write(byte[] pv, int cb, IntPtr pcbWritten)
-            {
-                _stream.Write(pv, 0, cb);
-                if (pcbWritten != IntPtr.Zero)
-                {
-                    Marshal.WriteInt32(pcbWritten, cb);
-                }
-            }
+            var context = CreateColorContext();
+            context.Object.InitializeFromFilename(fileName).ThrowOnError();
+            return context;
         }
 
         [Flags]
