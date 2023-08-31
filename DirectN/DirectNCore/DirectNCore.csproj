@@ -8,15 +8,15 @@
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
     <Copyright>Copyright © 2017-2023 Simon Mourier. All rights reserved.</Copyright>
-    <FileVersion>1.13.2.1</FileVersion>
+    <FileVersion>1.13.2.2</FileVersion>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.13.2.1</Version>
+    <Version>1.13.2.2</Version>
     <RootNamespace>DirectN</RootNamespace>
-    <AssemblyVersion>1.13.2.1</AssemblyVersion>
+    <AssemblyVersion>1.13.2.2</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
 
@@ -330,6 +330,7 @@
     <Compile Include="..\DirectN\Manual\WndProc.cs" Link="Manual\WndProc.cs" />
     <Compile Include="..\DirectN\Manual\WS.cs" Link="Manual\WS.cs" />
     <Compile Include="..\DirectN\Manual\WS_EX.cs" Link="Manual\WS_EX.cs" />
+    <Compile Include="..\DirectN\Manual\XMFLOAT2.cs" Link="Manual\XMFLOAT2.cs" />
     <Compile Include="..\DirectN\Manual\XMFLOAT3.cs" Link="Manual\XMFLOAT3.cs" />
     <Compile Include="..\DirectN\Manual\XMFLOAT4.cs" Link="Manual\XMFLOAT4.cs" />
     <Compile Include="..\DirectN\Manual\_D3DCOLORVALUE.partial.cs" Link="Manual\_D3DCOLORVALUE.partial.cs" />
