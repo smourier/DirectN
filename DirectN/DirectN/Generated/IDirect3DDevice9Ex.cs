@@ -27,7 +27,7 @@ namespace DirectN
         new HRESULT GetDisplayMode(uint iSwapChain, ref _D3DDISPLAYMODE pMode);
 
         [PreserveSig]
-        new HRESULT GetCreationParameters(ref _D3DDEVICE_CREATION_PARAMETERS pParameters);
+        new HRESULT GetCreationParameters(/*ref _D3DDEVICE_CREATION_PARAMETERS*/ IntPtr pParameters);
 
         [PreserveSig]
         new HRESULT SetCursorProperties(uint XHotSpot, uint YHotSpot, IDirect3DSurface9 pCursorBitmap);
@@ -39,7 +39,7 @@ namespace DirectN
         new bool ShowCursor(bool bShow);
 
         [PreserveSig]
-        new HRESULT CreateAdditionalSwapChain(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, out IDirect3DSwapChain9 pSwapChain);
+        new HRESULT CreateAdditionalSwapChain(/*ref _D3DPRESENT_PARAMETERS_*/ IntPtr pPresentationParameters, out IDirect3DSwapChain9 pSwapChain);
 
         [PreserveSig]
         new HRESULT GetSwapChain(uint iSwapChain, out IDirect3DSwapChain9 pSwapChain);
@@ -48,7 +48,7 @@ namespace DirectN
         new uint GetNumberOfSwapChains();
 
         [PreserveSig]
-        new HRESULT Reset(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters);
+        new HRESULT Reset(/*ref _D3DPRESENT_PARAMETERS_*/ IntPtr pPresentationParameters);
 
         [PreserveSig]
         new HRESULT Present(ref tagRECT pSourceRect, ref tagRECT pDestRect, IntPtr hDestWindowOverride, ref _RGNDATA pDirtyRegion);
@@ -397,7 +397,7 @@ namespace DirectN
         HRESULT CreateDepthStencilSurfaceEx(uint Width, uint Height, _D3DFORMAT Format, _D3DMULTISAMPLE_TYPE MultiSample, uint MultisampleQuality, bool Discard, out IDirect3DSurface9 ppSurface, IntPtr pSharedHandle, uint Usage);
 
         [PreserveSig]
-        HRESULT ResetEx(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, ref D3DDISPLAYMODEEX pFullscreenDisplayMode);
+        HRESULT ResetEx(/*ref _D3DPRESENT_PARAMETERS_ */ IntPtr pPresentationParameters, ref D3DDISPLAYMODEEX pFullscreenDisplayMode);
 
         [PreserveSig]
         HRESULT GetDisplayModeEx(uint iSwapChain, ref D3DDISPLAYMODEEX pMode, ref D3DDISPLAYROTATION pRotation);

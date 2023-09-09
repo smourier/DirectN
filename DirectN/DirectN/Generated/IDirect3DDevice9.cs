@@ -26,7 +26,7 @@ namespace DirectN
         HRESULT GetDisplayMode(uint iSwapChain, ref _D3DDISPLAYMODE pMode);
 
         [PreserveSig]
-        HRESULT GetCreationParameters(ref _D3DDEVICE_CREATION_PARAMETERS pParameters);
+        HRESULT GetCreationParameters(/*ref _D3DDEVICE_CREATION_PARAMETERS*/ IntPtr pParameters);
 
         [PreserveSig]
         HRESULT SetCursorProperties(uint XHotSpot, uint YHotSpot, IDirect3DSurface9 pCursorBitmap);
@@ -38,7 +38,7 @@ namespace DirectN
         bool ShowCursor(bool bShow);
 
         [PreserveSig]
-        HRESULT CreateAdditionalSwapChain(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, out IDirect3DSwapChain9 pSwapChain);
+        HRESULT CreateAdditionalSwapChain(/*ref _D3DPRESENT_PARAMETERS_*/ IntPtr pPresentationParameters, out IDirect3DSwapChain9 pSwapChain);
 
         [PreserveSig]
         HRESULT GetSwapChain(uint iSwapChain, out IDirect3DSwapChain9 pSwapChain);
@@ -47,7 +47,7 @@ namespace DirectN
         uint GetNumberOfSwapChains();
 
         [PreserveSig]
-        HRESULT Reset(ref _D3DPRESENT_PARAMETERS_ pPresentationParameters);
+        HRESULT Reset(/*ref _D3DPRESENT_PARAMETERS_*/ IntPtr pPresentationParameters);
 
         [PreserveSig]
         HRESULT Present(ref tagRECT pSourceRect, ref tagRECT pDestRect, IntPtr hDestWindowOverride, ref _RGNDATA pDirtyRegion);

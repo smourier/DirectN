@@ -9,44 +9,44 @@ namespace DirectN
     {
         [PreserveSig]
         HRESULT RegisterSoftwareDevice(IntPtr pInitializeFunction);
-        
+
         [PreserveSig]
         uint GetAdapterCount();
-        
+
         [PreserveSig]
-        HRESULT GetAdapterIdentifier(uint Adapter, uint Flags, ref _D3DADAPTER_IDENTIFIER9 pIdentifier);
-        
+        HRESULT GetAdapterIdentifier(uint Adapter, uint Flags, /*ref _D3DADAPTER_IDENTIFIER9*/ IntPtr pIdentifier);
+
         [PreserveSig]
         uint GetAdapterModeCount(uint Adapter, _D3DFORMAT Format);
-        
+
         [PreserveSig]
         HRESULT EnumAdapterModes(uint Adapter, _D3DFORMAT Format, uint Mode, ref _D3DDISPLAYMODE pMode);
-        
+
         [PreserveSig]
         HRESULT GetAdapterDisplayMode(uint Adapter, ref _D3DDISPLAYMODE pMode);
-        
+
         [PreserveSig]
         HRESULT CheckDeviceType(uint Adapter, _D3DDEVTYPE DevType, _D3DFORMAT AdapterFormat, _D3DFORMAT BackBufferFormat, bool bWindowed);
-        
+
         [PreserveSig]
         HRESULT CheckDeviceFormat(uint Adapter, _D3DDEVTYPE DeviceType, _D3DFORMAT AdapterFormat, uint Usage, _D3DRESOURCETYPE RType, _D3DFORMAT CheckFormat);
-        
+
         [PreserveSig]
         HRESULT CheckDeviceMultiSampleType(uint Adapter, _D3DDEVTYPE DeviceType, _D3DFORMAT SurfaceFormat, bool Windowed, _D3DMULTISAMPLE_TYPE MultiSampleType, ref uint pQualityLevels);
-        
+
         [PreserveSig]
         HRESULT CheckDepthStencilMatch(uint Adapter, _D3DDEVTYPE DeviceType, _D3DFORMAT AdapterFormat, _D3DFORMAT RenderTargetFormat, _D3DFORMAT DepthStencilFormat);
-        
+
         [PreserveSig]
         HRESULT CheckDeviceFormatConversion(uint Adapter, _D3DDEVTYPE DeviceType, _D3DFORMAT SourceFormat, _D3DFORMAT TargetFormat);
-        
+
         [PreserveSig]
         HRESULT GetDeviceCaps(uint Adapter, _D3DDEVTYPE DeviceType, ref _D3DCAPS9 pCaps);
-        
+
         [PreserveSig]
         IntPtr GetAdapterMonitor(uint Adapter);
-        
+
         [PreserveSig]
-        HRESULT CreateDevice(uint Adapter, _D3DDEVTYPE DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref _D3DPRESENT_PARAMETERS_ pPresentationParameters, out IDirect3DDevice9 ppReturnedDeviceInterface);
+        HRESULT CreateDevice(uint Adapter, _D3DDEVTYPE DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, /*ref _D3DPRESENT_PARAMETERS_*/ IntPtr pPresentationParameters, out IDirect3DDevice9 ppReturnedDeviceInterface);
     }
 }

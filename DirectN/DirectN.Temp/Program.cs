@@ -21,46 +21,61 @@ namespace DirectN.Temp
                 var mode = new _D3DDISPLAYMODE();
                 d3d.Object.GetAdapterDisplayMode(adapter, ref mode).ThrowOnError();
 
-                var parameters = new _D3DPRESENT_PARAMETERS_
+                object parameters;
+                if (IntPtr.Size == 8)
                 {
-                    Windowed = true,
-                    BackBufferCount = 1,
-                    BackBufferHeight = mode.Height,
-                    BackBufferWidth = mode.Width,
-                    SwapEffect = _D3DSWAPEFFECT.D3DSWAPEFFECT_DISCARD
-                };
-
-                d3d.Object.CreateDevice(adapter, _D3DDEVTYPE.D3DDEVTYPE_HAL, IntPtr.Zero, Constants.D3DCREATE_SOFTWARE_VERTEXPROCESSING, ref parameters, out var dev).ThrowOnError();
-                using (var device = new ComObject<IDirect3DDevice9>(dev))
-                {
-                    dev.CreateOffscreenPlainSurface(mode.Width, mode.Height, _D3DFORMAT.D3DFMT_A8R8G8B8, _D3DPOOL.D3DPOOL_SYSTEMMEM, out var surf, IntPtr.Zero).ThrowOnError();
-                    using (var surface = new ComObject<IDirect3DSurface9>(surf))
+                    parameters = new _D3DPRESENT_PARAMETERS_64
                     {
-                        var rc = new _D3DLOCKED_RECT();
-                        surf.LockRect(ref rc, IntPtr.Zero, 0).ThrowOnError();
-                        var pitch = rc.Pitch;
-                        surf.UnlockRect();
+                        Windowed = true,
+                        BackBufferCount = 1,
+                        BackBufferHeight = mode.Height,
+                        BackBufferWidth = mode.Width,
+                        SwapEffect = _D3DSWAPEFFECT.D3DSWAPEFFECT_DISCARD
+                    };
+                }
+                else
+                {
+                    parameters = new _D3DPRESENT_PARAMETERS_32
+                    {
+                        Windowed = true,
+                        BackBufferCount = 1,
+                        BackBufferHeight = mode.Height,
+                        BackBufferWidth = mode.Width,
+                        SwapEffect = _D3DSWAPEFFECT.D3DSWAPEFFECT_DISCARD
+                    };
+                }
 
-                        var shots = new byte[count][];
-                        for (var i = 0; i < count; i++)
+                using (var mem = new ComMemory(parameters))
+                {
+                    d3d.Object.CreateDevice(adapter, _D3DDEVTYPE.D3DDEVTYPE_HAL, IntPtr.Zero, Constants.D3DCREATE_SOFTWARE_VERTEXPROCESSING, mem.Pointer, out var dev).ThrowOnError();
+                    using (var device = new ComObject<IDirect3DDevice9>(dev))
+                    {
+                        dev.CreateOffscreenPlainSurface(mode.Width, mode.Height, _D3DFORMAT.D3DFMT_A8R8G8B8, _D3DPOOL.D3DPOOL_SYSTEMMEM, out var surf, IntPtr.Zero).ThrowOnError();
+                        using (var surface = new ComObject<IDirect3DSurface9>(surf))
                         {
-                            shots[i] = new byte[pitch * mode.Height];
-                        }
+                            var pitch = surf.WithLockRect(IntPtr.Zero, 0, (p, b) => p);
+                            var shots = new byte[count][];
+                            for (var i = 0; i < count; i++)
+                            {
+                                shots[i] = new byte[pitch * mode.Height];
+                            }
 
-                        var sw = new Stopwatch();
-                        sw.Start();
-                        for (var i = 0; i < count; i++)
-                        {
-                            dev.GetFrontBufferData(0, surf).ThrowOnError();
-                            surf.LockRect(ref rc, IntPtr.Zero, 0).ThrowOnError();
-                            Marshal.Copy(rc.pBits, shots[i], 0, shots[i].Length);
-                            surf.UnlockRect().ThrowOnError();
-                        }
-                        Console.WriteLine("Elapsed: " + sw.Elapsed);
+                            var sw = new Stopwatch();
+                            sw.Start();
+                            for (var i = 0; i < count; i++)
+                            {
+                                dev.GetFrontBufferData(0, surf).ThrowOnError();
+                                surf.WithLockRect(IntPtr.Zero, 0, (p, b) =>
+                                {
+                                    Marshal.Copy(b, shots[i], 0, shots[i].Length);
+                                });
+                            }
+                            Console.WriteLine("Elapsed: " + sw.Elapsed);
 
-                        for (var i = 0; i < count; i++)
-                        {
-                            SavePixelsToFile32bppPBGRA(mode.Width, mode.Height, (uint)pitch, shots[i], "cap" + i + ".png", WICConstants.GUID_ContainerFormatPng).ThrowOnError();
+                            for (var i = 0; i < count; i++)
+                            {
+                                SavePixelsToFile32bppPBGRA(mode.Width, mode.Height, (uint)pitch, shots[i], "cap" + i + ".png", WICConstants.GUID_ContainerFormatPng).ThrowOnError();
+                            }
                         }
                     }
                 }

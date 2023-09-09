@@ -6,9 +6,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public partial struct _D3DRECT
     {
-        public _D3DRECT__union_0 __union_0;
-        public _D3DRECT__union_1 __union_1;
-        public _D3DRECT__union_2 __union_2;
-        public _D3DRECT__union_3 __union_3;
+        public int x1;
+        public int y1;
+        public int x2;
+        public int y2;
     }
 }

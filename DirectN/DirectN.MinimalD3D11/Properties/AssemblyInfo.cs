@@ -16,8 +16,8 @@ using System.Runtime.Versioning;
 [assembly: ComVisible(false)]
 [assembly: Guid("3a848cdf-7b72-49de-92f7-30b640369d75")]
 
-[assembly: AssemblyVersion("1.13.2.2")]
-[assembly: AssemblyFileVersion("1.13.2.2")]
-[assembly: AssemblyInformationalVersion("1.13.2.2")]
+[assembly: AssemblyVersion("1.14.0.0")]
+[assembly: AssemblyFileVersion("1.14.0.0")]
+[assembly: AssemblyInformationalVersion("1.14.0.0")]
 
 [assembly: SupportedOSPlatform("windows10.0.19041.0")]

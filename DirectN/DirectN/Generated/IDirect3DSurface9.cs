@@ -10,44 +10,44 @@ namespace DirectN
         // IDirect3DResource9
         [PreserveSig]
         new HRESULT GetDevice(out IDirect3DDevice9 ppDevice);
-        
+
         [PreserveSig]
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
-        
+
         [PreserveSig]
         new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, ref uint pSizeOfData);
-        
+
         [PreserveSig]
         new HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
-        
+
         [PreserveSig]
         new uint SetPriority(uint PriorityNew);
-        
+
         [PreserveSig]
         new uint GetPriority();
-        
+
         [PreserveSig]
         new void PreLoad();
-        
+
         [PreserveSig]
         new _D3DRESOURCETYPE GetType();
-        
+
         // IDirect3DSurface9
         [PreserveSig]
         HRESULT GetContainer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppContainer);
-        
+
         [PreserveSig]
         HRESULT GetDesc(ref _D3DSURFACE_DESC pDesc);
-        
+
         [PreserveSig]
-        HRESULT LockRect(ref _D3DLOCKED_RECT pLockedRect, IntPtr pRect, uint Flags);
-        
+        HRESULT LockRect(/*ref _D3DLOCKED_RECT*/ IntPtr pLockedRect, IntPtr pRect, uint Flags);
+
         [PreserveSig]
         HRESULT UnlockRect();
-        
+
         [PreserveSig]
         HRESULT GetDC(IntPtr phdc);
-        
+
         [PreserveSig]
         HRESULT ReleaseDC(IntPtr hdc);
     }

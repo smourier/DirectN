@@ -71,6 +71,7 @@
     <Compile Include="Extensions\ID3D11Texture2DExtensions.cs" />
     <Compile Include="Extensions\ID3D11DeviceChildExtensions.cs" />
     <Compile Include="Extensions\ID3D11DeviceContextExtensions.cs" />
+    <Compile Include="Extensions\ID3D9BitnessExtensions.cs" />
     <Compile Include="Extensions\IDWriteFontCollectionExtensions.cs" />
     <Compile Include="Extensions\IDWriteFontFamilyExtensions.cs" />
     <Compile Include="Extensions\IDWriteFontSetBuilderExtensions.cs" />
@@ -4425,10 +4426,6 @@
     <Compile Include="Generated\_D3DCLIPSTATUS9.cs" />
     <Compile Include="Generated\_D3DCMPFUNC.cs" />
     <Compile Include="Generated\_D3DCOLORVALUE.cs" />
-    <Compile Include="Generated\_D3DCOLORVALUE__union_0.cs" />
-    <Compile Include="Generated\_D3DCOLORVALUE__union_1.cs" />
-    <Compile Include="Generated\_D3DCOLORVALUE__union_2.cs" />
-    <Compile Include="Generated\_D3DCOLORVALUE__union_3.cs" />
     <Compile Include="Generated\_D3DCOMPOSERECTDESC.cs" />
     <Compile Include="Generated\_D3DCOMPOSERECTDESTINATION.cs" />
     <Compile Include="Generated\_D3DCOMPOSERECTSOP.cs" />
@@ -4784,12 +4781,8 @@
     <Compile Include="Generated\_D3DQUERYTYPE.cs" />
     <Compile Include="Generated\_D3DRANGE.cs" />
     <Compile Include="Generated\_D3DRASTER_STATUS.cs" />
-    <Compile Include="Generated\_D3DRECT.cs" />
+    <Compile Include="Manual\_D3DRECT.cs" />
     <Compile Include="Generated\_D3DRECTPATCH_INFO.cs" />
-    <Compile Include="Generated\_D3DRECT__union_0.cs" />
-    <Compile Include="Generated\_D3DRECT__union_1.cs" />
-    <Compile Include="Generated\_D3DRECT__union_2.cs" />
-    <Compile Include="Generated\_D3DRECT__union_3.cs" />
     <Compile Include="Generated\_D3DRENDERSTATETYPE.cs" />
     <Compile Include="Generated\_D3DRESOURCESTATS.cs" />
     <Compile Include="Generated\_D3DRESOURCETYPE.cs" />

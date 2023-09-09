@@ -10,60 +10,60 @@ namespace DirectN
         // IDirect3DResource9
         [PreserveSig]
         new HRESULT GetDevice(out IDirect3DDevice9 ppDevice);
-        
+
         [PreserveSig]
         new HRESULT SetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, uint SizeOfData, uint Flags);
-        
+
         [PreserveSig]
         new HRESULT GetPrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid, IntPtr pData, ref uint pSizeOfData);
-        
+
         [PreserveSig]
         new HRESULT FreePrivateData([MarshalAs(UnmanagedType.LPStruct)] Guid refguid);
-        
+
         [PreserveSig]
         new uint SetPriority(uint PriorityNew);
-        
+
         [PreserveSig]
         new uint GetPriority();
-        
+
         [PreserveSig]
         new void PreLoad();
-        
+
         [PreserveSig]
         new _D3DRESOURCETYPE GetType();
-        
+
         // IDirect3DBaseTexture9
         [PreserveSig]
         new uint SetLOD(uint LODNew);
-        
+
         [PreserveSig]
         new uint GetLOD();
-        
+
         [PreserveSig]
         new uint GetLevelCount();
-        
+
         [PreserveSig]
         new HRESULT SetAutoGenFilterType(_D3DTEXTUREFILTERTYPE FilterType);
-        
+
         [PreserveSig]
         new _D3DTEXTUREFILTERTYPE GetAutoGenFilterType();
-        
+
         [PreserveSig]
         new void GenerateMipSubLevels();
-        
+
         // IDirect3DTexture9
         [PreserveSig]
         HRESULT GetLevelDesc(uint Level, ref _D3DSURFACE_DESC pDesc);
-        
+
         [PreserveSig]
         HRESULT GetSurfaceLevel(uint Level, out IDirect3DSurface9 ppSurfaceLevel);
-        
+
         [PreserveSig]
-        HRESULT LockRect(uint Level, ref _D3DLOCKED_RECT pLockedRect, ref tagRECT pRect, uint Flags);
-        
+        HRESULT LockRect(uint Level, /*ref _D3DLOCKED_RECT*/ IntPtr pLockedRect, /*ref tagRECT*/ IntPtr pRect, uint Flags);
+
         [PreserveSig]
         HRESULT UnlockRect(uint Level);
-        
+
         [PreserveSig]
         HRESULT AddDirtyRect(ref tagRECT pDirtyRect);
     }
