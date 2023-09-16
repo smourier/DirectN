@@ -90,6 +90,13 @@ namespace DirectN
             DXGI_SWAP_CHAIN_FULLSCREEN_DESC? fullScreenDesc = null,
             IComObject<IDXGIOutput1> restrictToOutput = null) where T : IDXGISwapChain1 => CreateSwapChainForHwnd<T>(factory?.Object, device?.Object, hwnd, desc, fullScreenDesc, restrictToOutput?.Object);
 
+        public static IComObject<T> CreateSwapChainForHwnd<T>(this IComObject<IDXGIFactory2> factory,
+            IComObject<ID3D12CommandQueue> device,
+            IntPtr hwnd,
+            DXGI_SWAP_CHAIN_DESC1 desc,
+            DXGI_SWAP_CHAIN_FULLSCREEN_DESC? fullScreenDesc = null,
+            IComObject<IDXGIOutput1> restrictToOutput = null) where T : IDXGISwapChain1 => CreateSwapChainForHwnd<T>(factory?.Object, device?.Object, hwnd, desc, fullScreenDesc, restrictToOutput?.Object);
+
         public static IComObject<T> CreateSwapChainForHwnd<T>(this IDXGIFactory2 factory,
             object device,
             IntPtr hwnd,
@@ -133,6 +140,18 @@ namespace DirectN
 
             factory.CreateSwapChainForComposition(device, ref desc, restrictToOutput, out var swapChain).ThrowOnError();
             return new ComObject<T>((T)swapChain);
+        }
+
+        public static IComObject<IDXGIAdapter1> EnumAdapterByGpuPreference(this IComObject<IDXGIFactory6> factory, int index, DXGI_GPU_PREFERENCE preference) => EnumAdapterByGpuPreference<IDXGIAdapter1>(factory?.Object, index, preference);
+        public static IComObject<IDXGIAdapter1> EnumAdapterByGpuPreference(this IDXGIFactory6 factory, int index, DXGI_GPU_PREFERENCE preference) => EnumAdapterByGpuPreference<IDXGIAdapter1>(factory, index, preference);
+        public static IComObject<T> EnumAdapterByGpuPreference<T>(this IComObject<IDXGIFactory6> factory, int index, DXGI_GPU_PREFERENCE preference) where T : IDXGIAdapter => EnumAdapterByGpuPreference<T>(factory?.Object, index, preference);
+        public static IComObject<T> EnumAdapterByGpuPreference<T>(this IDXGIFactory6 factory, int index, DXGI_GPU_PREFERENCE preference) where T : IDXGIAdapter
+        {
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
+
+            factory.EnumAdapterByGpuPreference((uint)index, preference, typeof(T).GUID, out var adapter);
+            return adapter == null ? null : new ComObject<T>((T)adapter);
         }
     }
 }

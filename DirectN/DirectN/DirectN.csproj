@@ -50,6 +50,8 @@
     <Compile Include="Extensions\D2D1Constants.cs" />
     <Compile Include="Extensions\D2D1Functions.cs" />
     <Compile Include="Extensions\D2D1Property.cs" />
+    <Compile Include="Extensions\D3D12Constants.cs" />
+    <Compile Include="Extensions\D3D12Functions.cs" />
     <Compile Include="Extensions\DecamelizeOptions.cs" />
     <Compile Include="Extensions\DWriteFontCollectionLoader.cs" />
     <Compile Include="Extensions\DWriteFontFile.cs" />
@@ -68,6 +70,9 @@
     <Compile Include="Extensions\ID2D1PropertiesExtensions.cs" />
     <Compile Include="Extensions\ID2D1RenderTargetExtensions.cs" />
     <Compile Include="Extensions\ID2D1SimplifiedGeometrySinkExtensions.cs" />
+    <Compile Include="Extensions\ID3D12CommandQueueExtensions.cs" />
+    <Compile Include="Extensions\ID3D12DescriptorHeapExtensions.cs" />
+    <Compile Include="Extensions\ID3D12DeviceExtensions.cs" />
     <Compile Include="Extensions\ID3D11Texture2DExtensions.cs" />
     <Compile Include="Extensions\ID3D11DeviceChildExtensions.cs" />
     <Compile Include="Extensions\ID3D11DeviceContextExtensions.cs" />
