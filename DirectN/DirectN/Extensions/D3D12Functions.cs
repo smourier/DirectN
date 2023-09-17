@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace DirectN
@@ -27,6 +28,48 @@ namespace DirectN
             return new ComObject<T>((T)dev);
         }
 
+        public static IComObject<ID3D10Blob> D3D12SerializeRootSignature(D3D12_ROOT_SIGNATURE_DESC rootSignature, D3D_ROOT_SIGNATURE_VERSION version = D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1)
+        {
+            var hr = D3D12SerializeRootSignature(ref rootSignature, version, out var blob, out var errorBlob);
+            if (errorBlob != null)
+            {
+                var str = errorBlob.GetAnsiStringFromBlob();
+                if (str != null)
+                    throw new Win32Exception(hr.Value, str);
+
+                throw new Win32Exception(hr.Value);
+            }
+            return new ComObject<ID3D10Blob>(blob);
+        }
+
+        public static IComObject<ID3D10Blob> D3D12SerializeRootSignature(D3D12_VERSIONED_ROOT_SIGNATURE_DESC rootSignature)
+        {
+            var hr = D3D12SerializeVersionedRootSignature(ref rootSignature, out var blob, out var errorBlob);
+            if (errorBlob != null)
+            {
+                var str = errorBlob.GetAnsiStringFromBlob();
+                if (str != null)
+                    throw new Win32Exception(hr.Value, str);
+
+                throw new Win32Exception(hr.Value);
+            }
+
+            hr.ThrowOnError();
+            return new ComObject<ID3D10Blob>(blob);
+        }
+
+        public static IComObject<ID3D12RootSignatureDeserializer> D3D12CreateRootSignatureDeserializer(IntPtr srcData, IntPtr srcDataSizeInBytes)
+        {
+            D3D12CreateRootSignatureDeserializer(srcData, srcDataSizeInBytes, typeof(ID3D12RootSignatureDeserializer).GUID, out var deserializer).ThrowOnError();
+            return new ComObject<ID3D12RootSignatureDeserializer>((ID3D12RootSignatureDeserializer)deserializer);
+        }
+
+        public static IComObject<ID3D12VersionedRootSignatureDeserializer> D3D12CreateVersionedRootSignatureDeserializer(IntPtr srcData, IntPtr srcDataSizeInBytes)
+        {
+            D3D12CreateVersionedRootSignatureDeserializer(srcData, srcDataSizeInBytes, typeof(ID3D12VersionedRootSignatureDeserializer).GUID, out var deserializer).ThrowOnError();
+            return new ComObject<ID3D12VersionedRootSignatureDeserializer>((ID3D12VersionedRootSignatureDeserializer)deserializer);
+        }
+
         [DllImport("d3d12", ExactSpelling = true)]
         public static extern HRESULT D3D12CreateDevice([MarshalAs(UnmanagedType.IUnknown)] object adapter, D3D_FEATURE_LEVEL minimumFeatureLevel, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDevice);
 
@@ -38,5 +81,17 @@ namespace DirectN
 
         [DllImport("d3d12", ExactSpelling = true)]
         public static extern HRESULT D3D12GetDebugInterface([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvDebug);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12SerializeRootSignature(ref D3D12_ROOT_SIGNATURE_DESC pRootSignature, D3D_ROOT_SIGNATURE_VERSION Version, out ID3D10Blob ppBlob, out ID3D10Blob ppErrorBlob);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12SerializeVersionedRootSignature(ref D3D12_VERSIONED_ROOT_SIGNATURE_DESC pRootSignature, out ID3D10Blob ppBlob, out ID3D10Blob ppErrorBlob);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12CreateRootSignatureDeserializer(IntPtr pSrcData, IntPtr SrcDataSizeInBytes, [MarshalAs(UnmanagedType.LPStruct)] Guid pRootSignatureDeserializerInterface, [MarshalAs(UnmanagedType.IUnknown)] out object ppRootSignatureDeserializer);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializer(IntPtr pSrcData, IntPtr SrcDataSizeInBytes, [MarshalAs(UnmanagedType.LPStruct)] Guid pRootSignatureDeserializerInterface, [MarshalAs(UnmanagedType.IUnknown)] out object ppRootSignatureDeserializer);
     }
 }

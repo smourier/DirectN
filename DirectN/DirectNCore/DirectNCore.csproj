@@ -59,10 +59,12 @@
     <Compile Include="..\DirectN\Extensions\ID2D1PropertiesExtensions.cs" Link="Extensions\ID2D1PropertiesExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID2D1RenderTargetExtensions.cs" Link="Extensions\ID2D1RenderTargetExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID2D1SimplifiedGeometrySinkExtensions.cs" Link="Extensions\ID2D1SimplifiedGeometrySinkExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\ID3D10BlobExtensions.cs" Link="Extensions\ID3D10BlobExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D11DeviceChildExtensions.cs" Link="Extensions\ID3D11DeviceChildExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D11DeviceContextExtensions.cs" Link="Extensions\ID3D11DeviceContextExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D11DeviceExtensions.cs" Link="Extensions\ID3D11DeviceExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D11Texture2DExtensions.cs" Link="Extensions\ID3D11Texture2DExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\ID3D12CommandListExtensions.cs" Link="Extensions\ID3D12CommandListExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D12CommandQueueExtensions.cs" Link="Extensions\ID3D12CommandQueueExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D12DescriptorHeapExtensions.cs" Link="Extensions\ID3D12DescriptorHeapExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D12DeviceExtensions.cs" Link="Extensions\ID3D12DeviceExtensions.cs" />
@@ -218,6 +220,8 @@
     <Compile Include="..\DirectN\Manual\D2D_VECTOR_3F.partial.cs" Link="Manual\D2D_VECTOR_3F.partial.cs" />
     <Compile Include="..\DirectN\Manual\D2D_VECTOR_4F.partial.cs" Link="Manual\D2D_VECTOR_4F.partial.cs" />
     <Compile Include="..\DirectN\Manual\D3D11_TRACE_COMPONENT_MASK.cs" Link="Manual\D3D11_TRACE_COMPONENT_MASK.cs" />
+    <Compile Include="..\DirectN\Manual\D3D12_BLEND_DESC.partial.cs" Link="Manual\D3D12_BLEND_DESC.partial.cs" />
+    <Compile Include="..\DirectN\Manual\D3D12_INPUT_ELEMENT_DESC.partial.cs" Link="Manual\D3D12_INPUT_ELEMENT_DESC.partial.cs" />
     <Compile Include="..\DirectN\Manual\D3DVALUE.cs" Link="Manual\D3DVALUE.cs" />
     <Compile Include="..\DirectN\Manual\DCX.cs" Link="Manual\DCX.cs" />
     <Compile Include="..\DirectN\Manual\DEVICE_POWER_STATE.cs" Link="Manual\DEVICE_POWER_STATE.cs" />

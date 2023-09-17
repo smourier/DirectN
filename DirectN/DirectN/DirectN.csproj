@@ -70,6 +70,8 @@
     <Compile Include="Extensions\ID2D1PropertiesExtensions.cs" />
     <Compile Include="Extensions\ID2D1RenderTargetExtensions.cs" />
     <Compile Include="Extensions\ID2D1SimplifiedGeometrySinkExtensions.cs" />
+    <Compile Include="Extensions\ID3D10BlobExtensions.cs" />
+    <Compile Include="Extensions\ID3D12CommandListExtensions.cs" />
     <Compile Include="Extensions\ID3D12CommandQueueExtensions.cs" />
     <Compile Include="Extensions\ID3D12DescriptorHeapExtensions.cs" />
     <Compile Include="Extensions\ID3D12DeviceExtensions.cs" />
@@ -137,6 +139,8 @@
     <Compile Include="Manual\D2D_VECTOR_2F.partial.cs" />
     <Compile Include="Manual\D2D_VECTOR_3F.partial.cs" />
     <Compile Include="Manual\D2D_VECTOR_4F.partial.cs" />
+    <Compile Include="Manual\D3D12_BLEND_DESC.partial.cs" />
+    <Compile Include="Manual\D3D12_INPUT_ELEMENT_DESC.partial.cs" />
     <Compile Include="Manual\D3DVALUE.cs" />
     <Compile Include="Extensions\DWriteFunctions.cs" />
     <Compile Include="Generated\adpcmcoef_tag.cs" />

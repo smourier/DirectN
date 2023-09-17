@@ -85,7 +85,7 @@ namespace DirectN
             return new ComObject<ID3D10Blob>(blob);
         }
 
-        public static IComObject<ID3D10Blob> D3DCompileFromFile(string filename, string entrypoint, string target)
+        public static IComObject<ID3D10Blob> D3DCompileFromFile(string filename, string entrypoint, string target, uint flags1 = 0, uint flags2 = 0)
         {
             if (filename == null)
                 throw new ArgumentNullException(nameof(filename));
@@ -96,25 +96,65 @@ namespace DirectN
             if (target == null)
                 throw new ArgumentNullException(nameof(target));
 
-            var hr = D3DCompileFromFile(filename, null, null, entrypoint, target, 0, 0, out var blob, out var msg);
+            var hr = D3DCompileFromFile(filename, null, null, entrypoint, target, flags1, flags2, out var blob, out var msg);
             if (msg != null)
             {
-                if (hr.IsError)
-                {
-                    var ptr = msg.GetBufferPointer();
-                    var len = msg.GetBufferSize().ToInt32();
-                    if (ptr != IntPtr.Zero && len > 0)
-                    {
-                        var str = Marshal.PtrToStringAnsi(ptr, len).Nullify();
-                        if (str != null)
-                        {
-                            Marshal.ReleaseComObject(msg);
-                            throw new Win32Exception(hr.Value, str);
-                        }
-                    }
-                }
-                Marshal.ReleaseComObject(msg);
+                var str = msg.GetAnsiStringFromBlob();
+                if (str != null)
+                    throw new Win32Exception(hr.Value, str);
+
+                throw new Win32Exception(hr.Value);
             }
+
+            hr.ThrowOnError();
+            return new ComObject<ID3D10Blob>(blob);
+        }
+
+        public static IComObject<ID3D10Blob> D3DCompile(byte[] srcData, string sourceName, string entrypoint, string target, uint flags1 = 0, uint flags2 = 0)
+        {
+            if (srcData == null)
+                throw new ArgumentNullException(nameof(srcData));
+
+            if (entrypoint == null)
+                throw new ArgumentNullException(nameof(entrypoint));
+
+            if (target == null)
+                throw new ArgumentNullException(nameof(target));
+
+            var hr = D3DCompile(srcData, (IntPtr)srcData.Length, sourceName, null, null, entrypoint, target, flags1, flags2, out var blob, out var msg);
+            if (msg != null)
+            {
+                var str = msg.GetAnsiStringFromBlob();
+                if (str != null)
+                    throw new Win32Exception(hr.Value, str);
+
+                throw new Win32Exception(hr.Value);
+            }
+
+            hr.ThrowOnError();
+            return new ComObject<ID3D10Blob>(blob);
+        }
+
+        public static IComObject<ID3D10Blob> D3DCompile(IntPtr srcData, long srcDataSize, string sourceName, string entrypoint, string target, uint flags1 = 0, uint flags2 = 0) => D3DCompile(srcData, (IntPtr)srcDataSize, sourceName, entrypoint, target, flags1, flags2);
+        public static IComObject<ID3D10Blob> D3DCompile(IntPtr srcData, int srcDataSize, string sourceName, string entrypoint, string target, uint flags1 = 0, uint flags2 = 0) => D3DCompile(srcData, (IntPtr)srcDataSize, sourceName, entrypoint, target, flags1, flags2);
+        public static IComObject<ID3D10Blob> D3DCompile(IntPtr srcData, IntPtr srcDataSize, string sourceName, string entrypoint, string target, uint flags1 = 0, uint flags2 = 0)
+        {
+            if (entrypoint == null)
+                throw new ArgumentNullException(nameof(entrypoint));
+
+            if (target == null)
+                throw new ArgumentNullException(nameof(target));
+
+            var hr = D3DCompile(srcData, srcDataSize, sourceName, null, null, entrypoint, target, flags1, flags2, out var blob, out var msg);
+            if (msg != null)
+            {
+                var str = msg.GetAnsiStringFromBlob();
+                if (str != null)
+                    throw new Win32Exception(hr.Value, str);
+
+                throw new Win32Exception(hr.Value);
+            }
+
             hr.ThrowOnError();
             return new ComObject<ID3D10Blob>(blob);
         }
@@ -124,6 +164,12 @@ namespace DirectN
 
         [DllImport("D3DCompiler_47", ExactSpelling = true, CharSet = CharSet.Ansi)]
         public static extern HRESULT D3DCompileFromFile([MarshalAs(UnmanagedType.LPWStr)] string pFileName, _D3D_SHADER_MACRO[] pDefines, ID3DInclude pInclude, [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, [MarshalAs(UnmanagedType.LPStr)] string pTarget, uint Flags1, uint Flags2, out ID3D10Blob ppCode, out ID3D10Blob ppErrorMsgs);
+
+        [DllImport("D3DCompiler_47", ExactSpelling = true, CharSet = CharSet.Ansi)]
+        public static extern HRESULT D3DCompile(IntPtr pSrcData, IntPtr SrcDataSize, [MarshalAs(UnmanagedType.LPWStr)] string pSourceName, _D3D_SHADER_MACRO[] pDefines, ID3DInclude pInclude, [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, [MarshalAs(UnmanagedType.LPStr)] string pTarget, uint Flags1, uint Flags2, out ID3D10Blob ppCode, out ID3D10Blob ppErrorMsgs);
+
+        [DllImport("D3DCompiler_47", ExactSpelling = true, CharSet = CharSet.Ansi)]
+        private static extern HRESULT D3DCompile(byte[] pSrcData, IntPtr SrcDataSize, [MarshalAs(UnmanagedType.LPWStr)] string pSourceName, _D3D_SHADER_MACRO[] pDefines, ID3DInclude pInclude, [MarshalAs(UnmanagedType.LPStr)] string pEntrypoint, [MarshalAs(UnmanagedType.LPStr)] string pTarget, uint Flags1, uint Flags2, out ID3D10Blob ppCode, out ID3D10Blob ppErrorMsgs);
 
         [DllImport("D3DCompiler_47", ExactSpelling = true)]
         public static extern HRESULT D3DReadFileToBlob([MarshalAs(UnmanagedType.LPWStr)] string pFileName, out ID3D10Blob ppContents);

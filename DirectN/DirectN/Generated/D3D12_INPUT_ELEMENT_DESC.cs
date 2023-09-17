@@ -7,8 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D3D12_INPUT_ELEMENT_DESC
     {
-        [MarshalAs(UnmanagedType.LPStr)] 
-        public string SemanticName;
+        public IntPtr SemanticName;
         public uint SemanticIndex;
         public DXGI_FORMAT Format;
         public uint InputSlot;

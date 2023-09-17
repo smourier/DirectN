@@ -390,7 +390,7 @@ namespace DirectN
             if (string.IsNullOrWhiteSpace(text))
                 return null;
 
-            string t = text.Trim();
+            var t = text.Trim();
             return t.Length == 0 ? null : t;
         }
 
@@ -445,6 +445,7 @@ namespace DirectN
 
                 index++;
             }
+
             return -1;
         }
 
@@ -452,6 +453,291 @@ namespace DirectN
         public static bool IsValid(this DateTime dt) => dt != DateTime.MinValue && dt != DateTime.MaxValue && dt.Kind != DateTimeKind.Unspecified;
         public static bool IsValid(this DateTime? dt) => dt.HasValue && IsValid(dt.Value);
 
+        public static void Dispose(this IEnumerable disposables, bool throwOnError = false)
+        {
+            if (disposables == null)
+                return;
+
+            if (throwOnError)
+            {
+                foreach (var disposable in disposables.OfType<IDisposable>())
+                {
+                    disposable?.Dispose();
+                }
+            }
+            else
+            {
+                foreach (var disposable in disposables.OfType<IDisposable>())
+                {
+                    try
+                    {
+                        disposable?.Dispose();
+                    }
+                    catch
+                    {
+                        // continue
+                    }
+                }
+            }
+        }
+
+        public static void WithDispose(this IEnumerable disposables, Action action, bool throwOnError = false)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            if (disposables == null)
+            {
+                action();
+                return;
+            }
+
+            try
+            {
+                action();
+            }
+            finally
+            {
+                if (throwOnError)
+                {
+                    foreach (var disposable in disposables.OfType<IDisposable>())
+                    {
+                        disposable?.Dispose();
+                    }
+                }
+                else
+                {
+                    foreach (var disposable in disposables.OfType<IDisposable>())
+                    {
+                        try
+                        {
+                            disposable?.Dispose();
+                        }
+                        catch
+                        {
+                            // continue
+                        }
+                    }
+                }
+            }
+        }
+
+        public static T WithDispose<T>(this IEnumerable disposables, Func<T> func, bool throwOnError = false)
+        {
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            if (disposables == null)
+                return func();
+
+            try
+            {
+                return func();
+            }
+            finally
+            {
+                if (throwOnError)
+                {
+                    foreach (var disposable in disposables.OfType<IDisposable>())
+                    {
+                        disposable?.Dispose();
+                    }
+                }
+                else
+                {
+                    foreach (var disposable in disposables.OfType<IDisposable>())
+                    {
+                        try
+                        {
+                            disposable?.Dispose();
+                        }
+                        catch
+                        {
+                            // continue
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void WithDispose(this IDisposable disposable, Action action, bool throwOnError = false)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            if (disposable == null)
+            {
+                action();
+                return;
+            }
+
+            try
+            {
+                action();
+            }
+            finally
+            {
+                if (throwOnError)
+                {
+                    disposable.Dispose();
+                }
+                else
+                {
+                    try
+                    {
+                        disposable.Dispose();
+                    }
+                    catch
+                    {
+                        // continue
+                    }
+                }
+            }
+        }
+
+        public static T WithDispose<T>(this IDisposable disposable, Func<T> func, bool throwOnError = false)
+        {
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            if (disposable == null)
+                return func();
+
+            try
+            {
+                return func();
+            }
+            finally
+            {
+                if (throwOnError)
+                {
+                    disposable.Dispose();
+                }
+                else
+                {
+                    try
+                    {
+                        disposable.Dispose();
+                    }
+                    catch
+                    {
+                        // continue
+                    }
+                }
+            }
+        }
+
+        public static void WithArrayPointer(this Array array, Action<IntPtr> action)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            if (array == null)
+            {
+                action(IntPtr.Zero);
+                return;
+            }
+
+            var ghc = GCHandle.Alloc(array, GCHandleType.Pinned);
+            try
+            {
+                var ptr = ghc.AddrOfPinnedObject();
+                action(ptr);
+            }
+            finally
+            {
+                ghc.Free();
+            }
+        }
+
+        public static T WithArrayPointer<T>(this Array array, Func<IntPtr, T> func)
+        {
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            if (array == null)
+                return func(IntPtr.Zero);
+
+            var ghc = GCHandle.Alloc(array, GCHandleType.Pinned);
+            try
+            {
+                var ptr = ghc.AddrOfPinnedObject();
+                return func(ptr);
+            }
+            finally
+            {
+                ghc.Free();
+            }
+        }
+
+        public static void Dispose(this IEnumerable<IDisposable> disposables, bool throwOnError = false)
+        {
+            if (disposables == null)
+                return;
+
+            foreach (var disposable in disposables)
+            {
+                if (disposable == null)
+                    continue;
+
+                if (throwOnError)
+                {
+                    disposable.Dispose();
+                }
+                else
+                {
+                    try
+                    {
+                        disposable.Dispose();
+                    }
+                    catch
+                    {
+                        // continue;
+                    }
+                }
+            }
+        }
+
         public static void FinalDispose<T>(this IComObject<T> comObject) => ComObject.FinalDispose(comObject as ComObject);
+        public static void WithComPointer<TCom>(this IComObject<TCom> comObject, Action<IntPtr> action)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            if (comObject == null || comObject.IsDisposed)
+            {
+                action(IntPtr.Zero);
+                return;
+            }
+
+            var ptr = Marshal.GetComInterfaceForObject(comObject.Object, typeof(TCom));
+            try
+            {
+                action(ptr);
+            }
+            finally
+            {
+                Marshal.Release(ptr);
+            }
+        }
+
+        public static T WithComPointer<TCom, T>(this IComObject<TCom> comObject, Func<IntPtr, T> func)
+        {
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            if (comObject == null || comObject.IsDisposed)
+                return func(IntPtr.Zero);
+
+            var ptr = Marshal.GetComInterfaceForObject(comObject.Object, typeof(TCom));
+            try
+            {
+                return func(ptr);
+            }
+            finally
+            {
+                Marshal.Release(ptr);
+            }
+        }
     }
 }
