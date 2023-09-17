@@ -78,6 +78,8 @@
     <Compile Include="Extensions\ID3D11Texture2DExtensions.cs" />
     <Compile Include="Extensions\ID3D11DeviceChildExtensions.cs" />
     <Compile Include="Extensions\ID3D11DeviceContextExtensions.cs" />
+    <Compile Include="Extensions\ID3D12FenceExtensions.cs" />
+    <Compile Include="Extensions\ID3D12ObjectExtensions.cs" />
     <Compile Include="Extensions\ID3D9BitnessExtensions.cs" />
     <Compile Include="Extensions\IDWriteFontCollectionExtensions.cs" />
     <Compile Include="Extensions\IDWriteFontFamilyExtensions.cs" />

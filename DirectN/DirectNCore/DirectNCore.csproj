@@ -68,6 +68,8 @@
     <Compile Include="..\DirectN\Extensions\ID3D12CommandQueueExtensions.cs" Link="Extensions\ID3D12CommandQueueExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D12DescriptorHeapExtensions.cs" Link="Extensions\ID3D12DescriptorHeapExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D12DeviceExtensions.cs" Link="Extensions\ID3D12DeviceExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\ID3D12FenceExtensions.cs" Link="Extensions\ID3D12FenceExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\ID3D12ObjectExtensions.cs" Link="Extensions\ID3D12ObjectExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\ID3D9BitnessExtensions.cs" Link="Extensions\ID3D9BitnessExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\IDWriteFactoryExtensions.cs" Link="Extensions\IDWriteFactoryExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\IDWriteFontCollectionExtensions.cs" Link="Extensions\IDWriteFontCollectionExtensions.cs" />

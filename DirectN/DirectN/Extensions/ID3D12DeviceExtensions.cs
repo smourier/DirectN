@@ -137,6 +137,21 @@ namespace DirectN
             return new ComObject<T>((T)fence);
         }
 
+        public static IComObject<ID3D12Resource> CreateCommittedResource(this IComObject<ID3D12Device> device, D3D12_HEAP_PROPERTIES heapProperties, D3D12_HEAP_FLAGS heapFlags, D3D12_RESOURCE_DESC desc, D3D12_RESOURCE_STATES initialResourceState, D3D12_CLEAR_VALUE? optimizedClearValue = null) => CreateCommittedResource<ID3D12Resource>(device?.Object, heapProperties, heapFlags, desc, initialResourceState, optimizedClearValue);
+        public static IComObject<ID3D12Resource> CreateCommittedResource(this ID3D12Device device, D3D12_HEAP_PROPERTIES heapProperties, D3D12_HEAP_FLAGS heapFlags, D3D12_RESOURCE_DESC desc, D3D12_RESOURCE_STATES initialResourceState, D3D12_CLEAR_VALUE? optimizedClearValue = null) => CreateCommittedResource<ID3D12Resource>(device, heapProperties, heapFlags, desc, initialResourceState, optimizedClearValue);
+        public static IComObject<T> CreateCommittedResource<T>(this IComObject<ID3D12Device> device, D3D12_HEAP_PROPERTIES heapProperties, D3D12_HEAP_FLAGS heapFlags, D3D12_RESOURCE_DESC desc, D3D12_RESOURCE_STATES initialResourceState, D3D12_CLEAR_VALUE? optimizedClearValue = null) where T : ID3D12Resource => CreateCommittedResource<T>(device?.Object, heapProperties, heapFlags, desc, initialResourceState, optimizedClearValue);
+        public static IComObject<T> CreateCommittedResource<T>(this ID3D12Device device, D3D12_HEAP_PROPERTIES heapProperties, D3D12_HEAP_FLAGS heapFlags, D3D12_RESOURCE_DESC desc, D3D12_RESOURCE_STATES initialResourceState, D3D12_CLEAR_VALUE? optimizedClearValue = null) where T : ID3D12Resource
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            using (var mem = new ComMemory(optimizedClearValue))
+            {
+                device.CreateCommittedResource(heapProperties, heapFlags, desc, initialResourceState, mem.Pointer, typeof(T).GUID, out var resource).ThrowOnError();
+                return new ComObject<T>((T)resource);
+            }
+        }
+
         public static void CreateRenderTargetView(this IComObject<ID3D12Device> device, IComObject<ID3D12Resource> resource, D3D12_RENDER_TARGET_VIEW_DESC? desc, D3D12_CPU_DESCRIPTOR_HANDLE handle) => CreateRenderTargetView(device?.Object, resource?.Object, desc, handle);
         public static void CreateRenderTargetView(this ID3D12Device device, ID3D12Resource resource, D3D12_RENDER_TARGET_VIEW_DESC? desc, D3D12_CPU_DESCRIPTOR_HANDLE handle)
         {

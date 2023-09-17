@@ -16,6 +16,13 @@ namespace DirectN
         public static void CopyTo(this IntPtr source, IntPtr destination, int length) => PropVariant.CopyMemory(destination, source, (IntPtr)length);
         public static void CopyTo(this IntPtr source, IntPtr destination, long length) => PropVariant.CopyMemory(destination, source, (IntPtr)length);
         public static void CopyTo(this IntPtr source, IntPtr destination, IntPtr length) => PropVariant.CopyMemory(destination, source, length);
+        public static void CopyTo<T>(this T[] source, IntPtr destination)
+        {
+            if (source == null || source.Length == 0)
+                return;
+
+            source.WithArrayPointer(p => p.CopyTo(destination, source.Length * Marshal.SizeOf<T>()));
+        }
 
         public static bool IsValid(this float value) => !float.IsNaN(value);
         public static bool IsInvalid(this float value) => float.IsNaN(value);
