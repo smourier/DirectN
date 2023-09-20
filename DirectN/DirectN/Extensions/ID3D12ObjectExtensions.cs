@@ -150,5 +150,14 @@ namespace DirectN
                 resource.ReadFromSubresource(dstData, dstRowPitch, dstDepthPitch, srcSubresource, mem.Pointer).ThrowOnError();
             }
         }
+
+        public static void Reset(this IComObject<ID3D12CommandAllocator> resource) => Reset(resource?.Object);
+        public static void Reset(this ID3D12CommandAllocator allocator)
+        {
+            if (allocator == null)
+                throw new ArgumentNullException(nameof(allocator));
+
+            allocator.Reset();
+        }
     }
 }
