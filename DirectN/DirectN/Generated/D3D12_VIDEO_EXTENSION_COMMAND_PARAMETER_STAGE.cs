@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12video.h(3649,1)
+﻿// generated from <Windows SDK Path>\um\d3d12video.h
 namespace DirectN
 {
     public enum D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE

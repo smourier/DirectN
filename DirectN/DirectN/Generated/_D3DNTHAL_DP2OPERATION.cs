@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3dnthal.h(533,9)
+﻿// generated from <Windows SDK Path>\um\d3dnthal.h
 namespace DirectN
 {
     public enum _D3DNTHAL_DP2OPERATION

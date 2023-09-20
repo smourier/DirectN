@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxmini.h(269,9)
+﻿// generated from <Windows SDK Path>\um\dxmini.h
 using System;
 using System.Runtime.InteropServices;
 

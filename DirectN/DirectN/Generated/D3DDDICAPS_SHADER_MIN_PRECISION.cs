@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3dumddi.h(2640,13)
+﻿// generated from <Windows SDK Path>\um\d3dumddi.h
 namespace DirectN
 {
     public enum D3DDDICAPS_SHADER_MIN_PRECISION

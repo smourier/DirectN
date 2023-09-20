@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12video.h(1330,1)
+﻿// generated from <Windows SDK Path>\um\d3d12video.h
 using System;
 
 namespace DirectN

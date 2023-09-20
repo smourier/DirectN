@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\spatialaudiometadata.h(1006,5)
+﻿// generated from <Windows SDK Path>\um\spatialaudiometadata.h
 using System;
 using System.Runtime.InteropServices;
 

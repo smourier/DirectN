@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\mmeapi.h(234,9)
+﻿// generated from <Windows SDK Path>\um\mmeapi.h
 using System;
 using System.Runtime.InteropServices;
 

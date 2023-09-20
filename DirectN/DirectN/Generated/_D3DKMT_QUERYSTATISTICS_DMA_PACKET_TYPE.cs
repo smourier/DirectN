@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(3187,9)
+﻿// generated from <Windows SDK Path>\shared\d3dkmthk.h
 namespace DirectN
 {
     public enum _D3DKMT_QUERYSTATISTICS_DMA_PACKET_TYPE

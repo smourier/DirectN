@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ddrawi.h(1363,5)
+﻿// generated from <Windows SDK Path>\um\ddrawi.h
 using System;
 using System.Runtime.InteropServices;
 

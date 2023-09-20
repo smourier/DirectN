@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\ks.h(2547,9)
+﻿// generated from <Windows SDK Path>\shared\ks.h
 namespace DirectN
 {
     public enum KSEVENT_DEVICE

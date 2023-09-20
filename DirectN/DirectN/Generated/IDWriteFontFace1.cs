@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dwrite_1.h(1090,1)
+﻿// generated from <Windows SDK Path>\um\dwrite_1.h
 using System;
 using System.Runtime.InteropServices;
 using IDWriteGeometrySink = DirectN.ID2D1SimplifiedGeometrySink;

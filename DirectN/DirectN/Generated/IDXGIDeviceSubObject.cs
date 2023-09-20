@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\dxgi.h(468,5)
+﻿// generated from <Windows SDK Path>\shared\dxgi.h
 using System;
 using System.Runtime.InteropServices;
 

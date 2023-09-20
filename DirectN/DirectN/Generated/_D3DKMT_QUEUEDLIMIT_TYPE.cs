@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(4179,9)
+﻿// generated from <Windows SDK Path>\shared\d3dkmthk.h
 namespace DirectN
 {
     public enum _D3DKMT_QUEUEDLIMIT_TYPE

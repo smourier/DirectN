@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfidl.h(4700,5)
+﻿// generated from <Windows SDK Path>\um\mfidl.h
 using System;
 using System.Runtime.InteropServices;
 using TOPOID = System.UInt64;

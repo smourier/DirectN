@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3d9.h(178,1)
+﻿// generated from <Windows SDK Path>\shared\d3d9.h
 using System;
 using System.Runtime.InteropServices;
 

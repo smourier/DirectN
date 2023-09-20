@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d.h(297,1)
+﻿// generated from <Windows SDK Path>\um\d3d.h
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECT3DDEVICE3 = DirectN.IDirect3DDevice3;

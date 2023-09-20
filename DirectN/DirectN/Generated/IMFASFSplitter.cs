@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wmcontainer.h(1916,5)
+﻿// generated from <Windows SDK Path>\um\wmcontainer.h
 using System;
 using System.Runtime.InteropServices;
 

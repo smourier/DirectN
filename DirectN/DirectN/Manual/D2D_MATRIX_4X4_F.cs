@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace DirectN
 {
@@ -65,7 +64,7 @@ namespace DirectN
             return m;
         }
 
-        // C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d2d1_1helper.h
+        // from <Windows SDK Path>\um\d2d1_1helper.h
         public static D2D_MATRIX_4X4_F Translation(float x, float y, float z)
         {
             var translation = new D2D_MATRIX_4X4_F();

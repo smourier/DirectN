@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wincodecsdk.h(1179,5)
+﻿// generated from <Windows SDK Path>\um\wincodecsdk.h
 using System;
 using System.Runtime.InteropServices;
 

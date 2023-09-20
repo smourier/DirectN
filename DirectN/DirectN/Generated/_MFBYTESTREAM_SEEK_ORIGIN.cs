@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfobjects.h(4689,1)
+﻿// generated from <Windows SDK Path>\um\mfobjects.h
 namespace DirectN
 {
     public enum _MFBYTESTREAM_SEEK_ORIGIN

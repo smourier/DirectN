@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wmcodecdsp.h(3784,1)
+﻿// generated from <Windows SDK Path>\um\wmcodecdsp.h
 namespace DirectN
 {
     public enum MF_AUVRHP_ROOMMODEL

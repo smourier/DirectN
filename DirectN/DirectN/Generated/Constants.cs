@@ -2,7 +2,7 @@
 {
     public static partial class Constants
     {
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\d3d9.h
+        // from <Windows SDK Path>\shared\d3d9.h
         public const int D3D9b_SDK_VERSION = 31;
         public const int D3DADAPTER_DEFAULT = 0;
         public const int D3DCREATE_ADAPTERGROUP_DEVICE = 512;
@@ -39,7 +39,7 @@
         public const int D3D_SDK_VERSION = 32;
         public const int _FACD3D = 2166;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\d3d9caps.h
+        // from <Windows SDK Path>\shared\d3d9caps.h
         public const int D3DCAPS2_CANAUTOGENMIPMAP = 1073741824;
         public const int D3DCAPS2_CANCALIBRATEGAMMA = 1048576;
         public const int D3DCAPS2_CANMANAGERESOURCE = 268435456;
@@ -169,7 +169,7 @@
         public const int D3DVTXPCAPS_TEXGEN_SPHEREMAP = 256;
         public const int D3DVTXPCAPS_TWEENING = 64;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\d3d9types.h
+        // from <Windows SDK Path>\shared\d3d9types.h
         public const int D3D9_RESOURCE_PRIORITY_HIGH = -1610612736;
         public const int D3D9_RESOURCE_PRIORITY_LOW = 1342177280;
         public const int D3D9_RESOURCE_PRIORITY_MAXIMUM = -939524096;
@@ -285,7 +285,7 @@
         public const int MAXD3DDECLUSAGEINDEX = 15;
         public const int MAX_DEVICE_IDENTIFIER_STRING = 512;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\d3dkmddi.h
+        // from <Windows SDK Path>\shared\d3dkmddi.h
         public const int D3DKM_INVALID_GAMMA_INDEX = -1;
         public const int DXGKDDI_PARTITION_EVENT_DESCRIPTION_MAX = 255;
         public const int DXGK_ALLOCATION_LIST_SIZE_GDICONTEXT = 256;
@@ -308,7 +308,7 @@
         public const int DXGK_TEXTURE_SIZE_SHIFT = 11;
         public const int DXGK_WDDM3_ON_VB_INTERFACE_VERSION_1 = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\d3dkmdt.h
+        // from <Windows SDK Path>\shared\d3dkmdt.h
         public const int D3DKMDT_BITS_PER_COMPONENT_06 = 1;
         public const int D3DKMDT_BITS_PER_COMPONENT_08 = 2;
         public const int D3DKMDT_BITS_PER_COMPONENT_10 = 4;
@@ -331,7 +331,7 @@
         public const int DXGK_BRIGHTNESS_MAXIMUM_NIT_RANGE_COUNT = 16;
         public const int DXGK_MAX_METADATA_NAME_LENGTH = 32;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\d3dkmthk.h
+        // from <Windows SDK Path>\shared\d3dkmthk.h
         public const int D3DKMT_GDI_STYLE_HANDLE_DECORATION = 2;
         public const int D3DKMT_GETPRESENTHISTORY_MAXTOKENS = 2048;
         public const int D3DKMT_GET_PTE_MAX = 64;
@@ -360,7 +360,7 @@
         public const int OUTPUTDUPL_CREATE_MAX_KEYEDMUTXES = 3;
         public const int SHARED_ALLOCATION_WRITE = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\d3dukmdt.h
+        // from <Windows SDK Path>\shared\d3dukmdt.h
         public const int D3DDDI_ALLOCATIONPRIORITY_HIGH = -1610612736;
         public const int D3DDDI_ALLOCATIONPRIORITY_LOW = 1342177280;
         public const int D3DDDI_ALLOCATIONPRIORITY_MAXIMUM = -939524096;
@@ -433,16 +433,16 @@
         public const int DXGK_MAX_PAGE_TABLE_LEVEL_COUNT = 6;
         public const int DXGK_MIN_PAGE_TABLE_LEVEL_COUNT = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\dcomptypes.h
+        // from <Windows SDK Path>\shared\dcomptypes.h
         public const int COMPOSITIONOBJECT_READ = 1;
         public const int COMPOSITIONOBJECT_WRITE = 2;
         public const int COMPOSITION_STATS_MAX_TARGETS = 256;
         public const int DCOMPOSITION_MAX_WAITFORCOMPOSITORCLOCK_OBJECTS = 32;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared\dmerror.h
+        // from <Windows SDK Path>\shared\dmerror.h
         public const int DMUS_ERRBASE = 4096;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\dxgi.h
+        // from <Windows SDK Path>\shared\dxgi.h
         public const int DXGI_CPU_ACCESS_DYNAMIC = 1;
         public const int DXGI_CPU_ACCESS_FIELD = 15;
         public const int DXGI_CPU_ACCESS_NONE = 0;
@@ -477,26 +477,26 @@
         public const int DXGI_USAGE_SHARED = 128;
         public const int DXGI_USAGE_UNORDERED_ACCESS = 1024;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\dxgi1_2.h
+        // from <Windows SDK Path>\shared\dxgi1_2.h
         public const int DXGI_ENUM_MODES_DISABLED_STEREO = 8;
         public const int DXGI_ENUM_MODES_STEREO = 4;
         public const int DXGI_SHARED_RESOURCE_READ = -2147483648;
         public const int DXGI_SHARED_RESOURCE_WRITE = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\dxgi1_3.h
+        // from <Windows SDK Path>\shared\dxgi1_3.h
         public const int DXGI_CREATE_FACTORY_DEBUG = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\dxgicommon.h
+        // from <Windows SDK Path>\shared\dxgicommon.h
         public const int DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN = -2;
         public const int DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN = -1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\dxgiformat.h
+        // from <Windows SDK Path>\shared\dxgiformat.h
         public const int DXGI_FORMAT_DEFINED = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\dxgitype.h
+        // from <Windows SDK Path>\shared\dxgitype.h
         public const int _FACDXGI = 2170;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\ks.h
+        // from <Windows SDK Path>\shared\ks.h
         public const int KSALLOCATOR_FLAG_2D_BUFFER_REQUIRED = 32768;
         public const int KSALLOCATOR_FLAG_ALLOCATOR_EXISTS = 2048;
         public const int KSALLOCATOR_FLAG_ATTENTION_STEPPING = 8192;
@@ -596,7 +596,7 @@
         public const int KSSTREAM_UVC_SECURE_ATTRIBUTE_SIZE = 8192;
         public const int NANOSECONDS = 10000000;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared\ksarm.h
+        // from <Windows SDK Path>\shared\ksarm.h
         public const int AaCp15_Cr0_CpuId = 0;
         public const int AaCp15_Cr10_NormalMemoryRemap = 328;
         public const int AaCp15_Cr10_PrimaryMemoryRemap = 324;
@@ -840,7 +840,7 @@
         public const int VsVfpD = 16;
         public const int VsVfpD8 = 80;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared\ksarm64.h
+        // from <Windows SDK Path>\shared\ksarm64.h
         public const int AaActlr_El1 = 16;
         public const int AaCpacr_El1 = 24;
         public const int AaEsr_El1 = 56;
@@ -2164,7 +2164,7 @@
         public const int WrDispatchInt = 31;
         public const int WrExecutive = 0;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\ksmedia.h
+        // from <Windows SDK Path>\shared\ksmedia.h
         public const int AUDIOMODULE_MAX_DATA_SIZE = 64000;
         public const int AUDIOMODULE_MAX_NAME_CCH_SIZE = 128;
         public const int CC_MAX_HW_DECODE_LINES = 12;
@@ -2562,7 +2562,7 @@
         public const int WST_TVTUNER_CHANGE_BEGIN_TUNE = 4096;
         public const int WST_TVTUNER_CHANGE_END_TUNE = 8192;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\mmreg.h
+        // from <Windows SDK Path>\shared\mmreg.h
         public const int ACM_MPEG_COPYRIGHT = 2;
         public const int ACM_MPEG_DUALCHANNEL = 4;
         public const int ACM_MPEG_ID_MPEG1 = 16;
@@ -4390,14 +4390,14 @@
         public const int WMAUDIO_MAX_CHANNELS = 2;
         public const int _INC_MMREG = 158;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared\windef.h
+        // from <Windows SDK Path>\shared\windef.h
         public const int APP_LOCAL_DEVICE_ID_SIZE = 32;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\amva.h
+        // from <Windows SDK Path>\um\amva.h
         public const int AMVA_QUERYRENDERSTATUSF_READ = 1;
         public const int AMVA_TYPEINDEX_OUTPUTFRAME = -1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\amvideo.h
+        // from <Windows SDK Path>\um\amvideo.h
         public const int AMDDS_ALL = 255;
         public const int AMDDS_DCIPS = 1;
         public const int AMDDS_NONE = 0;
@@ -4419,23 +4419,23 @@
         public const int iTRUECOLOR = 16;
         public const int MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\AudioClient.h
+        // from <Windows SDK Path>\um\AudioClient.h
         public const int AMBISONICS_PARAM_VERSION_1 = 1;
         public const int AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\audioendpoints.h
+        // from <Windows SDK Path>\um\audioendpoints.h
         public const int ENDPOINT_FORMAT_RESET_MIX_ONLY = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\audioenginebaseapo.h
+        // from <Windows SDK Path>\um\audioenginebaseapo.h
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\audiomediatype.h
+        // from <Windows SDK Path>\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\AudioSessionTypes.h
+        // from <Windows SDK Path>\um\AudioSessionTypes.h
         public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDE = 536870912;
         public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDEWHENEXPIRED = 1073741824;
         public const int AUDCLNT_SESSIONFLAGS_EXPIREWHENUNOWNED = 268435456;
@@ -4447,18 +4447,18 @@
         public const int AUDCLNT_STREAMFLAGS_RATEADJUST = 1048576;
         public const int AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY = 134217728;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\codecapi.h
+        // from <Windows SDK Path>\um\codecapi.h
         public const int AVENC_H263V_LEVELCOUNT = 8;
         public const int AVENC_H264V_LEVELCOUNT = 16;
         public const int AVENC_H264V_MAX_MBBITS = 3200;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\D2D1EffectAuthor.h
+        // from <Windows SDK Path>\um\D2D1EffectAuthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\D2DErr.h
+        // from <Windows SDK Path>\um\D2DErr.h
         public const int FACILITY_D2D = 2201;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d.h
+        // from <Windows SDK Path>\um\d3d.h
         public const int D3DDP_DONOTCLIP = 4;
         public const int D3DDP_DONOTLIGHT = 16;
         public const int D3DDP_DONOTUPDATEEXTENTS = 8;
@@ -4467,7 +4467,7 @@
         public const int D3DNEXT_NEXT = 1;
         public const int D3DNEXT_TAIL = 4;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d10.h
+        // from <Windows SDK Path>\um\d3d10.h
         public const int D3D10_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D10_32BIT_INDEX_STRIP_CUT_VALUE = -1;
         public const int D3D10_8BIT_INDEX_STRIP_CUT_VALUE = 255;
@@ -4649,18 +4649,18 @@
         public const int D3D_SPEC_DATE_YEAR = 2006;
         public const int _FACD3D10 = 2169;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d10sdklayers.h
+        // from <Windows SDK Path>\um\d3d10sdklayers.h
         public const int D3D10_DEBUG_FEATURE_FINISH_PER_RENDER_OP = 2;
         public const int D3D10_DEBUG_FEATURE_FLUSH_PER_RENDER_OP = 1;
         public const int D3D10_DEBUG_FEATURE_PRESENT_PER_RENDER_OP = 4;
         public const int D3D10_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int D3D10_SDK_LAYERS_VERSION = 11;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d10shader.h
+        // from <Windows SDK Path>\um\d3d10shader.h
         public const int D3D10_SHADER_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
         public const int D3D10_SHADER_OPTIMIZATION_LEVEL1 = 0;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d10umddi.h
+        // from <Windows SDK Path>\um\d3d10umddi.h
         public const int D3D10DDI_CREATEDEVICE_FLAG_DISABLE_EXTRA_THREAD_CREATION = 1;
         public const int D3D10DDI_MINOR_HEADER_VERSION = 2;
         public const int D3D10DDI_QUERY_MISCFLAG_PREDICATEHINT = 1;
@@ -4771,7 +4771,7 @@
         public const int DXGI_RESOLVE_SHARED_RESOURCE = 9;
         public const int VISTA_GOLD_PRODUCT_VER = 6000;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d10_1.h
+        // from <Windows SDK Path>\um\d3d10_1.h
         public const int D3D10_1_DEFAULT_SAMPLE_MASK = -1;
         public const int D3D10_1_GS_INPUT_REGISTER_COUNT = 32;
         public const int D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT = 32;
@@ -4792,7 +4792,7 @@
         public const int D3D10_1_VS_INPUT_REGISTER_COUNT = 32;
         public const int D3D10_1_VS_OUTPUT_REGISTER_COUNT = 32;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d11.h
+        // from <Windows SDK Path>\um\d3d11.h
         public const int D3D11_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D11_1_UAV_SLOT_COUNT = 64;
         public const int D3D11_2_TILED_RESOURCE_TILE_SIZE_IN_BYTES = 65536;
@@ -5130,7 +5130,7 @@
         public const int D3D11_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
         public const int _FACD3D11 = 2172;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d11sdklayers.h
+        // from <Windows SDK Path>\um\d3d11sdklayers.h
         public const int D3D11_DEBUG_FEATURE_ALWAYS_DISCARD_OFFERED_RESOURCE = 8;
         public const int D3D11_DEBUG_FEATURE_AVOID_BEHAVIOR_CHANGING_DEBUG_AIDS = 64;
         public const int D3D11_DEBUG_FEATURE_DISABLE_TILED_RESOURCE_MAPPING_TRACKING_AND_VALIDATION = 128;
@@ -5141,7 +5141,7 @@
         public const int D3D11_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int D3D11_SDK_LAYERS_VERSION = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\d3d11shadertracing.h
+        // from <Windows SDK Path>\um\d3d11shadertracing.h
         public const int D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_READS = 2;
         public const int D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_WRITES = 1;
         public const int D3D11_TRACE_COMPONENT_W = 8;
@@ -5157,7 +5157,7 @@
         public const int D3D11_TRACE_MISC_PS_DISCARD = 4;
         public const int D3D11_TRACE_REGISTER_FLAGS_RELATIVE_INDEXING = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d11TokenizedProgramFormat.hpp
+        // from <Windows SDK Path>\um\d3d11TokenizedProgramFormat.hpp
         public const int D3D10_SB_4_COMPONENT_NAME_MASK = 3;
         public const int D3D10_SB_CONSTANT_BUFFER_ACCESS_PATTERN_MASK = 2048;
         public const int D3D10_SB_CONSTANT_BUFFER_ACCESS_PATTERN_SHIFT = 11;
@@ -5260,10 +5260,10 @@
         public const int MAX_D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH = 127;
         public const int MAX_D3D10_SB_TOKENIZED_PROGRAM_LENGTH = -1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d11_2.h
+        // from <Windows SDK Path>\um\d3d11_2.h
         public const int D3D11_PACKED_TILE = -1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d12.h
+        // from <Windows SDK Path>\um\d3d12.h
         public const int D3D12_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D12_32BIT_INDEX_STRIP_CUT_VALUE = -1;
         public const int D3D12_8BIT_INDEX_STRIP_CUT_VALUE = 255;
@@ -5648,10 +5648,10 @@
         public const int D3D12_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
         public const int D3D12_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d12sdklayers.h
+        // from <Windows SDK Path>\um\d3d12sdklayers.h
         public const int D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3d12shader.h
+        // from <Windows SDK Path>\um\d3d12shader.h
         public const int D3D_SHADER_REQUIRES_11_1_DOUBLE_EXTENSIONS = 32;
         public const int D3D_SHADER_REQUIRES_11_1_SHADER_EXTENSIONS = 64;
         public const int D3D_SHADER_REQUIRES_64_UAVS = 8;
@@ -5682,7 +5682,7 @@
         public const int D3D_SHADER_REQUIRES_WAVE_MMA = 134217728;
         public const int D3D_SHADER_REQUIRES_WAVE_OPS = 16384;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\d3d12umddi.h
+        // from <Windows SDK Path>\um\d3d12umddi.h
         public const int D3D12DDI_BUILD_VERSION = 8;
         public const int D3D12DDI_BUILD_VERSION_0010 = 0;
         public const int D3D12DDI_BUILD_VERSION_0011 = 1;
@@ -5804,10 +5804,10 @@
         public const int D3D12DDI_VIDEO_DECODE_MAX_HISTOGRAM_COMPONENTS = 4;
         public const int D3D12DDI_VIDEO_PROCESS_MAX_FILTERS_0020 = 32;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\d3d9on12.h
+        // from <Windows SDK Path>\um\d3d9on12.h
         public const int MAX_D3D9ON12_QUEUES = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3dcaps.h
+        // from <Windows SDK Path>\um\d3dcaps.h
         public const int D3DDD_BCLIPPING = 16;
         public const int D3DDD_COLORMODEL = 1;
         public const int D3DDD_DEVCAPS = 2;
@@ -6018,7 +6018,7 @@
         public const int D3DVTXPCAPS_TEXGEN = 1;
         public const int D3DVTXPCAPS_VERTEXFOG = 4;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3dcommon.h
+        // from <Windows SDK Path>\um\d3dcommon.h
         public const int D3D_COMPONENT_MASK_W = 8;
         public const int D3D_COMPONENT_MASK_X = 1;
         public const int D3D_COMPONENT_MASK_Y = 2;
@@ -6068,7 +6068,7 @@
         public const int D3D_SHADER_FEATURE_WAVE_MMA = 134217728;
         public const int D3D_SHADER_FEATURE_WAVE_OPS = 16384;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\d3dcompiler.h
+        // from <Windows SDK Path>\um\d3dcompiler.h
         public const int D3DCOMPILE_DEBUG = (1 << 0);
         public const int D3DCOMPILE_SKIP_VALIDATION = (1 << 1);
         public const int D3DCOMPILE_SKIP_OPTIMIZATION = (1 << 2);
@@ -6115,12 +6115,12 @@
         public const int D3D_DISASM_PRINT_HEX_LITERALS = 128;
         public const int D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\d3dcsx.h
+        // from <Windows SDK Path>\um\d3dcsx.h
         public const int D3DX11_FFT_MAX_DIMENSIONS = 32;
         public const int D3DX11_FFT_MAX_PRECOMPUTE_BUFFERS = 4;
         public const int D3DX11_FFT_MAX_TEMP_BUFFERS = 4;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3dhal.h
+        // from <Windows SDK Path>\um\d3dhal.h
         public const int D3DCLEAR_COMPUTERECTS = 8;
         public const int D3DDEVCAPS_HWINDEXBUFFER = 67108864;
         public const int D3DDEVCAPS_HWVERTEXBUFFER = 33554432;
@@ -6294,7 +6294,7 @@
         public const int D3DVS_TEMPREG_MAX_V2_1 = 32;
         public const int D3DVS_TEMPREG_MAX_V3_0 = 32;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\d3dnthal.h
+        // from <Windows SDK Path>\um\d3dnthal.h
         public const int D3DNTHAL2_CB32_SETRENDERTARGET = 1;
         public const int D3DNTHAL3_CB32_CLEAR2 = 1;
         public const int D3DNTHAL3_CB32_DRAWPRIMITIVES2 = 8;
@@ -6318,7 +6318,7 @@
         public const int D3DNTHAL_TSS_STATESPERSTAGE = 64;
         public const int _NT_D3DRS_DELETERTPATCH = 169;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3dtypes.h
+        // from <Windows SDK Path>\um\d3dtypes.h
         public const int D3DCLEAR_STENCIL = 4;
         public const int D3DCLEAR_TARGET = 1;
         public const int D3DCLEAR_ZBUFFER = 2;
@@ -6443,7 +6443,7 @@
         public const int D3DWRAP_U = 1;
         public const int D3DWRAP_V = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\d3dumddi.h
+        // from <Windows SDK Path>\um\d3dumddi.h
         public const int D3DDDIDEVINFOID_VCACHE = 4;
         public const int D3DDDISETPALETTE_256 = 1;
         public const int D3DDDISETPALETTE_ALLOW256 = 512;
@@ -6582,7 +6582,7 @@
         public const int MODE_FXCAPS_OVERLAYSTRETCHY = 8;
         public const int _FACD3DDDI = 2166;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\ddkernel.h
+        // from <Windows SDK Path>\um\ddkernel.h
         public const int DDIRQ_RESERVED1 = 2;
         public const int DDKERNELCAPS_AUTOFLIP = 2;
         public const int DDKERNELCAPS_CAPTURE_INVERTED = 512;
@@ -6595,7 +6595,7 @@
         public const int DDKERNELCAPS_SETSTATE = 4;
         public const int DDKERNELCAPS_SKIPFIELDS = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\ddkmapi.h
+        // from <Windows SDK Path>\um\ddkmapi.h
         public const int DDADDBUFF_INVERT = 4;
         public const int DDADDBUFF_NONLOCALVIDMEM = 2;
         public const int DDADDBUFF_SYSTEMMEMORY = 1;
@@ -6628,7 +6628,7 @@
         public const int DXAPI_MAJORVERSION = 1;
         public const int DXAPI_MINORVERSION = 0;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\ddraw.h
+        // from <Windows SDK Path>\um\ddraw.h
         public const int CO_E_NOTINITIALIZED = -2147221008;
         public const int DDBD_1 = 16384;
         public const int DDBD_16 = 1024;
@@ -7056,7 +7056,7 @@
         public const int MAX_DDDEVICEID_STRING = 512;
         public const int _FACDD = 2166;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\ddrawi.h
+        // from <Windows SDK Path>\um\ddrawi.h
         public const int ACCESSRECT_BROKEN = 4;
         public const int ACCESSRECT_NOTHOLDINGWIN16LOCK = 2;
         public const int ACCESSRECT_VRAMSTYLE = 1;
@@ -7340,7 +7340,7 @@
         public const int VIDMEM_ISRECTANGULAR = 2;
         public const int VIDMEM_ISWC = 16;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\ddrawint.h
+        // from <Windows SDK Path>\um\ddrawint.h
         public const int DDABLT_SRCOVERDEST = 1;
         public const int DDBLT_AFLAGS = -2147483648;
         public const int DDHAL_CB32_MAPMEMORY = -2147483648;
@@ -7355,22 +7355,22 @@
         public const int DDHAL_PRIVATECAP_RESERVED1 = 4;
         public const int DDHAL_VPORT32_GETAUTOFLIPSURF = 64;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\dmemmgr.h
+        // from <Windows SDK Path>\um\dmemmgr.h
         public const int SURFACEALIGN_DISCARDABLE = 1;
         public const int VMEMHEAP_ALIGNMENT = 4;
         public const int VMEMHEAP_LINEAR = 1;
         public const int VMEMHEAP_RECTANGULAR = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dshow.h
+        // from <Windows SDK Path>\um\dshow.h
         public const int OAFALSE = 0;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dshowasf.h
+        // from <Windows SDK Path>\um\dshowasf.h
         public const int EC_PREPROCESS_COMPLETE = 86;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dvdevcod.h
+        // from <Windows SDK Path>\um\dvdevcod.h
         public const int EC_DVDBASE = 256;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dvdmedia.h
+        // from <Windows SDK Path>\um\dvdmedia.h
         public const int AMCONTROL_COLORINFO_PRESENT = 128;
         public const int AMCONTROL_PAD_TO_16x9 = 4;
         public const int AMCONTROL_PAD_TO_4x3 = 2;
@@ -7436,7 +7436,7 @@
         public const int AM_VIDEO_FLAG_REPEAT_FIELD = 64;
         public const int AM_VIDEO_FLAG_WEAVE = 8;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\dvp.h
+        // from <Windows SDK Path>\um\dvp.h
         public const int DDVPBCAPS_DESTINATION = 2;
         public const int DDVPBCAPS_SOURCE = 1;
         public const int DDVPB_OVERLAY = 2;
@@ -7524,24 +7524,24 @@
         public const int DDVP_VBINOINTERLEAVE = 16384;
         public const int DDVP_VBINOSCALE = 2048;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\DWrite.h
+        // from <Windows SDK Path>\um\DWrite.h
         public const int DWRITE_ALPHA_MAX = 255;
         public const int DWRITE_ERR_BASE = 20480;
         public const int FACILITY_DWRITE = 2200;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dxcapi.h
+        // from <Windows SDK Path>\um\dxcapi.h
         public const int DXC_CP_ACP = 0;
         public const int DXC_CP_UTF16 = 1200;
         public const int DXC_CP_UTF8 = 65001;
         public const int DXC_HASHFLAG_INCLUDES_SOURCE = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dxcore_interface.h
+        // from <Windows SDK Path>\um\dxcore_interface.h
         public const int _FACDXCORE = 2176;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dxdiag.h
+        // from <Windows SDK Path>\um\dxdiag.h
         public const int DXDIAG_DX9_SDK_VERSION = 111;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dxgiddi.h
+        // from <Windows SDK Path>\um\dxgiddi.h
         public const int DXGI_DDI_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS = 16;
         public const int DXGI_DDI_PRIMARY_DRIVER_FLAG_NO_SCANOUT = 1;
         public const int DXGI_DDI_PRIMARY_INDIRECT = 8;
@@ -7550,12 +7550,12 @@
         public const int DXGI_DDI_PRIMARY_STEREO = 4;
         public const int _FACDXGI_DDI = 2171;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dxgidebug.h
+        // from <Windows SDK Path>\um\dxgidebug.h
         public const int DXGI_DEBUG_BINARY_VERSION = 1;
         public const int DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION = 0;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dxmini.h
+        // from <Windows SDK Path>\um\dxmini.h
         public const int DDIRQ_BUSMASTER = 2;
         public const int DDIRQ_DISPLAY_VSYNC = 1;
         public const int DDIRQ_VPORT0_LINE = 8;
@@ -7611,7 +7611,7 @@
         public const int MDL_SOURCE_IS_NONPAGED_POOL = 4;
         public const int MDL_WRITE_OPERATION = 128;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dxva.h
+        // from <Windows SDK Path>\um\dxva.h
         public const int DXVA_ALPHA_BLEND_COMBINATION_FUNCTION = 3;
         public const int DXVA_ALPHA_BLEND_DATA_LOAD_FUNCTION = 2;
         public const int DXVA_BIDIRECTIONAL_AVERAGING_H263_TRUNC = 1;
@@ -7704,13 +7704,13 @@
         public const int DXVA_USUAL_BLOCK_HEIGHT = 8;
         public const int DXVA_USUAL_BLOCK_WIDTH = 8;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\dxva2api.h
+        // from <Windows SDK Path>\um\dxva2api.h
         public const int DXVA2_DECODE_GET_DRIVER_HANDLE = 1829;
         public const int DXVA2_DECODE_SPECIFY_ENCRYPTED_BLOCKS = 1828;
         public const int MAX_DEINTERLACE_SURFACES = 32;
         public const int MAX_SUBSTREAMS = 15;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dxva9typ.h
+        // from <Windows SDK Path>\um\dxva9typ.h
         public const int COPP_DefaultProtectionLevel = 0;
         public const int COPP_ImageAspectRatio_EN300294_Mask = 7;
         public const int DIRECT3D_VERSION = 2304;
@@ -7751,7 +7751,7 @@
         public const int DXVA_SLICE_CONTROL_BUFFER = 6;
         public const int MAX_DEINTERLACE_DEVICE_GUIDS = 32;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\mfapi.h
+        // from <Windows SDK Path>\um\mfapi.h
         public const int D3DFMT_A16B16G16R16F = 113;
         public const int D3DFMT_A2B10G10R10 = 31;
         public const int D3DFMT_A8R8G8B8 = 21;
@@ -7808,7 +7808,7 @@
         public const int MF_METADATATIMESTAMPS_PRESENTATION = 2;
         public const int MF_SDK_VERSION = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\Mferror.h
+        // from <Windows SDK Path>\um\Mferror.h
         public const int FACILITY_MF = 13;
         public const int FACILITY_MF_WIN32 = 7;
         public const int MF_INDEX_SIZE_ERR = -2140143615;
@@ -7825,7 +7825,7 @@
         public const int STATUS_SEVERITY_SUCCESS = 0;
         public const int STATUS_SEVERITY_WARNING = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\mfidl.h
+        // from <Windows SDK Path>\um\mfidl.h
         public const int MEDIASINK_CANNOT_MATCH_CLOCK = 2;
         public const int MEDIASINK_CAN_PREROLL = 16;
         public const int MEDIASINK_CLOCK_REQUIRED = 8;
@@ -7861,10 +7861,10 @@
         public const long PRESENTATION_CURRENT_POSITION = 9223372036854775807;
         public const int SHA_HASH_LEN = 20;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\MFMediaEngine.h
+        // from <Windows SDK Path>\um\MFMediaEngine.h
         public const long MF_INVALID_PRESENTATION_TIME = -9223372036854775808;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\mfobjects.h
+        // from <Windows SDK Path>\um\mfobjects.h
         public const int MFASYNC_BLOCKING_CALLBACK = 4;
         public const int MFASYNC_CALLBACK_QUEUE_ALL = -1;
         public const int MFASYNC_CALLBACK_QUEUE_IO = 3;
@@ -7895,10 +7895,10 @@
         public const int MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
         public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\mftransform.h
+        // from <Windows SDK Path>\um\mftransform.h
         public const int MFT_STREAMS_UNLIMITED = -1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\mmdeviceapi.h
+        // from <Windows SDK Path>\um\mmdeviceapi.h
         public const int DEVICE_STATEMASK_ALL = 15;
         public const int DEVICE_STATE_ACTIVE = 1;
         public const int DEVICE_STATE_DISABLED = 2;
@@ -7907,7 +7907,7 @@
         public const int ENDPOINT_SYSFX_DISABLED = 1;
         public const int ENDPOINT_SYSFX_ENABLED = 0;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\mmeapi.h
+        // from <Windows SDK Path>\um\mmeapi.h
         public const int AUXCAPS_AUXIN = 2;
         public const int AUXCAPS_CDAUDIO = 1;
         public const int AUXCAPS_LRVOLUME = 2;
@@ -8046,7 +8046,7 @@
         public const int WHDR_INQUEUE = 16;
         public const int WHDR_PREPARED = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\mmsyscom.h
+        // from <Windows SDK Path>\um\mmsyscom.h
         public const int CALLBACK_EVENT = 327680;
         public const int CALLBACK_FUNCTION = 196608;
         public const int CALLBACK_NULL = 0;
@@ -8113,17 +8113,17 @@
         public const int TIME_TICKS = 32;
         public const int WAVERR_BASE = 32;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\ocidl.h
+        // from <Windows SDK Path>\um\ocidl.h
         public const int MULTICLASSINFO_GETIIDPRIMARY = 4;
         public const int MULTICLASSINFO_GETIIDSOURCE = 8;
         public const int MULTICLASSINFO_GETNUMRESERVEDDISPIDS = 2;
         public const int MULTICLASSINFO_GETTYPEINFO = 1;
         public const int TIFLAGS_EXTENDDISPATCHONLY = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\SpatialAudioMetadata.h
+        // from <Windows SDK Path>\um\SpatialAudioMetadata.h
         public const int SPATIAL_AUDIO_STANDARD_COMMANDS_START = 200;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\strmif.h
+        // from <Windows SDK Path>\um\strmif.h
         public const int AM_GBF_NODDSURFACELOCK = 8;
         public const int AM_GBF_NOTASYNCPOINT = 2;
         public const int AM_GBF_NOWAIT = 4;
@@ -8179,7 +8179,7 @@
         public const int VMR_NOTSUPPORTED = 0;
         public const int VMR_SUPPORTED = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\wincodec.h
+        // from <Windows SDK Path>\um\wincodec.h
         public const int FACILITY_WINCODEC_ERR = 2200;
         public const int WICRawChangeNotification_Contrast = 16;
         public const int WICRawChangeNotification_DestinationColorContext = 1024;
@@ -8210,10 +8210,10 @@
         public const int WINCODEC_SDK_VERSION1 = 566;
         public const int WINCODEC_SDK_VERSION2 = 567;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\windows.ui.xaml.media.dxinterop.h
+        // from <Windows SDK Path>\um\windows.ui.xaml.media.dxinterop.h
         public const int E_SURFACE_CONTENTS_LOST = -2144665568;
 
-        // from C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um\wingdi.h
+        // from <Windows SDK Path>\um\wingdi.h
         public const int ABORTDOC = 2;
         public const int ABSOLUTE = 1;
         public const int AC_SRC_ALPHA = 1;
@@ -9558,7 +9558,7 @@
         public const int WHITE_PEN = 6;
         public const int WINDING = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wmcodecdsp.h
+        // from <Windows SDK Path>\um\wmcodecdsp.h
         public const int AEC_MAX_SYSTEM_MODES = 6;
         public const int SYSFXUI_DONOTSHOW_BASSBOOST = 8;
         public const int SYSFXUI_DONOTSHOW_BASSMANAGEMENT = 4;
@@ -9577,7 +9577,7 @@
         public const int WM_CODEC_TWOPASS_VBR_PEAKCONSTRAINED = 16;
         public const int WM_CODEC_TWOPASS_VBR_UNCONSTRAINED = 8;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wmcontainer.h
+        // from <Windows SDK Path>\um\wmcontainer.h
         public const long MFASFINDEXER_APPROX_SEEK_TIME_UNKNOWN = -1;
         public const int MFASFINDEXER_NO_FIXED_INTERVAL = -1;
         public const int MFASFINDEXER_PER_ENTRY_BYTES_DYNAMIC = 65535;
@@ -9587,19 +9587,19 @@
         public const int MFASF_PAYLOADEXTENSION_MAX_SIZE = 255;
         public const int MFASF_PAYLOADEXTENSION_VARIABLE_SIZE = 65535;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wmdmlog.h
+        // from <Windows SDK Path>\um\wmdmlog.h
         public const int WMDM_LOG_NOTIMESTAMP = 16;
         public const int WMDM_LOG_SEV_ERROR = 4;
         public const int WMDM_LOG_SEV_INFO = 1;
         public const int WMDM_LOG_SEV_WARN = 2;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wmpdevices.h
+        // from <Windows SDK Path>\um\wmpdevices.h
         public const int IOCTL_WMP_DEVICE_CAN_SYNC = 844123479;
         public const int IOCTL_WMP_METADATA_ROUND_TRIP = 827346263;
         public const int WMP_MDRT_FLAGS_UNREPORTED_ADDED_ITEMS = 2;
         public const int WMP_MDRT_FLAGS_UNREPORTED_DELETED_ITEMS = 1;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wmpids.h
+        // from <Windows SDK Path>\um\wmpids.h
         public const int DISPID_DELTA = 50;
         public const int DISPID_WMPCORE_BASE = 0;
         public const int DISPID_WMPCORE_MIN = 1;
@@ -9614,7 +9614,7 @@
         public const int WMPCOREEVENT_WARNING_BASE = 5600;
         public const int WMPOCXEVENT_BASE = 6500;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wmpplug.h
+        // from <Windows SDK Path>\um\wmpplug.h
         public const int PLUGIN_FLAGS_ACCEPTSMEDIA = 268435456;
         public const int PLUGIN_FLAGS_ACCEPTSPLAYLISTS = 134217728;
         public const int PLUGIN_FLAGS_HASPRESETS = 67108864;
@@ -9628,14 +9628,14 @@
         public const int PLUGIN_TYPE_SEPARATEWINDOW = 2;
         public const int PLUGIN_TYPE_SETTINGSAREA = 4;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wmpservices.h
+        // from <Windows SDK Path>\um\wmpservices.h
         public const int WMPGC_FLAGS_ALLOW_PREROLL = 1;
         public const int WMPGC_FLAGS_DISABLE_PLUGINS = 8;
         public const int WMPGC_FLAGS_IGNORE_AV_SYNC = 4;
         public const int WMPGC_FLAGS_SUPPRESS_DIALOGS = 2;
         public const int WMPGC_FLAGS_USE_CUSTOM_GRAPH = 16;
 
-        // from C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wmsdkidl.h
+        // from <Windows SDK Path>\um\wmsdkidl.h
         public const int DRM_OPL_TYPES = 1;
         public const int WAVE_FORMAT_DRM = 9;
         public const int WMDRM_IMPORT_INIT_STRUCT_DEFINED = 1;

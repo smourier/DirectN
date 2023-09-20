@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dukmdt.h(926,9)
+﻿// generated from <Windows SDK Path>\shared\d3dukmdt.h
 namespace DirectN
 {
     public enum D3DDDI_COLOR_SPACE_TYPE

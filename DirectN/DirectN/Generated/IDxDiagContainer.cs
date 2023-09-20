@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxdiag.h(124,1)
+﻿// generated from <Windows SDK Path>\um\dxdiag.h
 using System;
 using System.Runtime.InteropServices;
 

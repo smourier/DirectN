@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d11_1.h(586,1)
+﻿// generated from <Windows SDK Path>\um\d3d11_1.h
 namespace DirectN
 {
     public enum D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG

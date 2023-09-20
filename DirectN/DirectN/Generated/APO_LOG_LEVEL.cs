@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\audioengineextensionapo.h(345,1)
+﻿// generated from <Windows SDK Path>\um\audioengineextensionapo.h
 namespace DirectN
 {
     public enum APO_LOG_LEVEL

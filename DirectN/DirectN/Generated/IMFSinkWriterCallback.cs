@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfreadwrite.h(1854,5)
+﻿// generated from <Windows SDK Path>\um\mfreadwrite.h
 using System;
 using System.Runtime.InteropServices;
 

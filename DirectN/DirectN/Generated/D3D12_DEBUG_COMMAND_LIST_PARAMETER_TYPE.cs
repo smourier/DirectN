@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12sdklayers.h(1335,1)
+﻿// generated from <Windows SDK Path>\um\d3d12sdklayers.h
 namespace DirectN
 {
     public enum D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE

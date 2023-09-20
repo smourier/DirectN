@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12.h(13211,1)
+﻿// generated from <Windows SDK Path>\um\d3d12.h
 namespace DirectN
 {
     public enum D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TYPE

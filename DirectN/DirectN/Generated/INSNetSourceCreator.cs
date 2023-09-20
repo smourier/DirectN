@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wmnetsourcecreator.h(102,5)
+﻿// generated from <Windows SDK Path>\um\wmnetsourcecreator.h
 using System;
 using System.Runtime.InteropServices;
 

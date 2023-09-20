@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(3018,9)
+﻿// generated from <Windows SDK Path>\um\d3d12umddi.h
 using System;
 using System.Runtime.InteropServices;
 using PFND3D12DDI_CALC_PRIVATE_COMMAND_LIST_SIZE_0001 = System.IntPtr;

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\dxgi1_5.h(1280,5)
+﻿// generated from <Windows SDK Path>\shared\dxgi1_5.h
 using System;
 using System.Runtime.InteropServices;
 using LUID = DirectN._LUID;

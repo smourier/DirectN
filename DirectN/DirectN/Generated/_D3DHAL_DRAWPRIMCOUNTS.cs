@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3dhal.h(743,9)
+﻿// generated from <Windows SDK Path>\um\d3dhal.h
 using System;
 using System.Runtime.InteropServices;
 

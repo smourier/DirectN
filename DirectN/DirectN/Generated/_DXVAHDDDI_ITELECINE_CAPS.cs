@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3dumddi.h(1561,9)
+﻿// generated from <Windows SDK Path>\um\d3dumddi.h
 namespace DirectN
 {
     public enum _DXVAHDDDI_ITELECINE_CAPS

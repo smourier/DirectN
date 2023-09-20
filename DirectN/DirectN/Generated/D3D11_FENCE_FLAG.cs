@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d11_3.h(2203,1)
+﻿// generated from <Windows SDK Path>\um\d3d11_3.h
 using System;
 
 namespace DirectN

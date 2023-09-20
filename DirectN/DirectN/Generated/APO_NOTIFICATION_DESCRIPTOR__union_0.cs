@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\audioengineextensionapo.h(515,5)
+﻿// generated from <Windows SDK Path>\um\audioengineextensionapo.h
 using System.Runtime.InteropServices;
 
 namespace DirectN

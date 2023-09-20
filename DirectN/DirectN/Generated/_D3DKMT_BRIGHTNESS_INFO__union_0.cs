@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmthk.h(2908,5)
+﻿// generated from <Windows SDK Path>\shared\d3dkmthk.h
 using System;
 using System.Runtime.InteropServices;
 using DXGK_BACKLIGHT_OPTIMIZATION_LEVEL = DirectN.DxgkBacklightOptimization;

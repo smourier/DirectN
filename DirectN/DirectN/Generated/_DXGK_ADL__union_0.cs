@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmddi.h(2994,5)
+﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
 using DXGK_PAGE_NUMBER = System.UInt64;

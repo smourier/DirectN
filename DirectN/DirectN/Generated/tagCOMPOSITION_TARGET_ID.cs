@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\dcomptypes.h(116,9)
+﻿// generated from <Windows SDK Path>\shared\dcomptypes.h
 using System;
 using System.Runtime.InteropServices;
 using LUID = DirectN._LUID;

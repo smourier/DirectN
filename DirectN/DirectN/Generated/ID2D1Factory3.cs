@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d2d1_3.h(997,1)
+﻿// generated from <Windows SDK Path>\um\d2d1_3.h
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;

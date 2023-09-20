@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\ddrawint.h(792,5)
+﻿// generated from <Windows SDK Path>\um\ddrawint.h
 using System.Runtime.InteropServices;
 
 namespace DirectN

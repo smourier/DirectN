@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ddrawint.h(946,9)
+﻿// generated from <Windows SDK Path>\um\ddrawint.h
 using System;
 using System.Runtime.InteropServices;
 using PDD_GETDRIVERINFO = System.IntPtr;

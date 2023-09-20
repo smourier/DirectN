@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3d9types.h(1189,9)
+﻿// generated from <Windows SDK Path>\shared\d3d9types.h
 namespace DirectN
 {
     public enum _D3DSHADER_MIN_PRECISION

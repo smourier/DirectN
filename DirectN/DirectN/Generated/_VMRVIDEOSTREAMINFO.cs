@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\strmif.h(21244,9)
+﻿// generated from <Windows SDK Path>\um\strmif.h
 using System;
 using System.Runtime.InteropServices;
 using LPDIRECTDRAWSURFACE7 = DirectN.IDirectDrawSurface7;

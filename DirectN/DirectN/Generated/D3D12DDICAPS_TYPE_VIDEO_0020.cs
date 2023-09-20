@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d12umddi.h(4261,9)
+﻿// generated from <Windows SDK Path>\um\d3d12umddi.h
 namespace DirectN
 {
     public enum D3D12DDICAPS_TYPE_VIDEO_0020

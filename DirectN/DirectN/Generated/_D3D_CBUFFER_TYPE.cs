@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\d3dcommon.h(853,1)
+﻿// generated from <Windows SDK Path>\um\d3dcommon.h
 namespace DirectN
 {
     public enum _D3D_CBUFFER_TYPE

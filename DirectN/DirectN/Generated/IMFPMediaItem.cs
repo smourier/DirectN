@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfplay.h(738,5)
+﻿// generated from <Windows SDK Path>\um\mfplay.h
 using System;
 using System.Runtime.InteropServices;
 using MFP_MEDIAITEM_CHARACTERISTICS = System.UInt32;

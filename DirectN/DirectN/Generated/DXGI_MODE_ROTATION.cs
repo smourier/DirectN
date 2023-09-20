@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\dxgitype.h(74,9)
+﻿// generated from <Windows SDK Path>\shared\dxgitype.h
 namespace DirectN
 {
     public enum DXGI_MODE_ROTATION

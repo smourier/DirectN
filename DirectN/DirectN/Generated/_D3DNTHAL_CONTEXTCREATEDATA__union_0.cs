@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3dnthal.h(275,5)
+﻿// generated from <Windows SDK Path>\um\d3dnthal.h
 using System;
 using System.Runtime.InteropServices;
 using PDD_DIRECTDRAW_GLOBAL = DirectN._DD_DIRECTDRAW_GLOBAL;

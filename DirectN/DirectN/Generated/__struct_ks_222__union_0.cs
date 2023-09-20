@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\ks.h(115,5)
+﻿// generated from <Windows SDK Path>\shared\ks.h
 using System;
 using System.Runtime.InteropServices;
 

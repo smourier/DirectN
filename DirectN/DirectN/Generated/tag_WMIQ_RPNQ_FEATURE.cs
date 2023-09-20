@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wmiutils.h(1181,1)
+﻿// generated from <Windows SDK Path>\um\wmiutils.h
 using System;
 
 namespace DirectN

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wincodec.h(4891,5)
+﻿// generated from <Windows SDK Path>\um\wincodec.h
 using System;
 using System.Runtime.InteropServices;
 using PFNProgressNotification = System.IntPtr;

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3dumddi.h(2619,13)
+﻿// generated from <Windows SDK Path>\um\d3dumddi.h
 namespace DirectN
 {
     public enum _D3DDDI_CERTIFICATETYPE

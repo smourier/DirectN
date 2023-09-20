@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\d3d10.h(4427,1)
+﻿// generated from <Windows SDK Path>\um\d3d10.h
 namespace DirectN
 {
     public enum D3D10_QUERY

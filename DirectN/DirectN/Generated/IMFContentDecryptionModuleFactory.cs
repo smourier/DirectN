@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfcontentdecryptionmodule.h(663,5)
+﻿// generated from <Windows SDK Path>\um\mfcontentdecryptionmodule.h
 using System;
 using System.Runtime.InteropServices;
 

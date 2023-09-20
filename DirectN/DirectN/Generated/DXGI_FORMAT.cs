@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\dxgiformat.h(11,9)
+﻿// generated from <Windows SDK Path>\shared\dxgiformat.h
 namespace DirectN
 {
     public enum DXGI_FORMAT

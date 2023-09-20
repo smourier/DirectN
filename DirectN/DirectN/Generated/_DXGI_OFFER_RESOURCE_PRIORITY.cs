@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\dxgi1_2.h(969,1)
+﻿// generated from <Windows SDK Path>\shared\dxgi1_2.h
 namespace DirectN
 {
     public enum _DXGI_OFFER_RESOURCE_PRIORITY

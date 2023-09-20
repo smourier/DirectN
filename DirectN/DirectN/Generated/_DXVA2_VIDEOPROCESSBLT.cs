@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxva2swdev.h(60,9)
+﻿// generated from <Windows SDK Path>\um\dxva2swdev.h
 using System;
 using System.Runtime.InteropServices;
 

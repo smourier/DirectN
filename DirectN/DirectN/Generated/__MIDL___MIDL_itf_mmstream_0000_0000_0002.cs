@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mmstream.h(126,1)
+﻿// generated from <Windows SDK Path>\um\mmstream.h
 namespace DirectN
 {
     public enum __MIDL___MIDL_itf_mmstream_0000_0000_0002

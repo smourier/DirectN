@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ddrawi.h(2176,9)
+﻿// generated from <Windows SDK Path>\um\ddrawi.h
 using System;
 using System.Runtime.InteropServices;
 using LPDDHALSURFCB_DESTROYSURFACE = System.IntPtr;

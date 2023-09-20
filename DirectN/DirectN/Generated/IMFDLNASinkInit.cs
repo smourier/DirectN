@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfmp2dlna.h(88,5)
+﻿// generated from <Windows SDK Path>\um\mfmp2dlna.h
 using System;
 using System.Runtime.InteropServices;
 

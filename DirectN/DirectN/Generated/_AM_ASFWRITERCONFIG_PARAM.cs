@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dshowasf.h(297,1)
+﻿// generated from <Windows SDK Path>\um\dshowasf.h
 namespace DirectN
 {
     public enum _AM_ASFWRITERCONFIG_PARAM

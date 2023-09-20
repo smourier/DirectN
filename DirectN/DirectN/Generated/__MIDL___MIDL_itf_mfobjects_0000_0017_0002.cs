@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfobjects.h(5166,1)
+﻿// generated from <Windows SDK Path>\um\mfobjects.h
 namespace DirectN
 {
     public enum __MIDL___MIDL_itf_mfobjects_0000_0017_0002

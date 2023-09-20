@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mfidl.h(4631,1)
+﻿// generated from <Windows SDK Path>\um\mfidl.h
 namespace DirectN
 {
     public enum MFTOPOLOGY_DXVA_MODE

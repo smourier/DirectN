@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dxva9typ.h(215,9)
+﻿// generated from <Windows SDK Path>\um\dxva9typ.h
 using System;
 using System.Runtime.InteropServices;
 

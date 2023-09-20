@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\opmapi.h(239,1)
+﻿// generated from <Windows SDK Path>\um\opmapi.h
 namespace DirectN
 {
     public enum __MIDL___MIDL_itf_opmapi_0000_0000_0009

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\d3dkmddi.h(5588,9)
+﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 namespace DirectN
 {
     public enum _DXGK_RECOMMENDFUNCTIONALVIDPN_REASON

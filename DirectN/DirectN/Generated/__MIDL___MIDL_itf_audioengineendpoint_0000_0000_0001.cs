@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\audioengineendpoint.h(154,1)
+﻿// generated from <Windows SDK Path>\um\audioengineendpoint.h
 namespace DirectN
 {
     public enum __MIDL___MIDL_itf_audioengineendpoint_0000_0000_0001

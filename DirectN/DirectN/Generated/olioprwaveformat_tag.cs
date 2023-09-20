@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\mmreg.h(3415,9)
+﻿// generated from <Windows SDK Path>\shared\mmreg.h
 using System.Runtime.InteropServices;
 
 namespace DirectN

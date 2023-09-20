@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\ks.h(1138,9)
+﻿// generated from <Windows SDK Path>\shared\ks.h
 namespace DirectN
 {
     public enum KSPIN_COMMUNICATION

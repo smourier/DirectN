@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\ddrawi.h(1327,9)
+﻿// generated from <Windows SDK Path>\um\ddrawi.h
 using System;
 using System.Runtime.InteropServices;
 using LPDDRAWI_DDRAWSURFACE_INT = DirectN._DDRAWI_DDRAWSURFACE_INT;

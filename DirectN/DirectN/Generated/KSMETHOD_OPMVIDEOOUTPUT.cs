@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ksopmapi.h(37,9)
+﻿// generated from <Windows SDK Path>\um\ksopmapi.h
 namespace DirectN
 {
     public enum KSMETHOD_OPMVIDEOOUTPUT

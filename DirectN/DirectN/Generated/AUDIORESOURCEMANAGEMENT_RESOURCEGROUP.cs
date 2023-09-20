@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\ksmedia.h(8296,9)
+﻿// generated from <Windows SDK Path>\shared\ksmedia.h
 using System;
 using System.Runtime.InteropServices;
 

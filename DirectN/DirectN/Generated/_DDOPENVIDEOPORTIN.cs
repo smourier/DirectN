@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\ddkmapi.h(127,13)
+﻿// generated from <Windows SDK Path>\um\ddkmapi.h
 using System;
 using System.Runtime.InteropServices;
 

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfgphone.h(115,9)
+﻿// generated from <Windows SDK Path>\um\mfgphone.h
 using System;
 using System.Runtime.InteropServices;
 

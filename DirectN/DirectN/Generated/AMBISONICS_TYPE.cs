@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\audioclient.h(2243,1)
+﻿// generated from <Windows SDK Path>\um\audioclient.h
 namespace DirectN
 {
     public enum AMBISONICS_TYPE

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\dxgicommon.h(26,9)
+﻿// generated from <Windows SDK Path>\shared\dxgicommon.h
 namespace DirectN
 {
     public enum DXGI_COLOR_SPACE_TYPE

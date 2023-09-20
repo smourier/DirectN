@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\shared\d3dkmthk.h(926,9)
+﻿// generated from <Windows SDK Path>\shared\d3dkmthk.h
 namespace DirectN
 {
     public enum D3DKMT_MULTIPLANE_OVERLAY_STEREO_FORMAT

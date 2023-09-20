@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\opmapi.h(159,1)
+﻿// generated from <Windows SDK Path>\um\opmapi.h
 namespace DirectN
 {
     public enum _OPM_OUTPUT_HARDWARE_PROTECTION

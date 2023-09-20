@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\d3d11sdklayers.h(674,5)
+﻿// generated from <Windows SDK Path>\um\d3d11sdklayers.h
 using System;
 using System.Runtime.InteropServices;
 

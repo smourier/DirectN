@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.18362.0\um\mfgphone.h(100,9)
+﻿// generated from <Windows SDK Path>\um\mfgphone.h
 namespace DirectN
 {
     public enum _MFGPHONE_CALLSTATUS

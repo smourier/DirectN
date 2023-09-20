@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\wmcodecdsp.h(5055,5)
+﻿// generated from <Windows SDK Path>\um\wmcodecdsp.h
 using System;
 using System.Runtime.InteropServices;
 

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\audioclient.h(232,5)
+﻿// generated from <Windows SDK Path>\um\audioclient.h
 using System;
 using System.Runtime.InteropServices;
 using REFERENCE_TIME = System.Int64;

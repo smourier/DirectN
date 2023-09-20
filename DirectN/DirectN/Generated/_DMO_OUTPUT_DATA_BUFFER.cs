@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\mediaobj.h(298,9)
+﻿// generated from <Windows SDK Path>\um\mediaobj.h
 using System;
 using System.Runtime.InteropServices;
 

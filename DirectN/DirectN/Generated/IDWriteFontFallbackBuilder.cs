@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\um\dwrite_2.h(575,1)
+﻿// generated from <Windows SDK Path>\um\dwrite_2.h
 using System;
 using System.Runtime.InteropServices;
 

@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22000.0\shared\dxgi1_2.h(2086,1)
+﻿// generated from <Windows SDK Path>\shared\dxgi1_2.h
 namespace DirectN
 {
     public enum DXGI_GRAPHICS_PREEMPTION_GRANULARITY

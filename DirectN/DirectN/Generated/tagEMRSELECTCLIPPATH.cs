@@ -1,4 +1,4 @@
-﻿// c:\program files (x86)\windows kits\10\include\10.0.22621.0\um\wingdi.h(5519,9)
+﻿// generated from <Windows SDK Path>\um\wingdi.h
 using System;
 using System.Runtime.InteropServices;
 
