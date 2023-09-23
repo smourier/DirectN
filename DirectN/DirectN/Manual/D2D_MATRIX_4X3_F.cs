@@ -1,11 +1,9 @@
-﻿// generated from <Windows SDK Path>\um\dcommon.h
-using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
-    public partial struct D2D_MATRIX_4X3_F__union_0__struct_0
+    public partial struct D2D_MATRIX_4X3_F
     {
         public float _11;
         public float _12;

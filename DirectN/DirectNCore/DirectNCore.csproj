@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
     <ApplicationIcon>DirectN.ico</ApplicationIcon>
@@ -19,7 +18,6 @@
     <AssemblyVersion>1.14.1.0</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="DirectN.ico" />
     <None Remove="DirectN.png" />
@@ -352,10 +350,43 @@
     <Compile Include="..\DirectN\Manual\__tagMETARECORD.cs" Link="Manual\__tagMETARECORD.cs" />
     <None Include="DirectN.png">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>
+      </PackagePath>
     </None>
+    <Compile Include="..\DirectN\Extensions\D3D12Constants.cs" Link="Extensions\D3D12Constants.cs" />
+    <Compile Include="..\DirectN\Manual\D2D_MATRIX_4X3_F.cs" Link="Manual\D2D_MATRIX_4X3_F.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DADAPTER_IDENTIFIER9.cs" Link="Manual\_D3DADAPTER_IDENTIFIER9.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE.cs" Link="Manual\_D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT.cs" Link="Manual\_D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT.cs" Link="Manual\_D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT.cs" Link="Manual\_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT.cs" Link="Manual\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT.cs" Link="Manual\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT.cs" Link="Manual\_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DAUTHENTICATEDCHANNEL_QUERY_INPUT.cs" Link="Manual\_D3DAUTHENTICATEDCHANNEL_QUERY_INPUT.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DDEVICE_CREATION_PARAMETERS.cs" Link="Manual\_D3DDEVICE_CREATION_PARAMETERS.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DLOCKED_RECT.cs" Link="Manual\_D3DLOCKED_RECT.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DMEMORYPRESSURE.cs" Link="Manual\_D3DMEMORYPRESSURE.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DPRESENTSTATS.cs" Link="Manual\_D3DPRESENTSTATS.cs" />
+    <Compile Include="..\DirectN\Manual\_D3DPRESENT_PARAMETERS_.cs" Link="Manual\_D3DPRESENT_PARAMETERS_.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_126__union_0.cs" Link="Generated\__struct_ksmedia_126__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_129__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_129__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_129__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_129__union_0__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_129__union_0.cs" Link="Generated\__struct_ksmedia_129__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_283__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_283__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_283__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_283__union_0__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_283__union_0.cs" Link="Generated\__struct_ksmedia_283__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_353__union_0.cs" Link="Generated\__struct_ksmedia_353__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_425__union_0.cs" Link="Generated\__struct_ksmedia_425__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_434__union_0.cs" Link="Generated\__struct_ksmedia_434__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_437__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_437__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_437__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_437__union_0__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_437__union_0.cs" Link="Generated\__struct_ksmedia_437__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_743__union_0.cs" Link="Generated\__struct_ksmedia_743__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_970__union_0.cs" Link="Generated\__struct_ksmedia_970__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_OPENNATIVEFENCEFROMNTHANDLE.cs" Link="Generated\_D3DKMT_OPENNATIVEFENCEFROMNTHANDLE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_WSAUMDIMAGENAME.cs" Link="Generated\_D3DKMT_WSAUMDIMAGENAME.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="..\DirectN\Generated\adpcmcoef_tag.cs" Link="Generated\adpcmcoef_tag.cs" />
     <Compile Include="..\DirectN\Generated\adpcmewaveformat_tag.cs" Link="Generated\adpcmewaveformat_tag.cs" />
@@ -691,9 +722,6 @@
     <Compile Include="..\DirectN\Generated\D2D1_YCBCR_CHROMA_SUBSAMPLING.cs" Link="Generated\D2D1_YCBCR_CHROMA_SUBSAMPLING.cs" />
     <Compile Include="..\DirectN\Generated\D2D1_YCBCR_INTERPOLATION_MODE.cs" Link="Generated\D2D1_YCBCR_INTERPOLATION_MODE.cs" />
     <Compile Include="..\DirectN\Generated\D2D1_YCBCR_PROP.cs" Link="Generated\D2D1_YCBCR_PROP.cs" />
-    <Compile Include="..\DirectN\Generated\D2D_MATRIX_4X3_F.cs" Link="Generated\D2D_MATRIX_4X3_F.cs" />
-    <Compile Include="..\DirectN\Generated\D2D_MATRIX_4X3_F__union_0.cs" Link="Generated\D2D_MATRIX_4X3_F__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\D2D_MATRIX_4X3_F__union_0__struct_0.cs" Link="Generated\D2D_MATRIX_4X3_F__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\D2D_POINT_2F.cs" Link="Generated\D2D_POINT_2F.cs" />
     <Compile Include="..\DirectN\Generated\D2D_POINT_2U.cs" Link="Generated\D2D_POINT_2U.cs" />
     <Compile Include="..\DirectN\Generated\D2D_RECT_F.cs" Link="Generated\D2D_RECT_F.cs" />
@@ -6679,40 +6707,31 @@
     <Compile Include="..\DirectN\Generated\_D3D12_SHADER_TYPE_DESC.cs" Link="Generated\_D3D12_SHADER_TYPE_DESC.cs" />
     <Compile Include="..\DirectN\Generated\_D3D12_SHADER_VARIABLE_DESC.cs" Link="Generated\_D3D12_SHADER_VARIABLE_DESC.cs" />
     <Compile Include="..\DirectN\Generated\_D3D12_SIGNATURE_PARAMETER_DESC.cs" Link="Generated\_D3D12_SIGNATURE_PARAMETER_DESC.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DADAPTER_IDENTIFIER9.cs" Link="Generated\_D3DADAPTER_IDENTIFIER9.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAES_CTR_IV.cs" Link="Generated\_D3DAES_CTR_IV.cs" />
     <Compile Include="..\DirectN\Generated\_D3DANTIALIASMODE.cs" Link="Generated\_D3DANTIALIASMODE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNELTYPE.cs" Link="Generated\_D3DAUTHENTICATEDCHANNELTYPE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS__union_0.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS__union_0.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS__union_0__struct_0.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERY_INPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERY_INPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT.cs" Link="Generated\_D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DBACKBUFFER_TYPE.cs" Link="Generated\_D3DBACKBUFFER_TYPE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DBASISTYPE.cs" Link="Generated\_D3DBASISTYPE.cs" />
@@ -6726,10 +6745,6 @@
     <Compile Include="..\DirectN\Generated\_D3DCLIPSTATUS9.cs" Link="Generated\_D3DCLIPSTATUS9.cs" />
     <Compile Include="..\DirectN\Generated\_D3DCMPFUNC.cs" Link="Generated\_D3DCMPFUNC.cs" />
     <Compile Include="..\DirectN\Generated\_D3DCOLORVALUE.cs" Link="Generated\_D3DCOLORVALUE.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DCOLORVALUE__union_0.cs" Link="Generated\_D3DCOLORVALUE__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DCOLORVALUE__union_1.cs" Link="Generated\_D3DCOLORVALUE__union_1.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DCOLORVALUE__union_2.cs" Link="Generated\_D3DCOLORVALUE__union_2.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DCOLORVALUE__union_3.cs" Link="Generated\_D3DCOLORVALUE__union_3.cs" />
     <Compile Include="..\DirectN\Generated\_D3DCOMPOSERECTDESC.cs" Link="Generated\_D3DCOMPOSERECTDESC.cs" />
     <Compile Include="..\DirectN\Generated\_D3DCOMPOSERECTDESTINATION.cs" Link="Generated\_D3DCOMPOSERECTDESTINATION.cs" />
     <Compile Include="..\DirectN\Generated\_D3DCOMPOSERECTSOP.cs" Link="Generated\_D3DCOMPOSERECTSOP.cs" />
@@ -7122,7 +7137,6 @@
     <Compile Include="..\DirectN\Generated\_D3DDeviceDesc_V1.cs" Link="Generated\_D3DDeviceDesc_V1.cs" />
     <Compile Include="..\DirectN\Generated\_D3DDeviceDesc_V2.cs" Link="Generated\_D3DDeviceDesc_V2.cs" />
     <Compile Include="..\DirectN\Generated\_D3DDeviceDesc_V3.cs" Link="Generated\_D3DDeviceDesc_V3.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DDEVICE_CREATION_PARAMETERS.cs" Link="Generated\_D3DDEVICE_CREATION_PARAMETERS.cs" />
     <Compile Include="..\DirectN\Generated\_D3DDEVINFO_D3D9BANDWIDTHTIMINGS.cs" Link="Generated\_D3DDEVINFO_D3D9BANDWIDTHTIMINGS.cs" />
     <Compile Include="..\DirectN\Generated\_D3DDEVINFO_D3D9CACHEUTILIZATION.cs" Link="Generated\_D3DDEVINFO_D3D9CACHEUTILIZATION.cs" />
     <Compile Include="..\DirectN\Generated\_D3DDEVINFO_D3D9INTERFACETIMINGS.cs" Link="Generated\_D3DDEVINFO_D3D9INTERFACETIMINGS.cs" />
@@ -7851,7 +7865,6 @@
     <Compile Include="..\DirectN\Generated\_D3DLINE__union_0.cs" Link="Generated\_D3DLINE__union_0.cs" />
     <Compile Include="..\DirectN\Generated\_D3DLINE__union_1.cs" Link="Generated\_D3DLINE__union_1.cs" />
     <Compile Include="..\DirectN\Generated\_D3DLOCKED_BOX.cs" Link="Generated\_D3DLOCKED_BOX.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DLOCKED_RECT.cs" Link="Generated\_D3DLOCKED_RECT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DLVERTEX.cs" Link="Generated\_D3DLVERTEX.cs" />
     <Compile Include="..\DirectN\Generated\_D3DLVERTEX__union_0.cs" Link="Generated\_D3DLVERTEX__union_0.cs" />
     <Compile Include="..\DirectN\Generated\_D3DLVERTEX__union_1.cs" Link="Generated\_D3DLVERTEX__union_1.cs" />
@@ -7879,7 +7892,6 @@
     <Compile Include="..\DirectN\Generated\_D3DMATRIXMULTIPLY.cs" Link="Generated\_D3DMATRIXMULTIPLY.cs" />
     <Compile Include="..\DirectN\Generated\_D3DMATRIX__union_0.cs" Link="Generated\_D3DMATRIX__union_0.cs" />
     <Compile Include="..\DirectN\Generated\_D3DMATRIX__union_0__struct_0.cs" Link="Generated\_D3DMATRIX__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DMEMORYPRESSURE.cs" Link="Generated\_D3DMEMORYPRESSURE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DMULTISAMPLE_TYPE.cs" Link="Generated\_D3DMULTISAMPLE_TYPE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DNTDeviceDesc_V3.cs" Link="Generated\_D3DNTDeviceDesc_V3.cs" />
     <Compile Include="..\DirectN\Generated\_D3DNTHALDeviceDesc_V1.cs" Link="Generated\_D3DNTHALDeviceDesc_V1.cs" />
@@ -7950,8 +7962,6 @@
     <Compile Include="..\DirectN\Generated\_D3DPICKRECORD.cs" Link="Generated\_D3DPICKRECORD.cs" />
     <Compile Include="..\DirectN\Generated\_D3DPOINT.cs" Link="Generated\_D3DPOINT.cs" />
     <Compile Include="..\DirectN\Generated\_D3DPOOL.cs" Link="Generated\_D3DPOOL.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DPRESENTSTATS.cs" Link="Generated\_D3DPRESENTSTATS.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DPRESENT_PARAMETERS_.cs" Link="Generated\_D3DPRESENT_PARAMETERS_.cs" />
     <Compile Include="..\DirectN\Generated\_D3DPrimCaps.cs" Link="Generated\_D3DPrimCaps.cs" />
     <Compile Include="..\DirectN\Generated\_D3DPRIMITIVETYPE.cs" Link="Generated\_D3DPRIMITIVETYPE.cs" />
     <Compile Include="..\DirectN\Generated\_D3DPROCESSVERTICES.cs" Link="Generated\_D3DPROCESSVERTICES.cs" />
@@ -10242,15 +10252,12 @@
     <Compile Include="..\DirectN\Generated\__WMT_VIDEOIMAGE_SAMPLE2.cs" Link="Generated\__WMT_VIDEOIMAGE_SAMPLE2.cs" />
     <Compile Include="..\DirectN\Generated\__WMT_WATERMARK_ENTRY.cs" Link="Generated\__WMT_WATERMARK_ENTRY.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="DirectN.ico" />
     <Content Include="DirectN.png" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Manual\" />
     <Folder Include="Extensions\" />
   </ItemGroup>
-
 </Project>
