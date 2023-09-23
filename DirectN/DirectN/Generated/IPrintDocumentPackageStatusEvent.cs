@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IPrintDocumentPackageStatusEvent
     {
         [PreserveSig]
-        HRESULT PackageStatusUpdated(/* [in] __RPC__in */ ref __MIDL___MIDL_itf_documenttarget_0000_0001_0001 packageStatus);
+        HRESULT PackageStatusUpdated(/* [in] __RPC__in */ ref __MIDL___MIDL_itf_documenttarget_0000_0002_0001 packageStatus);
     }
 }

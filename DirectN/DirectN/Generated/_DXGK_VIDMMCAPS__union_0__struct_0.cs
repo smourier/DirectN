@@ -27,6 +27,7 @@ namespace DirectN
         public uint MapAperture2Supported { get => InteropRuntime.GetUInt32(__bits, 14, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 14, 1); } }
         public uint CrossAdapterResourceTexture { get => InteropRuntime.GetUInt32(__bits, 15, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 15, 1); } }
         public uint CrossAdapterResourceScanout { get => InteropRuntime.GetUInt32(__bits, 16, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 16, 1); } }
-        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 17, 15); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 17, 15); } }
+        public uint AlwaysPoweredVRAM { get => InteropRuntime.GetUInt32(__bits, 17, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 17, 1); } }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 18, 14); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 18, 14); } }
     }
 }

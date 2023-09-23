@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct _DXGI_DDI_ARG_CHECKMULTIPLANEOVERLAYSUPPORT
     {
         public ulong hDevice;
-        public uint VidPnSourceId;
+        public int VidPnSourceId;
         public uint NumPlaneInfo;
         public IntPtr pPlaneInfo;
         public bool Supported;

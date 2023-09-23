@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint hDevice;
         public uint hAllocation;
-        public ulong Offset;
-        public ulong Length;
+        public IntPtr Offset;
+        public IntPtr Length;
     }
 }

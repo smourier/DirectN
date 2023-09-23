@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint dwSize;
         public uint dwFlags;
-        public int dcmColorModel;
+        public uint dcmColorModel;
         public uint dwDevCaps;
         public _D3DTRANSFORMCAPS dtcTransformCaps;
         public bool bClipping;
@@ -31,11 +31,11 @@ namespace DirectN
         public uint dwMaxTextureRepeat;
         public uint dwMaxTextureAspectRatio;
         public uint dwMaxAnisotropy;
-        public int dvGuardBandLeft;
-        public int dvGuardBandTop;
-        public int dvGuardBandRight;
-        public int dvGuardBandBottom;
-        public int dvExtentsAdjust;
+        public float dvGuardBandLeft;
+        public float dvGuardBandTop;
+        public float dvGuardBandRight;
+        public float dvGuardBandBottom;
+        public float dvExtentsAdjust;
         public uint dwStencilCaps;
         public uint dwFVFCaps;
         public uint dwTextureOpCaps;

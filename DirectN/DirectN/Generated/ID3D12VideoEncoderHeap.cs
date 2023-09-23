@@ -37,10 +37,10 @@ namespace DirectN
         D3D12_VIDEO_ENCODER_CODEC GetCodec();
         
         [PreserveSig]
-        HRESULT GetCodecProfile(/* _Out_ */ D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile);
+        HRESULT GetCodecProfile(/* _Inout_ */ D3D12_VIDEO_ENCODER_PROFILE_DESC dstProfile);
         
         [PreserveSig]
-        HRESULT GetCodecLevel(/* _Out_ */ D3D12_VIDEO_ENCODER_LEVEL_SETTING dstLevel);
+        HRESULT GetCodecLevel(/* _Inout_ */ D3D12_VIDEO_ENCODER_LEVEL_SETTING dstLevel);
         
         [PreserveSig]
         uint GetResolutionListCount();

@@ -12,7 +12,7 @@ namespace DirectN
         public uint hFenceObject;
         public uint NumOperations;
         public IntPtr Operations;
-        public ulong Reserved0;
+        public IntPtr Reserved0;
         public ulong Reserved1;
         public ulong FenceValue;
         public _D3DKMT_UPDATEGPUVIRTUALADDRESS__union_0 Flags;

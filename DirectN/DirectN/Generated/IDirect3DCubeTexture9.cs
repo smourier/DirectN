@@ -59,7 +59,7 @@ namespace DirectN
         HRESULT GetCubeMapSurface(_D3DCUBEMAP_FACES FaceType, uint Level, out IDirect3DSurface9 ppCubeMapSurface);
 
         [PreserveSig]
-        HRESULT LockRect(_D3DCUBEMAP_FACES FaceType, uint Level, /*ref _D3DLOCKED_RECT*/ IntPtr pLockedRect, /*ref tagRECT*/ IntPtr pRect, uint Flags);
+        HRESULT LockRect(_D3DCUBEMAP_FACES FaceType, uint Level, IntPtr pLockedRect, IntPtr pRect, uint Flags);
 
         [PreserveSig]
         HRESULT UnlockRect(_D3DCUBEMAP_FACES FaceType, uint Level);

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [ComImport, Guid("E6C9647E-9D6A-4C3B-B94C-524B5A6C343D"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("e6c9647e-9d6a-4c3b-b94c-524b5a6c343d"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDxcPdbUtils
     {
         [PreserveSig]

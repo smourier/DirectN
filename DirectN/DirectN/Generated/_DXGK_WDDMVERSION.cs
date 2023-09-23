@@ -19,6 +19,7 @@ namespace DirectN
         DXGKDDI_WDDMv2_8 = 10240,
         DXGKDDI_WDDMv2_9 = 10496,
         DXGKDDI_WDDMv3_0 = 12288,
-        DXGKDDI_WDDM_LATEST = 12288,
+        DXGKDDI_WDDMv3_1 = 12544,
+        DXGKDDI_WDDM_LATEST = 12544,
     }
 }

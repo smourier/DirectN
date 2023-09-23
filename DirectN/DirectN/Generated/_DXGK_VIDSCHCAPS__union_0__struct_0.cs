@@ -18,6 +18,7 @@ namespace DirectN
         public uint No64BitAtomics { get => InteropRuntime.GetUInt32(__bits, 5, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 5, 1); } }
         public uint LowIrqlPreemptCommand { get => InteropRuntime.GetUInt32(__bits, 6, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 6, 1); } }
         public uint HwQueuePacketCap { get => InteropRuntime.GetUInt32(__bits, 7, 4); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 7, 4); } }
-        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 11, 21); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 11, 21); } }
+        public uint NativeGpuFence { get => InteropRuntime.GetUInt32(__bits, 11, 1); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 11, 1); } }
+        public uint Reserved { get => InteropRuntime.GetUInt32(__bits, 12, 20); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetUInt32(value, __bits, 12, 20); } }
     }
 }

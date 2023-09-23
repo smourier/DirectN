@@ -1,0 +1,102 @@
+﻿// generated from <Windows SDK Path>\um\dwrite_3.h
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    [ComImport, Guid("eec175fc-bea9-4c86-8b53-ccbdd7df0c82"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public partial interface IDWriteFontSet4 : IDWriteFontSet3
+    {
+        // IDWriteFontSet
+        [PreserveSig]
+        new uint GetFontCount();
+        
+        [PreserveSig]
+        new HRESULT GetFontFaceReference(uint listIndex, /* _COM_Outptr_ */ out IDWriteFontFaceReference fontFaceReference);
+        
+        [PreserveSig]
+        new HRESULT FindFontFaceReference(IDWriteFontFaceReference fontFaceReference, /* _Out_ */ out uint listIndex, /* _Out_ */ out bool exists);
+        
+        [PreserveSig]
+        new HRESULT FindFontFace(IDWriteFontFace fontFace, /* _Out_ */ out uint listIndex, /* _Out_ */ out bool exists);
+        
+        [PreserveSig]
+        new HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, /* _COM_Outptr_ */ out IDWriteStringList values);
+        
+        [PreserveSig]
+        new HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, /* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string preferredLocaleNames, /* _COM_Outptr_ */ out IDWriteStringList values);
+        
+        [PreserveSig]
+        new HRESULT GetPropertyValues(uint listIndex, DWRITE_FONT_PROPERTY_ID propertyId, /* _Out_ */ out bool exists, /* _COM_Outptr_result_maybenull_ */ out IDWriteLocalizedStrings values);
+        
+        [PreserveSig]
+        new HRESULT GetPropertyOccurrenceCount(/* _In_ */ ref DWRITE_FONT_PROPERTY property, /* _Out_ */ out uint propertyOccurrenceCount);
+        
+        [PreserveSig]
+        new HRESULT GetMatchingFonts(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);
+        
+        [PreserveSig]
+        new HRESULT GetMatchingFonts(/* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_PROPERTY[] properties, int propertyCount, /* _COM_Outptr_ */ out IDWriteFontSet filteredSet);
+        
+        // IDWriteFontSet1
+        [PreserveSig]
+        new HRESULT GetMatchingFonts(/* optional(DWRITE_FONT_PROPERTY) */ IntPtr fontProperty, /* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, int fontAxisValueCount, /* _COM_Outptr_ */ out IDWriteFontSet1 matchingFonts);
+        
+        [PreserveSig]
+        new HRESULT GetFirstFontResources(/* _COM_Outptr_ */ out IDWriteFontSet1 filteredFontSet);
+        
+        [PreserveSig]
+        new HRESULT GetFilteredFonts(/* _In_reads_(indexCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] uint[] indices, int indexCount, /* _COM_Outptr_ */ out IDWriteFontSet1 filteredFontSet);
+        
+        [PreserveSig]
+        new HRESULT GetFilteredFonts(/* _In_reads_(fontAxisRangeCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_RANGE[] fontAxisRanges, int fontAxisRangeCount, bool selectAnyRange, /* _COM_Outptr_ */ out IDWriteFontSet1 filteredFontSet);
+        
+        [PreserveSig]
+        new HRESULT GetFilteredFonts(/* _In_reads_opt_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_PROPERTY[] properties, int propertyCount, bool selectAnyProperty, /* _COM_Outptr_ */ out IDWriteFontSet1 filteredFontSet);
+        
+        [PreserveSig]
+        new HRESULT GetFilteredFontIndices(/* _In_reads_(fontAxisRangeCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_RANGE[] fontAxisRanges, int fontAxisRangeCount, bool selectAnyRange, /* _Out_writes_(maxIndexCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] uint[] indices, int maxIndexCount, /* _Out_ */ out uint actualIndexCount);
+        
+        [PreserveSig]
+        new HRESULT GetFilteredFontIndices(/* _In_reads_(propertyCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_PROPERTY[] properties, int propertyCount, bool selectAnyProperty, /* _Out_writes_(maxIndexCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] uint[] indices, int maxIndexCount, /* _Out_ */ out uint actualIndexCount);
+        
+        [PreserveSig]
+        new HRESULT GetFontAxisRanges(uint listIndex, /* _Out_writes_(maxFontAxisRangeCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_RANGE[] fontAxisRanges, int maxFontAxisRangeCount, /* _Out_ */ out uint actualFontAxisRangeCount);
+        
+        [PreserveSig]
+        new HRESULT GetFontAxisRanges(/* _Out_writes_(maxFontAxisRangeCount) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_RANGE[] fontAxisRanges, int maxFontAxisRangeCount, /* _Out_ */ out uint actualFontAxisRangeCount);
+        
+        [PreserveSig]
+        new HRESULT GetFontFaceReference(uint listIndex, /* _COM_Outptr_ */ out IDWriteFontFaceReference1 fontFaceReference);
+        
+        [PreserveSig]
+        new HRESULT CreateFontResource(uint listIndex, /* _COM_Outptr_ */ out IDWriteFontResource fontResource);
+        
+        [PreserveSig]
+        new HRESULT CreateFontFace(uint listIndex, /* _COM_Outptr_ */ out IDWriteFontFace5 fontFace);
+        
+        [PreserveSig]
+        new DWRITE_LOCALITY GetFontLocality(uint listIndex);
+        
+        // IDWriteFontSet2
+        [PreserveSig]
+        new IntPtr GetExpirationEvent();
+        
+        // IDWriteFontSet3
+        [PreserveSig]
+        new DWRITE_FONT_SOURCE_TYPE GetFontSourceType(uint fontIndex);
+        
+        [PreserveSig]
+        new uint GetFontSourceNameLength(uint listIndex);
+        
+        [PreserveSig]
+        new HRESULT GetFontSourceName(uint listIndex, /* _Out_writes_z_(stringBufferSize) */ [MarshalAs(UnmanagedType.LPWStr)] string stringBuffer, uint stringBufferSize);
+        
+        // IDWriteFontSet4
+        [PreserveSig]
+        uint ConvertWeightStretchStyleToFontAxisValues(/* _In_reads_opt_(inputAxisCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] DWRITE_FONT_AXIS_VALUE[] inputAxisValues, int inputAxisCount, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, float fontSize, /* _Out_writes_to_(DWRITE_STANDARD_FONT_AXIS_COUNT, return) */ [Out, MarshalAs(UnmanagedType.LPArray)] DWRITE_FONT_AXIS_VALUE[] outputAxisValues);
+        
+        [PreserveSig]
+        HRESULT GetMatchingFonts(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string familyName, /* _In_reads_(fontAxisValueCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] DWRITE_FONT_AXIS_VALUE[] fontAxisValues, int fontAxisValueCount, DWRITE_FONT_SIMULATIONS allowedSimulations, /* _COM_Outptr_ */ out IDWriteFontSet4 matchingFonts);
+    }
+}

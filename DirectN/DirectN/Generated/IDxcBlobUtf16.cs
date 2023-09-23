@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [ComImport, Guid("A3F84EAB-0FAA-497E-A39C-EE6ED60B2D84"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("a3f84eab-0faa-497e-a39c-ee6ed60b2d84"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDxcBlobUtf16 : IDxcBlobEncoding
     {
         // IDxcBlob

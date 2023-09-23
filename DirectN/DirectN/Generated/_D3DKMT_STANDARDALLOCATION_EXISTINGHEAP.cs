@@ -7,6 +7,6 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DKMT_STANDARDALLOCATION_EXISTINGHEAP
     {
-        public ulong Size;
+        public IntPtr Size;
     }
 }

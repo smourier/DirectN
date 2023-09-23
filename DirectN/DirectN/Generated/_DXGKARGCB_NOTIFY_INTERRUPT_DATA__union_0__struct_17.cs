@@ -7,7 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DXGKARGCB_NOTIFY_INTERRUPT_DATA__union_0__struct_17
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)] 
-        public uint[] Reserved;
+        public uint NodeOrdinal;
+        public uint EngineOrdinal;
+        public uint SignaledNativeFenceCount;
+        public IntPtr pSignaledNativeFenceArray;
     }
 }

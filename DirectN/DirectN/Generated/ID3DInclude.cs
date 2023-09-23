@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    // whoever knows what is the guid please contact me!
     [ComImport, Guid("00000000-0000-0000-0000-000000000000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3DInclude
     {

@@ -59,7 +59,7 @@ namespace DirectN
         HRESULT GetSurfaceLevel(uint Level, out IDirect3DSurface9 ppSurfaceLevel);
 
         [PreserveSig]
-        HRESULT LockRect(uint Level, /*ref _D3DLOCKED_RECT*/ IntPtr pLockedRect, /*ref tagRECT*/ IntPtr pRect, uint Flags);
+        HRESULT LockRect(uint Level, IntPtr pLockedRect, IntPtr pRect, uint Flags);
 
         [PreserveSig]
         HRESULT UnlockRect(uint Level);

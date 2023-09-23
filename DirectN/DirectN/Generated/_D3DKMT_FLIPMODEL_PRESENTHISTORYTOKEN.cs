@@ -10,7 +10,7 @@ namespace DirectN
     {
         public ulong FenceValue;
         public ulong hLogicalSurface;
-        public ulong dxgContext;
+        public IntPtr dxgContext;
         public uint VidPnSourceId;
         public uint SwapChainIndex;
         public ulong PresentLimitSemaphoreId;

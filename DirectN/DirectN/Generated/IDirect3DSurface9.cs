@@ -40,7 +40,7 @@ namespace DirectN
         HRESULT GetDesc(ref _D3DSURFACE_DESC pDesc);
 
         [PreserveSig]
-        HRESULT LockRect(/*ref _D3DLOCKED_RECT*/ IntPtr pLockedRect, IntPtr pRect, uint Flags);
+        HRESULT LockRect(IntPtr pLockedRect, IntPtr pRect, uint Flags);
 
         [PreserveSig]
         HRESULT UnlockRect();

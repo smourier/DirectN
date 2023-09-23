@@ -18,7 +18,7 @@ namespace DirectN
         HRESULT OnDeviceRemoved(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwstrDeviceId);
         
         [PreserveSig]
-        HRESULT OnDefaultDeviceChanged(/* [annotation][in] _In_ */ __MIDL___MIDL_itf_mmdeviceapi_0000_0000_0001 flow, /* [annotation][in] _In_ */ __MIDL___MIDL_itf_mmdeviceapi_0000_0000_0002 role, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwstrDefaultDeviceId);
+        HRESULT OnDefaultDeviceChanged(/* [annotation][in] _In_ */ __MIDL___MIDL_itf_mmdeviceapi_0000_0000_0001 flow, /* [annotation][in] _In_ */ __MIDL___MIDL_itf_mmdeviceapi_0000_0000_0002 role, /* [annotation][in] _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwstrDefaultDeviceId);
         
         [PreserveSig]
         HRESULT OnPropertyValueChanged(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwstrDeviceId, /* [annotation][in] _In_ */ PROPERTYKEY key);

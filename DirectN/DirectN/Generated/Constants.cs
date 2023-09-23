@@ -3,6 +3,8 @@
     public static partial class Constants
     {
         // from <Windows SDK Path>\shared\d3d9.h
+        public const int _FACD3D = 2166;
+        public const int D3D_SDK_VERSION = 32;
         public const int D3D9b_SDK_VERSION = 31;
         public const int D3DADAPTER_DEFAULT = 0;
         public const int D3DCREATE_ADAPTERGROUP_DEVICE = 512;
@@ -36,10 +38,10 @@
         public const int D3DSGR_CALIBRATE = 1;
         public const int D3DSGR_NO_CALIBRATION = 0;
         public const int D3DSPD_IUNKNOWN = 1;
-        public const int D3D_SDK_VERSION = 32;
-        public const int _FACD3D = 2166;
-
+        
         // from <Windows SDK Path>\shared\d3d9caps.h
+        public const int D3DCAPS_OVERLAY = 2048;
+        public const int D3DCAPS_READ_SCANLINE = 131072;
         public const int D3DCAPS2_CANAUTOGENMIPMAP = 1073741824;
         public const int D3DCAPS2_CANCALIBRATEGAMMA = 1048576;
         public const int D3DCAPS2_CANMANAGERESOURCE = 268435456;
@@ -54,8 +56,6 @@
         public const int D3DCAPS3_DXVAHD_LIMITED = 2048;
         public const int D3DCAPS3_LINEAR_TO_SRGB_PRESENTATION = 128;
         public const int D3DCAPS3_RESERVED = -2147483617;
-        public const int D3DCAPS_OVERLAY = 2048;
-        public const int D3DCAPS_READ_SCANLINE = 131072;
         public const int D3DCPCAPS_CONTENTKEY = 16;
         public const int D3DCPCAPS_ENCRYPTEDREADBACK = 64;
         public const int D3DCPCAPS_ENCRYPTEDREADBACKKEY = 128;
@@ -68,6 +68,11 @@
         public const int D3DCPCAPS_SOFTWARE = 1;
         public const int D3DCURSORCAPS_COLOR = 1;
         public const int D3DCURSORCAPS_LOWRES = 2;
+        public const int D3DDEVCAPS_NPATCHES = 16777216;
+        public const int D3DDEVCAPS_PUREDEVICE = 1048576;
+        public const int D3DDEVCAPS_QUINTICRTPATCHES = 2097152;
+        public const int D3DDEVCAPS_RTPATCHES = 4194304;
+        public const int D3DDEVCAPS_RTPATCHHANDLEZERO = 8388608;
         public const int D3DDEVCAPS2_ADAPTIVETESSNPATCH = 8;
         public const int D3DDEVCAPS2_ADAPTIVETESSRTPATCH = 4;
         public const int D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES = 16;
@@ -75,11 +80,6 @@
         public const int D3DDEVCAPS2_PRESAMPLEDDMAPNPATCH = 32;
         public const int D3DDEVCAPS2_STREAMOFFSET = 1;
         public const int D3DDEVCAPS2_VERTEXELEMENTSCANSHARESTREAMOFFSET = 64;
-        public const int D3DDEVCAPS_NPATCHES = 16777216;
-        public const int D3DDEVCAPS_PUREDEVICE = 1048576;
-        public const int D3DDEVCAPS_QUINTICRTPATCHES = 2097152;
-        public const int D3DDEVCAPS_RTPATCHES = 4194304;
-        public const int D3DDEVCAPS_RTPATCHHANDLEZERO = 8388608;
         public const int D3DDTCAPS_DEC3N = 128;
         public const int D3DDTCAPS_FLOAT16_2 = 256;
         public const int D3DDTCAPS_FLOAT16_4 = 512;
@@ -168,8 +168,10 @@
         public const int D3DVTXPCAPS_NO_TEXGEN_NONLOCALVIEWER = 512;
         public const int D3DVTXPCAPS_TEXGEN_SPHEREMAP = 256;
         public const int D3DVTXPCAPS_TWEENING = 64;
-
+        
         // from <Windows SDK Path>\shared\d3d9types.h
+        public const int D3D_MAX_SIMULTANEOUS_RENDERTARGETS = 4;
+        public const int D3D_OMAC_SIZE = 16;
         public const int D3D9_RESOURCE_PRIORITY_HIGH = -1610612736;
         public const int D3D9_RESOURCE_PRIORITY_LOW = 1342177280;
         public const int D3D9_RESOURCE_PRIORITY_MAXIMUM = -939524096;
@@ -198,10 +200,11 @@
         public const int D3DFVF_XYZW = 16386;
         public const int D3DLOCK_DISCARD = 8192;
         public const int D3DLOCK_DONOTWAIT = 16384;
+        public const int D3DLOCK_NO_DIRTY_UPDATE = 32768;
         public const int D3DLOCK_NOOVERWRITE = 4096;
         public const int D3DLOCK_NOSYSLOCK = 2048;
-        public const int D3DLOCK_NO_DIRTY_UPDATE = 32768;
         public const int D3DLOCK_READONLY = 16;
+        public const int D3DPRESENT_RATE_DEFAULT = 0;
         public const int D3DPRESENTFLAG_DEVICECLIP = 4;
         public const int D3DPRESENTFLAG_DISCARD_DEPTHSTENCIL = 2;
         public const int D3DPRESENTFLAG_LOCKABLE_BACKBUFFER = 1;
@@ -209,11 +212,10 @@
         public const int D3DPRESENTFLAG_OVERLAY_LIMITEDRGB = 128;
         public const int D3DPRESENTFLAG_OVERLAY_YCbCr_BT709 = 256;
         public const int D3DPRESENTFLAG_OVERLAY_YCbCr_xvYCC = 512;
-        public const int D3DPRESENTFLAG_RESTRICTED_CONTENT = 1024;
         public const int D3DPRESENTFLAG_RESTRICT_SHARED_RESOURCE_DRIVER = 2048;
+        public const int D3DPRESENTFLAG_RESTRICTED_CONTENT = 1024;
         public const int D3DPRESENTFLAG_UNPRUNEDMODE = 64;
         public const int D3DPRESENTFLAG_VIDEO = 16;
-        public const int D3DPRESENT_RATE_DEFAULT = 0;
         public const int D3DSHADER_ADDRESSMODE_SHIFT = 13;
         public const int D3DSI_COISSUE = 1073741824;
         public const int D3DSI_COMMENTSIZE_MASK = 2147418112;
@@ -221,10 +223,10 @@
         public const int D3DSI_INSTLENGTH_MASK = 251658240;
         public const int D3DSI_INSTLENGTH_SHIFT = 24;
         public const int D3DSI_OPCODE_MASK = 65535;
-        public const int D3DSP_DCL_USAGEINDEX_MASK = 983040;
-        public const int D3DSP_DCL_USAGEINDEX_SHIFT = 16;
         public const int D3DSP_DCL_USAGE_MASK = 15;
         public const int D3DSP_DCL_USAGE_SHIFT = 0;
+        public const int D3DSP_DCL_USAGEINDEX_MASK = 983040;
+        public const int D3DSP_DCL_USAGEINDEX_SHIFT = 16;
         public const int D3DSP_DSTMOD_MASK = 15728640;
         public const int D3DSP_DSTMOD_SHIFT = 20;
         public const int D3DSP_DSTSHIFT_MASK = 251658240;
@@ -268,9 +270,9 @@
         public const int D3DUSAGE_QUERY_VERTEXTEXTURE = 1048576;
         public const int D3DUSAGE_QUERY_WRAPANDMIP = 2097152;
         public const int D3DUSAGE_RENDERTARGET = 1;
-        public const int D3DUSAGE_RESTRICTED_CONTENT = 2048;
         public const int D3DUSAGE_RESTRICT_SHARED_RESOURCE = 8192;
         public const int D3DUSAGE_RESTRICT_SHARED_RESOURCE_DRIVER = 4096;
+        public const int D3DUSAGE_RESTRICTED_CONTENT = 2048;
         public const int D3DUSAGE_RTPATCHES = 128;
         public const int D3DUSAGE_SOFTWAREPROCESSING = 16;
         public const int D3DUSAGE_TEXTAPI = 268435456;
@@ -279,15 +281,12 @@
         public const int D3DVS_SWIZZLE_MASK = 16711680;
         public const int D3DVS_SWIZZLE_SHIFT = 16;
         public const int D3DWRAP_W = 4;
-        public const int D3D_MAX_SIMULTANEOUS_RENDERTARGETS = 4;
-        public const int D3D_OMAC_SIZE = 16;
+        public const int MAX_DEVICE_IDENTIFIER_STRING = 512;
         public const int MAXD3DDECLLENGTH = 64;
         public const int MAXD3DDECLUSAGEINDEX = 15;
-        public const int MAX_DEVICE_IDENTIFIER_STRING = 512;
-
+        
         // from <Windows SDK Path>\shared\d3dkmddi.h
         public const int D3DKM_INVALID_GAMMA_INDEX = -1;
-        public const int DXGKDDI_PARTITION_EVENT_DESCRIPTION_MAX = 255;
         public const int DXGK_ALLOCATION_LIST_SIZE_GDICONTEXT = 256;
         public const int DXGK_FSTATE_UNKNOWN_POWER = -1;
         public const long DXGK_FSTATE_UNKNOWN_TIME = -1;
@@ -295,10 +294,11 @@
         public const int DXGK_KEYWORD_LOG_FLAGS_STABLE_POWER = 4096;
         public const int DXGK_KEYWORD_LOG_FLAGS_STABLE_POWER2 = 8192;
         public const int DXGK_MAX_ASYMETRICAL_PROCESSING_NODES = 64;
+        public const int DXGK_MAX_DOORBELL_SIZE_BYTES = 16384;
         public const int DXGK_MAX_F_STATES = 8;
         public const int DXGK_MAX_INTEGRATED_DISPLAYS = 16;
-        public const int DXGK_MAX_POWER_COMPONENT_PROVIDERS = 16;
         public const int DXGK_MAX_P_STATES = 32;
+        public const int DXGK_MAX_POWER_COMPONENT_PROVIDERS = 16;
         public const int DXGK_POWER_COMPONENT_NAME_SIZE = 40;
         public const int DXGK_PRESENT_DESTINATION_INDEX = 2;
         public const int DXGK_PRESENT_SOURCE_INDEX = 1;
@@ -307,7 +307,8 @@
         public const int DXGK_SEGMENT_SET_SYSTEMMEMORY = -2147483648;
         public const int DXGK_TEXTURE_SIZE_SHIFT = 11;
         public const int DXGK_WDDM3_ON_VB_INTERFACE_VERSION_1 = 1;
-
+        public const int DXGKDDI_PARTITION_EVENT_DESCRIPTION_MAX = 255;
+        
         // from <Windows SDK Path>\shared\d3dkmdt.h
         public const int D3DKMDT_BITS_PER_COMPONENT_06 = 1;
         public const int D3DKMDT_BITS_PER_COMPONENT_08 = 2;
@@ -318,6 +319,8 @@
         public const int D3DKMDT_MACROVISION_OEMCOPYPROTECTION_SIZE = 256;
         public const int D3DKMDT_MAX_OVERLAYS_BITCOUNT = 2;
         public const int DISPLAYID_DETAILED_TIMING_TYPE_I_SIZE = 20;
+        public const int DXGK_BRIGHTNESS_MAXIMUM_NIT_RANGE_COUNT = 16;
+        public const int DXGK_MAX_METADATA_NAME_LENGTH = 32;
         public const int DXGKMDT_I2C_DEVICE_TRANSMITS_DATA_LENGTH = 1;
         public const int DXGKMDT_I2C_NO_FLAGS = 0;
         public const int DXGKMDT_OPM_128_BIT_RANDOM_NUMBER_SIZE = 16;
@@ -328,13 +331,11 @@
         public const int DXGKMDT_OPM_OMAC_SIZE = 16;
         public const int DXGKMDT_OPM_PROTECTION_TYPE_SIZE = 4;
         public const int DXGKMDT_OPM_REQUESTED_INFORMATION_SIZE = 4076;
-        public const int DXGK_BRIGHTNESS_MAXIMUM_NIT_RANGE_COUNT = 16;
-        public const int DXGK_MAX_METADATA_NAME_LENGTH = 32;
-
+        
         // from <Windows SDK Path>\shared\d3dkmthk.h
         public const int D3DKMT_GDI_STYLE_HANDLE_DECORATION = 2;
-        public const int D3DKMT_GETPRESENTHISTORY_MAXTOKENS = 2048;
         public const int D3DKMT_GET_PTE_MAX = 64;
+        public const int D3DKMT_GETPRESENTHISTORY_MAXTOKENS = 2048;
         public const int D3DKMT_MAX_BUNDLE_OBJECTS_PER_HANDLE = 16;
         public const int D3DKMT_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS_PER_PLANE = 256;
         public const int D3DKMT_MAX_MULTIPLANE_OVERLAY_PLANES = 8;
@@ -359,25 +360,8 @@
         public const int MAX_ENUM_ADAPTERS = 16;
         public const int OUTPUTDUPL_CREATE_MAX_KEYEDMUTXES = 3;
         public const int SHARED_ALLOCATION_WRITE = 1;
-
+        
         // from <Windows SDK Path>\shared\d3dukmdt.h
-        public const int D3DDDI_ALLOCATIONPRIORITY_HIGH = -1610612736;
-        public const int D3DDDI_ALLOCATIONPRIORITY_LOW = 1342177280;
-        public const int D3DDDI_ALLOCATIONPRIORITY_MAXIMUM = -939524096;
-        public const int D3DDDI_ALLOCATIONPRIORITY_MINIMUM = 671088640;
-        public const int D3DDDI_ALLOCATIONPRIORITY_NORMAL = 2013265920;
-        public const int D3DDDI_MAX_BROADCAST_CONTEXT = 64;
-        public const int D3DDDI_MAX_MPO_PRESENT_DIRTY_RECTS = 4095;
-        public const int D3DDDI_MAX_OBJECT_SIGNALED = 32;
-        public const int D3DDDI_MAX_OBJECT_WAITED_ON = 32;
-        public const int D3DDDI_MAX_WRITTEN_PRIMARIES = 16;
-        public const int D3DDDI_SYNC_OBJECT_SIGNAL = 2;
-        public const int D3DDDI_SYNC_OBJECT_WAIT = 1;
-        public const int D3DGPU_NULL = 0;
-        public const long D3DGPU_UNIQUE_DRIVER_PROTECTION = -9223372036854775808;
-        public const int D3DKMDT_MAX_VIDPN_SOURCES_BITCOUNT = 4;
-        public const int D3DKMT_CROSS_ADAPTER_RESOURCE_HEIGHT_ALIGNMENT = 4;
-        public const int D3DKMT_CROSS_ADAPTER_RESOURCE_PITCH_ALIGNMENT = 128;
         public const int D3D_UMD_INTERFACE_VERSION_VISTA = 12;
         public const int D3D_UMD_INTERFACE_VERSION_WDDM1_3 = 16386;
         public const int D3D_UMD_INTERFACE_VERSION_WDDM2_0 = 20482;
@@ -406,11 +390,32 @@
         public const int D3D_UMD_INTERFACE_VERSION_WDDM2_8_1 = 53248;
         public const int D3D_UMD_INTERFACE_VERSION_WDDM2_9_1 = 57344;
         public const int D3D_UMD_INTERFACE_VERSION_WDDM3_0_1 = 61440;
+        public const int D3D_UMD_INTERFACE_VERSION_WDDM3_1_1 = 65536;
         public const int D3D_UMD_INTERFACE_VERSION_WIN7 = 8195;
         public const int D3D_UMD_INTERFACE_VERSION_WIN8 = 12292;
         public const int D3D_UMD_INTERFACE_VERSION_WIN8_CP = 12290;
         public const int D3D_UMD_INTERFACE_VERSION_WIN8_M3 = 12289;
         public const int D3D_UMD_INTERFACE_VERSION_WIN8_RC = 12291;
+        public const int D3DDDI_ALLOCATIONPRIORITY_HIGH = -1610612736;
+        public const int D3DDDI_ALLOCATIONPRIORITY_LOW = 1342177280;
+        public const int D3DDDI_ALLOCATIONPRIORITY_MAXIMUM = -939524096;
+        public const int D3DDDI_ALLOCATIONPRIORITY_MINIMUM = 671088640;
+        public const int D3DDDI_ALLOCATIONPRIORITY_NORMAL = 2013265920;
+        public const int D3DDDI_DOORBELL_PRIVATEDATA_MAX_BYTES_WDDM3_1 = 16;
+        public const int D3DDDI_MAX_BROADCAST_CONTEXT = 64;
+        public const int D3DDDI_MAX_MPO_PRESENT_DIRTY_RECTS = 4095;
+        public const int D3DDDI_MAX_OBJECT_SIGNALED = 32;
+        public const int D3DDDI_MAX_OBJECT_WAITED_ON = 32;
+        public const int D3DDDI_MAX_WRITTEN_PRIMARIES = 16;
+        public const int D3DDDI_SYNC_OBJECT_SIGNAL = 2;
+        public const int D3DDDI_SYNC_OBJECT_WAIT = 1;
+        public const int D3DGPU_NULL = 0;
+        public const long D3DGPU_UNIQUE_DRIVER_PROTECTION = -9223372036854775808;
+        public const int D3DKMDT_MAX_VIDPN_SOURCES_BITCOUNT = 4;
+        public const int D3DKMT_CROSS_ADAPTER_RESOURCE_HEIGHT_ALIGNMENT = 4;
+        public const int D3DKMT_CROSS_ADAPTER_RESOURCE_PITCH_ALIGNMENT = 128;
+        public const int DXGK_MAX_PAGE_TABLE_LEVEL_COUNT = 6;
+        public const int DXGK_MIN_PAGE_TABLE_LEVEL_COUNT = 2;
         public const int DXGKDDI_INTERFACE_VERSION_VISTA = 4178;
         public const int DXGKDDI_INTERFACE_VERSION_VISTA_SP1 = 4179;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM1_3 = 16386;
@@ -428,20 +433,19 @@
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_8 = 53249;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM2_9 = 57347;
         public const int DXGKDDI_INTERFACE_VERSION_WDDM3_0 = 61443;
+        public const int DXGKDDI_INTERFACE_VERSION_WDDM3_1 = 65540;
         public const int DXGKDDI_INTERFACE_VERSION_WIN7 = 8197;
         public const int DXGKDDI_INTERFACE_VERSION_WIN8 = 12302;
-        public const int DXGK_MAX_PAGE_TABLE_LEVEL_COUNT = 6;
-        public const int DXGK_MIN_PAGE_TABLE_LEVEL_COUNT = 2;
-
+        
         // from <Windows SDK Path>\shared\dcomptypes.h
+        public const int COMPOSITION_STATS_MAX_TARGETS = 256;
         public const int COMPOSITIONOBJECT_READ = 1;
         public const int COMPOSITIONOBJECT_WRITE = 2;
-        public const int COMPOSITION_STATS_MAX_TARGETS = 256;
         public const int DCOMPOSITION_MAX_WAITFORCOMPOSITORCLOCK_OBJECTS = 32;
-
+        
         // from <Windows SDK Path>\shared\dmerror.h
         public const int DMUS_ERRBASE = 4096;
-
+        
         // from <Windows SDK Path>\shared\dxgi.h
         public const int DXGI_CPU_ACCESS_DYNAMIC = 1;
         public const int DXGI_CPU_ACCESS_FIELD = 15;
@@ -476,26 +480,26 @@
         public const int DXGI_USAGE_SHADER_INPUT = 16;
         public const int DXGI_USAGE_SHARED = 128;
         public const int DXGI_USAGE_UNORDERED_ACCESS = 1024;
-
+        
         // from <Windows SDK Path>\shared\dxgi1_2.h
         public const int DXGI_ENUM_MODES_DISABLED_STEREO = 8;
         public const int DXGI_ENUM_MODES_STEREO = 4;
         public const int DXGI_SHARED_RESOURCE_READ = -2147483648;
         public const int DXGI_SHARED_RESOURCE_WRITE = 1;
-
+        
         // from <Windows SDK Path>\shared\dxgi1_3.h
         public const int DXGI_CREATE_FACTORY_DEBUG = 1;
-
+        
         // from <Windows SDK Path>\shared\dxgicommon.h
         public const int DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN = -2;
         public const int DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN = -1;
-
+        
         // from <Windows SDK Path>\shared\dxgiformat.h
         public const int DXGI_FORMAT_DEFINED = 1;
-
+        
         // from <Windows SDK Path>\shared\dxgitype.h
         public const int _FACDXGI = 2170;
-
+        
         // from <Windows SDK Path>\shared\ks.h
         public const int KSALLOCATOR_FLAG_2D_BUFFER_REQUIRED = 32768;
         public const int KSALLOCATOR_FLAG_ALLOCATOR_EXISTS = 2048;
@@ -523,8 +527,6 @@
         public const int KSDATAFORMAT_BIT_TEMPORAL_COMPRESSION = 0;
         public const int KSDATARANGE_BIT_ATTRIBUTES = 1;
         public const int KSDATARANGE_BIT_REQUIRED_ATTRIBUTES = 2;
-        public const int KSEVENTF_EVENT_HANDLE = 1;
-        public const int KSEVENTF_SEMAPHORE_HANDLE = 2;
         public const int KSEVENT_TYPE_BASICSUPPORT = 512;
         public const int KSEVENT_TYPE_ENABLE = 1;
         public const int KSEVENT_TYPE_ENABLEBUFFERED = 4;
@@ -532,6 +534,8 @@
         public const int KSEVENT_TYPE_QUERYBUFFER = 1024;
         public const int KSEVENT_TYPE_SETSUPPORT = 256;
         public const int KSEVENT_TYPE_TOPOLOGY = 268435456;
+        public const int KSEVENTF_EVENT_HANDLE = 1;
+        public const int KSEVENTF_SEMAPHORE_HANDLE = 2;
         public const int KSFRAMETIME_VARIABLESIZE = 1;
         public const int KSMEDIUM_TYPE_ANYINSTANCE = 0;
         public const int KSMETHOD_TYPE_BASICSUPPORT = 512;
@@ -595,16 +599,16 @@
         public const int KSSTREAM_HEADER_TRACK_COMPLETION_NUMBERS = 131072;
         public const int KSSTREAM_UVC_SECURE_ATTRIBUTE_SIZE = 8192;
         public const int NANOSECONDS = 10000000;
-
+        
         // from <Windows SDK Path>\shared\ksarm.h
         public const int AaCp15_Cr0_CpuId = 0;
+        public const int AaCp15_Cr1_AuxControl = 8;
+        public const int AaCp15_Cr1_Control = 4;
+        public const int AaCp15_Cr1_Cpacr = 12;
         public const int AaCp15_Cr10_NormalMemoryRemap = 328;
         public const int AaCp15_Cr10_PrimaryMemoryRemap = 324;
         public const int AaCp15_Cr12_VBARns = 332;
         public const int AaCp15_Cr13_ContextId = 336;
-        public const int AaCp15_Cr1_AuxControl = 8;
-        public const int AaCp15_Cr1_Control = 4;
-        public const int AaCp15_Cr1_Cpacr = 12;
         public const int AaCp15_Cr2_Ttb0 = 20;
         public const int AaCp15_Cr2_Ttb1 = 24;
         public const int AaCp15_Cr2_TtbControl = 16;
@@ -660,6 +664,7 @@
         public const int CP15_TTBRx_PD_MASK = -16384;
         public const int CP15_xFSR_FS_HIGH = 1024;
         public const int CP15_xFSR_FS_LOW = 15;
+        public const int CPSR_IT_MASK = 100727808;
         public const int CPSRC_ABORT = 256;
         public const int CPSRC_INT = 128;
         public const int CPSRC_THUMB = 32;
@@ -675,7 +680,6 @@
         public const int CPSRM_SYS = 31;
         public const int CPSRM_UDF = 27;
         public const int CPSRM_USER = 16;
-        public const int CPSR_IT_MASK = 100727808;
         public const int CPVFP_FPEXC_DEX = 536870912;
         public const int CPVFP_FPEXC_EN = 1073741824;
         public const int CPVFP_FPEXC_EX = -2147483648;
@@ -704,8 +708,8 @@
         public const int DBGDSCR_MON_EN_BIT = 32768;
         public const int DcReserved = 48;
         public const int EXHANDLE_CACHED_REFS = 31;
-        public const int EXHANDLE_REFERENCE_SHIFT = 27;
         public const int EXHANDLE_REF_ACQUIRE_LOCK = -1;
+        public const int EXHANDLE_REFERENCE_SHIFT = 27;
         public const int EXHANDLE_REPLENISH_REFS = 8;
         public const int EXHANDLE_TABLE_ENTRY_LOCK = 1;
         public const int ExParam5 = 0;
@@ -719,6 +723,18 @@
         public const int ExR9 = 40;
         public const int ExTrapFrame = 4;
         public const int FAST_FAIL_DEPRECATED_SERVICE_INVOKED = 27;
+        public const int FPSCR_DZC = 2;
+        public const int FPSCR_DZE = 512;
+        public const int FPSCR_IDC = 128;
+        public const int FPSCR_IDE = 32768;
+        public const int FPSCR_IOC = 1;
+        public const int FPSCR_IOE = 256;
+        public const int FPSCR_IXC = 16;
+        public const int FPSCR_IXE = 4096;
+        public const int FPSCR_OFC = 4;
+        public const int FPSCR_OFE = 1024;
+        public const int FPSCR_UFC = 8;
+        public const int FPSCR_UFE = 2048;
         public const int FPSCRF_C = 536870912;
         public const int FPSCRF_N = -2147483648;
         public const int FPSCRF_QC = 134217728;
@@ -733,18 +749,6 @@
         public const int FPSCRM_RMODE_RN = 0;
         public const int FPSCRM_RMODE_RP = 4194304;
         public const int FPSCRM_RMODE_RZ = 12582912;
-        public const int FPSCR_DZC = 2;
-        public const int FPSCR_DZE = 512;
-        public const int FPSCR_IDC = 128;
-        public const int FPSCR_IDE = 32768;
-        public const int FPSCR_IOC = 1;
-        public const int FPSCR_IOE = 256;
-        public const int FPSCR_IXC = 16;
-        public const int FPSCR_IXE = 4096;
-        public const int FPSCR_OFC = 4;
-        public const int FPSCR_OFE = 1024;
-        public const int FPSCR_UFC = 8;
-        public const int FPSCR_UFE = 2048;
         public const int JbFpscr = 44;
         public const int JbPc = 40;
         public const int JbR10 = 28;
@@ -839,7 +843,7 @@
         public const int VsFpscr = 4;
         public const int VsVfpD = 16;
         public const int VsVfpD8 = 80;
-
+        
         // from <Windows SDK Path>\shared\ksarm64.h
         public const int AaActlr_El1 = 16;
         public const int AaCpacr_El1 = 24;
@@ -860,15 +864,16 @@
         public const int AaTtbr0_El1 = 40;
         public const int AaTtbr1_El1 = 48;
         public const int AaVbar_El1 = 624;
+        public const int AcdContextRecord = 8;
         public const int AfBitmap = 8;
         public const int AfCount = 0;
         public const int AffinityExLength = 264;
         public const int ApApcListEntry = 16;
         public const int ApApcMode = 81;
         public const int ApApcStateIndex = 80;
-        public const int ApcObjectLength = 88;
         public const int APC_INDEX_MISMATCH = 1;
         public const int APC_LEVEL = 1;
+        public const int ApcObjectLength = 88;
         public const int ApInserted = 82;
         public const int ApKernelRoutine = 32;
         public const int ApNormalContext = 56;
@@ -880,7 +885,6 @@
         public const int ApThread = 8;
         public const int ApType = 0;
         public const int ArFlags = 32;
-        public const int ARM64EC_CONTEXT_LENGTH = 1232;
         public const int ARM64_ACTLR_EL1 = 16513;
         public const int ARM64_ACTLR_EL2 = 24705;
         public const int ARM64_AFSR0_EL2 = 25224;
@@ -899,10 +903,10 @@
         public const int ARM64_BREAKPOINT = 61440;
         public const int ARM64_CCSIDR_EL1 = 18432;
         public const int ARM64_CLIDR_EL1 = 18433;
-        public const int ARM64_CNTV_OFF_EL2 = 26371;
         public const int ARM64_CNT_HCTL_EL1PCEN = 2;
         public const int ARM64_CNT_HCTL_EL1PCTEN = 1;
         public const int ARM64_CNT_HCTL_EL2 = 26376;
+        public const int ARM64_CNTV_OFF_EL2 = 26371;
         public const int ARM64_CPACR_EL1 = 16514;
         public const int ARM64_CPACR_VFP_MASK = 3145728;
         public const int ARM64_CPACR_VFP_MASK_BIT = 20;
@@ -912,13 +916,13 @@
         public const int ARM64_CurrentEL = 16914;
         public const int ARM64_DAIF = 23057;
         public const int ARM64_DBGBCR0_EL1 = 5;
+        public const int ARM64_DBGBCR1_EL1 = 13;
         public const int ARM64_DBGBCR10_EL1 = 85;
         public const int ARM64_DBGBCR11_EL1 = 93;
         public const int ARM64_DBGBCR12_EL1 = 101;
         public const int ARM64_DBGBCR13_EL1 = 109;
         public const int ARM64_DBGBCR14_EL1 = 117;
         public const int ARM64_DBGBCR15_EL1 = 125;
-        public const int ARM64_DBGBCR1_EL1 = 13;
         public const int ARM64_DBGBCR2_EL1 = 21;
         public const int ARM64_DBGBCR3_EL1 = 29;
         public const int ARM64_DBGBCR4_EL1 = 37;
@@ -928,13 +932,13 @@
         public const int ARM64_DBGBCR8_EL1 = 69;
         public const int ARM64_DBGBCR9_EL1 = 77;
         public const int ARM64_DBGBVR0_EL1 = 4;
+        public const int ARM64_DBGBVR1_EL1 = 12;
         public const int ARM64_DBGBVR10_EL1 = 84;
         public const int ARM64_DBGBVR11_EL1 = 92;
         public const int ARM64_DBGBVR12_EL1 = 100;
         public const int ARM64_DBGBVR13_EL1 = 108;
         public const int ARM64_DBGBVR14_EL1 = 116;
         public const int ARM64_DBGBVR15_EL1 = 124;
-        public const int ARM64_DBGBVR1_EL1 = 12;
         public const int ARM64_DBGBVR2_EL1 = 20;
         public const int ARM64_DBGBVR3_EL1 = 28;
         public const int ARM64_DBGBVR4_EL1 = 36;
@@ -947,13 +951,13 @@
         public const int ARM64_DBGDTRTX_EL0 = 6184;
         public const int ARM64_DBGPRCR_EL1 = 164;
         public const int ARM64_DBGWCR0_EL1 = 7;
+        public const int ARM64_DBGWCR1_EL1 = 15;
         public const int ARM64_DBGWCR10_EL1 = 87;
         public const int ARM64_DBGWCR11_EL1 = 95;
         public const int ARM64_DBGWCR12_EL1 = 103;
         public const int ARM64_DBGWCR13_EL1 = 111;
         public const int ARM64_DBGWCR14_EL1 = 119;
         public const int ARM64_DBGWCR15_EL1 = 127;
-        public const int ARM64_DBGWCR1_EL1 = 15;
         public const int ARM64_DBGWCR2_EL1 = 23;
         public const int ARM64_DBGWCR3_EL1 = 31;
         public const int ARM64_DBGWCR4_EL1 = 39;
@@ -963,13 +967,13 @@
         public const int ARM64_DBGWCR8_EL1 = 71;
         public const int ARM64_DBGWCR9_EL1 = 79;
         public const int ARM64_DBGWVR0_EL1 = 6;
+        public const int ARM64_DBGWVR1_EL1 = 14;
         public const int ARM64_DBGWVR10_EL1 = 86;
         public const int ARM64_DBGWVR11_EL1 = 94;
         public const int ARM64_DBGWVR12_EL1 = 102;
         public const int ARM64_DBGWVR13_EL1 = 110;
         public const int ARM64_DBGWVR14_EL1 = 118;
         public const int ARM64_DBGWVR15_EL1 = 126;
-        public const int ARM64_DBGWVR1_EL1 = 14;
         public const int ARM64_DBGWVR2_EL1 = 22;
         public const int ARM64_DBGWVR3_EL1 = 30;
         public const int ARM64_DBGWVR4_EL1 = 38;
@@ -978,7 +982,6 @@
         public const int ARM64_DBGWVR7_EL1 = 62;
         public const int ARM64_DBGWVR8_EL1 = 70;
         public const int ARM64_DBGWVR9_EL1 = 78;
-        public const int ARM64_DCZID_EL0 = 22535;
         public const int ARM64_DC_CISW = 1010;
         public const int ARM64_DC_CIVAC = 7153;
         public const int ARM64_DC_CSW = 978;
@@ -987,6 +990,7 @@
         public const int ARM64_DC_ISW = 946;
         public const int ARM64_DC_IVAC = 945;
         public const int ARM64_DC_ZVA = 7073;
+        public const int ARM64_DCZID_EL0 = 22535;
         public const int ARM64_DEBUG_SERVICE = 61442;
         public const int ARM64_DIVIDE_BY_0 = 61444;
         public const int ARM64_DLR = 23081;
@@ -1013,10 +1017,10 @@
         public const int ARM64_HCR_EL2_TSC = 524288;
         public const int ARM64_HCR_EL2_VM = 1;
         public const int ARM64_HPFAR_EL2 = 25348;
-        public const int ARM64_ICC_SRE_EL2 = 26189;
         public const int ARM64_IC_IALLU = 936;
         public const int ARM64_IC_IALLUIS = 904;
         public const int ARM64_IC_IVAU = 7081;
+        public const int ARM64_ICC_SRE_EL2 = 26189;
         public const int ARM64_ID_AA64AFR0_EL1 = 16428;
         public const int ARM64_ID_AA64AFR1_EL1 = 16429;
         public const int ARM64_ID_AA64DFR0_EL1 = 16424;
@@ -1052,9 +1056,9 @@
         public const int ARM64_PMCCFILTR_EL0 = 24447;
         public const int ARM64_PMCCFILTR_NSH = 134217728;
         public const int ARM64_PMCCNTR_EL0 = 23784;
+        public const int ARM64_PMCNTEN_PMCCNT = -2147483648;
         public const int ARM64_PMCNTENCLR_EL0 = 23778;
         public const int ARM64_PMCNTENSET_EL0 = 23777;
-        public const int ARM64_PMCNTEN_PMCCNT = -2147483648;
         public const int ARM64_PMCR_EL0 = 23776;
         public const int ARM64_PMINTENCLR_EL1 = 17650;
         public const int ARM64_PMINTENSET_EL1 = 17649;
@@ -1089,12 +1093,12 @@
         public const int ARM64_SCTLR_UCT = 32768;
         public const int ARM64_SCTLR_UMA = 512;
         public const int ARM64_SCTLR_WXN = 524288;
-        public const int ARM64_SPSel = 16912;
-        public const int ARM64_SPSR_EL1 = 16896;
-        public const int ARM64_SPSR_EL2 = 25088;
         public const int ARM64_SP_EL0 = 16904;
         public const int ARM64_SP_EL1 = 25096;
         public const int ARM64_SP_EL2 = 29192;
+        public const int ARM64_SPSel = 16912;
+        public const int ARM64_SPSR_EL1 = 16896;
+        public const int ARM64_SPSR_EL2 = 25088;
         public const int ARM64_TCR_EL1 = 16642;
         public const int ARM64_TCR_EL2 = 24834;
         public const int ARM64_TCR_EL2_PASize_SHIFT = 16;
@@ -1107,6 +1111,7 @@
         public const int ARM64_TCR_SH0_MASK = 12288;
         public const int ARM64_TCR_T0SZ_MASK = 63;
         public const long ARM64_TCR_TBI0 = 137438953472;
+        public const long ARM64_TCR_TBI1 = 274877906944;
         public const int ARM64_TCR_TG0_MASK = 49152;
         public const int ARM64_TLBI_ALLE1 = 9276;
         public const int ARM64_TLBI_ALLE2 = 9272;
@@ -1122,10 +1127,10 @@
         public const int ARM64_TLBI_VALE1IS = 1053;
         public const int ARM64_TLBI_VMALLE1 = 1080;
         public const int ARM64_TLBI_VMALLE1IS = 1048;
-        public const int ARM64_TPIDRRO_EL0 = 24195;
         public const int ARM64_TPIDR_EL0 = 24194;
         public const int ARM64_TPIDR_EL1 = 18052;
         public const int ARM64_TPIDR_EL2 = 26242;
+        public const int ARM64_TPIDRRO_EL0 = 24195;
         public const int ARM64_TTBR0_EL1 = 16640;
         public const int ARM64_TTBR0_EL2 = 24832;
         public const int ARM64_TTBR1_EL1 = 16641;
@@ -1134,6 +1139,7 @@
         public const int ARM64_VBAR_EL2 = 26112;
         public const int ARM64_VMPIDR_EL2 = 24581;
         public const int ARM64_VPIDR_EL2 = 24576;
+        public const int ARM64EC_CONTEXT_LENGTH = 1232;
         public const int ArNormalContext = 8;
         public const int ArNormalRoutine = 0;
         public const int ArSystemArgument1 = 16;
@@ -1171,6 +1177,14 @@
         public const int CONTEXT_FRAME_LENGTH = 912;
         public const int CONTEXT_FULL = 4194311;
         public const int CONTEXT_INTEGER = 4194306;
+        public const int CPSR_IL = 1048576;
+        public const int CPSR_IL_BIT = 20;
+        public const int CPSR_SS = 2097152;
+        public const int CPSR_SS_BIT = 21;
+        public const int CPSR_SSBS32 = 8388608;
+        public const int CPSR_SSBS32_BIT = 23;
+        public const int CPSR_SSBS64 = 4096;
+        public const int CPSR_SSBS64_BIT = 12;
         public const int CPSREL_0 = 0;
         public const int CPSREL_1 = 4;
         public const int CPSREL_1_BIT = 2;
@@ -1187,24 +1201,17 @@
         public const int CPSRM_EL3t = 12;
         public const int CPSRM_MASK = 15;
         public const int CPSRM_T = 32;
-        public const int CPSR_IL = 1048576;
-        public const int CPSR_IL_BIT = 20;
-        public const int CPSR_SS = 2097152;
-        public const int CPSR_SSBS32 = 8388608;
-        public const int CPSR_SSBS32_BIT = 23;
-        public const int CPSR_SSBS64 = 4096;
-        public const int CPSR_SSBS64_BIT = 12;
-        public const int CPSR_SS_BIT = 21;
         public const int Cv2ciContextAmd64 = 24;
-        public const int Cv2ciEmulatorData = 40;
-        public const int Cv2ciEmulatorData2 = 48;
-        public const int Cv2ciEmulatorData3 = 56;
-        public const int Cv2ciEmulatorData4 = 64;
+        public const int Cv2ciEmulatorData = 48;
+        public const int Cv2ciEmulatorData2 = 56;
+        public const int Cv2ciEmulatorData3 = 64;
+        public const int Cv2ciEmulatorData4 = 72;
         public const int Cv2ciEmulatorDataInline = 80;
         public const int Cv2ciEmulatorStackBase = 8;
         public const int Cv2ciEmulatorStackLimit = 16;
         public const int Cv2ciInSimulation = 0;
         public const int Cv2ciInSyscallCallback = 1;
+        public const int Cv2ciLoadingModuleModflag = 40;
         public const int Cv2ciSuspendDoorbell = 32;
         public const int CxBcr = 792;
         public const int CxBvr = 824;
@@ -1255,6 +1262,7 @@
         public const int DEBUG_ACTIVE_DBG = 1;
         public const int DEBUG_ACTIVE_DBG_BIT = 0;
         public const int DEBUG_ACTIVE_DBG_INSTRUMENTED = 3;
+        public const int DEBUG_ACTIVE_EMULATION_THREAD = 64;
         public const int DEBUG_ACTIVE_EMULATION_THREAD_BIT = 6;
         public const int DEBUG_ACTIVE_INSTRUMENTED = 2;
         public const int DEBUG_ACTIVE_MINIMAL_THREAD = 4;
@@ -1379,11 +1387,6 @@
         public const int EvSize = 2;
         public const int EvType = 0;
         public const int EvWaitListHead = 8;
-        public const int ExceptionCollidedUnwind = 3;
-        public const int ExceptionContinueExecution = 0;
-        public const int ExceptionContinueSearch = 1;
-        public const int ExceptionNestedException = 2;
-        public const int ExceptionRecordLength = 160;
         public const int EXCEPTION_COLLIDED_UNWIND = 64;
         public const int EXCEPTION_CONTINUE_EXECUTION = -1;
         public const int EXCEPTION_CONTINUE_SEARCH = 0;
@@ -1396,9 +1399,14 @@
         public const int EXCEPTION_TARGET_UNWIND = 32;
         public const int EXCEPTION_UNWIND = 102;
         public const int EXCEPTION_UNWINDING = 2;
+        public const int ExceptionCollidedUnwind = 3;
+        public const int ExceptionContinueExecution = 0;
+        public const int ExceptionContinueSearch = 1;
+        public const int ExceptionNestedException = 2;
+        public const int ExceptionRecordLength = 160;
         public const int Executive = 0;
         public const int ExecutiveProcessObjectLength = 3200;
-        public const int ExecutiveThreadObjectLength = 2320;
+        public const int ExecutiveThreadObjectLength = 2336;
         public const int ExFp = 80;
         public const int ExReturn = 88;
         public const int ExX19 = 0;
@@ -1435,6 +1443,12 @@
         public const int FmCount = 0;
         public const int FmOldIrql = 48;
         public const int FmOwner = 8;
+        public const int FPCR_DZE = 512;
+        public const int FPCR_IDE = 32768;
+        public const int FPCR_IOE = 256;
+        public const int FPCR_IXE = 4096;
+        public const int FPCR_OFE = 1024;
+        public const int FPCR_UFE = 2048;
         public const int FPCRM_AHP = 67108864;
         public const int FPCRM_AHP_BIT = 26;
         public const int FPCRM_DN = 33554432;
@@ -1446,12 +1460,6 @@
         public const int FPCRM_RMODE_RN = 0;
         public const int FPCRM_RMODE_RP = 4194304;
         public const int FPCRM_RMODE_RZ = 12582912;
-        public const int FPCR_DZE = 512;
-        public const int FPCR_IDE = 32768;
-        public const int FPCR_IOE = 256;
-        public const int FPCR_IXE = 4096;
-        public const int FPCR_OFE = 1024;
-        public const int FPCR_UFE = 2048;
         public const int FPSR_DZC = 2;
         public const int FPSR_IDC = 128;
         public const int FPSR_IOC = 1;
@@ -1473,8 +1481,8 @@
         public const int InInternalState = 104;
         public const int InInterruptListEntry = 8;
         public const int InIrql = 92;
-        public const int Initialized = 0;
         public const int INITIAL_STALL_COUNT = 100;
+        public const int Initialized = 0;
         public const int InLatched = 1;
         public const int InLevelSensitive = 0;
         public const int InMode = 108;
@@ -1488,9 +1496,9 @@
         public const int INSTRUCTION_BUS_ERROR = 47;
         public const int INSTRUCTION_COHERENCY_EXCEPTION = 86;
         public const int InSynchronizeIrql = 93;
-        public const int InterruptObjectLength = 288;
         public const int INTERRUPT_EXCEPTION_NOT_HANDLED = 61;
         public const int INTERRUPT_UNWIND_ATTEMPTED = 60;
+        public const int InterruptObjectLength = 280;
         public const int InTickCount = 64;
         public const int InTrapFrame = 136;
         public const int InType = 0;
@@ -1524,6 +1532,8 @@
         public const int JbX26 = 72;
         public const int JbX27 = 80;
         public const int JbX28 = 88;
+        public const int KAPC_CALLBACK_DATA_LENGTH = 32;
+        public const int KAPC_RECORD_FLAGS_CALLBACK_DATA_CONTEXT_BIT = 2;
         public const int KAPC_RECORD_FLAGS_CHECK_ALERT = 1;
         public const int KAPC_RECORD_LENGTH = 48;
         public const int KAPC_STATE_ANY_USER_APC_PENDING_MASK = 3;
@@ -1536,19 +1546,17 @@
         public const int KENTROPY_TIMING_ANALYSIS = 0;
         public const int KENTROPY_TIMING_BUFFER_MASK = 2047;
         public const int KENTROPY_TIMING_INTERRUPTS_PER_BUFFER = 1024;
-        public const int KernelMode = 0;
-        public const int KernelProcessObjectLength = 1008;
-        public const int KernelThreadObjectLength = 1184;
         public const int KERNEL_APC_PENDING_DURING_EXIT = 32;
         public const int KERNEL_LARGE_STACK_COMMIT = 32768;
         public const int KERNEL_LARGE_STACK_SIZE = 73728;
         public const int KERNEL_SECURITY_CHECK_FAILURE = 313;
+        public const int KernelMode = 0;
+        public const int KernelProcessObjectLength = 1008;
+        public const int KernelThreadObjectLength = 1184;
         public const int KEXCEPTION_ACTIVE_EXCEPTION_FRAME = 1;
         public const int KEXCEPTION_ACTIVE_INTERRUPT_FRAME = 0;
         public const int KEXCEPTION_ACTIVE_SERVICE_FRAME = 2;
         public const int KEXCEPTION_FRAME_LENGTH = 96;
-        public const int KINTERRUPT_STATE_DISABLED = 1;
-        public const int KINTERRUPT_STATE_DISABLED_BIT = 0;
         public const int KI_DPC_ALL_FLAGS = 191;
         public const int KI_DPC_ANY_DPC_ACTIVE = 65537;
         public const int KI_DPC_INTERRUPT_FLAGS = 175;
@@ -1562,6 +1570,8 @@
         public const int KI_SPINLOCK_ORDER_PRCB_LOCK = 128;
         public const int KI_USER_GLOBAL_IP_AUTH_ENABLED_BIT = 1;
         public const int KI_USER_PER_PROCESS_IP_AUTH_ENABLED_BIT = 0;
+        public const int KINTERRUPT_STATE_DISABLED = 1;
+        public const int KINTERRUPT_STATE_DISABLED_BIT = 0;
         public const int KMODE_EXCEPTION_NOT_HANDLED = 30;
         public const int KPRIORITY_STATE_PRIORITY_BITMASK = 127;
         public const int KsElr_El1 = 0;
@@ -1572,9 +1582,9 @@
         public const int KSTACK_ACTUAL_LIMIT_EXPANDED = 1;
         public const int KSTACK_CONTROL_LENGTH = 64;
         public const int KSTART_FRAME_LENGTH = 32;
-        public const int KsTpidrro_El0 = 24;
         public const int KsTpidr_El0 = 16;
         public const int KsTpidr_El1 = 32;
+        public const int KsTpidrro_El0 = 24;
         public const int KSWITCH_FRAME_LENGTH = 32;
         public const int KTHREAD_AUTO_ALIGNMENT_BIT = 2;
         public const int KTHREAD_BAM_QOS_LEVEL_MASK = 255;
@@ -1637,7 +1647,7 @@
         public const int PbCopyReadNoWait = 2636;
         public const int PbCopyReadNoWaitMiss = 2644;
         public const int PbCopyReadWait = 2640;
-        public const int PbCoresPerPhysicalProcessor = 1878;
+        public const int PbCoresPerPhysicalProcessor = 1904;
         public const int PbCurrentThread = 8;
         public const int PbCycleTime = 4336;
         public const int PbDeferredReadyListHead = 2568;
@@ -1669,7 +1679,7 @@
         public const int PbKernelTime = 3844;
         public const int PbKeSpinLockOrdering = 3060;
         public const int PbLockQueue = 1920;
-        public const int PbLogicalProcessorsPerCore = 1879;
+        public const int PbLogicalProcessorsPerCore = 1908;
         public const int PbLookasideIrpFloat = 2648;
         public const int PbMailbox = 2688;
         public const int PbMajorVersion = 1874;
@@ -1698,7 +1708,7 @@
         public const int PbQuantumEnd = 2841;
         public const int PbReadOperationCount = 2652;
         public const int PbReadTransferCount = 2664;
-        public const int PbRequestMailbox = 38400;
+        public const int PbRequestMailbox = 37888;
         public const int PbSecondaryColorMask = 4332;
         public const int PbSpBase = 2816;
         public const int PbSpinLockAcquireCount = 6144;
@@ -1708,6 +1718,7 @@
         public const int PbWaitListHead = 3072;
         public const int PbWriteOperationCount = 2656;
         public const int PbWriteTransferCount = 2672;
+        public const int PcBhbMitigation = 78;
         public const int PcBtiMitigation = 76;
         public const int PcCurrentIrql = 56;
         public const int PcCurrentThread = 2440;
@@ -1731,15 +1742,16 @@
         public const int PcPanicStorage = 80;
         public const int PcPrcb = 2432;
         public const int PcPrcbLock = 2472;
-        public const int PCR_BTI_MITIGATION_CSWAP_HVC = 4;
-        public const int PCR_BTI_MITIGATION_CSWAP_HVC_BIT = 2;
-        public const int PCR_BTI_MITIGATION_CSWAP_SMC = 8;
-        public const int PCR_BTI_MITIGATION_CSWAP_SMC_BIT = 3;
+        public const int PCR_BTI_MITIGATION_CSWAP_HVC = 16;
+        public const int PCR_BTI_MITIGATION_CSWAP_HVC_BIT = 4;
+        public const int PCR_BTI_MITIGATION_CSWAP_SMC = 32;
+        public const int PCR_BTI_MITIGATION_CSWAP_SMC_BIT = 5;
         public const int PCR_BTI_MITIGATION_NONE = 0;
         public const int PCR_BTI_MITIGATION_TRAP_HVC = 1;
         public const int PCR_BTI_MITIGATION_TRAP_HVC_BIT = 0;
         public const int PCR_BTI_MITIGATION_TRAP_SMC = 2;
         public const int PCR_BTI_MITIGATION_TRAP_SMC_BIT = 1;
+        public const int PCR_BTI_MITIGATION_VBAR_MASK = 15;
         public const int PcSelf = 24;
         public const int PcSkipTick = 6296;
         public const int PcSpBase = 5248;
@@ -1764,6 +1776,7 @@
         public const int PERF_SYSCALL_FLAG = 64;
         public const int PERF_SYSCALL_FLAG_BIT = 6;
         public const int PERF_SYSCALL_OFFSET = 8;
+        public const int PF_ARM_V81_ATOMIC_INSTRUCTIONS_AVAILABLE = 34;
         public const int PfAffinity = 72;
         public const int PfBucketShift = 48;
         public const int PfBuffer = 56;
@@ -1773,10 +1786,9 @@
         public const int PfRangeLimit = 40;
         public const int PfSegment = 64;
         public const int PfSize = 2;
-        public const int PfSource = 344;
-        public const int PfStarted = 346;
+        public const int PfSource = 608;
+        public const int PfStarted = 610;
         public const int PfType = 0;
-        public const int PF_ARM_V81_ATOMIC_INSTRUCTIONS_AVAILABLE = 34;
         public const int PiEndTime = 8;
         public const int PiStartTime = 0;
         public const int POWER_LEVEL = 14;
@@ -1794,13 +1806,13 @@
         public const int ProcessEnvironmentBlockLength = 2000;
         public const int ProcessInMemory = 0;
         public const int ProcessInTransition = 2;
-        public const int ProcessorControlRegisterLength = 171968;
+        public const int ProcessorControlRegisterLength = 171456;
         public const int ProcessorParkedPageLength = 4096;
         public const int ProcessorStartBlockLength = 16;
         public const int ProcessorStateLength = 1712;
         public const int ProcessOutOfMemory = 1;
-        public const int ProfileObjectLength = 352;
         public const int PROFILE_LEVEL = 15;
+        public const int ProfileObjectLength = 616;
         public const int PrProcessFlags = 640;
         public const int PrProfileListHead = 24;
         public const int PrQuantumReset = 649;
@@ -1811,6 +1823,15 @@
         public const int PrThreadListHead = 56;
         public const int PrType = 0;
         public const int PrUserTime = 904;
+        public const int PS_MITIGATION_OPTION_ALWAYS_OFF = 2;
+        public const int PS_MITIGATION_OPTION_ALWAYS_ON = 1;
+        public const int PS_MITIGATION_OPTION_BITS_PER_OPTION = 4;
+        public const int PS_MITIGATION_OPTION_CET_USER_SHADOW_STACKS = 31;
+        public const int PS_MITIGATION_OPTION_MASK = 3;
+        public const int PS_MITIGATION_OPTION_RESTRICT_SET_THREAD_CONTEXT = 19;
+        public const int PS_MITIGATION_OPTION_RETURN_FLOW_GUARD = 16;
+        public const int PS_PROCESS_MITIGATION_FLAGS2_POINTER_AUTH_USER_IP_BIT = 27;
+        public const int PS_PROCESS_MITIGATION_FLAGS2_SPECULATIVE_STORE_BYPASS_DISABLE = 13;
         public const int PsArchState = 160;
         public const int PsAuxControl = 176;
         public const int PsbSelfMap = 0;
@@ -1831,15 +1852,6 @@
         public const int PsUsrRO = 24;
         public const int PsUsrRW = 16;
         public const int PsVBARns = 784;
-        public const int PS_MITIGATION_OPTION_ALWAYS_OFF = 2;
-        public const int PS_MITIGATION_OPTION_ALWAYS_ON = 1;
-        public const int PS_MITIGATION_OPTION_BITS_PER_OPTION = 4;
-        public const int PS_MITIGATION_OPTION_CET_USER_SHADOW_STACKS = 31;
-        public const int PS_MITIGATION_OPTION_MASK = 3;
-        public const int PS_MITIGATION_OPTION_RESTRICT_SET_THREAD_CONTEXT = 19;
-        public const int PS_MITIGATION_OPTION_RETURN_FLOW_GUARD = 16;
-        public const int PS_PROCESS_MITIGATION_FLAGS2_POINTER_AUTH_USER_IP_BIT = 27;
-        public const int PS_PROCESS_MITIGATION_FLAGS2_SPECULATIVE_STORE_BYPASS_DISABLE = 13;
         public const int QuCurrentCount = 40;
         public const int QuEntryListHead = 24;
         public const int QueueObjectLength = 64;
@@ -1889,6 +1901,7 @@
         public const int STATUS_GUARD_PAGE_VIOLATION = -2147483647;
         public const int STATUS_ILLEGAL_FLOAT_CONTEXT = -1073741494;
         public const int STATUS_ILLEGAL_INSTRUCTION = -1073741795;
+        public const int STATUS_IN_PAGE_ERROR = -1073741818;
         public const int STATUS_INSTRUCTION_MISALIGNMENT = -1073741654;
         public const int STATUS_INTEGER_DIVIDE_BY_ZERO = -1073741676;
         public const int STATUS_INTEGER_OVERFLOW = -1073741675;
@@ -1899,7 +1912,6 @@
         public const int STATUS_INVALID_PARAMETER_1 = -1073741585;
         public const int STATUS_INVALID_SYSTEM_SERVICE = -1073741796;
         public const int STATUS_INVALID_THREAD = -1073740004;
-        public const int STATUS_IN_PAGE_ERROR = -1073741818;
         public const int STATUS_KERNEL_APC = 256;
         public const int STATUS_LONGJUMP = -2147483610;
         public const int STATUS_NO_CALLBACK_ACTIVE = -1073741224;
@@ -2000,7 +2012,6 @@
         public const int ThPreviousMode = 594;
         public const int thProcess = 576;
         public const int ThProcess = 576;
-        public const int ThreadEnvironmentBlockLength = 6224;
         public const int THREAD_FLAGS_ACCOUNTING_ANY = 190;
         public const int THREAD_FLAGS_ACCOUNTING_CSWITCH = 182;
         public const int THREAD_FLAGS_ACCOUNTING_INTERRUPT = 114;
@@ -2015,6 +2026,7 @@
         public const int THREAD_FLAGS_GROUP_SCHEDULING = 4;
         public const int THREAD_NOT_MUTEX_OWNER = 17;
         public const int THREAD_QUANTUM = 6;
+        public const int ThreadEnvironmentBlockLength = 6224;
         public const int ThRunning = 105;
         public const int ThSignalState = 4;
         public const int ThSize = 2;
@@ -2049,9 +2061,9 @@
         public const int TlLr = 88;
         public const int TlPadding = 10;
         public const int TlPc = 104;
-        public const int TlSp = 96;
         public const int TLS_EXPANSION_SLOTS = 1024;
         public const int TLS_MINIMUM_AVAILABLE = 64;
+        public const int TlSp = 96;
         public const int TlThread = 0;
         public const int TlTrapType = 9;
         public const int TlX0 = 16;
@@ -2113,9 +2125,9 @@
         public const int UsComPlusPackage = 736;
         public const int UsCryptoExponent = 572;
         public const int UsDismountCount = 732;
-        public const int UserMode = 1;
         public const int USER_CALLBACK_FILTER = 524288;
         public const long USER_SHARED_DATA = -9345848836096;
+        public const int UserMode = 1;
         public const int UsImageNumberHigh = 46;
         public const int UsImageNumberLow = 44;
         public const int UsInterruptTime = 8;
@@ -2151,10 +2163,10 @@
         public const int VsFpsr = 12;
         public const int VsLink = 0;
         public const int VsV = 16;
+        public const int WAIT_QUANTUM_DECREMENT = 1;
         public const int WaitAll = 0;
         public const int WaitAny = 1;
         public const int Waiting = 5;
-        public const int WAIT_QUANTUM_DECREMENT = 1;
         public const int WbObject = 32;
         public const int WbThread = 24;
         public const int WbWaitKey = 18;
@@ -2163,13 +2175,144 @@
         public const int Win32BatchFlushCallout = 7;
         public const int WrDispatchInt = 31;
         public const int WrExecutive = 0;
-
+        
         // from <Windows SDK Path>\shared\ksmedia.h
         public const int AUDIOMODULE_MAX_DATA_SIZE = 64000;
         public const int AUDIOMODULE_MAX_NAME_CCH_SIZE = 128;
         public const int CC_MAX_HW_DECODE_LINES = 12;
         public const int JACKDESC2_DYNAMIC_FORMAT_CHANGE_CAPABILITY = 2;
         public const int JACKDESC2_PRESENCE_DETECT_CAPABILITY = 1;
+        public const int KS_AM_UseNewCSSKey = 1;
+        public const int KS_AMCONTROL_COLORINFO_PRESENT = 128;
+        public const int KS_AMCONTROL_PAD_TO_16x9 = 4;
+        public const int KS_AMCONTROL_PAD_TO_4x3 = 2;
+        public const int KS_AMCONTROL_USED = 1;
+        public const int KS_AnalogVideo_NTSC_Mask = 7;
+        public const int KS_AnalogVideo_PAL_Mask = 1052656;
+        public const int KS_AnalogVideo_SECAM_Mask = 1044480;
+        public const int KS_BI_BITFIELDS = 3;
+        public const int KS_BI_JPEG = 4;
+        public const int KS_BI_RGB = 0;
+        public const int KS_BI_RLE4 = 2;
+        public const int KS_BI_RLE8 = 1;
+        public const int KS_CC_SUBSTREAM_EVEN = 2;
+        public const int KS_CC_SUBSTREAM_FIELD1_MASK = 240;
+        public const int KS_CC_SUBSTREAM_FIELD2_MASK = 7936;
+        public const int KS_CC_SUBSTREAM_ODD = 1;
+        public const int KS_CC_SUBSTREAM_SERVICE_CC1 = 16;
+        public const int KS_CC_SUBSTREAM_SERVICE_CC2 = 32;
+        public const int KS_CC_SUBSTREAM_SERVICE_CC3 = 256;
+        public const int KS_CC_SUBSTREAM_SERVICE_CC4 = 512;
+        public const int KS_CC_SUBSTREAM_SERVICE_T1 = 64;
+        public const int KS_CC_SUBSTREAM_SERVICE_T2 = 128;
+        public const int KS_CC_SUBSTREAM_SERVICE_T3 = 1024;
+        public const int KS_CC_SUBSTREAM_SERVICE_T4 = 2048;
+        public const int KS_CC_SUBSTREAM_SERVICE_XDS = 4096;
+        public const int KS_COPYPROTECT_RestrictDuplication = 1;
+        public const int KS_DVD_CGMS_COPY_ONCE = 16;
+        public const int KS_DVD_CGMS_COPY_PERMITTED = 0;
+        public const int KS_DVD_CGMS_COPY_PROTECT_MASK = 24;
+        public const int KS_DVD_CGMS_NO_COPY = 24;
+        public const int KS_DVD_CGMS_RESERVED_MASK = 120;
+        public const int KS_DVD_COPYRIGHT_MASK = 64;
+        public const int KS_DVD_COPYRIGHTED = 64;
+        public const int KS_DVD_NOT_COPYRIGHTED = 0;
+        public const int KS_DVD_SECTOR_NOT_PROTECTED = 0;
+        public const int KS_DVD_SECTOR_PROTECT_MASK = 32;
+        public const int KS_DVD_SECTOR_PROTECTED = 32;
+        public const int KS_iBLUE = 2;
+        public const int KS_iEGA_COLORS = 16;
+        public const int KS_iGREEN = 1;
+        public const int KS_iMASK_COLORS = 3;
+        public const int KS_iMAXBITS = 8;
+        public const int KS_INTERLACE_1FieldPerSample = 2;
+        public const int KS_INTERLACE_DisplayModeBobOnly = 0;
+        public const int KS_INTERLACE_DisplayModeBobOrWeave = 128;
+        public const int KS_INTERLACE_DisplayModeMask = 192;
+        public const int KS_INTERLACE_DisplayModeWeaveOnly = 64;
+        public const int KS_INTERLACE_Field1First = 4;
+        public const int KS_INTERLACE_FieldPatBothIrregular = 48;
+        public const int KS_INTERLACE_FieldPatBothRegular = 32;
+        public const int KS_INTERLACE_FieldPatField1Only = 0;
+        public const int KS_INTERLACE_FieldPatField2Only = 16;
+        public const int KS_INTERLACE_FieldPatternMask = 48;
+        public const int KS_INTERLACE_IsInterlaced = 1;
+        public const int KS_INTERLACE_UNUSED = 8;
+        public const int KS_iPALETTE = 8;
+        public const int KS_iPALETTE_COLORS = 256;
+        public const int KS_iRED = 0;
+        public const int KS_iTRUECOLOR = 16;
+        public const int KS_MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
+        public const int KS_MPEG2_27MhzTimebase = 256;
+        public const int KS_MPEG2_DoPanScan = 1;
+        public const int KS_MPEG2_DSS_UserData = 64;
+        public const int KS_MPEG2_DVB_UserData = 128;
+        public const int KS_MPEG2_DVDLine21Field1 = 2;
+        public const int KS_MPEG2_DVDLine21Field2 = 4;
+        public const int KS_MPEG2_FilmCameraMode = 16;
+        public const int KS_MPEG2_LetterboxAnalogOut = 32;
+        public const int KS_MPEG2_SourceIsLetterboxed = 8;
+        public const int KS_MPEG2_WidescreenAnalogOut = 512;
+        public const int KS_MPEGAUDIOINFO_27MhzTimebase = 1;
+        public const int KS_NABTS_GROUPID_LOCAL_CABLE_SYSTEM_ADVERTISER_BASE = 2224;
+        public const int KS_NABTS_GROUPID_LOCAL_CABLE_SYSTEM_CONTENT_BASE = 2208;
+        public const int KS_NABTS_GROUPID_MICROSOFT_RESERVED_TEST_DATA_BASE = 2288;
+        public const int KS_NABTS_GROUPID_NETWORK_WIDE_ADVERTISER_BASE = 2160;
+        public const int KS_NABTS_GROUPID_NETWORK_WIDE_CONTENT_BASE = 2144;
+        public const int KS_NABTS_GROUPID_ORIGINAL_CONTENT_ADVERTISER_BASE = 2064;
+        public const int KS_NABTS_GROUPID_ORIGINAL_CONTENT_BASE = 2048;
+        public const int KS_NABTS_GROUPID_PRODUCTION_COMPANY_ADVERTISER_BASE = 2096;
+        public const int KS_NABTS_GROUPID_PRODUCTION_COMPANY_CONTENT_BASE = 2080;
+        public const int KS_NABTS_GROUPID_SYNDICATED_SHOW_ADVERTISER_BASE = 2128;
+        public const int KS_NABTS_GROUPID_SYNDICATED_SHOW_CONTENT_BASE = 2112;
+        public const int KS_NABTS_GROUPID_TELEVISION_STATION_ADVERTISER_BASE = 2192;
+        public const int KS_NABTS_GROUPID_TELEVISION_STATION_CONTENT_BASE = 2176;
+        public const int KS_TVAUDIO_MODE_LANG_A = 16;
+        public const int KS_TVAUDIO_MODE_LANG_B = 32;
+        public const int KS_TVAUDIO_MODE_LANG_C = 64;
+        public const int KS_TVAUDIO_MODE_MONO = 1;
+        public const int KS_TVAUDIO_MODE_STEREO = 2;
+        public const int KS_TVAUDIO_PRESET_LANG_A = 4096;
+        public const int KS_TVAUDIO_PRESET_LANG_B = 8192;
+        public const int KS_TVAUDIO_PRESET_LANG_C = 16384;
+        public const int KS_TVAUDIO_PRESET_STEREO = 512;
+        public const int KS_TVTUNER_CHANGE_BEGIN_TUNE = 1;
+        public const int KS_TVTUNER_CHANGE_END_TUNE = 2;
+        public const int KS_VBI_FLAG_FIELD1 = 1;
+        public const int KS_VBI_FLAG_FIELD2 = 2;
+        public const int KS_VBI_FLAG_MV_DETECTED = 1024;
+        public const int KS_VBI_FLAG_MV_HARDWARE = 512;
+        public const int KS_VBI_FLAG_MV_PRESENT = 256;
+        public const int KS_VBI_FLAG_TVTUNER_CHANGE = 16;
+        public const int KS_VBI_FLAG_VBIINFOHEADER_CHANGE = 32;
+        public const int KS_VBICAP_PROTECTION_MV_DETECTED = 4;
+        public const int KS_VBICAP_PROTECTION_MV_HARDWARE = 2;
+        public const int KS_VBICAP_PROTECTION_MV_PRESENT = 1;
+        public const int KS_VBIDATARATE_CC = 503493;
+        public const int KS_VBIDATARATE_NABTS = 5727272;
+        public const int KS_VIDEO_ALLOC_VPE_AGP = 4;
+        public const int KS_VIDEO_ALLOC_VPE_DISPLAY = 2;
+        public const int KS_VIDEO_ALLOC_VPE_SYSTEM = 1;
+        public const int KS_VIDEO_FLAG_B_FRAME = 32;
+        public const int KS_VIDEO_FLAG_FIELD_MASK = 3;
+        public const int KS_VIDEO_FLAG_FIELD1 = 1;
+        public const int KS_VIDEO_FLAG_FIELD1FIRST = 4;
+        public const int KS_VIDEO_FLAG_FIELD2 = 2;
+        public const int KS_VIDEO_FLAG_FRAME = 0;
+        public const int KS_VIDEO_FLAG_I_FRAME = 0;
+        public const int KS_VIDEO_FLAG_IPB_MASK = 48;
+        public const int KS_VIDEO_FLAG_P_FRAME = 16;
+        public const int KS_VIDEO_FLAG_REPEAT_FIELD = 64;
+        public const int KS_VIDEO_FLAG_WEAVE = 8;
+        public const int KS_VIDEOSTREAM_CAPTURE = 2;
+        public const int KS_VIDEOSTREAM_CC = 256;
+        public const int KS_VIDEOSTREAM_EDS = 512;
+        public const int KS_VIDEOSTREAM_IS_VPE = 32768;
+        public const int KS_VIDEOSTREAM_NABTS = 32;
+        public const int KS_VIDEOSTREAM_PREVIEW = 1;
+        public const int KS_VIDEOSTREAM_STILL = 4096;
+        public const int KS_VIDEOSTREAM_TELETEXT = 1024;
+        public const int KS_VIDEOSTREAM_VBI = 16;
         public const int KSAC3_ALTERNATE_AUDIO_1 = 1;
         public const int KSAC3_ALTERNATE_AUDIO_2 = 2;
         public const int KSAC3_ALTERNATE_AUDIO_BOTH = 3;
@@ -2195,18 +2338,6 @@
         public const int KSAUDIO_STEREO_SPEAKER_GEOMETRY_MIN = 5;
         public const int KSAUDIO_STEREO_SPEAKER_GEOMETRY_NARROW = 10;
         public const int KSAUDIO_STEREO_SPEAKER_GEOMETRY_WIDE = 20;
-        public const int KSCameraProfileSensorType_Custom = 128;
-        public const int KSCameraProfileSensorType_Depth = 4;
-        public const int KSCameraProfileSensorType_ImageSegmentation = 16;
-        public const int KSCameraProfileSensorType_Infrared = 2;
-        public const int KSCameraProfileSensorType_PoseTracking = 8;
-        public const int KSCameraProfileSensorType_RGB = 1;
-        public const int KSCAMERAPROFILE_FLAGS_FACEDETECTION = 8;
-        public const int KSCAMERAPROFILE_FLAGS_PHOTOHDR = 4;
-        public const int KSCAMERAPROFILE_FLAGS_PREVIEW_RES_MUSTMATCH = 32;
-        public const int KSCAMERAPROFILE_FLAGS_VARIABLEPHOTOSEQUENCE = 16;
-        public const int KSCAMERAPROFILE_FLAGS_VIDEOHDR = 2;
-        public const int KSCAMERAPROFILE_FLAGS_VIDEOSTABLIZATION = 1;
         public const int KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_AUTO = 1;
         public const int KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_FNF = 4;
         public const int KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_HDR = 2;
@@ -2215,6 +2346,7 @@
         public const int KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_BLUR = 1;
         public const int KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_MASK = 2;
         public const int KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_OFF = 0;
+        public const int KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_SHALLOWFOCUS = 4;
         public const long KSCAMERA_EXTENDEDPROP_CAPS_ASYNCCONTROL = -9223372036854775808;
         public const long KSCAMERA_EXTENDEDPROP_CAPS_CANCELLABLE = 4611686018427387904;
         public const long KSCAMERA_EXTENDEDPROP_CAPS_MASK = -72057594037927936;
@@ -2228,6 +2360,7 @@
         public const int KSCAMERA_EXTENDEDPROP_EVCOMP_THIRDSTEP = 4;
         public const int KSCAMERA_EXTENDEDPROP_EYEGAZECORRECTION_OFF = 0;
         public const int KSCAMERA_EXTENDEDPROP_EYEGAZECORRECTION_ON = 1;
+        public const int KSCAMERA_EXTENDEDPROP_EYEGAZECORRECTION_STARE = 2;
         public const int KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_ALTERNATIVE_FRAME_ILLUMINATION = 2;
         public const int KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_BACKGROUND_SUBTRACTION = 4;
         public const int KSCAMERA_EXTENDEDPROP_FACEAUTH_MODE_DISABLED = 1;
@@ -2252,8 +2385,6 @@
         public const int KSCAMERA_EXTENDEDPROP_FLASH_ON_ADJUSTABLEPOWER = 2;
         public const int KSCAMERA_EXTENDEDPROP_FLASH_REDEYEREDUCTION = 16;
         public const int KSCAMERA_EXTENDEDPROP_FLASH_SINGLEFLASH = 32;
-        public const int KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_OFF = 0;
-        public const int KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_ON = 1;
         public const int KSCAMERA_EXTENDEDPROP_FOCUS_CONTINUOUS = 256;
         public const int KSCAMERA_EXTENDEDPROP_FOCUS_CONTINUOUSLOCK = 512;
         public const int KSCAMERA_EXTENDEDPROP_FOCUS_DISTANCE_HYPERFOCAL = 33554432;
@@ -2267,6 +2398,8 @@
         public const int KSCAMERA_EXTENDEDPROP_FOCUS_RANGE_NORMAL = 131072;
         public const int KSCAMERA_EXTENDEDPROP_FOCUS_REGIONBASED = 4096;
         public const int KSCAMERA_EXTENDEDPROP_FOCUS_UNLOCK = 1024;
+        public const int KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_OFF = 0;
+        public const int KSCAMERA_EXTENDEDPROP_FOCUSPRIORITY_ON = 1;
         public const int KSCAMERA_EXTENDEDPROP_HISTOGRAM_OFF = 0;
         public const int KSCAMERA_EXTENDEDPROP_HISTOGRAM_ON = 1;
         public const int KSCAMERA_EXTENDEDPROP_IRTORCHMODE_ALTERNATING_FRAME_ILLUMINATION = 4;
@@ -2362,6 +2495,18 @@
         public const int KSCAMERA_METADATA_FRAMEILLUMINATION_FLAG_ON = 1;
         public const long KSCAMERA_PERFRAMESETTING_AUTO = 4294967296;
         public const long KSCAMERA_PERFRAMESETTING_MANUAL = 8589934592;
+        public const int KSCAMERAPROFILE_FLAGS_FACEDETECTION = 8;
+        public const int KSCAMERAPROFILE_FLAGS_PHOTOHDR = 4;
+        public const int KSCAMERAPROFILE_FLAGS_PREVIEW_RES_MUSTMATCH = 32;
+        public const int KSCAMERAPROFILE_FLAGS_VARIABLEPHOTOSEQUENCE = 16;
+        public const int KSCAMERAPROFILE_FLAGS_VIDEOHDR = 2;
+        public const int KSCAMERAPROFILE_FLAGS_VIDEOSTABLIZATION = 1;
+        public const int KSCameraProfileSensorType_Custom = 128;
+        public const int KSCameraProfileSensorType_Depth = 4;
+        public const int KSCameraProfileSensorType_ImageSegmentation = 16;
+        public const int KSCameraProfileSensorType_Infrared = 2;
+        public const int KSCameraProfileSensorType_PoseTracking = 8;
+        public const int KSCameraProfileSensorType_RGB = 1;
         public const int KSDEVICE_PROFILE_TYPE_CAMERA = 1;
         public const int KSDEVICE_PROFILE_TYPE_UNKNOWN = 0;
         public const int KSDSOUND_3D_MODE_DISABLE = 2;
@@ -2419,137 +2564,6 @@
         public const int KSWAVE_BUFFER_ATTRIBUTEF_STATIC = 2;
         public const int KSWAVE_COMPATCAPS_INPUT = 0;
         public const int KSWAVE_COMPATCAPS_OUTPUT = 1;
-        public const int KS_AMCONTROL_COLORINFO_PRESENT = 128;
-        public const int KS_AMCONTROL_PAD_TO_16x9 = 4;
-        public const int KS_AMCONTROL_PAD_TO_4x3 = 2;
-        public const int KS_AMCONTROL_USED = 1;
-        public const int KS_AM_UseNewCSSKey = 1;
-        public const int KS_AnalogVideo_NTSC_Mask = 7;
-        public const int KS_AnalogVideo_PAL_Mask = 1052656;
-        public const int KS_AnalogVideo_SECAM_Mask = 1044480;
-        public const int KS_BI_BITFIELDS = 3;
-        public const int KS_BI_JPEG = 4;
-        public const int KS_BI_RGB = 0;
-        public const int KS_BI_RLE4 = 2;
-        public const int KS_BI_RLE8 = 1;
-        public const int KS_CC_SUBSTREAM_EVEN = 2;
-        public const int KS_CC_SUBSTREAM_FIELD1_MASK = 240;
-        public const int KS_CC_SUBSTREAM_FIELD2_MASK = 7936;
-        public const int KS_CC_SUBSTREAM_ODD = 1;
-        public const int KS_CC_SUBSTREAM_SERVICE_CC1 = 16;
-        public const int KS_CC_SUBSTREAM_SERVICE_CC2 = 32;
-        public const int KS_CC_SUBSTREAM_SERVICE_CC3 = 256;
-        public const int KS_CC_SUBSTREAM_SERVICE_CC4 = 512;
-        public const int KS_CC_SUBSTREAM_SERVICE_T1 = 64;
-        public const int KS_CC_SUBSTREAM_SERVICE_T2 = 128;
-        public const int KS_CC_SUBSTREAM_SERVICE_T3 = 1024;
-        public const int KS_CC_SUBSTREAM_SERVICE_T4 = 2048;
-        public const int KS_CC_SUBSTREAM_SERVICE_XDS = 4096;
-        public const int KS_COPYPROTECT_RestrictDuplication = 1;
-        public const int KS_DVD_CGMS_COPY_ONCE = 16;
-        public const int KS_DVD_CGMS_COPY_PERMITTED = 0;
-        public const int KS_DVD_CGMS_COPY_PROTECT_MASK = 24;
-        public const int KS_DVD_CGMS_NO_COPY = 24;
-        public const int KS_DVD_CGMS_RESERVED_MASK = 120;
-        public const int KS_DVD_COPYRIGHTED = 64;
-        public const int KS_DVD_COPYRIGHT_MASK = 64;
-        public const int KS_DVD_NOT_COPYRIGHTED = 0;
-        public const int KS_DVD_SECTOR_NOT_PROTECTED = 0;
-        public const int KS_DVD_SECTOR_PROTECTED = 32;
-        public const int KS_DVD_SECTOR_PROTECT_MASK = 32;
-        public const int KS_iBLUE = 2;
-        public const int KS_iEGA_COLORS = 16;
-        public const int KS_iGREEN = 1;
-        public const int KS_iMASK_COLORS = 3;
-        public const int KS_iMAXBITS = 8;
-        public const int KS_INTERLACE_1FieldPerSample = 2;
-        public const int KS_INTERLACE_DisplayModeBobOnly = 0;
-        public const int KS_INTERLACE_DisplayModeBobOrWeave = 128;
-        public const int KS_INTERLACE_DisplayModeMask = 192;
-        public const int KS_INTERLACE_DisplayModeWeaveOnly = 64;
-        public const int KS_INTERLACE_Field1First = 4;
-        public const int KS_INTERLACE_FieldPatBothIrregular = 48;
-        public const int KS_INTERLACE_FieldPatBothRegular = 32;
-        public const int KS_INTERLACE_FieldPatField1Only = 0;
-        public const int KS_INTERLACE_FieldPatField2Only = 16;
-        public const int KS_INTERLACE_FieldPatternMask = 48;
-        public const int KS_INTERLACE_IsInterlaced = 1;
-        public const int KS_INTERLACE_UNUSED = 8;
-        public const int KS_iPALETTE = 8;
-        public const int KS_iPALETTE_COLORS = 256;
-        public const int KS_iRED = 0;
-        public const int KS_iTRUECOLOR = 16;
-        public const int KS_MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
-        public const int KS_MPEG2_27MhzTimebase = 256;
-        public const int KS_MPEG2_DoPanScan = 1;
-        public const int KS_MPEG2_DSS_UserData = 64;
-        public const int KS_MPEG2_DVB_UserData = 128;
-        public const int KS_MPEG2_DVDLine21Field1 = 2;
-        public const int KS_MPEG2_DVDLine21Field2 = 4;
-        public const int KS_MPEG2_FilmCameraMode = 16;
-        public const int KS_MPEG2_LetterboxAnalogOut = 32;
-        public const int KS_MPEG2_SourceIsLetterboxed = 8;
-        public const int KS_MPEG2_WidescreenAnalogOut = 512;
-        public const int KS_MPEGAUDIOINFO_27MhzTimebase = 1;
-        public const int KS_NABTS_GROUPID_LOCAL_CABLE_SYSTEM_ADVERTISER_BASE = 2224;
-        public const int KS_NABTS_GROUPID_LOCAL_CABLE_SYSTEM_CONTENT_BASE = 2208;
-        public const int KS_NABTS_GROUPID_MICROSOFT_RESERVED_TEST_DATA_BASE = 2288;
-        public const int KS_NABTS_GROUPID_NETWORK_WIDE_ADVERTISER_BASE = 2160;
-        public const int KS_NABTS_GROUPID_NETWORK_WIDE_CONTENT_BASE = 2144;
-        public const int KS_NABTS_GROUPID_ORIGINAL_CONTENT_ADVERTISER_BASE = 2064;
-        public const int KS_NABTS_GROUPID_ORIGINAL_CONTENT_BASE = 2048;
-        public const int KS_NABTS_GROUPID_PRODUCTION_COMPANY_ADVERTISER_BASE = 2096;
-        public const int KS_NABTS_GROUPID_PRODUCTION_COMPANY_CONTENT_BASE = 2080;
-        public const int KS_NABTS_GROUPID_SYNDICATED_SHOW_ADVERTISER_BASE = 2128;
-        public const int KS_NABTS_GROUPID_SYNDICATED_SHOW_CONTENT_BASE = 2112;
-        public const int KS_NABTS_GROUPID_TELEVISION_STATION_ADVERTISER_BASE = 2192;
-        public const int KS_NABTS_GROUPID_TELEVISION_STATION_CONTENT_BASE = 2176;
-        public const int KS_TVAUDIO_MODE_LANG_A = 16;
-        public const int KS_TVAUDIO_MODE_LANG_B = 32;
-        public const int KS_TVAUDIO_MODE_LANG_C = 64;
-        public const int KS_TVAUDIO_MODE_MONO = 1;
-        public const int KS_TVAUDIO_MODE_STEREO = 2;
-        public const int KS_TVAUDIO_PRESET_LANG_A = 4096;
-        public const int KS_TVAUDIO_PRESET_LANG_B = 8192;
-        public const int KS_TVAUDIO_PRESET_LANG_C = 16384;
-        public const int KS_TVAUDIO_PRESET_STEREO = 512;
-        public const int KS_TVTUNER_CHANGE_BEGIN_TUNE = 1;
-        public const int KS_TVTUNER_CHANGE_END_TUNE = 2;
-        public const int KS_VBICAP_PROTECTION_MV_DETECTED = 4;
-        public const int KS_VBICAP_PROTECTION_MV_HARDWARE = 2;
-        public const int KS_VBICAP_PROTECTION_MV_PRESENT = 1;
-        public const int KS_VBIDATARATE_CC = 503493;
-        public const int KS_VBIDATARATE_NABTS = 5727272;
-        public const int KS_VBI_FLAG_FIELD1 = 1;
-        public const int KS_VBI_FLAG_FIELD2 = 2;
-        public const int KS_VBI_FLAG_MV_DETECTED = 1024;
-        public const int KS_VBI_FLAG_MV_HARDWARE = 512;
-        public const int KS_VBI_FLAG_MV_PRESENT = 256;
-        public const int KS_VBI_FLAG_TVTUNER_CHANGE = 16;
-        public const int KS_VBI_FLAG_VBIINFOHEADER_CHANGE = 32;
-        public const int KS_VIDEOSTREAM_CAPTURE = 2;
-        public const int KS_VIDEOSTREAM_CC = 256;
-        public const int KS_VIDEOSTREAM_EDS = 512;
-        public const int KS_VIDEOSTREAM_IS_VPE = 32768;
-        public const int KS_VIDEOSTREAM_NABTS = 32;
-        public const int KS_VIDEOSTREAM_PREVIEW = 1;
-        public const int KS_VIDEOSTREAM_STILL = 4096;
-        public const int KS_VIDEOSTREAM_TELETEXT = 1024;
-        public const int KS_VIDEOSTREAM_VBI = 16;
-        public const int KS_VIDEO_ALLOC_VPE_AGP = 4;
-        public const int KS_VIDEO_ALLOC_VPE_DISPLAY = 2;
-        public const int KS_VIDEO_ALLOC_VPE_SYSTEM = 1;
-        public const int KS_VIDEO_FLAG_B_FRAME = 32;
-        public const int KS_VIDEO_FLAG_FIELD1 = 1;
-        public const int KS_VIDEO_FLAG_FIELD1FIRST = 4;
-        public const int KS_VIDEO_FLAG_FIELD2 = 2;
-        public const int KS_VIDEO_FLAG_FIELD_MASK = 3;
-        public const int KS_VIDEO_FLAG_FRAME = 0;
-        public const int KS_VIDEO_FLAG_IPB_MASK = 48;
-        public const int KS_VIDEO_FLAG_I_FRAME = 0;
-        public const int KS_VIDEO_FLAG_P_FRAME = 16;
-        public const int KS_VIDEO_FLAG_REPEAT_FIELD = 64;
-        public const int KS_VIDEO_FLAG_WEAVE = 8;
         public const int MAX_NABTS_VBI_LINES_PER_FIELD = 11;
         public const int MAX_RESOURCEGROUPID_LENGTH = 256;
         public const int MAX_SINK_DESCRIPTION_NAME_LENGTH = 32;
@@ -2561,8 +2575,9 @@
         public const int WST_BYTES_PER_LINE = 42;
         public const int WST_TVTUNER_CHANGE_BEGIN_TUNE = 4096;
         public const int WST_TVTUNER_CHANGE_END_TUNE = 8192;
-
+        
         // from <Windows SDK Path>\shared\mmreg.h
+        public const int _INC_MMREG = 158;
         public const int ACM_MPEG_COPYRIGHT = 2;
         public const int ACM_MPEG_DUALCHANNEL = 4;
         public const int ACM_MPEG_ID_MPEG1 = 16;
@@ -2683,10 +2698,10 @@
         public const int MM_ALGOVISION_VB80WAVEIN = 2;
         public const int MM_ALGOVISION_VB80WAVEOUT = 1;
         public const int MM_AMD = 146;
-        public const int MM_AMD_INTERWAVE_AUX1 = 10;
-        public const int MM_AMD_INTERWAVE_AUX2 = 11;
         public const int MM_AMD_INTERWAVE_AUX_CD = 13;
         public const int MM_AMD_INTERWAVE_AUX_MIC = 12;
+        public const int MM_AMD_INTERWAVE_AUX1 = 10;
+        public const int MM_AMD_INTERWAVE_AUX2 = 11;
         public const int MM_AMD_INTERWAVE_EX_CD = 7;
         public const int MM_AMD_INTERWAVE_EX_TELEPHONY = 16;
         public const int MM_AMD_INTERWAVE_JOYSTICK = 6;
@@ -2868,9 +2883,9 @@
         public const int MM_CREATIVE_AUX_WAVE = 406;
         public const int MM_CREATIVE_FMSYNTH_MONO = 301;
         public const int MM_CREATIVE_FMSYNTH_STEREO = 302;
+        public const int MM_CREATIVE_MIDI_AWE32 = 303;
         public const int MM_CREATIVE_MIDIIN = 202;
         public const int MM_CREATIVE_MIDIOUT = 201;
-        public const int MM_CREATIVE_MIDI_AWE32 = 303;
         public const int MM_CREATIVE_PHNBLST_WAVEIN = 5;
         public const int MM_CREATIVE_PHNBLST_WAVEOUT = 105;
         public const int MM_CREATIVE_SB15_WAVEIN = 1;
@@ -3002,8 +3017,8 @@
         public const int MM_ENET_T2000_LINEOUT = 2;
         public const int MM_ENSONIQ = 125;
         public const int MM_ENSONIQ_SOUNDSCAPE = 16;
-        public const int MM_EPSON = 50;
         public const int MM_EPS_FMSND = 1;
+        public const int MM_EPSON = 50;
         public const int MM_ESS = 46;
         public const int MM_ESS_AMAUX = 3;
         public const int MM_ESS_AMMIDIIN = 6;
@@ -3089,12 +3104,12 @@
         public const int MM_FTR_ENCODER_WAVEIN = 1;
         public const int MM_FUJITSU = 4;
         public const int MM_GADGETLABS = 159;
+        public const int MM_GADGETLABS_WAVE4_MIDIIN = 5;
+        public const int MM_GADGETLABS_WAVE4_MIDIOUT = 6;
         public const int MM_GADGETLABS_WAVE42_WAVEIN = 3;
         public const int MM_GADGETLABS_WAVE42_WAVEOUT = 4;
         public const int MM_GADGETLABS_WAVE44_WAVEIN = 1;
         public const int MM_GADGETLABS_WAVE44_WAVEOUT = 2;
-        public const int MM_GADGETLABS_WAVE4_MIDIIN = 5;
-        public const int MM_GADGETLABS_WAVE4_MIDIOUT = 6;
         public const int MM_GRANDE = 117;
         public const int MM_GRAVIS = 34;
         public const int MM_GUILLEMOT = 207;
@@ -3113,6 +3128,8 @@
         public const int MM_HP_WAVEIN = 2;
         public const int MM_HP_WAVEOUT = 1;
         public const int MM_HYPERACTIVE = 246;
+        public const int MM_I_LINK = 233;
+        public const int MM_I_LINK_VOICE_CODER = 1;
         public const int MM_IBM = 22;
         public const int MM_IBM_MWAVE_AUX = 23;
         public const int MM_IBM_MWAVE_MIDIIN = 21;
@@ -3156,11 +3173,6 @@
         public const int MM_ICS = 57;
         public const int MM_ICS_2115_LITE_MIDIOUT = 13;
         public const int MM_ICS_2120_LITE_MIDIOUT = 14;
-        public const int MM_ICS_WAVEDECK_AUX = 4;
-        public const int MM_ICS_WAVEDECK_MIXER = 3;
-        public const int MM_ICS_WAVEDECK_SYNTH = 5;
-        public const int MM_ICS_WAVEDECK_WAVEIN = 2;
-        public const int MM_ICS_WAVEDECK_WAVEOUT = 1;
         public const int MM_ICS_WAVEDEC_SB_AUX = 12;
         public const int MM_ICS_WAVEDEC_SB_FM_MIDIOUT = 8;
         public const int MM_ICS_WAVEDEC_SB_MIXER = 11;
@@ -3168,13 +3180,18 @@
         public const int MM_ICS_WAVEDEC_SB_MPU401_MIDIOUT = 9;
         public const int MM_ICS_WAVEDEC_SB_WAVEIN = 7;
         public const int MM_ICS_WAVEDEC_SB_WAVEOUT = 6;
+        public const int MM_ICS_WAVEDECK_AUX = 4;
+        public const int MM_ICS_WAVEDECK_MIXER = 3;
+        public const int MM_ICS_WAVEDECK_SYNTH = 5;
+        public const int MM_ICS_WAVEDECK_WAVEIN = 2;
+        public const int MM_ICS_WAVEDECK_WAVEOUT = 1;
         public const int MM_INSOFT = 94;
         public const int MM_INTEL = 33;
+        public const int MM_INTEL_NSPMODEMLINEIN = 501;
+        public const int MM_INTEL_NSPMODEMLINEOUT = 502;
         public const int MM_INTELOPD_AUX = 401;
         public const int MM_INTELOPD_WAVEIN = 1;
         public const int MM_INTELOPD_WAVEOUT = 101;
-        public const int MM_INTEL_NSPMODEMLINEIN = 501;
-        public const int MM_INTEL_NSPMODEMLINEOUT = 502;
         public const int MM_INTERACTIVE = 36;
         public const int MM_INTERACTIVE_WAVEIN = 69;
         public const int MM_INTERACTIVE_WAVEOUT = 69;
@@ -3203,8 +3220,6 @@
         public const int MM_ISOLUTION_PASCAL = 1;
         public const int MM_ITERATEDSYS = 58;
         public const int MM_ITERATEDSYS_FUFCODEC = 1;
-        public const int MM_I_LINK = 233;
-        public const int MM_I_LINK_VOICE_CODER = 1;
         public const int MM_KAY_ELEMETRICS = 131;
         public const int MM_KAY_ELEMETRICS_CSL = 17152;
         public const int MM_KAY_ELEMETRICS_CSL_4CHANNEL = 17161;
@@ -3214,8 +3229,8 @@
         public const int MM_KORG_1212IO_MSWAVEOUT = 4;
         public const int MM_KORG_PCIF_MIDIIN = 2;
         public const int MM_KORG_PCIF_MIDIOUT = 1;
-        public const int MM_LERNOUT_ANDHAUSPIE_LHCODECACM = 1;
         public const int MM_LERNOUT_AND_HAUSPIE = 97;
+        public const int MM_LERNOUT_ANDHAUSPIE_LHCODECACM = 1;
         public const int MM_LEXICON = 236;
         public const int MM_LEXICON_STUDIO_WAVE_IN = 2;
         public const int MM_LEXICON_STUDIO_WAVE_OUT = 1;
@@ -3321,6 +3336,23 @@
         public const int MM_MOTU_FLYER_MIDI_IN_SYNC = 600;
         public const int MM_MOTU_FLYER_MIDI_OUT_A = 601;
         public const int MM_MOTU_FLYER_MIDI_OUT_B = 602;
+        public const int MM_MOTU_MTP_MIDIIN_1 = 101;
+        public const int MM_MOTU_MTP_MIDIIN_2 = 102;
+        public const int MM_MOTU_MTP_MIDIIN_3 = 103;
+        public const int MM_MOTU_MTP_MIDIIN_4 = 104;
+        public const int MM_MOTU_MTP_MIDIIN_5 = 105;
+        public const int MM_MOTU_MTP_MIDIIN_6 = 106;
+        public const int MM_MOTU_MTP_MIDIIN_7 = 107;
+        public const int MM_MOTU_MTP_MIDIIN_8 = 108;
+        public const int MM_MOTU_MTP_MIDIOUT_1 = 101;
+        public const int MM_MOTU_MTP_MIDIOUT_2 = 102;
+        public const int MM_MOTU_MTP_MIDIOUT_3 = 103;
+        public const int MM_MOTU_MTP_MIDIOUT_4 = 104;
+        public const int MM_MOTU_MTP_MIDIOUT_5 = 105;
+        public const int MM_MOTU_MTP_MIDIOUT_6 = 106;
+        public const int MM_MOTU_MTP_MIDIOUT_7 = 107;
+        public const int MM_MOTU_MTP_MIDIOUT_8 = 108;
+        public const int MM_MOTU_MTP_MIDIOUT_ALL = 100;
         public const int MM_MOTU_MTPAV_MIDIIN_1 = 901;
         public const int MM_MOTU_MTPAV_MIDIIN_2 = 902;
         public const int MM_MOTU_MTPAV_MIDIIN_3 = 903;
@@ -3391,23 +3423,6 @@
         public const int MM_MOTU_MTPII_NET_MIDIOUT_6 = 214;
         public const int MM_MOTU_MTPII_NET_MIDIOUT_7 = 215;
         public const int MM_MOTU_MTPII_NET_MIDIOUT_8 = 216;
-        public const int MM_MOTU_MTP_MIDIIN_1 = 101;
-        public const int MM_MOTU_MTP_MIDIIN_2 = 102;
-        public const int MM_MOTU_MTP_MIDIIN_3 = 103;
-        public const int MM_MOTU_MTP_MIDIIN_4 = 104;
-        public const int MM_MOTU_MTP_MIDIIN_5 = 105;
-        public const int MM_MOTU_MTP_MIDIIN_6 = 106;
-        public const int MM_MOTU_MTP_MIDIIN_7 = 107;
-        public const int MM_MOTU_MTP_MIDIIN_8 = 108;
-        public const int MM_MOTU_MTP_MIDIOUT_1 = 101;
-        public const int MM_MOTU_MTP_MIDIOUT_2 = 102;
-        public const int MM_MOTU_MTP_MIDIOUT_3 = 103;
-        public const int MM_MOTU_MTP_MIDIOUT_4 = 104;
-        public const int MM_MOTU_MTP_MIDIOUT_5 = 105;
-        public const int MM_MOTU_MTP_MIDIOUT_6 = 106;
-        public const int MM_MOTU_MTP_MIDIOUT_7 = 107;
-        public const int MM_MOTU_MTP_MIDIOUT_8 = 108;
-        public const int MM_MOTU_MTP_MIDIOUT_ALL = 100;
         public const int MM_MOTU_MXN_MIDIIN_1 = 501;
         public const int MM_MOTU_MXN_MIDIIN_2 = 502;
         public const int MM_MOTU_MXN_MIDIIN_3 = 503;
@@ -3418,6 +3433,20 @@
         public const int MM_MOTU_MXN_MIDIOUT_3 = 503;
         public const int MM_MOTU_MXN_MIDIOUT_4 = 504;
         public const int MM_MOTU_MXN_MIDIOUT_ALL = 500;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_1 = 301;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_2 = 302;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_3 = 303;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_4 = 304;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_5 = 305;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_6 = 306;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_1 = 301;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_2 = 302;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_3 = 303;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_4 = 304;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_5 = 305;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_6 = 306;
+        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_ALL = 300;
+        public const int MM_MOTU_MXP_MIDIIN_SYNC = 300;
         public const int MM_MOTU_MXPMPU_MIDIIN_1 = 401;
         public const int MM_MOTU_MXPMPU_MIDIIN_2 = 402;
         public const int MM_MOTU_MXPMPU_MIDIIN_3 = 403;
@@ -3450,20 +3479,6 @@
         public const int MM_MOTU_MXPXT_MIDIOUT_7 = 1007;
         public const int MM_MOTU_MXPXT_MIDIOUT_8 = 1008;
         public const int MM_MOTU_MXPXT_MIDIOUT_ALL = 1000;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_1 = 301;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_2 = 302;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_3 = 303;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_4 = 304;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_5 = 305;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIIN_6 = 306;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_1 = 301;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_2 = 302;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_3 = 303;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_4 = 304;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_5 = 305;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_6 = 306;
-        public const int MM_MOTU_MXP_MIDIIN_MIDIOUT_ALL = 300;
-        public const int MM_MOTU_MXP_MIDIIN_SYNC = 300;
         public const int MM_MOTU_PKX_MIDI_IN_A = 701;
         public const int MM_MOTU_PKX_MIDI_IN_B = 702;
         public const int MM_MOTU_PKX_MIDI_IN_SYNC = 700;
@@ -3511,6 +3526,8 @@
         public const int MM_MSFT_SBPRO_SYNTH = 72;
         public const int MM_MSFT_SBPRO_WAVEIN = 68;
         public const int MM_MSFT_SBPRO_WAVEOUT = 69;
+        public const int MM_MSFT_VMDM_GAME_WAVEIN = 90;
+        public const int MM_MSFT_VMDM_GAME_WAVEOUT = 89;
         public const int MM_MSFT_VMDMS_HANDSET_WAVEIN = 82;
         public const int MM_MSFT_VMDMS_HANDSET_WAVEOUT = 83;
         public const int MM_MSFT_VMDMS_LINE_WAVEIN = 80;
@@ -3520,8 +3537,6 @@
         public const int MM_MSFT_VMDMW_LINE_WAVEIN = 84;
         public const int MM_MSFT_VMDMW_LINE_WAVEOUT = 85;
         public const int MM_MSFT_VMDMW_MIXER = 88;
-        public const int MM_MSFT_VMDM_GAME_WAVEIN = 90;
-        public const int MM_MSFT_VMDM_GAME_WAVEOUT = 89;
         public const int MM_MSFT_WDMAUDIO_AUX = 105;
         public const int MM_MSFT_WDMAUDIO_MIDIIN = 103;
         public const int MM_MSFT_WDMAUDIO_MIDIOUT = 102;
@@ -3657,8 +3672,8 @@
         public const int MM_OTI_611WAVEIN = 5;
         public const int MM_OTI_611WAVEOUT = 6;
         public const int MM_PACIFICRESEARCH = 210;
-        public const int MM_PCSPEAKER_WAVEOUT = 13;
         public const int MM_PC_JOYSTICK = 12;
+        public const int MM_PCSPEAKER_WAVEOUT = 13;
         public const int MM_PHILIPS_ACM_LPCBB = 1;
         public const int MM_PHILIPS_SPEECH_PROCESSING = 7;
         public const int MM_PHONET = 203;
@@ -3819,9 +3834,9 @@
         public const int MM_SILICONSOFT_SC1_WAVEOUT = 2;
         public const int MM_SILICONSOFT_SC2_WAVEIN = 3;
         public const int MM_SILICONSOFT_SC2_WAVEOUT = 4;
+        public const int MM_SILICONSOFT_SOUNDJR2_WAVEOUT = 5;
         public const int MM_SILICONSOFT_SOUNDJR2PR_WAVEIN = 6;
         public const int MM_SILICONSOFT_SOUNDJR2PR_WAVEOUT = 7;
-        public const int MM_SILICONSOFT_SOUNDJR2_WAVEOUT = 5;
         public const int MM_SILICONSOFT_SOUNDJR3_WAVEOUT = 8;
         public const int MM_SIPROLAB = 211;
         public const int MM_SIPROLAB_ACELPNET = 1;
@@ -3860,8 +3875,8 @@
         public const int MM_SSP_SNDFESSYNTH = 5;
         public const int MM_SSP_SNDFESWAVEIN = 1;
         public const int MM_SSP_SNDFESWAVEOUT = 2;
-        public const int MM_STUDER = 171;
         public const int MM_ST_MICROELECTRONICS = 265;
+        public const int MM_STUDER = 171;
         public const int MM_SUNCOM = 186;
         public const int MM_SUPERMAC = 73;
         public const int MM_SYDEC_NV = 248;
@@ -3920,8 +3935,8 @@
         public const int MM_TTEWS_WAVEIN = 1;
         public const int MM_TTEWS_WAVEOUT = 2;
         public const int MM_TURTLE_BEACH = 21;
-        public const int MM_UHER_INFORMATIC = 247;
         public const int MM_UH_ACM_ADPCM = 1;
+        public const int MM_UHER_INFORMATIC = 247;
         public const int MM_UNISYS = 223;
         public const int MM_UNISYS_ACM_NAP = 1;
         public const int MM_UNMAPPED = 65535;
@@ -3948,12 +3963,12 @@
         public const int MM_VIENNASYS = 157;
         public const int MM_VIENNASYS_TSP_WAVE_DRIVER = 1;
         public const int MM_VIONA = 161;
-        public const int MM_VIONAQVINPCI_WAVEOUT = 3;
         public const int MM_VIONA_BUSTER_MIXER = 4;
         public const int MM_VIONA_CINEMASTER_MIXER = 5;
         public const int MM_VIONA_CONCERTO_MIXER = 6;
         public const int MM_VIONA_QVINPCI_MIXER = 1;
         public const int MM_VIONA_QVINPCI_WAVEIN = 2;
+        public const int MM_VIONAQVINPCI_WAVEOUT = 3;
         public const int MM_VIRTUALMUSIC = 205;
         public const int MM_VITEC = 67;
         public const int MM_VITEC_VMAKER = 1;
@@ -4063,15 +4078,15 @@
         public const int MM_YAMAHA_SXG_MIDIOUT = 34;
         public const int MM_YAMAHA_SXG_MIXER = 36;
         public const int MM_YAMAHA_SXG_WAVEOUT = 35;
-        public const int MM_YAMAHA_YMF724LEG_FMSYNTH = 32;
-        public const int MM_YAMAHA_YMF724LEG_MIDIIN = 26;
-        public const int MM_YAMAHA_YMF724LEG_MIDIOUT = 25;
-        public const int MM_YAMAHA_YMF724LEG_MIXER = 33;
         public const int MM_YAMAHA_YMF724_AUX = 30;
         public const int MM_YAMAHA_YMF724_MIDIOUT = 29;
         public const int MM_YAMAHA_YMF724_MIXER = 31;
         public const int MM_YAMAHA_YMF724_WAVEIN = 28;
         public const int MM_YAMAHA_YMF724_WAVEOUT = 27;
+        public const int MM_YAMAHA_YMF724LEG_FMSYNTH = 32;
+        public const int MM_YAMAHA_YMF724LEG_MIDIIN = 26;
+        public const int MM_YAMAHA_YMF724LEG_MIDIOUT = 25;
+        public const int MM_YAMAHA_YMF724LEG_MIXER = 33;
         public const int MM_YOUCOM = 256;
         public const int MM_ZEFIRO = 170;
         public const int MM_ZEFIRO_ZA2 = 2;
@@ -4145,10 +4160,10 @@
         public const int WAVE_FORMAT_CREATIVE_ADPCM = 512;
         public const int WAVE_FORMAT_CREATIVE_FASTSPEECH10 = 515;
         public const int WAVE_FORMAT_CREATIVE_FASTSPEECH8 = 514;
-        public const int WAVE_FORMAT_CS2 = 608;
         public const int WAVE_FORMAT_CS_IMAADPCM = 57;
-        public const int WAVE_FORMAT_CUSEEME = 7939;
+        public const int WAVE_FORMAT_CS2 = 608;
         public const int WAVE_FORMAT_CU_CODEC = 25;
+        public const int WAVE_FORMAT_CUSEEME = 7939;
         public const int WAVE_FORMAT_DEVELOPMENT = 65535;
         public const int WAVE_FORMAT_DF_G726 = 133;
         public const int WAVE_FORMAT_DF_GSM610 = 134;
@@ -4169,8 +4184,8 @@
         public const int WAVE_FORMAT_DSAT_DISPLAY = 103;
         public const int WAVE_FORMAT_DSPGROUP_TRUESPEECH = 34;
         public const int WAVE_FORMAT_DTS = 8;
-        public const int WAVE_FORMAT_DTS2 = 8193;
         public const int WAVE_FORMAT_DTS_DS = 400;
+        public const int WAVE_FORMAT_DTS2 = 8193;
         public const int WAVE_FORMAT_DVI_ADPCM = 17;
         public const int WAVE_FORMAT_DVM = 8192;
         public const int WAVE_FORMAT_ECHOSC1 = 35;
@@ -4187,13 +4202,12 @@
         public const int WAVE_FORMAT_G721_ADPCM = 64;
         public const int WAVE_FORMAT_G722_ADPCM = 101;
         public const int WAVE_FORMAT_G723_ADPCM = 20;
-        public const int WAVE_FORMAT_G726ADPCM = 320;
         public const int WAVE_FORMAT_G726_ADPCM = 100;
+        public const int WAVE_FORMAT_G726ADPCM = 320;
         public const int WAVE_FORMAT_G728_CELP = 65;
         public const int WAVE_FORMAT_G729A = 131;
         public const int WAVE_FORMAT_GENERIC_PASSTHRU = 585;
         public const int WAVE_FORMAT_GLOBAL_IP_ILBC = 41238;
-        public const int WAVE_FORMAT_GSM610 = 49;
         public const int WAVE_FORMAT_GSM_610 = 41229;
         public const int WAVE_FORMAT_GSM_620 = 41230;
         public const int WAVE_FORMAT_GSM_660 = 41231;
@@ -4201,6 +4215,7 @@
         public const int WAVE_FORMAT_GSM_ADAPTIVE_MULTIRATE_WB = 41233;
         public const int WAVE_FORMAT_GSM_AMR_CBR = 31265;
         public const int WAVE_FORMAT_GSM_AMR_VBR_SID = 31266;
+        public const int WAVE_FORMAT_GSM610 = 49;
         public const int WAVE_FORMAT_HP_DYN_VOICE = 26;
         public const int WAVE_FORMAT_IBM_CVSD = 5;
         public const int WAVE_FORMAT_IEEE_FLOAT = 3;
@@ -4238,12 +4253,12 @@
         public const int WAVE_FORMAT_MICRONAS = 848;
         public const int WAVE_FORMAT_MICRONAS_CELP833 = 849;
         public const int WAVE_FORMAT_MPEG = 80;
-        public const int WAVE_FORMAT_MPEG4_AAC = 41222;
-        public const int WAVE_FORMAT_MPEGLAYER3 = 85;
         public const int WAVE_FORMAT_MPEG_ADTS_AAC = 5632;
         public const int WAVE_FORMAT_MPEG_HEAAC = 5648;
         public const int WAVE_FORMAT_MPEG_LOAS = 5634;
         public const int WAVE_FORMAT_MPEG_RAW_AAC = 5633;
+        public const int WAVE_FORMAT_MPEG4_AAC = 41222;
+        public const int WAVE_FORMAT_MPEGLAYER3 = 85;
         public const int WAVE_FORMAT_MSAUDIO1 = 352;
         public const int WAVE_FORMAT_MSG723 = 66;
         public const int WAVE_FORMAT_MSNAUDIO = 50;
@@ -4376,9 +4391,9 @@
         public const int WAVE_FORMAT_WAVPACK_AUDIO = 22358;
         public const int WAVE_FORMAT_WM9_SPECTRUM_ANALYZER = 41227;
         public const int WAVE_FORMAT_WMASPDIF = 356;
+        public const int WAVE_FORMAT_WMAUDIO_LOSSLESS = 355;
         public const int WAVE_FORMAT_WMAUDIO2 = 353;
         public const int WAVE_FORMAT_WMAUDIO3 = 354;
-        public const int WAVE_FORMAT_WMAUDIO_LOSSLESS = 355;
         public const int WAVE_FORMAT_WMAVOICE10 = 11;
         public const int WAVE_FORMAT_WMAVOICE9 = 10;
         public const int WAVE_FORMAT_WMF_SPECTRUM_ANAYZER = 41228;
@@ -4388,15 +4403,14 @@
         public const int WAVE_FORMAT_ZYXEL_ADPCM = 151;
         public const int WMAUDIO_BITS_PER_SAMPLE = 16;
         public const int WMAUDIO_MAX_CHANNELS = 2;
-        public const int _INC_MMREG = 158;
-
+        
         // from <Windows SDK Path>\shared\windef.h
         public const int APP_LOCAL_DEVICE_ID_SIZE = 32;
-
+        
         // from <Windows SDK Path>\um\amva.h
         public const int AMVA_QUERYRENDERSTATUSF_READ = 1;
         public const int AMVA_TYPEINDEX_OUTPUTFRAME = -1;
-
+        
         // from <Windows SDK Path>\um\amvideo.h
         public const int AMDDS_ALL = 255;
         public const int AMDDS_DCIPS = 1;
@@ -4418,23 +4432,23 @@
         public const int iRED = 0;
         public const int iTRUECOLOR = 16;
         public const int MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
-
+        
         // from <Windows SDK Path>\um\AudioClient.h
         public const int AMBISONICS_PARAM_VERSION_1 = 1;
         public const int AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ = 1;
-
+        
         // from <Windows SDK Path>\um\audioendpoints.h
         public const int ENDPOINT_FORMAT_RESET_MIX_ONLY = 1;
-
+        
         // from <Windows SDK Path>\um\audioenginebaseapo.h
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
-
+        
         // from <Windows SDK Path>\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
-
+        
         // from <Windows SDK Path>\um\AudioSessionTypes.h
         public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDE = 536870912;
         public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDEWHENEXPIRED = 1073741824;
@@ -4446,18 +4460,18 @@
         public const int AUDCLNT_STREAMFLAGS_NOPERSIST = 524288;
         public const int AUDCLNT_STREAMFLAGS_RATEADJUST = 1048576;
         public const int AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY = 134217728;
-
+        
         // from <Windows SDK Path>\um\codecapi.h
         public const int AVENC_H263V_LEVELCOUNT = 8;
         public const int AVENC_H264V_LEVELCOUNT = 16;
         public const int AVENC_H264V_MAX_MBBITS = 3200;
-
+        
         // from <Windows SDK Path>\um\D2D1EffectAuthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
-
+        
         // from <Windows SDK Path>\um\D2DErr.h
         public const int FACILITY_D2D = 2201;
-
+        
         // from <Windows SDK Path>\um\d3d.h
         public const int D3DDP_DONOTCLIP = 4;
         public const int D3DDP_DONOTLIGHT = 16;
@@ -4466,8 +4480,35 @@
         public const int D3DNEXT_HEAD = 2;
         public const int D3DNEXT_NEXT = 1;
         public const int D3DNEXT_TAIL = 4;
-
+        
+        // from <Windows SDK Path>\um\d3d10_1.h
+        public const int D3D10_1_DEFAULT_SAMPLE_MASK = -1;
+        public const int D3D10_1_GS_INPUT_REGISTER_COUNT = 32;
+        public const int D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT = 32;
+        public const int D3D10_1_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT = 32;
+        public const int D3D10_1_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS = 128;
+        public const int D3D10_1_PS_OUTPUT_MASK_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_1_PS_OUTPUT_MASK_REGISTER_COMPONENTS = 1;
+        public const int D3D10_1_PS_OUTPUT_MASK_REGISTER_COUNT = 1;
+        public const int D3D10_1_SHADER_MAJOR_VERSION = 4;
+        public const int D3D10_1_SHADER_MINOR_VERSION = 1;
+        public const int D3D10_1_SO_BUFFER_MAX_STRIDE_IN_BYTES = 2048;
+        public const int D3D10_1_SO_BUFFER_MAX_WRITE_WINDOW_IN_BYTES = 256;
+        public const int D3D10_1_SO_BUFFER_SLOT_COUNT = 4;
+        public const int D3D10_1_SO_MULTIPLE_BUFFER_ELEMENTS_PER_BUFFER = 1;
+        public const int D3D10_1_SO_SINGLE_BUFFER_COMPONENT_LIMIT = 64;
+        public const int D3D10_1_STANDARD_VERTEX_ELEMENT_COUNT = 32;
+        public const int D3D10_1_SUBPIXEL_FRACTIONAL_BIT_COUNT = 8;
+        public const int D3D10_1_VS_INPUT_REGISTER_COUNT = 32;
+        public const int D3D10_1_VS_OUTPUT_REGISTER_COUNT = 32;
+        
         // from <Windows SDK Path>\um\d3d10.h
+        public const int _FACD3D10 = 2169;
+        public const int D3D_MAJOR_VERSION = 10;
+        public const int D3D_MINOR_VERSION = 0;
+        public const int D3D_SPEC_DATE_DAY = 8;
+        public const int D3D_SPEC_DATE_MONTH = 8;
+        public const int D3D_SPEC_DATE_YEAR = 2006;
         public const int D3D10_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D10_32BIT_INDEX_STRIP_CUT_VALUE = -1;
         public const int D3D10_8BIT_INDEX_STRIP_CUT_VALUE = 255;
@@ -4477,35 +4518,35 @@
         public const int D3D10_CLIP_OR_CULL_DISTANCE_COUNT = 8;
         public const int D3D10_CLIP_OR_CULL_DISTANCE_ELEMENT_COUNT = 2;
         public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT = 14;
-        public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_COMPONENTS = 4;
         public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_COMPONENTS = 4;
         public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_HW_SLOT_COUNT = 15;
         public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_REGISTER_COMPONENTS = 4;
         public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_REGISTER_COUNT = 15;
-        public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READ_PORTS = 1;
+        public const int D3D10_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D10_COMMONSHADER_FLOWCONTROL_NESTING_LIMIT = 64;
         public const int D3D10_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_COMPONENTS = 4;
         public const int D3D10_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_COUNT = 1;
-        public const int D3D10_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D10_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READ_PORTS = 1;
+        public const int D3D10_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D10_COMMONSHADER_IMMEDIATE_VALUE_COMPONENT_BIT_COUNT = 32;
         public const int D3D10_COMMONSHADER_INPUT_RESOURCE_REGISTER_COMPONENTS = 1;
         public const int D3D10_COMMONSHADER_INPUT_RESOURCE_REGISTER_COUNT = 128;
-        public const int D3D10_COMMONSHADER_INPUT_RESOURCE_REGISTER_READS_PER_INST = 1;
         public const int D3D10_COMMONSHADER_INPUT_RESOURCE_REGISTER_READ_PORTS = 1;
+        public const int D3D10_COMMONSHADER_INPUT_RESOURCE_REGISTER_READS_PER_INST = 1;
         public const int D3D10_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT = 128;
         public const int D3D10_COMMONSHADER_SAMPLER_REGISTER_COMPONENTS = 1;
         public const int D3D10_COMMONSHADER_SAMPLER_REGISTER_COUNT = 16;
-        public const int D3D10_COMMONSHADER_SAMPLER_REGISTER_READS_PER_INST = 1;
         public const int D3D10_COMMONSHADER_SAMPLER_REGISTER_READ_PORTS = 1;
+        public const int D3D10_COMMONSHADER_SAMPLER_REGISTER_READS_PER_INST = 1;
         public const int D3D10_COMMONSHADER_SAMPLER_SLOT_COUNT = 16;
         public const int D3D10_COMMONSHADER_SUBROUTINE_NESTING_LIMIT = 32;
-        public const int D3D10_COMMONSHADER_TEMP_REGISTER_COMPONENTS = 4;
         public const int D3D10_COMMONSHADER_TEMP_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_COMMONSHADER_TEMP_REGISTER_COMPONENTS = 4;
         public const int D3D10_COMMONSHADER_TEMP_REGISTER_COUNT = 4096;
-        public const int D3D10_COMMONSHADER_TEMP_REGISTER_READS_PER_INST = 3;
         public const int D3D10_COMMONSHADER_TEMP_REGISTER_READ_PORTS = 3;
+        public const int D3D10_COMMONSHADER_TEMP_REGISTER_READS_PER_INST = 3;
         public const int D3D10_COMMONSHADER_TEXCOORD_RANGE_REDUCTION_MAX = 10;
         public const int D3D10_COMMONSHADER_TEXEL_OFFSET_MAX_POSITIVE = 7;
         public const int D3D10_COMPARISON_FILTERING_BIT = 128;
@@ -4525,20 +4566,20 @@
         public const int D3D10_DEFAULT_VIEWPORT_TOPLEFTY = 0;
         public const int D3D10_DEFAULT_VIEWPORT_WIDTH = 0;
         public const int D3D10_FILTER_TYPE_MASK = 3;
-        public const int D3D10_GS_INPUT_PRIM_CONST_REGISTER_COMPONENTS = 1;
         public const int D3D10_GS_INPUT_PRIM_CONST_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_GS_INPUT_PRIM_CONST_REGISTER_COMPONENTS = 1;
         public const int D3D10_GS_INPUT_PRIM_CONST_REGISTER_COUNT = 1;
-        public const int D3D10_GS_INPUT_PRIM_CONST_REGISTER_READS_PER_INST = 2;
         public const int D3D10_GS_INPUT_PRIM_CONST_REGISTER_READ_PORTS = 1;
-        public const int D3D10_GS_INPUT_REGISTER_COMPONENTS = 4;
+        public const int D3D10_GS_INPUT_PRIM_CONST_REGISTER_READS_PER_INST = 2;
         public const int D3D10_GS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_GS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_GS_INPUT_REGISTER_COUNT = 16;
-        public const int D3D10_GS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D10_GS_INPUT_REGISTER_READ_PORTS = 1;
+        public const int D3D10_GS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D10_GS_INPUT_REGISTER_VERTICES = 6;
         public const int D3D10_GS_OUTPUT_ELEMENTS = 32;
-        public const int D3D10_GS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_GS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_GS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_GS_OUTPUT_REGISTER_COUNT = 32;
         public const int D3D10_IA_DEFAULT_INDEX_BUFFER_OFFSET_IN_BYTES = 0;
         public const int D3D10_IA_DEFAULT_PRIMITIVE_TOPOLOGY = 0;
@@ -4549,8 +4590,8 @@
         public const int D3D10_IA_PRIMITIVE_ID_BIT_COUNT = 32;
         public const int D3D10_IA_VERTEX_ID_BIT_COUNT = 32;
         public const int D3D10_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT = 16;
-        public const int D3D10_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS = 64;
         public const int D3D10_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT = 16;
+        public const int D3D10_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS = 64;
         public const int D3D10_INTEGER_DIVIDE_BY_ZERO_QUOTIENT = -1;
         public const int D3D10_INTEGER_DIVIDE_BY_ZERO_REMAINDER = -1;
         public const int D3D10_MAG_FILTER_SHIFT = 2;
@@ -4568,23 +4609,23 @@
         public const int D3D10_PS_FRONTFACING_DEFAULT_VALUE = -1;
         public const int D3D10_PS_FRONTFACING_FALSE_VALUE = 0;
         public const int D3D10_PS_FRONTFACING_TRUE_VALUE = -1;
-        public const int D3D10_PS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_PS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_PS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_PS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D10_PS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D10_PS_INPUT_REGISTER_READ_PORTS = 1;
-        public const int D3D10_PS_OUTPUT_DEPTH_REGISTER_COMPONENTS = 1;
+        public const int D3D10_PS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D10_PS_OUTPUT_DEPTH_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_PS_OUTPUT_DEPTH_REGISTER_COMPONENTS = 1;
         public const int D3D10_PS_OUTPUT_DEPTH_REGISTER_COUNT = 1;
-        public const int D3D10_PS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_PS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_PS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_PS_OUTPUT_REGISTER_COUNT = 8;
         public const int D3D10_REQ_BLEND_OBJECT_COUNT_PER_CONTEXT = 4096;
         public const int D3D10_REQ_BUFFER_RESOURCE_TEXEL_COUNT_2_TO_EXP = 27;
         public const int D3D10_REQ_CONSTANT_BUFFER_ELEMENT_COUNT = 4096;
         public const int D3D10_REQ_DEPTH_STENCIL_OBJECT_COUNT_PER_CONTEXT = 4096;
-        public const int D3D10_REQ_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 32;
         public const int D3D10_REQ_DRAW_VERTEX_COUNT_2_TO_EXP = 32;
+        public const int D3D10_REQ_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 32;
         public const int D3D10_REQ_FILTERING_HW_ADDRESSABLE_RESOURCE_DIMENSION = 8192;
         public const int D3D10_REQ_GS_INVOCATION_32BIT_OUTPUT_COMPONENT_LIMIT = 1024;
         public const int D3D10_REQ_IMMEDIATE_CONSTANT_BUFFER_ELEMENT_COUNT = 4096;
@@ -4631,41 +4672,30 @@
         public const int D3D10_VIEWPORT_AND_SCISSORRECT_MAX_INDEX = 15;
         public const int D3D10_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE = 16;
         public const int D3D10_VIEWPORT_BOUNDS_MAX = 16383;
-        public const int D3D10_VS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_VS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_VS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_VS_INPUT_REGISTER_COUNT = 16;
-        public const int D3D10_VS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D10_VS_INPUT_REGISTER_READ_PORTS = 1;
-        public const int D3D10_VS_OUTPUT_REGISTER_COMPONENTS = 4;
+        public const int D3D10_VS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D10_VS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D10_VS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D10_VS_OUTPUT_REGISTER_COUNT = 16;
         public const int D3D10_WHQL_CONTEXT_COUNT_FOR_RESOURCE_LIMIT = 10;
-        public const int D3D10_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
         public const int D3D10_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
-        public const int D3D_MAJOR_VERSION = 10;
-        public const int D3D_MINOR_VERSION = 0;
-        public const int D3D_SPEC_DATE_DAY = 8;
-        public const int D3D_SPEC_DATE_MONTH = 8;
-        public const int D3D_SPEC_DATE_YEAR = 2006;
-        public const int _FACD3D10 = 2169;
-
+        public const int D3D10_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
+        
         // from <Windows SDK Path>\um\d3d10sdklayers.h
         public const int D3D10_DEBUG_FEATURE_FINISH_PER_RENDER_OP = 2;
         public const int D3D10_DEBUG_FEATURE_FLUSH_PER_RENDER_OP = 1;
         public const int D3D10_DEBUG_FEATURE_PRESENT_PER_RENDER_OP = 4;
         public const int D3D10_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int D3D10_SDK_LAYERS_VERSION = 11;
-
+        
         // from <Windows SDK Path>\um\d3d10shader.h
         public const int D3D10_SHADER_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
         public const int D3D10_SHADER_OPTIMIZATION_LEVEL1 = 0;
-
+        
         // from <Windows SDK Path>\um\d3d10umddi.h
-        public const int D3D10DDI_CREATEDEVICE_FLAG_DISABLE_EXTRA_THREAD_CREATION = 1;
-        public const int D3D10DDI_MINOR_HEADER_VERSION = 2;
-        public const int D3D10DDI_QUERY_MISCFLAG_PREDICATEHINT = 1;
-        public const int D3D10on9_DDI_BUILD_VERSION = 0;
-        public const int D3D10on9_DDI_MINOR_VERSION = 0;
         public const int D3D10_0_7_DDI_BUILD_VERSION = 0;
         public const int D3D10_0_7_DDI_MINOR_VERSION = 9;
         public const int D3D10_0_DDI_BUILD_VERSION = 4;
@@ -4690,28 +4720,21 @@
         public const int D3D10_DDI_FORMAT_SUPPORT_SHADER_SAMPLE = 1;
         public const int D3D10_DDI_MAJOR_VERSION = 10;
         public const int D3D10_DDI_SIMULTANEOUS_RENDER_TARGET_COUNT = 8;
-        public const int D3D11DDICAPS_COMMANDLISTS = 2;
-        public const int D3D11DDICAPS_COMMANDLISTS_BUILD_2 = 4;
-        public const int D3D11DDICAPS_FREETHREADED = 1;
-        public const int D3D11DDICAPS_SHADER_COMPUTE_PLUS_RAW_AND_STRUCTURED_BUFFERS_IN_SHADER_4_X = 2;
-        public const int D3D11DDICAPS_SHADER_DEBUGGABLE = 4;
-        public const int D3D11DDICAPS_SHADER_DOUBLES = 1;
-        public const int D3D11DDICAPS_SHADER_REQUIRES_TRANSLATION_INFO_FOR_DX9 = 8;
-        public const int D3D11DDICAPS_SHADER_ROVS = 64;
-        public const int D3D11DDICAPS_SHADER_SPECIFIED_STENCIL_REF = 16;
-        public const int D3D11DDICAPS_SHADER_TYPED_UAV_LOAD_ADDITIONAL_FORMATS = 32;
-        public const int D3D11DDI_CREATEDEVICE_FLAG_3DPIPELINESUPPORT_SHIFT = 1;
-        public const int D3D11DDI_CREATEDEVICE_FLAG_3DPIPELINESUPPORT_SHIFT2 = 3;
-        public const int D3D11DDI_CREATEDEVICE_FLAG_DEBUGGABLE = 32;
-        public const int D3D11DDI_CREATEDEVICE_FLAG_ENABLE_INCREASED_PRIORITY = 4096;
-        public const int D3D11DDI_CREATEDEVICE_FLAG_SINGLETHREADED = 16;
-        public const int D3D11DDI_MINOR_HEADER_VERSION = 19;
+        public const int D3D10DDI_CREATEDEVICE_FLAG_DISABLE_EXTRA_THREAD_CREATION = 1;
+        public const int D3D10DDI_MINOR_HEADER_VERSION = 2;
+        public const int D3D10DDI_QUERY_MISCFLAG_PREDICATEHINT = 1;
+        public const int D3D10on9_DDI_BUILD_VERSION = 0;
+        public const int D3D10on9_DDI_MINOR_VERSION = 0;
         public const int D3D11_0_7_DDI_BUILD_VERSION = 2;
         public const int D3D11_0_7_DDI_MINOR_VERSION = 11;
         public const int D3D11_0_DDI_BUILD_VERSION = 2;
         public const int D3D11_0_DDI_MINOR_VERSION = 10;
         public const int D3D11_0_vista_DDI_BUILD_VERSION = 0;
         public const int D3D11_0_vista_DDI_MINOR_VERSION = 9;
+        public const int D3D11_1_DDI_BUILD_VERSION = 0;
+        public const int D3D11_1_DDI_BUILD_VERSION_RC = 1;
+        public const int D3D11_1_DDI_MINOR_VERSION = 15;
+        public const int D3D11_1_DDI_MINOR_VERSION_RC = 14;
         public const int D3D11_1DDI_FORMAT_SUPPORT_BUFFER = 1024;
         public const int D3D11_1DDI_FORMAT_SUPPORT_CAPTURE = 2048;
         public const int D3D11_1DDI_FORMAT_SUPPORT_DECODER_OUTPUT = 32;
@@ -4724,36 +4747,48 @@
         public const int D3D11_1DDI_FORMAT_SUPPORT_VIDEO_PROCESSOR_INPUT = 128;
         public const int D3D11_1DDI_FORMAT_SUPPORT_VIDEO_PROCESSOR_OUTPUT = 64;
         public const int D3D11_1DDI_VIDEO_FUNCTIONS = 2;
-        public const int D3D11_1_DDI_BUILD_VERSION = 0;
-        public const int D3D11_1_DDI_BUILD_VERSION_RC = 1;
-        public const int D3D11_1_DDI_MINOR_VERSION = 15;
-        public const int D3D11_1_DDI_MINOR_VERSION_RC = 14;
-        public const int D3D11_DDI_BUFFEREX_SRV_FLAG_RAW = 1;
         public const int D3D11_DDI_BUFFER_UAV_FLAG_APPEND = 2;
         public const int D3D11_DDI_BUFFER_UAV_FLAG_COUNTER = 4;
         public const int D3D11_DDI_BUFFER_UAV_FLAG_RAW = 1;
+        public const int D3D11_DDI_BUFFEREX_SRV_FLAG_RAW = 1;
         public const int D3D11_DDI_MAJOR_VERSION = 11;
-        public const int D3DWDDM1_3DDI_FORMAT_SUPPORT_TILED = 65536;
-        public const int D3DWDDM1_3DDI_SETMARKERMODE_CUSTOMDRIVEREVENTS = 1;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_3DPIPELINESUPPORT_SHIFT = 1;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_3DPIPELINESUPPORT_SHIFT2 = 3;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_DEBUGGABLE = 32;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_ENABLE_INCREASED_PRIORITY = 4096;
+        public const int D3D11DDI_CREATEDEVICE_FLAG_SINGLETHREADED = 16;
+        public const int D3D11DDI_MINOR_HEADER_VERSION = 20;
+        public const int D3D11DDICAPS_COMMANDLISTS = 2;
+        public const int D3D11DDICAPS_COMMANDLISTS_BUILD_2 = 4;
+        public const int D3D11DDICAPS_FREETHREADED = 1;
+        public const int D3D11DDICAPS_SHADER_COMPUTE_PLUS_RAW_AND_STRUCTURED_BUFFERS_IN_SHADER_4_X = 2;
+        public const int D3D11DDICAPS_SHADER_DEBUGGABLE = 4;
+        public const int D3D11DDICAPS_SHADER_DOUBLES = 1;
+        public const int D3D11DDICAPS_SHADER_REQUIRES_TRANSLATION_INFO_FOR_DX9 = 8;
+        public const int D3D11DDICAPS_SHADER_ROVS = 64;
+        public const int D3D11DDICAPS_SHADER_SPECIFIED_STENCIL_REF = 16;
+        public const int D3D11DDICAPS_SHADER_TYPED_UAV_LOAD_ADDITIONAL_FORMATS = 32;
         public const int D3DWDDM1_3_DDI_BUILD_VERSION = 1;
         public const int D3DWDDM1_3_DDI_BUILD_VERSION_M1 = 0;
         public const int D3DWDDM1_3_DDI_MINOR_VERSION = 16;
-        public const int D3DWDDM2_0DDI_FORMAT_SUPPORT_UAV_READS = 131072;
-        public const int D3DWDDM2_0DDI_VIDEO_FUNCTIONS = 3;
+        public const int D3DWDDM1_3DDI_FORMAT_SUPPORT_TILED = 65536;
+        public const int D3DWDDM1_3DDI_SETMARKERMODE_CUSTOMDRIVEREVENTS = 1;
         public const int D3DWDDM2_0_DDI_BUILD_VERSION = 9;
         public const int D3DWDDM2_0_DDI_MINOR_VERSION = 32;
-        public const int D3DWDDM2_1DDI_VIDEO_FUNCTIONS = 5;
+        public const int D3DWDDM2_0DDI_FORMAT_SUPPORT_UAV_READS = 131072;
+        public const int D3DWDDM2_0DDI_VIDEO_FUNCTIONS = 3;
         public const int D3DWDDM2_1_DDI_BUILD_VERSION = 2;
         public const int D3DWDDM2_1_DDI_MINOR_VERSION = 34;
+        public const int D3DWDDM2_1DDI_VIDEO_FUNCTIONS = 5;
         public const int D3DWDDM2_2_DDI_BUILD_VERSION = 5;
         public const int D3DWDDM2_2_DDI_MINOR_VERSION = 35;
         public const int D3DWDDM2_3_DDI_BUILD_VERSION = 1;
         public const int D3DWDDM2_3_DDI_MINOR_VERSION = 36;
+        public const int D3DWDDM2_4_DDI_BUILD_VERSION = 1;
+        public const int D3DWDDM2_4_DDI_MINOR_VERSION = 37;
         public const int D3DWDDM2_4DDI_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS = 4;
         public const int D3DWDDM2_4DDI_VIDEO_FUNCTIONS = 7;
         public const int D3DWDDM2_4DDI_VIDEO_FUNCTIONS_RS4_0 = 6;
-        public const int D3DWDDM2_4_DDI_BUILD_VERSION = 1;
-        public const int D3DWDDM2_4_DDI_MINOR_VERSION = 37;
         public const int D3DWDDM2_5_DDI_BUILD_VERSION = 0;
         public const int D3DWDDM2_5_DDI_MINOR_VERSION = 38;
         public const int D3DWDDM2_6_DDI_BUILD_VERSION = 4;
@@ -4766,35 +4801,20 @@
         public const int D3DWDDM2_9_DDI_MINOR_VERSION = 42;
         public const int D3DWDDM3_0_DDI_BUILD_VERSION = 0;
         public const int D3DWDDM3_0_DDI_MINOR_VERSION = 43;
+        public const int D3DWDDM3_1_DDI_BUILD_VERSION = 0;
+        public const int D3DWDDM3_1_DDI_MINOR_VERSION = 44;
         public const int DXGI_OFFER_RECLAIM = 10;
         public const int DXGI_QFE_1 = 8;
         public const int DXGI_RESOLVE_SHARED_RESOURCE = 9;
         public const int VISTA_GOLD_PRODUCT_VER = 6000;
-
-        // from <Windows SDK Path>\um\d3d10_1.h
-        public const int D3D10_1_DEFAULT_SAMPLE_MASK = -1;
-        public const int D3D10_1_GS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D10_1_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT = 32;
-        public const int D3D10_1_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS = 128;
-        public const int D3D10_1_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT = 32;
-        public const int D3D10_1_PS_OUTPUT_MASK_REGISTER_COMPONENTS = 1;
-        public const int D3D10_1_PS_OUTPUT_MASK_REGISTER_COMPONENT_BIT_COUNT = 32;
-        public const int D3D10_1_PS_OUTPUT_MASK_REGISTER_COUNT = 1;
-        public const int D3D10_1_SHADER_MAJOR_VERSION = 4;
-        public const int D3D10_1_SHADER_MINOR_VERSION = 1;
-        public const int D3D10_1_SO_BUFFER_MAX_STRIDE_IN_BYTES = 2048;
-        public const int D3D10_1_SO_BUFFER_MAX_WRITE_WINDOW_IN_BYTES = 256;
-        public const int D3D10_1_SO_BUFFER_SLOT_COUNT = 4;
-        public const int D3D10_1_SO_MULTIPLE_BUFFER_ELEMENTS_PER_BUFFER = 1;
-        public const int D3D10_1_SO_SINGLE_BUFFER_COMPONENT_LIMIT = 64;
-        public const int D3D10_1_STANDARD_VERTEX_ELEMENT_COUNT = 32;
-        public const int D3D10_1_SUBPIXEL_FRACTIONAL_BIT_COUNT = 8;
-        public const int D3D10_1_VS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D10_1_VS_OUTPUT_REGISTER_COUNT = 32;
-
+        
+        // from <Windows SDK Path>\um\d3d11_2.h
+        public const int D3D11_PACKED_TILE = -1;
+        
         // from <Windows SDK Path>\um\d3d11.h
-        public const int D3D11_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
+        public const int _FACD3D11 = 2172;
         public const int D3D11_1_UAV_SLOT_COUNT = 64;
+        public const int D3D11_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D11_2_TILED_RESOURCE_TILE_SIZE_IN_BYTES = 65536;
         public const int D3D11_32BIT_INDEX_STRIP_CUT_VALUE = -1;
         public const int D3D11_4_VIDEO_DECODER_HISTOGRAM_OFFSET_ALIGNMENT = 256;
@@ -4806,36 +4826,36 @@
         public const int D3D11_CLIP_OR_CULL_DISTANCE_COUNT = 8;
         public const int D3D11_CLIP_OR_CULL_DISTANCE_ELEMENT_COUNT = 2;
         public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT = 14;
-        public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_COMPONENTS = 4;
         public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_COMPONENTS = 4;
         public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_HW_SLOT_COUNT = 15;
         public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_PARTIAL_UPDATE_EXTENTS_BYTE_ALIGNMENT = 16;
         public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_REGISTER_COMPONENTS = 4;
         public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_REGISTER_COUNT = 15;
-        public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READ_PORTS = 1;
+        public const int D3D11_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D11_COMMONSHADER_FLOWCONTROL_NESTING_LIMIT = 64;
         public const int D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_COMPONENTS = 4;
         public const int D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_COUNT = 1;
-        public const int D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READ_PORTS = 1;
+        public const int D3D11_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D11_COMMONSHADER_IMMEDIATE_VALUE_COMPONENT_BIT_COUNT = 32;
         public const int D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_COMPONENTS = 1;
         public const int D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_COUNT = 128;
-        public const int D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_READS_PER_INST = 1;
         public const int D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_READ_PORTS = 1;
+        public const int D3D11_COMMONSHADER_INPUT_RESOURCE_REGISTER_READS_PER_INST = 1;
         public const int D3D11_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT = 128;
         public const int D3D11_COMMONSHADER_SAMPLER_REGISTER_COMPONENTS = 1;
         public const int D3D11_COMMONSHADER_SAMPLER_REGISTER_COUNT = 16;
-        public const int D3D11_COMMONSHADER_SAMPLER_REGISTER_READS_PER_INST = 1;
         public const int D3D11_COMMONSHADER_SAMPLER_REGISTER_READ_PORTS = 1;
+        public const int D3D11_COMMONSHADER_SAMPLER_REGISTER_READS_PER_INST = 1;
         public const int D3D11_COMMONSHADER_SAMPLER_SLOT_COUNT = 16;
         public const int D3D11_COMMONSHADER_SUBROUTINE_NESTING_LIMIT = 32;
-        public const int D3D11_COMMONSHADER_TEMP_REGISTER_COMPONENTS = 4;
         public const int D3D11_COMMONSHADER_TEMP_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_COMMONSHADER_TEMP_REGISTER_COMPONENTS = 4;
         public const int D3D11_COMMONSHADER_TEMP_REGISTER_COUNT = 4096;
-        public const int D3D11_COMMONSHADER_TEMP_REGISTER_READS_PER_INST = 3;
         public const int D3D11_COMMONSHADER_TEMP_REGISTER_READ_PORTS = 3;
+        public const int D3D11_COMMONSHADER_TEMP_REGISTER_READS_PER_INST = 3;
         public const int D3D11_COMMONSHADER_TEXCOORD_RANGE_REDUCTION_MAX = 10;
         public const int D3D11_COMMONSHADER_TEXEL_OFFSET_MAX_POSITIVE = 7;
         public const int D3D11_COMPARISON_FILTERING_BIT = 128;
@@ -4882,14 +4902,6 @@
         public const int D3D11_CS_TGSM_REGISTER_READS_PER_INST = 1;
         public const int D3D11_CS_TGSM_RESOURCE_REGISTER_COMPONENTS = 1;
         public const int D3D11_CS_TGSM_RESOURCE_REGISTER_READ_PORTS = 1;
-        public const int D3D11_CS_THREADGROUPID_REGISTER_COMPONENTS = 3;
-        public const int D3D11_CS_THREADGROUPID_REGISTER_COUNT = 1;
-        public const int D3D11_CS_THREADIDINGROUPFLATTENED_REGISTER_COMPONENTS = 1;
-        public const int D3D11_CS_THREADIDINGROUPFLATTENED_REGISTER_COUNT = 1;
-        public const int D3D11_CS_THREADIDINGROUP_REGISTER_COMPONENTS = 3;
-        public const int D3D11_CS_THREADIDINGROUP_REGISTER_COUNT = 1;
-        public const int D3D11_CS_THREADID_REGISTER_COMPONENTS = 3;
-        public const int D3D11_CS_THREADID_REGISTER_COUNT = 1;
         public const int D3D11_CS_THREAD_GROUP_MAX_THREADS_PER_GROUP = 1024;
         public const int D3D11_CS_THREAD_GROUP_MAX_X = 1024;
         public const int D3D11_CS_THREAD_GROUP_MAX_Y = 1024;
@@ -4898,6 +4910,14 @@
         public const int D3D11_CS_THREAD_GROUP_MIN_Y = 1;
         public const int D3D11_CS_THREAD_GROUP_MIN_Z = 1;
         public const int D3D11_CS_THREAD_LOCAL_TEMP_REGISTER_POOL = 16384;
+        public const int D3D11_CS_THREADGROUPID_REGISTER_COMPONENTS = 3;
+        public const int D3D11_CS_THREADGROUPID_REGISTER_COUNT = 1;
+        public const int D3D11_CS_THREADID_REGISTER_COMPONENTS = 3;
+        public const int D3D11_CS_THREADID_REGISTER_COUNT = 1;
+        public const int D3D11_CS_THREADIDINGROUP_REGISTER_COMPONENTS = 3;
+        public const int D3D11_CS_THREADIDINGROUP_REGISTER_COUNT = 1;
+        public const int D3D11_CS_THREADIDINGROUPFLATTENED_REGISTER_COMPONENTS = 1;
+        public const int D3D11_CS_THREADIDINGROUPFLATTENED_REGISTER_COUNT = 1;
         public const int D3D11_DEFAULT_DEPTH_BIAS = 0;
         public const int D3D11_DEFAULT_MAX_ANISOTROPY = 16;
         public const int D3D11_DEFAULT_RENDER_TARGET_ARRAY_INDEX = 0;
@@ -4914,89 +4934,89 @@
         public const int D3D11_DEFAULT_VIEWPORT_TOPLEFTX = 0;
         public const int D3D11_DEFAULT_VIEWPORT_TOPLEFTY = 0;
         public const int D3D11_DEFAULT_VIEWPORT_WIDTH = 0;
-        public const int D3D11_DS_INPUT_CONTROL_POINTS_MAX_TOTAL_SCALARS = 3968;
-        public const int D3D11_DS_INPUT_CONTROL_POINT_REGISTER_COMPONENTS = 4;
         public const int D3D11_DS_INPUT_CONTROL_POINT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_DS_INPUT_CONTROL_POINT_REGISTER_COMPONENTS = 4;
         public const int D3D11_DS_INPUT_CONTROL_POINT_REGISTER_COUNT = 32;
-        public const int D3D11_DS_INPUT_CONTROL_POINT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_DS_INPUT_CONTROL_POINT_REGISTER_READ_PORTS = 1;
-        public const int D3D11_DS_INPUT_DOMAIN_POINT_REGISTER_COMPONENTS = 3;
+        public const int D3D11_DS_INPUT_CONTROL_POINT_REGISTER_READS_PER_INST = 2;
+        public const int D3D11_DS_INPUT_CONTROL_POINTS_MAX_TOTAL_SCALARS = 3968;
         public const int D3D11_DS_INPUT_DOMAIN_POINT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_DS_INPUT_DOMAIN_POINT_REGISTER_COMPONENTS = 3;
         public const int D3D11_DS_INPUT_DOMAIN_POINT_REGISTER_COUNT = 1;
-        public const int D3D11_DS_INPUT_DOMAIN_POINT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_DS_INPUT_DOMAIN_POINT_REGISTER_READ_PORTS = 1;
-        public const int D3D11_DS_INPUT_PATCH_CONSTANT_REGISTER_COMPONENTS = 4;
+        public const int D3D11_DS_INPUT_DOMAIN_POINT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_DS_INPUT_PATCH_CONSTANT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_DS_INPUT_PATCH_CONSTANT_REGISTER_COMPONENTS = 4;
         public const int D3D11_DS_INPUT_PATCH_CONSTANT_REGISTER_COUNT = 32;
-        public const int D3D11_DS_INPUT_PATCH_CONSTANT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_DS_INPUT_PATCH_CONSTANT_REGISTER_READ_PORTS = 1;
-        public const int D3D11_DS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENTS = 1;
+        public const int D3D11_DS_INPUT_PATCH_CONSTANT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_DS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_DS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D11_DS_INPUT_PRIMITIVE_ID_REGISTER_COUNT = 1;
-        public const int D3D11_DS_INPUT_PRIMITIVE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_DS_INPUT_PRIMITIVE_ID_REGISTER_READ_PORTS = 1;
-        public const int D3D11_DS_OUTPUT_REGISTER_COMPONENTS = 4;
+        public const int D3D11_DS_INPUT_PRIMITIVE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_DS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_DS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_DS_OUTPUT_REGISTER_COUNT = 32;
         public const int D3D11_FILTER_REDUCTION_TYPE_MASK = 3;
         public const int D3D11_FILTER_REDUCTION_TYPE_SHIFT = 7;
         public const int D3D11_FILTER_TYPE_MASK = 3;
-        public const int D3D11_GS_INPUT_INSTANCE_ID_READS_PER_INST = 2;
         public const int D3D11_GS_INPUT_INSTANCE_ID_READ_PORTS = 1;
-        public const int D3D11_GS_INPUT_INSTANCE_ID_REGISTER_COMPONENTS = 1;
+        public const int D3D11_GS_INPUT_INSTANCE_ID_READS_PER_INST = 2;
         public const int D3D11_GS_INPUT_INSTANCE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_GS_INPUT_INSTANCE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D11_GS_INPUT_INSTANCE_ID_REGISTER_COUNT = 1;
-        public const int D3D11_GS_INPUT_PRIM_CONST_REGISTER_COMPONENTS = 1;
         public const int D3D11_GS_INPUT_PRIM_CONST_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_GS_INPUT_PRIM_CONST_REGISTER_COMPONENTS = 1;
         public const int D3D11_GS_INPUT_PRIM_CONST_REGISTER_COUNT = 1;
-        public const int D3D11_GS_INPUT_PRIM_CONST_REGISTER_READS_PER_INST = 2;
         public const int D3D11_GS_INPUT_PRIM_CONST_REGISTER_READ_PORTS = 1;
-        public const int D3D11_GS_INPUT_REGISTER_COMPONENTS = 4;
+        public const int D3D11_GS_INPUT_PRIM_CONST_REGISTER_READS_PER_INST = 2;
         public const int D3D11_GS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_GS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_GS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D11_GS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_GS_INPUT_REGISTER_READ_PORTS = 1;
+        public const int D3D11_GS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_GS_INPUT_REGISTER_VERTICES = 32;
         public const int D3D11_GS_MAX_INSTANCE_COUNT = 32;
         public const int D3D11_GS_MAX_OUTPUT_VERTEX_COUNT_ACROSS_INSTANCES = 1024;
         public const int D3D11_GS_OUTPUT_ELEMENTS = 32;
-        public const int D3D11_GS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_GS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_GS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_GS_OUTPUT_REGISTER_COUNT = 32;
         public const int D3D11_HS_CONTROL_POINT_PHASE_INPUT_REGISTER_COUNT = 32;
         public const int D3D11_HS_CONTROL_POINT_PHASE_OUTPUT_REGISTER_COUNT = 32;
-        public const int D3D11_HS_CONTROL_POINT_REGISTER_COMPONENTS = 4;
         public const int D3D11_HS_CONTROL_POINT_REGISTER_COMPONENT_BIT_COUNT = 32;
-        public const int D3D11_HS_CONTROL_POINT_REGISTER_READS_PER_INST = 2;
+        public const int D3D11_HS_CONTROL_POINT_REGISTER_COMPONENTS = 4;
         public const int D3D11_HS_CONTROL_POINT_REGISTER_READ_PORTS = 1;
+        public const int D3D11_HS_CONTROL_POINT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_FORK_PHASE_INSTANCE_COUNT_UPPER_BOUND = -1;
-        public const int D3D11_HS_INPUT_FORK_INSTANCE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D11_HS_INPUT_FORK_INSTANCE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_HS_INPUT_FORK_INSTANCE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D11_HS_INPUT_FORK_INSTANCE_ID_REGISTER_COUNT = 1;
-        public const int D3D11_HS_INPUT_FORK_INSTANCE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_INPUT_FORK_INSTANCE_ID_REGISTER_READ_PORTS = 1;
-        public const int D3D11_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_COMPONENTS = 1;
+        public const int D3D11_HS_INPUT_FORK_INSTANCE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D11_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_COUNT = 1;
-        public const int D3D11_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_READ_PORTS = 1;
-        public const int D3D11_HS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENTS = 1;
+        public const int D3D11_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_HS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D11_HS_INPUT_PRIMITIVE_ID_REGISTER_COUNT = 1;
-        public const int D3D11_HS_INPUT_PRIMITIVE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_INPUT_PRIMITIVE_ID_REGISTER_READ_PORTS = 1;
+        public const int D3D11_HS_INPUT_PRIMITIVE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_JOIN_PHASE_INSTANCE_COUNT_UPPER_BOUND = -1;
-        public const int D3D11_HS_OUTPUT_CONTROL_POINTS_MAX_TOTAL_SCALARS = 3968;
-        public const int D3D11_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_COMPONENTS = 1;
         public const int D3D11_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_COMPONENTS = 1;
         public const int D3D11_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_COUNT = 1;
-        public const int D3D11_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_READ_PORTS = 1;
-        public const int D3D11_HS_OUTPUT_PATCH_CONSTANT_REGISTER_COMPONENTS = 4;
+        public const int D3D11_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_READS_PER_INST = 2;
+        public const int D3D11_HS_OUTPUT_CONTROL_POINTS_MAX_TOTAL_SCALARS = 3968;
         public const int D3D11_HS_OUTPUT_PATCH_CONSTANT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_HS_OUTPUT_PATCH_CONSTANT_REGISTER_COMPONENTS = 4;
         public const int D3D11_HS_OUTPUT_PATCH_CONSTANT_REGISTER_COUNT = 32;
-        public const int D3D11_HS_OUTPUT_PATCH_CONSTANT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_OUTPUT_PATCH_CONSTANT_REGISTER_READ_PORTS = 1;
+        public const int D3D11_HS_OUTPUT_PATCH_CONSTANT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_HS_OUTPUT_PATCH_CONSTANT_REGISTER_SCALAR_COMPONENTS = 128;
         public const int D3D11_IA_DEFAULT_INDEX_BUFFER_OFFSET_IN_BYTES = 0;
         public const int D3D11_IA_DEFAULT_PRIMITIVE_TOPOLOGY = 0;
@@ -5008,8 +5028,8 @@
         public const int D3D11_IA_PRIMITIVE_ID_BIT_COUNT = 32;
         public const int D3D11_IA_VERTEX_ID_BIT_COUNT = 32;
         public const int D3D11_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT = 32;
-        public const int D3D11_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS = 128;
         public const int D3D11_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT = 32;
+        public const int D3D11_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS = 128;
         public const int D3D11_INTEGER_DIVIDE_BY_ZERO_QUOTIENT = -1;
         public const int D3D11_INTEGER_DIVIDE_BY_ZERO_REMAINDER = -1;
         public const int D3D11_KEEP_RENDER_TARGETS_AND_DEPTH_STENCIL = -1;
@@ -5019,9 +5039,9 @@
         public const int D3D11_MAX_MAXANISOTROPY = 16;
         public const int D3D11_MAX_MULTISAMPLE_SAMPLE_COUNT = 32;
         public const int D3D11_MAX_TEXTURE_DIMENSION_2_TO_EXP = 17;
-        public const int D3D11_MINOR_VERSION = 0;
         public const int D3D11_MIN_FILTER_SHIFT = 4;
         public const int D3D11_MIN_MAXANISOTROPY = 0;
+        public const int D3D11_MINOR_VERSION = 0;
         public const int D3D11_MIP_FILTER_SHIFT = 0;
         public const int D3D11_MIP_LOD_FRACTIONAL_BIT_COUNT = 8;
         public const int D3D11_MIP_LOD_RANGE_BIT_COUNT = 8;
@@ -5030,32 +5050,32 @@
         public const int D3D11_PRE_SCISSOR_PIXEL_ADDRESS_RANGE_BIT_COUNT = 16;
         public const int D3D11_PS_CS_UAV_REGISTER_COMPONENTS = 1;
         public const int D3D11_PS_CS_UAV_REGISTER_COUNT = 8;
-        public const int D3D11_PS_CS_UAV_REGISTER_READS_PER_INST = 1;
         public const int D3D11_PS_CS_UAV_REGISTER_READ_PORTS = 1;
+        public const int D3D11_PS_CS_UAV_REGISTER_READS_PER_INST = 1;
         public const int D3D11_PS_FRONTFACING_DEFAULT_VALUE = -1;
         public const int D3D11_PS_FRONTFACING_FALSE_VALUE = 0;
         public const int D3D11_PS_FRONTFACING_TRUE_VALUE = -1;
-        public const int D3D11_PS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_PS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_PS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_PS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D11_PS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_PS_INPUT_REGISTER_READ_PORTS = 1;
-        public const int D3D11_PS_OUTPUT_DEPTH_REGISTER_COMPONENTS = 1;
+        public const int D3D11_PS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_PS_OUTPUT_DEPTH_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_PS_OUTPUT_DEPTH_REGISTER_COMPONENTS = 1;
         public const int D3D11_PS_OUTPUT_DEPTH_REGISTER_COUNT = 1;
-        public const int D3D11_PS_OUTPUT_MASK_REGISTER_COMPONENTS = 1;
         public const int D3D11_PS_OUTPUT_MASK_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_PS_OUTPUT_MASK_REGISTER_COMPONENTS = 1;
         public const int D3D11_PS_OUTPUT_MASK_REGISTER_COUNT = 1;
-        public const int D3D11_PS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_PS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_PS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_PS_OUTPUT_REGISTER_COUNT = 8;
         public const int D3D11_RAW_UAV_SRV_BYTE_ALIGNMENT = 16;
         public const int D3D11_REQ_BLEND_OBJECT_COUNT_PER_DEVICE = 4096;
         public const int D3D11_REQ_BUFFER_RESOURCE_TEXEL_COUNT_2_TO_EXP = 27;
         public const int D3D11_REQ_CONSTANT_BUFFER_ELEMENT_COUNT = 4096;
         public const int D3D11_REQ_DEPTH_STENCIL_OBJECT_COUNT_PER_DEVICE = 4096;
-        public const int D3D11_REQ_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 32;
         public const int D3D11_REQ_DRAW_VERTEX_COUNT_2_TO_EXP = 32;
+        public const int D3D11_REQ_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 32;
         public const int D3D11_REQ_FILTERING_HW_ADDRESSABLE_RESOURCE_DIMENSION = 16384;
         public const int D3D11_REQ_GS_INVOCATION_32BIT_OUTPUT_COMPONENT_LIMIT = 1024;
         public const int D3D11_REQ_IMMEDIATE_CONSTANT_BUFFER_ELEMENT_COUNT = 4096;
@@ -5078,8 +5098,8 @@
         public const int D3D11_SDK_VERSION = 7;
         public const int D3D11_SHADER_MAJOR_VERSION = 5;
         public const int D3D11_SHADER_MAX_INSTANCES = 65535;
-        public const int D3D11_SHADER_MAX_INTERFACES = 253;
         public const int D3D11_SHADER_MAX_INTERFACE_CALL_SITES = 4096;
+        public const int D3D11_SHADER_MAX_INTERFACES = 253;
         public const int D3D11_SHADER_MAX_TYPES = 65535;
         public const int D3D11_SHADER_MINOR_VERSION = 0;
         public const int D3D11_SHIFT_INSTRUCTION_PAD_VALUE = 0;
@@ -5117,19 +5137,18 @@
         public const int D3D11_VIEWPORT_AND_SCISSORRECT_MAX_INDEX = 15;
         public const int D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE = 16;
         public const int D3D11_VIEWPORT_BOUNDS_MAX = 32767;
-        public const int D3D11_VS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_VS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_VS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_VS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D11_VS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_VS_INPUT_REGISTER_READ_PORTS = 1;
-        public const int D3D11_VS_OUTPUT_REGISTER_COMPONENTS = 4;
+        public const int D3D11_VS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D11_VS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D11_VS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D11_VS_OUTPUT_REGISTER_COUNT = 32;
         public const int D3D11_WHQL_CONTEXT_COUNT_FOR_RESOURCE_LIMIT = 10;
-        public const int D3D11_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
         public const int D3D11_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
-        public const int _FACD3D11 = 2172;
-
+        public const int D3D11_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
+        
         // from <Windows SDK Path>\um\d3d11sdklayers.h
         public const int D3D11_DEBUG_FEATURE_ALWAYS_DISCARD_OFFERED_RESOURCE = 8;
         public const int D3D11_DEBUG_FEATURE_AVOID_BEHAVIOR_CHANGING_DEBUG_AIDS = 64;
@@ -5140,7 +5159,7 @@
         public const int D3D11_DEBUG_FEATURE_PRESENT_PER_RENDER_OP = 4;
         public const int D3D11_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int D3D11_SDK_LAYERS_VERSION = 1;
-
+        
         // from <Windows SDK Path>\um\d3d11shadertracing.h
         public const int D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_READS = 2;
         public const int D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_WRITES = 1;
@@ -5156,7 +5175,7 @@
         public const int D3D11_TRACE_MISC_MESSAGE = 64;
         public const int D3D11_TRACE_MISC_PS_DISCARD = 4;
         public const int D3D11_TRACE_REGISTER_FLAGS_RELATIVE_INDEXING = 1;
-
+        
         // from <Windows SDK Path>\um\d3d11TokenizedProgramFormat.hpp
         public const int D3D10_SB_4_COMPONENT_NAME_MASK = 3;
         public const int D3D10_SB_CONSTANT_BUFFER_ACCESS_PATTERN_MASK = 2048;
@@ -5188,10 +5207,10 @@
         public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_X = 16;
         public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_Y = 32;
         public const int D3D10_SB_OPERAND_4_COMPONENT_MASK_Z = 64;
-        public const int D3D10_SB_OPERAND_4_COMPONENT_SELECTION_MODE_MASK = 12;
-        public const int D3D10_SB_OPERAND_4_COMPONENT_SELECTION_MODE_SHIFT = 2;
         public const int D3D10_SB_OPERAND_4_COMPONENT_SELECT_1_MASK = 48;
         public const int D3D10_SB_OPERAND_4_COMPONENT_SELECT_1_SHIFT = 4;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_SELECTION_MODE_MASK = 12;
+        public const int D3D10_SB_OPERAND_4_COMPONENT_SELECTION_MODE_SHIFT = 2;
         public const int D3D10_SB_OPERAND_4_COMPONENT_SWIZZLE_MASK = 4080;
         public const int D3D10_SB_OPERAND_4_COMPONENT_SWIZZLE_SHIFT = 4;
         public const int D3D10_SB_OPERAND_DOUBLE_EXTENDED_MASK = -2147483648;
@@ -5245,8 +5264,8 @@
         public const int D3D11_SB_OUTPUT_CONTROL_POINT_COUNT_MASK = 129024;
         public const int D3D11_SB_OUTPUT_CONTROL_POINT_COUNT_SHIFT = 11;
         public const int D3D11_SB_SYNC_FLAGS_MASK = 30720;
-        public const int D3D11_SB_SYNC_THREADS_IN_GROUP = 2048;
         public const int D3D11_SB_SYNC_THREAD_GROUP_SHARED_MEMORY = 4096;
+        public const int D3D11_SB_SYNC_THREADS_IN_GROUP = 2048;
         public const int D3D11_SB_SYNC_UNORDERED_ACCESS_VIEW_MEMORY_GLOBAL = 16384;
         public const int D3D11_SB_SYNC_UNORDERED_ACCESS_VIEW_MEMORY_GROUP = 8192;
         public const int D3D11_SB_TESS_DOMAIN_MASK = 6144;
@@ -5259,10 +5278,7 @@
         public const int D3D11_SB_UAV_HAS_ORDER_PRESERVING_COUNTER = 8388608;
         public const int MAX_D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH = 127;
         public const int MAX_D3D10_SB_TOKENIZED_PROGRAM_LENGTH = -1;
-
-        // from <Windows SDK Path>\um\d3d11_2.h
-        public const int D3D11_PACKED_TILE = -1;
-
+        
         // from <Windows SDK Path>\um\d3d12.h
         public const int D3D12_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D12_32BIT_INDEX_STRIP_CUT_VALUE = -1;
@@ -5273,36 +5289,36 @@
         public const int D3D12_CLIP_OR_CULL_DISTANCE_COUNT = 8;
         public const int D3D12_CLIP_OR_CULL_DISTANCE_ELEMENT_COUNT = 2;
         public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_API_SLOT_COUNT = 14;
-        public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_COMPONENTS = 4;
         public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_COMPONENTS = 4;
         public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_HW_SLOT_COUNT = 15;
         public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_PARTIAL_UPDATE_EXTENTS_BYTE_ALIGNMENT = 16;
         public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_REGISTER_COMPONENTS = 4;
         public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_REGISTER_COUNT = 15;
-        public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READ_PORTS = 1;
+        public const int D3D12_COMMONSHADER_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D12_COMMONSHADER_FLOWCONTROL_NESTING_LIMIT = 64;
         public const int D3D12_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_COMPONENTS = 4;
         public const int D3D12_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_COUNT = 1;
-        public const int D3D12_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D12_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READ_PORTS = 1;
+        public const int D3D12_COMMONSHADER_IMMEDIATE_CONSTANT_BUFFER_REGISTER_READS_PER_INST = 1;
         public const int D3D12_COMMONSHADER_IMMEDIATE_VALUE_COMPONENT_BIT_COUNT = 32;
         public const int D3D12_COMMONSHADER_INPUT_RESOURCE_REGISTER_COMPONENTS = 1;
         public const int D3D12_COMMONSHADER_INPUT_RESOURCE_REGISTER_COUNT = 128;
-        public const int D3D12_COMMONSHADER_INPUT_RESOURCE_REGISTER_READS_PER_INST = 1;
         public const int D3D12_COMMONSHADER_INPUT_RESOURCE_REGISTER_READ_PORTS = 1;
+        public const int D3D12_COMMONSHADER_INPUT_RESOURCE_REGISTER_READS_PER_INST = 1;
         public const int D3D12_COMMONSHADER_INPUT_RESOURCE_SLOT_COUNT = 128;
         public const int D3D12_COMMONSHADER_SAMPLER_REGISTER_COMPONENTS = 1;
         public const int D3D12_COMMONSHADER_SAMPLER_REGISTER_COUNT = 16;
-        public const int D3D12_COMMONSHADER_SAMPLER_REGISTER_READS_PER_INST = 1;
         public const int D3D12_COMMONSHADER_SAMPLER_REGISTER_READ_PORTS = 1;
+        public const int D3D12_COMMONSHADER_SAMPLER_REGISTER_READS_PER_INST = 1;
         public const int D3D12_COMMONSHADER_SAMPLER_SLOT_COUNT = 16;
         public const int D3D12_COMMONSHADER_SUBROUTINE_NESTING_LIMIT = 32;
-        public const int D3D12_COMMONSHADER_TEMP_REGISTER_COMPONENTS = 4;
         public const int D3D12_COMMONSHADER_TEMP_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_COMMONSHADER_TEMP_REGISTER_COMPONENTS = 4;
         public const int D3D12_COMMONSHADER_TEMP_REGISTER_COUNT = 4096;
-        public const int D3D12_COMMONSHADER_TEMP_REGISTER_READS_PER_INST = 3;
         public const int D3D12_COMMONSHADER_TEMP_REGISTER_READ_PORTS = 3;
+        public const int D3D12_COMMONSHADER_TEMP_REGISTER_READS_PER_INST = 3;
         public const int D3D12_COMMONSHADER_TEXCOORD_RANGE_REDUCTION_MAX = 10;
         public const int D3D12_COMMONSHADER_TEXEL_OFFSET_MAX_POSITIVE = 7;
         public const int D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT = 256;
@@ -5349,14 +5365,6 @@
         public const int D3D12_CS_TGSM_REGISTER_READS_PER_INST = 1;
         public const int D3D12_CS_TGSM_RESOURCE_REGISTER_COMPONENTS = 1;
         public const int D3D12_CS_TGSM_RESOURCE_REGISTER_READ_PORTS = 1;
-        public const int D3D12_CS_THREADGROUPID_REGISTER_COMPONENTS = 3;
-        public const int D3D12_CS_THREADGROUPID_REGISTER_COUNT = 1;
-        public const int D3D12_CS_THREADIDINGROUPFLATTENED_REGISTER_COMPONENTS = 1;
-        public const int D3D12_CS_THREADIDINGROUPFLATTENED_REGISTER_COUNT = 1;
-        public const int D3D12_CS_THREADIDINGROUP_REGISTER_COMPONENTS = 3;
-        public const int D3D12_CS_THREADIDINGROUP_REGISTER_COUNT = 1;
-        public const int D3D12_CS_THREADID_REGISTER_COMPONENTS = 3;
-        public const int D3D12_CS_THREADID_REGISTER_COUNT = 1;
         public const int D3D12_CS_THREAD_GROUP_MAX_THREADS_PER_GROUP = 1024;
         public const int D3D12_CS_THREAD_GROUP_MAX_X = 1024;
         public const int D3D12_CS_THREAD_GROUP_MAX_Y = 1024;
@@ -5365,6 +5373,14 @@
         public const int D3D12_CS_THREAD_GROUP_MIN_Y = 1;
         public const int D3D12_CS_THREAD_GROUP_MIN_Z = 1;
         public const int D3D12_CS_THREAD_LOCAL_TEMP_REGISTER_POOL = 16384;
+        public const int D3D12_CS_THREADGROUPID_REGISTER_COMPONENTS = 3;
+        public const int D3D12_CS_THREADGROUPID_REGISTER_COUNT = 1;
+        public const int D3D12_CS_THREADID_REGISTER_COMPONENTS = 3;
+        public const int D3D12_CS_THREADID_REGISTER_COUNT = 1;
+        public const int D3D12_CS_THREADIDINGROUP_REGISTER_COMPONENTS = 3;
+        public const int D3D12_CS_THREADIDINGROUP_REGISTER_COUNT = 1;
+        public const int D3D12_CS_THREADIDINGROUPFLATTENED_REGISTER_COMPONENTS = 1;
+        public const int D3D12_CS_THREADIDINGROUPFLATTENED_REGISTER_COUNT = 1;
         public const int D3D12_DEFAULT_DEPTH_BIAS = 0;
         public const int D3D12_DEFAULT_MAX_ANISOTROPY = 16;
         public const int D3D12_DEFAULT_MSAA_RESOURCE_PLACEMENT_ALIGNMENT = 4194304;
@@ -5386,89 +5402,89 @@
         public const int D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND = -1;
         public const int D3D12_DRIVER_RESERVED_REGISTER_SPACE_VALUES_END = -9;
         public const int D3D12_DRIVER_RESERVED_REGISTER_SPACE_VALUES_START = -16;
-        public const int D3D12_DS_INPUT_CONTROL_POINTS_MAX_TOTAL_SCALARS = 3968;
-        public const int D3D12_DS_INPUT_CONTROL_POINT_REGISTER_COMPONENTS = 4;
         public const int D3D12_DS_INPUT_CONTROL_POINT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_DS_INPUT_CONTROL_POINT_REGISTER_COMPONENTS = 4;
         public const int D3D12_DS_INPUT_CONTROL_POINT_REGISTER_COUNT = 32;
-        public const int D3D12_DS_INPUT_CONTROL_POINT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_DS_INPUT_CONTROL_POINT_REGISTER_READ_PORTS = 1;
-        public const int D3D12_DS_INPUT_DOMAIN_POINT_REGISTER_COMPONENTS = 3;
+        public const int D3D12_DS_INPUT_CONTROL_POINT_REGISTER_READS_PER_INST = 2;
+        public const int D3D12_DS_INPUT_CONTROL_POINTS_MAX_TOTAL_SCALARS = 3968;
         public const int D3D12_DS_INPUT_DOMAIN_POINT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_DS_INPUT_DOMAIN_POINT_REGISTER_COMPONENTS = 3;
         public const int D3D12_DS_INPUT_DOMAIN_POINT_REGISTER_COUNT = 1;
-        public const int D3D12_DS_INPUT_DOMAIN_POINT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_DS_INPUT_DOMAIN_POINT_REGISTER_READ_PORTS = 1;
-        public const int D3D12_DS_INPUT_PATCH_CONSTANT_REGISTER_COMPONENTS = 4;
+        public const int D3D12_DS_INPUT_DOMAIN_POINT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_DS_INPUT_PATCH_CONSTANT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_DS_INPUT_PATCH_CONSTANT_REGISTER_COMPONENTS = 4;
         public const int D3D12_DS_INPUT_PATCH_CONSTANT_REGISTER_COUNT = 32;
-        public const int D3D12_DS_INPUT_PATCH_CONSTANT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_DS_INPUT_PATCH_CONSTANT_REGISTER_READ_PORTS = 1;
-        public const int D3D12_DS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENTS = 1;
+        public const int D3D12_DS_INPUT_PATCH_CONSTANT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_DS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_DS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D12_DS_INPUT_PRIMITIVE_ID_REGISTER_COUNT = 1;
-        public const int D3D12_DS_INPUT_PRIMITIVE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_DS_INPUT_PRIMITIVE_ID_REGISTER_READ_PORTS = 1;
-        public const int D3D12_DS_OUTPUT_REGISTER_COMPONENTS = 4;
+        public const int D3D12_DS_INPUT_PRIMITIVE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_DS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_DS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_DS_OUTPUT_REGISTER_COUNT = 32;
         public const int D3D12_FILTER_REDUCTION_TYPE_MASK = 3;
         public const int D3D12_FILTER_REDUCTION_TYPE_SHIFT = 7;
         public const int D3D12_FILTER_TYPE_MASK = 3;
-        public const int D3D12_GS_INPUT_INSTANCE_ID_READS_PER_INST = 2;
         public const int D3D12_GS_INPUT_INSTANCE_ID_READ_PORTS = 1;
-        public const int D3D12_GS_INPUT_INSTANCE_ID_REGISTER_COMPONENTS = 1;
+        public const int D3D12_GS_INPUT_INSTANCE_ID_READS_PER_INST = 2;
         public const int D3D12_GS_INPUT_INSTANCE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_GS_INPUT_INSTANCE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D12_GS_INPUT_INSTANCE_ID_REGISTER_COUNT = 1;
-        public const int D3D12_GS_INPUT_PRIM_CONST_REGISTER_COMPONENTS = 1;
         public const int D3D12_GS_INPUT_PRIM_CONST_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_GS_INPUT_PRIM_CONST_REGISTER_COMPONENTS = 1;
         public const int D3D12_GS_INPUT_PRIM_CONST_REGISTER_COUNT = 1;
-        public const int D3D12_GS_INPUT_PRIM_CONST_REGISTER_READS_PER_INST = 2;
         public const int D3D12_GS_INPUT_PRIM_CONST_REGISTER_READ_PORTS = 1;
-        public const int D3D12_GS_INPUT_REGISTER_COMPONENTS = 4;
+        public const int D3D12_GS_INPUT_PRIM_CONST_REGISTER_READS_PER_INST = 2;
         public const int D3D12_GS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_GS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_GS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D12_GS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_GS_INPUT_REGISTER_READ_PORTS = 1;
+        public const int D3D12_GS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_GS_INPUT_REGISTER_VERTICES = 32;
         public const int D3D12_GS_MAX_INSTANCE_COUNT = 32;
         public const int D3D12_GS_MAX_OUTPUT_VERTEX_COUNT_ACROSS_INSTANCES = 1024;
         public const int D3D12_GS_OUTPUT_ELEMENTS = 32;
-        public const int D3D12_GS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_GS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_GS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_GS_OUTPUT_REGISTER_COUNT = 32;
         public const int D3D12_HS_CONTROL_POINT_PHASE_INPUT_REGISTER_COUNT = 32;
         public const int D3D12_HS_CONTROL_POINT_PHASE_OUTPUT_REGISTER_COUNT = 32;
-        public const int D3D12_HS_CONTROL_POINT_REGISTER_COMPONENTS = 4;
         public const int D3D12_HS_CONTROL_POINT_REGISTER_COMPONENT_BIT_COUNT = 32;
-        public const int D3D12_HS_CONTROL_POINT_REGISTER_READS_PER_INST = 2;
+        public const int D3D12_HS_CONTROL_POINT_REGISTER_COMPONENTS = 4;
         public const int D3D12_HS_CONTROL_POINT_REGISTER_READ_PORTS = 1;
+        public const int D3D12_HS_CONTROL_POINT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_FORK_PHASE_INSTANCE_COUNT_UPPER_BOUND = -1;
-        public const int D3D12_HS_INPUT_FORK_INSTANCE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D12_HS_INPUT_FORK_INSTANCE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_HS_INPUT_FORK_INSTANCE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D12_HS_INPUT_FORK_INSTANCE_ID_REGISTER_COUNT = 1;
-        public const int D3D12_HS_INPUT_FORK_INSTANCE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_INPUT_FORK_INSTANCE_ID_REGISTER_READ_PORTS = 1;
-        public const int D3D12_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_COMPONENTS = 1;
+        public const int D3D12_HS_INPUT_FORK_INSTANCE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D12_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_COUNT = 1;
-        public const int D3D12_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_READ_PORTS = 1;
-        public const int D3D12_HS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENTS = 1;
+        public const int D3D12_HS_INPUT_JOIN_INSTANCE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_HS_INPUT_PRIMITIVE_ID_REGISTER_COMPONENTS = 1;
         public const int D3D12_HS_INPUT_PRIMITIVE_ID_REGISTER_COUNT = 1;
-        public const int D3D12_HS_INPUT_PRIMITIVE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_INPUT_PRIMITIVE_ID_REGISTER_READ_PORTS = 1;
+        public const int D3D12_HS_INPUT_PRIMITIVE_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_JOIN_PHASE_INSTANCE_COUNT_UPPER_BOUND = -1;
-        public const int D3D12_HS_OUTPUT_CONTROL_POINTS_MAX_TOTAL_SCALARS = 3968;
-        public const int D3D12_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_COMPONENTS = 1;
         public const int D3D12_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_COMPONENTS = 1;
         public const int D3D12_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_COUNT = 1;
-        public const int D3D12_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_READ_PORTS = 1;
-        public const int D3D12_HS_OUTPUT_PATCH_CONSTANT_REGISTER_COMPONENTS = 4;
+        public const int D3D12_HS_OUTPUT_CONTROL_POINT_ID_REGISTER_READS_PER_INST = 2;
+        public const int D3D12_HS_OUTPUT_CONTROL_POINTS_MAX_TOTAL_SCALARS = 3968;
         public const int D3D12_HS_OUTPUT_PATCH_CONSTANT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_HS_OUTPUT_PATCH_CONSTANT_REGISTER_COMPONENTS = 4;
         public const int D3D12_HS_OUTPUT_PATCH_CONSTANT_REGISTER_COUNT = 32;
-        public const int D3D12_HS_OUTPUT_PATCH_CONSTANT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_OUTPUT_PATCH_CONSTANT_REGISTER_READ_PORTS = 1;
+        public const int D3D12_HS_OUTPUT_PATCH_CONSTANT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_HS_OUTPUT_PATCH_CONSTANT_REGISTER_SCALAR_COMPONENTS = 128;
         public const int D3D12_IA_DEFAULT_INDEX_BUFFER_OFFSET_IN_BYTES = 0;
         public const int D3D12_IA_DEFAULT_PRIMITIVE_TOPOLOGY = 0;
@@ -5480,8 +5496,8 @@
         public const int D3D12_IA_PRIMITIVE_ID_BIT_COUNT = 32;
         public const int D3D12_IA_VERTEX_ID_BIT_COUNT = 32;
         public const int D3D12_IA_VERTEX_INPUT_RESOURCE_SLOT_COUNT = 32;
-        public const int D3D12_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS = 128;
         public const int D3D12_IA_VERTEX_INPUT_STRUCTURE_ELEMENT_COUNT = 32;
+        public const int D3D12_IA_VERTEX_INPUT_STRUCTURE_ELEMENTS_COMPONENTS = 128;
         public const int D3D12_INTEGER_DIVIDE_BY_ZERO_QUOTIENT = -1;
         public const int D3D12_INTEGER_DIVIDE_BY_ZERO_REMAINDER = -1;
         public const int D3D12_KEEP_RENDER_TARGETS_AND_DEPTH_STENCIL = -1;
@@ -5497,9 +5513,9 @@
         public const int D3D12_MAX_SHADER_VISIBLE_SAMPLER_HEAP_SIZE = 2048;
         public const int D3D12_MAX_TEXTURE_DIMENSION_2_TO_EXP = 17;
         public const int D3D12_MAX_VIEW_INSTANCE_COUNT = 4;
-        public const int D3D12_MINOR_VERSION = 0;
         public const int D3D12_MIN_FILTER_SHIFT = 4;
         public const int D3D12_MIN_MAXANISOTROPY = 0;
+        public const int D3D12_MINOR_VERSION = 0;
         public const int D3D12_MIP_FILTER_SHIFT = 0;
         public const int D3D12_MIP_LOD_FRACTIONAL_BIT_COUNT = 8;
         public const int D3D12_MIP_LOD_RANGE_BIT_COUNT = 8;
@@ -5509,26 +5525,27 @@
         public const int D3D12_PACKED_TILE = -1;
         public const int D3D12_PIXEL_ADDRESS_RANGE_BIT_COUNT = 15;
         public const int D3D12_PRE_SCISSOR_PIXEL_ADDRESS_RANGE_BIT_COUNT = 16;
+        public const int D3D12_PREVIEW_SDK_VERSION = 702;
         public const int D3D12_PS_CS_UAV_REGISTER_COMPONENTS = 1;
         public const int D3D12_PS_CS_UAV_REGISTER_COUNT = 8;
-        public const int D3D12_PS_CS_UAV_REGISTER_READS_PER_INST = 1;
         public const int D3D12_PS_CS_UAV_REGISTER_READ_PORTS = 1;
+        public const int D3D12_PS_CS_UAV_REGISTER_READS_PER_INST = 1;
         public const int D3D12_PS_FRONTFACING_DEFAULT_VALUE = -1;
         public const int D3D12_PS_FRONTFACING_FALSE_VALUE = 0;
         public const int D3D12_PS_FRONTFACING_TRUE_VALUE = -1;
-        public const int D3D12_PS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_PS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_PS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_PS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D12_PS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_PS_INPUT_REGISTER_READ_PORTS = 1;
-        public const int D3D12_PS_OUTPUT_DEPTH_REGISTER_COMPONENTS = 1;
+        public const int D3D12_PS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_PS_OUTPUT_DEPTH_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_PS_OUTPUT_DEPTH_REGISTER_COMPONENTS = 1;
         public const int D3D12_PS_OUTPUT_DEPTH_REGISTER_COUNT = 1;
-        public const int D3D12_PS_OUTPUT_MASK_REGISTER_COMPONENTS = 1;
         public const int D3D12_PS_OUTPUT_MASK_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_PS_OUTPUT_MASK_REGISTER_COMPONENTS = 1;
         public const int D3D12_PS_OUTPUT_MASK_REGISTER_COUNT = 1;
-        public const int D3D12_PS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_PS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_PS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_PS_OUTPUT_REGISTER_COUNT = 8;
         public const int D3D12_RAW_UAV_SRV_BYTE_ALIGNMENT = 16;
         public const int D3D12_RAYTRACING_AABB_BYTE_ALIGNMENT = 8;
@@ -5548,8 +5565,8 @@
         public const int D3D12_REQ_BUFFER_RESOURCE_TEXEL_COUNT_2_TO_EXP = 27;
         public const int D3D12_REQ_CONSTANT_BUFFER_ELEMENT_COUNT = 4096;
         public const int D3D12_REQ_DEPTH_STENCIL_OBJECT_COUNT_PER_DEVICE = 4096;
-        public const int D3D12_REQ_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 32;
         public const int D3D12_REQ_DRAW_VERTEX_COUNT_2_TO_EXP = 32;
+        public const int D3D12_REQ_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 32;
         public const int D3D12_REQ_FILTERING_HW_ADDRESSABLE_RESOURCE_DIMENSION = 16384;
         public const int D3D12_REQ_GS_INVOCATION_32BIT_OUTPUT_COMPONENT_LIMIT = 1024;
         public const int D3D12_REQ_IMMEDIATE_CONSTANT_BUFFER_ELEMENT_COUNT = 4096;
@@ -5572,14 +5589,14 @@
         public const int D3D12_RESINFO_INSTRUCTION_MISSING_COMPONENT_RETVAL = 0;
         public const int D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES = -1;
         public const int D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT = 2;
-        public const int D3D12_SDK_VERSION = 5;
+        public const int D3D12_SDK_VERSION = 602;
         public const int D3D12_SHADER_COMPONENT_MAPPING_MASK = 7;
         public const int D3D12_SHADER_COMPONENT_MAPPING_SHIFT = 3;
         public const int D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES = 32;
         public const int D3D12_SHADER_MAJOR_VERSION = 5;
         public const int D3D12_SHADER_MAX_INSTANCES = 65535;
-        public const int D3D12_SHADER_MAX_INTERFACES = 253;
         public const int D3D12_SHADER_MAX_INTERFACE_CALL_SITES = 4096;
+        public const int D3D12_SHADER_MAX_INTERFACES = 253;
         public const int D3D12_SHADER_MAX_TYPES = 65535;
         public const int D3D12_SHADER_MINOR_VERSION = 1;
         public const int D3D12_SHADING_RATE_VALID_MASK = 3;
@@ -5636,21 +5653,21 @@
         public const int D3D12_VIEWPORT_AND_SCISSORRECT_MAX_INDEX = 15;
         public const int D3D12_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE = 16;
         public const int D3D12_VIEWPORT_BOUNDS_MAX = 32767;
-        public const int D3D12_VS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_VS_INPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_VS_INPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_VS_INPUT_REGISTER_COUNT = 32;
-        public const int D3D12_VS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_VS_INPUT_REGISTER_READ_PORTS = 1;
-        public const int D3D12_VS_OUTPUT_REGISTER_COMPONENTS = 4;
+        public const int D3D12_VS_INPUT_REGISTER_READS_PER_INST = 2;
         public const int D3D12_VS_OUTPUT_REGISTER_COMPONENT_BIT_COUNT = 32;
+        public const int D3D12_VS_OUTPUT_REGISTER_COMPONENTS = 4;
         public const int D3D12_VS_OUTPUT_REGISTER_COUNT = 32;
         public const int D3D12_WHQL_CONTEXT_COUNT_FOR_RESOURCE_LIMIT = 10;
-        public const int D3D12_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
         public const int D3D12_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
-
+        public const int D3D12_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
+        
         // from <Windows SDK Path>\um\d3d12sdklayers.h
         public const int D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
-
+        
         // from <Windows SDK Path>\um\d3d12shader.h
         public const int D3D_SHADER_REQUIRES_11_1_DOUBLE_EXTENSIONS = 32;
         public const int D3D_SHADER_REQUIRES_11_1_SHADER_EXTENSIONS = 64;
@@ -5677,11 +5694,11 @@
         public const int D3D_SHADER_REQUIRES_TILED_RESOURCES = 256;
         public const int D3D_SHADER_REQUIRES_TYPED_UAV_LOAD_ADDITIONAL_FORMATS = 2048;
         public const int D3D_SHADER_REQUIRES_UAVS_AT_EVERY_STAGE = 4;
-        public const int D3D_SHADER_REQUIRES_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER = 8192;
         public const int D3D_SHADER_REQUIRES_VIEW_ID = 65536;
+        public const int D3D_SHADER_REQUIRES_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER = 8192;
         public const int D3D_SHADER_REQUIRES_WAVE_MMA = 134217728;
         public const int D3D_SHADER_REQUIRES_WAVE_OPS = 16384;
-
+        
         // from <Windows SDK Path>\um\d3d12umddi.h
         public const int D3D12DDI_BUILD_VERSION = 8;
         public const int D3D12DDI_BUILD_VERSION_0010 = 0;
@@ -5731,6 +5748,12 @@
         public const int D3D12DDI_BUILD_VERSION_0082 = 2;
         public const int D3D12DDI_BUILD_VERSION_0083 = 3;
         public const int D3D12DDI_BUILD_VERSION_0084 = 4;
+        public const int D3D12DDI_BUILD_VERSION_0086 = 6;
+        public const int D3D12DDI_BUILD_VERSION_0088 = 8;
+        public const int D3D12DDI_BUILD_VERSION_0089 = 9;
+        public const int D3D12DDI_BUILD_VERSION_0090 = 90;
+        public const int D3D12DDI_BUILD_VERSION_0091 = 91;
+        public const int D3D12DDI_BUILD_VERSION_0092 = 92;
         public const int D3D12DDI_BUILD_VERSION_BEFORE_ASTC_PROFILE = 1;
         public const int D3D12DDI_BUILD_VERSION_BEFORE_CROSS_ADAPTER = 2;
         public const int D3D12DDI_BUILD_VERSION_BEFORE_DX10_DX12_HEADER_REFACTOR = 6;
@@ -5765,6 +5788,7 @@
         public const int D3D12DDI_FEATURE_VERSION_VIDEO_0080_2 = 20;
         public const int D3D12DDI_FEATURE_VERSION_VIDEO_0082_0 = 21;
         public const int D3D12DDI_FEATURE_VERSION_VIDEO_0083_0 = 22;
+        public const int D3D12DDI_FEATURE_VERSION_VIDEO_0088_0 = 24;
         public const int D3D12DDI_FORMAT_SUPPORT_BLENDABLE = 4;
         public const int D3D12DDI_FORMAT_SUPPORT_BUFFER = 1024;
         public const int D3D12DDI_FORMAT_SUPPORT_CAPTURE = 2048;
@@ -5803,10 +5827,10 @@
         public const int D3D12DDI_VIDEO_DECODE_MAX_ARGUMENTS_0020 = 10;
         public const int D3D12DDI_VIDEO_DECODE_MAX_HISTOGRAM_COMPONENTS = 4;
         public const int D3D12DDI_VIDEO_PROCESS_MAX_FILTERS_0020 = 32;
-
+        
         // from <Windows SDK Path>\um\d3d9on12.h
         public const int MAX_D3D9ON12_QUEUES = 2;
-
+        
         // from <Windows SDK Path>\um\d3dcaps.h
         public const int D3DDD_BCLIPPING = 16;
         public const int D3DDD_COLORMODEL = 1;
@@ -5819,11 +5843,11 @@
         public const int D3DDD_MAXVERTEXCOUNT = 1024;
         public const int D3DDD_TRANSFORMCAPS = 4;
         public const int D3DDD_TRICAPS = 64;
-        public const int D3DDEBCAPS_SYSTEMMEMORY = 1;
-        public const int D3DDEBCAPS_VIDEOMEMORY = 2;
         public const int D3DDEB_BUFSIZE = 1;
         public const int D3DDEB_CAPS = 2;
         public const int D3DDEB_LPDATA = 4;
+        public const int D3DDEBCAPS_SYSTEMMEMORY = 1;
+        public const int D3DDEBCAPS_VIDEOMEMORY = 2;
         public const int D3DDEVCAPS_CANBLTSYSTONONLOCAL = 131072;
         public const int D3DDEVCAPS_CANRENDERAFTERFLIP = 2048;
         public const int D3DDEVCAPS_DRAWPRIMITIVES2 = 8192;
@@ -6017,7 +6041,7 @@
         public const int D3DVTXPCAPS_POSITIONALLIGHTS = 16;
         public const int D3DVTXPCAPS_TEXGEN = 1;
         public const int D3DVTXPCAPS_VERTEXFOG = 4;
-
+        
         // from <Windows SDK Path>\um\d3dcommon.h
         public const int D3D_COMPONENT_MASK_W = 8;
         public const int D3D_COMPONENT_MASK_X = 1;
@@ -6063,46 +6087,12 @@
         public const int D3D_SHADER_FEATURE_TILED_RESOURCES = 256;
         public const int D3D_SHADER_FEATURE_TYPED_UAV_LOAD_ADDITIONAL_FORMATS = 2048;
         public const int D3D_SHADER_FEATURE_UAVS_AT_EVERY_STAGE = 4;
-        public const int D3D_SHADER_FEATURE_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER = 8192;
         public const int D3D_SHADER_FEATURE_VIEW_ID = 65536;
+        public const int D3D_SHADER_FEATURE_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER = 8192;
         public const int D3D_SHADER_FEATURE_WAVE_MMA = 134217728;
         public const int D3D_SHADER_FEATURE_WAVE_OPS = 16384;
-
+        
         // from <Windows SDK Path>\um\d3dcompiler.h
-        public const int D3DCOMPILE_DEBUG = (1 << 0);
-        public const int D3DCOMPILE_SKIP_VALIDATION = (1 << 1);
-        public const int D3DCOMPILE_SKIP_OPTIMIZATION = (1 << 2);
-        public const int D3DCOMPILE_PACK_MATRIX_ROW_MAJOR = (1 << 3);
-        public const int D3DCOMPILE_PACK_MATRIX_COLUMN_MAJOR = (1 << 4);
-        public const int D3DCOMPILE_PARTIAL_PRECISION = (1 << 5);
-        public const int D3DCOMPILE_FORCE_VS_SOFTWARE_NO_OPT = (1 << 6);
-        public const int D3DCOMPILE_FORCE_PS_SOFTWARE_NO_OPT = (1 << 7);
-        public const int D3DCOMPILE_NO_PRESHADER = (1 << 8);
-        public const int D3DCOMPILE_AVOID_FLOW_CONTROL = (1 << 9);
-        public const int D3DCOMPILE_PREFER_FLOW_CONTROL = (1 << 10);
-        public const int D3DCOMPILE_ENABLE_STRICTNESS = (1 << 11);
-        public const int D3DCOMPILE_ENABLE_BACKWARDS_COMPATIBILITY = (1 << 12);
-        public const int D3DCOMPILE_IEEE_STRICTNESS = (1 << 13);
-        public const int D3DCOMPILE_OPTIMIZATION_LEVEL0 = (1 << 14);
-        public const int D3DCOMPILE_OPTIMIZATION_LEVEL1 = 0;
-        public const int D3DCOMPILE_OPTIMIZATION_LEVEL2 = ((1 << 14) | (1 << 15));
-        public const int D3DCOMPILE_OPTIMIZATION_LEVEL3 = (1 << 15);
-        public const int D3DCOMPILE_RESERVED16 = (1 << 16);
-        public const int D3DCOMPILE_RESERVED17 = (1 << 17);
-        public const int D3DCOMPILE_WARNINGS_ARE_ERRORS = (1 << 18);
-        public const int D3DCOMPILE_RESOURCES_MAY_ALIAS = (1 << 19);
-        public const int D3DCOMPILE_ENABLE_UNBOUNDED_DESCRIPTOR_TABLES = (1 << 20);
-        public const int D3DCOMPILE_ALL_RESOURCES_BOUND = (1 << 21);
-        public const int D3DCOMPILE_DEBUG_NAME_FOR_SOURCE = (1 << 22);
-        public const int D3DCOMPILE_DEBUG_NAME_FOR_BINARY = (1 << 23);
-        public const int D3DCOMPILE_EFFECT_CHILD_EFFECT = (1 << 0);
-        public const int D3DCOMPILE_EFFECT_ALLOW_SLOW_OPS = (1 << 1);
-        public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
-        public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_0 = 1 << 4;
-        public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_1 = 1 << 5;
-        public const int D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS = 1;
-        public const int D3DCOMPILE_SECDATA_PRESERVE_TEMPLATE_SLOTS = 2;
-        public const int D3DCOMPILE_SECDATA_REQUIRE_TEMPLATE_MATCH = 4;
         public const int D3D_COMPILER_VERSION = 47;
         public const int D3D_COMPRESS_SHADER_KEEP_ALL_PARTS = 1;
         public const int D3D_DISASM_DISABLE_DEBUG_INFO = 16;
@@ -6114,12 +6104,17 @@
         public const int D3D_DISASM_INSTRUCTION_ONLY = 64;
         public const int D3D_DISASM_PRINT_HEX_LITERALS = 128;
         public const int D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE = 1;
-
+        public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
+        public const int D3DCOMPILE_OPTIMIZATION_LEVEL1 = 0;
+        public const int D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS = 1;
+        public const int D3DCOMPILE_SECDATA_PRESERVE_TEMPLATE_SLOTS = 2;
+        public const int D3DCOMPILE_SECDATA_REQUIRE_TEMPLATE_MATCH = 4;
+        
         // from <Windows SDK Path>\um\d3dcsx.h
         public const int D3DX11_FFT_MAX_DIMENSIONS = 32;
         public const int D3DX11_FFT_MAX_PRECOMPUTE_BUFFERS = 4;
         public const int D3DX11_FFT_MAX_TEMP_BUFFERS = 4;
-
+        
         // from <Windows SDK Path>\um\d3dhal.h
         public const int D3DCLEAR_COMPUTERECTS = 8;
         public const int D3DDEVCAPS_HWINDEXBUFFER = 67108864;
@@ -6127,8 +6122,8 @@
         public const int D3DDEVCAPS_SUBVOLUMELOCK = 134217728;
         public const int D3DFVF_FOG = 8192;
         public const int D3DGDI2_MAGIC = -1;
-        public const int D3DGDI2_TYPE_DEFERRED_AGP_AWARE = 24;
         public const int D3DGDI2_TYPE_DEFER_AGP_FREES = 32;
+        public const int D3DGDI2_TYPE_DEFERRED_AGP_AWARE = 24;
         public const int D3DGDI2_TYPE_DXVERSION = 4;
         public const int D3DGDI2_TYPE_FREE_DEFERRED_AGP = 25;
         public const int D3DGDI2_TYPE_GETADAPTERGROUP = 19;
@@ -6142,26 +6137,6 @@
         public const int D3DGDI2_TYPE_GETFORMAT = 3;
         public const int D3DGDI2_TYPE_GETFORMATCOUNT = 2;
         public const int D3DGDI2_TYPE_GETMULTISAMPLEQUALITYLEVELS = 22;
-        public const int D3DHAL2_CB32_CLEAR = 2;
-        public const int D3DHAL2_CB32_DRAWONEINDEXEDPRIMITIVE = 8;
-        public const int D3DHAL2_CB32_DRAWONEPRIMITIVE = 4;
-        public const int D3DHAL2_CB32_DRAWPRIMITIVES = 16;
-        public const int D3DHAL2_CB32_SETRENDERTARGET = 1;
-        public const int D3DHAL3_CB32_CLEAR2 = 1;
-        public const int D3DHAL3_CB32_DRAWPRIMITIVES2 = 8;
-        public const int D3DHAL3_CB32_RESERVED = 2;
-        public const int D3DHAL3_CB32_VALIDATETEXTURESTAGESTATE = 4;
-        public const int D3DHALDP2_EXECUTEBUFFER = 2;
-        public const int D3DHALDP2_REQCOMMANDBUFSIZE = 32;
-        public const int D3DHALDP2_REQVERTEXBUFSIZE = 16;
-        public const int D3DHALDP2_SWAPCOMMANDBUFFER = 8;
-        public const int D3DHALDP2_SWAPVERTEXBUFFER = 4;
-        public const int D3DHALDP2_USERMEMVERTICES = 1;
-        public const int D3DHALDP2_VIDMEMCOMMANDBUF = 128;
-        public const int D3DHALDP2_VIDMEMVERTEXBUF = 64;
-        public const int D3DHALSTATE_GET_LIGHT = 2;
-        public const int D3DHALSTATE_GET_RENDER = 4;
-        public const int D3DHALSTATE_GET_TRANSFORM = 1;
         public const int D3DHAL_CONTEXT_BAD = 512;
         public const int D3DHAL_EXECUTE_ABORT = 528;
         public const int D3DHAL_EXECUTE_NORMAL = 0;
@@ -6187,6 +6162,26 @@
         public const int D3DHAL_TSS_MAXSTAGES = 8;
         public const int D3DHAL_TSS_RENDERSTATEBASE = 256;
         public const int D3DHAL_TSS_STATESPERSTAGE = 64;
+        public const int D3DHAL2_CB32_CLEAR = 2;
+        public const int D3DHAL2_CB32_DRAWONEINDEXEDPRIMITIVE = 8;
+        public const int D3DHAL2_CB32_DRAWONEPRIMITIVE = 4;
+        public const int D3DHAL2_CB32_DRAWPRIMITIVES = 16;
+        public const int D3DHAL2_CB32_SETRENDERTARGET = 1;
+        public const int D3DHAL3_CB32_CLEAR2 = 1;
+        public const int D3DHAL3_CB32_DRAWPRIMITIVES2 = 8;
+        public const int D3DHAL3_CB32_RESERVED = 2;
+        public const int D3DHAL3_CB32_VALIDATETEXTURESTAGESTATE = 4;
+        public const int D3DHALDP2_EXECUTEBUFFER = 2;
+        public const int D3DHALDP2_REQCOMMANDBUFSIZE = 32;
+        public const int D3DHALDP2_REQVERTEXBUFSIZE = 16;
+        public const int D3DHALDP2_SWAPCOMMANDBUFFER = 8;
+        public const int D3DHALDP2_SWAPVERTEXBUFFER = 4;
+        public const int D3DHALDP2_USERMEMVERTICES = 1;
+        public const int D3DHALDP2_VIDMEMCOMMANDBUF = 128;
+        public const int D3DHALDP2_VIDMEMVERTEXBUF = 64;
+        public const int D3DHALSTATE_GET_LIGHT = 2;
+        public const int D3DHALSTATE_GET_RENDER = 4;
+        public const int D3DHALSTATE_GET_TRANSFORM = 1;
         public const int D3DINFINITEINSTRUCTIONS = -1;
         public const int D3DPMISCCAPS_FOGINFVF = 8192;
         public const int D3DPS_COLOROUT_MAX_V2_0 = 4;
@@ -6243,10 +6238,10 @@
         public const int D3DRENDERSTATE_EVICTMANAGEDTEXTURES = 61;
         public const int D3DRENDERSTATE_SCENECAPTURE = 62;
         public const int D3DRS_DELETERTPATCH = 169;
+        public const int D3DTRANSFORMSTATE_WORLD_DX7 = 1;
         public const int D3DTRANSFORMSTATE_WORLD1_DX7 = 4;
         public const int D3DTRANSFORMSTATE_WORLD2_DX7 = 5;
         public const int D3DTRANSFORMSTATE_WORLD3_DX7 = 6;
-        public const int D3DTRANSFORMSTATE_WORLD_DX7 = 1;
         public const int D3DTSS_TEXTUREMAP = 0;
         public const int D3DVS_ADDRREG_MAX_V1_1 = 1;
         public const int D3DVS_ADDRREG_MAX_V2_0 = 1;
@@ -6293,8 +6288,17 @@
         public const int D3DVS_TEMPREG_MAX_V2_0 = 12;
         public const int D3DVS_TEMPREG_MAX_V2_1 = 32;
         public const int D3DVS_TEMPREG_MAX_V3_0 = 32;
-
+        
         // from <Windows SDK Path>\um\d3dnthal.h
+        public const int _NT_D3DRS_DELETERTPATCH = 169;
+        public const int D3DNTHAL_CONTEXT_BAD = 512;
+        public const int D3DNTHAL_NUMCLIPVERTICES = 20;
+        public const int D3DNTHAL_OUTOFCONTEXTS = 513;
+        public const int D3DNTHAL_SCENE_CAPTURE_END = 1;
+        public const int D3DNTHAL_SCENE_CAPTURE_START = 0;
+        public const int D3DNTHAL_TSS_MAXSTAGES = 8;
+        public const int D3DNTHAL_TSS_RENDERSTATEBASE = 256;
+        public const int D3DNTHAL_TSS_STATESPERSTAGE = 64;
         public const int D3DNTHAL2_CB32_SETRENDERTARGET = 1;
         public const int D3DNTHAL3_CB32_CLEAR2 = 1;
         public const int D3DNTHAL3_CB32_DRAWPRIMITIVES2 = 8;
@@ -6308,23 +6312,11 @@
         public const int D3DNTHALDP2_USERMEMVERTICES = 1;
         public const int D3DNTHALDP2_VIDMEMCOMMANDBUF = 128;
         public const int D3DNTHALDP2_VIDMEMVERTEXBUF = 64;
-        public const int D3DNTHAL_CONTEXT_BAD = 512;
-        public const int D3DNTHAL_NUMCLIPVERTICES = 20;
-        public const int D3DNTHAL_OUTOFCONTEXTS = 513;
-        public const int D3DNTHAL_SCENE_CAPTURE_END = 1;
-        public const int D3DNTHAL_SCENE_CAPTURE_START = 0;
-        public const int D3DNTHAL_TSS_MAXSTAGES = 8;
-        public const int D3DNTHAL_TSS_RENDERSTATEBASE = 256;
-        public const int D3DNTHAL_TSS_STATESPERSTAGE = 64;
-        public const int _NT_D3DRS_DELETERTPATCH = 169;
-
+        
         // from <Windows SDK Path>\um\d3dtypes.h
         public const int D3DCLEAR_STENCIL = 4;
         public const int D3DCLEAR_TARGET = 1;
         public const int D3DCLEAR_ZBUFFER = 2;
-        public const int D3DCLIPSTATUS_EXTENTS2 = 2;
-        public const int D3DCLIPSTATUS_EXTENTS3 = 4;
-        public const int D3DCLIPSTATUS_STATUS = 1;
         public const int D3DCLIP_BACK = 32;
         public const int D3DCLIP_BOTTOM = 8;
         public const int D3DCLIP_FRONT = 16;
@@ -6337,6 +6329,9 @@
         public const int D3DCLIP_LEFT = 1;
         public const int D3DCLIP_RIGHT = 2;
         public const int D3DCLIP_TOP = 4;
+        public const int D3DCLIPSTATUS_EXTENTS2 = 2;
+        public const int D3DCLIPSTATUS_EXTENTS3 = 4;
+        public const int D3DCLIPSTATUS_STATUS = 1;
         public const int D3DCOLOR_MONO = 1;
         public const int D3DCOLOR_RGB = 2;
         public const int D3DDEVINFOID_D3DTEXTUREMANAGER = 2;
@@ -6436,31 +6431,32 @@
         public const int D3DVIS_INSIDE_TOP = 0;
         public const int D3DVIS_INTERSECT_FRUSTUM = 1;
         public const int D3DVIS_OUTSIDE_FRUSTUM = 2;
+        public const int D3DWRAP_U = 1;
+        public const int D3DWRAP_V = 2;
         public const int D3DWRAPCOORD_0 = 1;
         public const int D3DWRAPCOORD_1 = 2;
         public const int D3DWRAPCOORD_2 = 4;
         public const int D3DWRAPCOORD_3 = 8;
-        public const int D3DWRAP_U = 1;
-        public const int D3DWRAP_V = 2;
-
+        
         // from <Windows SDK Path>\um\d3dumddi.h
-        public const int D3DDDIDEVINFOID_VCACHE = 4;
-        public const int D3DDDISETPALETTE_256 = 1;
-        public const int D3DDDISETPALETTE_ALLOW256 = 512;
-        public const int D3DDDISETPALETTE_ALPHA = 8192;
+        public const int _FACD3DDDI = 2166;
         public const int D3DDDI_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS = 16;
         public const int D3DDDI_SETMARKERMODE_CUSTOMDRIVEREVENTS = 1;
         public const long D3DDDI_VERSION64_BUILD16_MASK = 4294901760;
         public const long D3DDDI_VERSION64_MAJOR16_MASK = -281474976710656;
         public const long D3DDDI_VERSION64_MINOR16_MASK = 281470681743360;
         public const long D3DDDI_VERSION64_REVISION16_MASK = 65535;
+        public const int D3DDDIDEVINFOID_VCACHE = 4;
+        public const int D3DDDISETPALETTE_256 = 1;
+        public const int D3DDDISETPALETTE_ALLOW256 = 512;
+        public const int D3DDDISETPALETTE_ALPHA = 8192;
+        public const int DDRAW_CAPS_BLTDEPTHFILL = 4;
+        public const int DDRAW_CAPS_COLORKEY = 2;
+        public const int DDRAW_CAPS_ZBLTS = 1;
         public const int DDRAW_CAPS2_CANDROPZ16BIT = 2;
         public const int DDRAW_CAPS2_DYNAMICTEXTURES = 16;
         public const int DDRAW_CAPS2_FLIPINTERVAL = 4;
         public const int DDRAW_CAPS2_FLIPNOVSYNC = 8;
-        public const int DDRAW_CAPS_BLTDEPTHFILL = 4;
-        public const int DDRAW_CAPS_COLORKEY = 2;
-        public const int DDRAW_CAPS_ZBLTS = 1;
         public const int DDRAW_CKEYCAPS_DESTBLT = 2;
         public const int DDRAW_CKEYCAPS_SRCBLT = 1;
         public const int DDRAW_FXCAPS_BLTMIRRORLEFTRIGHT = 1;
@@ -6478,34 +6474,34 @@
         public const int DXVADDI_DESTDATA_RFF = 1;
         public const int DXVADDI_DESTDATA_RFF_TFF_PRESENT = 4;
         public const int DXVADDI_DESTDATA_TFF = 2;
-        public const int DXVADDI_DETAILFILTERTECH_EDGE = 2;
-        public const int DXVADDI_DETAILFILTERTECH_SHARPENING = 4;
-        public const int DXVADDI_DETAILFILTERTECH_UNKNOWN = 1;
-        public const int DXVADDI_DETAILFILTERTECH_UNSUPPORTED = 0;
         public const int DXVADDI_DETAILFILTER_CHROMALEVEL = 10;
         public const int DXVADDI_DETAILFILTER_CHROMARADIUS = 12;
         public const int DXVADDI_DETAILFILTER_CHROMATHREASHOLD = 11;
         public const int DXVADDI_DETAILFILTER_LUMALEVEL = 7;
         public const int DXVADDI_DETAILFILTER_LUMARADIUS = 9;
         public const int DXVADDI_DETAILFILTER_LUMATHREASHOLD = 8;
+        public const int DXVADDI_DETAILFILTERTECH_EDGE = 2;
+        public const int DXVADDI_DETAILFILTERTECH_SHARPENING = 4;
+        public const int DXVADDI_DETAILFILTERTECH_UNKNOWN = 1;
+        public const int DXVADDI_DETAILFILTERTECH_UNSUPPORTED = 0;
         public const int DXVADDI_EXTENSION_CAPTYPE_MAX = 400;
         public const int DXVADDI_EXTENSION_CAPTYPE_MIN = 300;
         public const int DXVADDI_EXTENSION_CATEGORY_ALL = 7;
         public const int DXVADDI_EXTENSION_CATEGORY_DECODER = 1;
         public const int DXVADDI_EXTENSION_CATEGORY_ENCODER = 2;
         public const int DXVADDI_EXTENSION_CATEGORY_PROCESSOR = 4;
-        public const int DXVADDI_NOISEFILTERTECH_BLOCKNOISE = 8;
-        public const int DXVADDI_NOISEFILTERTECH_MEDIAN = 2;
-        public const int DXVADDI_NOISEFILTERTECH_MOSQUITONOISE = 16;
-        public const int DXVADDI_NOISEFILTERTECH_TEMPORAL = 4;
-        public const int DXVADDI_NOISEFILTERTECH_UNKNOWN = 1;
-        public const int DXVADDI_NOISEFILTERTECH_UNSUPPORTED = 0;
         public const int DXVADDI_NOISEFILTER_CHROMALEVEL = 4;
         public const int DXVADDI_NOISEFILTER_CHROMARADIUS = 6;
         public const int DXVADDI_NOISEFILTER_CHROMATHREASHOLD = 5;
         public const int DXVADDI_NOISEFILTER_LUMALEVEL = 1;
         public const int DXVADDI_NOISEFILTER_LUMARADIUS = 3;
         public const int DXVADDI_NOISEFILTER_LUMATHREASHOLD = 2;
+        public const int DXVADDI_NOISEFILTERTECH_BLOCKNOISE = 8;
+        public const int DXVADDI_NOISEFILTERTECH_MEDIAN = 2;
+        public const int DXVADDI_NOISEFILTERTECH_MOSQUITONOISE = 16;
+        public const int DXVADDI_NOISEFILTERTECH_TEMPORAL = 4;
+        public const int DXVADDI_NOISEFILTERTECH_UNKNOWN = 1;
+        public const int DXVADDI_NOISEFILTERTECH_UNSUPPORTED = 0;
         public const int DXVADDI_PROCAMP_BRIGHTNESS = 1;
         public const int DXVADDI_PROCAMP_CONTRAST = 2;
         public const int DXVADDI_PROCAMP_HUE = 4;
@@ -6544,8 +6540,8 @@
         public const int FORMATOP_NOALPHABLEND = 2097152;
         public const int FORMATOP_NOFILTER = 262144;
         public const int FORMATOP_NOTEXCOORDWRAPNORMIP = 16777216;
-        public const int FORMATOP_OFFSCREENPLAIN = 16384;
         public const int FORMATOP_OFFSCREEN_RENDERTARGET = 8;
+        public const int FORMATOP_OFFSCREENPLAIN = 16384;
         public const int FORMATOP_OVERLAY = 67108864;
         public const int FORMATOP_PIXELSIZE = 4096;
         public const int FORMATOP_PLANAR = 33554432;
@@ -6580,8 +6576,7 @@
         public const int MODE_FXCAPS_OVERLAYSHRINKY = 2;
         public const int MODE_FXCAPS_OVERLAYSTRETCHX = 4;
         public const int MODE_FXCAPS_OVERLAYSTRETCHY = 8;
-        public const int _FACD3DDDI = 2166;
-
+        
         // from <Windows SDK Path>\um\ddkernel.h
         public const int DDIRQ_RESERVED1 = 2;
         public const int DDKERNELCAPS_AUTOFLIP = 2;
@@ -6594,8 +6589,9 @@
         public const int DDKERNELCAPS_LOCK = 8;
         public const int DDKERNELCAPS_SETSTATE = 4;
         public const int DDKERNELCAPS_SKIPFIELDS = 1;
-
+        
         // from <Windows SDK Path>\um\ddkmapi.h
+        public const int DD_FIRST_DXAPI = 1280;
         public const int DDADDBUFF_INVERT = 4;
         public const int DDADDBUFF_NONLOCALVIDMEM = 2;
         public const int DDADDBUFF_SYSTEMMEMORY = 1;
@@ -6624,11 +6620,11 @@
         public const int DDSTATE_SKIPEVENFIELDS = 16;
         public const int DDSTATE_SOFTWARE_AUTOFLIP = 8;
         public const int DDSTATE_WEAVE = 2;
-        public const int DD_FIRST_DXAPI = 1280;
         public const int DXAPI_MAJORVERSION = 1;
         public const int DXAPI_MINORVERSION = 0;
-
+        
         // from <Windows SDK Path>\um\ddraw.h
+        public const int _FACDD = 2166;
         public const int CO_E_NOTINITIALIZED = -2147221008;
         public const int DDBD_1 = 16384;
         public const int DDBD_16 = 1024;
@@ -6637,20 +6633,6 @@
         public const int DDBD_32 = 256;
         public const int DDBD_4 = 4096;
         public const int DDBD_8 = 2048;
-        public const int DDBLTFAST_DESTCOLORKEY = 2;
-        public const int DDBLTFAST_DONOTWAIT = 32;
-        public const int DDBLTFAST_NOCOLORKEY = 0;
-        public const int DDBLTFAST_SRCCOLORKEY = 1;
-        public const int DDBLTFAST_WAIT = 16;
-        public const int DDBLTFX_ARITHSTRETCHY = 1;
-        public const int DDBLTFX_MIRRORLEFTRIGHT = 2;
-        public const int DDBLTFX_MIRRORUPDOWN = 4;
-        public const int DDBLTFX_NOTEARING = 8;
-        public const int DDBLTFX_ROTATE180 = 16;
-        public const int DDBLTFX_ROTATE270 = 32;
-        public const int DDBLTFX_ROTATE90 = 64;
-        public const int DDBLTFX_ZBUFFERBASEDEST = 256;
-        public const int DDBLTFX_ZBUFFERRANGE = 128;
         public const int DDBLT_ALPHADEST = 1;
         public const int DDBLT_ALPHADESTCONSTOVERRIDE = 2;
         public const int DDBLT_ALPHADESTNEG = 4;
@@ -6682,36 +6664,20 @@
         public const int DDBLT_ZBUFFERDESTOVERRIDE = 2097152;
         public const int DDBLT_ZBUFFERSRCCONSTOVERRIDE = 4194304;
         public const int DDBLT_ZBUFFERSRCOVERRIDE = 8388608;
-        public const int DDCAPS2_AUTOFLIPOVERLAY = 8;
-        public const int DDCAPS2_CANAUTOGENMIPMAP = 1073741824;
-        public const int DDCAPS2_CANBOBHARDWARE = 16384;
-        public const int DDCAPS2_CANBOBINTERLEAVED = 16;
-        public const int DDCAPS2_CANBOBNONINTERLEAVED = 32;
-        public const int DDCAPS2_CANCALIBRATEGAMMA = 1048576;
-        public const int DDCAPS2_CANDROPZ16BIT = 256;
-        public const int DDCAPS2_CANFLIPODDEVEN = 8192;
-        public const int DDCAPS2_CANMANAGERESOURCE = 268435456;
-        public const int DDCAPS2_CANMANAGETEXTURE = 8388608;
-        public const int DDCAPS2_CANRENDERWINDOWED = 524288;
-        public const int DDCAPS2_CANSHARERESOURCE = -2147483648;
-        public const int DDCAPS2_CERTIFIED = 1;
-        public const int DDCAPS2_COLORCONTROLOVERLAY = 64;
-        public const int DDCAPS2_COLORCONTROLPRIMARY = 128;
-        public const int DDCAPS2_COPYFOURCC = 32768;
-        public const int DDCAPS2_DYNAMICTEXTURES = 536870912;
-        public const int DDCAPS2_FLIPINTERVAL = 2097152;
-        public const int DDCAPS2_FLIPNOVSYNC = 4194304;
-        public const int DDCAPS2_NO2DDURING3DSCENE = 2;
-        public const int DDCAPS2_NONLOCALVIDMEM = 512;
-        public const int DDCAPS2_NONLOCALVIDMEMCAPS = 1024;
-        public const int DDCAPS2_NOPAGELOCKREQUIRED = 2048;
-        public const int DDCAPS2_PRIMARYGAMMA = 131072;
-        public const int DDCAPS2_RESERVED1 = 134217728;
-        public const int DDCAPS2_STEREO = 33554432;
-        public const int DDCAPS2_SYSTONONLOCAL_AS_SYSTOLOCAL = 67108864;
-        public const int DDCAPS2_TEXMANINNONLOCALVIDMEM = 16777216;
-        public const int DDCAPS2_VIDEOPORT = 4;
-        public const int DDCAPS2_WIDESURFACES = 4096;
+        public const int DDBLTFAST_DESTCOLORKEY = 2;
+        public const int DDBLTFAST_DONOTWAIT = 32;
+        public const int DDBLTFAST_NOCOLORKEY = 0;
+        public const int DDBLTFAST_SRCCOLORKEY = 1;
+        public const int DDBLTFAST_WAIT = 16;
+        public const int DDBLTFX_ARITHSTRETCHY = 1;
+        public const int DDBLTFX_MIRRORLEFTRIGHT = 2;
+        public const int DDBLTFX_MIRRORUPDOWN = 4;
+        public const int DDBLTFX_NOTEARING = 8;
+        public const int DDBLTFX_ROTATE180 = 16;
+        public const int DDBLTFX_ROTATE270 = 32;
+        public const int DDBLTFX_ROTATE90 = 64;
+        public const int DDBLTFX_ZBUFFERBASEDEST = 256;
+        public const int DDBLTFX_ZBUFFERRANGE = 128;
         public const int DDCAPS_3D = 1;
         public const int DDCAPS_ALIGNBOUNDARYDEST = 2;
         public const int DDCAPS_ALIGNBOUNDARYSRC = 8;
@@ -6744,6 +6710,41 @@
         public const int DDCAPS_VBI = 524288;
         public const int DDCAPS_ZBLTS = 1048576;
         public const int DDCAPS_ZOVERLAYS = 2097152;
+        public const int DDCAPS2_AUTOFLIPOVERLAY = 8;
+        public const int DDCAPS2_CANAUTOGENMIPMAP = 1073741824;
+        public const int DDCAPS2_CANBOBHARDWARE = 16384;
+        public const int DDCAPS2_CANBOBINTERLEAVED = 16;
+        public const int DDCAPS2_CANBOBNONINTERLEAVED = 32;
+        public const int DDCAPS2_CANCALIBRATEGAMMA = 1048576;
+        public const int DDCAPS2_CANDROPZ16BIT = 256;
+        public const int DDCAPS2_CANFLIPODDEVEN = 8192;
+        public const int DDCAPS2_CANMANAGERESOURCE = 268435456;
+        public const int DDCAPS2_CANMANAGETEXTURE = 8388608;
+        public const int DDCAPS2_CANRENDERWINDOWED = 524288;
+        public const int DDCAPS2_CANSHARERESOURCE = -2147483648;
+        public const int DDCAPS2_CERTIFIED = 1;
+        public const int DDCAPS2_COLORCONTROLOVERLAY = 64;
+        public const int DDCAPS2_COLORCONTROLPRIMARY = 128;
+        public const int DDCAPS2_COPYFOURCC = 32768;
+        public const int DDCAPS2_DYNAMICTEXTURES = 536870912;
+        public const int DDCAPS2_FLIPINTERVAL = 2097152;
+        public const int DDCAPS2_FLIPNOVSYNC = 4194304;
+        public const int DDCAPS2_NO2DDURING3DSCENE = 2;
+        public const int DDCAPS2_NONLOCALVIDMEM = 512;
+        public const int DDCAPS2_NONLOCALVIDMEMCAPS = 1024;
+        public const int DDCAPS2_NOPAGELOCKREQUIRED = 2048;
+        public const int DDCAPS2_PRIMARYGAMMA = 131072;
+        public const int DDCAPS2_RESERVED1 = 134217728;
+        public const int DDCAPS2_STEREO = 33554432;
+        public const int DDCAPS2_SYSTONONLOCAL_AS_SYSTOLOCAL = 67108864;
+        public const int DDCAPS2_TEXMANINNONLOCALVIDMEM = 16777216;
+        public const int DDCAPS2_VIDEOPORT = 4;
+        public const int DDCAPS2_WIDESURFACES = 4096;
+        public const int DDCKEY_COLORSPACE = 1;
+        public const int DDCKEY_DESTBLT = 2;
+        public const int DDCKEY_DESTOVERLAY = 4;
+        public const int DDCKEY_SRCBLT = 8;
+        public const int DDCKEY_SRCOVERLAY = 16;
         public const int DDCKEYCAPS_DESTBLT = 1;
         public const int DDCKEYCAPS_DESTBLTCLRSPACE = 2;
         public const int DDCKEYCAPS_DESTBLTCLRSPACEYUV = 4;
@@ -6763,11 +6764,6 @@
         public const int DDCKEYCAPS_SRCOVERLAYCLRSPACEYUV = 32768;
         public const int DDCKEYCAPS_SRCOVERLAYONEACTIVE = 65536;
         public const int DDCKEYCAPS_SRCOVERLAYYUV = 131072;
-        public const int DDCKEY_COLORSPACE = 1;
-        public const int DDCKEY_DESTBLT = 2;
-        public const int DDCKEY_DESTOVERLAY = 4;
-        public const int DDCKEY_SRCBLT = 8;
-        public const int DDCKEY_SRCOVERLAY = 16;
         public const int DDCOLOR_BRIGHTNESS = 1;
         public const int DDCOLOR_COLORENABLE = 64;
         public const int DDCOLOR_CONTRAST = 2;
@@ -6781,6 +6777,9 @@
         public const int DDEDM_STANDARDVGAMODES = 2;
         public const int DDEM_MODEFAILED = 2;
         public const int DDEM_MODEPASSED = 1;
+        public const int DDENUM_ATTACHEDSECONDARYDEVICES = 1;
+        public const int DDENUM_DETACHEDSECONDARYDEVICES = 2;
+        public const int DDENUM_NONDISPLAYDEVICES = 4;
         public const int DDENUMOVERLAYZ_BACKTOFRONT = 0;
         public const int DDENUMOVERLAYZ_FRONTTOBACK = 1;
         public const int DDENUMRET_CANCEL = 0;
@@ -6790,9 +6789,6 @@
         public const int DDENUMSURFACES_DOESEXIST = 16;
         public const int DDENUMSURFACES_MATCH = 2;
         public const int DDENUMSURFACES_NOMATCH = 4;
-        public const int DDENUM_ATTACHEDSECONDARYDEVICES = 1;
-        public const int DDENUM_DETACHEDSECONDARYDEVICES = 2;
-        public const int DDENUM_NONDISPLAYDEVICES = 4;
         public const int DDFLIP_DONOTWAIT = 32;
         public const int DDFLIP_EVEN = 2;
         public const int DDFLIP_INTERVAL2 = 33554432;
@@ -6858,26 +6854,16 @@
         public const int DDLOCK_SURFACEMEMORYPTR = 0;
         public const int DDLOCK_WAIT = 1;
         public const int DDLOCK_WRITEONLY = 32;
-        public const int DDOSDCAPS_MONOLITHICMIPMAP = 4;
-        public const int DDOSDCAPS_OPTCOMPRESSED = 1;
-        public const int DDOSDCAPS_OPTREORDERED = 2;
-        public const int DDOSDCAPS_VALIDOSCAPS = 7;
-        public const int DDOSDCAPS_VALIDSCAPS = 805324800;
         public const int DDOSD_ALL = 15;
         public const int DDOSD_COMPRESSION_RATIO = 2;
         public const int DDOSD_GUID = 1;
         public const int DDOSD_OSCAPS = 8;
         public const int DDOSD_SCAPS = 4;
-        public const int DDOVERFX_ARITHSTRETCHY = 1;
-        public const int DDOVERFX_DEINTERLACE = 8;
-        public const int DDOVERFX_MIRRORLEFTRIGHT = 2;
-        public const int DDOVERFX_MIRRORUPDOWN = 4;
-        public const int DDOVERZ_INSERTINBACKOF = 5;
-        public const int DDOVERZ_INSERTINFRONTOF = 4;
-        public const int DDOVERZ_MOVEBACKWARD = 3;
-        public const int DDOVERZ_MOVEFORWARD = 2;
-        public const int DDOVERZ_SENDTOBACK = 1;
-        public const int DDOVERZ_SENDTOFRONT = 0;
+        public const int DDOSDCAPS_MONOLITHICMIPMAP = 4;
+        public const int DDOSDCAPS_OPTCOMPRESSED = 1;
+        public const int DDOSDCAPS_OPTREORDERED = 2;
+        public const int DDOSDCAPS_VALIDOSCAPS = 7;
+        public const int DDOSDCAPS_VALIDSCAPS = 805324800;
         public const int DDOVER_ADDDIRTYRECT = 32768;
         public const int DDOVER_ALPHADEST = 1;
         public const int DDOVER_ALPHADESTCONSTOVERRIDE = 2;
@@ -6904,6 +6890,16 @@
         public const int DDOVER_REFRESHALL = 131072;
         public const int DDOVER_REFRESHDIRTYRECTS = 65536;
         public const int DDOVER_SHOW = 16384;
+        public const int DDOVERFX_ARITHSTRETCHY = 1;
+        public const int DDOVERFX_DEINTERLACE = 8;
+        public const int DDOVERFX_MIRRORLEFTRIGHT = 2;
+        public const int DDOVERFX_MIRRORUPDOWN = 4;
+        public const int DDOVERZ_INSERTINBACKOF = 5;
+        public const int DDOVERZ_INSERTINFRONTOF = 4;
+        public const int DDOVERZ_MOVEBACKWARD = 3;
+        public const int DDOVERZ_MOVEFORWARD = 2;
+        public const int DDOVERZ_SENDTOBACK = 1;
+        public const int DDOVERZ_SENDTOFRONT = 0;
         public const int DDPCAPS_1BIT = 256;
         public const int DDPCAPS_2BIT = 512;
         public const int DDPCAPS_4BIT = 1;
@@ -6934,6 +6930,37 @@
         public const int DDPF_YUV = 512;
         public const int DDPF_ZBUFFER = 1024;
         public const int DDPF_ZPIXELS = 8192;
+        public const int DDSCAPS_3DDEVICE = 8192;
+        public const int DDSCAPS_ALLOCONLOAD = 67108864;
+        public const int DDSCAPS_ALPHA = 2;
+        public const int DDSCAPS_BACKBUFFER = 4;
+        public const int DDSCAPS_COMPLEX = 8;
+        public const int DDSCAPS_FLIP = 16;
+        public const int DDSCAPS_FRONTBUFFER = 32;
+        public const int DDSCAPS_HWCODEC = 1048576;
+        public const int DDSCAPS_LIVEVIDEO = 524288;
+        public const int DDSCAPS_LOCALVIDMEM = 268435456;
+        public const int DDSCAPS_MIPMAP = 4194304;
+        public const int DDSCAPS_MODEX = 2097152;
+        public const int DDSCAPS_NONLOCALVIDMEM = 536870912;
+        public const int DDSCAPS_OFFSCREENPLAIN = 64;
+        public const int DDSCAPS_OPTIMIZED = -2147483648;
+        public const int DDSCAPS_OVERLAY = 128;
+        public const int DDSCAPS_OWNDC = 262144;
+        public const int DDSCAPS_PALETTE = 256;
+        public const int DDSCAPS_PRIMARYSURFACE = 512;
+        public const int DDSCAPS_PRIMARYSURFACELEFT = 0;
+        public const int DDSCAPS_RESERVED1 = 1;
+        public const int DDSCAPS_RESERVED2 = 8388608;
+        public const int DDSCAPS_RESERVED3 = 1024;
+        public const int DDSCAPS_STANDARDVGAMODE = 1073741824;
+        public const int DDSCAPS_SYSTEMMEMORY = 2048;
+        public const int DDSCAPS_TEXTURE = 4096;
+        public const int DDSCAPS_VIDEOMEMORY = 16384;
+        public const int DDSCAPS_VIDEOPORT = 134217728;
+        public const int DDSCAPS_VISIBLE = 32768;
+        public const int DDSCAPS_WRITEONLY = 65536;
+        public const int DDSCAPS_ZBUFFER = 131072;
         public const int DDSCAPS2_ADDITIONALPRIMARY = -2147483648;
         public const int DDSCAPS2_CUBEMAP = 512;
         public const int DDSCAPS2_CUBEMAP_NEGATIVEX = 2048;
@@ -6975,37 +7002,6 @@
         public const int DDSCAPS3_READONLYRESOURCE = 16384;
         public const int DDSCAPS3_RESERVED1 = 256;
         public const int DDSCAPS3_RESERVED2 = 512;
-        public const int DDSCAPS_3DDEVICE = 8192;
-        public const int DDSCAPS_ALLOCONLOAD = 67108864;
-        public const int DDSCAPS_ALPHA = 2;
-        public const int DDSCAPS_BACKBUFFER = 4;
-        public const int DDSCAPS_COMPLEX = 8;
-        public const int DDSCAPS_FLIP = 16;
-        public const int DDSCAPS_FRONTBUFFER = 32;
-        public const int DDSCAPS_HWCODEC = 1048576;
-        public const int DDSCAPS_LIVEVIDEO = 524288;
-        public const int DDSCAPS_LOCALVIDMEM = 268435456;
-        public const int DDSCAPS_MIPMAP = 4194304;
-        public const int DDSCAPS_MODEX = 2097152;
-        public const int DDSCAPS_NONLOCALVIDMEM = 536870912;
-        public const int DDSCAPS_OFFSCREENPLAIN = 64;
-        public const int DDSCAPS_OPTIMIZED = -2147483648;
-        public const int DDSCAPS_OVERLAY = 128;
-        public const int DDSCAPS_OWNDC = 262144;
-        public const int DDSCAPS_PALETTE = 256;
-        public const int DDSCAPS_PRIMARYSURFACE = 512;
-        public const int DDSCAPS_PRIMARYSURFACELEFT = 0;
-        public const int DDSCAPS_RESERVED1 = 1;
-        public const int DDSCAPS_RESERVED2 = 8388608;
-        public const int DDSCAPS_RESERVED3 = 1024;
-        public const int DDSCAPS_STANDARDVGAMODE = 1073741824;
-        public const int DDSCAPS_SYSTEMMEMORY = 2048;
-        public const int DDSCAPS_TEXTURE = 4096;
-        public const int DDSCAPS_VIDEOMEMORY = 16384;
-        public const int DDSCAPS_VIDEOPORT = 134217728;
-        public const int DDSCAPS_VISIBLE = 32768;
-        public const int DDSCAPS_WRITEONLY = 65536;
-        public const int DDSCAPS_ZBUFFER = 131072;
         public const int DDSCL_ALLOWMODEX = 64;
         public const int DDSCL_ALLOWREBOOT = 2;
         public const int DDSCL_CREATEDEVICEWINDOW = 512;
@@ -7018,7 +7014,6 @@
         public const int DDSCL_NOWINDOWCHANGES = 4;
         public const int DDSCL_SETDEVICEWINDOW = 256;
         public const int DDSCL_SETFOCUSWINDOW = 128;
-        public const int DDSDM_STANDARDVGAMODE = 1;
         public const int DDSD_ALL = 16775662;
         public const int DDSD_ALPHABITDEPTH = 128;
         public const int DDSD_BACKBUFFERCOUNT = 32;
@@ -7040,6 +7035,7 @@
         public const int DDSD_TEXTURESTAGE = 1048576;
         public const int DDSD_WIDTH = 4;
         public const int DDSD_ZBUFFERBITDEPTH = 64;
+        public const int DDSDM_STANDARDVGAMODE = 1;
         public const int DDSGR_CALIBRATE = 1;
         public const int DDSMT_ISTESTREQUIRED = 1;
         public const int DDSPD_IUNKNOWNPOINTER = 1;
@@ -7054,8 +7050,7 @@
         public const int DDWAITVB_BLOCKEND = 4;
         public const int DIRECTDRAW_VERSION = 1792;
         public const int MAX_DDDEVICEID_STRING = 512;
-        public const int _FACDD = 2166;
-
+        
         // from <Windows SDK Path>\um\ddrawi.h
         public const int ACCESSRECT_BROKEN = 4;
         public const int ACCESSRECT_NOTHOLDINGWIN16LOCK = 2;
@@ -7078,8 +7073,8 @@
         public const int D3DFORMAT_OP_NOALPHABLEND = 2097152;
         public const int D3DFORMAT_OP_NOFILTER = 262144;
         public const int D3DFORMAT_OP_NOTEXCOORDWRAPNORMIP = 16777216;
-        public const int D3DFORMAT_OP_OFFSCREENPLAIN = 16384;
         public const int D3DFORMAT_OP_OFFSCREEN_RENDERTARGET = 8;
+        public const int D3DFORMAT_OP_OFFSCREENPLAIN = 16384;
         public const int D3DFORMAT_OP_PIXELSIZE = 4096;
         public const int D3DFORMAT_OP_SAME_FORMAT_RENDERTARGET = 16;
         public const int D3DFORMAT_OP_SAME_FORMAT_UP_TO_ALPHA_RENDERTARGET = 256;
@@ -7091,13 +7086,12 @@
         public const int D3DFORMAT_OP_ZSTENCIL = 64;
         public const int D3DFORMAT_OP_ZSTENCIL_WITH_ARBITRARY_COLOR_DEPTH = 128;
         public const int DCICOMMAND = 3075;
+        public const int DD_HAL_VERSION = 256;
+        public const int DD_RUNTIME_VERSION = 2306;
+        public const int DD_VERSION = 512;
         public const int DDAL_IMPLICIT = 1;
         public const int DDCREATEDRIVEROBJECT = 10;
         public const int DDGET32BITDRIVERNAME = 11;
-        public const int DDHALINFO_GETDRIVERINFO2 = 8;
-        public const int DDHALINFO_GETDRIVERINFOSET = 4;
-        public const int DDHALINFO_ISPRIMARYDISPLAY = 1;
-        public const int DDHALINFO_MODEXILLEGAL = 2;
         public const int DDHAL_CB32_CANCREATESURFACE = 32;
         public const int DDHAL_CB32_CREATEPALETTE = 64;
         public const int DDHAL_CB32_CREATESURFACE = 2;
@@ -7169,6 +7163,10 @@
         public const int DDHAL_VPORT32_GETSIGNALSTATUS = 16384;
         public const int DDHAL_VPORT32_UPDATE = 4096;
         public const int DDHAL_VPORT32_WAITFORSYNC = 8192;
+        public const int DDHALINFO_GETDRIVERINFO2 = 8;
+        public const int DDHALINFO_GETDRIVERINFOSET = 4;
+        public const int DDHALINFO_ISPRIMARYDISPLAY = 1;
+        public const int DDHALINFO_MODEXILLEGAL = 2;
         public const int DDMCQUERY_READ = 1;
         public const int DDMODEINFO_MAXREFRESH = 16;
         public const int DDMODEINFO_MODEX = 2;
@@ -7179,6 +7177,43 @@
         public const int DDNEWCALLBACKFNS = 12;
         public const int DDPF_D3DFORMAT = 2097152;
         public const int DDPF_NOVEL_TEXTURE_FORMAT = 1048576;
+        public const int DDRAWI_ATTACHEDTODESKTOP = 16777216;
+        public const int DDRAWI_BADPDEV = 1073741824;
+        public const int DDRAWI_CHANGINGMODE = 4194304;
+        public const int DDRAWI_DDRAWDATANOTFETCHED = 67108864;
+        public const int DDRAWI_DISPLAYDRV = 32;
+        public const int DDRAWI_DRIVERINFO2 = 536870912;
+        public const int DDRAWI_EMULATIONINITIALIZED = 16384;
+        public const int DDRAWI_EXTENDEDALIGNMENT = 2097152;
+        public const int DDRAWI_FLIPPEDTOGDI = 131072;
+        public const int DDRAWI_FULLSCREEN = 64;
+        public const int DDRAWI_GDIDRV = 8388608;
+        public const int DDRAWI_GETCOLOR = 1;
+        public const int DDRAWI_HASCKEYDESTOVERLAY = 2048;
+        public const int DDRAWI_HASCKEYSRCOVERLAY = 4096;
+        public const int DDRAWI_HASGDIPALETTE = 8192;
+        public const int DDRAWI_HASGDIPALETTE_EXCLUSIVE = 32768;
+        public const int DDRAWI_MODECHANGED = 128;
+        public const int DDRAWI_MODEX = 16;
+        public const int DDRAWI_MODEXILLEGAL = 65536;
+        public const int DDRAWI_NEEDSWIN16FORVRAMLOCK = 262144;
+        public const int DDRAWI_NOEMULATION = 1024;
+        public const int DDRAWI_NOHARDWARE = 256;
+        public const int DDRAWI_PALETTEINIT = 512;
+        public const int DDRAWI_PDEVICEVRAMBITCLEARED = 524288;
+        public const int DDRAWI_SECONDARYDRIVERLOADED = 134217728;
+        public const int DDRAWI_SETCOLOR = 2;
+        public const int DDRAWI_STANDARDVGA = 1048576;
+        public const int DDRAWI_TESTINGMODES = 268435456;
+        public const int DDRAWI_UMODELOADED = 33554432;
+        public const int DDRAWI_VIRTUALDESKTOP = 8;
+        public const int DDRAWI_VPORTGETCOLOR = 1;
+        public const int DDRAWI_VPORTSETCOLOR = 2;
+        public const int DDRAWI_VPORTSTART = 1;
+        public const int DDRAWI_VPORTSTOP = 2;
+        public const int DDRAWI_VPORTUPDATE = 3;
+        public const int DDRAWI_xxxxxxxxx1 = 1;
+        public const int DDRAWI_xxxxxxxxx2 = 2;
         public const int DDRAWICLIP_INMASTERSPRITELIST = 4;
         public const int DDRAWICLIP_ISINITIALIZED = 2;
         public const int DDRAWICLIP_WATCHWINDOW = 1;
@@ -7218,27 +7253,6 @@
         public const int DDRAWIPAL_STORED_24 = 32;
         public const int DDRAWIPAL_STORED_8 = 8;
         public const int DDRAWIPAL_STORED_8INDEX = 4096;
-        public const int DDRAWISURFGBL_DDHELDONTFREE = 1048576;
-        public const int DDRAWISURFGBL_DX8SURFACE = 524288;
-        public const int DDRAWISURFGBL_FASTLOCKHELD = 32768;
-        public const int DDRAWISURFGBL_HARDWAREOPDEST = 1024;
-        public const int DDRAWISURFGBL_HARDWAREOPSOURCE = 512;
-        public const int DDRAWISURFGBL_IMPLICITHANDLE = 128;
-        public const int DDRAWISURFGBL_ISCLIENTMEM = 256;
-        public const int DDRAWISURFGBL_ISGDISURFACE = 4;
-        public const int DDRAWISURFGBL_LATEALLOCATELINEAR = 8192;
-        public const int DDRAWISURFGBL_LOCKBROKEN = 64;
-        public const int DDRAWISURFGBL_LOCKNOTHOLDINGWIN16LOCK = 16;
-        public const int DDRAWISURFGBL_LOCKVRAMSTYLE = 32;
-        public const int DDRAWISURFGBL_MEMFREE = 1;
-        public const int DDRAWISURFGBL_NOTIFYWHENUNLOCKED = 2097152;
-        public const int DDRAWISURFGBL_READONLYLOCKHELD = 65536;
-        public const int DDRAWISURFGBL_RESERVED0 = -2147483648;
-        public const int DDRAWISURFGBL_SOFTWAREAUTOFLIP = 8;
-        public const int DDRAWISURFGBL_SYSMEMEXECUTEBUFFER = 16384;
-        public const int DDRAWISURFGBL_SYSMEMREQUESTED = 2;
-        public const int DDRAWISURFGBL_VPORTDATA = 4096;
-        public const int DDRAWISURFGBL_VPORTINTERLEAVED = 2048;
         public const int DDRAWISURF_ATTACHED = 1;
         public const int DDRAWISURF_ATTACHED_FROM = 8;
         public const int DDRAWISURF_BACKBUFFER = 134217728;
@@ -7273,6 +7287,27 @@
         public const int DDRAWISURF_SW_CKEYDESTOVERLAY = 65536;
         public const int DDRAWISURF_SW_CKEYSRCBLT = 524288;
         public const int DDRAWISURF_SW_CKEYSRCOVERLAY = 262144;
+        public const int DDRAWISURFGBL_DDHELDONTFREE = 1048576;
+        public const int DDRAWISURFGBL_DX8SURFACE = 524288;
+        public const int DDRAWISURFGBL_FASTLOCKHELD = 32768;
+        public const int DDRAWISURFGBL_HARDWAREOPDEST = 1024;
+        public const int DDRAWISURFGBL_HARDWAREOPSOURCE = 512;
+        public const int DDRAWISURFGBL_IMPLICITHANDLE = 128;
+        public const int DDRAWISURFGBL_ISCLIENTMEM = 256;
+        public const int DDRAWISURFGBL_ISGDISURFACE = 4;
+        public const int DDRAWISURFGBL_LATEALLOCATELINEAR = 8192;
+        public const int DDRAWISURFGBL_LOCKBROKEN = 64;
+        public const int DDRAWISURFGBL_LOCKNOTHOLDINGWIN16LOCK = 16;
+        public const int DDRAWISURFGBL_LOCKVRAMSTYLE = 32;
+        public const int DDRAWISURFGBL_MEMFREE = 1;
+        public const int DDRAWISURFGBL_NOTIFYWHENUNLOCKED = 2097152;
+        public const int DDRAWISURFGBL_READONLYLOCKHELD = 65536;
+        public const int DDRAWISURFGBL_RESERVED0 = -2147483648;
+        public const int DDRAWISURFGBL_SOFTWAREAUTOFLIP = 8;
+        public const int DDRAWISURFGBL_SYSMEMEXECUTEBUFFER = 16384;
+        public const int DDRAWISURFGBL_SYSMEMREQUESTED = 2;
+        public const int DDRAWISURFGBL_VPORTDATA = 4096;
+        public const int DDRAWISURFGBL_VPORTINTERLEAVED = 2048;
         public const int DDRAWIVPORT_COLORKEYANDINTERP = 4;
         public const int DDRAWIVPORT_NOKERNELHANDLES = 8;
         public const int DDRAWIVPORT_ON = 1;
@@ -7280,48 +7315,8 @@
         public const int DDRAWIVPORT_SOFTWARE_BOB = 16;
         public const int DDRAWIVPORT_VBION = 32;
         public const int DDRAWIVPORT_VIDEOON = 64;
-        public const int DDRAWI_ATTACHEDTODESKTOP = 16777216;
-        public const int DDRAWI_BADPDEV = 1073741824;
-        public const int DDRAWI_CHANGINGMODE = 4194304;
-        public const int DDRAWI_DDRAWDATANOTFETCHED = 67108864;
-        public const int DDRAWI_DISPLAYDRV = 32;
-        public const int DDRAWI_DRIVERINFO2 = 536870912;
-        public const int DDRAWI_EMULATIONINITIALIZED = 16384;
-        public const int DDRAWI_EXTENDEDALIGNMENT = 2097152;
-        public const int DDRAWI_FLIPPEDTOGDI = 131072;
-        public const int DDRAWI_FULLSCREEN = 64;
-        public const int DDRAWI_GDIDRV = 8388608;
-        public const int DDRAWI_GETCOLOR = 1;
-        public const int DDRAWI_HASCKEYDESTOVERLAY = 2048;
-        public const int DDRAWI_HASCKEYSRCOVERLAY = 4096;
-        public const int DDRAWI_HASGDIPALETTE = 8192;
-        public const int DDRAWI_HASGDIPALETTE_EXCLUSIVE = 32768;
-        public const int DDRAWI_MODECHANGED = 128;
-        public const int DDRAWI_MODEX = 16;
-        public const int DDRAWI_MODEXILLEGAL = 65536;
-        public const int DDRAWI_NEEDSWIN16FORVRAMLOCK = 262144;
-        public const int DDRAWI_NOEMULATION = 1024;
-        public const int DDRAWI_NOHARDWARE = 256;
-        public const int DDRAWI_PALETTEINIT = 512;
-        public const int DDRAWI_PDEVICEVRAMBITCLEARED = 524288;
-        public const int DDRAWI_SECONDARYDRIVERLOADED = 134217728;
-        public const int DDRAWI_SETCOLOR = 2;
-        public const int DDRAWI_STANDARDVGA = 1048576;
-        public const int DDRAWI_TESTINGMODES = 268435456;
-        public const int DDRAWI_UMODELOADED = 33554432;
-        public const int DDRAWI_VIRTUALDESKTOP = 8;
-        public const int DDRAWI_VPORTGETCOLOR = 1;
-        public const int DDRAWI_VPORTSETCOLOR = 2;
-        public const int DDRAWI_VPORTSTART = 1;
-        public const int DDRAWI_VPORTSTOP = 2;
-        public const int DDRAWI_VPORTUPDATE = 3;
-        public const int DDRAWI_xxxxxxxxx1 = 1;
-        public const int DDRAWI_xxxxxxxxx2 = 2;
         public const int DDVERSIONINFO = 13;
         public const int DDWAITVB_I_TESTVB = -2147483642;
-        public const int DD_HAL_VERSION = 256;
-        public const int DD_RUNTIME_VERSION = 2306;
-        public const int DD_VERSION = 512;
         public const int DELETED_LASTONE = 1;
         public const int DELETED_NOTFOUND = 2;
         public const int DELETED_OK = 0;
@@ -7339,7 +7334,7 @@
         public const int VIDMEM_ISNONLOCAL = 8;
         public const int VIDMEM_ISRECTANGULAR = 2;
         public const int VIDMEM_ISWC = 16;
-
+        
         // from <Windows SDK Path>\um\ddrawint.h
         public const int DDABLT_SRCOVERDEST = 1;
         public const int DDBLT_AFLAGS = -2147483648;
@@ -7354,23 +7349,59 @@
         public const int DDHAL_PRIVATECAP_NOTIFYPRIMARYCREATION = 2;
         public const int DDHAL_PRIVATECAP_RESERVED1 = 4;
         public const int DDHAL_VPORT32_GETAUTOFLIPSURF = 64;
-
+        
         // from <Windows SDK Path>\um\dmemmgr.h
         public const int SURFACEALIGN_DISCARDABLE = 1;
         public const int VMEMHEAP_ALIGNMENT = 4;
         public const int VMEMHEAP_LINEAR = 1;
         public const int VMEMHEAP_RECTANGULAR = 2;
-
+        
         // from <Windows SDK Path>\um\dshow.h
         public const int OAFALSE = 0;
-
+        
         // from <Windows SDK Path>\um\dshowasf.h
         public const int EC_PREPROCESS_COMPLETE = 86;
-
+        
         // from <Windows SDK Path>\um\dvdevcod.h
         public const int EC_DVDBASE = 256;
-
+        
         // from <Windows SDK Path>\um\dvdmedia.h
+        public const int AM_AC3_ALTERNATE_AUDIO_1 = 1;
+        public const int AM_AC3_ALTERNATE_AUDIO_2 = 2;
+        public const int AM_AC3_ALTERNATE_AUDIO_BOTH = 3;
+        public const int AM_AC3_SERVICE_COMMENTARY = 5;
+        public const int AM_AC3_SERVICE_DIALOG_ONLY = 4;
+        public const int AM_AC3_SERVICE_EMERGENCY_FLASH = 6;
+        public const int AM_AC3_SERVICE_HEARING_IMPAIRED = 3;
+        public const int AM_AC3_SERVICE_MAIN_AUDIO = 0;
+        public const int AM_AC3_SERVICE_NO_DIALOG = 1;
+        public const int AM_AC3_SERVICE_VISUALLY_IMPAIRED = 2;
+        public const int AM_AC3_SERVICE_VOICE_OVER = 7;
+        public const int AM_DVD_CGMS_COPY_ONCE = 16;
+        public const int AM_DVD_CGMS_COPY_PERMITTED = 0;
+        public const int AM_DVD_CGMS_COPY_PROTECT_MASK = 24;
+        public const int AM_DVD_CGMS_NO_COPY = 24;
+        public const int AM_DVD_CGMS_RESERVED_MASK = 120;
+        public const int AM_DVD_COPYRIGHT_MASK = 64;
+        public const int AM_DVD_COPYRIGHTED = 64;
+        public const int AM_DVD_NOT_COPYRIGHTED = 0;
+        public const int AM_DVD_SECTOR_NOT_PROTECTED = 0;
+        public const int AM_DVD_SECTOR_PROTECT_MASK = 32;
+        public const int AM_DVD_SECTOR_PROTECTED = 32;
+        public const int AM_ReverseBlockEnd = 4;
+        public const int AM_ReverseBlockStart = 2;
+        public const int AM_UseNewCSSKey = 1;
+        public const int AM_VIDEO_FLAG_B_SAMPLE = 32;
+        public const int AM_VIDEO_FLAG_FIELD_MASK = 3;
+        public const int AM_VIDEO_FLAG_FIELD1 = 1;
+        public const int AM_VIDEO_FLAG_FIELD1FIRST = 4;
+        public const int AM_VIDEO_FLAG_FIELD2 = 2;
+        public const int AM_VIDEO_FLAG_I_SAMPLE = 0;
+        public const int AM_VIDEO_FLAG_INTERLEAVED_FRAME = 0;
+        public const int AM_VIDEO_FLAG_IPB_MASK = 48;
+        public const int AM_VIDEO_FLAG_P_SAMPLE = 16;
+        public const int AM_VIDEO_FLAG_REPEAT_FIELD = 64;
+        public const int AM_VIDEO_FLAG_WEAVE = 8;
         public const int AMCONTROL_COLORINFO_PRESENT = 128;
         public const int AMCONTROL_PAD_TO_16x9 = 4;
         public const int AMCONTROL_PAD_TO_4x3 = 2;
@@ -7399,49 +7430,29 @@
         public const int AMMPEG2_LetterboxAnalogOut = 32;
         public const int AMMPEG2_SourceIsLetterboxed = 8;
         public const int AMMPEG2_WidescreenAnalogOut = 512;
-        public const int AM_AC3_ALTERNATE_AUDIO_1 = 1;
-        public const int AM_AC3_ALTERNATE_AUDIO_2 = 2;
-        public const int AM_AC3_ALTERNATE_AUDIO_BOTH = 3;
-        public const int AM_AC3_SERVICE_COMMENTARY = 5;
-        public const int AM_AC3_SERVICE_DIALOG_ONLY = 4;
-        public const int AM_AC3_SERVICE_EMERGENCY_FLASH = 6;
-        public const int AM_AC3_SERVICE_HEARING_IMPAIRED = 3;
-        public const int AM_AC3_SERVICE_MAIN_AUDIO = 0;
-        public const int AM_AC3_SERVICE_NO_DIALOG = 1;
-        public const int AM_AC3_SERVICE_VISUALLY_IMPAIRED = 2;
-        public const int AM_AC3_SERVICE_VOICE_OVER = 7;
-        public const int AM_DVD_CGMS_COPY_ONCE = 16;
-        public const int AM_DVD_CGMS_COPY_PERMITTED = 0;
-        public const int AM_DVD_CGMS_COPY_PROTECT_MASK = 24;
-        public const int AM_DVD_CGMS_NO_COPY = 24;
-        public const int AM_DVD_CGMS_RESERVED_MASK = 120;
-        public const int AM_DVD_COPYRIGHTED = 64;
-        public const int AM_DVD_COPYRIGHT_MASK = 64;
-        public const int AM_DVD_NOT_COPYRIGHTED = 0;
-        public const int AM_DVD_SECTOR_NOT_PROTECTED = 0;
-        public const int AM_DVD_SECTOR_PROTECTED = 32;
-        public const int AM_DVD_SECTOR_PROTECT_MASK = 32;
-        public const int AM_ReverseBlockEnd = 4;
-        public const int AM_ReverseBlockStart = 2;
-        public const int AM_UseNewCSSKey = 1;
-        public const int AM_VIDEO_FLAG_B_SAMPLE = 32;
-        public const int AM_VIDEO_FLAG_FIELD1 = 1;
-        public const int AM_VIDEO_FLAG_FIELD1FIRST = 4;
-        public const int AM_VIDEO_FLAG_FIELD2 = 2;
-        public const int AM_VIDEO_FLAG_FIELD_MASK = 3;
-        public const int AM_VIDEO_FLAG_INTERLEAVED_FRAME = 0;
-        public const int AM_VIDEO_FLAG_IPB_MASK = 48;
-        public const int AM_VIDEO_FLAG_I_SAMPLE = 0;
-        public const int AM_VIDEO_FLAG_P_SAMPLE = 16;
-        public const int AM_VIDEO_FLAG_REPEAT_FIELD = 64;
-        public const int AM_VIDEO_FLAG_WEAVE = 8;
-
+        
         // from <Windows SDK Path>\um\dvp.h
-        public const int DDVPBCAPS_DESTINATION = 2;
-        public const int DDVPBCAPS_SOURCE = 1;
+        public const int DDVP_AUTOFLIP = 1;
+        public const int DDVP_CONVERT = 2;
+        public const int DDVP_CROP = 4;
+        public const int DDVP_HARDWAREDEINTERLACE = 32768;
+        public const int DDVP_IGNOREVBIXCROP = 8192;
+        public const int DDVP_INTERLEAVE = 8;
+        public const int DDVP_MIRRORLEFTRIGHT = 16;
+        public const int DDVP_MIRRORUPDOWN = 32;
+        public const int DDVP_OVERRIDEBOBWEAVE = 4096;
+        public const int DDVP_PRESCALE = 64;
+        public const int DDVP_SKIPEVENFIELDS = 128;
+        public const int DDVP_SKIPODDFIELDS = 256;
+        public const int DDVP_SYNCMASTER = 512;
+        public const int DDVP_VBICONVERT = 1024;
+        public const int DDVP_VBINOINTERLEAVE = 16384;
+        public const int DDVP_VBINOSCALE = 2048;
         public const int DDVPB_OVERLAY = 2;
         public const int DDVPB_TYPE = 4;
         public const int DDVPB_VIDEOPORT = 1;
+        public const int DDVPBCAPS_DESTINATION = 2;
+        public const int DDVPBCAPS_SOURCE = 1;
         public const int DDVPCAPS_AUTOFLIP = 1;
         public const int DDVPCAPS_COLORCONTROL = 1024;
         public const int DDVPCAPS_HARDWAREDEINTERLACE = 16384;
@@ -7507,54 +7518,41 @@
         public const int DDVPWAIT_BEGIN = 1;
         public const int DDVPWAIT_END = 2;
         public const int DDVPWAIT_LINE = 3;
-        public const int DDVP_AUTOFLIP = 1;
-        public const int DDVP_CONVERT = 2;
-        public const int DDVP_CROP = 4;
-        public const int DDVP_HARDWAREDEINTERLACE = 32768;
-        public const int DDVP_IGNOREVBIXCROP = 8192;
-        public const int DDVP_INTERLEAVE = 8;
-        public const int DDVP_MIRRORLEFTRIGHT = 16;
-        public const int DDVP_MIRRORUPDOWN = 32;
-        public const int DDVP_OVERRIDEBOBWEAVE = 4096;
-        public const int DDVP_PRESCALE = 64;
-        public const int DDVP_SKIPEVENFIELDS = 128;
-        public const int DDVP_SKIPODDFIELDS = 256;
-        public const int DDVP_SYNCMASTER = 512;
-        public const int DDVP_VBICONVERT = 1024;
-        public const int DDVP_VBINOINTERLEAVE = 16384;
-        public const int DDVP_VBINOSCALE = 2048;
-
+        
+        // from <Windows SDK Path>\um\dwrite_3.h
+        public const int DWRITE_STANDARD_FONT_AXIS_COUNT = 5;
+        
         // from <Windows SDK Path>\um\DWrite.h
         public const int DWRITE_ALPHA_MAX = 255;
         public const int DWRITE_ERR_BASE = 20480;
         public const int FACILITY_DWRITE = 2200;
-
+        
         // from <Windows SDK Path>\um\dxcapi.h
         public const int DXC_CP_ACP = 0;
         public const int DXC_CP_UTF16 = 1200;
         public const int DXC_CP_UTF8 = 65001;
         public const int DXC_HASHFLAG_INCLUDES_SOURCE = 1;
-
+        
         // from <Windows SDK Path>\um\dxcore_interface.h
         public const int _FACDXCORE = 2176;
-
+        
         // from <Windows SDK Path>\um\dxdiag.h
         public const int DXDIAG_DX9_SDK_VERSION = 111;
-
+        
         // from <Windows SDK Path>\um\dxgiddi.h
+        public const int _FACDXGI_DDI = 2171;
         public const int DXGI_DDI_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS = 16;
         public const int DXGI_DDI_PRIMARY_DRIVER_FLAG_NO_SCANOUT = 1;
         public const int DXGI_DDI_PRIMARY_INDIRECT = 8;
         public const int DXGI_DDI_PRIMARY_NONPREROTATED = 2;
         public const int DXGI_DDI_PRIMARY_OPTIONAL = 1;
         public const int DXGI_DDI_PRIMARY_STEREO = 4;
-        public const int _FACDXGI_DDI = 2171;
-
+        
         // from <Windows SDK Path>\um\dxgidebug.h
         public const int DXGI_DEBUG_BINARY_VERSION = 1;
         public const int DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION = 0;
-
+        
         // from <Windows SDK Path>\um\dxmini.h
         public const int DDIRQ_BUSMASTER = 2;
         public const int DDIRQ_DISPLAY_VSYNC = 1;
@@ -7587,11 +7585,11 @@
         public const int DDTRANSFER_SYSTEMMEMORY = 1;
         public const int DDVPFLIP_VBI = 2;
         public const int DDVPFLIP_VIDEO = 1;
+        public const int DX_OK = 0;
         public const int DXAPI_HALVERSION = 1;
         public const int DXERR_GENERIC = -2147467259;
         public const int DXERR_OUTOFCAPS = -2005532312;
         public const int DXERR_UNSUPPORTED = -2147467263;
-        public const int DX_OK = 0;
         public const int IRQINFO_HANDLED = 1;
         public const int IRQINFO_NOTHANDLED = 2;
         public const int MDL_64_BIT_VA = 32768;
@@ -7610,7 +7608,7 @@
         public const int MDL_SCATTER_GATHER_VA = 1024;
         public const int MDL_SOURCE_IS_NONPAGED_POOL = 4;
         public const int MDL_WRITE_OPERATION = 128;
-
+        
         // from <Windows SDK Path>\um\dxva.h
         public const int DXVA_ALPHA_BLEND_COMBINATION_FUNCTION = 3;
         public const int DXVA_ALPHA_BLEND_DATA_LOAD_FUNCTION = 2;
@@ -7648,10 +7646,10 @@
         public const int DXVA_MV_PRECISION_AND_CHROMA_RELATION_H261 = 2;
         public const int DXVA_MV_PRECISION_AND_CHROMA_RELATION_H263 = 1;
         public const int DXVA_MV_PRECISION_AND_CHROMA_RELATION_MPEG2 = 0;
+        public const int DXVA_NUM_TYPES_COMP_BUFFERS = 18;
         public const int DXVA_NumMV_OBMC_off_BinPBwith4MV_off = 4;
         public const int DXVA_NumMV_OBMC_on__BinPB_off = 10;
         public const int DXVA_NumMV_OBMC_on__BinPB_on = 11;
-        public const int DXVA_NUM_TYPES_COMP_BUFFERS = 18;
         public const int DXVA_PICTURE_DECODING_FUNCTION = 1;
         public const int DXVA_PICTURE_RESAMPLE_FUNCTION = 4;
         public const int DXVA_PICTURE_STRUCTURE_BOTTOM_FIELD = 2;
@@ -7677,11 +7675,11 @@
         public const int DXVA_RESTRICTED_MODE_H264_VLD_WITHFMOASO_NOFGT = 112;
         public const int DXVA_RESTRICTED_MODE_MPEG1_A = 9;
         public const int DXVA_RESTRICTED_MODE_MPEG1_VLD = 16;
-        public const int DXVA_RESTRICTED_MODE_MPEG2and1_VLD = 17;
         public const int DXVA_RESTRICTED_MODE_MPEG2_A = 10;
         public const int DXVA_RESTRICTED_MODE_MPEG2_B = 11;
         public const int DXVA_RESTRICTED_MODE_MPEG2_C = 12;
         public const int DXVA_RESTRICTED_MODE_MPEG2_D = 13;
+        public const int DXVA_RESTRICTED_MODE_MPEG2and1_VLD = 17;
         public const int DXVA_RESTRICTED_MODE_MPEG4PT2_VLD_ADV_SIMPLE_GMC = 178;
         public const int DXVA_RESTRICTED_MODE_MPEG4PT2_VLD_ADV_SIMPLE_NOGMC = 177;
         public const int DXVA_RESTRICTED_MODE_MPEG4PT2_VLD_SIMPLE = 176;
@@ -7703,13 +7701,13 @@
         public const int DXVA_STATUS_REPORTING_FUNCTION = 7;
         public const int DXVA_USUAL_BLOCK_HEIGHT = 8;
         public const int DXVA_USUAL_BLOCK_WIDTH = 8;
-
+        
         // from <Windows SDK Path>\um\dxva2api.h
         public const int DXVA2_DECODE_GET_DRIVER_HANDLE = 1829;
         public const int DXVA2_DECODE_SPECIFY_ENCRYPTED_BLOCKS = 1828;
         public const int MAX_DEINTERLACE_SURFACES = 32;
         public const int MAX_SUBSTREAMS = 15;
-
+        
         // from <Windows SDK Path>\um\dxva9typ.h
         public const int COPP_DefaultProtectionLevel = 0;
         public const int COPP_ImageAspectRatio_EN300294_Mask = 7;
@@ -7750,7 +7748,7 @@
         public const int DXVA_RESIDUAL_DIFFERENCE_BUFFER = 3;
         public const int DXVA_SLICE_CONTROL_BUFFER = 6;
         public const int MAX_DEINTERLACE_DEVICE_GUIDS = 32;
-
+        
         // from <Windows SDK Path>\um\mfapi.h
         public const int D3DFMT_A16B16G16R16F = 113;
         public const int D3DFMT_A2B10G10R10 = 31;
@@ -7770,32 +7768,20 @@
         public const int MACROBLOCK_FLAG_MOTION = 4;
         public const int MACROBLOCK_FLAG_SKIP = 1;
         public const int MACROBLOCK_FLAG_VIDEO = 8;
-        public const int MFCAPTURE_METADATA_SCANLINE_VERTICAL = 4;
-        public const int MFCAPTURE_METADATA_SCAN_BOTTOM_TOP = 2;
-        public const int MFCAPTURE_METADATA_SCAN_RIGHT_LEFT = 1;
-        public const int MFSampleExtension_ClosedCaption_CEA708_MAX_SIZE = 256;
-        public const int MFSESSIONCAP_DOES_NOT_USE_NETWORK = 64;
-        public const int MFSESSIONCAP_PAUSE = 4;
-        public const int MFSESSIONCAP_RATE_FORWARD = 16;
-        public const int MFSESSIONCAP_RATE_REVERSE = 32;
-        public const int MFSESSIONCAP_SEEK = 2;
-        public const int MFSESSIONCAP_START = 1;
-        public const int MFSTARTUP_FULL = 0;
-        public const int MFSTARTUP_NOSOCKET = 1;
+        public const int MF_1_BYTE_ALIGNMENT = 0;
         public const int MF_1024_BYTE_ALIGNMENT = 1023;
         public const int MF_128_BYTE_ALIGNMENT = 127;
         public const int MF_16_BYTE_ALIGNMENT = 15;
-        public const int MF_1_BYTE_ALIGNMENT = 0;
+        public const int MF_2_BYTE_ALIGNMENT = 1;
         public const int MF_2048_BYTE_ALIGNMENT = 2047;
         public const int MF_256_BYTE_ALIGNMENT = 255;
-        public const int MF_2_BYTE_ALIGNMENT = 1;
         public const int MF_32_BYTE_ALIGNMENT = 31;
-        public const int MF_4096_BYTE_ALIGNMENT = 4095;
         public const int MF_4_BYTE_ALIGNMENT = 3;
+        public const int MF_4096_BYTE_ALIGNMENT = 4095;
         public const int MF_512_BYTE_ALIGNMENT = 511;
         public const int MF_64_BYTE_ALIGNMENT = 63;
-        public const int MF_8192_BYTE_ALIGNMENT = 8191;
         public const int MF_8_BYTE_ALIGNMENT = 7;
+        public const int MF_8192_BYTE_ALIGNMENT = 8191;
         public const int MF_API_VERSION = 112;
         public const int MF_HISTOGRAM_CHANNEL_B = 8;
         public const int MF_HISTOGRAM_CHANNEL_Cb = 16;
@@ -7807,7 +7793,19 @@
         public const int MF_METADATATIMESTAMPS_DEVICE = 1;
         public const int MF_METADATATIMESTAMPS_PRESENTATION = 2;
         public const int MF_SDK_VERSION = 2;
-
+        public const int MFCAPTURE_METADATA_SCAN_BOTTOM_TOP = 2;
+        public const int MFCAPTURE_METADATA_SCAN_RIGHT_LEFT = 1;
+        public const int MFCAPTURE_METADATA_SCANLINE_VERTICAL = 4;
+        public const int MFSampleExtension_ClosedCaption_CEA708_MAX_SIZE = 256;
+        public const int MFSESSIONCAP_DOES_NOT_USE_NETWORK = 64;
+        public const int MFSESSIONCAP_PAUSE = 4;
+        public const int MFSESSIONCAP_RATE_FORWARD = 16;
+        public const int MFSESSIONCAP_RATE_REVERSE = 32;
+        public const int MFSESSIONCAP_SEEK = 2;
+        public const int MFSESSIONCAP_START = 1;
+        public const int MFSTARTUP_FULL = 0;
+        public const int MFSTARTUP_NOSOCKET = 1;
+        
         // from <Windows SDK Path>\um\Mferror.h
         public const int FACILITY_MF = 13;
         public const int FACILITY_MF_WIN32 = 7;
@@ -7824,22 +7822,14 @@
         public const int STATUS_SEVERITY_INFORMATIONAL = 1;
         public const int STATUS_SEVERITY_SUCCESS = 0;
         public const int STATUS_SEVERITY_WARNING = 2;
-
+        
         // from <Windows SDK Path>\um\mfidl.h
-        public const int MEDIASINK_CANNOT_MATCH_CLOCK = 2;
         public const int MEDIASINK_CAN_PREROLL = 16;
+        public const int MEDIASINK_CANNOT_MATCH_CLOCK = 2;
         public const int MEDIASINK_CLOCK_REQUIRED = 8;
         public const int MEDIASINK_FIXED_STREAMS = 1;
         public const int MEDIASINK_RATELESS = 4;
         public const int MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE = 32;
-        public const int MFCLOCK_FREQUENCY_HNS = 10000000;
-        public const int MFCLOCK_JITTER_DPC = 4000;
-        public const int MFCLOCK_JITTER_ISR = 1000;
-        public const int MFCLOCK_JITTER_PASSIVE = 10000;
-        public const int MFCLOCK_TOLERANCE_UNKNOWN = 50000;
-        public const int MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START = 67108864;
-        public const int MFRR_INFO_VERSION = 0;
-        public const int MFSEQUENCER_INVALID_ELEMENT_ID = -1;
         public const int MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_CROSSPROCESS = 1;
         public const int MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_DONT_ALLOW_FORMAT_CHANGES = 4;
         public const int MF_AUDIO_RENDERER_ATTRIBUTE_FLAGS_NOPERSIST = 2;
@@ -7858,13 +7848,26 @@
         public const int MF_TEST_SIGNED_COMPONENT_LOADING = 16777216;
         public const int MF_UNKNOWN_DURATION = 0;
         public const int MF_USER_MODE_COMPONENT_LOAD = 1;
+        public const int MFCLOCK_FREQUENCY_HNS = 10000000;
+        public const int MFCLOCK_JITTER_DPC = 4000;
+        public const int MFCLOCK_JITTER_ISR = 1000;
+        public const int MFCLOCK_JITTER_PASSIVE = 10000;
+        public const int MFCLOCK_TOLERANCE_UNKNOWN = 50000;
+        public const int MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START = 67108864;
+        public const int MFRR_INFO_VERSION = 0;
+        public const int MFSEQUENCER_INVALID_ELEMENT_ID = -1;
         public const long PRESENTATION_CURRENT_POSITION = 9223372036854775807;
         public const int SHA_HASH_LEN = 20;
-
+        
         // from <Windows SDK Path>\um\MFMediaEngine.h
         public const long MF_INVALID_PRESENTATION_TIME = -9223372036854775808;
-
+        
         // from <Windows SDK Path>\um\mfobjects.h
+        public const int MF_EVENT_FLAG_NO_WAIT = 1;
+        public const int MF_MEDIATYPE_EQUAL_FORMAT_DATA = 4;
+        public const int MF_MEDIATYPE_EQUAL_FORMAT_TYPES = 2;
+        public const int MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
+        public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 1;
         public const int MFASYNC_BLOCKING_CALLBACK = 4;
         public const int MFASYNC_CALLBACK_QUEUE_ALL = -1;
         public const int MFASYNC_CALLBACK_QUEUE_IO = 3;
@@ -7889,24 +7892,19 @@
         public const int MFBYTESTREAM_IS_WRITABLE = 2;
         public const int MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO = 1;
         public const int MFBYTESTREAM_SHARE_WRITE = 1024;
-        public const int MF_EVENT_FLAG_NO_WAIT = 1;
-        public const int MF_MEDIATYPE_EQUAL_FORMAT_DATA = 4;
-        public const int MF_MEDIATYPE_EQUAL_FORMAT_TYPES = 2;
-        public const int MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
-        public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 1;
-
+        
         // from <Windows SDK Path>\um\mftransform.h
         public const int MFT_STREAMS_UNLIMITED = -1;
-
+        
         // from <Windows SDK Path>\um\mmdeviceapi.h
-        public const int DEVICE_STATEMASK_ALL = 15;
         public const int DEVICE_STATE_ACTIVE = 1;
         public const int DEVICE_STATE_DISABLED = 2;
         public const int DEVICE_STATE_NOTPRESENT = 4;
         public const int DEVICE_STATE_UNPLUGGED = 8;
+        public const int DEVICE_STATEMASK_ALL = 15;
         public const int ENDPOINT_SYSFX_DISABLED = 1;
         public const int ENDPOINT_SYSFX_ENABLED = 0;
-
+        
         // from <Windows SDK Path>\um\mmeapi.h
         public const int AUXCAPS_AUXIN = 2;
         public const int AUXCAPS_CDAUDIO = 1;
@@ -7919,6 +7917,11 @@
         public const int MHDR_INQUEUE = 4;
         public const int MHDR_ISSTRM = 8;
         public const int MHDR_PREPARED = 2;
+        public const int MIDI_CACHE_ALL = 1;
+        public const int MIDI_CACHE_BESTFIT = 2;
+        public const int MIDI_CACHE_QUERY = 3;
+        public const int MIDI_IO_STATUS = 32;
+        public const int MIDI_UNCACHE = 4;
         public const int MIDICAPS_CACHE = 4;
         public const int MIDICAPS_LRVOLUME = 2;
         public const int MIDICAPS_STREAM = 8;
@@ -7928,11 +7931,31 @@
         public const int MIDIPROP_SET = -2147483648;
         public const int MIDIPROP_TEMPO = 2;
         public const int MIDIPROP_TIMEDIV = 1;
-        public const int MIDI_CACHE_ALL = 1;
-        public const int MIDI_CACHE_BESTFIT = 2;
-        public const int MIDI_CACHE_QUERY = 3;
-        public const int MIDI_IO_STATUS = 32;
-        public const int MIDI_UNCACHE = 4;
+        public const int MIXER_GETCONTROLDETAILSF_LISTTEXT = 1;
+        public const int MIXER_GETCONTROLDETAILSF_QUERYMASK = 15;
+        public const int MIXER_GETCONTROLDETAILSF_VALUE = 0;
+        public const int MIXER_GETLINECONTROLSF_ALL = 0;
+        public const int MIXER_GETLINECONTROLSF_ONEBYID = 1;
+        public const int MIXER_GETLINECONTROLSF_ONEBYTYPE = 2;
+        public const int MIXER_GETLINECONTROLSF_QUERYMASK = 15;
+        public const int MIXER_GETLINEINFOF_COMPONENTTYPE = 3;
+        public const int MIXER_GETLINEINFOF_DESTINATION = 0;
+        public const int MIXER_GETLINEINFOF_LINEID = 2;
+        public const int MIXER_GETLINEINFOF_QUERYMASK = 15;
+        public const int MIXER_GETLINEINFOF_SOURCE = 1;
+        public const int MIXER_GETLINEINFOF_TARGETTYPE = 4;
+        public const int MIXER_LONG_NAME_CHARS = 64;
+        public const int MIXER_OBJECTF_AUX = 1342177280;
+        public const int MIXER_OBJECTF_HANDLE = -2147483648;
+        public const int MIXER_OBJECTF_MIDIIN = 1073741824;
+        public const int MIXER_OBJECTF_MIDIOUT = 805306368;
+        public const int MIXER_OBJECTF_MIXER = 0;
+        public const int MIXER_OBJECTF_WAVEIN = 536870912;
+        public const int MIXER_OBJECTF_WAVEOUT = 268435456;
+        public const int MIXER_SETCONTROLDETAILSF_CUSTOM = 1;
+        public const int MIXER_SETCONTROLDETAILSF_QUERYMASK = 15;
+        public const int MIXER_SETCONTROLDETAILSF_VALUE = 0;
+        public const int MIXER_SHORT_NAME_CHARS = 16;
         public const int MIXERCONTROL_CONTROLF_DISABLED = -2147483648;
         public const int MIXERCONTROL_CONTROLF_MULTIPLE = 2;
         public const int MIXERCONTROL_CONTROLF_UNIFORM = 1;
@@ -7971,31 +7994,6 @@
         public const int MIXERLINE_TARGETTYPE_UNDEFINED = 0;
         public const int MIXERLINE_TARGETTYPE_WAVEIN = 2;
         public const int MIXERLINE_TARGETTYPE_WAVEOUT = 1;
-        public const int MIXER_GETCONTROLDETAILSF_LISTTEXT = 1;
-        public const int MIXER_GETCONTROLDETAILSF_QUERYMASK = 15;
-        public const int MIXER_GETCONTROLDETAILSF_VALUE = 0;
-        public const int MIXER_GETLINECONTROLSF_ALL = 0;
-        public const int MIXER_GETLINECONTROLSF_ONEBYID = 1;
-        public const int MIXER_GETLINECONTROLSF_ONEBYTYPE = 2;
-        public const int MIXER_GETLINECONTROLSF_QUERYMASK = 15;
-        public const int MIXER_GETLINEINFOF_COMPONENTTYPE = 3;
-        public const int MIXER_GETLINEINFOF_DESTINATION = 0;
-        public const int MIXER_GETLINEINFOF_LINEID = 2;
-        public const int MIXER_GETLINEINFOF_QUERYMASK = 15;
-        public const int MIXER_GETLINEINFOF_SOURCE = 1;
-        public const int MIXER_GETLINEINFOF_TARGETTYPE = 4;
-        public const int MIXER_LONG_NAME_CHARS = 64;
-        public const int MIXER_OBJECTF_AUX = 1342177280;
-        public const int MIXER_OBJECTF_HANDLE = -2147483648;
-        public const int MIXER_OBJECTF_MIDIIN = 1073741824;
-        public const int MIXER_OBJECTF_MIDIOUT = 805306368;
-        public const int MIXER_OBJECTF_MIXER = 0;
-        public const int MIXER_OBJECTF_WAVEIN = 536870912;
-        public const int MIXER_OBJECTF_WAVEOUT = 268435456;
-        public const int MIXER_SETCONTROLDETAILSF_CUSTOM = 1;
-        public const int MIXER_SETCONTROLDETAILSF_QUERYMASK = 15;
-        public const int MIXER_SETCONTROLDETAILSF_VALUE = 0;
-        public const int MIXER_SHORT_NAME_CHARS = 16;
         public const int MOD_FMSYNTH = 4;
         public const int MOD_MAPPER = 5;
         public const int MOD_MIDIPORT = 1;
@@ -8003,12 +8001,6 @@
         public const int MOD_SWSYNTH = 7;
         public const int MOD_SYNTH = 2;
         public const int MOD_WAVETABLE = 6;
-        public const int WAVECAPS_LRVOLUME = 8;
-        public const int WAVECAPS_PITCH = 1;
-        public const int WAVECAPS_PLAYBACKRATE = 2;
-        public const int WAVECAPS_SAMPLEACCURATE = 32;
-        public const int WAVECAPS_SYNC = 16;
-        public const int WAVECAPS_VOLUME = 4;
         public const int WAVE_ALLOWSYNC = 2;
         public const int WAVE_FORMAT_1M08 = 1;
         public const int WAVE_FORMAT_1M16 = 4;
@@ -8040,12 +8032,18 @@
         public const int WAVE_INVALIDFORMAT = 0;
         public const int WAVE_MAPPED = 4;
         public const int WAVE_MAPPED_DEFAULT_COMMUNICATION_DEVICE = 16;
+        public const int WAVECAPS_LRVOLUME = 8;
+        public const int WAVECAPS_PITCH = 1;
+        public const int WAVECAPS_PLAYBACKRATE = 2;
+        public const int WAVECAPS_SAMPLEACCURATE = 32;
+        public const int WAVECAPS_SYNC = 16;
+        public const int WAVECAPS_VOLUME = 4;
         public const int WHDR_BEGINLOOP = 4;
         public const int WHDR_DONE = 1;
         public const int WHDR_ENDLOOP = 8;
         public const int WHDR_INQUEUE = 16;
         public const int WHDR_PREPARED = 2;
-
+        
         // from <Windows SDK Path>\um\mmsyscom.h
         public const int CALLBACK_EVENT = 327680;
         public const int CALLBACK_FUNCTION = 196608;
@@ -8054,19 +8052,17 @@
         public const int CALLBACK_TYPEMASK = 458752;
         public const int CALLBACK_WINDOW = 65536;
         public const int JOYERR_BASE = 160;
+        public const int MAX_JOYSTICKOEMVXDNAME = 260;
         public const int MAXERRORLENGTH = 256;
         public const int MAXPNAMELEN = 32;
-        public const int MAX_JOYSTICKOEMVXDNAME = 260;
-        public const int MCIERR_BASE = 256;
         public const int MCI_CD_OFFSET = 1088;
         public const int MCI_SEQ_OFFSET = 1216;
         public const int MCI_STRING_OFFSET = 512;
         public const int MCI_VD_OFFSET = 1024;
         public const int MCI_WAVE_OFFSET = 1152;
+        public const int MCIERR_BASE = 256;
         public const int MIDIERR_BASE = 64;
         public const int MIXERR_BASE = 1024;
-        public const int MMSYSERR_BASE = 0;
-        public const int MMSYSERR_NOERROR = 0;
         public const int MM_DRVM_CLOSE = 977;
         public const int MM_DRVM_DATA = 978;
         public const int MM_DRVM_ERROR = 979;
@@ -8104,33 +8100,35 @@
         public const int MM_WOM_CLOSE = 956;
         public const int MM_WOM_DONE = 957;
         public const int MM_WOM_OPEN = 955;
-        public const int TIMERR_BASE = 96;
+        public const int MMSYSERR_BASE = 0;
+        public const int MMSYSERR_NOERROR = 0;
         public const int TIME_BYTES = 4;
         public const int TIME_MIDI = 16;
         public const int TIME_MS = 1;
         public const int TIME_SAMPLES = 2;
         public const int TIME_SMPTE = 8;
         public const int TIME_TICKS = 32;
+        public const int TIMERR_BASE = 96;
         public const int WAVERR_BASE = 32;
-
+        
         // from <Windows SDK Path>\um\ocidl.h
         public const int MULTICLASSINFO_GETIIDPRIMARY = 4;
         public const int MULTICLASSINFO_GETIIDSOURCE = 8;
         public const int MULTICLASSINFO_GETNUMRESERVEDDISPIDS = 2;
         public const int MULTICLASSINFO_GETTYPEINFO = 1;
         public const int TIFLAGS_EXTENDDISPATCHONLY = 1;
-
+        
         // from <Windows SDK Path>\um\SpatialAudioMetadata.h
         public const int SPATIAL_AUDIO_STANDARD_COMMANDS_START = 200;
-
+        
         // from <Windows SDK Path>\um\strmif.h
         public const int AM_GBF_NODDSURFACELOCK = 8;
         public const int AM_GBF_NOTASYNCPOINT = 2;
         public const int AM_GBF_NOWAIT = 4;
         public const int AM_GBF_PREVFRAMESKIPPED = 1;
         public const int AM_GETDECODERCAP_QUERY_EVR_SUPPORT = 7;
-        public const int AM_GETDECODERCAP_QUERY_VMR9_SUPPORT = 6;
         public const int AM_GETDECODERCAP_QUERY_VMR_SUPPORT = 1;
+        public const int AM_GETDECODERCAP_QUERY_VMR9_SUPPORT = 6;
         public const int AM_QUERY_DECODER_ATSC_HD_SUPPORT = 5;
         public const int AM_QUERY_DECODER_ATSC_SD_SUPPORT = 4;
         public const int AM_QUERY_DECODER_DVD_SUPPORT = 3;
@@ -8171,16 +8169,27 @@
         public const int MPEG2_PROGRAM_STREAM_MAP = 0;
         public const int MPEG2_PROGRAM_SYSTEM_HEADER = 5;
         public const int SUBSTREAM_FILTER_VAL_NONE = 268435456;
+        public const int VMR_NOTSUPPORTED = 0;
+        public const int VMR_SUPPORTED = 1;
         public const int VMRBITMAP_DISABLE = 1;
         public const int VMRBITMAP_ENTIREDDS = 4;
         public const int VMRBITMAP_HDC = 2;
         public const int VMRBITMAP_SRCCOLORKEY = 8;
         public const int VMRBITMAP_SRCRECT = 16;
-        public const int VMR_NOTSUPPORTED = 0;
-        public const int VMR_SUPPORTED = 1;
-
+        
         // from <Windows SDK Path>\um\wincodec.h
         public const int FACILITY_WINCODEC_ERR = 2200;
+        public const int WIC_JPEG_HUFFMAN_BASELINE_ONE = 0;
+        public const int WIC_JPEG_HUFFMAN_BASELINE_THREE = 1118464;
+        public const int WIC_JPEG_MAX_COMPONENT_COUNT = 4;
+        public const int WIC_JPEG_MAX_TABLE_INDEX = 3;
+        public const int WIC_JPEG_QUANTIZATION_BASELINE_ONE = 0;
+        public const int WIC_JPEG_QUANTIZATION_BASELINE_THREE = 65792;
+        public const int WIC_JPEG_SAMPLE_FACTORS_ONE = 17;
+        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_420 = 1118498;
+        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_422 = 1118497;
+        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_440 = 1118482;
+        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_444 = 1118481;
         public const int WICRawChangeNotification_Contrast = 16;
         public const int WICRawChangeNotification_DestinationColorContext = 1024;
         public const int WICRawChangeNotification_ExposureCompensation = 1;
@@ -8195,24 +8204,13 @@
         public const int WICRawChangeNotification_Sharpness = 64;
         public const int WICRawChangeNotification_Tint = 256;
         public const int WICRawChangeNotification_ToneCurve = 2048;
-        public const int WIC_JPEG_HUFFMAN_BASELINE_ONE = 0;
-        public const int WIC_JPEG_HUFFMAN_BASELINE_THREE = 1118464;
-        public const int WIC_JPEG_MAX_COMPONENT_COUNT = 4;
-        public const int WIC_JPEG_MAX_TABLE_INDEX = 3;
-        public const int WIC_JPEG_QUANTIZATION_BASELINE_ONE = 0;
-        public const int WIC_JPEG_QUANTIZATION_BASELINE_THREE = 65792;
-        public const int WIC_JPEG_SAMPLE_FACTORS_ONE = 17;
-        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_420 = 1118498;
-        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_422 = 1118497;
-        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_440 = 1118482;
-        public const int WIC_JPEG_SAMPLE_FACTORS_THREE_444 = 1118481;
         public const int WINCODEC_ERR_BASE = 8192;
         public const int WINCODEC_SDK_VERSION1 = 566;
         public const int WINCODEC_SDK_VERSION2 = 567;
-
+        
         // from <Windows SDK Path>\um\windows.ui.xaml.media.dxinterop.h
         public const int E_SURFACE_CONTENTS_LOST = -2144665568;
-
+        
         // from <Windows SDK Path>\um\wingdi.h
         public const int ABORTDOC = 2;
         public const int ABSOLUTE = 1;
@@ -8226,24 +8224,24 @@
         public const int ANSI_VAR_FONT = 12;
         public const int ANTIALIASED_QUALITY = 4;
         public const int ARABIC_CHARSET = 178;
+        public const int ASPECT_FILTERING = 1;
         public const int ASPECTX = 40;
         public const int ASPECTXY = 44;
         public const int ASPECTY = 42;
-        public const int ASPECT_FILTERING = 1;
         public const int BALTIC_CHARSET = 186;
         public const int BANDINFO = 24;
         public const int BEGIN_PATH = 4096;
-        public const int BITSPIXEL = 12;
         public const int BI_BITFIELDS = 3;
         public const int BI_JPEG = 4;
         public const int BI_PNG = 5;
         public const int BI_RGB = 0;
         public const int BI_RLE4 = 2;
         public const int BI_RLE8 = 1;
+        public const int BITSPIXEL = 12;
         public const int BKMODE_LAST = 2;
-        public const int BLACKONWHITE = 1;
         public const int BLACK_BRUSH = 4;
         public const int BLACK_PEN = 7;
+        public const int BLACKONWHITE = 1;
         public const int BLTALIGNMENT = 119;
         public const int BS_DIBPATTERN = 5;
         public const int BS_DIBPATTERN8X8 = 8;
@@ -8258,8 +8256,6 @@
         public const int CA_LOG_FILTER = 2;
         public const int CA_NEGATIVE = 1;
         public const int CBM_INIT = 4;
-        public const int CCHDEVICENAME = 32;
-        public const int CCHFORMNAME = 32;
         public const int CC_CHORD = 4;
         public const int CC_CIRCLES = 1;
         public const int CC_ELLIPSES = 8;
@@ -8270,17 +8266,19 @@
         public const int CC_STYLED = 32;
         public const int CC_WIDE = 16;
         public const int CC_WIDESTYLED = 64;
+        public const int CCHDEVICENAME = 32;
+        public const int CCHFORMNAME = 32;
         public const int CHECKJPEGFORMAT = 4119;
         public const int CHECKPNGFORMAT = 4120;
         public const int CHINESEBIG5_CHARSET = 136;
         public const int CLEARTYPE_NATURAL_QUALITY = 6;
         public const int CLEARTYPE_QUALITY = 5;
-        public const int CLIPCAPS = 36;
         public const int CLIP_CHARACTER_PRECIS = 1;
         public const int CLIP_DEFAULT_PRECIS = 0;
         public const int CLIP_MASK = 15;
         public const int CLIP_STROKE_PRECIS = 2;
         public const int CLIP_TO_PATH = 4097;
+        public const int CLIPCAPS = 36;
         public const int CLOSECHANNEL = 4112;
         public const int CLR_INVALID = -1;
         public const int CM_CMYK_COLOR = 4;
@@ -8302,22 +8300,6 @@
         public const int CS_DISABLE = 2;
         public const int CS_ENABLE = 1;
         public const int CURVECAPS = 28;
-        public const int DCBA_FACEDOWNCENTER = 257;
-        public const int DCBA_FACEDOWNLEFT = 258;
-        public const int DCBA_FACEDOWNNONE = 256;
-        public const int DCBA_FACEDOWNRIGHT = 259;
-        public const int DCBA_FACEUPCENTER = 1;
-        public const int DCBA_FACEUPLEFT = 2;
-        public const int DCBA_FACEUPNONE = 0;
-        public const int DCBA_FACEUPRIGHT = 3;
-        public const int DCB_ACCUMULATE = 2;
-        public const int DCB_DISABLE = 8;
-        public const int DCB_ENABLE = 4;
-        public const int DCB_RESET = 1;
-        public const int DCTT_BITMAP = 1;
-        public const int DCTT_DOWNLOAD = 2;
-        public const int DCTT_DOWNLOAD_OUTLINE = 8;
-        public const int DCTT_SUBDEV = 4;
         public const int DC_BINADJUST = 19;
         public const int DC_BINNAMES = 12;
         public const int DC_BINS = 6;
@@ -8355,6 +8337,22 @@
         public const int DC_STAPLE = 30;
         public const int DC_TRUETYPE = 15;
         public const int DC_VERSION = 10;
+        public const int DCB_ACCUMULATE = 2;
+        public const int DCB_DISABLE = 8;
+        public const int DCB_ENABLE = 4;
+        public const int DCB_RESET = 1;
+        public const int DCBA_FACEDOWNCENTER = 257;
+        public const int DCBA_FACEDOWNLEFT = 258;
+        public const int DCBA_FACEDOWNNONE = 256;
+        public const int DCBA_FACEDOWNRIGHT = 259;
+        public const int DCBA_FACEUPCENTER = 1;
+        public const int DCBA_FACEUPLEFT = 2;
+        public const int DCBA_FACEUPNONE = 0;
+        public const int DCBA_FACEUPRIGHT = 3;
+        public const int DCTT_BITMAP = 1;
+        public const int DCTT_DOWNLOAD = 2;
+        public const int DCTT_DOWNLOAD_OUTLINE = 8;
+        public const int DCTT_SUBDEV = 4;
         public const int DEFAULT_CHARSET = 1;
         public const int DEFAULT_GUI_FONT = 17;
         public const int DEFAULT_PALETTE = 15;
@@ -8362,11 +8360,28 @@
         public const int DEFAULT_QUALITY = 0;
         public const int DESKTOPHORZRES = 118;
         public const int DESKTOPVERTRES = 117;
-        public const int DEVICEDATA = 19;
         public const int DEVICE_DEFAULT_FONT = 14;
         public const int DEVICE_FONTTYPE = 2;
+        public const int DEVICEDATA = 19;
+        public const int DI_APPBANDING = 1;
+        public const int DI_ROPS_READ_DESTINATION = 2;
         public const int DIB_PAL_COLORS = 1;
         public const int DIB_RGB_COLORS = 0;
+        public const int DISPLAY_DEVICE_ACC_DRIVER = 64;
+        public const int DISPLAY_DEVICE_ACTIVE = 1;
+        public const int DISPLAY_DEVICE_ATTACHED = 2;
+        public const int DISPLAY_DEVICE_ATTACHED_TO_DESKTOP = 1;
+        public const int DISPLAY_DEVICE_DISCONNECT = 33554432;
+        public const int DISPLAY_DEVICE_MIRRORING_DRIVER = 8;
+        public const int DISPLAY_DEVICE_MODESPRUNED = 134217728;
+        public const int DISPLAY_DEVICE_MULTI_DRIVER = 2;
+        public const int DISPLAY_DEVICE_PRIMARY_DEVICE = 4;
+        public const int DISPLAY_DEVICE_RDPUDD = 16777216;
+        public const int DISPLAY_DEVICE_REMOTE = 67108864;
+        public const int DISPLAY_DEVICE_REMOVABLE = 32;
+        public const int DISPLAY_DEVICE_TS_COMPATIBLE = 2097152;
+        public const int DISPLAY_DEVICE_UNSAFE_MODES_ON = 524288;
+        public const int DISPLAY_DEVICE_VGA_COMPATIBLE = 16;
         public const int DISPLAYCONFIG_MAXPATH = 1024;
         public const int DISPLAYCONFIG_PATH_ACTIVE = 1;
         public const int DISPLAYCONFIG_PATH_CLONE_GROUP_INVALID = 65535;
@@ -8384,24 +8399,43 @@
         public const int DISPLAYCONFIG_TARGET_FORCIBLE = 2;
         public const int DISPLAYCONFIG_TARGET_IN_USE = 1;
         public const int DISPLAYCONFIG_TARGET_IS_HMD = 32;
-        public const int DISPLAY_DEVICE_ACC_DRIVER = 64;
-        public const int DISPLAY_DEVICE_ACTIVE = 1;
-        public const int DISPLAY_DEVICE_ATTACHED = 2;
-        public const int DISPLAY_DEVICE_ATTACHED_TO_DESKTOP = 1;
-        public const int DISPLAY_DEVICE_DISCONNECT = 33554432;
-        public const int DISPLAY_DEVICE_MIRRORING_DRIVER = 8;
-        public const int DISPLAY_DEVICE_MODESPRUNED = 134217728;
-        public const int DISPLAY_DEVICE_MULTI_DRIVER = 2;
-        public const int DISPLAY_DEVICE_PRIMARY_DEVICE = 4;
-        public const int DISPLAY_DEVICE_RDPUDD = 16777216;
-        public const int DISPLAY_DEVICE_REMOTE = 67108864;
-        public const int DISPLAY_DEVICE_REMOVABLE = 32;
-        public const int DISPLAY_DEVICE_TS_COMPATIBLE = 2097152;
-        public const int DISPLAY_DEVICE_UNSAFE_MODES_ON = 524288;
-        public const int DISPLAY_DEVICE_VGA_COMPATIBLE = 16;
-        public const int DI_APPBANDING = 1;
-        public const int DI_ROPS_READ_DESTINATION = 2;
         public const int DKGRAY_BRUSH = 3;
+        public const int DM_BITSPERPEL = 262144;
+        public const int DM_COLLATE = 32768;
+        public const int DM_COLOR = 2048;
+        public const int DM_COPIES = 256;
+        public const int DM_COPY = 2;
+        public const int DM_DEFAULTSOURCE = 512;
+        public const int DM_DISPLAYFIXEDOUTPUT = 536870912;
+        public const int DM_DISPLAYFLAGS = 2097152;
+        public const int DM_DISPLAYFREQUENCY = 4194304;
+        public const int DM_DISPLAYORIENTATION = 128;
+        public const int DM_DITHERTYPE = 67108864;
+        public const int DM_DUPLEX = 4096;
+        public const int DM_FORMNAME = 65536;
+        public const int DM_ICMINTENT = 16777216;
+        public const int DM_ICMMETHOD = 8388608;
+        public const int DM_INTERLACED = 2;
+        public const int DM_LOGPIXELS = 131072;
+        public const int DM_MEDIATYPE = 33554432;
+        public const int DM_MODIFY = 8;
+        public const int DM_NUP = 64;
+        public const int DM_ORIENTATION = 1;
+        public const int DM_PANNINGHEIGHT = 268435456;
+        public const int DM_PANNINGWIDTH = 134217728;
+        public const int DM_PAPERLENGTH = 4;
+        public const int DM_PAPERSIZE = 2;
+        public const int DM_PAPERWIDTH = 8;
+        public const int DM_PELSHEIGHT = 1048576;
+        public const int DM_PELSWIDTH = 524288;
+        public const int DM_POSITION = 32;
+        public const int DM_PRINTQUALITY = 1024;
+        public const int DM_PROMPT = 4;
+        public const int DM_SCALE = 16;
+        public const int DM_SPECVERSION = 1025;
+        public const int DM_TTOPTION = 16384;
+        public const int DM_UPDATE = 1;
+        public const int DM_YRESOLUTION = 8192;
         public const int DMBIN_AUTO = 7;
         public const int DMBIN_CASSETTE = 14;
         public const int DMBIN_ENVELOPE = 5;
@@ -8443,16 +8477,16 @@
         public const int DMDUP_HORIZONTAL = 3;
         public const int DMDUP_SIMPLEX = 1;
         public const int DMDUP_VERTICAL = 2;
-        public const int DMICMMETHOD_DEVICE = 4;
-        public const int DMICMMETHOD_DRIVER = 3;
-        public const int DMICMMETHOD_NONE = 1;
-        public const int DMICMMETHOD_SYSTEM = 2;
-        public const int DMICMMETHOD_USER = 256;
         public const int DMICM_ABS_COLORIMETRIC = 4;
         public const int DMICM_COLORIMETRIC = 3;
         public const int DMICM_CONTRAST = 2;
         public const int DMICM_SATURATE = 1;
         public const int DMICM_USER = 256;
+        public const int DMICMMETHOD_DEVICE = 4;
+        public const int DMICMMETHOD_DRIVER = 3;
+        public const int DMICMMETHOD_NONE = 1;
+        public const int DMICMMETHOD_SYSTEM = 2;
+        public const int DMICMMETHOD_USER = 256;
         public const int DMMEDIA_GLOSSY = 3;
         public const int DMMEDIA_STANDARD = 1;
         public const int DMMEDIA_TRANSPARENCY = 2;
@@ -8467,6 +8501,7 @@
         public const int DMPAPER_12X11 = 90;
         public const int DMPAPER_15X11 = 46;
         public const int DMPAPER_9X11 = 44;
+        public const int DMPAPER_A_PLUS = 57;
         public const int DMPAPER_A2 = 66;
         public const int DMPAPER_A3 = 8;
         public const int DMPAPER_A3_EXTRA = 63;
@@ -8474,18 +8509,18 @@
         public const int DMPAPER_A3_ROTATED = 76;
         public const int DMPAPER_A3_TRANSVERSE = 67;
         public const int DMPAPER_A4 = 9;
-        public const int DMPAPER_A4SMALL = 10;
         public const int DMPAPER_A4_EXTRA = 53;
         public const int DMPAPER_A4_PLUS = 60;
         public const int DMPAPER_A4_ROTATED = 77;
         public const int DMPAPER_A4_TRANSVERSE = 55;
+        public const int DMPAPER_A4SMALL = 10;
         public const int DMPAPER_A5 = 11;
         public const int DMPAPER_A5_EXTRA = 64;
         public const int DMPAPER_A5_ROTATED = 78;
         public const int DMPAPER_A5_TRANSVERSE = 61;
         public const int DMPAPER_A6 = 70;
         public const int DMPAPER_A6_ROTATED = 83;
-        public const int DMPAPER_A_PLUS = 57;
+        public const int DMPAPER_B_PLUS = 58;
         public const int DMPAPER_B4 = 12;
         public const int DMPAPER_B4_JIS_ROTATED = 79;
         public const int DMPAPER_B5 = 13;
@@ -8494,7 +8529,6 @@
         public const int DMPAPER_B5_TRANSVERSE = 62;
         public const int DMPAPER_B6_JIS = 88;
         public const int DMPAPER_B6_JIS_ROTATED = 89;
-        public const int DMPAPER_B_PLUS = 58;
         public const int DMPAPER_CSHEET = 24;
         public const int DMPAPER_DBL_JAPANESE_POSTCARD = 69;
         public const int DMPAPER_DBL_JAPANESE_POSTCARD_ROTATED = 82;
@@ -8540,23 +8574,23 @@
         public const int DMPAPER_LEGAL = 5;
         public const int DMPAPER_LEGAL_EXTRA = 51;
         public const int DMPAPER_LETTER = 1;
-        public const int DMPAPER_LETTERSMALL = 2;
         public const int DMPAPER_LETTER_EXTRA = 50;
         public const int DMPAPER_LETTER_EXTRA_TRANSVERSE = 56;
         public const int DMPAPER_LETTER_PLUS = 59;
         public const int DMPAPER_LETTER_ROTATED = 75;
         public const int DMPAPER_LETTER_TRANSVERSE = 54;
+        public const int DMPAPER_LETTERSMALL = 2;
         public const int DMPAPER_NOTE = 18;
         public const int DMPAPER_P16K = 93;
         public const int DMPAPER_P16K_ROTATED = 106;
         public const int DMPAPER_P32K = 94;
+        public const int DMPAPER_P32K_ROTATED = 107;
         public const int DMPAPER_P32KBIG = 95;
         public const int DMPAPER_P32KBIG_ROTATED = 108;
-        public const int DMPAPER_P32K_ROTATED = 107;
         public const int DMPAPER_PENV_1 = 96;
+        public const int DMPAPER_PENV_1_ROTATED = 109;
         public const int DMPAPER_PENV_10 = 105;
         public const int DMPAPER_PENV_10_ROTATED = 118;
-        public const int DMPAPER_PENV_1_ROTATED = 109;
         public const int DMPAPER_PENV_2 = 97;
         public const int DMPAPER_PENV_2_ROTATED = 110;
         public const int DMPAPER_PENV_3 = 98;
@@ -8584,46 +8618,10 @@
         public const int DMTT_DOWNLOAD = 2;
         public const int DMTT_DOWNLOAD_OUTLINE = 4;
         public const int DMTT_SUBDEV = 3;
-        public const int DM_BITSPERPEL = 262144;
-        public const int DM_COLLATE = 32768;
-        public const int DM_COLOR = 2048;
-        public const int DM_COPIES = 256;
-        public const int DM_COPY = 2;
-        public const int DM_DEFAULTSOURCE = 512;
-        public const int DM_DISPLAYFIXEDOUTPUT = 536870912;
-        public const int DM_DISPLAYFLAGS = 2097152;
-        public const int DM_DISPLAYFREQUENCY = 4194304;
-        public const int DM_DISPLAYORIENTATION = 128;
-        public const int DM_DITHERTYPE = 67108864;
-        public const int DM_DUPLEX = 4096;
-        public const int DM_FORMNAME = 65536;
-        public const int DM_ICMINTENT = 16777216;
-        public const int DM_ICMMETHOD = 8388608;
-        public const int DM_INTERLACED = 2;
-        public const int DM_LOGPIXELS = 131072;
-        public const int DM_MEDIATYPE = 33554432;
-        public const int DM_MODIFY = 8;
-        public const int DM_NUP = 64;
-        public const int DM_ORIENTATION = 1;
-        public const int DM_PANNINGHEIGHT = 268435456;
-        public const int DM_PANNINGWIDTH = 134217728;
-        public const int DM_PAPERLENGTH = 4;
-        public const int DM_PAPERSIZE = 2;
-        public const int DM_PAPERWIDTH = 8;
-        public const int DM_PELSHEIGHT = 1048576;
-        public const int DM_PELSWIDTH = 524288;
-        public const int DM_POSITION = 32;
-        public const int DM_PRINTQUALITY = 1024;
-        public const int DM_PROMPT = 4;
-        public const int DM_SCALE = 16;
-        public const int DM_SPECVERSION = 1025;
-        public const int DM_TTOPTION = 16384;
-        public const int DM_UPDATE = 1;
-        public const int DM_YRESOLUTION = 8192;
         public const int DOWNLOADFACE = 514;
         public const int DOWNLOADHEADER = 4111;
-        public const int DRAFTMODE = 7;
         public const int DRAFT_QUALITY = 1;
+        public const int DRAFTMODE = 7;
         public const int DRAWPATTERNRECT = 25;
         public const int DRIVERVERSION = 0;
         public const int DT_CHARSTREAM = 4;
@@ -8764,14 +8762,14 @@
         public const int ENABLEPAIRKERNING = 769;
         public const int ENABLERELATIVEWIDTHS = 768;
         public const int ENCAPSULATED_POSTSCRIPT = 4116;
-        public const int ENDDOC = 11;
         public const int END_PATH = 4098;
+        public const int ENDDOC = 11;
         public const int ENHMETA_SIGNATURE = 1179469088;
         public const int ENHMETA_STOCK_OBJECT = -2147483648;
         public const int ENUMPAPERBINS = 31;
         public const int ENUMPAPERMETRICS = 34;
-        public const int EPSPRINTING = 33;
         public const int EPS_SIGNATURE = 1179865157;
+        public const int EPSPRINTING = 33;
         public const int ERROR = 0;
         public const int ETO_CLIPPED = 4;
         public const int ETO_GLYPH_INDEX = 16;
@@ -8782,8 +8780,8 @@
         public const int ETO_PDY = 8192;
         public const int ETO_REVERSE_INDEX_MAP = 65536;
         public const int ETO_RTLREADING = 128;
-        public const int EXTTEXTOUT = 512;
         public const int EXT_DEVICE_CAPS = 4099;
+        public const int EXTTEXTOUT = 512;
         public const int FEATURESETTING_CUSTPAPER = 3;
         public const int FEATURESETTING_MIRROR = 4;
         public const int FEATURESETTING_NEGATIVE = 5;
@@ -8829,21 +8827,6 @@
         public const int FW_SEMIBOLD = 600;
         public const int FW_THIN = 100;
         public const int GB2312_CHARSET = 134;
-        public const int GCPCLASS_ARABIC = 2;
-        public const int GCPCLASS_HEBREW = 2;
-        public const int GCPCLASS_LATIN = 1;
-        public const int GCPCLASS_LATINNUMBER = 5;
-        public const int GCPCLASS_LATINNUMERICSEPARATOR = 7;
-        public const int GCPCLASS_LATINNUMERICTERMINATOR = 6;
-        public const int GCPCLASS_LOCALNUMBER = 4;
-        public const int GCPCLASS_NEUTRAL = 3;
-        public const int GCPCLASS_NUMERICSEPARATOR = 8;
-        public const int GCPCLASS_POSTBOUNDLTR = 32;
-        public const int GCPCLASS_POSTBOUNDRTL = 16;
-        public const int GCPCLASS_PREBOUNDLTR = 128;
-        public const int GCPCLASS_PREBOUNDRTL = 64;
-        public const int GCPGLYPH_LINKAFTER = 16384;
-        public const int GCPGLYPH_LINKBEFORE = 32768;
         public const int GCP_CLASSIN = 524288;
         public const int GCP_DBCS = 1;
         public const int GCP_DIACRITIC = 256;
@@ -8862,6 +8845,22 @@
         public const int GCP_REORDER = 2;
         public const int GCP_SYMSWAPOFF = 8388608;
         public const int GCP_USEKERNING = 8;
+        public const int GCPCLASS_ARABIC = 2;
+        public const int GCPCLASS_HEBREW = 2;
+        public const int GCPCLASS_LATIN = 1;
+        public const int GCPCLASS_LATINNUMBER = 5;
+        public const int GCPCLASS_LATINNUMERICSEPARATOR = 7;
+        public const int GCPCLASS_LATINNUMERICTERMINATOR = 6;
+        public const int GCPCLASS_LOCALNUMBER = 4;
+        public const int GCPCLASS_NEUTRAL = 3;
+        public const int GCPCLASS_NUMERICSEPARATOR = 8;
+        public const int GCPCLASS_POSTBOUNDLTR = 32;
+        public const int GCPCLASS_POSTBOUNDRTL = 16;
+        public const int GCPCLASS_PREBOUNDLTR = 128;
+        public const int GCPCLASS_PREBOUNDRTL = 64;
+        public const int GCPGLYPH_LINKAFTER = 16384;
+        public const int GCPGLYPH_LINKBEFORE = 32768;
+        public const int GDI_ERROR = -1;
         public const int GDICOMMENT_BEGINGROUP = 2;
         public const int GDICOMMENT_ENDGROUP = 3;
         public const int GDICOMMENT_IDENTIFIER = 1128875079;
@@ -8871,7 +8870,7 @@
         public const int GDICOMMENT_WINDOWS_METAFILE = -2147483647;
         public const int GDIPLUS_TS_QUERYVER = 4122;
         public const int GDIPLUS_TS_RECORD = 4123;
-        public const int GDI_ERROR = -1;
+        public const int GET_PS_FEATURESETTING = 4121;
         public const int GETCOLORTABLE = 5;
         public const int GETDEVICEUNITS = 42;
         public const int GETEXTENDEDTEXTMETRICS = 256;
@@ -8891,7 +8890,6 @@
         public const int GETTRACKKERNTABLE = 259;
         public const int GETVECTORBRUSHSIZE = 27;
         public const int GETVECTORPENSIZE = 26;
-        public const int GET_PS_FEATURESETTING = 4121;
         public const int GGI_MARK_NONEXISTING_GLYPHS = 1;
         public const int GGO_BEZIER = 3;
         public const int GGO_BITMAP = 1;
@@ -8950,11 +8948,6 @@
         public const int LAYOUT_BTT = 2;
         public const int LAYOUT_RTL = 1;
         public const int LAYOUT_VBH = 4;
-        public const int LCS_CALIBRATED_RGB = 0;
-        public const int LCS_GM_ABS_COLORIMETRIC = 8;
-        public const int LCS_GM_BUSINESS = 1;
-        public const int LCS_GM_GRAPHICS = 2;
-        public const int LCS_GM_IMAGES = 4;
         public const int LC_INTERIORS = 128;
         public const int LC_MARKER = 4;
         public const int LC_NONE = 0;
@@ -8963,6 +8956,11 @@
         public const int LC_STYLED = 32;
         public const int LC_WIDE = 16;
         public const int LC_WIDESTYLED = 64;
+        public const int LCS_CALIBRATED_RGB = 0;
+        public const int LCS_GM_ABS_COLORIMETRIC = 8;
+        public const int LCS_GM_BUSINESS = 1;
+        public const int LCS_GM_GRAPHICS = 2;
+        public const int LCS_GM_IMAGES = 4;
         public const int LF_FACESIZE = 32;
         public const int LF_FULLFACESIZE = 64;
         public const int LINECAPS = 30;
@@ -8983,7 +8981,6 @@
         public const int LTGRAY_BRUSH = 1;
         public const int MAC_CHARSET = 77;
         public const int MAXSTRETCHBLTMODE = 4;
-        public const int METAFILE_DRIVER = 2049;
         public const int META_ANIMATEPALETTE = 1078;
         public const int META_ARC = 2071;
         public const int META_BITBLT = 2338;
@@ -9053,6 +9050,7 @@
         public const int META_STRETCHBLT = 2851;
         public const int META_STRETCHDIB = 3907;
         public const int META_TEXTOUT = 1313;
+        public const int METAFILE_DRIVER = 2049;
         public const int MFCOMMENT = 15;
         public const int MILCORE_TS_QUERYVER_RESULT_FALSE = 0;
         public const int MILCORE_TS_QUERYVER_RESULT_TRUE = 2147483647;
@@ -9083,9 +9081,9 @@
         public const int NTM_REGULAR = 64;
         public const int NTM_TT_OPENTYPE = 262144;
         public const int NTM_TYPE1 = 1048576;
-        public const int NULLREGION = 1;
         public const int NULL_BRUSH = 5;
         public const int NULL_PEN = 8;
+        public const int NULLREGION = 1;
         public const int NUMBRUSHES = 16;
         public const int NUMCOLORS = 24;
         public const int NUMFONTS = 22;
@@ -9121,7 +9119,6 @@
         public const int OUT_STROKE_PRECIS = 3;
         public const int OUT_TT_ONLY_PRECIS = 7;
         public const int OUT_TT_PRECIS = 4;
-        public const int PANOSE_COUNT = 10;
         public const int PAN_ANY = 0;
         public const int PAN_ARMSTYLE_INDEX = 6;
         public const int PAN_BENT_ARMS_DOUBLE_SERIF = 11;
@@ -9139,12 +9136,11 @@
         public const int PAN_CONTRAST_VERY_HIGH = 9;
         public const int PAN_CONTRAST_VERY_LOW = 3;
         public const int PAN_CULTURE_LATIN = 0;
-        public const int PAN_FAMILYTYPE_INDEX = 0;
         public const int PAN_FAMILY_DECORATIVE = 4;
         public const int PAN_FAMILY_PICTORIAL = 5;
         public const int PAN_FAMILY_SCRIPT = 3;
         public const int PAN_FAMILY_TEXT_DISPLAY = 2;
-        public const int PAN_LETTERFORM_INDEX = 7;
+        public const int PAN_FAMILYTYPE_INDEX = 0;
         public const int PAN_LETT_NORMAL_BOXED = 4;
         public const int PAN_LETT_NORMAL_CONTACT = 2;
         public const int PAN_LETT_NORMAL_FLATTENED = 5;
@@ -9159,6 +9155,7 @@
         public const int PAN_LETT_OBLIQUE_ROUNDED = 13;
         public const int PAN_LETT_OBLIQUE_SQUARE = 15;
         public const int PAN_LETT_OBLIQUE_WEIGHTED = 10;
+        public const int PAN_LETTERFORM_INDEX = 7;
         public const int PAN_MIDLINE_CONSTANT_POINTED = 9;
         public const int PAN_MIDLINE_CONSTANT_SERIFED = 10;
         public const int PAN_MIDLINE_CONSTANT_TRIMMED = 8;
@@ -9173,7 +9170,6 @@
         public const int PAN_MIDLINE_STANDARD_SERIFED = 4;
         public const int PAN_MIDLINE_STANDARD_TRIMMED = 2;
         public const int PAN_NO_FIT = 1;
-        public const int PAN_PROPORTION_INDEX = 3;
         public const int PAN_PROP_CONDENSED = 6;
         public const int PAN_PROP_EVEN_WIDTH = 4;
         public const int PAN_PROP_EXPANDED = 5;
@@ -9182,7 +9178,7 @@
         public const int PAN_PROP_OLD_STYLE = 2;
         public const int PAN_PROP_VERY_CONDENSED = 8;
         public const int PAN_PROP_VERY_EXPANDED = 7;
-        public const int PAN_SERIFSTYLE_INDEX = 1;
+        public const int PAN_PROPORTION_INDEX = 3;
         public const int PAN_SERIF_BONE = 8;
         public const int PAN_SERIF_COVE = 2;
         public const int PAN_SERIF_EXAGGERATED = 9;
@@ -9197,12 +9193,12 @@
         public const int PAN_SERIF_SQUARE_COVE = 4;
         public const int PAN_SERIF_THIN = 7;
         public const int PAN_SERIF_TRIANGLE = 10;
+        public const int PAN_SERIFSTYLE_INDEX = 1;
         public const int PAN_STRAIGHT_ARMS_DOUBLE_SERIF = 6;
         public const int PAN_STRAIGHT_ARMS_HORZ = 2;
         public const int PAN_STRAIGHT_ARMS_SINGLE_SERIF = 5;
         public const int PAN_STRAIGHT_ARMS_VERT = 4;
         public const int PAN_STRAIGHT_ARMS_WEDGE = 3;
-        public const int PAN_STROKEVARIATION_INDEX = 5;
         public const int PAN_STROKE_GRADUAL_DIAG = 2;
         public const int PAN_STROKE_GRADUAL_HORZ = 5;
         public const int PAN_STROKE_GRADUAL_TRAN = 3;
@@ -9210,6 +9206,7 @@
         public const int PAN_STROKE_INSTANT_VERT = 8;
         public const int PAN_STROKE_RAPID_HORZ = 7;
         public const int PAN_STROKE_RAPID_VERT = 6;
+        public const int PAN_STROKEVARIATION_INDEX = 5;
         public const int PAN_WEIGHT_BLACK = 10;
         public const int PAN_WEIGHT_BOLD = 8;
         public const int PAN_WEIGHT_BOOK = 5;
@@ -9228,6 +9225,7 @@
         public const int PAN_XHEIGHT_DUCKING_SMALL = 5;
         public const int PAN_XHEIGHT_DUCKING_STD = 6;
         public const int PAN_XHEIGHT_INDEX = 9;
+        public const int PANOSE_COUNT = 10;
         public const int PASSTHROUGH = 19;
         public const int PC_EXPLICIT = 2;
         public const int PC_INTERIORS = 128;
@@ -9280,12 +9278,33 @@
         public const int POSTSCRIPT_IGNORE = 38;
         public const int POSTSCRIPT_INJECTION = 4118;
         public const int POSTSCRIPT_PASSTHROUGH = 4115;
+        public const int PR_JOBSTATUS = 0;
         public const int PRINTRATEUNIT_CPS = 2;
         public const int PRINTRATEUNIT_IPM = 4;
         public const int PRINTRATEUNIT_LPM = 3;
         public const int PRINTRATEUNIT_PPM = 1;
         public const int PROOF_QUALITY = 2;
-        public const int PR_JOBSTATUS = 0;
+        public const int PS_ALTERNATE = 8;
+        public const int PS_COSMETIC = 0;
+        public const int PS_DASH = 1;
+        public const int PS_DASHDOT = 3;
+        public const int PS_DASHDOTDOT = 4;
+        public const int PS_DOT = 2;
+        public const int PS_ENDCAP_FLAT = 512;
+        public const int PS_ENDCAP_MASK = 3840;
+        public const int PS_ENDCAP_ROUND = 0;
+        public const int PS_ENDCAP_SQUARE = 256;
+        public const int PS_GEOMETRIC = 65536;
+        public const int PS_INSIDEFRAME = 6;
+        public const int PS_JOIN_BEVEL = 4096;
+        public const int PS_JOIN_MASK = 61440;
+        public const int PS_JOIN_MITER = 8192;
+        public const int PS_JOIN_ROUND = 0;
+        public const int PS_NULL = 5;
+        public const int PS_SOLID = 0;
+        public const int PS_STYLE_MASK = 15;
+        public const int PS_TYPE_MASK = 983040;
+        public const int PS_USERSTYLE = 7;
         public const int PSIDENT_GDICENTRIC = 0;
         public const int PSIDENT_PSCENTRIC = 1;
         public const int PSINJECT_BEGINDEFAULTS = 12;
@@ -9324,27 +9343,6 @@
         public const int PSPROTOCOL_BCP = 1;
         public const int PSPROTOCOL_BINARY = 3;
         public const int PSPROTOCOL_TBCP = 2;
-        public const int PS_ALTERNATE = 8;
-        public const int PS_COSMETIC = 0;
-        public const int PS_DASH = 1;
-        public const int PS_DASHDOT = 3;
-        public const int PS_DASHDOTDOT = 4;
-        public const int PS_DOT = 2;
-        public const int PS_ENDCAP_FLAT = 512;
-        public const int PS_ENDCAP_MASK = 3840;
-        public const int PS_ENDCAP_ROUND = 0;
-        public const int PS_ENDCAP_SQUARE = 256;
-        public const int PS_GEOMETRIC = 65536;
-        public const int PS_INSIDEFRAME = 6;
-        public const int PS_JOIN_BEVEL = 4096;
-        public const int PS_JOIN_MASK = 61440;
-        public const int PS_JOIN_MITER = 8192;
-        public const int PS_JOIN_ROUND = 0;
-        public const int PS_NULL = 5;
-        public const int PS_SOLID = 0;
-        public const int PS_STYLE_MASK = 15;
-        public const int PS_TYPE_MASK = 983040;
-        public const int PS_USERSTYLE = 7;
         public const int PT_BEZIERTO = 4;
         public const int PT_CLOSEFIGURE = 1;
         public const int PT_LINETO = 2;
@@ -9378,15 +9376,15 @@
         public const int R2_NOTXORPEN = 10;
         public const int R2_WHITE = 16;
         public const int R2_XORPEN = 7;
-        public const int RASTERCAPS = 38;
         public const int RASTER_FONTTYPE = 1;
+        public const int RASTERCAPS = 38;
         public const int RC_BANDING = 2;
         public const int RC_BIGFONT = 1024;
         public const int RC_BITBLT = 1;
         public const int RC_BITMAP64 = 8;
         public const int RC_DEVBITS = 32768;
-        public const int RC_DIBTODEV = 512;
         public const int RC_DI_BITMAP = 128;
+        public const int RC_DIBTODEV = 512;
         public const int RC_FLOODFILL = 4096;
         public const int RC_GDI20_OUTPUT = 16;
         public const int RC_GDI20_STATE = 32;
@@ -9431,6 +9429,14 @@
         public const int SDC_VIRTUAL_MODE_AWARE = 32768;
         public const int SDC_VIRTUAL_REFRESH_RATE_AWARE = 131072;
         public const int SELECTPAPERSOURCE = 18;
+        public const int SET_ARC_DIRECTION = 4102;
+        public const int SET_BACKGROUND_COLOR = 4103;
+        public const int SET_BOUNDS = 4109;
+        public const int SET_CLIP_BOX = 4108;
+        public const int SET_MIRROR_MODE = 4110;
+        public const int SET_POLY_MODE = 4104;
+        public const int SET_SCREEN_ANGLE = 4105;
+        public const int SET_SPREAD = 4106;
         public const int SETABORTPROC = 9;
         public const int SETALLJUSTVALUES = 771;
         public const int SETCHARSET = 772;
@@ -9442,20 +9448,12 @@
         public const int SETLINECAP = 21;
         public const int SETLINEJOIN = 22;
         public const int SETMITERLIMIT = 23;
-        public const int SET_ARC_DIRECTION = 4102;
-        public const int SET_BACKGROUND_COLOR = 4103;
-        public const int SET_BOUNDS = 4109;
-        public const int SET_CLIP_BOX = 4108;
-        public const int SET_MIRROR_MODE = 4110;
-        public const int SET_POLY_MODE = 4104;
-        public const int SET_SCREEN_ANGLE = 4105;
-        public const int SET_SPREAD = 4106;
         public const int SHADEBLENDCAPS = 120;
         public const int SHIFTJIS_CHARSET = 128;
         public const int SIMPLEREGION = 2;
         public const int SIZEPALETTE = 104;
-        public const int SPCLPASSTHROUGH2 = 4568;
         public const int SP_NOTREPORTED = 16384;
+        public const int SPCLPASSTHROUGH2 = 4568;
         public const int STARTDOC = 10;
         public const int STOCK_LAST = 19;
         public const int STRETCHBLT = 2048;
@@ -9476,10 +9474,6 @@
         public const int TA_RTLREADING = 256;
         public const int TA_TOP = 0;
         public const int TA_UPDATECP = 1;
-        public const int TCI_SRCCHARSET = 1;
-        public const int TCI_SRCCODEPAGE = 2;
-        public const int TCI_SRCFONTSIG = 3;
-        public const int TCI_SRCLOCALE = 4096;
         public const int TC_CP_STROKE = 4;
         public const int TC_CR_90 = 8;
         public const int TC_CR_ANY = 16;
@@ -9497,6 +9491,10 @@
         public const int TC_SO_ABLE = 4096;
         public const int TC_UA_ABLE = 2048;
         public const int TC_VA_ABLE = 16384;
+        public const int TCI_SRCCHARSET = 1;
+        public const int TCI_SRCCODEPAGE = 2;
+        public const int TCI_SRCFONTSIG = 3;
+        public const int TCI_SRCLOCALE = 4096;
         public const int TECHNOLOGY = 2;
         public const int TEXTCAPS = 34;
         public const int THAI_CHARSET = 222;
@@ -9521,7 +9519,6 @@
         public const int VREFRESH = 116;
         public const int WGL_FONT_LINES = 0;
         public const int WGL_FONT_POLYGONS = 1;
-        public const int WGL_SWAPMULTIPLE_MAX = 16;
         public const int WGL_SWAP_MAIN_PLANE = 1;
         public const int WGL_SWAP_OVERLAY1 = 2;
         public const int WGL_SWAP_OVERLAY10 = 1024;
@@ -9553,11 +9550,12 @@
         public const int WGL_SWAP_UNDERLAY7 = 4194304;
         public const int WGL_SWAP_UNDERLAY8 = 8388608;
         public const int WGL_SWAP_UNDERLAY9 = 16777216;
-        public const int WHITEONBLACK = 2;
+        public const int WGL_SWAPMULTIPLE_MAX = 16;
         public const int WHITE_BRUSH = 0;
         public const int WHITE_PEN = 6;
+        public const int WHITEONBLACK = 2;
         public const int WINDING = 2;
-
+        
         // from <Windows SDK Path>\um\wmcodecdsp.h
         public const int AEC_MAX_SYSTEM_MODES = 6;
         public const int SYSFXUI_DONOTSHOW_BASSBOOST = 8;
@@ -9570,35 +9568,35 @@
         public const int SYSFXUI_DONOTSHOW_VIRTUALSURROUND = 32;
         public const int TOC_ENTRY_MAX_TITLE_SIZE = 65535;
         public const int TOC_MAX_DESCRIPTION_SIZE = 65535;
-        public const int WMAAECMA_E_NO_ACTIVE_RENDER_STREAM = -2016673782;
         public const int WM_CODEC_ONEPASS_CBR = 1;
         public const int WM_CODEC_ONEPASS_VBR = 2;
         public const int WM_CODEC_TWOPASS_CBR = 4;
         public const int WM_CODEC_TWOPASS_VBR_PEAKCONSTRAINED = 16;
         public const int WM_CODEC_TWOPASS_VBR_UNCONSTRAINED = 8;
-
+        public const int WMAAECMA_E_NO_ACTIVE_RENDER_STREAM = -2016673782;
+        
         // from <Windows SDK Path>\um\wmcontainer.h
-        public const long MFASFINDEXER_APPROX_SEEK_TIME_UNKNOWN = -1;
-        public const int MFASFINDEXER_NO_FIXED_INTERVAL = -1;
-        public const int MFASFINDEXER_PER_ENTRY_BYTES_DYNAMIC = 65535;
-        public const long MFASFINDEXER_READ_FOR_REVERSEPLAYBACK_OUTOFDATASEGMENT = -1;
         public const int MFASF_DEFAULT_BUFFER_WINDOW_MS = 3000;
         public const int MFASF_MAX_STREAM_NUMBER = 127;
         public const int MFASF_PAYLOADEXTENSION_MAX_SIZE = 255;
         public const int MFASF_PAYLOADEXTENSION_VARIABLE_SIZE = 65535;
-
+        public const long MFASFINDEXER_APPROX_SEEK_TIME_UNKNOWN = -1;
+        public const int MFASFINDEXER_NO_FIXED_INTERVAL = -1;
+        public const int MFASFINDEXER_PER_ENTRY_BYTES_DYNAMIC = 65535;
+        public const long MFASFINDEXER_READ_FOR_REVERSEPLAYBACK_OUTOFDATASEGMENT = -1;
+        
         // from <Windows SDK Path>\um\wmdmlog.h
         public const int WMDM_LOG_NOTIMESTAMP = 16;
         public const int WMDM_LOG_SEV_ERROR = 4;
         public const int WMDM_LOG_SEV_INFO = 1;
         public const int WMDM_LOG_SEV_WARN = 2;
-
+        
         // from <Windows SDK Path>\um\wmpdevices.h
         public const int IOCTL_WMP_DEVICE_CAN_SYNC = 844123479;
         public const int IOCTL_WMP_METADATA_ROUND_TRIP = 827346263;
         public const int WMP_MDRT_FLAGS_UNREPORTED_ADDED_ITEMS = 2;
         public const int WMP_MDRT_FLAGS_UNREPORTED_DELETED_ITEMS = 1;
-
+        
         // from <Windows SDK Path>\um\wmpids.h
         public const int DISPID_DELTA = 50;
         public const int DISPID_WMPCORE_BASE = 0;
@@ -9613,7 +9611,7 @@
         public const int WMPCOREEVENT_SEEK_BASE = 5200;
         public const int WMPCOREEVENT_WARNING_BASE = 5600;
         public const int WMPOCXEVENT_BASE = 6500;
-
+        
         // from <Windows SDK Path>\um\wmpplug.h
         public const int PLUGIN_FLAGS_ACCEPTSMEDIA = 268435456;
         public const int PLUGIN_FLAGS_ACCEPTSPLAYLISTS = 134217728;
@@ -9627,17 +9625,31 @@
         public const int PLUGIN_TYPE_METADATAAREA = 5;
         public const int PLUGIN_TYPE_SEPARATEWINDOW = 2;
         public const int PLUGIN_TYPE_SETTINGSAREA = 4;
-
+        
         // from <Windows SDK Path>\um\wmpservices.h
         public const int WMPGC_FLAGS_ALLOW_PREROLL = 1;
         public const int WMPGC_FLAGS_DISABLE_PLUGINS = 8;
         public const int WMPGC_FLAGS_IGNORE_AV_SYNC = 4;
         public const int WMPGC_FLAGS_SUPPRESS_DIALOGS = 2;
         public const int WMPGC_FLAGS_USE_CUSTOM_GRAPH = 16;
-
+        
         // from <Windows SDK Path>\um\wmsdkidl.h
         public const int DRM_OPL_TYPES = 1;
         public const int WAVE_FORMAT_DRM = 9;
+        public const int WM_CL_INTERLACED420 = 0;
+        public const int WM_CL_PROGRESSIVE420 = 1;
+        public const int WM_CT_BOTTOM_FIELD_FIRST = 32;
+        public const int WM_CT_INTERLACED = 128;
+        public const int WM_CT_REPEAT_FIRST_FIELD = 16;
+        public const int WM_CT_TOP_FIELD_FIRST = 64;
+        public const int WM_MAX_STREAMS = 63;
+        public const int WM_MAX_VIDEO_STREAMS = 63;
+        public const int WM_SampleExtension_ChromaLocation_Size = 1;
+        public const int WM_SampleExtension_ColorSpaceInfo_Size = 3;
+        public const int WM_SampleExtension_ContentType_Size = 1;
+        public const int WM_SampleExtension_PixelAspectRatio_Size = 2;
+        public const int WM_SampleExtension_SampleDuration_Size = 2;
+        public const int WM_SampleExtension_Timecode_Size = 14;
         public const int WMDRM_IMPORT_INIT_STRUCT_DEFINED = 1;
         public const int WMT_VIDEOIMAGE_INTEGER_DENOMINATOR = 65536;
         public const int WMT_VIDEOIMAGE_MAGIC_NUMBER = 491406834;
@@ -9667,19 +9679,5 @@
         public const int WMT_VIDEOIMAGE_TRANSITION_SPLIT = 29;
         public const int WMT_VIDEOIMAGE_TRANSITION_STAR = 30;
         public const int WMT_VIDEOIMAGE_TRANSITION_WHEEL = 31;
-        public const int WM_CL_INTERLACED420 = 0;
-        public const int WM_CL_PROGRESSIVE420 = 1;
-        public const int WM_CT_BOTTOM_FIELD_FIRST = 32;
-        public const int WM_CT_INTERLACED = 128;
-        public const int WM_CT_REPEAT_FIRST_FIELD = 16;
-        public const int WM_CT_TOP_FIELD_FIRST = 64;
-        public const int WM_MAX_STREAMS = 63;
-        public const int WM_MAX_VIDEO_STREAMS = 63;
-        public const int WM_SampleExtension_ChromaLocation_Size = 1;
-        public const int WM_SampleExtension_ColorSpaceInfo_Size = 3;
-        public const int WM_SampleExtension_ContentType_Size = 1;
-        public const int WM_SampleExtension_PixelAspectRatio_Size = 2;
-        public const int WM_SampleExtension_SampleDuration_Size = 2;
-        public const int WM_SampleExtension_Timecode_Size = 14;
     }
 }

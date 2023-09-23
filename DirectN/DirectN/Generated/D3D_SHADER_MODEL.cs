@@ -12,5 +12,6 @@ namespace DirectN
         D3D_SHADER_MODEL_6_5 = 101,
         D3D_SHADER_MODEL_6_6 = 102,
         D3D_SHADER_MODEL_6_7 = 103,
+        D3D_HIGHEST_SHADER_MODEL = 103,
     }
 }

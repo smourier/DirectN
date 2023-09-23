@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d3d12.h
 using System;
 using System.Runtime.InteropServices;
-using LUID = DirectN._LUID;
 using SECURITY_ATTRIBUTES = DirectN._SECURITY_ATTRIBUTES;
 
 namespace DirectN

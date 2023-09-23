@@ -20,5 +20,7 @@ namespace DirectN
         D3D12_BLEND_INV_SRC1_COLOR = 17,
         D3D12_BLEND_SRC1_ALPHA = 18,
         D3D12_BLEND_INV_SRC1_ALPHA = 19,
+        D3D12_BLEND_ALPHA_FACTOR = 20,
+        D3D12_BLEND_INV_ALPHA_FACTOR = 21,
     }
 }
