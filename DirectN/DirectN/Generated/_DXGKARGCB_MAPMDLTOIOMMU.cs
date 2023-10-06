@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DXGKARGCB_MAPMDLTOIOMMU
     {
-        public IntPtr pMdl;
+        public int pMdl;
         public IntPtr hMemoryHandle;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
@@ -504,6 +505,14 @@ namespace DirectN
             return 0xFF;
         }
 
+        public static string ToHexa(this IntPtr ptr)
+        {
+            if (IntPtr.Size == 4)
+                return "0x" + ptr.ToInt32().ToString("X8");
+
+            return "0x" + ptr.ToInt32().ToString("X16");
+        }
+
         public static string ToHexa(this byte[] bytes, bool addEllipsis = false) => bytes != null ? ToHexa(bytes, 0, bytes.Length, addEllipsis) : "0x";
         public static string ToHexa(this byte[] bytes, int count, bool addEllipsis = false) => ToHexa(bytes, 0, count, addEllipsis);
         public static string ToHexa(this byte[] bytes, int offset, int count, bool addEllipsis = false)
@@ -566,7 +575,6 @@ namespace DirectN
         }
 
         public static string ToHexaDump(this IntPtr ptr, int count) => ToHexaDump(ptr, 0, count, null, true);
-
         public static string ToHexaDump(this IntPtr ptr, int offset, int count, string prefix, bool addHeader)
         {
             if (ptr == IntPtr.Zero)
@@ -643,6 +651,84 @@ namespace DirectN
             return sb.ToString();
         }
 
+        public static void WriteHexaDump(this byte[] bytes, TextWriter writer, string prefix = null) => WriteHexaDump(bytes, writer, 0, bytes.Length, prefix, true);
+        public static void WriteHexaDump(this IntPtr ptr, TextWriter writer, int count) => WriteHexaDump(ptr, writer, 0, count, null, true);
+        public static void WriteHexaDump(this IntPtr ptr, TextWriter writer, int offset, int count, string prefix = null, bool addHeader = true)
+        {
+            if (ptr == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(ptr));
+
+            var bytes = new byte[count];
+            Marshal.Copy(ptr, bytes, offset, count);
+            WriteHexaDump(bytes, writer, 0, count, prefix, addHeader);
+        }
+
+        public static void WriteHexaDump(this byte[] bytes, TextWriter writer, int count) => WriteHexaDump(bytes, writer, 0, count, null, true);
+        public static void WriteHexaDump(this byte[] bytes, TextWriter writer, int offset, int count, string prefix = null, bool addHeader = true)
+        {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
+            if (writer == null)
+                throw new ArgumentNullException(nameof(writer));
+
+            if (offset < 0)
+            {
+                offset = 0;
+            }
+
+            if (count < 0)
+            {
+                count = bytes.Length;
+            }
+
+            if ((offset + count) > bytes.Length)
+            {
+                count = bytes.Length - offset;
+            }
+
+            if (addHeader)
+            {
+                writer.Write(prefix);
+                //             0         1         2         3         4         5         6         7
+                //             01234567890123456789012345678901234567890123456789012345678901234567890123456789
+                writer.WriteLine("Offset    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F  0123456789ABCDEF");
+                writer.WriteLine("--------  -----------------------------------------------  ----------------");
+            }
+
+            for (var i = 0; i < count; i += 16)
+            {
+                writer.Write(prefix);
+                writer.Write(string.Format("{0:X8}  ", i + offset));
+
+                int j;
+                for (j = 0; (j < 16) && ((i + j) < count); j++)
+                {
+                    writer.Write(string.Format("{0:X2} ", bytes[i + j + offset]));
+                }
+
+                writer.Write(' ');
+                if (j < 16)
+                {
+                    writer.Write(new string(' ', 3 * (16 - j)));
+                }
+                for (j = 0; j < 16 && (i + j) < count; j++)
+                {
+                    var b = bytes[i + j + offset];
+                    if (b > 31 && b < 128)
+                    {
+                        writer.Write((char)b);
+                    }
+                    else
+                    {
+                        writer.Write('.');
+                    }
+                }
+
+                writer.WriteLine();
+            }
+        }
+
         public static IReadOnlyList<T> SplitToList<T>(string text, params char[] separators) => SplitToList<T>(text, null, separators);
         public static IReadOnlyList<T> SplitToList<T>(string text, IFormatProvider provider, params char[] separators)
         {
@@ -697,6 +783,7 @@ namespace DirectN
 
         public static T ChangeType<T>(object input) => ChangeType(input, default(T));
         public static T ChangeType<T>(object input, T defaultValue) => ChangeType(input, defaultValue, null);
+        public static T ChangeType<T>(object input, IFormatProvider provider) => ChangeType<T>(input, default, provider);
         public static T ChangeType<T>(object input, T defaultValue, IFormatProvider provider)
         {
             if (!TryChangeType(input, provider, out T value))

@@ -5,11 +5,12 @@ using System.Threading;
 
 namespace DirectN
 {
-    public class ComObject : IDisposable
+    public abstract class ComObject : IComObject
     {
         private object _object;
+        private readonly bool _dispose;
 
-        public ComObject(object comObject)
+        public ComObject(object comObject, bool dispose = true)
         {
             if (comObject == null)
                 throw new ArgumentNullException(nameof(comObject));
@@ -18,6 +19,7 @@ namespace DirectN
                 throw new ArgumentException("Argument is not a COM object", nameof(comObject));
 
             _object = comObject;
+            _dispose = dispose;
 
 #if DEBUG
             Id = Interlocked.Increment(ref _id);
@@ -26,6 +28,7 @@ namespace DirectN
 #endif
         }
 
+        public abstract Type InterfaceType { get; }
         public bool IsDisposed => _object == null;
         public object Object
         {
@@ -68,12 +71,37 @@ namespace DirectN
             return (T)obj;
         }
 
+        public IntPtr GetInterfacePointer<T>(bool throwOnError = false)
+        {
+            try
+            {
+                return Marshal.GetComInterfaceForObject(Object, typeof(T));
+            }
+            catch
+            {
+                if (throwOnError)
+                    throw;
+            }
+            return IntPtr.Zero;
+        }
+
         public T As<T>(bool throwOnError = false) where T : class
         {
             if (throwOnError)
                 return (T)Object; // will throw
 
             return Object as T;
+        }
+
+        public IComObject<T> AsComObject<T>(bool throwOnError = false) where T : class
+        {
+            if (throwOnError)
+                return new ComObject<T>((T)Object, false); // will throw
+
+            if (!(Object is T obj))
+                return null;
+
+            return new ComObject<T>(obj, false);
         }
 
         public static ComObject<T> WrapAsGeneric<T>(object instance) => (ComObject<T>)WrapAsGeneric(typeof(T), instance);
@@ -114,6 +142,9 @@ namespace DirectN
 
         protected virtual void Dispose(bool disposing)
         {
+            if (!_dispose)
+                return;
+
             //#if DEBUG
             //            Trace("~", "disposing: " + disposing + " duration: " + Duration.Milliseconds);
             //#endif
@@ -192,6 +223,52 @@ namespace DirectN
             return Marshal.ReleaseComObject(comObject);
         }
 
+        public static void WithComPointer<T>(object comObject, Action<IntPtr> action) => WithComPointer(comObject, typeof(T), action);
+        public static void WithComPointer(object comObject, Type type, Action<IntPtr> action)
+        {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            var ptr = comObject != null ? Marshal.GetComInterfaceForObject(Unwrap(comObject), type) : IntPtr.Zero;
+            try
+            {
+                action(ptr);
+            }
+            finally
+            {
+                if (ptr != IntPtr.Zero)
+                {
+                    Marshal.Release(ptr);
+                }
+            }
+        }
+
+        public static T WithComPointer<T, TType>(object comObject, Func<IntPtr, T> func) => WithComPointer<T>(comObject, typeof(TType), func);
+        public static T WithComPointer<T>(object comObject, Type type, Func<IntPtr, T> func)
+        {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            var ptr = comObject != null ? Marshal.GetComInterfaceForObject(Unwrap(comObject), type) : IntPtr.Zero;
+            try
+            {
+                return func(ptr);
+            }
+            finally
+            {
+                if (ptr != IntPtr.Zero)
+                {
+                    Marshal.Release(ptr);
+                }
+            }
+        }
+
 #if DEBUG
         public static ILogger Logger { get; set; }
         protected virtual string ObjectTypeName => null;
@@ -254,39 +331,92 @@ namespace DirectN
 
     public class ComObject<T> : ComObject, IComObject<T>
     {
-        public ComObject(T comObject)
-            : base(comObject)
+        public ComObject(T comObject, bool dispose = true)
+            : base(comObject, dispose)
         {
         }
 
         public new T Object => (T)base.Object;
+        public override Type InterfaceType => typeof(T);
 
 #if DEBUG
         protected override string ObjectTypeName => typeof(T).Name;
 #endif
-
-        //public static implicit operator ComObject<T>(T value) => new ComObject<T>(value);
-        //public static implicit operator T(ComObject<T> value) => value.Object;
     }
 
-    public sealed class NoDisposeComObject<T> : IComObject<T>
+    public interface IComObject : IDisposable
     {
-        public NoDisposeComObject(object comObject)
+        bool IsDisposed { get; }
+        object Object { get; }
+        Type InterfaceType { get; }
+        I As<I>(bool throwOnError = false) where I : class;
+        IntPtr GetInterfacePointer<T>(bool throwOnError = false);
+        IComObject<I> AsComObject<I>(bool throwOnError = false) where I : class;
+    }
+
+    public interface IComObject<out T> : IComObject
+    {
+        new T Object { get; }
+    }
+
+    public static class ComObjectExtensions
+    {
+        public static void SafeDispose(this IComObject comObject)
         {
-            Object = (T)comObject;
+            if (comObject == null || comObject.IsDisposed)
+                return;
+
+            comObject.Dispose();
+        }
+    }
+
+    public sealed class ComObjectWrapper<T> : IDisposable
+    {
+        private readonly IComObject<T> _cot;
+
+        public ComObjectWrapper(object obj)
+        {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
+
+            _cot = obj as IComObject<T>;
+            if (_cot == null)
+            {
+                if (obj is T t)
+                {
+                    _cot = new ComObject<T>(t);
+                }
+                else
+                {
+                    if (obj is IComObject co)
+                    {
+                        if (co.IsDisposed)
+                            throw new ArgumentException("Input of type '" + obj.GetType() + "' is disposed.", nameof(obj));
+
+                        if (co.Object is T t2)
+                        {
+                            _cot = new ComObject<T>(t2);
+                        }
+                    }
+
+                    if (_cot == null)
+                        throw new ArgumentException("Input of type '" + obj.GetType() + "' must be assignable to type '" + typeof(T) + "'.", nameof(obj));
+                }
+            }
+
+            if (_cot.IsDisposed)
+                throw new ArgumentException("Input of type '" + obj.GetType() + "' is disposed.", nameof(obj));
         }
 
-        public T Object { get; }
-        public bool IsDisposed => false;
+        public T Object => _cot.Object;
+        public IComObject<T> ComObject => _cot;
 
-        public I As<I>(bool throwOnError = false) where I : class => throwOnError ? (I)(object)Object : Object as I;
-        public void Dispose() { }
-    }
+        public void Dispose()
+        {
+            if (_cot.IsDisposed)
+                return;
 
-    public interface IComObject<out T> : IDisposable
-    {
-        T Object { get; }
-        bool IsDisposed { get; }
-        I As<I>(bool throwOnError = false) where I : class;
+            _cot.Dispose();
+        }
     }
 }

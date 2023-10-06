@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
@@ -9,8 +8,8 @@ namespace DirectN
     public partial struct _DXGK_SEGMENTDESCRIPTOR3
     {
         public _DXGK_SEGMENTFLAGS Flags;
-        public PHYSICAL_ADDRESS BaseAddress;
-        public PHYSICAL_ADDRESS CpuTranslatedAddress;
+        public long BaseAddress;
+        public long CpuTranslatedAddress;
         public IntPtr Size;
         public uint NbOfBanks;
         public IntPtr pBankRangeTable;

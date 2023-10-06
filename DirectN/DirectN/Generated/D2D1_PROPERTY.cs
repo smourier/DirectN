@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_1.h
 namespace DirectN
 {
-    /// <summary>
-    /// This defines the list of system properties present on the root effect property interface.
-    /// </summary>
     public enum D2D1_PROPERTY
     {
         D2D1_PROPERTY_CLSID = -2147483648,

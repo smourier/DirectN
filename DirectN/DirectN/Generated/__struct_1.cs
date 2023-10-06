@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_1
     {
-        public ulong UnsignedMinimum;
-        public ulong UnsignedMaximum;
+        public uint UnsignedMinimum;
+        public uint UnsignedMaximum;
     }
 }

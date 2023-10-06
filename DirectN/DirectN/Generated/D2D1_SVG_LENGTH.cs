@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents an SVG length.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_SVG_LENGTH
     {

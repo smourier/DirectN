@@ -23,6 +23,6 @@ namespace DirectN
         HRESULT CreateFontFaceFromHdc(IntPtr hdc, /* _COM_Outptr_ */ out IDWriteFontFace fontFace);
         
         [PreserveSig]
-        HRESULT CreateBitmapRenderTarget(/* optional(HDC__) */ IntPtr hdc, uint width, uint height, /* _COM_Outptr_ */ out IDWriteBitmapRenderTarget renderTarget);
+        HRESULT CreateBitmapRenderTarget(/* optional(HDC) */ IntPtr hdc, uint width, uint height, /* _COM_Outptr_ */ out IDWriteBitmapRenderTarget renderTarget);
     }
 }

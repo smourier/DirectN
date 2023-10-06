@@ -9,7 +9,7 @@ namespace DirectN
     public partial interface IDxcLibrary
     {
         [PreserveSig]
-        HRESULT SetMalloc(/* optional(IMalloc) */ IntPtr pMalloc);
+        HRESULT SetMalloc(/* _In_opt_ */ IMalloc pMalloc);
         
         [PreserveSig]
         HRESULT CreateBlobFromBlob(/* _In_ */ IDxcBlob pBlob, uint offset, uint length, /* _COM_Outptr_ */ out IDxcBlob ppResult);
@@ -24,7 +24,7 @@ namespace DirectN
         HRESULT CreateBlobWithEncodingOnHeapCopy(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IntPtr[] pText, int size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
-        HRESULT CreateBlobWithEncodingOnMalloc(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IntPtr[] pText, ref IMalloc pIMalloc, int size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT CreateBlobWithEncodingOnMalloc(/* _In_bytecount_(size) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IntPtr[] pText, IMalloc pIMalloc, int size, uint codePage, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
         HRESULT CreateIncludeHandler(/* _COM_Outptr_ */ out IDxcIncludeHandler ppResult);

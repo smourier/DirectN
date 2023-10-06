@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_1.h
 namespace DirectN
 {
-    /// <summary>
-    /// Specifies how the layer contents should be prepared.
-    /// </summary>
     public enum D2D1_LAYER_OPTIONS1
     {
         D2D1_LAYER_OPTIONS1_NONE = 0,

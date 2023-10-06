@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
@@ -13,6 +15,8 @@ namespace DirectN
 {
     public static class Extensions
     {
+        private static readonly ConcurrentDictionary<Type, ConcurrentDictionary<Guid, string>> _guidsNames = new ConcurrentDictionary<Type, ConcurrentDictionary<Guid, string>>();
+
         public static void CopyTo(this IntPtr source, IntPtr destination, int length) => PropVariant.CopyMemory(destination, source, (IntPtr)length);
         public static void CopyTo(this IntPtr source, IntPtr destination, long length) => PropVariant.CopyMemory(destination, source, (IntPtr)length);
         public static void CopyTo(this IntPtr source, IntPtr destination, IntPtr length) => PropVariant.CopyMemory(destination, source, length);
@@ -152,6 +156,49 @@ namespace DirectN
         public static bool IgnoreCase(this StringComparer comparer) => comparer == StringComparer.CurrentCultureIgnoreCase ||
             comparer == StringComparer.InvariantCultureIgnoreCase ||
             comparer == StringComparer.OrdinalIgnoreCase;
+
+        public static DateTimeOffset ToDateTimeOffset(this System.Runtime.InteropServices.ComTypes.FILETIME fileTime)
+        {
+            var ft = (((long)fileTime.dwHighDateTime) << 32) + fileTime.dwLowDateTime;
+            return DateTimeOffset.FromFileTime(ft);
+        }
+
+        public static long CopyTo(this Stream input, Stream output, long count = long.MaxValue, int bufferSize = 0x14000)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            if (output == null)
+                throw new ArgumentNullException(nameof(output));
+
+            if (count <= 0)
+                throw new ArgumentException(null, nameof(count));
+
+            if (bufferSize <= 0)
+                throw new ArgumentException(null, nameof(bufferSize));
+
+            if (count < bufferSize)
+            {
+                bufferSize = (int)count;
+            }
+
+            var bytes = new byte[bufferSize];
+            var total = 0;
+            do
+            {
+                var max = (int)Math.Min(count - total, bytes.Length);
+                var read = input.Read(bytes, 0, max);
+                if (read == 0)
+                    break;
+
+                output.Write(bytes, 0, read);
+                total += read;
+                if (total == count)
+                    break;
+            }
+            while (true);
+            return total;
+        }
 
         public static int SizeOf(this Array array)
         {
@@ -677,14 +724,18 @@ namespace DirectN
             }
         }
 
-        public static void Dispose(this IEnumerable<IDisposable> disposables, bool throwOnError = false)
+        public static void Dispose(this IEnumerable<IDisposable> disposables, IEnumerable<IDisposable> excluded = null, bool throwOnError = false)
         {
             if (disposables == null)
                 return;
 
+            var hash = excluded != null ? new HashSet<IDisposable>(excluded) : null;
             foreach (var disposable in disposables)
             {
                 if (disposable == null)
+                    continue;
+
+                if (hash?.Contains(disposable) == true)
                     continue;
 
                 if (throwOnError)
@@ -745,6 +796,39 @@ namespace DirectN
             {
                 Marshal.Release(ptr);
             }
+        }
+
+        public static string GetGuidName(this Type type, Guid guid)
+        {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
+            if (TryGetGuidName(type, guid, out var name))
+                return name;
+
+            return guid.ToString();
+        }
+
+        public static bool TryGetGuidName(this Type type, Guid guid, out string name)
+        {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
+            if (!_guidsNames.TryGetValue(type, out var dic))
+            {
+                dic = new ConcurrentDictionary<Guid, string>();
+                foreach (var field in type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly))
+                {
+                    dic[(Guid)field.GetValue(null)] = field.Name;
+                }
+                _guidsNames[type] = dic;
+            }
+
+            if (dic.TryGetValue(guid, out name))
+                return true;
+
+            name = null;
+            return false;
         }
     }
 }

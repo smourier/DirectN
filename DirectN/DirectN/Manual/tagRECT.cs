@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace DirectN
 {
@@ -79,6 +78,21 @@ namespace DirectN
         public tagPOINT RightTop => new tagPOINT(right, top);
         public tagPOINT RightBottom => new tagPOINT(right, bottom);
         public tagRECT Abs => new tagRECT(Math.Abs(left), Math.Abs(top), Math.Abs(right), Math.Abs(bottom));
+
+        public bool Contains(tagRECT rect) => left <= rect.left && top <= rect.top && right >= rect.right && bottom >= rect.bottom;
+        public bool Contains(int left, int top) => this.left <= left && this.top <= top && right >= left && bottom >= top;
+        public bool Contains(tagPOINT point) => Contains(point.x, point.y);
+        public bool Equals(tagRECT other) => left == other.left && top == other.top && right == other.right && bottom == other.bottom;
+        public override bool Equals(object obj) => obj is tagRECT rc && Equals(rc);
+        public override int GetHashCode() => left.GetHashCode() ^ top.GetHashCode() ^ right.GetHashCode() ^ bottom.GetHashCode();
+
+        public static bool operator ==(tagRECT left, tagRECT right) => left.Equals(right);
+        public static bool operator !=(tagRECT left, tagRECT right) => !left.Equals(right);
+
+        public static tagRECT Sized(int left, int top, int width, int height) => new tagRECT(left, top, left + width, top + height);
+        public static tagRECT Thickness(int horizontal, int vertical) => Thickness(horizontal, vertical, horizontal, vertical);
+        public static tagRECT Thickness(int all) => Thickness(all, all, all, all);
+        public static tagRECT Thickness(int left, int top, int right, int bottom) => new tagRECT { left = left, top = top, right = right, bottom = bottom }; // don't change how this is done (avoids validation)
 
         public D2D_RECT_F ToD2D_RECT_F() => new D2D_RECT_F(left, top, right, bottom);
 

@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_1.h
 namespace DirectN
 {
-    /// <summary>
-    /// This defines the valid property types that can be used in an effect property interface.
-    /// </summary>
     public enum D2D1_PROPERTY_TYPE
     {
         D2D1_PROPERTY_TYPE_UNKNOWN = 0,

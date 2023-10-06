@@ -1,16 +1,17 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
+using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DXGK_SEGMENTDESCRIPTOR4__union_0
     {
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public PHYSICAL_ADDRESS CpuTranslatedAddress { get => InteropRuntime.Get<PHYSICAL_ADDRESS>(__bits, 0, 64); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<PHYSICAL_ADDRESS>(value, __bits, 0, 64); } }
-        public _DXGK_CPUHOSTAPERTURE CpuHostAperture { get => InteropRuntime.Get<_DXGK_CPUHOSTAPERTURE>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<_DXGK_CPUHOSTAPERTURE>(value, __bits, 0, 96); } }
+        public long CpuTranslatedAddress {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.GetInt64(__bits, 0, 64);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[16]; InteropRuntime.SetInt64(value, __bits, 0, 64); } }
+        public _DXGK_CPUHOSTAPERTURE CpuHostAperture {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<_DXGK_CPUHOSTAPERTURE>(__bits, 0, 128);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[16]; InteropRuntime.Set<_DXGK_CPUHOSTAPERTURE>(value, __bits, 0, 128); } }
     }
 }

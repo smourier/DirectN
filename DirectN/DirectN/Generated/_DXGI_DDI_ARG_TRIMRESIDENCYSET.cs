@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct _DXGI_DDI_ARG_TRIMRESIDENCYSET
     {
         public ulong hDevice;
-        public int TrimFlags;
+        public D3DDDI_TRIMRESIDENCYSET_FLAGS TrimFlags;
         public ulong NumBytesToTrim;
     }
 }

@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_3.h
 namespace DirectN
 {
-    /// <summary>
-    /// Specifies which way a color profile is defined.
-    /// </summary>
     public enum D2D1_COLOR_CONTEXT_TYPE
     {
         D2D1_COLOR_CONTEXT_TYPE_ICC = 0,

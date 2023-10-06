@@ -3,9 +3,6 @@ using System;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Option flags controlling how images sources are loaded during CreateImageSourceFromWic.
-    /// </summary>
     [Flags]
     public enum D2D1_IMAGE_SOURCE_LOADING_OPTIONS
     {

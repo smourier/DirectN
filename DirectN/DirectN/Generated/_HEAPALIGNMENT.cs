@@ -8,7 +8,7 @@ namespace DirectN
     public partial struct _HEAPALIGNMENT
     {
         public uint dwSize;
-        public int ddsCaps;
+        public _DDSCAPS ddsCaps;
         public uint dwReserved;
         public _SURFACEALIGNMENT ExecuteBuffer;
         public _SURFACEALIGNMENT Overlay;

@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Interface describing an SVG attribute.
-    /// </summary>
     [ComImport, Guid("c9cdb0dd-f8c9-4e70-b7c2-301c80292c5e"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgAttribute : ID2D1Resource
     {

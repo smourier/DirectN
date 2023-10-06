@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_3.h
 namespace DirectN
 {
-    /// <summary>
-    /// Specifies the appearance of the ink nib (pen tip) as part of an D2D1_INK_STYLE_PROPERTIES structure.
-    /// </summary>
     public enum D2D1_INK_NIB_SHAPE
     {
         D2D1_INK_NIB_SHAPE_ROUND = 0,

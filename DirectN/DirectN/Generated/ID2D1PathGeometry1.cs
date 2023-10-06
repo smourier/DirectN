@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// The ID2D1PathGeometry1 interface adds functionality to ID2D1PathGeometry. In particular, it provides the path geometry-specific ComputePointAndSegmentAtLength method.
-    /// </summary>
     [ComImport, Guid("62baa2d2-ab54-41b7-b872-787e0106a421"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1PathGeometry1 : ID2D1PathGeometry
     {

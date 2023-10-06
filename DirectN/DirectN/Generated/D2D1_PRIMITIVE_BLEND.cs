@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_1.h
 namespace DirectN
 {
-    /// <summary>
-    /// A blend mode that applies to all primitives drawn on the context.
-    /// </summary>
     public enum D2D1_PRIMITIVE_BLEND
     {
         D2D1_PRIMITIVE_BLEND_SOURCE_OVER = 0,

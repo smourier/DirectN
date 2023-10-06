@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
@@ -12,6 +11,6 @@ namespace DirectN
         public bool Enabled;
         public IntPtr hDeviceSpecificAllocation;
         public _DXGK_PRESENTMULTIPLANEOVERLAYLIST__struct_0 __field_3;
-        public PHYSICAL_ADDRESS PhysicalAddress;
+        public long PhysicalAddress;
     }
 }

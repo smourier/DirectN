@@ -1,6 +1,8 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmthk.h
 using System;
 using System.Runtime.InteropServices;
+using PDXGK_GRAPHICSPOWER_UNREGISTER = System.IntPtr;
+using PDXGK_SET_SHARED_POWER_COMPONENT_STATE = System.IntPtr;
 
 namespace DirectN
 {

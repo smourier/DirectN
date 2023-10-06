@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
@@ -22,6 +21,6 @@ namespace DirectN
         public uint PatchLocationListOutSize;
         public uint MultipassOffset;
         public uint DmaBufferSegmentId;
-        public PHYSICAL_ADDRESS DmaBufferPhysicalAddress;
+        public long DmaBufferPhysicalAddress;
     }
 }

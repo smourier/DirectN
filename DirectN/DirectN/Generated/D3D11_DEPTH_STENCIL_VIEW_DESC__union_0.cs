@@ -1,4 +1,5 @@
 ﻿// generated from <Windows SDK Path>\um\d3d11.h
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace DirectN
@@ -9,11 +10,11 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 12)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public D3D11_TEX1D_DSV Texture1D { get => InteropRuntime.Get<D3D11_TEX1D_DSV>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX1D_DSV>(value, __bits, 0, 32); } }
-        public D3D11_TEX1D_ARRAY_DSV Texture1DArray { get => InteropRuntime.Get<D3D11_TEX1D_ARRAY_DSV>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX1D_ARRAY_DSV>(value, __bits, 0, 96); } }
-        public D3D11_TEX2D_DSV Texture2D { get => InteropRuntime.Get<D3D11_TEX2D_DSV>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX2D_DSV>(value, __bits, 0, 32); } }
-        public D3D11_TEX2D_ARRAY_DSV Texture2DArray { get => InteropRuntime.Get<D3D11_TEX2D_ARRAY_DSV>(__bits, 0, 96); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX2D_ARRAY_DSV>(value, __bits, 0, 96); } }
-        public D3D11_TEX2DMS_DSV Texture2DMS { get => InteropRuntime.Get<D3D11_TEX2DMS_DSV>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX2DMS_DSV>(value, __bits, 0, 32); } }
-        public D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray { get => InteropRuntime.Get<D3D11_TEX2DMS_ARRAY_DSV>(__bits, 0, 64); set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX2DMS_ARRAY_DSV>(value, __bits, 0, 64); } }
+        public D3D11_TEX1D_DSV Texture1D {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D11_TEX1D_DSV>(__bits, 0, 32);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX1D_DSV>(value, __bits, 0, 32); } }
+        public D3D11_TEX1D_ARRAY_DSV Texture1DArray {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D11_TEX1D_ARRAY_DSV>(__bits, 0, 96);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX1D_ARRAY_DSV>(value, __bits, 0, 96); } }
+        public D3D11_TEX2D_DSV Texture2D {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D11_TEX2D_DSV>(__bits, 0, 32);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX2D_DSV>(value, __bits, 0, 32); } }
+        public D3D11_TEX2D_ARRAY_DSV Texture2DArray {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D11_TEX2D_ARRAY_DSV>(__bits, 0, 96);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX2D_ARRAY_DSV>(value, __bits, 0, 96); } }
+        public D3D11_TEX2DMS_DSV Texture2DMS {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D11_TEX2DMS_DSV>(__bits, 0, 32);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX2DMS_DSV>(value, __bits, 0, 32); } }
+        public D3D11_TEX2DMS_ARRAY_DSV Texture2DMSArray {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D11_TEX2DMS_ARRAY_DSV>(__bits, 0, 64);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[12]; InteropRuntime.Set<D3D11_TEX2DMS_ARRAY_DSV>(value, __bits, 0, 64); } }
     }
 }

@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using LPCRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -25,7 +24,7 @@ namespace DirectN
         HRESULT get_Height(/* [out] __RPC__out */ out int pHeight);
         
         [PreserveSig]
-        HRESULT Render(/* [in] __RPC__in */ IntPtr hDC, /* [in] */ int x, /* [in] */ int y, /* [in] */ int cx, /* [in] */ int cy, /* [in] */ int xSrc, /* [in] */ int ySrc, /* [in] */ int cxSrc, /* [in] */ int cySrc, /* [in] __RPC__in */ ref LPCRECT pRcWBounds);
+        HRESULT Render(/* [in] __RPC__in */ IntPtr hDC, /* [in] */ int x, /* [in] */ int y, /* [in] */ int cx, /* [in] */ int cy, /* [in] */ int xSrc, /* [in] */ int ySrc, /* [in] */ int cxSrc, /* [in] */ int cySrc, /* [in] __RPC__in */ ref tagRECT pRcWBounds);
         
         [PreserveSig]
         HRESULT set_hPal(/* [in] */ IntPtr hPal);

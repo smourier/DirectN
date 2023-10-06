@@ -7,7 +7,7 @@ namespace DirectN
     public interface IEnumString
     {
         [PreserveSig]
-        HRESULT Next(int celt, [In, Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPWStr)] string[] rgelt, out int celtFetched);
+        HRESULT Next(int celt, [In, Out, MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPWStr)] string[] rgelt, IntPtr celtFetched);
 
         [PreserveSig]
         HRESULT Skip(int celt);

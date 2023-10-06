@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
@@ -24,7 +23,7 @@ namespace DirectN
         public D3DDDI_FLIPINTERVAL_TYPE FlipInterval;
         public _DXGK_PRESENTFLAGS Flags;
         public uint DmaBufferSegmentId;
-        public PHYSICAL_ADDRESS DmaBufferPhysicalAddress;
+        public long DmaBufferPhysicalAddress;
         public uint Reserved;
         public ulong DmaBufferGpuVirtualAddress;
         public uint NumSrcAllocations;

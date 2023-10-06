@@ -1,14 +1,13 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DXGK_DRIVERCAPS
     {
-        public PHYSICAL_ADDRESS HighestAcceptableAddress;
+        public long HighestAcceptableAddress;
         public uint MaxAllocationListSlotId;
         public IntPtr ApertureSegmentCommitLimit;
         public uint MaxPointerWidth;

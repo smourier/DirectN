@@ -5,9 +5,6 @@ using PDD_DIRECTDRAW_GLOBAL = DirectN._DD_DIRECTDRAW_GLOBAL;
 
 namespace DirectN
 {
-    /// <summary>
-    /// **************************************************************************
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DD_GETAVAILDRIVERMEMORYDATA
     {

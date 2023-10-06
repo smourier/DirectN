@@ -1,9 +1,9 @@
 # DirectN
 Direct Interop code for .NET Framework, .NET Core and .NET 5+ : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, WinUI3, etc.
 
-The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/ (.NET Framework) or https://www.nuget.org/packages/DirectNCore/ (.NET Core and .NET 5, 6, 7, etc.)
+The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/ (.NET Framework) or https://www.nuget.org/packages/DirectNCore/ (.NET Core and .NET 5, 6, 7, etc.) or https://www.nuget.org/packages/DirectNStandard/ (.NET Standard).
 
-Or you can pick the C# source files you want (among the 9000 .cs provided ...). It can be sometimes difficult because the dependencies between all these technologies can make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is possible as demonstrated in this other project: [Windows Interface Composition Engine ("Wice")](https://github.com/aelyo-softworks/Wice) wich uses only ~700 files (less than 10%) from DirectN.
+Or you can pick the C# source files you want (among the 10000 .cs provided ...). It can be sometimes difficult because the dependencies between all these technologies can make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is possible as demonstrated in this other project: [Windows Interface Composition Engine ("Wice")](https://github.com/aelyo-softworks/Wice) wich uses only ~700 files (less than 10%) from DirectN.
 
 ## Same names and types than the native concepts!
 DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, probably more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the **same names and types than the native concepts** (interfaces, enums, structures, constants, methods, arguments, guids, etc.) . So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
@@ -228,7 +228,7 @@ cleanup:
 
  # Winforms .NET 6 - Direct3D11 minimal sample.
  The **DirectN.MinimalD3D11** sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.MinimalD3D11 has been ported to C# from here: https://gist.github.com/d7samurai/261c69490cce0620d0bfc93003cd1052 which features *"a minimal Direct3D11 "uncluttered direct3d 11 setup and rendering primer for newcomers to the api"* sample.
- 
+
  It's dependent on DirectN, .NET 6, Windows Forms and ... that's it. Here is the output (believe me, it rotates):
 
   ![Sample](/Assets/minimald3d11.png?raw=true)
@@ -243,5 +243,4 @@ Note: the code also works with .NET Core 3.1 to 5, it's just a project configura
 
   ![Sample](/Assets/minimald3d11_pt3.png?raw=true)
 Full credits go to d7Samurai: https://gist.github.com/d7samurai
-
 

@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using COLORREF = System.UInt32;
-using LPRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -19,7 +18,7 @@ namespace DirectN
         HRESULT GetMaxIdealVideoSize(/* [out] */ out int lpWidth, /* [out] */ out int lpHeight);
         
         [PreserveSig]
-        HRESULT SetVideoPosition(/* [in] */ ref LPRECT lpSRCRect, /* [in] */ ref LPRECT lpDSTRect);
+        HRESULT SetVideoPosition(/* [in] */ ref tagRECT lpSRCRect, /* [in] */ ref tagRECT lpDSTRect);
         
         [PreserveSig]
         HRESULT GetVideoPosition(/* [out] */ out tagRECT lpSRCRect, /* [out] */ out tagRECT lpDSTRect);

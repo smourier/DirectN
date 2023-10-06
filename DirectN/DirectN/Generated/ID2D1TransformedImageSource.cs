@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Represents an image source which shares resources with an original image source.
-    /// </summary>
     [ComImport, Guid("7f1f79e5-2796-416c-8f55-700f911445e5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1TransformedImageSource : ID2D1Image
     {

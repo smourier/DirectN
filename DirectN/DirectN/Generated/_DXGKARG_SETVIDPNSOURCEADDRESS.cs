@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
@@ -10,7 +9,7 @@ namespace DirectN
     {
         public uint VidPnSourceId;
         public uint PrimarySegment;
-        public PHYSICAL_ADDRESS PrimaryAddress;
+        public long PrimaryAddress;
         public IntPtr hAllocation;
         public uint ContextCount;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 65)] 

@@ -11,7 +11,7 @@ namespace DirectN
         public ulong hDevice;
         public IntPtr pResources;
         public uint Resources;
-        public int Priority;
-        public int Flags;
+        public _D3DDDI_OFFER_PRIORITY Priority;
+        public D3DDDI_OFFER_FLAGS Flags;
     }
 }

@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_1.h
 namespace DirectN
 {
-    /// <summary>
-    /// Specifies the composite mode that will be applied.
-    /// </summary>
     public enum D2D1_COMPOSITE_MODE
     {
         D2D1_COMPOSITE_MODE_SOURCE_OVER = 0,

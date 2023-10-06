@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Interface describing an SVG 'fill' or 'stroke' value.
-    /// </summary>
     [ComImport, Guid("d59bab0a-68a2-455b-a5dc-9eb2854e2490"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgPaint : ID2D1SvgAttribute
     {

@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_1.h
 namespace DirectN
 {
-    /// <summary>
-    /// This defines the indices of sub-properties that may be present on any parent property.
-    /// </summary>
     public enum D2D1_SUBPROPERTY
     {
         D2D1_SUBPROPERTY_DISPLAYNAME = -2147483648,

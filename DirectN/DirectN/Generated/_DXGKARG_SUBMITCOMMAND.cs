@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
@@ -10,7 +9,7 @@ namespace DirectN
     {
         public _DXGKARG_SUBMITCOMMAND__union_0 __union_0;
         public uint DmaBufferSegmentId;
-        public PHYSICAL_ADDRESS DmaBufferPhysicalAddress;
+        public long DmaBufferPhysicalAddress;
         public uint DmaBufferSize;
         public uint DmaBufferSubmissionStartOffset;
         public uint DmaBufferSubmissionEndOffset;

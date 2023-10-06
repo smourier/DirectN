@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d3d.h
 using System;
 using System.Runtime.InteropServices;
-using LPD3DMATRIX = DirectN._D3DMATRIX;
 using LPDIRECT3DEXECUTEBUFFER = DirectN.IDirect3DExecuteBuffer;
 using LPDIRECT3DTEXTURE = DirectN.IDirect3DTexture;
 using LPDIRECT3DVIEWPORT = DirectN.IDirect3DViewport;
@@ -51,7 +50,7 @@ namespace DirectN
         HRESULT CreateMatrix(ref uint unnamed__0);
         
         [PreserveSig]
-        HRESULT SetMatrix(uint unnamed__0, ref LPD3DMATRIX unnamed__1);
+        HRESULT SetMatrix(uint unnamed__0, ref _D3DMATRIX unnamed__1);
         
         [PreserveSig]
         HRESULT GetMatrix(uint unnamed__0, ref _D3DMATRIX unnamed__1);

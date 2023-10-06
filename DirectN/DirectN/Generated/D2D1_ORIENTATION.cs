@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_3.h
 namespace DirectN
 {
-    /// <summary>
-    /// Specifies the orientation of an image.
-    /// </summary>
     public enum D2D1_ORIENTATION
     {
         D2D1_ORIENTATION_DEFAULT = 1,

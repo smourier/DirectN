@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1effects.h
 namespace DirectN
 {
-    /// <summary>
-    /// Specifies which ICC rendering intent the Color management effect should use.
-    /// </summary>
     public enum D2D1_COLORMANAGEMENT_RENDERING_INTENT
     {
         D2D1_COLORMANAGEMENT_RENDERING_INTENT_PERCEPTUAL = 0,

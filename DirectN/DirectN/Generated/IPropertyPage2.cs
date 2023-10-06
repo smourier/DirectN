@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\ocidl.h
 using System;
 using System.Runtime.InteropServices;
-using LPCRECT = DirectN.tagRECT;
 using MSG = DirectN.tagMSG;
 
 namespace DirectN
@@ -14,7 +13,7 @@ namespace DirectN
         new HRESULT SetPageSite(/* [in] __RPC__in_opt */ IPropertyPageSite pPageSite);
         
         [PreserveSig]
-        new HRESULT Activate(/* [in] __RPC__in */ IntPtr hWndParent, /* [in] __RPC__in */ ref LPCRECT pRect, /* [in] */ bool bModal);
+        new HRESULT Activate(/* [in] __RPC__in */ IntPtr hWndParent, /* [in] __RPC__in */ ref tagRECT pRect, /* [in] */ bool bModal);
         
         [PreserveSig]
         new HRESULT Deactivate();
@@ -29,7 +28,7 @@ namespace DirectN
         new HRESULT Show(/* [in] */ uint nCmdShow);
         
         [PreserveSig]
-        new HRESULT Move(/* [in] __RPC__in */ ref LPCRECT pRect);
+        new HRESULT Move(/* [in] __RPC__in */ ref tagRECT pRect);
         
         [PreserveSig]
         new HRESULT IsPageDirty();

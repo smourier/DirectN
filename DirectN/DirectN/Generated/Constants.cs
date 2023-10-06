@@ -1,4 +1,6 @@
-﻿namespace DirectN
+﻿using System;
+
+namespace DirectN
 {
     public static partial class Constants
     {
@@ -38,7 +40,7 @@
         public const int D3DSGR_CALIBRATE = 1;
         public const int D3DSGR_NO_CALIBRATION = 0;
         public const int D3DSPD_IUNKNOWN = 1;
-        
+
         // from <Windows SDK Path>\shared\d3d9caps.h
         public const int D3DCAPS_OVERLAY = 2048;
         public const int D3DCAPS_READ_SCANLINE = 131072;
@@ -168,7 +170,7 @@
         public const int D3DVTXPCAPS_NO_TEXGEN_NONLOCALVIEWER = 512;
         public const int D3DVTXPCAPS_TEXGEN_SPHEREMAP = 256;
         public const int D3DVTXPCAPS_TWEENING = 64;
-        
+
         // from <Windows SDK Path>\shared\d3d9types.h
         public const int D3D_MAX_SIMULTANEOUS_RENDERTARGETS = 4;
         public const int D3D_OMAC_SIZE = 16;
@@ -284,7 +286,7 @@
         public const int MAX_DEVICE_IDENTIFIER_STRING = 512;
         public const int MAXD3DDECLLENGTH = 64;
         public const int MAXD3DDECLUSAGEINDEX = 15;
-        
+
         // from <Windows SDK Path>\shared\d3dkmddi.h
         public const int D3DKM_INVALID_GAMMA_INDEX = -1;
         public const int DXGK_ALLOCATION_LIST_SIZE_GDICONTEXT = 256;
@@ -308,7 +310,7 @@
         public const int DXGK_TEXTURE_SIZE_SHIFT = 11;
         public const int DXGK_WDDM3_ON_VB_INTERFACE_VERSION_1 = 1;
         public const int DXGKDDI_PARTITION_EVENT_DESCRIPTION_MAX = 255;
-        
+
         // from <Windows SDK Path>\shared\d3dkmdt.h
         public const int D3DKMDT_BITS_PER_COMPONENT_06 = 1;
         public const int D3DKMDT_BITS_PER_COMPONENT_08 = 2;
@@ -331,7 +333,7 @@
         public const int DXGKMDT_OPM_OMAC_SIZE = 16;
         public const int DXGKMDT_OPM_PROTECTION_TYPE_SIZE = 4;
         public const int DXGKMDT_OPM_REQUESTED_INFORMATION_SIZE = 4076;
-        
+
         // from <Windows SDK Path>\shared\d3dkmthk.h
         public const int D3DKMT_GDI_STYLE_HANDLE_DECORATION = 2;
         public const int D3DKMT_GET_PTE_MAX = 64;
@@ -360,7 +362,7 @@
         public const int MAX_ENUM_ADAPTERS = 16;
         public const int OUTPUTDUPL_CREATE_MAX_KEYEDMUTXES = 3;
         public const int SHARED_ALLOCATION_WRITE = 1;
-        
+
         // from <Windows SDK Path>\shared\d3dukmdt.h
         public const int D3D_UMD_INTERFACE_VERSION_VISTA = 12;
         public const int D3D_UMD_INTERFACE_VERSION_WDDM1_3 = 16386;
@@ -436,16 +438,16 @@
         public const int DXGKDDI_INTERFACE_VERSION_WDDM3_1 = 65540;
         public const int DXGKDDI_INTERFACE_VERSION_WIN7 = 8197;
         public const int DXGKDDI_INTERFACE_VERSION_WIN8 = 12302;
-        
+
         // from <Windows SDK Path>\shared\dcomptypes.h
         public const int COMPOSITION_STATS_MAX_TARGETS = 256;
         public const int COMPOSITIONOBJECT_READ = 1;
         public const int COMPOSITIONOBJECT_WRITE = 2;
         public const int DCOMPOSITION_MAX_WAITFORCOMPOSITORCLOCK_OBJECTS = 32;
-        
+
         // from <Windows SDK Path>\shared\dmerror.h
         public const int DMUS_ERRBASE = 4096;
-        
+
         // from <Windows SDK Path>\shared\dxgi.h
         public const int DXGI_CPU_ACCESS_DYNAMIC = 1;
         public const int DXGI_CPU_ACCESS_FIELD = 15;
@@ -480,26 +482,26 @@
         public const int DXGI_USAGE_SHADER_INPUT = 16;
         public const int DXGI_USAGE_SHARED = 128;
         public const int DXGI_USAGE_UNORDERED_ACCESS = 1024;
-        
+
         // from <Windows SDK Path>\shared\dxgi1_2.h
         public const int DXGI_ENUM_MODES_DISABLED_STEREO = 8;
         public const int DXGI_ENUM_MODES_STEREO = 4;
         public const int DXGI_SHARED_RESOURCE_READ = -2147483648;
         public const int DXGI_SHARED_RESOURCE_WRITE = 1;
-        
+
         // from <Windows SDK Path>\shared\dxgi1_3.h
         public const int DXGI_CREATE_FACTORY_DEBUG = 1;
-        
+
         // from <Windows SDK Path>\shared\dxgicommon.h
         public const int DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN = -2;
         public const int DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN = -1;
-        
+
         // from <Windows SDK Path>\shared\dxgiformat.h
         public const int DXGI_FORMAT_DEFINED = 1;
-        
+
         // from <Windows SDK Path>\shared\dxgitype.h
         public const int _FACDXGI = 2170;
-        
+
         // from <Windows SDK Path>\shared\ks.h
         public const int KSALLOCATOR_FLAG_2D_BUFFER_REQUIRED = 32768;
         public const int KSALLOCATOR_FLAG_ALLOCATOR_EXISTS = 2048;
@@ -599,7 +601,7 @@
         public const int KSSTREAM_HEADER_TRACK_COMPLETION_NUMBERS = 131072;
         public const int KSSTREAM_UVC_SECURE_ATTRIBUTE_SIZE = 8192;
         public const int NANOSECONDS = 10000000;
-        
+
         // from <Windows SDK Path>\shared\ksarm.h
         public const int AaCp15_Cr0_CpuId = 0;
         public const int AaCp15_Cr1_AuxControl = 8;
@@ -843,7 +845,7 @@
         public const int VsFpscr = 4;
         public const int VsVfpD = 16;
         public const int VsVfpD8 = 80;
-        
+
         // from <Windows SDK Path>\shared\ksarm64.h
         public const int AaActlr_El1 = 16;
         public const int AaCpacr_El1 = 24;
@@ -2175,7 +2177,7 @@
         public const int Win32BatchFlushCallout = 7;
         public const int WrDispatchInt = 31;
         public const int WrExecutive = 0;
-        
+
         // from <Windows SDK Path>\shared\ksmedia.h
         public const int AUDIOMODULE_MAX_DATA_SIZE = 64000;
         public const int AUDIOMODULE_MAX_NAME_CCH_SIZE = 128;
@@ -2575,7 +2577,7 @@
         public const int WST_BYTES_PER_LINE = 42;
         public const int WST_TVTUNER_CHANGE_BEGIN_TUNE = 4096;
         public const int WST_TVTUNER_CHANGE_END_TUNE = 8192;
-        
+
         // from <Windows SDK Path>\shared\mmreg.h
         public const int _INC_MMREG = 158;
         public const int ACM_MPEG_COPYRIGHT = 2;
@@ -4403,14 +4405,14 @@
         public const int WAVE_FORMAT_ZYXEL_ADPCM = 151;
         public const int WMAUDIO_BITS_PER_SAMPLE = 16;
         public const int WMAUDIO_MAX_CHANNELS = 2;
-        
+
         // from <Windows SDK Path>\shared\windef.h
         public const int APP_LOCAL_DEVICE_ID_SIZE = 32;
-        
+
         // from <Windows SDK Path>\um\amva.h
         public const int AMVA_QUERYRENDERSTATUSF_READ = 1;
         public const int AMVA_TYPEINDEX_OUTPUTFRAME = -1;
-        
+
         // from <Windows SDK Path>\um\amvideo.h
         public const int AMDDS_ALL = 255;
         public const int AMDDS_DCIPS = 1;
@@ -4432,23 +4434,23 @@
         public const int iRED = 0;
         public const int iTRUECOLOR = 16;
         public const int MAX_SIZE_MPEG1_SEQUENCE_INFO = 140;
-        
+
         // from <Windows SDK Path>\um\AudioClient.h
         public const int AMBISONICS_PARAM_VERSION_1 = 1;
         public const int AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ = 1;
-        
+
         // from <Windows SDK Path>\um\audioendpoints.h
         public const int ENDPOINT_FORMAT_RESET_MIX_ONLY = 1;
-        
+
         // from <Windows SDK Path>\um\audioenginebaseapo.h
         public const int AUDIO_MAX_CHANNELS = 4096;
         public const int AUDIO_MIN_CHANNELS = 1;
-        
+
         // from <Windows SDK Path>\um\audiomediatype.h
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_DATA = 4;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_TYPES = 2;
         public const int AUDIOMEDIATYPE_EQUAL_FORMAT_USER_DATA = 8;
-        
+
         // from <Windows SDK Path>\um\AudioSessionTypes.h
         public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDE = 536870912;
         public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDEWHENEXPIRED = 1073741824;
@@ -4460,18 +4462,18 @@
         public const int AUDCLNT_STREAMFLAGS_NOPERSIST = 524288;
         public const int AUDCLNT_STREAMFLAGS_RATEADJUST = 1048576;
         public const int AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY = 134217728;
-        
+
         // from <Windows SDK Path>\um\codecapi.h
         public const int AVENC_H263V_LEVELCOUNT = 8;
         public const int AVENC_H264V_LEVELCOUNT = 16;
         public const int AVENC_H264V_MAX_MBBITS = 3200;
-        
+
         // from <Windows SDK Path>\um\D2D1EffectAuthor.h
         public const int D2D1_APPEND_ALIGNED_ELEMENT = -1;
-        
+
         // from <Windows SDK Path>\um\D2DErr.h
         public const int FACILITY_D2D = 2201;
-        
+
         // from <Windows SDK Path>\um\d3d.h
         public const int D3DDP_DONOTCLIP = 4;
         public const int D3DDP_DONOTLIGHT = 16;
@@ -4480,7 +4482,7 @@
         public const int D3DNEXT_HEAD = 2;
         public const int D3DNEXT_NEXT = 1;
         public const int D3DNEXT_TAIL = 4;
-        
+
         // from <Windows SDK Path>\um\d3d10_1.h
         public const int D3D10_1_DEFAULT_SAMPLE_MASK = -1;
         public const int D3D10_1_GS_INPUT_REGISTER_COUNT = 32;
@@ -4501,7 +4503,7 @@
         public const int D3D10_1_SUBPIXEL_FRACTIONAL_BIT_COUNT = 8;
         public const int D3D10_1_VS_INPUT_REGISTER_COUNT = 32;
         public const int D3D10_1_VS_OUTPUT_REGISTER_COUNT = 32;
-        
+
         // from <Windows SDK Path>\um\d3d10.h
         public const int _FACD3D10 = 2169;
         public const int D3D_MAJOR_VERSION = 10;
@@ -4683,18 +4685,18 @@
         public const int D3D10_WHQL_CONTEXT_COUNT_FOR_RESOURCE_LIMIT = 10;
         public const int D3D10_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
         public const int D3D10_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
-        
+
         // from <Windows SDK Path>\um\d3d10sdklayers.h
         public const int D3D10_DEBUG_FEATURE_FINISH_PER_RENDER_OP = 2;
         public const int D3D10_DEBUG_FEATURE_FLUSH_PER_RENDER_OP = 1;
         public const int D3D10_DEBUG_FEATURE_PRESENT_PER_RENDER_OP = 4;
         public const int D3D10_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int D3D10_SDK_LAYERS_VERSION = 11;
-        
+
         // from <Windows SDK Path>\um\d3d10shader.h
         public const int D3D10_SHADER_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
         public const int D3D10_SHADER_OPTIMIZATION_LEVEL1 = 0;
-        
+
         // from <Windows SDK Path>\um\d3d10umddi.h
         public const int D3D10_0_7_DDI_BUILD_VERSION = 0;
         public const int D3D10_0_7_DDI_MINOR_VERSION = 9;
@@ -4807,10 +4809,10 @@
         public const int DXGI_QFE_1 = 8;
         public const int DXGI_RESOLVE_SHARED_RESOURCE = 9;
         public const int VISTA_GOLD_PRODUCT_VER = 6000;
-        
+
         // from <Windows SDK Path>\um\d3d11_2.h
         public const int D3D11_PACKED_TILE = -1;
-        
+
         // from <Windows SDK Path>\um\d3d11.h
         public const int _FACD3D11 = 2172;
         public const int D3D11_1_UAV_SLOT_COUNT = 64;
@@ -5148,7 +5150,7 @@
         public const int D3D11_WHQL_CONTEXT_COUNT_FOR_RESOURCE_LIMIT = 10;
         public const int D3D11_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
         public const int D3D11_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
-        
+
         // from <Windows SDK Path>\um\d3d11sdklayers.h
         public const int D3D11_DEBUG_FEATURE_ALWAYS_DISCARD_OFFERED_RESOURCE = 8;
         public const int D3D11_DEBUG_FEATURE_AVOID_BEHAVIOR_CHANGING_DEBUG_AIDS = 64;
@@ -5159,7 +5161,7 @@
         public const int D3D11_DEBUG_FEATURE_PRESENT_PER_RENDER_OP = 4;
         public const int D3D11_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int D3D11_SDK_LAYERS_VERSION = 1;
-        
+
         // from <Windows SDK Path>\um\d3d11shadertracing.h
         public const int D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_READS = 2;
         public const int D3D11_SHADER_TRACE_FLAG_RECORD_REGISTER_WRITES = 1;
@@ -5175,7 +5177,7 @@
         public const int D3D11_TRACE_MISC_MESSAGE = 64;
         public const int D3D11_TRACE_MISC_PS_DISCARD = 4;
         public const int D3D11_TRACE_REGISTER_FLAGS_RELATIVE_INDEXING = 1;
-        
+
         // from <Windows SDK Path>\um\d3d11TokenizedProgramFormat.hpp
         public const int D3D10_SB_4_COMPONENT_NAME_MASK = 3;
         public const int D3D10_SB_CONSTANT_BUFFER_ACCESS_PATTERN_MASK = 2048;
@@ -5278,7 +5280,7 @@
         public const int D3D11_SB_UAV_HAS_ORDER_PRESERVING_COUNTER = 8388608;
         public const int MAX_D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH = 127;
         public const int MAX_D3D10_SB_TOKENIZED_PROGRAM_LENGTH = -1;
-        
+
         // from <Windows SDK Path>\um\d3d12.h
         public const int D3D12_16BIT_INDEX_STRIP_CUT_VALUE = 65535;
         public const int D3D12_32BIT_INDEX_STRIP_CUT_VALUE = -1;
@@ -5664,10 +5666,10 @@
         public const int D3D12_WHQL_CONTEXT_COUNT_FOR_RESOURCE_LIMIT = 10;
         public const int D3D12_WHQL_DRAW_VERTEX_COUNT_2_TO_EXP = 25;
         public const int D3D12_WHQL_DRAWINDEXED_INDEX_COUNT_2_TO_EXP = 25;
-        
+
         // from <Windows SDK Path>\um\d3d12sdklayers.h
         public const int D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
-        
+
         // from <Windows SDK Path>\um\d3d12shader.h
         public const int D3D_SHADER_REQUIRES_11_1_DOUBLE_EXTENSIONS = 32;
         public const int D3D_SHADER_REQUIRES_11_1_SHADER_EXTENSIONS = 64;
@@ -5698,7 +5700,7 @@
         public const int D3D_SHADER_REQUIRES_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER = 8192;
         public const int D3D_SHADER_REQUIRES_WAVE_MMA = 134217728;
         public const int D3D_SHADER_REQUIRES_WAVE_OPS = 16384;
-        
+
         // from <Windows SDK Path>\um\d3d12umddi.h
         public const int D3D12DDI_BUILD_VERSION = 8;
         public const int D3D12DDI_BUILD_VERSION_0010 = 0;
@@ -5827,10 +5829,10 @@
         public const int D3D12DDI_VIDEO_DECODE_MAX_ARGUMENTS_0020 = 10;
         public const int D3D12DDI_VIDEO_DECODE_MAX_HISTOGRAM_COMPONENTS = 4;
         public const int D3D12DDI_VIDEO_PROCESS_MAX_FILTERS_0020 = 32;
-        
+
         // from <Windows SDK Path>\um\d3d9on12.h
         public const int MAX_D3D9ON12_QUEUES = 2;
-        
+
         // from <Windows SDK Path>\um\d3dcaps.h
         public const int D3DDD_BCLIPPING = 16;
         public const int D3DDD_COLORMODEL = 1;
@@ -6041,7 +6043,7 @@
         public const int D3DVTXPCAPS_POSITIONALLIGHTS = 16;
         public const int D3DVTXPCAPS_TEXGEN = 1;
         public const int D3DVTXPCAPS_VERTEXFOG = 4;
-        
+
         // from <Windows SDK Path>\um\d3dcommon.h
         public const int D3D_COMPONENT_MASK_W = 8;
         public const int D3D_COMPONENT_MASK_X = 1;
@@ -6091,30 +6093,61 @@
         public const int D3D_SHADER_FEATURE_VIEWPORT_AND_RT_ARRAY_INDEX_FROM_ANY_SHADER_FEEDING_RASTERIZER = 8192;
         public const int D3D_SHADER_FEATURE_WAVE_MMA = 134217728;
         public const int D3D_SHADER_FEATURE_WAVE_OPS = 16384;
-        
+        public static readonly Guid WKPDID_D3DDebugObjectName = new Guid("429b8c22-9188-4b0c-8742-acb0bf85c200");
+        public static readonly Guid WKPDID_D3DDebugObjectNameW = new Guid("4cca5fd8-921f-42c8-8566-70caf2a9b741");
+
         // from <Windows SDK Path>\um\d3dcompiler.h
         public const int D3D_COMPILER_VERSION = 47;
         public const int D3D_COMPRESS_SHADER_KEEP_ALL_PARTS = 1;
-        public const int D3D_DISASM_DISABLE_DEBUG_INFO = 16;
-        public const int D3D_DISASM_ENABLE_COLOR_CODE = 1;
-        public const int D3D_DISASM_ENABLE_DEFAULT_VALUE_PRINTS = 2;
-        public const int D3D_DISASM_ENABLE_INSTRUCTION_CYCLE = 8;
-        public const int D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING = 4;
-        public const int D3D_DISASM_ENABLE_INSTRUCTION_OFFSET = 32;
-        public const int D3D_DISASM_INSTRUCTION_ONLY = 64;
-        public const int D3D_DISASM_PRINT_HEX_LITERALS = 128;
+        public const int D3D_DISASM_DISABLE_DEBUG_INFO = 0x00000010;
+        public const int D3D_DISASM_ENABLE_COLOR_CODE = 0x00000001;
+        public const int D3D_DISASM_ENABLE_DEFAULT_VALUE_PRINTS = 0x00000002;
+        public const int D3D_DISASM_ENABLE_INSTRUCTION_CYCLE = 0x00000008;
+        public const int D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING = 0x00000004;
+        public const int D3D_DISASM_ENABLE_INSTRUCTION_OFFSET = 0x00000020;
+        public const int D3D_DISASM_INSTRUCTION_ONLY = 0x00000040;
+        public const int D3D_DISASM_PRINT_HEX_LITERALS = 0x00000080;
         public const int D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE = 1;
+        public const int D3DCOMPILE_ALL_RESOURCES_BOUND = 1 << 21;
+        public const int D3DCOMPILE_AVOID_FLOW_CONTROL = 1 << 9;
+        public const int D3DCOMPILE_DEBUG = 1 << 0;
+        public const int D3DCOMPILE_DEBUG_NAME_FOR_BINARY = 1 << 23;
+        public const int D3DCOMPILE_DEBUG_NAME_FOR_SOURCE = 1 << 22;
+        public const int D3DCOMPILE_EFFECT_ALLOW_SLOW_OPS = 1 << 1;
+        public const int D3DCOMPILE_EFFECT_CHILD_EFFECT = 1 << 0;
+        public const int D3DCOMPILE_ENABLE_BACKWARDS_COMPATIBILITY = 1 << 12;
+        public const int D3DCOMPILE_ENABLE_STRICTNESS = 1 << 11;
+        public const int D3DCOMPILE_ENABLE_UNBOUNDED_DESCRIPTOR_TABLES = 1 << 20;
+        public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_0 = 1 << 4;
+        public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_1 = 1 << 5;
         public const int D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST = 0;
+        public const int D3DCOMPILE_FORCE_PS_SOFTWARE_NO_OPT = 1 << 7;
+        public const int D3DCOMPILE_FORCE_VS_SOFTWARE_NO_OPT = 1 << 6;
+        public const int D3DCOMPILE_IEEE_STRICTNESS = 1 << 13;
+        public const int D3DCOMPILE_NO_PRESHADER = 1 << 8;
+        public const int D3DCOMPILE_OPTIMIZATION_LEVEL0 = 1 << 14;
         public const int D3DCOMPILE_OPTIMIZATION_LEVEL1 = 0;
-        public const int D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS = 1;
-        public const int D3DCOMPILE_SECDATA_PRESERVE_TEMPLATE_SLOTS = 2;
-        public const int D3DCOMPILE_SECDATA_REQUIRE_TEMPLATE_MATCH = 4;
-        
+        public const int D3DCOMPILE_OPTIMIZATION_LEVEL2 = (1 << 14) | (1 << 15);
+        public const int D3DCOMPILE_OPTIMIZATION_LEVEL3 = 1 << 15;
+        public const int D3DCOMPILE_PACK_MATRIX_COLUMN_MAJOR = 1 << 4;
+        public const int D3DCOMPILE_PACK_MATRIX_ROW_MAJOR = 1 << 3;
+        public const int D3DCOMPILE_PARTIAL_PRECISION = 1 << 5;
+        public const int D3DCOMPILE_PREFER_FLOW_CONTROL = 1 << 10;
+        public const int D3DCOMPILE_RESERVED16 = 1 << 16;
+        public const int D3DCOMPILE_RESERVED17 = 1 << 17;
+        public const int D3DCOMPILE_RESOURCES_MAY_ALIAS = 1 << 19;
+        public const int D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS = 0x00000001;
+        public const int D3DCOMPILE_SECDATA_PRESERVE_TEMPLATE_SLOTS = 0x00000002;
+        public const int D3DCOMPILE_SECDATA_REQUIRE_TEMPLATE_MATCH = 0x00000004;
+        public const int D3DCOMPILE_SKIP_OPTIMIZATION = 1 << 2;
+        public const int D3DCOMPILE_SKIP_VALIDATION = 1 << 1;
+        public const int D3DCOMPILE_WARNINGS_ARE_ERRORS = 1 << 18;
+
         // from <Windows SDK Path>\um\d3dcsx.h
         public const int D3DX11_FFT_MAX_DIMENSIONS = 32;
         public const int D3DX11_FFT_MAX_PRECOMPUTE_BUFFERS = 4;
         public const int D3DX11_FFT_MAX_TEMP_BUFFERS = 4;
-        
+
         // from <Windows SDK Path>\um\d3dhal.h
         public const int D3DCLEAR_COMPUTERECTS = 8;
         public const int D3DDEVCAPS_HWINDEXBUFFER = 67108864;
@@ -6288,7 +6321,7 @@
         public const int D3DVS_TEMPREG_MAX_V2_0 = 12;
         public const int D3DVS_TEMPREG_MAX_V2_1 = 32;
         public const int D3DVS_TEMPREG_MAX_V3_0 = 32;
-        
+
         // from <Windows SDK Path>\um\d3dnthal.h
         public const int _NT_D3DRS_DELETERTPATCH = 169;
         public const int D3DNTHAL_CONTEXT_BAD = 512;
@@ -6312,7 +6345,7 @@
         public const int D3DNTHALDP2_USERMEMVERTICES = 1;
         public const int D3DNTHALDP2_VIDMEMCOMMANDBUF = 128;
         public const int D3DNTHALDP2_VIDMEMVERTEXBUF = 64;
-        
+
         // from <Windows SDK Path>\um\d3dtypes.h
         public const int D3DCLEAR_STENCIL = 4;
         public const int D3DCLEAR_TARGET = 1;
@@ -6437,7 +6470,7 @@
         public const int D3DWRAPCOORD_1 = 2;
         public const int D3DWRAPCOORD_2 = 4;
         public const int D3DWRAPCOORD_3 = 8;
-        
+
         // from <Windows SDK Path>\um\d3dumddi.h
         public const int _FACD3DDDI = 2166;
         public const int D3DDDI_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS = 16;
@@ -6576,7 +6609,7 @@
         public const int MODE_FXCAPS_OVERLAYSHRINKY = 2;
         public const int MODE_FXCAPS_OVERLAYSTRETCHX = 4;
         public const int MODE_FXCAPS_OVERLAYSTRETCHY = 8;
-        
+
         // from <Windows SDK Path>\um\ddkernel.h
         public const int DDIRQ_RESERVED1 = 2;
         public const int DDKERNELCAPS_AUTOFLIP = 2;
@@ -6589,7 +6622,7 @@
         public const int DDKERNELCAPS_LOCK = 8;
         public const int DDKERNELCAPS_SETSTATE = 4;
         public const int DDKERNELCAPS_SKIPFIELDS = 1;
-        
+
         // from <Windows SDK Path>\um\ddkmapi.h
         public const int DD_FIRST_DXAPI = 1280;
         public const int DDADDBUFF_INVERT = 4;
@@ -6622,7 +6655,7 @@
         public const int DDSTATE_WEAVE = 2;
         public const int DXAPI_MAJORVERSION = 1;
         public const int DXAPI_MINORVERSION = 0;
-        
+
         // from <Windows SDK Path>\um\ddraw.h
         public const int _FACDD = 2166;
         public const int CO_E_NOTINITIALIZED = -2147221008;
@@ -7050,7 +7083,7 @@
         public const int DDWAITVB_BLOCKEND = 4;
         public const int DIRECTDRAW_VERSION = 1792;
         public const int MAX_DDDEVICEID_STRING = 512;
-        
+
         // from <Windows SDK Path>\um\ddrawi.h
         public const int ACCESSRECT_BROKEN = 4;
         public const int ACCESSRECT_NOTHOLDINGWIN16LOCK = 2;
@@ -7334,7 +7367,7 @@
         public const int VIDMEM_ISNONLOCAL = 8;
         public const int VIDMEM_ISRECTANGULAR = 2;
         public const int VIDMEM_ISWC = 16;
-        
+
         // from <Windows SDK Path>\um\ddrawint.h
         public const int DDABLT_SRCOVERDEST = 1;
         public const int DDBLT_AFLAGS = -2147483648;
@@ -7349,22 +7382,22 @@
         public const int DDHAL_PRIVATECAP_NOTIFYPRIMARYCREATION = 2;
         public const int DDHAL_PRIVATECAP_RESERVED1 = 4;
         public const int DDHAL_VPORT32_GETAUTOFLIPSURF = 64;
-        
+
         // from <Windows SDK Path>\um\dmemmgr.h
         public const int SURFACEALIGN_DISCARDABLE = 1;
         public const int VMEMHEAP_ALIGNMENT = 4;
         public const int VMEMHEAP_LINEAR = 1;
         public const int VMEMHEAP_RECTANGULAR = 2;
-        
+
         // from <Windows SDK Path>\um\dshow.h
         public const int OAFALSE = 0;
-        
+
         // from <Windows SDK Path>\um\dshowasf.h
         public const int EC_PREPROCESS_COMPLETE = 86;
-        
+
         // from <Windows SDK Path>\um\dvdevcod.h
         public const int EC_DVDBASE = 256;
-        
+
         // from <Windows SDK Path>\um\dvdmedia.h
         public const int AM_AC3_ALTERNATE_AUDIO_1 = 1;
         public const int AM_AC3_ALTERNATE_AUDIO_2 = 2;
@@ -7430,7 +7463,7 @@
         public const int AMMPEG2_LetterboxAnalogOut = 32;
         public const int AMMPEG2_SourceIsLetterboxed = 8;
         public const int AMMPEG2_WidescreenAnalogOut = 512;
-        
+
         // from <Windows SDK Path>\um\dvp.h
         public const int DDVP_AUTOFLIP = 1;
         public const int DDVP_CONVERT = 2;
@@ -7518,27 +7551,27 @@
         public const int DDVPWAIT_BEGIN = 1;
         public const int DDVPWAIT_END = 2;
         public const int DDVPWAIT_LINE = 3;
-        
+
         // from <Windows SDK Path>\um\dwrite_3.h
         public const int DWRITE_STANDARD_FONT_AXIS_COUNT = 5;
-        
+
         // from <Windows SDK Path>\um\DWrite.h
         public const int DWRITE_ALPHA_MAX = 255;
         public const int DWRITE_ERR_BASE = 20480;
         public const int FACILITY_DWRITE = 2200;
-        
+
         // from <Windows SDK Path>\um\dxcapi.h
         public const int DXC_CP_ACP = 0;
         public const int DXC_CP_UTF16 = 1200;
         public const int DXC_CP_UTF8 = 65001;
         public const int DXC_HASHFLAG_INCLUDES_SOURCE = 1;
-        
+
         // from <Windows SDK Path>\um\dxcore_interface.h
         public const int _FACDXCORE = 2176;
-        
+
         // from <Windows SDK Path>\um\dxdiag.h
         public const int DXDIAG_DX9_SDK_VERSION = 111;
-        
+
         // from <Windows SDK Path>\um\dxgiddi.h
         public const int _FACDXGI_DDI = 2171;
         public const int DXGI_DDI_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS = 16;
@@ -7547,12 +7580,12 @@
         public const int DXGI_DDI_PRIMARY_NONPREROTATED = 2;
         public const int DXGI_DDI_PRIMARY_OPTIONAL = 1;
         public const int DXGI_DDI_PRIMARY_STEREO = 4;
-        
+
         // from <Windows SDK Path>\um\dxgidebug.h
         public const int DXGI_DEBUG_BINARY_VERSION = 1;
         public const int DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
         public const int DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION = 0;
-        
+
         // from <Windows SDK Path>\um\dxmini.h
         public const int DDIRQ_BUSMASTER = 2;
         public const int DDIRQ_DISPLAY_VSYNC = 1;
@@ -7608,7 +7641,7 @@
         public const int MDL_SCATTER_GATHER_VA = 1024;
         public const int MDL_SOURCE_IS_NONPAGED_POOL = 4;
         public const int MDL_WRITE_OPERATION = 128;
-        
+
         // from <Windows SDK Path>\um\dxva.h
         public const int DXVA_ALPHA_BLEND_COMBINATION_FUNCTION = 3;
         public const int DXVA_ALPHA_BLEND_DATA_LOAD_FUNCTION = 2;
@@ -7701,13 +7734,13 @@
         public const int DXVA_STATUS_REPORTING_FUNCTION = 7;
         public const int DXVA_USUAL_BLOCK_HEIGHT = 8;
         public const int DXVA_USUAL_BLOCK_WIDTH = 8;
-        
+
         // from <Windows SDK Path>\um\dxva2api.h
         public const int DXVA2_DECODE_GET_DRIVER_HANDLE = 1829;
         public const int DXVA2_DECODE_SPECIFY_ENCRYPTED_BLOCKS = 1828;
         public const int MAX_DEINTERLACE_SURFACES = 32;
         public const int MAX_SUBSTREAMS = 15;
-        
+
         // from <Windows SDK Path>\um\dxva9typ.h
         public const int COPP_DefaultProtectionLevel = 0;
         public const int COPP_ImageAspectRatio_EN300294_Mask = 7;
@@ -7748,7 +7781,7 @@
         public const int DXVA_RESIDUAL_DIFFERENCE_BUFFER = 3;
         public const int DXVA_SLICE_CONTROL_BUFFER = 6;
         public const int MAX_DEINTERLACE_DEVICE_GUIDS = 32;
-        
+
         // from <Windows SDK Path>\um\mfapi.h
         public const int D3DFMT_A16B16G16R16F = 113;
         public const int D3DFMT_A2B10G10R10 = 31;
@@ -7805,7 +7838,7 @@
         public const int MFSESSIONCAP_START = 1;
         public const int MFSTARTUP_FULL = 0;
         public const int MFSTARTUP_NOSOCKET = 1;
-        
+
         // from <Windows SDK Path>\um\Mferror.h
         public const int FACILITY_MF = 13;
         public const int FACILITY_MF_WIN32 = 7;
@@ -7822,7 +7855,7 @@
         public const int STATUS_SEVERITY_INFORMATIONAL = 1;
         public const int STATUS_SEVERITY_SUCCESS = 0;
         public const int STATUS_SEVERITY_WARNING = 2;
-        
+
         // from <Windows SDK Path>\um\mfidl.h
         public const int MEDIASINK_CAN_PREROLL = 16;
         public const int MEDIASINK_CANNOT_MATCH_CLOCK = 2;
@@ -7858,10 +7891,10 @@
         public const int MFSEQUENCER_INVALID_ELEMENT_ID = -1;
         public const long PRESENTATION_CURRENT_POSITION = 9223372036854775807;
         public const int SHA_HASH_LEN = 20;
-        
+
         // from <Windows SDK Path>\um\MFMediaEngine.h
         public const long MF_INVALID_PRESENTATION_TIME = -9223372036854775808;
-        
+
         // from <Windows SDK Path>\um\mfobjects.h
         public const int MF_EVENT_FLAG_NO_WAIT = 1;
         public const int MF_MEDIATYPE_EQUAL_FORMAT_DATA = 4;
@@ -7892,10 +7925,10 @@
         public const int MFBYTESTREAM_IS_WRITABLE = 2;
         public const int MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO = 1;
         public const int MFBYTESTREAM_SHARE_WRITE = 1024;
-        
+
         // from <Windows SDK Path>\um\mftransform.h
         public const int MFT_STREAMS_UNLIMITED = -1;
-        
+
         // from <Windows SDK Path>\um\mmdeviceapi.h
         public const int DEVICE_STATE_ACTIVE = 1;
         public const int DEVICE_STATE_DISABLED = 2;
@@ -7904,7 +7937,7 @@
         public const int DEVICE_STATEMASK_ALL = 15;
         public const int ENDPOINT_SYSFX_DISABLED = 1;
         public const int ENDPOINT_SYSFX_ENABLED = 0;
-        
+
         // from <Windows SDK Path>\um\mmeapi.h
         public const int AUXCAPS_AUXIN = 2;
         public const int AUXCAPS_CDAUDIO = 1;
@@ -8043,7 +8076,7 @@
         public const int WHDR_ENDLOOP = 8;
         public const int WHDR_INQUEUE = 16;
         public const int WHDR_PREPARED = 2;
-        
+
         // from <Windows SDK Path>\um\mmsyscom.h
         public const int CALLBACK_EVENT = 327680;
         public const int CALLBACK_FUNCTION = 196608;
@@ -8110,17 +8143,17 @@
         public const int TIME_TICKS = 32;
         public const int TIMERR_BASE = 96;
         public const int WAVERR_BASE = 32;
-        
+
         // from <Windows SDK Path>\um\ocidl.h
         public const int MULTICLASSINFO_GETIIDPRIMARY = 4;
         public const int MULTICLASSINFO_GETIIDSOURCE = 8;
         public const int MULTICLASSINFO_GETNUMRESERVEDDISPIDS = 2;
         public const int MULTICLASSINFO_GETTYPEINFO = 1;
         public const int TIFLAGS_EXTENDDISPATCHONLY = 1;
-        
+
         // from <Windows SDK Path>\um\SpatialAudioMetadata.h
         public const int SPATIAL_AUDIO_STANDARD_COMMANDS_START = 200;
-        
+
         // from <Windows SDK Path>\um\strmif.h
         public const int AM_GBF_NODDSURFACELOCK = 8;
         public const int AM_GBF_NOTASYNCPOINT = 2;
@@ -8176,7 +8209,7 @@
         public const int VMRBITMAP_HDC = 2;
         public const int VMRBITMAP_SRCCOLORKEY = 8;
         public const int VMRBITMAP_SRCRECT = 16;
-        
+
         // from <Windows SDK Path>\um\wincodec.h
         public const int FACILITY_WINCODEC_ERR = 2200;
         public const int WIC_JPEG_HUFFMAN_BASELINE_ONE = 0;
@@ -8207,10 +8240,10 @@
         public const int WINCODEC_ERR_BASE = 8192;
         public const int WINCODEC_SDK_VERSION1 = 566;
         public const int WINCODEC_SDK_VERSION2 = 567;
-        
+
         // from <Windows SDK Path>\um\windows.ui.xaml.media.dxinterop.h
         public const int E_SURFACE_CONTENTS_LOST = -2144665568;
-        
+
         // from <Windows SDK Path>\um\wingdi.h
         public const int ABORTDOC = 2;
         public const int ABSOLUTE = 1;
@@ -9555,7 +9588,7 @@
         public const int WHITE_PEN = 6;
         public const int WHITEONBLACK = 2;
         public const int WINDING = 2;
-        
+
         // from <Windows SDK Path>\um\wmcodecdsp.h
         public const int AEC_MAX_SYSTEM_MODES = 6;
         public const int SYSFXUI_DONOTSHOW_BASSBOOST = 8;
@@ -9574,7 +9607,7 @@
         public const int WM_CODEC_TWOPASS_VBR_PEAKCONSTRAINED = 16;
         public const int WM_CODEC_TWOPASS_VBR_UNCONSTRAINED = 8;
         public const int WMAAECMA_E_NO_ACTIVE_RENDER_STREAM = -2016673782;
-        
+
         // from <Windows SDK Path>\um\wmcontainer.h
         public const int MFASF_DEFAULT_BUFFER_WINDOW_MS = 3000;
         public const int MFASF_MAX_STREAM_NUMBER = 127;
@@ -9584,19 +9617,19 @@
         public const int MFASFINDEXER_NO_FIXED_INTERVAL = -1;
         public const int MFASFINDEXER_PER_ENTRY_BYTES_DYNAMIC = 65535;
         public const long MFASFINDEXER_READ_FOR_REVERSEPLAYBACK_OUTOFDATASEGMENT = -1;
-        
+
         // from <Windows SDK Path>\um\wmdmlog.h
         public const int WMDM_LOG_NOTIMESTAMP = 16;
         public const int WMDM_LOG_SEV_ERROR = 4;
         public const int WMDM_LOG_SEV_INFO = 1;
         public const int WMDM_LOG_SEV_WARN = 2;
-        
+
         // from <Windows SDK Path>\um\wmpdevices.h
         public const int IOCTL_WMP_DEVICE_CAN_SYNC = 844123479;
         public const int IOCTL_WMP_METADATA_ROUND_TRIP = 827346263;
         public const int WMP_MDRT_FLAGS_UNREPORTED_ADDED_ITEMS = 2;
         public const int WMP_MDRT_FLAGS_UNREPORTED_DELETED_ITEMS = 1;
-        
+
         // from <Windows SDK Path>\um\wmpids.h
         public const int DISPID_DELTA = 50;
         public const int DISPID_WMPCORE_BASE = 0;
@@ -9611,7 +9644,7 @@
         public const int WMPCOREEVENT_SEEK_BASE = 5200;
         public const int WMPCOREEVENT_WARNING_BASE = 5600;
         public const int WMPOCXEVENT_BASE = 6500;
-        
+
         // from <Windows SDK Path>\um\wmpplug.h
         public const int PLUGIN_FLAGS_ACCEPTSMEDIA = 268435456;
         public const int PLUGIN_FLAGS_ACCEPTSPLAYLISTS = 134217728;
@@ -9625,14 +9658,14 @@
         public const int PLUGIN_TYPE_METADATAAREA = 5;
         public const int PLUGIN_TYPE_SEPARATEWINDOW = 2;
         public const int PLUGIN_TYPE_SETTINGSAREA = 4;
-        
+
         // from <Windows SDK Path>\um\wmpservices.h
         public const int WMPGC_FLAGS_ALLOW_PREROLL = 1;
         public const int WMPGC_FLAGS_DISABLE_PLUGINS = 8;
         public const int WMPGC_FLAGS_IGNORE_AV_SYNC = 4;
         public const int WMPGC_FLAGS_SUPPRESS_DIALOGS = 2;
         public const int WMPGC_FLAGS_USE_CUSTOM_GRAPH = 16;
-        
+
         // from <Windows SDK Path>\um\wmsdkidl.h
         public const int DRM_OPL_TYPES = 1;
         public const int WAVE_FORMAT_DRM = 9;

@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// This describes the drawing state.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_DRAWING_STATE_DESCRIPTION1
     {

@@ -8,9 +8,9 @@ namespace DirectN
     public partial struct _DXGI_DDI_ARG_CHECKMULTIPLANEOVERLAYCOLORSPACESUPPORT
     {
         public ulong hDevice;
-        public int VidPnSourceId;
+        public uint VidPnSourceId;
         public DXGI_FORMAT Format;
-        public int ColorSpace;
+        public D3DDDI_COLOR_SPACE_TYPE ColorSpace;
         public bool Supported;
     }
 }

@@ -1,5 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\dxva2api.h
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace DirectN
@@ -10,7 +11,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public _DXVA2_Fixed32__union_0__struct_0 __field_0 { get => InteropRuntime.Get<_DXVA2_Fixed32__union_0__struct_0>(__bits, 0, 32); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<_DXVA2_Fixed32__union_0__struct_0>(value, __bits, 0, 32); } }
-        public int ll { get => InteropRuntime.GetInt32(__bits, 0, 32); set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetInt32(value, __bits, 0, 32); } }
+        public _DXVA2_Fixed32__union_0__struct_0 __field_0 {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<_DXVA2_Fixed32__union_0__struct_0>(__bits, 0, 32);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[4]; InteropRuntime.Set<_DXVA2_Fixed32__union_0__struct_0>(value, __bits, 0, 32); } }
+        public int ll {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.GetInt32(__bits, 0, 32);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[4]; InteropRuntime.SetInt32(value, __bits, 0, 32); } }
     }
 }

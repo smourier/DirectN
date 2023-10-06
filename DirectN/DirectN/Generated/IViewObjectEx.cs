@@ -2,7 +2,6 @@
 using System;
 using System.Runtime.InteropServices;
 using DVTARGETDEVICE = DirectN.tagDVTARGETDEVICE;
-using LPCRECT = DirectN.tagRECT;
 
 namespace DirectN
 {
@@ -16,10 +15,10 @@ namespace DirectN
         HRESULT GetViewStatus(/* [out] __RPC__out */ out uint pdwStatus);
         
         [PreserveSig]
-        HRESULT QueryHitPoint(/* [in] */ uint dwAspect, /* [in] __RPC__in */ ref LPCRECT pRectBounds, /* [in] */ tagPOINT ptlLoc, /* [in] */ int lCloseHint, /* [out] __RPC__out */ out uint pHitResult);
+        HRESULT QueryHitPoint(/* [in] */ uint dwAspect, /* [in] __RPC__in */ ref tagRECT pRectBounds, /* [in] */ tagPOINT ptlLoc, /* [in] */ int lCloseHint, /* [out] __RPC__out */ out uint pHitResult);
         
         [PreserveSig]
-        HRESULT QueryHitRect(/* [in] */ uint dwAspect, /* [in] __RPC__in */ ref LPCRECT pRectBounds, /* [in] __RPC__in */ ref LPCRECT pRectLoc, /* [in] */ int lCloseHint, /* [out] __RPC__out */ out uint pHitResult);
+        HRESULT QueryHitRect(/* [in] */ uint dwAspect, /* [in] __RPC__in */ ref tagRECT pRectBounds, /* [in] __RPC__in */ ref tagRECT pRectLoc, /* [in] */ int lCloseHint, /* [out] __RPC__out */ out uint pHitResult);
         
         [PreserveSig]
         HRESULT GetNaturalExtent(/* [in] */ uint dwAspect, /* [in] */ int lindex, /* [in] __RPC__in */ ref DVTARGETDEVICE ptd, /* [in] __RPC__in */ IntPtr hicTargetDev, /* [in] __RPC__in */ ref tagExtentInfo pExtentInfo, /* [out] __RPC__out */ out tagSIZE pSizel);

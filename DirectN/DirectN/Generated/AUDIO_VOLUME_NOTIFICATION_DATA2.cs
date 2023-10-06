@@ -14,7 +14,7 @@ namespace DirectN
         public float volumeIncrementInDb;
         public uint step;
         public uint stepCount;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] 
         public float[] channelVolumesInDb;
     }
 }

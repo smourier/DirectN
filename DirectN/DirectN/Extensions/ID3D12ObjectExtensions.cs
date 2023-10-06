@@ -5,6 +5,24 @@ namespace DirectN
 {
     public static class ID3D12ObjectExtensions
     {
+        public static void SetName(this IComObject<ID3D12Object> obj, string name) => SetName(obj?.Object, name);
+        public static void SetName(this ID3D12Object obj, string name)
+        {
+            obj.SetName(name).ThrowOnError();
+        }
+
+        public static void SetPrivateData(this IComObject<ID3D12Object> obj, Guid guid, uint dataSize, IntPtr data) => SetPrivateData(obj?.Object, guid, dataSize, data);
+        public static void SetPrivateData(this ID3D12Object obj, Guid guid, uint dataSize, IntPtr data)
+        {
+            obj.SetPrivateData(guid, dataSize, data).ThrowOnError();
+        }
+
+        public static void SetPrivateDataInterface(this IComObject<ID3D12Object> obj, Guid guid, IntPtr data) => SetPrivateDataInterface(obj?.Object, guid, data);
+        public static void SetPrivateDataInterface(this ID3D12Object obj, Guid guid, IntPtr data)
+        {
+            obj.SetPrivateDataInterface(guid, data).ThrowOnError();
+        }
+
         public static IComObject<ID3D12Device> GetDevice(this IComObject<ID3D12DeviceChild> child) => GetDevice<ID3D12Device>(child?.Object);
         public static IComObject<ID3D12Device> GetDevice(this ID3D12DeviceChild child) => GetDevice<ID3D12Device>(child);
         public static IComObject<T> GetDevice<T>(this IComObject<ID3D12DeviceChild> child) where T : ID3D12Device => GetDevice<T>(child?.Object);
@@ -157,7 +175,7 @@ namespace DirectN
             if (allocator == null)
                 throw new ArgumentNullException(nameof(allocator));
 
-            allocator.Reset();
+            allocator.Reset().ThrowOnError();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
@@ -129,14 +130,15 @@ namespace DirectN
             }
         }
 
-        public static IComObject<ID2D1Device> GetDevice(this IComObject<ID2D1DeviceContext> context) => GetDevice(context?.Object);
-        public static IComObject<ID2D1Device> GetDevice(this ID2D1DeviceContext context)
+        public static IComObject<ID2D1Device> GetDevice(this IComObject<ID2D1DeviceContext> context) => GetDevice<ID2D1Device>(context?.Object);
+        public static IComObject<T> GetDevice<T>(this IComObject<ID2D1DeviceContext> context) where T : ID2D1Device => GetDevice<T>(context?.Object);
+        public static IComObject<T> GetDevice<T>(this ID2D1DeviceContext context) where T : ID2D1Device
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
             context.GetDevice(out var device);
-            return device != null ? new ComObject<ID2D1Device>(device) : null;
+            return device != null ? new ComObject<T>((T)device) : null;
         }
 
         public static IComObject<ID2D1Factory> GetFactory(this IComObject<ID2D1DeviceContext> context) => GetFactory(context?.Object);
@@ -161,14 +163,35 @@ namespace DirectN
             context.SetTarget(target);
         }
 
-        public static IComObject<ID2D1Image> GetTarget(this IComObject<ID2D1DeviceContext> context) => GetTarget(context?.Object);
-        public static IComObject<ID2D1Image> GetTarget(this ID2D1DeviceContext context)
+        public static IComObject<ID2D1Image> GetTarget(this IComObject<ID2D1DeviceContext> context) => GetTarget<ID2D1Image>(context?.Object);
+        public static IComObject<T> GetTarget<T>(this IComObject<ID2D1DeviceContext> context) where T : ID2D1Image => GetTarget<T>(context?.Object);
+        public static IComObject<T> GetTarget<T>(this ID2D1DeviceContext context) where T : ID2D1Image
         {
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            context.GetTarget(out var target);
-            return target != null ? new ComObject<ID2D1Image>(target) : null;
+            context.GetTarget(out var device);
+            return device != null ? new ComObject<T>((T)device) : null;
+        }
+
+        public static D2D_RECT_F GetImageLocalBounds(this IComObject<ID2D1DeviceContext> context, IComObject<ID2D1Image> image) => GetImageLocalBounds(context?.Object, image?.Object);
+        public static D2D_RECT_F GetImageLocalBounds(this ID2D1DeviceContext context, ID2D1Image image)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            context.GetImageLocalBounds(image, out var bounds).ThrowOnError();
+            return bounds;
+        }
+
+        public static D2D_RECT_F GetImageWorldBounds(this IComObject<ID2D1DeviceContext> context, IComObject<ID2D1Image> image) => GetImageWorldBounds(context?.Object, image?.Object);
+        public static D2D_RECT_F GetImageWorldBounds(this ID2D1DeviceContext context, ID2D1Image image)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            context.GetImageWorldBounds(image, out var bounds).ThrowOnError();
+            return bounds;
         }
 
         public static D2D_SIZE_U GetPixelSize(this IComObject<ID2D1DeviceContext> context) => GetPixelSize(context?.Object);
@@ -406,6 +429,49 @@ namespace DirectN
             context.FillEllipse(ref ellipse, brush);
         }
 
+        public static IComObject<ID2D1ColorContext> CreateColorContextFromWicColorContext(this IComObject<ID2D1DeviceContext> context, IComObject<IWICColorContext> colorContext) => CreateColorContextFromWicColorContext(context?.Object, colorContext?.Object);
+        public static IComObject<ID2D1ColorContext> CreateColorContextFromWicColorContext(this ID2D1DeviceContext context, IWICColorContext colorContext)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (colorContext == null)
+                throw new ArgumentNullException(nameof(colorContext));
+
+            context.CreateColorContextFromWicColorContext(colorContext, out var d2dColorContext).ThrowOnError();
+            return new ComObject<ID2D1ColorContext>(d2dColorContext);
+        }
+
+        public static IComObject<ID2D1ColorContext> CreateColorContext(this IComObject<ID2D1DeviceContext> context, D2D1_COLOR_SPACE space, byte[] profile = null) => CreateColorContext(context?.Object, space, profile);
+        public static IComObject<ID2D1ColorContext> CreateColorContext(this ID2D1DeviceContext context, D2D1_COLOR_SPACE space, byte[] profile = null)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            context.CreateColorContext(space, profile, (profile?.Length).GetValueOrDefault(), out var d2dColorContext).ThrowOnError();
+            return new ComObject<ID2D1ColorContext>(d2dColorContext);
+        }
+
+        public static IComObject<ID2D1ColorContext> CreateColorContextFromFilename(this IComObject<ID2D1DeviceContext> context, string filePath) => CreateColorContextFromFilename(context?.Object, filePath);
+        public static IComObject<ID2D1ColorContext> CreateColorContextFromFilename(this ID2D1DeviceContext context, string filePath)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            context.CreateColorContextFromFilename(filePath, out var d2dColorContext).ThrowOnError();
+            return new ComObject<ID2D1ColorContext>(d2dColorContext);
+        }
+
+        public static IComObject<ID2D1ColorContext1> CreateColorContextFromDxgiColorSpace(this IComObject<ID2D1DeviceContext5> context, DXGI_COLOR_SPACE_TYPE colorSpace) => CreateColorContextFromDxgiColorSpace(context?.Object, colorSpace);
+        public static IComObject<ID2D1ColorContext1> CreateColorContextFromDxgiColorSpace(this ID2D1DeviceContext5 context, DXGI_COLOR_SPACE_TYPE colorSpace)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            context.CreateColorContextFromDxgiColorSpace(colorSpace, out var d2dColorContext).ThrowOnError();
+            return new ComObject<ID2D1ColorContext1>(d2dColorContext);
+        }
+
         public static void DrawBitmap(this IComObject<ID2D1DeviceContext> context,
             IComObject<ID2D1Bitmap1> bitmap,
             float opacity = 1,
@@ -537,6 +603,19 @@ namespace DirectN
                 throw new ArgumentNullException(nameof(context));
 
             context.PopLayer();
+        }
+
+        public static IComObject<ID2D1SvgDocument> CreateSvgDocument(this IComObject<ID2D1DeviceContext5> context, IStream stream, D2D_SIZE_F viewPortSize) => CreateSvgDocument(context?.Object, stream, viewPortSize);
+        public static IComObject<ID2D1SvgDocument> CreateSvgDocument(this ID2D1DeviceContext5 context, IStream stream, D2D_SIZE_F viewPortSize)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            if (stream == null)
+                throw new ArgumentNullException(nameof(stream));
+
+            context.CreateSvgDocument(stream, viewPortSize, out var doc).ThrowOnError();
+            return new ComObject<ID2D1SvgDocument>(doc);
         }
     }
 }

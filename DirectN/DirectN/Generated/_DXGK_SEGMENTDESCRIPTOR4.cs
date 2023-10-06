@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
@@ -9,7 +8,7 @@ namespace DirectN
     public partial struct _DXGK_SEGMENTDESCRIPTOR4
     {
         public _DXGK_SEGMENTFLAGS Flags;
-        public PHYSICAL_ADDRESS BaseAddress;
+        public long BaseAddress;
         public IntPtr Size;
         public IntPtr CommitLimit;
         public IntPtr SystemMemoryEndAddress;

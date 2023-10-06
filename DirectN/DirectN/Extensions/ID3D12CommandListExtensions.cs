@@ -396,44 +396,38 @@ namespace DirectN
             if (list == null)
                 throw new ArgumentNullException(nameof(list));
 
-            if (renderTargetDescriptors == null)
-                throw new ArgumentNullException(nameof(renderTargetDescriptors));
-
-            var array = renderTargetDescriptors.ToArray();
-            using (var mem = new ComMemory(depthStencilDescriptor))
+            var array = renderTargetDescriptors?.ToArray();
+            using (var desc = new ComMemory(array))
             {
-                list.OMSetRenderTargets(array.Length, array, rtsSingleHandleToDescriptorRange, mem.Pointer);
+                using (var mem = new ComMemory(depthStencilDescriptor))
+                {
+                    list.OMSetRenderTargets((uint)(array?.Length).GetValueOrDefault(), desc.Pointer, rtsSingleHandleToDescriptorRange, mem.Pointer);
+                }
             }
         }
 
-        public static void ClearDepthStencilView(this IComObject<ID3D12GraphicsCommandList> list, D3D12_CPU_DESCRIPTOR_HANDLE depthStencilView, D3D12_CLEAR_FLAGS clearFlags, float depth, byte stencil, IEnumerable<tagRECT> rects) => ClearDepthStencilView(list?.Object, depthStencilView, clearFlags, depth, stencil, rects);
-        public static void ClearDepthStencilView(this ID3D12GraphicsCommandList list, D3D12_CPU_DESCRIPTOR_HANDLE depthStencilView, D3D12_CLEAR_FLAGS clearFlags, float depth, byte stencil, IEnumerable<tagRECT> rects)
+        public static void ClearDepthStencilView(this IComObject<ID3D12GraphicsCommandList> list, D3D12_CPU_DESCRIPTOR_HANDLE depthStencilView, D3D12_CLEAR_FLAGS clearFlags, float depth, byte stencil, IEnumerable<tagRECT> rects = null) => ClearDepthStencilView(list?.Object, depthStencilView, clearFlags, depth, stencil, rects);
+        public static void ClearDepthStencilView(this ID3D12GraphicsCommandList list, D3D12_CPU_DESCRIPTOR_HANDLE depthStencilView, D3D12_CLEAR_FLAGS clearFlags, float depth, byte stencil, IEnumerable<tagRECT> rects = null)
         {
             if (list == null)
                 throw new ArgumentNullException(nameof(list));
 
-            if (rects == null)
-                throw new ArgumentNullException(nameof(rects));
-
-            var array = rects.ToArray();
-            list.ClearDepthStencilView(depthStencilView, clearFlags, depth, stencil, array.Length, array);
+            var array = rects?.ToArray();
+            list.ClearDepthStencilView(depthStencilView, clearFlags, depth, stencil, (array?.Length).GetValueOrDefault(), array);
         }
 
-        public static void ClearRenderTargetView(this IComObject<ID3D12GraphicsCommandList> list, D3D12_CPU_DESCRIPTOR_HANDLE renderTargetView, float[] colorRGBA, IEnumerable<tagRECT> rects) => ClearRenderTargetView(list?.Object, renderTargetView, colorRGBA, rects);
-        public static void ClearRenderTargetView(this ID3D12GraphicsCommandList list, D3D12_CPU_DESCRIPTOR_HANDLE renderTargetView, float[] colorRGBA, IEnumerable<tagRECT> rects)
+        public static void ClearRenderTargetView(this IComObject<ID3D12GraphicsCommandList> list, D3D12_CPU_DESCRIPTOR_HANDLE renderTargetView, float[] colorRGBA, IEnumerable<tagRECT> rects = null) => ClearRenderTargetView(list?.Object, renderTargetView, colorRGBA, rects);
+        public static void ClearRenderTargetView(this ID3D12GraphicsCommandList list, D3D12_CPU_DESCRIPTOR_HANDLE renderTargetView, float[] colorRGBA, IEnumerable<tagRECT> rects = null)
         {
             if (list == null)
                 throw new ArgumentNullException(nameof(list));
 
-            if (rects == null)
-                throw new ArgumentNullException(nameof(rects));
-
-            var array = rects.ToArray();
-            list.ClearRenderTargetView(renderTargetView, colorRGBA, array.Length, array);
+            var array = rects?.ToArray();
+            list.ClearRenderTargetView(renderTargetView, colorRGBA, (array?.Length).GetValueOrDefault(), array);
         }
 
-        public static void ClearUnorderedAccessViewUint(this IComObject<ID3D12GraphicsCommandList> list, D3D12_GPU_DESCRIPTOR_HANDLE viewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE viewCPUHandle, IComObject<ID3D12Resource> resource, uint[] values, IEnumerable<tagRECT> rects) => ClearUnorderedAccessViewUint(list?.Object, viewGPUHandleInCurrentHeap, viewCPUHandle, resource?.Object, values, rects);
-        public static void ClearUnorderedAccessViewUint(this ID3D12GraphicsCommandList list, D3D12_GPU_DESCRIPTOR_HANDLE viewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE viewCPUHandle, ID3D12Resource resource, uint[] values, IEnumerable<tagRECT> rects)
+        public static void ClearUnorderedAccessViewUint(this IComObject<ID3D12GraphicsCommandList> list, D3D12_GPU_DESCRIPTOR_HANDLE viewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE viewCPUHandle, IComObject<ID3D12Resource> resource, uint[] values, IEnumerable<tagRECT> rects = null) => ClearUnorderedAccessViewUint(list?.Object, viewGPUHandleInCurrentHeap, viewCPUHandle, resource?.Object, values, rects);
+        public static void ClearUnorderedAccessViewUint(this ID3D12GraphicsCommandList list, D3D12_GPU_DESCRIPTOR_HANDLE viewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE viewCPUHandle, ID3D12Resource resource, uint[] values, IEnumerable<tagRECT> rects = null)
         {
             if (list == null)
                 throw new ArgumentNullException(nameof(list));
@@ -441,15 +435,12 @@ namespace DirectN
             if (resource == null)
                 throw new ArgumentNullException(nameof(resource));
 
-            if (rects == null)
-                throw new ArgumentNullException(nameof(rects));
-
-            var array = rects.ToArray();
-            list.ClearUnorderedAccessViewUint(viewGPUHandleInCurrentHeap, viewCPUHandle, resource, values, array.Length, array);
+            var array = rects?.ToArray();
+            list.ClearUnorderedAccessViewUint(viewGPUHandleInCurrentHeap, viewCPUHandle, resource, values, (array?.Length).GetValueOrDefault(), array);
         }
 
-        public static void ClearUnorderedAccessViewFloat(this IComObject<ID3D12GraphicsCommandList> list, D3D12_GPU_DESCRIPTOR_HANDLE viewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE viewCPUHandle, IComObject<ID3D12Resource> resource, float[] values, IEnumerable<tagRECT> rects) => ClearUnorderedAccessViewFloat(list?.Object, viewGPUHandleInCurrentHeap, viewCPUHandle, resource?.Object, values, rects);
-        public static void ClearUnorderedAccessViewFloat(this ID3D12GraphicsCommandList list, D3D12_GPU_DESCRIPTOR_HANDLE viewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE viewCPUHandle, ID3D12Resource resource, float[] values, IEnumerable<tagRECT> rects)
+        public static void ClearUnorderedAccessViewFloat(this IComObject<ID3D12GraphicsCommandList> list, D3D12_GPU_DESCRIPTOR_HANDLE viewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE viewCPUHandle, IComObject<ID3D12Resource> resource, float[] values, IEnumerable<tagRECT> rects = null) => ClearUnorderedAccessViewFloat(list?.Object, viewGPUHandleInCurrentHeap, viewCPUHandle, resource?.Object, values, rects);
+        public static void ClearUnorderedAccessViewFloat(this ID3D12GraphicsCommandList list, D3D12_GPU_DESCRIPTOR_HANDLE viewGPUHandleInCurrentHeap, D3D12_CPU_DESCRIPTOR_HANDLE viewCPUHandle, ID3D12Resource resource, float[] values, IEnumerable<tagRECT> rects = null)
         {
             if (list == null)
                 throw new ArgumentNullException(nameof(list));
@@ -457,11 +448,8 @@ namespace DirectN
             if (resource == null)
                 throw new ArgumentNullException(nameof(resource));
 
-            if (rects == null)
-                throw new ArgumentNullException(nameof(rects));
-
             var array = rects.ToArray();
-            list.ClearUnorderedAccessViewFloat(viewGPUHandleInCurrentHeap, viewCPUHandle, resource, values, array.Length, array);
+            list.ClearUnorderedAccessViewFloat(viewGPUHandleInCurrentHeap, viewCPUHandle, resource, values, (array?.Length).GetValueOrDefault(), array);
         }
 
         public static void DiscardResource(this IComObject<ID3D12GraphicsCommandList> list, IComObject<ID3D12Resource> resource, D3D12_DISCARD_REGION? region = null) => DiscardResource(list?.Object, resource?.Object, region);

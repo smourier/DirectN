@@ -130,7 +130,6 @@ namespace DirectN
         public bool IsSizeZero => Width == 0 && Height == 0;
         public bool IsEmpty => Width == 0 || Height == 0;
         public bool IsZero => left == 0 && top == 0 && right == 0 && bottom == 0;
-
         public bool IsSet => left.IsSet() && top.IsSet() && Width.IsSet() && Height.IsSet();
         public bool IsNotSet => !IsSet;
 

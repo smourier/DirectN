@@ -11,7 +11,7 @@ namespace DirectN
         HRESULT Read(/* [in] */ int cProperties, /* [size_is][in] __RPC__in_ecount_full(cProperties) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagPROPBAG2[] pPropBag, /* optional(IErrorLog) */ IntPtr pErrLog, /* [size_is][out] __RPC__out_ecount_full(cProperties) */ out IntPtr pvarValue, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(cProperties) */ [In, Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] HRESULT[] phrError);
         
         [PreserveSig]
-        HRESULT Write(/* [in] */ int cProperties, /* [size_is][in] __RPC__in_ecount_full(cProperties) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagPROPBAG2[] pPropBag, /* [size_is][in] __RPC__in_ecount_full(cProperties) */ IntPtr pvarValue);
+        HRESULT Write(/* [in] */ int cProperties, /* [size_is][in] __RPC__in_ecount_full(cProperties) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] tagPROPBAG2[] pPropBag, /* [size_is][in] __RPC__in_ecount_full(cProperties) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] object[] pvarValue);
         
         [PreserveSig]
         HRESULT CountProperties(/* [out] __RPC__out */ out uint pcProperties);

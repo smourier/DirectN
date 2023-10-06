@@ -30,7 +30,7 @@ namespace DirectN
 #endif
 
                     var desca = a.GetDesc();
-                    if (desca.AdapterLuid.luid == desc.AdapterLuid.luid)
+                    if (desca.AdapterLuid.Value == desc.AdapterLuid.Value)
                         return i;
 
                     i++;

@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1_1.h
 namespace DirectN
 {
-    /// <summary>
-    /// This specifies the precision that should be used in buffers allocated by D2D.
-    /// </summary>
     public enum D2D1_BUFFER_PRECISION
     {
         D2D1_BUFFER_PRECISION_UNKNOWN = 0,

@@ -33,6 +33,91 @@ namespace DirectN
             return ptr;
         }
 
+        public static byte[] StructureToBytes(this object structure)
+        {
+            var bytes = new byte[Marshal.SizeOf(structure)];
+            var handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+            Marshal.StructureToPtr(structure, handle.AddrOfPinnedObject(), false);
+            handle.Free();
+            return bytes;
+        }
+
+        public static byte[] StructureToBytes<T>(this T structure) where T : struct
+        {
+            var bytes = new byte[Marshal.SizeOf<T>()];
+            var handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+            try
+            {
+                Marshal.StructureToPtr(structure, handle.AddrOfPinnedObject(), false);
+                return bytes;
+            }
+            finally
+            {
+                handle.Free();
+            }
+        }
+
+        public static object BytesToStructure(this byte[] bytes, Type structureType)
+        {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
+            if (structureType == null)
+                throw new ArgumentNullException(nameof(structureType));
+
+            var handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+            try
+            {
+                return Marshal.PtrToStructure(handle.AddrOfPinnedObject(), structureType);
+            }
+            finally
+            {
+                handle.Free();
+            }
+        }
+
+        public static T BytesToStructure<T>(this byte[] bytes) where T : struct
+        {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
+            var handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+            try
+            {
+                return Marshal.PtrToStructure<T>(handle.AddrOfPinnedObject());
+            }
+            finally
+            {
+                handle.Free();
+            }
+        }
+
+        public static IntPtr BytesToIntPtr(this byte[] bytes)
+        {
+            if (bytes == null)
+                throw new ArgumentNullException(nameof(bytes));
+
+            if (bytes.Length != IntPtr.Size)
+                throw new ArgumentException(null, nameof(bytes));
+
+            if (IntPtr.Size == 4)
+            {
+                var i = BitConverter.ToInt32(bytes, 0);
+                return new IntPtr(i);
+            }
+
+            var l = BitConverter.ToInt64(bytes, 0);
+            return new IntPtr(l);
+        }
+
+        public static byte[] IntPtrToBytes(this IntPtr ptr)
+        {
+            if (IntPtr.Size == 4)
+                return BitConverter.GetBytes(ptr.ToInt32());
+
+            return BitConverter.GetBytes(ptr.ToInt64());
+        }
+
         public static string ToName(this Guid guid, string formatIfNotFound = null)
         {
             if (guid == Guid.Empty)

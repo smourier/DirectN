@@ -7,8 +7,56 @@ namespace DirectN
 {
     public static class ID2D1FactoryExtensions
     {
-        public static IComObject<ID2D1EllipseGeometry> CreateEllipseGeometry(this IComObject<ID2D1Factory1> factory, D2D1_ELLIPSE ellipse) => CreateEllipseGeometry(factory?.Object, ellipse);
-        public static IComObject<ID2D1EllipseGeometry> CreateEllipseGeometry(this ID2D1Factory1 factory, D2D1_ELLIPSE ellipse)
+        public static IComObject<ID2D1RenderTarget> CreateWicBitmapRenderTarget(this IComObject<ID2D1Factory> factory, IComObject<IWICBitmap> target, D2D1_RENDER_TARGET_PROPERTIES? renderTargetProperties = null) => CreateWicBitmapRenderTarget<ID2D1RenderTarget>(factory?.Object, target?.Object, renderTargetProperties);
+        public static IComObject<T> CreateWicBitmapRenderTarget<T>(this IComObject<ID2D1Factory> factory, IComObject<IWICBitmap> target, D2D1_RENDER_TARGET_PROPERTIES? renderTargetProperties = null) where T : ID2D1RenderTarget => CreateWicBitmapRenderTarget<T>(factory?.Object, target?.Object, renderTargetProperties);
+        public static IComObject<T> CreateWicBitmapRenderTarget<T>(this ID2D1Factory factory, IWICBitmap target, D2D1_RENDER_TARGET_PROPERTIES? renderTargetProperties = null) where T : ID2D1RenderTarget
+        {
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
+
+            if (target == null)
+                throw new ArgumentNullException(nameof(target));
+
+            var props = renderTargetProperties ?? new D2D1_RENDER_TARGET_PROPERTIES();
+            factory.CreateWicBitmapRenderTarget(target, ref props, out var renderTarget).ThrowOnError();
+            return new ComObject<T>((T)renderTarget);
+        }
+
+        public static IComObject<ID2D1HwndRenderTarget> CreateHwndRenderTarget(this IComObject<ID2D1Factory> factory, D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, D2D1_RENDER_TARGET_PROPERTIES? renderTargetProperties = null) => CreateHwndRenderTarget(factory?.Object, hwndRenderTargetProperties, renderTargetProperties);
+        public static IComObject<ID2D1HwndRenderTarget> CreateHwndRenderTarget(this ID2D1Factory factory, D2D1_HWND_RENDER_TARGET_PROPERTIES hwndRenderTargetProperties, D2D1_RENDER_TARGET_PROPERTIES? renderTargetProperties = null)
+        {
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
+
+            var props = renderTargetProperties ?? new D2D1_RENDER_TARGET_PROPERTIES();
+            factory.CreateHwndRenderTarget(ref props, ref hwndRenderTargetProperties, out var renderTarget).ThrowOnError();
+            return new ComObject<ID2D1HwndRenderTarget>(renderTarget);
+        }
+
+        public static IComObject<ID2D1DCRenderTarget> CreateDCRenderTarget(this IComObject<ID2D1Factory> factory, D2D1_RENDER_TARGET_PROPERTIES properties) => CreateDCRenderTarget<ID2D1DCRenderTarget>(factory?.Object, properties);
+        public static IComObject<T> CreateDCRenderTarget<T>(this IComObject<ID2D1Factory> factory, D2D1_RENDER_TARGET_PROPERTIES properties) where T : ID2D1DCRenderTarget => CreateDCRenderTarget<T>(factory?.Object, properties);
+        public static IComObject<T> CreateDCRenderTarget<T>(this ID2D1Factory factory, D2D1_RENDER_TARGET_PROPERTIES properties) where T : ID2D1DCRenderTarget
+        {
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
+
+            factory.CreateDCRenderTarget(ref properties, out var target).ThrowOnError();
+            return new ComObject<T>((T)target);
+        }
+
+        public static IComObject<ID2D1StrokeStyle> CreateStrokeStyle(this IComObject<ID2D1Factory> factory, D2D1_STROKE_STYLE_PROPERTIES properties, IEnumerable<float> dashes = null) => CreateStrokeStyle<ID2D1StrokeStyle>(factory?.Object, properties, dashes);
+        public static IComObject<T> CreateStrokeStyle<T>(this IComObject<ID2D1Factory> factory, D2D1_STROKE_STYLE_PROPERTIES properties, IEnumerable<float> dashes = null) where T : ID2D1StrokeStyle => CreateStrokeStyle<T>(factory?.Object, properties, dashes);
+        public static IComObject<T> CreateStrokeStyle<T>(this ID2D1Factory factory, D2D1_STROKE_STYLE_PROPERTIES properties, IEnumerable<float> dashes = null) where T : ID2D1StrokeStyle
+        {
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
+
+            factory.CreateStrokeStyle(ref properties, dashes?.ToArray(), (dashes?.Count()).GetValueOrDefault(), out var style).ThrowOnError();
+            return new ComObject<T>((T)style);
+        }
+
+        public static IComObject<ID2D1EllipseGeometry> CreateEllipseGeometry(this IComObject<ID2D1Factory> factory, D2D1_ELLIPSE ellipse) => CreateEllipseGeometry(factory?.Object, ellipse);
+        public static IComObject<ID2D1EllipseGeometry> CreateEllipseGeometry(this ID2D1Factory factory, D2D1_ELLIPSE ellipse)
         {
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
@@ -17,8 +65,8 @@ namespace DirectN
             return new ComObject<ID2D1EllipseGeometry>(geometry);
         }
 
-        public static IComObject<ID2D1RectangleGeometry> CreateRectangleGeometry(this IComObject<ID2D1Factory1> factory, D2D_RECT_F rectangle) => CreateRectangleGeometry(factory?.Object, rectangle);
-        public static IComObject<ID2D1RectangleGeometry> CreateRectangleGeometry(this ID2D1Factory1 factory, D2D_RECT_F rectangle)
+        public static IComObject<ID2D1RectangleGeometry> CreateRectangleGeometry(this IComObject<ID2D1Factory> factory, D2D_RECT_F rectangle) => CreateRectangleGeometry(factory?.Object, rectangle);
+        public static IComObject<ID2D1RectangleGeometry> CreateRectangleGeometry(this ID2D1Factory factory, D2D_RECT_F rectangle)
         {
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
@@ -27,8 +75,8 @@ namespace DirectN
             return new ComObject<ID2D1RectangleGeometry>(geometry);
         }
 
-        public static IComObject<ID2D1RoundedRectangleGeometry> CreateRoundedRectangleGeometry(this IComObject<ID2D1Factory1> factory, D2D1_ROUNDED_RECT rectangle) => CreateRoundedRectangleGeometry(factory?.Object, rectangle);
-        public static IComObject<ID2D1RoundedRectangleGeometry> CreateRoundedRectangleGeometry(this ID2D1Factory1 factory, D2D1_ROUNDED_RECT rectangle)
+        public static IComObject<ID2D1RoundedRectangleGeometry> CreateRoundedRectangleGeometry(this IComObject<ID2D1Factory> factory, D2D1_ROUNDED_RECT rectangle) => CreateRoundedRectangleGeometry(factory?.Object, rectangle);
+        public static IComObject<ID2D1RoundedRectangleGeometry> CreateRoundedRectangleGeometry(this ID2D1Factory factory, D2D1_ROUNDED_RECT rectangle)
         {
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
@@ -37,18 +85,19 @@ namespace DirectN
             return new ComObject<ID2D1RoundedRectangleGeometry>(geometry);
         }
 
-        public static IComObject<ID2D1PathGeometry1> CreatePathGeometry(this IComObject<ID2D1Factory1> factory) => CreatePathGeometry(factory?.Object);
-        public static IComObject<ID2D1PathGeometry1> CreatePathGeometry(this ID2D1Factory1 factory)
+        public static IComObject<ID2D1PathGeometry> CreatePathGeometry(this IComObject<ID2D1Factory> factory) => CreatePathGeometry<ID2D1PathGeometry>(factory?.Object);
+        public static IComObject<T> CreatePathGeometry<T>(this IComObject<ID2D1Factory> factory) where T : ID2D1PathGeometry => CreatePathGeometry<T>(factory?.Object);
+        public static IComObject<T> CreatePathGeometry<T>(this ID2D1Factory factory) where T : ID2D1PathGeometry
         {
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
 
-            factory.CreatePathGeometry(out ID2D1PathGeometry1 geometry).ThrowOnError();
-            return new ComObject<ID2D1PathGeometry1>(geometry);
+            factory.CreatePathGeometry(out var geometry).ThrowOnError();
+            return new ComObject<T>((T)geometry);
         }
 
-        public static IComObject<ID2D1GeometryGroup> CreateGeometryGroup(this IComObject<ID2D1Factory1> factory, D2D1_FILL_MODE fillMode, IReadOnlyList<ID2D1Geometry> geometries) => CreateGeometryGroup(factory?.Object, fillMode, geometries);
-        public static IComObject<ID2D1GeometryGroup> CreateGeometryGroup(this ID2D1Factory1 factory, D2D1_FILL_MODE fillMode, IReadOnlyList<ID2D1Geometry> geometries)
+        public static IComObject<ID2D1GeometryGroup> CreateGeometryGroup(this IComObject<ID2D1Factory> factory, D2D1_FILL_MODE fillMode, IReadOnlyList<ID2D1Geometry> geometries) => CreateGeometryGroup(factory?.Object, fillMode, geometries);
+        public static IComObject<ID2D1GeometryGroup> CreateGeometryGroup(this ID2D1Factory factory, D2D1_FILL_MODE fillMode, IReadOnlyList<ID2D1Geometry> geometries)
         {
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
@@ -75,31 +124,6 @@ namespace DirectN
 
             factory.CreateDevice(device, out var dev).ThrowOnError();
             return new ComObject<T>((T)dev);
-        }
-
-        public static IComObject<ID2D1DCRenderTarget> CreateDCRenderTarget(this IComObject<ID2D1Factory1> factory, D2D1_RENDER_TARGET_PROPERTIES properties) => CreateDCRenderTarget<ID2D1DCRenderTarget>(factory?.Object, properties);
-        public static IComObject<T> CreateDCRenderTarget<T>(this IComObject<ID2D1Factory1> factory, D2D1_RENDER_TARGET_PROPERTIES properties) where T : ID2D1DCRenderTarget => CreateDCRenderTarget<T>(factory?.Object, properties);
-        public static IComObject<T> CreateDCRenderTarget<T>(this ID2D1Factory1 factory, D2D1_RENDER_TARGET_PROPERTIES properties) where T : ID2D1DCRenderTarget
-        {
-            if (factory == null)
-                throw new ArgumentNullException(nameof(factory));
-
-            factory.CreateDCRenderTarget(ref properties, out var target).ThrowOnError();
-            return new ComObject<T>((T)target);
-        }
-
-        public static IComObject<ID2D1RenderTarget> CreateDxgiSurfaceRenderTarget(this IComObject<ID2D1Factory1> factory, IComObject<IDXGISurface> surface, D2D1_RENDER_TARGET_PROPERTIES properties) => CreateDxgiSurfaceRenderTarget<ID2D1RenderTarget>(factory?.Object, surface?.Object, properties);
-        public static IComObject<T> CreateDxgiSurfaceRenderTarget<T>(this IComObject<ID2D1Factory1> factory, IComObject<IDXGISurface> surface, D2D1_RENDER_TARGET_PROPERTIES properties) where T : ID2D1RenderTarget => CreateDxgiSurfaceRenderTarget<T>(factory?.Object, surface?.Object, properties);
-        public static IComObject<T> CreateDxgiSurfaceRenderTarget<T>(this ID2D1Factory1 factory, IDXGISurface surface, D2D1_RENDER_TARGET_PROPERTIES properties) where T : ID2D1RenderTarget
-        {
-            if (factory == null)
-                throw new ArgumentNullException(nameof(factory));
-
-            if (surface == null)
-                throw new ArgumentNullException(nameof(surface));
-
-            factory.CreateDxgiSurfaceRenderTarget(surface, ref properties, out var target).ThrowOnError();
-            return new ComObject<T>((T)target);
         }
 
         public static Guid[] GetRegisteredEffects(this IComObject<ID2D1Factory1> factory) => GetRegisteredEffects(factory?.Object);

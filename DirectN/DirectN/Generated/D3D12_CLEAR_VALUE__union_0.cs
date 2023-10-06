@@ -1,5 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d3d12.h
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace DirectN
@@ -10,7 +11,7 @@ namespace DirectN
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public byte[] __bits;
-        public float[] Color { get => InteropRuntime.GetArray<float>(__bits, 0, 128); set { if (__bits == null) __bits = new byte[16]; InteropRuntime.SetArray<float>(value, __bits, 0, 128); } }
-        public D3D12_DEPTH_STENCIL_VALUE DepthStencil { get => InteropRuntime.Get<D3D12_DEPTH_STENCIL_VALUE>(__bits, 0, 40); set { if (__bits == null) __bits = new byte[16]; InteropRuntime.Set<D3D12_DEPTH_STENCIL_VALUE>(value, __bits, 0, 40); } }
+        public float[] Color {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.GetArray<float>(__bits, 0, 128);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[16]; InteropRuntime.SetArray<float>(value, __bits, 0, 128); } }
+        public D3D12_DEPTH_STENCIL_VALUE DepthStencil {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D12_DEPTH_STENCIL_VALUE>(__bits, 0, 64);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[16]; InteropRuntime.Set<D3D12_DEPTH_STENCIL_VALUE>(value, __bits, 0, 64); } }
     }
 }

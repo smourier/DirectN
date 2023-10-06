@@ -9,7 +9,7 @@ namespace DirectN
     {
         public ulong hDevice;
         public IntPtr pDXGIContext;
-        public int VidPnSourceId;
+        public uint VidPnSourceId;
         public DXGI_DDI_PRESENT_FLAGS Flags;
         public DXGI_DDI_FLIP_INTERVAL_TYPE FlipInterval;
         public uint PresentPlaneCount;

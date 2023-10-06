@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// Interface describing an SVG 'points' value in a 'polyline' or 'polygon' element.
-    /// </summary>
     [ComImport, Guid("9dbe4c0d-3572-4dd9-9825-5530813bb712"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID2D1SvgPointCollection : ID2D1SvgAttribute
     {

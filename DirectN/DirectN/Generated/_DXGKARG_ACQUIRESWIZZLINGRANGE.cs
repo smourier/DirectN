@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\shared\d3dkmddi.h
 using System;
 using System.Runtime.InteropServices;
-using PHYSICAL_ADDRESS = System.Int64;
 
 namespace DirectN
 {
@@ -13,6 +12,6 @@ namespace DirectN
         public uint RangeId;
         public uint SegmentId;
         public IntPtr RangeSize;
-        public PHYSICAL_ADDRESS CPUTranslatedAddress;
+        public long CPUTranslatedAddress;
     }
 }

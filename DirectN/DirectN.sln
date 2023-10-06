@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectNCore", "DirectNCore\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectN.MinimalD3D11", "DirectN.MinimalD3D11\DirectN.MinimalD3D11.csproj", "{6B30B760-A163-43D5-AF80-1680CCC2580E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectN.WinUI3.MinimalD3D11", "DirectN.WinUI3.MinimalD3D11\DirectN.WinUI3.MinimalD3D11.csproj", "{6D7E230A-A229-4BFE-9533-1B37ADCC884A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectN.WinUI3.MinimalD3D11", "DirectN.WinUI3.MinimalD3D11\DirectN.WinUI3.MinimalD3D11.csproj", "{6D7E230A-A229-4BFE-9533-1B37ADCC884A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectNStandard", "DirectNStandard\DirectNStandard.csproj", "{F9436809-089F-4260-88F4-EE905B76CF08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +115,22 @@ Global
 		{6D7E230A-A229-4BFE-9533-1B37ADCC884A}.Release|x86.ActiveCfg = Release|x86
 		{6D7E230A-A229-4BFE-9533-1B37ADCC884A}.Release|x86.Build.0 = Release|x86
 		{6D7E230A-A229-4BFE-9533-1B37ADCC884A}.Release|x86.Deploy.0 = Release|x86
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Debug|x64.Build.0 = Debug|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Debug|x86.Build.0 = Debug|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Release|ARM64.Build.0 = Release|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Release|x64.ActiveCfg = Release|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Release|x64.Build.0 = Release|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Release|x86.ActiveCfg = Release|Any CPU
+		{F9436809-089F-4260-88F4-EE905B76CF08}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

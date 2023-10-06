@@ -1,6 +1,7 @@
 ﻿// generated from <Windows SDK Path>\um\d3d.h
 using System;
 using System.Runtime.InteropServices;
+using LPD3DVALUE = System.Single;
 using LPDIRECT3DTEXTURE2 = DirectN.IDirect3DTexture2;
 using LPDIRECT3DVERTEXBUFFER = DirectN.IDirect3DVertexBuffer;
 using LPDIRECT3DVIEWPORT3 = DirectN.IDirect3DViewport3;

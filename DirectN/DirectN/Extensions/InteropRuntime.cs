@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace System.Runtime.InteropServices
@@ -10,7 +11,10 @@ namespace System.Runtime.InteropServices
         public static Encoding StringEncoding { get; set; }
 
         // Note we mostly do checks with debug.assert, since calling code is supposed to be generated.
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static sbyte GetSByte(byte[] bytes, int offset, int count) => (sbyte)GetByte(bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte GetByte(byte[] bytes, int offset, int count)
         {
             if (bytes == null)
@@ -32,8 +36,13 @@ namespace System.Runtime.InteropServices
             return b;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static char GetChar(byte[] bytes, int offset, int count) => (char)GetInt16(bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static short GetInt16(byte[] bytes, int offset, int count) => (short)GetUInt16(bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ushort GetUInt16(byte[] bytes, int offset, int count)
         {
             if (bytes == null)
@@ -55,9 +64,13 @@ namespace System.Runtime.InteropServices
             return ui;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool GetBoolean(byte[] bytes, int offset, int count) => EnumerateBits(bytes, offset, count).Any(b => b);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetInt32(byte[] bytes, int offset, int count) => (int)GetUInt32(bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint GetUInt32(byte[] bytes, int offset, int count)
         {
             if (bytes == null)
@@ -79,7 +92,10 @@ namespace System.Runtime.InteropServices
             return ui;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long GetInt64(byte[] bytes, int offset, int count) => (int)GetUInt64(bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong GetUInt64(byte[] bytes, int offset, int count)
         {
             if (bytes == null)
@@ -101,6 +117,7 @@ namespace System.Runtime.InteropServices
             return ul;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float GetSingle(byte[] bytes, int offset, int count)
         {
             if (bytes == null)
@@ -110,6 +127,7 @@ namespace System.Runtime.InteropServices
             return BitConverter.ToSingle(bytes, offset / 8);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double GetDouble(byte[] bytes, int offset, int count)
         {
             if (bytes == null)
@@ -119,6 +137,7 @@ namespace System.Runtime.InteropServices
             return BitConverter.ToDouble(bytes, offset / 8);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string GetString(byte[] bytes, int offset, int count, UnmanagedType type)
         {
             if (bytes == null)
@@ -160,6 +179,7 @@ namespace System.Runtime.InteropServices
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte[] GetByteArray(byte[] bytes, int offset, int count)
         {
             Debug.Assert(count % 8 == 0);
@@ -172,6 +192,7 @@ namespace System.Runtime.InteropServices
             return value;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] GetArray<T>(byte[] bytes, int offset, int count)
         {
             Debug.Assert((offset % 8) == 0);
@@ -232,19 +253,43 @@ namespace System.Runtime.InteropServices
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetSByte(sbyte value, byte[] bytes, int offset, int count) => SetByteArray(new byte[] { (byte)value }, bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetByte(byte value, byte[] bytes, int offset, int count) => SetByteArray(new byte[] { value }, bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetChar(char value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetInt16(short value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetUInt16(ushort value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetBoolean(bool value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetInt32(int value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetUInt32(uint value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetInt64(long value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetUInt64(ulong value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetSingle(float value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetDouble(double value, byte[] bytes, int offset, int count) => SetByteArray(BitConverter.GetBytes(value), bytes, offset, count);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void SetString(string value, byte[] bytes, int offset, int count, UnmanagedType type)
         {
             if (value == null || value.Length == 0)

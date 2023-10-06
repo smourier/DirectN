@@ -1,7 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\ocidl.h
 using System;
 using System.Runtime.InteropServices;
-using LPCRECT = DirectN.tagRECT;
 using LRESULT = System.Int64;
 
 namespace DirectN
@@ -36,19 +35,19 @@ namespace DirectN
         HRESULT SetFocus(/* [in] */ bool fFocus);
         
         [PreserveSig]
-        HRESULT GetDC(/* optional(LPCRECT) */ IntPtr pRect, /* [in] */ uint grfFlags, /* [out] __RPC__deref_out_opt */ out IntPtr phDC);
+        HRESULT GetDC(/* optional(tagRECT) */ IntPtr pRect, /* [in] */ uint grfFlags, /* [out] __RPC__deref_out_opt */ out IntPtr phDC);
         
         [PreserveSig]
         HRESULT ReleaseDC(/* [in] __RPC__in */ IntPtr hDC);
         
         [PreserveSig]
-        HRESULT InvalidateRect(/* optional(LPCRECT) */ IntPtr pRect, /* [in] */ bool fErase);
+        HRESULT InvalidateRect(/* optional(tagRECT) */ IntPtr pRect, /* [in] */ bool fErase);
         
         [PreserveSig]
         HRESULT InvalidateRgn(/* [in] __RPC__in */ IntPtr hRGN, /* [in] */ bool fErase);
         
         [PreserveSig]
-        HRESULT ScrollRect(/* [in] */ int dx, /* [in] */ int dy, /* [in] __RPC__in */ ref LPCRECT pRectScroll, /* [in] __RPC__in */ ref LPCRECT pRectClip);
+        HRESULT ScrollRect(/* [in] */ int dx, /* [in] */ int dy, /* [in] __RPC__in */ ref tagRECT pRectScroll, /* [in] __RPC__in */ ref tagRECT pRectClip);
         
         [PreserveSig]
         HRESULT AdjustRect(/* [out][in] __RPC__inout */ ref tagRECT prc);

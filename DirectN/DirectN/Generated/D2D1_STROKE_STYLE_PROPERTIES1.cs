@@ -4,9 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    /// <summary>
-    /// This defines how geometries should be drawn and widened.
-    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public partial struct D2D1_STROKE_STYLE_PROPERTIES1
     {
@@ -17,9 +14,6 @@ namespace DirectN
         public float miterLimit;
         public D2D1_DASH_STYLE dashStyle;
         public float dashOffset;
-        /// <summary>
-        /// How the nib of the stroke is influenced by the context properties.
-        /// </summary>
         public D2D1_STROKE_TRANSFORM_TYPE transformType;
     }
 }

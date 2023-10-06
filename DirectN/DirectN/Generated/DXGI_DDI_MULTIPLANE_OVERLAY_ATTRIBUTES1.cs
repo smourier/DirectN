@@ -16,7 +16,7 @@ namespace DirectN
         public uint DirtyRectCount;
         public IntPtr pDirtyRects;
         public DXGI_DDI_MULTIPLANE_OVERLAY_VIDEO_FRAME_FORMAT VideoFrameFormat;
-        public int ColorSpace;
+        public D3DDDI_COLOR_SPACE_TYPE ColorSpace;
         public DXGI_DDI_MULTIPLANE_OVERLAY_STEREO_FORMAT StereoFormat;
         public bool StereoLeftViewFrame0;
         public bool StereoBaseViewFrame0;

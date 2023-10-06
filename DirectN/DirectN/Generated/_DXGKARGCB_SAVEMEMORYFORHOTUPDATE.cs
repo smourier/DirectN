@@ -9,7 +9,7 @@ namespace DirectN
     {
         public uint NumDataMemoryRanges;
         public IntPtr pDataMemoryRanges;
-        public IntPtr pDataMdl;
+        public int pDataMdl;
         public uint DataSize;
         public IntPtr pData;
         public uint MetaDataSize;

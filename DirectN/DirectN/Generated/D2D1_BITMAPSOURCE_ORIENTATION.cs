@@ -1,9 +1,6 @@
 ﻿// generated from <Windows SDK Path>\um\d2d1effects.h
 namespace DirectN
 {
-    /// <summary>
-    /// Speficies whether a flip and/or rotation operation should be performed by the Bitmap source effect
-    /// </summary>
     public enum D2D1_BITMAPSOURCE_ORIENTATION
     {
         D2D1_BITMAPSOURCE_ORIENTATION_DEFAULT = 1,
