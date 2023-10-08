@@ -460,6 +460,9 @@ namespace DirectN
         public const int DXGI_MAP_READ = 1;
         public const int DXGI_MAP_WRITE = 2;
         public const int DXGI_MAX_SWAP_CHAIN_BUFFERS = 16;
+        public const int DXGI_MWA_NO_WINDOW_CHANGES = 1 << 0;
+        public const int DXGI_MWA_NO_ALT_ENTER = 1 << 1;
+        public const int DXGI_MWA_NO_PRINT_SCREEN = 1 << 2;
         public const int DXGI_MWA_VALID = 7;
         public const int DXGI_PRESENT_ALLOW_TEARING = 512;
         public const int DXGI_PRESENT_DO_NOT_SEQUENCE = 2;
