@@ -10,6 +10,21 @@ namespace DirectN
             this.y = y;
         }
 
+        public tagPOINT(float x, float y)
+        {
+#if DEBUG
+            if (x.IsNotSet())
+                throw new ArgumentException(null, nameof(x));
+
+            if (y.IsNotSet())
+                throw new ArgumentException(null, nameof(y));
+
+#endif
+
+            this.x = x.FloorI();
+            this.y = y.FloorI();
+        }
+
         public bool IsZero => x == 0 && y == 0;
         public override string ToString() => "X=" + x + ",Y=" + y;
         public bool Equals(tagPOINT other) => x == other.x && y == other.y;

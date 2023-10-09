@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -229,6 +230,18 @@ namespace DirectN
         [DllImport("dwmapi")]
         public static extern HRESULT DwmGetWindowAttribute(IntPtr hwnd, DWMWINDOWATTRIBUTE dwAttribute, ref tagRECT pvAttribute, int cbAttribute);
 
+        [DllImport("dwmapi")]
+        public static extern HRESULT DwmGetWindowAttribute(IntPtr hwnd, DWMWINDOWATTRIBUTE dwAttribute, ref int pvAttribute, int cbAttribute);
+
+        [DllImport("uxtheme")]
+        public static extern HRESULT GetThemeColor(IntPtr themeHandle, int iPartId, int iStateId, int iPropId, out int pColor);
+
+        [DllImport("uxtheme", CharSet = CharSet.Unicode)]
+        public static extern IntPtr OpenThemeData(IntPtr hwnd, string pszClassList);
+
+        [DllImport("uxtheme")]
+        public static extern int CloseThemeData(IntPtr hTheme);
+
         [DllImport("uxtheme")]
         public static extern int GetThemeSysColor(IntPtr themeHandle, COLOR index);
 
@@ -245,5 +258,153 @@ namespace DirectN
 
         [DllImport("kernel32")]
         public static extern IntPtr GetConsoleWindow();
+
+        public static int GetPointerId(IntPtr wParam) => Extensions.LOWORD(wParam);
+        public static POINTER_MESSAGE_FLAGS GetPointerFlags(IntPtr wParam) => (POINTER_MESSAGE_FLAGS)Extensions.HIWORD(wParam);
+        public static int GetWheelDelta(IntPtr wParam) => Extensions.HIWORD(wParam);
+
+        public static bool EnableMouseInPointer() => EnableMouseInPointer(true);
+
+        public static POINTER_INPUT_TYPE GetPointerType(int id)
+        {
+            GetPointerType(id, out var type);
+            return type;
+        }
+
+        public static POINTER_INFO GetPointerInfo(int id)
+        {
+            GetPointerInfo(id, out var info);
+            return info;
+        }
+
+        public static POINTER_TOUCH_INFO GetPointerTouchInfo(int id)
+        {
+            GetPointerTouchInfo(id, out var info);
+            return info;
+        }
+
+        public static POINTER_PEN_INFO GetPointerPenInfo(int id)
+        {
+            GetPointerPenInfo(id, out var info);
+            return info;
+        }
+
+        [DllImport("user32", SetLastError = true)]
+        public static extern bool SkipPointerFrameMessages(int pointerId);
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool GetPointerType(int pointerId, out POINTER_INPUT_TYPE pointerType);
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool GetPointerInfo(int pointerId, out POINTER_INFO pointerInfo);
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool GetPointerTouchInfo(int pointerId, out POINTER_TOUCH_INFO touchInfo);
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool GetPointerPenInfo(int pointerId, out POINTER_PEN_INFO penInfo);
+
+        [DllImport("user32")]
+        public static extern bool IsMouseInPointerEnabled();
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool EnableMouseInPointer(bool fEnable);
+
+        [DllImport("user32", CharSet = CharSet.Unicode)]
+        private static extern IntPtr MB_GetString(int button);
+        public static string GetMessageBoxString(DialogBoxCommand button, bool removeMnemonics = true)
+        {
+            var ptr = MB_GetString((int)(button - 1));
+            if (ptr == IntPtr.Zero)
+                return null;
+
+            var str = Marshal.PtrToStringUni(ptr);
+            if (removeMnemonics)
+                return str.Replace("&", string.Empty);
+
+            return str;
+        }
+
+        [DllImport("user32")]
+        public static extern bool EnableWindow(IntPtr hwnd, bool bEnable);
+
+        [DllImport("user32")]
+        public static extern bool IsWindowEnabled(IntPtr hwnd);
+
+        [DllImport("user32")]
+        public static extern bool SetWindowDisplayAffinity(IntPtr hwnd, WDA dwAffinity);
+
+        [DllImport("user32")]
+        private static extern bool GetWindowDisplayAffinity(IntPtr hwnd, out WDA pdwAffinity);
+
+        public static WDA GetWindowDisplayAffinity(IntPtr hwnd)
+        {
+            GetWindowDisplayAffinity(hwnd, out var affinity);
+            return affinity;
+        }
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
+        private static extern IntPtr GetModuleFileName(IntPtr hModule, StringBuilder lpFilename, int nSize);
+
+        public static string GetModuleFileName(IntPtr hModule)
+        {
+            var sb = new StringBuilder(1024);
+            GetModuleFileName(hModule, sb, sb.Capacity);
+            return sb.ToString().Nullify();
+        }
+
+        [DllImport("kernel32", CharSet = CharSet.Unicode, SetLastError = true)]
+        public static extern IntPtr LoadLibrary(string lpLibFileName);
+
+        public static int GetWindowThreadId(IntPtr handle) => GetWindowThreadProcessId(handle, out _);
+        public static int GetWindowProcessId(IntPtr handle)
+        {
+            GetWindowThreadProcessId(handle, out int processId);
+            return processId;
+        }
+
+        public static string GetWindowModuleFileName(IntPtr handle)
+        {
+            var sb = new StringBuilder(1024);
+            GetWindowModuleFileName(handle, sb, sb.Capacity);
+            return sb.ToString();
+        }
+
+        [DllImport("user32", CharSet = CharSet.Unicode)]
+        private static extern int GetWindowModuleFileName(IntPtr handle, StringBuilder pszFileName, int cchFileNameMax);
+
+        [DllImport("user32")]
+        private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
+
+        [DllImport("user32")]
+        private static extern bool EnumChildWindows(IntPtr hWndParent, EnumChildProc lpEnumFunc, IntPtr lParam);
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool EnumWindows(EnumChildProc lpEnumFunc, IntPtr lParam);
+
+        private delegate bool EnumWindowsProc(IntPtr handle, IntPtr lParam);
+        private delegate bool EnumChildProc(IntPtr handle, IntPtr lParam);
+
+        public static IReadOnlyList<IntPtr> EnumerateChildWindows(IntPtr handle)
+        {
+            var list = new List<IntPtr>();
+            EnumChildWindows(handle, (h, l) =>
+            {
+                list.Add(h);
+                return true;
+            }, IntPtr.Zero);
+            return list.AsReadOnly();
+        }
+
+        public static IReadOnlyList<IntPtr> EnumerateTopLevelWindows()
+        {
+            var list = new List<IntPtr>();
+            EnumWindows((h, l) =>
+            {
+                list.Add(h);
+                return true;
+            }, IntPtr.Zero);
+            return list.AsReadOnly();
+        }
     }
 }

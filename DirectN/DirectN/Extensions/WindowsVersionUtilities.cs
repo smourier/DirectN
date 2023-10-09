@@ -1,9 +1,29 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace DirectN
 {
     public static class WindowsVersionUtilities
     {
+        private static readonly Lazy<Version> _kernelVersion = new Lazy<Version>(() =>
+        {
+            // warning: this requires a manifest with Windows 10 marked, like this
+            //
+            //<compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+            //  <application>
+            //    <!-- Windows 10 -->
+            //    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+            //  </application>
+            //</compatibility>
+            //
+
+            var vi = FileVersionInfo.GetVersionInfo(System.IO.Path.Combine(Environment.SystemDirectory, "kernel32.dll"));
+            return new Version(vi.FileMajorPart, vi.FileMinorPart, vi.FileBuildPart, vi.FilePrivatePart);
+        }, true);
+
+        public static Version KernelVersion => _kernelVersion.Value;
+
         public static bool IsWindowsVistaOrGreater() => IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 0);
         public static bool IsWindowsVistaSP1OrGreater() => IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 1);
         public static bool IsWindowsVistaSP2OrGreater() => IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 2);

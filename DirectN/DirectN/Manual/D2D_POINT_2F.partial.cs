@@ -39,5 +39,7 @@ namespace DirectN
         public static D2D_POINT_2F operator *(D2D_MATRIX_3X2_F left, D2D_POINT_2F right) => left.Multiply(right);
         public static implicit operator D2D_VECTOR_2F(D2D_POINT_2F pt) => new D2D_VECTOR_2F(pt.x, pt.y);
         public static implicit operator D2D_POINT_2F(D2D_VECTOR_2F vc) => new D2D_POINT_2F(vc.x, vc.y);
+        public static implicit operator tagPOINT(D2D_POINT_2F pt) => new tagPOINT(pt.x, pt.y);
+        public static implicit operator D2D_POINT_2F(tagPOINT pt) => new D2D_POINT_2F(pt.x, pt.y);
     }
 }

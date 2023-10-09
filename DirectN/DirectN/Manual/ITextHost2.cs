@@ -129,7 +129,7 @@ namespace DirectN
         new void TxImmReleaseContext(int himc);
 
         [PreserveSig]
-        new HRESULT TxGetSelectionBarWidth(out int lSelBarWidth);
+        new HRESULT TxGetSelectionBarWidth(ref int lSelBarWidth);
 
         // ITextHost2
         [PreserveSig]
@@ -157,7 +157,7 @@ namespace DirectN
         HRESULT TxGetEditStyle(TXES dwItem, out TXES pdwData);
 
         [PreserveSig]
-        HRESULT TxGetWindowStyles(out int pdwStyle, out int pdwExStyle);
+        HRESULT TxGetWindowStyles(out WS pdwStyle, out WS_EX pdwExStyle);
 
         [PreserveSig]
         HRESULT TxShowDropCaret(bool fShow, IntPtr hdc, IntPtr prc);

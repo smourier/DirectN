@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [ComVisible(true), Guid("c5bdd8d0-d26e-11ce-a89e-00aa006cadc5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("c5bdd8d0-d26e-11ce-a89e-00aa006cadc5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public interface ITextHost
     {
         [PreserveSig]
@@ -128,6 +128,6 @@ namespace DirectN
         void TxImmReleaseContext(int himc);
 
         [PreserveSig]
-        HRESULT TxGetSelectionBarWidth(out int lSelBarWidth);
+        HRESULT TxGetSelectionBarWidth(ref int lSelBarWidth);
     }
 }

@@ -1,14 +1,39 @@
 ﻿using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace DirectN
 {
     public static class MessageDecoder
     {
+        private static readonly Lazy<ConcurrentDictionary<int, string[]>> _messagesNames = new Lazy<ConcurrentDictionary<int, string[]>>(GetMessageNames, true);
+
+        public static int Machin;
+
+        private static ConcurrentDictionary<int, string[]> GetMessageNames()
+        {
+            var dic = new Dictionary<int, List<string>>();
+            foreach (var msg in typeof(MessageDecoder).GetFields(BindingFlags.Static | BindingFlags.Public).Where(m => m.IsLiteral && m.Attributes.HasFlag(FieldAttributes.HasDefault) && m.FieldType == typeof(int)))
+            {
+                var key = (int)msg.GetValue(null);
+                if (!dic.TryGetValue(key, out var list))
+                {
+                    list = new List<string>();
+                    dic.Add(key, list);
+                }
+                list.Add(msg.Name);
+            }
+
+            return new ConcurrentDictionary<int, string[]>(dic.Select(kv => new KeyValuePair<int, string[]>(kv.Key, kv.Value.ToArray())));
+        }
+
         public static string Decode(this MSG msg) => Decode(msg.hwnd, msg.message, msg.wParam, msg.lParam);
         public static string Decode(IntPtr handle, int msg, IntPtr wParam, IntPtr lParam, IntPtr? lResult = null)
         {
-            string id = Parenthesize(MsgToString(msg));
-            string description = string.Empty;
+            var id = Parenthesize(MsgToString(msg));
+            var description = string.Empty;
             if (msg == WM_PARENTNOTIFY)
             {
                 description = Parenthesize(MsgToString(LOWORD(wParam)));
@@ -26,14 +51,14 @@ namespace DirectN
             return s;
         }
 
-        public static bool IsMouseButtonMessage(int msg)
-        {
-            return msg == WM_LBUTTONDOWN || msg == WM_LBUTTONUP || msg == WM_LBUTTONDBLCLK ||
+        public static bool IsMouseButtonMessage(int msg) =>
+                msg == WM_LBUTTONDOWN || msg == WM_LBUTTONUP || msg == WM_LBUTTONDBLCLK ||
                 msg == WM_RBUTTONDOWN || msg == WM_RBUTTONUP || msg == WM_RBUTTONDBLCLK ||
                 msg == WM_MBUTTONDOWN || msg == WM_MBUTTONUP || msg == WM_MBUTTONDBLCLK ||
                 msg == WM_XBUTTONDOWN || msg == WM_XBUTTONUP || msg == WM_XBUTTONDBLCLK;
-        }
 
+        private static int LOWORD(int n) => n & 0xffff;
+        private static int LOWORD(IntPtr n) => LOWORD((int)(long)n);
         private static string Parenthesize(string input)
         {
             if (input == null)
@@ -42,324 +67,21 @@ namespace DirectN
             return " (" + input + ")";
         }
 
-        private static int LOWORD(int n) => n & 0xffff;
-        private static int LOWORD(IntPtr n) => LOWORD((int)(long)n);
         public static string MsgToString(int msg)
         {
-            string text;
-            switch (msg)
+            if (_messagesNames.Value.TryGetValue(msg, out var list))
+                return string.Join("|", list); // there can be more than one text per message
+
+            if ((msg & WM_REFLECT) == WM_REFLECT)
             {
-                case WM_NULL: text = "WM_NULL"; break;
-                case WM_CREATE: text = "WM_CREATE"; break;
-                case WM_DESTROY: text = "WM_DESTROY"; break;
-                case WM_MOVE: text = "WM_MOVE"; break;
-                case WM_SIZE: text = "WM_SIZE"; break;
-                case WM_ACTIVATE: text = "WM_ACTIVATE"; break;
-                case WM_SETFOCUS: text = "WM_SETFOCUS"; break;
-                case WM_KILLFOCUS: text = "WM_KILLFOCUS"; break;
-                case WM_ENABLE: text = "WM_ENABLE"; break;
-                case WM_SETREDRAW: text = "WM_SETREDRAW"; break;
-                case WM_SETTEXT: text = "WM_SETTEXT"; break;
-                case WM_GETTEXT: text = "WM_GETTEXT"; break;
-                case WM_GETTEXTLENGTH: text = "WM_GETTEXTLENGTH"; break;
-                case WM_PAINT: text = "WM_PAINT"; break;
-                case WM_CLOSE: text = "WM_CLOSE"; break;
-                case WM_QUERYENDSESSION: text = "WM_QUERYENDSESSION"; break;
-                case WM_QUIT: text = "WM_QUIT"; break;
-                case WM_QUERYOPEN: text = "WM_QUERYOPEN"; break;
-                case WM_ERASEBKGND: text = "WM_ERASEBKGND"; break;
-                case WM_SYSCOLORCHANGE: text = "WM_SYSCOLORCHANGE"; break;
-                case WM_ENDSESSION: text = "WM_ENDSESSION"; break;
-                case WM_SHOWWINDOW: text = "WM_SHOWWINDOW"; break;
-                case WM_WININICHANGE: text = "WM_WININICHANGE"; break;
-                case WM_DEVMODECHANGE: text = "WM_DEVMODECHANGE"; break;
-                case WM_ACTIVATEAPP: text = "WM_ACTIVATEAPP"; break;
-                case WM_FONTCHANGE: text = "WM_FONTCHANGE"; break;
-                case WM_TIMECHANGE: text = "WM_TIMECHANGE"; break;
-                case WM_CANCELMODE: text = "WM_CANCELMODE"; break;
-                case WM_SETCURSOR: text = "WM_SETCURSOR"; break;
-                case WM_MOUSEACTIVATE: text = "WM_MOUSEACTIVATE"; break;
-                case WM_CHILDACTIVATE: text = "WM_CHILDACTIVATE"; break;
-                case WM_QUEUESYNC: text = "WM_QUEUESYNC"; break;
-                case WM_GETMINMAXINFO: text = "WM_GETMINMAXINFO"; break;
-                case WM_PAINTICON: text = "WM_PAINTICON"; break;
-                case WM_ICONERASEBKGND: text = "WM_ICONERASEBKGND"; break;
-                case WM_NEXTDLGCTL: text = "WM_NEXTDLGCTL"; break;
-                case WM_SPOOLERSTATUS: text = "WM_SPOOLERSTATUS"; break;
-                case WM_DRAWITEM: text = "WM_DRAWITEM"; break;
-                case WM_MEASUREITEM: text = "WM_MEASUREITEM"; break;
-                case WM_DELETEITEM: text = "WM_DELETEITEM"; break;
-                case WM_VKEYTOITEM: text = "WM_VKEYTOITEM"; break;
-                case WM_CHARTOITEM: text = "WM_CHARTOITEM"; break;
-                case WM_SETFONT: text = "WM_SETFONT"; break;
-                case WM_GETFONT: text = "WM_GETFONT"; break;
-                case WM_SETHOTKEY: text = "WM_SETHOTKEY"; break;
-                case WM_GETHOTKEY: text = "WM_GETHOTKEY"; break;
-                case WM_QUERYDRAGICON: text = "WM_QUERYDRAGICON"; break;
-                case WM_COMPAREITEM: text = "WM_COMPAREITEM"; break;
-                case WM_GETOBJECT: text = "WM_GETOBJECT"; break;
-                case WM_COMPACTING: text = "WM_COMPACTING"; break;
-                case WM_COMMNOTIFY: text = "WM_COMMNOTIFY"; break;
-                case WM_WINDOWPOSCHANGING: text = "WM_WINDOWPOSCHANGING"; break;
-                case WM_WINDOWPOSCHANGED: text = "WM_WINDOWPOSCHANGED"; break;
-                case WM_POWER: text = "WM_POWER"; break;
-                case WM_COPYDATA: text = "WM_COPYDATA"; break;
-                case WM_CANCELJOURNAL: text = "WM_CANCELJOURNAL"; break;
-                case WM_NOTIFY: text = "WM_NOTIFY"; break;
-                case WM_INPUTLANGCHANGEREQUEST: text = "WM_INPUTLANGCHANGEREQUEST"; break;
-                case WM_INPUTLANGCHANGE: text = "WM_INPUTLANGCHANGE"; break;
-                case WM_TCARD: text = "WM_TCARD"; break;
-                case WM_HELP: text = "WM_HELP"; break;
-                case WM_USERCHANGED: text = "WM_USERCHANGED"; break;
-                case WM_NOTIFYFORMAT: text = "WM_NOTIFYFORMAT"; break;
-                case WM_CONTEXTMENU: text = "WM_CONTEXTMENU"; break;
-                case WM_STYLECHANGING: text = "WM_STYLECHANGING"; break;
-                case WM_STYLECHANGED: text = "WM_STYLECHANGED"; break;
-                case WM_DISPLAYCHANGE: text = "WM_DISPLAYCHANGE"; break;
-                case WM_GETICON: text = "WM_GETICON"; break;
-                case WM_SETICON: text = "WM_SETICON"; break;
-                case WM_NCCREATE: text = "WM_NCCREATE"; break;
-                case WM_NCDESTROY: text = "WM_NCDESTROY"; break;
-                case WM_NCCALCSIZE: text = "WM_NCCALCSIZE"; break;
-                case WM_NCHITTEST: text = "WM_NCHITTEST"; break;
-                case WM_NCPAINT: text = "WM_NCPAINT"; break;
-                case WM_NCACTIVATE: text = "WM_NCACTIVATE"; break;
-                case WM_GETDLGCODE: text = "WM_GETDLGCODE"; break;
-                case WM_NCMOUSEMOVE: text = "WM_NCMOUSEMOVE"; break;
-                case WM_NCLBUTTONDOWN: text = "WM_NCLBUTTONDOWN"; break;
-                case WM_NCLBUTTONUP: text = "WM_NCLBUTTONUP"; break;
-                case WM_NCLBUTTONDBLCLK: text = "WM_NCLBUTTONDBLCLK"; break;
-                case WM_NCRBUTTONDOWN: text = "WM_NCRBUTTONDOWN"; break;
-                case WM_NCRBUTTONUP: text = "WM_NCRBUTTONUP"; break;
-                case WM_NCRBUTTONDBLCLK: text = "WM_NCRBUTTONDBLCLK"; break;
-                case WM_NCMBUTTONDOWN: text = "WM_NCMBUTTONDOWN"; break;
-                case WM_NCMBUTTONUP: text = "WM_NCMBUTTONUP"; break;
-                case WM_NCMBUTTONDBLCLK: text = "WM_NCMBUTTONDBLCLK"; break;
-                case WM_KEYDOWN: text = "WM_KEYDOWN"; break;
-                case WM_KEYUP: text = "WM_KEYUP"; break;
-                case WM_CHAR: text = "WM_CHAR"; break;
-                case WM_DEADCHAR: text = "WM_DEADCHAR"; break;
-                case WM_SYSKEYDOWN: text = "WM_SYSKEYDOWN"; break;
-                case WM_SYSKEYUP: text = "WM_SYSKEYUP"; break;
-                case WM_SYSCHAR: text = "WM_SYSCHAR"; break;
-                case WM_SYSDEADCHAR: text = "WM_SYSDEADCHAR"; break;
-                case WM_KEYLAST: text = "WM_KEYLAST"; break;
-                case WM_IME_STARTCOMPOSITION: text = "WM_IME_STARTCOMPOSITION"; break;
-                case WM_IME_ENDCOMPOSITION: text = "WM_IME_ENDCOMPOSITION"; break;
-                case WM_IME_COMPOSITION: text = "WM_IME_COMPOSITION"; break;
-                case WM_INITDIALOG: text = "WM_INITDIALOG"; break;
-                case WM_COMMAND: text = "WM_COMMAND"; break;
-                case WM_SYSCOMMAND: text = "WM_SYSCOMMAND"; break;
-                case WM_TIMER: text = "WM_TIMER"; break;
-                case WM_HSCROLL: text = "WM_HSCROLL"; break;
-                case WM_VSCROLL: text = "WM_VSCROLL"; break;
-                case WM_INITMENU: text = "WM_INITMENU"; break;
-                case WM_INITMENUPOPUP: text = "WM_INITMENUPOPUP"; break;
-                case WM_MENUSELECT: text = "WM_MENUSELECT"; break;
-                case WM_MENUCHAR: text = "WM_MENUCHAR"; break;
-                case WM_ENTERIDLE: text = "WM_ENTERIDLE"; break;
-                case WM_CTLCOLORMSGBOX: text = "WM_CTLCOLORMSGBOX"; break;
-                case WM_CTLCOLOREDIT: text = "WM_CTLCOLOREDIT"; break;
-                case WM_CTLCOLORLISTBOX: text = "WM_CTLCOLORLISTBOX"; break;
-                case WM_CTLCOLORBTN: text = "WM_CTLCOLORBTN"; break;
-                case WM_CTLCOLORDLG: text = "WM_CTLCOLORDLG"; break;
-                case WM_CTLCOLORSCROLLBAR: text = "WM_CTLCOLORSCROLLBAR"; break;
-                case WM_CTLCOLORSTATIC: text = "WM_CTLCOLORSTATIC"; break;
-                case WM_MOUSEMOVE: text = "WM_MOUSEMOVE"; break;
-                case WM_LBUTTONDOWN: text = "WM_LBUTTONDOWN"; break;
-                case WM_LBUTTONUP: text = "WM_LBUTTONUP"; break;
-                case WM_LBUTTONDBLCLK: text = "WM_LBUTTONDBLCLK"; break;
-                case WM_RBUTTONDOWN: text = "WM_RBUTTONDOWN"; break;
-                case WM_RBUTTONUP: text = "WM_RBUTTONUP"; break;
-                case WM_RBUTTONDBLCLK: text = "WM_RBUTTONDBLCLK"; break;
-                case WM_MBUTTONDOWN: text = "WM_MBUTTONDOWN"; break;
-                case WM_MBUTTONUP: text = "WM_MBUTTONUP"; break;
-                case WM_MBUTTONDBLCLK: text = "WM_MBUTTONDBLCLK"; break;
-                case WM_MOUSEWHEEL: text = "WM_MOUSEWHEEL"; break;
-                case WM_PARENTNOTIFY: text = "WM_PARENTNOTIFY"; break;
-                case WM_ENTERMENULOOP: text = "WM_ENTERMENULOOP"; break;
-                case WM_EXITMENULOOP: text = "WM_EXITMENULOOP"; break;
-                case WM_NEXTMENU: text = "WM_NEXTMENU"; break;
-                case WM_SIZING: text = "WM_SIZING"; break;
-                case WM_CAPTURECHANGED: text = "WM_CAPTURECHANGED"; break;
-                case WM_MOVING: text = "WM_MOVING"; break;
-                case WM_POWERBROADCAST: text = "WM_POWERBROADCAST"; break;
-                case WM_DEVICECHANGE: text = "WM_DEVICECHANGE"; break;
-                case WM_IME_SETCONTEXT: text = "WM_IME_SETCONTEXT"; break;
-                case WM_IME_NOTIFY: text = "WM_IME_NOTIFY"; break;
-                case WM_IME_CONTROL: text = "WM_IME_CONTROL"; break;
-                case WM_IME_COMPOSITIONFULL: text = "WM_IME_COMPOSITIONFULL"; break;
-                case WM_IME_SELECT: text = "WM_IME_SELECT"; break;
-                case WM_IME_CHAR: text = "WM_IME_CHAR"; break;
-                case WM_IME_KEYDOWN: text = "WM_IME_KEYDOWN"; break;
-                case WM_IME_KEYUP: text = "WM_IME_KEYUP"; break;
-                case WM_MDICREATE: text = "WM_MDICREATE"; break;
-                case WM_MDIDESTROY: text = "WM_MDIDESTROY"; break;
-                case WM_MDIACTIVATE: text = "WM_MDIACTIVATE"; break;
-                case WM_MDIRESTORE: text = "WM_MDIRESTORE"; break;
-                case WM_MDINEXT: text = "WM_MDINEXT"; break;
-                case WM_MDIMAXIMIZE: text = "WM_MDIMAXIMIZE"; break;
-                case WM_MDITILE: text = "WM_MDITILE"; break;
-                case WM_MDICASCADE: text = "WM_MDICASCADE"; break;
-                case WM_MDIICONARRANGE: text = "WM_MDIICONARRANGE"; break;
-                case WM_MDIGETACTIVE: text = "WM_MDIGETACTIVE"; break;
-                case WM_MDISETMENU: text = "WM_MDISETMENU"; break;
-                case WM_ENTERSIZEMOVE: text = "WM_ENTERSIZEMOVE"; break;
-                case WM_EXITSIZEMOVE: text = "WM_EXITSIZEMOVE"; break;
-                case WM_DROPFILES: text = "WM_DROPFILES"; break;
-                case WM_MDIREFRESHMENU: text = "WM_MDIREFRESHMENU"; break;
-                case WM_MOUSEHOVER: text = "WM_MOUSEHOVER"; break;
-                case WM_MOUSELEAVE: text = "WM_MOUSELEAVE"; break;
-                case WM_CUT: text = "WM_CUT"; break;
-                case WM_COPY: text = "WM_COPY"; break;
-                case WM_PASTE: text = "WM_PASTE"; break;
-                case WM_CLEAR: text = "WM_CLEAR"; break;
-                case WM_UNDO: text = "WM_UNDO"; break;
-                case WM_RENDERFORMAT: text = "WM_RENDERFORMAT"; break;
-                case WM_RENDERALLFORMATS: text = "WM_RENDERALLFORMATS"; break;
-                case WM_DESTROYCLIPBOARD: text = "WM_DESTROYCLIPBOARD"; break;
-                case WM_DRAWCLIPBOARD: text = "WM_DRAWCLIPBOARD"; break;
-                case WM_PAINTCLIPBOARD: text = "WM_PAINTCLIPBOARD"; break;
-                case WM_VSCROLLCLIPBOARD: text = "WM_VSCROLLCLIPBOARD"; break;
-                case WM_SIZECLIPBOARD: text = "WM_SIZECLIPBOARD"; break;
-                case WM_ASKCBFORMATNAME: text = "WM_ASKCBFORMATNAME"; break;
-                case WM_CHANGECBCHAIN: text = "WM_CHANGECBCHAIN"; break;
-                case WM_HSCROLLCLIPBOARD: text = "WM_HSCROLLCLIPBOARD"; break;
-                case WM_QUERYNEWPALETTE: text = "WM_QUERYNEWPALETTE"; break;
-                case WM_PALETTEISCHANGING: text = "WM_PALETTEISCHANGING"; break;
-                case WM_PALETTECHANGED: text = "WM_PALETTECHANGED"; break;
-                case WM_HOTKEY: text = "WM_HOTKEY"; break;
-                case WM_PRINT: text = "WM_PRINT"; break;
-                case WM_PRINTCLIENT: text = "WM_PRINTCLIENT"; break;
-                case WM_HANDHELDFIRST: text = "WM_HANDHELDFIRST"; break;
-                case WM_GETTITLEBARINFOEX: text = "WM_GETTITLEBARINFOEX"; break;
-                case WM_HANDHELDLAST: text = "WM_HANDHELDLAST"; break;
-                case WM_AFXFIRST: text = "WM_AFXFIRST"; break;
-                case WM_AFXLAST: text = "WM_AFXLAST"; break;
-                case WM_PENWINFIRST: text = "WM_PENWINFIRST"; break;
-                case WM_PENWINLAST: text = "WM_PENWINLAST"; break;
-                case WM_APP: text = "WM_APP"; break;
-                case WM_USER: text = "WM_USER"; break;
-                case WM_NCMOUSELEAVE: text = "WM_NCMOUSELEAVE"; break;
-                case WM_CTLCOLOR: text = "WM_CTLCOLOR"; break;
-                case WM_DWMCOMPOSITIONCHANGED: text = "WM_DWMCOMPOSITIONCHANGED"; break;
-                case WM_DWMNCRENDERINGCHANGED: text = "WM_DWMNCRENDERINGCHANGED"; break;
-                case WM_DWMCOLORIZATIONCOLORCHANGED: text = "WM_DWMCOLORIZATIONCOLORCHANGED"; break;
-                case WM_DWMWINDOWMAXIMIZEDCHANGE: text = "WM_DWMWINDOWMAXIMIZEDCHANGE"; break;
-                case WM_DWMSENDICONICTHUMBNAIL: text = "WM_DWMSENDICONICTHUMBNAIL"; break;
-                case WM_DWMSENDICONICLIVEPREVIEWBITMAP: text = "WM_DWMSENDICONICLIVEPREVIEWBITMAP"; break;
-
-                // RichEdit messages
-                //case WM_CONTEXTMENU: text = "WM_CONTEXTMENU"; break;
-
-                //case WM_PRINTCLIENT: text = "WM_PRINTCLIENT"; break;
-
-                case EM_GETLIMITTEXT: text = "EM_GETLIMITTEXT"; break;
-
-                case EM_POSFROMCHAR: text = "EM_POSFROMCHAR"; break;
-                case EM_CHARFROMPOS: text = "EM_CHARFROMPOS"; break;
-
-                case EM_SCROLLCARET: text = "EM_SCROLLCARET"; break;
-                case EM_CANPASTE: text = "EM_CANPASTE"; break;
-                case EM_DISPLAYBAND: text = "EM_DISPLAYBAND"; break;
-                case EM_EXGETSEL: text = "EM_EXGETSEL"; break;
-                case EM_EXLIMITTEXT: text = "EM_EXLIMITTEXT"; break;
-                case EM_EXLINEFROMCHAR: text = "EM_EXLINEFROMCHAR"; break;
-                case EM_EXSETSEL: text = "EM_EXSETSEL"; break;
-                case EM_FINDTEXT: text = "EM_FINDTEXT"; break;
-                case EM_FORMATRANGE: text = "EM_FORMATRANGE"; break;
-                case EM_GETCHARFORMAT: text = "EM_GETCHARFORMAT"; break;
-                case EM_GETEVENTMASK: text = "EM_GETEVENTMASK"; break;
-                case EM_GETOLEINTERFACE: text = "EM_GETOLEINTERFACE"; break;
-                case EM_GETPARAFORMAT: text = "EM_GETPARAFORMAT"; break;
-                case EM_GETSELTEXT: text = "EM_GETSELTEXT"; break;
-                case EM_HIDESELECTION: text = "EM_HIDESELECTION"; break;
-                case EM_PASTESPECIAL: text = "EM_PASTESPECIAL"; break;
-                case EM_REQUESTRESIZE: text = "EM_REQUESTRESIZE"; break;
-                case EM_SELECTIONTYPE: text = "EM_SELECTIONTYPE"; break;
-                case EM_SETBKGNDCOLOR: text = "EM_SETBKGNDCOLOR"; break;
-                case EM_SETCHARFORMAT: text = "EM_SETCHARFORMAT"; break;
-                case EM_SETEVENTMASK: text = "EM_SETEVENTMASK"; break;
-                case EM_SETOLECALLBACK: text = "EM_SETOLECALLBACK"; break;
-                case EM_SETPARAFORMAT: text = "EM_SETPARAFORMAT"; break;
-                case EM_SETTARGETDEVICE: text = "EM_SETTARGETDEVICE"; break;
-                case EM_STREAMIN: text = "EM_STREAMIN"; break;
-                case EM_STREAMOUT: text = "EM_STREAMOUT"; break;
-                case EM_GETTEXTRANGE: text = "EM_GETTEXTRANGE"; break;
-                case EM_FINDWORDBREAK: text = "EM_FINDWORDBREAK"; break;
-                case EM_SETOPTIONS: text = "EM_SETOPTIONS"; break;
-                case EM_GETOPTIONS: text = "EM_GETOPTIONS"; break;
-                case EM_FINDTEXTEX: text = "EM_FINDTEXTEX"; break;
-                case EM_GETWORDBREAKPROCEX: text = "EM_GETWORDBREAKPROCEX"; break;
-                case EM_SETWORDBREAKPROCEX: text = "EM_SETWORDBREAKPROCEX"; break;
-
-                // Richedit v2.0 messages
-                case EM_SETUNDOLIMIT: text = "EM_SETUNDOLIMIT"; break;
-                case EM_REDO: text = "EM_REDO"; break;
-                case EM_CANREDO: text = "EM_CANREDO"; break;
-                case EM_GETUNDONAME: text = "EM_GETUNDONAME"; break;
-                case EM_GETREDONAME: text = "EM_GETREDONAME"; break;
-                case EM_STOPGROUPTYPING: text = "EM_STOPGROUPTYPING"; break;
-
-                case EM_SETTEXTMODE: text = "EM_SETTEXTMODE"; break;
-                case EM_GETTEXTMODE: text = "EM_GETTEXTMODE"; break;
-
-                case EM_AUTOURLDETECT: text = "EM_AUTOURLDETECT"; break;
-                case EM_GETAUTOURLDETECT: text = "EM_GETAUTOURLDETECT"; break;
-                case EM_SETPALETTE: text = "EM_SETPALETTE"; break;
-                case EM_GETTEXTEX: text = "EM_GETTEXTEX"; break;
-                case EM_GETTEXTLENGTHEX: text = "EM_GETTEXTLENGTHEX"; break;
-
-                // Asia specific messages
-                case EM_SETPUNCTUATION: text = "EM_SETPUNCTUATION"; break;
-                case EM_GETPUNCTUATION: text = "EM_GETPUNCTUATION"; break;
-                case EM_SETWORDWRAPMODE: text = "EM_SETWORDWRAPMODE"; break;
-                case EM_GETWORDWRAPMODE: text = "EM_GETWORDWRAPMODE"; break;
-                case EM_SETIMECOLOR: text = "EM_SETIMECOLOR"; break;
-                case EM_GETIMECOLOR: text = "EM_GETIMECOLOR"; break;
-                case EM_SETIMEOPTIONS: text = "EM_SETIMEOPTIONS"; break;
-                case EM_GETIMEOPTIONS: text = "EM_GETIMEOPTIONS"; break;
-                case EM_CONVPOSITION: text = "EM_CONVPOSITION"; break;
-
-                case EM_SETLANGOPTIONS: text = "EM_SETLANGOPTIONS"; break;
-                case EM_GETLANGOPTIONS: text = "EM_GETLANGOPTIONS"; break;
-                case EM_GETIMECOMPMODE: text = "EM_GETIMECOMPMODE"; break;
-
-                case EM_FINDTEXTW: text = "EM_FINDTEXTW"; break;
-                case EM_FINDTEXTEXW: text = "EM_FINDTEXTEXW"; break;
-
-                //Rich Edit 3.0 Asia msgs
-                case EM_RECONVERSION: text = "EM_RECONVERSION"; break;
-                case EM_SETIMEMODEBIAS: text = "EM_SETIMEMODEBIAS"; break;
-                case EM_GETIMEMODEBIAS: text = "EM_GETIMEMODEBIAS"; break;
-
-                // BiDi Specific messages
-                case EM_SETBIDIOPTIONS: text = "EM_SETBIDIOPTIONS"; break;
-                case EM_GETBIDIOPTIONS: text = "EM_GETBIDIOPTIONS"; break;
-
-                case EM_SETTYPOGRAPHYOPTIONS: text = "EM_SETTYPOGRAPHYOPTIONS"; break;
-                case EM_GETTYPOGRAPHYOPTIONS: text = "EM_GETTYPOGRAPHYOPTIONS"; break;
-
-                // Extended Edit style specific messages
-                case EM_SETEDITSTYLE: text = "EM_SETEDITSTYLE"; break;
-                case EM_GETEDITSTYLE: text = "EM_GETEDITSTYLE"; break;
-
-                default: text = null; break;
-            }
-
-            if (text == null && (msg & WM_REFLECT) == WM_REFLECT)
-            {
-                string subtext = MsgToString(msg - WM_REFLECT);
+                var subtext = MsgToString(msg - WM_REFLECT);
                 subtext = subtext ?? "???";
-                text = "WM_REFLECT + " + subtext;
+                return "WM_REFLECT + " + subtext;
             }
-            return text;
+            return null;
         }
 
-        public const int WH_JOURNALPLAYBACK = 1,
-            WH_GETMESSAGE = 3,
-            WH_MOUSE = 7,
-            WSF_VISIBLE = 0x0001,
+        public const int
             WM_NULL = 0x0000,
             WM_CREATE = 0x0001,
             WM_DELETEITEM = 0x002D,
@@ -367,9 +89,6 @@ namespace DirectN
             WM_MOVE = 0x0003,
             WM_SIZE = 0x0005,
             WM_ACTIVATE = 0x0006,
-            WA_INACTIVE = 0,
-            WA_ACTIVE = 1,
-            WA_CLICKACTIVE = 2,
             WM_SETFOCUS = 0x0007,
             WM_KILLFOCUS = 0x0008,
             WM_ENABLE = 0x000A,
@@ -453,7 +172,6 @@ namespace DirectN
             WM_NCXBUTTONDOWN = 0x00AB,
             WM_NCXBUTTONUP = 0x00AC,
             WM_NCXBUTTONDBLCLK = 0x00AD,
-            WM_KEYFIRST = 0x0100,
             WM_KEYDOWN = 0x0100,
             WM_KEYUP = 0x0101,
             WM_CHAR = 0x0102,
@@ -463,11 +181,9 @@ namespace DirectN
             WM_SYSKEYUP = 0x0105,
             WM_SYSCHAR = 0x0106,
             WM_SYSDEADCHAR = 0x0107,
-            WM_KEYLAST = 0x0108,
             WM_IME_STARTCOMPOSITION = 0x010D,
             WM_IME_ENDCOMPOSITION = 0x010E,
             WM_IME_COMPOSITION = 0x010F,
-            WM_IME_KEYLAST = 0x010F,
             WM_INITDIALOG = 0x0110,
             WM_COMMAND = 0x0111,
             WM_SYSCOMMAND = 0x0112,
@@ -490,7 +206,6 @@ namespace DirectN
             WM_CTLCOLORDLG = 0x0136,
             WM_CTLCOLORSCROLLBAR = 0x0137,
             WM_CTLCOLORSTATIC = 0x0138,
-            WM_MOUSEFIRST = 0x0200,
             WM_MOUSEMOVE = 0x0200,
             WM_LBUTTONDOWN = 0x0201,
             WM_LBUTTONUP = 0x0202,
@@ -505,9 +220,9 @@ namespace DirectN
             WM_XBUTTONUP = 0x020C,
             WM_XBUTTONDBLCLK = 0x020D,
             WM_MOUSEWHEEL = 0x020A,
-            WM_MOUSELAST = 0x020A;
+            WM_MOUSEHWHEEL = 0x020E;
 
-        public const int WHEEL_DELTA = 120,
+        public const int
             WM_PARENTNOTIFY = 0x0210,
             WM_ENTERMENULOOP = 0x0211,
             WM_EXITMENULOOP = 0x0212,
@@ -540,7 +255,26 @@ namespace DirectN
             WM_EXITSIZEMOVE = 0x0232,
             WM_DROPFILES = 0x0233,
             WM_MDIREFRESHMENU = 0x0234,
-            WM_POINTERDOWN = 0x246,
+            WM_POINTERDEVICECHANGE = 0x238,
+            WM_POINTERDEVICEINRANGE = 0x239,
+            WM_POINTERDEVICEOUTOFRANGE = 0x23A,
+            WM_NCPOINTERUPDATE = 0x0241,
+            WM_NCPOINTERDOWN = 0x0242,
+            WM_NCPOINTERUP = 0x0243,
+            WM_POINTERUPDATE = 0x0245,
+            WM_POINTERDOWN = 0x0246,
+            WM_POINTERUP = 0x0247,
+            WM_POINTERENTER = 0x0249,
+            WM_POINTERLEAVE = 0x024A,
+            WM_POINTERACTIVATE = 0x024B,
+            WM_POINTERCAPTURECHANGED = 0x024C,
+            WM_TOUCHHITTESTING = 0x024D,
+            WM_POINTERWHEEL = 0x024E,
+            WM_POINTERHWHEEL = 0x024F,
+            DM_POINTERHITTEST = 0x0250,
+            WM_POINTERROUTEDTO = 0x0251,
+            WM_POINTERROUTEDAWAY = 0x0252,
+            WM_POINTERROUTEDRELEASED = 0x0253,
             WM_MOUSEHOVER = 0x02A1,
             WM_MOUSELEAVE = 0x02A3,
             WM_DPICHANGED = 0x02E0,
@@ -579,41 +313,6 @@ namespace DirectN
             WM_APP = 0x8000,
             WM_USER = 0x0400,
             WM_REFLECT = WM_USER + 0x1C00,
-            WS_OVERLAPPED = 0x00000000,
-            WS_POPUP = unchecked((int)0x80000000),
-            WS_CHILD = 0x40000000,
-            WS_MINIMIZE = 0x20000000,
-            WS_VISIBLE = 0x10000000,
-            WS_DISABLED = 0x08000000,
-            WS_CLIPSIBLINGS = 0x04000000,
-            WS_CLIPCHILDREN = 0x02000000,
-            WS_MAXIMIZE = 0x01000000,
-            WS_CAPTION = 0x00C00000,
-            WS_BORDER = 0x00800000,
-            WS_DLGFRAME = 0x00400000,
-            WS_VSCROLL = 0x00200000,
-            WS_HSCROLL = 0x00100000,
-            WS_SYSMENU = 0x00080000,
-            WS_THICKFRAME = 0x00040000,
-            WS_TABSTOP = 0x00010000,
-            WS_MINIMIZEBOX = 0x00020000,
-            WS_MAXIMIZEBOX = 0x00010000,
-            WS_EX_DLGMODALFRAME = 0x00000001,
-            WS_EX_MDICHILD = 0x00000040,
-            WS_EX_TOOLWINDOW = 0x00000080,
-            WS_EX_CLIENTEDGE = 0x00000200,
-            WS_EX_CONTEXTHELP = 0x00000400,
-            WS_EX_RIGHT = 0x00001000,
-            WS_EX_LEFT = 0x00000000,
-            WS_EX_RTLREADING = 0x00002000,
-            WS_EX_LEFTSCROLLBAR = 0x00004000,
-            WS_EX_CONTROLPARENT = 0x00010000,
-            WS_EX_STATICEDGE = 0x00020000,
-            WS_EX_APPWINDOW = 0x00040000,
-            WS_EX_LAYERED = 0x00080000,
-            WS_EX_TOPMOST = 0x00000008,
-            WS_EX_LAYOUTRTL = 0x00400000,
-            WS_EX_NOINHERITLAYOUT = 0x00100000,
             WM_DWMCOMPOSITIONCHANGED = 0x0000031E,
             WM_DWMNCRENDERINGCHANGED = 0x0000031F,
             WM_DWMCOLORIZATIONCOLORCHANGED = 0x00000320,

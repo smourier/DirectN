@@ -7,15 +7,15 @@
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
     <Copyright>Copyright © 2017-2023 Simon Mourier. All rights reserved.</Copyright>
-    <FileVersion>1.15.0.1</FileVersion>
+    <FileVersion>1.15.0.2</FileVersion>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.15.0.1</Version>
+    <Version>1.15.0.2</Version>
     <RootNamespace>DirectN</RootNamespace>
-    <AssemblyVersion>1.15.0.1</AssemblyVersion>
+    <AssemblyVersion>1.15.0.2</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -79,7 +79,6 @@
     <Compile Include="..\DirectN\Extensions\InteropExtensions.cs" Link="Extensions\InteropExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\InteropRuntime.cs" Link="Extensions\InteropRuntime.cs" />
     <Compile Include="..\DirectN\Extensions\IWICBitmapFrameDecodeExtensions.cs" Link="Extensions\IWICBitmapFrameDecodeExtensions.cs" />
-    <Compile Include="..\DirectN\Extensions\IWicBitmapSourceExtensions.cs" Link="Extensions\IWicBitmapSourceExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\IWICColorContextExtensions.cs" Link="Extensions\IWICColorContextExtensions.cs" />
     <Compile Include="..\DirectN\Extensions\KSMedia.cs" Link="Extensions\KSMedia.cs" />
     <Compile Include="..\DirectN\Extensions\ManagedIStream.cs" Link="Extensions\ManagedIStream.cs" />
@@ -9614,6 +9613,16 @@
     <Compile Include="..\DirectN\Generated\tagVIDEOINFO__union_0.cs" Link="Generated\tagVIDEOINFO__union_0.cs" />
     <Compile Include="..\DirectN\Generated\tagVIDEOINFOHEADER2__union_0.cs" Link="Generated\tagVIDEOINFOHEADER2__union_0.cs" />
     <Compile Include="..\DirectN\Generated\tMIXERCONTROLDETAILS__union_0.cs" Link="Generated\tMIXERCONTROLDETAILS__union_0.cs" />
+    <Compile Include="..\DirectN\Extensions\ColorUtilities.cs" Link="Extensions\ColorUtilities.cs" />
+    <Compile Include="..\DirectN\Extensions\DialogBoxCommand.cs" Link="Extensions\DialogBoxCommand.cs" />
+    <Compile Include="..\DirectN\Extensions\ImmersiveColor.cs" Link="Extensions\ImmersiveColor.cs" />
+    <Compile Include="..\DirectN\Extensions\IWICBitmapSourceExtensions.cs" Link="Extensions\IWICBitmapSourceExtensions.cs" />
+    <Compile Include="..\DirectN\Extensions\TextServicesGenerator.cs" Link="Extensions\TextServicesGenerator.cs" />
+    <Compile Include="..\DirectN\Extensions\UnmanagedMemoryStream.cs" Link="Extensions\UnmanagedMemoryStream.cs" />
+    <Compile Include="..\DirectN\Manual\DWM_CLOAKED.cs" Link="Manual\DWM_CLOAKED.cs" />
+    <Compile Include="..\DirectN\Manual\IGraphicsEffectD2D1Interop.cs" Link="Manual\IGraphicsEffectD2D1Interop.cs" />
+    <Compile Include="..\DirectN\Manual\PA.cs" Link="Manual\PA.cs" />
+    <Compile Include="..\DirectN\Manual\WDA.cs" Link="Manual\WDA.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DirectN.ico" />
@@ -9625,6 +9634,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
   </ItemGroup>

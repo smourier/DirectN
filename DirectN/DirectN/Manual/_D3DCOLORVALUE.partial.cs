@@ -80,33 +80,58 @@ namespace DirectN
 
         private static bool IsHexa(char c) => (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
 
+        public static _D3DCOLORVALUE FromCOLORREF(int color, byte alpha = 255)
+        {
+            // swap r & b
+            var r = (color & 0xFF) << 16;
+            var b = (color >> 16) & 0xFF;
+            var g = color & 0xFF00;
+            return new _D3DCOLORVALUE(r | g | b, alpha);
+        }
+
         public static _D3DCOLORVALUE FromArgb(byte r, byte g, byte b) => FromArgb(1, r, g, b);
         public static _D3DCOLORVALUE FromArgb(byte a, byte r, byte g, byte b) => new _D3DCOLORVALUE(ByteToSingle(a), ByteToSingle(r), ByteToSingle(g), ByteToSingle(b));
         public static _D3DCOLORVALUE FromName(string name)
         {
+            TryParseFromName(name, out var value);
+            return value;
+        }
+
+        public static bool TryParseFromName(string name, out _D3DCOLORVALUE outValue)
+        {
             if (name == null)
                 throw new ArgumentNullException(nameof(name));
 
+            outValue = new _D3DCOLORVALUE();
             if (name.Length > 0)
             {
                 if (name.StartsWith("#"))
                 {
                     if (uint.TryParse(name.Substring(1), System.Globalization.NumberStyles.HexNumber, null, out var ui))
-                        return new _D3DCOLORVALUE(ui);
+                    {
+                        outValue = new _D3DCOLORVALUE(ui);
+                        return true;
+                    }
                 }
                 else
                 {
                     if (_colors.TryGetValue(name, out var value))
-                        return value;
+                    {
+                        outValue = value;
+                        return true;
+                    }
 
                     if (IsHexa(name[0]))
                     {
                         if (uint.TryParse(name, System.Globalization.NumberStyles.HexNumber, null, out var ui))
-                            return new _D3DCOLORVALUE(ui);
+                        {
+                            outValue = new _D3DCOLORVALUE(ui);
+                            return true;
+                        }
                     }
                 }
             }
-            return new _D3DCOLORVALUE();
+            return false;
         }
 
         public byte BA { get => SingleToByte(a); set => a = ByteToSingle(value); }

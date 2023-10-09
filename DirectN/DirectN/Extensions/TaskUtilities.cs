@@ -9,7 +9,7 @@ namespace DirectN
         public static async void Forget(this Task task, params Type[] acceptableExceptions)
         {
             if (task == null)
-                throw new ArgumentNullException(nameof(task));
+                return;
 
             try
             {
@@ -30,7 +30,7 @@ namespace DirectN
             }
         }
 
-        public static Task<T> StartSTAThreadTask<T>(Func<T> func)
+        public static Task<T> RunWithNewSTAThread<T>(Func<T> func)
         {
             if (func == null)
                 throw new ArgumentNullException(nameof(func));
@@ -53,16 +53,39 @@ namespace DirectN
             return tcs.Task;
         }
 
-        public static Task StartSTAThreadTask(Action action)
+        public static Task<T> RunWithSTAThread<T>(Func<T> func, bool startNew = false)
+        {
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            if (startNew || Thread.CurrentThread.GetApartmentState() != ApartmentState.STA)
+                return RunWithNewSTAThread(func);
+
+            return Task.FromResult(func());
+        }
+
+        public static Task RunWithNewSTAThread(Action action)
         {
             if (action == null)
                 throw new ArgumentNullException(nameof(action));
 
-            return StartSTAThreadTask(() =>
+            return RunWithNewSTAThread(() =>
             {
                 action();
                 return true;
             });
+        }
+
+        public static Task RunWithSTAThread(Action action, bool startNew = false)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            if (startNew || Thread.CurrentThread.GetApartmentState() != ApartmentState.STA)
+                return RunWithNewSTAThread(action);
+
+            action();
+            return Task.CompletedTask;
         }
     }
 }

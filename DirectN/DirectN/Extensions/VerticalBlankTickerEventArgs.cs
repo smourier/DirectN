@@ -1,8 +1,8 @@
-﻿using System;
+﻿using System.ComponentModel;
 
 namespace DirectN
 {
-    public sealed class VerticalBlankTickerEventArgs : EventArgs
+    public sealed class VerticalBlankTickerEventArgs : CancelEventArgs
     {
         internal VerticalBlankTickerEventArgs(long ticks)
         {

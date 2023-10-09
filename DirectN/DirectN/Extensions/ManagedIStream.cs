@@ -2,20 +2,39 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using STATSTG = System.Runtime.InteropServices.ComTypes.STATSTG;
+using System.Text;
+using System.Threading;
 
 namespace DirectN
 {
-    public sealed class ManagedIStream : IStream
+    public sealed class ManagedIStream : System.Runtime.InteropServices.ComTypes.IStream, IDisposable
     {
-        private readonly Stream _stream;
+        private Stream _stream;
+        private readonly bool _owned;
 
-        public ManagedIStream(Stream stream)
+        public ManagedIStream(Stream stream, bool owned = false)
         {
             if (stream == null)
                 throw new ArgumentNullException(nameof(stream));
 
             _stream = stream;
+            _owned = owned;
+        }
+
+        public ManagedIStream(string text, Encoding encoding = null)
+            : this(GetStream(text, encoding), true)
+        {
+        }
+
+        private static Stream GetStream(string text, Encoding encoding)
+        {
+            if (!string.IsNullOrEmpty(text))
+            {
+                encoding = encoding ?? Encoding.Unicode;
+                return new MemoryStream(encoding.GetBytes(text));
+            }
+
+            return new MemoryStream();
         }
 
         public void Read(byte[] pv, int cb, IntPtr pcbRead)
@@ -51,12 +70,19 @@ namespace DirectN
             }
         }
 
+        public void Dispose()
+        {
+            if (_owned)
+            {
+                Interlocked.Exchange(ref _stream, null)?.Dispose();
+            }
+        }
+
         public void SetSize(long libNewSize) => _stream.SetLength(libNewSize);
         public void Commit(int grfCommitFlags) => _stream.Flush();
-
-        public void Stat(out STATSTG pstatstg, int grfStatFlag)
+        public void Stat(out System.Runtime.InteropServices.ComTypes.STATSTG pstatstg, int grfStatFlag)
         {
-            pstatstg = new STATSTG
+            pstatstg = new System.Runtime.InteropServices.ComTypes.STATSTG
             {
                 type = (int)STGTY.STGTY_STREAM,
                 cbSize = _stream.Length,

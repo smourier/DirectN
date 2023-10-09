@@ -4,10 +4,8 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    public class TextHostThunk : IDisposable
+    internal class TextHostThunk : IDisposable
     {
-        #pragma warning disable IDE0060 // Remove unused parameter
-
         // https://devblogs.microsoft.com/oldnewthing/20040205-00/?p=40733
         private IntPtr _vtablePointer;
         private IntPtr _unk;
@@ -25,7 +23,7 @@ namespace DirectN
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         private delegate int ReleaseFn(IntPtr pThis);
 
-        // see my comments here: https://stackoverflow.com/questions/55416805/how-to-use-createtextservices-itexthost-correctly-in-c
+        // see comments here: https://stackoverflow.com/questions/55416805/how-to-use-createtextservices-itexthost-correctly-in-c
         // All ITextHost and ITextServices are using thiscall...
         [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
         private delegate IntPtr TxGetDCFn(IntPtr pThis);
@@ -149,7 +147,7 @@ namespace DirectN
         private delegate void TxImmReleaseContextFn(IntPtr pThis, int himc);
 
         [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
-        private delegate HRESULT TxGetSelectionBarWidthFn(IntPtr pThis, out int lSelBarWidth);
+        private delegate HRESULT TxGetSelectionBarWidthFn(IntPtr pThis, ref int lSelBarWidth);
 
         [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
         private delegate bool TxIsDoubleClickPendingFn(IntPtr pThis);
@@ -176,7 +174,7 @@ namespace DirectN
         private delegate HRESULT TxGetEditStyleFn(IntPtr pThis, TXES dwItem, out TXES pdwData);
 
         [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
-        private delegate HRESULT TxGetWindowStylesFn(IntPtr pThis, out int pdwStyle, out int pdwExStyle);
+        private delegate HRESULT TxGetWindowStylesFn(IntPtr pThis, out WS pdwStyle, out WS_EX pdwExStyle);
 
         [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
         private delegate HRESULT TxShowDropCaretFn(IntPtr pThis, bool fShow, IntPtr hdc, IntPtr prc);
@@ -187,7 +185,9 @@ namespace DirectN
         [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
         private delegate HRESULT TxGetHorzExtentFn(IntPtr pThis, out int plHorzExtent);
 
+#pragma warning disable IDE1006 // Naming Styles
         private static readonly Guid IID_IUnknown = new Guid("00000000-0000-0000-c000-000000000046");
+#pragma warning restore IDE1006 // Naming Styles
 
         // this is to avoid GC
         private static readonly QueryInterfaceFn _queryInterface = QueryInterface;
@@ -331,6 +331,9 @@ namespace DirectN
                 return 0;
             }
 
+#if DEBUG
+            TextHost.Logger?.Log(System.Diagnostics.TraceLevel.Warning, "IID:" + riid, nameof(TextHostThunk) + ":QueryInterface");
+#endif
             return (int)HRESULTS.E_NOINTERFACE;
         }
 
@@ -376,7 +379,7 @@ namespace DirectN
         private static HRESULT TxNotify(IntPtr pThis, int iNotify, IntPtr pv) => GetHost(pThis).TxNotify(iNotify, pv);
         private static int TxImmGetContext(IntPtr pThis) => GetHost(pThis).TxImmGetContext();
         private static void TxImmReleaseContext(IntPtr pThis, int himc) => GetHost(pThis).TxImmReleaseContext(himc);
-        private static HRESULT TxGetSelectionBarWidth(IntPtr pThis, out int lSelBarWidth) => GetHost(pThis).TxGetSelectionBarWidth(out lSelBarWidth);
+        private static HRESULT TxGetSelectionBarWidth(IntPtr pThis, ref int lSelBarWidth) => GetHost(pThis).TxGetSelectionBarWidth(ref lSelBarWidth);
 
         // ITextHost2
         private static bool TxIsDoubleClickPending(IntPtr pThis) => GetHost(pThis).TxIsDoubleClickPending();
@@ -387,7 +390,7 @@ namespace DirectN
         private static IntPtr TxSetCursor2(IntPtr pThis, IntPtr hcur, bool bText) => GetHost(pThis).TxSetCursor2(hcur, bText);
         private static void TxFreeTextServicesNotification(IntPtr pThis) => GetHost(pThis).TxFreeTextServicesNotification();
         private static HRESULT TxGetEditStyle(IntPtr pThis, TXES dwItem, out TXES pdwData) => GetHost(pThis).TxGetEditStyle(dwItem, out pdwData);
-        private static HRESULT TxGetWindowStyles(IntPtr pThis, out int pdwStyle, out int pdwExStyle) => GetHost(pThis).TxGetWindowStyles(out pdwStyle, out pdwExStyle);
+        private static HRESULT TxGetWindowStyles(IntPtr pThis, out WS pdwStyle, out WS_EX pdwExStyle) => GetHost(pThis).TxGetWindowStyles(out pdwStyle, out pdwExStyle);
         private static HRESULT TxShowDropCaret(IntPtr pThis, bool fShow, IntPtr hdc, IntPtr prc) => GetHost(pThis).TxShowDropCaret(fShow, hdc, prc);
         private static HRESULT TxDestroyCaret(IntPtr pThis) => GetHost(pThis).TxDestroyCaret();
         private static HRESULT TxGetHorzExtent(IntPtr pThis, out int plHorzExtent) => GetHost(pThis).TxGetHorzExtent(out plHorzExtent);

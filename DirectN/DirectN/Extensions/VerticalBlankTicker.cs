@@ -101,20 +101,26 @@ namespace DirectN
                         smallCount = 0;
                     }
 
+                    var e = new VerticalBlankTickerEventArgs(_ticks++);
                     if (_throw)
                     {
-                        Tick?.Invoke(null, new VerticalBlankTickerEventArgs(_ticks++));
+                        Tick?.Invoke(null, e);
                     }
                     else
                     {
                         try
                         {
-                            Tick?.Invoke(null, new VerticalBlankTickerEventArgs(_ticks++));
+                            Tick?.Invoke(null, e);
                         }
                         catch
                         {
                             // continue
                         }
+                    }
+
+                    if (e.Cancel)
+                    {
+                        Stop();
                     }
                 }
                 else

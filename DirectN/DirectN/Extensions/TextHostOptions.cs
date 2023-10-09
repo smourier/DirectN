@@ -6,8 +6,9 @@ namespace DirectN
     public enum TextHostOptions
     {
         None = 0x0,
-        WordWrap = 0x1,
-        Vertical = 0x2,
-        Multiline = 0x4,
+        WordWrap = TXTBIT.TXTBIT_WORDWRAP,
+        Vertical = TXTBIT.TXTBIT_VERTICAL,
+        Multiline = TXTBIT.TXTBIT_MULTILINE,
+        ReadOnly = TXTBIT.TXTBIT_READONLY,
     }
 }

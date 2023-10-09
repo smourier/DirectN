@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 
@@ -9,23 +7,6 @@ namespace DirectN
     // note this class considers dpix = dpiy
     public static class DpiUtilities
     {
-        public static Version KernelVersion => _kernelVersion.Value;
-        private static readonly Lazy<Version> _kernelVersion = new Lazy<Version>(() =>
-        {
-            // warning: this requires a manifest with Windows 10 marked, like this
-            //
-            //<compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
-            //  <application>
-            //    <!-- Windows 10 -->
-            //    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
-            //  </application>
-            //</compatibility>
-            //
-
-            var vi = FileVersionInfo.GetVersionInfo(Path.Combine(Environment.SystemDirectory, "kernel32.dll"));
-            return new Version(vi.FileMajorPart, vi.FileMinorPart, vi.FileBuildPart, vi.FilePrivatePart);
-        }, true);
-
         public static int TextScaleFactor => _textScaleFactor.Value;
         private static readonly Lazy<int> _textScaleFactor = new Lazy<int>(() =>
         {
@@ -111,7 +92,7 @@ namespace DirectN
         {
             // Windows 10, version 1803
             // see here for correspondance https://en.wikipedia.org/wiki/Windows_10_version_history
-            if (KernelVersion >= new Version(10, 0, 17134))
+            if (WindowsVersionUtilities.KernelVersion >= new Version(10, 0, 17134))
                 return GetDpiFromDpiAwarenessContext((IntPtr)value);
 
             return 0;
@@ -122,7 +103,7 @@ namespace DirectN
         {
             // Windows 10, version 1607
             // see here for correspondance https://en.wikipedia.org/wiki/Windows_10_version_history
-            if (KernelVersion >= new Version(10, 0, 14393))
+            if (WindowsVersionUtilities.KernelVersion >= new Version(10, 0, 14393))
                 return GetWindowDpiAwarenessContextPrivate(hwnd);
 
             return (IntPtr)DPI_AWARENESS_CONTEXT.DPI_AWARENESS_CONTEXT_INVALID;

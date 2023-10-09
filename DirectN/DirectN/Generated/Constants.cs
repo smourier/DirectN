@@ -9715,5 +9715,9 @@ namespace DirectN
         public const int WMT_VIDEOIMAGE_TRANSITION_SPLIT = 29;
         public const int WMT_VIDEOIMAGE_TRANSITION_STAR = 30;
         public const int WMT_VIDEOIMAGE_TRANSITION_WHEEL = 31;
+
+        // from <Windows SDK Path>\um\winuser.rh
+        public const int WHEEL_DELTA = 120;
+
     }
 }

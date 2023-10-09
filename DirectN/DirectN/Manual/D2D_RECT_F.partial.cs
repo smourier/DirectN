@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace DirectN
 {
@@ -211,6 +212,43 @@ namespace DirectN
             var l = rect.left + (rect.Width - w) / 2f;
             var t = rect.top + (rect.Height - h) / 2f;
             return new D2D_RECT_F(l, t, w + l, h + t);
+        }
+
+        public D2D_RECT_F TransformToBounds(ref Matrix4x4 matrix)
+        {
+            var xMin = left;
+            var xMax = right;
+            var yMin = top;
+            var yMax = bottom;
+
+            transformPoint(ref matrix, left, top);
+            transformPoint(ref matrix, right, top);
+            transformPoint(ref matrix, left, bottom);
+            transformPoint(ref matrix, right, bottom);
+            return new D2D_RECT_F(xMin, yMin, xMax, yMax);
+
+            void transformPoint(ref Matrix4x4 m, float x, float y)
+            {
+                var px = x * m.M11 + y * m.M21 + m.M31;
+                var py = x * m.M12 + y * m.M22 + m.M32;
+                if (px > xMax)
+                {
+                    xMax = px;
+                }
+                else if (px < xMin)
+                {
+                    xMin = px;
+                }
+
+                if (py > yMax)
+                {
+                    yMax = py;
+                }
+                else if (py < yMin)
+                {
+                    yMin = py;
+                }
+            }
         }
 
         public IEnumerable<D2D_POINT_2F> Points

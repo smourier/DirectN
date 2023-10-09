@@ -47,6 +47,7 @@
     <Compile Include="Extensions\ColorProfileAttribute.cs" />
     <Compile Include="Extensions\ColorProfileElement.cs" />
     <Compile Include="Extensions\ColorProfileFlags.cs" />
+    <Compile Include="Extensions\ColorUtilities.cs" />
     <Compile Include="Extensions\ComError.cs" />
     <Compile Include="Extensions\ComMemory.cs" />
     <Compile Include="Extensions\ComObject.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Extensions\D3D12Constants.cs" />
     <Compile Include="Extensions\D3D12Functions.cs" />
     <Compile Include="Extensions\DecamelizeOptions.cs" />
+    <Compile Include="Extensions\DialogBoxCommand.cs" />
     <Compile Include="Extensions\DispatcherQueueController.cs" />
     <Compile Include="Extensions\DisplayConfig.cs" />
     <Compile Include="Extensions\DpiUtilities.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Extensions\IDWriteLocalizedStringsExtensions.cs" />
     <Compile Include="Extensions\IDWriteTextFormatExtensions.cs" />
     <Compile Include="Extensions\IDWriteTextLayoutExtensions.cs" />
+    <Compile Include="Extensions\ImmersiveColor.cs" />
     <Compile Include="Extensions\InterlockedDisposable.cs" />
     <Compile Include="Extensions\InteropExtensions.cs" />
     <Compile Include="Extensions\InteropRuntime.cs" />
@@ -105,7 +108,7 @@
     <Compile Include="Extensions\IWICBitmapExtensions.cs" />
     <Compile Include="Extensions\IWICBitmapFrameDecodeExtensions.cs" />
     <Compile Include="Extensions\IWICBitmapFrameEncodeExtensions.cs" />
-    <Compile Include="Extensions\IWicBitmapSourceExtensions.cs" />
+    <Compile Include="Extensions\IWICBitmapSourceExtensions.cs" />
     <Compile Include="Extensions\IWICColorContextExtensions.cs" />
     <Compile Include="Extensions\IWICColorTransformExtensions.cs" />
     <Compile Include="Extensions\IWICFormatConverterInfoExtensions.cs" />
@@ -120,6 +123,7 @@
     <Compile Include="Extensions\Monitor.cs" />
     <Compile Include="Extensions\SoftwareBitmapNativeFactory.cs" />
     <Compile Include="Extensions\StreamOnIStream.cs" />
+    <Compile Include="Extensions\TextServicesGenerator.cs" />
     <Compile Include="Extensions\WICBitmapFrameEncode.cs" />
     <Compile Include="Manual\DEVICE_SCALE_FACTOR.cs" />
     <Compile Include="Manual\DEVMODE.cs" />
@@ -127,14 +131,17 @@
     <Compile Include="Manual\DMDFO.cs" />
     <Compile Include="Manual\DMDO.cs" />
     <Compile Include="Manual\DPI_AWARENESS_CONTEXT.cs" />
+    <Compile Include="Manual\DWM_CLOAKED.cs" />
     <Compile Include="Manual\EDS.cs" />
     <Compile Include="Manual\IDispatcherQueue.cs" />
     <Compile Include="Manual\IDispatcherQueueController.cs" />
     <Compile Include="Manual\IDisplayPathInterop.cs" />
+    <Compile Include="Manual\IGraphicsEffectD2D1Interop.cs" />
     <Compile Include="Manual\ISoftwareBitmapNative.cs" />
     <Compile Include="Manual\ISoftwareBitmapNativeFactory.cs" />
     <Compile Include="Manual\MONITORINFOF.cs" />
     <Compile Include="Manual\MONITOR_DPI_TYPE.cs" />
+    <Compile Include="Manual\PA.cs" />
     <Compile Include="Manual\PHOTO_ORIENTATION.cs" />
     <Compile Include="Manual\PropertyType.cs" />
     <Compile Include="Manual\PropVariant.cs" />
@@ -4043,6 +4050,8 @@
     <Compile Include="Manual\STGM.cs" />
     <Compile Include="Manual\STGTY.cs" />
     <Compile Include="Manual\tagPROPBAG2.partial.cs" />
+    <Compile Include="Extensions\UnmanagedMemoryStream.cs" />
+    <Compile Include="Manual\WDA.cs" />
     <Compile Include="Manual\WicIntSize.cs" />
     <Compile Include="Manual\WICRect.partial.cs" />
     <Compile Include="Manual\WicSize.cs" />
