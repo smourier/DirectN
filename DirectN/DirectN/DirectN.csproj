@@ -127,7 +127,7 @@
     <Compile Include="Extensions\WICBitmapFrameEncode.cs" />
     <Compile Include="Manual\DEVICE_SCALE_FACTOR.cs" />
     <Compile Include="Manual\DEVMODE.cs" />
-    <Compile Include="Manual\Direct2DEffects.cs" />
+    <Compile Include="Extensions\Direct2DEffects.cs" />
     <Compile Include="Manual\DMDFO.cs" />
     <Compile Include="Manual\DMDO.cs" />
     <Compile Include="Manual\DPI_AWARENESS_CONTEXT.cs" />
@@ -193,9 +193,9 @@
     <Compile Include="Manual\CFE.cs" />
     <Compile Include="Manual\CFM.cs" />
     <Compile Include="Manual\CHARFORMAT2W.cs" />
-    <Compile Include="Manual\CodecApi.cs" />
+    <Compile Include="Extensions\CodecApi.cs" />
     <Compile Include="Manual\COLOR.cs" />
-    <Compile Include="Manual\Cursor.cs" />
+    <Compile Include="Extensions\Cursor.cs" />
     <Compile Include="Manual\D2D1_ELLIPSE.partial.cs" />
     <Compile Include="Manual\D2D_MATRIX_3X2_F.cs" />
     <Compile Include="Manual\D2D_MATRIX_4X3_F.cs" />
@@ -4051,6 +4051,7 @@
     <Compile Include="Manual\STGTY.cs" />
     <Compile Include="Manual\tagPROPBAG2.partial.cs" />
     <Compile Include="Extensions\UnmanagedMemoryStream.cs" />
+    <Compile Include="Manual\tomConstants.cs" />
     <Compile Include="Manual\WDA.cs" />
     <Compile Include="Manual\WicIntSize.cs" />
     <Compile Include="Manual\WICRect.partial.cs" />

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [TypeConverter(typeof(CursorConverter))]
-    public class Cursor
+    public class Cursor : IEquatable<Cursor>
     {
         public Cursor(int id)
         {
@@ -33,14 +33,32 @@ namespace DirectN
         public static readonly Cursor UpArrow = new Cursor(32516);
         public static readonly Cursor Wait = new Cursor(32514);
 
-        public void Set() => SetCursor(Handle);
-        public static void Set(IntPtr handle) => SetCursor(handle);
+        private static void Set(IntPtr handle) => SetCursor(handle);
+        public static void Set(Cursor cursor)
+        {
+            if (cursor == null || cursor.Handle == IntPtr.Zero)
+            {
+                SetCursor(Arrow.Handle);
+            }
+            else
+            {
+                Set(cursor.Handle);
+            }
+        }
+
+        [DllImport("user32", CharSet = CharSet.Auto)]
+        private static extern IntPtr GetCursor();
 
         [DllImport("user32", CharSet = CharSet.Auto)]
         private static extern IntPtr SetCursor(IntPtr hcursor);
 
         [DllImport("user32", CharSet = CharSet.Auto)]
         private static extern IntPtr LoadCursor(IntPtr hInst, int iconId);
+
+        public override int GetHashCode() => Handle.GetHashCode();
+        public override string ToString() => Id + " " + Handle;
+        public override bool Equals(object obj) => Equals(obj as Cursor);
+        public bool Equals(Cursor other) => other != null && (Id == other.Id || Handle == other.Handle);
     }
 
     public class CursorConverter : TypeConverter
@@ -57,7 +75,12 @@ namespace DirectN
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
             if (destinationType == typeof(string))
-                return ((Cursor)value)?.Id.ToString();
+            {
+                if (value is Cursor cursor)
+                    return cursor.Id.ToString();
+
+                return null;
+            }
 
             return base.ConvertTo(context, culture, value, destinationType);
         }

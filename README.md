@@ -222,9 +222,12 @@ cleanup:
 }
 ```
 
+## Notes
+
  * Note 1: there  currently may be some issues with sructures that contain unions. If you have a specific problem with that, just create an issue;
  * Note 2: the functions.cs file has some issues as everything in the Generated folder is, well, automatically generated. If you have a specific problem with that, just create an issue;
  * Note 3: the tool that builds the Generated folder is not open source.
+ * Note 4: Although DirectN is built with x64 and x86 support, its priority target is 64-bit support. There may be some issues if you run it with a 32-bit executable. In this case, create an issue and we'll see if we can work this out.
 
  # Winforms .NET 6 - Direct3D11 minimal sample.
  The **DirectN.MinimalD3D11** sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.MinimalD3D11 has been ported to C# from here: https://gist.github.com/d7samurai/261c69490cce0620d0bfc93003cd1052 which features *"a minimal Direct3D11 "uncluttered direct3d 11 setup and rendering primer for newcomers to the api"* sample.

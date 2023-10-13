@@ -11,6 +11,7 @@
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
     <Version>1.15.0.2</Version>
@@ -144,9 +145,7 @@
     <Compile Include="..\DirectN\Manual\CFE.cs" Link="Manual\CFE.cs" />
     <Compile Include="..\DirectN\Manual\CFM.cs" Link="Manual\CFM.cs" />
     <Compile Include="..\DirectN\Manual\CHARFORMAT2W.cs" Link="Manual\CHARFORMAT2W.cs" />
-    <Compile Include="..\DirectN\Manual\CodecApi.cs" Link="Manual\CodecApi.cs" />
     <Compile Include="..\DirectN\Manual\COLOR.cs" Link="Manual\COLOR.cs" />
-    <Compile Include="..\DirectN\Manual\Cursor.cs" Link="Manual\Cursor.cs" />
     <Compile Include="..\DirectN\Manual\D2D1_ELLIPSE.partial.cs" Link="Manual\D2D1_ELLIPSE.partial.cs" />
     <Compile Include="..\DirectN\Manual\D2D_MATRIX_3X2_F.cs" Link="Manual\D2D_MATRIX_3X2_F.cs" />
     <Compile Include="..\DirectN\Manual\D2D_MATRIX_4X3_F.cs" Link="Manual\D2D_MATRIX_4X3_F.cs" />
@@ -8603,7 +8602,6 @@
     <Compile Include="..\DirectN\Manual\STGC.cs" Link="Manual\STGC.cs" />
     <Compile Include="..\DirectN\Manual\STGM.cs" Link="Manual\STGM.cs" />
     <Compile Include="..\DirectN\Manual\STGTY.cs" Link="Manual\STGTY.cs" />
-    <Compile Include="..\DirectN\Manual\Direct2DEffects.cs" Link="Manual\Direct2DEffects.cs" />
     <Compile Include="..\DirectN\Manual\DEVMODE.cs" Link="Manual\DEVMODE.cs" />
     <Compile Include="..\DirectN\Manual\DMDFO.cs" Link="Manual\DMDFO.cs" />
     <Compile Include="..\DirectN\Manual\DMDO.cs" Link="Manual\DMDO.cs" />
@@ -9623,10 +9621,15 @@
     <Compile Include="..\DirectN\Manual\IGraphicsEffectD2D1Interop.cs" Link="Manual\IGraphicsEffectD2D1Interop.cs" />
     <Compile Include="..\DirectN\Manual\PA.cs" Link="Manual\PA.cs" />
     <Compile Include="..\DirectN\Manual\WDA.cs" Link="Manual\WDA.cs" />
+    <Compile Include="..\DirectN\Extensions\Direct2DEffects.cs" Link="Extensions\Direct2DEffects.cs" />
+    <Compile Include="..\DirectN\Extensions\CodecApi.cs" Link="Extensions\CodecApi.cs" />
+    <Compile Include="..\DirectN\Extensions\Cursor.cs" Link="Extensions\Cursor.cs" />
+    <Compile Include="..\DirectN\Manual\tomConstants.cs" Link="Manual\tomConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DirectN.ico" />
     <Content Include="DirectN.png" />
+    <None Include="readme.md" Pack="true" PackagePath="\" />
     <None Include="DirectN.png">
       <Pack>True</Pack>
       <PackagePath>

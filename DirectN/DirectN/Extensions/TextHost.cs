@@ -70,30 +70,13 @@ namespace DirectN
             }
         }
 
-#pragma warning disable IDE1006 // Naming Styles
-
-        // GetText2/SetText2 flags
-        private const int tomConvertRTF = 0x00002000;
-        private const int tomConvertMathML = 0x00010000;
-        private const int tomConvertLinearFormat = 0x00040000;
-        private const int tomConvertOMML = 0x00080000;
-        private const int tomConvertRuby = 0x00100000;
-        private const int tomConvertHtml = 0x00900000; // only works for read & with Office's riched20
-
-        private const int tomGetUtf16 = 0x00020000;
-        private const int tomGetUtf8 = 0x08000000;
-
-
-        private const int tomStory = 6;
-#pragma warning restore IDE1006 // Naming Styles
-
         public string RtfText
         {
             get
             {
                 try
                 {
-                    GetWholeRange().GetText2(tomConvertRTF | tomGetUtf16, out string value);
+                    GetWholeRange().GetText2(tomConstants.tomConvertRTF | tomConstants.tomGetUtf16, out string value);
                     return value;
                 }
                 catch
@@ -103,7 +86,7 @@ namespace DirectN
             }
             set
             {
-                GetWholeRange().SetText2(tomConvertRTF, value);
+                GetWholeRange().SetText2(tomConstants.tomConvertRTF, value);
             }
         }
 
@@ -113,7 +96,7 @@ namespace DirectN
             {
                 try
                 {
-                    GetWholeRange().GetText2(tomConvertHtml | tomGetUtf16, out string value);
+                    GetWholeRange().GetText2(tomConstants.tomConvertHtml | tomConstants.tomGetUtf16, out string value);
                     return value;
                 }
                 catch
@@ -125,7 +108,7 @@ namespace DirectN
             {
                 // https://devblogs.microsoft.com/math-in-office/richedit-html-support/
                 // note this doesn't seem to work right now...
-                GetWholeRange().SetText2(tomConvertHtml, value);
+                GetWholeRange().SetText2(tomConstants.tomConvertHtml, value);
             }
         }
 
@@ -133,7 +116,7 @@ namespace DirectN
         {
             var d = Document;
             var range = d.Range(0, 0);
-            range.MoveEnd(tomStory, 1);
+            range.MoveEnd(tomConstants.tomStory, 1);
             return range;
         }
 
@@ -281,11 +264,11 @@ namespace DirectN
         public tagSIZE GetNaturalSize(TXTNATURALSIZE mode, D2D_SIZE_F constraint) => GetNaturalSize(mode, constraint, out _);
         public tagSIZE GetNaturalSize(TXTNATURALSIZE mode, D2D_SIZE_F constraint, out int ascent)
         {
+            Trace("mode: " + mode + " constraint: " + constraint);
             // for some reason, -1, -1 avoids the himetric mumbo jumbo computation...
             var extent = new tagSIZE { width = uint.MaxValue, height = uint.MaxValue };
 
-            var ct = constraint.ToSize();
-            var width = (int)ct.width;
+            var width = (int)constraint.width;
             if (Options.HasFlag(TextHostOptions.WordWrap))
             {
                 if (width == int.MaxValue)
@@ -295,7 +278,7 @@ namespace DirectN
                 }
             }
 
-            int height = 0; // warning! not sure why this seems to be always good? check vertical mode
+            var height = 0; // warning! not sure why this seems to be always good? check vertical mode
 
             if (_services32 != null)
             {
@@ -621,6 +604,7 @@ namespace DirectN
 
         public HRESULT TxGetViewInset(ref tagRECT prc)
         {
+            Trace("prc: " + prc);
             prc.left = 0;
             prc.top = 0;
             prc.right = 0;

@@ -36,7 +36,7 @@ namespace DirectN
                 if (szFaceName == null)
                     return null;
 
-                for (int i = 0; i < szFaceName.Length - 2; i += 2)
+                for (var i = 0; i < szFaceName.Length - 2; i += 2)
                 {
                     if (szFaceName[i] == 0 && szFaceName[i + 1] == 0)
                         return Encoding.Unicode.GetString(szFaceName, 0, i);
@@ -55,12 +55,14 @@ namespace DirectN
 
                 if (szFaceName != null)
                 {
-                    for (int i = 0; i < szFaceName.Length; i++)
+                    for (var i = 0; i < szFaceName.Length; i++)
                     {
                         szFaceName[i] = 0;
                     }
                 }
             }
         }
+
+        public override string ToString() => "'" + FaceName + "'";
     }
 }

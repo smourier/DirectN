@@ -7,7 +7,8 @@ using System.Threading;
 
 namespace DirectN
 {
-    public sealed class ManagedIStream : System.Runtime.InteropServices.ComTypes.IStream, IDisposable
+    [ComVisible(true)]
+    public sealed class ManagedIStream : IStream, IDisposable
     {
         private Stream _stream;
         private readonly bool _owned;
@@ -42,7 +43,7 @@ namespace DirectN
             if (pv == null)
                 throw new ArgumentNullException(nameof(pv));
 
-            var read = _stream.Read(pv, 0, cb);
+            var read = CheckDisposed().Read(pv, 0, cb);
             if (pcbRead != IntPtr.Zero)
             {
                 Marshal.WriteInt32(pcbRead, read);
@@ -54,7 +55,7 @@ namespace DirectN
             if (pv == null)
                 throw new ArgumentNullException(nameof(pv));
 
-            _stream.Write(pv, 0, cb);
+            CheckDisposed().Write(pv, 0, cb);
             if (pcbWritten != IntPtr.Zero)
             {
                 Marshal.WriteInt32(pcbWritten, cb);
@@ -63,7 +64,7 @@ namespace DirectN
 
         public void Seek(long dlibMove, int dwOrigin, IntPtr plibNewPosition)
         {
-            var newPos = _stream.Seek(dlibMove, (SeekOrigin)dwOrigin);
+            var newPos = CheckDisposed().Seek(dlibMove, (SeekOrigin)dwOrigin);
             if (plibNewPosition != IntPtr.Zero)
             {
                 Marshal.WriteInt64(plibNewPosition, newPos);
@@ -78,30 +79,31 @@ namespace DirectN
             }
         }
 
-        public void SetSize(long libNewSize) => _stream.SetLength(libNewSize);
-        public void Commit(int grfCommitFlags) => _stream.Flush();
+        public void SetSize(long libNewSize) => CheckDisposed().SetLength(libNewSize);
+        public void Commit(int grfCommitFlags) => _stream?.Flush();
         public void Stat(out System.Runtime.InteropServices.ComTypes.STATSTG pstatstg, int grfStatFlag)
         {
+            var stream = CheckDisposed();
             pstatstg = new System.Runtime.InteropServices.ComTypes.STATSTG
             {
                 type = (int)STGTY.STGTY_STREAM,
-                cbSize = _stream.Length,
+                cbSize = stream.Length,
                 grfMode = 0
             };
 
-            if (_stream.CanRead && _stream.CanWrite)
+            if (stream.CanRead && stream.CanWrite)
             {
                 pstatstg.grfMode |= (int)STGM.STGM_READWRITE;
                 return;
             }
 
-            if (_stream.CanRead)
+            if (stream.CanRead)
             {
                 pstatstg.grfMode |= (int)STGM.STGM_READ;
                 return;
             }
 
-            if (_stream.CanWrite)
+            if (stream.CanWrite)
             {
                 pstatstg.grfMode |= (int)STGM.STGM_WRITE;
                 return;
@@ -118,7 +120,7 @@ namespace DirectN
             long count;
             using (var stream = new StreamOnIStream(pstm))
             {
-                count = _stream.CopyTo(stream, cb);
+                count = CheckDisposed().CopyTo(stream, cb);
             }
 
             if (pcbRead != IntPtr.Zero)
@@ -136,5 +138,14 @@ namespace DirectN
         public void LockRegion(long libOffset, long cb, int dwLockType) => throw new NotSupportedException();
         public void UnlockRegion(long libOffset, long cb, int dwLockType) => throw new NotSupportedException();
         public void Clone(out IStream ppstm) => throw new NotSupportedException();
+
+        private Stream CheckDisposed()
+        {
+            var stream = _stream;
+            if (stream == null)
+                throw new ObjectDisposedException(nameof(Stream));
+
+            return stream;
+        }
     }
 }

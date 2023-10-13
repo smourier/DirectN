@@ -4,7 +4,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DirectN
 {
-    public class TextServices32
+    internal class TextServices32
     {
         private readonly ITextServicesVTable _vtable;
         private readonly TxSetTextFn _setText;
