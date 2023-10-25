@@ -8,7 +8,7 @@ namespace DirectN
 {
     public class Monitor
     {
-        private Monitor(IntPtr handle)
+        public Monitor(IntPtr handle)
         {
             Handle = handle;
             var mi = new MONITORINFOEX();

@@ -753,7 +753,7 @@ namespace DirectN
                     // dispose managed state (managed objects).
                 }
 
-                TextServicesFunctions.Shutdown(_services);
+                TextServicesFunctions.Shutdown(_services, false);
                 _charFormat?.Dispose();
                 _paraFormat?.Dispose();
                 HostThunk?.Dispose();

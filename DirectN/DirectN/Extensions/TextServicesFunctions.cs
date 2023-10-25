@@ -150,7 +150,8 @@ namespace DirectN
             }
         }
 
-        public static void Shutdown(ITextServices services)
+        // note this will fail if not called on the same thread as creation thread (because of underlying COM object, which is probably STA-aware only ...)
+        public static void Shutdown(ITextServices services, bool throwOnError = true)
         {
             if (services == null)
                 return;
@@ -158,10 +159,10 @@ namespace DirectN
             var generator = GetGenerator(services);
             if (generator == TextServicesGenerator.Office)
             {
-                ShutdownOfficeTextServices(services).ThrowOnError();
+                ShutdownOfficeTextServices(services).ThrowOnError(throwOnError);
                 return;
             }
-            ShutdownTextServices(services).ThrowOnError();
+            ShutdownTextServices(services).ThrowOnError(throwOnError);
         }
 
         private static string GetOfficeInstallRoot(out string version)
