@@ -50,7 +50,7 @@ namespace DirectN
             }
         }
 
-        public string Text
+        public virtual string Text
         {
             get
             {
@@ -70,7 +70,7 @@ namespace DirectN
             }
         }
 
-        public string RtfText
+        public virtual string RtfText
         {
             get
             {
@@ -90,7 +90,7 @@ namespace DirectN
             }
         }
 
-        public string HtmlText
+        public virtual string HtmlText
         {
             get
             {
@@ -120,7 +120,7 @@ namespace DirectN
             return range;
         }
 
-        public TextHostOptions Options
+        public virtual TextHostOptions Options
         {
             get => _options;
             set
@@ -136,7 +136,7 @@ namespace DirectN
             }
         }
 
-        public int TextColor
+        public virtual int TextColor
         {
             get => _textColor;
             set
@@ -149,7 +149,7 @@ namespace DirectN
             }
         }
 
-        public int BackColor
+        public virtual int BackColor
         {
             get => _backColor;
             set
@@ -175,7 +175,7 @@ namespace DirectN
             }
         }
 
-        public short Weight
+        public virtual short Weight
         {
             get => _weight;
             set
@@ -188,7 +188,7 @@ namespace DirectN
             }
         }
 
-        public string FaceName
+        public virtual string FaceName
         {
             get => _faceName;
             set
@@ -201,7 +201,7 @@ namespace DirectN
             }
         }
 
-        public PFA Aligment
+        public virtual PFA Aligment
         {
             get => _aligment;
             set
@@ -246,7 +246,7 @@ namespace DirectN
             ChangeBitNotify(TXTBIT.TXTBIT_PARAFORMATCHANGE);
         }
 
-        private void ChangeBitNotify(TXTBIT bit)
+        protected virtual void ChangeBitNotify(TXTBIT bit)
         {
             if (bit == 0)
                 return;
@@ -262,12 +262,9 @@ namespace DirectN
         }
 
         public tagSIZE GetNaturalSize(TXTNATURALSIZE mode, D2D_SIZE_F constraint) => GetNaturalSize(mode, constraint, out _);
-        public tagSIZE GetNaturalSize(TXTNATURALSIZE mode, D2D_SIZE_F constraint, out int ascent)
+        public virtual tagSIZE GetNaturalSize(TXTNATURALSIZE mode, D2D_SIZE_F constraint, out int ascent)
         {
             Trace("mode: " + mode + " constraint: " + constraint);
-            // for some reason, -1, -1 avoids the himetric mumbo jumbo computation...
-            var extent = new tagSIZE { width = uint.MaxValue, height = uint.MaxValue };
-
             var width = (int)constraint.width;
             if (Options.HasFlag(TextHostOptions.WordWrap))
             {
@@ -279,14 +276,26 @@ namespace DirectN
             }
 
             var height = 0; // warning! not sure why this seems to be always good? check vertical mode
+            return TxGetNaturalSize2(mode, width, height, null, out ascent);
+        }
 
+        protected tagSIZE TxGetNaturalSize2(TXTNATURALSIZE mode, int width, int height, tagSIZE? extent = null) => TxGetNaturalSize2(mode, width, height, extent, out _);
+        protected virtual tagSIZE TxGetNaturalSize2(TXTNATURALSIZE mode, int width, int height, tagSIZE? extent, out int ascent)
+        {
+            if (extent == null)
+            {
+                // for some reason, -1, -1 avoids the himetric mumbo jumbo computation...
+                extent = new tagSIZE { width = uint.MaxValue, height = uint.MaxValue };
+            }
+
+            var ext = extent.Value;
             if (_services32 != null)
             {
-                _services32.TxGetNaturalSize2(DVASPECT.DVASPECT_CONTENT, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, mode, ref extent, ref width, ref height, out ascent).ThrowOnError();
+                _services32.TxGetNaturalSize2(DVASPECT.DVASPECT_CONTENT, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, mode, ref ext, ref width, ref height, out ascent).ThrowOnError();
             }
             else
             {
-                _services.TxGetNaturalSize2(DVASPECT.DVASPECT_CONTENT, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, mode, ref extent, ref width, ref height, out ascent).ThrowOnError();
+                _services.TxGetNaturalSize2(DVASPECT.DVASPECT_CONTENT, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, mode, ref ext, ref width, ref height, out ascent).ThrowOnError();
             }
             return new tagSIZE(width, height);
         }
@@ -309,7 +318,7 @@ namespace DirectN
 #endif
         }
 
-        public void Activate(tagRECT rect)
+        public virtual void Activate(tagRECT rect)
         {
             _rect = rect;
             if (_services32 != null)
@@ -324,7 +333,8 @@ namespace DirectN
             }
         }
 
-        public void Draw(ID2D1RenderTarget target, tagRECT rc)
+        public void Draw(IComObject<ID2D1RenderTarget> target, tagRECT rc) => Draw(target?.Object, rc);
+        public virtual void Draw(ID2D1RenderTarget target, tagRECT rc)
         {
             if (target == null)
                 throw new ArgumentNullException(nameof(target));
@@ -341,80 +351,80 @@ namespace DirectN
             }
         }
 
-        public HRESULT OnTxCharFormatChange(ref CHARFORMAT2W pCF)
+        public virtual HRESULT OnTxCharFormatChange(ref CHARFORMAT2W pCF)
         {
             Trace("pCF: " + pCF);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT OnTxParaFormatChange(ref PARAFORMAT2 pPF)
+        public virtual HRESULT OnTxParaFormatChange(ref PARAFORMAT2 pPF)
         {
             Trace("pPF: " + pPF);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxActivate(IntPtr plOldState)
+        public virtual HRESULT TxActivate(IntPtr plOldState)
         {
             Trace("plOldState: " + plOldState);
             return HRESULTS.S_OK;
         }
 
-        public bool TxClientToScreen(ref tagPOINT lppt)
+        public virtual bool TxClientToScreen(ref tagPOINT lppt)
         {
             Trace("lppt: " + lppt);
             return false;
         }
 
-        public bool TxScreenToClient(ref tagPOINT lppt)
+        public virtual bool TxScreenToClient(ref tagPOINT lppt)
         {
             Trace("lppt: " + lppt);
             return false;
         }
 
-        public bool TxCreateCaret(IntPtr hbmp, int xWidth, int yHeight)
+        public virtual bool TxCreateCaret(IntPtr hbmp, int xWidth, int yHeight)
         {
             Trace("hbmp: " + hbmp + " xWidth: " + xWidth + " yHeight: " + yHeight);
             return false;
         }
 
-        public HRESULT TxDeactivate(int lNewState)
+        public virtual HRESULT TxDeactivate(int lNewState)
         {
             Trace("lNewState: " + lNewState);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxDestroyCaret()
+        public virtual HRESULT TxDestroyCaret()
         {
             Trace();
             return HRESULTS.S_OK;
         }
 
-        public bool TxEnableScrollBar(SB fuSBFlags, ESB fuArrowflags)
+        public virtual bool TxEnableScrollBar(SB fuSBFlags, ESB fuArrowflags)
         {
             Trace("fuSBFlags: " + fuSBFlags + " fuArrowflags: " + fuArrowflags);
             return true;
         }
 
-        public void TxFreeTextServicesNotification()
+        public virtual void TxFreeTextServicesNotification()
         {
             Trace();
         }
 
-        public HRESULT TxGetAcceleratorPos(out int pcp)
+        public virtual HRESULT TxGetAcceleratorPos(out int pcp)
         {
             pcp = -1;
             Trace("pcp: " + pcp);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetBackStyle(out TXTBACKSTYLE pstyle)
+        public virtual HRESULT TxGetBackStyle(out TXTBACKSTYLE pstyle)
         {
             pstyle = TXTBACKSTYLE.TXTBACK_TRANSPARENT;
             Trace("pstyle: " + pstyle);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetCharFormat(out IntPtr ppCF)
+        public virtual HRESULT TxGetCharFormat(out IntPtr ppCF)
         {
             if (_charFormat == null)
             {
@@ -454,7 +464,7 @@ namespace DirectN
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetParaFormat(out IntPtr ppPF)
+        public virtual HRESULT TxGetParaFormat(out IntPtr ppPF)
         {
             if (_paraFormat == null)
             {
@@ -472,40 +482,40 @@ namespace DirectN
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetClientRect(ref tagRECT prc)
+        public virtual HRESULT TxGetClientRect(ref tagRECT prc)
         {
             prc = _rect;
             Trace("prc: " + prc);
             return HRESULTS.S_OK;
         }
 
-        public IntPtr TxGetDC()
+        public virtual IntPtr TxGetDC()
         {
             Trace();
             return IntPtr.Zero;
         }
 
-        public int TxReleaseDC(IntPtr hdc)
+        public virtual int TxReleaseDC(IntPtr hdc)
         {
             Trace("hdc: " + hdc);
             return 1;
         }
 
-        public HRESULT TxGetEastAsianFlags(out ES pFlags)
+        public virtual HRESULT TxGetEastAsianFlags(out ES pFlags)
         {
             pFlags = ES.ES_NOIME;
             Trace("pFlags: " + pFlags);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetEditStyle(TXES dwItem, out TXES pdwData)
+        public virtual HRESULT TxGetEditStyle(TXES dwItem, out TXES pdwData)
         {
             pdwData = TXES.TXES_ISDIALOG;
             Trace("dwItem: " + dwItem + " pdwData: " + pdwData);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetExtent(out tagSIZE lpExtent)
+        public virtual HRESULT TxGetExtent(out tagSIZE lpExtent)
         {
             lpExtent = new tagSIZE();
             //lpExtent.width = 400;
@@ -516,33 +526,33 @@ namespace DirectN
             return HRESULTS.E_NOTIMPL;
         }
 
-        public HRESULT TxGetHorzExtent(out int plHorzExtent)
+        public virtual HRESULT TxGetHorzExtent(out int plHorzExtent)
         {
             plHorzExtent = 0;
             Trace("plHorzExtent: " + plHorzExtent);
             return HRESULTS.E_NOTIMPL;
         }
 
-        public HRESULT TxGetMaxLength(ref int plength)
+        public virtual HRESULT TxGetMaxLength(ref int plength)
         {
             plength = -1;
             Trace("plength: " + plength);
             return HRESULTS.S_OK;
         }
 
-        public IntPtr TxGetPalette()
+        public virtual IntPtr TxGetPalette()
         {
             Trace();
             return IntPtr.Zero;
         }
 
-        public HRESULT TxGetPasswordChar(ref char pch)
+        public virtual HRESULT TxGetPasswordChar(ref char pch)
         {
             Trace("pch: " + pch);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetPropertyBits(TXTBIT dwMask, ref TXTBIT pdwBits)
+        public virtual HRESULT TxGetPropertyBits(TXTBIT dwMask, ref TXTBIT pdwBits)
         {
             //pdwBits = dwMask;
             //pdwBits &= ~TXTBIT.TXTBIT_VERTICAL;
@@ -577,7 +587,7 @@ namespace DirectN
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetScrollBars(out SBOUT pdwScrollBar)
+        public virtual HRESULT TxGetScrollBars(out SBOUT pdwScrollBar)
         {
             //pdwScrollBar = SBOUT.WS_VSCROLL | SBOUT.WS_HSCROLL;
             pdwScrollBar = 0;
@@ -585,14 +595,14 @@ namespace DirectN
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetSelectionBarWidth(ref int lSelBarWidth)
+        public virtual HRESULT TxGetSelectionBarWidth(ref int lSelBarWidth)
         {
             lSelBarWidth = 0;
             Trace("lSelBarWidth: " + lSelBarWidth);
             return HRESULTS.S_OK;
         }
 
-        public int TxGetSysColor(COLOR nIndex)
+        public virtual int TxGetSysColor(COLOR nIndex)
         {
             //if (nIndex == COLOR.COLOR_WINDOW)
             //    return 0xF03050;
@@ -602,7 +612,7 @@ namespace DirectN
             return color;
         }
 
-        public HRESULT TxGetViewInset(ref tagRECT prc)
+        public virtual HRESULT TxGetViewInset(ref tagRECT prc)
         {
             Trace("prc: " + prc);
             prc.left = 0;
@@ -614,14 +624,14 @@ namespace DirectN
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetWindow(out IntPtr phwnd)
+        public virtual HRESULT TxGetWindow(out IntPtr phwnd)
         {
             phwnd = IntPtr.Zero;
             Trace("phwnd: " + phwnd);
             return HRESULTS.S_OK;
         }
 
-        public HRESULT TxGetWindowStyles(out WS pdwStyle, out WS_EX pdwExStyle)
+        public virtual HRESULT TxGetWindowStyles(out WS pdwStyle, out WS_EX pdwExStyle)
         {
             pdwStyle = 0;
             pdwExStyle = 0;
@@ -629,114 +639,114 @@ namespace DirectN
             return HRESULTS.S_OK;
         }
 
-        public int TxImmGetContext()
+        public virtual int TxImmGetContext()
         {
             Trace();
             return 0;
         }
 
-        public void TxImmReleaseContext(int himc)
+        public virtual void TxImmReleaseContext(int himc)
         {
             Trace();
         }
 
-        public void TxInvalidateRect(IntPtr prc, bool fMode)
+        public virtual void TxInvalidateRect(IntPtr prc, bool fMode)
         {
             Trace("prc: " + prc + " fMode: " + fMode);
         }
 
-        public bool TxIsDoubleClickPending()
+        public virtual bool TxIsDoubleClickPending()
         {
             Trace();
             return false;
         }
 
-        public HRESULT TxNotify(int iNotify, IntPtr pv)
+        public virtual HRESULT TxNotify(int iNotify, IntPtr pv)
         {
             Trace("iNotify: " + iNotify + " pv: " + pv);
             return HRESULTS.S_OK;
         }
 
-        public void TxScrollWindowEx(int dx, int dy, IntPtr lprcScroll, IntPtr lprcClip, IntPtr hrgnUpdate, IntPtr lprcUpdate, TSW fuScroll)
+        public virtual void TxScrollWindowEx(int dx, int dy, IntPtr lprcScroll, IntPtr lprcClip, IntPtr hrgnUpdate, IntPtr lprcUpdate, TSW fuScroll)
         {
             Trace("dx: " + dx + " dy: " + dy + " lprcScroll: " + lprcScroll + " lprcClip: " + lprcClip + " hrgnUpdate: " + hrgnUpdate + " lprcUpdate: " + lprcUpdate + " fuScroll: " + fuScroll);
         }
 
-        public void TxSetCapture(bool fCapture)
+        public virtual void TxSetCapture(bool fCapture)
         {
             Trace("fCapture: " + fCapture);
         }
 
-        public bool TxSetCaretPos(int x, int y)
+        public virtual bool TxSetCaretPos(int x, int y)
         {
             Trace("x: " + x + " y: " + y);
             return true;
         }
 
-        public void TxSetCursor(IntPtr hcur, bool fText)
+        public virtual void TxSetCursor(IntPtr hcur, bool fText)
         {
             Trace("hcur: " + hcur + " fText: " + fText);
         }
 
-        public IntPtr TxSetCursor2(IntPtr hcur, bool bText)
+        public virtual IntPtr TxSetCursor2(IntPtr hcur, bool bText)
         {
             Trace("hcur: " + hcur + " bText: " + bText);
             return IntPtr.Zero;
         }
 
-        public void TxSetFocus()
+        public virtual void TxSetFocus()
         {
             Trace();
         }
 
-        public HRESULT TxSetForegroundWindow()
+        public virtual HRESULT TxSetForegroundWindow()
         {
             Trace();
             return HRESULTS.S_OK;
         }
 
-        public bool TxSetScrollPos(int fnBar, int nPos, bool fRedraw)
+        public virtual bool TxSetScrollPos(int fnBar, int nPos, bool fRedraw)
         {
             Trace("fnBar: " + fnBar + " nPos: " + nPos + " fRedraw: " + fRedraw);
             return true;
         }
 
-        public bool TxSetScrollRange(SB fnBar, int nMinPos, int nMaxPos, bool fRedraw)
+        public virtual bool TxSetScrollRange(SB fnBar, int nMinPos, int nMaxPos, bool fRedraw)
         {
             Trace("fnBar: " + fnBar + " nMinPos: " + nMinPos + " nMaxPos: " + nMaxPos + " fRedraw: " + fRedraw);
             return true;
         }
 
-        public void TxKillTimer(int idTimer)
+        public virtual void TxKillTimer(int idTimer)
         {
             Trace("idTimer: " + idTimer);
         }
 
-        public bool TxSetTimer(int idTimer, int uTimeout)
+        public virtual bool TxSetTimer(int idTimer, int uTimeout)
         {
             Trace("idTimer: " + idTimer + " uTimeout: " + uTimeout);
             return true;
         }
 
-        public bool TxShowCaret(bool fShow)
+        public virtual bool TxShowCaret(bool fShow)
         {
             Trace("fShow: " + fShow);
             return true;
         }
 
-        public HRESULT TxShowDropCaret(bool fShow, IntPtr hdc, IntPtr prc)
+        public virtual HRESULT TxShowDropCaret(bool fShow, IntPtr hdc, IntPtr prc)
         {
             Trace("fShow: " + fShow + " hdc: " + hdc + " prc: " + prc);
             return HRESULTS.S_OK;
         }
 
-        public bool TxShowScrollBar(SB fnBar, bool fShow)
+        public virtual bool TxShowScrollBar(SB fnBar, bool fShow)
         {
             Trace("fnBar: " + fnBar + " fShow: " + fShow);
             return fShow;
         }
 
-        public void TxViewChange(bool fUpdate)
+        public virtual void TxViewChange(bool fUpdate)
         {
             Trace("fUpdate: " + fUpdate);
         }
