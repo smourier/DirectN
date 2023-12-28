@@ -54,20 +54,24 @@ namespace DirectN
         [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT DXGIGetDebugInterface1(int Flags, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppDebug);
 
-        public static IComObject<IDXGIDebug> DXGIGetDebugInterface()
+        public static IComObject<IDXGIDebug> DXGIGetDebugInterface() => DXGIGetDebugInterface<IDXGIDebug>();
+        public static IComObject<T> DXGIGetDebugInterface<T>()
         {
-            if (DXGIGetDebugInterface(typeof(IDXGIDebug).GUID, out var debug).IsError)
+            DXGIGetDebugInterface(typeof(T).GUID, out var debug);
+            if (debug == null)
                 return null;
 
-            return new ComObject<IDXGIDebug>((IDXGIDebug)debug);
+            return new ComObject<T>((T)debug);
         }
 
-        public static IComObject<IDXGIDebug1> DXGIGetDebugInterface1()
+        public static IComObject<IDXGIDebug1> DXGIGetDebugInterface1() => DXGIGetDebugInterface1<IDXGIDebug1>();
+        public static IComObject<T> DXGIGetDebugInterface1<T>()
         {
-            if (DXGIGetDebugInterface(typeof(IDXGIDebug1).GUID, out var debug).IsError)
+            DXGIGetDebugInterface(typeof(T).GUID, out var debug);
+            if (debug == null)
                 return null;
 
-            return new ComObject<IDXGIDebug1>((IDXGIDebug1)debug);
+            return new ComObject<T>((T)debug);
         }
 
         public static IComObject<IDXGIFactory2> CreateDXGIFactory2(DXGI_CREATE_FACTORY_FLAGS flags = DXGI_CREATE_FACTORY_FLAGS.DXGI_CREATE_FACTORY_NONE) => CreateDXGIFactory2<IDXGIFactory2>(flags);

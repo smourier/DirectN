@@ -16,15 +16,21 @@ namespace DirectN
         public static HRESULT D3D12CheckDeviceCreate(object adapter, D3D_FEATURE_LEVEL minimumFeatureLevel = D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_11_0) => D3D12CheckDeviceCreate<ID3D12Device>(adapter, minimumFeatureLevel);
         public static HRESULT D3D12CheckDeviceCreate<T>(object adapter, D3D_FEATURE_LEVEL minimumFeatureLevel = D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_11_0) where T : ID3D12Device => D3D12CreateDevice(ComObject.Unwrap(adapter), minimumFeatureLevel, typeof(T).GUID, IntPtr.Zero);
 
-        public static IComObject<T> D3D12GetInterface<T>(Guid rclsid)
+        public static IComObject<T> D3D12GetInterface<T>(Guid rclsid, bool throwOnError = true)
         {
-            D3D12GetInterface(rclsid, typeof(T).GUID, out var dev).ThrowOnError();
+            D3D12GetInterface(rclsid, typeof(T).GUID, out var dev).ThrowOnError(throwOnError);
+            if (dev == null)
+                return null;
+
             return new ComObject<T>((T)dev);
         }
 
         public static IComObject<T> D3D12GetDebugInterface<T>()
         {
-            D3D12GetDebugInterface(typeof(T).GUID, out var dev).ThrowOnError();
+            D3D12GetDebugInterface(typeof(T).GUID, out var dev);
+            if (dev == null)
+                return null;
+
             return new ComObject<T>((T)dev);
         }
 
@@ -68,6 +74,15 @@ namespace DirectN
         {
             D3D12CreateVersionedRootSignatureDeserializer(srcData, srcDataSizeInBytes, typeof(ID3D12VersionedRootSignatureDeserializer).GUID, out var deserializer).ThrowOnError();
             return new ComObject<ID3D12VersionedRootSignatureDeserializer>((ID3D12VersionedRootSignatureDeserializer)deserializer);
+        }
+
+        // works only on Windows 11 or Windows 10 with developer mode enabled
+        public static void SetSDKVersion(uint version, string path, bool throwOnError = false)
+        {
+            using (var conf = D3D12GetInterface<ID3D12SDKConfiguration>(D3D12Constants.CLSID_D3D12SDKConfiguration, throwOnError))
+            {
+                conf?.Object.SetSDKVersion(version, path).ThrowOnError(throwOnError);
+            }
         }
 
         [DllImport("d3d12", ExactSpelling = true)]

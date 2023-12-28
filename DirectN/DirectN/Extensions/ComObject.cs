@@ -85,23 +85,75 @@ namespace DirectN
             return IntPtr.Zero;
         }
 
-        public T As<T>(bool throwOnError = false) where T : class
+        public T As<T>(bool throwOnError = false, bool addRef = false) where T : class
         {
+            T obj;
             if (throwOnError)
-                return (T)Object; // will throw
+            {
+                obj = (T)Object; // will throw
+            }
+            else
+            {
+                obj = Object as T;
+            }
 
-            return Object as T;
+            if (obj != null && addRef)
+            {
+                AddRefComObject(obj, throwOnError);
+            }
+            return obj;
         }
 
-        public IComObject<T> AsComObject<T>(bool throwOnError = false) where T : class
+        public IComObject<T> AsComObject<T>(bool throwOnError = false, bool addRef = false, bool dispose = false) where T : class
         {
             if (throwOnError)
-                return new ComObject<T>((T)Object, false); // will throw
+            {
+                var com = new ComObject<T>((T)Object, dispose); // will throw
+                if (addRef)
+                {
+                    AddRefComObject(com.Object, throwOnError);
+                }
+                return com;
+            }
 
             if (!(Object is T obj))
                 return null;
 
-            return new ComObject<T>(obj, false);
+            var co = new ComObject<T>(obj, dispose);
+            if (addRef)
+            {
+                AddRefComObject(co.Object, throwOnError);
+            }
+            return co;
+        }
+
+        public static object AddRefComObject(object obj, bool throwOnError = true) // reverse of Marshal.ReleaseComObject (which is not the same as Marshal.AddRef)
+        {
+            // unwrap
+            if (obj is ComObject co)
+            {
+                obj = co.Object;
+            }
+
+            try
+            {
+                var ptr = Marshal.GetIUnknownForObject(obj);
+                try
+                {
+                    return Marshal.GetObjectForIUnknown(ptr);
+                }
+                finally
+                {
+                    Marshal.Release(ptr);
+                }
+            }
+            catch
+            {
+                if (throwOnError)
+                    throw;
+
+                return null;
+            }
         }
 
         public static ComObject<T> WrapAsGeneric<T>(object instance) => (ComObject<T>)WrapAsGeneric(typeof(T), instance);
@@ -349,9 +401,9 @@ namespace DirectN
         bool IsDisposed { get; }
         object Object { get; }
         Type InterfaceType { get; }
-        I As<I>(bool throwOnError = false) where I : class;
+        I As<I>(bool throwOnError = false, bool addRef = false) where I : class;
         IntPtr GetInterfacePointer<T>(bool throwOnError = false);
-        IComObject<I> AsComObject<I>(bool throwOnError = false) where I : class;
+        IComObject<I> AsComObject<I>(bool throwOnError = false, bool addRef = false, bool dispose = false) where I : class;
     }
 
     public interface IComObject<out T> : IComObject
