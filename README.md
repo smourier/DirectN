@@ -3,7 +3,7 @@ Direct Interop code for .NET Framework, .NET Core and .NET 5+ : DXGI, WIC, Direc
 
 The easiest way to use this is reference the nuget package: https://www.nuget.org/packages/DirectN/ (.NET Framework) or https://www.nuget.org/packages/DirectNCore/ (.NET Core and .NET 5, 6, 7, etc.) or https://www.nuget.org/packages/DirectNStandard/ (.NET Standard).
 
-Or you can pick the C# source files you want (among the 10000 .cs provided ...). It can be sometimes difficult because the dependencies between all these technologies can make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is possible as demonstrated in this other project: [Windows Interface Composition Engine ("Wice")](https://github.com/aelyo-softworks/Wice) wich uses only ~700 files (less than 10%) from DirectN.
+Or you can pick the C# source files you want (among the 10000 .cs provided ...). It can be sometimes difficult because the dependencies between all these technologies can make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is still possible.
 
 ## Same names and types than the native concepts!
 DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, probably more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the **same names and types than the native concepts** (interfaces, enums, structures, constants, methods, arguments, guids, etc.) . So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
@@ -224,10 +224,15 @@ cleanup:
 
 ## Notes
 
- * Note 1: there  currently may be some issues with sructures that contain unions. If you have a specific problem with that, just create an issue;
+ * Note 1: there currently may be some issues with sructures that contain unions. If you have a specific problem with that, just create an issue;
  * Note 2: the functions.cs file has some issues as everything in the Generated folder is, well, automatically generated. If you have a specific problem with that, just create an issue;
  * Note 3: the tool that builds the Generated folder is not open source.
- * Note 4: Although DirectN is built with x64 and x86 support, its priority target is 64-bit support. There may be some issues if you run it with a 32-bit executable. In this case, create an issue and we'll see if we can work this out.
+ * Note 4: Although DirectN is built with x64 and x86 support, its priority target is 64-bit support. There may be some issues if you run it with a 32-bit executable (notably with old structs and interfaces such as DirectX9). In this case, create an issue and we'll see if we can work this out.
+
+ # "Wicnet" & "Wice" example projects
+ [WicNet](https://github.com/smourier/WicNet) is a .NET standard project that is a full wrapper on WIC (Windows Imaging Component) components. It includes WIC connections with Direct2D (effects), and DirectWrite (text rendering) and is based on DirectN
+ 
+ Wice ["Windows Interface Composition Engine"](https://github.com/aelyo-softworks/Wice) also uses DirectN and is a bloat-free .NET UI engine (no releation with Winforms, WPF, UWP nor WinUI3) for creating Windows (as in Win32/WinRT) desktop applications.
 
  # Winforms .NET 6 - Direct3D11 minimal sample.
  The **DirectN.MinimalD3D11** sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.MinimalD3D11 has been ported to C# from here: https://gist.github.com/d7samurai/261c69490cce0620d0bfc93003cd1052 which features *"a minimal Direct3D11 "uncluttered direct3d 11 setup and rendering primer for newcomers to the api"* sample.
