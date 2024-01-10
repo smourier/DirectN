@@ -51,6 +51,9 @@ namespace DirectN
 
         public static object Unwrap(object obj)
         {
+            if (obj == null)
+                return null;
+
             if (obj is ComObject co)
                 return co.Object;
 
@@ -62,6 +65,9 @@ namespace DirectN
 
         public static T Unwrap<T>(object obj)
         {
+            if (obj == null)
+                return default;
+
             if (obj is ComObject co)
                 return (T)co.Object;
 

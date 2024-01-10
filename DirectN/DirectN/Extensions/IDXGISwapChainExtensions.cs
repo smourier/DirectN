@@ -69,5 +69,18 @@ namespace DirectN
 
             swapChain.Present(syncInterval, flags).ThrowOnError();
         }
+
+        public static bool IsFullScreenState(this IComObject<IDXGISwapChain> swapChain) => IsFullScreenState(swapChain?.Object);
+        public static bool IsFullScreenState(this IDXGISwapChain swapChain)
+        {
+            if (swapChain == null)
+                throw new ArgumentNullException(nameof(swapChain));
+
+            using (var mem = new ComMemory(false))
+            {
+                swapChain.GetFullscreenState(mem.Pointer, out _).ThrowOnError();
+                return mem.ToStructure<bool>();
+            }
+        }
     }
 }
