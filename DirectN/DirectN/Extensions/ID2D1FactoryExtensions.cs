@@ -33,6 +33,20 @@ namespace DirectN
             return new ComObject<ID2D1HwndRenderTarget>(renderTarget);
         }
 
+        public static IComObject<ID2D1RenderTarget> CreateDxgiSurfaceRenderTarget(this IComObject<ID2D1Factory> factory, IComObject<IDXGISurface> surface, D2D1_RENDER_TARGET_PROPERTIES? properties = null) => CreateDxgiSurfaceRenderTarget(factory?.Object, surface?.Object, properties);
+        public static IComObject<ID2D1RenderTarget> CreateDxgiSurfaceRenderTarget(this ID2D1Factory factory, IDXGISurface surface, D2D1_RENDER_TARGET_PROPERTIES? properties = null)
+        {
+            if (factory == null)
+                throw new ArgumentNullException(nameof(factory));
+
+            if (surface == null)
+                throw new ArgumentNullException(nameof(surface));
+
+            var props = properties ?? new D2D1_RENDER_TARGET_PROPERTIES();
+            factory.CreateDxgiSurfaceRenderTarget(surface, ref props, out var renderTarget).ThrowOnError();
+            return new ComObject<ID2D1RenderTarget>(renderTarget);
+        }
+
         public static IComObject<ID2D1DCRenderTarget> CreateDCRenderTarget(this IComObject<ID2D1Factory> factory, D2D1_RENDER_TARGET_PROPERTIES properties) => CreateDCRenderTarget<ID2D1DCRenderTarget>(factory?.Object, properties);
         public static IComObject<T> CreateDCRenderTarget<T>(this IComObject<ID2D1Factory> factory, D2D1_RENDER_TARGET_PROPERTIES properties) where T : ID2D1DCRenderTarget => CreateDCRenderTarget<T>(factory?.Object, properties);
         public static IComObject<T> CreateDCRenderTarget<T>(this ID2D1Factory factory, D2D1_RENDER_TARGET_PROPERTIES properties) where T : ID2D1DCRenderTarget
