@@ -90,7 +90,7 @@ namespace DirectN
 
         public static D2D_MATRIX_4X4_F RotationX(float degrees)
         {
-            var radians = degrees * (3.141592654f / 180f);
+            var radians = (degrees * 3.141592654f) / 180;
             D2D1Functions.D2D1SinCos(radians, out var sin, out var cos);
             return new D2D_MATRIX_4X4_F(
                 1, 0, 0, 0,
@@ -102,7 +102,7 @@ namespace DirectN
 
         public static D2D_MATRIX_4X4_F RotationY(float degrees)
         {
-            var radians = degrees * (3.141592654f / 180f);
+            var radians = (degrees * 3.141592654f) / 180;
             D2D1Functions.D2D1SinCos(radians, out var sin, out var cos);
             return new D2D_MATRIX_4X4_F(
                 cos, 0, -sin, 0,
@@ -114,7 +114,7 @@ namespace DirectN
 
         public static D2D_MATRIX_4X4_F RotationZ(float degrees)
         {
-            var radians = degrees * (3.141592654f / 180f);
+            var radians = (degrees * 3.141592654f) / 180;
             D2D1Functions.D2D1SinCos(radians, out var sin, out var cos);
             return new D2D_MATRIX_4X4_F(
                 cos, sin, 0, 0,
@@ -130,7 +130,7 @@ namespace DirectN
             centerX /= magnitude;
             centerY /= magnitude;
             centerZ /= magnitude;
-            var radians = degrees * (3.141592654f / 180.0f);
+            var radians = (degrees * 3.141592654f) / 180;
             D2D1Functions.D2D1SinCos(radians, out var sin, out var cos);
             var oneMinusCos = 1 - cos;
             return new D2D_MATRIX_4X4_F(
@@ -142,7 +142,6 @@ namespace DirectN
                 1 + oneMinusCos * (centerY * centerY - 1),
                 centerX * sin + oneMinusCos * centerY * centerZ,
                 0,
-
                 centerY * sin + oneMinusCos * centerZ * centerX,
                 -centerX * sin + oneMinusCos * centerZ * centerY,
                 1 + oneMinusCos * (centerZ * centerZ - 1),
@@ -153,7 +152,7 @@ namespace DirectN
 
         public static D2D_MATRIX_4X4_F SkewX(float degrees)
         {
-            var radians = degrees * (3.141592654f / 180.0f);
+            var radians = (degrees * 3.141592654f) / 180;
             var tan = D2D1Functions.D2D1Tan(radians);
             return new D2D_MATRIX_4X4_F(
                 1, 0, 0, 0,
@@ -165,7 +164,7 @@ namespace DirectN
 
         public static D2D_MATRIX_4X4_F SkewY(float degrees)
         {
-            var radians = degrees * (3.141592654f / 180.0f);
+            var radians = (degrees * 3.141592654f) / 180;
             var tan = D2D1Functions.D2D1Tan(radians);
             return new D2D_MATRIX_4X4_F(
                 1, tan, 0, 0,
@@ -232,6 +231,97 @@ namespace DirectN
             m._43 = a._41 * b._13 + a._42 * b._23 + a._43 * b._33 + a._44 * b._43;
             m._44 = a._41 * b._14 + a._42 * b._24 + a._43 * b._34 + a._44 * b._44;
             return m;
+        }
+
+        public static D2D_MATRIX_4X4_F Transpose(ref D2D_MATRIX_4X4_F value)
+        {
+            var result = new D2D_MATRIX_4X4_F();
+            result._11 = value._11;
+            result._12 = value._21;
+            result._13 = value._31;
+            result._14 = value._41;
+            result._21 = value._12;
+            result._22 = value._22;
+            result._23 = value._32;
+            result._24 = value._42;
+            result._31 = value._13;
+            result._32 = value._23;
+            result._33 = value._33;
+            result._34 = value._43;
+            result._41 = value._14;
+            result._42 = value._24;
+            result._43 = value._34;
+            result._44 = value._44;
+            return result;
+        }
+
+        public static D2D_MATRIX_4X4_F Transpose(D2D_MATRIX_4X4_F value)
+        {
+            var result = new D2D_MATRIX_4X4_F();
+            result._11 = value._11;
+            result._12 = value._21;
+            result._13 = value._31;
+            result._14 = value._41;
+            result._21 = value._12;
+            result._22 = value._22;
+            result._23 = value._32;
+            result._24 = value._42;
+            result._31 = value._13;
+            result._32 = value._23;
+            result._33 = value._33;
+            result._34 = value._43;
+            result._41 = value._14;
+            result._42 = value._24;
+            result._43 = value._34;
+            result._44 = value._44;
+            return result;
+        }
+
+        public static D2D_MATRIX_4X4_F LookAtLH(D2D_VECTOR_3F eye, D2D_VECTOR_3F at, D2D_VECTOR_3F up)
+        {
+            var za = (at - eye).Normalize();
+            var xa = up.Cross(za).Normalize();
+            var ya = za.Cross(xa);
+
+            var result = new D2D_MATRIX_4X4_F();
+            result._11 = xa.x;
+            result._12 = ya.x;
+            result._13 = za.x;
+            result._21 = xa.y;
+            result._22 = ya.y;
+            result._23 = za.y;
+            result._31 = xa.z;
+            result._32 = ya.z;
+            result._33 = za.z;
+            result._41 = -xa.Dot(eye);
+            result._42 = -ya.Dot(eye);
+            result._43 = -za.Dot(eye);
+            result._44 = 1;
+            return result;
+        }
+
+        // https://learn.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrixlookatlh
+        public static D2D_MATRIX_4X4_F LookAtLH(ref D2D_VECTOR_3F eye, ref D2D_VECTOR_3F at, ref D2D_VECTOR_3F up)
+        {
+            var za = (at - eye).Normalize();
+            var xa = up.Cross(za).Normalize();
+            var ya = za.Cross(xa);
+
+            var result = new D2D_MATRIX_4X4_F();
+            result._11 = xa.x;
+            result._12 = ya.x;
+            result._13 = za.x;
+            result._21 = xa.y;
+            result._22 = ya.y;
+            result._23 = za.y;
+            result._31 = xa.z;
+            result._32 = ya.z;
+            result._33 = za.z;
+            result._41 = -xa.Dot(eye);
+            result._42 = -ya.Dot(eye);
+            result._43 = -za.Dot(eye);
+            result._44 = 1;
+            return result;
         }
 
         // https://docs.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrixortholh
