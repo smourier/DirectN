@@ -406,5 +406,16 @@ namespace DirectN
             }, IntPtr.Zero);
             return list.AsReadOnly();
         }
+
+        [DllImport("windows.data.pdf", ExactSpelling = true)]
+        private static extern HRESULT PdfCreateRenderer(IDXGIDevice pDevice, out IPdfRendererNative ppRenderer);
+        public static IPdfRendererNative PdfCreateRenderer(IDXGIDevice device, bool throwOnError = true)
+        {
+            if (device == null)
+                throw new ArgumentNullException(nameof(device));
+
+            PdfCreateRenderer(device, out var renderer).ThrowOnError(throwOnError);
+            return renderer;
+        }
     }
 }

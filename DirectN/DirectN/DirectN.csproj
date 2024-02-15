@@ -133,10 +133,12 @@
     <Compile Include="Manual\DPI_AWARENESS_CONTEXT.cs" />
     <Compile Include="Manual\DWM_CLOAKED.cs" />
     <Compile Include="Manual\EDS.cs" />
+    <Compile Include="Manual\ICompositorInterop.cs" />
     <Compile Include="Manual\IDispatcherQueue.cs" />
     <Compile Include="Manual\IDispatcherQueueController.cs" />
     <Compile Include="Manual\IDisplayPathInterop.cs" />
     <Compile Include="Manual\IGraphicsEffectD2D1Interop.cs" />
+    <Compile Include="Manual\IPdfRendererNative.cs" />
     <Compile Include="Manual\ISoftwareBitmapNative.cs" />
     <Compile Include="Manual\ISoftwareBitmapNativeFactory.cs" />
     <Compile Include="Manual\MONITORINFOF.cs" />

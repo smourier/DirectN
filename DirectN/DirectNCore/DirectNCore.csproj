@@ -1474,6 +1474,8 @@
     <Compile Include="..\DirectN\Extensions\CodecApi.cs" Link="Extensions\CodecApi.cs" />
     <Compile Include="..\DirectN\Extensions\Cursor.cs" Link="Extensions\Cursor.cs" />
     <Compile Include="..\DirectN\Manual\tomConstants.cs" Link="Manual\tomConstants.cs" />
+    <Compile Include="..\DirectN\Manual\ICompositorInterop.cs" Link="Manual\ICompositorInterop.cs" />
+    <Compile Include="..\DirectN\Manual\IPdfRendererNative.cs" Link="Manual\IPdfRendererNative.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\DirectN\Generated\adpcmcoef_tag.cs" Link="Generated\adpcmcoef_tag.cs" />
