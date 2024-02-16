@@ -1480,6 +1480,7 @@
     <Compile Include="..\DirectN\Manual\IVisualInteractionSourceInterop.cs" Link="Manual\IVisualInteractionSourceInterop.cs" />
     <Compile Include="..\DirectN\Manual\ICompositionTextureInterop.cs" Link="Manual\ICompositionTextureInterop.cs" />
     <Compile Include="..\DirectN\Manual\ICompositorInterop2.cs" Link="Manual\ICompositorInterop2.cs" />
+    <Compile Include="..\DirectN\Manual\PDF_RENDER_PARAMS.cs" Link="Manual\PDF_RENDER_PARAMS.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\DirectN\Generated\adpcmcoef_tag.cs" Link="Generated\adpcmcoef_tag.cs" />

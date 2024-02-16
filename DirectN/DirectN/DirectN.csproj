@@ -148,6 +148,7 @@
     <Compile Include="Manual\MONITORINFOF.cs" />
     <Compile Include="Manual\MONITOR_DPI_TYPE.cs" />
     <Compile Include="Manual\PA.cs" />
+    <Compile Include="Manual\PDF_RENDER_PARAMS.cs" />
     <Compile Include="Manual\PHOTO_ORIENTATION.cs" />
     <Compile Include="Manual\PropertyType.cs" />
     <Compile Include="Manual\PropVariant.cs" />
