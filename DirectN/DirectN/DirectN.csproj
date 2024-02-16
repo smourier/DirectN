@@ -133,7 +133,11 @@
     <Compile Include="Manual\DPI_AWARENESS_CONTEXT.cs" />
     <Compile Include="Manual\DWM_CLOAKED.cs" />
     <Compile Include="Manual\EDS.cs" />
+    <Compile Include="Manual\ICompositionDrawingSurfaceInterop2.cs" />
+    <Compile Include="Manual\IVisualInteractionSourceInterop.cs" />
     <Compile Include="Manual\ICompositorInterop.cs" />
+    <Compile Include="Manual\ICompositionTextureInterop.cs" />
+    <Compile Include="Manual\ICompositorInterop2.cs" />
     <Compile Include="Manual\IDispatcherQueue.cs" />
     <Compile Include="Manual\IDispatcherQueueController.cs" />
     <Compile Include="Manual\IDisplayPathInterop.cs" />

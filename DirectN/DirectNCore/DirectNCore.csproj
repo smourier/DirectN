@@ -1476,6 +1476,10 @@
     <Compile Include="..\DirectN\Manual\tomConstants.cs" Link="Manual\tomConstants.cs" />
     <Compile Include="..\DirectN\Manual\ICompositorInterop.cs" Link="Manual\ICompositorInterop.cs" />
     <Compile Include="..\DirectN\Manual\IPdfRendererNative.cs" Link="Manual\IPdfRendererNative.cs" />
+    <Compile Include="..\DirectN\Manual\ICompositionDrawingSurfaceInterop2.cs" Link="Manual\ICompositionDrawingSurfaceInterop2.cs" />
+    <Compile Include="..\DirectN\Manual\IVisualInteractionSourceInterop.cs" Link="Manual\IVisualInteractionSourceInterop.cs" />
+    <Compile Include="..\DirectN\Manual\ICompositionTextureInterop.cs" Link="Manual\ICompositionTextureInterop.cs" />
+    <Compile Include="..\DirectN\Manual\ICompositorInterop2.cs" Link="Manual\ICompositorInterop2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\DirectN\Generated\adpcmcoef_tag.cs" Link="Generated\adpcmcoef_tag.cs" />
