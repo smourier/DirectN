@@ -14,7 +14,16 @@ namespace DirectN
         public UnmanagedMemoryStream()
         {
             _stream = SHCreateMemStream(IntPtr.Zero, 0);
-            Check();
+            CheckMemory();
+            Position = 0;
+        }
+
+        public UnmanagedMemoryStream(string filePath, STGM mode = STGM.STGM_READ)
+        {
+            if (filePath == null)
+                throw new ArgumentNullException(nameof(filePath));
+
+            SHCreateStreamOnFile(filePath, mode, out _stream).ThrowOnError();
             Position = 0;
         }
 
@@ -37,7 +46,7 @@ namespace DirectN
                 throw new ArgumentNullException(nameof(bytes));
 
             _stream = SHCreateMemStream(bytes, bytes.Length);
-            Check();
+            CheckMemory();
             Position = 0;
         }
 
@@ -47,7 +56,7 @@ namespace DirectN
                 throw new ArgumentException(null, nameof(pointer));
 
             _stream = SHCreateMemStream(pointer, size);
-            Check();
+            CheckMemory();
             Position = 0;
         }
 
@@ -113,7 +122,7 @@ namespace DirectN
             ((IStream)this).Write(buffer, count, IntPtr.Zero);
         }
 
-        private void Check()
+        private void CheckMemory()
         {
             if (_stream == null)
                 throw new OutOfMemoryException();
@@ -134,6 +143,9 @@ namespace DirectN
 
         [DllImport("shlwapi")]
         private static extern IStream SHCreateMemStream(byte[] pInit, int cbInit);
+
+        [DllImport("shlwapi", CharSet = CharSet.Unicode)]
+        private static extern HRESULT SHCreateStreamOnFile(string pszFile, STGM grfMode, out IStream ppstm);
 
         void IStream.Seek(long dlibMove, int dwOrigin, IntPtr plibNewPosition)
         {
