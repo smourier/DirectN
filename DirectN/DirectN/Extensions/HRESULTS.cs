@@ -13,6 +13,7 @@
         E_UNEXPECTED = unchecked((int)0x8000FFFF),
         E_NOT_SUFFICIENT_BUFFER = unchecked((int)0x8007007A),
         E_BOUNDS = unchecked((int)0x8000000B),
+        E_POINTER = unchecked((int)0x80004003),
         ERROR_CANCELLED = unchecked((int)0x800704C7),
         ERROR_INTERNAL_ERROR = unchecked((int)0x8007054F),
         ERROR_INVALID_DATA = unchecked((int)0x8007000D),

@@ -89,6 +89,120 @@ namespace DirectN
             return (int)value;
         }
 
+        public static void DeleteAllItems(this IComObject<IMFAttributes> input) => DeleteAllItems(input?.Object);
+        public static void DeleteAllItems(this IMFAttributes input)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            input.DeleteAllItems().ThrowOnError();
+        }
+
+        public static void DeleteItem(this IComObject<IMFAttributes> input, Guid key) => DeleteItem(input?.Object, key);
+        public static void DeleteItem(this IMFAttributes input, Guid key)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            input.DeleteItem(key).ThrowOnError();
+        }
+
+        public static void LockStore(this IComObject<IMFAttributes> input) => LockStore(input?.Object);
+        public static void LockStore(this IMFAttributes input)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            input.LockStore().ThrowOnError();
+        }
+
+        public static void UnlockStore(this IComObject<IMFAttributes> input) => UnlockStore(input?.Object);
+        public static void UnlockStore(this IMFAttributes input)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            input.UnlockStore().ThrowOnError();
+        }
+
+        public static void TryGetItemByIndex(this IComObject<IMFAttributes> input, uint index, out Guid key, out object value) => TryGetItemByIndex(input?.Object, index, out key, out value);
+        public static bool TryGetItemByIndex(this IMFAttributes input, uint index, out Guid key, out object value)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            HRESULT hr;
+            using (var pv = new PropVariant())
+            {
+                hr = input.GetItemByIndex(index, out key, pv);
+                value = pv.Value;
+            }
+
+            return hr.IsSuccess;
+        }
+
+        public static void Set2UINT32asUINT64(this IComObject<IMFAttributes> input, Guid key, uint high, uint low) => Set2UINT32asUINT64(input?.Object, key, high, low);
+        public static void Set2UINT32asUINT64(this IMFAttributes input, Guid key, uint high, uint low)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            MFSetAttribute2UINT32asUINT64(input, key, high, low).ThrowOnError();
+        }
+
+        public static void SetSize(this IComObject<IMFAttributes> input, Guid key, uint width, uint height) => SetSize(input?.Object, key, width, height);
+        public static void SetSize(this IMFAttributes input, Guid key, uint width, uint height)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            MFSetAttribute2UINT32asUINT64(input, key, width, height).ThrowOnError();
+        }
+
+        public static void SetRatio(this IComObject<IMFAttributes> input, Guid key, uint numerator, uint denominator) => SetRatio(input?.Object, key, numerator, denominator);
+        public static void SetRatio(this IMFAttributes input, Guid key, uint numerator, uint denominator)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            MFSetAttribute2UINT32asUINT64(input, key, numerator, denominator).ThrowOnError();
+        }
+
+        public static bool TryGet2UINT32asUINT64(this IComObject<IMFAttributes> input, Guid key, out uint high, out uint low) => TryGet2UINT32asUINT64(input?.Object, key, out high, out low);
+        public static bool TryGet2UINT32asUINT64(this IMFAttributes input, Guid key, out uint high, out uint low)
+        {
+            if (input == null)
+                throw new ArgumentNullException(nameof(input));
+
+            return MFGetAttribute2UINT32asUINT64(input, key, out high, out low).IsSuccess;
+        }
+
+        public static bool TryGetSize(this IComObject<IMFAttributes> input, Guid key, out uint width, out uint height) => TryGetSize(input?.Object, key, out width, out height);
+        public static bool TryGetSize(this IMFAttributes input, Guid key, out uint width, out uint height) => TryGet2UINT32asUINT64(input, key, out width, out height);
+
+        public static bool TryGetRatio(this IComObject<IMFAttributes> input, Guid key, out uint numerator, out uint denominator) => TryGetRatio(input?.Object, key, out numerator, out denominator);
+        public static bool TryGetRatio(this IMFAttributes input, Guid key, out uint numerator, out uint denominator) => TryGet2UINT32asUINT64(input, key, out numerator, out denominator);
+
+        public static ulong Pack2UINT32AsUINT64(uint high, uint low) => ((ulong)high << 32) | low;
+        public static void Unpack2UINT32AsUINT64(ulong packed, out uint high, out uint low) { high = (uint)(packed >> 32); low = (uint)packed; }
+        public static HRESULT MFSetAttribute2UINT32asUINT64(IMFAttributes attributes, Guid key, uint high, uint low) => attributes?.SetUINT64(key, Pack2UINT32AsUINT64(high, low)) ?? HRESULTS.E_INVALIDARG;
+        public static HRESULT MFGetAttribute2UINT32asUINT64(IMFAttributes attributes, Guid key, out uint high, out uint low)
+        {
+            if (attributes == null)
+                throw new ArgumentNullException(nameof(attributes));
+
+            var hr = attributes.GetUINT64(key, out var packed);
+            if (hr.IsError)
+            {
+                high = 0;
+                low = 0;
+                return hr;
+            }
+
+            Unpack2UINT32AsUINT64(packed, out high, out low);
+            return HRESULTS.S_OK;
+        }
+
         public static void Set(this IComObject<IMFAttributes> input, Guid key, ComObject value) => input?.Object.SetUnknown(key, value?.Object).ThrowOnError();
         public static void Set(this IComObject<IMFAttributes> input, Guid key, string value) => input?.Object.SetString(key, value).ThrowOnError();
         public static void Set(this IComObject<IMFAttributes> input, Guid key, double value) => input?.Object.SetDouble(key, value).ThrowOnError();

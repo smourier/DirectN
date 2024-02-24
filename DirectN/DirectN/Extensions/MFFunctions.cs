@@ -42,8 +42,8 @@ namespace DirectN
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateSampleGrabberSinkActivate(IMFMediaType pIMFMediaType, IMFSampleGrabberSinkCallback pIMFSampleGrabberSinkCallback, out IMFActivate ppIActivate);
 
-        public static ComObject<IMFActivate> MFCreateSampleGrabberSinkActivate(IMFMediaType type, IMFSampleGrabberSinkCallback callback) => MFCreateSampleGrabberSinkActivate<IMFActivate>(type, callback);
-        public static ComObject<T> MFCreateSampleGrabberSinkActivate<T>(IMFMediaType type, IMFSampleGrabberSinkCallback callback) where T : IMFActivate
+        public static IComObject<IMFActivate> MFCreateSampleGrabberSinkActivate(IMFMediaType type, IMFSampleGrabberSinkCallback callback) => MFCreateSampleGrabberSinkActivate<IMFActivate>(type, callback);
+        public static IComObject<T> MFCreateSampleGrabberSinkActivate<T>(IMFMediaType type, IMFSampleGrabberSinkCallback callback) where T : IMFActivate
         {
             if (type == null)
                 throw new ArgumentNullException(nameof(type));
@@ -55,8 +55,8 @@ namespace DirectN
             return new ComObject<T>((T)sink);
         }
 
-        public static ComObject<IMFSinkWriter> MFCreateSinkWriterFromMediaSink(IMFMediaSink sink, IMFAttributes attributes = null) => MFCreateSinkWriterFromMediaSink<IMFSinkWriter>(sink, attributes);
-        public static ComObject<T> MFCreateSinkWriterFromMediaSink<T>(IMFMediaSink sink, IMFAttributes attributes = null) where T : IMFSinkWriter
+        public static IComObject<IMFSinkWriter> MFCreateSinkWriterFromMediaSink(IMFMediaSink sink, IMFAttributes attributes = null) => MFCreateSinkWriterFromMediaSink<IMFSinkWriter>(sink, attributes);
+        public static IComObject<T> MFCreateSinkWriterFromMediaSink<T>(IMFMediaSink sink, IMFAttributes attributes = null) where T : IMFSinkWriter
         {
             if (sink == null)
                 throw new ArgumentNullException(nameof(sink));
@@ -68,8 +68,8 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMFByteStreamOnStream(IStream pStream, out IMFByteStream ppByteStream);
 
-        public static ComObject<IMFByteStream> MFCreateMFByteStreamOnStream(this IStream stream) => MFCreateMFByteStreamOnStream<IMFByteStream>(stream);
-        public static ComObject<T> MFCreateMFByteStreamOnStream<T>(this IStream stream) where T : IMFByteStream
+        public static IComObject<IMFByteStream> MFCreateMFByteStreamOnStream(this IStream stream) => MFCreateMFByteStreamOnStream<IMFByteStream>(stream);
+        public static IComObject<T> MFCreateMFByteStreamOnStream<T>(this IStream stream) where T : IMFByteStream
         {
             if (stream == null)
                 throw new ArgumentNullException(nameof(stream));
@@ -81,8 +81,8 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMediaType(out IMFMediaType ppMFType);
 
-        public static ComObject<IMFMediaType> MFCreateMediaType() => MFCreateMediaType<IMFMediaType>();
-        public static ComObject<T> MFCreateMediaType<T>() where T : IMFMediaType
+        public static IComObject<IMFMediaType> MFCreateMediaType() => MFCreateMediaType<IMFMediaType>();
+        public static IComObject<T> MFCreateMediaType<T>() where T : IMFMediaType
         {
             MFCreateMediaType(out var type).ThrowOnError();
             return new ComObject<T>((T)type);
@@ -91,8 +91,8 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateAttributes(out IMFAttributes ppMFAttributes, uint cInitialSize);
 
-        public static ComObject<IMFAttributes> MFCreateAttributes(uint initialSize = 0) => MFCreateAttributes<IMFAttributes>(initialSize);
-        public static ComObject<T> MFCreateAttributes<T>(uint initialSize = 0) where T : IMFAttributes
+        public static IComObject<IMFAttributes> MFCreateAttributes(uint initialSize = 0) => MFCreateAttributes<IMFAttributes>(initialSize);
+        public static IComObject<T> MFCreateAttributes<T>(uint initialSize = 0) where T : IMFAttributes
         {
             MFCreateAttributes(out var attributes, initialSize).ThrowOnError();
             return new ComObject<T>((T)attributes);
@@ -104,8 +104,8 @@ namespace DirectN
         [DllImport("mfreadwrite", ExactSpelling = true)]
         public static extern HRESULT MFCreateSinkWriterFromURL([MarshalAs(UnmanagedType.LPWStr)] string pwszOutputURL, IMFByteStream pByteStream, IMFAttributes pAttributes, out IMFSinkWriter ppSinkWriter);
 
-        public static ComObject<IMFSinkWriter> MFCreateSinkWriterFromURL(string outputUrl, IMFByteStream byteStream, IMFAttributes attributes) => MFCreateSinkWriterFromURL<IMFSinkWriter>(outputUrl, byteStream, attributes);
-        public static ComObject<T> MFCreateSinkWriterFromURL<T>(string outputURL, IMFByteStream byteStream, IMFAttributes attributes) where T : IMFSinkWriter
+        public static IComObject<IMFSinkWriter> MFCreateSinkWriterFromURL(string outputUrl, IMFByteStream byteStream, IMFAttributes attributes) => MFCreateSinkWriterFromURL<IMFSinkWriter>(outputUrl, byteStream, attributes);
+        public static IComObject<T> MFCreateSinkWriterFromURL<T>(string outputURL, IMFByteStream byteStream, IMFAttributes attributes) where T : IMFSinkWriter
         {
             if (attributes == null)
                 throw new ArgumentNullException(nameof(attributes));
@@ -117,8 +117,8 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMemoryBuffer(uint cbMaxLength, out IMFMediaBuffer ppBuffer);
 
-        public static ComObject<IMFMediaBuffer> MFCreateMemoryBuffer(uint cbMaxLength) => MFCreateMemoryBuffer<IMFMediaBuffer>(cbMaxLength);
-        public static ComObject<T> MFCreateMemoryBuffer<T>(uint cbMaxLength) where T : IMFMediaBuffer
+        public static IComObject<IMFMediaBuffer> MFCreateMemoryBuffer(uint cbMaxLength) => MFCreateMemoryBuffer<IMFMediaBuffer>(cbMaxLength);
+        public static IComObject<T> MFCreateMemoryBuffer<T>(uint cbMaxLength) where T : IMFMediaBuffer
         {
             MFCreateMemoryBuffer(cbMaxLength, out var sample).ThrowOnError();
             return new ComObject<T>((T)sample);
@@ -127,8 +127,8 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateSample(out IMFSample ppIMFSample);
 
-        public static ComObject<IMFSample> MFCreateSample() => MFCreateSample<IMFSample>();
-        public static ComObject<T> MFCreateSample<T>() where T : IMFSample
+        public static IComObject<IMFSample> MFCreateSample() => MFCreateSample<IMFSample>();
+        public static IComObject<T> MFCreateSample<T>() where T : IMFSample
         {
             MFCreateSample(out var sample).ThrowOnError();
             return new ComObject<T>((T)sample);
@@ -137,7 +137,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGISurfaceBuffer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object punkSurface, uint uSubresourceIndex, bool fBottomUpWhenLinear, out IMFMediaBuffer ppBuffer);
 
-        public static ComObject<T> MFCreateDXGISurfaceBuffer<T>(object surface, int resourceIndex, bool bottomUpWhenLinear) where T : IMFMediaBuffer
+        public static IComObject<T> MFCreateDXGISurfaceBuffer<T>(object surface, int resourceIndex, bool bottomUpWhenLinear) where T : IMFMediaBuffer
         {
             MFCreateDXGISurfaceBuffer(typeof(ID3D11Texture2D).GUID, surface, (uint)resourceIndex, bottomUpWhenLinear, out var buffer).ThrowOnError();
             return new ComObject<T>((T)buffer);
@@ -146,9 +146,9 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGIDeviceManager(out uint resetToken, out IMFDXGIDeviceManager ppDeviceManager);
 
-        public static ComObject<IMFDXGIDeviceManager> MFCreateDXGIDeviceManager() => MFCreateDXGIDeviceManager();
-        public static ComObject<IMFDXGIDeviceManager> MFCreateDXGIDeviceManager(out uint resetToken) => MFCreateDXGIDeviceManager<IMFDXGIDeviceManager>(out resetToken);
-        public static ComObject<T> MFCreateDXGIDeviceManager<T>(out uint resetToken) where T : IMFDXGIDeviceManager
+        public static IComObject<IMFDXGIDeviceManager> MFCreateDXGIDeviceManager() => MFCreateDXGIDeviceManager();
+        public static IComObject<IMFDXGIDeviceManager> MFCreateDXGIDeviceManager(out uint resetToken) => MFCreateDXGIDeviceManager<IMFDXGIDeviceManager>(out resetToken);
+        public static IComObject<T> MFCreateDXGIDeviceManager<T>(out uint resetToken) where T : IMFDXGIDeviceManager
         {
             MFCreateDXGIDeviceManager(out resetToken, out var manager).ThrowOnError();
             return new ComObject<T>((T)manager);

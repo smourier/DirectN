@@ -11,7 +11,7 @@ namespace DirectN
         public const string Postfix = "0000-0010-8000-00aa00389b71";
         public static readonly FourCC Empty = new FourCC(0);
 
-        private uint _value;
+        private readonly uint _value;
 
         public FourCC(Guid guid)
         {

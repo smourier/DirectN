@@ -4,7 +4,7 @@ namespace DirectN
 {
     public class CodecApi : ComObject
     {
-        private ICodecAPI _api;
+        private readonly ICodecAPI _api;
 
         public CodecApi(object api, bool dispose = true)
             : base(api, dispose)

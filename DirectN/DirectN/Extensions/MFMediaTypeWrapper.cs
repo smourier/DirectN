@@ -7,7 +7,7 @@ namespace DirectN
     public class MFMediaTypeWrapper : IMFMediaType
     {
         public static ILogger Logger { get; set; }
-        private IMFMediaType _type;
+        private readonly IMFMediaType _type;
 
         [Conditional("DEBUG")]
         public static void Trace(string message = null, [CallerMemberName] string methodName = null) => Logger?.Log(TraceLevel.Info, message, methodName);
@@ -54,6 +54,7 @@ namespace DirectN
             Trace("key: " + guidKey.ToName() + " hr: " + hr);
             return hr;
         }
+
         public HRESULT FreeRepresentation(Guid guidRepresentation, IntPtr pvRepresentation)
         {
             var hr = _type.FreeRepresentation(guidRepresentation, pvRepresentation);
@@ -120,7 +121,7 @@ namespace DirectN
         public HRESULT GetItemByIndex(uint unIndex, out Guid pguidKey, PropVariant pValue)
         {
             var hr = _type.GetItemByIndex(unIndex, out pguidKey, pValue);
-            Trace("index: " + unIndex + " guid: " + pguidKey.ToName() + " value: " + (pValue != null  ? pValue.ToString() : "<null>") + " hr: " + hr);
+            Trace("index: " + unIndex + " guid: " + pguidKey.ToName() + " value: " + (pValue != null ? pValue.ToString() : "<null>") + " hr: " + hr);
             return hr;
         }
 
