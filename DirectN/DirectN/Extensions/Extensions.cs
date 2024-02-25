@@ -806,7 +806,7 @@ namespace DirectN
             if (TryGetGuidName(type, guid, out var name))
                 return name;
 
-            return guid.ToString();
+            return guid.ToString("B");
         }
 
         public static bool TryGetGuidName(this Type type, Guid guid, out string name)

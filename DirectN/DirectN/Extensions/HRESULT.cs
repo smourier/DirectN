@@ -100,6 +100,15 @@ namespace DirectN
             }
         }
 
+        public static HRESULT FromWin32(int error)
+        {
+            if (error < 0)
+                return error;
+
+            const int FACILITY_WIN32 = 7;
+            return (uint)(error & 0x0000FFFF) | (FACILITY_WIN32 << 16) | 0x80000000;
+        }
+
         public static bool operator ==(HRESULT left, HRESULT right) => left.Value == right.Value;
         public static bool operator !=(HRESULT left, HRESULT right) => left.Value != right.Value;
 

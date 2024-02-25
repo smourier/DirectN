@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 
@@ -326,7 +325,7 @@ namespace DirectN
                         }
 
                         var hr = PropVariantToVariant(this, out var obj);
-                        if (hr == 0)
+                        if (hr.IsSuccess)
                             return obj;
 
                         throw new NotSupportedException("Value of property type " + _vt + " is not supported.");
@@ -334,21 +333,19 @@ namespace DirectN
             }
         }
 
-        public IntPtr Serialize(out int size)
+        public IntPtr Serialize(out int size, bool throwOnError = true)
         {
-            var hr = StgSerializePropVariant(this, out IntPtr ptr, out size);
-            if (hr != 0)
-                throw new Win32Exception(hr);
-
+            StgSerializePropVariant(this, out var ptr, out size).ThrowOnError(throwOnError);
             return ptr;
         }
 
-        public byte[] Serialize()
+        public byte[] Serialize(bool throwOnError = true)
         {
             var hr = StgSerializePropVariant(this, out IntPtr ptr, out int size);
-            if (hr != 0)
-                throw new Win32Exception(hr);
+            if (hr.IsError && !throwOnError)
+                return null;
 
+            hr.ThrowOnError(throwOnError);
             var bytes = new byte[size];
             Marshal.Copy(ptr, bytes, 0, bytes.Length);
             Marshal.FreeCoTaskMem(ptr);
@@ -366,6 +363,39 @@ namespace DirectN
             var pv = new PropVariant();
             PropVariantChangeType(pv, this, 0, type).ThrowOnError(throwOnError);
             return pv;
+        }
+
+        public void CopyFrom(PropVariant source, bool throwOnError = true)
+        {
+            if (source == null)
+                throw new ArgumentNullException(nameof(source));
+
+            if (source == this)
+                return;
+
+            PropVariantCopy(this, source).ThrowOnError(throwOnError);
+        }
+
+        public PropVariant Copy(bool throwOnError = true)
+        {
+            var pv = new PropVariant();
+            var hr = PropVariantCopy(pv, this);
+            hr.ThrowOnError(throwOnError);
+            return hr.IsError ? null : pv;
+        }
+
+        public IntPtr ToWinRTPropertyValuePointer(bool throwOnError = true) => ToWinRTPropertyValuePointer(IID_IPropertyValue, throwOnError);
+        public IntPtr ToWinRTPropertyValuePointer(Guid iid, bool throwOnError = true)
+        {
+            PropVariantToWinRTPropertyValue(this, iid, out IntPtr ptr).ThrowOnError(throwOnError);
+            return ptr;
+        }
+
+        public object ToWinRTPropertyValue(bool throwOnError = true) => ToWinRTPropertyValue(IID_IPropertyValue, throwOnError);
+        public object ToWinRTPropertyValue(Guid iid, bool throwOnError = true)
+        {
+            PropVariantToWinRTPropertyValue(this, iid, out object obj).ThrowOnError(throwOnError);
+            return obj;
         }
 
         public override string ToString()
@@ -564,12 +594,10 @@ namespace DirectN
 
             var pv = new PropVariant();
             var hr = StgDeserializePropVariant(bytes, bytes.Length, pv);
-            if (hr != 0)
+            if (hr.IsError)
             {
                 pv.Dispose();
-                if (throwOnError)
-                    throw new Win32Exception(hr);
-
+                hr.ThrowOnError(throwOnError);
                 return null;
             }
 
@@ -583,12 +611,10 @@ namespace DirectN
 
             var pv = new PropVariant();
             var hr = StgDeserializePropVariant(ptr, size, pv);
-            if (hr != 0)
+            if (hr.IsError)
             {
                 pv.Dispose();
-                if (throwOnError)
-                    throw new Win32Exception(hr);
-
+                hr.ThrowOnError(throwOnError);
                 return null;
             }
 
@@ -603,6 +629,17 @@ namespace DirectN
             var pv = new PropVariant(); // empty
             VariantToPropVariant(value, pv).ThrowOnError(throwOnError);
             return pv;
+        }
+
+        public static PropVariant FromWinRTPropertyValue(IntPtr propertyValue, bool throwOnError = true)
+        {
+            if (propertyValue == IntPtr.Zero)
+                return null;
+
+            var pv = new PropVariant();
+            var hr = WinRTPropertyValueToPropVariant(propertyValue, pv);
+            hr.ThrowOnError(throwOnError);
+            return hr.IsError ? null : pv;
         }
 
         private static void Using(object resource, Action action)
@@ -848,20 +885,34 @@ namespace DirectN
             }
         }
 
-        [DllImport("propsys", ExactSpelling = true)]
-        private extern static int StgDeserializePropVariant(IntPtr ppProp, int cbMax, [Out] PropVariant ppropvar);
+        private static readonly Guid IID_IPropertyValue = new Guid("4bd682dd-7554-40e9-9a9b-82654ede7e62");
 
         [DllImport("propsys", ExactSpelling = true)]
-        private extern static int StgDeserializePropVariant([MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] ppProp, int cbMax, [Out] PropVariant ppropvar);
+        private extern static HRESULT PropVariantToWinRTPropertyValue(PropVariant propvar, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, out IntPtr ppv);
 
         [DllImport("propsys", ExactSpelling = true)]
-        private extern static int StgSerializePropVariant(PropVariant ppropvar, out IntPtr ppProp, out int pcb);
+        private extern static HRESULT PropVariantToWinRTPropertyValue(PropVariant propvar, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
+
+        [DllImport("propsys", ExactSpelling = true)]
+        private extern static HRESULT WinRTPropertyValueToPropVariant(IntPtr punkPropertyValue, [Out] PropVariant ppropvar);
+
+        [DllImport("propsys", ExactSpelling = true)]
+        private extern static HRESULT StgDeserializePropVariant(IntPtr ppProp, int cbMax, [Out] PropVariant ppropvar);
+
+        [DllImport("propsys", ExactSpelling = true)]
+        private extern static HRESULT StgDeserializePropVariant([MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] ppProp, int cbMax, [Out] PropVariant ppropvar);
+
+        [DllImport("propsys", ExactSpelling = true)]
+        private extern static HRESULT StgSerializePropVariant(PropVariant ppropvar, out IntPtr ppProp, out int pcb);
 
         [DllImport("ole32", ExactSpelling = true)]
-        private extern static int PropVariantClear([In, Out] PropVariant pvar);
+        private extern static HRESULT PropVariantClear([In, Out] PropVariant pvar);
+
+        [DllImport("ole32", ExactSpelling = true)]
+        private extern static HRESULT PropVariantCopy([In, Out] PropVariant pvarDest, PropVariant pvarSrc);
 
         [DllImport("propsys", ExactSpelling = true)]
-        private static extern int InitPropVariantFromFileTime(ref long pftIn, [Out] PropVariant ppropvar);
+        private static extern HRESULT InitPropVariantFromFileTime(ref long pftIn, [Out] PropVariant ppropvar);
 
         [DllImport("propsys", ExactSpelling = true)]
         private static extern HRESULT PropVariantToVariant(PropVariant pPropVar, out object pVar);
