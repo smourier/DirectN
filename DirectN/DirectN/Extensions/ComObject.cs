@@ -198,6 +198,21 @@ namespace DirectN
             return type.GetGenericArguments()[0];
         }
 
+        public static IntPtr QueryObjectInterface<T>(object instance, bool throwOnError = true) => QueryObjectInterface(instance, typeof(T).GUID, throwOnError);
+        public static IntPtr QueryObjectInterface(object instance, Guid iid, bool throwOnError = true)
+        {
+            if (instance == null)
+                return IntPtr.Zero;
+
+            var unk = Marshal.GetIUnknownForObject(Unwrap(instance));
+            var hr = Marshal.QueryInterface(unk, ref iid, out var ppv);
+            Marshal.Release(unk);
+            if (hr < 0 && throwOnError)
+                Marshal.ThrowExceptionForHR(hr);
+
+            return ppv;
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (!_dispose)
@@ -304,6 +319,25 @@ namespace DirectN
             }
         }
 
+        public static void WithComPointer(object comObject, Action<IntPtr> action)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            var ptr = comObject != null ? Marshal.GetIUnknownForObject(Unwrap(comObject)) : IntPtr.Zero;
+            try
+            {
+                action(ptr);
+            }
+            finally
+            {
+                if (ptr != IntPtr.Zero)
+                {
+                    Marshal.Release(ptr);
+                }
+            }
+        }
+
         public static T WithComPointer<T, TType>(object comObject, Func<IntPtr, T> func) => WithComPointer<T>(comObject, typeof(TType), func);
         public static T WithComPointer<T>(object comObject, Type type, Func<IntPtr, T> func)
         {
@@ -314,6 +348,25 @@ namespace DirectN
                 throw new ArgumentNullException(nameof(func));
 
             var ptr = comObject != null ? Marshal.GetComInterfaceForObject(Unwrap(comObject), type) : IntPtr.Zero;
+            try
+            {
+                return func(ptr);
+            }
+            finally
+            {
+                if (ptr != IntPtr.Zero)
+                {
+                    Marshal.Release(ptr);
+                }
+            }
+        }
+
+        public static T WithComPointer<T>(object comObject, Func<IntPtr, T> func)
+        {
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            var ptr = comObject != null ? Marshal.GetIUnknownForObject(Unwrap(comObject)) : IntPtr.Zero;
             try
             {
                 return func(ptr);

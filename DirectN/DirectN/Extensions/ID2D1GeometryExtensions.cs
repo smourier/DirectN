@@ -27,8 +27,8 @@ namespace DirectN
             return bounds;
         }
 
-        public static D2D_RECT_F GetWidenedBounds(this IComObject<ID2D1Geometry> geometry, float strokeWidth, IComObject<ID2D1StrokeStyle> strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) => GetWidenedBounds(geometry?.Object, strokeWidth, strokeStyle?.Object, worldTransform, flatteningTolerance);
-        public static D2D_RECT_F GetWidenedBounds(this ID2D1Geometry geometry, float strokeWidth, ID2D1StrokeStyle strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE)
+        public static D2D_RECT_F GetWidenedBounds(this IComObject<ID2D1Geometry> geometry, float strokeWidth = 1, IComObject<ID2D1StrokeStyle> strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) => GetWidenedBounds(geometry?.Object, strokeWidth, strokeStyle?.Object, worldTransform, flatteningTolerance);
+        public static D2D_RECT_F GetWidenedBounds(this ID2D1Geometry geometry, float strokeWidth = 1, ID2D1StrokeStyle strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE)
         {
             if (geometry == null)
                 throw new ArgumentNullException(nameof(geometry));
@@ -48,8 +48,8 @@ namespace DirectN
             return bounds;
         }
 
-        public static bool StrokeContainsPoint(this IComObject<ID2D1Geometry> geometry, D2D_POINT_2F point, float strokeWidth, IComObject<ID2D1StrokeStyle> strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) => StrokeContainsPoint(geometry?.Object, point, strokeWidth, strokeStyle?.Object, worldTransform, flatteningTolerance);
-        public static bool StrokeContainsPoint(this ID2D1Geometry geometry, D2D_POINT_2F point, float strokeWidth, ID2D1StrokeStyle strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE)
+        public static bool StrokeContainsPoint(this IComObject<ID2D1Geometry> geometry, D2D_POINT_2F point, float strokeWidth = 1, IComObject<ID2D1StrokeStyle> strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) => StrokeContainsPoint(geometry?.Object, point, strokeWidth, strokeStyle?.Object, worldTransform, flatteningTolerance);
+        public static bool StrokeContainsPoint(this ID2D1Geometry geometry, D2D_POINT_2F point, float strokeWidth = 1, ID2D1StrokeStyle strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE)
         {
             if (geometry == null)
                 throw new ArgumentNullException(nameof(geometry));
@@ -271,8 +271,8 @@ namespace DirectN
             }
         }
 
-        public static void Widen(this IComObject<ID2D1Geometry> geometry, IComObject<ID2D1SimplifiedGeometrySink> geometrySink, float strokeWidth, IComObject<ID2D1StrokeStyle> strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) => Widen(geometry?.Object, geometrySink?.Object, strokeWidth, strokeStyle?.Object, worldTransform, flatteningTolerance);
-        public static void Widen(this ID2D1Geometry geometry, ID2D1SimplifiedGeometrySink geometrySink, float strokeWidth, ID2D1StrokeStyle strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE)
+        public static void Widen(this IComObject<ID2D1Geometry> geometry, IComObject<ID2D1SimplifiedGeometrySink> geometrySink, float strokeWidth = 1, IComObject<ID2D1StrokeStyle> strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) => Widen(geometry?.Object, geometrySink?.Object, strokeWidth, strokeStyle?.Object, worldTransform, flatteningTolerance);
+        public static void Widen(this ID2D1Geometry geometry, ID2D1SimplifiedGeometrySink geometrySink, float strokeWidth = 1, ID2D1StrokeStyle strokeStyle = null, D2D_MATRIX_3X2_F? worldTransform = null, float flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE)
         {
             if (geometry == null)
                 throw new ArgumentNullException(nameof(geometry));
