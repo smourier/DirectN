@@ -172,21 +172,32 @@ namespace DirectN
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out IMFActivate[] pppMFTActivate,
             out int pnumMFTActivate);
 
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFTEnumEx(
+            Guid guidCategory,
+            _MFT_ENUM_FLAG Flags,
+            IntPtr pInputType,
+            IntPtr pOutputType,
+            [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out IMFActivate[] pppMFTActivate,
+            out int pnumMFTActivate);
+
         public static IReadOnlyList<ComObject<IMFActivate>> MFTEnumEx(Guid categoryId, _MFT_ENUM_FLAG flags, __MIDL___MIDL_itf_mfobjects_0000_0008_0003? inputType = null, __MIDL___MIDL_itf_mfobjects_0000_0008_0003? outputType = null)
         {
-            var it = inputType ?? new __MIDL___MIDL_itf_mfobjects_0000_0008_0003();
-            var ot = outputType ?? new __MIDL___MIDL_itf_mfobjects_0000_0008_0003();
-            MFTEnumEx(categoryId, flags, IntPtr.Zero, ref ot, out var activate, out var count).ThrowOnError();
-            var list = new List<ComObject<IMFActivate>>();
-            for (var i = 0; i < count; i++)
+            using (var it = new ComMemory(inputType))
+            using (var ot = new ComMemory(outputType))
             {
-                //if (activate[i] is IMFGetService svc)
-                //{
-                //    var hr = svc.GetService(MFConstants.MF_WRAPPED_OBJECT, typeof(IClassFactory).GUID, out var classFactory);
-                //}
-                list.Add(new ComObject<IMFActivate>(activate[i]));
+                MFTEnumEx(categoryId, flags, it.Pointer, ot.Pointer, out var activate, out var count).ThrowOnError();
+                var list = new List<ComObject<IMFActivate>>();
+                for (var i = 0; i < count; i++)
+                {
+                    //if (activate[i] is IMFGetService svc)
+                    //{
+                    //    var hr = svc.GetService(MFConstants.MF_WRAPPED_OBJECT, typeof(IClassFactory).GUID, out var classFactory);
+                    //}
+                    list.Add(new ComObject<IMFActivate>(activate[i]));
+                }
+                return list;
             }
-            return list;
         }
     }
 }

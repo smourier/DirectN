@@ -1237,5 +1237,9 @@ namespace DirectN
         public static readonly Guid MEDIATYPE_MPEG2_PACK = new Guid("36523b13-8ee5-11d1-8ca3-0060b057664a");
         public static readonly Guid MEDIATYPE_MPEG2_PES = new Guid("e06d8020-db46-11cf-b4d1-00805f6cbbea");
         public static readonly Guid MEDIATYPE_MPEG2_SECTIONS = new Guid("455f176c-4b06-47ce-9aef-8caef73df7b5");
+
+        // undocguids2.h
+        public static readonly Guid KSPROPSETID_DevInstPropertySet = new Guid("b03a874b-d32b-4213-ac38-25a718e4454f");
+        public static readonly Guid KSPROPSETID_Frame = new Guid("a60d8368-5324-4893-b020-c431a50bcbe3");
     }
 }
