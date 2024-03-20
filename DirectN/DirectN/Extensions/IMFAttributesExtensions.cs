@@ -9,6 +9,7 @@ namespace DirectN
     // we want to avoid PropVariant stuff
     public static class IMFAttributesExtensions
     {
+        public static string Trace(this IComObject<IMFAttributes> input, string separator = null) => Trace(input?.Object, separator);
         public static string Trace(this IMFAttributes input, string separator = null)
         {
             if (input == null)
@@ -18,6 +19,7 @@ namespace DirectN
             return string.Join(separator, Enumerate(input).Select(kv => kv.Key.ToName() + "=" + TraceValue(input, kv.Key)));
         }
 
+        public static string TraceValue(this IComObject<IMFAttributes> input, Guid key) => TraceValue(input?.Object, key);
         public static string TraceValue(this IMFAttributes input, Guid key)
         {
             if (input == null)

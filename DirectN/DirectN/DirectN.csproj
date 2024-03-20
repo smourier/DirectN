@@ -62,6 +62,7 @@
     <Compile Include="Extensions\DispatcherQueueController.cs" />
     <Compile Include="Extensions\DisplayConfig.cs" />
     <Compile Include="Extensions\DpiUtilities.cs" />
+    <Compile Include="Extensions\DwmThumbnail.cs" />
     <Compile Include="Extensions\DWriteFontCollectionLoader.cs" />
     <Compile Include="Extensions\DWriteFontFile.cs" />
     <Compile Include="Extensions\DWriteFontStreamFile.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Extensions\InterlockedDisposable.cs" />
     <Compile Include="Extensions\InteropExtensions.cs" />
     <Compile Include="Extensions\InteropRuntime.cs" />
+    <Compile Include="Extensions\IntPtrBuffer.cs" />
     <Compile Include="Extensions\IPropertyBag2Extensions.cs" />
     <Compile Include="Extensions\IWICBitmapDecoderExtensions.cs" />
     <Compile Include="Extensions\IWICBitmapEncoderExtensions.cs" />
@@ -132,8 +134,11 @@
     <Compile Include="Manual\DMDO.cs" />
     <Compile Include="Manual\DPI_AWARENESS_CONTEXT.cs" />
     <Compile Include="Manual\DWM_CLOAKED.cs" />
+    <Compile Include="Manual\DWM_THUMBNAIL_PROPERTIES.cs" />
+    <Compile Include="Manual\DWM_TNP.cs" />
     <Compile Include="Manual\EDS.cs" />
     <Compile Include="Manual\ICompositionDrawingSurfaceInterop2.cs" />
+    <Compile Include="Manual\IMFActivateImpl.cs" />
     <Compile Include="Manual\IVisualInteractionSourceInterop.cs" />
     <Compile Include="Manual\ICompositorInterop.cs" />
     <Compile Include="Manual\ICompositionTextureInterop.cs" />

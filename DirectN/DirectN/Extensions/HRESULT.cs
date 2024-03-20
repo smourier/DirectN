@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace DirectN
 {
@@ -35,9 +37,14 @@ namespace DirectN
         public bool IsOk => Value == (int)HRESULTS.S_OK;
         public bool IsFalse => Value == (int)HRESULTS.S_FALSE;
 
-        public int ThrowOnError(bool throwOnError = true)
+        public int ThrowOnError(bool throwOnError = true) => ThrowOnErrorExcept(null, throwOnError).Value;
+        public HRESULT ThrowOnErrorExcept(HRESULT exceptedValue, bool throwOnError = true) => ThrowOnErrorExcept(new[] { exceptedValue }, throwOnError);
+        public HRESULT ThrowOnErrorExcept(IEnumerable<HRESULT> exceptedValues, bool throwOnError = true)
         {
             if (!throwOnError)
+                return Value;
+
+            if (exceptedValues != null && exceptedValues.Contains(this))
                 return Value;
 
             var exception = GetException();
@@ -45,6 +52,30 @@ namespace DirectN
                 throw exception;
 
             return Value;
+        }
+
+        public static HRESULT RunWithRetries(Func<HRESULT> func, HRESULT retryableValue, int maxRetries = int.MaxValue, int retryWaitMs = 0, bool throwOnError = true) => RunWithRetries(func, new[] { retryableValue }, maxRetries, retryWaitMs, throwOnError);
+        public static HRESULT RunWithRetries(Func<HRESULT> func, IEnumerable<HRESULT> retryableValues = null, int maxRetries = int.MaxValue, int retryWaitMs = 0, bool throwOnError = true)
+        {
+            if (func == null)
+                throw new ArgumentNullException(nameof(func));
+
+            var count = 0;
+            HRESULT hr;
+            do
+            {
+                hr = func().ThrowOnErrorExcept(retryableValues, throwOnError);
+                if (hr.IsSuccess)
+                    return hr;
+
+                if (retryWaitMs > 0)
+                {
+                    Thread.Sleep(retryWaitMs);
+                }
+                count++;
+            }
+            while (count < maxRetries);
+            return hr;
         }
 
         public Exception GetException()

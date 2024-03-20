@@ -8,8 +8,8 @@ namespace DirectN
     public partial interface IAudioRenderClient
     {
         [PreserveSig]
-        HRESULT GetBuffer(/* [annotation][in] _In_ */ uint NumFramesRequested, /* [annotation][out] _Outptr_result_buffer_(_Inexpressible_("NumFramesRequested * pFormat->nBlockAlign")) */ out byte[] ppData);
-        
+        HRESULT GetBuffer(/* [annotation][in] _In_ */ uint NumFramesRequested, /* [annotation][out] _Outptr_result_buffer_(_Inexpressible_("NumFramesRequested * pFormat->nBlockAlign")) */ out IntPtr ppData);
+
         [PreserveSig]
         HRESULT ReleaseBuffer(/* [annotation][in] _In_ */ uint NumFramesWritten, /* [annotation][in] _In_ */ uint dwFlags);
     }

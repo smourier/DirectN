@@ -29,11 +29,23 @@ namespace DirectN
             if (transform == null)
                 throw new ArgumentNullException(nameof(transform));
 
-            var hr = MFGetMFTMerit(transform, 0, null, out var merit);
+            var hr = MFGetMFTMerit(ComObject.Unwrap(transform), 0, null, out var merit);
             if (hr.IsError)
                 return null;
 
             return (int)merit;
+        }
+
+        [DllImport("mf", ExactSpelling = true)]
+        public static extern HRESULT MFGetService([MarshalAs(UnmanagedType.IUnknown)] object punkObject, [MarshalAs(UnmanagedType.LPStruct)] Guid guidService, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
+
+        public static object MFGetService(object obj, Guid guidService, Guid iid)
+        {
+            if (obj == null)
+                return null;
+
+            MFGetService(ComObject.Unwrap(obj), guidService, iid, out var output);
+            return output;
         }
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
@@ -137,9 +149,10 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGISurfaceBuffer([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] object punkSurface, uint uSubresourceIndex, bool fBottomUpWhenLinear, out IMFMediaBuffer ppBuffer);
 
-        public static IComObject<T> MFCreateDXGISurfaceBuffer<T>(object surface, int resourceIndex, bool bottomUpWhenLinear) where T : IMFMediaBuffer
+        public static IComObject<IMFMediaBuffer> MFCreateDXGISurfaceBuffer(object surface, int resourceIndex = 0, bool bottomUpWhenLinear = false) => MFCreateDXGISurfaceBuffer<IMFMediaBuffer>(surface, resourceIndex, bottomUpWhenLinear);
+        public static IComObject<T> MFCreateDXGISurfaceBuffer<T>(object surface, int resourceIndex = 0, bool bottomUpWhenLinear = false) where T : IMFMediaBuffer
         {
-            MFCreateDXGISurfaceBuffer(typeof(ID3D11Texture2D).GUID, surface, (uint)resourceIndex, bottomUpWhenLinear, out var buffer).ThrowOnError();
+            MFCreateDXGISurfaceBuffer(typeof(ID3D11Texture2D).GUID, ComObject.Unwrap(surface), (uint)resourceIndex, bottomUpWhenLinear, out var buffer).ThrowOnError();
             return new ComObject<T>((T)buffer);
         }
 

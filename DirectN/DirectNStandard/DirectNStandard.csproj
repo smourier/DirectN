@@ -9632,6 +9632,11 @@
     <Compile Include="..\DirectN\Manual\ICompositionTextureInterop.cs" Link="Manual\ICompositionTextureInterop.cs" />
     <Compile Include="..\DirectN\Manual\ICompositorInterop2.cs" Link="Manual\ICompositorInterop2.cs" />
     <Compile Include="..\DirectN\Manual\PDF_RENDER_PARAMS.cs" Link="Manual\PDF_RENDER_PARAMS.cs" />
+    <Compile Include="..\DirectN\Extensions\IntPtrBuffer.cs" Link="Extensions\IntPtrBuffer.cs" />
+    <Compile Include="..\DirectN\Manual\IMFActivateImpl.cs" Link="Manual\IMFActivateImpl.cs" />
+    <Compile Include="..\DirectN\Extensions\DwmThumbnail.cs" Link="Extensions\DwmThumbnail.cs" />
+    <Compile Include="..\DirectN\Manual\DWM_THUMBNAIL_PROPERTIES.cs" Link="Manual\DWM_THUMBNAIL_PROPERTIES.cs" />
+    <Compile Include="..\DirectN\Manual\DWM_TNP.cs" Link="Manual\DWM_TNP.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DirectN.ico" />

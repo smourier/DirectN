@@ -45,23 +45,6 @@ namespace DirectN.WinUI3.MinimalD3D11
             // we dispose on another thread or a lock will happen when closing under Visual Studio debugger for some reason... (doesn't happen under WinDbg)
             Closed += (s, e) => Task.Run(Dispose);
             panel.SizeChanged += OnSizeChanged;
-
-            if (Content is FrameworkElement fe)
-            {
-                // this whole convoluted thing is just to detect dpi has changed...
-                fe.Loaded += (s, e) =>
-                {
-                    var scale = fe.XamlRoot.RasterizationScale;
-                    fe.XamlRoot.Changed += (s2, e2) =>
-                    {
-                        if (fe.XamlRoot.RasterizationScale != scale)
-                        {
-                            Dispose();
-                            Init();
-                        }
-                    };
-                };
-            }
         }
 
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
@@ -85,10 +68,12 @@ namespace DirectN.WinUI3.MinimalD3D11
             using var dxgiAdapter = dxgiDevice.GetAdapter();
             using var dxgiFactory = dxgiAdapter.GetFactory2();
 
-            var swapChainDesc = new DXGI_SWAP_CHAIN_DESC1();
-            swapChainDesc.Width = (uint)panel.ActualWidth;
-            swapChainDesc.Height = (uint)panel.ActualHeight;
-            swapChainDesc.Format = DXGI_FORMAT.DXGI_FORMAT_B8G8R8A8_UNORM;
+            var swapChainDesc = new DXGI_SWAP_CHAIN_DESC1
+            {
+                Width = (uint)panel.ActualWidth,
+                Height = (uint)panel.ActualHeight,
+                Format = DXGI_FORMAT.DXGI_FORMAT_B8G8R8A8_UNORM
+            };
             swapChainDesc.SampleDesc.Count = 1;
             swapChainDesc.BufferUsage = DirectN.Constants.DXGI_USAGE_RENDER_TARGET_OUTPUT;
             swapChainDesc.BufferCount = 2;
@@ -99,14 +84,11 @@ namespace DirectN.WinUI3.MinimalD3D11
             _swapChain = dxgiFactory.CreateSwapChainForComposition(dxgiDevice, swapChainDesc);
             using var framebufferTexture = _swapChain.GetBuffer<ID3D11Texture2D>(0);
 
-            var panelScaleTransform = new DXGI_MATRIX_3X2_F();
-            panelScaleTransform._11 = (float)(1 / Content.XamlRoot.RasterizationScale);
-            panelScaleTransform._22 = (float)(1 / Content.XamlRoot.RasterizationScale);
-            _swapChain.As<IDXGISwapChain2>()?.SetMatrixTransform(panelScaleTransform);
-
-            var framebufferDesc = new D3D11_RENDER_TARGET_VIEW_DESC();
-            framebufferDesc.Format = DXGI_FORMAT.DXGI_FORMAT_B8G8R8A8_UNORM_SRGB;
-            framebufferDesc.ViewDimension = D3D11_RTV_DIMENSION.D3D11_RTV_DIMENSION_TEXTURE2D;
+            var framebufferDesc = new D3D11_RENDER_TARGET_VIEW_DESC
+            {
+                Format = DXGI_FORMAT.DXGI_FORMAT_B8G8R8A8_UNORM_SRGB,
+                ViewDimension = D3D11_RTV_DIMENSION.D3D11_RTV_DIMENSION_TEXTURE2D
+            };
 
             _framebufferRTV = d3D11Device.CreateRenderTargetView(framebufferTexture, framebufferDesc);
 
@@ -117,74 +99,94 @@ namespace DirectN.WinUI3.MinimalD3D11
             using var framebufferDepthTexture = d3D11Device.CreateTexture2D(framebufferDepthDesc);
             _framebufferDSV = d3D11Device.CreateDepthStencilView(framebufferDepthTexture);
 
-            var shadowmapDepthDesc = new D3D11_TEXTURE2D_DESC();
-            shadowmapDepthDesc.Width = 2048;
-            shadowmapDepthDesc.Height = 2048;
-            shadowmapDepthDesc.MipLevels = 1;
-            shadowmapDepthDesc.ArraySize = 1;
-            shadowmapDepthDesc.Format = DXGI_FORMAT.DXGI_FORMAT_R32_TYPELESS;
+            var shadowmapDepthDesc = new D3D11_TEXTURE2D_DESC
+            {
+                Width = 2048,
+                Height = 2048,
+                MipLevels = 1,
+                ArraySize = 1,
+                Format = DXGI_FORMAT.DXGI_FORMAT_R32_TYPELESS
+            };
             shadowmapDepthDesc.SampleDesc.Count = 1;
             shadowmapDepthDesc.Usage = D3D11_USAGE.D3D11_USAGE_DEFAULT;
             shadowmapDepthDesc.BindFlags = (uint)(D3D11_BIND_FLAG.D3D11_BIND_DEPTH_STENCIL | D3D11_BIND_FLAG.D3D11_BIND_SHADER_RESOURCE);
 
             using var shadowmapDepthTexture = d3D11Device.CreateTexture2D(shadowmapDepthDesc);
-            var shadowmapDSVdesc = new D3D11_DEPTH_STENCIL_VIEW_DESC();
-            shadowmapDSVdesc.Format = DXGI_FORMAT.DXGI_FORMAT_D32_FLOAT;
-            shadowmapDSVdesc.ViewDimension = D3D11_DSV_DIMENSION.D3D11_DSV_DIMENSION_TEXTURE2D;
+            var shadowmapDSVdesc = new D3D11_DEPTH_STENCIL_VIEW_DESC
+            {
+                Format = DXGI_FORMAT.DXGI_FORMAT_D32_FLOAT,
+                ViewDimension = D3D11_DSV_DIMENSION.D3D11_DSV_DIMENSION_TEXTURE2D
+            };
 
             _shadowmapDSV = d3D11Device.CreateDepthStencilView(shadowmapDepthTexture, shadowmapDSVdesc);
 
-            var shadowmapSRVdesc = new D3D11_SHADER_RESOURCE_VIEW_DESC();
-            shadowmapSRVdesc.Format = DXGI_FORMAT.DXGI_FORMAT_R32_FLOAT;
-            shadowmapSRVdesc.ViewDimension = D3D_SRV_DIMENSION.D3D11_SRV_DIMENSION_TEXTURE2D;
-            var t2D = new D3D11_TEX2D_SRV();
-            t2D.MipLevels = 1;
+            var shadowmapSRVdesc = new D3D11_SHADER_RESOURCE_VIEW_DESC
+            {
+                Format = DXGI_FORMAT.DXGI_FORMAT_R32_FLOAT,
+                ViewDimension = D3D_SRV_DIMENSION.D3D11_SRV_DIMENSION_TEXTURE2D
+            };
+            var t2D = new D3D11_TEX2D_SRV
+            {
+                MipLevels = 1
+            };
             shadowmapSRVdesc.__union_2.Texture2D = t2D;
 
             _shadowmapSRV = d3D11Device.CreateShaderResourceView(shadowmapDepthTexture, shadowmapSRVdesc);
 
-            var constantBufferDesc = new D3D11_BUFFER_DESC();
-            constantBufferDesc.ByteWidth = (uint)Marshal.SizeOf<Constants>();
-            constantBufferDesc.Usage = D3D11_USAGE.D3D11_USAGE_DYNAMIC;
-            constantBufferDesc.BindFlags = (uint)D3D11_BIND_FLAG.D3D11_BIND_CONSTANT_BUFFER;
-            constantBufferDesc.CPUAccessFlags = (uint)D3D11_CPU_ACCESS_FLAG.D3D11_CPU_ACCESS_WRITE;
+            var constantBufferDesc = new D3D11_BUFFER_DESC
+            {
+                ByteWidth = (uint)Marshal.SizeOf<Constants>(),
+                Usage = D3D11_USAGE.D3D11_USAGE_DYNAMIC,
+                BindFlags = (uint)D3D11_BIND_FLAG.D3D11_BIND_CONSTANT_BUFFER,
+                CPUAccessFlags = (uint)D3D11_CPU_ACCESS_FLAG.D3D11_CPU_ACCESS_WRITE
+            };
 
             _constantBuffer = d3D11Device.CreateBuffer(constantBufferDesc);
 
             var vertexData = new float[] { -1, 1, -1, 0, 0, 1, 1, -1, 9.5f, 0, -0.58f, 0.58f, -1, 2, 2, 0.58f, 0.58f, -1, 7.5f, 2, -0.58f, 0.58f, -1, 0, 0, 0.58f, 0.58f, -1, 0, 0, -0.58f, 0.58f, -0.58f, 0, 0, 0.58f, 0.58f, -0.58f, 0, 0 };
 
-            var vertexBufferDesc = new D3D11_BUFFER_DESC();
-            vertexBufferDesc.ByteWidth = (uint)vertexData.SizeOf();
-            vertexBufferDesc.Usage = D3D11_USAGE.D3D11_USAGE_IMMUTABLE;
-            vertexBufferDesc.BindFlags = (uint)D3D11_BIND_FLAG.D3D11_BIND_SHADER_RESOURCE;
-            vertexBufferDesc.MiscFlags = (uint)D3D11_RESOURCE_MISC_FLAG.D3D11_RESOURCE_MISC_BUFFER_STRUCTURED;
-            vertexBufferDesc.StructureByteStride = 5 * sizeof(float);
+            var vertexBufferDesc = new D3D11_BUFFER_DESC
+            {
+                ByteWidth = (uint)vertexData.SizeOf(),
+                Usage = D3D11_USAGE.D3D11_USAGE_IMMUTABLE,
+                BindFlags = (uint)D3D11_BIND_FLAG.D3D11_BIND_SHADER_RESOURCE,
+                MiscFlags = (uint)D3D11_RESOURCE_MISC_FLAG.D3D11_RESOURCE_MISC_BUFFER_STRUCTURED,
+                StructureByteStride = 5 * sizeof(float)
+            };
 
             var gc = GCHandle.Alloc(vertexData, GCHandleType.Pinned);
-            var vData = new D3D11_SUBRESOURCE_DATA();
-            vData.pSysMem = gc.AddrOfPinnedObject();
+            var vData = new D3D11_SUBRESOURCE_DATA
+            {
+                pSysMem = gc.AddrOfPinnedObject()
+            };
             _vertexBuffer = d3D11Device.CreateBuffer(vertexBufferDesc, vData);
             gc.Free();
 
-            var vertexBufferSRVdesc = new D3D11_SHADER_RESOURCE_VIEW_DESC();
-            vertexBufferSRVdesc.Format = DXGI_FORMAT.DXGI_FORMAT_UNKNOWN;
-            vertexBufferSRVdesc.ViewDimension = D3D_SRV_DIMENSION.D3D11_SRV_DIMENSION_BUFFER;
+            var vertexBufferSRVdesc = new D3D11_SHADER_RESOURCE_VIEW_DESC
+            {
+                Format = DXGI_FORMAT.DXGI_FORMAT_UNKNOWN,
+                ViewDimension = D3D_SRV_DIMENSION.D3D11_SRV_DIMENSION_BUFFER
+            };
             var bf = new D3D11_BUFFER_SRV();
             bf.__union_1.NumElements = vertexBufferDesc.ByteWidth / vertexBufferDesc.StructureByteStride;
             vertexBufferSRVdesc.__union_2.Buffer = bf;
 
             _vertexBufferSRV = d3D11Device.CreateShaderResourceView(_vertexBuffer, vertexBufferSRVdesc);
 
-            var depthStencilDesc = new D3D11_DEPTH_STENCIL_DESC();
-            depthStencilDesc.DepthEnable = true;
-            depthStencilDesc.DepthWriteMask = D3D11_DEPTH_WRITE_MASK.D3D11_DEPTH_WRITE_MASK_ALL;
-            depthStencilDesc.DepthFunc = D3D11_COMPARISON_FUNC.D3D11_COMPARISON_LESS;
+            var depthStencilDesc = new D3D11_DEPTH_STENCIL_DESC
+            {
+                DepthEnable = true,
+                DepthWriteMask = D3D11_DEPTH_WRITE_MASK.D3D11_DEPTH_WRITE_MASK_ALL,
+                DepthFunc = D3D11_COMPARISON_FUNC.D3D11_COMPARISON_LESS
+            };
 
             _depthStencilState = d3D11Device.CreateDepthStencilState(depthStencilDesc);
 
-            var rasterizerDesc = new D3D11_RASTERIZER_DESC();
-            rasterizerDesc.FillMode = D3D11_FILL_MODE.D3D11_FILL_SOLID;
-            rasterizerDesc.CullMode = D3D11_CULL_MODE.D3D11_CULL_BACK;
+            var rasterizerDesc = new D3D11_RASTERIZER_DESC
+            {
+                FillMode = D3D11_FILL_MODE.D3D11_FILL_SOLID,
+                CullMode = D3D11_CULL_MODE.D3D11_CULL_BACK
+            };
 
             _cullBackRS = d3D11Device.CreateRasterizerState(rasterizerDesc);
 
@@ -203,24 +205,30 @@ namespace DirectN.WinUI3.MinimalD3D11
 
             _framebufferClear = new float[] { 0.025f, 0.025f, 0.025f, 1 };
 
-            _framebufferVP = new D3D11_VIEWPORT();
-            _framebufferVP.Width = framebufferDepthDesc.Width;
-            _framebufferVP.Height = framebufferDepthDesc.Height;
-            _framebufferVP.MaxDepth = 1;
+            _framebufferVP = new D3D11_VIEWPORT
+            {
+                Width = framebufferDepthDesc.Width,
+                Height = framebufferDepthDesc.Height,
+                MaxDepth = 1
+            };
 
-            _shadowmapVP = new D3D11_VIEWPORT();
-            _shadowmapVP.Width = shadowmapDepthDesc.Width;
-            _shadowmapVP.Height = shadowmapDepthDesc.Height;
-            _shadowmapVP.MaxDepth = 1;
+            _shadowmapVP = new D3D11_VIEWPORT
+            {
+                Width = shadowmapDepthDesc.Width,
+                Height = shadowmapDepthDesc.Height,
+                MaxDepth = 1
+            };
 
-            _constants = new Constants();
-            _constants.CameraProjection = new float[] { 2.0f / (_framebufferVP.Width / _framebufferVP.Height), 0, 0, 0, 0, 2, 0, 0, 0, 0, 1.125f, 1, 0, 0, -1.125f, 0 };
-            _constants.LightProjection = new float[] { 0.5f, 0, 0, 0, 0, 0.5f, 0, 0, 0, 0, 0.125f, 0, 0, 0, -0.125f, 1 };
+            _constants = new Constants
+            {
+                CameraProjection = new float[] { 2.0f / (_framebufferVP.Width / _framebufferVP.Height), 0, 0, 0, 0, 2, 0, 0, 0, 0, 1.125f, 1, 0, 0, -1.125f, 0 },
+                LightProjection = new float[] { 0.5f, 0, 0, 0, 0, 0.5f, 0, 0, 0, 0, 0.125f, 0, 0, 0, -0.125f, 1 },
 
-            _constants.LightRotation = new XMFLOAT4(0.8f, 0.6f, 0.0f, 0);
-            _constants.ModelRotation = new XMFLOAT4(0.0f, 0.0f, 0.0f, 0);
-            _constants.ModelTranslation = new XMFLOAT4(0.0f, 0.0f, 4.0f, 0);
-            _constants.ShadowmapSize = new XMFLOAT4(_shadowmapVP.Width, _shadowmapVP.Height, 0, 0);
+                LightRotation = new XMFLOAT4(0.8f, 0.6f, 0.0f, 0),
+                ModelRotation = new XMFLOAT4(0.0f, 0.0f, 0.0f, 0),
+                ModelTranslation = new XMFLOAT4(0.0f, 0.0f, 4.0f, 0),
+                ShadowmapSize = new XMFLOAT4(_shadowmapVP.Width, _shadowmapVP.Height, 0, 0)
+            };
 
             var nativePanel = panel.As<ISwapChainPanelNative>();
             nativePanel.SetSwapChain(_swapChain.Object).ThrowOnError();

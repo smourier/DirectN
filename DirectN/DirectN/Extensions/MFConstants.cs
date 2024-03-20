@@ -4,6 +4,13 @@ namespace DirectN
 {
     public static class MFConstants
     {
+        // evr.h
+        public static readonly Guid MR_BUFFER_SERVICE = new Guid("a562248c-9ac6-4ffc-9fba-3af8f8ad1a4d");
+        public static readonly Guid MR_VIDEO_ACCELERATION_SERVICE = new Guid("efef5175-5c7d-4ce2-bbbd-34ff8bca6554");
+        public static readonly Guid MR_VIDEO_MIXER_SERVICE = new Guid("073cd2fc-6cf4-40b7-8859-e89552c841f8");
+        public static readonly Guid MR_VIDEO_RENDER_SERVICE = new Guid("1092a86c-ab1a-459a-a336-831fbc4d11ff");
+        public static readonly Guid VIDEO_ZOOM_RECT = new Guid("7aaa1638-1b7f-4c93-bd89-5b9c9fb6fcf0");
+
         // mfapi.h
         public static readonly Guid AM_MEDIA_TYPE_REPRESENTATION = new Guid("e2e42ad2-132c-491e-a268-3c7c2dca181f");
         public static readonly Guid CLSID_MFSourceResolver = new Guid("90eab60f-e43a-4188-bcc4-e47fdf04868c");
@@ -1867,5 +1874,11 @@ namespace DirectN
         public static readonly Guid MFTLongRunning_Start = new Guid("120004b5-0105-0474-0000-000000000020");
         public static readonly Guid MFTLongRunning_Stop = new Guid("120004b6-0205-0474-0000-000000000020");
         public static readonly Guid MFTopo_MFT_Inserted = new Guid("12000406-0005-0077-0000-000000000020");
+
+        // undoc'd
+        public static readonly Guid MEDIA_TELEMETRY_SESSION_ID = new Guid("2acf1917-3743-41df-a564-e727a80ea33d");
+        public static readonly Guid MF_FRAMESERVER_CLIENTCONTEXT_CLIENTPID = new Guid("5f8d322e-0fe4-43e4-9e50-d83ecd9fc2b8");
+        public static readonly Guid MF_FRAMESERVER_VCAM_CONFIGURATION_APP = new Guid("22125de7-d680-4fb3-a5dd-93a0315bbec9");
+        public static readonly Guid MF_DEVSOURCE_ATTRIBUTE_D3D_ADAPTERLUID = new Guid("9471213a-ee86-4570-a3ba-79c85a14a7a2");
     }
 }

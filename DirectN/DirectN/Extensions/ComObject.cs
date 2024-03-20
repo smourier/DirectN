@@ -47,7 +47,20 @@ namespace DirectN
             }
         }
 
-        public static ComObject<T> From<T>(T comObject) => comObject == null ? null : new ComObject<T>(comObject);
+        public static ComObject<T> From<T>(T comObject, bool dispose = true) => comObject == null ? null : new ComObject<T>(comObject, dispose);
+
+#if !NETSTANDARD
+        public static ComObject<T> From<T>(IntPtr unknown, bool dispose = true)
+        {
+            if (unknown == IntPtr.Zero)
+                return null;
+
+            var typed = (T)Marshal.GetTypedObjectForIUnknown(unknown, typeof(T)); // does addref
+            var co = new ComObject<T>(typed, dispose);
+            Marshal.Release(unknown);
+            return co;
+        }
+#endif
 
         public static object Unwrap(object obj)
         {
@@ -56,9 +69,6 @@ namespace DirectN
 
             if (obj is ComObject co)
                 return co.Object;
-
-            if (!Marshal.IsComObject(obj))
-                throw new ArgumentException("Argument is not a COM object", nameof(obj));
 
             return obj;
         }
@@ -70,9 +80,6 @@ namespace DirectN
 
             if (obj is ComObject co)
                 return (T)co.Object;
-
-            if (!Marshal.IsComObject(obj))
-                throw new ArgumentException("Argument is not a COM object", nameof(obj));
 
             return (T)obj;
         }
@@ -279,6 +286,7 @@ namespace DirectN
             if (comObject == null)
                 return 0;
 
+            comObject = Unwrap(comObject);
             if (!Marshal.IsComObject(comObject))
                 throw new ArgumentException("Argument is not a COM object", nameof(comObject));
 
@@ -290,10 +298,20 @@ namespace DirectN
             if (comObject == null)
                 return 0;
 
+            comObject = Unwrap(comObject);
             if (!Marshal.IsComObject(comObject))
                 throw new ArgumentException("Argument is not a COM object", nameof(comObject));
 
             return Marshal.ReleaseComObject(comObject);
+        }
+
+        public static int? GetRefCount(object comObject)
+        {
+            if (comObject == null)
+                return null;
+
+            var ptr = Marshal.GetIUnknownForObject(Unwrap(comObject));
+            return Marshal.Release(ptr);
         }
 
         public static void WithComPointer<T>(object comObject, Action<IntPtr> action) => WithComPointer(comObject, typeof(T), action);

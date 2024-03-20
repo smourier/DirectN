@@ -322,9 +322,9 @@ namespace DirectN
 
         public static void DrawTextLayout(this IComObject<ID2D1RenderTarget> context,
             D2D_POINT_2F origin,
-            IDWriteTextLayout layout,
-            ID2D1Brush defaultFillBrush = null,
-            D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_NONE) => DrawTextLayout(context?.Object, origin, layout, defaultFillBrush, options);
+            IComObject<IDWriteTextLayout> layout,
+            IComObject<ID2D1Brush> defaultFillBrush = null,
+            D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS.D2D1_DRAW_TEXT_OPTIONS_NONE) => DrawTextLayout(context?.Object, origin, layout?.Object, defaultFillBrush?.Object, options);
 
         public static void DrawTextLayout(this ID2D1RenderTarget context,
             D2D_POINT_2F origin,
