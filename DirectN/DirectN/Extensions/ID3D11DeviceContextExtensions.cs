@@ -354,8 +354,15 @@ namespace DirectN
 
             context.VSSetShader(vertexShader, classInstances, (classInstances?.Length).GetValueOrDefault());
         }
+        public static void GSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11GeometryShader> geometryShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => GSSetShader(context?.Object, geometryShader?.Object, classInstances.ToArray());
+        public static void GSSetShader(this ID3D11DeviceContext context, ID3D11GeometryShader geometryShader, ID3D11ClassInstance[] classInstances = null)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
 
-        public static void PSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11PixelShader> pixelShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => PSSetShader(context?.Object, pixelShader?.Object, classInstances.ToArray());
+            context.GSSetShader(geometryShader, classInstances, (classInstances?.Length).GetValueOrDefault());
+        }
+        public static void PSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11PixelShader> pixelShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => PSSetShader(context?.Object, pixelShader?.Object, classInstances?.ToArray());
         public static void PSSetShader(this ID3D11DeviceContext context, ID3D11PixelShader pixelShader, ID3D11ClassInstance[] classInstances = null)
         {
             if (context == null)
@@ -407,7 +414,31 @@ namespace DirectN
 
             context.VSSetShaderResources((uint)startSlot, (shaderResourceViews?.Length).GetValueOrDefault(), shaderResourceViews);
         }
+        public static void GSSetShaderResource(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView> shaderResourceView)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
 
+            if (context.Object == null)
+                throw new ArgumentException(null, nameof(context));
+
+            if (shaderResourceView == null)
+                throw new ArgumentNullException(nameof(shaderResourceView));
+
+            if (shaderResourceView.Object == null)
+                throw new ArgumentException(null, nameof(shaderResourceView));
+
+            context.Object.GSSetShaderResources((uint)startSlot, 1, new[] { shaderResourceView.Object });
+        }
+
+        public static void GSSetShaderResources(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView>[] shaderResourceViews) => GSSetShaderResources(context?.Object, startSlot, shaderResourceViews?.ToArray());
+        public static void GSSetShaderResources(this ID3D11DeviceContext context, int startSlot, ID3D11ShaderResourceView[] shaderResourceViews)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            context.GSSetShaderResources((uint)startSlot, (shaderResourceViews?.Length).GetValueOrDefault(), shaderResourceViews);
+        }
         public static void PSSetSampler(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11SamplerState> samplerState)
         {
             if (context == null)
