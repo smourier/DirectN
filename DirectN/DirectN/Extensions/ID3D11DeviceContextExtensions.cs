@@ -362,7 +362,7 @@ namespace DirectN
 
             context.GSSetShader(geometryShader, classInstances, (classInstances?.Length).GetValueOrDefault());
         }
-        public static void PSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11PixelShader> pixelShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => PSSetShader(context?.Object, pixelShader?.Object, classInstances?.ToArray());
+        public static void PSSetShader(this IComObject<ID3D11DeviceContext> context, IComObject<ID3D11PixelShader> pixelShader, IComObject<ID3D11ClassInstance>[] classInstances = null) => PSSetShader(context?.Object, pixelShader?.Object, classInstances.ToArray());
         public static void PSSetShader(this ID3D11DeviceContext context, ID3D11PixelShader pixelShader, ID3D11ClassInstance[] classInstances = null)
         {
             if (context == null)
@@ -431,7 +431,7 @@ namespace DirectN
             context.Object.GSSetShaderResources((uint)startSlot, 1, new[] { shaderResourceView.Object });
         }
 
-        public static void GSSetShaderResources(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView>[] shaderResourceViews) => GSSetShaderResources(context?.Object, startSlot, shaderResourceViews?.ToArray());
+        public static void GSSetShaderResources(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView>[] shaderResourceViews) => GSSetShaderResources(context?.Object, startSlot, shaderResourceViews.ToArray());
         public static void GSSetShaderResources(this ID3D11DeviceContext context, int startSlot, ID3D11ShaderResourceView[] shaderResourceViews)
         {
             if (context == null)
@@ -482,7 +482,7 @@ namespace DirectN
             context.Object.PSSetShaderResources((uint)startSlot, 1, new[] { shaderResourceView.Object });
         }
 
-        public static void PSSetShaderResources(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView>[] shaderResourceViews) => PSSetShaderResources(context?.Object, startSlot, shaderResourceViews?.ToArray());
+        public static void PSSetShaderResources(this IComObject<ID3D11DeviceContext> context, int startSlot, IComObject<ID3D11ShaderResourceView>[] shaderResourceViews) => PSSetShaderResources(context?.Object, startSlot, shaderResourceViews.ToArray());
         public static void PSSetShaderResources(this ID3D11DeviceContext context, int startSlot, ID3D11ShaderResourceView[] shaderResourceViews)
         {
             if (context == null)
