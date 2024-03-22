@@ -27,7 +27,7 @@ namespace DirectN
             return hr;
         }
 
-        public HRESULT CompareItem(Guid guidKey, PropVariant Value, out bool pbResult)
+        public HRESULT CompareItem(Guid guidKey, PROPVARIANT Value, out bool pbResult)
         {
             var hr = _type.CompareItem(guidKey, Value, out pbResult);
             Trace("key: " + guidKey.ToName() + " value: " + Value + " result: " + pbResult + " hr: " + hr);
@@ -111,14 +111,14 @@ namespace DirectN
             return hr;
         }
 
-        public HRESULT GetItem(Guid guidKey, PropVariant pValue)
+        public HRESULT GetItem(Guid guidKey, PROPVARIANT pValue)
         {
             var hr = _type.GetItem(guidKey, pValue);
             Trace("guid: " + guidKey.ToName() + " value: " + (pValue != null ? pValue.ToString() : "<null>") + " hr: " + hr);
             return hr;
         }
 
-        public HRESULT GetItemByIndex(uint unIndex, out Guid pguidKey, PropVariant pValue)
+        public HRESULT GetItemByIndex(uint unIndex, out Guid pguidKey, PROPVARIANT pValue)
         {
             var hr = _type.GetItemByIndex(unIndex, out pguidKey, pValue);
             Trace("index: " + unIndex + " guid: " + pguidKey.ToName() + " value: " + (pValue != null ? pValue.ToString() : "<null>") + " hr: " + hr);
@@ -217,7 +217,7 @@ namespace DirectN
             return hr;
         }
 
-        public HRESULT SetItem(Guid guidKey, PropVariant Value)
+        public HRESULT SetItem(Guid guidKey, PROPVARIANT Value)
         {
             var hr = _type.SetItem(guidKey, Value);
             Trace("key: " + guidKey.ToName() + " value: " + Value + " hr: " + hr);

@@ -9,10 +9,10 @@ namespace DirectN
     {
         [PreserveSig]
         HRESULT KsProperty(/* [in] */ ref KSIDENTIFIER Property, /* [in] */ uint PropertyLength, /* [out][in] */ IntPtr PropertyData, /* [in] */ uint DataLength, /* [out] */ out uint BytesReturned);
-
+        
         [PreserveSig]
         HRESULT KsMethod(/* [in] */ ref KSIDENTIFIER Method, /* [in] */ uint MethodLength, /* [out][in] */ IntPtr MethodData, /* [in] */ uint DataLength, /* [out] */ out uint BytesReturned);
-
+        
         [PreserveSig]
         HRESULT KsEvent(/* [in] */ ref KSIDENTIFIER Event, /* [in] */ uint EventLength, /* [out][in] */ IntPtr EventData, /* [in] */ uint DataLength, /* [out] */ out uint BytesReturned);
     }

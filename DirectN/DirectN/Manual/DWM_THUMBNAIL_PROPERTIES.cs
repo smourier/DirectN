@@ -1,5 +1,4 @@
 ﻿using System.Runtime.InteropServices;
-using DirectN.Manual;
 
 namespace DirectN
 {

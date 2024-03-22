@@ -134,14 +134,18 @@ namespace DirectN
             if (input == null)
                 throw new ArgumentNullException(nameof(input));
 
-            HRESULT hr;
-            using (var pv = new PropVariant())
+            var detached = new PROPVARIANT();
+            if (input.GetItemByIndex(index, out key, detached).IsError)
             {
-                hr = input.GetItemByIndex(index, out key, pv);
-                value = pv.Value;
+                value = null;
+                return false;
             }
 
-            return hr.IsSuccess;
+            using (var pv = detached.Attach())
+            {
+                value = pv.Value;
+            }
+            return true;
         }
 
         public static void Set2UINT32asUINT64(this IComObject<IMFAttributes> input, Guid key, uint high, uint low) => Set2UINT32asUINT64(input?.Object, key, high, low);
@@ -344,11 +348,12 @@ namespace DirectN
             if (input == null)
                 throw new ArgumentNullException(nameof(input));
 
-            using (var pv = new PropVariant())
-            {
-                if (input.GetItem(key, pv).IsError)
-                    return null;
+            var detached = new PROPVARIANT();
+            if (input.GetItem(key, detached).IsError)
+                return null;
 
+            using (var pv = detached.Attach())
+            {
                 return pv.Value;
             }
         }

@@ -139,7 +139,7 @@ namespace DirectN
         HRESULT SetSourceFromByteStream(/* [annotation][in] _In_ */ IMFByteStream pByteStream, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.BStr)] string pURL);
         
         [PreserveSig]
-        HRESULT GetStatistics(/* [annotation][in] _In_ */ MF_MEDIA_ENGINE_STATISTIC StatisticID, /* [annotation][out] _Out_ */ [In, Out] PropVariant pStatistic);
+        HRESULT GetStatistics(/* [annotation][in] _In_ */ MF_MEDIA_ENGINE_STATISTIC StatisticID, /* [annotation][out] _Out_ */ [In, Out] PROPVARIANT pStatistic);
         
         [PreserveSig]
         HRESULT UpdateVideoStream(/* optional(MFVideoNormalizedRect) */ IntPtr pSrc, /* optional(tagRECT) */ IntPtr pDst, /* optional(_MFARGB) */ IntPtr pBorderClr);
@@ -160,13 +160,13 @@ namespace DirectN
         HRESULT GetResourceCharacteristics(/* [annotation][out] _Out_ */ out uint pCharacteristics);
         
         [PreserveSig]
-        HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ [In, Out] PropVariant pvValue);
+        HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ [In, Out] PROPVARIANT pvValue);
         
         [PreserveSig]
         HRESULT GetNumberOfStreams(/* [annotation][out] _Out_ */ out uint pdwStreamCount);
         
         [PreserveSig]
-        HRESULT GetStreamAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ [In, Out] PropVariant pvValue);
+        HRESULT GetStreamAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMFAttribute, /* [annotation][out] _Out_ */ [In, Out] PROPVARIANT pvValue);
         
         [PreserveSig]
         HRESULT GetStreamSelection(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out] _Out_ */ out bool pEnabled);

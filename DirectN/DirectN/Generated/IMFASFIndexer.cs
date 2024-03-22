@@ -33,7 +33,7 @@ namespace DirectN
         HRESULT SetIndexStatus(/* [in] */ ref byte pbIndexDescriptor, /* [in] */ uint cbIndexDescriptor, /* [in] */ bool fGenerateIndex);
         
         [PreserveSig]
-        HRESULT GetSeekPositionForValue(/* [in] */ [In, Out] PropVariant pvarValue, /* [in] */ ref _ASF_INDEX_IDENTIFIER pIndexIdentifier, /* [out] */ out ulong pcbOffsetWithinData, /* [optional][out] */ out MFTIME phnsApproxTime, /* [optional][out] */ out uint pdwPayloadNumberOfStreamWithinPacket);
+        HRESULT GetSeekPositionForValue(/* [in] */ [In, Out] PROPVARIANT pvarValue, /* [in] */ ref _ASF_INDEX_IDENTIFIER pIndexIdentifier, /* [out] */ out ulong pcbOffsetWithinData, /* [optional][out] */ out MFTIME phnsApproxTime, /* [optional][out] */ out uint pdwPayloadNumberOfStreamWithinPacket);
         
         [PreserveSig]
         HRESULT GenerateIndexEntries(/* [in] */ IMFSample pIASFPacketSample);

@@ -26,9 +26,9 @@ namespace DirectN
         HRESULT IsAudioObjectFormatSupported(/* [annotation][in] _In_ */ ref tWAVEFORMATEX objectFormat);
         
         [PreserveSig]
-        HRESULT IsSpatialAudioStreamAvailable(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid streamUuid, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant auxiliaryInfo);
+        HRESULT IsSpatialAudioStreamAvailable(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid streamUuid, /* [annotation][in] _In_opt_ */ [In, Out] PROPVARIANT auxiliaryInfo);
         
         [PreserveSig]
-        HRESULT ActivateSpatialAudioStream(/* [annotation][in] _In_ */ [In, Out] PropVariant activationParams, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][iid_is][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object stream);
+        HRESULT ActivateSpatialAudioStream(/* [annotation][in] _In_ */ [In, Out] PROPVARIANT activationParams, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][iid_is][out] _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object stream);
     }
 }

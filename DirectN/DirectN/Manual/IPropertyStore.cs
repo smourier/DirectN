@@ -13,7 +13,7 @@ namespace DirectN
         HRESULT GetAt(/* [in] */ uint iProp, /* [out] __RPC__out */ out PROPERTYKEY pkey);
 
         [PreserveSig]
-        HRESULT GetValue(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [out] __RPC__out */ [In, Out] PropVariant pv);
+        HRESULT GetValue(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [out] __RPC__out */ [In, Out] PROPVARIANT  pv);
 
         [PreserveSig]
         HRESULT SetValue(/* [in] __RPC__in */ ref PROPERTYKEY key, /* [in] __RPC__in */ PropVariant propvar);

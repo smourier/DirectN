@@ -18,7 +18,7 @@ namespace DirectN
         new HRESULT EndGetEvent(/* [in] */ IMFAsyncResult pResult, /* [annotation][out] _Out_ */ out IMFMediaEvent ppEvent);
         
         [PreserveSig]
-        new HRESULT QueueEvent(/* [in] */ uint met, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] __RPC__in_opt */ [In, Out] PropVariant pvValue);
+        new HRESULT QueueEvent(/* [in] */ uint met, /* [in] __RPC__in */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] __RPC__in_opt */ [In, Out] PROPVARIANT pvValue);
         
         // IMFStreamSink
         [PreserveSig]
@@ -34,7 +34,7 @@ namespace DirectN
         HRESULT ProcessSample(/* [in] __RPC__in_opt */ IMFSample pSample);
         
         [PreserveSig]
-        HRESULT PlaceMarker(/* [in] */ _MFSTREAMSINK_MARKER_TYPE eMarkerType, /* [in] __RPC__in */ [In, Out] PropVariant pvarMarkerValue, /* [in] __RPC__in */ [In, Out] PropVariant pvarContextValue);
+        HRESULT PlaceMarker(/* [in] */ _MFSTREAMSINK_MARKER_TYPE eMarkerType, /* [in] __RPC__in */ [In, Out] PROPVARIANT pvarMarkerValue, /* [in] __RPC__in */ [In, Out] PROPVARIANT pvarContextValue);
         
         [PreserveSig]
         HRESULT Flush();

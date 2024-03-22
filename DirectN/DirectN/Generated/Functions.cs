@@ -130,7 +130,7 @@ namespace DirectN
         public static extern D3D12DDI_HRTPIPELINESTATE MAKE_D3D12DDI_HRTPIPELINESTATE(IntPtr h);
 
         [DllImport("d3d12umddi", ExactSpelling = true)]
-        public static extern D3D12DDI_HRTPROTECTEDSESSION_0030 MAKE_D3D12DDI_HRTPROTECTEDSESSION_0030(/* Build rev 92. // Adds DDI enum to signify support for alpha blend factor #define D3D12DDI_BUILD_VERSION_0092 92 #define D3D12DDI_SUPPORTED_0092 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R8) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0092) << 16)) typedef VOID ( APIENTRY* PFND3D12DDI_OM_SETALPHABLENDFACTOR_0092 )( D3D12DDI_HCOMMANDLIST, FLOAT ); typedef struct D3D12DDI_COMMAND_LIST_FUNCS_3D_0092 { PFND3D12DDI_CLOSECOMMANDLIST pfnCloseCommandList; PFND3D12DDI_RESETCOMMANDLIST_0040 pfnResetCommandList; PFND3D12DDI_DRAWINSTANCED pfnDrawInstanced; PFND3D12DDI_DRAWINDEXEDINSTANCED pfnDrawIndexedInstanced; PFND3D12DDI_DISPATCH pfnDispatch; PFND3D12DDI_CLEAR_UNORDERED_ACCESS_VIEW_UINT_0003 pfnClearUnorderedAccessViewUint; PFND3D12DDI_CLEAR_UNORDERED_ACCESS_VIEW_FLOAT_0003 pfnClearUnorderedAccessViewFloat; PFND3D12DDI_CLEAR_RENDER_TARGET_VIEW_0003 pfnClearRenderTargetView; PFND3D12DDI_CLEAR_DEPTH_STENCIL_VIEW_0003 pfnClearDepthStencilView; PFND3D12DDI_DISCARD_RESOURCE_0003 pfnDiscardResource; PFND3D12DDI_COPYTEXTUREREGION_0003 pfnCopyTextureRegion; PFND3D12DDI_RESOURCECOPY pfnResourceCopy; PFND3D12DDI_COPYTILES pfnCopyTiles; PFND3D12DDI_COPYBUFFERREGION_0003 pfnCopyBufferRegion; PFND3D12DDI_RESOURCERESOLVESUBRESOURCE pfnResourceResolveSubresource; PFND3D12DDI_EXECUTE_BUNDLE pfnExecuteBundle; PFND3D12DDI_EXECUTE_INDIRECT pfnExecuteIndirect; PFND3D12DDI_RESOURCEBARRIER_0022 pfnResourceBarrier; PFND3D12DDI_BLT pfnBlt; PFND3D12DDI_PRESENT_0051 pfnPresent; PFND3D12DDI_BEGIN_END_QUERY_0003 pfnBeginQuery; PFND3D12DDI_BEGIN_END_QUERY_0003 pfnEndQuery; PFND3D12DDI_RESOLVE_QUERY_DATA pfnResolveQueryData; PFND3D12DDI_SET_PREDICATION pfnSetPredication; PFND3D12DDI_IA_SETTOPOLOGY_0003 pfnIaSetTopology; PFND3D12DDI_RS_SETVIEWPORTS_0003 pfnRsSetViewports; PFND3D12DDI_RS_SETSCISSORRECTS_0003 pfnRsSetScissorRects; PFND3D12DDI_OM_SETBLENDFACTOR pfnOmSetBlendFactor; PFND3D12DDI_OM_SETSTENCILREF pfnOmSetStencilRef; PFND3D12DDI_SET_PIPELINE_STATE pfnSetPipelineState; PFND3D12DDI_SET_DESCRIPTOR_HEAPS_0003 pfnSetDescriptorHeaps; PFND3D12DDI_SET_ROOT_SIGNATURE pfnSetComputeRootSignature; PFND3D12DDI_SET_ROOT_SIGNATURE pfnSetGraphicsRootSignature; PFND3D12DDI_SET_ROOT_DESCRIPTOR_TABLE pfnSetComputeRootDescriptorTable; PFND3D12DDI_SET_ROOT_DESCRIPTOR_TABLE pfnSetGraphicsRootDescriptorTable; PFND3D12DDI_SET_ROOT_32BIT_CONSTANT pfnSetComputeRoot32BitConstant; PFND3D12DDI_SET_ROOT_32BIT_CONSTANT pfnSetGraphicsRoot32BitConstant; PFND3D12DDI_SET_ROOT_32BIT_CONSTANTS_0003 pfnSetComputeRoot32BitConstants; PFND3D12DDI_SET_ROOT_32BIT_CONSTANTS_0003 pfnSetGraphicsRoot32BitConstants; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootConstantBufferView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootConstantBufferView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootShaderResourceView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootShaderResourceView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootUnorderedAccessView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootUnorderedAccessView; PFND3D12DDI_IA_SET_INDEX_BUFFER pfnIASetIndexBuffer; PFND3D12DDI_IA_SET_VERTEX_BUFFERS_0003 pfnIASetVertexBuffers; PFND3D12DDI_SO_SET_TARGETS_0003 pfnSOSetTargets; PFND3D12DDI_OM_SET_RENDER_TARGETS_0003 pfnOMSetRenderTargets; PFND3D12DDI_SET_MARKER pfnSetMarker; PFND3D12DDI_CLEAR_ROOT_ARGUMENTS pfnClearRootArguments; PFND3D12DDI_COPYBUFFERREGION_0003 pfnAtomicCopyBufferRegion; PFND3D12DDI_OM_SETDEPTHBOUNDS_0025 pfnOMSetDepthBounds; PFND3D12DDI_SETSAMPLEPOSITIONS_0027 pfnSetSamplePositions; PFND3D12DDI_RESOURCERESOLVESUBRESOURCEREGION_0027 pfnResourceResolveSubresourceRegion; PFND3D12DDI_SETPROTECTEDRESOURCESESSION_0030 pfnSetProtectedResourceSession; PFND3D12DDI_WRITEBUFFERIMMEDIATE_0032 pfnWriteBufferImmediate; PFND3D12DDI_SETVIEWINSTANCEMASK_0033 pfnSetViewInstanceMask; PFND3D12DDI_INITIALIZE_META_COMMAND_0052 pfnInitializeMetaCommand; PFND3D12DDI_EXECUTE_META_COMMAND_0052 pfnExecuteMetaCommand; PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054 pfnBuildRaytracingAccelerationStructure; PFND3D12DDI_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_0054 pfnEmitRaytracingAccelerationStructurePostbuildInfo; PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054 pfnCopyRaytracingAccelerationStructure; PFND3D12DDI_SET_PIPELINE_STATE1_0054 pfnSetPipelineState1; PFND3D12DDI_DISPATCH_RAYS_0054 pfnDispatchRays; PFND3D12DDI_RS_SET_SHADING_RATE_0062 pfnRSSetShadingRate; PFND3D12DDI_RS_SET_SHADING_RATE_IMAGE_0062 pfnRSSetShadingRateImage; PFND3D12DDI_DISPATCH_MESH_0074 pfnDispatchMesh; PFND3D12DDI_BARRIER_0088 pfnBarrier; PFND3D12DDI_OM_SETALPHABLENDFACTOR_0092 pfnOmSetAlphaBlendFactor; // unused } D3D12DDI_COMMAND_LIST_FUNCS_3D_0092; //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 Extended Feature Content Protection Resources // Feature: D3D12DDI_FEATURE_0030_CONTENT_PROTECTION_RESOURCES // Version: D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0030_0 // Usermode DDI Min Version: D3D12DDI_SUPPORTED_0030 #define D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0030_0 1u */ IntPtr h);
+        public static extern D3D12DDI_HRTPROTECTEDSESSION_0030 MAKE_D3D12DDI_HRTPROTECTEDSESSION_0030(/* optional(void) */ IntPtr h);
 
         [DllImport("d3d12umddi", ExactSpelling = true)]
         public static extern D3D12DDI_HRTSCHEDULINGGROUP_0050 MAKE_D3D12DDI_HRTSCHEDULINGGROUP_0050(IntPtr h);
@@ -1059,7 +1059,7 @@ namespace DirectN
         public static extern HRESULT MFCreateSampleGrabberSinkActivate(IMFMediaType pIMFMediaType, IMFSampleGrabberSinkCallback pIMFSampleGrabberSinkCallback, /* _Outptr_ */ out IntPtr ppIActivate);
 
         [DllImport("mf", ExactSpelling = true)]
-        public static extern HRESULT MFCreateSequencerSegmentOffset(uint dwId, long hnsOffset, /* _Out_ */ [In, Out] PropVariant pvarSegmentOffset);
+        public static extern HRESULT MFCreateSequencerSegmentOffset(uint dwId, long hnsOffset, /* _Out_ */ [In, Out] PROPVARIANT pvarSegmentOffset);
 
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFCreateSequencerSource([MarshalAs(UnmanagedType.IUnknown)] object pReserved, /* _Outptr_ */ out IMFSequencerSource ppSequencerSource);
@@ -1113,10 +1113,10 @@ namespace DirectN
         public static extern HRESULT MFGetService([MarshalAs(UnmanagedType.IUnknown)] object punkObject, [MarshalAs(UnmanagedType.LPStruct)] Guid guidService, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ out IntPtr ppvObject);
 
         [DllImport("mf", ExactSpelling = true)]
-        public static extern HRESULT MFGetSupportedMimeTypes(/* _Out_ */ [In, Out] PropVariant pPropVarMimeTypeArray);
+        public static extern HRESULT MFGetSupportedMimeTypes(/* _Out_ */ [In, Out] PROPVARIANT pPropVarMimeTypeArray);
 
         [DllImport("mf", ExactSpelling = true)]
-        public static extern HRESULT MFGetSupportedSchemes(/* _Out_ */ [In, Out] PropVariant pPropVarSchemeArray);
+        public static extern HRESULT MFGetSupportedSchemes(/* _Out_ */ [In, Out] PROPVARIANT pPropVarSchemeArray);
 
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFGetSystemId(/* _Outptr_ */ out IMFSystemId ppId);
@@ -1304,7 +1304,7 @@ namespace DirectN
         public static extern HRESULT MFCreateMediaBufferWrapper(/* _In_ */ IMFMediaBuffer pBuffer, /* _In_ */ uint cbOffset, /* _In_ */ uint dwLength, /* _Out_ */ out IMFMediaBuffer ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateMediaEvent(/* _In_ */ uint met, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* _In_ */ HRESULT hrStatus, /* _In_opt_ */ [In, Out] PropVariant pvValue, /* _Out_ */ out IMFMediaEvent ppEvent);
+        public static extern HRESULT MFCreateMediaEvent(/* _In_ */ uint met, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* _In_ */ HRESULT hrStatus, /* _In_opt_ */ [In, Out] PROPVARIANT pvValue, /* _Out_ */ out IMFMediaEvent ppEvent);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMediaExtensionActivate(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string szActivatableClassId, /* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pConfiguration, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ out IntPtr ppvObject);
@@ -1708,7 +1708,7 @@ namespace DirectN
 
         // mmdeviceapi.dll
         [DllImport("mmdeviceapi", ExactSpelling = true)]
-        public static extern HRESULT ActivateAudioInterfaceAsync(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceInterfacePath, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_opt_ */ [In, Out] PropVariant activationParams, /* _In_ */ IActivateAudioInterfaceCompletionHandler completionHandler, /* _COM_Outptr_ */ out IActivateAudioInterfaceAsyncOperation activationOperation);
+        public static extern HRESULT ActivateAudioInterfaceAsync(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceInterfacePath, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_opt_ */ [In, Out] PROPVARIANT activationParams, /* _In_ */ IActivateAudioInterfaceCompletionHandler completionHandler, /* _COM_Outptr_ */ out IActivateAudioInterfaceAsyncOperation activationOperation);
 
         // opmapi.dll
         [DllImport("opmapi", ExactSpelling = true)]

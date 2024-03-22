@@ -20,7 +20,7 @@ namespace DirectN
         HRESULT QueueEvent(/* [in] */ IMFMediaEvent pEvent);
         
         [PreserveSig]
-        HRESULT QueueEventParamVar(/* [in] */ uint met, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] */ [In, Out] PropVariant pvValue);
+        HRESULT QueueEventParamVar(/* [in] */ uint met, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] */ [In, Out] PROPVARIANT pvValue);
         
         [PreserveSig]
         HRESULT QueueEventParamUnk(/* [in] */ uint met, /* [in] */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidExtendedType, /* [in] */ HRESULT hrStatus, /* [unique][in] */ [MarshalAs(UnmanagedType.IUnknown)] object pUnk);

@@ -56,9 +56,7 @@ namespace DirectN
                 return null;
 
             var typed = (T)Marshal.GetTypedObjectForIUnknown(unknown, typeof(T)); // does addref
-            var co = new ComObject<T>(typed, dispose);
-            Marshal.Release(unknown);
-            return co;
+            return new ComObject<T>(typed, dispose);
         }
 #endif
 

@@ -24,7 +24,7 @@ namespace DirectN
         new HRESULT SetCurrentMediaType(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][out][in] _Reserved_ */ ref uint pdwReserved, /* [annotation][in] _In_ */ IMFMediaType pMediaType);
         
         [PreserveSig]
-        new HRESULT SetCurrentPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidTimeFormat, /* [annotation][in] _In_ */ [In, Out] PropVariant varPosition);
+        new HRESULT SetCurrentPosition(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidTimeFormat, /* [annotation][in] _In_ */ [In, Out] PROPVARIANT varPosition);
         
         [PreserveSig]
         new HRESULT ReadSample(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ uint dwControlFlags, /* optional(DWORD) */ IntPtr pdwActualStreamIndex, /* optional(DWORD) */ IntPtr pdwStreamFlags, /* optional(LONGLONG) */ IntPtr pllTimestamp, /* [annotation][out] _Out_opt_ */ out IMFSample ppSample);
@@ -36,7 +36,7 @@ namespace DirectN
         new HRESULT GetServiceForStream(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidService, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Out_ */ out IntPtr ppvObject);
         
         [PreserveSig]
-        new HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidAttribute, /* [annotation][out] _Out_ */ [In, Out] PropVariant pvarAttribute);
+        new HRESULT GetPresentationAttribute(/* [annotation][in] _In_ */ uint dwStreamIndex, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidAttribute, /* [annotation][out] _Out_ */ [In, Out] PROPVARIANT pvarAttribute);
         
         // IMFSourceReaderEx
         [PreserveSig]

@@ -8,6 +8,6 @@ namespace DirectN
     public partial interface IMMDeviceActivator
     {
         [PreserveSig]
-        HRESULT Activate(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid iid, /* [annotation][in] _In_ */ IMMDevice pDevice, /* [annotation][in] _In_opt_ */ [In, Out] PropVariant pActivationParams, /* [annotation][iid_is][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppInterface);
+        HRESULT Activate(/* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid iid, /* [annotation][in] _In_ */ IMMDevice pDevice, /* [annotation][in] _In_opt_ */ [In, Out] PROPVARIANT pActivationParams, /* [annotation][iid_is][out] _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppInterface);
     }
 }

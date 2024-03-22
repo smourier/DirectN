@@ -1486,6 +1486,41 @@
     <Compile Include="..\DirectN\Extensions\DwmThumbnail.cs" Link="Extensions\DwmThumbnail.cs" />
     <Compile Include="..\DirectN\Manual\DWM_THUMBNAIL_PROPERTIES.cs" Link="Manual\DWM_THUMBNAIL_PROPERTIES.cs" />
     <Compile Include="..\DirectN\Manual\DWM_TNP.cs" Link="Manual\DWM_TNP.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DEVICE_CONFIGURATION_DESC.cs" Link="Generated\D3D12_DEVICE_CONFIGURATION_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DEVICE_FACTORY_FLAGS.cs" Link="Generated\D3D12_DEVICE_FACTORY_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DEVICE_FLAGS.cs" Link="Generated\D3D12_DEVICE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS19.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS19.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS20.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS20.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS_0092.cs" Link="Generated\D3D12DDI_OPTIONS_0092.cs" />
+    <Compile Include="..\DirectN\Generated\DWRITE_BITMAP_DATA_BGRA32.cs" Link="Generated\DWRITE_BITMAP_DATA_BGRA32.cs" />
+    <Compile Include="..\DirectN\Generated\DWRITE_COLOR_COMPOSITE_MODE.cs" Link="Generated\DWRITE_COLOR_COMPOSITE_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\DWRITE_PAINT_ATTRIBUTES.cs" Link="Generated\DWRITE_PAINT_ATTRIBUTES.cs" />
+    <Compile Include="..\DirectN\Generated\DWRITE_PAINT_COLOR.cs" Link="Generated\DWRITE_PAINT_COLOR.cs" />
+    <Compile Include="..\DirectN\Generated\DWRITE_PAINT_ELEMENT.cs" Link="Generated\DWRITE_PAINT_ELEMENT.cs" />
+    <Compile Include="..\DirectN\Generated\DWRITE_PAINT_FEATURE_LEVEL.cs" Link="Generated\DWRITE_PAINT_FEATURE_LEVEL.cs" />
+    <Compile Include="..\DirectN\Generated\DWRITE_PAINT_TYPE.cs" Link="Generated\DWRITE_PAINT_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\ID2D1Device7.cs" Link="Generated\ID2D1Device7.cs" />
+    <Compile Include="..\DirectN\Generated\ID2D1DeviceContext7.cs" Link="Generated\ID2D1DeviceContext7.cs" />
+    <Compile Include="..\DirectN\Generated\ID2D1Factory8.cs" Link="Generated\ID2D1Factory8.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12DeviceConfiguration.cs" Link="Generated\ID3D12DeviceConfiguration.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12DeviceFactory.cs" Link="Generated\ID3D12DeviceFactory.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12SDKConfiguration1.cs" Link="Generated\ID3D12SDKConfiguration1.cs" />
+    <Compile Include="..\DirectN\Generated\IDCompositionDevice4.cs" Link="Generated\IDCompositionDevice4.cs" />
+    <Compile Include="..\DirectN\Generated\IDCompositionTexture.cs" Link="Generated\IDCompositionTexture.cs" />
+    <Compile Include="..\DirectN\Generated\IDWriteBitmapRenderTarget2.cs" Link="Generated\IDWriteBitmapRenderTarget2.cs" />
+    <Compile Include="..\DirectN\Generated\IDWriteBitmapRenderTarget3.cs" Link="Generated\IDWriteBitmapRenderTarget3.cs" />
+    <Compile Include="..\DirectN\Generated\IDWriteFactory8.cs" Link="Generated\IDWriteFactory8.cs" />
+    <Compile Include="..\DirectN\Generated\IDWriteFontFace7.cs" Link="Generated\IDWriteFontFace7.cs" />
+    <Compile Include="..\DirectN\Generated\IDWritePaintReader.cs" Link="Generated\IDWritePaintReader.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_COLOR_GLYPH.cs" Link="Generated\PAINT_COLOR_GLYPH.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_COMPOSITE.cs" Link="Generated\PAINT_COMPOSITE.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_GLYPH.cs" Link="Generated\PAINT_GLYPH.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_LAYERS.cs" Link="Generated\PAINT_LAYERS.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_LINEAR_GRADIENT.cs" Link="Generated\PAINT_LINEAR_GRADIENT.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_RADIAL_GRADIENT.cs" Link="Generated\PAINT_RADIAL_GRADIENT.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_SOLID_GLYPH.cs" Link="Generated\PAINT_SOLID_GLYPH.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_SWEEP_GRADIENT.cs" Link="Generated\PAINT_SWEEP_GRADIENT.cs" />
+    <Compile Include="..\DirectN\Generated\PAINT_UNION.cs" Link="Generated\PAINT_UNION.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\DirectN\Generated\adpcmcoef_tag.cs" Link="Generated\adpcmcoef_tag.cs" />

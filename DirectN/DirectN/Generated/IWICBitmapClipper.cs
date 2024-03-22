@@ -22,7 +22,7 @@ namespace DirectN
         new HRESULT CopyPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);
         
         [PreserveSig]
-        new HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint cbStride, /* [in] */ int cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 2)] IntPtr pbBuffer);
+        new HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out] IntPtr pbBuffer);
         
         // IWICBitmapClipper
         [PreserveSig]

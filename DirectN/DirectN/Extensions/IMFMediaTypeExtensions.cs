@@ -180,11 +180,12 @@ namespace DirectN
             if (input == null)
                 throw new ArgumentNullException(nameof(input));
 
-            using (var pv = new PropVariant())
-            {
-                if (input.GetItem(key, pv).IsError)
-                    return null;
+            var detached = new PROPVARIANT();
+            if (input.GetItem(key, detached).IsError)
+                return null;
 
+            using (var pv = detached.Attach())
+            {
                 return pv.Value;
             }
         }

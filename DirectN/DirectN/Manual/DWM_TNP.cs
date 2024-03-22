@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DirectN.Manual
+namespace DirectN
 {
     [Flags]
     public enum DWM_TNP

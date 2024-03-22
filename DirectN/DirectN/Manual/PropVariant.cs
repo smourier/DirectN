@@ -7,7 +7,25 @@ using System.Runtime.InteropServices;
 namespace DirectN
 {
     [StructLayout(LayoutKind.Explicit)]
-    public sealed class PropVariant : IDisposable
+    public class PROPVARIANT : PropVariant
+    {
+        public PROPVARIANT()
+            : base()
+        {
+        }
+
+        public PROPVARIANT(object value, PropertyType? type = null)
+            : base(value, type)
+        {
+        }
+
+        public override bool ClearOnDispose => false;
+
+        public PropVariant Attach(bool clearDetached = true) => Attach(this, clearDetached);
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public class PropVariant : IDisposable
     {
 #pragma warning disable IDE0044 // Add readonly modifier
         [FieldOffset(0)]
@@ -65,6 +83,9 @@ namespace DirectN
             public int cElems;
             public IntPtr pElems;
         }
+
+        public virtual bool ClearOnDispose => true;
+        public PROPVARIANT Detached => new PROPVARIANT { _decimal = _decimal, _ca = _ca };
 
         public PropVariant()
         {
@@ -232,7 +253,7 @@ namespace DirectN
             _vt = FromType(valueType, type);
         }
 
-        public PropertyType VarType { get => _vt; set => _vt = value; }
+        public PropertyType VarType { get => _vt; }
         public object Value
         {
             get
@@ -398,6 +419,43 @@ namespace DirectN
             return obj;
         }
 
+        public PROPVARIANT Detach()
+        {
+            if (this is PROPVARIANT pv)
+                return pv;
+
+            pv = new PROPVARIANT
+            {
+                _decimal = _decimal,
+                _ca = _ca,
+            };
+
+            _decimal = 0;
+            _ca.pElems = IntPtr.Zero;
+            _ca.cElems = 0;
+            return pv;
+        }
+
+        public static PropVariant Attach(PROPVARIANT detached, bool clearDetached = true)
+        {
+            if (detached == null)
+                return null;
+
+            var pv = new PropVariant
+            {
+                _decimal = detached._decimal,
+                _ca = detached._ca,
+            };
+
+            if (clearDetached)
+            {
+                detached._decimal = 0;
+                detached._ca.pElems = IntPtr.Zero;
+                detached._ca.cElems = 0;
+            }
+            return pv;
+        }
+
         public override string ToString()
         {
             var value = Value;
@@ -422,7 +480,10 @@ namespace DirectN
         ~PropVariant() => Dispose();
         public void Dispose()
         {
-            _ = PropVariantClear(this);
+            if (ClearOnDispose)
+            {
+                Clear(false);
+            }
             GC.SuppressFinalize(this);
         }
 
@@ -489,7 +550,7 @@ namespace DirectN
                 }
                 else if (type == typeof(object))
                 {
-                    size = Marshal.SizeOf<PropVariant>(); // same size as VARIANT
+                    size = Marshal.SizeOf<PropVariant>();
                 }
                 else
                 {
@@ -641,6 +702,13 @@ namespace DirectN
             hr.ThrowOnError(throwOnError);
             return hr.IsError ? null : pv;
         }
+
+        public void Clear(bool throwOnError = true)
+        {
+            PropVariantClear(this).ThrowOnError(throwOnError);
+        }
+
+        public static void Clear(IntPtr propVariantPointer, bool throwOnError = true) => PropVariantClear(propVariantPointer).ThrowOnError(throwOnError);
 
         private static void Using(object resource, Action action)
         {
@@ -907,6 +975,9 @@ namespace DirectN
 
         [DllImport("ole32", ExactSpelling = true)]
         private extern static HRESULT PropVariantClear([In, Out] PropVariant pvar);
+
+        [DllImport("ole32", ExactSpelling = true)]
+        private extern static HRESULT PropVariantClear(IntPtr pvar);
 
         [DllImport("ole32", ExactSpelling = true)]
         private extern static HRESULT PropVariantCopy([In, Out] PropVariant pvarDest, PropVariant pvarSrc);

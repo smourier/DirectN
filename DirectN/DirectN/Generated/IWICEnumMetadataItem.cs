@@ -8,7 +8,7 @@ namespace DirectN
     public partial interface IWICEnumMetadataItem
     {
         [PreserveSig]
-        HRESULT Next(/* [in] */ uint celt, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(celt) */ [In, Out] PropVariant rgeltSchema, /* [size_is][out][in] __RPC__inout_ecount_full(celt) */ [In, Out] PropVariant rgeltId, /* [size_is][optional][out][in] __RPC__inout_ecount_full(celt) */ [In, Out] PropVariant rgeltValue, /* [optional][out] __RPC__out */ out uint pceltFetched);
+        HRESULT Next(/* [in] */ uint celt, /* [size_is][unique][out][in] __RPC__inout_ecount_full_opt(celt) */ [In, Out] PROPVARIANT rgeltSchema, /* [size_is][out][in] __RPC__inout_ecount_full(celt) */ [In, Out] PROPVARIANT rgeltId, /* [size_is][optional][out][in] __RPC__inout_ecount_full(celt) */ [In, Out] PROPVARIANT rgeltValue, /* [optional][out] __RPC__out */ out uint pceltFetched);
         
         [PreserveSig]
         HRESULT Skip(/* [in] */ uint celt);

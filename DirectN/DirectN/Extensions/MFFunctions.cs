@@ -36,6 +36,19 @@ namespace DirectN
             return (int)merit;
         }
 
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateVideoSampleAllocatorEx([MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppSampleAllocator);
+
+        public static IComObject<IMFVideoSampleAllocatorEx> MFCreateVideoSampleAllocatorEx() => MFCreateVideoSampleAllocatorEx<IMFVideoSampleAllocatorEx>();
+        public static IComObject<T> MFCreateVideoSampleAllocatorEx<T>()
+        {
+            MFCreateVideoSampleAllocatorEx(typeof(T).GUID, out var allocator).ThrowOnError();
+            if (allocator is T item)
+                return new ComObject<T>(item);
+
+            return null;
+        }
+
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFGetService([MarshalAs(UnmanagedType.IUnknown)] object punkObject, [MarshalAs(UnmanagedType.LPStruct)] Guid guidService, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppvObject);
 

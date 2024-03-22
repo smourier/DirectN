@@ -10,17 +10,17 @@ namespace DirectN
     {
         [PreserveSig]
         HRESULT GetSize(/* [out] __RPC__out */ out uint puiWidth, /* [out] __RPC__out */ out uint puiHeight);
-
+        
         [PreserveSig]
         HRESULT GetPixelFormat(/* [out] __RPC__out */ out WICPixelFormatGUID pPixelFormat);
-
+        
         [PreserveSig]
         HRESULT GetResolution(/* [out] __RPC__out */ out double pDpiX, /* [out] __RPC__out */ out double pDpiY);
-
+        
         [PreserveSig]
         HRESULT CopyPalette(/* [in] __RPC__in_opt */ IWICPalette pIPalette);
-
+        
         [PreserveSig]
-        HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint cbStride, /* [in] */ int cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ IntPtr pbBuffer);
+        HRESULT CopyPixels(/* optional(WICRect) */ IntPtr prc, /* [in] */ uint cbStride, /* [in] */ uint cbBufferSize, /* [size_is][out] __RPC__out_ecount_full(cbBufferSize) */ [Out] IntPtr pbBuffer);
     }
 }

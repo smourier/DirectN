@@ -15,7 +15,7 @@ namespace DirectN
 
             using (var pv = new PropVariant(value, type))
             {
-                writer.SetMetadataByName(name, pv).ThrowOnError();
+                writer.SetMetadataByName(name, pv.Detached).ThrowOnError();
             }
         }
 
@@ -31,7 +31,7 @@ namespace DirectN
             if (pv == null)
                 throw new ArgumentNullException(nameof(pv));
 
-            writer.SetMetadataByName(name, pv).ThrowOnError();
+            writer.SetMetadataByName(name, pv.Detached).ThrowOnError();
         }
 
         public static void RemoveMetadataByName(this IComObject<IWICMetadataQueryWriter> writer, string name) => RemoveMetadataByName(writer?.Object, name);
