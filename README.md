@@ -5,6 +5,11 @@ The easiest way to use this is reference the nuget package: https://www.nuget.or
 
 Or you can pick the C# source files you want (among the 10000 .cs provided ...). It can be sometimes difficult because the dependencies between all these technologies can make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is still possible.
 
+## AOT support
+The code in this repository compatible with .NET Framework, marshalling provided by the CLR, older C# versions, etc., so it's not compatible with [Native AOT Deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=net8plus%2Cwindows).
+
+However, a .NET 8+ project has been started here [DirectNAot](https://github.com/smourier/DirectNAot) which builds AOT-compatible DirectN code. This code will not be 100% source compatible with DirectN but the code generator is now provided as open source. Work is in progress, stay tuned!
+
 ## Same names and types than the native concepts!
 DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, probably more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the **same names and types than the native concepts** (interfaces, enums, structures, constants, methods, arguments, guids, etc.) . So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
 
