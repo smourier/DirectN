@@ -1818,5 +1818,26 @@ namespace DirectN
 
         [DllImport("wmvcore", ExactSpelling = true)]
         public static extern HRESULT WMValidateData(/* [in] */ ref byte pbData, /* [in, out] */ ref uint pdwDataSize);
+
+        [DllImport("ddraw")]
+        public static extern HRESULT DirectDrawCreate(IntPtr lpGUID, out IDirectDraw lplpDD, IntPtr pUnkOuter);
+
+        [DllImport("ddraw")]
+        public static extern HRESULT DirectDrawCreateClipper(uint dwFlags, out IDirectDrawClipper lplpDDClipper, IntPtr pUnkOuter);
+
+        [DllImport("ddraw")]
+        public static extern HRESULT DirectDrawCreateEx(IntPtr lpGuid, [MarshalAs(UnmanagedType.IUnknown)] out object lplpDD, [MarshalAs(UnmanagedType.LPStruct)] Guid iid, IntPtr pUnkOuter);
+
+        [DllImport("ddraw")]
+        public static extern HRESULT DirectDrawEnumerateA(IntPtr lpCallback, IntPtr lpContext);
+
+        [DllImport("ddraw")]
+        public static extern HRESULT DirectDrawEnumerateExA(IntPtr lpCallback, IntPtr lpContext, uint dwFlags);
+
+        [DllImport("ddraw", CharSet = CharSet.Unicode)]
+        public static extern HRESULT DirectDrawEnumerateExW(IntPtr lpCallback, IntPtr lpContext, uint dwFlags);
+
+        [DllImport("ddraw", CharSet = CharSet.Unicode)]
+        public static extern HRESULT DirectDrawEnumerateW(IntPtr lpCallback, IntPtr lpContext);
     }
 }
