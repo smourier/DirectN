@@ -186,18 +186,6 @@ namespace DirectN
             }
         }
 
-        public static void SetTarget(this IComObject<ID2D1RenderTarget> context, IComObject<ID2D1Image> target) => SetTarget(context?.Object, target?.Object);
-        public static void SetTarget(this ID2D1RenderTarget context, ID2D1Image target)
-        {
-            if (context == null)
-                throw new ArgumentNullException(nameof(context));
-
-            if (target == null)
-                throw new ArgumentNullException(nameof(context));
-
-            context.SetTarget(target);
-        }
-
         public static D2D_SIZE_U GetPixelSize(this IComObject<ID2D1RenderTarget> context) => GetPixelSize(context?.Object);
         public static D2D_SIZE_U GetPixelSize(this ID2D1RenderTarget context)
         {
