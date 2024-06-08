@@ -157,9 +157,6 @@ namespace DirectN
             if (context == null)
                 throw new ArgumentNullException(nameof(context));
 
-            if (target == null)
-                throw new ArgumentNullException(nameof(context));
-
             context.SetTarget(target);
         }
 
