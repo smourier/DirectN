@@ -502,5 +502,135 @@ namespace DirectN
 
             renderTarget.PopAxisAlignedClip();
         }
+
+        public static D2D_SIZE_F GetDpi(this IComObject<ID2D1RenderTarget> renterTarget) => GetDpi(renterTarget?.Object);
+        public static D2D_SIZE_F GetDpi(this ID2D1RenderTarget renterTarget)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.GetDpi(out var x, out var y);
+            return new D2D_SIZE_F(x, y);
+        }
+
+        public static D2D1_TEXT_ANTIALIAS_MODE GetTextAntialiasMode(this IComObject<ID2D1RenderTarget> renterTarget) => GetTextAntialiasMode(renterTarget?.Object);
+        public static D2D1_TEXT_ANTIALIAS_MODE GetTextAntialiasMode(this ID2D1RenderTarget renterTarget)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            return renterTarget.GetTextAntialiasMode();
+        }
+
+        public static void SetTextAntialiasMode(this IComObject<ID2D1RenderTarget> renterTarget, D2D1_TEXT_ANTIALIAS_MODE mode) => SetTextAntialiasMode(renterTarget?.Object, mode);
+        public static void SetTextAntialiasMode(this ID2D1RenderTarget renterTarget, D2D1_TEXT_ANTIALIAS_MODE mode)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.SetTextAntialiasMode(mode);
+        }
+
+        public static D2D_MATRIX_3X2_F GetTransform(this IComObject<ID2D1RenderTarget> renterTarget) => GetTransform(renterTarget?.Object);
+        public static D2D_MATRIX_3X2_F GetTransform(this ID2D1RenderTarget renterTarget)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.GetTransform(out var transform);
+            return transform;
+        }
+
+        public static void SetTransform(this IComObject<ID2D1RenderTarget> renterTarget, D2D_MATRIX_3X2_F transform) => SetTransform(renterTarget?.Object, transform);
+        public static void SetTransform(this ID2D1RenderTarget renterTarget, D2D_MATRIX_3X2_F transform)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.SetTransform(transform);
+        }
+
+        public static D2D1_ANTIALIAS_MODE GetAntialiasMode(this IComObject<ID2D1RenderTarget> renterTarget) => GetAntialiasMode(renterTarget?.Object);
+        public static D2D1_ANTIALIAS_MODE GetAntialiasMode(this ID2D1RenderTarget renterTarget)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            return renterTarget.GetAntialiasMode();
+        }
+
+        public static void SetAntialiasMode(this IComObject<ID2D1RenderTarget> renterTarget, D2D1_ANTIALIAS_MODE mode) => SetAntialiasMode(renterTarget?.Object, mode);
+        public static void SetAntialiasMode(this ID2D1RenderTarget renterTarget, D2D1_ANTIALIAS_MODE mode)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.SetAntialiasMode(mode);
+        }
+
+        public static void SetDpi(this IComObject<ID2D1RenderTarget> renterTarget, float dpi) => SetDpi(renterTarget?.Object, dpi, dpi);
+        public static void SetDpi(this IComObject<ID2D1RenderTarget> renterTarget, float dpiX, float dpiY) => SetDpi(renterTarget?.Object, dpiX, dpiY);
+        public static void SetDpi(this ID2D1RenderTarget renterTarget, float dpi) => SetDpi(renterTarget, dpi, dpi);
+        public static void SetDpi(this ID2D1RenderTarget renterTarget, float dpiX, float dpiY)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.SetDpi(dpiX, dpiY);
+        }
+
+        public static void SaveDrawingState(this IComObject<ID2D1RenderTarget> renterTarget, IComObject<ID2D1DrawingStateBlock> block) => SaveDrawingState(renterTarget?.Object, block?.Object);
+        public static void SaveDrawingState(this ID2D1RenderTarget renterTarget, ID2D1DrawingStateBlock block)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            if (block == null)
+                throw new ArgumentNullException(nameof(block));
+
+            renterTarget.SaveDrawingState(block);
+        }
+
+        public static void SetTextRenderingParams(this IComObject<ID2D1RenderTarget> renterTarget, IComObject<IDWriteRenderingParams> @params) => SetTextRenderingParams(renterTarget?.Object, @params?.Object);
+        public static void SetTextRenderingParams(this ID2D1RenderTarget renterTarget, IDWriteRenderingParams @params)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.SetTextRenderingParams(@params);
+        }
+
+        public static IComObject<IDWriteRenderingParams> GetTextRenderingParams(this IComObject<ID2D1RenderTarget> renterTarget) => GetTextRenderingParams(renterTarget?.Object);
+        public static IComObject<IDWriteRenderingParams> GetTextRenderingParams(this ID2D1RenderTarget renterTarget)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.GetTextRenderingParams(out var @params);
+            if (@params != null)
+                return new ComObject<IDWriteRenderingParams>(@params);
+
+            return null;
+        }
+
+        public static uint GetMaximumBitmapSize(this IComObject<ID2D1RenderTarget> renterTarget) => GetMaximumBitmapSize(renterTarget?.Object);
+        public static uint GetMaximumBitmapSize(this ID2D1RenderTarget renterTarget)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            return renterTarget.GetMaximumBitmapSize();
+        }
+
+        public static void Flush(this IComObject<ID2D1RenderTarget> renterTarget) => Flush(renterTarget?.Object, IntPtr.Zero, IntPtr.Zero);
+        public static void Flush(this IComObject<ID2D1RenderTarget> renterTarget, IntPtr tag1, IntPtr tag2) => Flush(renterTarget?.Object, tag1, tag2);
+        public static void Flush(this ID2D1RenderTarget renterTarget) => Flush(renterTarget, IntPtr.Zero, IntPtr.Zero);
+        public static void Flush(this ID2D1RenderTarget renterTarget, IntPtr tag1, IntPtr tag2)
+        {
+            if (renterTarget == null)
+                throw new ArgumentNullException(nameof(renterTarget));
+
+            renterTarget.Flush(tag1, tag2).ThrowOnError();
+        }
     }
 }
