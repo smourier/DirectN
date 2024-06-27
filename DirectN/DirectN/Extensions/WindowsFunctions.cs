@@ -150,6 +150,9 @@ namespace DirectN
         public static extern int GetSystemMetrics(SM index);
 
         [DllImport("user32", ExactSpelling = true)]
+        public static extern int GetSystemMetricsForDpi(SM index, uint dpi);
+
+        [DllImport("user32", ExactSpelling = true)]
         public static extern int GetSysColor(COLOR index);
 
         [DllImport("user32", SetLastError = true)]

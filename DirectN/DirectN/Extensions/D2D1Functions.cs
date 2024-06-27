@@ -13,7 +13,7 @@ namespace DirectN
         private static readonly Lazy<D2D_SIZE_F> _dpiScale = new Lazy<D2D_SIZE_F>(() =>
         {
             var dpi = Dpi;
-            return new D2D_SIZE_F(dpi.width / 96, dpi.height / 96);
+            return new D2D_SIZE_F(dpi.width / DpiUtilities.USER_DEFAULT_SCREEN_DPI, dpi.height / DpiUtilities.USER_DEFAULT_SCREEN_DPI);
         }, true);
         public static D2D_SIZE_F DpiScale => _dpiScale.Value;
 
@@ -71,14 +71,14 @@ namespace DirectN
         }
 
         // https://blogs.msdn.microsoft.com/text/2009/12/11/wpf-text-measurement-units/
-        public static float PointsToDips(float pt) => 96 / (72 * pt);
-        public static float DipsToPoints(float dip) => 72 / (96 * dip);
+        public static float PointsToDips(float pt) => DpiUtilities.USER_DEFAULT_SCREEN_DPI / (72 * pt);
+        public static float DipsToPoints(float dip) => 72 / (DpiUtilities.USER_DEFAULT_SCREEN_DPI * dip);
         public static float PointsToTwips(float pt) => pt * 20;
         public static float TwipsToPoints(float twips) => twips / 20;
 
-        public static double PixelsToDips(int pixels, double dpi) => pixels * 96 / dpi;
-        public static int DipsToPixels(int dips, double dpi) => (int)(dips * dpi / 96);
-        public static float PixelsToDips(int pixels, float dpi) => pixels * 96 / dpi;
-        public static int DipsToPixels(int dips, float dpi) => (int)(dips * dpi / 96);
+        public static double PixelsToDips(int pixels, double dpi) => pixels * DpiUtilities.USER_DEFAULT_SCREEN_DPI / dpi;
+        public static int DipsToPixels(int dips, double dpi) => (int)(dips * dpi / DpiUtilities.USER_DEFAULT_SCREEN_DPI);
+        public static float PixelsToDips(int pixels, float dpi) => pixels * DpiUtilities.USER_DEFAULT_SCREEN_DPI / dpi;
+        public static int DipsToPixels(int dips, float dpi) => (int)(dips * dpi / DpiUtilities.USER_DEFAULT_SCREEN_DPI);
     }
 }
