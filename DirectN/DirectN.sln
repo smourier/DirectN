@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectN.MinimalD3D11", "Dir
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectN.WinUI3.MinimalD3D11", "DirectN.WinUI3.MinimalD3D11\DirectN.WinUI3.MinimalD3D11.csproj", "{6D7E230A-A229-4BFE-9533-1B37ADCC884A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectNStandard", "DirectNStandard\DirectNStandard.csproj", "{F9436809-089F-4260-88F4-EE905B76CF08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectNStandard", "DirectNStandard\DirectNStandard.csproj", "{F9436809-089F-4260-88F4-EE905B76CF08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
