@@ -414,8 +414,11 @@ namespace DirectN
             switch (tc)
             {
                 case TypeCode.Boolean:
-                case TypeCode.Int64:
-                case TypeCode.UInt64:
+                    type = D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_BOOL;
+                    data = BitConverter.GetBytes(Convert.ToInt32(value));
+                    return true;
+
+                case TypeCode.Int64:  // possible overflow
                 case TypeCode.Int16:
                 case TypeCode.UInt16:
                 case TypeCode.Byte:
@@ -427,6 +430,11 @@ namespace DirectN
                 case TypeCode.Int32:
                     type = D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_INT32;
                     data = BitConverter.GetBytes((int)value);
+                    return true;
+
+                case TypeCode.UInt64: // possible overflow
+                    type = D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_UINT32;
+                    data = BitConverter.GetBytes(Convert.ToUInt32(value));
                     return true;
 
                 case TypeCode.UInt32:
