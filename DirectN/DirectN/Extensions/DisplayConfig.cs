@@ -15,7 +15,7 @@ namespace DirectN
 
             var paths = new DISPLAYCONFIG_PATH_INFO[pathCount];
             var modes = new DISPLAYCONFIG_MODE_INFO[modeCount];
-            err = QueryDisplayConfig(QDC.QDC_ONLY_ACTIVE_PATHS, ref pathCount, paths, ref modeCount, modes, IntPtr.Zero);
+            err = QueryDisplayConfig(flags, ref pathCount, paths, ref modeCount, modes, IntPtr.Zero);
             if (err != 0)
                 throw new Win32Exception(err);
 
@@ -112,15 +112,15 @@ namespace DirectN
             return info.viewGdiDeviceName;
         }
 
-        public static uint? GetSourceId(uint targetId)
+        public static uint? GetSourceId(uint targetId, QDC flags = QDC.QDC_ONLY_ACTIVE_PATHS)
         {
-            var err = GetDisplayConfigBufferSizes(QDC.QDC_ONLY_ACTIVE_PATHS, out var pathCount, out var modeCount);
+            var err = GetDisplayConfigBufferSizes(flags, out var pathCount, out var modeCount);
             if (err != 0)
                 throw new Win32Exception(err);
 
             var paths = new DISPLAYCONFIG_PATH_INFO[pathCount];
             var modes = new DISPLAYCONFIG_MODE_INFO[modeCount];
-            err = QueryDisplayConfig(QDC.QDC_ONLY_ACTIVE_PATHS, ref pathCount, paths, ref modeCount, modes, IntPtr.Zero);
+            err = QueryDisplayConfig(flags, ref pathCount, paths, ref modeCount, modes, IntPtr.Zero);
             if (err != 0)
                 throw new Win32Exception(err);
 
