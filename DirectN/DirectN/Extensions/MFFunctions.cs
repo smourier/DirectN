@@ -16,7 +16,7 @@ namespace DirectN
         public static void MFStartup() => MFStartup((Constants.MF_SDK_VERSION << 16) | Constants.MF_API_VERSION, Constants.MFSTARTUP_FULL).ThrowOnError();
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTRegisterLocal(IClassFactory pClassFactory, [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, [MarshalAs(UnmanagedType.LPWStr)] string pszName, _MFT_ENUM_FLAG Flags, uint cInputTypes, __MIDL___MIDL_itf_mfobjects_0000_0008_0003[] pInputTypes, uint cOutputTypes, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0008_0003[] pOutputTypes);
+        public static extern HRESULT MFTRegisterLocal(IClassFactory pClassFactory, [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, [MarshalAs(UnmanagedType.LPWStr)] string pszName, _MFT_ENUM_FLAG Flags, uint cInputTypes, __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pInputTypes, uint cOutputTypes, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pOutputTypes);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTUnregisterLocal(IClassFactory pClassFactory);
@@ -184,8 +184,8 @@ namespace DirectN
         public static extern HRESULT MFTEnumEx(
             Guid guidCategory,
             _MFT_ENUM_FLAG Flags,
-            ref __MIDL___MIDL_itf_mfobjects_0000_0008_0003 pInputType,
-            ref __MIDL___MIDL_itf_mfobjects_0000_0008_0003 pOutputType,
+            ref __MIDL___MIDL_itf_mfobjects_0000_0009_0003 pInputType,
+            ref __MIDL___MIDL_itf_mfobjects_0000_0009_0003 pOutputType,
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out IMFActivate[] pppMFTActivate,
             out int pnumMFTActivate);
 
@@ -194,7 +194,7 @@ namespace DirectN
             Guid guidCategory,
             _MFT_ENUM_FLAG Flags,
             IntPtr pInputType,
-            ref __MIDL___MIDL_itf_mfobjects_0000_0008_0003 pOutputType,
+            ref __MIDL___MIDL_itf_mfobjects_0000_0009_0003 pOutputType,
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out IMFActivate[] pppMFTActivate,
             out int pnumMFTActivate);
 
@@ -207,7 +207,7 @@ namespace DirectN
             [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] out IMFActivate[] pppMFTActivate,
             out int pnumMFTActivate);
 
-        public static IReadOnlyList<ComObject<IMFActivate>> MFTEnumEx(Guid categoryId, _MFT_ENUM_FLAG flags, __MIDL___MIDL_itf_mfobjects_0000_0008_0003? inputType = null, __MIDL___MIDL_itf_mfobjects_0000_0008_0003? outputType = null)
+        public static IReadOnlyList<ComObject<IMFActivate>> MFTEnumEx(Guid categoryId, _MFT_ENUM_FLAG flags, __MIDL___MIDL_itf_mfobjects_0000_0009_0003? inputType = null, __MIDL___MIDL_itf_mfobjects_0000_0009_0003? outputType = null)
         {
             using (var it = new ComMemory(inputType))
             using (var ot = new ComMemory(outputType))

@@ -25,5 +25,7 @@ namespace DirectN
         AudioObjectType_BottomBackLeft = 0x00008000,
         AudioObjectType_BottomBackRight = 0x00010000,
         AudioObjectType_BackCenter = 0x00020000,
+        AudioObjectType_StereoLeft = 0x00040000,
+        AudioObjectType_StereoRight = 0x00080000,
     }
 }

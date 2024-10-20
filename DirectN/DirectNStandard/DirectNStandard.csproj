@@ -7,16 +7,16 @@
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
     <Copyright>Copyright © 2017-2024 Simon Mourier. All rights reserved.</Copyright>
-    <FileVersion>1.16.1.3</FileVersion>
+    <FileVersion>1.17.0.0</FileVersion>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.16.1.3</Version>
+    <Version>1.17.0.0</Version>
     <RootNamespace>DirectN</RootNamespace>
-    <AssemblyVersion>1.16.1.3</AssemblyVersion>
+    <AssemblyVersion>1.17.0.0</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -4994,11 +4994,6 @@
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_dxva2api_0000_0000_0013.cs" Link="Generated\__MIDL___MIDL_itf_dxva2api_0000_0000_0013.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfcaptureengine_0000_0000_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfcaptureengine_0000_0000_0001.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfidl_0000_0001_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfidl_0000_0001_0001.cs" />
-    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0008_0003.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0008_0003.cs" />
-    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0012_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0012_0001.cs" />
-    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0017_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0017_0001.cs" />
-    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0017_0002.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0017_0002.cs" />
-    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0017_0003.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0017_0003.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfreadwrite_0000_0001_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfreadwrite_0000_0001_0001.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfreadwrite_0000_0001_0002.cs" Link="Generated\__MIDL___MIDL_itf_mfreadwrite_0000_0001_0002.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfreadwrite_0000_0005_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfreadwrite_0000_0005_0001.cs" />
@@ -5686,7 +5681,6 @@
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_101.cs" Link="Generated\__struct_ksmedia_101.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_102.cs" Link="Generated\__struct_ksmedia_102.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_103.cs" Link="Generated\__struct_ksmedia_103.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_104.cs" Link="Generated\__struct_ksmedia_104.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_105.cs" Link="Generated\__struct_ksmedia_105.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_106.cs" Link="Generated\__struct_ksmedia_106.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_107.cs" Link="Generated\__struct_ksmedia_107.cs" />
@@ -5698,11 +5692,7 @@
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_113.cs" Link="Generated\__struct_ksmedia_113.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_114.cs" Link="Generated\__struct_ksmedia_114.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_115.cs" Link="Generated\__struct_ksmedia_115.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_130.cs" Link="Generated\__struct_ksmedia_130.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_131.cs" Link="Generated\__struct_ksmedia_131.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_132.cs" Link="Generated\__struct_ksmedia_132.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_133.cs" Link="Generated\__struct_ksmedia_133.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_134.cs" Link="Generated\__struct_ksmedia_134.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_135.cs" Link="Generated\__struct_ksmedia_135.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_136.cs" Link="Generated\__struct_ksmedia_136.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_137.cs" Link="Generated\__struct_ksmedia_137.cs" />
@@ -5735,22 +5725,13 @@
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_59.cs" Link="Generated\__struct_ksmedia_59.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_60.cs" Link="Generated\__struct_ksmedia_60.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_61.cs" Link="Generated\__struct_ksmedia_61.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_69.cs" Link="Generated\__struct_ksmedia_69.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_7.cs" Link="Generated\__struct_ksmedia_7.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_70.cs" Link="Generated\__struct_ksmedia_70.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_71.cs" Link="Generated\__struct_ksmedia_71.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_72.cs" Link="Generated\__struct_ksmedia_72.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_73.cs" Link="Generated\__struct_ksmedia_73.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_74.cs" Link="Generated\__struct_ksmedia_74.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_75.cs" Link="Generated\__struct_ksmedia_75.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_76.cs" Link="Generated\__struct_ksmedia_76.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_77.cs" Link="Generated\__struct_ksmedia_77.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_79.cs" Link="Generated\__struct_ksmedia_79.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_84.cs" Link="Generated\__struct_ksmedia_84.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_85.cs" Link="Generated\__struct_ksmedia_85.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_86.cs" Link="Generated\__struct_ksmedia_86.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_87.cs" Link="Generated\__struct_ksmedia_87.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_88.cs" Link="Generated\__struct_ksmedia_88.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_89.cs" Link="Generated\__struct_ksmedia_89.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_90.cs" Link="Generated\__struct_ksmedia_90.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_91.cs" Link="Generated\__struct_ksmedia_91.cs" />
@@ -5769,9 +5750,7 @@
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfidl_0000_0110_0002.cs" Link="Generated\__MIDL___MIDL_itf_mfidl_0000_0110_0002.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfidl_0000_0110_0003.cs" Link="Generated\__MIDL___MIDL_itf_mfidl_0000_0110_0003.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfidl_0000_0114_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfidl_0000_0114_0001.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_127.cs" Link="Generated\__struct_ksmedia_127.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_142.cs" Link="Generated\__struct_ksmedia_142.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_148.cs" Link="Generated\__struct_ksmedia_148.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_150.cs" Link="Generated\__struct_ksmedia_150.cs" />
     <Compile Include="..\DirectN\Generated\_D3D9ON12_ARGS.cs" Link="Generated\_D3D9ON12_ARGS.cs" />
     <Compile Include="..\DirectN\Generated\_D3DKMDT_DISPLAYMODE_FLAGS.cs" Link="Generated\_D3DKMDT_DISPLAYMODE_FLAGS.cs" />
@@ -6264,7 +6243,6 @@
     <Compile Include="..\DirectN\Generated\tagKSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING.cs" Link="Generated\tagKSCAMERA_EXTENDEDPROP_DIGITALWINDOW_SETTING.cs" />
     <Compile Include="..\DirectN\Generated\tagKSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK.cs" Link="Generated\tagKSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK.cs" />
     <Compile Include="..\DirectN\Generated\tagKSCAMERA_METADATA_DIGITALWINDOW.cs" Link="Generated\tagKSCAMERA_METADATA_DIGITALWINDOW.cs" />
-    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_audioenginebaseapo_0000_0011_0001.cs" Link="Generated\__MIDL___MIDL_itf_audioenginebaseapo_0000_0011_0001.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0001.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002.cs" Link="Generated\__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0002.cs" />
     <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003.cs" Link="Generated\__MIDL___MIDL_itf_mfvirtualcamera_0000_0000_0003.cs" />
@@ -8415,7 +8393,6 @@
     <Compile Include="..\DirectN\Generated\IDCompositionDelegatedInkTrail.cs" Link="Generated\IDCompositionDelegatedInkTrail.cs" />
     <Compile Include="..\DirectN\Generated\IDCompositionInkTrailDevice.cs" Link="Generated\IDCompositionInkTrailDevice.cs" />
     <Compile Include="..\DirectN\Generated\IDWriteFontFace6.cs" Link="Generated\IDWriteFontFace6.cs" />
-    <Compile Include="..\DirectN\Generated\IDxcBlobUtf16.cs" Link="Generated\IDxcBlobUtf16.cs" />
     <Compile Include="..\DirectN\Generated\IDxcBlobUtf8.cs" Link="Generated\IDxcBlobUtf8.cs" />
     <Compile Include="..\DirectN\Generated\IDxcCompiler3.cs" Link="Generated\IDxcCompiler3.cs" />
     <Compile Include="..\DirectN\Generated\IDxcCompilerArgs.cs" Link="Generated\IDxcCompilerArgs.cs" />
@@ -8451,7 +8428,6 @@
     <Compile Include="..\DirectN\Generated\SpatialAudioObjectRenderStreamActivationParams2.cs" Link="Generated\SpatialAudioObjectRenderStreamActivationParams2.cs" />
     <Compile Include="..\DirectN\Generated\SpatialAudioObjectRenderStreamForMetadataActivationParams2.cs" Link="Generated\SpatialAudioObjectRenderStreamForMetadataActivationParams2.cs" />
     <Compile Include="..\DirectN\Generated\tagDigitalWindowSetting.cs" Link="Generated\tagDigitalWindowSetting.cs" />
-    <Compile Include="..\DirectN\Generated\_D3DDDI_CREATENATIVEFENCEINFO.cs" Link="Generated\_D3DDDI_CREATENATIVEFENCEINFO.cs" />
     <Compile Include="..\DirectN\Generated\_D3DDDI_DOORBELLSTATUS.cs" Link="Generated\_D3DDDI_DOORBELLSTATUS.cs" />
     <Compile Include="..\DirectN\Generated\_D3DDDI_NATIVEFENCEMAPPING.cs" Link="Generated\_D3DDDI_NATIVEFENCEMAPPING.cs" />
     <Compile Include="..\DirectN\Generated\_D3DKMT_CONNECT_DOORBELL_FLAGS.cs" Link="Generated\_D3DKMT_CONNECT_DOORBELL_FLAGS.cs" />
@@ -8496,9 +8472,6 @@
     <Compile Include="..\DirectN\Generated\_DXGKARG_DESTROYDOORBELL.cs" Link="Generated\_DXGKARG_DESTROYDOORBELL.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_DISCONNECTDOORBELL_FLAGS.cs" Link="Generated\_DXGKARG_DISCONNECTDOORBELL_FLAGS.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_DISCONNECTDOORBELL.cs" Link="Generated\_DXGKARG_DISCONNECTDOORBELL.cs" />
-    <Compile Include="..\DirectN\Generated\_DXGKARG_FLUSHHWQUEUE_FLAGS.cs" Link="Generated\_DXGKARG_FLUSHHWQUEUE_FLAGS.cs" />
-    <Compile Include="..\DirectN\Generated\_DXGKARG_FLUSHHWQUEUE.cs" Link="Generated\_DXGKARG_FLUSHHWQUEUE.cs" />
-    <Compile Include="..\DirectN\Generated\_DXGKARG_NOTIFYCURRENTVALUEUPDATES.cs" Link="Generated\_DXGKARG_NOTIFYCURRENTVALUEUPDATES.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_NOTIFYWORKSUBMISSION_FLAGS.cs" Link="Generated\_DXGKARG_NOTIFYWORKSUBMISSION_FLAGS.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_NOTIFYWORKSUBMISSION.cs" Link="Generated\_DXGKARG_NOTIFYWORKSUBMISSION.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATEMONITOREDVALUES.cs" Link="Generated\_DXGKARG_UPDATEMONITOREDVALUES.cs" />
@@ -8624,14 +8597,6 @@
     <Compile Include="..\DirectN\Generated\__struct_ks_34__union_0.cs" Link="Generated\__struct_ks_34__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ks_41__union_0__struct_0.cs" Link="Generated\__struct_ks_41__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ks_41__union_0.cs" Link="Generated\__struct_ks_41__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_118__union_0.cs" Link="Generated\__struct_ksmedia_118__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_127__union_0.cs" Link="Generated\__struct_ksmedia_127__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_130__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_130__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_130__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_130__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_130__union_0.cs" Link="Generated\__struct_ksmedia_130__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_131__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_131__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_131__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_131__union_0__struct_1.cs" />
-    <Compile Include="..\DirectN\Generated\__struct_ksmedia_131__union_0.cs" Link="Generated\__struct_ksmedia_131__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_3__union_0.cs" Link="Generated\__struct_ksmedia_3__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_ksmedia_46__union_0.cs" Link="Generated\__struct_ksmedia_46__union_0.cs" />
     <Compile Include="..\DirectN\Generated\__struct_mmreg_1__union_0.cs" Link="Generated\__struct_mmreg_1__union_0.cs" />
@@ -9247,8 +9212,6 @@
     <Compile Include="..\DirectN\Generated\_DXGKARG_CREATEDOORBELL_FLAGS__union_0.cs" Link="Generated\_DXGKARG_CREATEDOORBELL_FLAGS__union_0.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_DISCONNECTDOORBELL_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGKARG_DISCONNECTDOORBELL_FLAGS__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_DISCONNECTDOORBELL_FLAGS__union_0.cs" Link="Generated\_DXGKARG_DISCONNECTDOORBELL_FLAGS__union_0.cs" />
-    <Compile Include="..\DirectN\Generated\_DXGKARG_FLUSHHWQUEUE_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGKARG_FLUSHHWQUEUE_FLAGS__union_0__struct_0.cs" />
-    <Compile Include="..\DirectN\Generated\_DXGKARG_FLUSHHWQUEUE_FLAGS__union_0.cs" Link="Generated\_DXGKARG_FLUSHHWQUEUE_FLAGS__union_0.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_GETSTANDARDALLOCATIONDRIVERDATA__union_0.cs" Link="Generated\_DXGKARG_GETSTANDARDALLOCATIONDRIVERDATA__union_0.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_NOTIFYWORKSUBMISSION_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGKARG_NOTIFYWORKSUBMISSION_FLAGS__union_0__struct_0.cs" />
     <Compile Include="..\DirectN\Generated\_DXGKARG_NOTIFYWORKSUBMISSION_FLAGS__union_0.cs" Link="Generated\_DXGKARG_NOTIFYWORKSUBMISSION_FLAGS__union_0.cs" />
@@ -9642,7 +9605,6 @@
     <Compile Include="..\DirectN\Generated\D3D12_DEVICE_FLAGS.cs" Link="Generated\D3D12_DEVICE_FLAGS.cs" />
     <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS19.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS19.cs" />
     <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS20.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS20.cs" />
-    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS_0092.cs" Link="Generated\D3D12DDI_OPTIONS_0092.cs" />
     <Compile Include="..\DirectN\Generated\DWRITE_BITMAP_DATA_BGRA32.cs" Link="Generated\DWRITE_BITMAP_DATA_BGRA32.cs" />
     <Compile Include="..\DirectN\Generated\DWRITE_COLOR_COMPOSITE_MODE.cs" Link="Generated\DWRITE_COLOR_COMPOSITE_MODE.cs" />
     <Compile Include="..\DirectN\Generated\DWRITE_PAINT_ATTRIBUTES.cs" Link="Generated\DWRITE_PAINT_ATTRIBUTES.cs" />
@@ -9672,6 +9634,749 @@
     <Compile Include="..\DirectN\Generated\PAINT_SOLID_GLYPH.cs" Link="Generated\PAINT_SOLID_GLYPH.cs" />
     <Compile Include="..\DirectN\Generated\PAINT_SWEEP_GRADIENT.cs" Link="Generated\PAINT_SWEEP_GRADIENT.cs" />
     <Compile Include="..\DirectN\Generated\PAINT_UNION.cs" Link="Generated\PAINT_UNION.cs" />
+    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0009_0003.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0009_0003.cs" />
+    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0013_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0013_0001.cs" />
+    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0018_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0018_0001.cs" />
+    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0018_0002.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0018_0002.cs" />
+    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfobjects_0000_0018_0003.cs" Link="Generated\__MIDL___MIDL_itf_mfobjects_0000_0018_0003.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_135__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_135__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_135__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_135__union_0__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_135__union_0.cs" Link="Generated\__struct_ksmedia_135__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_BUILDTESTCOMMANDBUFFERFLAGS__union_0__struct_0.cs" Link="Generated\_D3DDDI_BUILDTESTCOMMANDBUFFERFLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_BUILDTESTCOMMANDBUFFERFLAGS__union_0.cs" Link="Generated\_D3DDDI_BUILDTESTCOMMANDBUFFERFLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_BUILDTESTCOMMANDBUFFERFLAGS.cs" Link="Generated\_D3DDDI_BUILDTESTCOMMANDBUFFERFLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_DRIVERESCAPE_BUILDTESTCOMMANDBUFFER.cs" Link="Generated\_D3DDDI_DRIVERESCAPE_BUILDTESTCOMMANDBUFFER.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_NATIVEFENCE_TYPE.cs" Link="Generated\_D3DDDI_NATIVEFENCE_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_NATIVEFENCEINFO.cs" Link="Generated\_D3DDDI_NATIVEFENCEINFO.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_TESTCOMMANDBUFFER__union_0.cs" Link="Generated\_D3DDDI_TESTCOMMANDBUFFER__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_TESTCOMMANDBUFFER_COPY.cs" Link="Generated\_D3DDDI_TESTCOMMANDBUFFER_COPY.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_TESTCOMMANDBUFFER_FILL.cs" Link="Generated\_D3DDDI_TESTCOMMANDBUFFER_FILL.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_TESTCOMMANDBUFFER.cs" Link="Generated\_D3DDDI_TESTCOMMANDBUFFER.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_TESTCOMMANDBUFFEROP.cs" Link="Generated\_D3DDDI_TESTCOMMANDBUFFEROP.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMDT_FENCESTORAGESURFACEDATA.cs" Link="Generated\_D3DKMDT_FENCESTORAGESURFACEDATA.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_BRIGHTNESS_INTERFACE_VERSION.cs" Link="Generated\_D3DKMT_BRIGHTNESS_INTERFACE_VERSION.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATENATIVEFENCE_FLAGS__union_0__struct_0.cs" Link="Generated\_D3DKMT_CREATENATIVEFENCE_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATENATIVEFENCE_FLAGS__union_0.cs" Link="Generated\_D3DKMT_CREATENATIVEFENCE_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_CREATENATIVEFENCE_FLAGS.cs" Link="Generated\_D3DKMT_CREATENATIVEFENCE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_GET_PTE_EXT.cs" Link="Generated\_D3DKMT_GET_PTE_EXT.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_GETNATIVEFENCELOGDETAIL_FLAGS__union_0__struct_0.cs" Link="Generated\_D3DKMT_GETNATIVEFENCELOGDETAIL_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_GETNATIVEFENCELOGDETAIL_FLAGS__union_0.cs" Link="Generated\_D3DKMT_GETNATIVEFENCELOGDETAIL_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_GETNATIVEFENCELOGDETAIL_FLAGS.cs" Link="Generated\_D3DKMT_GETNATIVEFENCELOGDETAIL_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_GETNATIVEFENCELOGDETAIL.cs" Link="Generated\_D3DKMT_GETNATIVEFENCELOGDETAIL.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_HYBRID_DLIST_DLL_MUX_SUPPORT.cs" Link="Generated\_D3DKMT_HYBRID_DLIST_DLL_MUX_SUPPORT.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_ISFEATUREENABLED.cs" Link="Generated\_D3DKMT_ISFEATUREENABLED.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_OPENSYNCOBJECTFROMSYNCFILE.cs" Link="Generated\_D3DKMT_OPENSYNCOBJECTFROMSYNCFILE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_VIDMM_ESCAPE__union_0__struct_3__union_1.cs" Link="Generated\_D3DKMT_VIDMM_ESCAPE__union_0__struct_3__union_1.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DKMT_WAITSYNCFILE.cs" Link="Generated\_D3DKMT_WAITSYNCFILE.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_ADVANCED_COLOR_MODE.cs" Link="Generated\_DISPLAYCONFIG_ADVANCED_COLOR_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_2__union_0__struct_0.cs" Link="Generated\_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_2__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_2__union_0.cs" Link="Generated\_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_2__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_2.cs" Link="Generated\_DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_2.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_SET_HDR_STATE__union_0__struct_0.cs" Link="Generated\_DISPLAYCONFIG_SET_HDR_STATE__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_SET_HDR_STATE__union_0.cs" Link="Generated\_DISPLAYCONFIG_SET_HDR_STATE__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_SET_HDR_STATE.cs" Link="Generated\_DISPLAYCONFIG_SET_HDR_STATE.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_SET_WCG_STATE__union_0__struct_0.cs" Link="Generated\_DISPLAYCONFIG_SET_WCG_STATE__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_SET_WCG_STATE__union_0.cs" Link="Generated\_DISPLAYCONFIG_SET_WCG_STATE__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DISPLAYCONFIG_SET_WCG_STATE.cs" Link="Generated\_DISPLAYCONFIG_SET_WCG_STATE.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_BUFFERDESC.cs" Link="Generated\_DMUS_BUFFERDESC.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_CLOCKINFO7.cs" Link="Generated\_DMUS_CLOCKINFO7.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_CLOCKINFO8.cs" Link="Generated\_DMUS_CLOCKINFO8.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_EVENTHEADER.cs" Link="Generated\_DMUS_EVENTHEADER.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_PORTCAPS.cs" Link="Generated\_DMUS_PORTCAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_PORTPARAMS.cs" Link="Generated\_DMUS_PORTPARAMS.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_PORTPARAMS8.cs" Link="Generated\_DMUS_PORTPARAMS8.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_SYNTHSTATS.cs" Link="Generated\_DMUS_SYNTHSTATS.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_SYNTHSTATS8.cs" Link="Generated\_DMUS_SYNTHSTATS8.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_VOICE_STATE.cs" Link="Generated\_DMUS_VOICE_STATE.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_WAVES_REVERB_PARAMS.cs" Link="Generated\_DMUS_WAVES_REVERB_PARAMS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_64_BIT_ONLY_CAPS__union_0__struct_0.cs" Link="Generated\_DXGK_64_BIT_ONLY_CAPS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_64_BIT_ONLY_CAPS__union_0.cs" Link="Generated\_DXGK_64_BIT_ONLY_CAPS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_64_BIT_ONLY_CAPS.cs" Link="Generated\_DXGK_64_BIT_ONLY_CAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_ALLOCATIONINFO__union_0__struct_0.cs" Link="Generated\_DXGK_ALLOCATIONINFO__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_ALLOCATIONINFO__union_2.cs" Link="Generated\_DXGK_ALLOCATIONINFO__union_2.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_ALLOCATIONINFO__union_3.cs" Link="Generated\_DXGK_ALLOCATIONINFO__union_3.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_BUILDPAGINGBUFFER_MAPMMU.cs" Link="Generated\_DXGK_BUILDPAGINGBUFFER_MAPMMU.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFY_FENCE_RESIDENCY__union_0.cs" Link="Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFY_FENCE_RESIDENCY__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFY_FENCE_RESIDENCY.cs" Link="Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFY_FENCE_RESIDENCY.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFYALLOC.cs" Link="Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFYALLOC.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFYRESIDENCY2__struct_1.cs" Link="Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFYRESIDENCY2__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFYRESIDENCY2__union_0.cs" Link="Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFYRESIDENCY2__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFYRESIDENCY2.cs" Link="Generated\_DXGK_BUILDPAGINGBUFFER_NOTIFYRESIDENCY2.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_BUILDPAGINGBUFFER_UNMAPMMU.cs" Link="Generated\_DXGK_BUILDPAGINGBUFFER_UNMAPMMU.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_CLOSENATIVEFENCE_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGK_CLOSENATIVEFENCE_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_CLOSENATIVEFENCE_FLAGS__union_0.cs" Link="Generated\_DXGK_CLOSENATIVEFENCE_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_CLOSENATIVEFENCE_FLAGS.cs" Link="Generated\_DXGK_CLOSENATIVEFENCE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DESTROYNATIVEFENCE_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGK_DESTROYNATIVEFENCE_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DESTROYNATIVEFENCE_FLAGS__union_0.cs" Link="Generated\_DXGK_DESTROYNATIVEFENCE_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DESTROYNATIVEFENCE_FLAGS.cs" Link="Generated\_DXGK_DESTROYNATIVEFENCE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DIRTY_BIT_TRACKING_CAPS__union_0__struct_0.cs" Link="Generated\_DXGK_DIRTY_BIT_TRACKING_CAPS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DIRTY_BIT_TRACKING_CAPS__union_0.cs" Link="Generated\_DXGK_DIRTY_BIT_TRACKING_CAPS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DIRTY_BIT_TRACKING_CAPS.cs" Link="Generated\_DXGK_DIRTY_BIT_TRACKING_CAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DIRTY_BIT_TRACKING_SEGMENT_CAPS.cs" Link="Generated\_DXGK_DIRTY_BIT_TRACKING_SEGMENT_CAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DISPLAYMUX_DRIVER_SUPPORT_LEVEL.cs" Link="Generated\_DXGK_DISPLAYMUX_DRIVER_SUPPORT_LEVEL.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DISPLAYMUX_RUNTIME_STATUS.cs" Link="Generated\_DXGK_DISPLAYMUX_RUNTIME_STATUS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DISPLAYMUX_SET_INTERNAL_PANEL_INFO.cs" Link="Generated\_DXGK_DISPLAYMUX_SET_INTERNAL_PANEL_INFO.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_DRIVER_FEATURE.cs" Link="Generated\_DXGK_DRIVER_FEATURE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_FEATURE_CATEGORY.cs" Link="Generated\_DXGK_FEATURE_CATEGORY.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_FENCE_RESIDENCY_INFO.cs" Link="Generated\_DXGK_FENCE_RESIDENCY_INFO.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_GPU_PHYSICAL_RESERVE_DESCRIPTOR.cs" Link="Generated\_DXGK_GPU_PHYSICAL_RESERVE_DESCRIPTOR.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_GPUP_MIGRATIONTYPE.cs" Link="Generated\_DXGK_GPUP_MIGRATIONTYPE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_INTERRUPT_TABLE_ENTRY.cs" Link="Generated\_DXGK_INTERRUPT_TABLE_ENTRY.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_ISFEATUREENABLED_RESULT__union_0__struct_0.cs" Link="Generated\_DXGK_ISFEATUREENABLED_RESULT__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_ISFEATUREENABLED_RESULT__union_0.cs" Link="Generated\_DXGK_ISFEATUREENABLED_RESULT__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_ISFEATUREENABLED_RESULT.cs" Link="Generated\_DXGK_ISFEATUREENABLED_RESULT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_MMUDESCRIPTOR.cs" Link="Generated\_DXGK_MMUDESCRIPTOR.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_MMUFLAGS__struct_0.cs" Link="Generated\_DXGK_MMUFLAGS__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_MMUFLAGS.cs" Link="Generated\_DXGK_MMUFLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NATIVE_FENCE_LOG_BUFFER.cs" Link="Generated\_DXGK_NATIVE_FENCE_LOG_BUFFER.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NATIVE_FENCE_LOG_ENTRY.cs" Link="Generated\_DXGK_NATIVE_FENCE_LOG_ENTRY.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NATIVE_FENCE_LOG_HEADER__union_0__struct_0.cs" Link="Generated\_DXGK_NATIVE_FENCE_LOG_HEADER__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NATIVE_FENCE_LOG_HEADER__union_0.cs" Link="Generated\_DXGK_NATIVE_FENCE_LOG_HEADER__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NATIVE_FENCE_LOG_HEADER.cs" Link="Generated\_DXGK_NATIVE_FENCE_LOG_HEADER.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NATIVE_FENCE_LOG_OPERATION.cs" Link="Generated\_DXGK_NATIVE_FENCE_LOG_OPERATION.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NATIVE_FENCE_LOG_TYPE.cs" Link="Generated\_DXGK_NATIVE_FENCE_LOG_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NOTIFYALLOCFLAGS__union_0__struct_0.cs" Link="Generated\_DXGK_NOTIFYALLOCFLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NOTIFYALLOCFLAGS__union_0.cs" Link="Generated\_DXGK_NOTIFYALLOCFLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_NOTIFYALLOCFLAGS.cs" Link="Generated\_DXGK_NOTIFYALLOCFLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_OPENNATIVEFENCE_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGK_OPENNATIVEFENCE_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_OPENNATIVEFENCE_FLAGS__union_0.cs" Link="Generated\_DXGK_OPENNATIVEFENCE_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_OPENNATIVEFENCE_FLAGS.cs" Link="Generated\_DXGK_OPENNATIVEFENCE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_OS_FEATURE.cs" Link="Generated\_DXGK_OS_FEATURE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_PAGESIZE.cs" Link="Generated\_DXGK_PAGESIZE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_PRIMARYCONTEXTDATA__union_0.cs" Link="Generated\_DXGK_PRIMARYCONTEXTDATA__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_PRIMARYCONTEXTDATA__union_1.cs" Link="Generated\_DXGK_PRIMARYCONTEXTDATA__union_1.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYMMUCOUNTIN.cs" Link="Generated\_DXGK_QUERYMMUCOUNTIN.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYMMUCOUNTOUT.cs" Link="Generated\_DXGK_QUERYMMUCOUNTOUT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYMMUSIN.cs" Link="Generated\_DXGK_QUERYMMUSIN.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYMMUSOUT.cs" Link="Generated\_DXGK_QUERYMMUSOUT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYPAGINGBUFFERINFOIN.cs" Link="Generated\_DXGK_QUERYPAGINGBUFFERINFOIN.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYPAGINGBUFFERINFOOUT.cs" Link="Generated\_DXGK_QUERYPAGINGBUFFERINFOOUT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYSCATTERRESERVEIN.cs" Link="Generated\_DXGK_QUERYSCATTERRESERVEIN.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYSCATTERRESERVEOUT.cs" Link="Generated\_DXGK_QUERYSCATTERRESERVEOUT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYSEGMENTCOUNTIN.cs" Link="Generated\_DXGK_QUERYSEGMENTCOUNTIN.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYSEGMENTCOUNTOUT.cs" Link="Generated\_DXGK_QUERYSEGMENTCOUNTOUT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYSEGMENTIN5.cs" Link="Generated\_DXGK_QUERYSEGMENTIN5.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_QUERYSEGMENTOUT5.cs" Link="Generated\_DXGK_QUERYSEGMENTOUT5.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_SEGMENTDESCRIPTOR5__union_0.cs" Link="Generated\_DXGK_SEGMENTDESCRIPTOR5__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_SEGMENTDESCRIPTOR5.cs" Link="Generated\_DXGK_SEGMENTDESCRIPTOR5.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_SEGMENTTYPE.cs" Link="Generated\_DXGK_SEGMENTTYPE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_TDR_PAYLOAD_ENGINE_TIMEOUT.cs" Link="Generated\_DXGK_TDR_PAYLOAD_ENGINE_TIMEOUT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_TDR_PAYLOAD_VSYNC_TIMEOUT.cs" Link="Generated\_DXGK_TDR_PAYLOAD_VSYNC_TIMEOUT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_TDR_TYPE.cs" Link="Generated\_DXGK_TDR_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_UPDATECURRENTVALUESFROMCPU_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGK_UPDATECURRENTVALUESFROMCPU_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_UPDATECURRENTVALUESFROMCPU_FLAGS__union_0.cs" Link="Generated\_DXGK_UPDATECURRENTVALUESFROMCPU_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGK_UPDATECURRENTVALUESFROMCPU_FLAGS.cs" Link="Generated\_DXGK_UPDATECURRENTVALUESFROMCPU_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_BUILDTESTCOMMANDBUFFER.cs" Link="Generated\_DXGKARG_BUILDTESTCOMMANDBUFFER.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_CLOSENATIVEFENCE.cs" Link="Generated\_DXGKARG_CLOSENATIVEFENCE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_COLLECTDBGINFO2.cs" Link="Generated\_DXGKARG_COLLECTDBGINFO2.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_CREATEMEMORYBASIS.cs" Link="Generated\_DXGKARG_CREATEMEMORYBASIS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_CREATENATIVEFENCE_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGKARG_CREATENATIVEFENCE_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_CREATENATIVEFENCE_FLAGS__union_0.cs" Link="Generated\_DXGKARG_CREATENATIVEFENCE_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_CREATENATIVEFENCE_FLAGS.cs" Link="Generated\_DXGKARG_CREATENATIVEFENCE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_DESTROYNATIVEFENCE.cs" Link="Generated\_DXGKARG_DESTROYNATIVEFENCE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_FEATURE_SAMPLE_ADDVALUE.cs" Link="Generated\_DXGKARG_FEATURE_SAMPLE_ADDVALUE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_FEATURE_SAMPLE_SUBTRACTVALUE.cs" Link="Generated\_DXGKARG_FEATURE_SAMPLE_SUBTRACTVALUE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_FENCESTORAGEFLAGS.cs" Link="Generated\_DXGKARG_FENCESTORAGEFLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_FENCESTORAGEVALUETYPE.cs" Link="Generated\_DXGKARG_FENCESTORAGEVALUETYPE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_GPUP_PREPARE_LIVE_MIGRATION.cs" Link="Generated\_DXGKARG_GPUP_PREPARE_LIVE_MIGRATION.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_GPUP_RESTORE_IMMUTABLE_MIGRATION_DATA.cs" Link="Generated\_DXGKARG_GPUP_RESTORE_IMMUTABLE_MIGRATION_DATA.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_GPUP_RESTORE_MUTABLE_MIGRATION_DATA.cs" Link="Generated\_DXGKARG_GPUP_RESTORE_MUTABLE_MIGRATION_DATA.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_GPUP_SAVE_IMMUTABLE_MIGRATION_DATA.cs" Link="Generated\_DXGKARG_GPUP_SAVE_IMMUTABLE_MIGRATION_DATA.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_GPUP_SAVE_MUTABLE_MIGRATION_DATA.cs" Link="Generated\_DXGKARG_GPUP_SAVE_MUTABLE_MIGRATION_DATA.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_GPUP_WRITE_VIRTUALIZED_MSIX.cs" Link="Generated\_DXGKARG_GPUP_WRITE_VIRTUALIZED_MSIX.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_NOTIFYCONTEXTPRIORITYCHANGE.cs" Link="Generated\_DXGKARG_NOTIFYCONTEXTPRIORITYCHANGE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_OPENNATIVEFENCE.cs" Link="Generated\_DXGKARG_OPENNATIVEFENCE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_QUERYDIRTYBITDATA.cs" Link="Generated\_DXGKARG_QUERYDIRTYBITDATA.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_QUERYDIRTYBITDATAFLAGS.cs" Link="Generated\_DXGKARG_QUERYDIRTYBITDATAFLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_QUERYFEATUREINTERFACE.cs" Link="Generated\_DXGKARG_QUERYFEATUREINTERFACE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_QUERYFEATURESUPPORT.cs" Link="Generated\_DXGKARG_QUERYFEATURESUPPORT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_RESETDISPLAYENGINE.cs" Link="Generated\_DXGKARG_RESETDISPLAYENGINE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_SETNATIVEFENCELOGBUFFER_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGKARG_SETNATIVEFENCELOGBUFFER_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_SETNATIVEFENCELOGBUFFER_FLAGS__union_0.cs" Link="Generated\_DXGKARG_SETNATIVEFENCELOGBUFFER_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_SETNATIVEFENCELOGBUFFER_FLAGS.cs" Link="Generated\_DXGKARG_SETNATIVEFENCELOGBUFFER_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_SETNATIVEFENCELOGBUFFER.cs" Link="Generated\_DXGKARG_SETNATIVEFENCELOGBUFFER.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_SETVIRTUALFUNCTIONPAUSESTATE.cs" Link="Generated\_DXGKARG_SETVIRTUALFUNCTIONPAUSESTATE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_SETVIRTUALGPURESOURCES2.cs" Link="Generated\_DXGKARG_SETVIRTUALGPURESOURCES2.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATECURRENTVALUESFROMCPU.cs" Link="Generated\_DXGKARG_UPDATECURRENTVALUESFROMCPU.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATEMONITOREDVALUES_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGKARG_UPDATEMONITOREDVALUES_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATEMONITOREDVALUES_FLAGS__union_0.cs" Link="Generated\_DXGKARG_UPDATEMONITOREDVALUES_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATEMONITOREDVALUES_FLAGS.cs" Link="Generated\_DXGKARG_UPDATEMONITOREDVALUES_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATENATIVEFENCELOGS_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGKARG_UPDATENATIVEFENCELOGS_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATENATIVEFENCELOGS_FLAGS__union_0.cs" Link="Generated\_DXGKARG_UPDATENATIVEFENCELOGS_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATENATIVEFENCELOGS_FLAGS.cs" Link="Generated\_DXGKARG_UPDATENATIVEFENCELOGS_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARG_UPDATENATIVEFENCELOGS.cs" Link="Generated\_DXGKARG_UPDATENATIVEFENCELOGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARGCB_FEATURE_NATIVEFENCE_CAPS_1.cs" Link="Generated\_DXGKARGCB_FEATURE_NATIVEFENCE_CAPS_1.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARGCB_FEATURE_SAMPLE_GETVALUE.cs" Link="Generated\_DXGKARGCB_FEATURE_SAMPLE_GETVALUE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARGCB_ISFEATUREENABLED2_FLAGS__union_0__struct_0.cs" Link="Generated\_DXGKARGCB_ISFEATUREENABLED2_FLAGS__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARGCB_ISFEATUREENABLED2_FLAGS__union_0.cs" Link="Generated\_DXGKARGCB_ISFEATUREENABLED2_FLAGS__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARGCB_ISFEATUREENABLED2_FLAGS.cs" Link="Generated\_DXGKARGCB_ISFEATUREENABLED2_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARGCB_ISFEATUREENABLED2.cs" Link="Generated\_DXGKARGCB_ISFEATUREENABLED2.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKARGCB_QUERYFEATUREINTERFACE.cs" Link="Generated\_DXGKARGCB_QUERYFEATUREINTERFACE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKCBINT_FEATURE_NATIVEFENCE_1.cs" Link="Generated\_DXGKCBINT_FEATURE_NATIVEFENCE_1.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKCBINT_FEATURE_SAMPLE_4.cs" Link="Generated\_DXGKCBINT_FEATURE_SAMPLE_4.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKDDI_KERNELMODETESTINGINTERFACE.cs" Link="Generated\_DXGKDDI_KERNELMODETESTINGINTERFACE.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKDDIINT_FEATURE_SAMPLE_4.cs" Link="Generated\_DXGKDDIINT_FEATURE_SAMPLE_4.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKDDIINT_FEATURE_SAMPLE_5.cs" Link="Generated\_DXGKDDIINT_FEATURE_SAMPLE_5.cs" />
+    <Compile Include="..\DirectN\Generated\_DXGKISFEATUREENABLED2IOCTL.cs" Link="Generated\_DXGKISFEATUREENABLED2IOCTL.cs" />
+    <Compile Include="..\DirectN\Generated\D3D_FORMAT_COMPONENT_INTERPRETATION.cs" Link="Generated\D3D_FORMAT_COMPONENT_INTERPRETATION.cs" />
+    <Compile Include="..\DirectN\Generated\D3D_FORMAT_COMPONENT_NAME.cs" Link="Generated\D3D_FORMAT_COMPONENT_NAME.cs" />
+    <Compile Include="..\DirectN\Generated\D3D_FORMAT_LAYOUT.cs" Link="Generated\D3D_FORMAT_LAYOUT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D_FORMAT_TYPE_LEVEL.cs" Link="Generated\D3D_FORMAT_TYPE_LEVEL.cs" />
+    <Compile Include="..\DirectN\Generated\DMUS_CLOCK.cs" Link="Generated\DMUS_CLOCK.cs" />
+    <Compile Include="..\DirectN\Generated\GAME_INSTALL_SCOPE.cs" Link="Generated\GAME_INSTALL_SCOPE.cs" />
+    <Compile Include="..\DirectN\Generated\GAMESTATS_OPEN_RESULT.cs" Link="Generated\GAMESTATS_OPEN_RESULT.cs" />
+    <Compile Include="..\DirectN\Generated\GAMESTATS_OPEN_TYPE.cs" Link="Generated\GAMESTATS_OPEN_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusic.cs" Link="Generated\IDirectMusic.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusic8.cs" Link="Generated\IDirectMusic8.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicBuffer.cs" Link="Generated\IDirectMusicBuffer.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicCollection.cs" Link="Generated\IDirectMusicCollection.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicDownload.cs" Link="Generated\IDirectMusicDownload.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicDownloadedInstrument.cs" Link="Generated\IDirectMusicDownloadedInstrument.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicInstrument.cs" Link="Generated\IDirectMusicInstrument.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicPort.cs" Link="Generated\IDirectMusicPort.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicPortDownload.cs" Link="Generated\IDirectMusicPortDownload.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicSynth.cs" Link="Generated\IDirectMusicSynth.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicSynth8.cs" Link="Generated\IDirectMusicSynth8.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicSynthSink.cs" Link="Generated\IDirectMusicSynthSink.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectMusicThru.cs" Link="Generated\IDirectMusicThru.cs" />
+    <Compile Include="..\DirectN\Generated\IGameExplorer.cs" Link="Generated\IGameExplorer.cs" />
+    <Compile Include="..\DirectN\Generated\IGameExplorer2.cs" Link="Generated\IGameExplorer2.cs" />
+    <Compile Include="..\DirectN\Generated\IGameStatistics.cs" Link="Generated\IGameStatistics.cs" />
+    <Compile Include="..\DirectN\Generated\IGameStatisticsMgr.cs" Link="Generated\IGameStatisticsMgr.cs" />
+    <Compile Include="..\DirectN\Generated\IMFDXGICrossAdapterBuffer.cs" Link="Generated\IMFDXGICrossAdapterBuffer.cs" />
+    <Compile Include="..\DirectN\Generated\KSMIDILOOPED_BUFFER.cs" Link="Generated\KSMIDILOOPED_BUFFER.cs" />
+    <Compile Include="..\DirectN\Generated\KSMIDILOOPED_EVENT.cs" Link="Generated\KSMIDILOOPED_EVENT.cs" />
+    <Compile Include="..\DirectN\Generated\KSMIDILOOPED_REGISTERS.cs" Link="Generated\KSMIDILOOPED_REGISTERS.cs" />
+    <Compile Include="..\DirectN\Generated\KSPROPERTY_AUDIOLOOPBACK_TAPPOINT_CAPS.cs" Link="Generated\KSPROPERTY_AUDIOLOOPBACK_TAPPOINT_CAPS.cs" />
+    <Compile Include="..\DirectN\Generated\KSPROPERTY_MIDILOOPEDSTREAMING.cs" Link="Generated\KSPROPERTY_MIDILOOPEDSTREAMING.cs" />
+    <Compile Include="..\DirectN\Generated\MF_DXGI_DEVICE_MANAGER_MODE.cs" Link="Generated\MF_DXGI_DEVICE_MANAGER_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\tagAUDIOLOOPBACK_TAPPOINT_TYPE.cs" Link="Generated\tagAUDIOLOOPBACK_TAPPOINT_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\tagKSATTRIBUTE_AUDIOLOOPBACK_TAPPOINT.cs" Link="Generated\tagKSATTRIBUTE_AUDIOLOOPBACK_TAPPOINT.cs" />
+    <Compile Include="..\DirectN\Generated\tagKSCAMERA_EXTENDEDPROP_FIELDOFVIEW2_CONFIGCAPS.cs" Link="Generated\tagKSCAMERA_EXTENDEDPROP_FIELDOFVIEW2_CONFIGCAPS.cs" />
+    <Compile Include="..\DirectN\Generated\UMPDATAFORMAT.cs" Link="Generated\UMPDATAFORMAT.cs" />
+    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_audioenginebaseapo_0000_0012_0001.cs" Link="Generated\__MIDL___MIDL_itf_audioenginebaseapo_0000_0012_0001.cs" />
+    <Compile Include="..\DirectN\Generated\__MIDL___MIDL_itf_mfidl_0000_0139_0001.cs" Link="Generated\__MIDL___MIDL_itf_mfidl_0000_0139_0001.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_116.cs" Link="Generated\__struct_ksmedia_116.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_117.cs" Link="Generated\__struct_ksmedia_117.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_118.cs" Link="Generated\__struct_ksmedia_118.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_119.cs" Link="Generated\__struct_ksmedia_119.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_120.cs" Link="Generated\__struct_ksmedia_120.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_123__union_0.cs" Link="Generated\__struct_ksmedia_123__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_132__union_0.cs" Link="Generated\__struct_ksmedia_132__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_136__union_0__struct_0.cs" Link="Generated\__struct_ksmedia_136__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_136__union_0__struct_1.cs" Link="Generated\__struct_ksmedia_136__union_0__struct_1.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_136__union_0.cs" Link="Generated\__struct_ksmedia_136__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_143.cs" Link="Generated\__struct_ksmedia_143.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_149.cs" Link="Generated\__struct_ksmedia_149.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_151.cs" Link="Generated\__struct_ksmedia_151.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_152.cs" Link="Generated\__struct_ksmedia_152.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_153.cs" Link="Generated\__struct_ksmedia_153.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_155.cs" Link="Generated\__struct_ksmedia_155.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_65.cs" Link="Generated\__struct_ksmedia_65.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_78.cs" Link="Generated\__struct_ksmedia_78.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_80.cs" Link="Generated\__struct_ksmedia_80.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_81.cs" Link="Generated\__struct_ksmedia_81.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_82.cs" Link="Generated\__struct_ksmedia_82.cs" />
+    <Compile Include="..\DirectN\Generated\__struct_ksmedia_99.cs" Link="Generated\__struct_ksmedia_99.cs" />
+    <Compile Include="..\DirectN\Generated\_D3D12DDI_NODE_0108__union_0.cs" Link="Generated\_D3D12DDI_NODE_0108__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_D3D12DDI_NODE_0108.cs" Link="Generated\_D3D12DDI_NODE_0108.cs" />
+    <Compile Include="..\DirectN\Generated\_D3D9_UMD_MODE.cs" Link="Generated\_D3D9_UMD_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_DLIST_MUX_QUERY_COMPATIBILITY_RESULT.cs" Link="Generated\_D3DDDI_DLIST_MUX_QUERY_COMPATIBILITY_RESULT.cs" />
+    <Compile Include="..\DirectN\Generated\_D3DDDI_DLIST_MUX_QUERY_RESULT.cs" Link="Generated\_D3DDDI_DLIST_MUX_QUERY_RESULT.cs" />
+    <Compile Include="..\DirectN\Generated\_DXVA_HuffmanTable_MJPEG.cs" Link="Generated\_DXVA_HuffmanTable_MJPEG.cs" />
+    <Compile Include="..\DirectN\Generated\_DXVA_PicParams_HEVC_RangeExt__union_0__struct_0.cs" Link="Generated\_DXVA_PicParams_HEVC_RangeExt__union_0__struct_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXVA_PicParams_HEVC_RangeExt__union_0.cs" Link="Generated\_DXVA_PicParams_HEVC_RangeExt__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\_DXVA_PicParams_HEVC_RangeExt.cs" Link="Generated\_DXVA_PicParams_HEVC_RangeExt.cs" />
+    <Compile Include="..\DirectN\Generated\_DXVA_PicParams_MJPEG.cs" Link="Generated\_DXVA_PicParams_MJPEG.cs" />
+    <Compile Include="..\DirectN\Generated\_DXVA_QMatrix_MJPEG.cs" Link="Generated\_DXVA_QMatrix_MJPEG.cs" />
+    <Compile Include="..\DirectN\Generated\AcousticEchoCanceller_Reference_Input.cs" Link="Generated\AcousticEchoCanceller_Reference_Input.cs" />
+    <Compile Include="..\DirectN\Generated\APO_REFERENCE_STREAM_PROPERTIES.cs" Link="Generated\APO_REFERENCE_STREAM_PROPERTIES.cs" />
+    <Compile Include="..\DirectN\Generated\AUDIO_ENVIRONMENT_STATE_CHANGE_NOTIFICATION.cs" Link="Generated\AUDIO_ENVIRONMENT_STATE_CHANGE_NOTIFICATION.cs" />
+    <Compile Include="..\DirectN\Generated\D3D11_FEATURE_DATA_D3D11_OPTIONS6.cs" Link="Generated\D3D11_FEATURE_DATA_D3D11_OPTIONS6.cs" />
+    <Compile Include="..\DirectN\Generated\D3D11_SHADER_ACCESS_RESTRICTED_RESOURCE_TIER.cs" Link="Generated\D3D11_SHADER_ACCESS_RESTRICTED_RESOURCE_TIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D11_UMD_MODE.cs" Link="Generated\D3D11_UMD_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_BROADCASTING_LAUNCH_OVERRIDES.cs" Link="Generated\D3D12_BROADCASTING_LAUNCH_OVERRIDES.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_COALESCING_LAUNCH_OVERRIDES.cs" Link="Generated\D3D12_COALESCING_LAUNCH_OVERRIDES.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_COMMON_COMPUTE_NODE_OVERRIDES.cs" Link="Generated\D3D12_COMMON_COMPUTE_NODE_OVERRIDES.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DEPTH_STENCIL_DESC2.cs" Link="Generated\D3D12_DEPTH_STENCIL_DESC2.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DEPTH_STENCIL_FORMAT.cs" Link="Generated\D3D12_DEPTH_STENCIL_FORMAT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DEPTH_STENCILOP_DESC1.cs" Link="Generated\D3D12_DEPTH_STENCILOP_DESC1.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DISPATCH_GRAPH_DESC__union_0.cs" Link="Generated\D3D12_DISPATCH_GRAPH_DESC__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DISPATCH_GRAPH_DESC.cs" Link="Generated\D3D12_DISPATCH_GRAPH_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_DISPATCH_MODE.cs" Link="Generated\D3D12_DISPATCH_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_EXECUTE_INDIRECT_TIER.cs" Link="Generated\D3D12_EXECUTE_INDIRECT_TIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS14.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS14.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS15.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS15.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS16.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS16.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS17.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS17.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS18.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS18.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS21.cs" Link="Generated\D3D12_FEATURE_DATA_D3D12_OPTIONS21.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_HARDWARE_COPY.cs" Link="Generated\D3D12_FEATURE_DATA_HARDWARE_COPY.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_PLACED_RESOURCE_SUPPORT_INFO.cs" Link="Generated\D3D12_FEATURE_DATA_PLACED_RESOURCE_SUPPORT_INFO.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_PREDICATION.cs" Link="Generated\D3D12_FEATURE_DATA_PREDICATION.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG.cs" Link="Generated\D3D12_FEATURE_DATA_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT1.cs" Link="Generated\D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT1.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_GENERIC_PROGRAM_DESC.cs" Link="Generated\D3D12_GENERIC_PROGRAM_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_IB_STRIP_CUT_VALUE.cs" Link="Generated\D3D12_IB_STRIP_CUT_VALUE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_INDIRECT_ARGUMENT_DESC__union_0__struct_5.cs" Link="Generated\D3D12_INDIRECT_ARGUMENT_DESC__union_0__struct_5.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_LINE_RASTERIZATION_MODE.cs" Link="Generated\D3D12_LINE_RASTERIZATION_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_MULTI_NODE_CPU_INPUT.cs" Link="Generated\D3D12_MULTI_NODE_CPU_INPUT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_MULTI_NODE_GPU_INPUT.cs" Link="Generated\D3D12_MULTI_NODE_GPU_INPUT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_NODE__union_0.cs" Link="Generated\D3D12_NODE__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_NODE_CPU_INPUT.cs" Link="Generated\D3D12_NODE_CPU_INPUT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_NODE_GPU_INPUT.cs" Link="Generated\D3D12_NODE_GPU_INPUT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_NODE_ID.cs" Link="Generated\D3D12_NODE_ID.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_NODE_OUTPUT_OVERRIDES.cs" Link="Generated\D3D12_NODE_OUTPUT_OVERRIDES.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_NODE_OVERRIDES_TYPE.cs" Link="Generated\D3D12_NODE_OVERRIDES_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_NODE_TYPE.cs" Link="Generated\D3D12_NODE_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_NODE.cs" Link="Generated\D3D12_NODE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_PRIMITIVE_TOPOLOGY_DESC.cs" Link="Generated\D3D12_PRIMITIVE_TOPOLOGY_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_PROGRAM_IDENTIFIER.cs" Link="Generated\D3D12_PROGRAM_IDENTIFIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_PROGRAM_TYPE.cs" Link="Generated\D3D12_PROGRAM_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_RASTERIZER_DESC1.cs" Link="Generated\D3D12_RASTERIZER_DESC1.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_RASTERIZER_DESC2.cs" Link="Generated\D3D12_RASTERIZER_DESC2.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_RECREATE_AT_TIER.cs" Link="Generated\D3D12_RECREATE_AT_TIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS.cs" Link="Generated\D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_RENDER_PASS_ENDING_ACCESS_PRESERVE_LOCAL_PARAMETERS.cs" Link="Generated\D3D12_RENDER_PASS_ENDING_ACCESS_PRESERVE_LOCAL_PARAMETERS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_ROOT_SIGNATURE_DESC2.cs" Link="Generated\D3D12_ROOT_SIGNATURE_DESC2.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SAMPLE_MASK.cs" Link="Generated\D3D12_SAMPLE_MASK.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SAMPLER_DESC2__union_0.cs" Link="Generated\D3D12_SAMPLER_DESC2__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SAMPLER_DESC2.cs" Link="Generated\D3D12_SAMPLER_DESC2.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SAMPLER_FLAGS.cs" Link="Generated\D3D12_SAMPLER_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SET_GENERIC_PIPELINE_DESC.cs" Link="Generated\D3D12_SET_GENERIC_PIPELINE_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SET_PROGRAM_DESC__union_0.cs" Link="Generated\D3D12_SET_PROGRAM_DESC__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SET_PROGRAM_DESC.cs" Link="Generated\D3D12_SET_PROGRAM_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SET_RAYTRACING_PIPELINE_DESC.cs" Link="Generated\D3D12_SET_RAYTRACING_PIPELINE_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SET_WORK_GRAPH_DESC.cs" Link="Generated\D3D12_SET_WORK_GRAPH_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SET_WORK_GRAPH_FLAGS.cs" Link="Generated\D3D12_SET_WORK_GRAPH_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SHADER_NODE__union_0.cs" Link="Generated\D3D12_SHADER_NODE__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_SHADER_NODE.cs" Link="Generated\D3D12_SHADER_NODE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_STATIC_SAMPLER_DESC1.cs" Link="Generated\D3D12_STATIC_SAMPLER_DESC1.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_TEX2DMS_ARRAY_UAV.cs" Link="Generated\D3D12_TEX2DMS_ARRAY_UAV.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_TEX2DMS_UAV.cs" Link="Generated\D3D12_TEX2DMS_UAV.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_THREAD_LAUNCH_OVERRIDES.cs" Link="Generated\D3D12_THREAD_LAUNCH_OVERRIDES.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_CDEF_CONFIG.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_CDEF_CONFIG.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION_SUPPORT.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION_SUPPORT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_COMP_PREDICTION_TYPE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_COMP_PREDICTION_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_FRAME_SUBREGION_LAYOUT_CONFIG_VALIDATION_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_FRAME_SUBREGION_LAYOUT_CONFIG_VALIDATION_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_FRAME_TYPE_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_FRAME_TYPE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_FRAME_TYPE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_FRAME_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_INTERPOLATION_FILTERS_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_INTERPOLATION_FILTERS_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_INTERPOLATION_FILTERS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_INTERPOLATION_FILTERS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_LEVEL_TIER_CONSTRAINTS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_LEVEL_TIER_CONSTRAINTS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_LEVELS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_LEVELS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_TILES.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_TILES.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_POST_ENCODE_VALUES_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_POST_ENCODE_VALUES_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_POST_ENCODE_VALUES.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_POST_ENCODE_VALUES.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_PROFILE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_PROFILE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_REFERENCE_PICTURE_DESCRIPTOR.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_REFERENCE_PICTURE_DESCRIPTOR.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_REFERENCE_PICTURE_WARPED_MOTION_INFO.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_REFERENCE_PICTURE_WARPED_MOTION_INFO.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_REFERENCE_WARPED_MOTION_TRANSFORMATION_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_REFERENCE_WARPED_MOTION_TRANSFORMATION_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_REFERENCE_WARPED_MOTION_TRANSFORMATION.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_REFERENCE_WARPED_MOTION_TRANSFORMATION.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_RESTORATION_CONFIG.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_RESTORATION_CONFIG.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_RESTORATION_SUPPORT_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_RESTORATION_SUPPORT_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_RESTORATION_TILESIZE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_RESTORATION_TILESIZE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_RESTORATION_TYPE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_RESTORATION_TYPE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENT_DATA.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENT_DATA.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_BLOCK_SIZE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_BLOCK_SIZE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_CONFIG.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_CONFIG.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_MAP.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_MAP.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_MODE_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_MODE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_MODE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_SEGMENTATION_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_SEQUENCE_STRUCTURE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_SEQUENCE_STRUCTURE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_TIER.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_TIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_TX_MODE_FLAGS.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_TX_MODE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_AV1_TX_MODE.cs" Link="Generated\D3D12_VIDEO_ENCODER_AV1_TX_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_LOOP_FILTER_CONFIG.cs" Link="Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_LOOP_FILTER_CONFIG.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_LOOP_FILTER_DELTA_CONFIG.cs" Link="Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_LOOP_FILTER_DELTA_CONFIG.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_PICTURE_CONTROL_SUPPORT.cs" Link="Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_PICTURE_CONTROL_SUPPORT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_QUANTIZATION_CONFIG.cs" Link="Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_QUANTIZATION_CONFIG.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_QUANTIZATION_DELTA_CONFIG.cs" Link="Generated\D3D12_VIDEO_ENCODER_CODEC_AV1_QUANTIZATION_DELTA_CONFIG.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT__union_0.cs" Link="Generated\D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT.cs" Link="Generated\D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_ABSOLUTE_QP_MAP.cs" Link="Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_ABSOLUTE_QP_MAP.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_CBR1.cs" Link="Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_CBR1.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP1.cs" Link="Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP1.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_QVBR1.cs" Link="Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_QVBR1.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR1.cs" Link="Generated\D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR1.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_WORK_GRAPH_DESC.cs" Link="Generated\D3D12_WORK_GRAPH_DESC.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_WORK_GRAPH_FLAGS.cs" Link="Generated\D3D12_WORK_GRAPH_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_WORK_GRAPH_MEMORY_REQUIREMENTS.cs" Link="Generated\D3D12_WORK_GRAPH_MEMORY_REQUIREMENTS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12_WORK_GRAPHS_TIER.cs" Link="Generated\D3D12_WORK_GRAPHS_TIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_ADAPTERFUNCS_0109.cs" Link="Generated\D3D12DDI_ADAPTERFUNCS_0109.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_BROADCASTING_LAUNCH_NODE_PROPERTIES_0084.cs" Link="Generated\D3D12DDI_BROADCASTING_LAUNCH_NODE_PROPERTIES_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_BROADCASTING_LAUNCH_NODE_PROPERTIES_0108.cs" Link="Generated\D3D12DDI_BROADCASTING_LAUNCH_NODE_PROPERTIES_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COALESCING_LAUNCH_NODE_PROPERTIES_0084.cs" Link="Generated\D3D12DDI_COALESCING_LAUNCH_NODE_PROPERTIES_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COALESCING_LAUNCH_NODE_PROPERTIES_0108.cs" Link="Generated\D3D12DDI_COALESCING_LAUNCH_NODE_PROPERTIES_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COMMAND_LIST_FUNCS_3D_0094.cs" Link="Generated\D3D12DDI_COMMAND_LIST_FUNCS_3D_0094.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COMMAND_LIST_FUNCS_3D_0095.cs" Link="Generated\D3D12DDI_COMMAND_LIST_FUNCS_3D_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COMMAND_LIST_FUNCS_3D_0099.cs" Link="Generated\D3D12DDI_COMMAND_LIST_FUNCS_3D_0099.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COMMAND_LIST_FUNCS_3D_0108.cs" Link="Generated\D3D12DDI_COMMAND_LIST_FUNCS_3D_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COMMAND_LIST_FUNCS_VIDEO_DECODE_0094.cs" Link="Generated\D3D12DDI_COMMAND_LIST_FUNCS_VIDEO_DECODE_0094.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COMMAND_LIST_FUNCS_VIDEO_ENCODE_0094.cs" Link="Generated\D3D12DDI_COMMAND_LIST_FUNCS_VIDEO_ENCODE_0094.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_COMMAND_LIST_FUNCS_VIDEO_PROCESS_0094.cs" Link="Generated\D3D12DDI_COMMAND_LIST_FUNCS_VIDEO_PROCESS_0094.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEPTH_STENCIL_DESC_0095.cs" Link="Generated\D3D12DDI_DEPTH_STENCIL_DESC_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEPTH_STENCIL_FORMAT_0084.cs" Link="Generated\D3D12DDI_DEPTH_STENCIL_FORMAT_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEVICE_FUNCS_CORE_0095.cs" Link="Generated\D3D12DDI_DEVICE_FUNCS_CORE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEVICE_FUNCS_CORE_0096.cs" Link="Generated\D3D12DDI_DEVICE_FUNCS_CORE_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEVICE_FUNCS_CORE_0099.cs" Link="Generated\D3D12DDI_DEVICE_FUNCS_CORE_0099.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEVICE_FUNCS_CORE_0100.cs" Link="Generated\D3D12DDI_DEVICE_FUNCS_CORE_0100.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEVICE_FUNCS_CORE_0102.cs" Link="Generated\D3D12DDI_DEVICE_FUNCS_CORE_0102.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEVICE_FUNCS_CORE_0108.cs" Link="Generated\D3D12DDI_DEVICE_FUNCS_CORE_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DEVICE_FUNCS_CORE_0109.cs" Link="Generated\D3D12DDI_DEVICE_FUNCS_CORE_0109.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DISPATCH_GRAPH_DESC_0108__union_0.cs" Link="Generated\D3D12DDI_DISPATCH_GRAPH_DESC_0108__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DISPATCH_GRAPH_DESC_0108.cs" Link="Generated\D3D12DDI_DISPATCH_GRAPH_DESC_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_DISPATCH_MODE_0108.cs" Link="Generated\D3D12DDI_DISPATCH_MODE_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_EXECUTE_INDIRECT_TIER.cs" Link="Generated\D3D12DDI_EXECUTE_INDIRECT_TIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_EXTENDED_FEATURES_FUNCS_0096.cs" Link="Generated\D3D12DDI_EXTENDED_FEATURES_FUNCS_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_FEATURE_DATA_HARDWARE_COPY_106.cs" Link="Generated\D3D12DDI_FEATURE_DATA_HARDWARE_COPY_106.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_FEATURE_DATA_PLACED_RESOURCE_SUPPORT_INFO_106.cs" Link="Generated\D3D12DDI_FEATURE_DATA_PLACED_RESOURCE_SUPPORT_INFO_106.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_FEATURE_DATA_PREDICATION_106.cs" Link="Generated\D3D12DDI_FEATURE_DATA_PREDICATION_106.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_FEATURE_DATA_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_0095.cs" Link="Generated\D3D12DDI_FEATURE_DATA_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_GENERIC_PROGRAM_DESC_0108.cs" Link="Generated\D3D12DDI_GENERIC_PROGRAM_DESC_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_INDIRECT_ARGUMENT_DESC__union_0__struct_5.cs" Link="Generated\D3D12DDI_INDIRECT_ARGUMENT_DESC__union_0__struct_5.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_LINE_RASTERIZATION_MODE.cs" Link="Generated\D3D12DDI_LINE_RASTERIZATION_MODE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_MULTI_NODE_CPU_INPUT_0108.cs" Link="Generated\D3D12DDI_MULTI_NODE_CPU_INPUT_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_MULTI_NODE_GPU_INPUT_0108.cs" Link="Generated\D3D12DDI_MULTI_NODE_GPU_INPUT_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_0084__union_0.cs" Link="Generated\D3D12DDI_NODE_0084__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_0084.cs" Link="Generated\D3D12DDI_NODE_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_CPU_INPUT_0108.cs" Link="Generated\D3D12DDI_NODE_CPU_INPUT_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_GPU_INPUT_0108.cs" Link="Generated\D3D12DDI_NODE_GPU_INPUT_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_ID_0108.cs" Link="Generated\D3D12DDI_NODE_ID_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_IO_FLAGS_0108.cs" Link="Generated\D3D12DDI_NODE_IO_FLAGS_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_IO_KIND_0108.cs" Link="Generated\D3D12DDI_NODE_IO_KIND_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_LIST_ENTRY_0108.cs" Link="Generated\D3D12DDI_NODE_LIST_ENTRY_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_OUTPUT_0084.cs" Link="Generated\D3D12DDI_NODE_OUTPUT_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_OUTPUT_0108.cs" Link="Generated\D3D12DDI_NODE_OUTPUT_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_PROPERTIES_TYPE_0084.cs" Link="Generated\D3D12DDI_NODE_PROPERTIES_TYPE_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_PROPERTIES_TYPE_0108.cs" Link="Generated\D3D12DDI_NODE_PROPERTIES_TYPE_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_TYPE_0084.cs" Link="Generated\D3D12DDI_NODE_TYPE_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_NODE_TYPE_0108.cs" Link="Generated\D3D12DDI_NODE_TYPE_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS_0093.cs" Link="Generated\D3D12DDI_OPTIONS_0093.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS_0098.cs" Link="Generated\D3D12DDI_OPTIONS_0098.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS_0101.cs" Link="Generated\D3D12DDI_OPTIONS_0101.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS_0102.cs" Link="Generated\D3D12DDI_OPTIONS_0102.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS_0109.cs" Link="Generated\D3D12DDI_OPTIONS_0109.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS_DATA_0110.cs" Link="Generated\D3D12DDI_OPTIONS_DATA_0110.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_OPTIONS1_DATA_0103.cs" Link="Generated\D3D12DDI_OPTIONS1_DATA_0103.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_PIPELINE_STATE_FLAGS.cs" Link="Generated\D3D12DDI_PIPELINE_STATE_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_PRIMITIVE_TOPOLOGY_DESC_0084.cs" Link="Generated\D3D12DDI_PRIMITIVE_TOPOLOGY_DESC_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_PROGRAM_IDENTIFIER_0108.cs" Link="Generated\D3D12DDI_PROGRAM_IDENTIFIER_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_PROGRAM_TYPE_0084.cs" Link="Generated\D3D12DDI_PROGRAM_TYPE_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_PROGRAM_TYPE_0108.cs" Link="Generated\D3D12DDI_PROGRAM_TYPE_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RANGED_BARRIER_0094.cs" Link="Generated\D3D12DDI_RANGED_BARRIER_0094.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RANGED_BARRIER_FLAGS_0094.cs" Link="Generated\D3D12DDI_RANGED_BARRIER_FLAGS_0094.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RASTERIZER_DESC_0099.cs" Link="Generated\D3D12DDI_RASTERIZER_DESC_0099.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RASTERIZER_DESC_0102.cs" Link="Generated\D3D12DDI_RASTERIZER_DESC_0102.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RECORD_DISPATCH_GRID_0108.cs" Link="Generated\D3D12DDI_RECORD_DISPATCH_GRID_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RECREATE_AT_TIER.cs" Link="Generated\D3D12DDI_RECREATE_AT_TIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS_0101.cs" Link="Generated\D3D12DDI_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS_0101.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RENDER_PASS_ENDING_ACCESS_PRESERVE_LOCAL_PARAMETERS_0101.cs" Link="Generated\D3D12DDI_RENDER_PASS_ENDING_ACCESS_PRESERVE_LOCAL_PARAMETERS_0101.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_ROOT_SIGNATURE_0100.cs" Link="Generated\D3D12DDI_ROOT_SIGNATURE_0100.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_RT_FORMAT_ARRAY.cs" Link="Generated\D3D12DDI_RT_FORMAT_ARRAY.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SAMPLE_MASK_0084.cs" Link="Generated\D3D12DDI_SAMPLE_MASK_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SAMPLER_DESC_0096__union_0.cs" Link="Generated\D3D12DDI_SAMPLER_DESC_0096__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SAMPLER_DESC_0096.cs" Link="Generated\D3D12DDI_SAMPLER_DESC_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SAMPLER_FLAGS_0096.cs" Link="Generated\D3D12DDI_SAMPLER_FLAGS_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_GENERIC_PIPELINE_DESC_0084.cs" Link="Generated\D3D12DDI_SET_GENERIC_PIPELINE_DESC_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_GENERIC_PIPELINE_DESC_0108.cs" Link="Generated\D3D12DDI_SET_GENERIC_PIPELINE_DESC_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_PROGRAM_DESC_0084__union_0.cs" Link="Generated\D3D12DDI_SET_PROGRAM_DESC_0084__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_PROGRAM_DESC_0084.cs" Link="Generated\D3D12DDI_SET_PROGRAM_DESC_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_PROGRAM_DESC_0108__union_0.cs" Link="Generated\D3D12DDI_SET_PROGRAM_DESC_0108__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_PROGRAM_DESC_0108.cs" Link="Generated\D3D12DDI_SET_PROGRAM_DESC_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_RAYTRACING_PIPELINE_DESC_0084.cs" Link="Generated\D3D12DDI_SET_RAYTRACING_PIPELINE_DESC_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_RAYTRACING_PIPELINE_DESC_0108.cs" Link="Generated\D3D12DDI_SET_RAYTRACING_PIPELINE_DESC_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_WORK_GRAPH_DESC_0084.cs" Link="Generated\D3D12DDI_SET_WORK_GRAPH_DESC_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_WORK_GRAPH_DESC_0108.cs" Link="Generated\D3D12DDI_SET_WORK_GRAPH_DESC_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_WORK_GRAPH_FLAGS_0084.cs" Link="Generated\D3D12DDI_SET_WORK_GRAPH_FLAGS_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SET_WORK_GRAPH_FLAGS_0108.cs" Link="Generated\D3D12DDI_SET_WORK_GRAPH_FLAGS_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SHADER_MODEL_6_8_OPTIONS_0110.cs" Link="Generated\D3D12DDI_SHADER_MODEL_6_8_OPTIONS_0110.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SHADER_NODE_0084__union_0.cs" Link="Generated\D3D12DDI_SHADER_NODE_0084__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SHADER_NODE_0084.cs" Link="Generated\D3D12DDI_SHADER_NODE_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SHADER_NODE_0108__union_0.cs" Link="Generated\D3D12DDI_SHADER_NODE_0108__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_SHADER_NODE_0108.cs" Link="Generated\D3D12DDI_SHADER_NODE_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_STATE_OBJECTS_EXPERIMENT_FUNCS_0084.cs" Link="Generated\D3D12DDI_STATE_OBJECTS_EXPERIMENT_FUNCS_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_STATIC_SAMPLER_0100.cs" Link="Generated\D3D12DDI_STATIC_SAMPLER_0100.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_STREAM_OUTPUT_DESC_0108.cs" Link="Generated\D3D12DDI_STREAM_OUTPUT_DESC_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_THREAD_LAUNCH_NODE_PROPERTIES_0084.cs" Link="Generated\D3D12DDI_THREAD_LAUNCH_NODE_PROPERTIES_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_THREAD_LAUNCH_NODE_PROPERTIES_0108.cs" Link="Generated\D3D12DDI_THREAD_LAUNCH_NODE_PROPERTIES_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_CDEF_CONFIG_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_CDEF_CONFIG_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION_SUPPORT_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION_SUPPORT_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_COMP_PREDICTION_TYPE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_COMP_PREDICTION_TYPE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_FEATURE_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_FEATURE_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_FRAME_SUBREGION_LAYOUT_CONFIG_VALIDATION_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_FRAME_SUBREGION_LAYOUT_CONFIG_VALIDATION_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_FRAME_TYPE_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_FRAME_TYPE_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_FRAME_TYPE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_FRAME_TYPE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_INTERPOLATION_FILTERS_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_INTERPOLATION_FILTERS_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_INTERPOLATION_FILTERS_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_INTERPOLATION_FILTERS_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_LEVEL_TIER_CONSTRAINTS_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_LEVEL_TIER_CONSTRAINTS_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_LEVELS_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_LEVELS_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_PICTURE_CONTROL_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_PICTURE_CONTROL_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_TILES_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA_TILES_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_POST_ENCODE_VALUES_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_POST_ENCODE_VALUES_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_POST_ENCODE_VALUES_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_POST_ENCODE_VALUES_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_PROFILE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_PROFILE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_REFERENCE_PICTURE_DESCRIPTOR_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_REFERENCE_PICTURE_DESCRIPTOR_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_REFERENCE_PICTURE_WARPED_MOTION_INFO_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_REFERENCE_PICTURE_WARPED_MOTION_INFO_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_REFERENCE_WARPED_MOTION_TRANSFORMATION_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_REFERENCE_WARPED_MOTION_TRANSFORMATION_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_REFERENCE_WARPED_MOTION_TRANSFORMATION_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_REFERENCE_WARPED_MOTION_TRANSFORMATION_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_RESTORATION_CONFIG_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_RESTORATION_CONFIG_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_RESTORATION_SUPPORT_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_RESTORATION_SUPPORT_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_RESTORATION_TILESIZE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_RESTORATION_TILESIZE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_RESTORATION_TYPE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_RESTORATION_TYPE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENT_DATA_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENT_DATA_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_BLOCK_SIZE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_BLOCK_SIZE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_CONFIG_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_CONFIG_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_MAP_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_MAP_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_MODE_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_MODE_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_MODE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEGMENTATION_MODE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEQUENCE_STRUCTURE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_SEQUENCE_STRUCTURE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_TIER_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_TIER_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_TX_MODE_0095_FLAGS.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_TX_MODE_0095_FLAGS.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_AV1_TX_MODE_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_AV1_TX_MODE_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_LOOP_FILTER_CONFIG_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_LOOP_FILTER_CONFIG_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_LOOP_FILTER_DELTA_CONFIG_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_LOOP_FILTER_DELTA_CONFIG_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_PICTURE_CONTROL_SUPPORT_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_PICTURE_CONTROL_SUPPORT_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_QUANTIZATION_CONFIG_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_QUANTIZATION_CONFIG_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_QUANTIZATION_DELTA_CONFIG_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_CODEC_AV1_QUANTIZATION_DELTA_CONFIG_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT_0095__union_0.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT_0095__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT_0095.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT_0095.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_ABSOLUTE_QP_MAP_0096.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_ABSOLUTE_QP_MAP_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_CBR1_0096.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_CBR1_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_CQP1_0096.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_CQP1_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_QVBR1_0096.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_QVBR1_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_VBR1_0096.cs" Link="Generated\D3D12DDI_VIDEO_ENCODER_RATE_CONTROL_VBR1_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WAVE_MMA_ACCUM_DATATYPE.cs" Link="Generated\D3D12DDI_WAVE_MMA_ACCUM_DATATYPE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WAVE_MMA_DATA_0103.cs" Link="Generated\D3D12DDI_WAVE_MMA_DATA_0103.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WAVE_MMA_DIMENSION.cs" Link="Generated\D3D12DDI_WAVE_MMA_DIMENSION.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WAVE_MMA_INPUT_DATATYPE.cs" Link="Generated\D3D12DDI_WAVE_MMA_INPUT_DATATYPE.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WORK_GRAPH_DESC_0084.cs" Link="Generated\D3D12DDI_WORK_GRAPH_DESC_0084.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WORK_GRAPH_DESC_0108.cs" Link="Generated\D3D12DDI_WORK_GRAPH_DESC_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WORK_GRAPH_FLAGS_0108.cs" Link="Generated\D3D12DDI_WORK_GRAPH_FLAGS_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WORK_GRAPH_MEMORY_REQUIREMENTS_0108.cs" Link="Generated\D3D12DDI_WORK_GRAPH_MEMORY_REQUIREMENTS_0108.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDI_WORK_GRAPHS_TIER.cs" Link="Generated\D3D12DDI_WORK_GRAPHS_TIER.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_BARRIER_0094__union_0.cs" Link="Generated\D3D12DDIARG_BARRIER_0094__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_BARRIER_0094.cs" Link="Generated\D3D12DDIARG_BARRIER_0094.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_CREATE_PIPELINE_STATE_0099.cs" Link="Generated\D3D12DDIARG_CREATE_PIPELINE_STATE_0099.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_CREATE_ROOT_SIGNATURE_0100__union_0.cs" Link="Generated\D3D12DDIARG_CREATE_ROOT_SIGNATURE_0100__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_CREATE_ROOT_SIGNATURE_0100.cs" Link="Generated\D3D12DDIARG_CREATE_ROOT_SIGNATURE_0100.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_CREATE_SAMPLER_0096.cs" Link="Generated\D3D12DDIARG_CREATE_SAMPLER_0096.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_CREATEDEVICE_0109__union_0.cs" Link="Generated\D3D12DDIARG_CREATEDEVICE_0109__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_CREATEDEVICE_0109.cs" Link="Generated\D3D12DDIARG_CREATEDEVICE_0109.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDIARG_CREATERESOURCE_0109.cs" Link="Generated\D3D12DDIARG_CREATERESOURCE_0109.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDICAPS_TYPE_VIDEO_ARCHITECTURE_DATA_0098.cs" Link="Generated\D3D12DDICAPS_TYPE_VIDEO_ARCHITECTURE_DATA_0098.cs" />
+    <Compile Include="..\DirectN\Generated\D3D12DDICAPS_VIDEO_ENCODER_SUPPORT1_DATA_0096.cs" Link="Generated\D3D12DDICAPS_VIDEO_ENCODER_SUPPORT1_DATA_0096.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreAdapterEngineIndex.cs" Link="Generated\DXCoreAdapterEngineIndex.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreAdapterProcessSetQueryInput.cs" Link="Generated\DXCoreAdapterProcessSetQueryInput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreAdapterProcessSetQueryOutput.cs" Link="Generated\DXCoreAdapterProcessSetQueryOutput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreEngineNamePropertyInput.cs" Link="Generated\DXCoreEngineNamePropertyInput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreEngineNamePropertyOutput.cs" Link="Generated\DXCoreEngineNamePropertyOutput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreEngineQueryInput.cs" Link="Generated\DXCoreEngineQueryInput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreEngineQueryOutput.cs" Link="Generated\DXCoreEngineQueryOutput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreFrequencyQueryOutput.cs" Link="Generated\DXCoreFrequencyQueryOutput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreHardwareTypeFilterFlags.cs" Link="Generated\DXCoreHardwareTypeFilterFlags.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreMemoryQueryInput.cs" Link="Generated\DXCoreMemoryQueryInput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreMemoryType.cs" Link="Generated\DXCoreMemoryType.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreMemoryUsage.cs" Link="Generated\DXCoreMemoryUsage.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreProcessMemoryQueryInput.cs" Link="Generated\DXCoreProcessMemoryQueryInput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreProcessMemoryQueryOutput.cs" Link="Generated\DXCoreProcessMemoryQueryOutput.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreRuntimeFilterFlags.cs" Link="Generated\DXCoreRuntimeFilterFlags.cs" />
+    <Compile Include="..\DirectN\Generated\DXCoreWorkload.cs" Link="Generated\DXCoreWorkload.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputArcadeStickButtons.cs" Link="Generated\GameInputArcadeStickButtons.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputArcadeStickInfo.cs" Link="Generated\GameInputArcadeStickInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputArcadeStickState.cs" Link="Generated\GameInputArcadeStickState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputBatteryState.cs" Link="Generated\GameInputBatteryState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputBatteryStatus.cs" Link="Generated\GameInputBatteryStatus.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputControllerAxisInfo.cs" Link="Generated\GameInputControllerAxisInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputControllerButtonInfo.cs" Link="Generated\GameInputControllerButtonInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputControllerSwitchInfo.cs" Link="Generated\GameInputControllerSwitchInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputDeviceCapabilities.cs" Link="Generated\GameInputDeviceCapabilities.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputDeviceFamily.cs" Link="Generated\GameInputDeviceFamily.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputDeviceInfo.cs" Link="Generated\GameInputDeviceInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputDeviceStatus.cs" Link="Generated\GameInputDeviceStatus.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputEnumerationKind.cs" Link="Generated\GameInputEnumerationKind.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputFeedbackAxes.cs" Link="Generated\GameInputFeedbackAxes.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputFeedbackEffectState.cs" Link="Generated\GameInputFeedbackEffectState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputFlightStickButtons.cs" Link="Generated\GameInputFlightStickButtons.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputFlightStickInfo.cs" Link="Generated\GameInputFlightStickInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputFlightStickState.cs" Link="Generated\GameInputFlightStickState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputFocusPolicy.cs" Link="Generated\GameInputFocusPolicy.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackConditionParams.cs" Link="Generated\GameInputForceFeedbackConditionParams.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackConstantParams.cs" Link="Generated\GameInputForceFeedbackConstantParams.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackEffectKind.cs" Link="Generated\GameInputForceFeedbackEffectKind.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackEnvelope.cs" Link="Generated\GameInputForceFeedbackEnvelope.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackMagnitude.cs" Link="Generated\GameInputForceFeedbackMagnitude.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackMotorInfo.cs" Link="Generated\GameInputForceFeedbackMotorInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackParams__union_0.cs" Link="Generated\GameInputForceFeedbackParams__union_0.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackParams.cs" Link="Generated\GameInputForceFeedbackParams.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackPeriodicParams.cs" Link="Generated\GameInputForceFeedbackPeriodicParams.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputForceFeedbackRampParams.cs" Link="Generated\GameInputForceFeedbackRampParams.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputGamepadButtons.cs" Link="Generated\GameInputGamepadButtons.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputGamepadInfo.cs" Link="Generated\GameInputGamepadInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputGamepadState.cs" Link="Generated\GameInputGamepadState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputHapticFeedbackMotorInfo.cs" Link="Generated\GameInputHapticFeedbackMotorInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputHapticFeedbackParams.cs" Link="Generated\GameInputHapticFeedbackParams.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputHapticWaveformInfo.cs" Link="Generated\GameInputHapticWaveformInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputKeyboardInfo.cs" Link="Generated\GameInputKeyboardInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputKeyboardKind.cs" Link="Generated\GameInputKeyboardKind.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputKeyState.cs" Link="Generated\GameInputKeyState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputKind.cs" Link="Generated\GameInputKind.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputLabel.cs" Link="Generated\GameInputLabel.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputLocation.cs" Link="Generated\GameInputLocation.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputMotionAccuracy.cs" Link="Generated\GameInputMotionAccuracy.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputMotionInfo.cs" Link="Generated\GameInputMotionInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputMotionState.cs" Link="Generated\GameInputMotionState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputMouseButtons.cs" Link="Generated\GameInputMouseButtons.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputMouseInfo.cs" Link="Generated\GameInputMouseInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputMouseState.cs" Link="Generated\GameInputMouseState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRacingWheelButtons.cs" Link="Generated\GameInputRacingWheelButtons.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRacingWheelInfo.cs" Link="Generated\GameInputRacingWheelInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRacingWheelState.cs" Link="Generated\GameInputRacingWheelState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRawDeviceItemCollectionInfo.cs" Link="Generated\GameInputRawDeviceItemCollectionInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRawDeviceItemCollectionKind.cs" Link="Generated\GameInputRawDeviceItemCollectionKind.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRawDevicePhysicalUnitKind.cs" Link="Generated\GameInputRawDevicePhysicalUnitKind.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRawDeviceReportInfo.cs" Link="Generated\GameInputRawDeviceReportInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRawDeviceReportItemFlags.cs" Link="Generated\GameInputRawDeviceReportItemFlags.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRawDeviceReportItemInfo.cs" Link="Generated\GameInputRawDeviceReportItemInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRawDeviceReportKind.cs" Link="Generated\GameInputRawDeviceReportKind.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRumbleMotors.cs" Link="Generated\GameInputRumbleMotors.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputRumbleParams.cs" Link="Generated\GameInputRumbleParams.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputString.cs" Link="Generated\GameInputString.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputSwitchKind.cs" Link="Generated\GameInputSwitchKind.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputSwitchPosition.cs" Link="Generated\GameInputSwitchPosition.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputSystemButtons.cs" Link="Generated\GameInputSystemButtons.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputTouchSensorInfo.cs" Link="Generated\GameInputTouchSensorInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputTouchShape.cs" Link="Generated\GameInputTouchShape.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputTouchState.cs" Link="Generated\GameInputTouchState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputUiNavigationButtons.cs" Link="Generated\GameInputUiNavigationButtons.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputUiNavigationInfo.cs" Link="Generated\GameInputUiNavigationInfo.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputUiNavigationState.cs" Link="Generated\GameInputUiNavigationState.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputUsage.cs" Link="Generated\GameInputUsage.cs" />
+    <Compile Include="..\DirectN\Generated\GameInputVersion.cs" Link="Generated\GameInputVersion.cs" />
+    <Compile Include="..\DirectN\Generated\IApoAcousticEchoCancellation2.cs" Link="Generated\IApoAcousticEchoCancellation2.cs" />
+    <Compile Include="..\DirectN\Generated\IAudioProcessingObjectPreferredFormatSupport.cs" Link="Generated\IAudioProcessingObjectPreferredFormatSupport.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12DebugCommandList3.cs" Link="Generated\ID3D12DebugCommandList3.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12DebugCommandQueue1.cs" Link="Generated\ID3D12DebugCommandQueue1.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12Device11.cs" Link="Generated\ID3D12Device11.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12Device12.cs" Link="Generated\ID3D12Device12.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12Device13.cs" Link="Generated\ID3D12Device13.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12Device14.cs" Link="Generated\ID3D12Device14.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12DeviceConfiguration1.cs" Link="Generated\ID3D12DeviceConfiguration1.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12DeviceRemovedExtendedDataSettings2.cs" Link="Generated\ID3D12DeviceRemovedExtendedDataSettings2.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12GraphicsCommandList10.cs" Link="Generated\ID3D12GraphicsCommandList10.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12GraphicsCommandList8.cs" Link="Generated\ID3D12GraphicsCommandList8.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12GraphicsCommandList9.cs" Link="Generated\ID3D12GraphicsCommandList9.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12ManualWriteTrackingResource.cs" Link="Generated\ID3D12ManualWriteTrackingResource.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12StateObjectProperties1.cs" Link="Generated\ID3D12StateObjectProperties1.cs" />
+    <Compile Include="..\DirectN\Generated\ID3D12WorkGraphProperties.cs" Link="Generated\ID3D12WorkGraphProperties.cs" />
+    <Compile Include="..\DirectN\Generated\IDxcBlobWide.cs" Link="Generated\IDxcBlobWide.cs" />
+    <Compile Include="..\DirectN\Generated\IDXCoreAdapter1.cs" Link="Generated\IDXCoreAdapter1.cs" />
+    <Compile Include="..\DirectN\Generated\IDXCoreAdapterFactory1.cs" Link="Generated\IDXCoreAdapterFactory1.cs" />
+    <Compile Include="..\DirectN\Generated\IDxcPdbUtils2.cs" Link="Generated\IDxcPdbUtils2.cs" />
+    <Compile Include="..\DirectN\Generated\IGameInput.cs" Link="Generated\IGameInput.cs" />
+    <Compile Include="..\DirectN\Generated\IGameInputDevice.cs" Link="Generated\IGameInputDevice.cs" />
+    <Compile Include="..\DirectN\Generated\IGameInputDispatcher.cs" Link="Generated\IGameInputDispatcher.cs" />
+    <Compile Include="..\DirectN\Generated\IGameInputForceFeedbackEffect.cs" Link="Generated\IGameInputForceFeedbackEffect.cs" />
+    <Compile Include="..\DirectN\Generated\IGameInputRawDeviceReport.cs" Link="Generated\IGameInputRawDeviceReport.cs" />
+    <Compile Include="..\DirectN\Generated\IGameInputReading.cs" Link="Generated\IGameInputReading.cs" />
+    <Compile Include="..\DirectN\Generated\IMFDeviceTransform2.cs" Link="Generated\IMFDeviceTransform2.cs" />
+    <Compile Include="..\DirectN\Generated\IMFFaceDetectionTransform.cs" Link="Generated\IMFFaceDetectionTransform.cs" />
+    <Compile Include="..\DirectN\Generated\IMFFaceDetectionTransformCallback.cs" Link="Generated\IMFFaceDetectionTransformCallback.cs" />
+    <Compile Include="..\DirectN\Generated\IWICBitmapSourceTransform2.cs" Link="Generated\IWICBitmapSourceTransform2.cs" />
+    <Compile Include="..\DirectN\Generated\IWICDisplayAdaptationControl.cs" Link="Generated\IWICDisplayAdaptationControl.cs" />
+    <Compile Include="..\DirectN\Generated\VulkanOn12CreatorID.cs" Link="Generated\VulkanOn12CreatorID.cs" />
+    <Compile Include="..\DirectN\Generated\WICHeifCompressionOption.cs" Link="Generated\WICHeifCompressionOption.cs" />
+    <Compile Include="..\DirectN\Generated\WICJpegXLAnimFrameProperties.cs" Link="Generated\WICJpegXLAnimFrameProperties.cs" />
+    <Compile Include="..\DirectN\Generated\WICJpegXLAnimProperties.cs" Link="Generated\WICJpegXLAnimProperties.cs" />
+    <Compile Include="..\DirectN\Generated\_DS3DBUFFER.cs" Link="Generated\_DS3DBUFFER.cs" />
+    <Compile Include="..\DirectN\Generated\_DS3DLISTENER.cs" Link="Generated\_DS3DLISTENER.cs" />
+    <Compile Include="..\DirectN\Generated\_DSBCAPS.cs" Link="Generated\_DSBCAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_DSBPOSITIONNOTIFY.cs" Link="Generated\_DSBPOSITIONNOTIFY.cs" />
+    <Compile Include="..\DirectN\Generated\_DSBUFFERDESC.cs" Link="Generated\_DSBUFFERDESC.cs" />
+    <Compile Include="..\DirectN\Generated\_DSBUFFERDESC1.cs" Link="Generated\_DSBUFFERDESC1.cs" />
+    <Compile Include="..\DirectN\Generated\_DSCAPS.cs" Link="Generated\_DSCAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_DSCBCAPS.cs" Link="Generated\_DSCBCAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_DSCBUFFERDESC.cs" Link="Generated\_DSCBUFFERDESC.cs" />
+    <Compile Include="..\DirectN\Generated\_DSCBUFFERDESC1.cs" Link="Generated\_DSCBUFFERDESC1.cs" />
+    <Compile Include="..\DirectN\Generated\_DSCCAPS.cs" Link="Generated\_DSCCAPS.cs" />
+    <Compile Include="..\DirectN\Generated\_DSCEFFECTDESC.cs" Link="Generated\_DSCEFFECTDESC.cs" />
+    <Compile Include="..\DirectN\Generated\_DSCFXAec.cs" Link="Generated\_DSCFXAec.cs" />
+    <Compile Include="..\DirectN\Generated\_DSCFXNoiseSuppress.cs" Link="Generated\_DSCFXNoiseSuppress.cs" />
+    <Compile Include="..\DirectN\Generated\_DSEFFECTDESC.cs" Link="Generated\_DSEFFECTDESC.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXChorus.cs" Link="Generated\_DSFXChorus.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXCompressor.cs" Link="Generated\_DSFXCompressor.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXDistortion.cs" Link="Generated\_DSFXDistortion.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXEcho.cs" Link="Generated\_DSFXEcho.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXFlanger.cs" Link="Generated\_DSFXFlanger.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXGargle.cs" Link="Generated\_DSFXGargle.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXI3DL2Reverb.cs" Link="Generated\_DSFXI3DL2Reverb.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXParamEq.cs" Link="Generated\_DSFXParamEq.cs" />
+    <Compile Include="..\DirectN\Generated\_DSFXWavesReverb.cs" Link="Generated\_DSFXWavesReverb.cs" />
+    <Compile Include="..\DirectN\Generated\DSFX_I3DL2_ENVIRONMENT_PRESET.cs" Link="Generated\DSFX_I3DL2_ENVIRONMENT_PRESET.cs" />
+    <Compile Include="..\DirectN\Generated\DSFX_I3DL2_MATERIAL_PRESET.cs" Link="Generated\DSFX_I3DL2_MATERIAL_PRESET.cs" />
+    <Compile Include="..\DirectN\Generated\DSFXR.cs" Link="Generated\DSFXR.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSound.cs" Link="Generated\IDirectSound.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSound3DBuffer.cs" Link="Generated\IDirectSound3DBuffer.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSound3DListener.cs" Link="Generated\IDirectSound3DListener.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSound8.cs" Link="Generated\IDirectSound8.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundBuffer.cs" Link="Generated\IDirectSoundBuffer.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundBuffer8.cs" Link="Generated\IDirectSoundBuffer8.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundCapture.cs" Link="Generated\IDirectSoundCapture.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundCaptureBuffer.cs" Link="Generated\IDirectSoundCaptureBuffer.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundCaptureBuffer8.cs" Link="Generated\IDirectSoundCaptureBuffer8.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundCaptureFXAec.cs" Link="Generated\IDirectSoundCaptureFXAec.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundCaptureFXNoiseSuppress.cs" Link="Generated\IDirectSoundCaptureFXNoiseSuppress.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFullDuplex.cs" Link="Generated\IDirectSoundFullDuplex.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXChorus.cs" Link="Generated\IDirectSoundFXChorus.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXCompressor.cs" Link="Generated\IDirectSoundFXCompressor.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXDistortion.cs" Link="Generated\IDirectSoundFXDistortion.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXEcho.cs" Link="Generated\IDirectSoundFXEcho.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXFlanger.cs" Link="Generated\IDirectSoundFXFlanger.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXGargle.cs" Link="Generated\IDirectSoundFXGargle.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXI3DL2Reverb.cs" Link="Generated\IDirectSoundFXI3DL2Reverb.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXParamEq.cs" Link="Generated\IDirectSoundFXParamEq.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundFXWavesReverb.cs" Link="Generated\IDirectSoundFXWavesReverb.cs" />
+    <Compile Include="..\DirectN\Generated\IDirectSoundNotify.cs" Link="Generated\IDirectSoundNotify.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_ARTICPARAMS.cs" Link="Generated\_DMUS_ARTICPARAMS.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_ARTICULATION.cs" Link="Generated\_DMUS_ARTICULATION.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_ARTICULATION2.cs" Link="Generated\_DMUS_ARTICULATION2.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_COPYRIGHT.cs" Link="Generated\_DMUS_COPYRIGHT.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_DOWNLOADINFO.cs" Link="Generated\_DMUS_DOWNLOADINFO.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_EXTENSIONCHUNK.cs" Link="Generated\_DMUS_EXTENSIONCHUNK.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_INSTRUMENT.cs" Link="Generated\_DMUS_INSTRUMENT.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_LFOPARAMS.cs" Link="Generated\_DMUS_LFOPARAMS.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_MSCPARAMS.cs" Link="Generated\_DMUS_MSCPARAMS.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_NOTERANGE.cs" Link="Generated\_DMUS_NOTERANGE.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_OFFSETTABLE.cs" Link="Generated\_DMUS_OFFSETTABLE.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_PEGPARAMS.cs" Link="Generated\_DMUS_PEGPARAMS.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_REGION.cs" Link="Generated\_DMUS_REGION.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_VEGPARAMS.cs" Link="Generated\_DMUS_VEGPARAMS.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_WAVE.cs" Link="Generated\_DMUS_WAVE.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_WAVEARTDL.cs" Link="Generated\_DMUS_WAVEARTDL.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_WAVEDATA.cs" Link="Generated\_DMUS_WAVEDATA.cs" />
+    <Compile Include="..\DirectN\Generated\_DMUS_WAVEDL.cs" Link="Generated\_DMUS_WAVEDL.cs" />
+    <Compile Include="..\DirectN\Generated\_CONNECTION.cs" Link="Generated\_CONNECTION.cs" />
+    <Compile Include="..\DirectN\Generated\_CONNECTIONLIST.cs" Link="Generated\_CONNECTIONLIST.cs" />
+    <Compile Include="..\DirectN\Generated\_DLSHEADER.cs" Link="Generated\_DLSHEADER.cs" />
+    <Compile Include="..\DirectN\Generated\_DLSID.cs" Link="Generated\_DLSID.cs" />
+    <Compile Include="..\DirectN\Generated\_DLSVERSION.cs" Link="Generated\_DLSVERSION.cs" />
+    <Compile Include="..\DirectN\Generated\_INSTHEADER.cs" Link="Generated\_INSTHEADER.cs" />
+    <Compile Include="..\DirectN\Generated\_MIDILOCALE.cs" Link="Generated\_MIDILOCALE.cs" />
+    <Compile Include="..\DirectN\Generated\_POOLCUE.cs" Link="Generated\_POOLCUE.cs" />
+    <Compile Include="..\DirectN\Generated\_POOLTABLE.cs" Link="Generated\_POOLTABLE.cs" />
+    <Compile Include="..\DirectN\Generated\_RGNHEADER.cs" Link="Generated\_RGNHEADER.cs" />
+    <Compile Include="..\DirectN\Generated\_RGNRANGE.cs" Link="Generated\_RGNRANGE.cs" />
+    <Compile Include="..\DirectN\Generated\_rloop.cs" Link="Generated\_rloop.cs" />
+    <Compile Include="..\DirectN\Generated\_rwsmp.cs" Link="Generated\_rwsmp.cs" />
+    <Compile Include="..\DirectN\Generated\_WAVELINK.cs" Link="Generated\_WAVELINK.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DirectN.ico" />

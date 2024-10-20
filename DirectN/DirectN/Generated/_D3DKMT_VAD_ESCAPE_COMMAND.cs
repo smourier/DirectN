@@ -9,5 +9,6 @@ namespace DirectN
         D3DKMT_VAD_ESCAPE_GET_PTE = 3,
         D3DKMT_VAD_ESCAPE_GET_GPUMMU_CAPS = 4,
         D3DKMT_VAD_ESCAPE_GET_SEGMENT_CAPS = 5,
+        D3DKMT_VAD_ESCAPE_GET_PTE_DATA = 6,
     }
 }

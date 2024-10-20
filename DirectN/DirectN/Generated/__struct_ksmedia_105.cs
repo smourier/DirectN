@@ -8,9 +8,9 @@ namespace DirectN
     public partial struct __struct_ksmedia_105
     {
         public int Property;
-        public uint StandardsSupported;
-        public uint Capabilities;
-        public uint SettlingTime;
-        public uint HSyncPerVSync;
+        public bool fSupportsHardwareAssistedScanning;
+        public uint SupportedBroadcastStandards;
+        public IntPtr GUIDBucket;
+        public uint lengthofBucket;
     }
 }

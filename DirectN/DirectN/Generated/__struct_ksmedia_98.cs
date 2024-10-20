@@ -8,9 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_98
     {
         public int Property;
-        public uint CurrentFrequency;
-        public uint PLLOffset;
-        public uint SignalStrength;
-        public uint Busy;
+        public uint Mode;
     }
 }

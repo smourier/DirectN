@@ -11,6 +11,5 @@ namespace DirectN
         public int Value;
         public uint Flags;
         public uint Capabilities;
-        public tagRECT FocusRect;
     }
 }

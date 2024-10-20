@@ -1,4 +1,4 @@
-﻿// generated from <Windows SDK Path>\um\strmif.h
+﻿// generated from <Windows SDK Path>\um\dsound.h
 using System;
 using System.Runtime.InteropServices;
 using REFERENCE_TIME = System.Int64;
@@ -9,15 +9,15 @@ namespace DirectN
     public partial interface IReferenceClock
     {
         [PreserveSig]
-        HRESULT GetTime(/* [annotation][out] _Out_ */ out REFERENCE_TIME pTime);
+        HRESULT GetTime(/* THIS_ _Out_ */ out REFERENCE_TIME pTime);
         
         [PreserveSig]
-        HRESULT AdviseTime(/* [in] */ long baseTime, /* [in] */ long streamTime, /* [in] */ IntPtr hEvent, /* [annotation][out] _Out_ */ out IntPtr pdwAdviseCookie);
+        HRESULT AdviseTime(long rtBaseTime, long rtStreamTime, IntPtr hEvent, /* _Out_ */ out IntPtr pdwAdviseCookie);
         
         [PreserveSig]
-        HRESULT AdvisePeriodic(/* [in] */ long startTime, /* [in] */ long periodTime, /* [in] */ ulong hSemaphore, /* [annotation][out] _Out_ */ out IntPtr pdwAdviseCookie);
+        HRESULT AdvisePeriodic(long rtStartTime, long rtPeriodTime, IntPtr hSemaphore, /* _Out_ */ out IntPtr pdwAdviseCookie);
         
         [PreserveSig]
-        HRESULT Unadvise(/* [in] */ IntPtr dwAdviseCookie);
+        HRESULT Unadvise(IntPtr dwAdviseCookie);
     }
 }

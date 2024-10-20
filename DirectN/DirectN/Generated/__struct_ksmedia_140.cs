@@ -8,11 +8,10 @@ namespace DirectN
     public partial struct __struct_ksmedia_140
     {
         public int Property;
-        public uint StreamIndex;
-        public int DefaultKeyFrameRate;
-        public int DefaultPFrameRate;
-        public int DefaultQuality;
-        public int NumberOfQualitySettings;
-        public int Capabilities;
+        public int Direction;
+        public uint Index;
+        public uint PinType;
+        public uint RelatedPinIndex;
+        public int Medium;
     }
 }

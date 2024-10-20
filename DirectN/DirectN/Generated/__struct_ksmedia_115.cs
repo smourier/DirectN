@@ -7,9 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_ksmedia_115
     {
-        public IntPtr NodeProperty;
-        public int lOcularFocalLength;
-        public int lObjectiveFocalLengthMin;
-        public int lObjectiveFocalLengthMax;
+        public int Property;
+        public int Value;
+        public uint Flags;
+        public uint Capabilities;
     }
 }

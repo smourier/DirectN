@@ -8,6 +8,7 @@ namespace DirectN
     public partial struct __struct_ksmedia_139
     {
         public int Property;
-        public uint Mode;
+        public uint NumberOfInputs;
+        public uint NumberOfOutputs;
     }
 }

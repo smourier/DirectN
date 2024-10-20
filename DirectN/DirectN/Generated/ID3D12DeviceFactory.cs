@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [ComImport, Guid("cd310fac-c78c-413d-a799-3da46a952cb7"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("61f307d3-d34e-4e7c-8374-3ba4de23cccb"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface ID3D12DeviceFactory
     {
         [PreserveSig]
@@ -26,6 +26,6 @@ namespace DirectN
         HRESULT EnableExperimentalFeatures(int NumFeatures, /* _In_reads_(NumFeatures) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] Guid[] pIIDs, /* optional(void) */ IntPtr pConfigurationStructs, /* _In_reads_opt_(NumFeatures) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pConfigurationStructSizes);
         
         [PreserveSig]
-        HRESULT CreateDevice(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object adapter, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvDevice);
+        HRESULT CreateDevice(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object adapter, D3D_FEATURE_LEVEL FeatureLevel, [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvDevice);
     }
 }

@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_79
     {
         public int Property;
-        public IntPtr pVramSurfaceInfo;
+        public _VBICODECFILTERING_STATISTICS_NABTS Statistics;
     }
 }

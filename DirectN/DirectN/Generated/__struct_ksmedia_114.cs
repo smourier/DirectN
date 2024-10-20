@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct __struct_ksmedia_114
     {
         public int Property;
-        public int lOcularFocalLength;
-        public int lObjectiveFocalLengthMin;
-        public int lObjectiveFocalLengthMax;
+        public int Value;
+        public uint Flags;
+        public uint Capabilities;
+        public tagRECT FocusRect;
     }
 }

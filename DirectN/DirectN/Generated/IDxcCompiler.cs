@@ -7,12 +7,21 @@ namespace DirectN
     [ComImport, Guid("8c210bf3-011f-4422-8d70-6f9acb8db617"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDxcCompiler
     {
+        /// <summary>
+        /// Compile a single entry point to the target shader model.
+        /// </summary>
         [PreserveSig]
-        HRESULT Compile(/* _In_ */ IDxcBlob pSource, /* // Source text to compile _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pSourceName, /* // Optional file name for pSource. Used in errors and include handlers. _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pEntryPoint, /* // entry point name _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pTargetProfile, /* optional(LPCWSTR) */ IntPtr pArguments, /* // Array of pointers to arguments _In_ */ uint argCount, /* // Number of arguments _In_count_(defineCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 7)] DxcDefine[] pDefines, /* // Array of defines _In_ */ int defineCount, /* // Number of defines _In_opt_ */ IDxcIncludeHandler pIncludeHandler, /* // user-provided interface to handle #include directives (optional) _COM_Outptr_ */ out IDxcOperationResult ppResult);
+        HRESULT Compile(/* _In_ */ IDxcBlob pSource, /* // Source text to compile. _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pSourceName, /* // Optional file name for pSource. Used in errors and include handlers. _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pEntryPoint, /* // Entry point name. _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pTargetProfile, /* optional(LPCWSTR) */ IntPtr pArguments, /* // Array of pointers to arguments. _In_ */ uint argCount, /* // Number of arguments. _In_count_(defineCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 7)] DxcDefine[] pDefines, /* // Array of defines. _In_ */ int defineCount, /* // Number of defines. _In_opt_ */ IDxcIncludeHandler pIncludeHandler, /* // User-provided interface to handle #include directives (optional). _COM_Outptr_ */ out IDxcOperationResult ppResult);
         
+        /// <summary>
+        /// Preprocess source text.
+        /// </summary>
         [PreserveSig]
-        HRESULT Preprocess(/* _In_ */ IDxcBlob pSource, /* // Source text to preprocess _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pSourceName, /* optional(LPCWSTR) */ IntPtr pArguments, /* // Array of pointers to arguments _In_ */ uint argCount, /* // Number of arguments _In_count_(defineCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DxcDefine[] pDefines, /* // Array of defines _In_ */ int defineCount, /* // Number of defines _In_opt_ */ IDxcIncludeHandler pIncludeHandler, /* // user-provided interface to handle #include directives (optional) _COM_Outptr_ */ out IDxcOperationResult ppResult);
+        HRESULT Preprocess(/* _In_ */ IDxcBlob pSource, /* // Source text to preprocess. _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string pSourceName, /* optional(LPCWSTR) */ IntPtr pArguments, /* // Array of pointers to arguments. _In_ */ uint argCount, /* // Number of arguments. _In_count_(defineCount) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] DxcDefine[] pDefines, /* // Array of defines. _In_ */ int defineCount, /* // Number of defines. _In_opt_ */ IDxcIncludeHandler pIncludeHandler, /* // user-provided interface to handle #include directives (optional). _COM_Outptr_ */ out IDxcOperationResult ppResult);
         
+        /// <summary>
+        /// Disassemble a program.
+        /// </summary>
         [PreserveSig]
         HRESULT Disassemble(/* _In_ */ IDxcBlob pSource, /* // Program to disassemble. _COM_Outptr_ */ out IDxcBlobEncoding ppDisassembly);
     }

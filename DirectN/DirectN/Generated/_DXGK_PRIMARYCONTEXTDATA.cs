@@ -9,7 +9,7 @@ namespace DirectN
     {
         public IntPtr hContext;
         public IntPtr hAllocation;
-        public ushort SegmentId;
-        public long SegmentAddress;
+        public _DXGK_PRIMARYCONTEXTDATA__union_0 __union_2;
+        public _DXGK_PRIMARYCONTEXTDATA__union_1 __union_3;
     }
 }

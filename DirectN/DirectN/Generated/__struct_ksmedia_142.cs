@@ -8,8 +8,7 @@ namespace DirectN
     public partial struct __struct_ksmedia_142
     {
         public int Property;
-        public uint StreamIndex;
-        public int Value;
-        public uint Flags;
+        public uint IndexInputPin;
+        public uint Active;
     }
 }

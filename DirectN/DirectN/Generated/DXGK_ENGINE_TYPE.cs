@@ -12,6 +12,7 @@ namespace DirectN
         DXGK_ENGINE_TYPE_COPY = 6,
         DXGK_ENGINE_TYPE_OVERLAY = 7,
         DXGK_ENGINE_TYPE_CRYPTO = 8,
-        DXGK_ENGINE_TYPE_MAX = 9,
+        DXGK_ENGINE_TYPE_VIDEO_CODEC = 9,
+        DXGK_ENGINE_TYPE_MAX = 10,
     }
 }

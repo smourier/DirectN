@@ -8,7 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_102
     {
         public int Property;
-        public _TunerDecoderLockType LockStatus;
-        public uint CurrentFrequency;
+        public uint InputIndex;
     }
 }

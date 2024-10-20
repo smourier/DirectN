@@ -7,9 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_ksmedia_138
     {
-        public int Property;
-        public uint Capabilities;
-        public int InputMedium;
-        public int OutputMedium;
+        public int NodeProperty;
+        public tagTIMECODE_SAMPLE TimecodeSamp;
     }
 }

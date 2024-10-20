@@ -7,13 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_ksmedia_94
     {
-        public int Property;
-        public uint Frequency;
-        public uint LastFrequency;
-        public uint TuningFlags;
-        public uint VideoSubChannel;
-        public uint AudioSubChannel;
-        public uint Channel;
-        public uint Country;
+        public int NodeProperty;
+        public int Value;
+        public uint Flags;
+        public uint Capabilities;
     }
 }

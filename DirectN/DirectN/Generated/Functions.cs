@@ -3,13 +3,25 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using AM_MEDIA_TYPE = DirectN._AMMediaType;
 using COMPOSITION_FRAME_ID = System.UInt64;
+using FNAPONOTIFICATIONCALLBACK = System.IntPtr;
 using LPD3DHAL_CALLBACKS = DirectN._D3DHAL_CALLBACKS;
 using LPD3DHAL_GLOBALDRIVERDATA = DirectN._D3DHAL_GLOBALDRIVERDATA;
+using LPDIRECTSOUND = DirectN.IDirectSound;
+using LPDIRECTSOUND8 = DirectN.IDirectSound8;
+using LPDIRECTSOUNDBUFFER8 = DirectN.IDirectSoundBuffer8;
+using LPDIRECTSOUNDCAPTURE = DirectN.IDirectSoundCapture;
+using LPDIRECTSOUNDCAPTURE8 = DirectN.IDirectSoundCapture;
+using LPDIRECTSOUNDCAPTUREBUFFER8 = DirectN.IDirectSoundCaptureBuffer8;
+using LPDIRECTSOUNDFULLDUPLEX = DirectN.IDirectSoundFullDuplex;
+using LPDSENUMCALLBACKA = System.IntPtr;
+using LPDSENUMCALLBACKW = System.IntPtr;
+using LPUNKNOWN = System.Object;
 using LUID = DirectN._LUID;
 using MFASYNC_WORKQUEUE_TYPE = DirectN.MF;
 using MFPERIODICCALLBACK = System.IntPtr;
 using MPEG1VIDEOINFO = DirectN.tagMPEG1VIDEOINFO;
 using MPEG2VIDEOINFO = DirectN.tagMPEG2VIDEOINFO;
+using REFWICPixelFormatGUID = System.Guid;
 using VIDEOINFOHEADER = DirectN.tagVIDEOINFOHEADER;
 using VIDEOINFOHEADER2 = DirectN.tagVIDEOINFOHEADER2;
 
@@ -17,6 +29,25 @@ namespace DirectN
 {
     public static partial class Functions
     {
+        // audioenginebaseapo.dll
+        [DllImport("audioenginebaseapo", ExactSpelling = true)]
+        public static extern HRESULT EnumerateAPOs(FNAPONOTIFICATIONCALLBACK pfnCallback, IntPtr pvRefData);
+
+        [DllImport("audioenginebaseapo", ExactSpelling = true)]
+        public static extern HRESULT GetAPOProperties([MarshalAs(UnmanagedType.LPStruct)] Guid clsid, ref APO_REG_PROPERTIES pProperties);
+
+        [DllImport("audioenginebaseapo", ExactSpelling = true)]
+        public static extern HRESULT RegisterAPO(ref APO_REG_PROPERTIES pProperties);
+
+        [DllImport("audioenginebaseapo", ExactSpelling = true)]
+        public static extern HRESULT RegisterAPONotification(IntPtr hEvent);
+
+        [DllImport("audioenginebaseapo", ExactSpelling = true)]
+        public static extern HRESULT UnregisterAPO([MarshalAs(UnmanagedType.LPStruct)] Guid clsid);
+
+        [DllImport("audioenginebaseapo", ExactSpelling = true)]
+        public static extern HRESULT UnregisterAPONotification(IntPtr hEvent);
+
         // audiomediatype.dll
         [DllImport("audiomediatype", ExactSpelling = true)]
         public static extern HRESULT CreateAudioMediaType(ref tWAVEFORMATEX pAudioFormat, uint cbAudioFormatSize, out IAudioMediaType ppIAudioMediaType);
@@ -49,12 +80,225 @@ namespace DirectN
         [DllImport("audiostatemonitorapi", ExactSpelling = true)]
         public static extern HRESULT CreateRenderAudioStateMonitorForCategoryAndDeviceRole(/* _In_ */ _AUDIO_STREAM_CATEGORY category, /* _In_ */ int role, /* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
+        // d2d1.dll
+        [DllImport("d2d1", ExactSpelling = true)]
+        public static extern D2D1_GRADIENT_MESH_PATCH GradientMeshPatch(D2D_POINT_2F point00, D2D_POINT_2F point01, D2D_POINT_2F point02, D2D_POINT_2F point03, D2D_POINT_2F point10, D2D_POINT_2F point11, D2D_POINT_2F point12, D2D_POINT_2F point13, D2D_POINT_2F point20, D2D_POINT_2F point21, D2D_POINT_2F point22, D2D_POINT_2F point23, D2D_POINT_2F point30, D2D_POINT_2F point31, D2D_POINT_2F point32, D2D_POINT_2F point33, _D3DCOLORVALUE color00, _D3DCOLORVALUE color03, _D3DCOLORVALUE color30, _D3DCOLORVALUE color33, D2D1_PATCH_EDGE_MODE topEdgeMode, D2D1_PATCH_EDGE_MODE leftEdgeMode, D2D1_PATCH_EDGE_MODE bottomEdgeMode, D2D1_PATCH_EDGE_MODE rightEdgeMode);
+
+        [DllImport("d2d1", ExactSpelling = true)]
+        public static extern D2D1_GRADIENT_MESH_PATCH GradientMeshPatchFromCoonsPatch(D2D_POINT_2F point0, D2D_POINT_2F point1, D2D_POINT_2F point2, D2D_POINT_2F point3, D2D_POINT_2F point4, D2D_POINT_2F point5, D2D_POINT_2F point6, D2D_POINT_2F point7, D2D_POINT_2F point8, D2D_POINT_2F point9, D2D_POINT_2F point10, D2D_POINT_2F point11, _D3DCOLORVALUE color0, _D3DCOLORVALUE color1, _D3DCOLORVALUE color2, _D3DCOLORVALUE color3, D2D1_PATCH_EDGE_MODE topEdgeMode, D2D1_PATCH_EDGE_MODE leftEdgeMode, D2D1_PATCH_EDGE_MODE bottomEdgeMode, D2D1_PATCH_EDGE_MODE rightEdgeMode);
+
+        [DllImport("d2d1", ExactSpelling = true)]
+        public static extern D2D_RECT_U InfiniteRectU();
+
+        [DllImport("d2d1", ExactSpelling = true)]
+        public static extern D2D1_INK_BEZIER_SEGMENT InkBezierSegment(ref D2D1_INK_POINT point1, ref D2D1_INK_POINT point2, ref D2D1_INK_POINT point3);
+
+        [DllImport("d2d1", ExactSpelling = true)]
+        public static extern D2D1_INK_POINT InkPoint(ref D2D_POINT_2F point, float radius);
+
+        [DllImport("d2d1", ExactSpelling = true)]
+        public static extern D2D1_INK_STYLE_PROPERTIES InkStyleProperties(D2D1_INK_NIB_SHAPE nibShape, ref D2D_MATRIX_3X2_F nibTransform);
+
+        [DllImport("d2d1", ExactSpelling = true)]
+        public static extern D2D1_SIMPLE_COLOR_PROFILE SimpleColorProfile(ref D2D_POINT_2F redPrimary, ref D2D_POINT_2F greenPrimary, ref D2D_POINT_2F bluePrimary, D2D1_GAMMA1 gamma, ref D2D_POINT_2F whitePointXZ);
+
+        // d3d10.dll
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HADAPTER MAKE_D3D10DDI_HADAPTER(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HBLENDSTATE MAKE_D3D10DDI_HBLENDSTATE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HDEPTHSTENCILSTATE MAKE_D3D10DDI_HDEPTHSTENCILSTATE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HDEPTHSTENCILVIEW MAKE_D3D10DDI_HDEPTHSTENCILVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HDEVICE MAKE_D3D10DDI_HDEVICE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HELEMENTLAYOUT MAKE_D3D10DDI_HELEMENTLAYOUT(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HKMALLOCATION MAKE_D3D10DDI_HKMALLOCATION(uint h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HKMDEVICE MAKE_D3D10DDI_HKMDEVICE(uint h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HKMRESOURCE MAKE_D3D10DDI_HKMRESOURCE(uint h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HQUERY MAKE_D3D10DDI_HQUERY(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRASTERIZERSTATE MAKE_D3D10DDI_HRASTERIZERSTATE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRENDERTARGETVIEW MAKE_D3D10DDI_HRENDERTARGETVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRESOURCE MAKE_D3D10DDI_HRESOURCE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTADAPTER MAKE_D3D10DDI_HRTADAPTER(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTBLENDSTATE MAKE_D3D10DDI_HRTBLENDSTATE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTCORELAYER MAKE_D3D10DDI_HRTCORELAYER(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTDEPTHSTENCILSTATE MAKE_D3D10DDI_HRTDEPTHSTENCILSTATE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTDEPTHSTENCILVIEW MAKE_D3D10DDI_HRTDEPTHSTENCILVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTDEVICE MAKE_D3D10DDI_HRTDEVICE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTELEMENTLAYOUT MAKE_D3D10DDI_HRTELEMENTLAYOUT(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTQUERY MAKE_D3D10DDI_HRTQUERY(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTRASTERIZERSTATE MAKE_D3D10DDI_HRTRASTERIZERSTATE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTRENDERTARGETVIEW MAKE_D3D10DDI_HRTRENDERTARGETVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTRESOURCE MAKE_D3D10DDI_HRTRESOURCE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTSAMPLER MAKE_D3D10DDI_HRTSAMPLER(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTSHADER MAKE_D3D10DDI_HRTSHADER(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HRTSHADERRESOURCEVIEW MAKE_D3D10DDI_HRTSHADERRESOURCEVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HSAMPLER MAKE_D3D10DDI_HSAMPLER(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HSHADER MAKE_D3D10DDI_HSHADER(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D10DDI_HSHADERRESOURCEVIEW MAKE_D3D10DDI_HSHADERRESOURCEVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HAUTHCHANNEL MAKE_D3D11_1DDI_HAUTHCHANNEL(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HCRYPTOSESSION MAKE_D3D11_1DDI_HCRYPTOSESSION(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HDECODE MAKE_D3D11_1DDI_HDECODE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HRTAUTHCHANNEL MAKE_D3D11_1DDI_HRTAUTHCHANNEL(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HRTCRYPTOSESSION MAKE_D3D11_1DDI_HRTCRYPTOSESSION(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HRTDECODE MAKE_D3D11_1DDI_HRTDECODE(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HRTVIDEODECODEROUTPUTVIEW MAKE_D3D11_1DDI_HRTVIDEODECODEROUTPUTVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HRTVIDEOPROCESSOR MAKE_D3D11_1DDI_HRTVIDEOPROCESSOR(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HRTVIDEOPROCESSORENUM MAKE_D3D11_1DDI_HRTVIDEOPROCESSORENUM(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HRTVIDEOPROCESSORINPUTVIEW MAKE_D3D11_1DDI_HRTVIDEOPROCESSORINPUTVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HRTVIDEOPROCESSOROUTPUTVIEW MAKE_D3D11_1DDI_HRTVIDEOPROCESSOROUTPUTVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HVIDEODECODEROUTPUTVIEW MAKE_D3D11_1DDI_HVIDEODECODEROUTPUTVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HVIDEOPROCESSOR MAKE_D3D11_1DDI_HVIDEOPROCESSOR(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HVIDEOPROCESSORENUM MAKE_D3D11_1DDI_HVIDEOPROCESSORENUM(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HVIDEOPROCESSORINPUTVIEW MAKE_D3D11_1DDI_HVIDEOPROCESSORINPUTVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11_1DDI_HVIDEOPROCESSOROUTPUTVIEW MAKE_D3D11_1DDI_HVIDEOPROCESSOROUTPUTVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11DDI_HCOMMANDLIST MAKE_D3D11DDI_HCOMMANDLIST(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11DDI_HRTCOMMANDLIST MAKE_D3D11DDI_HRTCOMMANDLIST(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11DDI_HRTUNORDEREDACCESSVIEW MAKE_D3D11DDI_HRTUNORDEREDACCESSVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3D11DDI_HUNORDEREDACCESSVIEW MAKE_D3D11DDI_HUNORDEREDACCESSVIEW(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3DWDDM2_2DDI_HCACHESESSION MAKE_D3DWDDM2_2DDI_HCACHESESSION(IntPtr h);
+
+        [DllImport("d3d10", ExactSpelling = true)]
+        public static extern D3DWDDM2_2DDI_HRTCACHESESSION MAKE_D3DWDDM2_2DDI_HRTCACHESESSION(IntPtr h);
+
         // d3d11.dll
+        [DllImport("d3d11", ExactSpelling = true)]
+        public static extern uint D3D11CalcSubresource(uint MipSlice, uint ArraySlice, uint MipLevels);
+
+        [DllImport("d3d11", ExactSpelling = true)]
+        public static extern HRESULT D3D11CreateDevice(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D_DRIVER_TYPE DriverType, IntPtr Software, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D_FEATURE_LEVEL[] pFeatureLevels, int FeatureLevels, uint SDKVersion, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* optional(D3D_FEATURE_LEVEL) */ IntPtr pFeatureLevel, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext);
+
+        [DllImport("d3d11", ExactSpelling = true)]
+        public static extern HRESULT D3D11CreateDeviceAndSwapChain(/* _In_opt_ */ IDXGIAdapter pAdapter, D3D_DRIVER_TYPE DriverType, IntPtr Software, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 5)] D3D_FEATURE_LEVEL[] pFeatureLevels, int FeatureLevels, uint SDKVersion, /* optional(DXGI_SWAP_CHAIN_DESC) */ IntPtr pSwapChainDesc, /* _COM_Outptr_opt_ */ out IDXGISwapChain ppSwapChain, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* optional(D3D_FEATURE_LEVEL) */ IntPtr pFeatureLevel, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext);
+
         [DllImport("d3d11", ExactSpelling = true)]
         public static extern HRESULT D3D11On12CreateDevice(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D_FEATURE_LEVEL[] pFeatureLevels, int FeatureLevels, /* _In_reads_opt_( NumQueues ) */ [MarshalAs(UnmanagedType.IUnknown)] object ppCommandQueues, uint NumQueues, uint NodeMask, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext, /* optional(D3D_FEATURE_LEVEL) */ IntPtr pChosenFeatureLevel);
 
         [DllImport("d3d11", ExactSpelling = true)]
         public static extern HRESULT D3DDisassemble11Trace(/* _In_reads_bytes_(SrcDataSize) */ IntPtr pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ ID3D11ShaderTrace pTrace, /* _In_ */ uint StartStep, /* _In_ */ uint NumSteps, /* _In_ */ uint Flags, /* _COM_Outptr_ */ out ID3D10Blob ppDisassembly);
+
+        // d3d12.dll
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12CreateDevice(/* _In_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] object pAdapter, D3D_FEATURE_LEVEL MinimumFeatureLevel, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* // Expected: ID3D12Device _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppDevice);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12CreateRootSignatureDeserializer(/* _In_reads_bytes_(SrcDataSizeInBytes) */ IntPtr pSrcData, /* _In_ */ IntPtr SrcDataSizeInBytes, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pRootSignatureDeserializerInterface, /* _Out_ */ out IntPtr ppRootSignatureDeserializer);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializer(/* _In_reads_bytes_(SrcDataSizeInBytes) */ IntPtr pSrcData, /* _In_ */ IntPtr SrcDataSizeInBytes, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pRootSignatureDeserializerInterface, /* _Out_ */ out IntPtr ppRootSignatureDeserializer);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12EnableExperimentalFeatures(int NumFeatures, /* _In_count_(NumFeatures) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] Guid[] pIIDs, /* optional(void) */ IntPtr pConfigurationStructs, /* _In_opt_count_(NumFeatures) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] uint[] pConfigurationStructSizes);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12GetDebugInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvDebug);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12GetInterface(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rclsid, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_opt_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvDebug);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12SerializeRootSignature(/* _In_ */ ref D3D12_ROOT_SIGNATURE_DESC pRootSignature, /* _In_ */ D3D_ROOT_SIGNATURE_VERSION Version, /* _Out_ */ out ID3D10Blob ppBlob, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorBlob);
+
+        [DllImport("d3d12", ExactSpelling = true)]
+        public static extern HRESULT D3D12SerializeVersionedRootSignature(/* _In_ */ ref D3D12_VERSIONED_ROOT_SIGNATURE_DESC pRootSignature, /* _Out_ */ out ID3D10Blob ppBlob, /* _Always_(_Outptr_opt_result_maybenull_) */ out ID3D10Blob ppErrorBlob);
 
         // d3d12umddi.dll
         [DllImport("d3d12umddi", ExactSpelling = true)]
@@ -97,7 +341,7 @@ namespace DirectN
         public static extern D3D12DDI_HMETACOMMAND_0052 MAKE_D3D12DDI_HMETACOMMAND_0052(IntPtr h);
 
         [DllImport("d3d12umddi", ExactSpelling = true)]
-        public static extern D3D12DDI_HPASS MAKE_D3D12DDI_HPASS(/* optional(void) */ out IntPtr h);
+        public static extern D3D12DDI_HPASS MAKE_D3D12DDI_HPASS(/* optional(void) */ IntPtr h);
 
         [DllImport("d3d12umddi", ExactSpelling = true)]
         public static extern D3D12DDI_HPIPELINELIBRARY MAKE_D3D12DDI_HPIPELINELIBRARY(/* } D3D12DDI_3DPIPELINELEVEL; typedef VOID ( APIENTRY* PFND3D12DDI_CHECKFORMATSUPPORT )( D3D12DDI_HDEVICE, DXGI_FORMAT, _Out_ UINT* ); typedef VOID ( APIENTRY* PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS )( D3D12DDI_HDEVICE hDevice, DXGI_FORMAT Format, UINT SampleCount, D3D12DDI_MULTISAMPLE_QUALITY_LEVEL_FLAGS Flags, _Out_ UINT* pNumQualityLevels ); typedef VOID ( APIENTRY* PFND3D12DDI_GETMIPPACKING )( D3D12DDI_HDEVICE hDevice, D3D12DDI_HRESOURCE hTiledResource, _Out_ UINT* pNumPackedMips, _Out_ UINT* pNumTilesForPackedMips ); typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_CREATEELEMENTLAYOUT* ); typedef VOID ( APIENTRY* PFND3D12DDI_CREATEELEMENTLAYOUT_0003 )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_CREATEELEMENTLAYOUT*, D3D12DDI_HELEMENTLAYOUT ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYELEMENTLAYOUT )( D3D12DDI_HDEVICE, D3D12DDI_HELEMENTLAYOUT ); typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDI_BLEND_DESC* ); typedef VOID ( APIENTRY* PFND3D12DDI_CREATEBLENDSTATE_0003 )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDI_BLEND_DESC*, D3D12DDI_HBLENDSTATE ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYBLENDSTATE )( D3D12DDI_HDEVICE, D3D12DDI_HBLENDSTATE ); typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDI_DEPTH_STENCIL_DESC* ); typedef VOID ( APIENTRY* PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0003 )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDI_DEPTH_STENCIL_DESC*, D3D12DDI_HDEPTHSTENCILSTATE ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYDEPTHSTENCILSTATE )( D3D12DDI_HDEVICE, D3D12DDI_HDEPTHSTENCILSTATE ); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYRASTERIZERSTATE )( D3D12DDI_HDEVICE, D3D12DDI_HRASTERIZERSTATE ); typedef VOID ( APIENTRY* PFND3D12DDI_CLEAR_ROOT_ARGUMENTS )(D3D12DDI_HCOMMANDLIST); typedef VOID ( APIENTRY* PFND3D12DDI_DESTROYSHADER )( D3D12DDI_HDEVICE, D3D12DDI_HSHADER ); typedef VOID ( APIENTRY* PFND3D12DDI_BEGIN_END_QUERY_0003 )( D3D12DDI_HCOMMANDLIST, D3D12DDI_HQUERYHEAP, D3D12DDI_QUERY_TYPE, UINT ); typedef D3DKMT_HANDLE ( APIENTRY* PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE )( D3D12DDI_HDEVICE, D3D10DDI_HRESOURCE ); //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 DDI Tables // typedef struct D3D12DDI_COMMAND_LIST_FUNCS_3D_0003 { PFND3D12DDI_CLOSECOMMANDLIST pfnCloseCommandList; PFND3D12DDI_RESETCOMMANDLIST pfnResetCommandList; PFND3D12DDI_DRAWINSTANCED pfnDrawInstanced; PFND3D12DDI_DRAWINDEXEDINSTANCED pfnDrawIndexedInstanced; PFND3D12DDI_DISPATCH pfnDispatch; PFND3D12DDI_CLEAR_UNORDERED_ACCESS_VIEW_UINT_0003 pfnClearUnorderedAccessViewUint; PFND3D12DDI_CLEAR_UNORDERED_ACCESS_VIEW_FLOAT_0003 pfnClearUnorderedAccessViewFloat; PFND3D12DDI_CLEAR_RENDER_TARGET_VIEW_0003 pfnClearRenderTargetView; PFND3D12DDI_CLEAR_DEPTH_STENCIL_VIEW_0003 pfnClearDepthStencilView; PFND3D12DDI_DISCARD_RESOURCE_0003 pfnDiscardResource; PFND3D12DDI_COPYTEXTUREREGION_0003 pfnCopyTextureRegion; PFND3D12DDI_RESOURCECOPY pfnResourceCopy; PFND3D12DDI_COPYTILES pfnCopyTiles; PFND3D12DDI_COPYBUFFERREGION_0003 pfnCopyBufferRegion; PFND3D12DDI_RESOURCERESOLVESUBRESOURCE pfnResourceResolveSubresource; PFND3D12DDI_EXECUTE_BUNDLE pfnExecuteBundle; PFND3D12DDI_EXECUTE_INDIRECT pfnExecuteIndirect; PFND3D12DDI_RESOURCEBARRIER_0003 pfnResourceBarrier; PFND3D12DDI_BLT pfnBlt; PFND3D12DDI_PRESENT_0003 pfnPresent; PFND3D12DDI_BEGIN_END_QUERY_0003 pfnBeginQuery; PFND3D12DDI_BEGIN_END_QUERY_0003 pfnEndQuery; PFND3D12DDI_RESOLVE_QUERY_DATA pfnResolveQueryData; PFND3D12DDI_SET_PREDICATION pfnSetPredication; PFND3D12DDI_IA_SETTOPOLOGY_0003 pfnIaSetTopology; PFND3D12DDI_RS_SETVIEWPORTS_0003 pfnRsSetViewports; PFND3D12DDI_RS_SETSCISSORRECTS_0003 pfnRsSetScissorRects; PFND3D12DDI_OM_SETBLENDFACTOR pfnOmSetBlendFactor; PFND3D12DDI_OM_SETSTENCILREF pfnOmSetStencilRef; PFND3D12DDI_SET_PIPELINE_STATE pfnSetPipelineState; PFND3D12DDI_SET_DESCRIPTOR_HEAPS_0003 pfnSetDescriptorHeaps; PFND3D12DDI_SET_ROOT_SIGNATURE pfnSetComputeRootSignature; PFND3D12DDI_SET_ROOT_SIGNATURE pfnSetGraphicsRootSignature; PFND3D12DDI_SET_ROOT_DESCRIPTOR_TABLE pfnSetComputeRootDescriptorTable; PFND3D12DDI_SET_ROOT_DESCRIPTOR_TABLE pfnSetGraphicsRootDescriptorTable; PFND3D12DDI_SET_ROOT_32BIT_CONSTANT pfnSetComputeRoot32BitConstant; PFND3D12DDI_SET_ROOT_32BIT_CONSTANT pfnSetGraphicsRoot32BitConstant; PFND3D12DDI_SET_ROOT_32BIT_CONSTANTS_0003 pfnSetComputeRoot32BitConstants; PFND3D12DDI_SET_ROOT_32BIT_CONSTANTS_0003 pfnSetGraphicsRoot32BitConstants; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootConstantBufferView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootConstantBufferView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootShaderResourceView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootShaderResourceView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetComputeRootUnorderedAccessView; PFND3D12DDI_SET_ROOT_BUFFER_VIEW pfnSetGraphicsRootUnorderedAccessView; PFND3D12DDI_IA_SET_INDEX_BUFFER pfnIASetIndexBuffer; PFND3D12DDI_IA_SET_VERTEX_BUFFERS_0003 pfnIASetVertexBuffers; PFND3D12DDI_SO_SET_TARGETS_0003 pfnSOSetTargets; PFND3D12DDI_OM_SET_RENDER_TARGETS_0003 pfnOMSetRenderTargets; PFND3D12DDI_SET_MARKER pfnSetMarker; PFND3D12DDI_CLEAR_ROOT_ARGUMENTS pfnClearRootArguments; } D3D12DDI_COMMAND_LIST_FUNCS_3D_0003; typedef struct D3D12DDI_DEVICE_FUNCS_CORE_0003 { PFND3D12DDI_CHECKFORMATSUPPORT pfnCheckFormatSupport; PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS pfnCheckMultisampleQualityLevels; PFND3D12DDI_GETMIPPACKING pfnGetMipPacking; PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE pfnCalcPrivateElementLayoutSize; PFND3D12DDI_CREATEELEMENTLAYOUT_0003 pfnCreateElementLayout; PFND3D12DDI_DESTROYELEMENTLAYOUT pfnDestroyElementLayout; PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE pfnCalcPrivateBlendStateSize; PFND3D12DDI_CREATEBLENDSTATE_0003 pfnCreateBlendState; PFND3D12DDI_DESTROYBLENDSTATE pfnDestroyBlendState; PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE pfnCalcPrivateDepthStencilStateSize; PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0003 pfnCreateDepthStencilState; PFND3D12DDI_DESTROYDEPTHSTENCILSTATE pfnDestroyDepthStencilState; PFND3D12DDI_CALCPRIVATERASTERIZERSTATESIZE pfnCalcPrivateRasterizerStateSize; PFND3D12DDI_CREATERASTERIZERSTATE_0003 pfnCreateRasterizerState; PFND3D12DDI_DESTROYRASTERIZERSTATE pfnDestroyRasterizerState; PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE pfnCalcPrivateShaderSize; PFND3D12DDI_CREATE_SHADER_0003 pfnCreateVertexShader; PFND3D12DDI_CREATE_SHADER_0003 pfnCreatePixelShader; PFND3D12DDI_CREATE_SHADER_0003 pfnCreateGeometryShader; PFND3D12DDI_CREATE_COMPUTE_SHADER_0003 pfnCreateComputeShader; PFND3D12DDI_CALC_PRIVATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT pfnCalcPrivateGeometryShaderWithStreamOutput; PFND3D12DDI_CREATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0003 pfnCreateGeometryShaderWithStreamOutput; PFND3D12DDI_CALC_PRIVATE_TESSELLATION_SHADER_SIZE pfnCalcPrivateTessellationShaderSize; PFND3D12DDI_CREATE_TESS_SHADER_0003 pfnCreateHullShader; PFND3D12DDI_CREATE_TESS_SHADER_0003 pfnCreateDomainShader; PFND3D12DDI_DESTROYSHADER pfnDestroyShader; PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0001 pfnCalcPrivateCommandQueueSize; PFND3D12DDI_CREATECOMMANDQUEUE_0001 pfnCreateCommandQueue; PFND3D12DDI_DESTROYCOMMANDQUEUE pfnDestroyCommandQueue; PFND3D12DDI_CALCPRIVATECOMMANDALLOCATORSIZE pfnCalcPrivateCommandAllocatorSize; PFND3D12DDI_CREATECOMMANDALLOCATOR pfnCreateCommandAllocator; PFND3D12DDI_DESTROYCOMMANDALLOCATOR pfnDestroyCommandAllocator; PFND3D12DDI_RESETCOMMANDALLOCATOR pfnResetCommandAllocator; PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0001 pfnCalcPrivatePipelineStateSize; PFND3D12DDI_CREATE_PIPELINE_STATE_0001 pfnCreatePipelineState; PFND3D12DDI_DESTROY_PIPELINE_STATE pfnDestroyPipelineState; PFND3D12DDI_CALC_PRIVATE_COMMAND_LIST_SIZE_0001 pfnCalcPrivateCommandListSize; PFND3D12DDI_CREATE_COMMAND_LIST_0001 pfnCreateCommandList; PFND3D12DDI_DESTROYCOMMANDLIST pfnDestroyCommandList; PFND3D12DDI_CALCPRIVATEFENCESIZE pfnCalcPrivateFenceSize; PFND3D12DDI_CREATEFENCE pfnCreateFence; PFND3D12DDI_DESTROYFENCE pfnDestroyFence; PFND3D12DDI_CALC_PRIVATE_DESCRIPTOR_HEAP_SIZE_0001 pfnCalcPrivateDescriptorHeapSize; PFND3D12DDI_CREATE_DESCRIPTOR_HEAP_0001 pfnCreateDescriptorHeap; PFND3D12DDI_DESTROY_DESCRIPTOR_HEAP pfnDestroyDescriptorHeap; PFND3D12DDI_GET_DESCRIPTOR_SIZE_IN_BYTES pfnGetDescriptorSizeInBytes; PFND3D12DDI_GET_CPU_DESCRIPTOR_HANDLE_FOR_HEAP_START pfnGetCPUDescriptorHandleForHeapStart; PFND3D12DDI_GET_GPU_DESCRIPTOR_HANDLE_FOR_HEAP_START pfnGetGPUDescriptorHandleForHeapStart; PFND3D12DDI_CREATE_SHADER_RESOURCE_VIEW_0002 pfnCreateShaderResourceView; PFND3D12DDI_CREATE_CONSTANT_BUFFER_VIEW pfnCreateConstantBufferView; PFND3D12DDI_CREATE_SAMPLER pfnCreateSampler; PFND3D12DDI_CREATE_UNORDERED_ACCESS_VIEW_0002 pfnCreateUnorderedAccessView; PFND3D12DDI_CREATE_RENDER_TARGET_VIEW_0002 pfnCreateRenderTargetView; PFND3D12DDI_CREATE_DEPTH_STENCIL_VIEW pfnCreateDepthStencilView; PFND3D12DDI_CALC_PRIVATE_ROOT_SIGNATURE_SIZE_0001 pfnCalcPrivateRootSignatureSize; PFND3D12DDI_CREATE_ROOT_SIGNATURE_0001 pfnCreateRootSignature; PFND3D12DDI_DESTROY_ROOT_SIGNATURE pfnDestroyRootSignature; PFND3D12DDI_SERIALIZEOBJECT pfnSerializeObject; PFND3D12DDI_DESTROYOBJECTSERIALIZATION pfnDestroyObjectSerialization; PFND3D12DDI_CALCPRIVATEDESERIALIZEDOBJECTSIZE pfnCalcPrivateDeserializedObjectSize; PFND3D12DDI_CREATEDESERIALIZEDOBJECT pfnCreateDeserializedObject; PFND3D12DDI_MAPHEAP pfnMapHeap; PFND3D12DDI_UNMAPHEAP pfnUnmapHeap; PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0003 pfnCalcPrivateHeapAndResourceSizes; PFND3D12DDI_CREATEHEAPANDRESOURCE_0003 pfnCreateHeapAndResource; PFND3D12DDI_DESTROYHEAPANDRESOURCE pfnDestroyHeapAndResource; PFND3D12DDI_MAKERESIDENT_0001 pfnMakeResident; PFND3D12DDI_EVICT2 pfnEvict; PFND3D12DDI_CALCPRIVATEOPENEDHEAPANDRESOURCESIZES_0003 pfnCalcPrivateOpenedHeapAndResourceSizes; PFND3D12DDI_OPENHEAPANDRESOURCE_0003 pfnOpenHeapAndResource; PFND3D12DDI_COPY_DESCRIPTORS_0003 pfnCopyDescriptors; PFND3D12DDI_COPY_DESCRIPTORS_SIMPLE_0003 pfnCopyDescriptorsSimple; PFND3D12DDI_CALC_PRIVATE_QUERY_HEAP_SIZE_0001 pfnCalcPrivateQueryHeapSize; PFND3D12DDI_CREATE_QUERY_HEAP_0001 pfnCreateQueryHeap; PFND3D12DDI_DESTROY_QUERY_HEAP pfnDestroyQueryHeap; PFND3D12DDI_CALC_PRIVATE_COMMAND_SIGNATURE_SIZE_0001 pfnCalcPrivateCommandSignatureSize; PFND3D12DDI_CREATE_COMMAND_SIGNATURE_0001 pfnCreateCommandSignature; PFND3D12DDI_DESTROY_COMMAND_SIGNATURE pfnDestroyCommandSignature; PFND3D12DDI_CHECKRESOURCEVIRTUALADDRESS pfnCheckResourceVirtualAddress; PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0003 pfnCheckResourceAllocationInfo; PFND3D12DDI_CHECKSUBRESOURCEINFO pfnCheckSubresourceInfo; PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO pfnCheckExistingResourceAllocationInfo; PFND3D12DDI_OFFERRESOURCES pfnOfferResources; PFND3D12DDI_RECLAIMRESOURCES_0001 pfnReclaimResources; PFND3D12DDI_GETIMPLICITPHYSICALADAPTERMASK pfnGetImplicitPhysicalAdapterMask; PFND3D12DDI_GET_PRESENT_PRIVATE_DRIVER_DATA_SIZE pfnGetPresentPrivateDriverDataSize; PFND3D12DDI_QUERY_NODE_MAP pfnQueryNodeMap; PFND3D12DDI_RETRIEVE_SHADER_COMMENT_0003 pfnRetrieveShaderComment; PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE pfnCheckResourceAllocationHandle; } D3D12DDI_DEVICE_FUNCS_CORE_0003; //---------------------------------------------------------------------------------------------------------------------------------- // D3D12 Release 1 #define D3D12DDI_MINOR_VERSION_R1 10 #define D3D12DDI_INTERFACE_VERSION_R1 ((D3D12DDI_MAJOR_VERSION << 16) | D3D12DDI_MINOR_VERSION_R1) #define D3D12DDI_BUILD_VERSION_0010 0 #define D3D12DDI_SUPPORTED_0010 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R1) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0010) << 16)) // UMD handle types */ out IntPtr h);
@@ -422,6 +666,37 @@ namespace DirectN
         [DllImport("ddrawgdi", ExactSpelling = true)]
         public static extern IntPtr GdiEntry9(IntPtr hdc, ref tagBITMAPINFO pbmi, uint iUsage, IntPtr ppvBits, IntPtr hSectionApp, uint dwOffset);
 
+        // dsound.dll
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundCaptureCreate(/* optional(LPCGUID) */ IntPtr pcGuidDevice, /* _Outptr_ */ out LPDIRECTSOUNDCAPTURE ppDSC, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundCaptureCreate8(/* optional(LPCGUID) */ IntPtr pcGuidDevice, /* _Outptr_ */ out LPDIRECTSOUNDCAPTURE8 ppDSC8, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundCaptureEnumerateA(/* _In_ */ ref LPDSENUMCALLBACKA pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundCaptureEnumerateW(/* _In_ */ ref LPDSENUMCALLBACKW pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundCreate(/* optional(LPCGUID) */ IntPtr pcGuidDevice, /* _Outptr_ */ out LPDIRECTSOUND ppDS, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundCreate8(/* optional(LPCGUID) */ IntPtr pcGuidDevice, /* _Outptr_ */ out LPDIRECTSOUND8 ppDS8, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundEnumerateA(/* _In_ */ ref LPDSENUMCALLBACKA pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundEnumerateW(/* _In_ */ ref LPDSENUMCALLBACKW pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT DirectSoundFullDuplexCreate(/* optional(LPCGUID) */ IntPtr pcGuidCaptureDevice, /* optional(LPCGUID) */ IntPtr pcGuidRenderDevice, /* _In_ */ ref _DSCBUFFERDESC pcDSCBufferDesc, /* _In_ */ ref _DSBUFFERDESC pcDSBufferDesc, IntPtr hWnd, uint dwLevel, /* _Outptr_ */ out LPDIRECTSOUNDFULLDUPLEX ppDSFD, /* _Outptr_ */ out LPDIRECTSOUNDCAPTUREBUFFER8 ppDSCBuffer8, /* _Outptr_ */ out LPDIRECTSOUNDBUFFER8 ppDSBuffer8, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
+
+        [DllImport("dsound", ExactSpelling = true)]
+        public static extern HRESULT GetDeviceID(/* optional(LPCGUID) */ IntPtr pGuidSrc, /* _Out_ */ out Guid pGuidDest);
+
         // dxcapi.dll
         [DllImport("dxcapi", ExactSpelling = true)]
         public static extern HRESULT DxcCreateInstance(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rclsid, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Out_ */ out IntPtr ppv);
@@ -450,6 +725,23 @@ namespace DirectN
 
         [DllImport("dxva2", ExactSpelling = true)]
         public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(/* _In_ */ IDirect3DDevice9 pDirect3DDevice9, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _Out_ */ out uint pulNumVideoOutputs, /* _Outptr_result_buffer_(*pulNumVideoOutputs) */ out IOPMVideoOutput pppOPMVideoOutputArray);
+
+        // dxva2api.dll
+        [DllImport("dxva2api", ExactSpelling = true)]
+        public static extern _DXVA2_Fixed32 DXVA2_Fixed32OpaqueAlpha();
+
+        [DllImport("dxva2api", ExactSpelling = true)]
+        public static extern _DXVA2_Fixed32 DXVA2_Fixed32TransparentAlpha();
+
+        [DllImport("dxva2api", ExactSpelling = true)]
+        public static extern void DXVA2FixedToFloat(/* _In_ */ _DXVA2_Fixed32 _fixed_);
+
+        [DllImport("dxva2api", ExactSpelling = true)]
+        public static extern _DXVA2_Fixed32 DXVA2FloatToFixed(/* _In_ */ float _float_);
+
+        // GameInput.dll
+        [DllImport("GameInput", ExactSpelling = true)]
+        public static extern HRESULT GameInputCreate(/* _COM_Outptr_ */ out IGameInput gameInput);
 
         // gdi32.dll
         [DllImport("gdi32", ExactSpelling = true)]
@@ -1201,6 +1493,13 @@ namespace DirectN
         [DllImport("mfgphone", ExactSpelling = true)]
         public static extern HRESULT MfgPhoneUninitialize();
 
+        // mfobjects.dll
+        [DllImport("mfobjects", ExactSpelling = true)]
+        public static extern HRESULT MFDeserializeAttributesFromStream(IMFAttributes pAttr, uint dwOptions, IStream pStm);
+
+        [DllImport("mfobjects", ExactSpelling = true)]
+        public static extern HRESULT MFSerializeAttributesToStream(IMFAttributes pAttr, uint dwOptions, IStream pStm);
+
         // mfplat.dll
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT CreatePropertyStore(/* out _Outptr_ */ out IntPtr ppStore);
@@ -1227,7 +1526,7 @@ namespace DirectN
         public static extern HRESULT MFAverageTimePerFrameToFrameRate(/* _In_ */ ulong unAverageTimePerFrame, /* _Out_ */ out uint punNumerator, /* _Out_ */ out uint punDenominator);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFBeginCreateFile(__MIDL___MIDL_itf_mfobjects_0000_0017_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0003 fFlags, [MarshalAs(UnmanagedType.LPWStr)] string pwszFilePath, IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pState, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppCancelCookie);
+        public static extern HRESULT MFBeginCreateFile(__MIDL___MIDL_itf_mfobjects_0000_0018_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0018_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0018_0003 fFlags, [MarshalAs(UnmanagedType.LPWStr)] string pwszFilePath, IMFAsyncCallback pCallback, [MarshalAs(UnmanagedType.IUnknown)] object pState, /* _Out_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppCancelCookie);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS(uint dwWorkQueueId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string wszClass, uint dwTaskId, /* _In_ */ IMFAsyncCallback pDoneCallback, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDoneState);
@@ -1275,6 +1574,9 @@ namespace DirectN
         public static extern HRESULT MFCreate2DMediaBuffer(/* _In_ */ uint dwWidth, /* _In_ */ uint dwHeight, /* _In_ */ uint dwFourCC, /* _In_ */ bool fBottomUp, /* _Out_ */ out IMFMediaBuffer ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreate3GPMediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
+
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateAlignedMemoryBuffer(/* _In_ */ uint cbMaxLength, /* _In_ */ uint cbAligment, /* _Out_ */ out IMFMediaBuffer ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1290,16 +1592,31 @@ namespace DirectN
         public static extern HRESULT MFCreateAudioMediaType(/* _In_ */ ref tWAVEFORMATEX pAudioFormat, /* _Out_ */ out IMFAudioMediaType ppIAudioMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateAudioRendererActivate(/* _Outptr_ */ out IMFActivate ppActivate);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateAVIMediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateCameraControlMonitor(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string symbolicLink, /* _In_ */ IMFCameraControlNotify callback, /* _COM_Outptr_ */ out IMFCameraControlMonitor ppCameraControlMonitor);
+
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateCameraOcclusionStateMonitor(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string symbolicLink, /* _In_ */ IMFCameraOcclusionStateReportCallback callback, /* _COM_Outptr_ */ out IMFCameraOcclusionStateMonitor occlusionStateMonitor);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateCollection(/* _Out_ */ out IMFCollection ppIMFCollection);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateContentDecryptorContext(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMediaProtectionSystemId, /* optional(IMFDXGIDeviceManager) */ IntPtr pD3DManager, /* _In_ */ IMFContentProtectionDevice pContentProtectionDevice, /* _Outptr_ */ out IMFContentDecryptorContext ppContentDecryptorContext);
+        public static extern HRESULT MFCreateContentDecryptorContext(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMediaProtectionSystemId, /* _In_opt_ */ IMFDXGIDeviceManager pD3DManager, /* _In_ */ IMFContentProtectionDevice pContentProtectionDevice, /* _Outptr_ */ out IMFContentDecryptorContext ppContentDecryptorContext);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateContentProtectionDevice(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProtectionSystemId, /* _Outptr_ */ out IMFContentProtectionDevice ContentProtectionDevice);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateDeviceSourceActivate(/* _In_ */ IMFAttributes pAttributes, /* _Outptr_ */ out IMFActivate ppActivate);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateDXGICrossAdapterBuffer(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkDevice, /* _In_ */ IMFMediaType pMediaType, /* _In_ */ uint uSubresource, /* _COM_Outptr_ */ out IMFMediaBuffer ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGIDeviceManager(/* _Out_ */ out uint resetToken, /* _Outptr_ */ out IMFDXGIDeviceManager ppDeviceManager);
@@ -1314,7 +1631,13 @@ namespace DirectN
         public static extern HRESULT MFCreateEventQueue(/* _Out_ */ out IMFMediaEventQueue ppMediaEventQueue);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateFile(__MIDL___MIDL_itf_mfobjects_0000_0017_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0003 fFlags, [MarshalAs(UnmanagedType.LPWStr)] string pwszFileURL, /* _Out_ */ out IMFByteStream ppIByteStream);
+        public static extern HRESULT MFCreateExtendedCameraIntrinsicModel(_MFCameraIntrinsic_DistortionModelType distortionModelType, /* _COM_Outptr_ */ out IMFExtendedCameraIntrinsicModel ppExtendedCameraIntrinsicModel);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateFile(__MIDL___MIDL_itf_mfobjects_0000_0018_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0018_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0018_0003 fFlags, [MarshalAs(UnmanagedType.LPWStr)] string pwszFileURL, /* _Out_ */ out IMFByteStream ppIByteStream);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateFMPEG4MediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateLegacyMediaBufferOnMFMediaBuffer(/* _In_opt_ */ IMFSample pSample, /* _In_ */ IMFMediaBuffer pMFMediaBuffer, /* _In_ */ uint cbOffset, /* _Outptr_ */ out IMediaBuffer ppMediaBuffer);
@@ -1335,7 +1658,7 @@ namespace DirectN
         public static extern HRESULT MFCreateMediaType(/* _Outptr_ */ out IMFMediaType ppMFType);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateMediaTypeFromProperties(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkStream, /* _Outptr_ */ out IntPtr ppMediaType);
+        public static extern HRESULT MFCreateMediaTypeFromProperties(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkStream, /* _Outptr_ */ out IMFMediaType ppMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMediaTypeFromRepresentation(Guid guidRepresentation, /* _In_ */ IntPtr pvRepresentation, /* _Out_ */ out IMFMediaType ppIMediaType);
@@ -1344,16 +1667,22 @@ namespace DirectN
         public static extern HRESULT MFCreateMemoryBuffer(/* _In_ */ uint cbMaxLength, /* _Out_ */ out IMFMediaBuffer ppBuffer);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateMFByteStreamOnStream(IStream pStream, /* _Outptr_ */ out IntPtr ppByteStream);
+        public static extern HRESULT MFCreateMFByteStreamOnStream(IStream pStream, /* _Outptr_ */ out IMFByteStream ppByteStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateMFByteStreamOnStreamEx(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkStream, /* _Outptr_ */ out IntPtr ppByteStream);
+        public static extern HRESULT MFCreateMFByteStreamOnStreamEx(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkStream, /* _Outptr_ */ out IMFByteStream ppByteStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMFByteStreamWrapper(/* _In_ */ IMFByteStream pStream, /* _Out_ */ out IMFByteStream ppStreamWrapper);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMFVideoFormatFromMFMediaType(/* _In_ */ IMFMediaType pMFType, /* _Out_ */ out IntPtr ppMFVF, /* optional(UINT32) */ IntPtr pcbSize);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateMPEG4MediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateMuxSink(/* _In_ */ Guid guidOutputSubType, /* _In_opt_ */ IMFAttributes pOutputAttributes, /* _In_opt_ */ IMFByteStream pOutputByteStream, /* _Outptr_ */ out IMFMediaSink ppMuxSink);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMuxStreamAttributes(/* _In_ */ IMFCollection pAttributesToMux, /* _COM_Outptr_ */ out IMFAttributes ppMuxAttribs);
@@ -1365,13 +1694,43 @@ namespace DirectN
         public static extern HRESULT MFCreateMuxStreamSample(/* _In_ */ IMFCollection pSamplesToMux, /* _COM_Outptr_ */ out IMFSample ppMuxSample);
 
         [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreatePMPMediaSession(uint dwCreationFlags, IMFAttributes pConfiguration, /* _Outptr_ */ out IMFMediaSession ppMediaSession, /* _Outptr_opt_ */ out IMFActivate ppEnablerActivate);
+
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreatePresentationDescriptor(int cStreamDescriptors, /* _In_reads_opt_( cStreamDescriptors ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 0)] IMFStreamDescriptor[] apStreamDescriptors, /* _Outptr_ */ out IMFPresentationDescriptor ppPresentationDescriptor);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreatePropertiesFromMediaType(/* _In_ */ IMFMediaType pMediaType, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ out IntPtr ppv);
 
         [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateProxyLocator([MarshalAs(UnmanagedType.LPWStr)] string pszProtocol, ref IPropertyStore pProxyConfig, /* _Outptr_ */ out IMFNetProxyLocator ppProxyLocator);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateRelativePanelWatcher(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string videoDeviceId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string displayMonitorDeviceId, /* _COM_Outptr_ */ out IMFRelativePanelWatcher ppRelativePanelWatcher);
+
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateSample(/* _Out_ */ out IMFSample ppIMFSample);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateSampleCopierMFT(/* _Outptr_ */ out IMFTransform ppCopierMFT);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateSampleGrabberSinkActivate(IMFMediaType pIMFMediaType, IMFSampleGrabberSinkCallback pIMFSampleGrabberSinkCallback, /* _Outptr_ */ out IMFActivate ppIActivate);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateSensorActivityMonitor(/* _In_ */ IMFSensorActivitiesReportCallback pCallback, /* _COM_Outptr_ */ out IMFSensorActivityMonitor ppActivityMonitor);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateSensorGroup(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string SensorGroupSymbolicLink, /* _COM_Outptr_ */ out IMFSensorGroup ppSensorGroup);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateSensorProfile(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProfileType, /* _In_ */ uint ProfileIndex, /* _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string Constraints, /* _COM_Outptr_ */ out IMFSensorProfile ppProfile);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateSensorProfileCollection(/* _COM_Outptr_ */ out IMFSensorProfileCollection ppSensorProfile);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateSensorStream(/* _In_ */ uint StreamId, /* _In_opt_ */ IMFAttributes pAttributes, /* _In_ */ IMFCollection pMediaTypeCollection, /* _COM_Outptr_ */ out IMFSensorStream ppStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateStreamDescriptor(uint dwStreamIdentifier, int cMediaTypes, /* _In_reads_(cMediaTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] IMFMediaType[] apMediaTypes, /* _Outptr_ */ out IMFStreamDescriptor ppDescriptor);
@@ -1386,10 +1745,13 @@ namespace DirectN
         public static extern HRESULT MFCreateSystemTimeSource(/* _Outptr_ */ out IMFPresentationTimeSource ppSystemTimeSource);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFCreateTempFile(__MIDL___MIDL_itf_mfobjects_0000_0017_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0017_0003 fFlags, /* _Out_ */ out IMFByteStream ppIByteStream);
+        public static extern HRESULT MFCreateTempFile(__MIDL___MIDL_itf_mfobjects_0000_0018_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0018_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0018_0003 fFlags, /* _Out_ */ out IMFByteStream ppIByteStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateTrackedSample(/* _Outptr_ */ out IMFTrackedSample ppMFSample);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateTranscodeSinkActivate(/* _Outptr_ */ out IMFActivate ppActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateVideoMediaType(/* _In_ */ ref _MFVIDEOFORMAT pVideoFormat, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
@@ -1404,10 +1766,16 @@ namespace DirectN
         public static extern HRESULT MFCreateVideoMediaTypeFromSubtype(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pAMSubtype, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
 
         [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateVideoRendererActivate(/* _In_ */ IntPtr hwndVideo, /* _Outptr_ */ out IMFActivate ppActivate);
+
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateVideoSampleAllocatorEx(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ out IntPtr ppSampleAllocator);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateWaveFormatExFromMFMediaType(/* _In_ */ IMFMediaType pMFType, /* _Out_ */ out IntPtr ppWF, /* optional(UINT32) */ IntPtr pcbSize, /* _In_ */ uint Flags);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFCreateWAVEMediaSink(/* _In_ */ IMFByteStream pTargetByteStream, /* _In_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppMediaSink);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateWICBitmapBuffer(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object punkSurface, /* _Outptr_ */ out IMFMediaBuffer ppBuffer);
@@ -1423,6 +1791,9 @@ namespace DirectN
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFEndUnregisterWorkQueueWithMMCSS(/* _In_ */ IMFAsyncResult pResult);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFEnumDeviceSources(/* _In_ */ IMFAttributes pAttributes, /* _Outptr_result_buffer_(*pcSourceActivate) */ out IMFActivate pppSourceActivate, /* _Out_ */ out uint pcSourceActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFFrameRateToAverageTimePerFrame(/* _In_ */ uint unNumerator, /* _In_ */ uint unDenominator, /* _Out_ */ out ulong punAverageTimePerFrame);
@@ -1455,6 +1826,9 @@ namespace DirectN
         public static extern HRESULT MFGetContentProtectionSystemCLSID(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidProtectionSystemID, /* _Out_ */ out Guid pclsid);
 
         [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFGetDXGIDeviceManageMode(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDeviceManager, /* _Out_ */ out MF_DXGI_DEVICE_MANAGER_MODE mode);
+
+        [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFGetMFTMerit(/* _Inout_ */ [MarshalAs(UnmanagedType.IUnknown)] object pMFT, /* _In_ */ int cbVerifier, /* _In_reads_bytes_(cbVerifier) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] byte[] verifier, /* _Out_ */ out uint merit);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1471,6 +1845,9 @@ namespace DirectN
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFGetTimerPeriodicity(/* _Out_ */ out uint Periodicity);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFGetTopoNodeCurrentType(IMFTopologyNode pNode, uint dwStreamIndex, bool fOutput, /* _Outptr_ */ out IMFMediaType ppType);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern uint MFGetUncompressedVideoFormat(/* _In_ */ ref _MFVIDEOFORMAT pVideoFormat);
@@ -1608,25 +1985,28 @@ namespace DirectN
         public static extern HRESULT MFStartup(uint Version, uint dwFlags);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTEnum(/* _In_ */ Guid guidCategory, /* _In_ */ uint Flags, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0008_0003) */ IntPtr pInputType, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0008_0003) */ IntPtr pOutputType, /* _In_opt_ */ IMFAttributes pAttributes, /* _Outptr_result_buffer_(*pcMFTs) */ out IntPtr ppclsidMFT, /* // must be freed with CoTaskMemFree _Out_ */ out uint pcMFTs);
+        public static extern HRESULT MFTEnum(/* _In_ */ Guid guidCategory, /* _In_ */ uint Flags, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr pInputType, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr pOutputType, /* _In_opt_ */ IMFAttributes pAttributes, /* _Outptr_result_buffer_(*pcMFTs) */ out IntPtr ppclsidMFT, /* // must be freed with CoTaskMemFree _Out_ */ out uint pcMFTs);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTEnum2(/* _In_ */ Guid guidCategory, /* _In_ */ uint Flags, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0008_0003) */ IntPtr pInputType, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0008_0003) */ IntPtr pOutputType, /* _In_opt_ */ IMFAttributes pAttributes, /* _Outptr_result_buffer_( *pnumMFTActivate ) */ out IMFActivate pppMFTActivate, /* _Out_ */ out uint pnumMFTActivate);
+        public static extern HRESULT MFTEnum2(/* _In_ */ Guid guidCategory, /* _In_ */ uint Flags, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr pInputType, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr pOutputType, /* _In_opt_ */ IMFAttributes pAttributes, /* _Outptr_result_buffer_( *pnumMFTActivate ) */ out IMFActivate pppMFTActivate, /* _Out_ */ out uint pnumMFTActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTEnumEx(/* _In_ */ Guid guidCategory, /* _In_ */ uint Flags, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0008_0003) */ IntPtr pInputType, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0008_0003) */ IntPtr pOutputType, /* _Outptr_result_buffer_(*pnumMFTActivate) */ out IMFActivate pppMFTActivate, /* _Out_ */ out uint pnumMFTActivate);
+        public static extern HRESULT MFTEnumEx(/* _In_ */ Guid guidCategory, /* _In_ */ uint Flags, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr pInputType, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr pOutputType, /* _Outptr_result_buffer_(*pnumMFTActivate) */ out IMFActivate pppMFTActivate, /* _Out_ */ out uint pnumMFTActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTGetInfo(/* _In_ */ Guid clsidMFT, /* optional(LPWSTR) */ out IntPtr pszName, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0008_0003) */ IntPtr ppInputTypes, /* optional(UINT32) */ IntPtr pcInputTypes, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0008_0003) */ IntPtr ppOutputTypes, /* optional(UINT32) */ IntPtr pcOutputTypes, /* _Outptr_opt_result_maybenull_ */ out IMFAttributes ppAttributes);
+        public static extern HRESULT MFTGetInfo(/* _In_ */ Guid clsidMFT, /* optional(LPWSTR) */ out IntPtr pszName, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr ppInputTypes, /* optional(UINT32) */ IntPtr pcInputTypes, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr ppOutputTypes, /* optional(UINT32) */ IntPtr pcOutputTypes, /* _Outptr_opt_result_maybenull_ */ out IMFAttributes ppAttributes);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTRegister(/* _In_ */ Guid clsidMFT, /* _In_ */ Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0008_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0008_0003[] pOutputTypes, /* _In_opt_ */ IMFAttributes pAttributes);
+        public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidSubType, /* _In_ */ uint dwMFTFlags, /* _In_opt_ */ IMFAttributes pCodecConfig, /* _Outptr_ */ out IMFCollection ppAvailableTypes);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTRegisterLocal(/* _In_ */ ref IClassFactory pClassFactory, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0008_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0008_0003[] pOutputTypes);
+        public static extern HRESULT MFTRegister(/* _In_ */ Guid clsidMFT, /* _In_ */ Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pOutputTypes, /* _In_opt_ */ IMFAttributes pAttributes);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTRegisterLocalByCLSID(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clisdMFT, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0008_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0008_0003[] pOutputTypes);
+        public static extern HRESULT MFTRegisterLocal(/* _In_ */ ref IClassFactory pClassFactory, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pOutputTypes);
+
+        [DllImport("mfplat", ExactSpelling = true)]
+        public static extern HRESULT MFTRegisterLocalByCLSID(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clisdMFT, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pOutputTypes);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTUnregister(/* _In_ */ Guid clsidMFT);
@@ -1698,21 +2078,6 @@ namespace DirectN
 
         // mfsensorgroup.dll
         [DllImport("mfsensorgroup", ExactSpelling = true)]
-        public static extern HRESULT MFCreateRelativePanelWatcher(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string videoDeviceId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string displayMonitorDeviceId, /* _COM_Outptr_ */ out IMFRelativePanelWatcher ppRelativePanelWatcher);
-
-        [DllImport("mfsensorgroup", ExactSpelling = true)]
-        public static extern HRESULT MFCreateSensorActivityMonitor(/* _In_ */ IMFSensorActivitiesReportCallback pCallback, /* _COM_Outptr_ */ out IMFSensorActivityMonitor ppActivityMonitor);
-
-        [DllImport("mfsensorgroup", ExactSpelling = true)]
-        public static extern HRESULT MFCreateSensorGroup(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string SensorGroupSymbolicLink, /* _COM_Outptr_ */ out IMFSensorGroup ppSensorGroup);
-
-        [DllImport("mfsensorgroup", ExactSpelling = true)]
-        public static extern HRESULT MFCreateSensorProfile(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProfileType, /* _In_ */ uint ProfileIndex, /* _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string Constraints, /* _COM_Outptr_ */ out IMFSensorProfile ppProfile);
-
-        [DllImport("mfsensorgroup", ExactSpelling = true)]
-        public static extern HRESULT MFCreateSensorProfileCollection(/* _COM_Outptr_ */ out IMFSensorProfileCollection ppSensorProfile);
-
-        [DllImport("mfsensorgroup", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorStream(/* _In_ */ uint StreamId, /* optional(IMFAttributes) */ IntPtr pAttributes, /* _In_ */ IMFCollection pMediaTypeCollection, /* _COM_Outptr_ */ out IMFSensorStream ppStream);
 
         [DllImport("mfsensorgroup", ExactSpelling = true)]
@@ -1725,8 +2090,9 @@ namespace DirectN
         [DllImport("mfsrcsnk", ExactSpelling = true)]
         public static extern HRESULT MFCreateAVIMediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_ */ IMFMediaType pVideoMediaType, /* optional(IMFMediaType) */ IntPtr pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
 
-        [DllImport("mfsrcsnk", ExactSpelling = true)]
-        public static extern HRESULT MFCreateWAVEMediaSink(/* _In_ */ IMFByteStream pTargetByteStream, /* _In_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppMediaSink);
+        // mftransform.dll
+        [DllImport("mftransform", ExactSpelling = true)]
+        public static extern HRESULT MFCreateTransformActivate(/* _Out_ */ out IMFActivate ppActivate);
 
         // mmdeviceapi.dll
         [DllImport("mmdeviceapi", ExactSpelling = true)]
@@ -1741,6 +2107,25 @@ namespace DirectN
 
         [DllImport("opmapi", ExactSpelling = true)]
         public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(/* _In_ */ ref int pDirect3DDevice9, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _Out_ */ out uint pulNumVideoOutputs, /* _Outptr_result_buffer_(*pulNumVideoOutputs) */ out IOPMVideoOutput pppOPMVideoOutputArray);
+
+        // wincodec.dll
+        [DllImport("wincodec", ExactSpelling = true)]
+        public static extern HRESULT WICConvertBitmapSource(/* _In_ */ ref REFWICPixelFormatGUID dstFormat, /* // Destination pixel format _In_ */ IWICBitmapSource pISrc, /* // Source bitmap _Outptr_ */ out IWICBitmapSource ppIDst);
+
+        [DllImport("wincodec", ExactSpelling = true)]
+        public static extern HRESULT WICCreateBitmapFromSection(/* _In_ */ uint width, /* _In_ */ uint height, /* _In_ */ ref REFWICPixelFormatGUID pixelFormat, /* _In_ */ IntPtr hSection, /* _In_ */ uint stride, /* _In_ */ uint offset, /* _Outptr_ */ out IWICBitmap ppIBitmap);
+
+        [DllImport("wincodec", ExactSpelling = true)]
+        public static extern HRESULT WICCreateBitmapFromSectionEx(/* _In_ */ uint width, /* _In_ */ uint height, /* _In_ */ ref REFWICPixelFormatGUID pixelFormat, /* _In_ */ IntPtr hSection, /* _In_ */ uint stride, /* _In_ */ uint offset, /* _In_ */ WICSectionAccessLevel desiredAccessLevel, /* _Outptr_ */ out IWICBitmap ppIBitmap);
+
+        [DllImport("wincodec", ExactSpelling = true)]
+        public static extern HRESULT WICMapGuidToShortName(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint cchName, /* _Inout_updates_opt_(cchName) */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out uint pcchActual);
+
+        [DllImport("wincodec", ExactSpelling = true)]
+        public static extern HRESULT WICMapSchemaToName(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMetadataFormat, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwzSchema, /* _In_ */ uint cchName, /* _Inout_updates_opt_(cchName) */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out uint pcchActual);
+
+        [DllImport("wincodec", ExactSpelling = true)]
+        public static extern HRESULT WICMapShortNameToGuid(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out Guid pguid);
 
         // wincodecsdk.dll
         [DllImport("wincodecsdk", ExactSpelling = true)]

@@ -18,5 +18,8 @@ namespace DirectN
         IsIntegrated = 12,
         IsDetachable = 13,
         HardwareIDParts = 14,
+        PhysicalAdapterCount = 15,
+        AdapterEngineCount = 16,
+        AdapterEngineName = 17,
     }
 }

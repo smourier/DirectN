@@ -9,6 +9,11 @@ namespace DirectN
     {
         public IntPtr NativeFenceArray;
         public IntPtr UpdatedValueArray;
-        public uint UpdatedValueCount;
+        [MarshalAs(UnmanagedType.IUnknown)] 
+        public object MonitoredValueKernelCpuVa;
+        public uint NumFences;
+        public _DXGKARG_UPDATEMONITOREDVALUES_FLAGS Flags;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 28)] 
+        public byte[] Reserved;
     }
 }

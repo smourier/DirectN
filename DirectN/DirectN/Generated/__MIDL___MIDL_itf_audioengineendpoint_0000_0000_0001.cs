@@ -7,6 +7,7 @@ namespace DirectN
         eOffloadConnector = 1,
         eLoopbackConnector = 2,
         eKeywordDetectorConnector = 3,
-        eConnectorCount = 4,
+        eLoopbackConnectorPostVolume = 4,
+        eConnectorCount = 5,
     }
 }

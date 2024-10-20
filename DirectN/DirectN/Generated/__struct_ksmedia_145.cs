@@ -9,6 +9,10 @@ namespace DirectN
     {
         public int Property;
         public uint StreamIndex;
-        public int Mode;
+        public int DefaultKeyFrameRate;
+        public int DefaultPFrameRate;
+        public int DefaultQuality;
+        public int NumberOfQualitySettings;
+        public int Capabilities;
     }
 }

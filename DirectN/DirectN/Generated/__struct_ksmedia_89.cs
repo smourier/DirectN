@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_ksmedia_89
     {
-        public int NodeProperty;
+        public int Property;
         public int Value;
         public uint Flags;
         public uint Capabilities;

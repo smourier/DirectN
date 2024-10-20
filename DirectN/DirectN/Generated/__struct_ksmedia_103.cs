@@ -7,8 +7,10 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_ksmedia_103
     {
-        public int EventData;
-        public uint StartFrequency;
-        public uint EndFrequency;
+        public int Property;
+        public uint CurrentFrequency;
+        public uint PLLOffset;
+        public uint SignalStrength;
+        public uint Busy;
     }
 }

@@ -11,5 +11,6 @@ namespace DirectN
         public uint EngineOrdinal;
         public uint SignaledNativeFenceCount;
         public IntPtr pSignaledNativeFenceArray;
+        public IntPtr hHWQueue;
     }
 }

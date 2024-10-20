@@ -8,9 +8,8 @@ namespace DirectN
     public partial struct __struct_ksmedia_112
     {
         public int Property;
-        public int Value1;
-        public uint Flags;
-        public uint Capabilities;
-        public int Value2;
+        public uint NumberOfLines;
+        public uint SignalLocked;
+        public uint ChromaLock;
     }
 }

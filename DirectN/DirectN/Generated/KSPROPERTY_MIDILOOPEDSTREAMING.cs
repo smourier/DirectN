@@ -1,0 +1,10 @@
+﻿// generated from <Windows SDK Path>\shared\ksmedia.h
+namespace DirectN
+{
+    public enum KSPROPERTY_MIDILOOPEDSTREAMING
+    {
+        KSPROPERTY_MIDILOOPEDSTREAMING_BUFFER = 0,
+        KSPROPERTY_MIDILOOPEDSTREAMING_REGISTERS = 1,
+        KSPROPERTY_MIDILOOPEDSTREAMING_NOTIFICATION_EVENT = 2,
+    }
+}

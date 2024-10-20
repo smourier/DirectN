@@ -8,7 +8,8 @@ namespace DirectN
     public partial struct __struct_ksmedia_106
     {
         public int Property;
-        public uint NumberOfLines;
-        public uint SignalLocked;
+        public Guid NetworkType;
+        public uint BufferSize;
+        public IntPtr NetworkTunerCapabilities;
     }
 }

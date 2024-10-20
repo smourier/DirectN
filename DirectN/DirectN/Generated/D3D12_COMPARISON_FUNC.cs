@@ -3,6 +3,7 @@ namespace DirectN
 {
     public enum D3D12_COMPARISON_FUNC
     {
+        D3D12_COMPARISON_FUNC_NONE = 0,
         D3D12_COMPARISON_FUNC_NEVER = 1,
         D3D12_COMPARISON_FUNC_LESS = 2,
         D3D12_COMPARISON_FUNC_EQUAL = 3,

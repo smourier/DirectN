@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DKMT_NOTIFY_WORK_SUBMISSION
     {
-        public uint hHwQueue;
+        public uint hDoorbell;
         public _D3DKMT_NOTIFY_WORK_SUBMISSION_FLAGS Flags;
     }
 }

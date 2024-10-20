@@ -7,9 +7,8 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_ksmedia_111
     {
-        public int NodeProperty;
-        public int Value;
-        public uint Flags;
-        public uint Capabilities;
+        public int Property;
+        public uint NumberOfLines;
+        public uint SignalLocked;
     }
 }

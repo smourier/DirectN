@@ -7,5 +7,6 @@ namespace DirectN
         D3D12_HEAP_TYPE_UPLOAD = 2,
         D3D12_HEAP_TYPE_READBACK = 3,
         D3D12_HEAP_TYPE_CUSTOM = 4,
+        D3D12_HEAP_TYPE_GPU_UPLOAD = 5,
     }
 }

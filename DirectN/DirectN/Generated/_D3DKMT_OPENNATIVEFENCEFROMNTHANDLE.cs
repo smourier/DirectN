@@ -13,5 +13,7 @@ namespace DirectN
         public _D3DDDI_SYNCHRONIZATIONOBJECT_FLAGS Flags;
         public uint hSyncObject;
         public _D3DDDI_NATIVEFENCEMAPPING NativeFenceMapping;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
+        public byte[] Reserved;
     }
 }

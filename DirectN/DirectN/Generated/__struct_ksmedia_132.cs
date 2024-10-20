@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_132
     {
         public int Property;
-        public tagTIMECODE_SAMPLE TimecodeSamp;
+        public __struct_ksmedia_132__union_0 u;
     }
 }

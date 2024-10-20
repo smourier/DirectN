@@ -7,6 +7,6 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DKMT_DESTROY_DOORBELL
     {
-        public uint hHwQueue;
+        public uint hDoorbell;
     }
 }

@@ -9,7 +9,7 @@ namespace DirectN
     {
         [PreserveSig]
         HRESULT Open(_D3D_INCLUDE_TYPE IncludeType, [MarshalAs(UnmanagedType.LPStr)] string pFileName, IntPtr pParentData, IntPtr ppData, ref uint pBytes);
-
+        
         [PreserveSig]
         HRESULT Close(IntPtr pData);
     }

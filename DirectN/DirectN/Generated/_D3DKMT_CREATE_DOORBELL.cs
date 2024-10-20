@@ -16,5 +16,7 @@ namespace DirectN
         public IntPtr DoorbellCPUVirtualAddress;
         public IntPtr DoorbellSecondaryCPUVirtualAddress;
         public IntPtr DoorbellStatusCPUVirtualAddress;
+        public IntPtr HwQueueProgressFenceLastQueuedValueCPUVirtualAddress;
+        public uint hDoorbell;
     }
 }

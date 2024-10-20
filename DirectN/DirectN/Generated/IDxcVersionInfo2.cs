@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// PDB Version Information.
+    /// </summary>
     [ComImport, Guid("fb6904c4-42f0-4b62-9c46-983af7da7c83"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDxcVersionInfo2 : IDxcVersionInfo
     {
@@ -16,6 +19,6 @@ namespace DirectN
         
         // IDxcVersionInfo2
         [PreserveSig]
-        HRESULT GetCommitInfo(/* _Out_ */ out uint pCommitCount, /* // The total number commits. _Outptr_result_z_ */ out IntPtr pCommitHash);
+        HRESULT GetCommitInfo(/* _Out_ */ out uint pCommitCount, /* ///< The total number commits. _Outptr_result_z_ */ out IntPtr pCommitHash);
     }
 }

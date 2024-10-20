@@ -1,0 +1,15 @@
+﻿// generated from <Windows SDK Path>\shared\d3dkmthk.h
+using System;
+using System.Runtime.InteropServices;
+
+namespace DirectN
+{
+    [StructLayout(LayoutKind.Sequential)]
+    public partial struct _D3DKMT_GET_PTE_EXT
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)] 
+        public ulong[] DriverProtection;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)] 
+        public ulong[] AllocationData;
+    }
+}

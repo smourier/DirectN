@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_77
     {
         public int Property;
-        public _VBICODECFILTERING_STATISTICS_CC_PIN Statistics;
+        public _VBICODECFILTERING_STATISTICS_COMMON Statistics;
     }
 }

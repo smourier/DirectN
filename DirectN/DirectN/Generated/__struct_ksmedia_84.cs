@@ -8,8 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_84
     {
         public int Property;
-        public int Value;
-        public uint Flags;
-        public uint Capabilities;
+        public IntPtr pVramSurfaceInfo;
     }
 }

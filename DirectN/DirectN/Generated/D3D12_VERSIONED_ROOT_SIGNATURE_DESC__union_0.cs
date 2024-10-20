@@ -12,5 +12,6 @@ namespace DirectN
         public byte[] __bits;
         public D3D12_ROOT_SIGNATURE_DESC Desc_1_0 {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC>(__bits, 0, 320);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[40]; InteropRuntime.Set<D3D12_ROOT_SIGNATURE_DESC>(value, __bits, 0, 320); } }
         public D3D12_ROOT_SIGNATURE_DESC1 Desc_1_1 {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC1>(__bits, 0, 320);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[40]; InteropRuntime.Set<D3D12_ROOT_SIGNATURE_DESC1>(value, __bits, 0, 320); } }
+        public D3D12_ROOT_SIGNATURE_DESC2 Desc_1_2 {  [MethodImpl(MethodImplOptions.AggressiveInlining)] get => InteropRuntime.Get<D3D12_ROOT_SIGNATURE_DESC2>(__bits, 0, 320);  [MethodImpl(MethodImplOptions.AggressiveInlining)] set { if (__bits == null) __bits = new byte[40]; InteropRuntime.Set<D3D12_ROOT_SIGNATURE_DESC2>(value, __bits, 0, 320); } }
     }
 }

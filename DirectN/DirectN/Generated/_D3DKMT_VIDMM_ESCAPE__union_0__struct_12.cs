@@ -7,6 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DKMT_VIDMM_ESCAPE__union_0__struct_12
     {
-        public uint SegmentId;
+        public ushort PhysicalAdapterIndex;
+        public ushort SegmentId;
     }
 }

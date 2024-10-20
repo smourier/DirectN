@@ -36,6 +36,6 @@ namespace DirectN
         HRESULT GetBlobAsUtf8(/* _In_ */ IDxcBlob pBlob, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
         
         [PreserveSig]
-        HRESULT GetBlobAsUtf16(/* _In_ */ IDxcBlob pBlob, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
+        HRESULT GetBlobAsWide(/* _In_ */ IDxcBlob pBlob, /* _COM_Outptr_ */ out IDxcBlobEncoding pBlobEncoding);
     }
 }

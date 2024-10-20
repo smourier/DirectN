@@ -5,5 +5,6 @@ namespace DirectN
     {
         D3D12_VIDEO_ENCODER_CODEC_H264 = 0,
         D3D12_VIDEO_ENCODER_CODEC_HEVC = 1,
+        D3D12_VIDEO_ENCODER_CODEC_AV1 = 2,
     }
 }

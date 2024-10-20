@@ -8,7 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_137
     {
         public int Property;
-        public uint IndexInputPin;
-        public uint Active;
+        public tagTIMECODE_SAMPLE TimecodeSamp;
     }
 }

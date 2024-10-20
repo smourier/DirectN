@@ -7,11 +7,14 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DXGKARG_CREATENATIVEFENCE
     {
-        public IntPtr hNativeFence;
-        public _D3DDDI_NATIVEFENCEMAPPING NativeFenceMapping;
-        public ulong CurrentValueGpuVaInCmpAddressSpace;
-        public ulong MonitoredValueGpuVaInCmpAddressSpace;
-        public IntPtr pPrivateDriverData;
-        public uint PrivateDriverDataSize;
+        public IntPtr hGlobalNativeFence;
+        public _D3DDDI_NATIVEFENCE_TYPE Type;
+        public ulong CurrentValueSystemProcessGpuVa;
+        public ulong MonitoredValueSystemProcessGpuVa;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)] 
+        public byte[] pPrivateDriverData;
+        public _DXGKARG_CREATENATIVEFENCE_FLAGS Flags;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
+        public byte[] Reserved;
     }
 }

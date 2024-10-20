@@ -47,7 +47,7 @@ namespace DirectN
             if (input == null)
                 throw new ArgumentNullException(nameof(input));
 
-            Functions.MFEnumDeviceSources(input, out var array, out var count).ThrowOnError();
+            Functions.MFEnumDeviceSources(input, out IntPtr array, out var count).ThrowOnError();
             for (var i = 0; i < count; i++)
             {
                 var ptr = Marshal.ReadIntPtr(array, i * IntPtr.Size);

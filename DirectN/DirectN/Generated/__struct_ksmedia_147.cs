@@ -9,7 +9,7 @@ namespace DirectN
     {
         public int Property;
         public uint StreamIndex;
-        public uint RangeIndex;
-        public tagSIZE Dimensions;
+        public int Value;
+        public uint Flags;
     }
 }

@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
+    /// <summary>
+    /// An optimizer pass.
+    /// </summary>
     [ComImport, Guid("ae2cd79f-cc22-453f-9b6b-b124e7a5204c"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDxcOptimizerPass
     {

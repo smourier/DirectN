@@ -116,7 +116,7 @@ namespace DirectN
         
         // ID3D12InfoQueue1
         [PreserveSig]
-        HRESULT RegisterMessageCallback(/* _In_ */ IntPtr CallbackFunc, /* _In_ */ D3D12_MESSAGE_CALLBACK_FLAGS CallbackFilterFlags, /* _In_ */ IntPtr pContext, /* _Inout_ */ ref uint pCallbackCookie);
+        HRESULT RegisterMessageCallback(/* _In_ */ IntPtr CallbackFunc, /* _In_ */ D3D12_MESSAGE_CALLBACK_FLAGS CallbackFilterFlags, /* _Inout_ */ IntPtr pContext, /* _Inout_ */ ref uint pCallbackCookie);
         
         [PreserveSig]
         HRESULT UnregisterMessageCallback(/* _In_ */ uint CallbackCookie);

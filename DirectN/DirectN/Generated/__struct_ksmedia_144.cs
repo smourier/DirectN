@@ -8,7 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_144
     {
         public int Property;
-        public uint StreamIndex;
-        public uint VideoControlCaps;
+        public uint Mode;
     }
 }

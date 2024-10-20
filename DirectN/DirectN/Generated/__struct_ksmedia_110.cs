@@ -8,8 +8,9 @@ namespace DirectN
     public partial struct __struct_ksmedia_110
     {
         public int Property;
-        public int Value;
-        public uint Flags;
+        public uint StandardsSupported;
         public uint Capabilities;
+        public uint SettlingTime;
+        public uint HSyncPerVSync;
     }
 }

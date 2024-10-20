@@ -8,8 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_101
     {
         public int Property;
-        public Guid NetworkType;
-        public uint BufferSize;
-        public IntPtr NetworkTunerCapabilities;
+        public bool AutoDetect;
     }
 }

@@ -1,0 +1,11 @@
+﻿// generated from <Windows SDK Path>\um\d3d12umddi.h
+namespace DirectN
+{
+    public enum D3D12DDI_DISPATCH_MODE_0108
+    {
+        D3D12DDI_DISPATCH_MODE_NODE_CPU_INPUT_0108 = 0,
+        D3D12DDI_DISPATCH_MODE_NODE_GPU_INPUT_0108 = 1,
+        D3D12DDI_DISPATCH_MODE_MULTI_NODE_CPU_INPUT_0108 = 2,
+        D3D12DDI_DISPATCH_MODE_MULTI_NODE_GPU_INPUT_0108 = 3,
+    }
+}

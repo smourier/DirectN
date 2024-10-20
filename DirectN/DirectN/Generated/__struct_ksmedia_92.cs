@@ -7,14 +7,10 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_ksmedia_92
     {
-        public int Property;
-        public uint Mode;
-        public uint StandardsSupported;
-        public uint MinFrequency;
-        public uint MaxFrequency;
-        public uint TuningGranularity;
-        public uint NumberOfInputs;
-        public uint SettlingTime;
-        public uint Strategy;
+        public int NodeProperty;
+        public int Value1;
+        public uint Flags;
+        public uint Capabilities;
+        public int Value2;
     }
 }

@@ -16,7 +16,8 @@ namespace DirectN
         MFVideoPrimaries_XYZ = 10,
         MFVideoPrimaries_DCI_P3 = 11,
         MFVideoPrimaries_ACES = 12,
-        MFVideoPrimaries_Last = 13,
+        MFVideoPrimaries_Display_P3 = 13,
+        MFVideoPrimaries_Last = 14,
         MFVideoPrimaries_ForceDWORD = 2147483647,
     }
 }

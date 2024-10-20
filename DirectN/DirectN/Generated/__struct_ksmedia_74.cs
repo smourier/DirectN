@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_74
     {
         public int Property;
-        public _VBICODECFILTERING_STATISTICS_NABTS Statistics;
+        public _VBICODECFILTERING_SCANLINES Scanlines;
     }
 }

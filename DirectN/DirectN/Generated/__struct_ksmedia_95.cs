@@ -8,6 +8,9 @@ namespace DirectN
     public partial struct __struct_ksmedia_95
     {
         public int Property;
-        public uint Standard;
+        public uint ModesSupported;
+        public int VideoMedium;
+        public int TVAudioMedium;
+        public int RadioAudioMedium;
     }
 }

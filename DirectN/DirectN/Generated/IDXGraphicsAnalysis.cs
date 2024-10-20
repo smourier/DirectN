@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 
 namespace DirectN
 {
-    [ComImport, Guid("00000000-0000-0000-0000-000000000000"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [ComImport, Guid("9f251514-9d4d-4902-9d60-18988ab7d4b5"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     public partial interface IDXGraphicsAnalysis
     {
         [PreserveSig]
         void BeginCapture();
-
+        
         [PreserveSig]
         void EndCapture();
     }

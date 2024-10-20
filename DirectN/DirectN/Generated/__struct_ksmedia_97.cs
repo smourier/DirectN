@@ -8,6 +8,13 @@ namespace DirectN
     public partial struct __struct_ksmedia_97
     {
         public int Property;
-        public uint InputIndex;
+        public uint Mode;
+        public uint StandardsSupported;
+        public uint MinFrequency;
+        public uint MaxFrequency;
+        public uint TuningGranularity;
+        public uint NumberOfInputs;
+        public uint SettlingTime;
+        public uint Strategy;
     }
 }

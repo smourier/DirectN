@@ -10,5 +10,7 @@ namespace DirectN
         public IntPtr CurrentValueCpuVa;
         public ulong CurrentValueGpuVa;
         public ulong MonitoredValueGpuVa;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)] 
+        public byte[] Reserved;
     }
 }

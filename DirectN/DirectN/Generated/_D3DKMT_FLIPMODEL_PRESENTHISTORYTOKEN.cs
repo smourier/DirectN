@@ -20,14 +20,13 @@ namespace DirectN
         public LUID compSurfLuid;
         public ulong confirmationCookie;
         public ulong CompositionSyncKey;
-        public uint RemainingTokens;
         public tagRECT ScrollRect;
         public tagPOINT ScrollOffset;
         public uint PresentCount;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)] 
         public float[] RevealColor;
         public _D3DDDI_ROTATION Rotation;
-        public _D3DKMT_FLIPMODEL_PRESENTHISTORYTOKEN__union_0 __union_18;
+        public _D3DKMT_FLIPMODEL_PRESENTHISTORYTOKEN__union_0 __union_17;
         public uint InkCookie;
         public tagRECT SourceRect;
         public uint DestWidth;

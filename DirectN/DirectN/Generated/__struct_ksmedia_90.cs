@@ -7,10 +7,9 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct __struct_ksmedia_90
     {
-        public int Property;
-        public uint ModesSupported;
-        public int VideoMedium;
-        public int TVAudioMedium;
-        public int RadioAudioMedium;
+        public int NodeProperty;
+        public int Value;
+        public uint Flags;
+        public uint Capabilities;
     }
 }

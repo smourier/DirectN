@@ -8,6 +8,7 @@ namespace DirectN
     public partial struct _DXGKARGCB_DISCONNECTDOORBELL
     {
         public IntPtr hHwQueue;
+        public IntPtr hDoorbell;
         public _DXGKARGCB_DISCONNECTDOORBELL_FLAGS Flags;
         public _D3DDDI_DOORBELLSTATUS DisconnectReason;
     }

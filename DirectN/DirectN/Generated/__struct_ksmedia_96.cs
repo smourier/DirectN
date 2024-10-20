@@ -8,6 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_96
     {
         public int Property;
-        public bool AutoDetect;
+        public int IFMedium;
     }
 }

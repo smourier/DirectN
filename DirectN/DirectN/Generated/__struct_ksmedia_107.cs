@@ -8,8 +8,7 @@ namespace DirectN
     public partial struct __struct_ksmedia_107
     {
         public int Property;
-        public uint NumberOfLines;
-        public uint SignalLocked;
-        public uint ChromaLock;
+        public _TunerDecoderLockType LockStatus;
+        public uint CurrentFrequency;
     }
 }

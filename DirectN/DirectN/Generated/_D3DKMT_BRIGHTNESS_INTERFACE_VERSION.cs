@@ -1,0 +1,11 @@
+﻿// generated from <Windows SDK Path>\shared\d3dkmthk.h
+namespace DirectN
+{
+    public enum _D3DKMT_BRIGHTNESS_INTERFACE_VERSION
+    {
+        D3DKMT_BRIGHTNESS_INTERFACE_VERSION_UNINITIALIZED = 0,
+        D3DKMT_BRIGHTNESS_INTERFACE_VERSION_1 = 1,
+        D3DKMT_BRIGHTNESS_INTERFACE_VERSION_2 = 2,
+        D3DKMT_BRIGHTNESS_INTERFACE_VERSION_3 = 3,
+    }
+}

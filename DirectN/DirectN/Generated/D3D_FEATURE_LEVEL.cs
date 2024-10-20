@@ -3,6 +3,7 @@ namespace DirectN
 {
     public enum D3D_FEATURE_LEVEL
     {
+        D3D_FEATURE_LEVEL_1_0_GENERIC = 256,
         D3D_FEATURE_LEVEL_1_0_CORE = 4096,
         D3D_FEATURE_LEVEL_9_1 = 37120,
         D3D_FEATURE_LEVEL_9_2 = 37376,

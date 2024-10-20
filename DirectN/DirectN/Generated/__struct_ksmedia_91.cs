@@ -8,6 +8,9 @@ namespace DirectN
     public partial struct __struct_ksmedia_91
     {
         public int Property;
-        public int IFMedium;
+        public int Value1;
+        public uint Flags;
+        public uint Capabilities;
+        public int Value2;
     }
 }

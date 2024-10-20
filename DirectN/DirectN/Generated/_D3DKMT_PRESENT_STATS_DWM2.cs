@@ -16,5 +16,9 @@ namespace DirectN
         public uint CustomPresentDuration;
         public uint VirtualSyncRefreshCount;
         public long VirtualSyncQPCTime;
+        public long VSyncDurationQPCTime;
+        public uint VSyncMultiplier;
+        public uint VirtualPresentRefreshCount;
+        public long VirtualPresentQPCTime;
     }
 }

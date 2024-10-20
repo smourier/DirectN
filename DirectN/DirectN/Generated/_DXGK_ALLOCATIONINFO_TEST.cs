@@ -8,8 +8,8 @@ namespace DirectN
     public partial struct _DXGK_ALLOCATIONINFO_TEST
     {
         public uint Alignment;
-        public IntPtr Size;
-        public IntPtr PitchAlignedSize;
+        public ulong Size;
+        public ulong PitchAlignedSize;
         public _DXGK_SEGMENTBANKPREFERENCE HintedBank;
         public _D3DDDI_SEGMENTPREFERENCE PreferredSegment;
         public uint SupportedReadSegmentSet;

@@ -21,7 +21,9 @@ namespace DirectN
         MFVideoTransFunc_2084 = 15,
         MFVideoTransFunc_HLG = 16,
         MFVideoTransFunc_10_rel = 17,
-        MFVideoTransFunc_Last = 18,
+        MFVideoTransFunc_BT1361_ECG = 18,
+        MFVideoTransFunc_SMPTE428 = 19,
+        MFVideoTransFunc_Last = 20,
         MFVideoTransFunc_ForceDWORD = 2147483647,
     }
 }

@@ -7,10 +7,11 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _DXGK_NATIVE_FENCE_CAPS
     {
-        public _D3DDDI_SEGMENTPREFERENCE PreferredSegmentForCurrentValue;
-        public _D3DDDI_SEGMENTPREFERENCE PreferredSegmentForMonitoredValue;
-        public uint CurrentValueStride;
         public uint MonitoredValueStride;
-        public byte MapToCmpAddressSpace;
+        public byte MapToGpuSystemProcess;
+        public ulong MinimumAddress;
+        public ulong MaximumAddress;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 28)] 
+        public byte[] Reserved;
     }
 }

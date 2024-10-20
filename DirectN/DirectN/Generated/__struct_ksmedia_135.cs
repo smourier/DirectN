@@ -8,10 +8,6 @@ namespace DirectN
     public partial struct __struct_ksmedia_135
     {
         public int Property;
-        public int Direction;
-        public uint Index;
-        public uint PinType;
-        public uint RelatedPinIndex;
-        public int Medium;
+        public __struct_ksmedia_135__union_0 u;
     }
 }

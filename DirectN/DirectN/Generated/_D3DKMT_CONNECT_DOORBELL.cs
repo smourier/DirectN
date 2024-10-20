@@ -7,7 +7,7 @@ namespace DirectN
     [StructLayout(LayoutKind.Sequential)]
     public partial struct _D3DKMT_CONNECT_DOORBELL
     {
-        public uint hHwQueue;
+        public uint hDoorbell;
         public _D3DKMT_CONNECT_DOORBELL_FLAGS Flags;
     }
 }

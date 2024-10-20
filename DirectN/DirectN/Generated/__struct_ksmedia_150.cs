@@ -8,6 +8,7 @@ namespace DirectN
     public partial struct __struct_ksmedia_150
     {
         public int Property;
-        public tagKS_AMVPSIZE Size;
+        public uint StreamIndex;
+        public int Mode;
     }
 }

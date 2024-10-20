@@ -1,4 +1,4 @@
-﻿// generated from <Windows SDK Path>\shared\ksproxy.h
+﻿// generated from <Windows SDK Path>\um\dsound.h
 using System;
 using System.Runtime.InteropServices;
 
@@ -8,12 +8,12 @@ namespace DirectN
     public partial interface IKsPropertySet
     {
         [PreserveSig]
-        HRESULT Set(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _In_reads_bytes_(InstanceLength) */ IntPtr InstanceData, /* _In_ */ uint InstanceLength, /* _In_reads_bytes_(DataLength) */ IntPtr PropertyData, /* _In_ */ uint DataLength);
+        HRESULT Get(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rguidPropSet, uint ulId, /* optional(LPVOID) */ IntPtr pInstanceData, uint ulInstanceLength, /* _Out_writes_bytes_(ulDataLength) */ IntPtr pPropertyData, uint ulDataLength, /* optional(PULONG) */ IntPtr pulBytesReturned);
         
         [PreserveSig]
-        HRESULT Get(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _In_reads_bytes_(InstanceLength) */ IntPtr InstanceData, /* _In_ */ uint InstanceLength, /* _Out_writes_bytes_(DataLength) */ IntPtr PropertyData, /* _In_ */ uint DataLength, /* _Out_ */ out uint BytesReturned);
+        HRESULT Set(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rguidPropSet, uint ulId, /* optional(LPVOID) */ IntPtr pInstanceData, uint ulInstanceLength, /* _In_reads_bytes_(ulDataLength) */ IntPtr pPropertyData, uint ulDataLength);
         
         [PreserveSig]
-        HRESULT QuerySupported(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid PropSet, /* _In_ */ uint Id, /* _Out_ */ out uint TypeSupport);
+        HRESULT QuerySupport(/* THIS_ _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rguidPropSet, uint ulId, /* _Out_ */ out uint pulTypeSupport);
     }
 }

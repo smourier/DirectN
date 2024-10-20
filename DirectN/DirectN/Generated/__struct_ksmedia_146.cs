@@ -9,9 +9,6 @@ namespace DirectN
     {
         public int Property;
         public uint StreamIndex;
-        public uint RangeIndex;
-        public tagSIZE Dimensions;
-        public long CurrentActualFrameRate;
-        public long CurrentMaxAvailableFrameRate;
+        public int Value;
     }
 }
