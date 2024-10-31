@@ -18,6 +18,7 @@ namespace DirectN
         public static IComObject<IWICBitmapDecoder> CreateDecoderFromStream(IStream stream, Guid? guidVendor = null, WICDecodeOptions metadataOptions = WICDecodeOptions.WICDecodeMetadataCacheOnDemand) => WithFactory(f => f.CreateDecoderFromStream(stream, guidVendor, metadataOptions));
         public static IComObject<IWICBitmapDecoder> CreateDecoderFromFileHandle(IntPtr handle, Guid? guidVendor = null, WICDecodeOptions metadataOptions = WICDecodeOptions.WICDecodeMetadataCacheOnDemand) => WithFactory(f => f.CreateDecoderFromFileHandle(handle, guidVendor, metadataOptions));
         public static IComObject<IWICBitmapDecoder> CreateDecoderFromStream(Stream stream, Guid? guidVendor = null, WICDecodeOptions metadataOptions = WICDecodeOptions.WICDecodeMetadataCacheOnDemand) => WithFactory(f => f.CreateDecoderFromStream(new ManagedIStream(stream), guidVendor, metadataOptions));
+        public static IComObject<IWICBitmapDecoder> CreateDecoder(Guid guidContainerFormat, Guid? guidVendor = null) => WithFactory(f => f.CreateDecoder(guidContainerFormat, guidVendor));
         public static IComObject<IWICBitmapEncoder> CreateEncoder(Guid containerFormat) => WithFactory(f => f.CreateEncoder(containerFormat));
         public static IComObject<IWICBitmap> CreateBitmapFromHBITMAP(IntPtr bitmapHandle, WICBitmapAlphaChannelOption options = WICBitmapAlphaChannelOption.WICBitmapUseAlpha) => WithFactory(f => f.CreateBitmapFromHBITMAP(bitmapHandle, IntPtr.Zero, options));
         public static IComObject<IWICBitmap> CreateBitmapFromHBITMAP(IntPtr bitmapHandle, IntPtr paletteHandle, WICBitmapAlphaChannelOption options = WICBitmapAlphaChannelOption.WICBitmapUseAlpha) => WithFactory(f => f.CreateBitmapFromHBITMAP(bitmapHandle, paletteHandle, options));
@@ -26,6 +27,7 @@ namespace DirectN
         public static IComObject<IWICBitmap> CreateBitmapFromSource(IComObject<IWICBitmapSource> source, WICBitmapCreateCacheOption option = WICBitmapCreateCacheOption.WICBitmapNoCache) => WithFactory(f => f.CreateBitmapFromSource(source?.Object, option));
         public static IComObject<IWICBitmap> CreateBitmapFromSourceRect(IComObject<IWICBitmapSource> source, int x, int y, int width, int height) => WithFactory(f => f.CreateBitmapFromSourceRect(source?.Object, x, y, width, height));
         public static IComObject<IWICImageEncoder> CreateImageEncoder(IComObject<ID2D1Device> device) => WithFactory2(f => f.CreateImageEncoder(device?.Object));
+        public static IComObject<IWICComponentInfo> CreateComponentInfo(Guid clsidComponent) => WithFactory(f => f.CreateComponentInfo(clsidComponent));
 
         public static IComObject<IWICColorContext>[] CreateColorContexts(int count) => WithFactory(f =>
         {
