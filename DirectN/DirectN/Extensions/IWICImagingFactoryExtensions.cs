@@ -138,14 +138,17 @@ namespace DirectN
             return new ComObject<IEnumUnknown>(value);
         }
 
-        public static IComObject<IWICBitmapEncoder> CreateEncoder(this IComObject<IWICImagingFactory> factory, Guid containerFormat) => CreateEncoder(factory?.Object, containerFormat);
-        public static IComObject<IWICBitmapEncoder> CreateEncoder(this IWICImagingFactory factory, Guid containerFormat)
+        public static IComObject<IWICBitmapEncoder> CreateEncoder(this IComObject<IWICImagingFactory> factory, Guid containerFormat, Guid? guidVendor = null) => CreateEncoder(factory?.Object, containerFormat, guidVendor);
+        public static IComObject<IWICBitmapEncoder> CreateEncoder(this IWICImagingFactory factory, Guid containerFormat, Guid? guidVendor = null)
         {
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
 
-            factory.CreateEncoder(containerFormat, IntPtr.Zero, out var value).ThrowOnError();
-            return new ComObject<IWICBitmapEncoder>(value);
+            using (var guid = new ComMemory(guidVendor))
+            {
+                factory.CreateEncoder(containerFormat, guid.Pointer, out var value).ThrowOnError();
+                return new ComObject<IWICBitmapEncoder>(value);
+            }
         }
 
         public static IComObject<IWICBitmap> CreateBitmapFromHBITMAP(this IComObject<IWICImagingFactory> factory, IntPtr bitmapHandle, IntPtr paletteHandle, WICBitmapAlphaChannelOption options = WICBitmapAlphaChannelOption.WICBitmapUseAlpha) => CreateBitmapFromHBITMAP(factory?.Object, bitmapHandle, paletteHandle, options);
