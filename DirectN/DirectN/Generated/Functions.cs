@@ -1996,7 +1996,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTGetInfo(/* _In_ */ Guid clsidMFT, /* optional(LPWSTR) */ out IntPtr pszName, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr ppInputTypes, /* optional(UINT32) */ IntPtr pcInputTypes, /* optional(__MIDL___MIDL_itf_mfobjects_0000_0009_0003) */ IntPtr ppOutputTypes, /* optional(UINT32) */ IntPtr pcOutputTypes, /* _Outptr_opt_result_maybenull_ */ out IMFAttributes ppAttributes);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidSubType, /* _In_ */ uint dwMFTFlags, /* _In_opt_ */ IMFAttributes pCodecConfig, /* _Outptr_ */ out IMFCollection ppAvailableTypes);
 
         [DllImport("mfplat", ExactSpelling = true)]
