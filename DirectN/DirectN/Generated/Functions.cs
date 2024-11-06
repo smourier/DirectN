@@ -56,28 +56,28 @@ namespace DirectN
         public static extern HRESULT CreateAudioMediaTypeFromUncompressedAudioFormat(ref _UNCOMPRESSEDAUDIOFORMAT pUncompressedAudioFormat, out IAudioMediaType ppIAudioMediaType);
 
         // audiostatemonitorapi.dll
-        [DllImport("audiostatemonitorapi", ExactSpelling = true)]
+        [DllImport("Windows.Media.MediaControl", ExactSpelling = true)]
         public static extern HRESULT CreateCaptureAudioStateMonitor(/* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
-        [DllImport("audiostatemonitorapi", ExactSpelling = true)]
+        [DllImport("Windows.Media.MediaControl", ExactSpelling = true)]
         public static extern HRESULT CreateCaptureAudioStateMonitorForCategory(/* _In_ */ _AUDIO_STREAM_CATEGORY category, /* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
-        [DllImport("audiostatemonitorapi", ExactSpelling = true)]
+        [DllImport("Windows.Media.MediaControl", ExactSpelling = true)]
         public static extern HRESULT CreateCaptureAudioStateMonitorForCategoryAndDeviceId(/* _In_ */ _AUDIO_STREAM_CATEGORY category, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceId, /* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
-        [DllImport("audiostatemonitorapi", ExactSpelling = true)]
+        [DllImport("Windows.Media.MediaControl", ExactSpelling = true)]
         public static extern HRESULT CreateCaptureAudioStateMonitorForCategoryAndDeviceRole(/* _In_ */ _AUDIO_STREAM_CATEGORY category, /* _In_ */ int role, /* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
-        [DllImport("audiostatemonitorapi", ExactSpelling = true)]
+        [DllImport("Windows.Media.MediaControl", ExactSpelling = true)]
         public static extern HRESULT CreateRenderAudioStateMonitor(/* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
-        [DllImport("audiostatemonitorapi", ExactSpelling = true)]
+        [DllImport("Windows.Media.MediaControl", ExactSpelling = true)]
         public static extern HRESULT CreateRenderAudioStateMonitorForCategory(/* _In_ */ _AUDIO_STREAM_CATEGORY category, /* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
-        [DllImport("audiostatemonitorapi", ExactSpelling = true)]
+        [DllImport("Windows.Media.MediaControl", ExactSpelling = true)]
         public static extern HRESULT CreateRenderAudioStateMonitorForCategoryAndDeviceId(/* _In_ */ _AUDIO_STREAM_CATEGORY category, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceId, /* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
-        [DllImport("audiostatemonitorapi", ExactSpelling = true)]
+        [DllImport("Windows.Media.MediaControl", ExactSpelling = true)]
         public static extern HRESULT CreateRenderAudioStateMonitorForCategoryAndDeviceRole(/* _In_ */ _AUDIO_STREAM_CATEGORY category, /* _In_ */ int role, /* _Outptr_ */ out IAudioStateMonitor audioStateMonitor);
 
         // d2d1.dll
@@ -272,7 +272,7 @@ namespace DirectN
         [DllImport("d3d11", ExactSpelling = true)]
         public static extern HRESULT D3D11On12CreateDevice(/* _In_ */ [MarshalAs(UnmanagedType.IUnknown)] object pDevice, uint Flags, /* _In_reads_opt_( FeatureLevels ) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 3)] D3D_FEATURE_LEVEL[] pFeatureLevels, int FeatureLevels, /* _In_reads_opt_( NumQueues ) */ [MarshalAs(UnmanagedType.IUnknown)] object ppCommandQueues, uint NumQueues, uint NodeMask, /* _COM_Outptr_opt_ */ out ID3D11Device ppDevice, /* _COM_Outptr_opt_ */ out ID3D11DeviceContext ppImmediateContext, /* optional(D3D_FEATURE_LEVEL) */ IntPtr pChosenFeatureLevel);
 
-        [DllImport("d3d11", ExactSpelling = true)]
+        [DllImport("D3DCOMPILER_47", ExactSpelling = true)]
         public static extern HRESULT D3DDisassemble11Trace(/* _In_reads_bytes_(SrcDataSize) */ IntPtr pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ ID3D11ShaderTrace pTrace, /* _In_ */ uint StartStep, /* _In_ */ uint NumSteps, /* _In_ */ uint Flags, /* _COM_Outptr_ */ out ID3D10Blob ppDisassembly);
 
         // d3d12.dll
@@ -447,10 +447,10 @@ namespace DirectN
         public static extern HRESULT Direct3DCreate9Ex(uint SDKVersion, out IDirect3D9Ex unnamed__1);
 
         // d3d9on12.dll
-        [DllImport("d3d9on12", ExactSpelling = true)]
+        [DllImport("d3d9", ExactSpelling = true)]
         public static extern IDirect3D9 Direct3DCreate9On12(uint SDKVersion, ref _D3D9ON12_ARGS pOverrideList, uint NumOverrideEntries);
 
-        [DllImport("d3d9on12", ExactSpelling = true)]
+        [DllImport("d3d9", ExactSpelling = true)]
         public static extern HRESULT Direct3DCreate9On12Ex(uint SDKVersion, ref _D3D9ON12_ARGS pOverrideList, uint NumOverrideEntries, out IDirect3D9Ex ppOutputInterface);
 
         // D3DCompiler_47.dll
@@ -698,10 +698,10 @@ namespace DirectN
         public static extern HRESULT GetDeviceID(/* optional(LPCGUID) */ IntPtr pGuidSrc, /* _Out_ */ out Guid pGuidDest);
 
         // dxcapi.dll
-        [DllImport("dxcapi", ExactSpelling = true)]
+        [DllImport("dxcompiler", ExactSpelling = true)]
         public static extern HRESULT DxcCreateInstance(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rclsid, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Out_ */ out IntPtr ppv);
 
-        [DllImport("dxcapi", ExactSpelling = true)]
+        [DllImport("dxcompiler", ExactSpelling = true)]
         public static extern HRESULT DxcCreateInstance2(/* _In_ */ IMalloc pMalloc, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid rclsid, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Out_ */ out IntPtr ppv);
 
         // dxcore.dll
@@ -709,10 +709,10 @@ namespace DirectN
         public static extern HRESULT DXCoreCreateAdapterFactory([MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _COM_Outptr_ */ [MarshalAs(UnmanagedType.IUnknown)] out object ppvFactory);
 
         // dxgi1_6.dll
-        [DllImport("dxgi1_6", ExactSpelling = true)]
+        [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
 
-        [DllImport("dxgi1_6", ExactSpelling = true)]
+        [DllImport("dxgi", ExactSpelling = true)]
         public static extern HRESULT DXGIDisableVBlankVirtualization();
 
         // dxgidebug.dll
@@ -1451,7 +1451,7 @@ namespace DirectN
         public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidSubType, /* _In_ */ uint dwMFTFlags, /* optional(IMFAttributes) */ IntPtr pCodecConfig, /* _Outptr_ */ out IntPtr ppAvailableTypes);
 
         // mfcontentdecryptionmodule.dll
-        [DllImport("mfcontentdecryptionmodule", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateEncryptedMediaExtensionsStoreActivate(/* _In_ */ IMFPMPHostApp pmpHost, /* _In_ */ IStream objectStream, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string classId, /* _Outptr_ */ out IMFActivate activate);
 
         // mfcore.dll
@@ -1462,7 +1462,7 @@ namespace DirectN
         public static extern HRESULT MFCreateExtendedCameraIntrinsics(/* _COM_Outptr_ */ out IMFExtendedCameraIntrinsics ppExtendedCameraIntrinsics);
 
         // mfd3d12.dll
-        [DllImport("mfd3d12", ExactSpelling = true)]
+        [DllImport("MFPlat", ExactSpelling = true)]
         public static extern HRESULT MFCreateD3D12SynchronizationObject(/* [annotation][in] _In_ */ ID3D12Device pDevice, /* [annotation][in] _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* [annotation][out] _Outptr_ */ out IntPtr ppvSyncObject);
 
         // mfgphone.dll
@@ -1494,10 +1494,10 @@ namespace DirectN
         public static extern HRESULT MfgPhoneUninitialize();
 
         // mfobjects.dll
-        [DllImport("mfobjects", ExactSpelling = true)]
+        [DllImport("MFPlat", ExactSpelling = true)]
         public static extern HRESULT MFDeserializeAttributesFromStream(IMFAttributes pAttr, uint dwOptions, IStream pStm);
 
-        [DllImport("mfobjects", ExactSpelling = true)]
+        [DllImport("MFPlat", ExactSpelling = true)]
         public static extern HRESULT MFSerializeAttributesToStream(IMFAttributes pAttr, uint dwOptions, IStream pStm);
 
         // mfplat.dll
@@ -1573,7 +1573,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreate2DMediaBuffer(/* _In_ */ uint dwWidth, /* _In_ */ uint dwHeight, /* _In_ */ uint dwFourCC, /* _In_ */ bool fBottomUp, /* _Out_ */ out IMFMediaBuffer ppBuffer);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreate3GPMediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1591,16 +1591,16 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateAudioMediaType(/* _In_ */ ref tWAVEFORMATEX pAudioFormat, /* _Out_ */ out IMFAudioMediaType ppIAudioMediaType);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateAudioRendererActivate(/* _Outptr_ */ out IMFActivate ppActivate);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("mfsrcsnk", ExactSpelling = true)]
         public static extern HRESULT MFCreateAVIMediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateCameraControlMonitor(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string symbolicLink, /* _In_ */ IMFCameraControlNotify callback, /* _COM_Outptr_ */ out IMFCameraControlMonitor ppCameraControlMonitor);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateCameraOcclusionStateMonitor(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string symbolicLink, /* _In_ */ IMFCameraOcclusionStateReportCallback callback, /* _COM_Outptr_ */ out IMFCameraOcclusionStateMonitor occlusionStateMonitor);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1612,7 +1612,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateContentProtectionDevice(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProtectionSystemId, /* _Outptr_ */ out IMFContentProtectionDevice ContentProtectionDevice);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateDeviceSourceActivate(/* _In_ */ IMFAttributes pAttributes, /* _Outptr_ */ out IMFActivate ppActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1630,13 +1630,13 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateEventQueue(/* _Out_ */ out IMFMediaEventQueue ppMediaEventQueue);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFCORE", ExactSpelling = true)]
         public static extern HRESULT MFCreateExtendedCameraIntrinsicModel(_MFCameraIntrinsic_DistortionModelType distortionModelType, /* _COM_Outptr_ */ out IMFExtendedCameraIntrinsicModel ppExtendedCameraIntrinsicModel);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateFile(__MIDL___MIDL_itf_mfobjects_0000_0018_0001 AccessMode, __MIDL___MIDL_itf_mfobjects_0000_0018_0002 OpenMode, __MIDL___MIDL_itf_mfobjects_0000_0018_0003 fFlags, [MarshalAs(UnmanagedType.LPWStr)] string pwszFileURL, /* _Out_ */ out IMFByteStream ppIByteStream);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateFMPEG4MediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1678,10 +1678,10 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMFVideoFormatFromMFMediaType(/* _In_ */ IMFMediaType pMFType, /* _Out_ */ out IntPtr ppMFVF, /* optional(UINT32) */ IntPtr pcbSize);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateMPEG4MediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_opt_ */ IMFMediaType pVideoMediaType, /* _In_opt_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateMuxSink(/* _In_ */ Guid guidOutputSubType, /* _In_opt_ */ IMFAttributes pOutputAttributes, /* _In_opt_ */ IMFByteStream pOutputByteStream, /* _Outptr_ */ out IMFMediaSink ppMuxSink);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1693,7 +1693,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateMuxStreamSample(/* _In_ */ IMFCollection pSamplesToMux, /* _COM_Outptr_ */ out IMFSample ppMuxSample);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreatePMPMediaSession(uint dwCreationFlags, IMFAttributes pConfiguration, /* _Outptr_ */ out IMFMediaSession ppMediaSession, /* _Outptr_opt_ */ out IMFActivate ppEnablerActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1702,34 +1702,34 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreatePropertiesFromMediaType(/* _In_ */ IMFMediaType pMediaType, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ out IntPtr ppv);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateProxyLocator([MarshalAs(UnmanagedType.LPWStr)] string pszProtocol, ref IPropertyStore pProxyConfig, /* _Outptr_ */ out IMFNetProxyLocator ppProxyLocator);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateRelativePanelWatcher(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string videoDeviceId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string displayMonitorDeviceId, /* _COM_Outptr_ */ out IMFRelativePanelWatcher ppRelativePanelWatcher);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateSample(/* _Out_ */ out IMFSample ppIMFSample);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateSampleCopierMFT(/* _Outptr_ */ out IMFTransform ppCopierMFT);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateSampleGrabberSinkActivate(IMFMediaType pIMFMediaType, IMFSampleGrabberSinkCallback pIMFSampleGrabberSinkCallback, /* _Outptr_ */ out IMFActivate ppIActivate);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorActivityMonitor(/* _In_ */ IMFSensorActivitiesReportCallback pCallback, /* _COM_Outptr_ */ out IMFSensorActivityMonitor ppActivityMonitor);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorGroup(/* _In_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string SensorGroupSymbolicLink, /* _COM_Outptr_ */ out IMFSensorGroup ppSensorGroup);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorProfile(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProfileType, /* _In_ */ uint ProfileIndex, /* _In_opt_z_ */ [MarshalAs(UnmanagedType.LPWStr)] string Constraints, /* _COM_Outptr_ */ out IMFSensorProfile ppProfile);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorProfileCollection(/* _COM_Outptr_ */ out IMFSensorProfileCollection ppSensorProfile);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateSensorStream(/* _In_ */ uint StreamId, /* _In_opt_ */ IMFAttributes pAttributes, /* _In_ */ IMFCollection pMediaTypeCollection, /* _COM_Outptr_ */ out IMFSensorStream ppStream);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1750,7 +1750,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateTrackedSample(/* _Outptr_ */ out IMFTrackedSample ppMFSample);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateTranscodeSinkActivate(/* _Outptr_ */ out IMFActivate ppActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1765,7 +1765,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateVideoMediaTypeFromSubtype(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid pAMSubtype, /* _Out_ */ out IMFVideoMediaType ppIVideoMediaType);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFCreateVideoRendererActivate(/* _In_ */ IntPtr hwndVideo, /* _Outptr_ */ out IMFActivate ppActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1774,7 +1774,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateWaveFormatExFromMFMediaType(/* _In_ */ IMFMediaType pMFType, /* _Out_ */ out IntPtr ppWF, /* optional(UINT32) */ IntPtr pcbSize, /* _In_ */ uint Flags);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("mfsrcsnk", ExactSpelling = true)]
         public static extern HRESULT MFCreateWAVEMediaSink(/* _In_ */ IMFByteStream pTargetByteStream, /* _In_ */ IMFMediaType pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppMediaSink);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1792,7 +1792,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFEndUnregisterWorkQueueWithMMCSS(/* _In_ */ IMFAsyncResult pResult);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFEnumDeviceSources(/* _In_ */ IMFAttributes pAttributes, /* _Outptr_result_buffer_(*pcSourceActivate) */ out IMFActivate pppSourceActivate, /* _Out_ */ out uint pcSourceActivate);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1846,7 +1846,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFGetTimerPeriodicity(/* _Out_ */ out uint Periodicity);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("MF", ExactSpelling = true)]
         public static extern HRESULT MFGetTopoNodeCurrentType(IMFTopologyNode pNode, uint dwStreamIndex, bool fOutput, /* _Outptr_ */ out IMFMediaType ppType);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -1906,7 +1906,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFIsContentProtectionDeviceSupported(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid ProtectionSystemId, /* _Out_ */ out bool isSupported);
 
-        [DllImport("mfplat", ExactSpelling = true)]
+        [DllImport("EVR", ExactSpelling = true)]
         public static extern bool MFIsFormatYUV(uint Format);
 
         [DllImport("mfplat", ExactSpelling = true)]
@@ -2091,50 +2091,50 @@ namespace DirectN
         public static extern HRESULT MFCreateAVIMediaSink(/* _In_ */ IMFByteStream pIByteStream, /* _In_ */ IMFMediaType pVideoMediaType, /* optional(IMFMediaType) */ IntPtr pAudioMediaType, /* _Outptr_ */ out IMFMediaSink ppIMediaSink);
 
         // mftransform.dll
-        [DllImport("mftransform", ExactSpelling = true)]
+        [DllImport("MFPlat", ExactSpelling = true)]
         public static extern HRESULT MFCreateTransformActivate(/* _Out_ */ out IMFActivate ppActivate);
 
         // mmdeviceapi.dll
-        [DllImport("mmdeviceapi", ExactSpelling = true)]
+        [DllImport("MMDevAPI", ExactSpelling = true)]
         public static extern HRESULT ActivateAudioInterfaceAsync(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceInterfacePath, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_opt_ */ [In, Out] PROPVARIANT activationParams, /* _In_ */ IActivateAudioInterfaceCompletionHandler completionHandler, /* _COM_Outptr_ */ out IActivateAudioInterfaceAsyncOperation activationOperation);
 
         // opmapi.dll
-        [DllImport("opmapi", ExactSpelling = true)]
+        [DllImport("dxva2", ExactSpelling = true)]
         public static extern HRESULT OPMGetVideoOutputForTarget(/* _In_ */ ref LUID pAdapterLuid, /* _In_ */ uint VidPnTarget, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _COM_Outptr_ */ out IOPMVideoOutput ppOPMVideoOutput);
 
-        [DllImport("opmapi", ExactSpelling = true)]
+        [DllImport("dxva2", ExactSpelling = true)]
         public static extern HRESULT OPMGetVideoOutputsFromHMONITOR(/* _In_ */ IntPtr hMonitor, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _Out_ */ out uint pulNumVideoOutputs, /* _Outptr_result_buffer_(*pulNumVideoOutputs) */ out IOPMVideoOutput pppOPMVideoOutputArray);
 
-        [DllImport("opmapi", ExactSpelling = true)]
+        [DllImport("dxva2", ExactSpelling = true)]
         public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(/* _In_ */ ref int pDirect3DDevice9, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _Out_ */ out uint pulNumVideoOutputs, /* _Outptr_result_buffer_(*pulNumVideoOutputs) */ out IOPMVideoOutput pppOPMVideoOutputArray);
 
         // wincodec.dll
-        [DllImport("wincodec", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICConvertBitmapSource(/* _In_ */ ref REFWICPixelFormatGUID dstFormat, /* // Destination pixel format _In_ */ IWICBitmapSource pISrc, /* // Source bitmap _Outptr_ */ out IWICBitmapSource ppIDst);
 
-        [DllImport("wincodec", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICCreateBitmapFromSection(/* _In_ */ uint width, /* _In_ */ uint height, /* _In_ */ ref REFWICPixelFormatGUID pixelFormat, /* _In_ */ IntPtr hSection, /* _In_ */ uint stride, /* _In_ */ uint offset, /* _Outptr_ */ out IWICBitmap ppIBitmap);
 
-        [DllImport("wincodec", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICCreateBitmapFromSectionEx(/* _In_ */ uint width, /* _In_ */ uint height, /* _In_ */ ref REFWICPixelFormatGUID pixelFormat, /* _In_ */ IntPtr hSection, /* _In_ */ uint stride, /* _In_ */ uint offset, /* _In_ */ WICSectionAccessLevel desiredAccessLevel, /* _Outptr_ */ out IWICBitmap ppIBitmap);
 
-        [DllImport("wincodec", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICMapGuidToShortName(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guid, /* _In_ */ uint cchName, /* _Inout_updates_opt_(cchName) */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out uint pcchActual);
 
-        [DllImport("wincodec", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICMapSchemaToName(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidMetadataFormat, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwzSchema, /* _In_ */ uint cchName, /* _Inout_updates_opt_(cchName) */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out uint pcchActual);
 
-        [DllImport("wincodec", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICMapShortNameToGuid(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string wzName, /* _Out_ */ out Guid pguid);
 
         // wincodecsdk.dll
-        [DllImport("wincodecsdk", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICGetMetadataContentSize(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* _In_ */ IWICMetadataWriter pIWriter, /* _Out_ */ out ulong pcbSize);
 
-        [DllImport("wincodecsdk", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICMatchMetadataContent(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* optional(GUID) */ IntPtr pguidVendor, /* _In_ */ IStream pIStream, /* _Out_ */ out Guid pguidMetadataFormat);
 
-        [DllImport("wincodecsdk", ExactSpelling = true)]
+        [DllImport("WindowsCodecs", ExactSpelling = true)]
         public static extern HRESULT WICSerializeMetadataContent(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidContainerFormat, /* _In_ */ IWICMetadataWriter pIWriter, /* _In_ */ uint dwPersistOptions, /* _In_ */ IStream pIStream);
 
         // wmcodecdsp.dll
