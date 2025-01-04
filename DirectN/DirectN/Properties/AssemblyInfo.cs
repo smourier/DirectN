@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("DirectN")]
 [assembly: AssemblyProduct("DirectN")]
-[assembly: AssemblyCopyright("Copyright © 2017-2024 Simon Mourier. All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright © 2017-2025 Simon Mourier. All rights reserved.")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("576ef3e5-0414-4891-8dce-f0b27074c069")]
