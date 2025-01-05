@@ -7,16 +7,16 @@
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
     <Copyright>Copyright © 2017-2025 Simon Mourier. All rights reserved.</Copyright>
-    <FileVersion>1.17.1.0</FileVersion>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
-    <Version>1.17.1.0</Version>
     <RootNamespace>DirectN</RootNamespace>
-    <AssemblyVersion>1.17.1.0</AssemblyVersion>
+    <FileVersion>1.17.2.0</FileVersion>
+    <Version>1.17.2.0</Version>
+    <AssemblyVersion>1.17.2.0</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

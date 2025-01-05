@@ -482,7 +482,7 @@ namespace DirectN
         public static extern HRESULT D3DDisassemble(/* _In_reads_bytes_(SrcDataSize) */ IntPtr pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ uint Flags, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string szComments, /* _Out_ */ out ID3D10Blob ppDisassembly);
 
         [DllImport("D3DCompiler_47", ExactSpelling = true)]
-        public static extern HRESULT D3DDisassemble10Effect(/* _In_ */ ref ID3D10Effect pEffect, /* _In_ */ uint Flags, /* _Out_ */ out ID3D10Blob ppDisassembly);
+        public static extern HRESULT D3DDisassemble10Effect(/* _In_ */ ID3D10Effect pEffect, /* _In_ */ uint Flags, /* _Out_ */ out ID3D10Blob ppDisassembly);
 
         [DllImport("D3DCompiler_47", ExactSpelling = true)]
         public static extern HRESULT D3DDisassembleRegion(/* _In_reads_bytes_(SrcDataSize) */ IntPtr pSrcData, /* _In_ */ IntPtr SrcDataSize, /* _In_ */ uint Flags, /* _In_opt_ */ [MarshalAs(UnmanagedType.LPStr)] string szComments, /* _In_ */ IntPtr StartByteOffset, /* _In_ */ IntPtr NumInsts, /* optional(SIZE_T) */ IntPtr pFinishByteOffset, /* _Out_ */ out ID3D10Blob ppDisassembly);
@@ -619,49 +619,49 @@ namespace DirectN
 
         // ddrawgdi.dll
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry1(int pDirectDrawGlobal, IntPtr hdc);
+        public static extern bool GdiEntry1(IntPtr pDirectDrawGlobal, IntPtr hdc);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry10(int pDirectDrawGlobal, ref bool pbNewMode);
+        public static extern bool GdiEntry10(IntPtr pDirectDrawGlobal, ref bool pbNewMode);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry11(int pSurfaceFrom, int pSurfaceTo);
+        public static extern bool GdiEntry11(IntPtr pSurfaceFrom, IntPtr pSurfaceTo);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern void GdiEntry12(int pSurface, int pSurfaceAttached);
+        public static extern void GdiEntry12(IntPtr pSurface, IntPtr pSurfaceAttached);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
         public static extern uint GdiEntry13();
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern IntPtr GdiEntry14(int pDDraw, int pSurface, bool bRelease);
+        public static extern IntPtr GdiEntry14(IntPtr pDDraw, IntPtr pSurface, bool bRelease);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry15(int pDDraw, IntPtr hdc, IntPtr lpGammaRamp);
+        public static extern bool GdiEntry15(IntPtr pDDraw, IntPtr hdc, IntPtr lpGammaRamp);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern uint GdiEntry16(int pDDraw, int pDDSLcl1, int pDDSLcl2);
+        public static extern uint GdiEntry16(IntPtr pDDraw, IntPtr pDDSLcl1, IntPtr pDDSLcl2);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry2(int pDirectDrawGlobal, int pHalInfo, int pDDCallbacks, int pDDSurfaceCallbacks, int pDDPaletteCallbacks, ref LPD3DHAL_CALLBACKS pD3dCallbacks, ref LPD3DHAL_GLOBALDRIVERDATA pD3dDriverData, int pD3dBufferCallbacks, int pD3dTextureFormats, ref uint pdwFourCC, /* // Can be NULL */ int pvmList);
+        public static extern bool GdiEntry2(IntPtr pDirectDrawGlobal, IntPtr pHalInfo, IntPtr pDDCallbacks, IntPtr pDDSurfaceCallbacks, IntPtr pDDPaletteCallbacks, LPD3DHAL_CALLBACKS pD3dCallbacks, LPD3DHAL_GLOBALDRIVERDATA pD3dDriverData, IntPtr pD3dBufferCallbacks, IntPtr pD3dTextureFormats, ref uint pdwFourCC, /* // Can be NULL */ IntPtr pvmList);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry3(int pDirectDrawGlobal);
+        public static extern bool GdiEntry3(IntPtr pDirectDrawGlobal);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry4(int pSurfaceLocal, bool bPrimarySurface);
+        public static extern bool GdiEntry4(IntPtr pSurfaceLocal, bool bPrimarySurface);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry5(int pSurfaceLocal);
+        public static extern bool GdiEntry5(IntPtr pSurfaceLocal);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry6(int pSurfaceLocal, IntPtr hWnd);
+        public static extern bool GdiEntry6(IntPtr pSurfaceLocal, IntPtr hWnd);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern IntPtr GdiEntry7(int pSurfaceLocal, ref tagPALETTEENTRY pColorTable);
+        public static extern IntPtr GdiEntry7(IntPtr pSurfaceLocal, ref tagPALETTEENTRY pColorTable);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
-        public static extern bool GdiEntry8(int pSurfaceLocal);
+        public static extern bool GdiEntry8(IntPtr pSurfaceLocal);
 
         [DllImport("ddrawgdi", ExactSpelling = true)]
         public static extern IntPtr GdiEntry9(IntPtr hdc, ref tagBITMAPINFO pbmi, uint iUsage, IntPtr ppvBits, IntPtr hSectionApp, uint dwOffset);
@@ -674,10 +674,10 @@ namespace DirectN
         public static extern HRESULT DirectSoundCaptureCreate8(/* optional(LPCGUID) */ IntPtr pcGuidDevice, /* _Outptr_ */ out LPDIRECTSOUNDCAPTURE8 ppDSC8, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
 
         [DllImport("dsound", ExactSpelling = true)]
-        public static extern HRESULT DirectSoundCaptureEnumerateA(/* _In_ */ ref LPDSENUMCALLBACKA pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
+        public static extern HRESULT DirectSoundCaptureEnumerateA(/* _In_ */ LPDSENUMCALLBACKA pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
 
         [DllImport("dsound", ExactSpelling = true)]
-        public static extern HRESULT DirectSoundCaptureEnumerateW(/* _In_ */ ref LPDSENUMCALLBACKW pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
+        public static extern HRESULT DirectSoundCaptureEnumerateW(/* _In_ */ LPDSENUMCALLBACKW pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
 
         [DllImport("dsound", ExactSpelling = true)]
         public static extern HRESULT DirectSoundCreate(/* optional(LPCGUID) */ IntPtr pcGuidDevice, /* _Outptr_ */ out LPDIRECTSOUND ppDS, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
@@ -686,10 +686,10 @@ namespace DirectN
         public static extern HRESULT DirectSoundCreate8(/* optional(LPCGUID) */ IntPtr pcGuidDevice, /* _Outptr_ */ out LPDIRECTSOUND8 ppDS8, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
 
         [DllImport("dsound", ExactSpelling = true)]
-        public static extern HRESULT DirectSoundEnumerateA(/* _In_ */ ref LPDSENUMCALLBACKA pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
+        public static extern HRESULT DirectSoundEnumerateA(/* _In_ */ LPDSENUMCALLBACKA pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
 
         [DllImport("dsound", ExactSpelling = true)]
-        public static extern HRESULT DirectSoundEnumerateW(/* _In_ */ ref LPDSENUMCALLBACKW pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
+        public static extern HRESULT DirectSoundEnumerateW(/* _In_ */ LPDSENUMCALLBACKW pDSEnumCallback, /* optional(LPVOID) */ IntPtr pContext);
 
         [DllImport("dsound", ExactSpelling = true)]
         public static extern HRESULT DirectSoundFullDuplexCreate(/* optional(LPCGUID) */ IntPtr pcGuidCaptureDevice, /* optional(LPCGUID) */ IntPtr pcGuidRenderDevice, /* _In_ */ ref _DSCBUFFERDESC pcDSCBufferDesc, /* _In_ */ ref _DSBUFFERDESC pcDSBufferDesc, IntPtr hWnd, uint dwLevel, /* _Outptr_ */ out LPDIRECTSOUNDFULLDUPLEX ppDSFD, /* _Outptr_ */ out LPDIRECTSOUNDCAPTUREBUFFER8 ppDSCBuffer8, /* _Outptr_ */ out LPDIRECTSOUNDBUFFER8 ppDSBuffer8, /* _Pre_null_ */ LPUNKNOWN pUnkOuter);
@@ -721,10 +721,16 @@ namespace DirectN
 
         // dxva2.dll
         [DllImport("dxva2", ExactSpelling = true)]
-        public static extern HRESULT DXVAHD_CreateDevice(/* _In_ */ ref int pD3DDevice, /* _In_ */ ref _DXVAHD_CONTENT_DESC pContentDesc, /* _In_ */ _DXVAHD_DEVICE_USAGE Usage, /* optional(PDXVAHDSW_Plugin) */ IntPtr pPlugin, /* _Outptr_ */ out IDXVAHD_Device ppDevice);
+        public static extern HRESULT DXVAHD_CreateDevice(/* _In_ */ IDirect3DDevice9Ex pD3DDevice, /* _In_ */ ref _DXVAHD_CONTENT_DESC pContentDesc, /* _In_ */ _DXVAHD_DEVICE_USAGE Usage, /* optional(PDXVAHDSW_Plugin) */ IntPtr pPlugin, /* _Outptr_ */ out IDXVAHD_Device ppDevice);
 
         [DllImport("dxva2", ExactSpelling = true)]
         public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(/* _In_ */ IDirect3DDevice9 pDirect3DDevice9, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _Out_ */ out uint pulNumVideoOutputs, /* _Outptr_result_buffer_(*pulNumVideoOutputs) */ out IOPMVideoOutput pppOPMVideoOutputArray);
+
+        [DllImport("dxva2", ExactSpelling = true)]
+        public static extern HRESULT OPMGetVideoOutputForTarget(/* _In_ */ ref LUID pAdapterLuid, /* _In_ */ uint VidPnTarget, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _COM_Outptr_ */ out IOPMVideoOutput ppOPMVideoOutput);
+
+        [DllImport("dxva2", ExactSpelling = true)]
+        public static extern HRESULT OPMGetVideoOutputsFromHMONITOR(/* _In_ */ IntPtr hMonitor, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _Out_ */ out uint pulNumVideoOutputs, /* _Outptr_result_buffer_(*pulNumVideoOutputs) */ out IOPMVideoOutput pppOPMVideoOutputArray);
 
         // dxva2api.dll
         [DllImport("dxva2api", ExactSpelling = true)]
@@ -1412,10 +1418,10 @@ namespace DirectN
         public static extern HRESULT MFCreateVideoRendererActivate(/* _In_ */ IntPtr hwndVideo, /* _Outptr_ */ out IntPtr ppActivate);
 
         [DllImport("mf", ExactSpelling = true)]
-        public static extern HRESULT MFCreateWMAEncoderActivate(IMFMediaType pMediaType, ref IPropertyStore pEncodingConfigurationProperties, out IMFActivate ppActivate);
+        public static extern HRESULT MFCreateWMAEncoderActivate(IMFMediaType pMediaType, IPropertyStore pEncodingConfigurationProperties, out IMFActivate ppActivate);
 
         [DllImport("mf", ExactSpelling = true)]
-        public static extern HRESULT MFCreateWMVEncoderActivate(IMFMediaType pMediaType, ref IPropertyStore pEncodingConfigurationProperties, out IMFActivate ppActivate);
+        public static extern HRESULT MFCreateWMVEncoderActivate(IMFMediaType pMediaType, IPropertyStore pEncodingConfigurationProperties, out IMFActivate ppActivate);
 
         [DllImport("mf", ExactSpelling = true)]
         public static extern HRESULT MFEnumDeviceSources(/* _In_ */ IMFAttributes pAttributes, /* _Outptr_result_buffer_(*pcSourceActivate) */ out IntPtr pppSourceActivate, /* _Out_ */ out uint pcSourceActivate);
@@ -1701,9 +1707,6 @@ namespace DirectN
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreatePropertiesFromMediaType(/* _In_ */ IMFMediaType pMediaType, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _Outptr_ */ out IntPtr ppv);
-
-        [DllImport("MF", ExactSpelling = true)]
-        public static extern HRESULT MFCreateProxyLocator([MarshalAs(UnmanagedType.LPWStr)] string pszProtocol, ref IPropertyStore pProxyConfig, /* _Outptr_ */ out IMFNetProxyLocator ppProxyLocator);
 
         [DllImport("MFSENSORGROUP", ExactSpelling = true)]
         public static extern HRESULT MFCreateRelativePanelWatcher(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string videoDeviceId, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string displayMonitorDeviceId, /* _COM_Outptr_ */ out IMFRelativePanelWatcher ppRelativePanelWatcher);
@@ -2003,7 +2006,7 @@ namespace DirectN
         public static extern HRESULT MFTRegister(/* _In_ */ Guid clsidMFT, /* _In_ */ Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pOutputTypes, /* _In_opt_ */ IMFAttributes pAttributes);
 
         [DllImport("mfplat", ExactSpelling = true)]
-        public static extern HRESULT MFTRegisterLocal(/* _In_ */ ref IClassFactory pClassFactory, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pOutputTypes);
+        public static extern HRESULT MFTRegisterLocal(/* _In_ */ IClassFactory pClassFactory, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pOutputTypes);
 
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFTRegisterLocalByCLSID(/* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid clisdMFT, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid guidCategory, /* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pszName, /* _In_ */ uint Flags, /* _In_ */ int cInputTypes, /* _In_reads_opt_(cInputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 4)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pInputTypes, /* _In_ */ int cOutputTypes, /* _In_reads_opt_(cOutputTypes) */ [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 6)] __MIDL___MIDL_itf_mfobjects_0000_0009_0003[] pOutputTypes);
@@ -2062,7 +2065,7 @@ namespace DirectN
 
         // mfreadwrite.dll
         [DllImport("mfreadwrite", ExactSpelling = true)]
-        public static extern HRESULT MFCreateSinkWriterFromMediaSink(/* _In_ */ ref int pMediaSink, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSinkWriter ppSinkWriter);
+        public static extern HRESULT MFCreateSinkWriterFromMediaSink(/* _In_ */ IMFMediaSink pMediaSink, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSinkWriter ppSinkWriter);
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
         public static extern HRESULT MFCreateSinkWriterFromURL(/* _In_opt_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszOutputURL, /* _In_opt_ */ IMFByteStream pByteStream, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSinkWriter ppSinkWriter);
@@ -2071,7 +2074,7 @@ namespace DirectN
         public static extern HRESULT MFCreateSourceReaderFromByteStream(/* _In_ */ IMFByteStream pByteStream, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
-        public static extern HRESULT MFCreateSourceReaderFromMediaSource(/* _In_ */ ref int pMediaSource, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
+        public static extern HRESULT MFCreateSourceReaderFromMediaSource(/* _In_ */ IMFMediaSource pMediaSource, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
 
         [DllImport("mfreadwrite", ExactSpelling = true)]
         public static extern HRESULT MFCreateSourceReaderFromURL(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string pwszURL, /* _In_opt_ */ IMFAttributes pAttributes, /* _Out_ */ out IMFSourceReader ppSourceReader);
@@ -2097,16 +2100,6 @@ namespace DirectN
         // mmdeviceapi.dll
         [DllImport("MMDevAPI", ExactSpelling = true)]
         public static extern HRESULT ActivateAudioInterfaceAsync(/* _In_ */ [MarshalAs(UnmanagedType.LPWStr)] string deviceInterfacePath, /* _In_ */ [MarshalAs(UnmanagedType.LPStruct)] Guid riid, /* _In_opt_ */ [In, Out] PROPVARIANT activationParams, /* _In_ */ IActivateAudioInterfaceCompletionHandler completionHandler, /* _COM_Outptr_ */ out IActivateAudioInterfaceAsyncOperation activationOperation);
-
-        // opmapi.dll
-        [DllImport("dxva2", ExactSpelling = true)]
-        public static extern HRESULT OPMGetVideoOutputForTarget(/* _In_ */ ref LUID pAdapterLuid, /* _In_ */ uint VidPnTarget, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _COM_Outptr_ */ out IOPMVideoOutput ppOPMVideoOutput);
-
-        [DllImport("dxva2", ExactSpelling = true)]
-        public static extern HRESULT OPMGetVideoOutputsFromHMONITOR(/* _In_ */ IntPtr hMonitor, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _Out_ */ out uint pulNumVideoOutputs, /* _Outptr_result_buffer_(*pulNumVideoOutputs) */ out IOPMVideoOutput pppOPMVideoOutputArray);
-
-        [DllImport("dxva2", ExactSpelling = true)]
-        public static extern HRESULT OPMGetVideoOutputsFromIDirect3DDevice9Object(/* _In_ */ ref int pDirect3DDevice9, /* _In_ */ _OPM_VIDEO_OUTPUT_SEMANTICS vos, /* _Out_ */ out uint pulNumVideoOutputs, /* _Outptr_result_buffer_(*pulNumVideoOutputs) */ out IOPMVideoOutput pppOPMVideoOutputArray);
 
         // wincodec.dll
         [DllImport("WindowsCodecs", ExactSpelling = true)]
