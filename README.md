@@ -5,13 +5,14 @@ The easiest way to use this is reference the nuget package: https://www.nuget.or
 
 Or you can pick the C# source files you want (among the 10000 .cs provided ...). It can be sometimes difficult because the dependencies between all these technologies can make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is still possible.
 
-## AOT support
+## AOT support and future developments
 Since DirectN is compatible with .NET Framework and older C# versions and constructs, marshalling is provided by the CLR (it's "built-in"), so it's not compatible with [Native AOT Deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=net8plus%2Cwindows).
 
-However, a .NET 8+ project has been started here [DirectNAot](https://github.com/smourier/DirectNAot) which builds AOT-compatible DirectN code. This code will not be 100% source compatible with DirectN but its code generator named [Win32InteropBuilder](https://github.com/smourier/Win32InteropBuilder) is now provided as open source (based on [win32metadata](https://github.com/microsoft/win32metadata) project).
+However, a .NET 8+ project has been started here [DirectNAot](https://github.com/smourier/DirectNAot) which builds AOT-compatible DirectN code. This code is *not* 100% source compatible with DirectN but it's very similar, and its code generator named [Win32InteropBuilder](https://github.com/smourier/Win32InteropBuilder) is now provided as open source and is based on Microsoft-endorsed [win32metadata](https://github.com/microsoft/win32metadata) project, which ensures better future enhancements.
 
-⚡️⚡️ Most of DirectN for .NET Core evolutions will happen in this AOT project. DirectN still exists as is, mostly for .NET Framework support.
-Work is in progress, stay tuned!
+Note the fact DirectNAOT is AOT-compatible doesn't prevent you from using it for non-AOT projects.
+
+⚡️⚡️ DirectN evolutions will now happen in this DirectNAot project. DirectN still exists as is, mostly for .NET Framework or .NET 7 or lower support. We recommend you start migrating your .NET  8+ projects to DirectNAot as soon as possible. Don't hesitate to create issues in DirectNAot repository for migration issues.
 
 ## Same names and types than the native concepts!
 DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, probably more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the **same names and types than the native concepts** (interfaces, enums, structures, constants, methods, arguments, guids, etc.) . So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
@@ -239,7 +240,7 @@ cleanup:
 
  # "Wicnet" & "Wice" example projects
  [WicNet](https://github.com/smourier/WicNet) is a .NET standard project that is a full wrapper on WIC (Windows Imaging Component) components. It includes WIC connections with Direct2D (effects), and DirectWrite (text rendering) and is based on DirectN
- 
+
  Wice ["Windows Interface Composition Engine"](https://github.com/aelyo-softworks/Wice) also uses DirectN and is a bloat-free .NET UI engine (no releation with Winforms, WPF, UWP nor WinUI3) for creating Windows (as in Win32/WinRT) desktop applications.
 
  # Winforms .NET 6 - Direct3D11 minimal sample.
