@@ -172,7 +172,7 @@ namespace DirectN
         [DllImport("mfplat", ExactSpelling = true)]
         public static extern HRESULT MFCreateDXGIDeviceManager(out uint resetToken, out IMFDXGIDeviceManager ppDeviceManager);
 
-        public static IComObject<IMFDXGIDeviceManager> MFCreateDXGIDeviceManager() => MFCreateDXGIDeviceManager();
+        public static IComObject<IMFDXGIDeviceManager> MFCreateDXGIDeviceManager() => MFCreateDXGIDeviceManager(out _);
         public static IComObject<IMFDXGIDeviceManager> MFCreateDXGIDeviceManager(out uint resetToken) => MFCreateDXGIDeviceManager<IMFDXGIDeviceManager>(out resetToken);
         public static IComObject<T> MFCreateDXGIDeviceManager<T>(out uint resetToken) where T : IMFDXGIDeviceManager
         {

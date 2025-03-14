@@ -14,9 +14,9 @@
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
     <RootNamespace>DirectN</RootNamespace>
-    <FileVersion>1.17.2.0</FileVersion>
-    <Version>1.17.2.0</Version>
-    <AssemblyVersion>1.17.2.0</AssemblyVersion>
+    <FileVersion>1.17.2.1</FileVersion>
+    <Version>1.17.2.1</Version>
+    <AssemblyVersion>1.17.2.1</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
