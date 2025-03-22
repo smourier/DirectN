@@ -40,6 +40,8 @@ namespace DirectN
 
         internal TextHostThunk HostThunk { get; }
 
+        public ITextServices2 Services => _services;
+
         // ITextDocument(2)
         public dynamic Document
         {
@@ -333,8 +335,8 @@ namespace DirectN
             }
         }
 
-        public void Draw(IComObject<ID2D1RenderTarget> target, tagRECT rc) => Draw(target?.Object, rc);
-        public virtual void Draw(ID2D1RenderTarget target, tagRECT rc)
+        public void Draw(IComObject<ID2D1RenderTarget> target, tagRECT rc, tagRECT? updateRect = null, TXTVIEW view = TXTVIEW.TXTVIEW_ACTIVE) => Draw(target?.Object, rc, updateRect, view);
+        public virtual void Draw(ID2D1RenderTarget target, tagRECT rc, tagRECT? updateRect = null, TXTVIEW view = TXTVIEW.TXTVIEW_ACTIVE)
         {
             if (target == null)
                 throw new ArgumentNullException(nameof(target));
@@ -343,11 +345,17 @@ namespace DirectN
             rc = rc.PixelToDip();
             if (_services32 != null)
             {
-                _services32.TxDrawD2D(target, ref rc, IntPtr.Zero, TXTVIEW.TXTVIEW_ACTIVE).ThrowOnError();
+                using (var mem = new ComMemory(updateRect))
+                {
+                    _services32.TxDrawD2D(target, ref rc, mem.Pointer, view).ThrowOnError();
+                }
             }
             else
             {
-                _services.TxDrawD2D(target, ref rc, IntPtr.Zero, TXTVIEW.TXTVIEW_ACTIVE).ThrowOnError();
+                using (var mem = new ComMemory(updateRect))
+                {
+                    _services.TxDrawD2D(target, ref rc, mem.Pointer, view).ThrowOnError();
+                }
             }
         }
 
