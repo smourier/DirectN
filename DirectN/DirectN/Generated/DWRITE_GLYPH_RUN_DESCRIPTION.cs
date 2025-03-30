@@ -13,13 +13,11 @@ namespace DirectN
         /// <summary>
         /// The locale name associated with this run.
         /// </summary>
-        [MarshalAs(UnmanagedType.LPWStr)] 
-        public string localeName;
+        public IntPtr localeName;
         /// <summary>
         /// The text associated with the glyphs.
         /// </summary>
-        [MarshalAs(UnmanagedType.LPWStr)] 
-        public string @string;
+        public IntPtr @string;
         /// <summary>
         /// The number of characters (UTF16 code-units). Note that this may be different than the number of glyphs.
         /// </summary>
