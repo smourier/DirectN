@@ -21,6 +21,9 @@
         ERROR_INVALID_NAME = unchecked((int)0x8007007B),
         ERROR_INVALID_HANDLE = unchecked((int)0x80070006),
         DISP_E_EXCEPTION = unchecked((int)0x80020009),
+        DRAGDROP_S_DROP = 0x00040100,
+        DRAGDROP_S_CANCEL = 0x00040101,
+        DRAGDROP_S_USEDEFAULTCURSORS = 0x00040102,
 
         // storage
         STG_E_INVALIDFUNCTION = unchecked((int)0x80030001),
