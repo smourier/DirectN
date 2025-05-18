@@ -410,7 +410,7 @@ namespace DirectN
             return list.AsReadOnly();
         }
 
-        [DllImport("windows.data.pdf", ExactSpelling = true)]
+        [DllImport("windows.data.pdf.dll", ExactSpelling = true)]
         private static extern HRESULT PdfCreateRenderer(IDXGIDevice pDevice, out IPdfRendererNative ppRenderer);
         public static IPdfRendererNative PdfCreateRenderer(IDXGIDevice device, bool throwOnError = true)
         {
