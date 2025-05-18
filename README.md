@@ -8,11 +8,11 @@ Or you can pick the C# source files you want (among the 10000 .cs provided ...).
 ## AOT support and future developments
 Since DirectN is compatible with .NET Framework and older C# versions and constructs, marshalling is provided by the CLR (it's "built-in"), so it's not compatible with [Native AOT Deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=net8plus%2Cwindows).
 
-However, a .NET 8+ project has been started here [DirectNAot](https://github.com/smourier/DirectNAot) which builds AOT-compatible DirectN code. This code is *not* 100% source compatible with DirectN but it's very similar, and its code generator named [Win32InteropBuilder](https://github.com/smourier/Win32InteropBuilder) is now provided as open source and is based on Microsoft-endorsed [win32metadata](https://github.com/microsoft/win32metadata) project, which ensures better future enhancements.
+However, a .NET 9+ (.NET 8 has a **dreadful** COM support bug so it's not supported) project here [DirectNAot](https://github.com/smourier/DirectNAot) which builds AOT-compatible DirectN code. This code is *not* 100% source compatible with DirectN but it's very similar, and its code generator named [Win32InteropBuilder](https://github.com/smourier/Win32InteropBuilder) is now provided as open source and is based on Microsoft-endorsed [win32metadata](https://github.com/microsoft/win32metadata) project, which ensures better future enhancements.
 
 Note the fact DirectNAOT is AOT-compatible doesn't prevent you from using it for non-AOT projects.
 
-⚡️⚡️ DirectN evolutions will now happen in this DirectNAot project. DirectN still exists as is, mostly for .NET Framework or .NET 7 or lower support. We recommend you start migrating your .NET  8+ projects to DirectNAot as soon as possible. Don't hesitate to create issues in DirectNAot repository for migration issues.
+⚡️⚡️ DirectN evolutions will now happen in this DirectNAot project. DirectN still exists as is, mostly for .NET Framework or .NET 7 or lower support. We recommend you start migrating your .NET 8+ projects to DirectNAot as soon as possible. Don't hesitate to create issues in DirectNAot repository for migration issues.
 
 ## Same names and types than the native concepts!
 DirectN allows you to port C/C++ code to C#, or to write C# code from scratch, probably more easily than with other existing interop libraries in this domain because one of its main objective is to use exactly the **same names and types than the native concepts** (interfaces, enums, structures, constants, methods, arguments, guids, etc.) . So you can read the official documentation, use existing C/C++ samples, and start coding with .NET right away.
