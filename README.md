@@ -5,7 +5,7 @@ The easiest way to use this is reference the nuget package: https://www.nuget.or
 
 Or you can pick the C# source files you want (among the 10000 .cs provided ...). It can be sometimes difficult because the dependencies between all these technologies can make extracting a small portion quite difficult (and they are one of the reasons why DirectN exists...). However this is still possible.
 
-⚠️ DirectN evolutions will now happen in the [DirectNAot](https://github.com/smourier/DirectNAot) project which builds AOT-compatible DirectN code project (see below) with the main benefit of being able to ship single-file binaries. DirectN still exists, as is, mostly for .NET Framework support. We recommend you start migrating your .NET 9+ projects to DirectNAot as soon as possible. Don't hesitate to create issues in DirectNAot repository for migration issues.
+⚠️ As of 2025, DirectN evolutions will now happen in the [DirectNAot](https://github.com/smourier/DirectNAot) project which builds AOT-compatible DirectN code project (see below) with the main benefit of being able to ship single-file binaries. DirectN still exists, as is, mostly for .NET Framework support. We recommend you start migrating your .NET 9+ projects to DirectNAot as soon as possible. Don't hesitate to create issues in DirectNAot repository for migration issues.
 
 ## AOT support and future developments
 Since DirectN is compatible with .NET Framework and older C# versions and constructs, marshalling is provided by the CLR (it's "built-in"), so it's not compatible with [Native AOT Deployment](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=net8plus%2Cwindows).
