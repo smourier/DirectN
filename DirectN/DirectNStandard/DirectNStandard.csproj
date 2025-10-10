@@ -14,9 +14,9 @@
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
     <RootNamespace>DirectN</RootNamespace>
-    <FileVersion>1.17.3.0</FileVersion>
-    <Version>1.17.3.0</Version>
-    <AssemblyVersion>1.17.3.0</AssemblyVersion>
+    <FileVersion>1.17.4.0</FileVersion>
+    <Version>1.17.4.0</Version>
+    <AssemblyVersion>1.17.4.0</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

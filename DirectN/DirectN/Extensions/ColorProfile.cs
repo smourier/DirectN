@@ -140,20 +140,23 @@ namespace DirectN
                                 case "mluc": // multiLocalizedUnicodeType
                                     offset = 8;
                                     var records = getInt32();
-                                    _ = getInt32(); // record size
-                                    var languageCode = Get2BytesString(BitConverter.ToInt16(bytes, offset));
-                                    offset += 2;
-                                    var countryCode = Get2BytesString(BitConverter.ToInt16(bytes, offset));
+                                    var recordSize = getInt32(); // record size
+                                    if (recordSize != 12 || records == 0)
+                                        break;
 
-                                    var lcid = languageCode + "-" + countryCode;
-                                    offset += 2;
                                     for (var ir = 0; ir < records; ir++)
                                     {
+                                        var languageCode = Get2BytesString(BitConverter.ToInt16(bytes, offset));
+                                        offset += 2;
+                                        var countryCode = Get2BytesString(BitConverter.ToInt16(bytes, offset));
+                                        offset += 2;
+                                        var lcid = languageCode + "-" + countryCode;
+
                                         var sl = getInt32();
-                                        var o = offset; // save
-                                        offset = getInt32();
-                                        var s = getBEUnicode(sl / 2);
-                                        offset = o; // restore
+                                        var stringOffset = getInt32();
+                                        var s = getBEUnicode(stringOffset, sl / 2);
+                                        if (s == null)
+                                            break;
 
                                         if (!localizedStrings.TryGetValue(lcid, out var list))
                                         {
@@ -204,10 +207,9 @@ namespace DirectN
                                 return s;
                             }
 
-                            string getBEUnicode(int len)
+                            string getBEUnicode(int strOffset, int len)
                             {
-                                var s = TrimTerminatingZeros(Encoding.BigEndianUnicode.GetString(bytes, offset, len * 2));
-                                offset += len;
+                                var s = TrimTerminatingZeros(Encoding.BigEndianUnicode.GetString(bytes, strOffset, len * 2));
                                 return s;
                             }
 
