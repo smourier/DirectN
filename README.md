@@ -246,20 +246,20 @@ cleanup:
 
  Wice ["Windows Interface Composition Engine"](https://github.com/aelyo-softworks/Wice) also uses DirectN and is a bloat-free .NET UI engine (no releation with Winforms, WPF, UWP nor WinUI3) for creating Windows (as in Win32/WinRT) desktop applications.
 
- # Winforms .NET 6 - Direct3D11 minimal sample.
+ # Winforms .NET 10 - Direct3D11 minimal sample.
  The **DirectN.MinimalD3D11** sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.MinimalD3D11 has been ported to C# from here: https://gist.github.com/d7samurai/261c69490cce0620d0bfc93003cd1052 which features *"a minimal Direct3D11 "uncluttered direct3d 11 setup and rendering primer for newcomers to the api"* sample.
 
- It's dependent on DirectN, .NET 6, Windows Forms and ... that's it. Here is the output (believe me, it rotates):
+ It's dependent on DirectN, .NET 10, Windows Forms and ... that's it. Here is the output (believe me, it rotates):
 
   ![Sample](/Assets/minimald3d11.png?raw=true)
 Full credits go to d7Samurai: https://gist.github.com/d7samurai
 
 Note: the code also works with .NET Core 3.1 to 5, it's just a project configuration matter.
 
- # WinUI3 .NET 6 - Direct3D11 minimal sample.
+ # WinUI3 .NET 10 - Direct3D11 minimal sample.
  The **DirectN.WinUI3.MinimalD3D11** sample here https://github.com/smourier/DirectN/tree/master/DirectN/DirectN.WinUI3.MinimalD3D11 has been ported to C# from here: https://gist.github.com/d7samurai/abab8a580d0298cb2f34a44eec41d39d which features a minimal Direct3D11 *"'API familiarizer' - an uncluttered Direct3D 11 setup & basic rendering reference implementation, in the form of a complete, runnable Windows application contained in a single function and laid out in a linear, step-by-step fashion"* sample.
 
- It's dependent on DirectN, .NET 6, WinUI3 (using **SwapChainPanel** https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel), and ... that's it. Here is the output (believe me, it rotates):
+ It's dependent on DirectN, .NET 10, WinUI3 (using **SwapChainPanel** https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel), and ... that's it. Here is the output (believe me, it rotates):
 
   ![Sample](/Assets/minimald3d11_pt3.png?raw=true)
 Full credits go to d7Samurai: https://gist.github.com/d7samurai
