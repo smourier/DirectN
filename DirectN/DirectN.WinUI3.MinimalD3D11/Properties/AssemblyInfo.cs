@@ -11,13 +11,13 @@ using System.Runtime.Versioning;
 [assembly: AssemblyCompany("Simon Mourier")]
 [assembly: AssemblyProduct("DirectN")]
 [assembly: AssemblyDescription("Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.")]
-[assembly: AssemblyCopyright("Copyright © 2017-2025 Simon Mourier. All rights reserved. Original code by d7samurai.")]
+[assembly: AssemblyCopyright("Copyright © 2017-2026 Simon Mourier. All rights reserved. Original code by d7samurai.")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("99873e46-b92d-47ce-b5be-d453cad3895b")]
 
-[assembly: AssemblyVersion("1.17.4.0")]
-[assembly: AssemblyFileVersion("1.17.4.0")]
-[assembly: AssemblyInformationalVersion("1.17.4.0")]
+[assembly: AssemblyVersion("1.18.0.0")]
+[assembly: AssemblyFileVersion("1.18.0.0")]
+[assembly: AssemblyInformationalVersion("1.18.0.0")]
 
 [assembly: SupportedOSPlatform("windows10.0.19041.0")]

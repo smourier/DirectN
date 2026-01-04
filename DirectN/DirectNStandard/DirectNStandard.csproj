@@ -6,7 +6,7 @@
     <Description>Interop Code for .NET : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, WinUI3, etc.</Description>
     <Company>Simon Mourier</Company>
     <Product>DirectN</Product>
-    <Copyright>Copyright © 2017-2025 Simon Mourier. All rights reserved.</Copyright>
+    <Copyright>Copyright © 2017-2026 Simon Mourier. All rights reserved.</Copyright>
     <PackageTags>.NET DXGI WIC DirectX Direct2D DirectWrite DirectComposition MediaFoundation WASAPI CoreAudio CodecAPI GDI SpatialAudio DVD WindowsMediaPlayer WMP Interop UWP DX</PackageTags>
     <RepositoryUrl>https://github.com/smourier/DirectN</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -14,9 +14,9 @@
     <PackageIcon>DirectN.png</PackageIcon>
     <Authors>Simon Mourier</Authors>
     <RootNamespace>DirectN</RootNamespace>
-    <FileVersion>1.17.4.0</FileVersion>
-    <Version>1.17.4.0</Version>
-    <AssemblyVersion>1.17.4.0</AssemblyVersion>
+    <FileVersion>1.18.0.0</FileVersion>
+    <Version>1.18.0.0</Version>
+    <AssemblyVersion>1.18.0.0</AssemblyVersion>
     <PackageProjectUrl>https://github.com/smourier/DirectN</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

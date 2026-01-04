@@ -9,7 +9,7 @@
 	<Identity Name="398c998c-1dc7-482b-94de-2e1fa8e8ac82" Publisher="CN=Simon Mourier" Version="1.0.0.0" />
 
 	<Properties>
-		<DisplayName>minimal d3d11 pt3 by d7samurai - On WinUI3 and .NET 6.0</DisplayName>
+		<DisplayName>minimal d3d11 pt3 by d7samurai - On WinUI3 and .NET 10.0</DisplayName>
 		<PublisherDisplayName>Simon Mourier</PublisherDisplayName>
 		<Logo>Assets\StoreLogo.png</Logo>
 	</Properties>
@@ -28,7 +28,7 @@
 		  Executable="$targetnametoken$.exe"
 		  EntryPoint="$targetentrypoint$">
 			<uap:VisualElements
-			  DisplayName="minimal d3d11 pt3 by d7samurai - On WinUI3 and .NET 6.0"
+			  DisplayName="minimal d3d11 pt3 by d7samurai - On WinUI3 and .NET 10.0"
 			  BackgroundColor="transparent"
 			  Square150x150Logo="Assets\Square150x150Logo.png"
 			  Square44x44Logo="Assets\Square44x44Logo.png" Description="Ported from https://gist.github.com/d7samurai/abab8a580d0298cb2f34a44eec41d39d">
